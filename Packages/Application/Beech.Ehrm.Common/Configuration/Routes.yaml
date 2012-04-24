@@ -1,0 +1,8 @@
+-
+  name: 'Login'
+  uriPattern: 'login.html'
+  defaults:
+    '@package': 'Beech.Ehrm.Common'
+    '@controller': 'Login'
+    '@action': 'login'
+    '@format': 'html'
