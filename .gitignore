@@ -12,3 +12,11 @@ Configuration/Settings.yaml
 /Packages/.Shortcuts/
 /Tests/
 /Web/_Resources/
+/.idea
+/.project
+~.swp
+.~
+/.settings
+/.nbproject
+.DS_Store
+Thumbs.db
