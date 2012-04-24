@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <phpunit strict="true"
-		bootstrap="../Common/PhpUnit/UnitTestBootstrap.php"
+		bootstrap="../Common/PhpUnit/FunctionalTestBootstrap.php"
 		convertErrorsToExceptions="true"
 		convertNoticesToExceptions="true"
 		convertWarningsToExceptions="true">
 	<testsuites>
 		<testsuite name="All tests">
-			<directory>../../Packages/Application/*/Tests/PHP/Unit/</directory>
+			<directory>../../Packages/Application/*/Tests/PHP/Functional/</directory>
 		</testsuite>
 	</testsuites>
 	<filter>
@@ -15,6 +15,7 @@
 		</whitelist>
 	</filter>
 	<logging>
-		<log type="junit" target="../Reports/UnitTests.xml" logIncompleteSkipped="false"/>
+		<log type="junit" target="../Reports/FunctionalTests.xml" logIncompleteSkipped="false"/>
+		<log type="testdox-text" target="../Data/Logs/FunctionalTestDox.txt"/>
 	</logging>
 </phpunit>

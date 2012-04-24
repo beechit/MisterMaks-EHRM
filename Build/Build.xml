@@ -99,10 +99,12 @@
 
 	<target name="phpcs-ci"
 			description="Find coding standard violations using PHP_CodeSniffer creating a log file for the continuous integration server">
-		<exec executable="phpcs" output="/dev/null">
+		<!--<exec executable="phpcs" output="/dev/null">-->
+		<exec executable="phpcs">
 			<arg value="--report=checkstyle"/>
 			<arg value="--report-file=${basedir}/Data/Logs/checkstyle.xml"/>
 			<arg value="--standard=${basedir}/PhpCs.xml"/>
+			<arg value="--extensions=php" />
 			<arg path="${basedir}/../Packages/Application"/>
 		</exec>
 	</target>
@@ -127,7 +129,7 @@
 
 	<target name="phpunit" description="Run unit tests with PHPUnit">
 		<exec executable="phpunit" failonerror="true">
-			<arg line="-c ../Build/Common/PhpUnit/UnitTests.xml" />
+			<arg line="-c ../Build/PhpUnit/UnitTests.xml" />
 			<arg line="--coverage-html ${basedir}/Data/Coverage/Unit/" />
 			<arg line="--coverage-clover ${basedir}/Data/Logs/unit-clover.xml" />
 			<arg line="--log-junit ${basedir}/Data/Logs/unit-junit.xml" />
@@ -136,7 +138,7 @@
 
 	<target name="phpunit_functional" description="Run functional tests with PHPUnit">
 		<exec executable="phpunit" failonerror="true">
-			<arg line="-c ../Build/Common/PhpUnit/FunctionalTests.xml" />
+			<arg line="-c ../Build/PhpUnit/FunctionalTests.xml" />
 			<arg line="--coverage-html ${basedir}/Data/Coverage/Functional/" />
 			<arg line="--coverage-clover ${basedir}/Data/Logs/functional-clover.xml" />
 			<arg line="--log-junit ${basedir}/Data/Logs/functional-junit.xml" />
