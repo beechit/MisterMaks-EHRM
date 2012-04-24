@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset name="FLOW3">
+	<description>The coding standard for FLOW3 / TYPO3 Phoenix. For more information have a look at http://forge.typo3.org/projects/team-php_codesniffer</description>
+
+	<!-- PHP -->
+	<rule ref="TYPO3.PHP.CharacterBeforePHPOpeningTag" />
+	<rule ref="TYPO3.PHP.CharacterAfterPHPClosingTag" />
+	<rule ref="Generic.PHP.DisallowShortOpenTag" />
+	<rule ref="TYPO3.PHP.DisallowMultiplePHPTags" />
+	<rule ref="TYPO3.PHP.ClosingPHPTag" />
+	<rule ref="Squiz.PHP.NonExecutableCode" />
+	<rule ref="Generic.PHP.DeprecatedFunctions" />
+	<rule ref="Squiz.PHP.Eval" />
+	<rule ref="Squiz.PHP.GlobalKeyword" />
+	<rule ref="Generic.PHP.UpperCaseConstant" />
+
+	<!-- Files -->
+	<rule ref="TYPO3.Files.OneClassPerFile" />
+	<rule ref="TYPO3.Files.OneInterfacePerFile" />
+	<rule ref="Generic.Files.LineEndings" />
+	<rule ref="TYPO3.Files.EncodingUtf8" />
+
+	<!-- Whitespaces -->
+	<rule ref="Squiz.WhiteSpace.SuperfluousWhitespace" />
+	<rule ref="TYPO3.WhiteSpace.DisallowSpaceIndent" />
+	<rule ref="Squiz.WhiteSpace.SemicolonSpacing" />
+	<rule ref="Squiz.WhiteSpace.LogicalOperatorSpacing" />
+	<rule ref="TYPO3.WhiteSpace.AssignmentArithmeticAndComparisonSpace" />
+	<rule ref="TYPO3.WhiteSpace.AsteriksWhitespaces" />
+
+	<!-- Commenting -->
+	<rule ref="PEAR.Commenting.InlineComment" />
+	<rule ref="TYPO3.Commenting.DoubleSlashCommentsInNewLine" />
+	<rule ref="TYPO3.Commenting.ValidCommentIndent" />
+	<rule ref="TYPO3.Commenting.SpaceAfterDoubleSlash" />
+
+	<!-- Control structures -->
+	<rule ref="Generic.ControlStructures.InlineControlStructure" />
+	<rule ref="Squiz.ControlStructures.ControlSignature" />
+	<rule ref="TYPO3.ControlStructures.DisallowElseIfConstruct" />
+
+	<!-- Strings -->
+	<rule ref="TYPO3.Strings.UnnecessaryStringConcat" />
+	<rule ref="Squiz.Strings.DoubleQuoteUsage" />
+
+	<!-- Scope -->
+	<rule ref="Squiz.Scope.MemberVarScope" />
+	<rule ref="Squiz.Scope.MethodScope" />
+
+	<!-- NamingConventions -->
+	<rule ref="Generic.NamingConventions.ConstructorName" />
+	<rule ref="Generic.NamingConventions.UpperCaseConstantName" />
+
+	<!-- Classes -->
+	<rule ref="TYPO3.Classes.LowercaseClassKeywords" />
+	<rule ref="Squiz.Classes.SelfMemberReference" />
+
+	<!-- Arrays -->
+	<rule ref="Squiz.Arrays.ArrayBracketSpacing" />
+
+	<!-- Functions -->
+	<rule ref="Generic.Functions.OpeningFunctionBraceKernighanRitchie" />
+	<rule ref="Generic.Functions.FunctionCallArgumentSpacing" />
+
+</ruleset>

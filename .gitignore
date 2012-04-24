@@ -1,6 +1,8 @@
 /Build/Archives/
 /Build/Reports/
 /Build/Temporary/
+/Build/Data/
+/Build/cache.properties
 /Configuration/Production/IncludeCachedConfigurations.php
 /Configuration/PackageStates.php
 Configuration/Development/Settings.yaml
