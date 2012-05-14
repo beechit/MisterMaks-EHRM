@@ -1,3 +1,18 @@
+
+##
+# Admin package
+#
+
+-
+  name: 'Admin Package routes'
+  uriPattern: '<AdminRoutes>'
+  defaults:
+    '@format': 'html'
+    '@package': 'Admin'
+  subRoutes:
+    AdminRoutes:
+      package: Admin
+
 ##
 # EHRM.Common subroutes
 #
