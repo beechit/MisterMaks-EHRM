@@ -1,0 +1,61 @@
+Beech:
+  Ehrm:
+    menu:
+      groups:
+        manage:
+          priority: 40
+          label: 'Beheer'
+        new:
+          priority: 10
+          label: 'Nieuw'
+        edit:
+          priority: 20
+          label: 'Bewerk'
+        report:
+          priority: 30
+          label: 'Rapporteer'
+    modules:
+      admin:
+        config:
+          label: 'Admin'
+          depends: ''
+        resources:
+          stylesheets:
+          javascripts:
+        menu:
+          actions:
+            index:
+              package: 'Beech.Ehrm'
+              controller: 'Standard'
+              action: 'index'
+              label: 'Admin index'
+              priority: 10
+              menuGroup: 'manage'
+      timecard:
+        config:
+          label: 'Tijdregistratie'
+          depends: ''
+        menu:
+          actions:
+            index:
+              package: 'Beech.Ehrm'
+              controller: 'Standard'
+              action: 'index'
+              label: 'Admin index'
+              priority: 20
+              menuGroup: 'manage'
+      absence:
+        config:
+          label: 'Verlof & verzuim'
+        menu:
+          actions:
+            new:
+              package: 'Beech.Ehrm'
+              controller: 'Standard'
+              action: 'index'
+              label: 'Test'
+              priority: 40
+              menuGroup: 'new'
+
+
+

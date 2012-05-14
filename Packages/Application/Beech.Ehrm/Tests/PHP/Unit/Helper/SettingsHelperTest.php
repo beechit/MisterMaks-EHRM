@@ -1,8 +1,8 @@
 <?php
-namespace Beech\Ehrm\Common\Tests\Unit\Helper;
+namespace Beech\Ehrm\Tests\Unit\Helper;
 
 /*                                                                        *
- * This script belongs to the FLOW3 package "Beech.Ehrm.Common".          *
+ * This script belongs to the FLOW3 package "Beech.Ehrm".                 *
  *                                                                        *
  *                                                                        */
 
@@ -36,7 +36,7 @@ class SettingsHelper extends \TYPO3\FLOW3\Tests\UnitTestCase {
 
 	public function setUp() {
 		$this->uriBuilder = $this->getAccessibleMock('TYPO3\FLOW3\Mvc\Routing\UriBuilder');
-		$this->uriBuilder->expects($this->any())->method('uriFor')->will($this->returnValue('beech.ehrm.common/standard/index'));
+		$this->uriBuilder->expects($this->any())->method('uriFor')->will($this->returnValue('beech.ehrm/standard/index'));
 		$this->uriBuilder->expects($this->any())->method('reset')->will($this->returnValue($this->uriBuilder));
 
 		$this->settings = array(
@@ -133,7 +133,7 @@ class SettingsHelper extends \TYPO3\FLOW3\Tests\UnitTestCase {
 			)
 		);
 
-		\Beech\Ehrm\Common\Helper\SettingsHelper::convertMenuActionsToUrls($this->settings, $this->uriBuilder);
+		\Beech\Ehrm\Helper\SettingsHelper::convertMenuActionsToUrls($this->settings, $this->uriBuilder);
 	}
 
 	/**
@@ -149,7 +149,7 @@ class SettingsHelper extends \TYPO3\FLOW3\Tests\UnitTestCase {
 
 		$this->assertEquals(
 			$matchValue,
-			\Beech\Ehrm\Common\Helper\SettingsHelper::sortSettingsByPriority($this->settings['menu']['groups'])
+			\Beech\Ehrm\Helper\SettingsHelper::sortSettingsByPriority($this->settings['menu']['groups'])
 		);
 	}
 
@@ -163,11 +163,11 @@ class SettingsHelper extends \TYPO3\FLOW3\Tests\UnitTestCase {
 				'items' => array(
 					1 => array(
 						'label' => 'Admin index',
-						'link' => 'beech.ehrm.common/standard/index',
+						'link' => 'beech.ehrm/standard/index',
 					),
 					0 => array(
 						'label' => 'Admin index',
-						'link' => 'beech.ehrm.common/standard/index',
+						'link' => 'beech.ehrm/standard/index',
 					)
 				)
 			),
@@ -176,7 +176,7 @@ class SettingsHelper extends \TYPO3\FLOW3\Tests\UnitTestCase {
 				'items' => array(
 					0 => array(
 						'label' => 'Admin index',
-						'link' => 'beech.ehrm.common/standard/index',
+						'link' => 'beech.ehrm/standard/index',
 					)
 				)
 			),
@@ -185,7 +185,7 @@ class SettingsHelper extends \TYPO3\FLOW3\Tests\UnitTestCase {
 				'items' => array(
 					0 => array(
 						'label' => 'Admin index',
-						'link' => 'beech.ehrm.common/standard/index',
+						'link' => 'beech.ehrm/standard/index',
 					)
 				)
 			),
@@ -194,11 +194,11 @@ class SettingsHelper extends \TYPO3\FLOW3\Tests\UnitTestCase {
 				'items' => array(
 					1 => array(
 						'label' => 'Admin index',
-						'link' => 'beech.ehrm.common/standard/index',
+						'link' => 'beech.ehrm/standard/index',
 					),
 					0 => array(
 						'label' => 'Admin index',
-						'link' => 'beech.ehrm.common/standard/index',
+						'link' => 'beech.ehrm/standard/index',
 					)
 				)
 			),
@@ -206,7 +206,7 @@ class SettingsHelper extends \TYPO3\FLOW3\Tests\UnitTestCase {
 
 		$this->assertEquals(
 			$matchValue,
-			\Beech\Ehrm\Common\Helper\SettingsHelper::getMainMenuItems($this->settings)
+			\Beech\Ehrm\Helper\SettingsHelper::getMainMenuItems($this->settings)
 		);
 	}
 }

@@ -1,5 +1,5 @@
 <?php
-namespace Beech\Ehrm\Common\Functional;
+namespace Beech\Ehrm\Functional;
 
 /**
  * Test suite for Signal Slot
