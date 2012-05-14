@@ -3,13 +3,14 @@
 #
 
 -
-  name: 'Beech EHRM Common'
-  uriPattern: '<EHRMCommonSubroutes>'
+  name: 'Beech EHRM'
+  uriPattern: '<EHRMSubroutes>'
   defaults:
     '@format': 'html'
   subRoutes:
-    EHRMCommonSubroutes:
-      package: Beech.Ehrm.Common
+    EHRMSubroutes:
+      package: Beech.Ehrm
+
 
 ##
 # FLOW3 subroutes
