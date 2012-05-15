@@ -52,3 +52,6 @@
 [submodule "Packages/Application/Emberjs"]
 	path = Packages/Application/Emberjs
 	url = git://github.com/radmiraal/Emberjs.git
+[submodule "Documentation"]
+	path = Documentation
+	url = ssh://git.beech.local/EHRM/Documentation.git
