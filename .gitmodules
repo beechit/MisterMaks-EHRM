@@ -46,9 +46,9 @@
 [submodule "Packages/Tools/TYPO3.DocTools"]
 	path = Packages/Tools/TYPO3.DocTools
 	url = git://git.typo3.org/FLOW3/Packages/TYPO3.DocTools.git
-[submodule "Packages/Application/TYPO3.Jobqueue.Common"]
-	path = Packages/Application/TYPO3.Jobqueue.Common
-	url = git://github.com/radmiraal/TYPO3.Jobqueue.Common.git
+[submodule "Packages/Application/TYPO3.Jobqueue"]
+	path = Packages/Application/TYPO3.Jobqueue
+	url = git://git.typo3.org/FLOW3/Packages/TYPO3.Queue.git
 [submodule "Packages/Application/Emberjs"]
 	path = Packages/Application/Emberjs
 	url = git://github.com/radmiraal/Emberjs.git
