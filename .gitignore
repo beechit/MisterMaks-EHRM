@@ -11,6 +11,7 @@ Configuration/Settings.yaml
 /Data/
 /Tests/
 /Web/_Resources/
+.vagrant
 /.idea
 /.project
 ~.swp
@@ -19,3 +20,4 @@ Configuration/Settings.yaml
 /.nbproject
 .DS_Store
 Thumbs.db
+/index.html

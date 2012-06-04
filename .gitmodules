@@ -46,12 +46,15 @@
 [submodule "Packages/Tools/TYPO3.DocTools"]
 	path = Packages/Tools/TYPO3.DocTools
 	url = git://git.typo3.org/FLOW3/Packages/TYPO3.DocTools.git
-[submodule "Packages/Application/TYPO3.Jobqueue"]
-	path = Packages/Application/TYPO3.Jobqueue
-	url = git://git.typo3.org/FLOW3/Packages/TYPO3.Queue.git
 [submodule "Packages/Application/Emberjs"]
 	path = Packages/Application/Emberjs
 	url = git://github.com/radmiraal/Emberjs.git
 [submodule "Documentation"]
 	path = Documentation
 	url = ssh://git.beech.local/EHRM/Documentation.git
+[submodule "Build/Vagrant/Chef"]
+	path = Build/Vagrant/Chef
+	url = ssh://git.beech.local/Beech/Tools/Vagrant.git
+[submodule "Packages/Application/TYPO3.Queue"]
+	path = Packages/Application/TYPO3.Queue
+	url = git://git.typo3.org/FLOW3/Packages/TYPO3.Queue.git
