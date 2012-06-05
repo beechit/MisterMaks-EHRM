@@ -1,7 +1,6 @@
 Vagrant::Config.run do |config|
 	config.vm.box     = "ubuntu-12-nfs-32"
-	#config.vm.box_url = "http://ci.beech.local/files/ubuntu-12-nfs-32.box"
-	config.vm.box_url = "/Volumes/Data/VirtualBoxVMs/ubuntu-12-nfs-32.box"
+	config.vm.box_url = "http://ci.beech.local/files/ubuntu-12-nfs-32.box"
 
 	config.vm.network :hostonly, "172.31.254.10"
 	config.vm.network :bridged
