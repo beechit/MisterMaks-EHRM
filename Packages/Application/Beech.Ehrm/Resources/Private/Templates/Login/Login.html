@@ -8,30 +8,26 @@
 	</head>
 	<body>
 		<f:section name="body">
-
-
-			<form class="form-horizontal">
+			<f:flashMessages class="errorMessages" />
+			<f:form action="authenticate" class="form-horizontal">
 				<fieldset>
-					<legend>Nieuwe gebruiker</legend>
+					<legend>Inloggen</legend>
 					<div class="control-group">
-						<label class="control-label" for="input01">Voornaam</label>
+						<label class="control-label" for="username">Gebruikersnaam</label>
 						<div class="controls">
-							<input type="text" class="input-xlarge" id="input01" />
-							<p class="help-block">Help tekstje</p>
+							<f:form.textfield name="__authentication[TYPO3][FLOW3][Security][Authentication][Token][UsernamePassword][username]" class="input-xlarge" id="username" value="{username}" />
 						</div>
-						<label class="control-label" for="input01">Achternaam</label>
+						<label class="control-label" for="password">Wachtwoord</label>
 						<div class="controls">
-							<input type="text" class="input-xlarge" id="input01" />
-							<p class="help-block">Help tekstje</p>
+							<f:form.password name="__authentication[TYPO3][FLOW3][Security][Authentication][Token][UsernamePassword][password]" class="input-xlarge" id="password" />
 						</div>
 					</div>
 				</fieldset>
 
 				<div class="form-actions">
-					<button type="submit" class="btn btn-primary">Aanmaken</button>
-					<button class="btn">Annuleren</button>
+					<button type="submit" class="btn btn-primary">Login</button>
 				</div>
-			</form>
+			</f:form>
 
 		</f:section>
 	</body>
@@ -40,27 +36,3 @@
 <f:section name="left">
 
 </f:section>
-
-<ul class="nav nav-list">
-	<li class="nav-header">Contracten</li>
-	<li><a href="#"><i class="icon-repeat"></i>Overzicht</a></li>
-	<li><a href="#"><i class="icon-th-list"></i>Nieuw</a></li>
-	<li><a href="#"><i class="icon-text-height"></i>Lorem</a></li>
-	<li><a href="#"><i class="icon-tags"></i>Ipsum</a></li>
-	<li class="nav-header">Gebruikers</li>
-	<li><a href="#"><i class="icon-ok-circle"></i>Overzicht</a></li>
-	<li><a href="#"><i class="icon-indent-left"></i>Nieuw</a></li>
-	<li><a href="#"><i class="icon-upload"></i>Lorem</a></li>
-	<li><a href="#"><i class="icon-user"></i>Ipsum</a></li>
-	<li class="nav-header">Personeel</li>
-	<li><a href="#"><i class="icon-calendar"></i>Overzicht</a></li>
-	<li><a href="#"><i class="icon-align-justify"></i>Nieuw</a></li>
-	<li><a href="#"><i class="icon-envelope"></i>Lorem</a></li>
-	<li><a href="#"><i class="icon-retweet"></i>Ipsum</a></li>
-	<li class="nav-header">Rapportage</li>
-	<li><a href="#"><i class="icon-book"></i>Overzicht</a></li>
-	<li><a href="#"><i class="icon-play"></i>Nieuw</a></li>
-	<li><a href="#"><i class="icon-print"></i>Lorem</a></li>
-	<li><a href="#"><i class="icon-pause"></i>Ipsum</a></li>
-
-</ul>

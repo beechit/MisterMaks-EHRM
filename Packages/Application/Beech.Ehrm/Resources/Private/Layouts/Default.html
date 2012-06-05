@@ -24,13 +24,15 @@
 					<div class="container">
 						<a class="brand" href="#">EHRM</a>
 
-						<bootstrap:navigation.menu items="{items}" classNames="{0:'nav'}" />
+						<f:security.ifAuthenticated>
+							<bootstrap:navigation.menu items="{mainmenuItems}" classNames="{0:'nav'}" />
 
-						<form class="navbar-form pull-right">
-							<input type="text" class="search-query input-small" placeholder="Search">
-						</form>
+							<form class="navbar-form pull-right">
+								<input type="text" class="search-query input-small" placeholder="Search">
+							</form>
 
-						<bootstrap:navigation.menu items="{0:{label:'Admin'},1:{divider:'1'},2:{label:'Uitloggen'}}" classNames="{0:'nav',1:'pull-right'}" />
+							<bootstrap:navigation.menu items="{0:{label:'Admin'},1:{divider:'1'},2:{label:'Uitloggen'}}" classNames="{0:'nav',1:'pull-right'}" />
+						</f:security.ifAuthenticated>
 					</div>
 				</div>
 			</nav>
