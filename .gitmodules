@@ -28,9 +28,6 @@
 [submodule "Packages/Application/Twitter.Bootstrap"]
 	path = Packages/Application/Twitter.Bootstrap
 	url = git://git.typo3.org/FLOW3/Packages/Twitter.Bootstrap.git
-[submodule "Packages/Tools/Admin"]
-	path = Packages/Tools/Admin
-	url = git://github.com/radmiraal/FLOW3-Admin.git
 [submodule "Packages/Application/TYPO3.LDAP"]
 	path = Packages/Application/TYPO3.LDAP
 	url = git://git.typo3.org/FLOW3/Packages/LDAP.git
@@ -58,3 +55,6 @@
 [submodule "Packages/Application/TYPO3.Queue"]
 	path = Packages/Application/TYPO3.Queue
 	url = git://git.typo3.org/FLOW3/Packages/TYPO3.Queue.git
+[submodule "Packages/Framework/Symfony.Component.DomCrawler"]
+	path = Packages/Framework/Symfony.Component.DomCrawler
+	url = git://git.typo3.org/FLOW3/Packages/Symfony.Component.DomCrawler.git
