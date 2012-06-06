@@ -49,9 +49,6 @@
 [submodule "Documentation"]
 	path = Documentation
 	url = ssh://git.beech.local/EHRM/Documentation.git
-[submodule "Build/Vagrant/Chef"]
-	path = Build/Vagrant/Chef
-	url = ssh://git.beech.local/Beech/Tools/Vagrant.git
 [submodule "Packages/Application/TYPO3.Queue"]
 	path = Packages/Application/TYPO3.Queue
 	url = git://git.typo3.org/FLOW3/Packages/TYPO3.Queue.git
