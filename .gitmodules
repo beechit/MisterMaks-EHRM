@@ -55,3 +55,6 @@
 [submodule "Packages/Framework/Symfony.Component.DomCrawler"]
 	path = Packages/Framework/Symfony.Component.DomCrawler
 	url = git://git.typo3.org/FLOW3/Packages/Symfony.Component.DomCrawler.git
+[submodule "Build/Vagrant"]
+	path = Build/Vagrant
+	url = ssh://git.beech.local/Beech/Tools/Vagrant.git
