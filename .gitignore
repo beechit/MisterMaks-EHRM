@@ -5,9 +5,6 @@
 /Build/cache.properties
 /Configuration/Production/IncludeCachedConfigurations.php
 /Configuration/PackageStates.php
-Configuration/Development/Settings.yaml
-Configuration/Production/Settings.yaml
-Configuration/Settings.yaml
 /Data/
 /Tests/
 /Web/_Resources/
