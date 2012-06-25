@@ -25,33 +25,15 @@
 [submodule "Packages/Framework/Symfony.Component.Yaml"]
 	path = Packages/Framework/Symfony.Component.Yaml
 	url = git://git.typo3.org/FLOW3/Packages/Symfony.Component.Yaml.git
-[submodule "Packages/Application/Twitter.Bootstrap"]
-	path = Packages/Application/Twitter.Bootstrap
-	url = git://git.typo3.org/FLOW3/Packages/Twitter.Bootstrap.git
-[submodule "Packages/Application/TYPO3.LDAP"]
-	path = Packages/Application/TYPO3.LDAP
-	url = git://git.typo3.org/FLOW3/Packages/LDAP.git
-[submodule "Packages/Application/TYPO3.Form"]
-	path = Packages/Application/TYPO3.Form
-	url = git://git.typo3.org/FLOW3/Packages/TYPO3.Form.git
-[submodule "Packages/Application/TYPO3.FormBuilder"]
-	path = Packages/Application/TYPO3.FormBuilder
-	url = git://git.typo3.org/FLOW3/Packages/TYPO3.FormBuilder.git
 [submodule "Packages/Tools/TYPO3.Surf"]
 	path = Packages/Tools/TYPO3.Surf
 	url = git://git.typo3.org/FLOW3/Packages/TYPO3.Surf.git
 [submodule "Packages/Tools/TYPO3.DocTools"]
 	path = Packages/Tools/TYPO3.DocTools
 	url = git://git.typo3.org/FLOW3/Packages/TYPO3.DocTools.git
-[submodule "Packages/Application/Emberjs"]
-	path = Packages/Application/Emberjs
-	url = git://github.com/radmiraal/Emberjs.git
 [submodule "Documentation"]
 	path = Documentation
 	url = ssh://git.beech.local/EHRM/Documentation.git
-[submodule "Packages/Application/TYPO3.Queue"]
-	path = Packages/Application/TYPO3.Queue
-	url = git://git.typo3.org/FLOW3/Packages/TYPO3.Queue.git
 [submodule "Packages/Framework/Symfony.Component.DomCrawler"]
 	path = Packages/Framework/Symfony.Component.DomCrawler
 	url = git://git.typo3.org/FLOW3/Packages/Symfony.Component.DomCrawler.git
@@ -61,3 +43,24 @@
 [submodule "Build/CGL/Common/PHP"]
 	path = Build/CGL/Common/PHP
 	url = git://git.typo3.org/Teams/forge.typo3.org/hudson-helpers/tools/PHP_CodeSniffer.git
+[submodule "Packages/Library/Twitter.Bootstrap"]
+	path = Packages/Library/Twitter.Bootstrap
+	url = git://git.typo3.org/FLOW3/Packages/Twitter.Bootstrap.git
+[submodule "Packages/Library/TYPO3.LDAP"]
+	path = Packages/Library/TYPO3.LDAP
+	url = git://git.typo3.org/FLOW3/Packages/LDAP.git
+[submodule "Packages/Library/TYPO3.Form"]
+	path = Packages/Library/TYPO3.Form
+	url = git://git.typo3.org/FLOW3/Packages/TYPO3.Form.git
+[submodule "Packages/Library/TYPO3.FormBuilder"]
+	path = Packages/Library/TYPO3.FormBuilder
+	url = git://git.typo3.org/FLOW3/Packages/TYPO3.FormBuilder.git
+[submodule "Packages/Library/Emberjs"]
+	path = Packages/Library/Emberjs
+	url = git://github.com/radmiraal/Emberjs.git
+[submodule "Packages/Library/TYPO3.Queue"]
+	path = Packages/Library/TYPO3.Queue
+	url = git://git.typo3.org/FLOW3/Packages/TYPO3.Queue.git
+[submodule "Packages/Application/Beech.Ehrm"]
+	path = Packages/Application/Beech.Ehrm
+	url = ssh://git.beech.local/EHRM/Package/Ehrm.git
