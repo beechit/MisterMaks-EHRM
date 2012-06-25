@@ -14,7 +14,6 @@ namespace Beech\Ehrm\Controller;
  *                                                                        */
 
 use TYPO3\FLOW3\Annotations as FLOW3;
-use Beech\Ehrm\Helper\SettingsHelper as SettingsHelper;
 
 /**
  * Login controller for the Beech.Ehrm package

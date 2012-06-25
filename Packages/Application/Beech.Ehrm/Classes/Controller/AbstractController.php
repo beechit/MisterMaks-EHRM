@@ -14,7 +14,6 @@ namespace Beech\Ehrm\Controller;
  *                                                                        */
 
 use TYPO3\FLOW3\Annotations as FLOW3;
-use Beech\Ehrm\Helper\SettingsHelper as SettingsHelper;
 
 /**
  * Abstract controller for the Beech.Ehrm package
@@ -24,20 +23,18 @@ use Beech\Ehrm\Helper\SettingsHelper as SettingsHelper;
 class AbstractController extends \TYPO3\FLOW3\Mvc\Controller\ActionController {
 
 	/**
-	 * Initialize Mvc action
-	 *
-	 * @return void
+	 * @var \Beech\Ehrm\Helper\SettingsHelper
+	 * @FLOW3\Inject
 	 */
-	public function initializeAction() {
-		SettingsHelper::convertMenuActionsToUrls($this->settings, $this->uriBuilder);
-	}
+	protected $settingsHelper;
 
 	/**
 	 * @param \TYPO3\FLOW3\Mvc\View\ViewInterface $view
 	 * @return void
 	 */
 	public function initializeView(\TYPO3\FLOW3\Mvc\View\ViewInterface $view) {
-		$view->assign('mainmenuItems', SettingsHelper::getMainMenuItems($this->settings));
+		$view->assign('mainMenuItems', $this->settingsHelper->getMenuItems('main'));
+		$view->assign('actionMenuItems', $this->settingsHelper->getMenuItems('action'));
 	}
 
 }
