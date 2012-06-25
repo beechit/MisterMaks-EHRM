@@ -55,7 +55,7 @@
 		<exec executable="phploc">
 			<arg value="--log-csv"/>
 			<arg value="${basedir}/Data/Logs/phploc.csv"/>
-			<arg path="${basedir}/../Packages/Application"/>
+			<arg path="${basedir}/../Packages/Application/"/>
 		</exec>
 	</target>
 
@@ -65,14 +65,14 @@
 			<arg value="--jdepend-xml=${basedir}/Data/Logs/jdepend.xml"/>
 			<arg value="--jdepend-chart=${basedir}/Data/Pdepend/dependencies.svg"/>
 			<arg value="--overview-pyramid=${basedir}/Data/Pdepend/overview-pyramid.svg"/>
-			<arg path="${basedir}/../Packages/Application"/>
+			<arg path="${basedir}/../Packages/Application/"/>
 		</exec>
 	</target>
 
 	<target name="phpmd"
 			description="Perform project mess detection using PHPMD and print human readable output. Intended for usage on the command line before committing.">
 		<exec executable="phpmd">
-			<arg path="${basedir}/../Packages/Application"/>
+			<arg path="${basedir}/../Packages/Application/"/>
 			<arg value="text"/>
 			<arg value="${basedir}/PhpMd.xml"/>
 		</exec>
@@ -81,7 +81,7 @@
 	<target name="phpmd-ci"
 			description="Perform project mess detection using PHPMD creating a log file for the continuous integration server">
 		<exec executable="phpmd">
-			<arg path="${basedir}/../Packages/Application"/>
+			<arg path="${basedir}/../Packages/Application/"/>
 			<arg value="xml"/>
 			<arg value="${basedir}/PhpMd.xml"/>
 			<arg value="--reportfile"/>
@@ -92,20 +92,20 @@
 	<target name="phpcs"
 			description="Find coding standard violations using PHP_CodeSniffer and print human readable output. Intended for usage on the command line before committing.">
 		<exec executable="phpcs">
-			<arg value="--standard=${basedir}/PhpCs.xml"/>
-			<arg path="${basedir}/../Packages/Application"/>
+			<arg value="--standard=${basedir}/CGL/Common/PHP/FLOW3/ruleset.xml"/>
+			<arg value="--extensions=php" />
+			<arg path="${basedir}/../Packages/Application/"/>
 		</exec>
 	</target>
 
 	<target name="phpcs-ci"
 			description="Find coding standard violations using PHP_CodeSniffer creating a log file for the continuous integration server">
-		<!--<exec executable="phpcs" output="/dev/null">-->
 		<exec executable="phpcs">
 			<arg value="--report=checkstyle"/>
 			<arg value="--report-file=${basedir}/Data/Logs/checkstyle.xml"/>
-			<arg value="--standard=${basedir}/PhpCs.xml"/>
+			<arg value="--standard=${basedir}/CGL/Common/PHP/FLOW3/ruleset.xml"/>
 			<arg value="--extensions=php" />
-			<arg path="${basedir}/../Packages/Application"/>
+			<arg path="${basedir}/../Packages/Application/"/>
 		</exec>
 	</target>
 
@@ -113,7 +113,7 @@
 		<exec executable="phpcpd">
 			<arg value="--log-pmd"/>
 			<arg value="${basedir}/Data/Logs/pmd-cpd.xml"/>
-			<arg path="${basedir}/../Packages/Application"/>
+			<arg path="${basedir}/../Packages/Application/"/>
 		</exec>
 	</target>
 
@@ -151,7 +151,7 @@
 			<arg value="--log"/>
 			<arg path="${basedir}/Data/Logs"/>
 			<arg value="--source"/>
-			<arg path="${basedir}/../Packages/Application"/>
+			<arg path="${basedir}/../Packages/Application/"/>
 			<arg value="--output"/>
 			<arg path="${basedir}/Data/Code-browser"/>
 		</exec>

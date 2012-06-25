@@ -58,3 +58,6 @@
 [submodule "Build/Vagrant"]
 	path = Build/Vagrant
 	url = ssh://git.beech.local/Beech/Tools/Vagrant.git
+[submodule "Build/CGL/Common/PHP"]
+	path = Build/CGL/Common/PHP
+	url = git://git.typo3.org/Teams/forge.typo3.org/hudson-helpers/tools/PHP_CodeSniffer.git
