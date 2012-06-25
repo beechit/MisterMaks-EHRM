@@ -1,0 +1,19 @@
+#                                                                        #
+# Security policy for the TYPO3 package                                  #
+#                                                                        #
+
+resources:
+  methods:
+    Ehrm_Controller: 'method(Beech\Ehrm\Controller\StandardController->.*())'
+
+
+roles:
+  Administrator: [ User ]
+  User: [ ]
+
+acls:
+  Administrator:
+    methods:
+  User:
+    methods:
+      Ehrm_Controller: GRANT

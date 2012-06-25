@@ -1,0 +1,52 @@
+<!DOCTYPE html>{namespace ember=Emberjs\ViewHelpers}{namespace bootstrap=Twitter\Bootstrap\ViewHelpers}
+<html>
+	<head>
+		<title>EHRM</title>
+		<f:base />
+		<ember:include loadJQuery="TRUE" loadEmberData="TRUE" />
+		<script type="text/javascript">
+			var App = Ember.Application.create({
+				Model: {},
+				Store: DS.Store.create({})
+			});
+			{ember:dataModel(packageKey: 'TYPO3.Party', modelNamespace: 'App.Model')}
+
+			var person = App.Store.createRecord(App.Model.Person);
+		</script>
+		<bootstrap:include />
+		<link rel="stylesheet" type="text/css" href="{f:uri.resource(path: 'StyleSheets/main.css')}" />
+		<script data-main="{f:uri.resource(path: 'JavaScript/app.js')}" src="{f:uri.resource(path: 'JavaScript/require.js')}"></script>
+	</head>
+	<body>
+		<header>
+			<nav class="navbar navbar-fixed-top">
+				<div class="navbar-inner">
+					<div class="container">
+						<a class="brand" href="#">EHRM</a>
+
+						<f:security.ifAuthenticated>
+							<bootstrap:navigation.menu items="{mainMenuItems}" classNames="{0:'nav'}" />
+
+							<form class="navbar-form pull-right">
+								<input type="text" class="search-query input-small" placeholder="Search">
+							</form>
+
+							<bootstrap:navigation.menu items="{actionMenuItems}" classNames="{0:'nav',1:'pull-right'}" />
+						</f:security.ifAuthenticated>
+					</div>
+				</div>
+			</nav>
+		</header>
+
+		<section class="container">
+			<div class="row">
+				<!--<aside class="span3">-->
+					<f:render section="left" />
+				<!--</aside>-->
+				<section class="span12">
+					<f:render section="body" />
+				</section>
+			</div>
+		</section>
+	</body>
+</html>
