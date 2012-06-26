@@ -64,3 +64,6 @@
 [submodule "Packages/Application/Beech.Ehrm"]
 	path = Packages/Application/Beech.Ehrm
 	url = ssh://git.beech.local/EHRM/Package/Ehrm.git
+[submodule "Packages/Application/Beech.Party"]
+	path = Packages/Application/Beech.Party
+	url = ssh://git.beech.local/EHRM/Package/Party.git
