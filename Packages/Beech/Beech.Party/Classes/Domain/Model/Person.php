@@ -14,7 +14,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @FLOW3\Entity
  */
-class Person {
+class Person extends \TYPO3\Party\Domain\Model\AbstractParty {
 
 	/**
 	 * @var string
