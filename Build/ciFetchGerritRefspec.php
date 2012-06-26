@@ -27,17 +27,17 @@ if ($workspaceRemoteUrl !== NULL) {
 
 if ($path !== NULL) {
 	/**
-	 * Create the cherry-pick command and execute it in the found path
+	 * Create the checkout command and execute it in the found path
 	 */
-	$cherryPickCommand = sprintf('git fetch ssh://%s/%s %s && git cherry-pick FETCH_HEAD', $gerritHost, $project, $refSpec);
+	$checkoutCommand = sprintf('git fetch ssh://%s/%s %s && git checkout FETCH_HEAD', $gerritHost, $project, $refSpec);
 	echo '*********************' . chr(10);
 	echo '* Download patchset *' . chr(10);
 	echo '*********************' . chr(10);
-	echo 'Command: ' . $cherryPickCommand . chr(10);
-	echo 'Path: ' . $path;
-	echo shell_exec(sprintf('cd %s && %s', $path, $cherryPickCommand));
+	echo 'Command: ' . $checkoutCommand . chr(10);
+	echo 'Path: ' . $path . chr(10);
+	echo shell_exec(sprintf('cd %s && %s', $path, $checkoutCommand)) . chr(10) . chr(10);
 } else {
-	echo 'Refspec could not be checked out in any local module';
+	echo 'Refspec could not be checked out in any local module' . chr(10);
 	exit(1);
 }
 ?>
