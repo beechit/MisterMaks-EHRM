@@ -67,3 +67,6 @@
 [submodule "Packages/Application/Beech.Party"]
 	path = Packages/Application/Beech.Party
 	url = ssh://git.beech.local/EHRM/Package/Party.git
+[submodule "Build/Essentials"]
+	path = Build/Essentials
+	url = ssh://git.beech.local/Beech/BuildEssentials.git
