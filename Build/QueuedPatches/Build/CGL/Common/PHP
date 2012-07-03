@@ -1,1 +1,0 @@
-git fetch git://git.typo3.org/Teams/forge.typo3.org/hudson-helpers/tools/PHP_CodeSniffer refs/changes/88/12288/3 && git cherry-pick FETCH_HEAD
