@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file original="" source-language="en" target-language="nl" datatype="plaintext">
+		<body>
+			<trans-unit id="action.close">
+				<source>Close</source>
+				<target>Sluiten</target>
+			</trans-unit>
+			<trans-unit id="action.save">
+				<source>Save</source>
+				<target>Opslaan</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
