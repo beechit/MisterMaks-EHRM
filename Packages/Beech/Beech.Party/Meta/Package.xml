@@ -4,4 +4,9 @@
 	<title/>
 	<description/>
 	<version/>
+	<constraints>
+		<depends>
+			<package>Beech.Ehrm</package>
+		</depends>
+	</constraints>
 </package>
