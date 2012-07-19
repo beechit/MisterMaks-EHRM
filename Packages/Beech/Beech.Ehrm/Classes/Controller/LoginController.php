@@ -8,11 +8,6 @@ namespace Beech\Ehrm\Controller;
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
-/*                                                                        *
- * This script belongs to the FLOW3 package "Beech.Ehrm".                 *
- *                                                                        *
- *                                                                        */
-
 use TYPO3\FLOW3\Annotations as FLOW3;
 
 /**

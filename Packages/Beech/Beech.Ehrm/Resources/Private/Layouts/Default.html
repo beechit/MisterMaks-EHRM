@@ -12,10 +12,12 @@
 			{ember:dataModel(packageKey: 'TYPO3.Party', modelNamespace: 'App.Model')}
 
 			var person = App.Store.createRecord(App.Model.Person);
+
 		</script>
 		<bootstrap:include />
 		<link rel="stylesheet" type="text/css" href="{f:uri.resource(path: 'StyleSheets/main.css')}" />
 		<script data-main="{f:uri.resource(path: 'JavaScript/app.js')}" src="{f:uri.resource(path: 'JavaScript/require.js')}"></script>
+		<script src="{f:uri.resource(path: 'JavaScript/modals.js')}"></script>
 	</head>
 	<body>
 		<header>

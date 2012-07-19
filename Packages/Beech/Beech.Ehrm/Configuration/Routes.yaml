@@ -17,11 +17,11 @@
     '@format': 'json'
 
 -
-  name: 'Modal'
-  uriPattern: 'modal/{entity}/{id}'
+  name: 'Wizard'
+  uriPattern: 'wizard/{entity}/{id}'
   defaults:
     '@package': 'Beech.Ehrm'
-    '@controller': 'Modal'
+    '@controller': 'Wizard'
     '@action': 'index'
 
 -

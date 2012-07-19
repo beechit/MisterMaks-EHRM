@@ -8,9 +8,13 @@
 </head>
 <body>
 <f:section name="body">
-	Welcome
-
+	Welcome<br/>
+	<a class="btn" href="modal/user/1" data-toggle="modal" data-target="#entityModal">Show user</a>
+	<a class="btn" href="modal/customer/3" data-toggle="modal" data-target="#entityModal">Show customer</a>
+	<div class="modal fade" id="entityModal"></div>
+	<div class="loading hide"><f:render partial="ModalContent" arguments="{title: 'Loading...', content: ''}"/></div>
 </f:section>
+
 </body>
 </html>
 
