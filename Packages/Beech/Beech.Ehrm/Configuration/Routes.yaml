@@ -8,6 +8,23 @@
     '@format': 'html'
 
 -
+  name: 'Rest'
+  uriPattern: 'rest/{entity}/{id}.json'
+  defaults:
+    '@package': 'Beech.Ehrm'
+    '@controller': 'Rest'
+    '@action': 'index'
+    '@format': 'json'
+
+-
+  name: 'Modal'
+  uriPattern: 'modal/{entity}/{id}'
+  defaults:
+    '@package': 'Beech.Ehrm'
+    '@controller': 'Modal'
+    '@action': 'index'
+
+-
   name: 'Default'
   uriPattern: ''
   defaults:
