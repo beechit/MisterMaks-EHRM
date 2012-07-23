@@ -12,8 +12,6 @@ roles:
   User: [ ]
 
 acls:
-  Administrator:
-    methods:
-  User:
+  Everybody:
     methods:
       Ehrm_Controller: GRANT
