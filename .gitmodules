@@ -67,3 +67,6 @@
 [submodule "Build/Essentials"]
 	path = Build/Essentials
 	url = ssh://git.beech.local/Beech/BuildEssentials.git
+[submodule "Packages/Application/Beech.WorkFlow"]
+	path = Packages/Application/Beech.WorkFlow
+	url = ssh://git.beech.local/EHRM/Package/WorkFlow.git
