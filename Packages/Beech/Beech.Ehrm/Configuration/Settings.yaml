@@ -20,15 +20,8 @@ Beech:
             priority: 30
             label: 'Rapporteer'
         menu:
-          test:
-            label: 'Something'
-            priority: 10
       action:
         menu:
-          admin:
-            label: 'Admin'
-            priority: 10
-            resource: 'Ehrm_Admin_Controller'
           logout:
             label: 'Uitloggen'
             priority: 99
@@ -39,29 +32,3 @@ Beech:
         package: 'Beech.Ehrm'
         controller: 'Standard'
         action: 'index'
-      admin:
-        config:
-          label: 'Admin'
-        menu:
-          index:
-            label: 'Admin index'
-            priority: 10
-            menuGroup: 'main:manage'
-            resource: 'Ehrm_Controller'
-      timecard:
-        config:
-          label: 'Tijdregistratie'
-        menu:
-          index:
-            label: 'Admin index'
-            priority: 20
-            menuGroup: 'main:manage'
-      absence:
-        config:
-          label: 'Verlof & verzuim'
-        menu:
-          new:
-            label: 'Test'
-            priority: 40
-            menuGroup: 'main:new'
-
