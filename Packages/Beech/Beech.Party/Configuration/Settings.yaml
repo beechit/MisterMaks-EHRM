@@ -1,0 +1,12 @@
+Beech:
+  Ehrm:
+    modules:
+      admin:
+        menu:
+          company:
+            label: 'Bedrijven'
+            priority: 20
+            menuGroup: 'main:manage'
+            package: 'Beech.Party'
+            controller: 'Management\Company'
+            action: 'list'
