@@ -1,0 +1,19 @@
+<f:layout name="Default"/>
+
+<f:section name="Title">Nieuw company</f:section>
+
+<f:section name="Content">
+	<p>Fill out the following form to create a new company:</p>
+
+	<f:form action="create" name="newCompany" class="form-horizontal well">
+		<div class="control-group">
+			<label class="control-label" for="name">Name</label>
+			<div class="controls">
+				<f:form.textfield property="name" id="name"/>
+			</div>
+		</div>
+		<div class="form-actions">
+			<f:form.submit value="Create" class="btn btn-primary"/>
+		</div>
+	</f:form>
+</f:section>

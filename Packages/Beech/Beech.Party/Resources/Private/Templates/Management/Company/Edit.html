@@ -1,0 +1,18 @@
+<f:layout name="Default"/>
+
+<f:section name="Title">Edit "{company.name}"</f:section>
+
+<f:section name="Content">
+	<f:form action="update" object="{company}" name="company" class="form-horizontal well">
+		<div class="control-group">
+			<label class="control-label" for="name">Name</label>
+			<div class="controls">
+				<f:form.textfield property="name" id="name"/>
+			</div>
+		</div>
+		<div class="form-actions">
+			<f:form.submit value="Update" class="btn"/>
+			<button class="btn">Cancel</button>
+		</div>
+	</f:form>
+</f:section>

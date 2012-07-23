@@ -1,0 +1,35 @@
+<f:layout name="Default" />
+
+<f:section name="Title">Companies</f:section>
+
+<f:section name="Content">
+	<f:if condition="{companies}">
+		<f:then>
+			<table class="table table-striped table-bordered">
+				<thead>
+				<tr>
+					<th>ID</th><th>Name</th><th>Actions</th>
+				</tr>
+				</thead>
+				<tbody>
+				<f:for each="{companies}" as="company" iteration="iterator">
+					<tr>
+						<td>{iterator.cycle}</td>
+						<td><f:link.action action="show" arguments="{company: company}">{company.name}</f:link.action></td>
+						<td>
+							<f:link.action action="edit" arguments="{company: company}"><i class="icon-pencil"></i></f:link.action>
+							<f:link.action action="delete" arguments="{company: company}"><i class="icon-trash"></i></f:link.action>
+						</td>
+					</tr>
+				</f:for>
+				</tbody>
+			</table>
+		</f:then>
+		<f:else>
+			<p>No companies created yet.</p>
+		</f:else>
+	</f:if>
+	<div class="form-actions">
+	<f:link.action action="new" class="btn btn-primary">Create a new company</f:link.action>
+	</div>
+</f:section>

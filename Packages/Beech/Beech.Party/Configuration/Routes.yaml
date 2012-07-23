@@ -1,0 +1,17 @@
+-
+  name: 'Company management with format'
+  uriPattern: 'management/company/{@action}(.{@format})'
+  defaults:
+    '@package': 'Beech.Party'
+    '@controller': 'Management\Company'
+    '@action': 'list'
+
+-
+  name: 'Company management'
+  uriPattern: 'management/company(/{@action})'
+  defaults:
+    '@package': 'Beech.Party'
+    '@controller': 'Management\Company'
+    '@action': 'list'
+    '@format': 'html'
+

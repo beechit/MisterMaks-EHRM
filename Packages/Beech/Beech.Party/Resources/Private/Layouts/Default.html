@@ -1,0 +1,21 @@
+<!DOCTYPE html>{namespace bootstrap=Twitter\Bootstrap\ViewHelpers}
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title><f:render section="Title" /></title>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<f:base />
+		<bootstrap:include />
+		<style>
+			body{padding-top: 60px;}
+			.alert ul{list-style: none;}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+		<f:flashMessages class="flashmessages" />
+		<h1><f:render section="Title" /></h1>
+		<f:render section="Content" />
+		</div>
+	</body>
+</html>
