@@ -1,4 +1,16 @@
 ##
+# Subroutes for Party package
+#
+-
+  name: 'Beech Party'
+  uriPattern: '<PartySubroutes>'
+  defaults:
+    '@format': 'html'
+  subRoutes:
+    PartySubroutes:
+      package: 'Beech.Party'
+
+##
 # EHRM.Common subroutes
 #
 
@@ -9,8 +21,7 @@
     '@format': 'html'
   subRoutes:
     EHRMSubroutes:
-      package: Beech.Ehrm
-
+      package: 'Beech.Ehrm'
 
 ##
 # FLOW3 subroutes
@@ -23,4 +34,4 @@
     '@format': 'html'
   subRoutes:
     FLOW3Subroutes:
-      package: TYPO3.FLOW3
+      package: 'TYPO3.FLOW3'
