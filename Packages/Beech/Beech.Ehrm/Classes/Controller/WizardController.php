@@ -30,6 +30,17 @@ class WizardController extends \TYPO3\FLOW3\Mvc\Controller\ActionController {
 		$this->view->assign('content', 'Content for '. $entity);
 	}
 
+	/**
+	 * Render an alternative form
+	 *
+	 * @param string $formPersistenceIdentifier
+	 * @param string $presetName
+	 * @return void
+	 */
+	public function showAction($formPersistenceIdentifier, $presetName = 'default') {
+		$this->view->assign('formPersistenceIdentifier', $formPersistenceIdentifier);
+		$this->view->assign('presetName', $presetName);
+	}
 }
 
 ?>
