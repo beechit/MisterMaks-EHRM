@@ -4,7 +4,7 @@
 
 resources:
   methods:
-    Ehrm_Controller: 'method(Beech\Ehrm\Controller\StandardController->.*())'
+    ManagementControllers: 'method(Beech\.*\Management\.*Controller->.*())'
 
 
 roles:
@@ -12,6 +12,6 @@ roles:
   User: [ ]
 
 acls:
-  Everybody:
+  Administrator:
     methods:
-      Ehrm_Controller: GRANT
+      ManagementControllers: GRANT
