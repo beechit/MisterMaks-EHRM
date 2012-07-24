@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file original="" source-language="en" target-language="en" datatype="plaintext">
+		<body>
+			<trans-unit id="company">
+				<source>Company</source>
+			</trans-unit>
+			<trans-unit id="lead.new.company">
+				<source>Fill out the following form to create a new company</source>
+			</trans-unit>
+			<trans-unit id="company.name">
+				<source>Company name</source>
+			</trans-unit>
+			<trans-unit id="company.number">
+				<source>Company number</source>
+			</trans-unit>
+			<trans-unit id="company.type">
+				<source>Company Type</source>
+			</trans-unit>
+			<trans-unit id="company.description">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="company.phone">
+				<source>Phone</source>
+			</trans-unit>
+			<trans-unit id="company.website">
+				<source>Website</source>
+			</trans-unit>
+			<trans-unit id="company.legalForm">
+				<source>Legal form</source>
+			</trans-unit>
+			<trans-unit id="company.wageTaxNumber">
+				<source>Wage tax number</source>
+			</trans-unit>
+			<trans-unit id="company.chamberOfCommerceNumber">
+				<source>Chamber of commerce number</source>
+			</trans-unit>
+			<trans-unit id="company.vatNumber">
+				<source>VAT number</source>
+			</trans-unit>
+			<trans-unit id="message.company.noResult">
+				<source>No companies created yet</source>
+			</trans-unit>
+			<trans-unit id="action">
+				<source>Action</source>
+			</trans-unit>
+			<trans-unit id="action.new">
+				<source>New</source>
+			</trans-unit>
+			<trans-unit id="action.create">
+				<source>Create</source>
+			</trans-unit>
+			<trans-unit id="action.show">
+				<source>Show</source>
+			</trans-unit>
+			<trans-unit id="action.edit">
+				<source>Edit</source>
+			</trans-unit>
+			<trans-unit id="action.save">
+				<source>Save</source>
+			</trans-unit>
+			<trans-unit id="action.update">
+				<source>Update</source>
+			</trans-unit>
+			<trans-unit id="action.cancel">
+				<source>Cancel</source>
+			</trans-unit>
+			<trans-unit id="action.close">
+				<source>Close</source>
+			</trans-unit>
+			<trans-unit id="action.back">
+				<source>Back</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

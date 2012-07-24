@@ -7,7 +7,7 @@
 			<table class="table table-striped table-bordered">
 				<thead>
 				<tr>
-					<th>ID</th><th>Name</th><th>Actions</th>
+					<th>ID</th><th><f:translate id="company.name">Company name</f:translate></th><th><f:translate id="action">Action</f:translate></th>
 				</tr>
 				</thead>
 				<tbody>
@@ -25,11 +25,11 @@
 			</table>
 		</f:then>
 		<f:else>
-			<p>No companies created yet.</p>
+			<p><f:translate id="message.company.noResult">No companies created yet</f:translate></p>
 		</f:else>
 	</f:if>
 	<div class="form-actions">
-	<f:link.action action="new" class="btn btn-primary">Create a new company</f:link.action>
+	<f:link.action action="new" class="btn btn-primary"><f:translate id="action.create">Create</f:translate></f:link.action>
 	</div>
 </f:section>
 

@@ -3,10 +3,38 @@
 <f:section name="Body">
 	<h1>Show "{company.name}"</h1>
 	<dl class="dl-horizontal well">
-		<dt>Name</dt>
+		<dt><f:translate id="company.name">Company name</f:translate></dt>
 		<dd>{company.name}&nbsp;</dd>
+
+		<dt><f:translate id="company.number">Company number</f:translate></dt>
+		<dd>{company.companyNumber}&nbsp;</dd>
+
+		<dt><f:translate id="company.type">Company type</f:translate></dt>
+		<dd>{company.companyType}&nbsp;</dd>
+
+		<dt><f:translate id="company.description">Description</f:translate></dt>
+		<dd>{company.description}&nbsp;</dd>
+
+		<dt><f:translate id="company.phone">Phone number</f:translate></dt>
+		<dd>{company.phoneNumber}&nbsp;</dd>
+
+		<dt><f:translate id="company.website">Website</f:translate></dt>
+		<dd>{company.website}&nbsp;</dd>
+
+		<dt><f:translate id="company.legalForm">Legal form</f:translate></dt>
+		<dd>{company.legalForm}&nbsp;</dd>
+
+		<dt><f:translate id="company.wageTaxNumber">Wage tax number</f:translate></dt>
+		<dd>{company.wageTaxNumber}&nbsp;</dd>
+
+		<dt><f:translate id="company.chamberOfCommerceNumber">Chamber of commerce number</f:translate></dt>
+		<dd>{company.chamberOfCommerceNumber}&nbsp;</dd>
+
+		<dt><f:translate id="company.vatNumber">Vat number</f:translate></dt>
+		<dd>{company.vatNumber}&nbsp;</dd>
 	</dl>
-	<div class="form-actions"><f:link.action action="index">Back</f:link.action></div>
+
+	<div class="form-actions"><f:link.action action="list"><f:translate id="action.back">Back</f:translate></f:link.action></div>
 </f:section>
 
 <f:section name="Left" />

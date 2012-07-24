@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file original="" source-language="en" target-language="nl" datatype="plaintext">
+		<body>
+			<trans-unit id="company">
+				<source>Company</source>
+				<target>Bedrijf</target>
+			</trans-unit>
+			<trans-unit id="lead.new.company">
+				<source>Fill out the following form to create a new company</source>
+				<target>Gebruik het volgende formulier om een nieuw bedrijf aan te maken</target>
+			</trans-unit>
+			<trans-unit id="company.name">
+				<source>Company name</source>
+				<target>Bedrijfsnaam</target>
+			</trans-unit>
+			<trans-unit id="company.number">
+				<source>Company number</source>
+				<target>Bedrijfsnummer</target>
+			</trans-unit>
+			<trans-unit id="company.type">
+				<source>Company Type</source>
+				<target>Bedrijf type</target>
+			</trans-unit>
+			<trans-unit id="company.description">
+				<source>Description</source>
+				<target>Omschrijving</target>
+			</trans-unit>
+			<trans-unit id="company.phone">
+				<source>Phone</source>
+				<target>Telefoon</target>
+			</trans-unit>
+			<trans-unit id="company.website">
+				<source>Website</source>
+				<target>Website</target>
+			</trans-unit>
+			<trans-unit id="company.legalForm">
+				<source>Legal form</source>
+				<target>Rechtsvorm</target>
+			</trans-unit>
+			<trans-unit id="company.wageTaxNumber">
+				<source>Wage tax number</source>
+				<target>Loonheffingsnummer</target>
+			</trans-unit>
+			<trans-unit id="company.chamberOfCommerceNumber">
+				<source>Chamber of commerce number</source>
+				<target>KvK nummer</target>
+			</trans-unit>
+			<trans-unit id="company.vatNumber">
+				<source>VAT number</source>
+				<target>BTW nummer</target>
+			</trans-unit>
+			<trans-unit id="message.company.noResult">
+				<source>No companies created yet</source>
+				<target>Nog geen bedrijf aangemaakt</target>
+			</trans-unit>
+			<trans-unit id="action">
+				<source>Action</source>
+				<target>Actie</target>
+			</trans-unit>
+			<trans-unit id="action.new">
+				<source>New</source>
+				<target>Tonen</target>
+			</trans-unit>
+			<trans-unit id="action.create">
+				<source>Create</source>
+				<target>Toevoegen</target>
+			</trans-unit>
+			<trans-unit id="action.show">
+				<source>Show</source>
+				<target>Tonen</target>
+			</trans-unit>
+			<trans-unit id="action.edit">
+				<source>Edit</source>
+				<target>Bewerk</target>
+			</trans-unit>
+			<trans-unit id="action.save">
+				<source>Save</source>
+				<target>Opslaan</target>
+			</trans-unit>
+			<trans-unit id="action.update">
+				<source>Update</source>
+				<target>Update</target>
+			</trans-unit>
+			<trans-unit id="action.cancel">
+				<source>Cancel</source>
+				<target>Annuleer</target>
+			</trans-unit>
+			<trans-unit id="action.close">
+				<source>Close</source>
+				<target>Sluiten</target>
+			</trans-unit>
+			<trans-unit id="action.back">
+				<source>Back</source>
+				<target>Terug</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
