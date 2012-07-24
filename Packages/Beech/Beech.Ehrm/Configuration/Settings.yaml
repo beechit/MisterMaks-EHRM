@@ -21,10 +21,27 @@ Beech:
             label: 'Rapporteer'
         menu:
       action:
+        groups:
         menu:
+      account:
+        groups:
+        menu:
+          settings:
+            label: 'Instellingen'
+            priority: 20
+            package: 'Beech.Party'
+            controller: 'Management\Company'
+            action: 'list'
+          log:
+            label: 'Logboek'
+            priority: 30
+            package: 'Beech.Ehrm'
+            controller: 'Login'
+            action: 'logout'
           logout:
             label: 'Uitloggen'
             priority: 99
+            package: 'Beech.Ehrm'
             controller: 'Login'
             action: 'logout'
     modules:

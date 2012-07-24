@@ -21,11 +21,29 @@
 						<f:security.ifAuthenticated>
 							<bootstrap:navigation.menu items="{mainMenuItems}" classNames="{0:'nav'}" />
 
+							<bootstrap:navigation.menu items="{actionMenuItems}" classNames="{0:'nav',1:'pull-right'}" />
+
 							<form class="navbar-form pull-right">
 								<input type="text" class="search-query input-small" placeholder="Search">
 							</form>
 
-							<bootstrap:navigation.menu items="{actionMenuItems}" classNames="{0:'nav',1:'pull-right'}" />
+							<div class="btn-group pull-right">
+								<a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#">
+									<i class="icon-user icon-white"></i>
+									<f:if condition="{activeTokens.DefaultProvider.account}">
+										<f:then>
+											{activeTokens.DefaultProvider.account.accountidentifier}
+										</f:then>
+										<f:else>
+											Account
+										</f:else>
+									</f:if>
+									<span class="caret"></span>
+								</a>
+								<bootstrap:navigation.menu items="{accountMenuItems}" classNames="{0:'dropdown-menu'}" />
+							</div>
+
+
 						</f:security.ifAuthenticated>
 					</div>
 				</div>
@@ -33,6 +51,7 @@
 		</header>
 
 		<section class="container">
+
 			<div class="row">
 				<!--<aside class="span3">-->
 					<f:render section="left" />
@@ -42,5 +61,7 @@
 				</section>
 			</div>
 		</section>
+
+
 	</body>
 </html>

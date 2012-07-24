@@ -35,6 +35,7 @@ class AbstractController extends \TYPO3\FLOW3\Mvc\Controller\ActionController {
 	public function initializeView(\TYPO3\FLOW3\Mvc\View\ViewInterface $view) {
 		$view->assign('mainMenuItems', $this->settingsHelper->getMenuItems('main'));
 		$view->assign('actionMenuItems', $this->settingsHelper->getMenuItems('action'));
+		$view->assign('accountMenuItems', $this->settingsHelper->getMenuItems('account'));
 	}
 
 }
