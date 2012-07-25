@@ -45,33 +45,43 @@ class Company {
 	protected $description;
 
 	/**
-	 * The phone number
-	 *
-	 * @var string
+	 * @var \Doctrine\Common\Collections\Collection<\Beech\Party\Domain\Model\ElectronicAddress>
+	 * @ORM\ManyToMany
 	 */
-	protected $phoneNumber;
+	protected $electronicAddresses;
 
 	/**
-	 * The company website
-	 *
-	 * @var string
+	 * @var \Beech\Party\Domain\Model\ElectronicAddress
+	 * @ORM\ManyToOne
 	 */
-	protected $website;
+	protected $primaryElectronicAddress;
 
 	/**
-	 * The legal form
-	 *
-	 * @var string
+	 * @var \Beech\Party\Domain\Model\Address
+	 * @ORM\ManyToMany
 	 */
-	protected $legalForm;
+	protected $addresses;
 
 	/**
-	 * The wageTax number
-	 *
-	 * @var string
-	 * @FLOW3\Validate(type="NotEmpty", validationGroups={"Controller"})
+	 * @var \Beech\Party\Domain\Model\Company\TaxData
+	 * @ORM\OneToOne
 	 */
-	protected $wageTaxNumber;
+	protected $taxData;
+
+	/**
+	 * @var \Doctrine\Common\Collections\Collection<\Beech\Party\Domain\Model\Company>
+	 * @ORM\OneToMany(mappedBy="parentCompany")
+	 * @FLOW3\Lazy
+	 */
+	protected $departments;
+
+	/**
+	 * @var \Beech\Party\Domain\Model\Company
+	 * @ORM\ManyToOne(inversedBy="departments")
+	 * @ORM\JoinColumn(name="parent_company_id")
+	 * @FLOW3\Lazy
+	 */
+	protected $parentCompany;
 
 	/**
 	 * The chamber of commerce number (KvK)
@@ -82,17 +92,27 @@ class Company {
 	protected $chamberOfCommerceNumber;
 
 	/**
-	 * The vat number (BTW)
+	 * The legal form
 	 *
 	 * @var string
-	 * @FLOW3\Validate(type="NotEmpty", validationGroups={"Controller"})
 	 */
-	protected $vatNumber;
+	protected $legalForm;
+
+	/**
+	 * Construct the object
+	 */
+	public function __construct() {
+		parent::__construct();
+		$this->addresses = new \Doctrine\Common\Collections\ArrayCollection();
+		$this->electronicAddresses = new \Doctrine\Common\Collections\ArrayCollection();
+		$this->departments = new \Doctrine\Common\Collections\ArrayCollection();
+	}
 
 	/**
 	 * Set company name
 	 *
 	 * @param string $name
+	 * @return void
 	 */
 	public function setName($name) {
 		$this->name = $name;
@@ -108,27 +128,10 @@ class Company {
 	}
 
 	/**
-	 * Set chamberOfCommerceNumber
-	 *
-	 * @param string $chamberOfCommerceNumber
-	 */
-	public function setChamberOfCommerceNumber($chamberOfCommerceNumber) {
-		$this->chamberOfCommerceNumber = $chamberOfCommerceNumber;
-	}
-
-	/**
-	 * Get chamberOfCommerceNumber
-	 *
-	 * @return string
-	 */
-	public function getChamberOfCommerceNumber() {
-		return $this->chamberOfCommerceNumber;
-	}
-
-	/**
 	 * Set companyNumber
 	 *
 	 * @param string $companyNumber
+	 * @return void
 	 */
 	public function setCompanyNumber($companyNumber) {
 		$this->companyNumber = $companyNumber;
@@ -147,6 +150,7 @@ class Company {
 	 * Set companyType
 	 *
 	 * @param string $companyType
+	 * @return void
 	 */
 	public function setCompanyType($companyType) {
 		$this->companyType = $companyType;
@@ -165,6 +169,7 @@ class Company {
 	 * Set description
 	 *
 	 * @param string $description
+	 * @return void
 	 */
 	public function setDescription($description) {
 		$this->description = $description;
@@ -180,17 +185,100 @@ class Company {
 	}
 
 	/**
-	 * Set legalForm
+	 * Adds the given address to this company.
 	 *
+	 * @param \Beech\Party\Domain\Model\Address $address The address
+	 * @return void
+	 */
+	public function addAddress(\Beech\Party\Domain\Model\Address $address) {
+		$this->addresses->add($address);
+	}
+
+	/**
+	 * Removes the given address from this company.
+	 *
+	 * @param \Beech\Party\Domain\Model\Address $address The address
+	 * @return void
+	 */
+	public function removeAddress(\Beech\Party\Domain\Model\Address $address) {
+		$this->addresses->removeElement($address);
+		if ($address === $this->primaryAddress) {
+			unset($this->primaryAddress);
+		}
+	}
+
+	/**
+	 * Returns all known addresses of this company.
+	 *
+	 * @return \Doctrine\Common\Collections\Collection<\Beech\Party\Domain\Model\Address>
+	 */
+	public function getAddresses() {
+		return clone $this->addresses;
+	}
+
+	/**
+	 * Adds the given electronic address to this company.
+	 *
+	 * @param \Beech\Party\Domain\Model\ElectronicAddress $electronicAddress The electronic address
+	 * @return void
+	 */
+	public function addElectronicAddress(\Beech\Party\Domain\Model\ElectronicAddress $electronicAddress) {
+		$this->electronicAddresses->add($electronicAddress);
+	}
+
+	/**
+	 * Removes the given electronic address from this company.
+	 *
+	 * @param \Beech\Party\Domain\Model\ElectronicAddress $electronicAddress The electronic address
+	 * @return void
+	 */
+	public function removeElectronicAddress(\Beech\Party\Domain\Model\ElectronicAddress $electronicAddress) {
+		$this->electronicAddresses->removeElement($electronicAddress);
+		if ($electronicAddress === $this->primaryElectronicAddress) {
+			unset($this->primaryElectronicAddress);
+		}
+	}
+
+	/**
+	 * Returns all known electronic addresses of this company.
+	 *
+	 * @return \Doctrine\Common\Collections\Collection<\Beech\Party\Domain\Model\ElectronicAddress>
+	 */
+	public function getElectronicAddresses() {
+		return clone $this->electronicAddresses;
+	}
+
+	/**
+	 * Sets (and adds if necessary) the primary electronic address of this company.
+	 *
+	 * @param \Beech\Party\Domain\Model\ElectronicAddress $electronicAddress The electronic address
+	 * @return void
+	 */
+	public function setPrimaryElectronicAddress(\Beech\Party\Domain\Model\ElectronicAddress $electronicAddress) {
+		$this->primaryElectronicAddress = $electronicAddress;
+		if (!$this->electronicAddresses->contains($electronicAddress)) {
+			$this->electronicAddresses->add($electronicAddress);
+		}
+	}
+
+	/**
+	 * Returns the primary electronic address, if one has been defined.
+	 *
+	 * @return \Beech\Party\Domain\Model\ElectronicAddress The primary electronic address or NULL
+	 */
+	public function getPrimaryElectronicAddress() {
+		return $this->primaryElectronicAddress;
+	}
+
+	/**
 	 * @param string $legalForm
+	 * @return void
 	 */
 	public function setLegalForm($legalForm) {
 		$this->legalForm = $legalForm;
 	}
 
 	/**
-	 * Get legalForm
-	 *
 	 * @return string
 	 */
 	public function getLegalForm() {
@@ -198,75 +286,73 @@ class Company {
 	}
 
 	/**
-	 * Set phoneNumber
-	 *
-	 * @param string $phoneNumber
+	 * @param \Beech\Party\Domain\Model\Company\TaxData $taxData
+	 * @return void
 	 */
-	public function setPhoneNumber($phoneNumber) {
-		$this->phoneNumber = $phoneNumber;
+	public function setTaxData(\Beech\Party\Domain\Model\Company\TaxData $taxData) {
+		$this->taxData = $taxData;
 	}
 
 	/**
-	 * Get phoneNumber
-	 *
+	 * @return \Beech\Party\Domain\Model\Company\TaxData
+	 */
+	public function getTaxData() {
+		return $this->taxData;
+	}
+
+	/**
+	 * @param string $chamberOfCommerceNumber
+	 * @return void
+	 */
+	public function setChamberOfCommerceNumber($chamberOfCommerceNumber) {
+		$this->chamberOfCommerceNumber = $chamberOfCommerceNumber;
+	}
+
+	/**
 	 * @return string
 	 */
-	public function getPhoneNumber() {
-		return $this->phoneNumber;
+	public function getChamberOfCommerceNumber() {
+		return $this->chamberOfCommerceNumber;
 	}
 
 	/**
-	 * Set vatNumber
-	 *
-	 * @param string $vatNumber
+	 * @param \Beech\Party\Domain\Model\Company $department
+	 * @return void
 	 */
-	public function setVatNumber($vatNumber) {
-		$this->vatNumber = $vatNumber;
+	public function addDepartment(\Beech\Party\Domain\Model\Company $department) {
+		$this->departments->add($department);
+		$department->setParentCompany($this);
 	}
 
 	/**
-	 * Get vatNumber
-	 *
-	 * @return string
+	 * @param \Beech\Party\Domain\Model\Company $department
+	 * @return void
 	 */
-	public function getVatNumber() {
-		return $this->vatNumber;
+	public function removeDepartment(\Beech\Party\Domain\Model\Company $department) {
+		$this->departments->removeElement($department);
+		$department->setParentCompany(NULL);
 	}
 
 	/**
-	 * Set wageTaxNumber
-	 *
-	 * @param string $wageTaxNumber
+	 * @return \Doctrine\Common\Collections\Collection
 	 */
-	public function setWageTaxNumber($wageTaxNumber) {
-		$this->wageTaxNumber = $wageTaxNumber;
+	public function getDepartments() {
+		return $this->departments;
 	}
 
 	/**
-	 * Get wageTaxNumber
-	 *
-	 * @return string
+	 * @param \Beech\Party\Domain\Model\Company $parentCompany
+	 * @return void
 	 */
-	public function getWageTaxNumber() {
-		return $this->wageTaxNumber;
+	public function setParentCompany($parentCompany) {
+		$this->parentCompany = $parentCompany;
 	}
 
 	/**
-	 * Set website
-	 *
-	 * @param string $website
+	 * @return \Beech\Party\Domain\Model\Company
 	 */
-	public function setWebsite($website) {
-		$this->website = $website;
-	}
-
-	/**
-	 * Get website
-	 *
-	 * @return string
-	 */
-	public function getWebsite() {
-		return $this->website;
+	public function getParentCompany() {
+		return $this->parentCompany;
 	}
 
 }
