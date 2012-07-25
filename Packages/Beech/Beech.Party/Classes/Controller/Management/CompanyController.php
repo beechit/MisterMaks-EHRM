@@ -9,7 +9,6 @@ namespace Beech\Party\Controller\Management;
  */
 
 use TYPO3\FLOW3\Annotations as FLOW3;
-use TYPO3\FLOW3\Mvc\Controller\ActionController;
 use Beech\Party\Domain\Model\Company;
 
 /**
@@ -17,7 +16,7 @@ use Beech\Party\Domain\Model\Company;
  *
  * @FLOW3\Scope("singleton")
  */
-class CompanyController extends ActionController {
+class CompanyController extends \Beech\Ehrm\Controller\AbstractController {
 
 	/**
 	 * @FLOW3\Inject

@@ -1,8 +1,7 @@
 <f:layout name="Default" />
 
-<f:section name="Title">Companies</f:section>
-
-<f:section name="Content">
+<f:section name="Body">
+	<h1>Companies</h1>
 	<f:if condition="{companies}">
 		<f:then>
 			<table class="table table-striped table-bordered">
@@ -33,3 +32,5 @@
 	<f:link.action action="new" class="btn btn-primary">Create a new company</f:link.action>
 	</div>
 </f:section>
+
+<f:section name="Left" />

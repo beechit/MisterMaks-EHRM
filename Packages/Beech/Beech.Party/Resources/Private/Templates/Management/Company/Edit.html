@@ -1,8 +1,7 @@
 <f:layout name="Default"/>
 
-<f:section name="Title">Edit "{company.name}"</f:section>
-
-<f:section name="Content">
+<f:section name="Body">
+	<h1>Edit "{company.name}"</h1>
 	<f:form action="update" object="{company}" name="company" class="form-horizontal well">
 		<div class="control-group">
 			<label class="control-label" for="name">Name</label>
@@ -16,3 +15,5 @@
 		</div>
 	</f:form>
 </f:section>
+
+<f:section name="Left" />
