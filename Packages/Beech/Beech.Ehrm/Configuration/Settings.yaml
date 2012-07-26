@@ -49,3 +49,23 @@ Beech:
         package: 'Beech.Ehrm'
         controller: 'Standard'
         action: 'index'
+TYPO3:
+  Form:
+    presets:
+      default:
+        finisherPresets:
+          'Beech.Ehrm:Database':
+             implementationClassName: 'Beech\Ehrm\Finishers\DatabaseFinisher'
+        formElementTypes:
+          'TYPO3.Form:Form':
+            formBuilder:
+              editors:
+                finishers:
+                  availableFinishers:
+                    'Beech.Ehrm:Database':
+                      label: 'Database Persistence Finisher'
+                      templateName: 'Finisher-DatabaseFinisher'
+  FormBuilder:
+    handlebarsTemplates:
+      # include the handlebars template
+      Finisher-DatabaseFinisher: resource://Beech.Ehrm/Private/FormBuilderTemplates/DatabaseFinisher.html
