@@ -1,6 +1,15 @@
 <?php
 namespace Beech\Ehrm\Finishers;
 
+/*
+ * This source file is proprietary property of Beech Applications B.V.
+ * Developer: Ruud Alberts <ruud@mail-beech.nl>
+ * Date: 05-06-12 10:47
+ * All code (c) Beech Applications B.V. all rights reserved
+ */
+
+use TYPO3\FLOW3\Annotations as FLOW3;
+
 /*                                                                        *
  * This finisher stores a model using user-generated formdata
  *
