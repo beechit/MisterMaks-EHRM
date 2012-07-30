@@ -53,6 +53,17 @@ validationGroups={"Controller"} part to the annotation.
 Other validation, like MinLength for instance, should always be used on the model without adding the
 validationGroups. These rules apply in both regular and wizard mode.
 
+Localization
+--------------------
+
+In order to make our forms multilingual, use a preset. A preset defines which set of formelements, validators
+and finishers can be used in the Form. The preset named ``Wizard`` has alternative templates, which have handles
+defined in translationfiles. This is a bit 'loose', since a label from the formbuilder (which is userinput) will be
+looked up in translation, but a fallback is always assured.
+
+To call a form using presets, create a form and navigate to something like:
+/beech.ehrm/wizard/show?formPersistenceIdentifier=yourForm&preset=wizard
+
 Overriding wizards for customization
 ------------------------------------
 
