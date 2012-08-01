@@ -70,3 +70,6 @@
 [submodule "Packages/Application/Beech.WorkFlow"]
 	path = Packages/Application/Beech.WorkFlow
 	url = ssh://git.beech.local/EHRM/Package/WorkFlow.git
+[submodule "Packages/Library/TYPO3.TcPdf"]
+	path = Packages/Library/TYPO3.TcPdf
+	url = git://git.typo3.org/FLOW3/Packages/TYPO3.TcPdf.git
