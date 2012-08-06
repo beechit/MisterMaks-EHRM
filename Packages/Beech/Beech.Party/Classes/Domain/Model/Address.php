@@ -49,6 +49,13 @@ class Address {
 	protected $postalCode;
 
 	/**
+	 * The post box
+	 *
+	 * @var integer
+	 */
+	protected $postBox;
+
+	/**
 	 * The residence
 	 *
 	 * @var integer
