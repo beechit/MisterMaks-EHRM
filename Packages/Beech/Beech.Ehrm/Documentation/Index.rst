@@ -7,3 +7,4 @@ Mister Maks
 	:numbered:
 
 	Features/Wizard
+	Features/Notifications
