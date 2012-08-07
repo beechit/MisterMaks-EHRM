@@ -83,4 +83,30 @@ Usage::
 
  Notification.showDialog('Are you sure you want to delete this record?', actions);
 
+Timeout settings
+================
+By default, timeout is set to 5 seconds.
+
+The are some ways to manipulate time.
+
+Global timeout
+--------------
+
+Function ``setTimeout`` allows to set/change default time of timeout::
+
+ App.Notification.setTimeout(2000); //2000 = 2 seconds
+
+Timeout for one notification
+----------------------------
+
+Its possible to set timeout only for selected notification::
+
+ App.Notification.showInfo('I go home in one second', 1000);
+
+Sticky notification
+-------------------
+
+To make notification displayed until user reaction use ``0`` value for timeout::
+
+ App.Notification.showError('You made a BIG mistake', 0);
 

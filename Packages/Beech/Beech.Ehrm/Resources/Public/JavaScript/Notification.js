@@ -2,37 +2,44 @@ define(['jquery', 'emberjs', 'Beech.Ehrm/Library/jquery.midgardNotifications'], 
 
 	return Ember.Object.create({
 		_placeholder: null,
+		_timeout: 5000, //1 second = 1000
 
 		initialize: function() {
 			var that = this;
 			this.set('_placeholder', jQuery('body').midgardNotifications());
 		},
 
-		showInfo: function(bodyMessage) {
-			this._show('Info', bodyMessage, 'alert alert-info');
+		setTimeout: function(timeout) {
+			this._timeout = timeout;
 		},
 
-		showSuccess: function(bodyMessage) {
-			this._show('Success', bodyMessage, 'alert alert-success');
+		showInfo: function(bodyMessage, timeout) {
+			this._show('Info', bodyMessage, 'alert alert-info', [], timeout);
 		},
 
-		showError: function(bodyMessage) {
-			this._show('Error', bodyMessage, 'alert alert-danger');
+		showSuccess: function(bodyMessage, timeout) {
+			this._show('Success', bodyMessage, 'alert alert-success', [], timeout);
 		},
 
-		showDialog: function(bodyMessage, actions) {
-			this._show('Dialog', bodyMessage, 'alert', actions);
+		showError: function(bodyMessage, timeout) {
+			this._show('Error', bodyMessage, 'alert alert-danger', [], timeout);
 		},
 
-		_show: function(title, bodyMessage, className, actions) {
+		showDialog: function(bodyMessage, actions, timeout) {
+			this._show('Dialog', bodyMessage, 'alert', actions, timeout);
+		},
+
+		_show: function(title, bodyMessage, className, actions, timeout) {
 			if (actions == undefined) {
 				actions = [];
 			}
-
+			if (timeout == undefined) {
+				timeout = this.get('_timeout');
+			}
 			jQuery(this.get('_placeholder')).data('midgardNotifications').create({
 				body: bodyMessage,
 				actions: actions,
-				timeout: 0,
+				timeout: timeout,
 				callbacks: {
 					beforeShow: function(notify) {
 						var notifyElement = notify.getElement();
