@@ -67,6 +67,7 @@ class CompanyController extends \Beech\Ehrm\Controller\AbstractController {
 	 * Shows a form for editing an existing company object
 	 *
 	 * @param \Beech\Party\Domain\Model\Company $company The company to edit
+	 * @FLOW3\IgnoreValidation("$company")
 	 * @return void
 	 */
 	public function editAction(Company $company) {

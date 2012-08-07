@@ -57,7 +57,7 @@ class Company {
 	protected $primaryElectronicAddress;
 
 	/**
-	 * @var \Beech\Party\Domain\Model\Address
+	 * @var \Doctrine\Common\Collections\Collection<\Beech\Party\Domain\Model\Address>
 	 * @ORM\ManyToMany
 	 */
 	protected $addresses;
@@ -74,6 +74,13 @@ class Company {
 	 * @FLOW3\Lazy
 	 */
 	protected $departments;
+
+	/**
+	 * @var \Doctrine\Common\Collections\Collection<\Beech\Party\Domain\Model\Person>
+	 * @ORM\ManyToMany
+	 * @FLOW3\Lazy
+	 */
+	protected $contactPersons;
 
 	/**
 	 * @var \Beech\Party\Domain\Model\Company
@@ -102,10 +109,10 @@ class Company {
 	 * Construct the object
 	 */
 	public function __construct() {
-		parent::__construct();
 		$this->addresses = new \Doctrine\Common\Collections\ArrayCollection();
 		$this->electronicAddresses = new \Doctrine\Common\Collections\ArrayCollection();
 		$this->departments = new \Doctrine\Common\Collections\ArrayCollection();
+		$this->contactPersons = new \Doctrine\Common\Collections\ArrayCollection();
 	}
 
 	/**
@@ -353,6 +360,36 @@ class Company {
 	 */
 	public function getParentCompany() {
 		return $this->parentCompany;
+	}
+
+	/**
+	 * @param \Doctrine\Common\Collections\Collection<\Beech\Party\Domain\Model\Person> $contactPersons
+	 */
+	public function setContactPersons($contactPersons) {
+		$this->contactPersons = $contactPersons;
+	}
+
+	/**
+	 * @return \Doctrine\Common\Collections\Collection<\Beech\Party\Domain\Model\Person>
+	 */
+	public function getContactPersons() {
+		return $this->contactPersons;
+	}
+
+	/**
+	 * @param \Beech\Party\Domain\Model\Person $person
+	 * @return void
+	 */
+	public function addContactPerson(\Beech\Party\Domain\Model\Person $person) {
+		$this->contactPersons->add($person);
+	}
+
+	/**
+	 * @param \Beech\Party\Domain\Model\Person $person
+	 * @return void
+	 */
+	public function removeContactPerson(\Beech\Party\Domain\Model\Person $person) {
+		$this->contactPersons->remove($person);
 	}
 
 }
