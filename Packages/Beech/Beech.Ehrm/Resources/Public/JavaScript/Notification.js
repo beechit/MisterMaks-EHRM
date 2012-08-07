@@ -5,30 +5,7 @@ define(['jquery', 'emberjs', 'Beech.Ehrm/Library/jquery.midgardNotifications'], 
 
 		initialize: function() {
 			var that = this;
-
 			this.set('_placeholder', jQuery('body').midgardNotifications());
-
-			var actions =
-				[
-					{
-						name: 'yes', label: 'Yes',
-						cb: function(e, notification) {
-							Notification.showSuccess('Success message');
-							notification.close();
-						}
-					},
-					{
-						name: 'no', label: 'No',
-						cb: function(e, notification) {
-							notification.close();
-						}
-					}
-				];
-
-			jQuery('.notify-info').live('click', function() {that.showInfo('Info message');});
-			jQuery('.notify-success').live('click', function() {that.showSuccess('Success message');});
-			jQuery('.notify-error').live('click', function() {that.showError('Error message');});
-			jQuery('.notify-dialog').live('click', function() {that.showDialog('Question?', actions);});
 		},
 
 		showInfo: function(bodyMessage) {

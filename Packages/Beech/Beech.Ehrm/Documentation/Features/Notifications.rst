@@ -14,11 +14,16 @@ Implementation is based on:
 
 Init and usage
 ==============
-To init and allow usage of notifications in project, initialization method should be run.
+Initialization of Notification plugin is realized in JavaScript/Init.js
+To init and allow usage of notifications in project, inside other modules use requireJS
+
 
 Usage::
+define(['notification'], function(Notification) {
+	Notification.initialize();
+	Notification.showInfo('Notification message');
+});
 
- Notification.initialize();
 
 Types of notifications
 ======================

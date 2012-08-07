@@ -30,9 +30,7 @@ require(
 		'bootstrap'
 	],
 	function(jQuery, Ember) {
-
 		jQuery(document).ready(function() {
-
 			require(['ui', 'notification'], function(UserInterface, Notification) {
 				window.App = Ember.Application.create({
 					ready: function() {
