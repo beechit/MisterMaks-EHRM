@@ -1,0 +1,58 @@
+<!DOCTYPE html>{namespace bootstrap=Twitter\Bootstrap\ViewHelpers}
+<f:layout name="Default" />
+
+<f:section name="Title">{log.message}</f:section>
+
+<f:section name="Body">
+	<table>
+		<tr>
+			<th>Message</th>
+			<td>{log.message}</td>
+		</tr>
+
+		<tr>
+			<th>Severity</th>
+			<td>{log.severity}</td>
+		</tr>
+
+		<tr>
+			<th>Additional data</th>
+			<td>{log.additionalData}</td>
+		</tr>
+
+		<tr>
+			<th>Package key</th>
+			<td>{log.packageKey}</td>
+		</tr>
+
+		<tr>
+			<th>Class name</th>
+			<td>{log.className}</td>
+		</tr>
+
+		<tr>
+			<th>Method name</th>
+			<td>{log.methodName}</td>
+		</tr>
+
+		<tr>
+			<th>Ip address</th>
+			<td>{log.ipAddress}</td>
+		</tr>
+
+		<tr>
+			<th>Process id</th>
+			<td>{log.processId}</td>
+		</tr>
+
+		<tr>
+			<th>Timestamp</th>
+			<td>{log.timestamp -> f:format.date(format: 'Y-m-d H:i:s')}</td>
+		</tr>
+	</table>
+	<p>
+		<f:link.action action="index">Back</f:link.action>
+	</p>
+</f:section>
+
+<f:section name="Left" />

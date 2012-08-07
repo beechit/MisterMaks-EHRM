@@ -1,0 +1,15 @@
+#                                                                          #
+# Log                                                                      #
+#                                                                          #
+Beech\Ehrm\Log\Backend\DatabaseBackend:
+  autowiring: off
+Beech\Ehrm\Log\ApplicationLoggerInterface:
+  scope: singleton
+  factoryObjectName: TYPO3\FLOW3\Log\LoggerFactory
+  arguments:
+    1:
+      value: 'Beech_Application'
+    2:
+      value: 'TYPO3\FLOW3\Log\Logger'
+    3:
+      value: 'Beech\Ehrm\Log\Backend\DatabaseBackend'

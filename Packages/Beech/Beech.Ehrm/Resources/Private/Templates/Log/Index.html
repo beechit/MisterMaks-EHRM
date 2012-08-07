@@ -1,0 +1,28 @@
+<!DOCTYPE html>{namespace bootstrap=Twitter\Bootstrap\ViewHelpers}
+<f:layout name="Default" />
+
+<f:section name="Title">A list of logs</f:section>
+
+<f:section name="Body">
+	<f:flashMessages class="flashmessages"/>
+	<f:if condition="{logs}">
+		<f:then>
+			<ul>
+				<f:for each="{logs}" as="log">
+					<li>
+						<f:link.action action="show" arguments="{log: log}">{log.message}</f:link.action>
+						{log.timestamp -> f:format.date(format: 'Y-m-d H:i:s')}
+					</li>
+				</f:for>
+			</ul>
+		</f:then>
+		<f:else>
+			<p>No logs created yet.</p>
+		</f:else>
+	</f:if>
+	<p>
+		<f:link.action action="addExample">Add an example</f:link.action>
+	</p>
+</f:section>
+
+<f:section name="Left" />
