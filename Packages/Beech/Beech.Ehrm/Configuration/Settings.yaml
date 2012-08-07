@@ -52,11 +52,18 @@ Beech:
 TYPO3:
   Form:
     presets:
-      default:
+      wizard:
+        title: 'Wizard'
+        parentPreset: 'default'
         finisherPresets:
           'Beech.Ehrm:Database':
              implementationClassName: 'Beech\Ehrm\Finishers\DatabaseFinisher'
         formElementTypes:
+          'TYPO3.Form:Base':
+            renderingOptions:
+              templatePathPattern: 'resource://Beech.Ehrm/Private/Form/{@type}.html'
+              partialPathPattern: 'resource://Beech.Ehrm/Private/Form/Partials/{@type}.html'
+              layoutPathPattern: 'resource://Beech.Ehrm/Private/Form/Layouts/{@type}.html'
           'TYPO3.Form:Form':
             formBuilder:
               editors:

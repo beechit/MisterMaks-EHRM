@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file original="" source-language="en" target-language="en" datatype="plaintext">
+		<body>
+			<trans-unit id="action.previous">
+				<source>Previous page</source>
+			</trans-unit>
+			<trans-unit id="action.next">
+				<source>Next page</source>
+			</trans-unit>
+			<trans-unit id="action.cancel">
+				<source>Cancel</source>
+			</trans-unit>
+			<trans-unit id="action.replace.file">
+				<source>Replace File</source>
+			</trans-unit>
+			<trans-unit id="action.replace.image">
+				<source>Replace Image</source>
+			</trans-unit>
+			<trans-unit id="action.submit">
+				<source>Submit</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

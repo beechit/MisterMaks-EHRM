@@ -1,0 +1,13 @@
+<f:layout name="TYPO3.Form:Field" />
+<f:section name="field">
+	<ul class="inputs-list" id="{element.uniqueIdentifier}">
+		<f:for each="{element.properties.options}" as="label" key="value">
+			<li>
+				<label>
+					<f:form.radio property="{element.identifier}" value="{value}" errorClass="error" />
+					<span><f:translate id="{label}" source="Wizard" package="Beech.Ehrm">{label}</f:translate></span>
+				</label>
+			</li>
+		</f:for>
+	</ul>
+</f:section>
