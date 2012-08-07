@@ -38,7 +38,7 @@ class Person extends \TYPO3\Party\Domain\Model\Person {
 	protected $primaryElectronicAddress;
 
 	/**
-	 * @var \Beech\Party\Domain\Model\Address
+	 * @var \Doctrine\Common\Collections\Collection<\Beech\Party\Domain\Model\Address>
 	 * @ORM\ManyToMany
 	 */
 	protected $addresses;
@@ -88,6 +88,14 @@ class Person extends \TYPO3\Party\Domain\Model\Person {
 		return clone $this->addresses;
 	}
 
+	/**
+	 * Set description
+	 *
+	 * @param string $description
+	 * @return void
+	 */
+	public function setDescription($description) {
+		$this->description = $description;
+	}
 }
-
 ?>

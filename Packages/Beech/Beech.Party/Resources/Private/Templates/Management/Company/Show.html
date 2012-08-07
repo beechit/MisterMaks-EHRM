@@ -32,6 +32,16 @@
 
 		<dt><f:translate id="company.vatNumber">Vat number</f:translate></dt>
 		<dd>{company.vatNumber}&nbsp;</dd>
+
+		<dt>Company Contacts</dt>
+		<dd>
+			<ul>
+			<f:for each="{company.contactPersons}" as="contact" iteration="iterator">
+				<li>{contact.name.fullName}</li>
+			</f:for>
+			</ul>
+			<!-- TODO: add possibility to create / select new contact person -->
+		</dd>
 	</dl>
 
 	<div class="form-actions"><f:link.action action="list"><f:translate id="action.back">Back</f:translate></f:link.action></div>
