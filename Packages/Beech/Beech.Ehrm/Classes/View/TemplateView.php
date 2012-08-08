@@ -1,10 +1,17 @@
 <?php
 namespace Beech\Ehrm\View;
+
 /*
  * This source file is proprietary property of Beech Applications B.V.
  * Developer: Rens Admiraal <rens@beech.it>
  * Date: 23-07-12 23:55
  * All code (c) Beech Applications B.V. all rights reserved
+ */
+
+use TYPO3\FLOW3\Annotations as FLOW3;
+
+/**
+ * A custom TemplateView with dynamic path resolving
  */
 class TemplateView extends \TYPO3\Fluid\View\TemplateView {
 
