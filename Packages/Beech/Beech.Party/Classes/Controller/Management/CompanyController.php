@@ -19,8 +19,8 @@ use Beech\Party\Domain\Model\Company;
 class CompanyController extends \Beech\Ehrm\Controller\AbstractController {
 
 	/**
-	 * @FLOW3\Inject
 	 * @var \Beech\Party\Domain\Repository\CompanyRepository
+	 * @FLOW3\Inject
 	 */
 	protected $companyRepository;
 

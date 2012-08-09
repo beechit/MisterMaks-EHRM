@@ -1,0 +1,27 @@
+<f:layout name="Default" />
+
+<f:section name="Body">
+	<f:if condition="{todos}">
+		<f:then>
+			<table class="table">
+				<tr>
+					<th>Priority</th>
+					<th>Task</th>
+					<th></th>
+				</tr>
+				<f:for each="{todos}" as="todo">
+					<tr>
+						<td>{todo.priorityTextual}</td>
+						<td>{todo.task}</td>
+						<td><f:link.action controller="{todo.controller}" action="{todo.action}" arguments="{todo.arguments}">DO</f:link.action></td>
+					</tr>
+				</f:for>
+			</table>
+		</f:then>
+		<f:else>
+			<p>Nothing to do.</p>
+		</f:else>
+	</f:if>
+</f:section>
+
+<f:section name="Left" />
