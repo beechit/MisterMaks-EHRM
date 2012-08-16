@@ -1,3 +1,9 @@
 body {
 	padding: 60px;
 }
+
+/* Notifications */
+.midgardNotifications-container, .midgardNotifications-item-outer{
+	z-index:10001;
+	width: 150px;
+}
