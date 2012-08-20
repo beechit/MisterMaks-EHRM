@@ -9,6 +9,7 @@ require(
 			'emberjs': 'Emberjs/Core/minified/ember-0.9.8.min',
 			'bootstrap': 'Twitter.Bootstrap/2.0/js/bootstrap.min',
 			'notification': 'Beech.Ehrm/JavaScript/Notification',
+			'message-queue': 'Beech.Ehrm/JavaScript/MessageQueue',
 			'ui': 'Beech.Ehrm/JavaScript/UserInterface'
 		},
 		shim: {
@@ -31,11 +32,12 @@ require(
 	],
 	function(jQuery, Ember) {
 		jQuery(document).ready(function() {
-			require(['ui', 'notification'], function(UserInterface, Notification) {
+			require(['ui', 'notification', 'message-queue'], function(UserInterface, Notification, MessageQueue) {
 				window.App = Ember.Application.create({
 					ready: function() {
 						UserInterface.modal().initialize();
 						Notification.initialize();
+						MessageQueue.initialize();
 
 						jQuery.get('rest/todo/1.json', function(data) {
 							jQuery.each(data, function(index, value){
