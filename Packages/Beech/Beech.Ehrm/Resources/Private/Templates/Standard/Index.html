@@ -8,14 +8,22 @@
 </head>
 <body>
 <f:section name="Body">
-	Welcome<br/>
-	<a class="btn" href="wizard/user/1" data-toggle="modal" data-target="#entityModal">Show user</a>
-	<a class="btn" href="wizard/customer/3" data-toggle="modal" data-target="#entityModal">Show customer</a>
-
-	<div class="modal fade" id="entityModal"></div>
-	<div class="loading hide"><f:render partial="ModalContent" arguments="{title: 'Loading...', content: ''}"/></div>
-	<hr/>
-
+	<fieldset>
+		<legend>Things to do</legend>
+		<f:if condition="{todos}">
+			<f:then>
+				<ul>
+					<f:for each="{todos}" as="todo">
+						<li><p>{todo.task}</p> <f:link.action action="{todo.action}" controller="{todo.controller}" arguments="{todo.arguments}" package="beech.party"><f:translate key="do.task">Do task</f:translate></f:link.action></li>
+					</f:for>
+				</ul>
+			</f:then>
+			<f:else>
+				<f:translate key="nothing.to.do">Nothing to do</f:translate>
+			</f:else>
+		</f:if>
+		</ul>
+	</fieldset>
 </f:section>
 
 </body>

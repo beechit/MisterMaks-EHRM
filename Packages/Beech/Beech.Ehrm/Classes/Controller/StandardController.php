@@ -18,10 +18,16 @@ use TYPO3\FLOW3\Annotations as FLOW3;
 class StandardController extends AbstractController {
 
 	/**
+	 * @FLOW3\Inject
+	 * @var \Beech\Party\Domain\Repository\ToDoRepository
+	 */
+	protected $toDoRepository;
+
+	/**
 	 *
 	 */
 	public function indexAction() {
-
+		$this->view->assign('todos', $this->toDoRepository->findAll());
 	}
 }
 

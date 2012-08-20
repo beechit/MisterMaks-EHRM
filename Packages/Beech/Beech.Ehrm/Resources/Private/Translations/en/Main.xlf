@@ -8,6 +8,12 @@
 			<trans-unit id="action.save">
 				<source>Save</source>
 			</trans-unit>
+			<trans-unit id="do.task">
+				<source>Do task</source>
+			</trans-unit>
+			<trans-unit id="nothing.to.do">
+				<source>Nothing to do</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

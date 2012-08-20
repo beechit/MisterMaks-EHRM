@@ -10,6 +10,14 @@
 				<source>Save</source>
 				<target>Opslaan</target>
 			</trans-unit>
+			<trans-unit id="do.task">
+				<source>Do task</source>
+				<target>Taak uitvoeren</target>
+			</trans-unit>
+			<trans-unit id="nothing.to.do">
+				<source>Nothing to do</source>
+				<target>Geen open taken</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
