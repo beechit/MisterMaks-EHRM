@@ -18,6 +18,12 @@ use TYPO3\FLOW3\Annotations as FLOW3;
 class RestController extends \TYPO3\FLOW3\Mvc\Controller\ActionController {
 
 	/**
+	 * @FLOW3\Inject
+	 * @var \Beech\Party\Domain\Repository\ToDoRepository
+	 */
+	protected $toDoRepository;
+
+	/**
 	 * @var array
 	 */
 	protected $supportedMediaTypes = array('application/json');
@@ -32,10 +38,19 @@ class RestController extends \TYPO3\FLOW3\Mvc\Controller\ActionController {
 	/**
 	 * Index action
 	 *
+	 * @param string $entity
 	 * @return void
 	 */
-	public function indexAction() {
-		$this->view->assign('value', array('foo' => 'bar'));
+	public function indexAction($entity = NULL) {
+		if($entity === 'todo') {
+			$this->toDoRepository->setDefaultOrderings(array('priority' => \TYPO3\FLOW3\Persistence\QueryInterface::ORDER_DESCENDING));
+			$todos = $this->toDoRepository->findAll();
+			foreach($todos as $todo) {
+				$todo->executeUrl = $this->uriBuilder->uriFor($todo->getAction(), $todo->getArguments(), $todo->getController(),'beech.party');
+				$todosModified[] = $todo;
+			}
+			$this->view->assign('value', $todosModified);
+		}
 	}
 
 }
