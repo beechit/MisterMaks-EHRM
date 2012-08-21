@@ -10,8 +10,8 @@
 		</testsuite>
 	</testsuites>
 	<filter>
-		<whitelist addUncoveredFilesFromWhitelist="false">
-			<directory>../../Packages/Application/*/Classes</directory>
+		<whitelist addUncoveredFilesFromWhitelist="true">
+			<directory>../../Data/Temporary/Testing/Cache/FLOW3_Object_Classes</directory>
 		</whitelist>
 	</filter>
 	<logging>
