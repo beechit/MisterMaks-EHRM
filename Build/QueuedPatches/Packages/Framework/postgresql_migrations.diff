@@ -1,0 +1,67 @@
+diff --git a/Classes/Migrations/Configuration/Configuration.php b/Classes/Migrations/Configuration/Configuration.php
+index 8c4154e..d1339a1 100644
+--- a/Classes/Migrations/Configuration/Configuration.php
++++ b/Classes/Migrations/Configuration/Configuration.php
+@@ -62,7 +62,7 @@ class Configuration
+ 
+     /**
+      * OutputWriter instance for writing output during migrations
+-     * 
++     *
+      * @var OutputWriter
+      */
+     private $outputWriter;
+@@ -76,7 +76,7 @@ class Configuration
+ 
+     /**
+      * The path to a directory where new migration classes will be written
+-     * 
++     *
+      * @var string
+      */
+     private $migrationsDirectory;
+@@ -159,7 +159,7 @@ class Configuration
+     /**
+      * Returns a timestamp version as a formatted date
+      *
+-     * @param string $version 
++     * @param string $version
+      * @return string $formattedVersion The formatted version
+      */
+     public function formatVersion($version)
+@@ -207,7 +207,7 @@ class Configuration
+     /**
+      * Set the new migrations directory where new migration classes are generated
+      *
+-     * @param string $migrationsDirectory The new migrations directory 
++     * @param string $migrationsDirectory The new migrations directory
+      */
+     public function setMigrationsDirectory($migrationsDirectory)
+     {
+diff --git a/Classes/Schema/PostgreSqlSchemaManager.php b/Classes/Schema/PostgreSqlSchemaManager.php
+index 80ac9a7..557b91a 100644
+--- a/Classes/Schema/PostgreSqlSchemaManager.php
++++ b/Classes/Schema/PostgreSqlSchemaManager.php
+@@ -43,8 +43,8 @@ class PostgreSqlSchemaManager extends AbstractSchemaManager
+      */
+     public function getSchemaNames()
+     {
+-        $rows = $this->_conn->fetchAll('SELECT schema_name FROM information_schema.schemata');
+-        return array_map(function($v) { return $v['schema_name']; }, $rows);
++		$rows = $this->_conn->fetchAll('SELECT nspname FROM pg_catalog.pg_namespace');
++		return array_map(function($v) { return $v['nspname']; }, $rows);
+     }
+ 
+     /**
+@@ -91,6 +91,11 @@ class PostgreSqlSchemaManager extends AbstractSchemaManager
+         $names = $this->getSchemaNames();
+         $paths = $this->getSchemaSearchPaths();
+ 
++		if (empty($names)) {
++			$this->existingSchemaPaths = $paths;
++			return;
++		}
++
+         $this->existingSchemaPaths = array_filter($paths, function ($v) use ($names) {
+             return in_array($v, $names);
+         });

@@ -1,0 +1,2 @@
+git reset --hard
+patch -p1 -i ../../../Build/QueuedPatches/Packages/Framework/postgresql_migrations.diff
