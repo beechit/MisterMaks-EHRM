@@ -11,7 +11,6 @@ define(['jquery', 'emberjs', 'Beech.Ehrm/Library/jquery.midgardNotifications'], 
 		_timeout: 5000, //1 second = 1000
 
 		initialize: function() {
-			var that = this;
 			this.set('_placeholder', jQuery('body').midgardNotifications());
 		},
 
@@ -27,8 +26,8 @@ define(['jquery', 'emberjs', 'Beech.Ehrm/Library/jquery.midgardNotifications'], 
 			this._show('Success', bodyMessage, 'alert alert-success', [], timeout);
 		},
 
-		showError: function(bodyMessage, timeout) {
-			this._show('Error', bodyMessage, 'alert alert-danger', [], timeout);
+		showError: function(bodyMessage, timeout, removable) {
+			this._show('Error', bodyMessage, 'alert alert-danger', [], timeout, removable);
 		},
 
 		showDialog: function(bodyMessage, actions, timeout, title, priority) {
@@ -45,6 +44,10 @@ define(['jquery', 'emberjs', 'Beech.Ehrm/Library/jquery.midgardNotifications'], 
 			this._show(title, bodyMessage, className, actions, timeout);
 		},
 
+		createListener: function(element, event, action) {
+			jQuery(element).live(event, action);
+		},
+
 		_show: function(title, bodyMessage, className, actions, timeout, removable) {
 			if (actions === undefined) {
 				actions = [];
@@ -55,7 +58,6 @@ define(['jquery', 'emberjs', 'Beech.Ehrm/Library/jquery.midgardNotifications'], 
 			if (removable === undefined) {
 				removable = true;
 			}
-
 			jQuery(this.get('_placeholder')).data('midgardNotifications').create({
 				body: bodyMessage,
 				actions: actions,
@@ -64,17 +66,22 @@ define(['jquery', 'emberjs', 'Beech.Ehrm/Library/jquery.midgardNotifications'], 
 					beforeShow: function(notify) {
 						var notifyElement = notify.getElement();
 						if (notifyElement.find('.close').length === 0) { //fix for strange bug with double execution of this callback
-								notifyElement.prepend('<button class="close" data-dismiss="alert">×</button><strong>'+title+'</strong>');
-								notifyElement
-									.addClass(className)
-									.find('button').addClass('btn');
+							notifyElement.prepend('<button class="close btn">×</button><strong>'+title+'</strong>')
+								.addClass(className)
+								.find('button').click(function() {
+									notify.close();
+								}
+							);
 							if (!removable) {
 								notifyElement.find('.close').hide();
 							}
 						}
 					},
-					onClick: function() {
-							//to prevent default close on click action
+						//to prevent default close on click action
+					onClick: function(event) {
+						if ($(event.target).hasClass('close')) {
+							return true;
+						}
 						return false;
 					}
 				}
