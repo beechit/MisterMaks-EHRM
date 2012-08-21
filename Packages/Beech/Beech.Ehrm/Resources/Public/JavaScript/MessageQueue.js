@@ -34,10 +34,15 @@ define(['jquery', 'emberjs', 'notification'], function(jQuery, Ember, Notificati
 		/**
 		 * Display notification by id.
 		 * If id is not specified, it takes first notification from queue
+		 * if optional param removeAfter is set to TRUE, remove notification from message queue
 		 * @param id
+		 * @param removeAfter boolean
 		 */
-		showMessage: function(id) {
+		showMessage: function(id, removeAfter) {
+
 			var messageObject =  (id === undefined) ? this.get('content').objectAt(0) : this.getMessage(id);
+			removeAfter = (removeAfter === undefined) ? false : true;
+
 			if (messageObject !== undefined) {
 				switch (messageObject.type) {
 					case Notification.INFO:
@@ -56,9 +61,21 @@ define(['jquery', 'emberjs', 'notification'], function(jQuery, Ember, Notificati
 						Notification.showError(messageObject.text, 0, false);
 						break;
 				}
-				this.removeObject(messageObject);
+				if (removeAfter) {
+					this.removeMessage(id);
+				}
 			}
+		},
+
+		/**
+		 * Remove message from message queue.
+		 * @param id
+		 */
+		removeMessage: function(id) {
+			var messageObject =  (id === undefined) ? this.get('content').objectAt(0) : this.getMessage(id);
+			this.removeObject(messageObject);
 		}
+
 	});
 });
 
