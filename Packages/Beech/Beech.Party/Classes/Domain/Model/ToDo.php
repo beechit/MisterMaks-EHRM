@@ -55,6 +55,7 @@ class ToDo {
 	 * Priority of this task 0-100
 	 *
 	 * @var integer
+	 * @FLOW3\Validate(type="NumberRange", options={ "minimum"=0, "maximum"=100 })
 	 */
 	protected $priority;
 
