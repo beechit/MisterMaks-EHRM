@@ -14,12 +14,12 @@
 			<f:then>
 				<ul>
 					<f:for each="{todos}" as="todo">
-						<li><p>{todo.task}</p> <f:link.action action="{todo.action}" controller="{todo.controller}" arguments="{todo.arguments}" package="beech.party"><f:translate key="do.task">Do task</f:translate></f:link.action></li>
+						<li><p>{todo.task}</p> <f:link.action action="{todo.action}" controller="{todo.controller}" arguments="{todo.arguments}" package="beech.party"><f:translate id="do.task">Do task</f:translate></f:link.action></li>
 					</f:for>
 				</ul>
 			</f:then>
 			<f:else>
-				<f:translate key="nothing.to.do">Nothing to do</f:translate>
+				<f:translate id="nothing.to.do">Nothing to do</f:translate>
 			</f:else>
 		</f:if>
 		</ul>
