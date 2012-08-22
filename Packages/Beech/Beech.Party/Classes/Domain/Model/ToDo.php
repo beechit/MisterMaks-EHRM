@@ -18,6 +18,11 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class ToDo {
 
+	const PRIORITY_LOW = 'low';
+	const PRIORITY_NORMAL = 'normal';
+	const PRIORITY_HIGH = 'high';
+	const PRIORITY_VERY_HIGH = 'veryHigh';
+
 	/**
 	 * The task name
 	 *
@@ -133,10 +138,15 @@ class ToDo {
 	 */
 	public function getPriorityTextual() {
 		switch(ceil($this->priority / 25)) {
-			case(1): return 'low'; break;
-			case(2): return 'normal'; break;
-			case(3): return 'high'; break;
-			case(4): return 'veryHigh'; break;
+			case 4:
+				return self::PRIORITY_VERY_HIGH;
+			case 3:
+				return self::PRIORITY_HIGH;
+			case 2:
+				return self::PRIORITY_NORMAL;
+			case 1:
+			default:
+				return self::PRIORITY_LOW;
 		}
 	}
 
