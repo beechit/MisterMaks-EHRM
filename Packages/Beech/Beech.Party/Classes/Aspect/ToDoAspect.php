@@ -43,10 +43,9 @@ class ToDoAspect {
 	 */
 	public function addToDoAfterCompanyCreate(\TYPO3\FLOW3\AOP\JoinPointInterface $joinPoint) {
 		$company = $joinPoint->getMethodArgument('newCompany');
-		$account = $this->securityContext->getAccount();
 
-		$this->createTask('addAddress', $account->getAccountIdentifier(), 'new', 'management\address', array('company' => $this->persistenceManager->getIdentifierByObject($company)), '', 100);
-		$this->createTask('addCompanyContact', $account->getAccountIdentifier(),  'new', 'management\contact', array('company' => $this->persistenceManager->getIdentifierByObject($company)), '', 50);
+		$this->createTask('addAddress', $this->securityContext->getAccount()->getParty(), 'new', 'management\address', array('company' => $this->persistenceManager->getIdentifierByObject($company)), 100);
+		$this->createTask('addCompanyContact', $this->securityContext->getAccount()->getParty(), 'new', 'management\contact', array('company' => $this->persistenceManager->getIdentifierByObject($company)), 50);
 	}
 
 	/**
@@ -71,23 +70,22 @@ class ToDoAspect {
 
 	/**
 	 * @param string $task The task name
-	 * @param string $owner The owner of the task
+	 * @param \TYPO3\Party\Domain\Model\AbstractParty $owner
 	 * @param string $action The action to execute
 	 * @param string $controller The controller to execute
 	 * @param array $arguments The arguments
-	 * @param string $starter The starter of this task
 	 * @param integer $priority Priority of this task 0-100
 	 * @return void
 	 */
-	private function createTask($task, $owner, $action, $controller, $arguments, $starter, $priority) {
+	private function createTask($task, \TYPO3\Party\Domain\Model\AbstractParty $owner, $action, $controller, $arguments, $priority) {
 		$todo = new \Beech\Party\Domain\Model\ToDo();
 
 		$todo->setTask($task);
-		$todo->setOwner($owner);
 		$todo->setAction($action);
+		$todo->setOwner($owner);
+		$todo->setStarter($this->securityContext->getAccount()->getParty());
 		$todo->setController($controller);
 		$todo->setArguments(serialize($arguments));
-		$todo->setStarter($starter);
 		$todo->setPriority($priority);
 
 		$this->toDoRepository->add($todo);

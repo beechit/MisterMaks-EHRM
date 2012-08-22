@@ -33,14 +33,16 @@ class ToDo {
 	/**
 	 * The task owner
 	 *
-	 * @var string
+	 * @var \Beech\Party\Domain\Model\Person
+	 * @ORM\ManyToOne
 	 */
 	protected $owner;
 
 	/**
 	 * The task starter
 	 *
-	 * @var string
+	 * @var \Beech\Party\Domain\Model\Person
+	 * @ORM\ManyToOne
 	 */
 	protected $starter;
 
@@ -107,6 +109,7 @@ class ToDo {
 	 */
 	public function __construct() {
 		$this->dateTime = new \DateTime();
+		$this->dateTime->modify('now');
 	}
 
 	/**
@@ -168,7 +171,7 @@ class ToDo {
 	/**
 	 * Sets the owner for this task
 	 *
-	 * @param string $owner
+	 * @param \TYPO3\Party\Domain\Model\AbstractParty $owner
 	 * @return void
 	 */
 	public function setOwner($owner) {
@@ -178,7 +181,7 @@ class ToDo {
 	/**
 	 * Returns the owner for this task
 	 *
-	 * @return string
+	 * @return \TYPO3\Party\Domain\Model\AbstractParty
 	 */
 	public function getOwner() {
 		return $this->owner;
@@ -187,7 +190,7 @@ class ToDo {
 	/**
 	 * Sets the starter
 	 *
-	 * @param $starter
+	 * @param \TYPO3\Party\Domain\Model\AbstractParty $starter
 	 * @return void
 	 */
 	public function setStarter($starter) {
@@ -197,7 +200,7 @@ class ToDo {
 	/**
 	 * Returns the starter for this task
 	 *
-	 * @return string
+	 * @return \TYPO3\Party\Domain\Model\AbstractParty
 	 */
 	public function getStarter() {
 		return $this->starter;
