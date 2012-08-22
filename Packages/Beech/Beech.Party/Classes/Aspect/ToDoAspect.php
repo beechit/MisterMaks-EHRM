@@ -45,8 +45,8 @@ class ToDoAspect {
 		$company = $joinPoint->getMethodArgument('newCompany');
 		$account = $this->securityContext->getAccount();
 
-		$this->createTask('addAddress', $account->getAccountIdentifier(), 'new', 'management\address', array('company' => $this->persistenceManager->getIdentifierByObject($company)), '', date('Y-m-d H:i:s', time()), 100);
-		$this->createTask('addCompanyContact', $account->getAccountIdentifier(), 'new', 'management\contact', array('company' => $this->persistenceManager->getIdentifierByObject($company)), '', date('Y-m-d H:i:s', time()), 50);
+		$this->createTask('addAddress', $account->getAccountIdentifier(), 'new', 'management\address', array('company' => $this->persistenceManager->getIdentifierByObject($company)), '', 100);
+		$this->createTask('addCompanyContact', $account->getAccountIdentifier(),  'new', 'management\contact', array('company' => $this->persistenceManager->getIdentifierByObject($company)), '', 50);
 	}
 
 	/**
@@ -76,11 +76,10 @@ class ToDoAspect {
 	 * @param string $controller The controller to execute
 	 * @param array $arguments The arguments
 	 * @param string $starter The starter of this task
-	 * @param string $dateTime The dateTime
 	 * @param integer $priority Priority of this task 0-100
 	 * @return void
 	 */
-	private function createTask($task, $owner, $action, $controller, $arguments, $starter, $dateTime, $priority) {
+	private function createTask($task, $owner, $action, $controller, $arguments, $starter, $priority) {
 		$todo = new \Beech\Party\Domain\Model\ToDo();
 
 		$todo->setTask($task);
@@ -90,7 +89,6 @@ class ToDoAspect {
 		$todo->setArguments(serialize($arguments));
 		$todo->setStarter($starter);
 		$todo->setPriority($priority);
-		$todo->setDateTime($dateTime);
 
 		$this->toDoRepository->add($todo);
 	}

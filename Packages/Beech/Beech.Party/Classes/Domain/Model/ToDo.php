@@ -47,7 +47,7 @@ class ToDo {
 	/**
 	 * The dateTime
 	 *
-	 * @var string
+	 * @var \DateTime
 	 */
 	protected $dateTime;
 
@@ -92,7 +92,7 @@ class ToDo {
 	 * Construct the object, sets default value for dateTime
 	 */
 	public function __construct() {
-		$this->dateTime = date("m/d/y g:i A", time());
+		$this->dateTime = new \DateTime();
 	}
 
 	/**
