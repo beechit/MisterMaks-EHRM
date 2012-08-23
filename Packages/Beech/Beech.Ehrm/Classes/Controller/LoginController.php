@@ -61,7 +61,7 @@ class LoginController extends AbstractController {
 		}
 
 		if ($authenticated) {
-			$this->redirect('status');
+			$this->redirect('index', 'Standard');
 		} else {
 			$this->addFlashMessage($message);
 			$this->redirect('login');
