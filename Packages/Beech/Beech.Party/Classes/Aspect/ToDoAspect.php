@@ -56,7 +56,7 @@ class ToDoAspect {
 	 */
 	public function removeToDoAfterContactCreate(\TYPO3\FLOW3\AOP\JoinPointInterface $joinPoint) {
 		$company = $this->persistenceManager->getIdentifierByObject($joinPoint->getMethodArgument('company'));
-		$this->removeTask('management\contact', 'new', array('company' => $company));
+		$this->archiveTask('management\contact', 'new', array('company' => $company));
 	}
 
 	/**
@@ -66,7 +66,7 @@ class ToDoAspect {
 	 */
 	public function removeToDoAfterAddressCreate(\TYPO3\FLOW3\AOP\JoinPointInterface $joinPoint) {
 		$company = $this->persistenceManager->getIdentifierByObject($joinPoint->getMethodArgument('company'));
-		$this->removeTask('management\address', 'new', array('company' => $company));
+		$this->archiveTask('management\address', 'new', array('company' => $company));
 	}
 
 	/**
@@ -99,9 +99,9 @@ class ToDoAspect {
 	 * @param array $arguments The arguments
 	 * @return void
 	 */
-	private function removeTask($controller, $action, $arguments) {
+	private function archiveTask($controller, $action, $arguments) {
 		$arguments = serialize($arguments);
-		$this->toDoRepository->removeTask($controller, $action, $arguments);
+		$this->toDoRepository->archiveTask($controller, $action, $arguments);
 	}
 }
 ?>

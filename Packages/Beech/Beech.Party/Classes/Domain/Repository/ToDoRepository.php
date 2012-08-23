@@ -21,7 +21,7 @@ class ToDoRepository extends \TYPO3\FLOW3\Persistence\Repository {
 	 * @param string $arguments serialized array of arguments
 	 * @return void
 	 */
-	public function removeTask($controller, $action, $arguments) {
+	public function archiveTask($controller, $action, $arguments) {
 		$query = $this->createQuery();
 
 		$object = $query->matching(
@@ -34,7 +34,10 @@ class ToDoRepository extends \TYPO3\FLOW3\Persistence\Repository {
 			)
 		)->execute()->getFirst();
 
-		$this->remove($object);
+		if (isset($object) && $object instanceof \Beech\Party\Domain\Model\ToDo) {
+			$object->setArchived(TRUE);
+			$this->update($object);
+		}
 	}
 
 }

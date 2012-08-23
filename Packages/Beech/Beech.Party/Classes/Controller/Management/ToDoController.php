@@ -26,11 +26,14 @@ class ToDoController extends \Beech\Ehrm\Controller\AbstractController {
 	/**
 	 * Shows a list of todos
 	 *
+	 * @param boolean $archived
 	 * @return void
 	 */
-	public function indexAction() {
+	public function indexAction($archived = FALSE) {
 		$this->toDoRepository->setDefaultOrderings(array('priority' => \TYPO3\FLOW3\Persistence\QueryInterface::ORDER_DESCENDING));
-		$this->view->assign('todos', $this->toDoRepository->findAll());
+		$todos = $this->toDoRepository->findByArchived($archived);
+		$this->view->assign('archived', $archived);
+		$this->view->assign('todos', $todos);
 	}
 }
 

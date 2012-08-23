@@ -54,6 +54,14 @@
 				<source>No companies created yet</source>
 				<target>Nog geen bedrijf aangemaakt</target>
 			</trans-unit>
+			<trans-unit id="todo.viewArchived">
+				<source>View archived items</source>
+				<target>Bekijk gearchiveerde items</target>
+			</trans-unit>
+			<trans-unit id="todo.viewUnarchived">
+				<source>View unarchived items</source>
+				<target>Bekijk niet gearchiveerde items</target>
+			</trans-unit>
 			<trans-unit id="action">
 				<source>Action</source>
 				<target>Actie</target>

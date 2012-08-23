@@ -38,6 +38,12 @@
 			<trans-unit id="company.vatNumber">
 				<source>VAT number</source>
 			</trans-unit>
+			<trans-unit id="todo.viewArchived">
+				<source>View archived items</source>
+			</trans-unit>
+			<trans-unit id="todo.viewUnarchived">
+				<source>View unarchived items</source>
+			</trans-unit>
 			<trans-unit id="message.company.noResult">
 				<source>No companies created yet</source>
 			</trans-unit>

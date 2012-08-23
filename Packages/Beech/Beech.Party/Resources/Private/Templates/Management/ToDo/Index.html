@@ -1,6 +1,14 @@
 <f:layout name="Default" />
 
 <f:section name="Body">
+	<f:if condition="{archived}">
+		<f:then>
+			<f:link.action controller="management\todo" action="index"><f:translate id="todo.viewUnarchived">View unarchived items</f:translate></f:link.action>
+		</f:then>
+		<f:else>
+			<f:link.action controller="management\todo" action="index" arguments="{archived: 1}"><f:translate id="todo.viewArchived">View archived items</f:translate><</f:link.action>
+		</f:else>
+	</f:if>
 	<f:if condition="{todos}">
 		<f:then>
 			<table class="table">
@@ -10,11 +18,22 @@
 					<th></th>
 				</tr>
 				<f:for each="{todos}" as="todo">
-					<tr>
-						<td>{todo.priorityTextual}</td>
-						<td>{todo.task}</td>
-						<td><f:link.action controller="{todo.controller}" action="{todo.action}" arguments="{todo.arguments}">DO</f:link.action></td>
-					</tr>
+					<f:if condition="{archived}">
+						<f:then>
+						<tr>
+							<td>{todo.priorityTextual}</td>
+							<td>{todo.task}</td>
+							<td><f:format.date format="d.m.Y - H:i:s">{todo.archivedDateTime}</f:format.date></td>
+						</tr>
+						</f:then>
+						<f:else>
+						<tr>
+							<td>{todo.priorityTextual}</td>
+							<td>{todo.task}</td>
+							<td><f:link.action controller="{todo.controller}" action="{todo.action}" arguments="{todo.arguments}">DO</f:link.action></td>
+						</tr>
+						</f:else>
+					</f:if>
 				</f:for>
 			</table>
 		</f:then>

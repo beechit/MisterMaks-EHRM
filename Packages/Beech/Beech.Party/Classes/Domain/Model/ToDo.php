@@ -81,6 +81,20 @@ class ToDo {
 	protected $controller;
 
 	/**
+	 * True is task is finished
+	 *
+	 * @var boolean
+	 */
+	protected $archived;
+
+	/**
+	 * The datetime the task is archived
+	 * @var \DateTime
+	 * @ORM\Column(nullable=true)
+	 */
+	protected $archivedDateTime;
+
+	/**
 	 * The url to execute this task
 	 *
 	 * @var string
@@ -272,6 +286,42 @@ class ToDo {
 	 */
 	public function getArguments() {
 		return unserialize($this->arguments);
+	}
+
+	/**
+	 * Archive the task
+	 *
+	 * @param boolean $archived
+	 * @return void
+	 */
+	public function setArchived($archived) {
+		$this->archived = $archived;
+		$this->setArchivedDateTime(new \DateTime());
+	}
+
+	/**
+	 * Set the archived dateTime
+	 *
+	 * @return void
+	 */
+	public function setArchivedDateTime($archivedDateTime) {
+		$this->archivedDateTime = $archivedDateTime;
+	}
+
+	/**
+	 * Returns the archived dateTime
+	 *
+	 * @return \DateTime
+	 */
+	public function getArchivedDateTime() {
+		return $this->archivedDateTime;
+	}
+
+	/**
+	 * @return boolean
+	 */
+	public function getArchived() {
+		return $this->archived;
 	}
 
 }
