@@ -1,11 +1,10 @@
-#                                                                        #
-# Security policy for the TYPO3 package                                  #
-#                                                                        #
-
 resources:
   methods:
-    ManagementControllers: 'method(Beech\.*\Management\.*Controller->.*())'
-
+    ManagementControllers: 'method(Beech\.*\Management\.*Controller->.*Action())'
+    LogController: 'method(Beech\Ehrm\Controller\LogController->.*Action())'
+    WizardController: 'method(Beech\Ehrm\Controller\WizardController->.*Action())'
+    RestController: 'method(Beech\Ehrm\Controller\RestController->.*Action())'
+    StandardController: 'method(Beech\Ehrm\Controller\StandardController->.*Action())'
 
 roles:
   Administrator: [ User ]
@@ -15,3 +14,9 @@ acls:
   Administrator:
     methods:
       ManagementControllers: GRANT
+  Everybody:
+    methods:
+      LogController: GRANT
+      WizardController: GRANT
+      RestController: GRANT
+      StandardController: GRANT
