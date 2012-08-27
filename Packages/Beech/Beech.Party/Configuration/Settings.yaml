@@ -9,4 +9,15 @@ Beech:
             menuGroup: 'main:manage'
             package: 'Beech.Party'
             controller: 'Management\Company'
+            resource: 'ManagementControllers'
+            action: 'list'
+
+    menu:
+      account:
+        menu:
+          settings:
+            label: 'Instellingen'
+            priority: 20
+            package: 'Beech.Party'
+            controller: 'Management\Company'
             action: 'list'
