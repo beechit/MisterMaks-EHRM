@@ -106,6 +106,11 @@ class Company {
 	protected $legalForm;
 
 	/**
+	 * @var boolean
+	 */
+	protected $deleted = FALSE;
+
+	/**
 	 * Construct the object
 	 */
 	public function __construct() {
@@ -390,6 +395,20 @@ class Company {
 	 */
 	public function removeContactPerson(\Beech\Party\Domain\Model\Person $person) {
 		$this->contactPersons->remove($person);
+	}
+
+	/**
+	 * @param boolean $deleted
+	 */
+	public function setDeleted($deleted) {
+		$this->deleted = $deleted;
+	}
+
+	/**
+	 * @return boolean
+	 */
+	public function getDeleted() {
+		return $this->deleted;
 	}
 
 }
