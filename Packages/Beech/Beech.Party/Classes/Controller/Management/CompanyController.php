@@ -25,6 +25,12 @@ class CompanyController extends \Beech\Ehrm\Controller\AbstractController {
 	protected $companyRepository;
 
 	/**
+	 * @var \TYPO3\FLOW3\I18n\Translator
+	 * @FLOW3\Inject
+	 */
+	protected $translator;
+
+	/**
 	 * Shows a list of companies
 	 *
 	 * @return void
@@ -40,6 +46,7 @@ class CompanyController extends \Beech\Ehrm\Controller\AbstractController {
 	 * @return void
 	 */
 	public function showAction(Company $company) {
+		$this->view->assign('departments', $this->companyRepository->findByParentCompany($company));
 		$this->view->assign('company', $company);
 	}
 
@@ -64,6 +71,30 @@ class CompanyController extends \Beech\Ehrm\Controller\AbstractController {
 	}
 
 	/**
+	 * Shows a form for creating a new company object
+	 *
+	 * @param \Beech\Party\Domain\Model\Company $company The parent company
+	 * @return void
+	 */
+	public function newDepartmentAction(\Beech\Party\Domain\Model\Company $company) {
+		$this->view->assign('company', $company);
+	}
+
+	/**
+	 * Adds the given new company object to the company repository
+	 *
+	 * @param \Beech\Party\Domain\Model\Company $newDepartment A new department to add
+	 * @param \Beech\Party\Domain\Model\Company $company The parent company
+	 * @return void
+	 */
+	public function addDepartmentAction(Company $newDepartment, Company $company) {
+		$newDepartment->setParentCompany($company);
+		$this->companyRepository->add($newDepartment);
+		$this->addFlashMessage($this->translator->translateById('flashmessage.newDepartment'));
+		$this->redirect('list');
+	}
+
+	/**
 	 * Shows a form for editing an existing company object
 	 *
 	 * @param \Beech\Party\Domain\Model\Company $company The company to edit
@@ -82,7 +113,7 @@ class CompanyController extends \Beech\Ehrm\Controller\AbstractController {
 	 */
 	public function updateAction(Company $company) {
 		$this->companyRepository->update($company);
-		$this->addFlashMessage('Updated the company.');
+		$this->addFlashMessage($this->translator->translateById('flashmessage.updatedCompany'));
 		$this->redirect('list');
 	}
 
@@ -93,8 +124,7 @@ class CompanyController extends \Beech\Ehrm\Controller\AbstractController {
 	 * @return void
 	 */
 	public function deleteAction(Company $company) {
-		$this->companyRepository->remove($company);
-		$this->addFlashMessage('Deleted a company.');
+		$this->companyRepositor($this->translator->translateById('flashmessage.deletedCompany'));
 		$this->redirect('list');
 	}
 

@@ -44,6 +44,9 @@
 			<trans-unit id="todo.viewUnarchived">
 				<source>View unarchived items</source>
 			</trans-unit>
+			<trans-unit id="department.name">
+				<source>Department name</source>
+			</trans-unit>
 			<trans-unit id="message.company.noResult">
 				<source>No companies created yet</source>
 			</trans-unit>
@@ -76,6 +79,18 @@
 			</trans-unit>
 			<trans-unit id="action.back">
 				<source>Back</source>
+			</trans-unit>
+			<trans-unit id="action.newDepartment">
+				<source>New department</source>
+			</trans-unit>
+			<trans-unit id="flashmessage.newDepartment">
+				<source>Created new department</source>
+			</trans-unit>
+			<trans-unit id="flashmessage.updatedCompany">
+				<source>Updated the company</source>
+			</trans-unit>
+			<trans-unit id="flashmessage.deletedCompany">
+				<source>Deleted the company</source>
 			</trans-unit>
 		</body>
 	</file>

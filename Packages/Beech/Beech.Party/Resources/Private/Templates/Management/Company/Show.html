@@ -44,7 +44,10 @@
 		</dd>
 	</dl>
 
-	<div class="form-actions"><f:link.action action="list"><f:translate id="action.back">Back</f:translate></f:link.action></div>
+	<div class="form-actions">
+		<f:link.action action="list"><f:translate id="action.back">Back</f:translate></f:link.action> |
+		<f:link.action action="newDepartment" arguments="{company: company}"><f:translate id="action.newDepartment">New department</f:translate></f:link.action>
+	</div>
 </f:section>
 
 <f:section name="Left" />
