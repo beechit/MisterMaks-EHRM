@@ -33,36 +33,42 @@ class Log {
 	/**
 	 * The additional data
 	 * @var string
+	 * @ORM\Column(nullable=true)
 	 */
 	protected $additionalData;
 
 	/**
 	 * The package key
 	 * @var string
+	 * @ORM\Column(nullable=true)
 	 */
 	protected $packageKey;
 
 	/**
 	 * The class name
 	 * @var string
+	 * @ORM\Column(nullable=true)
 	 */
 	protected $className;
 
 	/**
 	 * The method name
 	 * @var string
+	 * @ORM\Column(nullable=true)
 	 */
 	protected $methodName;
 
 	/**
 	 * The ip address
 	 * @var string
+	 * @ORM\Column(nullable=true)
 	 */
 	protected $ipAddress;
 
 	/**
 	 * The process id
 	 * @var string
+	 * @ORM\Column(nullable=true)
 	 */
 	protected $processId;
 
