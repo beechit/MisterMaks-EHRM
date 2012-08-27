@@ -32,25 +32,28 @@ require(
 	],
 	function(jQuery, Ember) {
 		jQuery(document).ready(function() {
-			require(['ui', 'notification', 'message-queue'], function(UserInterface, Notification, MessageQueue) {
-				window.App = Ember.Application.create({
-					ready: function() {
-						UserInterface.modal().initialize();
-						Notification.initialize();
-						MessageQueue.initialize();
+			if (MM.authenticated) {
+				require(['ui', 'notification', 'message-queue'], function(UserInterface, Notification, MessageQueue) {
+					window.App = Ember.Application.create({
+						ready: function() {
+							UserInterface.modal().initialize();
+							Notification.initialize();
+							MessageQueue.initialize();
 
-						jQuery.get('rest/todo/1.json', function(data) {
-							jQuery.each(data, function(index, value){
+							jQuery.get('rest/todo/1.json', function(data) {
 
-								var actions = [];
-								// TODO: Add localization for 'Do Task'
-								Notification.showDialog('<a href="' + value.executeUrl + '">Do task</a>', actions, 'TODO: ' + value.task, value.priorityTextual);
+								jQuery.each(data, function(index, value){
 
+									var actions = [];
+									// TODO: Add localization for 'Do Task'
+									Notification.showDialog('<a href="' + value.executeUrl + '">Do task</a>', actions, 'TODO: ' + value.task, value.priorityTextual);
+
+								});
 							});
-						});
-					}
+						}
+					});
 				});
-			});
+			}
 		});
 	}
 );

@@ -8,6 +8,14 @@
 		<link rel="stylesheet" type="text/css" href="{f:uri.resource(path: 'StyleSheets/main.css', package: 'Beech.Ehrm')}" />
 		<link rel="stylesheet" type="text/css" href="{f:uri.resource(path: 'Library/jquery-ui-bootstrap/css/style.css', package: 'Beech.Ehrm')}" />
 
+		<script>
+			<![CDATA[
+				var MM = {
+					authenticated: ]]><f:security.ifAuthenticated><f:then>true</f:then><f:else>false</f:else></f:security.ifAuthenticated><![CDATA[,
+				};
+			]]>
+		</script>
+
 		<script data-main="{f:uri.resource(path: 'JavaScript/Init.js', package: 'Beech.Ehrm')}" src="{f:uri.resource(path: 'JavaScript/require.js', package: 'Beech.Ehrm')}"></script>
 
 	</head>
