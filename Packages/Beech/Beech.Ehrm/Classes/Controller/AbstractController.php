@@ -15,7 +15,7 @@ use TYPO3\FLOW3\Annotations as FLOW3;
  *
  * @FLOW3\Scope("singleton")
  */
-class AbstractController extends \TYPO3\FLOW3\Mvc\Controller\ActionController {
+abstract class AbstractController extends \TYPO3\FLOW3\Mvc\Controller\ActionController {
 
 	/**
 	 * @var \Beech\Ehrm\Helper\SettingsHelper

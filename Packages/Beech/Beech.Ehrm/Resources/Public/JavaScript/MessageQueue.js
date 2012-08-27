@@ -7,7 +7,6 @@ define(['jquery', 'emberjs', 'notification'], function(jQuery, Ember, Notificati
 		 * Initialization
 		 */
 		initialize: function() {
-			var that = this;
 			this.set('content', []);
 		},
 
@@ -22,15 +21,14 @@ define(['jquery', 'emberjs', 'notification'], function(jQuery, Ember, Notificati
 		 * Add notification message to queue
 		 */
 		add: function(messageId, messageText, messageType) {
-			this.get('content').pushObject(Ember.Object.create({id: messageId, text: messageText, type: messageType}))
+			this.get('content').pushObject(Ember.Object.create({id: messageId, text: messageText, type: messageType}));
 		},
 
 		/**
 		 * Get message data by specified id
 		 */
 		getMessage: function(id) {
-			var messageObject = this.findProperty('id', id);
-			return messageObject;
+			return this.findProperty('id', id);
 		},
 
 		/**
@@ -39,8 +37,8 @@ define(['jquery', 'emberjs', 'notification'], function(jQuery, Ember, Notificati
 		 * @param id
 		 */
 		showMessage: function(id) {
-			var messageObject =  (id == undefined) ? this.get('content').objectAt(0) : this.getMessage(id);
-			if (messageObject != undefined) {
+			var messageObject =  (id === undefined) ? this.get('content').objectAt(0) : this.getMessage(id);
+			if (messageObject !== undefined) {
 				switch (messageObject.type) {
 					case Notification.INFO:
 						Notification.showInfo(messageObject.text, 2500);

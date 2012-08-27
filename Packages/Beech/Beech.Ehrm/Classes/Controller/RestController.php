@@ -15,38 +15,27 @@ use TYPO3\FLOW3\Annotations as FLOW3;
  *
  * @FLOW3\Scope("singleton")
  */
-class RestController extends \TYPO3\FLOW3\Mvc\Controller\ActionController {
+class RestController extends \TYPO3\FLOW3\Mvc\Controller\RestController {
 
 	/**
-	 * @FLOW3\Inject
 	 * @var \Beech\Party\Domain\Repository\ToDoRepository
+	 * @FLOW3\Inject
 	 */
 	protected $toDoRepository;
 
 	/**
-	 * @var array
-	 */
-	protected $supportedMediaTypes = array('application/json');
-
-	/**
-	 * @var array
-	 */
-	protected $viewFormatToObjectNameMap = array(
-		'json' => '\TYPO3\FLOW3\Mvc\View\JsonView'
-	);
-
-	/**
-	 * Index action
+	 * List action
 	 *
 	 * @param string $entity
 	 * @return void
 	 */
-	public function indexAction($entity = NULL) {
-		if($entity === 'todo') {
+	public function listAction($entity = NULL) {
+		if ($entity === 'todo') {
+			$todosModified = array();
 			$this->toDoRepository->setDefaultOrderings(array('priority' => \TYPO3\FLOW3\Persistence\QueryInterface::ORDER_DESCENDING));
 			$todos = $this->toDoRepository->findAll();
-			foreach($todos as $todo) {
-				$todo->executeUrl = $this->uriBuilder->uriFor($todo->getAction(), $todo->getArguments(), $todo->getController(),'beech.party');
+			foreach ($todos as $todo) {
+				$todo->executeUrl = $this->uriBuilder->uriFor($todo->getAction(), $todo->getArguments(), $todo->getController(), 'beech.party');
 				$todosModified[] = $todo;
 			}
 			$this->view->assign('value', $todosModified);
