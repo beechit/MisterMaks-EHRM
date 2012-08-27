@@ -33,7 +33,7 @@ class RestController extends \TYPO3\FLOW3\Mvc\Controller\RestController {
 		if ($entity === 'todo') {
 			$todosModified = array();
 			$this->toDoRepository->setDefaultOrderings(array('priority' => \TYPO3\FLOW3\Persistence\QueryInterface::ORDER_DESCENDING));
-			$todos = $this->toDoRepository->findAll();
+			$todos = $this->toDoRepository->findByArchived(FALSE);
 			foreach ($todos as $todo) {
 				$todo->executeUrl = $this->uriBuilder->uriFor($todo->getAction(), $todo->getArguments(), $todo->getController(), 'beech.party');
 				$todosModified[] = $todo;
