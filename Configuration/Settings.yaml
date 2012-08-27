@@ -2,6 +2,7 @@ TYPO3:
   FLOW3:
     security:
       authentication:
+        authenticationStrategy: oneToken
         providers:
           LdapProvider:
             provider: TYPO3\LDAP\Security\Authentication\Provider\LDAPProvider
