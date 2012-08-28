@@ -11,6 +11,14 @@ Beech:
             controller: 'Management\Company'
             resource: 'ManagementControllers'
             action: 'list'
+          person:
+            label: 'Personen'
+            priority: 30
+            menuGroup: 'main:manage'
+            package: 'Beech.Party'
+            controller: 'Management\Person'
+            resource: 'ManagementControllers'
+            action: 'list'
 
     menu:
       account:

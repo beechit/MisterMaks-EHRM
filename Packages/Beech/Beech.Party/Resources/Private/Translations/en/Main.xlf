@@ -50,6 +50,24 @@
 			<trans-unit id="message.company.noResult">
 				<source>No companies created yet</source>
 			</trans-unit>
+			<trans-unit id="person">
+				<source>Person</source>
+			</trans-unit>
+			<trans-unit id="person.firstName">
+				<source>First name</source>
+			</trans-unit>
+			<trans-unit id="person.lastName">
+				<source>Last name</source>
+			</trans-unit>
+			<trans-unit id="person.email">
+				<source>Email</source>
+			</trans-unit>
+			<trans-unit id="person.phone">
+				<source>Phone</source>
+			</trans-unit>
+			<trans-unit id="person.description">
+				<source>Description</source>
+			</trans-unit>
 			<trans-unit id="action">
 				<source>Action</source>
 			</trans-unit>

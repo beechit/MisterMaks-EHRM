@@ -1,0 +1,23 @@
+<f:layout name="Default" />
+
+<f:section name="Body">
+	<f:if condition="{people}">
+		<f:then>
+			<ul>
+				<f:for each="{people}" as="person">
+					<li>
+						<f:link.action action="show" arguments="{person: person}">{person.name}</f:link.action>
+						<f:link.action action="edit" arguments="{person: person}"><i class="icon-pencil"></i></f:link.action>
+						<f:link.action action="delete" arguments="{person: person}"><i class="icon-trash"></i></f:link.action>
+					</li>
+				</f:for>
+			</ul>
+		</f:then>
+		<f:else>
+			<p><f:translate id="message.person.noResult">No people created yet.</f:translate></p>
+		</f:else>
+	</f:if>
+	<p><f:link.action action="new" class="btn btn-primary"><f:translate id="action.create">Create</f:translate></f:link.action></p>
+</f:section>
+
+<f:section name="Left" />

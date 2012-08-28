@@ -40,6 +40,14 @@ class ElectronicAddress extends \TYPO3\Party\Domain\Model\ElectronicAddress {
 	protected $code;
 
 	/**
+	 * Construct the object
+	 */
+	public function __construct() {
+		parent::__construct();
+		$this->setCode('');
+	}
+
+	/**
 	 * @param string $description
 	 */
 	public function setDescription($description) {

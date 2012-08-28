@@ -1,0 +1,33 @@
+<f:layout name="Default" />
+
+<f:section name="Body">
+	<f:form action="update" object="{person}" name="person">
+		<ol>
+			<li>
+				<label for="name.firstName"><f:translate id="person.firstName">First name</f:translate></label>
+				<f:form.textfield property="name.firstName" id="name.firstName" />
+			</li>
+			<li>
+				<label for="name.lastName"><f:translate id="person.lastName">Last name</f:translate></label>
+				<f:form.textfield property="name.lastName" id="name.lastName" />
+			</li>
+			<li>
+				<label for="email"><f:translate id="person.email">Email</f:translate></label>
+				<f:form.textfield name="email" id="email" />
+			</li>
+			<li>
+				<label for="phone"><f:translate id="person.phone">Phone</f:translate></label>
+				<f:form.textfield name="phone" id="phone" />
+			</li>
+			<li>
+				<label for="description"><f:translate id="person.description">Description</f:translate></label>
+				<f:form.textfield property="description" id="description" />
+			</li>
+			<li>
+				<f:form.submit value="Update"/>
+			</li>
+		</ol>
+	</f:form>
+</f:section>
+
+<f:section name="Left" />

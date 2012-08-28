@@ -1,0 +1,21 @@
+<f:layout name="Default" />
+
+<f:section name="Body">
+	<table>
+		<tr>
+			<th><f:translate id="person.firstName">First name</f:translate></th>
+			<td>{person.name.firstName}</td>
+		</tr>
+		<tr>
+			<th><f:translate id="person.lastName">Last name</f:translate></th>
+			<td>{person.name.lastName}</td>
+		</tr>
+		<tr>
+			<th><f:translate id="person.description">Description</f:translate></th>
+			<td>{person.description}</td>
+		</tr>
+	</table>
+	<f:link.action action="list"><f:translate id="action.back">Back</f:translate></f:link.action>
+</f:section>
+
+<f:section name="Left" />

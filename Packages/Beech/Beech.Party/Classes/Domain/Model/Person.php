@@ -10,6 +10,7 @@ namespace Beech\Party\Domain\Model;
 
 use TYPO3\FLOW3\Annotations as FLOW3;
 use Doctrine\ORM\Mapping as ORM;
+use Beech\Party\Domain\Model\ElectronicAddress;
 
 /**
  * A Person
@@ -57,6 +58,37 @@ class Person extends \TYPO3\Party\Domain\Model\Person {
 	}
 
 	/**
+	 * Adds the given email to this person.
+	 *
+	 * @param string $email Email
+	 * @return ElectronicAddress
+	 */
+	public function addEmail($email) {
+		$electronicAddress = new ElectronicAddress();
+		$electronicAddress->setType(ElectronicAddress::TYPE_EMAIL);
+		$electronicAddress->setIdentifier($email);
+		$electronicAddress->setDescription('Email');
+		$this->setPrimaryElectronicAddress($electronicAddress);
+		return $electronicAddress;
+	}
+
+	/**
+	 * Adds the given phone to this person.
+	 *
+	 * @param string $phone Phone number
+	 * @param string $type  Phone type
+	 * @return ElectronicAddress
+	 */
+	public function addPhone($phone, $type = ElectronicAddress::TYPE_PHONE) {
+		$electronicAddress = new ElectronicAddress();
+		$electronicAddress->setType($type);
+		$electronicAddress->setIdentifier($phone);
+		$electronicAddress->setDescription('Phone');
+		$this->addElectronicAddress($electronicAddress);
+		return $electronicAddress;
+	}
+
+	/**
 	 * Adds the given address to this company.
 	 *
 	 * @param \Beech\Party\Domain\Model\Address $address The address
@@ -85,11 +117,13 @@ class Person extends \TYPO3\Party\Domain\Model\Person {
 	 * @return \Doctrine\Common\Collections\Collection<\Beech\Party\Domain\Model\Address>
 	 */
 	public function getAddresses() {
-		return clone $this->addresses;
+		if (!is_null($this->addresses)) {
+			return clone $this->addresses;
+		}
 	}
 
 	/**
-	 * Set description
+	 * Setter for description
 	 *
 	 * @param string $description
 	 * @return void
@@ -97,5 +131,15 @@ class Person extends \TYPO3\Party\Domain\Model\Person {
 	public function setDescription($description) {
 		$this->description = $description;
 	}
+
+	/**
+	 * Getter for description
+	 *
+	 * @return string
+	 */
+	public function getDescription() {
+		return $this->description;
+	}
 }
+
 ?>

@@ -65,6 +65,33 @@
 			<trans-unit id="todo.viewUnarchived">
 				<source>View unarchived items</source>
 				<target>Bekijk niet gearchiveerde items</target>
+			<trans-unit id="person">
+				<source>Person</source>
+				<target>Persoon</target>
+			</trans-unit>
+			<trans-unit id="person.firstName">
+				<source>First name</source>
+				<target>Voornaam</target>
+			</trans-unit>
+			<trans-unit id="person.lastName">
+				<source>Last name</source>
+				<target>Achternaam</target>
+			</trans-unit>
+			<trans-unit id="person.email">
+				<source>Email</source>
+				<target>Email</target>
+			</trans-unit>
+			<trans-unit id="person.phone">
+				<source>Phone</source>
+				<target>Telefoon</target>
+			</trans-unit>
+			<trans-unit id="person.description">
+				<source>Description</source>
+				<target>Omschrijving</target>
+			</trans-unit>
+			<trans-unit id="message.person.noResult">
+				<source>No people created yet</source>
+				<target>Nog geen personen aangemaakt</target>
 			</trans-unit>
 			<trans-unit id="action">
 				<source>Action</source>

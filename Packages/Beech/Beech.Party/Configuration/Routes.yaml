@@ -8,6 +8,23 @@
     '@format': 'html'
 
 -
+  name: 'Person management with format'
+  uriPattern: 'management/person/{@action}(.{@format})'
+  defaults:
+    '@package': 'Beech.Party'
+    '@controller': 'Management\Person'
+    '@action': 'list'
+
+-
+  name: 'Person management'
+  uriPattern: 'management/person(/{@action})'
+  defaults:
+    '@package': 'Beech.Party'
+    '@controller': 'Management\Person'
+    '@action': 'list'
+    '@format': 'html'
+
+-
   name: 'ToDo list'
   uriPattern: 'management/todo(/{@action})'
   defaults:
