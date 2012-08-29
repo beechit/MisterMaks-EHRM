@@ -8,11 +8,32 @@
 			<trans-unit id="action.save">
 				<source>Save</source>
 			</trans-unit>
+			<trans-unit id="action.login">
+				<source>Login</source>
+			</trans-unit>
+			<trans-unit id="action.logout">
+				<source>Logout</source>
+			</trans-unit>
 			<trans-unit id="do.task">
 				<source>Do task</source>
 			</trans-unit>
 			<trans-unit id="nothing.to.do">
 				<source>Nothing to do</source>
+			</trans-unit>
+			<trans-unit id="panel.login.legend">
+				<source>Login panel</source>
+			</trans-unit>
+			<trans-unit id="panel.login.username">
+				<source>Username</source>
+			</trans-unit>
+			<trans-unit id="panel.login.password">
+				<source>Password</source>
+			</trans-unit>
+			<trans-unit id="status.logged.in">
+				<source>Logged in</source>
+			</trans-unit>
+			<trans-unit id="status.logged.out">
+				<source>Logged out</source>
 			</trans-unit>
 		</body>
 	</file>

@@ -3,21 +3,27 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Status view of Login controller</title>
+	<title>Status</title>
 	<f:base />
 </head>
 <body>
 <f:section name="Body">
-	Status: Logged in<br/>
-	<f:if condition="{activeTokens.LdapProvider.account}">
-		User: {activeTokens.LdapProvider.account.accountidentifier}<br/>
-	</f:if>
-	<f:if condition="{activeTokens.DefaultProvider.account}">
-		User: {activeTokens.DefaultProvider.account.accountidentifier}<br/>
-	</f:if>
-
-	<f:link.action action="logout">Logout</f:link.action>
-
+	Status:
+	<f:security.ifAuthenticated>
+		<f:then>
+			 <f:translate id="status.logged.in">Logged in</f:translate><br/>
+			<f:if condition="{activeTokens.LdapProvider.account}">
+				User: {activeTokens.LdapProvider.account.accountidentifier}<br/>
+			</f:if>
+			<f:if condition="{activeTokens.DefaultProvider.account}">
+				User: {activeTokens.DefaultProvider.account.accountidentifier}<br/>
+			</f:if>
+			<f:link.action action="logout">Logout</f:link.action>
+		</f:then>
+		<f:else>
+			<f:translate id="status.logged.out">Logged out</f:translate><br/><f:link.action action="login">Login</f:link.action>
+		</f:else>
+	</f:security.ifAuthenticated>
 </f:section>
 </body>
 </html>
