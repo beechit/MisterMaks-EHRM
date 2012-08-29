@@ -100,6 +100,10 @@ class CompanyPersistenceTest extends \TYPO3\FLOW3\Tests\FunctionalTestCase {
 
 		$this->assertEquals(1, $this->companyRepository->countAll());
 
+		$company = $this->companyRepository->findAll()->getFirst();
+
+		$this->assertEquals(1, $company->getAddresses()->count());
+
 		$this->persistenceManager->clearState();
 	}
 }

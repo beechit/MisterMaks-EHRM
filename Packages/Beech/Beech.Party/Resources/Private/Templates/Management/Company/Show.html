@@ -33,6 +33,16 @@
 		<dt><f:translate id="company.vatNumber">Vat number</f:translate></dt>
 		<dd>{company.vatNumber}&nbsp;</dd>
 
+		<dt>Company addresses</dt>
+		<dd>
+			<ul>
+			<f:for each="{company.addresses}" as="address" iteration="iterator">
+				<li>{address.code}</li>
+			</f:for>
+			</ul>
+			<f:link.action action="newAddress" arguments="{company: company}">Add company address</f:link.action>
+		</dd>
+
 		<dt>Company Contacts</dt>
 		<dd>
 			<ul>

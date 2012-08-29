@@ -201,18 +201,14 @@ class Address {
 	}
 
 	/**
-	 * Set postBox
-	 *
-	 * @param int $postBox
+	 * @param integer $postBox
 	 */
 	public function setPostBox($postBox) {
 		$this->postBox = $postBox;
 	}
 
 	/**
-	 * Get postBox
-	 *
-	 * @return int
+	 * @return integer
 	 */
 	public function getPostBox() {
 		return $this->postBox;

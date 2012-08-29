@@ -58,25 +58,13 @@ class ToDoAspect {
 	public function addToDoAfterCompanyCreate(\TYPO3\FLOW3\AOP\JoinPointInterface $joinPoint) {
 		if ($this->partyAvailableInSecurityContext()) {
 			$company = $joinPoint->getMethodArgument('newCompany');
-
 			$this->createTask('addAddress', $this->currentParty(), 'new', 'management\address', array('company' => $this->persistenceManager->getIdentifierByObject($company)), 100);
-			$this->createTask('addCompanyContact', $this->currentParty(), 'new', 'management\contact', array('company' => $this->persistenceManager->getIdentifierByObject($company)), 50);
 		}
 	}
 
 	/**
 	 * @param \TYPO3\FLOW3\AOP\JoinPointInterface $joinPoint
-	 * @FLOW3\After("method(Beech\Party\Controller\Management\ContactController->createAction())")
-	 * @return void
-	 */
-	public function removeToDoAfterContactCreate(\TYPO3\FLOW3\AOP\JoinPointInterface $joinPoint) {
-		$company = $this->persistenceManager->getIdentifierByObject($joinPoint->getMethodArgument('company'));
-		$this->archiveTask('management\contact', 'new', array('company' => $company));
-	}
-
-	/**
-	 * @param \TYPO3\FLOW3\AOP\JoinPointInterface $joinPoint
-	 * @FLOW3\After("method(Beech\Party\Controller\Management\AddressController->createAction())")
+	 * @FLOW3\After("method(Beech\Party\Controller\Management\CompanyController->createAddressAction())")
 	 * @return void
 	 */
 	public function removeToDoAfterAddressCreate(\TYPO3\FLOW3\AOP\JoinPointInterface $joinPoint) {

@@ -58,7 +58,7 @@ class Company {
 
 	/**
 	 * @var \Doctrine\Common\Collections\Collection<\Beech\Party\Domain\Model\Address>
-	 * @ORM\ManyToMany
+	 * @ORM\ManyToMany(cascade={"persist"})
 	 */
 	protected $addresses;
 
@@ -197,9 +197,7 @@ class Company {
 	}
 
 	/**
-	 * Adds the given address to this company.
-	 *
-	 * @param \Beech\Party\Domain\Model\Address $address The address
+	 * @param \Beech\Party\Domain\Model\Address $address
 	 * @return void
 	 */
 	public function addAddress(\Beech\Party\Domain\Model\Address $address) {

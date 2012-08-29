@@ -1,0 +1,46 @@
+<f:layout name="Default" />
+
+<f:section name="Body">
+	<p>Just fill out the following form to create a new address:</p>
+
+	<f:form action="createAddress" name="newAddress" arguments="{company:company}">
+		<ol>
+			<li>
+				<label for="type">Type</label>
+				<f:form.textfield property="type" id="type" />
+			</li>
+			<li>
+				<label for="code">Code</label>
+				<f:form.textfield property="code" id="code" />
+			</li>
+			<li>
+				<label for="postalCode">Postal code</label>
+				<f:form.textfield property="postalCode" id="postalCode" />
+			</li>
+			<li>
+				<label for="postBox">Postbox</label>
+				<f:form.textfield property="postBox" id="postBox" />
+			</li>
+			<li>
+				<label for="residence">Residence</label>
+				<f:form.textfield property="residence" id="residence" />
+			</li>
+			<li>
+				<label for="street">Street</label>
+				<f:form.textfield property="street" id="street" />
+			</li>
+			<li>
+				<label for="houseNumber">houseNumber</label>
+				<f:form.textfield property="houseNumber" id="houseNumber" />
+			</li>
+			<li>
+				<label for="residence">Description</label>
+				<f:form.textfield property="description" id="description" />
+			</li>
+			<li>
+				<f:form.submit value="Create" />
+			</li>
+		</ol>
+	</f:form>
+</f:section>
+<f:section name="Left" />

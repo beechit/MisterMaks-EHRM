@@ -19,6 +19,12 @@ use Beech\Party\Domain\Model\Company;
 class CompanyController extends \Beech\Ehrm\Controller\AbstractController {
 
 	/**
+	 * @var \Beech\Party\Domain\Repository\AddressRepository
+	 * @FLOW3\Inject
+	 */
+	protected $addressRepository;
+
+	/**
 	 * @var \Beech\Party\Domain\Repository\CompanyRepository
 	 * @FLOW3\Inject
 	 */
@@ -137,6 +143,30 @@ class CompanyController extends \Beech\Ehrm\Controller\AbstractController {
 		$this->redirect('list');
 	}
 
+	/**
+	 * @param \Beech\Party\Domain\Model\Company $company
+	 * @param \Beech\Party\Domain\Model\Address $newAddress
+	 * @return void
+	 */
+	public function newAddressAction(\Beech\Party\Domain\Model\Company $company, \Beech\Party\Domain\Model\Address $newAddress = NULL) {
+		$this->view->assign('company', $company);
+		$this->view->assign('newAddress', $newAddress);
+	}
+
+	/**
+	 * Adds the given new company object to the company repository
+	 *
+	 * @param \Beech\Party\Domain\Model\Company $company The company
+	 * @param \Beech\Party\Domain\Model\Address $newAddress A new address to add
+	 * @return void
+	 */
+	public function createAddressAction(\Beech\Party\Domain\Model\Company $company, \Beech\Party\Domain\Model\Address $newAddress) {
+		$company->addAddress($newAddress);
+		$this->companyRepository->update($company);
+
+		$this->addFlashMessage('Added a new address to the company');
+		$this->redirect('show', 'Management\Company', NULL, array('company' => $company));
+	}
 }
 
 ?>
