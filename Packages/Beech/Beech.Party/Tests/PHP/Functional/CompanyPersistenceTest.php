@@ -28,7 +28,6 @@ class CompanyPersistenceTest extends \TYPO3\FLOW3\Tests\FunctionalTestCase {
 	protected $companyRepository;
 
 	/**
-
 	 */
 	public function setUp() {
 		parent::setUp();
