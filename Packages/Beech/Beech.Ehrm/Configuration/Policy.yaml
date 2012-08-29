@@ -1,10 +1,10 @@
 resources:
   methods:
-    ManagementControllers: 'method(Beech\.*\Management\.*Controller->.*Action())'
-    LogController: 'method(Beech\Ehrm\Controller\LogController->.*Action())'
-    WizardController: 'method(Beech\Ehrm\Controller\WizardController->.*Action())'
-    RestController: 'method(Beech\Ehrm\Controller\RestController->.*Action())'
-    StandardController: 'method(Beech\Ehrm\Controller\StandardController->.*Action())'
+    ManagementControllers: 'method(\Beech\.*\Management\.*Controller->.*Action())'
+    LogController: 'method(\Beech\Ehrm\Controller\LogController->.*Action())'
+    WizardController: 'method(\Beech\Ehrm\Controller\WizardController->.*Action())'
+    RestController: 'method(\Beech\Ehrm\Controller\RestController->.*Action())'
+    StandardController: 'method(\Beech\Ehrm\Controller\StandardController->.*Action())'
 
 roles:
   Administrator: [ User ]
