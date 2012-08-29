@@ -2,6 +2,11 @@ body {
 	padding: 60px;
 }
 
+ul.flashmessages {
+	list-style-type: none;
+	margin-left: 0px;
+}
+
 /* Notifications */
 .midgardNotifications-container, .midgardNotifications-item-outer{
 	z-index:10001;
