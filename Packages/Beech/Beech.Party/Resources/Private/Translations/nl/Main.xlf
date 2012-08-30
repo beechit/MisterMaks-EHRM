@@ -65,6 +65,7 @@
 			<trans-unit id="todo.viewUnarchived">
 				<source>View unarchived items</source>
 				<target>Bekijk niet gearchiveerde items</target>
+			</trans-unit>
 			<trans-unit id="person">
 				<source>Person</source>
 				<target>Persoon</target>
