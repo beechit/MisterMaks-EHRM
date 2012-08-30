@@ -32,50 +32,22 @@ class ActionTest extends \TYPO3\FLOW3\Tests\UnitTestCase {
 	/**
 	 * @return array
 	 */
-	public function invalidTargetArguments() {
+	public function invalidArguments() {
 		return array(
-			array(''),
-			array(intval(9)),
-			array('SomeFoolishWrongNameWhichIsNoClassWithPrependingSlash'),
+				// Argument is invalid, not a class instance
 			array(array()),
-			array(TRUE),
-				// Contains no entity identifier
-			array('\TYPO3\Party\Domain\Model\Person'),
-				// Contains no leading backslash
-			array('TYPO3\Party\Domain\Model\Person:gf82537a-e32c-405c-a7b3-fb8095ae2a03'),
-				// Contains a non-hexadecimal character (the q after Person:)
-			array('\TYPO3\Party\Domain\Model\Person:qf82537a-e32c-405c-a7b3-fb8095ae2a03'),
-		);
-	}
-
-	/**
-	 * @return array
-	 */
-	public function validTargetArguments() {
-		return array(
-			array('\Beech\Ehrm\Foo:7a1f60ac-e32c-405c-a7b3-fb8095ae2a03'),
-			array('\TYPO3\Party\Domain\Model\Person:gf82537a-e32c-405c-a7b3-fb8095ae2a03'),
-			array('\\TYPO3\Party\Domain\Model\Person:gf82537a-e32c-405c-a7b3-fb8095ae2a03'),
+				// Argument is invalid, not a class instance
+			array('\Beech\Party\Domain\Model\Company'),
 		);
 	}
 
 	/**
 	 * @test
-	 * @dataProvider invalidTargetArguments
+	 * @dataProvider invalidArguments
 	 * @expectedException \Beech\WorkFlow\Exception\InvalidArgumentException
 	 */
-	public function actionModelThrowsAnExceptionOnInvalidTargetNames($targetName) {
-		$this->action->setTarget($targetName);
-	}
-
-	/**
-	 * @test
-	 * @dataProvider validTargetArguments
-	 */
-	public function actionModelAcceptsValidTargetNames($targetName) {
-		$this->action->setTarget($targetName);
-		$this->assertEquals($targetName, $this->action->getTargetClassName());
+	public function actionModelThrowsAnExceptionOnInvalidArgument($targetEntity) {
+		$this->action->setTarget($targetEntity);
 	}
 }
-
 ?>

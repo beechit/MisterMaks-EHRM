@@ -9,8 +9,16 @@ namespace Beech\WorkFlow\Core;
 
 use TYPO3\FLOW3\Annotations as FLOW3;
 
+/**
+ */
 interface PreConditionInterface {
 
+	/**
+	 * Determine if a precondition is valid or completed
+	 *
+	 * @abstract
+	 * @return boolean
+	 */
 	public function isMet();
 
 }

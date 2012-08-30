@@ -1,18 +1,18 @@
 <?php
-namespace Beech\WorkFlow\PreConditions;
+namespace Beech\WorkFlow\Validators;
 
 /*
  * This source file is proprietary property of Beech Applications B.V.
- * Date: 27-08-12 22:53
+ * Date: 10-09-2012 22:53
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
 use TYPO3\FLOW3\Annotations as FLOW3;
 
 /**
- * The DatePreCondition allows for checking a Date condition
+ * The DateValidator allows for checking a Date condition
  */
-class DatePreCondition implements \Beech\WorkFlow\Core\PreConditionInterface {
+class DateValidator implements \Beech\WorkFlow\Core\ValidatorInterface {
 
 	const	MATCH_CONDITION_SMALLER_THEN = 0,
 			MATCH_CONDITION_EQUAL = 1,
@@ -32,7 +32,8 @@ class DatePreCondition implements \Beech\WorkFlow\Core\PreConditionInterface {
 	 * @throws \Beech\WorkFlow\Exception\InvalidConfigurationException
 	 * @return boolean
 	 */
-	public function isMet() {
+	public function isValid() {
+
 		if (!$this->getValue() instanceof \DateTime) {
 			throw new \Beech\WorkFlow\Exception\InvalidConfigurationException('Match value has to be an instance of \DateTime');
 		}
@@ -56,7 +57,6 @@ class DatePreCondition implements \Beech\WorkFlow\Core\PreConditionInterface {
 
 	/**
 	 * @param \DateTime $value
-	 * @return void
 	 */
 	public function setValue(\DateTime $value) {
 		$this->value = $value->setTime(0, 0, 0);
@@ -71,7 +71,6 @@ class DatePreCondition implements \Beech\WorkFlow\Core\PreConditionInterface {
 
 	/**
 	 * @param integer $matchCondition
-	 * @return void
 	 */
 	public function setMatchCondition($matchCondition) {
 		$this->matchCondition = $matchCondition;

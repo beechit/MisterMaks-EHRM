@@ -10,14 +10,14 @@ namespace Beech\WorkFlow\Tests\Unit\PreConditions;
 use TYPO3\FLOW3\Annotations as FLOW3;
 
 /**
- *
+ * Unittests for DatePrecondition
  */
 class DatePreConditionTest extends \TYPO3\FLOW3\Tests\UnitTestCase {
 
 	/**
 	 * @return array
 	 */
-	public function testDataProvider() {
+	public function dataProvider() {
 		return array(
 			array(new \DateTime('yesterday'), \Beech\WorkFlow\PreConditions\DatePreCondition::MATCH_CONDITION_SMALLER_THEN, TRUE),
 			array(new \DateTime('yesterday'), \Beech\WorkFlow\PreConditions\DatePreCondition::MATCH_CONDITION_EQUAL, FALSE),
@@ -26,7 +26,7 @@ class DatePreConditionTest extends \TYPO3\FLOW3\Tests\UnitTestCase {
 	}
 
 	/**
-	 * @dataProvider testDataProvider
+	 * @dataProvider dataProvider
 	 * @test
 	 */
 	public function datePreConditionMatchesCorrectly(\DateTime $matchValue, $matchCondition, $expectedValue) {

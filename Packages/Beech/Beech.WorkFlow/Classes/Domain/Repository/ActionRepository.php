@@ -7,7 +7,8 @@ namespace Beech\WorkFlow\Domain\Repository;
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
-use TYPO3\FLOW3\Annotations as FLOW3;
+use TYPO3\FLOW3\Annotations as FLOW3,
+	Beech\WorkFlow\Domain\Model\Action as Action;
 
 /**
  * A repository for Actions
@@ -16,6 +17,19 @@ use TYPO3\FLOW3\Annotations as FLOW3;
  */
 class ActionRepository extends \TYPO3\FLOW3\Persistence\Repository {
 
+	/**
+	 * Get all active actions, which are those with status NEW or status STARTED
+	 *
+	 * @return \TYPO3\FLOW3\Persistence\QueryResultInterface
+	 */
+	public function findActive() {
+		$query = $this->createQuery();
+		return $query->matching(
+			$query->logicalOr(
+				$query->equals('status', Action::STATUS_NEW),
+				$query->equals('status', Action::STATUS_STARTED)
+			)
+		)->execute();
+	}
 }
-
 ?>

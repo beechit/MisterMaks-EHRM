@@ -10,10 +10,15 @@ namespace Beech\WorkFlow\Core;
 use TYPO3\FLOW3\Annotations as FLOW3;
 
 /**
- *
  */
-interface OutputInterface {
+interface OutputHandlerInterface {
 
+	/**
+	 * Execute the output handler class
+	 *
+	 * @abstract
+	 * @return mixed
+	 */
 	public function invoke();
 
 }

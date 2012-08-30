@@ -17,20 +17,19 @@ interface ActionInterface {
 			STATUS_STARTED = 1,
 			STATUS_FINISHED = 2,
 			STATUS_EXPIRED = 3,
-			STATUS_TERMINATED = 4,
-			PATTERN_TARGET_NAME = '#^(\\\[A-Z]{1}[a-zA-Z0-9\_]*){1,}:[a-g0-9\-]{36}$#';
+			STATUS_TERMINATED = 4;
 
 	/**
 	 * @return void
 	 */
-	public function start();
+	public function dispatch();
 
 	/**
-	 * @param string $target
+	 * @param object $targetEntity
+	 * @throws \Beech\WorkFlow\Exception\InvalidArgumentException
 	 * @return void
 	 */
-	public function setTarget($target);
+	public function setTarget($targetEntity);
 
 }
-
 ?>
