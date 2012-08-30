@@ -10,6 +10,14 @@
 				<source>Save</source>
 				<target>Opslaan</target>
 			</trans-unit>
+			<trans-unit id="action.login">
+				<source>Login</source>
+				<target>Log in</target>
+			</trans-unit>
+			<trans-unit id="action.logout">
+				<source>Logout</source>
+				<target>Uitloggen</target>
+			</trans-unit>
 			<trans-unit id="do.task">
 				<source>Do task</source>
 				<target>Taak uitvoeren</target>
@@ -17,6 +25,26 @@
 			<trans-unit id="nothing.to.do">
 				<source>Nothing to do</source>
 				<target>Geen open taken</target>
+			</trans-unit>
+			<trans-unit id="panel.login.legend">
+				<source>Login panel</source>
+				<target>Inloggen</target>
+			</trans-unit>
+			<trans-unit id="panel.login.username">
+				<source>Username</source>
+				<target>Gebruikersnaam</target>
+			</trans-unit>
+			<trans-unit id="panel.login.password">
+				<source>Password</source>
+				<target>Wachtwoord</target>
+			</trans-unit>
+			<trans-unit id="status.logged.in">
+				<source>Logged in</source>
+				<target>Ingelogd</target>
+			</trans-unit>
+			<trans-unit id="status.logged.out">
+				<source>Logged out</source>
+				<target>Uitgelogd</target>
 			</trans-unit>
 		</body>
 	</file>
