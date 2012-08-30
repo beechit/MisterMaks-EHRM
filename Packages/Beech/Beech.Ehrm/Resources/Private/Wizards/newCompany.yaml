@@ -1,0 +1,128 @@
+type: 'TYPO3.Form:Form'
+identifier: company
+label: Company
+renderingOptions:
+    submitButtonLabel: Create
+finishers:
+    -
+        identifier: 'Beech.Ehrm:Database'
+        options:
+            package: Beech.Party
+            model: Company
+renderables:
+    -
+        type: 'TYPO3.Form:Page'
+        identifier: page1
+        label: 'Step 1 - Creating company'
+        renderables:
+            -
+                type: 'TYPO3.Form:SingleLineText'
+                identifier: name
+                label: 'Company name'
+                properties:
+                    placeholder: ''
+                defaultValue: ''
+            -
+                type: 'TYPO3.Form:SingleLineText'
+                identifier: companyNumber
+                label: 'Company number'
+                properties:
+                    placeholder: ''
+                defaultValue: ''
+            -
+                type: 'TYPO3.Form:SingleLineText'
+                identifier: companyType
+                label: 'Company type'
+                properties:
+                    placeholder: ''
+                defaultValue: ''
+            -
+                type: 'TYPO3.Form:SingleLineText'
+                identifier: chamberOfCommerceNumber
+                label: 'Chamber Of Commerce Number'
+                properties:
+                    placeholder: ''
+                defaultValue: ''
+            -
+                type: 'TYPO3.Form:SingleLineText'
+                identifier: legalForm
+                label: 'Legal form'
+                properties:
+                    placeholder: ''
+                defaultValue: ''
+            -
+                type: 'TYPO3.Form:MultiLineText'
+                identifier: description
+                label: Description
+                properties:
+                    placeholder: ''
+                defaultValue: ''
+    -
+        type: 'TYPO3.Form:Page'
+        identifier: page2
+        label: 'Step 2 - Adding address'
+        renderables:
+            -
+                type: 'TYPO3.Form:SingleLineText'
+                identifier: address.postalCode
+                label: 'Postal code'
+                properties:
+                    placeholder: ''
+                defaultValue: ''
+            -
+                type: 'TYPO3.Form:SingleSelectDropdown'
+                identifier: address.type
+                label: 'Adress type'
+                properties:
+                    options:
+                        -
+                            _value: 'Primary address'
+                            _key: PrimaryLiving
+                        -
+                            _value: 'Temporary address'
+                            _key: TemporaryAddress
+                        -
+                            _value: 'Work location'
+                            _key: WorkLocation
+            -
+                type: 'TYPO3.Form:SingleLineText'
+                identifier: address.code
+                label: 'Address code'
+                properties:
+                    placeholder: ''
+                defaultValue: ''
+            -
+                type: 'TYPO3.Form:SingleLineText'
+                identifier: address.street
+                label: Straat
+                properties:
+                    placeholder: ''
+                defaultValue: ''
+            -
+                type: 'TYPO3.Form:SingleLineText'
+                identifier: address.houseNumber
+                label: 'House number'
+                properties:
+                    placeholder: ''
+                defaultValue: ''
+            -
+                type: 'TYPO3.Form:SingleLineText'
+                identifier: address.residence
+                label: Residence
+                properties:
+                    placeholder: ''
+                defaultValue: ''
+            -
+                type: 'TYPO3.Form:SingleLineText'
+                identifier: address.postBox
+                label: 'Post box'
+                properties:
+                    placeholder: ''
+                defaultValue: ''
+            -
+                type: 'TYPO3.Form:MultiLineText'
+                identifier: address.description
+                label: Description
+                properties:
+                    placeholder: ''
+                defaultValue: ''
