@@ -199,6 +199,25 @@ class Address {
 	public function getDescription() {
 		return $this->description;
 	}
+
+	/**
+	 * Set postBox
+	 *
+	 * @param int $postBox
+	 */
+	public function setPostBox($postBox) {
+		$this->postBox = $postBox;
+	}
+
+	/**
+	 * Get postBox
+	 *
+	 * @return int
+	 */
+	public function getPostBox() {
+		return $this->postBox;
+	}
+
 }
 
 ?>
