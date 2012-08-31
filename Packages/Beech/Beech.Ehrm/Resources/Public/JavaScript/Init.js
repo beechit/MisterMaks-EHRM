@@ -40,15 +40,33 @@ require(
 							Notification.initialize();
 							MessageQueue.initialize();
 
-							jQuery.get('rest/todo/1.json', function(data) {
+							jQuery.get('rest/notification/', function(data) {
+								data = jQuery.parseJSON(data);
 
-								jQuery.each(data, function(index, value){
-
-									var actions = [];
-									// TODO: Add localization for 'Do Task'
-									Notification.showDialog('<a href="' + value.executeUrl + '">Do task</a>', actions, 'TODO: ' + value.task, value.priorityTextual);
-
-								});
+								if (data.result.status === 'success') {
+									jQuery.each(data.objects, function(index, value) {
+										Notification.showDialog(
+											value.urls.execute ? '<a href="' + value.urls.execute + '">Do task</a>' : '', // TODO: Add localization for 'Do Task'
+											[],
+											value.sticky ? 0 : 500, // TODO: Check why the timeout doesn't work
+											'Notification: ' + value.label,
+											'normal',
+											value.closeable,
+											function() {
+												console.log('after show callback');
+												jQuery.ajax(
+													'rest/notification/' + value.identifier,
+													{
+														'type': 'DELETE'
+													}
+												);
+											}
+										);
+											// TODO: Add closeable / no
+									});
+								} else {
+									Notification.showError('Communication error');
+								}
 							});
 						}
 					});

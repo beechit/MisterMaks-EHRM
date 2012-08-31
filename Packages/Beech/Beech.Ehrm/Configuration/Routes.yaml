@@ -8,15 +8,6 @@
     '@format': 'html'
 
 -
-  name: 'REST with entity'
-  uriPattern: 'rest/{entity}(/{id})'
-  defaults:
-    '@package': 'Beech.Ehrm'
-    '@controller': 'Rest'
-    '@action': 'index'
-    '@format': 'json'
-
--
   name: 'Wizard'
   uriPattern: 'wizard/{entity}/{id}'
   defaults:

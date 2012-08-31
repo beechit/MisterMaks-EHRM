@@ -18,19 +18,19 @@ define(['jquery', 'emberjs', 'Beech.Ehrm/Library/jquery.midgardNotifications'], 
 			this.set('_timeout', timeout);
 		},
 
-		showInfo: function(bodyMessage, timeout) {
+		showInfo: function(bodyMessage, timeout, callBack) {
 			this._show('Info', bodyMessage, 'alert alert-info', [], timeout);
 		},
 
-		showSuccess: function(bodyMessage, timeout) {
+		showSuccess: function(bodyMessage, timeout, callBack) {
 			this._show('Success', bodyMessage, 'alert alert-success', [], timeout);
 		},
 
-		showError: function(bodyMessage, timeout, removable) {
+		showError: function(bodyMessage, timeout, removable, callBack) {
 			this._show('Error', bodyMessage, 'alert alert-danger', [], timeout, removable);
 		},
 
-		showDialog: function(bodyMessage, actions, timeout, title, priority) {
+		showDialog: function(bodyMessage, actions, timeout, title, priority, removable, callBack) {
 			var className;
 			if (title === undefined) {
 				title = 'Dialog';
@@ -41,14 +41,15 @@ define(['jquery', 'emberjs', 'Beech.Ehrm/Library/jquery.midgardNotifications'], 
 				className = 'alert';
 			}
 
-			this._show(title, bodyMessage, className, actions, timeout);
+			this._show(title, bodyMessage, className, actions, timeout, removable, callBack);
 		},
 
 		createListener: function(element, event, action) {
 			jQuery(element).live(event, action);
 		},
 
-		_show: function(title, bodyMessage, className, actions, timeout, removable) {
+		_show: function(title, bodyMessage, className, actions, timeout, removable, callBack) {
+			console.log(callBack);
 			if (actions === undefined) {
 				actions = [];
 			}
@@ -65,8 +66,9 @@ define(['jquery', 'emberjs', 'Beech.Ehrm/Library/jquery.midgardNotifications'], 
 				callbacks: {
 					beforeShow: function(notify) {
 						var notifyElement = notify.getElement();
-						if (notifyElement.find('.close').length === 0) { //fix for strange bug with double execution of this callback
-							notifyElement.prepend('<button class="close btn">×</button><strong>'+title+'</strong>')
+						if (notifyElement.find('.close').length === 0) {
+								// TODO: fix for strange bug with double execution of this callback
+							notifyElement.prepend('<button class="close btn">×</button><strong>' + title + '</strong>')
 								.addClass(className)
 								.find('button').click(function() {
 									notify.close();
@@ -77,9 +79,15 @@ define(['jquery', 'emberjs', 'Beech.Ehrm/Library/jquery.midgardNotifications'], 
 							}
 						}
 					},
+					afterShow: function() {
+						console.log('after show', callBack);
+						if (callBack) {
+							callBack.call();
+						}
+					},
 						//to prevent default close on click action
 					onClick: function(event) {
-						if ($(event.target).hasClass('close')) {
+						if (jQuery(event.target).hasClass('close')) {
 							return true;
 						}
 						return false;

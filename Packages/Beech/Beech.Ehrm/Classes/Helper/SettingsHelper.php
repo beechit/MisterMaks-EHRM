@@ -38,6 +38,12 @@ class SettingsHelper {
 	protected $bootstrap;
 
 	/**
+	 * @var \Beech\Party\Domain\Repository\ToDoRepository
+	 * @FLOW3\Inject
+	 */
+	protected $toDoRepository;
+
+	/**
 	 * @param array $settings
 	 */
 	public function injectSettings(array $settings) {
@@ -53,6 +59,7 @@ class SettingsHelper {
 		$this->uriBuilder = new \TYPO3\FLOW3\Mvc\Routing\UriBuilder();
 		$this->uriBuilder->setRequest($this->bootstrap->getActiveRequestHandler()->getHttpRequest()->createActionRequest());
 		$this->convertMenuActionsToUrls();
+		$this->appendNumberOfOpenToDos();
 	}
 
 	/**
@@ -80,6 +87,22 @@ class SettingsHelper {
 					$this->convertMenuConfigurationPartToUrls($identifier, $subIdentifier, $defaults);
 				}
 			}
+		}
+	}
+
+	/**
+	 * Appends the outstanding to-do's to the label
+	 *
+	 */
+	protected function appendNumberOfOpenToDos() {
+		foreach ($this->settings['menu'] as $subIdentifier => $configuration) {
+				if (isset($configuration['menu'])) {
+					foreach ($this->settings['menu'][$subIdentifier]['menu'] as $key => $item) {
+						if ($key === 'todo') {
+							$this->settings['menu'][$subIdentifier]['menu']['todo']['label'] .= ' (' . $this->toDoRepository->countByArchivedDateTime(NULL) . ')';
+						}
+					}
+				}
 		}
 	}
 

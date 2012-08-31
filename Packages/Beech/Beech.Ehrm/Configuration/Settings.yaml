@@ -31,6 +31,12 @@ Beech:
             priority: 30
             controller: 'Login'
             action: 'logout'
+          todo:
+            label: 'Todo'
+            priority: 30
+            package: 'Beech.Party'
+            controller: 'management\todo'
+            action: 'index'
           logout:
             label: 'Uitloggen'
             priority: 99
