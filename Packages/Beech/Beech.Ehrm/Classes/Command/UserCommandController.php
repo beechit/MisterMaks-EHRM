@@ -18,20 +18,20 @@ use TYPO3\FLOW3\Annotations as FLOW3;
 class UserCommandController extends \TYPO3\FLOW3\Cli\CommandController {
 
 	/**
-	 * @FLOW3\Inject
 	 * @var \TYPO3\FLOW3\Security\AccountRepository
+	 * @FLOW3\Inject
 	 */
 	protected $accountRepository;
 
 	/**
+	 * @var \Beech\Party\Domain\Repository\PersonRepository
 	 * @FLOW3\Inject
-	 * @var \TYPO3\Party\Domain\Repository\PartyRepository
 	 */
-	protected $partyRepository;
+	protected $personRepository;
 
 	/**
-	 * @FLOW3\Inject
 	 * @var \TYPO3\FLOW3\Security\AccountFactory
+	 * @FLOW3\Inject
 	 */
 	protected $accountFactory;
 
@@ -39,17 +39,24 @@ class UserCommandController extends \TYPO3\FLOW3\Cli\CommandController {
 	 *
 	 * @param string $username Username
 	 * @param string $password Password
+	 * @param string $userName
+	 * @param string $lastName
 	 * @param string $roles Comma separated list of roles
 	 * @return void
 	 */
-	public function createCommand($username, $password, $roles) {
+	public function createCommand($username, $password, $firstName, $lastName, $roles) {
 		$account = $this->accountRepository->findByAccountIdentifierAndAuthenticationProviderName($username, 'DefaultProvider');
 		if ($account instanceof \TYPO3\FLOW3\Security\Account) {
 			$this->outputLine('User "%s" already exists.', array($username));
 			return;
 		}
 
+		$person = new \Beech\Party\Domain\Model\Person();
+		$person->setName(new \TYPO3\Party\Domain\Model\PersonName(NULL, $firstName, NULL, $lastName));
+		$this->personRepository->add($person);
+
 		$account = $this->accountFactory->createAccountWithPassword($username, $password, explode(',', $roles), 'DefaultProvider');
+		$account->setParty($person);
 		$this->accountRepository->add($account);
 		$this->outputLine('Created account "%s".', array($username));
 	}
