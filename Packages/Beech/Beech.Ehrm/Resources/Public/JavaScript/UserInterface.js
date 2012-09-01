@@ -10,12 +10,16 @@ define(['jquery', 'emberjs'], function(jQuery, Ember) {
 		modal: function() {
 			return Ember.Object.create({
 				initialize: function() {
+					var $modal = jQuery('<div></div>').addClass('modal fade').attr('id', 'entityModal');
+					jQuery('section.container').append($modal)
 					jQuery('a[data-toggle=modal]').live('click', function() {
 						var target = jQuery(this).attr('data-target');
 						var url = jQuery(this).attr('href');
+						var content = jQuery('<iframe></iframe>').addClass('modal-body-content').attr('src',url);
+						console.log(content);
 						jQuery(target)
 							.html(jQuery('.loading').html()) // Set default loading content
-							.load(url);
+							.find('.modal-body').html(content);
 					});
 				}
 			});

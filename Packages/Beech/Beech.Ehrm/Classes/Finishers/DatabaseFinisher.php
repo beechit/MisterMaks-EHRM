@@ -11,9 +11,7 @@ use TYPO3\FLOW3\Annotations as FLOW3;
 
 /**
  * This finisher stores a model using user-generated formdata
- *
  * Options:
- *
  * - package (mandatory): Name of the package in which the model can be found (i.e.: Beech\Party)
  * - model (mandatory): The model receiving and storing data (i.e.: Company)
  */
@@ -48,17 +46,31 @@ class DatabaseFinisher extends \TYPO3\Form\Core\Model\AbstractFinisher {
 		}
 
 			// Resolve name and instantiate model and repository
-		$strModel = '\\' . $packageNamespace . '\Domain\Model\\' . ucfirst($modelName);
-		$strRepository = '\\' . $packageNamespace . '\Domain\Repository\\' . ucfirst($modelName) . 'Repository';
+		$modelClassName = '\\' . $packageNamespace . '\Domain\Model\\' . ucfirst($modelName);
+		$repositoryClassName = '\\' . $packageNamespace . '\Domain\Repository\\' . ucfirst($modelName) . 'Repository';
 
-		$model = new $strModel;
-		$repository = new $strRepository;
+		$model = new $modelClassName();
+		$repository = new $repositoryClassName();
 
 			// Map form input to the model and store data
 		foreach ($this->finisherContext->getFormValues() AS $key => $val) {
-			$methodName = 'set' . ucfirst($key);
-			$model->$methodName($val);
+
+			if (is_array($val)) {
+				$subModelClassName = '\\' . $packageNamespace . '\Domain\Model\\' . ucfirst($key);
+				$subModel = new $subModelClassName();
+				foreach ($val as $property => $propertyValue) {
+					$methodName = 'set' . ucfirst($property);
+					$subModel->$methodName($propertyValue);
+				}
+				$methodName = 'add' . ucfirst($key);
+				$model->$methodName($subModel);
+			} else {
+				$methodName = 'set' . ucfirst($key);
+				$model->$methodName($val);
+			}
+
 		}
+
 		$repository->add($model);
 	}
 }
