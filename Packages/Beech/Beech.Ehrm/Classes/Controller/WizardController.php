@@ -14,7 +14,14 @@ use TYPO3\FLOW3\Annotations as FLOW3;
  *
  * @FLOW3\Scope("singleton")
  */
-class WizardController extends \TYPO3\FLOW3\Mvc\Controller\ActionController {
+class WizardController extends AbstractController {
+
+	/**
+	 * @param \TYPO3\FLOW3\Mvc\View\ViewInterface $view
+	 * @return void
+	 */
+	public function initializeView(\TYPO3\FLOW3\Mvc\View\ViewInterface $view) {
+	}
 
 	/**
 	 * Get modal for entity
