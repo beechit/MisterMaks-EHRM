@@ -27,7 +27,7 @@ class StandardController extends AbstractController {
 	 *
 	 */
 	public function indexAction() {
-		$this->view->assign('todos', $this->toDoRepository->findByArchived(FALSE));
+		$this->view->assign('todos', $this->toDoRepository->findAllOpenToDos());
 	}
 }
 

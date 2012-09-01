@@ -3,7 +3,6 @@ namespace Beech\Ehrm\Controller;
 
 /*
  * This source file is proprietary property of Beech Applications B.V.
- * Developer: Karol Kamiński <karol@beech.it>
  * Date: 23-07-12 13:27
  * All code (c) Beech Applications B.V. all rights reserved
  */
@@ -27,7 +26,7 @@ class WizardController extends \TYPO3\FLOW3\Mvc\Controller\ActionController {
 	public function indexAction($entity = NULL, $id = NULL) {
 		$this->view->assign('modalId', $entity . '_' . $id);
 		$this->view->assign('title', ucwords($entity) . ' of ID ' . $id);
-		$this->view->assign('content', 'Content for '. $entity);
+		$this->view->assign('content', 'Content for ' . $entity);
 	}
 
 	/**
