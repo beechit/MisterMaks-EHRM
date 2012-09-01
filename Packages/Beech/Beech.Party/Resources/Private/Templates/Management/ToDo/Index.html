@@ -6,7 +6,7 @@
 			<f:link.action controller="management\todo" action="index"><f:translate id="todo.viewUnarchived">View unarchived items</f:translate></f:link.action>
 		</f:then>
 		<f:else>
-			<f:link.action controller="management\todo" action="index" arguments="{archived: 1}"><f:translate id="todo.viewArchived">View archived items</f:translate><</f:link.action>
+			<f:link.action controller="management\todo" action="index" arguments="{archived: 1}"><f:translate id="todo.viewArchived">View archived items</f:translate></f:link.action>
 		</f:else>
 	</f:if>
 	<f:if condition="{todos}">

@@ -46,6 +46,7 @@ class Person extends \TYPO3\Party\Domain\Model\Person {
 
 	/**
 	 * @var string
+	 * @ORM\Column(nullable=true)
 	 */
 	protected $description;
 

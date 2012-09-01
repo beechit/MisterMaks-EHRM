@@ -97,14 +97,6 @@ class ToDo {
 	protected $archivedDateTime;
 
 	/**
-	 * The url to execute this task
-	 *
-	 * @var string
-	 * @FLOW3\Transient
-	 */
-	public $executeUrl;
-
-	/**
 	 * Construct the object, sets default value for dateTime
 	 */
 	public function __construct() {
@@ -223,15 +215,6 @@ class ToDo {
 	 */
 	public function getTask() {
 		return $this->task;
-	}
-
-	/**
-	 * Returns the url to execute
-	 *
-	 * @return string
-	 */
-	public function getExecuteUrl() {
-		return $this->executeUrl;
 	}
 
 	/**
