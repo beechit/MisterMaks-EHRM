@@ -37,15 +37,31 @@ class ToDoAspect {
 	protected $securityContext;
 
 	/**
+	 * @return \TYPO3\Party\Domain\Model\AbstractParty
+	 */
+	protected function currentParty() {
+		return $this->securityContext->getAccount()->getParty();
+	}
+
+	/**
+	 * @return boolean
+	 */
+	protected function partyAvailableInSecurityContext() {
+		return $this->securityContext->getAccount()->getParty() instanceof \TYPO3\Party\Domain\Model\AbstractParty;
+	}
+
+	/**
 	 * @param \TYPO3\FLOW3\AOP\JoinPointInterface $joinPoint
 	 * @FLOW3\After("method(Beech\Party\Controller\Management\CompanyController->createAction())")
 	 * @return void
 	 */
 	public function addToDoAfterCompanyCreate(\TYPO3\FLOW3\AOP\JoinPointInterface $joinPoint) {
-		$company = $joinPoint->getMethodArgument('newCompany');
+		if ($this->partyAvailableInSecurityContext()) {
+			$company = $joinPoint->getMethodArgument('newCompany');
 
-		$this->createTask('addAddress', $this->securityContext->getAccount()->getParty(), 'new', 'management\address', array('company' => $this->persistenceManager->getIdentifierByObject($company)), 100);
-		$this->createTask('addCompanyContact', $this->securityContext->getAccount()->getParty(), 'new', 'management\contact', array('company' => $this->persistenceManager->getIdentifierByObject($company)), 50);
+			$this->createTask('addAddress', $this->currentParty(), 'new', 'management\address', array('company' => $this->persistenceManager->getIdentifierByObject($company)), 100);
+			$this->createTask('addCompanyContact', $this->currentParty(), 'new', 'management\contact', array('company' => $this->persistenceManager->getIdentifierByObject($company)), 50);
+		}
 	}
 
 	/**
@@ -77,13 +93,13 @@ class ToDoAspect {
 	 * @param integer $priority Priority of this task 0-100
 	 * @return void
 	 */
-	private function createTask($task, \TYPO3\Party\Domain\Model\AbstractParty $owner, $action, $controller, $arguments, $priority) {
+	protected function createTask($task, \TYPO3\Party\Domain\Model\AbstractParty $owner, $action, $controller, $arguments, $priority) {
 		$todo = new \Beech\Party\Domain\Model\ToDo();
 
 		$todo->setTask($task);
 		$todo->setAction($action);
 		$todo->setOwner($owner);
-		$todo->setStarter($this->securityContext->getAccount()->getParty());
+		$todo->setStarter($this->currentParty());
 		$todo->setController($controller);
 		$todo->setArguments(serialize($arguments));
 		$todo->setPriority($priority);
@@ -97,7 +113,7 @@ class ToDoAspect {
 	 * @param array $arguments The arguments
 	 * @return void
 	 */
-	private function archiveTask($controller, $action, $arguments) {
+	protected function archiveTask($controller, $action, $arguments) {
 		$arguments = serialize($arguments);
 		$this->toDoRepository->archiveTask($controller, $action, $arguments);
 	}

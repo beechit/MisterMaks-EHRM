@@ -40,5 +40,13 @@ class ToDoRepository extends \TYPO3\FLOW3\Persistence\Repository {
 		}
 	}
 
+	/**
+	 * @return \TYPO3\FLOW3\Persistence\QueryResultInterface
+	 */
+	public function findAllOpenToDos() {
+		$query = $this->createQuery();
+		return $query->matching('archived', FALSE)->execute();
+	}
+
 }
 ?>

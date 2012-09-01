@@ -83,7 +83,7 @@ class ToDo {
 	protected $controller;
 
 	/**
-	 * True is task is finished
+	 * True if task is finished
 	 *
 	 * @var boolean
 	 */
@@ -303,11 +303,19 @@ class ToDo {
 	}
 
 	/**
+	 * @return boolean
+	 */
+	public function getArchived() {
+		return $this->archived;
+	}
+
+	/**
 	 * Set the archived dateTime
 	 *
+	 * @param \DateTime $archivedDateTime
 	 * @return void
 	 */
-	public function setArchivedDateTime($archivedDateTime) {
+	public function setArchivedDateTime(\DateTime $archivedDateTime) {
 		$this->archivedDateTime = $archivedDateTime;
 	}
 
@@ -318,13 +326,6 @@ class ToDo {
 	 */
 	public function getArchivedDateTime() {
 		return $this->archivedDateTime;
-	}
-
-	/**
-	 * @return boolean
-	 */
-	public function getArchived() {
-		return $this->archived;
 	}
 
 }
