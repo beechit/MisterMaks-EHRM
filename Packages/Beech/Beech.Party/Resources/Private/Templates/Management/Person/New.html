@@ -3,33 +3,40 @@
 <f:section name="Body">
 	<p><f:translate id="action.new">New</f:translate> <f:translate id="person">person</f:translate></p>
 
-	<f:form action="create" name="newPerson">
-		<ol>
-			<li>
-				<label for="name.firstName"><f:translate id="person.firstName">First name</f:translate></label>
+	<f:form action="create" name="newPerson" class="form-horizontal well">
+		<div class="control-group">
+			<label class="control-label" for="name.firstName"><f:translate id="person.firstName">First name</f:translate></label>
+			<div class="controls">
 				<f:form.textfield property="name.firstName" id="name.firstName" />
-			</li>
-			<li>
-				<label for="name.lastName"><f:translate id="person.lastName">Last name</f:translate></label>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="name.lastName"><f:translate id="person.lastName">Last name</f:translate></label>
+			<div class="controls">
 				<f:form.textfield property="name.lastName" id="name.lastName" />
-			</li>
-			<li>
-				<label for="email"><f:translate id="person.email">Email</f:translate></label>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="email"><f:translate id="person.email">Email</f:translate></label>
+			<div class="controls">
 				<f:form.textfield name="email" id="email" />
-			</li>
-			<li>
-				<label for="phone"><f:translate id="person.phone">Phone</f:translate></label>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="phone"><f:translate id="person.phone">Phone</f:translate></label>
+			<div class="controls">
 				<f:form.textfield name="phone" id="phone" />
-			</li>
-			<li>
-				<label for="description"><f:translate id="person.description">Description</f:translate></label>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="description"><f:translate id="person.description">Description</f:translate></label>
+			<div class="controls">
 				<f:form.textfield property="description" id="description" />
-			</li>
-
-			<li>
-				<f:form.submit value="{f:translate(id: 'action.create')}" />
-			</li>
-		</ol>
+			</div>
+		</div>
+		<div class="form-actions">
+			<f:form.submit value="{f:translate(id: 'action.create')}" />
+		</div>
 	</f:form>
 </f:section>
 

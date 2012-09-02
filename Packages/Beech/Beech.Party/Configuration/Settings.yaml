@@ -3,7 +3,15 @@ Beech:
     modules:
       admin:
         menu:
-          company:
+          companyNew:
+            label: 'Bedrijf'
+            priority: 20
+            menuGroup: 'main:new'
+            package: 'Beech.Party'
+            controller: 'Management\Company'
+            resource: 'ManagementControllers'
+            action: 'new'
+          companyList:
             label: 'Bedrijven'
             priority: 20
             menuGroup: 'main:manage'
@@ -11,7 +19,7 @@ Beech:
             controller: 'Management\Company'
             resource: 'ManagementControllers'
             action: 'list'
-          person:
+          personList:
             label: 'Personen'
             priority: 30
             menuGroup: 'main:manage'
@@ -23,9 +31,15 @@ Beech:
     menu:
       account:
         menu:
+          todo:
+            label: 'Todo'
+            priority: 30
+            package: 'Beech.Party'
+            controller: 'management\todo'
+            action: 'index'
+
           settings:
             label: 'Instellingen'
             priority: 20
-            package: 'Beech.Party'
-            controller: 'Management\Company'
-            action: 'list'
+            controller: 'Setup'
+            action: 'index'
