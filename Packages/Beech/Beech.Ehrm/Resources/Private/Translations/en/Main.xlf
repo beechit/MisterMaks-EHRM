@@ -17,8 +17,8 @@
 			<trans-unit id="do.task">
 				<source>Do task</source>
 			</trans-unit>
-			<trans-unit id="nothing.to.do">
-				<source>Nothing to do</source>
+			<trans-unit id="No.active.tasks">
+				<source>No active tasks</source>
 			</trans-unit>
 			<trans-unit id="panel.login.legend">
 				<source>Login panel</source>
