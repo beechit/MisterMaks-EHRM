@@ -1,111 +1,150 @@
 <?xml version="1.0"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-	<file original="" source-language="en" target-language="en" datatype="plaintext">
+	<file original="" source-language="en" target-language="pl" datatype="plaintext">
 		<body>
 			<trans-unit id="company">
 				<source>Company</source>
+				<target>Firma</target>
 			</trans-unit>
 			<trans-unit id="lead.new.company">
 				<source>Fill out the following form to create a new company</source>
+				<target>Aby stworzyc profil firmowy wypelnij ponizszy formularz</target>
 			</trans-unit>
 			<trans-unit id="company.name">
 				<source>Company name</source>
+				<target>Nazwa firmy</target>
 			</trans-unit>
 			<trans-unit id="company.number">
 				<source>Company number</source>
+				<target>Numer firmy</target>
 			</trans-unit>
 			<trans-unit id="company.type">
 				<source>Company Type</source>
+				<target>Typ firmy</target>
 			</trans-unit>
 			<trans-unit id="company.description">
 				<source>Description</source>
+				<target>Opis</target>
 			</trans-unit>
 			<trans-unit id="company.phone">
 				<source>Phone</source>
+				<target>Telefon</target>
 			</trans-unit>
 			<trans-unit id="company.website">
 				<source>Website</source>
+				<target>Strona www</target>
 			</trans-unit>
 			<trans-unit id="company.legalForm">
 				<source>Legal form</source>
+				<target>Forma prawna</target>
 			</trans-unit>
 			<trans-unit id="company.wageTaxNumber">
 				<source>Wage tax number</source>
+				<target>Loonheffingsnummer</target>
 			</trans-unit>
 			<trans-unit id="company.chamberOfCommerceNumber">
 				<source>Chamber of commerce number</source>
+				<target>Numer REGON</target>
 			</trans-unit>
 			<trans-unit id="company.vatNumber">
 				<source>VAT number</source>
-			</trans-unit>
-			<trans-unit id="todo.viewArchived">
-				<source>View archived items</source>
+				<target>Numer NIP</target>
 			</trans-unit>
 			<trans-unit id="department.name">
 				<source>Department name</source>
+				<target>Nazwa dzialu</target>
 			</trans-unit>
 			<trans-unit id="message.company.noResult">
 				<source>No company created yet</source>
+				<target>Brak firm w systemie</target>
+			</trans-unit>
+			<trans-unit id="todo.viewArchived">
+				<source>View archived items</source>
+				<target>Pokaz zarchiwizowane zadania</target>
 			</trans-unit>
 			<trans-unit id="person">
 				<source>Person</source>
+				<target>Osoby</target>
 			</trans-unit>
 			<trans-unit id="person.firstName">
 				<source>First name</source>
+				<target>Imie</target>
 			</trans-unit>
 			<trans-unit id="person.lastName">
 				<source>Last name</source>
+				<target>Nazwisko</target>
 			</trans-unit>
 			<trans-unit id="person.email">
 				<source>Email</source>
+				<target>Email</target>
 			</trans-unit>
 			<trans-unit id="person.phone">
 				<source>Phone</source>
+				<target>Telefon</target>
 			</trans-unit>
 			<trans-unit id="person.description">
 				<source>Description</source>
+				<target>Opis</target>
+			</trans-unit>
+			<trans-unit id="message.person.noResult">
+				<source>No people created yet</source>
+				<target>Brak osob w systemie</target>
 			</trans-unit>
 			<trans-unit id="action">
 				<source>Action</source>
+				<target>Akcja</target>
 			</trans-unit>
 			<trans-unit id="action.new">
 				<source>New</source>
+				<target>Nowy</target>
 			</trans-unit>
 			<trans-unit id="action.create">
 				<source>Create</source>
+				<target>Stworz</target>
 			</trans-unit>
 			<trans-unit id="action.show">
 				<source>Show</source>
+				<target>Pokaz</target>
 			</trans-unit>
 			<trans-unit id="action.edit">
 				<source>Edit</source>
+				<target>Edytuj</target>
 			</trans-unit>
 			<trans-unit id="action.save">
 				<source>Save</source>
+				<target>Zapisz</target>
 			</trans-unit>
 			<trans-unit id="action.update">
 				<source>Update</source>
+				<target>Zaktualizuj</target>
 			</trans-unit>
 			<trans-unit id="action.cancel">
 				<source>Cancel</source>
+				<target>Anuluj</target>
 			</trans-unit>
 			<trans-unit id="action.close">
 				<source>Close</source>
+				<target>Zamknij</target>
 			</trans-unit>
 			<trans-unit id="action.back">
 				<source>Back</source>
+				<target>Wroc</target>
 			</trans-unit>
 			<trans-unit id="action.newDepartment">
 				<source>Create new department</source>
+				<target>Nowy dzial</target>
 			</trans-unit>
 			<trans-unit id="flashmessage.newDepartment">
 				<source>Created new department</source>
+				<target>Dodano nowy dzial</target>
 			</trans-unit>
 			<trans-unit id="flashmessage.updatedCompany">
 				<source>CompanyData updated</source>
+				<target>Dane firmy zostaly zaaktualizowane</target>
 			</trans-unit>
 			<trans-unit id="flashmessage.deletedCompany">
 				<source>Companydata deleted</source>
+				<target>Firma zostala usunieta</target>
 			</trans-unit>
 		</body>
 	</file>

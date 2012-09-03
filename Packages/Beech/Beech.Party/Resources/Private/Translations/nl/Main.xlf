@@ -55,16 +55,12 @@
 				<target>Naam departement</target>
 			</trans-unit>
 			<trans-unit id="message.company.noResult">
-				<source>No companies created yet</source>
+				<source>No company created yet</source>
 				<target>Nog geen bedrijf aangemaakt</target>
 			</trans-unit>
 			<trans-unit id="todo.viewArchived">
 				<source>View archived items</source>
 				<target>Bekijk gearchiveerde items</target>
-			</trans-unit>
-			<trans-unit id="todo.viewUnarchived">
-				<source>View unarchived items</source>
-				<target>Bekijk niet gearchiveerde items</target>
 			</trans-unit>
 			<trans-unit id="person">
 				<source>Person</source>
@@ -135,7 +131,7 @@
 				<target>Terug</target>
 			</trans-unit>
 			<trans-unit id="action.newDepartment">
-				<source>New department</source>
+				<source>Create new department</source>
 				<target>Nieuw afdeling</target>
 			</trans-unit>
 			<trans-unit id="flashmessage.newDepartment">
@@ -143,12 +139,12 @@
 				<target>Nieuw afdeling aangemaakt</target>
 			</trans-unit>
 			<trans-unit id="flashmessage.updatedCompany">
-				<source>Updated the company</source>
-				<target>Bedrijf bijgewerkt</target>
+				<source>CompanyData updated</source>
+				<target>Bedrijfsgegevens bijgewerkt</target>
 			</trans-unit>
 			<trans-unit id="flashmessage.deletedCompany">
-				<source>Deleted the company</source>
-				<target>Bedrijf verwijderd</target>
+				<source>Companydata deleted</source>
+				<target>Bedrijfsgegevens verwijderd</target>
 			</trans-unit>
 		</body>
 	</file>
