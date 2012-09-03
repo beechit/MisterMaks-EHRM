@@ -16,37 +16,35 @@ use TYPO3\FLOW3\Annotations as FLOW3;
 class ToDoRepository extends \TYPO3\FLOW3\Persistence\Repository {
 
 	/**
-	 * @param string $controller
-	 * @param string $action
-	 * @param string $arguments serialized array of arguments
+	 * @var \Beech\Party\Domain\Repository\NotificationRepository
+	 * @FLOW3\Inject
+	 */
+	protected $notificationRepository;
+
+	/**
+	 * @param \Beech\Party\Domain\Model\ToDo $toDo
 	 * @return void
 	 */
-	public function archiveTask($controller, $action, $arguments) {
-		$query = $this->createQuery();
+	public function archiveToDo(\Beech\Party\Domain\Model\ToDo $toDo) {
+		$toDo->setArchived();
 
-		$object = $query->matching(
-			$query->logicalAnd(
-				array(
-					$query->equals('controller', $controller),
-					$query->equals('action', $action),
-					$query->equals('arguments', $arguments)
-				)
-			)
-		)->execute()->getFirst();
-
-		if (isset($object) && $object instanceof \Beech\Party\Domain\Model\ToDo) {
-			$object->setArchived(TRUE);
-			$this->update($object);
-		}
+		$this->update($toDo);
+		$this->notificationRepository->deleteByToDo($toDo);
 	}
 
 	/**
+	 * @param $controllerName
+	 * @param $controllerAction
+	 * @param $controllerArgument
 	 * @return \TYPO3\FLOW3\Persistence\QueryResultInterface
 	 */
-	public function findAllOpenToDos() {
+	public function findByControllerActionAndArguments($controllerName, $controllerAction, $controllerArguments) {
 		$query = $this->createQuery();
-		return $query->matching('archived', FALSE)->execute();
+		$query->matching($query->logicalAnd($query->equals('controllerName', $controllerName),
+											$query->equals('controllerAction', $controllerAction),
+											$query->equals('controllerArguments', $controllerArguments)
+											));
+		return $query->execute()->getFirst();
 	}
-
 }
 ?>

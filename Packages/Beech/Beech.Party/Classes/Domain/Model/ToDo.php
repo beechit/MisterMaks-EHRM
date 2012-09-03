@@ -31,6 +31,30 @@ class ToDo {
 	protected $task;
 
 	/**
+	 * The controllername to complete this task
+	 *
+	 * @var string
+	 * @ORM\Column(nullable=true)
+	 */
+	protected $controllerName;
+
+	/**
+	 * The actionname to complete this task
+	 *
+	 * @var string
+	 * @ORM\Column(nullable=true)
+	 */
+	protected $controllerAction;
+
+	/**
+	 * The arguments to complete this task
+	 *
+	 * @var string
+	 * @ORM\Column(nullable=true)
+	 */
+	protected $controllerArguments;
+
+	/**
 	 * The task owner
 	 *
 	 * @var \Beech\Party\Domain\Model\Person
@@ -62,34 +86,6 @@ class ToDo {
 	protected $priority;
 
 	/**
-	 * The arguments for this task
-	 *
-	 * @var string
-	 */
-	protected $arguments;
-
-	/**
-	 * The action
-	 *
-	 * @var string
-	 */
-	protected $action;
-
-	/**
-	 * The controller
-	 *
-	 * @var string
-	 */
-	protected $controller;
-
-	/**
-	 * True if task is finished
-	 *
-	 * @var boolean
-	 */
-	protected $archived;
-
-	/**
 	 * The datetime the task is archived
 	 * @var \DateTime
 	 * @ORM\Column(nullable=true)
@@ -97,11 +93,27 @@ class ToDo {
 	protected $archivedDateTime;
 
 	/**
+	 * Is true if a user may archive an item
+	 *
+	 * @var boolean
+	 */
+	protected $userMayArchive;
+
+	/**
+	 * The url to execute this task
+	 *
+	 * @var \Doctrine\Common\Collections\ArrayCollection<\Beech\Party\Domain\Model\Notification>
+	 * @ORM\OneToMany(mappedBy="todo",cascade={"persist"})
+	 */
+	protected $notifications;
+
+	/**
 	 * Construct the object, sets default value for dateTime
 	 */
 	public function __construct() {
 		$this->dateTime = new \DateTime();
-		$this->dateTime->modify('now');
+
+		$this->notifications = new \Doctrine\Common\Collections\ArrayCollection();
 	}
 
 	/**
@@ -129,6 +141,18 @@ class ToDo {
 	 */
 	public function getPriority() {
 		return $this->priority;
+	}
+
+	/**
+	 * Returns the priorities
+	 *
+	 * @return array
+	 */
+	public static function getPriorities() {
+		return array(	100 => self::PRIORITY_VERY_HIGH,
+						75 => self::PRIORITY_HIGH,
+						50 => self::PRIORITY_NORMAL,
+						25 => self::PRIORITY_LOW);
 	}
 
 	/**
@@ -218,78 +242,12 @@ class ToDo {
 	}
 
 	/**
-	 * Sets the action
-	 *
-	 * @param string $action
-	 * @return void
-	 */
-	public function setAction($action) {
-		$this->action = $action;
-	}
-
-	/**
-	 * Returns the action
-	 *
-	 * @return string
-	 */
-	public function getAction() {
-		return $this->action;
-	}
-
-	/**
-	 * Sets the controller
-	 *
-	 * @param string $controller
-	 * @return void
-	 */
-	public function setController($controller) {
-		$this->controller = $controller;
-	}
-
-	/**
-	 * Returns the controller
-	 *
-	 * @return string
-	 */
-	public function getController() {
-		return $this->controller;
-	}
-
-	/**
-	 * Serialized array with arguments
-	 *
-	 * @param string $arguments
-	 * @return void
-	 */
-	public function setArguments($arguments) {
-		$this->arguments = $arguments;
-	}
-
-	/**
-	 * Returns array with arguments
-	 *
-	 * @return array
-	 */
-	public function getArguments() {
-		return unserialize($this->arguments);
-	}
-
-	/**
 	 * Archive the task
 	 *
-	 * @param boolean $archived
 	 * @return void
 	 */
-	public function setArchived($archived) {
-		$this->archived = $archived;
+	public function setArchived() {
 		$this->setArchivedDateTime(new \DateTime());
-	}
-
-	/**
-	 * @return boolean
-	 */
-	public function getArchived() {
-		return $this->archived;
 	}
 
 	/**
@@ -309,6 +267,93 @@ class ToDo {
 	 */
 	public function getArchivedDateTime() {
 		return $this->archivedDateTime;
+	}
+
+	/**
+	 * Adds an notification to the current to-do.
+	 *
+	 * @param \Beech\Party\Domain\Model\Notification $notification
+	 * @return void
+	 */
+	public function addNotification(\Beech\Party\Domain\Model\Notification $notification) {
+		$notification->setToDo($this);
+		$this->notifications->add($notification);
+	}
+
+	/**
+	 * Sets the controllerName
+	 *
+	 * @param string $controllerName
+	 * @return void
+	 */
+	public function setControllerName($controllerName) {
+		$this->controllerName = $controllerName;
+	}
+
+	/**
+	 * Returns the controllerName
+	 *
+	 * @return string
+	 */
+	public function getControllerName() {
+		return $this->controllerName;
+	}
+
+	/**
+	 * Sets the controllerAction
+	 *
+	 * @param string $controllerAction
+	 * @return void
+	 */
+	public function setControllerAction($controllerAction) {
+		$this->controllerAction = $controllerAction;
+	}
+
+	/**
+	 * Returns the controllerAction
+	 *
+	 * @return string
+	 */
+	public function getControllerAction() {
+		return $this->controllerAction;
+	}
+
+	/**
+	 * Sets the controllerArguments
+	 *
+	 * @param string $controllerArguments
+	 * @return void
+	 */
+	public function setControllerArguments($controllerArguments) {
+		$this->controllerArguments = $controllerArguments;
+	}
+
+	/**
+	 * Returns the controllerArguments
+	 *
+	 * @return string
+	 */
+	public function getControllerArguments() {
+		return unserialize($this->controllerArguments);
+	}
+
+	/**
+	 * Sets userMayArchive
+	 *
+	 * @param boolean $userMayArchive
+	 * @return void
+	 */
+	public function setUserMayArchive($userMayArchive) {
+		$this->userMayArchive = $userMayArchive;
+	}
+
+	/**
+	 * Returns userMayArchive
+	 *
+	 * @return boolean
+	 */
+	public function getUserMayArchive() {
+		return $this->userMayArchive;
 	}
 
 }

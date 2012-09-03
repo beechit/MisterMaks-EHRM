@@ -58,18 +58,21 @@ class ToDoAspect {
 	public function addToDoAfterCompanyCreate(\TYPO3\FLOW3\AOP\JoinPointInterface $joinPoint) {
 		if ($this->partyAvailableInSecurityContext()) {
 			$company = $joinPoint->getMethodArgument('newCompany');
-			$this->createTask('addAddress', $this->currentParty(), 'new', 'management\address', array('company' => $this->persistenceManager->getIdentifierByObject($company)), 100);
+			$this->createToDo('addAddress', $this->currentParty(), 'newAddress', 'management\company', serialize(array('company' => $this->persistenceManager->getIdentifierByObject($company))), 100, TRUE);
 		}
 	}
+
+
 
 	/**
 	 * @param \TYPO3\FLOW3\AOP\JoinPointInterface $joinPoint
 	 * @FLOW3\After("method(Beech\Party\Controller\Management\CompanyController->createAddressAction())")
 	 * @return void
 	 */
-	public function removeToDoAfterAddressCreate(\TYPO3\FLOW3\AOP\JoinPointInterface $joinPoint) {
+	public function archiveToDoAfterAddressCreate(\TYPO3\FLOW3\AOP\JoinPointInterface $joinPoint) {
 		$company = $this->persistenceManager->getIdentifierByObject($joinPoint->getMethodArgument('company'));
-		$this->archiveTask('management\address', 'new', array('company' => $company));
+		$toDo = $this->toDoRepository->findByControllerActionAndArguments('management\company', 'newAddress', serialize(array('company' => $company)));
+		$this->toDoRepository->archiveToDo($toDo);
 	}
 
 	/**
@@ -79,31 +82,37 @@ class ToDoAspect {
 	 * @param string $controller The controller to execute
 	 * @param array $arguments The arguments
 	 * @param integer $priority Priority of this task 0-100
+	 * @param string $controllerName The controller name
+	 * @param string $controllerAction The controller action
+	 * @param string $controllerArgument The controller arguments
+	 * @param boolean $userMayArchive True if user is allowed to archive this task manual
 	 * @return void
 	 */
-	protected function createTask($task, \TYPO3\Party\Domain\Model\AbstractParty $owner, $action, $controller, $arguments, $priority) {
+	private function createToDo($task, \TYPO3\Party\Domain\Model\AbstractParty $owner, $controllerAction, $controllerName, $controllerArgument, $priority, $userMayArchive) {
 		$todo = new \Beech\Party\Domain\Model\ToDo();
 
-		$todo->setTask($task);
-		$todo->setAction($action);
-		$todo->setOwner($owner);
-		$todo->setStarter($this->currentParty());
-		$todo->setController($controller);
-		$todo->setArguments(serialize($arguments));
-		$todo->setPriority($priority);
+		$notification = new \Beech\Party\Domain\Model\Notification();
+		$notification->setLabel($task);
+		$notification->setSticky(TRUE);
+		$notification->setCloseable(TRUE);
+		$notification->setParty($this->currentParty());
 
+		$todo = new \Beech\Party\Domain\Model\ToDo();
+		$todo->setTask($task);
+		$todo->setOwner($owner);
+
+		if ($this->partyAvailableInSecurityContext()) {
+			$todo->setStarter($this->currentParty());
+		}
+
+		$todo->setPriority($priority);
+		$todo->setControllerName($controllerName);
+		$todo->setControllerAction($controllerAction);
+		$todo->setControllerArguments($controllerArgument);
+		$todo->setUserMayArchive($userMayArchive);
+		$todo->addNotification($notification);
 		$this->toDoRepository->add($todo);
 	}
 
-	/**
-	 * @param string $controller The controller
-	 * @param string $action The action
-	 * @param array $arguments The arguments
-	 * @return void
-	 */
-	protected function archiveTask($controller, $action, $arguments) {
-		$arguments = serialize($arguments);
-		$this->toDoRepository->archiveTask($controller, $action, $arguments);
-	}
 }
 ?>

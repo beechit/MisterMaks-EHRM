@@ -158,6 +158,38 @@
 				<source>Companydata deleted</source>
 				<target>Bedrijfsgegevens verwijderd</target>
 			</trans-unit>
+			<trans-unit id="notification.addAddress">
+				<source>Add address to company</source>
+				<target>Voeg adresgegevens toe aan het bedrijf</target>
+			</trans-unit>
+			<trans-unit id="notification.addCompanyContact">
+				<source>Add company contact</source>
+				<target>Voeg een contactpersoon toe</target>
+			</trans-unit>
+			<trans-unit id="toDo.status">
+				<source>Status</source>
+				<target>Status</target>
+			</trans-unit>
+			<trans-unit id="toDo.priority">
+				<source>Priority</source>
+				<target>Prioriteit</target>
+			</trans-unit>
+			<trans-unit id="toDo.task">
+				<source>Task</source>
+				<target>Taak</target>
+			</trans-unit>
+			<trans-unit id="toDo.doTask">
+				<source>Do task</source>
+				<target>Taak uitvoeren</target>
+			</trans-unit>
+			<trans-unit id="toDo.archiveTask">
+				<source>Archive task</source>
+				<target>Taak archiveren</target>
+			</trans-unit>
+			<trans-unit id="toDo.noToDo">
+				<source>No todo's</source>
+				<target>Geen taken</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

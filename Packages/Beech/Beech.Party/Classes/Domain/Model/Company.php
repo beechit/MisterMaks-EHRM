@@ -201,6 +201,10 @@ class Company {
 	 * @return void
 	 */
 	public function addAddress(\Beech\Party\Domain\Model\Address $address) {
+		if (!isset($this->addresses) && !$this->addresses instanceof \Doctrine\Common\Collections\Collection) {
+				// TODO: find out why a __clone method called on a non-object is thrown
+			$this->addresses = new \Doctrine\Common\Collections\ArrayCollection();
+		}
 		$this->addresses->add($address);
 	}
 
@@ -223,7 +227,11 @@ class Company {
 	 * @return \Doctrine\Common\Collections\Collection<\Beech\Party\Domain\Model\Address>
 	 */
 	public function getAddresses() {
-		return clone $this->addresses;
+		if (isset($this->addresses) && $this->addresses instanceof \Doctrine\Common\Collections\Collection) {
+			return clone $this->addresses;
+		}
+			// TODO: find out why a __clone method called on a non-object is thrown
+		return new \Doctrine\Common\Collections\ArrayCollection();
 	}
 
 	/**

@@ -1,36 +1,40 @@
-<f:layout name="Default" />
+{namespace ehrm=Beech\Ehrm\ViewHelpers}
+<f:layout name="Default"/>
 
 <f:section name="Body">
-	<f:if condition="{archived}">
-		<f:then>
-			<f:link.action controller="management\todo" action="index"><f:translate id="todo.viewUnarchived">View unarchived items</f:translate></f:link.action>
-		</f:then>
-		<f:else>
-			<f:link.action controller="management\todo" action="index" arguments="{archived: 1}"><f:translate id="todo.viewArchived">View archived items</f:translate></f:link.action>
-		</f:else>
-	</f:if>
 	<f:if condition="{todos}">
 		<f:then>
 			<table class="table">
 				<tr>
-					<th>Priority</th>
-					<th>Task</th>
+					<th><f:translate id="toDo.status">Status</f:translate></th>
+					<th><f:translate id="toDo.priority">Priority</f:translate></th>
+					<th><f:translate id="toDo.task">Task</f:translate></th>
 					<th></th>
 				</tr>
 				<f:for each="{todos}" as="todo">
-					<f:if condition="{archived}">
+					<f:if condition="{todo.archivedDateTime}">
 						<f:then>
 						<tr>
+							<td><i class="icon-ok"></i>&nbsp;
+								<f:format.date format="d.m.Y - H:i:s">{todo.archivedDateTime}</f:format.date></td>
 							<td>{todo.priorityTextual}</td>
 							<td>{todo.task}</td>
-							<td><f:format.date format="d.m.Y - H:i:s">{todo.archivedDateTime}</f:format.date></td>
+							<td></td>
 						</tr>
 						</f:then>
 						<f:else>
 						<tr>
+							<td><i class="icon-arrow-right"></i>&nbsp;
+								<f:if condition="{todo.controllerArguments}">
+									<ehrm:link.action controller="{todo.controllerName}" action="{todo.controllerAction}" arguments="{todo.controllerArguments}"><f:translate id="toDo.doTask">Do task</f:translate></ehrm:link.action>
+								</f:if>
+							</td>
 							<td>{todo.priorityTextual}</td>
 							<td>{todo.task}</td>
-							<td><f:link.action controller="{todo.controller}" action="{todo.action}" arguments="{todo.arguments}">DO</f:link.action></td>
+							<td>
+							<f:if condition="{todo.userMayArchive}">
+								<f:link.action action="userArchive" arguments="{toDo: todo}"><f:translate id="toDo.archiveTask">Archive task</f:translate></f:link.action>
+							</f:if></td>
 						</tr>
 						</f:else>
 					</f:if>
@@ -38,9 +42,16 @@
 			</table>
 		</f:then>
 		<f:else>
-			<p>Nothing to do.</p>
+			<p><f:translate id="toDo.noToDo">Nothing to do.</f:translate></p>
 		</f:else>
 	</f:if>
+	<div>
+		<f:form action="create" name="newToDo" class="form-horizontal well">
+			<f:form.textfield property="task" id="task" placeholder="Task"/>
+			<f:form.select property="priority" options="{priorities}" />
+			<f:form.submit value="{f:translate(id: 'action.create')}" class="btn btn-primary"/>
+		</f:form>
+	</div>
 </f:section>
 
 <f:section name="Left" />

@@ -4,7 +4,7 @@
   defaults:
     '@package': 'Beech.Party'
     '@controller': 'Rest\Notification'
-    '@action': 'index'
+    '@action': 'list'
     '@format': 'json'
 
 -
@@ -13,7 +13,7 @@
   defaults:
     '@package': 'Beech.Party'
     '@controller': 'Rest\Notification'
-    '@action': 'index'
+    '@action': 'delete'
     '@format': 'json'
 
 -
@@ -24,7 +24,7 @@
     '@controller': 'Management\Company'
     '@action': 'list'
     '@format': 'html'
-
+  appendExceedingArguments: true
 -
   name: 'Person management with format'
   uriPattern: 'management/person/{@action}(.{@format})'

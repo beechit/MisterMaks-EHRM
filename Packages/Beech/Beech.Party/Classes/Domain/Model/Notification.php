@@ -3,7 +3,7 @@ namespace Beech\Party\Domain\Model;
 
 /*
  * This source file is proprietary property of Beech Applications B.V.
- * Date: 01-09-12 12:25
+ * Date: 04-09-12 12:25
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
@@ -41,6 +41,12 @@ class Notification {
 	 * @var boolean
 	 */
 	protected $sticky;
+
+	/**
+	 * @var \Beech\Party\Domain\Model\ToDo
+	 * @ORM\ManyToOne(inversedBy="notifications")
+	 */
+	protected $toDo;
 
 	/**
 	 * Get the Notification's label
@@ -116,6 +122,25 @@ class Notification {
 	 */
 	public function setSticky($sticky) {
 		$this->sticky = $sticky;
+	}
+
+	/**
+	 * Sets the todo
+	 *
+	 * @param \Beech\Party\Domain\Model\ToDo $toDo
+	 * @return void
+	 */
+	public function setToDo(\Beech\Party\Domain\Model\ToDo $toDo) {
+		$this->toDo = $toDo;
+	}
+
+	/**
+	 * Returns the todo
+	 *
+	 * @return \Beech\Party\Domain\Model\ToDo
+	 */
+	public function getToDo() {
+		return $this->toDo;
 	}
 
 }

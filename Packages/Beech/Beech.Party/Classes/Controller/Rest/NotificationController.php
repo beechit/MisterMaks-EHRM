@@ -9,6 +9,10 @@ namespace Beech\Party\Controller\Rest;
 
 use TYPO3\FLOW3\Annotations as FLOW3;
 
+/**
+ * Notification Resy controller for the Beech.Party package
+ *
+ */
 class NotificationController extends \TYPO3\FLOW3\Mvc\Controller\RestController {
 
 	/**
@@ -24,13 +28,21 @@ class NotificationController extends \TYPO3\FLOW3\Mvc\Controller\RestController 
 	protected $securityContext;
 
 	/**
-	 * @return void
+	 * @var \TYPO3\FLOW3\I18n\Translator
+	 * @FLOW3\Inject
+	 */
+	protected $translator;
+
+	/**
+	 * @return mixed
 	 */
 	public function listAction() {
 		$currentParty = $this->securityContext->getAccount()->getParty();
 		if (!$currentParty instanceof \TYPO3\Party\Domain\Model\AbstractParty) {
 			return json_encode((object)array('result' => (object) array('status' => 'error')));
 		}
+
+			// ToDo Localize notification labels
 
 		$this->view->assign(
 			'notifications',
@@ -40,7 +52,7 @@ class NotificationController extends \TYPO3\FLOW3\Mvc\Controller\RestController 
 
 	/**
 	 * @param \Beech\Party\Domain\Model\Notification $resource
-	 * @return void
+	 * @return string
 	 */
 	public function deleteAction(\Beech\Party\Domain\Model\Notification $resource) {
 		$currentParty = $this->securityContext->getAccount()->getParty();
@@ -48,7 +60,9 @@ class NotificationController extends \TYPO3\FLOW3\Mvc\Controller\RestController 
 				|| $currentParty !== $resource->getParty()) {
 			return json_encode((object)array('result' => (object) array('status' => 'error')));
 		}
+
 		$this->notificationRepository->remove($resource);
+
 		return json_encode((object)array('result' => (object) array('status' => 'success')));
 	}
 
