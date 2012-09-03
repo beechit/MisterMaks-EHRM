@@ -50,6 +50,14 @@
 				<source>VAT number</source>
 				<target>Numer NIP</target>
 			</trans-unit>
+			<trans-unit id="company.address">
+				<source>Company addresses</source>
+				<target>Adresy firmy</target>
+			</trans-unit>
+			<trans-unit id="company.contacts">
+				<source>Company contacts</source>
+				<target>Kontakty firmy</target>
+			</trans-unit>
 			<trans-unit id="department.name">
 				<source>Department name</source>
 				<target>Nazwa dzialu</target>
@@ -87,7 +95,7 @@
 				<target>Opis</target>
 			</trans-unit>
 			<trans-unit id="message.person.noResult">
-				<source>No people created yet</source>
+				<source>No employees added yet</source>
 				<target>Brak osob w systemie</target>
 			</trans-unit>
 			<trans-unit id="action">
@@ -133,6 +141,10 @@
 			<trans-unit id="action.newDepartment">
 				<source>Create new department</source>
 				<target>Nowy dzial</target>
+			</trans-unit>
+			<trans-unit id="action.add.company.address">
+				<source>Add company address</source>
+				<target>Dodaj adres firmy</target>
 			</trans-unit>
 			<trans-unit id="flashmessage.newDepartment">
 				<source>Created new department</source>

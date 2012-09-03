@@ -38,6 +38,9 @@
 			<trans-unit id="company.vatNumber">
 				<source>VAT number</source>
 			</trans-unit>
+			<trans-unit id="company.addresses">
+				<source>Company addresses</source>
+			</trans-unit>
 			<trans-unit id="todo.viewArchived">
 				<source>View archived items</source>
 			</trans-unit>
@@ -97,6 +100,9 @@
 			</trans-unit>
 			<trans-unit id="action.newDepartment">
 				<source>Create new department</source>
+			</trans-unit>
+			<trans-unit id="action.add.company.address">
+				<source>Add company address</source>
 			</trans-unit>
 			<trans-unit id="flashmessage.newDepartment">
 				<source>Created new department</source>

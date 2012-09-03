@@ -50,6 +50,14 @@
 				<source>VAT number</source>
 				<target>BTW nummer</target>
 			</trans-unit>
+			<trans-unit id="company.addresses">
+				<source>Company addresses</source>
+				<target>Bedrijfsadres</target>
+			</trans-unit>
+			<trans-unit id="company.contacts">
+				<source>Company contacts</source>
+				<target>Bedrijfscontacten</target>
+			</trans-unit>
 			<trans-unit id="department.name">
 				<source>Department name</source>
 				<target>Naam departement</target>
@@ -87,8 +95,8 @@
 				<target>Omschrijving</target>
 			</trans-unit>
 			<trans-unit id="message.person.noResult">
-				<source>No people created yet</source>
-				<target>Nog geen personen aangemaakt</target>
+				<source>No employees added yet</source>
+				<target>Nog geen medewerkers aangemaakt</target>
 			</trans-unit>
 			<trans-unit id="action">
 				<source>Action</source>
@@ -133,6 +141,10 @@
 			<trans-unit id="action.newDepartment">
 				<source>Create new department</source>
 				<target>Nieuw afdeling</target>
+			</trans-unit>
+			<trans-unit id="action.add.company.address">
+				<source>Add company address</source>
+				<target>Voeg bedrijfsadres toe</target>
 			</trans-unit>
 			<trans-unit id="flashmessage.newDepartment">
 				<source>Created new department</source>
