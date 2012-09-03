@@ -22,7 +22,7 @@
 				<source>Do task</source>
 				<target>Wykonaj zadanie</target>
 			</trans-unit>
-			<trans-unit id="No.active.tasks">
+			<trans-unit id="no.active.tasks">
 				<source>No active tasks</source>
 				<target>Brak zadan</target>
 			</trans-unit>
