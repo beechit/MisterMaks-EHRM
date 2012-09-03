@@ -15,11 +15,11 @@ define(['jquery', 'emberjs'], function(jQuery, Ember) {
 					jQuery('a[data-toggle=modal]').live('click', function() {
 						var target = jQuery(this).attr('data-target');
 						var url = jQuery(this).attr('href');
-						var content = jQuery('<iframe></iframe>').addClass('modal-body-content').attr('src',url);
-						console.log(content);
+						var content = jQuery('<iframe onLoad="contentLoadFinisher()"></iframe>').addClass('modal-body-content').attr('src',url);
 						jQuery(target)
 							.html(jQuery('.loading').html()) // Set default loading content
-							.find('.modal-body').html(content);
+							.find('.modal-body')
+							.html(content);
 					});
 				}
 			});

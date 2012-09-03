@@ -15,7 +15,19 @@
 				};
 			]]>
 		</script>
+		<script>
+			function setModalTitle(modal, title) {
 
+			}
+			function getContentTitle() {
+				return $('.modal-body-content').contents().find('legend');
+			}
+			function contentLoadFinisher() {
+				console.log($(this).find('legend'));
+				var contentTitle = getContentTitle();
+
+			}
+		</script>
 		<script data-main="{f:uri.resource(path: 'JavaScript/Init.js', package: 'Beech.Ehrm')}" src="{f:uri.resource(path: 'JavaScript/require.js', package: 'Beech.Ehrm')}"></script>
 
 	</head>
