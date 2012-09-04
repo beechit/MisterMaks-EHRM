@@ -19,6 +19,7 @@ class Company {
 	 *
 	 * @var string
 	 * @FLOW3\Validate(type="NotEmpty", validationGroups={"Controller"})
+	 *
 	 */
 	protected $name;
 
@@ -27,6 +28,7 @@ class Company {
 	 *
 	 * @var string
 	 * @FLOW3\Validate(type="NotEmpty", validationGroups={"Controller"})
+	 * @ORM\Column(nullable=TRUE)
 	 */
 	protected $companyNumber;
 
@@ -34,6 +36,7 @@ class Company {
 	 * The company type
 	 *
 	 * @var string
+	 * @ORM\Column(nullable=TRUE)
 	 */
 	protected $companyType;
 
@@ -41,6 +44,7 @@ class Company {
 	 * The company description
 	 *
 	 * @var string
+	 * @ORM\Column(nullable=TRUE)
 	 */
 	protected $description;
 
@@ -95,6 +99,7 @@ class Company {
 	 *
 	 * @var string
 	 * @FLOW3\Validate(type="NotEmpty", validationGroups={"Controller"})
+	 * @ORM\Column(nullable=TRUE)
 	 */
 	protected $chamberOfCommerceNumber;
 
@@ -102,6 +107,7 @@ class Company {
 	 * The legal form
 	 *
 	 * @var string
+	 * @ORM\Column(nullable=TRUE)
 	 */
 	protected $legalForm;
 

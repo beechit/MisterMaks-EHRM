@@ -30,6 +30,8 @@ class Address {
 
 	/**
 	 * @var string
+	 * @FLOW3\Validate(type="NotEmpty", validationGroups={"Controller"})
+	 * @ORM\Column(nullable=TRUE)
 	 */
 	protected $code;
 
@@ -37,7 +39,7 @@ class Address {
 	 * @var string
 	 * @FLOW3\Validate(type="Alphanumeric")
 	 * @FLOW3\Validate(type="StringLength", options={ "minimum"=1, "maximum"=30 })
-	 * @ORM\Column(length=30)
+	 * @ORM\Column(nullable=TRUE, length=30)
 	 */
 	protected $type;
 
@@ -45,6 +47,7 @@ class Address {
 	 * The postal code
 	 *
 	 * @var string
+	 * @ORM\Column(nullable=TRUE)
 	 */
 	protected $postalCode;
 
@@ -52,6 +55,7 @@ class Address {
 	 * The post box
 	 *
 	 * @var integer
+	 * @ORM\Column(nullable=TRUE)
 	 */
 	protected $postBox;
 
@@ -59,6 +63,7 @@ class Address {
 	 * The residence
 	 *
 	 * @var integer
+	 * @ORM\Column(nullable=TRUE)
 	 */
 	protected $residence;
 
@@ -66,6 +71,7 @@ class Address {
 	 * The street
 	 *
 	 * @var string
+	 * @ORM\Column(nullable=TRUE)
 	 */
 	protected $street;
 
@@ -73,11 +79,13 @@ class Address {
 	 * The house number
 	 *
 	 * @var integer
+	 * @ORM\Column(nullable=TRUE)
 	 */
 	protected $houseNumber;
 
 	/**
 	 * @var string
+	 * @ORM\Column(nullable=TRUE)
 	 */
 	protected $description;
 
