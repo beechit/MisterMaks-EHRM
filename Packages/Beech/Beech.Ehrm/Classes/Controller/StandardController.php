@@ -24,10 +24,17 @@ class StandardController extends AbstractController {
 	protected $toDoRepository;
 
 	/**
+	 * @var \TYPO3\FLOW3\Security\Context
+	 * @FLOW3\Inject
+	 */
+	protected $securityContext;
+
+	/**
 	 *
 	 */
 	public function indexAction() {
-		$this->view->assign('todos', $this->toDoRepository->findAllOpenToDos());
+		$owner = $this->securityContext->getAccount()->getParty();
+		$this->view->assign('todos', $this->toDoRepository->findByOwner($owner));
 	}
 }
 
