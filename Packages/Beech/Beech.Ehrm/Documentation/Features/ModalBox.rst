@@ -36,3 +36,4 @@ Suggestion/TODO
 ===============
 Some parts could be extended in the future:
  * make usage more simple, maybe by moving container of modal and container with default content to layout template
+ * create a dynamic Title based on the process that started the wizard.

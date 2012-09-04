@@ -20,6 +20,9 @@
 			<trans-unit id="action.submit">
 				<source>Submit</source>
 			</trans-unit>
+			<trans-unit id="Loading">
+				<source>Mister Maks</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

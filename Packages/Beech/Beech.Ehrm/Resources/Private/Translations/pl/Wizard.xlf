@@ -26,6 +26,10 @@
 				<source>Submit</source>
 				<target>Zapisz</target>
 			</trans-unit>
+			<trans-unit id="Loading">
+				<source>Mister Maks</source>
+				<target>Mister Maks</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
