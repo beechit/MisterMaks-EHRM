@@ -33,8 +33,11 @@ class StandardController extends AbstractController {
 	 *
 	 */
 	public function indexAction() {
-		$owner = $this->securityContext->getAccount()->getParty();
-		$this->view->assign('todos', $this->toDoRepository->findByOwner($owner));
+		$ownerAccount = $this->securityContext->getAccount();
+		if ($ownerAccount instanceof \TYPO3\FLOW3\Security\Account) {
+			$owner = $ownerAccount->getParty();
+			$this->view->assign('todos', $this->toDoRepository->findByOwner($owner));
+		}
 	}
 }
 
