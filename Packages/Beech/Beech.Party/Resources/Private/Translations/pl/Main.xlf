@@ -198,6 +198,10 @@
 				<source>Companydata deleted</source>
 				<target>Firma zostala usunieta</target>
 			</trans-unit>
+			<trans-unit id="loading">
+				<source>Mister Maks</source>
+				<target>Mister Maks</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

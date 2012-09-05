@@ -167,6 +167,9 @@
 			<trans-unit id="toDo.noToDo">
 				<source>No todo's</source>
 			</trans-unit>
+			<trans-unit id="loading">
+				<source>Mister Maks</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
