@@ -164,6 +164,7 @@ class CompanyController extends \Beech\Ehrm\Controller\AbstractController {
 	public function createAddressAction(\Beech\Party\Domain\Model\Company $company, \Beech\Party\Domain\Model\Address $newAddress) {
 		$this->addressRepository->add($newAddress);
 		$company->addAddress($newAddress);
+		$this->companyRepository->update($company);
 		$this->addFlashMessage('Added a new address to the company');
 		$this->redirect('show', 'Management\Company', NULL, array('company' => $company));
 	}
