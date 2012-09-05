@@ -22,6 +22,9 @@ renderables:
                 properties:
                     placeholder: ''
                 defaultValue: ''
+                validators:
+                    -
+                        identifier: 'TYPO3.FLOW3:NotEmpty'
             -
                 type: 'TYPO3.Form:SingleLineText'
                 identifier: chamberOfCommerceNumber
@@ -29,13 +32,9 @@ renderables:
                 properties:
                     placeholder: ''
                 defaultValue: ''
-            -
-                type: 'TYPO3.Form:SingleLineText'
-                identifier: legalForm
-                label: 'Legal form'
-                properties:
-                    placeholder: ''
-                defaultValue: ''
+                validators:
+                    -
+                        identifier: 'TYPO3.FLOW3:NotEmpty'
     -
         type: 'TYPO3.Form:Page'
         identifier: page2
@@ -43,18 +42,14 @@ renderables:
         renderables:
             -
                 type: 'TYPO3.Form:SingleLineText'
-                identifier: address.postalCode
-                label: 'Postal code'
-                properties:
-                    placeholder: ''
-                defaultValue: ''
-            -
-                type: 'TYPO3.Form:SingleLineText'
                 identifier: address.street
                 label: Straat
                 properties:
                     placeholder: ''
                 defaultValue: ''
+                validators:
+                    -
+                        identifier: 'TYPO3.FLOW3:Text'
             -
                 type: 'TYPO3.Form:SingleLineText'
                 identifier: address.houseNumber
@@ -62,6 +57,9 @@ renderables:
                 properties:
                     placeholder: ''
                 defaultValue: ''
+                validators:
+                    -
+                        identifier: 'TYPO3.FLOW3:Integer'
             -
                 type: 'TYPO3.Form:SingleLineText'
                 identifier: address.residence
@@ -69,3 +67,6 @@ renderables:
                 properties:
                     placeholder: ''
                 defaultValue: ''
+                validators:
+                    -
+                        identifier: 'TYPO3.FLOW3:Text'
