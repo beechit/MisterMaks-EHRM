@@ -106,6 +106,10 @@
 				<source>No company created yet</source>
 				<target>Nog geen bedrijf aangemaakt</target>
 			</trans-unit>
+			<trans-unit id="message.department.noResult">
+				<source>No department created yet</source>
+				<target>Nog geen afdeling aangemaakt</target>
+			</trans-unit>
 			<trans-unit id="todo.viewArchived">
 				<source>View archived items</source>
 				<target>Bekijk gearchiveerde items</target>

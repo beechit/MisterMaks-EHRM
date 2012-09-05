@@ -80,6 +80,9 @@
 			<trans-unit id="message.company.noResult">
 				<source>No company created yet</source>
 			</trans-unit>
+			<trans-unit id="message.department.noResult">
+				<source>No department created yet</source>
+			</trans-unit>
 			<trans-unit id="person">
 				<source>Person</source>
 			</trans-unit>

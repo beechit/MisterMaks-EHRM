@@ -42,7 +42,7 @@ class CompanyController extends \Beech\Ehrm\Controller\AbstractController {
 	 * @return void
 	 */
 	public function listAction() {
-		$this->view->assign('companies', $this->companyRepository->findAll());
+		$this->view->assign('companies', $this->companyRepository->findByParentCompany(NULL));
 	}
 
 	/**
