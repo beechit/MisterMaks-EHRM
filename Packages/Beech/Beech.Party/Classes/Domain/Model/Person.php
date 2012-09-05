@@ -59,6 +59,16 @@ class Person extends \TYPO3\Party\Domain\Model\Person {
 	}
 
 	/**
+	 * Adds the person name to this person.
+	 *
+	 * @param \TYPO3\Party\Domain\Model\PersonName $personName The person name
+	 * @return void
+	 */
+	public function addPersonName(\TYPO3\Party\Domain\Model\PersonName $personName) {
+		$this->name = $personName;
+	}
+
+	/**
 	 * Adds the given email to this person.
 	 *
 	 * @param string $email Email
