@@ -230,6 +230,10 @@
 				<source>No todo's</source>
 				<target>Geen taken</target>
 			</trans-unit>
+			<trans-unit id="loading">
+				<source>Mister Maks</source>
+				<target>Mister Maks</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
