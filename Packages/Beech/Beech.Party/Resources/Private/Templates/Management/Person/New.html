@@ -2,7 +2,13 @@
 
 <f:section name="Body">
 	<p><f:translate id="action.new">New</f:translate> <f:translate id="person">person</f:translate></p>
-
+	<f:form.validationResults for="person">
+		<f:if condition="{validationResults.flattenedErrors}">
+			<div class="error">
+				<f:for each="{validationResults.flattenedErrors}" key="propertyPath" as="errors">{propertyPath}: <f:for each="{errors}" as="error">{error}</f:for></f:for>
+			</div>
+		</f:if>
+	</f:form.validationResults>
 	<f:form action="create" name="newPerson" class="form-horizontal well">
 		<div class="control-group">
 			<label class="control-label" for="name.firstName"><f:translate id="person.firstName">First name</f:translate></label>

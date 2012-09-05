@@ -1,6 +1,13 @@
 <f:layout name="Default" />
 
 <f:section name="Body">
+	<f:form.validationResults for="person">
+		<f:if condition="{validationResults.flattenedErrors}">
+			<div class="error">
+				<f:for each="{validationResults.flattenedErrors}" key="propertyPath" as="errors">{propertyPath}: <f:for each="{errors}" as="error">{error}</f:for></f:for>
+			</div>
+		</f:if>
+	</f:form.validationResults>
 	<f:form action="update" object="{person}" name="person" class="form-horizontal well">
 		<div class="control-group">
 			<label class="control-label" for="name.firstName"><f:translate id="person.firstName">First name</f:translate></label>
