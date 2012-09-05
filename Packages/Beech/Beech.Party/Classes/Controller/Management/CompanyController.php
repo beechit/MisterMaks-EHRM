@@ -31,7 +31,7 @@ class CompanyController extends \Beech\Ehrm\Controller\AbstractController {
 	protected $companyRepository;
 
 	/**
-	 * @var \TYPO3\FLOW3\I18n\Translator
+	 * @var \Beech\Party\I18n\Translator
 	 * @FLOW3\Inject
 	 */
 	protected $translator;
@@ -96,7 +96,7 @@ class CompanyController extends \Beech\Ehrm\Controller\AbstractController {
 	public function addDepartmentAction(Company $newDepartment, Company $company) {
 		$newDepartment->setParentCompany($company);
 		$this->companyRepository->add($newDepartment);
-		$this->addFlashMessage($this->translator->translateById('flashmessage.newDepartment'));
+		$this->addFlashMessage($this->translator->translateId('flashmessage.newDepartment'));
 		$this->redirect('list');
 	}
 
@@ -119,7 +119,7 @@ class CompanyController extends \Beech\Ehrm\Controller\AbstractController {
 	 */
 	public function updateAction(Company $company) {
 		$this->companyRepository->update($company);
-		$this->addFlashMessage($this->translator->translateById('flashmessage.updatedCompany'));
+		$this->addFlashMessage($this->translator->translateId('flashmessage.updatedCompany'));
 		$this->redirect('list');
 	}
 
@@ -131,7 +131,7 @@ class CompanyController extends \Beech\Ehrm\Controller\AbstractController {
 	 */
 	public function deleteAction(\Beech\Party\Domain\Model\Company $company) {
 		$this->companyRepository->remove($company);
-		$this->addFlashMessage($this->translator->translateById('flashmessage.deletedCompany'));
+		$this->addFlashMessage($this->translator->translateId('flashmessage.deletedCompany'));
 		$this->redirect('list');
 	}
 

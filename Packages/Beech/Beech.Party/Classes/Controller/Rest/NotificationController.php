@@ -28,7 +28,7 @@ class NotificationController extends \TYPO3\FLOW3\Mvc\Controller\RestController 
 	protected $securityContext;
 
 	/**
-	 * @var \TYPO3\FLOW3\I18n\Translator
+	 * @var \Beech\Party\I18n\Translator
 	 * @FLOW3\Inject
 	 */
 	protected $translator;
@@ -42,11 +42,17 @@ class NotificationController extends \TYPO3\FLOW3\Mvc\Controller\RestController 
 			return json_encode((object)array('result' => (object) array('status' => 'error')));
 		}
 
-			// ToDo Localize notification labels
+		$notifications = $this->notificationRepository->findByParty($currentParty);
+		$notificationArray = array();
+		foreach ($notifications as $notification) {
+			$labelTranslated = $this->translator->translateId('notification.' . $notification->getLabel());
+			$notification->setLabel($labelTranslated);
+			$notificationArray[] = $notification;
+		}
 
 		$this->view->assign(
 			'notifications',
-			$this->notificationRepository->findByParty($currentParty)
+			$notificationArray
 		);
 	}
 
