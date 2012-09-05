@@ -30,7 +30,6 @@ class Address {
 
 	/**
 	 * @var string
-	 * @FLOW3\Validate(type="NotEmpty", validationGroups={"Controller"})
 	 * @ORM\Column(nullable=TRUE)
 	 */
 	protected $code;
@@ -54,7 +53,7 @@ class Address {
 	/**
 	 * The post box
 	 *
-	 * @var integer
+	 * @var string
 	 * @ORM\Column(nullable=TRUE)
 	 */
 	protected $postBox;
@@ -62,7 +61,7 @@ class Address {
 	/**
 	 * The residence
 	 *
-	 * @var integer
+	 * @var string
 	 * @ORM\Column(nullable=TRUE)
 	 */
 	protected $residence;

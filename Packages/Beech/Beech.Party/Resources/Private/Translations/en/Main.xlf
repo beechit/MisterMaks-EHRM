@@ -8,6 +8,12 @@
 			<trans-unit id="lead.new.company">
 				<source>Fill out the following form to create a new company</source>
 			</trans-unit>
+			<trans-unit id="lead.edit.company">
+				<source>Use the following form to edit a company</source>
+			</trans-unit>
+			<trans-unit id="lead.new.address">
+				<source>Fill out the following form to create a new address</source>
+			</trans-unit>
 			<trans-unit id="company.name">
 				<source>Company name</source>
 			</trans-unit>
@@ -40,6 +46,30 @@
 			</trans-unit>
 			<trans-unit id="company.addresses">
 				<source>Company addresses</source>
+			</trans-unit>
+			<trans-unit id="address.type">
+				<source>Type</source>
+			</trans-unit>
+			<trans-unit id="address.code">
+				<source>Code</source>
+			</trans-unit>
+			<trans-unit id="address.postalCode">
+				<source>Postal code</source>
+			</trans-unit>
+			<trans-unit id="address.postBox">
+				<source>Postbox</source>
+			</trans-unit>
+			<trans-unit id="address.residence">
+				<source>Residence</source>
+			</trans-unit>
+			<trans-unit id="address.street">
+				<source>Street</source>
+			</trans-unit>
+			<trans-unit id="address.houseNumber">
+				<source>House number</source>
+			</trans-unit>
+			<trans-unit id="address.description">
+				<source>Description</source>
 			</trans-unit>
 			<trans-unit id="todo.viewArchived">
 				<source>View archived items</source>

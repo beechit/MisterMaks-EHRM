@@ -10,6 +10,14 @@
 				<source>Fill out the following form to create a new company</source>
 				<target>Aby stworzyc profil firmowy wypelnij ponizszy formularz</target>
 			</trans-unit>
+			<trans-unit id="lead.edit.company">
+				<source>Use the following form to edit a company</source>
+				<target>Use the following form to edit a company</target>
+			</trans-unit>
+			<trans-unit id="lead.new.address">
+				<source>Fill out the following form to create a new address</source>
+				<target>Fill out the following form to create a new address</target>
+			</trans-unit>
 			<trans-unit id="company.name">
 				<source>Company name</source>
 				<target>Nazwa firmy</target>
@@ -57,6 +65,38 @@
 			<trans-unit id="company.contacts">
 				<source>Company contacts</source>
 				<target>Kontakty firmy</target>
+			</trans-unit>
+			<trans-unit id="address.type">
+				<source>Type</source>
+				<target>Typ</target>
+			</trans-unit>
+			<trans-unit id="address.code">
+				<source>Code</source>
+				<target>Code</target>
+			</trans-unit>
+			<trans-unit id="address.postalCode">
+				<source>Postal code</source>
+				<target>Postal code</target>
+			</trans-unit>
+			<trans-unit id="address.postBox">
+				<source>Postbox</source>
+				<target>Postbox</target>
+			</trans-unit>
+			<trans-unit id="address.residence">
+				<source>Residence</source>
+				<target>Residence</target>
+			</trans-unit>
+			<trans-unit id="address.street">
+				<source>Street</source>
+				<target>Street</target>
+			</trans-unit>
+			<trans-unit id="address.houseNumber">
+				<source>House number</source>
+				<target>House number</target>
+			</trans-unit>
+			<trans-unit id="address.description">
+				<source>Description</source>
+				<target>Opis</target>
 			</trans-unit>
 			<trans-unit id="department.name">
 				<source>Department name</source>

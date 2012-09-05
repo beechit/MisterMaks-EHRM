@@ -37,7 +37,7 @@
 		<dd>
 			<ul>
 			<f:for each="{company.addresses}" as="address" iteration="iterator">
-				<li>{address.code}</li>
+				<li>{address.street} {address.housenumber} {address.residence}</li>
 			</f:for>
 			</ul>
 			<f:link.action action="newAddress" arguments="{company: company}"><f:translate id="action.add.company.address">Add company address</f:translate></f:link.action>

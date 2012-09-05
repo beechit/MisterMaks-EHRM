@@ -19,7 +19,6 @@ class Company {
 	 *
 	 * @var string
 	 * @FLOW3\Validate(type="NotEmpty", validationGroups={"Controller"})
-	 *
 	 */
 	protected $name;
 
@@ -27,7 +26,6 @@ class Company {
 	 * The company number
 	 *
 	 * @var string
-	 * @FLOW3\Validate(type="NotEmpty", validationGroups={"Controller"})
 	 * @ORM\Column(nullable=TRUE)
 	 */
 	protected $companyNumber;
@@ -99,7 +97,6 @@ class Company {
 	 *
 	 * @var string
 	 * @FLOW3\Validate(type="NotEmpty", validationGroups={"Controller"})
-	 * @ORM\Column(nullable=TRUE)
 	 */
 	protected $chamberOfCommerceNumber;
 

@@ -2,7 +2,14 @@
 
 <f:section name="Body">
 	<h1><f:translate id="action.edit">Edit</f:translate> "{company.name}"</h1>
-
+	<p><f:translate id="lead.edit.company">Use the following form to edit a company</f:translate>:</p>
+	<f:form.validationResults for="company">
+		<f:if condition="{validationResults.flattenedErrors}">
+			<div class="error">
+				<f:for each="{validationResults.flattenedErrors}" key="propertyPath" as="errors">{propertyPath}: <f:for each="{errors}" as="error">{error}</f:for></f:for>
+			</div>
+		</f:if>
+	</f:form.validationResults>
 	<f:form action="update" object="{company}" name="company" class="form-horizontal well">
 		<div class="control-group">
 			<label class="control-label" for="name"><f:translate id="company.name">Company name</f:translate></label>

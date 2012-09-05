@@ -10,6 +10,14 @@
 				<source>Fill out the following form to create a new company</source>
 				<target>Gebruik het volgende formulier om een nieuw bedrijf aan te maken</target>
 			</trans-unit>
+			<trans-unit id="lead.edit.company">
+				<source>Use the following form to edit a company</source>
+				<target>Gebruik het volgende formulier om een bedrijf te wijzigen</target>
+			</trans-unit>
+			<trans-unit id="lead.new.address">
+				<source>Fill out the following form to create a new address</source>
+				<target>Gebruik het volgende formulier om een nieuw adres aan te maken</target>
+			</trans-unit>
 			<trans-unit id="company.name">
 				<source>Company name</source>
 				<target>Bedrijfsnaam</target>
@@ -57,6 +65,38 @@
 			<trans-unit id="company.contacts">
 				<source>Company contacts</source>
 				<target>Bedrijfscontacten</target>
+			</trans-unit>
+			<trans-unit id="address.type">
+				<source>Type</source>
+				<target>Type</target>
+			</trans-unit>
+			<trans-unit id="address.code">
+				<source>Code</source>
+				<target>Code</target>
+			</trans-unit>
+			<trans-unit id="address.postalCode">
+				<source>Postal code</source>
+				<target>Postcode</target>
+			</trans-unit>
+			<trans-unit id="address.postBox">
+				<source>Postbox</source>
+				<target>Postbus</target>
+			</trans-unit>
+			<trans-unit id="address.residence">
+				<source>Residence</source>
+				<target>Woonplaats</target>
+			</trans-unit>
+			<trans-unit id="address.street">
+				<source>Street</source>
+				<target>Straat</target>
+			</trans-unit>
+			<trans-unit id="address.houseNumber">
+				<source>House number</source>
+				<target>Huisnummer</target>
+			</trans-unit>
+			<trans-unit id="address.description">
+				<source>Description</source>
+				<target>Omschrijving</target>
 			</trans-unit>
 			<trans-unit id="department.name">
 				<source>Department name</source>
