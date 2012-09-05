@@ -57,7 +57,11 @@ class DatabaseFinisher extends \TYPO3\Form\Core\Model\AbstractFinisher {
 
 			if (is_array($val)) {
 				$subModelClassName = '\\' . $packageNamespace . '\Domain\Model\\' . ucfirst($key);
+				if (!class_exists($subModelClassName)) {
+					$subModelClassName = '\\TYPO3\\Party\\Domain\\Model\\' . ucfirst($key);
+				}
 				$subModel = new $subModelClassName();
+
 				foreach ($val as $property => $propertyValue) {
 					$methodName = 'set' . ucfirst($property);
 					$subModel->$methodName($propertyValue);

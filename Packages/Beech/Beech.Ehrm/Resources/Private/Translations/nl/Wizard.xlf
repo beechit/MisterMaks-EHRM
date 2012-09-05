@@ -25,6 +25,7 @@
 			<trans-unit id="action.submit">
 				<source>Submit</source>
 				<target>Opslaan</target>
+			</trans-unit>
 			<trans-unit id="Loading">
 				<source>Mister Maks</source>
 				<target>Mister Maks</target>
