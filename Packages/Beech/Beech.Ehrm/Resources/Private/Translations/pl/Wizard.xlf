@@ -14,6 +14,10 @@
 				<source>Cancel</source>
 				<target>Anuluj</target>
 			</trans-unit>
+			<trans-unit id="action.create">
+				<source>Create</source>
+				<target>Create</target>
+			</trans-unit>
 			<trans-unit id="action.replace.file">
 				<source>Replace File</source>
 				<target>Zamien plik</target>
@@ -29,6 +33,30 @@
 			<trans-unit id="Loading">
 				<source>Mister Maks</source>
 				<target>Mister Maks</target>
+			</trans-unit>
+			<trans-unit id="Company name">
+				<source>Company name</source>
+				<target>Company name</target>
+			</trans-unit>
+			<trans-unit id="Chamber Of Commerce Number">
+				<source>Chamber Of Commerce Number</source>
+				<target>Chamber Of Commerce Number</target>
+			</trans-unit>
+			<trans-unit id="House number">
+				<source>House number</source>
+				<target>House number</target>
+			</trans-unit>
+			<trans-unit id="Residence">
+				<source>Residence</source>
+				<target>Residence</target>
+			</trans-unit>
+			<trans-unit id="Step 1 - Creating company">
+				<source>Step 1 - Creating company</source>
+				<target>Step 1 - Creating company</target>
+			</trans-unit>
+			<trans-unit id="Step 2 - Adding address">
+				<source>Step 2 - Adding address</source>
+				<target>Step 2 - Adding address</target>
 			</trans-unit>
 		</body>
 	</file>

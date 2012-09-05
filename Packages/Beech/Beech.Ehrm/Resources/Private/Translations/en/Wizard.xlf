@@ -11,6 +11,9 @@
 			<trans-unit id="action.cancel">
 				<source>Cancel</source>
 			</trans-unit>
+			<trans-unit id="action.create">
+				<source>Create</source>
+			</trans-unit>
 			<trans-unit id="action.replace.file">
 				<source>Replace File</source>
 			</trans-unit>
@@ -22,6 +25,24 @@
 			</trans-unit>
 			<trans-unit id="Loading">
 				<source>Mister Maks</source>
+			</trans-unit>
+			<trans-unit id="Company name">
+				<source>Company name</source>
+			</trans-unit>
+			<trans-unit id="Chamber Of Commerce Number">
+				<source>Chamber Of Commerce Number</source>
+			</trans-unit>
+			<trans-unit id="House number">
+				<source>House number</source>
+			</trans-unit>
+			<trans-unit id="Residence">
+				<source>Residence</source>
+			</trans-unit>
+			<trans-unit id="Step 1 - Creating company">
+				<source>Step 1 - Creating company</source>
+			</trans-unit>
+			<trans-unit id="Step 2 - Adding address">
+				<source>Step 2 - Adding address</source>
 			</trans-unit>
 		</body>
 	</file>
