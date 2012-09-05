@@ -16,7 +16,7 @@
 			</trans-unit>
 			<trans-unit id="action.create">
 				<source>Create</source>
-				<target>Create</target>
+				<target>Stwórz</target>
 			</trans-unit>
 			<trans-unit id="action.replace.file">
 				<source>Replace File</source>
@@ -36,27 +36,27 @@
 			</trans-unit>
 			<trans-unit id="Company name">
 				<source>Company name</source>
-				<target>Company name</target>
+				<target>azwa firmy</target>
 			</trans-unit>
 			<trans-unit id="Chamber Of Commerce Number">
 				<source>Chamber Of Commerce Number</source>
-				<target>Chamber Of Commerce Number</target>
+				<target>Numer regon</target>
 			</trans-unit>
 			<trans-unit id="House number">
 				<source>House number</source>
-				<target>House number</target>
+				<target>Numer domu</target>
 			</trans-unit>
 			<trans-unit id="Residence">
 				<source>Residence</source>
-				<target>Residence</target>
+				<target>Miasto</target>
 			</trans-unit>
 			<trans-unit id="Step 1 - Creating company">
 				<source>Step 1 - Creating company</source>
-				<target>Step 1 - Creating company</target>
+				<target>Krok 1 - Tworzenie firmy</target>
 			</trans-unit>
 			<trans-unit id="Step 2 - Adding address">
 				<source>Step 2 - Adding address</source>
-				<target>Step 2 - Adding address</target>
+				<target>Krok 2 - Dodawanie adresu</target>
 			</trans-unit>
 		</body>
 	</file>
