@@ -52,20 +52,6 @@ class ToDoAspect {
 
 	/**
 	 * @param \TYPO3\FLOW3\AOP\JoinPointInterface $joinPoint
-	 * @FLOW3\After("method(Beech\Party\Controller\Management\CompanyController->createAction())")
-	 * @return void
-	 */
-	public function addToDoAfterCompanyCreate(\TYPO3\FLOW3\AOP\JoinPointInterface $joinPoint) {
-		if ($this->partyAvailableInSecurityContext()) {
-			$company = $joinPoint->getMethodArgument('newCompany');
-			$this->createToDo('addAddress', $this->currentParty(), 'newAddress', 'management\company', serialize(array('company' => $this->persistenceManager->getIdentifierByObject($company))), 100, TRUE);
-		}
-	}
-
-
-
-	/**
-	 * @param \TYPO3\FLOW3\AOP\JoinPointInterface $joinPoint
 	 * @FLOW3\After("method(Beech\Party\Controller\Management\CompanyController->createAddressAction())")
 	 * @return void
 	 */
