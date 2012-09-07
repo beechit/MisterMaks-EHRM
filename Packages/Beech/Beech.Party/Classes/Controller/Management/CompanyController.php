@@ -72,7 +72,7 @@ class CompanyController extends \Beech\Ehrm\Controller\AbstractController {
 	 */
 	public function createAction(\Beech\Party\Domain\Model\Company $newCompany) {
 		$this->companyRepository->add($newCompany);
-		$this->addFlashMessage('Created a new company.');
+		$this->addFlashMessage($this->translator->translateId('flashmessage.createdCompany'));
 		$this->redirect('list');
 	}
 
@@ -164,7 +164,7 @@ class CompanyController extends \Beech\Ehrm\Controller\AbstractController {
 	public function createAddressAction(\Beech\Party\Domain\Model\Company $company, \Beech\Party\Domain\Model\Address $newAddress) {
 		$company->addAddress($newAddress);
 		$this->companyRepository->update($company);
-		$this->addFlashMessage('Added a new address to the company');
+		$this->addFlashMessage($this->translator->translateId('flashmessage.addedAddress'));
 		$this->redirect('show', 'Management\Company', NULL, array('company' => $company));
 	}
 }

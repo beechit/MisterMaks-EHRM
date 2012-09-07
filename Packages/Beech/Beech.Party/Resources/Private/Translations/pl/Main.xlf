@@ -190,6 +190,10 @@
 				<source>Created new department</source>
 				<target>Dodano nowy dzial</target>
 			</trans-unit>
+			<trans-unit id="flashmessage.createdCompany">
+				<source>New company created.</source>
+				<target>Nowa firma utworzona.</target>
+			</trans-unit>
 			<trans-unit id="flashmessage.updatedCompany">
 				<source>CompanyData updated</source>
 				<target>Dane firmy zostaly zaaktualizowane</target>
@@ -197,6 +201,10 @@
 			<trans-unit id="flashmessage.deletedCompany">
 				<source>Companydata deleted</source>
 				<target>Firma zostala usunieta</target>
+			</trans-unit>
+			<trans-unit id="flashmessage.addedAddress">
+				<source>New company address was successfully added.</source>
+				<target>Nowy adres firmy zostal pomyslnie dodany.</target>
 			</trans-unit>
 			<trans-unit id="loading">
 				<source>Mister Maks</source>

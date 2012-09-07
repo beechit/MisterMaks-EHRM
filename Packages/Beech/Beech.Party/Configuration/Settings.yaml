@@ -4,7 +4,7 @@ Beech:
       admin:
         menu:
           companyNew:
-            label: 'Bedrijf'
+            label: 'Company'
             priority: 20
             menuGroup: 'main:new'
             package: 'Beech.Party'
@@ -12,7 +12,7 @@ Beech:
             resource: 'ManagementControllers'
             action: 'new'
           companyList:
-            label: 'Bedrijven'
+            label: 'Companies'
             priority: 20
             menuGroup: 'main:manage'
             package: 'Beech.Party'
@@ -20,7 +20,7 @@ Beech:
             resource: 'ManagementControllers'
             action: 'list'
           personList:
-            label: 'Personen'
+            label: 'People'
             priority: 30
             menuGroup: 'main:manage'
             package: 'Beech.Party'
@@ -39,7 +39,7 @@ Beech:
             action: 'index'
 
           settings:
-            label: 'Instellingen'
+            label: 'Settings'
             priority: 20
             controller: 'Setup'
             action: 'index'

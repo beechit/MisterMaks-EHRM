@@ -194,6 +194,10 @@
 				<source>Created new department</source>
 				<target>Nieuw afdeling aangemaakt</target>
 			</trans-unit>
+			<trans-unit id="flashmessage.createdCompany">
+				<source>New company created.</source>
+				<target>Nieuw bedrijf aangemaakt.</target>
+			</trans-unit>
 			<trans-unit id="flashmessage.updatedCompany">
 				<source>CompanyData updated</source>
 				<target>Bedrijfsgegevens bijgewerkt</target>
@@ -201,6 +205,10 @@
 			<trans-unit id="flashmessage.deletedCompany">
 				<source>Companydata deleted</source>
 				<target>Bedrijfsgegevens verwijderd</target>
+			</trans-unit>
+			<trans-unit id="flashmessage.addedAddress">
+				<source>New company address was successfully added.</source>
+				<target>Nieuw adres van het bedrijf werd toegevoegd.</target>
 			</trans-unit>
 			<trans-unit id="notification.addAddress">
 				<source>Add address to company</source>
