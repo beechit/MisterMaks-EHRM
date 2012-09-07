@@ -46,6 +46,38 @@
 				<source>Logged out</source>
 				<target>Uitgelogd</target>
 			</trans-unit>
+			<trans-unit id='menu.new'>
+				<source>New</source>
+				<target>Nieuw</target>
+			</trans-unit>
+			<trans-unit id='menu.manage'>
+				<source>Manage</source>
+				<target>Beheer</target>
+			</trans-unit>
+			<trans-unit id='menu.company'>
+				<source>Company</source>
+				<target>Bedrijf</target>
+			</trans-unit>
+			<trans-unit id='menu.companies'>
+				<source>Companies</source>
+				<target>Bedrijven</target>
+			</trans-unit>
+			<trans-unit id='menu.people'>
+				<source>People</source>
+				<target>Personen</target>
+			</trans-unit>
+			<trans-unit id='menu.settings'>
+				<source>Settings</source>
+				<target>Instellingen</target>
+			</trans-unit>
+			<trans-unit id='menu.todo'>
+				<source>Todo</source>
+				<target>Todo</target>
+			</trans-unit>
+			<trans-unit id='menu.account'>
+				<source>Account</source>
+				<target>Account</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

@@ -46,6 +46,38 @@
 				<source>Logged out</source>
 				<target>Nie zalogowany</target>
 			</trans-unit>
+			<trans-unit id='menu.new'>
+				<source>New</source>
+				<target>Nowy</target>
+			</trans-unit>
+			<trans-unit id='menu.manage'>
+				<source>Manage</source>
+				<target>Zarzadzaj</target>
+			</trans-unit>
+			<trans-unit id='menu.company'>
+				<source>Company</source>
+				<target>Firma</target>
+			</trans-unit>
+			<trans-unit id='menu.companies'>
+				<source>Companies</source>
+				<target>Firmy</target>
+			</trans-unit>
+			<trans-unit id='menu.people'>
+				<source>People</source>
+				<target>Ludzie</target>
+			</trans-unit>
+			<trans-unit id='menu.settings'>
+				<source>Settings</source>
+				<target>Ustawienia</target>
+			</trans-unit>
+			<trans-unit id='menu.todo'>
+				<source>Todo</source>
+				<target>Lista zadań</target>
+			</trans-unit>
+			<trans-unit id='menu.account'>
+				<source>Account</source>
+				<target>Konto</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

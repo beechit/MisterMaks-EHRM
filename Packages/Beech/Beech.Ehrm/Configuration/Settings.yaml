@@ -9,16 +9,16 @@ Beech:
         groups:
           manage:
             priority: 40
-            label: 'Beheer'
+            label: 'Manage'
           new:
             priority: 10
-            label: 'Nieuw'
+            label: 'New'
           edit:
             priority: 20
-            label: 'Bewerk'
+            label: 'Edit'
           report:
             priority: 30
-            label: 'Rapporteer'
+            label: 'Report'
         menu:
       action:
         groups:
@@ -27,7 +27,7 @@ Beech:
         groups:
         menu:
           logout:
-            label: 'Uitloggen'
+            label: 'Logout'
             priority: 99
             controller: 'Login'
             action: 'logout'

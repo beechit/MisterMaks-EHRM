@@ -35,6 +35,30 @@
 			<trans-unit id="status.logged.out">
 				<source>Logged out</source>
 			</trans-unit>
+			<trans-unit id='menu.new'>
+				<source>New</source>
+			</trans-unit>
+			<trans-unit id='menu.manage'>
+				<source>Manage</source>
+			</trans-unit>
+			<trans-unit id='menu.company'>
+				<source>Company</source>
+			</trans-unit>
+			<trans-unit id='menu.companies'>
+				<source>Companies</source>
+			</trans-unit>
+			<trans-unit id='menu.people'>
+				<source>People</source>
+			</trans-unit>
+			<trans-unit id='menu.settings'>
+				<source>Settings</source>
+			</trans-unit>
+			<trans-unit id='menu.todo'>
+				<source>Todo</source>
+			</trans-unit>
+			<trans-unit id='menu.account'>
+				<source>Account</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

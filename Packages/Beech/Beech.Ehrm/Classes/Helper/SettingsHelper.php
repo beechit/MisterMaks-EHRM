@@ -44,6 +44,18 @@ class SettingsHelper {
 	protected $toDoRepository;
 
 	/**
+	 * @var \TYPO3\FLOW3\I18n\Translator
+	 * @FLOW3\Inject
+	 */
+	protected $translator;
+
+	/**
+	 * @var \Beech\Ehrm\Frontend\Session
+	 * @FLOW3\Inject
+	 */
+	protected $frontendSession;
+
+	/**
 	 * @param array $settings
 	 */
 	public function injectSettings(array $settings) {
@@ -56,6 +68,10 @@ class SettingsHelper {
 	 * @return void
 	 */
 	public function initializeObject() {
+		if (!$this->frontendSession->isInitialized()) {
+			$this->frontendSession->initialize();
+		}
+		$this->currentLocale = $this->frontendSession->getCurrentLocale();
 		$this->uriBuilder = new \TYPO3\FLOW3\Mvc\Routing\UriBuilder();
 		$this->uriBuilder->setRequest($this->bootstrap->getActiveRequestHandler()->getHttpRequest()->createActionRequest());
 		$this->convertMenuActionsToUrls();
@@ -144,6 +160,8 @@ class SettingsHelper {
 							continue;
 						}
 						if (!isset($linkItem['menuGroup']) || substr($linkItem['menuGroup'], 0, strlen($identifier) + 1) === $identifier . ':') {
+							$label = ($this->translator instanceof \TYPO3\FLOW3\I18n\Translator) ? $this->translator->translateByOriginalLabel($linkItem['label'], array(), NULL, $this->currentLocale, 'Main', 'Beech.Ehrm') : $linkItem['label'];
+							$linkItem['label'] = $label;
 							$linkCollection[] = $linkItem;
 						}
 					}
@@ -157,11 +175,12 @@ class SettingsHelper {
 					continue;
 				}
 				if (!isset($linkItem['menuGroup']) || substr($linkItem['menuGroup'], 0, strlen($identifier) + 1) === $identifier . ':') {
+					$label = ($this->translator instanceof \TYPO3\FLOW3\I18n\Translator) ? $this->translator->translateByOriginalLabel($linkItem['label'], array(), NULL, $this->currentLocale, 'Main', 'Beech.Ehrm') : $linkItem['label'];
+					$linkItem['label'] = $label;
 					$linkCollection[] = $linkItem;
 				}
 			}
 		}
-
 		return $linkCollection;
 	}
 
@@ -171,13 +190,13 @@ class SettingsHelper {
 	 */
 	public function getMenuItems($identifier) {
 		$items = $menuGroups = array();
-
 			// Get group configuration
 		if (isset($this->settings['menu'][$identifier]['groups'])) {
 			$menuGroups = self::sortSettingsByPriority($this->settings['menu'][$identifier]['groups']);
 			foreach ($menuGroups as $groupIdentifier => $groupConfig) {
+				$label = ($this->translator instanceof \TYPO3\FLOW3\I18n\Translator) ? $this->translator->translateByOriginalLabel($groupConfig['label'], array(), NULL, $this->currentLocale, 'Main', 'Beech.Ehrm') :$groupConfig['label'];
 				$items['group:' . $groupIdentifier] = array(
-					'label' => $groupConfig['label'],
+					'label' => $label,
 					'items' => array()
 				);
 			}
@@ -188,7 +207,6 @@ class SettingsHelper {
 
 		foreach ($linkCollection as $linkItem) {
 			$group = isset($linkItem['menuGroup']) ? str_replace($identifier . ':', '', $linkItem['menuGroup']) : NULL;
-
 			if ($group !== NULL) {
 				unset($linkItem['menuGroup']);
 				$items['group:' . $group]['items'][] = $linkItem;

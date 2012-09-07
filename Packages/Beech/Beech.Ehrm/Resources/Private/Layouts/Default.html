@@ -23,7 +23,6 @@
 				return $('.modal-body-content').contents().find('legend');
 			}
 			function contentLoadFinisher() {
-				console.log($(this).find('legend'));
 				var contentTitle = getContentTitle();
 
 			}
@@ -55,7 +54,7 @@
 											{activeTokens.DefaultProvider.account.accountidentifier}
 										</f:then>
 										<f:else>
-											Account
+											<f:translate id="menu.account">Account</f:translate>
 										</f:else>
 									</f:if>
 									<span class="caret"></span>
