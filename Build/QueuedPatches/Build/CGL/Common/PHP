@@ -1,2 +1,0 @@
-git reset --hard origin/master
-git fetch git://git.typo3.org/Teams/forge.typo3.org/hudson-helpers/tools/PHP_CodeSniffer refs/changes/37/13437/1 && git cherry-pick FETCH_HEAD
