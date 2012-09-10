@@ -2,7 +2,6 @@
 namespace Beech\Party\Tests\Functional;
 /*
  * This source file is proprietary property of Beech Applications B.V.
- * Developer: Karol Kamiński <karol@beech.it>
  * Date: 28-08-12 16:04
  * All code (c) Beech Applications B.V. all rights reserved
  */

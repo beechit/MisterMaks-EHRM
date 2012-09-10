@@ -3,7 +3,6 @@ namespace Beech\Party\Controller\Management;
 
 /*
  * This source file is proprietary property of Beech Applications B.V.
- * Developer: Karol Kamiński <karol@beech.it>
  * Date: 23-07-12 13:49
  * All code (c) Beech Applications B.V. all rights reserved
  */

@@ -3,7 +3,6 @@ namespace Beech\Party\Domain\Model;
 
 /*
  * This source file is proprietary property of Beech Applications B.V.
- * Developer: Rens Admiraal <rens@beech.it>
  * Date: 21-08-12 13:55
  * All code (c) Beech Applications B.V. all rights reserved
  */

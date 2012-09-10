@@ -3,7 +3,6 @@ namespace Beech\Party;
 
 /*
  * This source file is proprietary property of Beech Applications B.V.
- * Developer: Rens Admiraal <rens@beech.it>
  * Date: 26-06-12 13:53
  * All code (c) Beech Applications B.V. all rights reserved
  */
