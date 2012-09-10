@@ -3,7 +3,6 @@ namespace Beech\WorkFlow\Tests\Unit;
 
 /*
  * This source file is proprietary property of Beech Applications B.V.
- * Developer: Rens Admiraal <rens@beech.it>
  * Date: 02-08-12 00:27
  * All code (c) Beech Applications B.V. all rights reserved
  */

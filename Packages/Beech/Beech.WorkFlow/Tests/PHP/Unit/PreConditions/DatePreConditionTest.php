@@ -3,7 +3,6 @@ namespace Beech\WorkFlow\Tests\Unit\PreConditions;
 
 /*
  * This source file is proprietary property of Beech Applications B.V.
- * Developer: Rens Admiraal <rens@beech.it>
  * Date: 27-08-12 22:57
  * All code (c) Beech Applications B.V. all rights reserved
  */
