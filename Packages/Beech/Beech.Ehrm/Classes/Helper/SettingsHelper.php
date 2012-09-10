@@ -3,7 +3,6 @@ namespace Beech\Ehrm\Helper;
 
 /*
  * This source file is proprietary property of Beech Applications B.V.
- * Developer: Rens Admiraal <rens@beech.it>
  * Date: 03-05-12 22:50
  * All code (c) Beech Applications B.V. all rights reserved
  */

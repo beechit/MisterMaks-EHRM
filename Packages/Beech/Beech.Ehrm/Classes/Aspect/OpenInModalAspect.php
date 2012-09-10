@@ -3,7 +3,6 @@ namespace Beech\Ehrm\Aspect;
 
 /*
  * This source file is proprietary property of Beech Applications B.V.
- * Developer: Karol Kaminski <karol@beech.it>
  * Date: 23-08-12 10:54
  * All code (c) Beech Applications B.V. all rights reserved
  */

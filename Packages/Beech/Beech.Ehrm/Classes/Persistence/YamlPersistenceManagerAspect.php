@@ -3,7 +3,6 @@ namespace Beech\Ehrm\Persistence;
 
 /*
  * This source file is proprietary property of Beech Applications B.V.
- * Developer: Ruud Alberts <ruud@mail-beech.nl>
  * Date: 24-07-12 16:19
  * All code (c) Beech Applications B.V. all rights reserved
  */

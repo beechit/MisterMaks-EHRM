@@ -3,7 +3,6 @@ namespace Beech\Ehrm\Controller;
 
 /*
  * This source file is proprietary property of Beech Applications B.V.
- * Developer: Rens Admiraal <rens@beech.it>
  * Date: 03-05-12 22:51
  * All code (c) Beech Applications B.V. all rights reserved
  */
