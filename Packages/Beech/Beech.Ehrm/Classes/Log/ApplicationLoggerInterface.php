@@ -7,6 +7,8 @@ namespace Beech\Ehrm\Log;
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
+use TYPO3\FLOW3\Annotations as FLOW3;
+
 /**
  * Marker interface for the application logger.
  *

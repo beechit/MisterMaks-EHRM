@@ -30,8 +30,8 @@ class DatabaseBackend extends \TYPO3\FLOW3\Log\Backend\AbstractBackend {
 	);
 
 	/**
-	 * @FLOW3\Inject
 	 * @var \Beech\Ehrm\Domain\Repository\LogRepository
+	 * @FLOW3\Inject
 	 */
 	protected $logRepository;
 

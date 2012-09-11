@@ -33,7 +33,7 @@ class YamlPersistenceManagerAspect {
 	public function getAlternativeFormPathAndFilename(\TYPO3\FLOW3\AOP\JoinPointInterface $joinPoint) {
 		$persistenceIdentifier = $joinPoint->getMethodArgument('persistenceIdentifier');
 		$alternativeFile = \TYPO3\FLOW3\Utility\Files::concatenatePaths(array($this->alternativeSavePath, sprintf('%s.yaml', $persistenceIdentifier)));
-		if (true === file_exists($alternativeFile)) {
+		if (file_exists($alternativeFile)) {
 			return $alternativeFile;
 		}
 

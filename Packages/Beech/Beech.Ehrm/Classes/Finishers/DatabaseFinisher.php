@@ -33,7 +33,6 @@ class DatabaseFinisher extends \TYPO3\Form\Core\Model\AbstractFinisher {
 	 * @throws \TYPO3\Form\Exception\FinisherException
 	 */
 	protected function executeInternal() {
-
 		$packageNamespace = str_replace('.', '\\', $this->parseOption('package'));
 		$modelName = $this->parseOption('model');
 
@@ -53,10 +52,10 @@ class DatabaseFinisher extends \TYPO3\Form\Core\Model\AbstractFinisher {
 		$repository = new $repositoryClassName();
 
 			// Map form input to the model and store data
-		foreach ($this->finisherContext->getFormValues() AS $key => $val) {
+		foreach ($this->finisherContext->getFormValues() as $key => $val) {
 
 			if (is_array($val)) {
-				$subModelClassName = '\\' . $packageNamespace . '\Domain\Model\\' . ucfirst($key);
+				$subModelClassName = '\\' . $packageNamespace . '\\Domain\\Model\\' . ucfirst($key);
 				if (!class_exists($subModelClassName)) {
 					$subModelClassName = '\\TYPO3\\Party\\Domain\\Model\\' . ucfirst($key);
 				}

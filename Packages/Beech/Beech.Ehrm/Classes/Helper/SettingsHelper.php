@@ -107,17 +107,17 @@ class SettingsHelper {
 
 	/**
 	 * Appends the outstanding to-do's to the label
-	 *
+	 * @return void
 	 */
 	protected function appendNumberOfOpenToDos() {
 		foreach ($this->settings['menu'] as $subIdentifier => $configuration) {
-				if (isset($configuration['menu'])) {
-					foreach ($this->settings['menu'][$subIdentifier]['menu'] as $key => $item) {
-						if ($key === 'todo') {
-							$this->settings['menu'][$subIdentifier]['menu']['todo']['label'] .= ' (' . $this->toDoRepository->countByArchivedDateTime(NULL) . ')';
-						}
+			if (isset($configuration['menu'])) {
+				foreach ($this->settings['menu'][$subIdentifier]['menu'] as $key => $item) {
+					if ($key === 'todo') {
+						$this->settings['menu'][$subIdentifier]['menu']['todo']['label'] .= ' (' . $this->toDoRepository->countByArchivedDateTime(NULL) . ')';
 					}
 				}
+			}
 		}
 	}
 

@@ -65,10 +65,10 @@ class TemplateView extends \TYPO3\Fluid\View\TemplateView {
 		try {
 			return parent::getPartialPathAndFilename($partialName);
 		} catch (\TYPO3\Fluid\View\Exception\InvalidTemplateResourceException $exception) {
-				//set path to default package
+				// Set path to default package
 			$this->setPartialRootPath('resource://Beech.Ehrm/Private/Partials');
 			$defaultPaths = $this->expandGenericPathPattern($this->partialPathAndFilenamePattern, TRUE, TRUE);
-				//additionally, extra check
+				// Additionally, extra check
 			$extraPath = array($partialName);
 			$paths = array_merge($defaultPaths, $extraPath);
 			foreach ($paths as &$partialPathAndFilename) {

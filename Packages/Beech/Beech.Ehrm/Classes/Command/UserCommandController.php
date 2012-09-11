@@ -35,10 +35,11 @@ class UserCommandController extends \TYPO3\FLOW3\Cli\CommandController {
 	protected $accountFactory;
 
 	/**
+	 * Create a user
 	 *
 	 * @param string $username Username
 	 * @param string $password Password
-	 * @param string $userName
+	 * @param string $firstName
 	 * @param string $lastName
 	 * @param string $roles Comma separated list of roles
 	 * @return void

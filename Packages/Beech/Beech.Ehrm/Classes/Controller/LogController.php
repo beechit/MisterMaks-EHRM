@@ -60,7 +60,6 @@ class LogController extends ActionController {
 	 * @return void
 	 */
 	public function addExampleAction() {
-
 		$additionalData = array(
 			'user' => 'Name of the User',
 			'data' => array(

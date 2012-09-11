@@ -55,7 +55,7 @@ class SoftDeleteAspect {
 	/**
 	 * Only fetch objects which are not softdeleted
 	 *
-	 * @param  \TYPO3\FLOW3\AOP\JoinPointInterface $joinPoint
+	 * @param \TYPO3\FLOW3\AOP\JoinPointInterface $joinPoint
 	 * @FLOW3\Around("within(TYPO3\FLOW3\Persistence\QueryInterface) && method(.*->(execute|count)())")
 	 * @return \TYPO3\FLOW3\Persistence\Doctrine\Query
 	 */
