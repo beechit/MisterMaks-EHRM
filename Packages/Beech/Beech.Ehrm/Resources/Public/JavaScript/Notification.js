@@ -49,7 +49,6 @@ define(['jquery', 'emberjs', 'Beech.Ehrm/Library/jquery.midgardNotifications'], 
 		},
 
 		_show: function(title, bodyMessage, className, actions, timeout, removable, callBack) {
-			console.log(callBack);
 			if (actions === undefined) {
 				actions = [];
 			}
