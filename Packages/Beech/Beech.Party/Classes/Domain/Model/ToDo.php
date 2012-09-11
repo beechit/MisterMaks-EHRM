@@ -30,7 +30,7 @@ class ToDo {
 	protected $task;
 
 	/**
-	 * The controllername to complete this task
+	 * The controller name to complete this task
 	 *
 	 * @var string
 	 * @ORM\Column(nullable=true)
@@ -38,7 +38,7 @@ class ToDo {
 	protected $controllerName;
 
 	/**
-	 * The actionname to complete this task
+	 * The action name to complete this task
 	 *
 	 * @var string
 	 * @ORM\Column(nullable=true)
@@ -111,7 +111,6 @@ class ToDo {
 	 */
 	public function __construct() {
 		$this->dateTime = new \DateTime();
-
 		$this->notifications = new \Doctrine\Common\Collections\ArrayCollection();
 	}
 
@@ -356,4 +355,5 @@ class ToDo {
 	}
 
 }
+
 ?>

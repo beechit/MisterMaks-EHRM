@@ -181,7 +181,7 @@ class Address {
 	 * @param string $type
 	 */
 	public function setType($type) {
-			// TODO: add code to automatically set the code here using $this->setCode()
+			// TODO add code to automatically set the code here using $this->setCode()
 		$this->type = $type;
 	}
 

@@ -64,12 +64,12 @@ class NotificationController extends \TYPO3\FLOW3\Mvc\Controller\RestController 
 		$currentParty = $this->securityContext->getAccount()->getParty();
 		if (!$currentParty instanceof \TYPO3\Party\Domain\Model\AbstractParty
 				|| $currentParty !== $resource->getParty()) {
-			return json_encode((object)array('result' => (object) array('status' => 'error')));
+			return json_encode((object) array('result' => (object) array('status' => 'error')));
 		}
 
 		$this->notificationRepository->remove($resource);
 
-		return json_encode((object)array('result' => (object) array('status' => 'success')));
+		return json_encode((object) array('result' => (object) array('status' => 'success')));
 	}
 
 }

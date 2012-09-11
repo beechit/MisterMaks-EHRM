@@ -62,3 +62,5 @@ class TaxData {
 		return $this->wageTaxNumber;
 	}
 }
+
+?>

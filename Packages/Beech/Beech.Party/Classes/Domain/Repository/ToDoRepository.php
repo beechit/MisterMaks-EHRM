@@ -1,10 +1,11 @@
 <?php
 namespace Beech\Party\Domain\Repository;
 
-/*                                                                        *
- * This script belongs to the FLOW3 package "Beech.Party".                *
- *                                                                        *
- *                                                                        */
+/*
+ * This source file is proprietary property of Beech Applications B.V.
+ * Date: 23-07-12 13:49
+ * All code (c) Beech Applications B.V. all rights reserved
+ */
 
 use TYPO3\FLOW3\Annotations as FLOW3;
 
@@ -33,18 +34,20 @@ class ToDoRepository extends \TYPO3\FLOW3\Persistence\Repository {
 	}
 
 	/**
-	 * @param $controllerName
-	 * @param $controllerAction
-	 * @param $controllerArgument
+	 * @param string $controllerName
+	 * @param string $controllerAction
+	 * @param string $controllerArguments
 	 * @return \TYPO3\FLOW3\Persistence\QueryResultInterface
 	 */
-	public function findByControllerActionAndArguments($controllerName, $controllerAction, $controllerArguments) {
+	public function findOneByControllerActionAndArguments($controllerName, $controllerAction, $controllerArguments) {
 		$query = $this->createQuery();
-		$query->matching($query->logicalAnd($query->equals('controllerName', $controllerName),
-											$query->equals('controllerAction', $controllerAction),
-											$query->equals('controllerArguments', $controllerArguments)
-											));
+		$query->matching($query->logicalAnd(
+			$query->equals('controllerName', $controllerName),
+			$query->equals('controllerAction', $controllerAction),
+			$query->equals('controllerArguments', $controllerArguments)
+		));
 		return $query->execute()->getFirst();
 	}
 }
+
 ?>

@@ -39,7 +39,6 @@ class ToDoController extends \Beech\Ehrm\Controller\AbstractController {
 	/**
 	 * Shows a list of todos
 	 *
-	 * @param boolean $archived
 	 * @return void
 	 */
 	public function indexAction() {
@@ -52,9 +51,11 @@ class ToDoController extends \Beech\Ehrm\Controller\AbstractController {
 	}
 
 	/**
-	 * Creates an todo
+	 * Creates a todo
 	 *
 	 * @param \Beech\Party\Domain\Model\ToDo $newToDo
+	 * @param boolean $userMayArchive
+	 * @return void
 	 */
 	public function createAction(\Beech\Party\Domain\Model\ToDo $newToDo, $userMayArchive = TRUE) {
 		$account = $this->securityContext->getAccount();
@@ -71,9 +72,10 @@ class ToDoController extends \Beech\Ehrm\Controller\AbstractController {
 	}
 
 	/**
-	 * User archives an todo
+	 * User archives a todo
 	 *
 	 * @param \Beech\Party\Domain\Model\ToDo $toDo
+	 * @return void
 	 */
 	public function userArchiveAction(\Beech\Party\Domain\Model\ToDo $toDo) {
 		if ($toDo->getUserMayArchive() === TRUE) {

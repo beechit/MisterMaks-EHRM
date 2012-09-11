@@ -1,9 +1,12 @@
 <?php
 namespace Beech\Party\Domain\Model;
-/*                                                                        *
- * This script belongs to the FLOW3 package "Beech.Party".                *
- *                                                                        *
- *                                                                        */
+
+/*
+ * This source file is proprietary property of Beech Applications B.V.
+ * Date: 11-09-12 11:00
+ * All code (c) Beech Applications B.V. all rights reserved
+ */
+
 use TYPO3\FLOW3\Annotations as FLOW3;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -215,8 +218,8 @@ class Company {
 	 */
 	public function removeAddress(\Beech\Party\Domain\Model\Address $address) {
 		$this->addresses->removeElement($address);
-		if ($address === $this->primaryAddress) {
-			unset($this->primaryAddress);
+		if ($address === $this->primaryElectronicAddress) {
+			unset($this->primaryElectronicAddress);
 		}
 	}
 

@@ -71,7 +71,7 @@ class Person extends \TYPO3\Party\Domain\Model\Person {
 	 * Adds the given email to this person.
 	 *
 	 * @param string $email Email
-	 * @return ElectronicAddress
+	 * @return \Beech\Party\Domain\Model\ElectronicAddress
 	 */
 	public function addEmail($email) {
 		$electronicAddress = new ElectronicAddress();
@@ -87,7 +87,7 @@ class Person extends \TYPO3\Party\Domain\Model\Person {
 	 *
 	 * @param string $phone Phone number
 	 * @param string $type  Phone type
-	 * @return ElectronicAddress
+	 * @return \Beech\Party\Domain\Model\ElectronicAddress
 	 */
 	public function addPhone($phone, $type = ElectronicAddress::TYPE_PHONE) {
 		$electronicAddress = new ElectronicAddress();
@@ -116,8 +116,8 @@ class Person extends \TYPO3\Party\Domain\Model\Person {
 	 */
 	public function removeAddress(\Beech\Party\Domain\Model\Address $address) {
 		$this->addresses->removeElement($address);
-		if ($address === $this->primaryAddress) {
-			unset($this->primaryAddress);
+		if ($address === $this->primaryElectronicAddress) {
+			unset($this->primaryElectronicAddress);
 		}
 	}
 

@@ -18,8 +18,8 @@ use \Beech\Party\Domain\Model\Person;
 class PersonController extends \Beech\Ehrm\Controller\AbstractController {
 
 	/**
-	 * @FLOW3\Inject
 	 * @var \Beech\Party\Domain\Repository\PersonRepository
+	 * @FLOW3\Inject
 	 */
 	protected $personRepository;
 

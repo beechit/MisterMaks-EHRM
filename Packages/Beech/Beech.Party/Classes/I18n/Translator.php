@@ -17,9 +17,14 @@ use TYPO3\FLOW3\Annotations as FLOW3;
  */
 class Translator extends \TYPO3\FLOW3\I18n\Translator {
 
+	/**
+	 * @param string $labelId
+	 * @return string
+	 */
 	public function translateId($labelId) {
-		return parent::translateById($labelId ,array(), NULL, NULL, 'Main', 'Beech.Party');
+		return parent::translateById($labelId, array(), NULL, NULL, 'Main', 'Beech.Party');
 	}
+
 }
 
 ?>

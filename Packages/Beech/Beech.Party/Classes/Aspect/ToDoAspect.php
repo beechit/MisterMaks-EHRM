@@ -56,7 +56,7 @@ class ToDoAspect {
 	 */
 	public function archiveToDoAfterAddressCreate(\TYPO3\FLOW3\AOP\JoinPointInterface $joinPoint) {
 		$company = $this->persistenceManager->getIdentifierByObject($joinPoint->getMethodArgument('company'));
-		$toDo = $this->toDoRepository->findByControllerActionAndArguments('management\company', 'newAddress', serialize(array('company' => $company)));
+		$toDo = $this->toDoRepository->findOneByControllerActionAndArguments('management\company', 'newAddress', serialize(array('company' => $company)));
 		if ($toDo instanceof \Beech\Party\Domain\Model\ToDo) {
 			$this->toDoRepository->archiveToDo($toDo);
 		}
@@ -65,19 +65,14 @@ class ToDoAspect {
 	/**
 	 * @param string $task The task name
 	 * @param \TYPO3\Party\Domain\Model\AbstractParty $owner
-	 * @param string $action The action to execute
-	 * @param string $controller The controller to execute
-	 * @param array $arguments The arguments
+	 * @param string $controllerAction The action to execute
+	 * @param string $controllerName The controller to execute
+	 * @param array $controllerArguments The arguments
 	 * @param integer $priority Priority of this task 0-100
-	 * @param string $controllerName The controller name
-	 * @param string $controllerAction The controller action
-	 * @param string $controllerArgument The controller arguments
 	 * @param boolean $userMayArchive True if user is allowed to archive this task manual
 	 * @return void
 	 */
-	private function createToDo($task, \TYPO3\Party\Domain\Model\AbstractParty $owner, $controllerAction, $controllerName, $controllerArgument, $priority, $userMayArchive) {
-		$todo = new \Beech\Party\Domain\Model\ToDo();
-
+	private function createToDo($task, \TYPO3\Party\Domain\Model\AbstractParty $owner, $controllerAction, $controllerName, $controllerArguments, $priority, $userMayArchive) {
 		$notification = new \Beech\Party\Domain\Model\Notification();
 		$notification->setLabel($task);
 		$notification->setSticky(TRUE);
@@ -95,7 +90,7 @@ class ToDoAspect {
 		$todo->setPriority($priority);
 		$todo->setControllerName($controllerName);
 		$todo->setControllerAction($controllerAction);
-		$todo->setControllerArguments($controllerArgument);
+		$todo->setControllerArguments($controllerArguments);
 		$todo->setUserMayArchive($userMayArchive);
 		$todo->addNotification($notification);
 		$this->toDoRepository->add($todo);

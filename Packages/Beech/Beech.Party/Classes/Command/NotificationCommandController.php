@@ -10,7 +10,7 @@ namespace Beech\Party\Command;
 use TYPO3\FLOW3\Annotations as FLOW3;
 
 /**
- * ToDo command controller for the Beech.Party package
+ * TODO command controller for the Beech.Party package
  *
  * @FLOW3\Scope("singleton")
  */
