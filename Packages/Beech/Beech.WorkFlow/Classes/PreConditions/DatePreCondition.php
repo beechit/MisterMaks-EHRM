@@ -9,6 +9,9 @@ namespace Beech\WorkFlow\PreConditions;
 
 use TYPO3\FLOW3\Annotations as FLOW3;
 
+/**
+ *
+ */
 class DatePreCondition implements \Beech\WorkFlow\Core\PreConditionInterface {
 
 	const	MATCH_CONDITION_SMALLER_THEN = 0,
@@ -30,7 +33,6 @@ class DatePreCondition implements \Beech\WorkFlow\Core\PreConditionInterface {
 	 * @return boolean
 	 */
 	public function isMet() {
-
 		if (!$this->getValue() instanceof \DateTime) {
 			throw new \Beech\WorkFlow\Exception\InvalidConfigurationException('Match value has to be an instance of \DateTime');
 		}
@@ -54,6 +56,7 @@ class DatePreCondition implements \Beech\WorkFlow\Core\PreConditionInterface {
 
 	/**
 	 * @param \DateTime $value
+	 * @return void
 	 */
 	public function setValue(\DateTime $value) {
 		$this->value = $value->setTime(0, 0, 0);
@@ -68,6 +71,7 @@ class DatePreCondition implements \Beech\WorkFlow\Core\PreConditionInterface {
 
 	/**
 	 * @param integer $matchCondition
+	 * @return void
 	 */
 	public function setMatchCondition($matchCondition) {
 		$this->matchCondition = $matchCondition;

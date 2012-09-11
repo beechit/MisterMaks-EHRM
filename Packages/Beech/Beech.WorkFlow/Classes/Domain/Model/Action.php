@@ -64,6 +64,9 @@ class Action implements \Beech\WorkFlow\Core\ActionInterface {
 	 */
 	protected $validators;
 
+	/**
+	 * Constructs the Action
+	 */
 	public function __construct() {
 		$this->status = self::STATUS_NEW;
 		$this->validators = new \Doctrine\Common\Collections\ArrayCollection();
@@ -100,9 +103,17 @@ class Action implements \Beech\WorkFlow\Core\ActionInterface {
 		$this->validators = $validators;
 	}
 
+	/**
+	 * @return void
+	 */
 	public function start() {
 	}
 
+	/**
+	 * @param string $target
+	 * @throws \Beech\WorkFlow\Exception\InvalidArgumentException
+	 * @return void
+	 */
 	public function setTarget($target) {
 		if (!is_string($target) || !preg_match(self::PATTERN_TARGET_NAME, $target)) {
 			throw new \Beech\WorkFlow\Exception\InvalidArgumentException(sprintf('Target "%s" is not valid', $target), 1343866565);
@@ -131,14 +142,14 @@ class Action implements \Beech\WorkFlow\Core\ActionInterface {
 	}
 
 	/**
-	 * @param int $status
+	 * @param integer $status
 	 */
 	public function setStatus($status) {
 		$this->status = $status;
 	}
 
 	/**
-	 * @return int
+	 * @return integer
 	 */
 	public function getStatus() {
 		return $this->status;
