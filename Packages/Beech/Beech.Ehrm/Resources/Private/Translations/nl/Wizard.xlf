@@ -30,25 +30,33 @@
 				<source>Submit</source>
 				<target>Opslaan</target>
 			</trans-unit>
-			<trans-unit id="Loading">
+			<trans-unit id="loading">
 				<source>Mister Maks</source>
 				<target>Mister Maks</target>
 			</trans-unit>
-			<trans-unit id="Company name">
+			<trans-unit id="label.companyName">
 				<source>Company name</source>
 				<target>Bedrijfsnaam</target>
 			</trans-unit>
-			<trans-unit id="Chamber Of Commerce Number">
+			<trans-unit id="label.chamberOfCommerceNumber">
 				<source>Chamber Of Commerce Number</source>
 				<target>KVK nummer</target>
 			</trans-unit>
-			<trans-unit id="House number">
+			<trans-unit id="label.house">
 				<source>House number</source>
 				<target>Huisnummer</target>
 			</trans-unit>
-			<trans-unit id="Residence">
+			<trans-unit id="label.street">
+				<source>Street</source>
+				<target>Straat</target>
+			</trans-unit>
+			<trans-unit id="label.residence">
 				<source>Residence</source>
 				<target>Woonplaats</target>
+			</trans-unit>
+			<trans-unit id="street">
+				<source>Street</source>
+				<target>Ulica</target>
 			</trans-unit>
 			<trans-unit id="Step 1 - Creating company">
 				<source>Step 1 - Creating company</source>

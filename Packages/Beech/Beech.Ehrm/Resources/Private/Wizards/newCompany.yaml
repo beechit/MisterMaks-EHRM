@@ -18,7 +18,7 @@ renderables:
             -
                 type: 'TYPO3.Form:SingleLineText'
                 identifier: name
-                label: 'Company name'
+                label: label.companyName
                 properties:
                     placeholder: ''
                 defaultValue: ''
@@ -28,7 +28,7 @@ renderables:
             -
                 type: 'TYPO3.Form:SingleLineText'
                 identifier: chamberOfCommerceNumber
-                label: 'Chamber Of Commerce Number'
+                label: label.chamberOfCommerceNumber
                 properties:
                     placeholder: ''
                 defaultValue: ''
@@ -43,7 +43,7 @@ renderables:
             -
                 type: 'TYPO3.Form:SingleLineText'
                 identifier: address.street
-                label: Straat
+                label: label.street
                 properties:
                     placeholder: ''
                 defaultValue: ''
@@ -53,7 +53,7 @@ renderables:
             -
                 type: 'TYPO3.Form:SingleLineText'
                 identifier: address.houseNumber
-                label: 'House number'
+                label: label.house
                 properties:
                     placeholder: ''
                 defaultValue: ''
@@ -63,7 +63,7 @@ renderables:
             -
                 type: 'TYPO3.Form:SingleLineText'
                 identifier: address.residence
-                label: Residence
+                label: label.residence
                 properties:
                     placeholder: ''
                 defaultValue: ''
