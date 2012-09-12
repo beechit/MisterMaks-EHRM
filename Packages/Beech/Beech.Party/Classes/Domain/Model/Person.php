@@ -50,11 +50,20 @@ class Person extends \TYPO3\Party\Domain\Model\Person {
 	protected $description;
 
 	/**
+	 * Preferences of this user
+	 *
+	 * @var \Beech\Ehrm\Domain\Model\Preferences
+	 * @ORM\OneToOne
+	 */
+	protected $preferences;
+
+	/**
 	 * Construct the object
 	 */
 	public function __construct() {
 		parent::__construct();
 		$this->addresses = new \Doctrine\Common\Collections\ArrayCollection();
+		$this->preferences = new \Beech\Ehrm\Domain\Model\Preferences();
 	}
 
 	/**
@@ -150,6 +159,17 @@ class Person extends \TYPO3\Party\Domain\Model\Person {
 	public function getDescription() {
 		return $this->description;
 	}
+
+	/**
+	 * @return \Beech\Ehrm\Domain\Model\Preferences
+	 */
+	public function getPreferences() {
+		if (!$this->preferences instanceof \Beech\Ehrm\Domain\Model\Preferences) {
+			$this->preferences = new \Beech\Ehrm\Domain\Model\Preferences();
+		}
+		return $this->preferences;
+	}
+
 }
 
 ?>
