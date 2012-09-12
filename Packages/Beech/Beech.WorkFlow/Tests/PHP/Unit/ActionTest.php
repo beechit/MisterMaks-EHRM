@@ -18,6 +18,8 @@ class ActionTest extends \TYPO3\FLOW3\Tests\UnitTestCase {
 	 */
 	protected $action;
 
+	/**
+	 */
 	public function setUp() {
 		$this->action = new Action();
 	}

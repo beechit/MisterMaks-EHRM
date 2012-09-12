@@ -1,0 +1,12 @@
+action:
+  validators:
+    -
+      className: DateValidator
+      properties:
+        value: 'DATETIME:today'
+        matchCondition: 'CONSTANT:MATCH_CONDITION_EQUAL'
+    -
+      className: DateValidator
+      properties:
+        value: 'DATETIME:2012-01-01'
+        matchCondition: 'CONSTANT:MATCH_CONDITION_SMALLER_THEN'

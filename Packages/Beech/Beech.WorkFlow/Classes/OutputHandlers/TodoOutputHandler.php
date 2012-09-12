@@ -22,7 +22,7 @@ class TodoOutputHandler implements \Beech\WorkFlow\Core\OutputHandlerInterface {
 	protected $toDoRepository;
 
 	/**
-	 * The entitiy to persist
+	 * The entity to persist
 	 * @var \Beech\Party\Domain\Model\ToDo
 	 */
 	protected $toDoEntity;

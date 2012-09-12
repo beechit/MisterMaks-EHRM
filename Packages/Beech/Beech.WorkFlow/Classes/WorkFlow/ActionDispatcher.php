@@ -1,5 +1,5 @@
 <?php
-namespace Beech\WorkFlow\Core;
+namespace Beech\WorkFlow\WorkFlow;
 
 /*
  * This source file is proprietary property of Beech Applications B.V.
