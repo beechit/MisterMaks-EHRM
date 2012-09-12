@@ -18,56 +18,42 @@ use Doctrine\ORM\Mapping as ORM;
 class LocaleAspect {
 
 	/**
-	 * @var \Beech\Ehrm\Frontend\Session
-	 * @FLOW3\Inject
-	 */
-	protected $frontendSession;
-
-	/**
-	 * @var \TYPO3\FLOW3\Object\ObjectManagerInterface
-	 * @FLOW3\Inject
-	 */
-	protected $objectManager;
-
-	/**
 	 * @var \TYPO3\FLOW3\Security\Context
 	 * @FLOW3\Inject
 	 */
 	protected $securityContext;
 
 	/**
-	 * Setting default locale to session
+	 * Added to support the addExampleAction()
 	 *
-	 * To overwrite default language add user name to settings:
-	 * 	LanguageSetter:
-	 * 	  user:
-	 * 	    john: en
-	 * 	    bram: nl
-	 * 	    karol: pl
-	 *
-	 * @FLOW3\Before("method(TYPO3\Fluid\ViewHelpers\TranslateViewHelper->render())")
-	 * @param \TYPO3\FLOW3\AOP\JoinPointInterface $joinPoint The current join point
-	 * @return void
+	 * @var \Beech\Ehrm\Log\ApplicationLoggerInterface
+	 * @FLOW3\Inject
 	 */
-	public function addSessionLocaleToTranslateViewHelper(\TYPO3\FLOW3\AOP\JoinPointInterface $joinPoint) {
-		$account = $this->securityContext->getAccount();
-		if ($account instanceof \TYPO3\FLOW3\Security\Account) {
-			$accountIdentifier = $this->securityContext->getAccount()->getAccountIdentifier();
-			$userLanguageSetterCollection = $this->objectManager->getSettingsByPath(array('LanguageSetter', 'user'));
-			if (isset($userLanguageSetterCollection[$accountIdentifier])) {
-				$this->frontendSession->setCurrentLocale($userLanguageSetterCollection[$accountIdentifier]);
+	protected $applicationLogger;
+
+	/**
+	 * @FLOW3\Around("method(TYPO3\FLOW3\I18n\Configuration->getCurrentLocale())")
+	 * @param \TYPO3\FLOW3\AOP\JoinPointInterface $joinPoint The current join point
+	 * @return \TYPO3\FLOW3\I18n\Locale
+	 */
+	public function overrideCurrentLocaleByUserSettings(\TYPO3\FLOW3\AOP\JoinPointInterface $joinPoint) {
+		if ($this->securityContext->isInitialized() && $this->securityContext->getAccount() instanceof \TYPO3\FLOW3\Security\Account) {
+			$person = $this->securityContext->getAccount()->getParty();
+			if ($person instanceof \Beech\Party\Domain\Model\Person) {
+				try {
+					return new \TYPO3\FLOW3\I18n\Locale($person->getPreferences()->get('locale'));
+				} catch (\Exception $exception) {
+					$this->applicationLogger->log(sprintf(
+						'Invalid locale identifier (%s) for person "%s" found',
+						array($person->getPreferences()->get('locale'), $this->securityContext->getAccount()->getAccountIdentifier()))
+					);
+				};
 			}
 		}
-		if (!$this->frontendSession->isInitialized()) {
-			$this->frontendSession->initialize();
-		}
-		$methodArguments = $joinPoint->getMethodArguments();
-		if (empty($methodArguments['locale'])
-			&& $this->frontendSession->getCurrentLocale() instanceof \TYPO3\FLOW3\I18n\Locale
-		) {
-			$joinPoint->setMethodArgument('locale', $this->frontendSession->getCurrentLocale()->getLanguage());
-		}
+
+		return $joinPoint->getAdviceChain()->proceed($joinPoint);
 	}
+
 }
 
 ?>

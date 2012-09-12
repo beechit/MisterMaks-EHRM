@@ -63,8 +63,3 @@ TYPO3:
     handlebarsTemplates:
       # include the handlebars template
       Finisher-DatabaseFinisher: resource://Beech.Ehrm/Private/FormBuilderTemplates/DatabaseFinisher.html
-LanguageSetter:
-  user:
-    john: en
-    bram: nl
-    karol: pl
