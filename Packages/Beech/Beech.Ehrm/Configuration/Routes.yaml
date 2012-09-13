@@ -9,6 +9,14 @@
 
 -
   name: 'Wizard'
+  uriPattern: 'wizard/show/{formPersistenceIdentifier}'
+  defaults:
+    '@package': 'Beech.Ehrm'
+    '@controller': 'Wizard'
+    '@action': 'show'
+
+-
+  name: 'Wizard'
   uriPattern: 'wizard/{entity}/{id}'
   defaults:
     '@package': 'Beech.Ehrm'
