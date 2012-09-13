@@ -218,9 +218,6 @@ class Company {
 	 */
 	public function removeAddress(\Beech\Party\Domain\Model\Address $address) {
 		$this->addresses->removeElement($address);
-		if ($address === $this->primaryElectronicAddress) {
-			unset($this->primaryElectronicAddress);
-		}
 	}
 
 	/**
@@ -250,8 +247,8 @@ class Company {
 	 */
 	public function removeElectronicAddress(\Beech\Party\Domain\Model\ElectronicAddress $electronicAddress) {
 		$this->electronicAddresses->removeElement($electronicAddress);
-		if ($electronicAddress === $this->primaryElectronicAddress) {
-			unset($this->primaryElectronicAddress);
+		if ($electronicAddress === $this->getPrimaryElectronicAddress()) {
+			$this->primaryElectronicAddress = NULL;
 		}
 	}
 
@@ -398,7 +395,7 @@ class Company {
 	 * @return void
 	 */
 	public function removeContactPerson(\Beech\Party\Domain\Model\Person $person) {
-		$this->contactPersons->remove($person);
+		$this->contactPersons->removeElement($person);
 	}
 
 	/**

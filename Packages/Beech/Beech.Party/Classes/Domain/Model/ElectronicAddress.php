@@ -42,7 +42,6 @@ class ElectronicAddress extends \TYPO3\Party\Domain\Model\ElectronicAddress {
 	 * Construct the object
 	 */
 	public function __construct() {
-		parent::__construct();
 		$this->setCode('');
 	}
 
