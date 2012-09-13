@@ -23,19 +23,22 @@
 			<trans-unit id="action.submit">
 				<source>Submit</source>
 			</trans-unit>
-			<trans-unit id="Loading">
+			<trans-unit id="loading">
 				<source>Mister Maks</source>
 			</trans-unit>
-			<trans-unit id="Company name">
+			<trans-unit id="label.companyName">
 				<source>Company name</source>
 			</trans-unit>
-			<trans-unit id="Chamber Of Commerce Number">
+			<trans-unit id="label.chamberOfCommerceNumber">
 				<source>Chamber Of Commerce Number</source>
 			</trans-unit>
-			<trans-unit id="House number">
+			<trans-unit id="label.house">
 				<source>House number</source>
 			</trans-unit>
-			<trans-unit id="Residence">
+			<trans-unit id="label.street">
+				<source>Street</source>
+			</trans-unit>
+			<trans-unit id="label.residence">
 				<source>Residence</source>
 			</trans-unit>
 			<trans-unit id="Step 1 - Creating company">
