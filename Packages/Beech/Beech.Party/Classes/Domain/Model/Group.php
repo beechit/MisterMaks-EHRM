@@ -31,6 +31,7 @@ class Group {
 	/**
 	 * @var \Doctrine\Common\Collections\Collection<\Beech\Party\Domain\Model\Group>
 	 * @ORM\ManyToMany
+	 * @ORM\JoinTable(inverseJoinColumns={@ORM\JoinColumn(name="parent_group_id")})
 	 */
 	protected $children;
 
