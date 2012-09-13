@@ -17,7 +17,7 @@
 			<p><f:translate id="message.person.noResult">No employees added yet</f:translate></p>
 		</f:else>
 	</f:if>
-	<a class="btn btn-primary" href="/beech.ehrm/wizard/show?formPersistenceIdentifier=newPerson&presetName=wizard" data-toggle="modal" data-target="#entityModal"><i class="icon-leaf icon-white"></i> <f:translate id="action.create">Create</f:translate> with Wizard</a>
+	<a class="btn btn-primary" href="/{f:uri.action(package: 'Beech.Ehrm', controller: 'Wizard', arguments: {formPersistenceIdentifier: 'newPerson'})}" data-toggle="modal" data-target="#entityModal"><i class="icon-leaf icon-white"></i> <f:translate id="action.create">Create</f:translate></a>
 </f:section>
 
 <f:section name="Left" />
