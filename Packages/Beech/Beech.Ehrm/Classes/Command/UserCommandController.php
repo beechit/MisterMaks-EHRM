@@ -56,8 +56,7 @@ class UserCommandController extends \TYPO3\FLOW3\Cli\CommandController {
 		$this->personRepository->add($person);
 
 			// TODO remove when https://review.typo3.org/#/c/13868/ is merged
-		$roles = array_map(function($role) { return strpos('Beech.Ehrm.', $role) ? $role : 'Beech.Ehrm.' . $role; }, explode(',', $roles));
-
+		$roles = array_map(function($role) { return strpos($role, 'Beech.Ehrm.') !== FALSE ? $role : 'Beech.Ehrm.' . $role; }, explode(',', $roles));
 		$account = $this->accountFactory->createAccountWithPassword($username, $password, $roles, 'DefaultProvider');
 
 		$account->setParty($person);
