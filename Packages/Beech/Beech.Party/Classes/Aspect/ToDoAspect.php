@@ -19,7 +19,7 @@ class ToDoAspect {
 
 	/**
 	 * @var \TYPO3\FLOW3\Persistence\PersistenceManagerInterface
-	 * @FLOW3\inject
+	 * @FLOW3\Inject
 	 */
 	protected $persistenceManager;
 
