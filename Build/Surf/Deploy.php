@@ -38,8 +38,8 @@ $deployment->onInitialize(function() use ($workflow, $application) {
 	$workflow->removeTask('typo3.surf:flow3:copyconfiguration');
 	$workflow->removeTask('typo3.surf:gitcheckout');
 	$workflow->addTask('beech.gitcheckout', 'update', $application);
-	$workflow->afterTask('beech.gitcheckout', 'beech.updatesubmodules', $application);
-	$workflow->afterTask('beech.updatesubmodules', 'beech.fetchQueuedPatches', $application);
+	$workflow->afterTask('beech.gitcheckout', 'beech.configurationSymlink', $application);
+	$workflow->afterTask('beech.configurationSymlink', 'beech.fetchQueuedPatches', $application);
 	$workflow->afterTask('beech.fetchQueuedPatches', 'beech.clearcache', $application);
 });
 
@@ -51,8 +51,8 @@ $workflow->defineTask('beech.fetchQueuedPatches', 'typo3.surf:shell', array(
 	'command' => 'cd {releasePath} && php Build/Essentials/fetchQueuedPatches.php'
 ));
 
-$workflow->defineTask('beech.updatesubmodules', 'typo3.surf:shell', array(
-	'command' => 'cd {releasePath} && git submodule update --init --recursive'
+$workflow->defineTask('beech.configurationSymlink', 'typo3.surf:shell', array(
+	'command' => 'cd {releasePath} && ln -s ../../shared/Configuration/Production/Settings.yaml Configuration/Production/Settings.yaml'
 ));
 
 $workflow->defineTask('beech.clearcache', 'typo3.surf:shell', array(
