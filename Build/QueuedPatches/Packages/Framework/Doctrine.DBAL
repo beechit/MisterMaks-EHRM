@@ -1,2 +1,1 @@
-git reset --hard
-patch -p1 -i ../../../Build/QueuedPatches/Packages/Framework/postgresql_migrations.diff
+git fetch git://git.typo3.org/FLOW3/Packages/Doctrine.DBAL refs/changes/70/14570/1 && git cherry-pick FETCH_HEAD

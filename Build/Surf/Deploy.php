@@ -18,12 +18,6 @@ if (getenv('DEPLOYMENT_PATH')) {
 	throw new \Exception('Deployment path must be set in the DEPLOYMENT_PATH env variable.');
 }
 
-if (getenv('DEPLOYMENT_BRANCH')) {
-	$application->setOption('branch', getenv('DEPLOYMENT_BRANCH'));
-} else {
-	$application->setOption('branch', 'master');
-}
-
 if (getenv('DEPLOYMENT_REPOSITORY')) {
 	$application->setOption('repositoryUrl', getenv('DEPLOYMENT_REPOSITORY'));
 } else {
@@ -40,7 +34,18 @@ $deployment->setWorkflow($workflow);
 $deployment->onInitialize(function() use ($workflow, $application) {
 	$workflow->removeTask('typo3.surf:flow3:setfilepermissions');
 	$workflow->removeTask('typo3.surf:flow3:copyconfiguration');
+	$workflow->removeTask('typo3.surf:gitcheckout');
+	$workflow->addTask('beech.gitcheckout', 'update', $application);
+	$workflow->afterTask('beech.gitcheckout', 'beech.fetchQueuedPatches', $application);
 });
+
+$workflow->defineTask('beech.gitcheckout', 'typo3.surf:gitcheckout', array(
+	'branch' => 'development'
+));
+
+$workflow->defineTask('beech.fetchQueuedPatches', 'typo3.surf:shell', array(
+	'command' => 'cd {releasePath} && php Build/Essentials/fetchQueuedPatches.php'
+));
 
 if (getenv('DEPLOYMENT_HOST')) {
 	$node = new Node(getenv('DEPLOYMENT_HOST'));
