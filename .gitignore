@@ -4,7 +4,7 @@
 /Build/Data/
 /Build/cache.properties
 /Configuration/Development/Settings.yaml
-/Configuration/Production/IncludeCachedConfigurations.php
+/Configuration/Production/*
 /Configuration/PackageStates.php
 /Data/
 /Tests/
