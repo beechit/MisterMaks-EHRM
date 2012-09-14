@@ -1,1 +1,2 @@
+git reset --hard origin/master
 git fetch git://git.typo3.org/FLOW3/Packages/Doctrine.Common refs/changes/69/14569/1 && git cherry-pick FETCH_HEAD
