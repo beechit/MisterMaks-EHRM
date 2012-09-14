@@ -18,7 +18,18 @@ if (getenv('DEPLOYMENT_PATH')) {
 	throw new \Exception('Deployment path must be set in the DEPLOYMENT_PATH env variable.');
 }
 
-$application->setOption('repositoryUrl', 'ssh://git.beech.local/EHRM/Base.git');
+if (getenv('DEPLOYMENT_BRANCH')) {
+	$application->setOption('branch', getenv('DEPLOYMENT_BRANCH'));
+} else {
+	$application->setOption('branch', 'master');
+}
+
+if (getenv('DEPLOYMENT_REPOSITORY')) {
+	$application->setOption('repositoryUrl', getenv('DEPLOYMENT_REPOSITORY'));
+} else {
+	$application->setOption('repositoryUrl', 'ssh://git.beech.local/EHRM/Base.git');
+}
+
 $application->setOption('keepReleases', 20);
 
 $deployment->addApplication($application);
