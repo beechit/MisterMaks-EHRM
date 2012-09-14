@@ -29,6 +29,8 @@ $application->setOption('keepReleases', 20);
 $deployment->addApplication($application);
 
 $workflow = new SimpleWorkflow();
+$workflow->setEnableRollback(getenv('ENABLE_ROLLBACK') ? (boolean)getenv('ENABLE_ROLLBACK') : FALSE);
+
 $deployment->setWorkflow($workflow);
 
 $deployment->onInitialize(function() use ($workflow, $application) {
