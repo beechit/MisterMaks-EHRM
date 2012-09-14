@@ -18,12 +18,7 @@ if (getenv('DEPLOYMENT_PATH')) {
 	throw new \Exception('Deployment path must be set in the DEPLOYMENT_PATH env variable.');
 }
 
-if (getenv('DEPLOYMENT_REPOSITORY')) {
-	$application->setOption('repositoryUrl', getenv('DEPLOYMENT_REPOSITORY'));
-} else {
-	$application->setOption('repositoryUrl', 'ssh://git.beech.local/EHRM/Base.git');
-}
-
+$application->setOption('repositoryUrl', getenv('DEPLOYMENT_REPOSITORY') ? getenv('DEPLOYMENT_REPOSITORY') : 'ssh://git.beech.local/EHRM/Base.git');
 $application->setOption('keepReleases', 20);
 
 $deployment->addApplication($application);
@@ -34,30 +29,23 @@ $workflow->setEnableRollback(getenv('ENABLE_ROLLBACK') ? (boolean)getenv('ENABLE
 $deployment->setWorkflow($workflow);
 
 $deployment->onInitialize(function() use ($workflow, $application) {
-	$workflow->removeTask('typo3.surf:flow3:setfilepermissions');
-	$workflow->removeTask('typo3.surf:flow3:copyconfiguration');
-	$workflow->removeTask('typo3.surf:gitcheckout');
-	$workflow->addTask('beech.gitcheckout', 'update', $application);
-	$workflow->afterTask('beech.gitcheckout', 'beech.configurationSymlink', $application);
-	$workflow->afterTask('beech.configurationSymlink', 'beech.fetchQueuedPatches', $application);
-	$workflow->afterTask('beech.fetchQueuedPatches', 'beech.clearcache', $application);
+	$workflow
+		->removeTask('typo3.surf:flow3:setfilepermissions')
+		->removeTask('typo3.surf:flow3:copyconfiguration')
+
+		->defineTask('typo3.surf:gitcheckout', 'typo3.surf:gitcheckout', array(
+			'branch' => 'development'
+		))
+		->defineTask('beech.fetchQueuedPatches', 'typo3.surf:shell', array(
+			'command' => 'cd {releasePath} && php Build/Essentials/fetchQueuedPatches.php'
+		))
+		->defineTask('beech.clearcache', 'typo3.surf:shell', array(
+			'command' => 'cd {releasePath} && FLOW3_CONTEXT=Production ./flow3 flow3:cache:flush --force'
+		))
+
+		->afterTask('typo3.surf:gitcheckout', 'beech.fetchQueuedPatches', $application)
+		->addTask('beech.clearcache', 'update', $application);
 });
-
-$workflow->defineTask('beech.gitcheckout', 'typo3.surf:gitcheckout', array(
-	'branch' => 'development'
-));
-
-$workflow->defineTask('beech.fetchQueuedPatches', 'typo3.surf:shell', array(
-	'command' => 'cd {releasePath} && php Build/Essentials/fetchQueuedPatches.php'
-));
-
-$workflow->defineTask('beech.configurationSymlink', 'typo3.surf:shell', array(
-	'command' => 'cd {releasePath} && ln -s ../../shared/Configuration/Production/Settings.yaml Configuration/Production/Settings.yaml'
-));
-
-$workflow->defineTask('beech.clearcache', 'typo3.surf:shell', array(
-	'command' => 'cd {releasePath} && FLOW3_CONTEXT=Production ./flow3 flow3:cache:flush --force'
-));
 
 if (getenv('DEPLOYMENT_HOST')) {
 	$node = new Node(getenv('DEPLOYMENT_HOST'));
@@ -65,6 +53,7 @@ if (getenv('DEPLOYMENT_HOST')) {
 } else {
 	throw new \Exception('Hostname must be set in the DEPLOYMENT_HOST env variable.');
 }
+
 if (getenv('DEPLOYMENT_USERNAME')) {
 	$node->setOption('username', getenv('DEPLOYMENT_USERNAME'));
 } else {
