@@ -7,11 +7,11 @@ resources:
     StandardController: 'method(\Beech\Ehrm\Controller\StandardController->.*Action())'
 
 roles:
-  Administrator: [ User ]
-  User: [ ]
+  'Beech.Ehrm.Administrator': [ User ]
+  'Beech.Ehrm.User': [ ]
 
 acls:
-  Administrator:
+  'Beech.Ehrm.Administrator':
     methods:
       ManagementControllers: GRANT
   Everybody:

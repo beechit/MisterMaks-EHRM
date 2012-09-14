@@ -55,7 +55,11 @@ class UserCommandController extends \TYPO3\FLOW3\Cli\CommandController {
 		$person->setName(new \TYPO3\Party\Domain\Model\PersonName(NULL, $firstName, NULL, $lastName));
 		$this->personRepository->add($person);
 
-		$account = $this->accountFactory->createAccountWithPassword($username, $password, explode(',', $roles), 'DefaultProvider');
+			// TODO remove when https://review.typo3.org/#/c/13868/ is merged
+		$roles = array_map(function($role) { return strpos('Beech.Ehrm.', $role) ? $role : 'Beech.Ehrm.' . $role; }, explode(',', $roles));
+
+		$account = $this->accountFactory->createAccountWithPassword($username, $password, $roles, 'DefaultProvider');
+
 		$account->setParty($person);
 		$this->accountRepository->add($account);
 		$this->outputLine('Created account "%s".', array($username));
