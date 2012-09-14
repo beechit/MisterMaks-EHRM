@@ -38,7 +38,9 @@ $deployment->onInitialize(function() use ($workflow, $application) {
 	$workflow->removeTask('typo3.surf:flow3:copyconfiguration');
 	$workflow->removeTask('typo3.surf:gitcheckout');
 	$workflow->addTask('beech.gitcheckout', 'update', $application);
-	$workflow->afterTask('beech.gitcheckout', 'beech.fetchQueuedPatches', $application);
+	$workflow->afterTask('beech.gitcheckout', 'beech.updatesubmodules', $application);
+	$workflow->afterTask('beech.updatesubmodules', 'beech.fetchQueuedPatches', $application);
+	$workflow->afterTask('beech.fetchQueuedPatches', 'beech.clearcache', $application);
 });
 
 $workflow->defineTask('beech.gitcheckout', 'typo3.surf:gitcheckout', array(
@@ -47,6 +49,14 @@ $workflow->defineTask('beech.gitcheckout', 'typo3.surf:gitcheckout', array(
 
 $workflow->defineTask('beech.fetchQueuedPatches', 'typo3.surf:shell', array(
 	'command' => 'cd {releasePath} && php Build/Essentials/fetchQueuedPatches.php'
+));
+
+$workflow->defineTask('beech.updatesubmodules', 'typo3.surf:shell', array(
+	'command' => 'cd {releasePath} && git submodule update --init --recursive'
+));
+
+$workflow->defineTask('beech.clearcache', 'typo3.surf:shell', array(
+	'command' => 'cd {releasePath} && FLOW3_CONTEXT=Production ./flow3 flow3:cache:flush --force'
 ));
 
 if (getenv('DEPLOYMENT_HOST')) {
