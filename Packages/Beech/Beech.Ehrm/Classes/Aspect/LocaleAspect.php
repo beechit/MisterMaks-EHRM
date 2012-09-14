@@ -41,7 +41,9 @@ class LocaleAspect {
 			$person = $this->securityContext->getAccount()->getParty();
 			if ($person instanceof \Beech\Party\Domain\Model\Person) {
 				try {
-					return new \TYPO3\FLOW3\I18n\Locale($person->getPreferences()->get('locale'));
+					if ($person->getPreferences()->get('locale')) {
+						return new \TYPO3\FLOW3\I18n\Locale($person->getPreferences()->get('locale'));
+					}
 				} catch (\Exception $exception) {
 					$this->applicationLogger->log(sprintf(
 						'Invalid locale identifier (%s) for person "%s" found',
