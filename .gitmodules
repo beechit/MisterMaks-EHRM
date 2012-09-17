@@ -73,3 +73,9 @@
 [submodule "Packages/Library/TYPO3.TcPdf"]
 	path = Packages/Library/TYPO3.TcPdf
 	url = git://git.typo3.org/FLOW3/Packages/TYPO3.TcPdf.git
+[submodule "Packages/Library/TYPO3.TypoScript"]
+	path = Packages/Library/TYPO3.TypoScript
+	url = git://git.typo3.org/FLOW3/Packages/TYPO3.TypoScript.git
+[submodule "Packages/Library/TYPO3.Eel"]
+	path = Packages/Library/TYPO3.Eel
+	url = git://git.typo3.org/FLOW3/Packages/TYPO3.Eel.git
