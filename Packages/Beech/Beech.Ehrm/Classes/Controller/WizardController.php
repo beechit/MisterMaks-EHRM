@@ -43,7 +43,7 @@ class WizardController extends AbstractController {
 	 * @param string $presetName
 	 * @return void
 	 */
-	public function showAction($formPersistenceIdentifier, $presetName = 'default') {
+	public function showAction($formPersistenceIdentifier, $presetName = 'wizard') {
 		$this->view->assign('formPersistenceIdentifier', $formPersistenceIdentifier);
 		$this->view->assign('presetName', $presetName);
 	}

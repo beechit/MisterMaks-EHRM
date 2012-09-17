@@ -9,6 +9,12 @@ finishers:
         options:
             package: Beech.Party
             model: Company
+    -
+        identifier: 'TYPO3.Form:Redirect'
+        options:
+            package: Beech.Party
+            controller: Management\Company
+            action: list
 renderables:
     -
         type: 'TYPO3.Form:Page'

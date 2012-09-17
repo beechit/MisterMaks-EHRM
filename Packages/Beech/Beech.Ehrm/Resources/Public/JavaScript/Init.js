@@ -6,6 +6,7 @@ require(
 			'jquery': 'Beech.Ehrm/JavaScript/jquery',
 			'jquery-lib': 'Beech.Ehrm/Library/jquery-ui/js/jquery-1.7.2.min',
 			'jquery.ui': 'Beech.Ehrm/Library/jquery-ui/js/jquery-ui-1.8.21.custom.min',
+			'form': 'Beech.Ehrm/Library/jquery.form',
 			'emberjs': 'Emberjs/Core/minified/ember-0.9.8.min',
 			'bootstrap': 'Twitter.Bootstrap/2.0/js/bootstrap.min',
 			'notification': 'Beech.Ehrm/JavaScript/Notification',
