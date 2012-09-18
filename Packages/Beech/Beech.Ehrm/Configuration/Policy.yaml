@@ -1,10 +1,7 @@
 resources:
   methods:
+    ApplicationControllers: 'method(Beech\.*\Controller\.*(?<!Login)Controller->.*Action())'
     ManagementControllers: 'method(\Beech\.*\Management\.*Controller->.*Action())'
-    LogController: 'method(\Beech\Ehrm\Controller\LogController->.*Action())'
-    WizardController: 'method(\Beech\Ehrm\Controller\WizardController->.*Action())'
-    RestController: 'method(\Beech\Ehrm\Controller\RestController->.*Action())'
-    StandardController: 'method(\Beech\Ehrm\Controller\StandardController->.*Action())'
 
 roles:
   'Beech.Ehrm.Administrator': [ User ]
@@ -16,7 +13,4 @@ acls:
       ManagementControllers: GRANT
   Everybody:
     methods:
-      LogController: GRANT
-      WizardController: GRANT
-      RestController: GRANT
-      StandardController: GRANT
+      ApplicationControllers: GRANT
