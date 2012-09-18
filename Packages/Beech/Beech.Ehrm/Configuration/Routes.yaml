@@ -10,18 +10,22 @@
 -
   name: 'Wizard'
   uriPattern: 'wizard/show/{formPersistenceIdentifier}'
+  toLowerCase: false
   defaults:
     '@package': 'Beech.Ehrm'
     '@controller': 'Wizard'
     '@action': 'show'
+    presetName: 'wizard'
 
 -
   name: 'Wizard'
   uriPattern: 'wizard/{entity}/{id}'
+  toLowerCase: false
   defaults:
     '@package': 'Beech.Ehrm'
     '@controller': 'Wizard'
     '@action': 'index'
+    presetName: 'wizard'
 
 -
   name: 'Default'
