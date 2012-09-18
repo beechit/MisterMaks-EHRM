@@ -82,3 +82,12 @@
 [submodule "Packages/Tools/Beech.Style"]
 	path = Packages/Tools/Beech.Style
 	url = ssh://git.beech.local/EHRM/Package/Style.git
+[submodule "Packages/Application/Beech.Task"]
+	path = Packages/Application/Beech.Task
+	url = ssh://git.beech.local/EHRM/Package/Task.git
+[submodule "Packages/Application/Beech.Document"]
+	path = Packages/Application/Beech.Document
+	url = ssh://git.beech.local/EHRM/Package/Document.git
+[submodule "Packages/Application/Beech.CLA"]
+	path = Packages/Application/Beech.CLA
+	url = ssh://git.beech.local/EHRM/Package/CLA.git
