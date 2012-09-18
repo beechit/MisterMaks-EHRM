@@ -79,3 +79,6 @@
 [submodule "Packages/Library/TYPO3.Eel"]
 	path = Packages/Library/TYPO3.Eel
 	url = git://git.typo3.org/FLOW3/Packages/TYPO3.Eel.git
+[submodule "Packages/Tools/Beech.Style"]
+	path = Packages/Tools/Beech.Style
+	url = ssh://git.beech.local/EHRM/Package/Style.git
