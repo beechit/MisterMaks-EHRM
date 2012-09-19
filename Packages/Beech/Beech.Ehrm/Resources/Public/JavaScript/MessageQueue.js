@@ -1,4 +1,4 @@
-define(['jquery', 'emberjs', 'notification'], function(jQuery, Ember, Notification) {
+define(['jquery', 'emberjs', 'Beech.Ehrm/JavaScript/Notification'], function(jQuery, Ember, Notification) {
 
 	return Ember.ArrayController.create({
 		content: [],

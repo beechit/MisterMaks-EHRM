@@ -1,5 +1,35 @@
 define(['jquery', 'emberjs', 'Beech.Ehrm/Library/jquery.midgardNotifications'], function(jQuery, Ember) {
 
+	MM.init.afterInitialize.push(function() {
+		jQuery.get(MM.configuration.restNotificationUri, function(data) {
+			data = jQuery.parseJSON(data);
+
+			if (data.result.status === 'success') {
+				jQuery.each(data.objects, function(index, value) {
+					Notification.showDialog(
+						value.urls.execute ? '<a href="' + value.urls.execute + '">Do task</a>' : '', // TODO: Add localization for 'Do Task'
+						[],
+						value.sticky ? 0 : 500, // TODO: Check why the timeout doesn't work
+						'Notification: ' + value.label,
+						'normal',
+						value.closeable,
+						function() {
+							jQuery.ajax(
+								'rest/notification/' + value.identifier,
+								{
+									'type': 'DELETE'
+								}
+							);
+						}
+					);
+					// TODO: Add closeable / no
+				});
+			} else {
+				Notification.showError('Communication error');
+			}
+		});
+	});
+
 	return Ember.Object.create({
 		INFO: "Info",
 		LOW: "Low action",

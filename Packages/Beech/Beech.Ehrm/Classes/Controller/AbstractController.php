@@ -49,6 +49,9 @@ abstract class AbstractController extends \TYPO3\FLOW3\Mvc\Controller\ActionCont
 			$view->assign('mainMenuItems', $this->settingsHelper->getMenuItems('main'));
 			$view->assign('actionMenuItems', $this->settingsHelper->getMenuItems('action'));
 			$view->assign('accountMenuItems', $this->settingsHelper->getMenuItems('account'));
+			$view->assign('globalConfiguration', json_encode(array(
+				'restNotificationUri' => $this->uriBuilder->reset()->setFormat('json')->uriFor('list', array(), 'Rest\Notification', 'Beech.Party')
+			)));
 		}
 	}
 

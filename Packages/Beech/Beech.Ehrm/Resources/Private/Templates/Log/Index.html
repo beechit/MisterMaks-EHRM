@@ -1,28 +1,22 @@
-<!DOCTYPE html>{namespace bootstrap=Twitter\Bootstrap\ViewHelpers}
 <f:layout name="Default" />
 
-<f:section name="Title">A list of logs</f:section>
+<f:section name="Title">logs</f:section>
 
 <f:section name="Body">
-	<f:flashMessages class="flashmessages"/>
+
+	<script>MM.init.afterInitialize.push(function() {
+		App.View.Log.create().appendTo('#logTable');
+	});</script>
+
 	<f:if condition="{logs}">
 		<f:then>
-			<ul>
-				<f:for each="{logs}" as="log">
-					<li>
-						<f:link.action action="show" arguments="{log: log}">{log.message}</f:link.action>
-						{log.timestamp -> f:format.date(format: 'Y-m-d H:i:s')}
-					</li>
-				</f:for>
-			</ul>
+			<script type="text/x-handlebars" data-template-name="log-listing">{{view App.View.Logs}}</script>
+			<div id="logTable"></div>
 		</f:then>
 		<f:else>
 			<p>No logs created yet.</p>
 		</f:else>
 	</f:if>
-	<p>
-		<f:link.action action="addExample">Add an example</f:link.action>
-	</p>
 </f:section>
 
 <f:section name="Left" />

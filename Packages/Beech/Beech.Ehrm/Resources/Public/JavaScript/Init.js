@@ -4,21 +4,20 @@ require(
 		urlArgs: 'bust=' + (new Date()).getTime(),
 		paths: {
 			'jquery': 'Beech.Ehrm/JavaScript/jquery',
+			'jquery-ui': 'Beech.Ehrm/JavaScript/jquery-ui',
 			'jquery-lib': 'Beech.Ehrm/Library/jquery-ui/js/jquery-1.7.2.min',
-			'jquery.ui': 'Beech.Ehrm/Library/jquery-ui/js/jquery-ui-1.8.21.custom.min',
+			'jquery-ui-lib': 'Beech.Ehrm/Library/jquery-ui/js/jquery-ui-1.9.rc1',
 			'form': 'Beech.Ehrm/Library/jquery.form',
-			'emberjs': 'Emberjs/Core/minified/ember-0.9.8.min',
-			'bootstrap': 'Twitter.Bootstrap/2.0/js/bootstrap.min',
-			'notification': 'Beech.Ehrm/JavaScript/Notification',
-			'message-queue': 'Beech.Ehrm/JavaScript/MessageQueue',
-			'ui': 'Beech.Ehrm/JavaScript/UserInterface'
+			'emberjs': 'Emberjs/Core/ember-0.9.8',
+			'bootstrap': 'Twitter.Bootstrap/2.0/js/bootstrap.min'
 		},
 		shim: {
 			'jquery-lib': {
 				'exports': 'jQuery'
 			},
-			'jquery.ui': ['jquery'],
+			'jquery-ui': ['jquery'],
 			'bootstrap': ['jquery'],
+			'form': ['jquery'],
 			'emberjs': {
 				'deps': ['jquery'],
 				'exports': 'Ember'
@@ -28,50 +27,58 @@ require(
 	[
 		'jquery',
 		'emberjs',
-		'jquery.ui',
+		'jquery-ui',
 		'bootstrap'
 	],
-	function(jQuery, Ember) {
-		jQuery(document).ready(function() {
+	function($, Ember) {
+		$(document).ready(function() {
 			if (MM.authenticated) {
-				require(['ui', 'notification', 'message-queue'], function(UserInterface, Notification, MessageQueue) {
-					window.App = Ember.Application.create({
-						ready: function() {
-							UserInterface.modal().initialize();
-							Notification.initialize();
-							MessageQueue.initialize();
-
-							jQuery.get('rest/notification/', function(data) {
-								data = jQuery.parseJSON(data);
-
-								if (data.result.status === 'success') {
-									jQuery.each(data.objects, function(index, value) {
-										Notification.showDialog(
-											value.urls.execute ? '<a href="' + value.urls.execute + '">Do task</a>' : '', // TODO: Add localization for 'Do Task'
-											[],
-											value.sticky ? 0 : 500, // TODO: Check why the timeout doesn't work
-											'Notification: ' + value.label,
-											'normal',
-											value.closeable,
-											function() {
-												console.log('after show callback');
-												jQuery.ajax(
-													'rest/notification/' + value.identifier,
-													{
-														'type': 'DELETE'
-													}
-												);
-											}
-										);
-											// TODO: Add closeable / no
-									});
-								} else {
-									Notification.showError('Communication error');
-								}
-							});
+				if (MM.init.onLoad) {
+					for (var i in MM.init.onLoad) {
+						if (i.match(/^[0-9]*$/)) {
+							MM.init.onLoad[i].call();
 						}
-					});
-				});
+					}
+				}
+
+				require(
+					[
+						'Beech.Ehrm/JavaScript/UserInterface',
+						'Beech.Ehrm/JavaScript/Notification',
+						'Beech.Ehrm/JavaScript/MessageQueue',
+						'Beech.Ehrm/JavaScript/Log'
+					],
+					function(UserInterface, Notification, MessageQueue, Log) {
+						window.App = Ember.Application.create({
+
+							View: {
+								Log: Log
+							},
+
+							ready: function() {
+								if (MM.init.preInitialize) {
+									for (var i in MM.init.preInitialize) {
+										if (i.match(/^[0-9]*$/)) {
+											MM.init.preInitialize[i].call();
+										}
+									}
+								}
+
+								UserInterface.modal().initialize();
+								Notification.initialize();
+								MessageQueue.initialize();
+
+								if (MM.init.afterInitialize) {
+									for (var i in MM.init.afterInitialize) {
+										if (i.match(/^[0-9]*$/)) {
+											MM.init.afterInitialize[i].call();
+										}
+									}
+								}
+							}
+						});
+					}
+				);
 			}
 		});
 	}

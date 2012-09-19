@@ -12,6 +12,8 @@
 			<![CDATA[
 				var MM = {
 					authenticated: ]]><f:security.ifAuthenticated><f:then>true</f:then><f:else>false</f:else></f:security.ifAuthenticated><![CDATA[,
+					configuration: ]]>{globalConfiguration -> f:format.raw()}<![CDATA[,
+					init: { onLoad: [], afterInitialize: [], preInitialize: [] }
 				};
 			]]>
 		</script>

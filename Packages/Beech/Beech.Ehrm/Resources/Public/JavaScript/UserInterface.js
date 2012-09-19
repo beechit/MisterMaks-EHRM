@@ -1,4 +1,4 @@
-define(['jquery', 'emberjs', 'form'], function (jQuery, Ember, Form) {
+define(['jquery', 'emberjs', 'form'], function (jQuery, Ember) {
 	return {
 		navigation: function () {
 			return Ember.Object.create({

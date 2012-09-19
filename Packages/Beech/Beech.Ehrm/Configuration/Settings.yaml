@@ -36,6 +36,14 @@ Beech:
         package: 'Beech.Ehrm'
         controller: 'Standard'
         action: 'index'
+      base:
+        menu:
+          logmanager:
+            label: 'System log'
+            priority: 9999
+            menuGroup: 'main:manage'
+            controller: 'Log'
+            resource: 'ManagementControllers'
 TYPO3:
   Form:
     presets:
