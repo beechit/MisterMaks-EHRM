@@ -99,7 +99,7 @@ class Company {
 	 * The chamber of commerce number (KvK)
 	 *
 	 * @var string
-	 * @FLOW3\Validate(type="NotEmpty", validationGroups={"Controller"})
+	 * @ORM\Column(nullable=TRUE)
 	 */
 	protected $chamberOfCommerceNumber;
 
