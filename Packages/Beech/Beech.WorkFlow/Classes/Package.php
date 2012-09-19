@@ -28,7 +28,7 @@ class Package extends BasePackage {
 				// TODO Move this to another place later on.
 				// 1) this could be a performance killer
 				// 2) the check for $_SERVER['SHELL'] is dirty, but has to be done to be able to migrate the database
-			$dispatcher->connect('TYPO3\FLOW3\Mvc\Dispatcher', 'beforeControllerInvocation', 'Beech\WorkFlow\Core\ActionDispatcher', 'run');
+			$dispatcher->connect('TYPO3\FLOW3\Mvc\Dispatcher', 'beforeControllerInvocation', 'Beech\WorkFlow\WorkFlow\ActionDispatcher', 'run');
 		}
 	}
 }
