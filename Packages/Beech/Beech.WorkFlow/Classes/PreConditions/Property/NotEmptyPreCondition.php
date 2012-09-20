@@ -1,18 +1,18 @@
 <?php
-namespace Beech\WorkFlow\Validators\Property;
+namespace Beech\WorkFlow\PreConditions\Property;
 
 /*
  * This source file is proprietary property of Beech Applications B.V.
- * Date: 27-08-12
+ * Date: 21-09-12
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
 use TYPO3\FLOW3\Annotations as FLOW3;
 
 /**
- * The NotEmptyValidator checks if a property of an entity is not empty
+ * The NotEmptyPreCondition checks if a property of an entity is empty
  */
-class NotEmptyValidator implements \Beech\WorkFlow\Core\ValidatorInterface {
+class NotEmptyPreCondition implements \Beech\WorkFlow\Core\PreConditionInterface {
 
 	/**
 	 * @var string
@@ -29,7 +29,7 @@ class NotEmptyValidator implements \Beech\WorkFlow\Core\ValidatorInterface {
 	 *
 	 * @return boolean
 	 */
-	public function isValid() {
+	public function isMet() {
 		$propertyValue = $this->getPropertyValue();
 
 		if ($propertyValue) {
@@ -40,7 +40,7 @@ class NotEmptyValidator implements \Beech\WorkFlow\Core\ValidatorInterface {
 					return count($propertyValue) > 0;
 				case 'string':
 					return trim($propertyValue) !== '';
-					// default includes integer, boolean, double (yes, not float but double), resource, NULL, 'unknown type'
+				// default includes integer, boolean, double (yes, not float but double), resource, NULL, 'unknown type'
 				default:
 					return !empty($propertyValue);
 			}
