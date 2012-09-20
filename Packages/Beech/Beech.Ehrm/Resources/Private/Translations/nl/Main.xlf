@@ -78,6 +78,50 @@
 				<source>Account</source>
 				<target>Account</target>
 			</trans-unit>
+			<trans-unit id='log.timestamp'>
+				<source>Timestamp</source>
+				<target>Account</target>
+			</trans-unit>
+			<trans-unit id='log.message'>
+				<source>Message</source>
+				<target>Message</target>
+			</trans-unit>
+			<trans-unit id='log.severity'>
+				<source>Severity</source>
+				<target>Severity</target>
+			</trans-unit>
+			<trans-unit id='log.packageKey'>
+				<source>Package key</source>
+				<target>Package key</target>
+			</trans-unit>
+			<trans-unit id='log.className'>
+				<source>Class name</source>
+				<target>Class name</target>
+			</trans-unit>
+			<trans-unit id='log.methodName'>
+				<source>Method name</source>
+				<target>Method name</target>
+			</trans-unit>
+			<trans-unit id='log.ipAddress'>
+				<source>IP Address</source>
+				<target>IP Address</target>
+			</trans-unit>
+			<trans-unit id='log.processId'>
+				<source>Process Id</source>
+				<target>Process Id</target>
+			</trans-unit>
+			<trans-unit id='log.additionalData'>
+				<source>Additional data</source>
+				<target>Additional data</target>
+			</trans-unit>
+			<trans-unit id="message.log.noResult">
+				<source>No logs created yet</source>
+				<target>Geen logs gevonden</target>
+			</trans-unit>
+			<trans-unit id="action.back">
+				<source>Back</source>
+				<target>Terug</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

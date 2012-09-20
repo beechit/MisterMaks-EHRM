@@ -1,57 +1,37 @@
 <!DOCTYPE html>{namespace bootstrap=Twitter\Bootstrap\ViewHelpers}
 
-<f:section name="Title">{log.message}</f:section>
+<f:section name="Title">Log "{log}"</f:section>
 
 <f:section name="Body">
-	<table>
-		<tr>
-			<th>Message</th>
-			<td>{log.message}</td>
-		</tr>
+	<dl class="dl-horizontal well">
+		<dt><f:translate id="log.timestamp">Time</f:translate></dt>
+		<dd>{log.timestamp -> f:format.date(format: 'Y-m-d H:i')}&nbsp;</dd>
 
-		<tr>
-			<th>Severity</th>
-			<td>{log.severity}</td>
-		</tr>
+		<dt><f:translate id="log.message">Message</f:translate></dt>
+		<dd>{log.message}&nbsp;</dd>
 
-		<tr>
-			<th>Additional data</th>
-			<td>{log.additionalData}</td>
-		</tr>
+		<dt><f:translate id="log.severity">Severity</f:translate></dt>
+		<dd>{log.severity}&nbsp;</dd>
 
-		<tr>
-			<th>Package key</th>
-			<td>{log.packageKey}</td>
-		</tr>
+		<dt><f:translate id="log.packageKey">Package key</f:translate></dt>
+		<dd>{log.packageKey}&nbsp;</dd>
 
-		<tr>
-			<th>Class name</th>
-			<td>{log.className}</td>
-		</tr>
+		<dt><f:translate id="log.className">Class name</f:translate></dt>
+		<dd>{log.className}&nbsp;</dd>
 
-		<tr>
-			<th>Method name</th>
-			<td>{log.methodName}</td>
-		</tr>
+		<dt><f:translate id="log.methodName">Method name</f:translate></dt>
+		<dd>{log.methodName}&nbsp;</dd>
 
-		<tr>
-			<th>Ip address</th>
-			<td>{log.ipAddress}</td>
-		</tr>
+		<dt><f:translate id="log.ipAddress">Ip address</f:translate></dt>
+		<dd>{log.ipAddress}&nbsp;</dd>
 
-		<tr>
-			<th>Process id</th>
-			<td>{log.processId}</td>
-		</tr>
+		<dt><f:translate id="log.processId">Process id</f:translate></dt>
+		<dd>{log.processId}&nbsp;</dd>
 
-		<tr>
-			<th>Timestamp</th>
-			<td>{log.timestamp -> f:format.date(format: 'Y-m-d H:i:s')}</td>
-		</tr>
-	</table>
-	<p>
-		<f:link.action action="index">Back</f:link.action>
-	</p>
+		<dt><f:translate id="log.additionalData">Additional data</f:translate></dt>
+		<dd>{log.additionalData}&nbsp;</dd>
+	</dl>
+	<div class="form-actions"><f:link.action action="index"><f:translate id="action.back">Back</f:translate></f:link.action></div>
 </f:section>
 
 <f:section name="Left" />

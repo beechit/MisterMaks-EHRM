@@ -59,6 +59,39 @@
 			<trans-unit id='menu.account'>
 				<source>Account</source>
 			</trans-unit>
+			<trans-unit id='log.timestamp'>
+				<source>Timestamp</source>
+			</trans-unit>
+			<trans-unit id='log.message'>
+				<source>Message</source>
+			</trans-unit>
+			<trans-unit id='log.severity'>
+				<source>Severity</source>
+			</trans-unit>
+			<trans-unit id='log.packageKey'>
+				<source>Package key</source>
+			</trans-unit>
+			<trans-unit id='log.className'>
+				<source>Class name</source>
+			</trans-unit>
+			<trans-unit id='log.methodName'>
+				<source>Method name</source>
+			</trans-unit>
+			<trans-unit id='log.ipAddress'>
+				<source>IP Address</source>
+			</trans-unit>
+			<trans-unit id='log.processId'>
+				<source>Process Id</source>
+			</trans-unit>
+			<trans-unit id='log.additionalData'>
+				<source>Additional data</source>
+			</trans-unit>
+			<trans-unit id="message.log.noResult">
+				<source>No logs created yet</source>
+			</trans-unit>
+			<trans-unit id="action.back">
+				<source>Back</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

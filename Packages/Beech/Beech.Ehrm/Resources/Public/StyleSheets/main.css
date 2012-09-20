@@ -22,3 +22,7 @@ ul.flashmessages {
 iframe {
 	border: none;
 }
+/* DataTables */
+table.dataTable thead th, table.dataTable td {padding: 8px;}
+table.dataTable tfoot td {padding: 1px 0px 1px 8px; }
+table.dataTable tfoot input {width: 90%; }

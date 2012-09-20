@@ -87,5 +87,14 @@ class DatabaseBackend extends \TYPO3\FLOW3\Log\Backend\AbstractBackend {
 		$this->logRepository->add($log);
 	}
 
+	/**
+	 * Get severityLabels
+	 *
+	 * @return array
+	 */
+	public function getSeverityLabels() {
+		return $this->severityLabels;
+	}
+
 }
 ?>

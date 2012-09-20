@@ -10,6 +10,7 @@ namespace Beech\Ehrm\Controller;
 use TYPO3\FLOW3\Annotations as FLOW3;
 
 use \Beech\Ehrm\Domain\Model\Log;
+use \Beech\Ehrm\Log\Backend\DatabaseBackend;
 
 /**
  * Log controller for the Beech.Ehrm package
@@ -19,17 +20,8 @@ use \Beech\Ehrm\Domain\Model\Log;
 class LogController extends AbstractController {
 
 	/**
-	 * Added to support the addExampleAction()
-	 * TODO: Should be deleted later when actual logging is in place
-	 *
-	 * @var \Beech\Ehrm\Log\ApplicationLoggerInterface
 	 * @FLOW3\Inject
-	 */
-	protected $applicationLogger;
-
-	/**
 	 * @var \Beech\Ehrm\Domain\Repository\LogRepository
-	 * @FLOW3\Inject
 	 */
 	protected $logRepository;
 
@@ -39,6 +31,8 @@ class LogController extends AbstractController {
 	 * @return void
 	 */
 	public function indexAction() {
+		$databaseBackend = new DatabaseBackend();
+		$this->view->assign('severityLabels', $databaseBackend->getSeverityLabels());
 		$this->view->assign('logs', $this->logRepository->findAll());
 	}
 
@@ -53,24 +47,14 @@ class LogController extends AbstractController {
 	}
 
 	/**
-	 * Example of how to log a message using the applicationLogger
-	 * TODO: Method should be deleted later when actual logging is in place
+	 * Redirect to index action
 	 *
 	 * @return void
 	 */
-	public function addExampleAction() {
-		$additionalData = array(
-			'user' => 'Name of the User',
-			'data' => array(
-				'some-key' => 'some value',
-				'other-key' => 'some other value'
-			)
-		);
-
-		$this->applicationLogger->log('This is an example of how to log a message to the database.', LOG_INFO, $additionalData);
-		$this->addFlashMessage('Added a logmessage');
+	public function redirectAction() {
 		$this->redirect('index');
 	}
 
 }
+
 ?>

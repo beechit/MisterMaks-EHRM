@@ -78,6 +78,50 @@
 				<source>Account</source>
 				<target>Konto</target>
 			</trans-unit>
+			<trans-unit id='log.timestamp'>
+				<source>Timestamp</source>
+				<target>Czas</target>
+			</trans-unit>
+			<trans-unit id='log.message'>
+				<source>Message</source>
+				<target>Treść</target>
+			</trans-unit>
+			<trans-unit id='log.severity'>
+				<source>Severity</source>
+				<target>Ważność</target>
+			</trans-unit>
+			<trans-unit id='log.packageKey'>
+				<source>Package key</source>
+				<target>Pakiet</target>
+			</trans-unit>
+			<trans-unit id='log.className'>
+				<source>Class name</source>
+				<target>Klasa</target>
+			</trans-unit>
+			<trans-unit id='log.methodName'>
+				<source>Method name</source>
+				<target>Metoda</target>
+			</trans-unit>
+			<trans-unit id='log.ipAddress'>
+				<source>IP Address</source>
+				<target>Adres IP</target>
+			</trans-unit>
+			<trans-unit id='log.processId'>
+				<source>Process Id</source>
+				<target>ID Procesu</target>
+			</trans-unit>
+			<trans-unit id='log.additionalData'>
+				<source>Additional data</source>
+				<target>Dodatkowe dane</target>
+			</trans-unit>
+			<trans-unit id="message.log.noResult">
+				<source>No logs created yet</source>
+				<target>Brak logow w systemie</target>
+			</trans-unit>
+			<trans-unit id="action.back">
+				<source>Back</source>
+				<target>Powrót</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

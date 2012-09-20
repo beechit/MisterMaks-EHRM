@@ -8,11 +8,50 @@
 
 	<f:if condition="{logs}">
 		<f:then>
-			<script type="text/x-handlebars" data-template-name="log-listing">{{view App.View.Logs}}</script>
-			<div id="logTable"></div>
+			<div id="logTable">
+				<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered dataTable" style="display:none">
+					<thead>
+					<tr>
+						<th><f:translate id="log.timestamp">Time</f:translate></th>
+						<th><f:translate id="log.severity">Severity</f:translate></th>
+						<th><f:translate id="log.packageKey">Package key</f:translate></th>
+						<th style="width: 250px"><f:translate id="log.message">Message</f:translate></th>
+						<th>&nbsp;</th>
+					</tr>
+					</thead>
+					<tbody>
+					<f:for each="{logs}" as="log">
+					<tr>
+						<td>{log.timestamp -> f:format.date(format: 'Y-m-d H:i')}</td>
+						<td>{log.severity}</td>
+						<td>{log.packageKey}</td>
+						<td>{log.message}</td>
+						<td>
+							<f:link.action action="show" arguments="{log: log}"><i class="icon-eye-open"></i></f:link.action>
+						</td>
+					</tr>
+					</f:for>
+					</tbody>
+					<tfoot>
+						<tr>
+							<td><input type="text" name="search_timestamp" value="" class="search_init" /></td>
+							<td><select class="search_init" style="width: 120px;" name="search_severity">
+								<option value="">All</option>
+								<f:for each="{severityLabels}" as="severity">
+									<option value="{severity}">{severity}</option>
+								</f:for>
+							</select></td>
+							<td><input type="text" name="search_package" value="" class="search_init" /></td>
+							<td><input type="text" name="search_message" value="" class="search_init" /></td>
+							<td>&nbsp;</td>
+						</tr>
+					</tfoot>
+				</table>
+			</div>
+
 		</f:then>
 		<f:else>
-			<p>No logs created yet.</p>
+			<p><f:translate id="message.log.noResult">No logs created yet.</f:translate></p>
 		</f:else>
 	</f:if>
 </f:section>

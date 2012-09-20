@@ -9,7 +9,8 @@ require(
 			'jquery-ui-lib': 'Beech.Ehrm/Library/jquery-ui/js/jquery-ui-1.9.rc1',
 			'form': 'Beech.Ehrm/Library/jquery.form',
 			'emberjs': 'Emberjs/Core/ember-0.9.8',
-			'bootstrap': 'Twitter.Bootstrap/2.0/js/bootstrap.min'
+			'bootstrap': 'Twitter.Bootstrap/2.0/js/bootstrap.min',
+			'data-tables-twitterbootstrap': 'Beech.Ehrm/Library/dataTables/media/js/jquery.dataTables.TwitterBootstrap'
 		},
 		shim: {
 			'jquery-lib': {
@@ -21,6 +22,13 @@ require(
 			'emberjs': {
 				'deps': ['jquery'],
 				'exports': 'Ember'
+			},
+			'data-tables-twitterbootstrap': {
+				'deps':
+				[
+					'bootstrap',
+					'Beech.Ehrm/Library/dataTables/media/js/jquery.dataTables'
+				]
 			}
 		}
 	},
