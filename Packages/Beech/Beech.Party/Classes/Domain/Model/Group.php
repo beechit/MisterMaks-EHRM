@@ -29,6 +29,15 @@ class Group {
 	protected $members;
 
 	/**
+	 * The type of the group
+	 *
+	 * @var \Beech\Party\Domain\Model\Group\Type
+	 * @ORM\ManyToOne
+	 * @FLOW3\Validate(type="NotEmpty")
+	 */
+	protected $type;
+
+	/**
 	 * @var \Doctrine\Common\Collections\Collection<\Beech\Party\Domain\Model\Group>
 	 * @ORM\ManyToMany
 	 * @ORM\JoinTable(inverseJoinColumns={@ORM\JoinColumn(name="parent_group_id")})
@@ -54,6 +63,25 @@ class Group {
 	 */
 	public function getName() {
 		return $this->name;
+	}
+
+	/**
+	 * Sets the Group Type
+	 *
+	 * @param \Beech\Party\Domain\Model\Group\Type $type
+	 * @return void
+	 */
+	public function setType(\Beech\Party\Domain\Model\Group\Type $type) {
+		$this->type = $type;
+	}
+
+	/**
+	 * Returns the Group Type of this application
+	 *
+	 * @return \Beech\Party\Domain\Model\Group\Type
+	 */
+	public function getType() {
+		return $this->type;
 	}
 
 	/**

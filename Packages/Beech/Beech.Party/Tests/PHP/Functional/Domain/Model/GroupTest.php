@@ -9,6 +9,7 @@ namespace Beech\Party\Tests\Functional\Domain\Model;
 
 use TYPO3\FLOW3\Annotations as FLOW3;
 use \Beech\Party\Domain\Model\Group;
+use \Beech\Party\Domain\Model\Group\Type;
 
 /**
  */
@@ -25,28 +26,45 @@ class GroupTest extends \TYPO3\FLOW3\Tests\FunctionalTestCase {
 	protected $groupRepository;
 
 	/**
+	 * @var \Beech\Party\Domain\Repository\Group\TypeRepository
+	 */
+	protected $typeRepository;
+
+	/**
 	 */
 	public function setUp() {
 		parent::setUp();
 		$this->groupRepository = $this->objectManager->get('Beech\Party\Domain\Repository\GroupRepository');
+		$this->typeRepository = $this->objectManager->get('Beech\Party\Domain\Repository\Group\TypeRepository');
 	}
 
 	/**
 	 * @test
 	 */
 	public function nestedGroupsCanBePersistedAndRetrievingWorksCorrectly() {
+
+		$type = new Type();
+		$type->setName('Foo');
+		$this->typeRepository->add($type);
+
 		$group1 = new Group();
 		$group1->setName('Group 1');
+		$group1->setType($type);
 
 		$group2 = new Group();
 		$group2->setName('Group 2');
+		$group2->setType($type);
 
 		$group3 = new Group();
 		$group3->setName('Group 3');
+		$group3->setType($type);
+
 		$group1->addChild($group3);
 
 		$group4 = new Group();
 		$group4->setName('Group 4');
+		$group4->setType($type);
+
 		$group3->addChild($group4);
 
 		$this->groupRepository->add($group1);
