@@ -1,5 +1,5 @@
 <?php
-namespace Beech\Ehrm\Persistence;
+namespace Beech\Ehrm\Aspect;
 
 /*
  * This source file is proprietary property of Beech Applications B.V.
@@ -28,7 +28,7 @@ class YamlPersistenceManagerAspect {
 	 *
 	 * @param  \TYPO3\FLOW3\AOP\JoinPointInterface $joinPoint
 	 * @FLOW3\Around("method(TYPO3\Form\Persistence\YamlPersistenceManager->getFormPathAndFilename())")
-	 * @return string the absolute path and filename of the form with the specified $persistenceIdent
+	 * @return string the absolute path and filename of the form with the specified $persistenceIdentifier
 	 */
 	public function getAlternativeFormPathAndFilename(\TYPO3\FLOW3\AOP\JoinPointInterface $joinPoint) {
 		$persistenceIdentifier = $joinPoint->getMethodArgument('persistenceIdentifier');
