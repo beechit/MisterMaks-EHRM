@@ -164,6 +164,8 @@ class ActionFactoryTest extends \TYPO3\FLOW3\Tests\UnitTestCase {
 		$factoryOutput = $factory->create();
 
 			// Create mock action object
+		$action = new Action();
+
 		$outputHandler1 = new \Beech\WorkFlow\OutputHandlers\TodoOutputHandler();
 
 			// Work around time differences during running the tests
@@ -175,9 +177,12 @@ class ActionFactoryTest extends \TYPO3\FLOW3\Tests\UnitTestCase {
 		$outputHandler2 = new \Beech\WorkFlow\OutputHandlers\ActionExpiredOutputHandler();
 		$outputHandler2->setActionEntity(new \Beech\WorkFlow\Domain\Model\Action());
 
-		$action = new Action();
+		$outputHandler3 = new \Beech\WorkFlow\OutputHandlers\ActionOutputHandler();
+		$outputHandler3->setWorkflowName('SicknessNotice');
+
 		$action->addOutputHandler($outputHandler1);
 		$action->addOutputHandler($outputHandler2);
+		$action->addOutputHandler($outputHandler3);
 
 		$this->assertEquals($action, $factoryOutput);
 	}

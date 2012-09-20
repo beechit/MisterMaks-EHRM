@@ -12,3 +12,4 @@ action:
       className: ActionOutputHandler
       properties:
         workflowName: 'SicknessNotice'
+        resourcePath: ''

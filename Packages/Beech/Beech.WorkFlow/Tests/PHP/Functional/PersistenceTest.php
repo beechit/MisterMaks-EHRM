@@ -219,6 +219,36 @@ class PersistenceTest extends \TYPO3\FLOW3\Tests\FunctionalTestCase {
 	/**
 	 * @test
 	 */
+	public function theActionOutputHandlerCanAddANewAction() {
+		$company = $this->createCompany('Foo', 1, 1, 'type', 'description', 'bar');
+
+		$outputHandler = new \Beech\WorkFlow\OutputHandlers\ActionOutputHandler();
+		$outputHandler->setWorkflowName('ActionOutputHandlerTest');
+		$outputHandler->setResourcePath(__DIR__ . '/Fixtures/');
+		$outputHandler->setTargetEntity($company);
+
+		$action = new Action();
+		$action->addOutputHandler($outputHandler);
+		$this->actionRepository->add($action);
+
+		$this->persistenceManager->persistAll();
+		$persistedAction = $this->actionRepository->findAll()->getFirst();
+
+		$this->assertEquals(1, $this->actionRepository->countAll());
+		$this->assertEquals(1, $this->actionRepository->countByStatus(Action::STATUS_NEW));
+
+			// Run the action, which will effectively result in a new action being added
+		$dispatcher = new \Beech\WorkFlow\WorkFlow\ActionDispatcher();
+		$dispatcher->run();
+
+		$this->persistenceManager->persistAll();
+
+		$this->assertEquals(2, $this->actionRepository->countAll(2));
+	}
+
+	/**
+	 * @test
+	 */
 	public function anActionWithMultiplePreconditionsAndMultipleValidatorsAndMultipleOutputhandlersCanBePersistedAndDispatched() {
 			// Add company we can test the validator on
 		$company = $this->createCompany('Foo', 1, 1, 'type', 'description', 'bar');
