@@ -1,0 +1,90 @@
+@import "compass/css3";
+
+.fwd{
+  padding-top:0px;
+  .navbar{
+    .navbar-iGnner{
+      background:#fff;//eee
+      border-bottom:solid 7px #FF66CC;
+      .nav{
+        margin-left:20px;
+        li{
+          a{
+            padding:5px;
+            margin:5px 5px 0 0;
+            @include border-radius(5px);
+            &:hover{
+              background:#FF66CC;
+            };
+          }
+        }
+      }
+      .brand{
+        text-indent:-999px;
+        width:180px;
+        height:48px;
+        padding:0;
+        margin:5px 0 0 0;
+        //background:url(http://cdn1.1stwebdesigner.com/wp-content/themes/1stwd/img/1wd-logo-rd.png) no-repeat center center;
+        //background:url(http://typo3.org/uploads/RTEmagicC_beech-logo_01.png.png) no-repeat center center;
+        background:url(http://www.fruchtportal.de/images/Image/logos/lto%20groeiservice.JPG) no-repeat center center;
+      }
+    }
+  }
+  .hero-unit{
+    background:#464646;
+    color:#fff;
+    h1{
+      @include text-shadow(#000 1px 5px  10px);
+      span{
+        color:#F5821F;
+      }
+    }
+    .btn-info{
+      padding:15px;
+      font-size:1.2em;
+    }
+    form{
+      @include border-radius(10px);
+      background:#6d6b6b;
+      label{
+        font-weight:bold;
+        font-size:1.2em;
+        &.checkbox{
+          font-weight:normal;
+          font-size:1em;
+          color:#2d2d2d;
+        }
+      }
+      input{
+        background:#464646;
+        border:solid 1px #545252;
+        @include box-shadow(inset #2d2d2d 1px 0px 3px);
+        color:#8b7b6c;
+      }
+    }
+  }
+  .thumbnail{
+    @include border-radius(10px);
+    background:#55626B;
+    .caption{
+      position:relative;
+      color:#ccc9c9;
+      h5{
+        position:absolute;
+        top:-19px;
+        left:10px;
+        font-size:2em;
+        color:#fff;
+        @include text-shadow(#000 1px 5px 10px);
+      }
+    }
+  }
+  footer{
+    padding:10px;
+    margin-top:30px;
+    @include border-radius(10px 10px 0 0);
+    color:#fff;
+    background:#3F79B5;
+  }
+}
