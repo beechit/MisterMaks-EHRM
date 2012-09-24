@@ -10,7 +10,9 @@ define(['jquery', 'emberjs', 'form'], function (jQuery, Ember) {
 		modal: function () {
 			var _self;
 			return Ember.Object.create({
+
 				modalId: '',
+
 				initialize: function () {
 					_self = this;
 					_self.createModalBox();
@@ -21,7 +23,7 @@ define(['jquery', 'emberjs', 'form'], function (jQuery, Ember) {
 						jQuery(target)
 							.html(jQuery('.loading').html()) // Set default loading content
 						jQuery.ajax({
-							type: "POST",
+							type: 'POST',
 							url: url,
 							data: {}
 						}).done(function (response) {

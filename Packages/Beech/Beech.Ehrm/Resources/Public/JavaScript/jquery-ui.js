@@ -5,7 +5,7 @@ define(['jquery', 'jquery-ui-lib'], function($) {
 	 * Create a new mixin for jQuery UI widgets using the Ember
 	 * mixin syntax.
 	 */
-	window.JQ.Widget = Em.Mixin.create({
+	window.JQ.Widget = Ember.Mixin.create({
 
 		uiWidget: function(options) {
 			var ui;
