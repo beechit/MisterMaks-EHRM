@@ -129,7 +129,7 @@ class ActionFactoryTest extends \TYPO3\FLOW3\Tests\UnitTestCase {
 			// Use factory to create the action
 		$factory = $this->createFactory('ValidatorTest', __DIR__ . '/Configuration/WorkFlows');
 
-		$this->assertEquals($action, $factory->create());
+		$this->assertEquals(array($action), $factory->create());
 	}
 
 	/**
@@ -152,7 +152,7 @@ class ActionFactoryTest extends \TYPO3\FLOW3\Tests\UnitTestCase {
 			// Use factory to create the action
 		$factory = $this->createFactory('PreConditionTest', __DIR__ . '/Configuration/WorkFlows');
 
-		$this->assertEquals($action, $factory->create());
+		$this->assertEquals(array($action), $factory->create());
 	}
 
 	/**
@@ -170,8 +170,7 @@ class ActionFactoryTest extends \TYPO3\FLOW3\Tests\UnitTestCase {
 
 			// Work around time differences during running the tests
 		$todoEntity = new \Beech\Party\Domain\Model\ToDo();
-		$todoEntity->setDateTime($factoryOutput->getOutputHandlers()->first()->getToDoEntity()->getDateTime());
-
+		$todoEntity->setDateTime($factoryOutput[0]->getOutputHandlers()->first()->getToDoEntity()->getDateTime());
 		$outputHandler1->setToDoEntity($todoEntity);
 
 		$outputHandler2 = new \Beech\WorkFlow\OutputHandlers\ActionExpiredOutputHandler();
@@ -184,7 +183,7 @@ class ActionFactoryTest extends \TYPO3\FLOW3\Tests\UnitTestCase {
 		$action->addOutputHandler($outputHandler2);
 		$action->addOutputHandler($outputHandler3);
 
-		$this->assertEquals($action, $factoryOutput);
+		$this->assertEquals(array($action), $factoryOutput);
 	}
 
 	/**
@@ -206,7 +205,7 @@ class ActionFactoryTest extends \TYPO3\FLOW3\Tests\UnitTestCase {
 
 		$outputHandler1 = new \Beech\WorkFlow\OutputHandlers\TodoOutputHandler();
 		$todoEntity = new \Beech\Party\Domain\Model\ToDo();
-		$todoEntity->setDateTime($factoryOutput->getOutputHandlers()->first()->getToDoEntity()->getDateTime());
+		$todoEntity->setDateTime($factoryOutput[0]->getOutputHandlers()->first()->getToDoEntity()->getDateTime());
 		$outputHandler1->setToDoEntity($todoEntity);
 
 		$outputHandler2 = new \Beech\WorkFlow\OutputHandlers\ActionExpiredOutputHandler();
@@ -228,8 +227,37 @@ class ActionFactoryTest extends \TYPO3\FLOW3\Tests\UnitTestCase {
 		$action->addValidator($validator1);
 		$action->addValidator($validator2);
 
+		$this->assertEquals(array($action), $factoryOutput);
+	}
 
-		$this->assertEquals($action, $factoryOutput);
+	/**
+	 * @test
+	 */
+	public function testMultipleActionsCanBeCreatedByTheFactoryAndIsEqualToExpectedMockObject() {
+			// Use factory to create the action
+		$factory = $this->createFactory('MultipleActionsTest', __DIR__ . '/Configuration/WorkFlows');
+		$factoryOutput = $factory->create();
+
+			// Create mock action object
+		$validator = new \Beech\WorkFlow\Validators\DateValidator();
+		$validator->setValue(new \DateTime('today'));
+		$validator->setMatchCondition(\Beech\WorkFlow\Validators\DateValidator::MATCH_CONDITION_EQUAL);
+
+		$outputHandler = new \Beech\WorkFlow\OutputHandlers\TodoOutputHandler();
+		$todoEntity = new \Beech\Party\Domain\Model\ToDo();
+		$todoEntity->setDateTime($factoryOutput[0]->getOutputHandlers()->first()->getToDoEntity()->getDateTime());
+		$outputHandler->setToDoEntity($todoEntity);
+
+		$preCondition = new \Beech\WorkFlow\PreConditions\DatePreCondition();
+		$preCondition->setValue(new \DateTime('today'));
+		$preCondition->setMatchCondition(\Beech\WorkFlow\PreConditions\DatePreCondition::MATCH_CONDITION_EQUAL);
+
+		$action = new Action();
+		$action->addPreCondition($preCondition);
+		$action->addOutputHandler($outputHandler);
+		$action->addValidator($validator);
+
+		$this->assertEquals(array($action, $action), $factoryOutput);
 	}
 }
 ?>

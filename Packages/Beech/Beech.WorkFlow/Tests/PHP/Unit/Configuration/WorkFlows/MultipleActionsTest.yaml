@@ -6,30 +6,32 @@ action:
         properties:
           value: 'DATETIME:today'
           matchCondition: 'CONSTANT:MATCH_CONDITION_EQUAL'
-      -
-        className: DateValidator
-        properties:
-          value: 'DATETIME:2012-01-01'
-          matchCondition: 'CONSTANT:MATCH_CONDITION_SMALLER_THEN'
-
     outputHandlers:
       -
         className: TodoOutputHandler
         properties:
           toDoEntity: 'ENTITY:TODO'
-      -
-        className: ActionExpiredOutputHandler
-        properties:
-          actionEntity: 'ENTITY:ACTION'
-
     preConditions:
       -
         className: DatePreCondition
         properties:
           value: 'DATETIME:today'
           matchCondition: 'CONSTANT:MATCH_CONDITION_EQUAL'
+  -
+    validators:
+      -
+        className: DateValidator
+        properties:
+          value: 'DATETIME:today'
+          matchCondition: 'CONSTANT:MATCH_CONDITION_EQUAL'
+    outputHandlers:
+      -
+        className: TodoOutputHandler
+        properties:
+          toDoEntity: 'ENTITY:TODO'
+    preConditions:
       -
         className: DatePreCondition
         properties:
-          value: 'DATETIME:2012-01-01'
-          matchCondition: 'CONSTANT:MATCH_CONDITION_SMALLER_THEN'
+          value: 'DATETIME:today'
+          matchCondition: 'CONSTANT:MATCH_CONDITION_EQUAL'

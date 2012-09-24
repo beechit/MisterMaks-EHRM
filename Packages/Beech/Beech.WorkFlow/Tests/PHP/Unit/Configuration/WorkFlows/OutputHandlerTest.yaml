@@ -1,14 +1,15 @@
 action:
-  outputHandlers:
-    -
-      className: TodoOutputHandler
-      properties:
-        toDoEntity: 'ENTITY:TODO'
-    -
-      className: ActionExpiredOutputHandler
-      properties:
-        actionEntity: 'ENTITY:ACTION'
-    -
-      className: ActionOutputHandler
-      properties:
-        workflowName: 'SicknessNotice'
+  -
+    outputHandlers:
+      -
+        className: TodoOutputHandler
+        properties:
+          toDoEntity: 'ENTITY:TODO'
+      -
+        className: ActionExpiredOutputHandler
+        properties:
+          actionEntity: 'ENTITY:ACTION'
+      -
+        className: ActionOutputHandler
+        properties:
+          workflowName: 'SicknessNotice'

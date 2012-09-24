@@ -28,12 +28,6 @@ class ActionFactory {
 	protected $resourcePath = 'resource://Beech.WorkFlow/Configuration/WorkFlows/';
 
 	/**
-	 * The action created by the configuration file
-	 * @var \Beech\WorkFlow\Domain\Model\Action
-	 */
-	protected $action;
-
-	/**
 	 * @throws \Beech\WorkFlow\Exception\FileNotFoundException
 	 * @param string $workflowName
 	 * @param string $resourcePath
@@ -51,27 +45,35 @@ class ActionFactory {
 	}
 
 	/**
-	 * Create action class
-	 * @return \Beech\WorkFlow\Domain\Model\Action
+	 * Create action classes based on a workflow settings file
+	 *
+	 * @return array containing \Beech\WorkFlow\Domain\Model\Action objects
 	 */
 	public function create() {
+		$actionObjects = array();
 		$parsedData = $this->parseWorkflowAsArray();
+
 		if (array_key_exists('action', $parsedData)) {
-			$this->action = new Action();
+			foreach($parsedData['action'] as $actionItem => $actionSettings) {
+				$action = new Action();
 
-			if (array_key_exists('validators', $parsedData['action'])) {
-				$this->addValidators($parsedData['action']['validators']);
-			}
+				if (array_key_exists('validators', $actionSettings)) {
+					$this->addValidators($actionSettings['validators'], $action);
+				}
 
-			if (array_key_exists('preConditions', $parsedData['action'])) {
-				$this->addPreConditions($parsedData['action']['preConditions']);
-			}
+				if (array_key_exists('preConditions', $actionSettings)) {
+					$this->addPreConditions($actionSettings['preConditions'], $action);
+				}
 
-			if (array_key_exists('outputHandlers', $parsedData['action'])) {
-				$this->addOutputHandlers($parsedData['action']['outputHandlers']);
+				if (array_key_exists('outputHandlers', $actionSettings)) {
+					$this->addOutputHandlers($actionSettings['outputHandlers'], $action);
+				}
+
+				$actionObjects[] = $action;
 			}
-			return $this->action;
 		}
+
+		return $actionObjects;
 	}
 
 	/**
@@ -94,14 +96,15 @@ class ActionFactory {
 	 * Add validators to the action object
 	 *
 	 * @param array $validators
+	 * @param \Beech\WorkFlow\Domain\Model\Action $action
 	 * @return void
 	 */
-	protected function addValidators(array $validators) {
+	protected function addValidators(array $validators, $action) {
 		foreach ($validators as $validatorSettings) {
 			$validatorClassName = $this->getHandlerClassName($validatorSettings['className'], 'Validator');
 
 			if ($validatorClassName !== NULL && isset($validatorSettings['properties'])) {
-				$this->action->addValidator($this->createClassInstanceAndSetProperties($validatorClassName, $validatorSettings['properties']));
+				$action->addValidator($this->createClassInstanceAndSetProperties($validatorClassName, $validatorSettings['properties']));
 			}
 		}
 	}
@@ -110,14 +113,15 @@ class ActionFactory {
 	 * Add preConditions to the action object
 	 *
 	 * @param array $preConditions
+	 * @param \Beech\WorkFlow\Domain\Model\Action $action
 	 * @return void
 	 */
-	protected function addPreConditions(array $preConditions) {
+	protected function addPreConditions(array $preConditions, $action) {
 		foreach ($preConditions as $preConditionSettings) {
 			$preConditionClassName = $this->getHandlerClassName($preConditionSettings['className'], 'PreCondition');
 
 			if ($preConditionClassName !== NULL && isset($preConditionSettings['properties'])) {
-				$this->action->addPreCondition($this->createClassInstanceAndSetProperties($preConditionClassName, $preConditionSettings['properties']));
+				$action->addPreCondition($this->createClassInstanceAndSetProperties($preConditionClassName, $preConditionSettings['properties']));
 			}
 		}
 	}
@@ -126,14 +130,15 @@ class ActionFactory {
 	 * Add outputHandlers to the action object
 	 *
 	 * @param array $outputHandlers
+	 * @param \Beech\WorkFlow\Domain\Model\Action $action
 	 * @return void
 	 */
-	protected function addOutputHandlers(array $outputHandlers) {
+	protected function addOutputHandlers(array $outputHandlers, $action) {
 		foreach ($outputHandlers as $outputHandlerSettings) {
 			$outputHandlersClassName = $this->getHandlerClassName($outputHandlerSettings['className'], 'OutputHandler');
 
 			if ($outputHandlersClassName !== NULL && isset($outputHandlerSettings['properties'])) {
-				$this->action->addOutputHandler($this->createClassInstanceAndSetProperties($outputHandlersClassName, $outputHandlerSettings['properties']));
+				$action->addOutputHandler($this->createClassInstanceAndSetProperties($outputHandlersClassName, $outputHandlerSettings['properties']));
 			}
 		}
 	}
