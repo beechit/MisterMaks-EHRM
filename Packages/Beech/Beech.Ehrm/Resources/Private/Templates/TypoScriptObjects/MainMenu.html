@@ -1,0 +1,37 @@
+<header>{namespace bootstrap=Twitter\Bootstrap\ViewHelpers}
+	<nav class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<f:link.action package="Beech.Ehrm" controller="Standard" action="index" class="brand">Mister Maks</f:link.action>
+
+				<f:security.ifAuthenticated>
+					<bootstrap:navigation.menu items="{mainMenuItems}" classNames="{0:'nav'}" />
+
+					<bootstrap:navigation.menu items="{actionMenuItems}" classNames="{0:'nav',1:'pull-right'}" />
+
+					<form class="navbar-form pull-right">
+						<input type="text" class="search-query input-small" placeholder="Search">
+					</form>
+
+					<div class="btn-group pull-right">
+						<a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#">
+							<i class="icon-user icon-white"></i>
+							<f:if condition="{activeTokens.DefaultProvider.account}">
+								<f:then>
+									{activeTokens.DefaultProvider.account.accountidentifier}
+								</f:then>
+								<f:else>
+									<f:translate id="menu.account">Account</f:translate>
+								</f:else>
+							</f:if>
+							<span class="caret"></span>
+						</a>
+						<bootstrap:navigation.menu items="{accountMenuItems}" classNames="{0:'dropdown-menu'}" />
+					</div>
+
+
+				</f:security.ifAuthenticated>
+			</div>
+		</div>
+	</nav>
+</header>

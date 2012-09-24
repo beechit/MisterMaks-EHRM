@@ -9,7 +9,6 @@ namespace Beech\Ehrm\Controller;
 
 use TYPO3\FLOW3\Annotations as FLOW3;
 
-use TYPO3\FLOW3\Mvc\Controller\ActionController;
 use \Beech\Ehrm\Domain\Model\Log;
 
 /**
@@ -17,7 +16,7 @@ use \Beech\Ehrm\Domain\Model\Log;
  *
  * @FLOW3\Scope("singleton")
  */
-class LogController extends ActionController {
+class LogController extends AbstractController {
 
 	/**
 	 * Added to support the addExampleAction()
