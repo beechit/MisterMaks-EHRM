@@ -36,6 +36,13 @@ class TodoOutputHandler implements \Beech\WorkFlow\Core\OutputHandlerInterface {
 	}
 
 	/**
+	 * @return \Beech\Party\Domain\Model\ToDo
+	 */
+	public function getToDoEntity() {
+		return $this->toDoEntity;
+	}
+
+	/**
 	 * Execute this output handler class, persisting a todo to the repository
 	 * @return void
 	 */

@@ -159,9 +159,18 @@ class ActionFactoryTest extends \TYPO3\FLOW3\Tests\UnitTestCase {
 	 * @test
 	 */
 	public function testActionWithOutputHandlerCreatedWithFactoryIsEqualToExpectedMockObject() {
+			// Use factory to create the action
+		$factory = $this->createFactory('OutputHandlerTest', __DIR__ . '/Configuration/WorkFlows');
+		$factoryOutput = $factory->create();
+
 			// Create mock action object
 		$outputHandler1 = new \Beech\WorkFlow\OutputHandlers\TodoOutputHandler();
-		$outputHandler1->setToDoEntity(new \Beech\Party\Domain\Model\ToDo());
+
+			// Work around time differences during running the tests
+		$todoEntity = new \Beech\Party\Domain\Model\ToDo();
+		$todoEntity->setDateTime($factoryOutput->getOutputHandlers()->first()->getToDoEntity()->getDateTime());
+
+		$outputHandler1->setToDoEntity($todoEntity);
 
 		$outputHandler2 = new \Beech\WorkFlow\OutputHandlers\ActionExpiredOutputHandler();
 		$outputHandler2->setActionEntity(new \Beech\WorkFlow\Domain\Model\Action());
@@ -170,10 +179,7 @@ class ActionFactoryTest extends \TYPO3\FLOW3\Tests\UnitTestCase {
 		$action->addOutputHandler($outputHandler1);
 		$action->addOutputHandler($outputHandler2);
 
-			// Use factory to create the action
-		$factory = $this->createFactory('OutputHandlerTest', __DIR__ . '/Configuration/WorkFlows');
-
-		$this->assertEquals($action, $factory->create());
+		$this->assertEquals((array) $action, (array) $factoryOutput);
 	}
 
 	/**
