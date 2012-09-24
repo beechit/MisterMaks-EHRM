@@ -179,13 +179,17 @@ class ActionFactoryTest extends \TYPO3\FLOW3\Tests\UnitTestCase {
 		$action->addOutputHandler($outputHandler1);
 		$action->addOutputHandler($outputHandler2);
 
-		$this->assertEquals((array) $action, (array) $factoryOutput);
+		$this->assertEquals($action, $factoryOutput);
 	}
 
 	/**
 	 * @test
 	 */
 	public function testFullStackActionCreatedWithFactoryIsEqualToExpectedMockObject() {
+			// Use factory to create the action
+		$factory = $this->createFactory('FullStackTest', __DIR__ . '/Configuration/WorkFlows');
+		$factoryOutput = $factory->create();
+
 			// Create mock action object
 		$validator1 = new \Beech\WorkFlow\Validators\DateValidator();
 		$validator1->setValue(new \DateTime('today'));
@@ -196,7 +200,9 @@ class ActionFactoryTest extends \TYPO3\FLOW3\Tests\UnitTestCase {
 		$validator2->setMatchCondition(\Beech\WorkFlow\Validators\DateValidator::MATCH_CONDITION_SMALLER_THEN);
 
 		$outputHandler1 = new \Beech\WorkFlow\OutputHandlers\TodoOutputHandler();
-		$outputHandler1->setToDoEntity(new \Beech\Party\Domain\Model\ToDo());
+		$todoEntity = new \Beech\Party\Domain\Model\ToDo();
+		$todoEntity->setDateTime($factoryOutput->getOutputHandlers()->first()->getToDoEntity()->getDateTime());
+		$outputHandler1->setToDoEntity($todoEntity);
 
 		$outputHandler2 = new \Beech\WorkFlow\OutputHandlers\ActionExpiredOutputHandler();
 		$outputHandler2->setActionEntity(new \Beech\WorkFlow\Domain\Model\Action());
@@ -217,10 +223,8 @@ class ActionFactoryTest extends \TYPO3\FLOW3\Tests\UnitTestCase {
 		$action->addValidator($validator1);
 		$action->addValidator($validator2);
 
-			// Use factory to create the action
-		$factory = $this->createFactory('FullStackTest', __DIR__ . '/Configuration/WorkFlows');
 
-		$this->assertEquals($action, $factory->create());
+		$this->assertEquals($action, $factoryOutput);
 	}
 }
 ?>
