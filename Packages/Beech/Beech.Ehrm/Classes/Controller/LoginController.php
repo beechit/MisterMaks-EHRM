@@ -14,25 +14,7 @@ use TYPO3\FLOW3\Annotations as FLOW3;
  *
  * @FLOW3\Scope("singleton")
  */
-class LoginController extends \TYPO3\FLOW3\Mvc\Controller\ActionController {
-
-	/**
-	 * @var \TYPO3\FLOW3\Security\Authentication\AuthenticationManagerInterface
-	 * @FLOW3\Inject
-	 */
-	protected $authenticationManager;
-
-	/**
-	 * @var \TYPO3\FLOW3\Security\Context
-	 * @FLOW3\Inject
-	 */
-	protected $securityContext;
-
-	/**
-	 * @var \TYPO3\FLOW3\Security\AccountRepository
-	 * @FLOW3\Inject
-	 */
-	protected $accountRepository;
+class LoginController extends \TYPO3\FLOW3\Security\Authentication\Controller\AbstractAuthenticationController {
 
 	/**
 	 * @param string $username
@@ -43,28 +25,11 @@ class LoginController extends \TYPO3\FLOW3\Mvc\Controller\ActionController {
 	}
 
 	/**
-	 * Authenticates an account by invoking the Provider based Authentication Manager.
-	 *
-	 * On successful authentication redirects to the status view, otherwise returns
-	 * to the login screen.
-	 *
+	 * @param \TYPO3\FLOW3\Mvc\ActionRequest $originalRequest
 	 * @return void
 	 */
-	public function authenticateAction() {
-		$authenticated = FALSE;
-		try {
-			$this->authenticationManager->authenticate();
-			$authenticated = TRUE;
-		} catch (\Exception $exception) {
-			$message = $exception->getMessage();
-		}
-
-		if ($authenticated) {
-			$this->redirect('index', 'Standard');
-		} else {
-			$this->addFlashMessage($message);
-			$this->redirect('login');
-		}
+	public function onAuthenticationSuccess(\TYPO3\FLOW3\Mvc\ActionRequest $originalRequest = NULL) {
+		$this->redirect('index', 'Standard', 'Beech.Ehrm');
 	}
 
 	/**
@@ -73,16 +38,9 @@ class LoginController extends \TYPO3\FLOW3\Mvc\Controller\ActionController {
 	 * @return void
 	 */
 	public function logoutAction() {
-		$this->authenticationManager->logout();
+		parent::logoutAction();
 		$this->addFlashMessage('Successfully logged out.');
 		$this->redirect('login');
-	}
-
-	/**
-	 * @return void
-	 */
-	public function statusAction() {
-		$this->view->assign('activeTokens', $this->securityContext->getAuthenticationTokens());
 	}
 
 }

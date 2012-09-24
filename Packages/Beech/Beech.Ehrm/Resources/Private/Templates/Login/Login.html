@@ -1,36 +1,45 @@
 <!DOCTYPE html>{namespace bootstrap=Twitter\Bootstrap\ViewHelpers}
-<f:layout name="Default" />
 <html>
 	<head>
-		<meta charset="utf-8">
-		<title>Login</title>
+		<title>EHRM</title>
 		<f:base />
+		<link rel="stylesheet" type="text/css" href="{f:uri.resource(path: '2.0/css/bootstrap.min.css', package: 'Twitter.Bootstrap')}" />
+		<link rel="stylesheet" type="text/css" href="{f:uri.resource(path: 'StyleSheets/main.css', package: 'Beech.Ehrm')}" />
+		<link rel="stylesheet" type="text/css" href="{f:uri.resource(path: 'Library/jquery-ui-bootstrap/css/style.css', package: 'Beech.Ehrm')}" />
 	</head>
 	<body>
-		<f:section name="Body">
-			<f:flashMessages class="errorMessages" />
-			<f:form action="authenticate" class="form-horizontal">
-				<fieldset>
-					<legend><f:translate id="panel.login.legend">Login panel</f:translate></legend>
-					<div class="control-group">
-						<label class="control-label" for="username"><f:translate id="panel.login.username">Username</f:translate></label>
-						<div class="controls">
-							<f:form.textfield name="__authentication[TYPO3][FLOW3][Security][Authentication][Token][UsernamePassword][username]" class="input-xlarge" id="username" value="{username}" />
-						</div>
-						<label class="control-label" for="password"><f:translate id="panel.login.password">Password</f:translate></label>
-						<div class="controls">
-							<f:form.password name="__authentication[TYPO3][FLOW3][Security][Authentication][Token][UsernamePassword][password]" class="input-xlarge" id="password" />
-						</div>
+		<section class="container">
+			<nav class="navbar navbar-fixed-top">
+				<div class="navbar-inner">
+					<div class="container">
+						<f:link.action package="Beech.Ehrm" controller="Standard" action="index" class="brand">Mister Maks</f:link.action>
 					</div>
-				</fieldset>
-
-				<div class="form-actions">
-					<button type="submit" class="btn btn-primary"><f:translate id="action.login">Login</f:translate></button>
 				</div>
-			</f:form>
+			</nav>
 
-		</f:section>
+			<f:flashMessages class="flashmessages alert" />
+
+			<div class="row">
+				<f:form action="authenticate" class="form-horizontal">
+					<fieldset>
+						<legend><f:translate id="panel.login.legend">Login panel</f:translate></legend>
+						<div class="control-group">
+							<label class="control-label" for="username"><f:translate id="panel.login.username">Username</f:translate></label>
+							<div class="controls">
+								<f:form.textfield name="__authentication[TYPO3][FLOW3][Security][Authentication][Token][UsernamePassword][username]" class="input-xlarge" id="username" value="{username}" />
+							</div>
+							<label class="control-label" for="password"><f:translate id="panel.login.password">Password</f:translate></label>
+							<div class="controls">
+								<f:form.password name="__authentication[TYPO3][FLOW3][Security][Authentication][Token][UsernamePassword][password]" class="input-xlarge" id="password" />
+							</div>
+						</div>
+					</fieldset>
+
+					<div class="form-actions">
+						<button type="submit" class="btn btn-primary"><f:translate id="action.login">Login</f:translate></button>
+					</div>
+				</f:form>
+			</div>
+		</section>
 	</body>
 </html>
-
-<f:section name="Left" />
