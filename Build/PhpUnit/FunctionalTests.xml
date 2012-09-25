@@ -3,7 +3,8 @@
 		bootstrap="../Common/PhpUnit/FunctionalTestBootstrap.php"
 		convertErrorsToExceptions="true"
 		convertNoticesToExceptions="true"
-		convertWarningsToExceptions="true">
+		convertWarningsToExceptions="true"
+		timeoutForSmallTests="0">
 	<testsuites>
 		<testsuite name="All tests">
 			<directory>../../Packages/Application/*/Tests/PHP/Functional/</directory>
