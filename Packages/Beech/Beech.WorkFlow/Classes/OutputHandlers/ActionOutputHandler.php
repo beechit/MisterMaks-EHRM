@@ -78,9 +78,11 @@ class ActionOutputHandler implements \Beech\WorkFlow\Core\OutputHandlerInterface
 	 */
 	public function invoke() {
 		$factory = new ActionFactory($this->workflowName, $this->resourcePath);
-		$action  = $factory->create();
-		$action->setTarget($this->targetEntity);
-		$this->actionRepository->add($action);
+		$actions  = $factory->create();
+		foreach ($actions as $action) {
+			$action->setTarget($this->targetEntity);
+			$this->actionRepository->add($action);
+		}
 	}
 }
 ?>

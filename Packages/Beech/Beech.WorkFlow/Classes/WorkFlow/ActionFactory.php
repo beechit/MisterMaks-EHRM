@@ -45,7 +45,7 @@ class ActionFactory {
 	}
 
 	/**
-	 * Create action classes based on a workflow settings file
+	 * Creates one or multiple classes based on a workflow settings file
 	 *
 	 * @return array containing \Beech\WorkFlow\Domain\Model\Action objects
 	 */
@@ -54,7 +54,7 @@ class ActionFactory {
 		$parsedData = $this->parseWorkflowAsArray();
 
 		if (array_key_exists('action', $parsedData)) {
-			foreach($parsedData['action'] as $actionItem => $actionSettings) {
+			foreach ($parsedData['action'] as $actionSettings) {
 				$action = new Action();
 
 				if (array_key_exists('validators', $actionSettings)) {
