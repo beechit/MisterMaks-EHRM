@@ -3,7 +3,7 @@ namespace Beech\CLA\Domain\Model;
 
 /*
  * This source file is proprietary property of Beech Applications B.V.
- * Date: 17-09-12 14:52
+ * Date: 25-07-12 16:48
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
@@ -11,39 +11,33 @@ use TYPO3\Flow\Annotations as Flow;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * A LaborAgreement
+ * A Job position
  *
  * @Flow\Scope("prototype")
  * @Flow\Entity
+ * @ORM\HasLifecycleCallbacks
  */
-class LaborAgreement {
+class JobPosition {
 
 	/**
 	 * The name
-	 *
 	 * @var string
 	 */
 	protected $name;
 
 	/**
-	 * Get the LaborAgreement's name
-	 *
-	 * @return string The LaborAgreement's name
-	 */
-	public function getName() {
-		return $this->name;
-	}
-
-	/**
-	 * Sets this LaborAgreement's name
-	 *
-	 * @param string $name The LaborAgreement's name
-	 * @return void
+	 * @param string $name
 	 */
 	public function setName($name) {
 		$this->name = $name;
 	}
 
-}
+	/**
+	 * @return string
+	 */
+	public function getName() {
+		return $this->name;
+	}
 
+}
 ?>

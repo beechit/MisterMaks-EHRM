@@ -22,8 +22,6 @@ class LaborAgreementTest extends \TYPO3\Flow\Tests\UnitTestCase {
 		$laborAgreement->setName('Something');
 		$this->assertInstanceOf('Beech\CLA\Domain\Model\LaborAgreement', $laborAgreement);
 		$this->assertEquals('Something', $laborAgreement->getName());
-			// check string representation
-		$this->assertEquals('Something', $laborAgreement->__toString());
 	}
 
 
