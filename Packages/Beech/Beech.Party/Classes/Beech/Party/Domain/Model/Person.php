@@ -14,7 +14,7 @@ use Beech\Party\Domain\Model\ElectronicAddress;
 /**
  * A Person
  *
- * @FLOW3\Entity
+ * @FLOW3\Entity(versionable=TRUE)
  */
 class Person extends \TYPO3\Party\Domain\Model\Person {
 
@@ -24,6 +24,12 @@ class Person extends \TYPO3\Party\Domain\Model\Person {
 	 * @FLOW3\Validate(type="NotEmpty", validationGroups={"Controller"})
 	 */
 	protected $name;
+
+	/**
+	 * @var integer
+	 * @ORM\Version
+	 */
+	protected $version;
 
 	/**
 	 * @var \Doctrine\Common\Collections\Collection<\Beech\Party\Domain\Model\ElectronicAddress>
