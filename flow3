@@ -25,6 +25,8 @@
  * Bootstrap for the command line
  */
 
+define('OCI_DEFAULT',null);
+
 require(__DIR__ . '/Packages/Framework/TYPO3.FLOW3/Scripts/flow3.php');
 
 ?>

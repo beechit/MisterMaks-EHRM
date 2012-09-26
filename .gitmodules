@@ -1,42 +1,15 @@
-[submodule "Packages/Framework/TYPO3.FLOW3"]
-	path = Packages/Framework/TYPO3.FLOW3
-	url = git://git.typo3.org/FLOW3/Packages/TYPO3.FLOW3.git
-[submodule "Packages/Framework/TYPO3.Fluid"]
-	path = Packages/Framework/TYPO3.Fluid
-	url = git://git.typo3.org/FLOW3/Packages/TYPO3.Fluid.git
 [submodule "Packages/Tools/TYPO3.Kickstart"]
 	path = Packages/Tools/TYPO3.Kickstart
 	url = git://git.typo3.org/FLOW3/Packages/TYPO3.Kickstart.git
-[submodule "Packages/Framework/TYPO3.Party"]
-	path = Packages/Framework/TYPO3.Party
-	url = git://git.typo3.org/FLOW3/Packages/TYPO3.Party.git
 [submodule "Build/Common"]
 	path = Build/Common
 	url = git://git.typo3.org/FLOW3/BuildEssentials.git
-[submodule "Packages/Framework/Doctrine.ORM"]
-	path = Packages/Framework/Doctrine.ORM
-	url = git://git.typo3.org/FLOW3/Packages/Doctrine.ORM.git
-[submodule "Packages/Framework/Doctrine.Common"]
-	path = Packages/Framework/Doctrine.Common
-	url = git://git.typo3.org/FLOW3/Packages/Doctrine.Common.git
-[submodule "Packages/Framework/Doctrine.DBAL"]
-	path = Packages/Framework/Doctrine.DBAL
-	url = git://git.typo3.org/FLOW3/Packages/Doctrine.DBAL.git
-[submodule "Packages/Framework/Symfony.Component.Yaml"]
-	path = Packages/Framework/Symfony.Component.Yaml
-	url = git://git.typo3.org/FLOW3/Packages/Symfony.Component.Yaml.git
 [submodule "Packages/Tools/TYPO3.Surf"]
 	path = Packages/Tools/TYPO3.Surf
 	url = git://git.typo3.org/FLOW3/Packages/TYPO3.Surf.git
-[submodule "Packages/Tools/TYPO3.DocTools"]
-	path = Packages/Tools/TYPO3.DocTools
-	url = git://git.typo3.org/FLOW3/Packages/TYPO3.DocTools.git
 [submodule "Documentation"]
 	path = Documentation
 	url = ssh://git.beech.local/EHRM/Documentation.git
-[submodule "Packages/Framework/Symfony.Component.DomCrawler"]
-	path = Packages/Framework/Symfony.Component.DomCrawler
-	url = git://git.typo3.org/FLOW3/Packages/Symfony.Component.DomCrawler.git
 [submodule "Build/CGL/Common/PHP"]
 	path = Build/CGL/Common/PHP
 	url = git://git.typo3.org/Teams/forge.typo3.org/hudson-helpers/tools/PHP_CodeSniffer.git
@@ -58,18 +31,9 @@
 [submodule "Packages/Library/TYPO3.Queue"]
 	path = Packages/Library/TYPO3.Queue
 	url = git://git.typo3.org/FLOW3/Packages/TYPO3.Queue.git
-[submodule "Packages/Application/Beech.Ehrm"]
-	path = Packages/Application/Beech.Ehrm
-	url = ssh://git.beech.local/EHRM/Package/Ehrm.git
-[submodule "Packages/Application/Beech.Party"]
-	path = Packages/Application/Beech.Party
-	url = ssh://git.beech.local/EHRM/Package/Party.git
 [submodule "Build/Essentials"]
 	path = Build/Essentials
 	url = ssh://git.beech.local/Beech/BuildEssentials.git
-[submodule "Packages/Application/Beech.WorkFlow"]
-	path = Packages/Application/Beech.WorkFlow
-	url = ssh://git.beech.local/EHRM/Package/WorkFlow.git
 [submodule "Packages/Library/TYPO3.TcPdf"]
 	path = Packages/Library/TYPO3.TcPdf
 	url = git://git.typo3.org/FLOW3/Packages/TYPO3.TcPdf.git
@@ -82,12 +46,3 @@
 [submodule "Packages/Tools/Beech.Style"]
 	path = Packages/Tools/Beech.Style
 	url = ssh://git.beech.local/EHRM/Package/Style.git
-[submodule "Packages/Application/Beech.Task"]
-	path = Packages/Application/Beech.Task
-	url = ssh://git.beech.local/EHRM/Package/Task.git
-[submodule "Packages/Application/Beech.Document"]
-	path = Packages/Application/Beech.Document
-	url = ssh://git.beech.local/EHRM/Package/Document.git
-[submodule "Packages/Application/Beech.CLA"]
-	path = Packages/Application/Beech.CLA
-	url = ssh://git.beech.local/EHRM/Package/CLA.git

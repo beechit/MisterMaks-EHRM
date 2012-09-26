@@ -1,0 +1,37 @@
+{
+	"name": "beech/mister-maks-base-distribution",
+	"description": "Mister Maks Base Distribution",
+	"repositories": [
+		{
+			"type": "composer",
+			"url": "http://ci.beech.local:8080/job/composer-packages/ws/mistermaks/"
+		},
+		{
+			"type": "composer",
+			"url": "http://ci.typo3.robertlemke.net/job/composer-packages/ws/repository/"
+		}
+	],
+	"config": {
+		"vendor-dir":"Packages/Vendor",
+		"bin-dir": "bin"
+	},
+	"require": {
+		"typo3/flow3": "dev-master",
+		"beech/cla": "dev-development",
+		"beech/document": "dev-development",
+		"beech/ehrm": "dev-development",
+		"beech/task": "dev-development",
+		"beech/party": "dev-development",
+		"beech/workflow": "dev-development"
+	},
+	"require-dev": {
+		"typo3/kickstart": "dev-master",
+		"typo3/buildessentials": "dev-master",
+		"mikey179/vfsstream": "1.1.*"
+	},
+	"minimum-stability": "dev",
+	"scripts": {
+		"post-update-cmd": "Beech\\Ehrm\\Composer\\InstallerScripts::postUpdateAndInstall",
+		"post-install-cmd": "Beech\\Ehrm\\Composer\\InstallerScripts::postUpdateAndInstall"
+	}
+}

@@ -1,11 +1,7 @@
-/Build/Archives/
-/Build/Reports/
-/Build/Temporary/
 /Build/Data/
+/Build/Reports/
 /Build/cache.properties
-/Configuration/Development/Settings.yaml
-/Configuration/Production/*
-/Configuration/PackageStates.php
+/Configuration/
 /Data/
 /Tests/
 /Web/_Resources/
@@ -19,3 +15,10 @@
 .DS_Store
 Thumbs.db
 /index.html
+/Packages/Vendor/
+/Packages/Application/
+/Packages/Framework/
+/composer.lock
+/composer.phar
+/flow3.bat
+/*.txt
