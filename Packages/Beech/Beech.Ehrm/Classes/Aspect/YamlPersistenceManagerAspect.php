@@ -26,11 +26,11 @@ class YamlPersistenceManagerAspect {
 	/**
 	 * Load alternative wizard file if one is found
 	 *
-	 * @param  \TYPO3\FLOW3\AOP\JoinPointInterface $joinPoint
+	 * @param  \TYPO3\FLOW3\Aop\JoinPointInterface $joinPoint
 	 * @FLOW3\Around("method(TYPO3\Form\Persistence\YamlPersistenceManager->getFormPathAndFilename())")
 	 * @return string the absolute path and filename of the form with the specified $persistenceIdentifier
 	 */
-	public function getAlternativeFormPathAndFilename(\TYPO3\FLOW3\AOP\JoinPointInterface $joinPoint) {
+	public function getAlternativeFormPathAndFilename(\TYPO3\FLOW3\Aop\JoinPointInterface $joinPoint) {
 		$persistenceIdentifier = $joinPoint->getMethodArgument('persistenceIdentifier');
 		$alternativeFile = \TYPO3\FLOW3\Utility\Files::concatenatePaths(array($this->alternativeSavePath, sprintf('%s.yaml', $persistenceIdentifier)));
 		if (file_exists($alternativeFile)) {

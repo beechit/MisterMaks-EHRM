@@ -33,10 +33,10 @@ class LocaleAspect {
 
 	/**
 	 * @FLOW3\Around("method(TYPO3\FLOW3\I18n\Configuration->getCurrentLocale())")
-	 * @param \TYPO3\FLOW3\AOP\JoinPointInterface $joinPoint The current join point
+	 * @param \TYPO3\FLOW3\Aop\JoinPointInterface $joinPoint The current join point
 	 * @return \TYPO3\FLOW3\I18n\Locale
 	 */
-	public function overrideCurrentLocaleByUserSettings(\TYPO3\FLOW3\AOP\JoinPointInterface $joinPoint) {
+	public function overrideCurrentLocaleByUserSettings(\TYPO3\FLOW3\Aop\JoinPointInterface $joinPoint) {
 		if ($this->securityContext->isInitialized() && $this->securityContext->getAccount() instanceof \TYPO3\FLOW3\Security\Account) {
 			$person = $this->securityContext->getAccount()->getParty();
 			if ($person instanceof \Beech\Party\Domain\Model\Person) {

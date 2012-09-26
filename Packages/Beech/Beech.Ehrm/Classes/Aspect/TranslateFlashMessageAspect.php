@@ -24,11 +24,11 @@ class TranslateFlashMessageAspect {
 	protected $translator;
 
 	/**
-	 * @param \TYPO3\FLOW3\AOP\JoinPointInterface $joinPoint
+	 * @param \TYPO3\FLOW3\Aop\JoinPointInterface $joinPoint
 	 * @FLOW3\Before("method(Beech\.*\Controller\.*->addFlashMessage())")
 	 * @return void
 	 */
-	public function translateFlashMessageOnAdd(\TYPO3\FLOW3\AOP\JoinPointInterface $joinPoint) {
+	public function translateFlashMessageOnAdd(\TYPO3\FLOW3\Aop\JoinPointInterface $joinPoint) {
 		$joinPoint->setMethodArgument('messageBody', $this->translator->translateByOriginalLabel($joinPoint->getMethodArgument('messageBody')));
 	}
 }
