@@ -7,6 +7,11 @@ namespace Beech\Ehrm\Composer;
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
+use Composer\Script\Event;
+
+/**
+ *
+ */
 class InstallerScripts extends \TYPO3\FLOW3\Composer\InstallerScripts {
 
 	/**
