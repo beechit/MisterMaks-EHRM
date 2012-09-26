@@ -1,6 +1,6 @@
 resources:
   methods:
-    ApplicationControllers: 'method(Beech\.*\Controller\.*(?<!Login)Controller->.*Action())'
+    ApplicationControllers: 'method(Beech\.*\Controller\.*(?<!Login)Controller->(?<!initialize)Action())'
     ManagementControllers: 'method(\Beech\.*\Management\.*Controller->.*Action())'
 
 roles:

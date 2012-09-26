@@ -122,6 +122,10 @@
 				<source>Back</source>
 				<target>Powrót</target>
 			</trans-unit>
+			<trans-unit id='language'>
+				<source>Language</source>
+				<target>Język</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

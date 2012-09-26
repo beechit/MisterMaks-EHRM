@@ -44,6 +44,8 @@ Beech:
             menuGroup: 'main:manage'
             controller: 'Log'
             resource: 'ManagementControllers'
+    languages: [EN_en, NL_nl, PL_pl]
+
 TYPO3:
   Form:
     presets:

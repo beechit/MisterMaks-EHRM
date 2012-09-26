@@ -269,5 +269,23 @@ class SettingsHelper {
 
 		return TRUE;
 	}
+
+	/**
+	 * Get available languages
+	 *
+	 * @return array
+	 */
+	public function getAvailableLanguages() {
+		if (isset($this->settings['languages'])) {
+			$languageSetting = array();
+			foreach ($this->settings['languages'] as $locale) {
+				$languageSetting[$locale] = $locale;
+			}
+			return $languageSetting;
+		} else {
+			return array();
+		}
+
+	}
 }
 ?>

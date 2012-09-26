@@ -122,6 +122,10 @@
 				<source>Back</source>
 				<target>Terug</target>
 			</trans-unit>
+			<trans-unit id='language'>
+				<source>Language</source>
+				<target>Taal</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
