@@ -109,7 +109,6 @@ define(['jquery', 'emberjs', 'Beech.Ehrm/Library/jquery.midgardNotifications'], 
 						}
 					},
 					afterShow: function() {
-						console.log('after show', callBack);
 						if (callBack) {
 							callBack.call();
 						}

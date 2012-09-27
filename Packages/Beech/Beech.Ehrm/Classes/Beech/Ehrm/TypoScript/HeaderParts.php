@@ -41,7 +41,8 @@ class HeaderParts extends AbstractTypoScriptObject {
 					->reset()
 					->setFormat('json')
 					->uriFor('list', array(), 'Rest\Notification', 'Beech.Party')
-			)
+			),
+			'locale' => $this->authenticationManager->getSecurityContext()->getParty()->getPreferences()->get('locale')
 		);
 
 		return sprintf('<script>var MM = %s;</script>', json_encode($settings));

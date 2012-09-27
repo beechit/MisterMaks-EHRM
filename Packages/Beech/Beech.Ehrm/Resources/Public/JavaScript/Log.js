@@ -1,15 +1,13 @@
 define(
-	['jquery', 'emberjs', 'data-tables-twitterbootstrap'],
-	function($, Ember) {
+	['jquery', 'emberjs', 'i18n!Beech.Ehrm/JavaScript/nls/translate', 'data-tables-twitterbootstrap'],
+	function($, Ember, Translate) {
 		return Ember.View.extend({
 			didInsertElement: function() {
 				var oTable = $('.dataTable');
 				oTable = $(oTable).dataTable( {
 						"sDom": "RC<'row'<'span6'l><'span6'f>r>t<'row'<'span6'i><'span6'p>>",
 						"sPaginationType": "bootstrap",
-						"oLanguage": {
-							"sLengthMenu": "_MENU_ records per page"
-						},
+						"oLanguage": Translate.oLanguage,
 						"aoColumns": [
 							null,
 							null,

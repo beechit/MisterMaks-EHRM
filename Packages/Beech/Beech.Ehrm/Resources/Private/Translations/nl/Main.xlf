@@ -80,7 +80,7 @@
 			</trans-unit>
 			<trans-unit id='log.timestamp'>
 				<source>Timestamp</source>
-				<target>Account</target>
+				<target>Timestamp</target>
 			</trans-unit>
 			<trans-unit id='log.message'>
 				<source>Message</source>

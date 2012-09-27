@@ -8,9 +8,10 @@ require(
 			'jquery-lib': 'Beech.Ehrm/Library/jquery-ui/js/jquery-1.7.2.min',
 			'jquery-ui-lib': 'Beech.Ehrm/Library/jquery-ui/js/jquery-ui-1.9.rc1',
 			'form': 'Beech.Ehrm/Library/jquery.form',
-			'emberjs': 'Emberjs/Core/ember-0.9.8',
+			'emberjs': 'Beech.Ehrm/Library/emberjs/ember-0.9.8',
 			'bootstrap': 'Twitter.Bootstrap/2.0/js/bootstrap.min',
-			'data-tables-twitterbootstrap': 'Beech.Ehrm/Library/dataTables/media/js/jquery.dataTables.TwitterBootstrap'
+			'data-tables-twitterbootstrap': 'Beech.Ehrm/Library/dataTables/media/js/jquery.dataTables.TwitterBootstrap',
+			'i18n': 'Beech.Ehrm/JavaScript/i18n'
 		},
 		shim: {
 			'jquery-lib': {
@@ -29,6 +30,11 @@ require(
 					'bootstrap',
 					'Beech.Ehrm/Library/dataTables/media/js/jquery.dataTables'
 				]
+			}
+		},
+		config: {
+			i18n: {
+				locale: MM.locale
 			}
 		}
 	},
