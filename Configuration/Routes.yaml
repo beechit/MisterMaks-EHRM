@@ -3,11 +3,11 @@
 #
 -
   name: 'Beech Party'
-  uriPattern: '<PartySubroutes>'
+  uriPattern: '<BeechPartySubroutes>'
   defaults:
     '@format': 'html'
   subRoutes:
-    PartySubroutes:
+    BeechPartySubroutes:
       package: 'Beech.Party'
 
 ##
@@ -16,17 +16,29 @@
 
 -
   name: 'Beech EHRM'
-  uriPattern: '<EHRMSubroutes>'
+  uriPattern: '<BeechEhrmSubroutes>'
   defaults:
     '@format': 'html'
   subRoutes:
-    EHRMSubroutes:
+    BeechEhrmSubroutes:
       package: 'Beech.Ehrm'
+
+##
+# EHRM.Document subroutes
+#
+
+-
+  name: 'Beech Document'
+  uriPattern: '<BeechDocumentSubroutes>'
+  defaults:
+    '@format': 'html'
+  subRoutes:
+    BeechDocumentSubroutes:
+      package: 'Beech.Document'
 
 ##
 # Flow subroutes
 #
-
 -
   name: 'Flow'
   uriPattern: '<FlowSubroutes>'
