@@ -1,0 +1,46 @@
+<f:layout name="Default"/>
+
+<f:section name="Body">
+	<h1><f:translate id="document.documents">Documents</f:translate></h1>
+	<f:if condition="{documents}">
+		<f:then>
+			<table class="table table-striped">
+				<f:for each="{documents}" as="document">
+					<tr>
+						<td>
+							<f:link.action action="delete" arguments="{document: document}"><i class="icon icon-trash"></i></f:link.action>
+						</td>
+						<td>{document.name}</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<f:for each="{document.resources}" as="resource">
+						<tr>
+							<td></td>
+							<td>
+								<f:link.external uri="{f:uri.resource(resource: resource.originalResource)}" target="_blank"><i class="icon icon-eye-open"></i></f:link.external>
+							</td>
+							<td>
+								<f:format.date format="d-m-Y H:i">{resource.creationDateTime}</f:format.date>
+							</td>
+							<td>
+								<f:link.action action="deleteResource" arguments="{resource: resource}"><i class="icon icon-trash"></i></f:link.action>
+							</td>
+						</tr>
+					</f:for>
+				</f:for>
+			</table>
+		</f:then>
+		<f:else>
+			<p><f:translate id="document.noDocumentsFound">No documents found</f:translate></p>
+		</f:else>
+	</f:if>
+
+	<f:form method="post" action="create" name="newResource" object="{newResource}" class="form-horizontal well" enctype="multipart/form-data">
+		<f:form.upload property="originalResource" />
+		<f:form.submit value="Upload" />
+	</f:form>
+
+</f:section>
+
+<f:section name="Left" />

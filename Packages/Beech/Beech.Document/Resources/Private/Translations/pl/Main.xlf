@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file original="" source-language="en" target-language="pl" datatype="plaintext">
+		<body>
+			<trans-unit id="document.documents">
+				<source>Documents</source>
+				<target>Akta</target>
+			</trans-unit>
+			<trans-unit id="document.noDocumentsFound">
+				<source>No documents found</source>
+				<target>Nie znaleziono plików</target>
+			</trans-unit>
+			<trans-unit id="document.fileExtensionNotAllowed">
+				<source>File extension not allowed</source>
+				<target>Plik z tym rozszerzeniem jest niedozwolony</target>
+			</trans-unit>
+			<trans-unit id="document.noFileSelected">
+				<source>No file was selected for upload</source>
+				<target>Nie wybrano pliku do uploadu</target>
+			</trans-unit>
+			<trans-unit id="document.documentUploaded">
+				<source>Document uploaded</source>
+				<target>Przesłany plik</target>
+			</trans-unit>
+			<trans-unit id="document.documentDeleted">
+				<source>Document deleted</source>
+				<target>Plik usunięty</target>
+			</trans-unit>
+			<trans-unit id="document.upload">
+				<source>Upload</source>
+				<target>Prześlij</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
