@@ -1,9 +1,0 @@
-Beech.Ehrm.WizardController = Beech.Ehrm:Page {
-	templatePath = 'resource://Beech.Ehrm/Private/Templates/TypoScriptObjects/Wizard.html'
-	header = Template {
-		sectionName = 'Header'
-	}
-	body {
-		sectionName = 'Body'
-	}
-}

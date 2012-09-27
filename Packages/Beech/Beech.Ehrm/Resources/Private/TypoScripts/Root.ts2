@@ -12,3 +12,34 @@ prototype(TYPO3.Expose:Search).implementationClassName = 'TYPO3\\Expose\\TypoScr
 prototype(Beech.Ehrm.MainMenu).@class = 'Beech\\Ehrm\\TypoScript\\MainMenu'
 prototype(Beech.Ehrm.HeaderParts).@class = 'Beech\\Ehrm\\TypoScript\\HeaderParts'
 prototype(Beech.Ehrm.Page).@class = 'Beech\\Ehrm\\TypoScript\\Template'
+
+prototype(TYPO3.TypoScript:Template) {
+#	partialRootPath = 'resource://Beech.Ehrm/Private/Partials'
+	layoutRootPath = 'resource://Beech.Ehrm/Private/Layouts'
+}
+
+prototype(Beech.Ehrm:Page) < prototype(TYPO3.TypoScript:Template)
+prototype(Beech.Ehrm:Page) {
+	templatePath = 'resource://Beech.Ehrm/Private/Templates/TypoScriptObjects/Page.html'
+	body = Template
+	body.title = 'Mister Maks'
+}
+
+Application = Beech.Ehrm:Page {
+	headerMenu = Beech.Ehrm.MainMenu
+	headerParts = Beech.Ehrm.HeaderParts
+
+	body {
+		sectionName = 'Body'
+	}
+}
+
+Beech.Ehrm.WizardController = Beech.Ehrm:Page {
+	templatePath = 'resource://Beech.Ehrm/Private/Templates/TypoScriptObjects/Wizard.html'
+	header = Template {
+		sectionName = 'Header'
+	}
+	body {
+		sectionName = 'Body'
+	}
+}

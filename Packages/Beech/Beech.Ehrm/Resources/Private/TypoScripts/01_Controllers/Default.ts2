@@ -1,8 +1,0 @@
-Application = Beech.Ehrm:Page {
-	headerMenu = Beech.Ehrm.MainMenu
-	headerParts = Beech.Ehrm.HeaderParts
-
-	body {
-		sectionName = 'Body'
-	}
-}
