@@ -8,10 +8,13 @@
 					<bootstrap:navigation.menu items="{mainMenuItems}" classNames="{0:'nav'}" />
 
 					<bootstrap:navigation.menu items="{actionMenuItems}" classNames="{0:'nav',1:'pull-right'}" />
-
-					<form class="navbar-form pull-right">
-						<input type="text" class="search-query input-small" placeholder="Search">
-					</form>
+					<f:if condition="{settings.search.enabled}">
+						<f:then>
+							<form class="navbar-form pull-right">
+								<input type="text" class="search-query input-small" placeholder="Search">
+							</form>
+						</f:then>
+					</f:if>
 
 					<div class="btn-group pull-right">
 						<a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#">
@@ -28,7 +31,6 @@
 						</a>
 						<bootstrap:navigation.menu items="{accountMenuItems}" classNames="{0:'dropdown-menu'}" />
 					</div>
-
 
 				</f:security.ifAuthenticated>
 			</div>

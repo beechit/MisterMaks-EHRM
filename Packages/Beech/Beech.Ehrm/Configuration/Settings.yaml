@@ -31,6 +31,8 @@ Beech:
             priority: 99
             controller: 'Login'
             action: 'logout'
+    search:
+      enabled: FALSE
     modules:
       defaults:
         package: 'Beech.Ehrm'

@@ -285,7 +285,7 @@ class SettingsHelper {
 		} else {
 			return array();
 		}
-
 	}
 }
+
 ?>

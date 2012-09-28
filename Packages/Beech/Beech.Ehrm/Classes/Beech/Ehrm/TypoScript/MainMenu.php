@@ -23,12 +23,21 @@ class MainMenu extends AbstractTypoScriptObject {
 	protected $settingsHelper;
 
 	/**
+	 * @param array $settings
+	 * @return void
+	 */
+	public function injectSettings(array $settings) {
+		$this->settings = $settings;
+	}
+
+	/**
 	 * @return string
 	 */
 	public function evaluate() {
 		$this->initializeView();
 
 		$this->view->assignMultiple(array(
+			'settings' => $this->settings,
 			'mainMenuItems' => $this->settingsHelper->getMenuItems('main'),
 			'actionMenuItems' => $this->settingsHelper->getMenuItems('action'),
 			'accountMenuItems' => $this->settingsHelper->getMenuItems('account')

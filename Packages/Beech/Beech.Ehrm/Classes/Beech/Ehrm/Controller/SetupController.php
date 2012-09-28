@@ -52,7 +52,9 @@ class SetupController extends AbstractController {
 	 * @return void
 	 */
 	public function indexAction() {
-		$this->view->assign('locale', $this->securityContext->getAccount()->getParty()->getPreferences()->get('locale'));
+		if ($this->securityContext->isInitialized()) {
+			$this->view->assign('locale', $this->securityContext->getAccount()->getParty()->getPreferences()->get('locale'));
+		}
 		$this->view->assign('languages', $this->settingsHelper->getAvailableLanguages() );
 	}
 

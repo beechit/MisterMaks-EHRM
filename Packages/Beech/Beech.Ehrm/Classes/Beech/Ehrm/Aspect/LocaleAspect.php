@@ -64,7 +64,7 @@ class LocaleAspect {
 		$application = $this->applicationRepository->findApplication();
 		$defaultLocale = $application->getPreferences()->get('defaultLocale');
 		if ($defaultLocale !== NULL) {
-			return new \TYPO3\FLOW3\I18n\Locale($defaultLocale);
+			return new \TYPO3\Flow\I18n\Locale($defaultLocale);
 		}
 
 		return $joinPoint->getAdviceChain()->proceed($joinPoint);
