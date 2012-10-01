@@ -1,48 +1,18 @@
-[submodule "Packages/Tools/TYPO3.Kickstart"]
-	path = Packages/Tools/TYPO3.Kickstart
-	url = git://git.typo3.org/FLOW3/Packages/TYPO3.Kickstart.git
-[submodule "Build/Common"]
-	path = Build/Common
-	url = git://git.typo3.org/FLOW3/BuildEssentials.git
-[submodule "Packages/Tools/TYPO3.Surf"]
-	path = Packages/Tools/TYPO3.Surf
-	url = git://git.typo3.org/FLOW3/Packages/TYPO3.Surf.git
 [submodule "Documentation"]
 	path = Documentation
 	url = ssh://git.beech.local/EHRM/Documentation.git
 [submodule "Build/CGL/Common/PHP"]
 	path = Build/CGL/Common/PHP
 	url = git://git.typo3.org/Teams/forge.typo3.org/hudson-helpers/tools/PHP_CodeSniffer.git
-[submodule "Packages/Library/Twitter.Bootstrap"]
-	path = Packages/Library/Twitter.Bootstrap
-	url = git://git.typo3.org/FLOW3/Packages/Twitter.Bootstrap.git
-[submodule "Packages/Library/TYPO3.LDAP"]
-	path = Packages/Library/TYPO3.LDAP
-	url = git://git.typo3.org/FLOW3/Packages/LDAP.git
-[submodule "Packages/Library/TYPO3.Form"]
-	path = Packages/Library/TYPO3.Form
-	url = git://git.typo3.org/FLOW3/Packages/TYPO3.Form.git
 [submodule "Packages/Library/TYPO3.FormBuilder"]
 	path = Packages/Library/TYPO3.FormBuilder
 	url = git://git.typo3.org/FLOW3/Packages/TYPO3.FormBuilder.git
-[submodule "Packages/Library/Emberjs"]
-	path = Packages/Library/Emberjs
-	url = git://github.com/radmiraal/Emberjs.git
 [submodule "Packages/Library/TYPO3.Queue"]
 	path = Packages/Library/TYPO3.Queue
 	url = git://git.typo3.org/FLOW3/Packages/TYPO3.Queue.git
 [submodule "Build/Essentials"]
 	path = Build/Essentials
 	url = ssh://git.beech.local/Beech/BuildEssentials.git
-[submodule "Packages/Library/TYPO3.TcPdf"]
-	path = Packages/Library/TYPO3.TcPdf
-	url = git://git.typo3.org/FLOW3/Packages/TYPO3.TcPdf.git
-[submodule "Packages/Library/TYPO3.TypoScript"]
-	path = Packages/Library/TYPO3.TypoScript
-	url = git://git.typo3.org/FLOW3/Packages/TYPO3.TypoScript.git
-[submodule "Packages/Library/TYPO3.Eel"]
-	path = Packages/Library/TYPO3.Eel
-	url = git://git.typo3.org/FLOW3/Packages/TYPO3.Eel.git
 [submodule "Packages/Tools/Beech.Style"]
 	path = Packages/Tools/Beech.Style
 	url = ssh://git.beech.local/EHRM/Package/Style.git

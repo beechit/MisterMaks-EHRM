@@ -22,7 +22,14 @@
 		"beech/ehrm": "dev-development",
 		"beech/task": "dev-development",
 		"beech/party": "dev-development",
-		"beech/workflow": "dev-development"
+		"beech/workflow": "dev-development",
+		"twitter/bootstrap": "dev-master",
+		"typo3/eel": "dev-master",
+		"typo3/form": "dev-master",
+		"typo3/tcpdf": "dev-master",
+		"typo3/typoscript": "dev-master",
+		"typo3/surf": "dev-master",
+		"typo3/ldap": "dev-master"
 	},
 	"require-dev": {
 		"typo3/kickstart": "dev-master",
