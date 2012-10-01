@@ -16,7 +16,7 @@ use Beech\Party\Domain\Model\ElectronicAddress;
  *
  * @Flow\Entity
  */
-class Person extends \TYPO3\Party\Domain\Model\Person {
+class Person extends \TYPO3\Party\Domain\Model\AbstractParty {
 
 	/**
 	 * @var \TYPO3\Party\Domain\Model\PersonName
@@ -63,6 +63,7 @@ class Person extends \TYPO3\Party\Domain\Model\Person {
 	public function __construct() {
 		parent::__construct();
 		$this->addresses = new \Doctrine\Common\Collections\ArrayCollection();
+		$this->electronicAddresses = new \Doctrine\Common\Collections\ArrayCollection();
 		$this->preferences = new \Beech\Ehrm\Domain\Model\Preferences();
 	}
 
@@ -74,6 +75,15 @@ class Person extends \TYPO3\Party\Domain\Model\Person {
 	 */
 	public function addPersonName(\TYPO3\Party\Domain\Model\PersonName $personName) {
 		$this->name = $personName;
+	}
+
+	/**
+	 * Returns the current name of this person
+	 *
+	 * @return \TYPO3\Party\Domain\Model\PersonName Name of this person
+	 */
+	public function getName() {
+		return $this->name;
 	}
 
 	/**
@@ -105,6 +115,60 @@ class Person extends \TYPO3\Party\Domain\Model\Person {
 		$electronicAddress->setDescription('Phone');
 		$this->addElectronicAddress($electronicAddress);
 		return $electronicAddress;
+	}
+
+	/**
+	 * Adds the given electronic address to this person.
+	 *
+	 * @param \Beech\Party\Domain\Model\ElectronicAddress $electronicAddress The electronic address
+	 * @return void
+	 */
+	public function addElectronicAddress(\Beech\Party\Domain\Model\ElectronicAddress $electronicAddress) {
+		$this->electronicAddresses->add($electronicAddress);
+	}
+
+	/**
+	 * Removes the given electronic address from this person.
+	 *
+	 * @param \Beech\Party\Domain\Model\ElectronicAddress $electronicAddress The electronic address
+	 * @return void
+	 */
+	public function removeElectronicAddress(\Beech\Party\Domain\Model\ElectronicAddress $electronicAddress) {
+		$this->electronicAddresses->removeElement($electronicAddress);
+		if ($electronicAddress === $this->primaryElectronicAddress) {
+			unset($this->primaryElectronicAddress);
+		}
+	}
+
+	/**
+	 * Returns all known electronic addresses of this person.
+	 *
+	 * @return \Doctrine\Common\Collections\Collection<\TYPO3\Party\Domain\Model\ElectronicAddress>
+	 */
+	public function getElectronicAddresses() {
+		return clone $this->electronicAddresses;
+	}
+
+	/**
+	 * Sets (and adds if necessary) the primary electronic address of this person.
+	 *
+	 * @param \Beech\Party\Domain\Model\ElectronicAddress $electronicAddress The electronic address
+	 * @return void
+	 */
+	public function setPrimaryElectronicAddress(\Beech\Party\Domain\Model\ElectronicAddress $electronicAddress) {
+		$this->primaryElectronicAddress = $electronicAddress;
+		if (!$this->electronicAddresses->contains($electronicAddress)) {
+			$this->electronicAddresses->add($electronicAddress);
+		}
+	}
+
+	/**
+	 * Returns the primary electronic address, if one has been defined.
+	 *
+	 * @return \Beech\Party\Domain\Model\ElectronicAddress The primary electronic address or NULL
+	 */
+	public function getPrimaryElectronicAddress() {
+		return $this->primaryElectronicAddress;
 	}
 
 	/**
@@ -161,6 +225,14 @@ class Person extends \TYPO3\Party\Domain\Model\Person {
 	}
 
 	/**
+	 * @param \Beech\Ehrm\Domain\Model\Preferences $preferences
+	 * @return void
+	 */
+	public function setPreferences(\Beech\Ehrm\Domain\Model\Preferences $preferences) {
+		$this->preferences = $preferences;
+	}
+
+	/**
 	 * @return \Beech\Ehrm\Domain\Model\Preferences
 	 */
 	public function getPreferences() {
@@ -169,7 +241,5 @@ class Person extends \TYPO3\Party\Domain\Model\Person {
 		}
 		return $this->preferences;
 	}
-
 }
-
 ?>

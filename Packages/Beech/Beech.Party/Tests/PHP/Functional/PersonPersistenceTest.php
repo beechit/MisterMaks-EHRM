@@ -61,7 +61,7 @@ class PersonPersistenceTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 	 */
 	public function personsAndAccountPersistingAndRetrievingWorksCorrectly($firstName, $middleName, $lastName, $emailAddress) {
 		$person = new Person();
-		$person->setName(new PersonName('', $firstName, $middleName, $lastName));
+		$person->addPersonName(new PersonName('', $firstName, $middleName, $lastName));
 		$person->setDescription('Person');
 		$person->addEmail($emailAddress);
 		$account = $this->accountFactory->createAccountWithPassword($emailAddress, $this->persistenceManager->getIdentifierByObject($person));
