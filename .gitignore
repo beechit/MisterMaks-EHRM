@@ -18,6 +18,7 @@ Thumbs.db
 /index.html
 /Packages/Vendor/
 /Packages/Application/
+/Packages/Library/
 /Packages/Framework/
 /composer.phar
 /flow3.bat
