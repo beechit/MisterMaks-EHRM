@@ -11,6 +11,18 @@
       package: 'Beech.Party'
 
 ##
+# Subroutes for Party package
+#
+-
+  name: 'Beech Style'
+  uriPattern: '<StyleSubroutes>'
+  defaults:
+    '@format': 'html'
+  subRoutes:
+    StyleSubroutes:
+      package: 'Beech.Style'
+
+##
 # EHRM.Common subroutes
 #
 
