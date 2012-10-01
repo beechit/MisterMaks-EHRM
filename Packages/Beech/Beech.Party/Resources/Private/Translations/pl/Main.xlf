@@ -110,9 +110,13 @@
 				<source>View archived items</source>
 				<target>Pokaz zarchiwizowane zadania</target>
 			</trans-unit>
+			<trans-unit id="persons">
+				<source>Persons</source>
+				<target>Osoby</target>
+			</trans-unit>
 			<trans-unit id="person">
 				<source>Person</source>
-				<target>Osoby</target>
+				<target>Osoba</target>
 			</trans-unit>
 			<trans-unit id="person.firstName">
 				<source>First name</source>

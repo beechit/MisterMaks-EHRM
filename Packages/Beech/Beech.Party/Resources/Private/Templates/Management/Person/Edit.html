@@ -1,6 +1,7 @@
 <f:layout name="Default" />
 
 <f:section name="Body">
+	<h1><f:translate id="action.edit">Edit</f:translate> "{person.name}"</h1>
 	<f:form.validationResults for="person">
 		<f:if condition="{validationResults.flattenedErrors}">
 			<div class="error">

@@ -114,6 +114,10 @@
 				<source>View archived items</source>
 				<target>Bekijk gearchiveerde items</target>
 			</trans-unit>
+			<trans-unit id="persons">
+				<source>Persons</source>
+				<target>Gebruikers</target>
+			</trans-unit>
 			<trans-unit id="person">
 				<source>Person</source>
 				<target>Persoon</target>
