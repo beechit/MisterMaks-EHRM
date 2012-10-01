@@ -1,0 +1,8 @@
+{
+	"name": "Mister-Maks",
+	"version": "0.0.0",
+	"scripts": {
+		"server": "./Build/Common/JSUnit/buster.sh",
+		"test": "./node_modules/buster/bin/buster-test --reporter dots --config Build/JSUnit/buster.js"
+	}
+}

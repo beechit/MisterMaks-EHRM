@@ -18,7 +18,7 @@ Thumbs.db
 /Packages/Vendor/
 /Packages/Application/
 /Packages/Framework/
-/composer.lock
 /composer.phar
 /flow3.bat
 /*.txt
+/node_modules/
