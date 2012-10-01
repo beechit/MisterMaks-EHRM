@@ -1,5 +1,5 @@
 {
-    "hash": "617fed35a2e95a26147cd7402d9aeeec",
+    "hash": "29cb65460e0a2f3c832ecdd1d867ad7d",
     "packages": [
         {
             "name": "beech/cla",
@@ -358,7 +358,7 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/christianjul/installers.git",
-                "reference": "0c17fc1177fd20f3831287b84e4e582b24ea1693"
+                "reference": "721c602d925a579ee079978c4cd5e5c09bf9bfca"
             },
             "replace": {
                 "shama/baton": "*"
@@ -366,7 +366,7 @@
             "require-dev": {
                 "composer/composer": "1.0.*"
             },
-            "time": "1348667846",
+            "time": "1348736959",
             "type": "composer-installer",
             "extra": {
                 "class": "Composer\\Installers\\Installer"
@@ -410,53 +410,18 @@
             ]
         },
         {
-            "name": "simplethings/entity-audit-bundle",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/simplethings/EntityAudit.git",
-                "reference": "60a5bcb61a43fc4360ff5190cb4b5e63864fc3b7"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://github.com/simplethings/EntityAudit/zipball/60a5bcb61a43fc4360ff5190cb4b5e63864fc3b7",
-                "reference": "60a5bcb61a43fc4360ff5190cb4b5e63864fc3b7",
-                "shasum": ""
-            },
-            "require": {
-                "doctrine/orm": ">=2.1.0,<2.4"
-            },
-            "time": "1343892178",
-            "type": "library",
-            "installation-source": "source",
-            "autoload": {
-                "psr-0": {
-                    "SimpleThings\\EntityAudit": "src/"
-                }
-            },
-            "license": [
-                "New BSD"
-            ],
-            "description": "Audit for Doctrine Entities",
-            "keywords": [
-                "database",
-                "persistence",
-                "Audit"
-            ]
-        },
-        {
             "name": "symfony/dom-crawler",
             "version": "dev-master",
             "target-dir": "Symfony/Component/DomCrawler",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/DomCrawler",
-                "reference": "4809f601a8404ffe1c5b5360247828e6659a3e94"
+                "reference": "faa80e68d5bb87eed3bf114f7e964362ab904457"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/DomCrawler/zipball/4809f601a8404ffe1c5b5360247828e6659a3e94",
-                "reference": "4809f601a8404ffe1c5b5360247828e6659a3e94",
+                "url": "https://github.com/symfony/DomCrawler/zipball/faa80e68d5bb87eed3bf114f7e964362ab904457",
+                "reference": "faa80e68d5bb87eed3bf114f7e964362ab904457",
                 "shasum": ""
             },
             "require": {
@@ -468,7 +433,7 @@
             "suggest": {
                 "symfony/css-selector": "2.2.*"
             },
-            "time": "1348171091",
+            "time": "1348854729",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -478,7 +443,7 @@
             "installation-source": "source",
             "autoload": {
                 "psr-0": {
-                    "Symfony\\Component\\DomCrawler": ""
+                    "Symfony\\Component\\DomCrawler\\": ""
                 }
             },
             "license": [
@@ -504,18 +469,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Yaml",
-                "reference": "f1f0e0fea2bc568492ba1e25c2f88888d38459ca"
+                "reference": "f965c71d0edb97cef36c556f2bda25298fce7e69"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/Yaml/zipball/f1f0e0fea2bc568492ba1e25c2f88888d38459ca",
-                "reference": "f1f0e0fea2bc568492ba1e25c2f88888d38459ca",
+                "url": "https://github.com/symfony/Yaml/zipball/f965c71d0edb97cef36c556f2bda25298fce7e69",
+                "reference": "f965c71d0edb97cef36c556f2bda25298fce7e69",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "1347987929",
+            "time": "1348817656",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -525,7 +490,7 @@
             "installation-source": "source",
             "autoload": {
                 "psr-0": {
-                    "Symfony\\Component\\Yaml": ""
+                    "Symfony\\Component\\Yaml\\": ""
                 }
             },
             "license": [
@@ -545,12 +510,53 @@
             "homepage": "http://symfony.com"
         },
         {
+            "name": "twitter/bootstrap",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git://git.typo3.org/FLOW3/Packages/Twitter.Bootstrap.git",
+                "reference": "4184cb066d35d3e722012725a565bb7f50cf3ff2"
+            },
+            "require": {
+                "typo3/flow3": "*"
+            },
+            "time": "1348491485",
+            "type": "flow3-package",
+            "installation-source": "source",
+            "autoload": {
+                "psr-0": {
+                    "Twitter\\Bootstrap": "Classes"
+                }
+            },
+            "description": "Simple and flexible HTML, CSS, and Javascript for popular user interface components and interactions."
+        },
+        {
+            "name": "typo3/eel",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git://git.typo3.org/FLOW3/Packages/TYPO3.Eel.git",
+                "reference": "092b3b4c1bede362ad116251350370e97ebac707"
+            },
+            "require": {
+                "typo3/flow3": "*"
+            },
+            "time": "1348519511",
+            "type": "flow3-package",
+            "installation-source": "source",
+            "autoload": {
+                "psr-0": {
+                    "TYPO3\\Eel": "Classes"
+                }
+            }
+        },
+        {
             "name": "typo3/flow3",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "git://git.typo3.org/FLOW3/Packages/TYPO3.FLOW3.git",
-                "reference": "4179179dc14d11e2617125d50017a83beaae4114"
+                "reference": "569fcb8657b3c6521db122bef78f0717a98b1586"
             },
             "require": {
                 "php": ">=5.3.2",
@@ -566,7 +572,7 @@
                 "symfony/yaml": ">2.1.0",
                 "symfony/dom-crawler": ">2.0.16"
             },
-            "time": "1348653692",
+            "time": "1348955634",
             "type": "flow3-framework",
             "installation-source": "source",
             "autoload": {
@@ -615,6 +621,48 @@
             "description": "Next-Generation Templating Framework for FLOW3 and TYPO3 5.0, also backported to TYPO3 4.x"
         },
         {
+            "name": "typo3/form",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git://git.typo3.org/FLOW3/Packages/TYPO3.Form.git",
+                "reference": "3aa7f9899012811c19928edbff7169593f9977b0"
+            },
+            "require": {
+                "typo3/flow3": "*"
+            },
+            "time": "1348561266",
+            "type": "flow3-package",
+            "installation-source": "source",
+            "autoload": {
+                "psr-0": {
+                    "TYPO3\\Form": "Classes"
+                }
+            },
+            "description": "Extensible and flexible API for building web forms"
+        },
+        {
+            "name": "typo3/ldap",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git://git.typo3.org/FLOW3/Packages/LDAP.git",
+                "reference": "2c3debcec932145f0882a09b9db108a3760e40af"
+            },
+            "require": {
+                "typo3/flow3": "*"
+            },
+            "time": "1348668872",
+            "type": "flow3-library",
+            "installation-source": "source",
+            "autoload": {
+                "psr-0": {
+                    "TYPO3\\LDAP": "Classes"
+                }
+            },
+            "description": "LDAP Authentication for FLOW3"
+        },
+        {
             "name": "typo3/party",
             "version": "dev-master",
             "source": {
@@ -638,6 +686,67 @@
                 "LGPL-3.0+"
             ],
             "description": "A PHP implementation of the OASIS Customer Information Quality (CIQ) XML Standard."
+        },
+        {
+            "name": "typo3/surf",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git://git.typo3.org/FLOW3/Packages/TYPO3.Surf.git",
+                "reference": "feed4146476c78d9c74d28c059fa28745e8cffd6"
+            },
+            "require": {
+                "typo3/flow3": "*"
+            },
+            "time": "1349113378",
+            "type": "flow3-package",
+            "installation-source": "source",
+            "autoload": {
+                "psr-0": {
+                    "TYPO3\\Surf": "Classes"
+                }
+            }
+        },
+        {
+            "name": "typo3/tcpdf",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git://git.typo3.org/FLOW3/Packages/TYPO3.TcPdf.git",
+                "reference": "9b60ba5251d979e84f51167a9c9162e410839231"
+            },
+            "require": {
+                "typo3/flow3": "*"
+            },
+            "time": "1348669422",
+            "type": "flow3-library",
+            "installation-source": "source",
+            "autoload": {
+                "psr-0": {
+                    "TYPO3\\TcPdf": "Classes"
+                }
+            }
+        },
+        {
+            "name": "typo3/typoscript",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git://git.typo3.org/FLOW3/Packages/TYPO3.TypoScript.git",
+                "reference": "836390e037012830f54d14b238675bc4eb1d0fc6"
+            },
+            "require": {
+                "typo3/flow3": "*",
+                "typo3/eel": "*"
+            },
+            "time": "1348734561",
+            "type": "flow3-package",
+            "installation-source": "source",
+            "autoload": {
+                "psr-0": {
+                    "TYPO3\\TypoScript": "Classes"
+                }
+            }
         }
     ],
     "packages-dev": [
@@ -709,7 +818,13 @@
         "beech/task": 20,
         "beech/party": 20,
         "beech/workflow": 20,
-        "simplethings/entity-audit-bundle": 20,
+        "twitter/bootstrap": 20,
+        "typo3/eel": 20,
+        "typo3/form": 20,
+        "typo3/tcpdf": 20,
+        "typo3/typoscript": 20,
+        "typo3/surf": 20,
+        "typo3/ldap": 20,
         "typo3/kickstart": 20
     }
 }
