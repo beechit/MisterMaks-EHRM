@@ -22,9 +22,6 @@
 [submodule "Packages/Library/TYPO3.FormBuilder"]
 	path = Packages/Library/TYPO3.FormBuilder
 	url = git://git.typo3.org/FLOW3/Packages/TYPO3.FormBuilder.git
-[submodule "Packages/Library/Emberjs"]
-	path = Packages/Library/Emberjs
-	url = git://github.com/radmiraal/Emberjs.git
 [submodule "Packages/Library/TYPO3.Queue"]
 	path = Packages/Library/TYPO3.Queue
 	url = git://git.typo3.org/FLOW3/Packages/TYPO3.Queue.git
