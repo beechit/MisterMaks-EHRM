@@ -1,6 +1,3 @@
-[submodule "Packages/Tools/TYPO3.Kickstart"]
-	path = Packages/Tools/TYPO3.Kickstart
-	url = git://git.typo3.org/FLOW3/Packages/TYPO3.Kickstart.git
 [submodule "Build/Common"]
 	path = Build/Common
 	url = git://git.typo3.org/FLOW3/BuildEssentials.git
