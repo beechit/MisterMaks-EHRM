@@ -1,5 +1,5 @@
 {
-    "hash": "29cb65460e0a2f3c832ecdd1d867ad7d",
+    "hash": "be215164d7bb6539e9b5edc774724617",
     "packages": [
         {
             "name": "beech/cla",
@@ -781,6 +781,26 @@
             "homepage": "http://vfs.bovigo.org/"
         },
         {
+            "name": "typo3/buildessentials",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git://git.typo3.org/FLOW3/BuildEssentials.git",
+                "reference": "49f1842501870b251441982609dd73d1e8dcbd87"
+            },
+            "require": {
+                "php": ">=5.3.2",
+                "flow3/composer-installers": "*"
+            },
+            "time": "1348663169",
+            "type": "flow3-build",
+            "installation-source": "source",
+            "license": [
+                "LGPL-3.0+"
+            ],
+            "description": "FLOW3 Build Toolchain Essentials"
+        },
+        {
             "name": "typo3/kickstart",
             "version": "dev-master",
             "source": {
@@ -825,6 +845,7 @@
         "typo3/typoscript": 20,
         "typo3/surf": 20,
         "typo3/ldap": 20,
+        "typo3/buildessentials": 20,
         "typo3/kickstart": 20
     }
 }

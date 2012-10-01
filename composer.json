@@ -32,6 +32,7 @@
 		"typo3/ldap": "dev-master"
 	},
 	"require-dev": {
+		"typo3/buildessentials": "dev-master",
 		"typo3/kickstart": "dev-master",
 		"mikey179/vfsstream": "1.1.*"
 	},
