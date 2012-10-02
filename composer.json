@@ -23,6 +23,7 @@
 		"beech/task": "dev-development",
 		"beech/party": "dev-development",
 		"beech/workflow": "dev-development",
+		"beech/minutes": "dev-development",
 		"twitter/bootstrap": "dev-master",
 		"typo3/eel": "dev-master",
 		"typo3/form": "dev-master",
