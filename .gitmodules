@@ -7,6 +7,3 @@
 [submodule "Packages/Library/TYPO3.FormBuilder"]
 	path = Packages/Library/TYPO3.FormBuilder
 	url = git://git.typo3.org/FLOW3/Packages/TYPO3.FormBuilder.git
-[submodule "Build/Essentials"]
-	path = Build/Essentials
-	url = ssh://git.beech.local/Beech/BuildEssentials.git
