@@ -18,8 +18,12 @@ if (getenv('DEPLOYMENT_PATH')) {
 	throw new \Exception('Deployment path must be set in the DEPLOYMENT_PATH env variable.');
 }
 
+$phpPath = getenv('PHP_PATH') ? getenv('PHP_PATH') : 'php';
+
 $application->setOption('repositoryUrl', getenv('DEPLOYMENT_REPOSITORY') ? getenv('DEPLOYMENT_REPOSITORY') : 'ssh://git.beech.local/EHRM/Base.git');
 $application->setOption('keepReleases', 20);
+$application->setOption('composerDownloadCommand', 'curl -s https://getcomposer.org/installer | ' . $phpPath);
+$application->setOption('composerCommandPath', $phpPath . ' composer.phar');
 
 $deployment->addApplication($application);
 
@@ -43,6 +47,7 @@ $deployment->onInitialize(function() use ($workflow, $application) {
 			'command' => 'cd {releasePath} && FLOW3_CONTEXT=Production ./flow3 flow3:cache:flush --force'
 		))
 
+		->beforeTask('typo3.surf:composer:install', 'typo3.surf:composer:download', $application)
 		->afterTask('typo3.surf:gitcheckout', 'beech.fetchQueuedPatches', $application)
 		->addTask('beech.clearcache', 'update', $application);
 });
