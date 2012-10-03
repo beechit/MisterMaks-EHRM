@@ -2,7 +2,7 @@
 
 <project default="build">
 
-	<include file="${basedir}/Essentials/Build.xml" />
+	<include file="${basedir}/essentials/Build.xml" />
 
 	<target name="build"
 			depends="essentials.prepare,essentials.lint,essentials.phploc,essentials.pdepend,essentials.phpmd-ci,essentials.phpcs-ci,essentials.phpcpd,essentials.phpunit,essentials.phpunit_functional,essentials.phpcb"/>
