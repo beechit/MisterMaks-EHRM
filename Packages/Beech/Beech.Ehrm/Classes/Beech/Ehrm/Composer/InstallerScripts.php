@@ -19,7 +19,7 @@ class InstallerScripts extends \TYPO3\FLOW3\Composer\InstallerScripts {
 	 * @return void
 	 */
 	static public function postUpdateAndInstall(Event $event) {
-		require_once('Build/Essentials/fetchQueuedPatches.php');
+		require_once('Build/essentials/fetchQueuedPatches.php');
 		parent::postUpdateAndInstall($event);
 	}
 
