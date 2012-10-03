@@ -1,5 +1,5 @@
 {
-    "hash": "4b3f78ccd9d7f30277f80a80332bdc3a",
+    "hash": "a40a3b87b1c8e548e2800643c95fd435",
     "packages": [
         {
             "name": "beech/cla",
@@ -47,12 +47,12 @@
             "source": {
                 "type": "git",
                 "url": "ssh://git.beech.local/EHRM/Package/Ehrm.git",
-                "reference": "01c7f529a712998deca5984be913cd91d2cb3738"
+                "reference": "850a091d747fd353071d7cfcf2c816bf71193792"
             },
             "require": {
                 "typo3/flow3": "*"
             },
-            "time": "1349163141",
+            "time": "1349251407",
             "type": "flow3-package",
             "installation-source": "source",
             "autoload": {
@@ -716,12 +716,12 @@
             "source": {
                 "type": "git",
                 "url": "git://git.typo3.org/FLOW3/Packages/TYPO3.Surf.git",
-                "reference": "ad5ae013bf3086ba923656af3c1c3c470c868187"
+                "reference": "4657b81391aec92fa3f7fdc0f5c0078b4beecb32"
             },
             "require": {
                 "typo3/flow3": "*"
             },
-            "time": "1349167681",
+            "time": "1349193313",
             "type": "flow3-library",
             "installation-source": "source",
             "autoload": {
@@ -773,6 +773,43 @@
         }
     ],
     "packages-dev": [
+        {
+            "name": "beech/essentials",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "ssh://git.beech.local/Beech/BuildEssentials.git",
+                "reference": "bdcc64f591ab884775f262737f6b96450ddb34b4"
+            },
+            "require": {
+                "php": ">=5.3.2",
+                "flow3/composer-installers": "*"
+            },
+            "time": "1349182324",
+            "type": "flow3-build",
+            "installation-source": "source",
+            "description": "Beech FLOW3 Build Toolchain Essentials"
+        },
+        {
+            "name": "beech/style",
+            "version": "dev-development",
+            "source": {
+                "type": "git",
+                "url": "ssh://git.beech.local/EHRM/Package/Style.git",
+                "reference": "b1abf79d9ed0f937f421c71b96efa6fac2c6963f"
+            },
+            "require": {
+                "typo3/flow3": "*"
+            },
+            "time": "1349181680",
+            "type": "flow3-package",
+            "installation-source": "source",
+            "autoload": {
+                "psr-0": {
+                    "Beech\\Style": "Classes"
+                }
+            }
+        },
         {
             "name": "mikey179/vfsStream",
             "version": "v1.1.0",
@@ -870,6 +907,8 @@
         "typo3/surf": 20,
         "typo3/ldap": 20,
         "typo3/buildessentials": 20,
-        "typo3/kickstart": 20
+        "beech/essentials": 20,
+        "typo3/kickstart": 20,
+        "beech/style": 20
     }
 }
