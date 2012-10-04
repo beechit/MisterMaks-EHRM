@@ -28,6 +28,22 @@
     presetName: 'wizard'
 
 -
+  name: 'Setup user settings'
+  uriPattern: 'setup/user(/{@action})'
+  defaults:
+    '@package': 'Beech.Ehrm'
+    '@controller': 'Setup\UserPreferences'
+    '@action': 'index'
+
+-
+  name: 'Setup application settings'
+  uriPattern: 'setup/application(/{@action})'
+  defaults:
+    '@package': 'Beech.Ehrm'
+    '@controller': 'Setup\Application'
+    '@action': 'index'
+
+-
   name: 'Default'
   uriPattern: ''
   defaults:

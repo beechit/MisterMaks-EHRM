@@ -44,6 +44,15 @@ Beech:
             menuGroup: 'main:manage'
             controller: 'Log'
             resource: 'ManagementControllers'
+          setupApplication:
+            label: 'Setup application'
+            priority: 90
+            menuGroup: 'main:manage'
+            package: 'Beech.Ehrm'
+            controller: 'Setup\Application'
+            resource: 'ManagementControllers'
+            action: 'index'
+
     languages: [EN_en, NL_nl, PL_pl]
 
 TYPO3:

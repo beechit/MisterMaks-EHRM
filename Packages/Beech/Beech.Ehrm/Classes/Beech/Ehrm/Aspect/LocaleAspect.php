@@ -32,6 +32,12 @@ class LocaleAspect {
 	protected $applicationLogger;
 
 	/**
+	 * @var \Beech\Ehrm\Domain\Repository\ApplicationRepository
+	 * @Flow\Inject
+	 */
+	protected $applicationRepository;
+
+	/**
 	 * @Flow\Around("method(TYPO3\Flow\I18n\Configuration->getCurrentLocale())")
 	 * @param \TYPO3\Flow\Aop\JoinPointInterface $joinPoint The current join point
 	 * @return \TYPO3\Flow\I18n\Locale
@@ -41,6 +47,7 @@ class LocaleAspect {
 			$person = $this->securityContext->getAccount()->getParty();
 			if ($person instanceof \Beech\Party\Domain\Model\Person) {
 				try {
+						// User specific setting found
 					if ($person->getPreferences()->get('locale')) {
 						return new \TYPO3\Flow\I18n\Locale($person->getPreferences()->get('locale'));
 					}
@@ -51,6 +58,13 @@ class LocaleAspect {
 					);
 				};
 			}
+		}
+
+			// Us the global settings
+		$application = $this->applicationRepository->findApplication();
+		$defaultLocale = $application->getPreferences()->get('defaultLocale');
+		if ($defaultLocale !== NULL) {
+			return new \TYPO3\FLOW3\I18n\Locale($defaultLocale);
 		}
 
 		return $joinPoint->getAdviceChain()->proceed($joinPoint);

@@ -16,5 +16,14 @@ use TYPO3\Flow\Annotations as Flow;
  */
 class ApplicationRepository extends \TYPO3\Flow\Persistence\Repository {
 
+	/**
+	 * Find the main application
+	 *
+	 * @return object
+	 */
+	public function findApplication() {
+		return $this->findAll()->getFirst();
+	}
+
 }
 ?>

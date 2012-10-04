@@ -29,7 +29,7 @@ class HeaderParts extends AbstractTypoScriptObject {
 	public function evaluate() {
 		$this->initializeView();
 
-		$settings = (object)array(
+		$settings = array(
 			'authenticated' => $this->authenticationManager->isAuthenticated(),
 			'init' => (object)array(
 				'onLoad' => array(),
@@ -42,10 +42,14 @@ class HeaderParts extends AbstractTypoScriptObject {
 					->setFormat('json')
 					->uriFor('list', array(), 'Rest\Notification', 'Beech.Party')
 			),
-			'locale' => $this->authenticationManager->getSecurityContext()->getParty()->getPreferences()->get('locale')
+			'locale' => 'EN_en'
 		);
 
-		return sprintf('<script>var MM = %s;</script>', json_encode($settings));
+		if ($this->authenticationManager->isAuthenticated()) {
+			$settings['locale'] = $this->authenticationManager->getSecurityContext()->getParty()->getPreferences()->get('locale');
+		}
+
+		return sprintf('<script>var MM = %s;</script>', json_encode((object)$settings));
 	}
 
 }
