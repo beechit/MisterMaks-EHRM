@@ -50,11 +50,11 @@ class ToDoAspect {
 	}
 
 	/**
-	 * @param \TYPO3\Flow\AOP\JoinPointInterface $joinPoint
+	 * @param \TYPO3\Flow\Aop\JoinPointInterface $joinPoint
 	 * @Flow\After("method(Beech\Party\Controller\Management\CompanyController->createAddressAction())")
 	 * @return void
 	 */
-	public function archiveToDoAfterAddressCreate(\TYPO3\Flow\AOP\JoinPointInterface $joinPoint) {
+	public function archiveToDoAfterAddressCreate(\TYPO3\Flow\Aop\JoinPointInterface $joinPoint) {
 		$company = $this->persistenceManager->getIdentifierByObject($joinPoint->getMethodArgument('company'));
 		$toDo = $this->toDoRepository->findOneByControllerActionAndArguments('management\company', 'newAddress', serialize(array('company' => $company)));
 		if ($toDo instanceof \Beech\Party\Domain\Model\ToDo) {
