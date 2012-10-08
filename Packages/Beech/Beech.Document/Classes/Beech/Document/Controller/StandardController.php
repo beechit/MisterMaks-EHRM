@@ -7,12 +7,12 @@ namespace Beech\Document\Controller;
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
-use TYPO3\FLOW3\Annotations as FLOW3;
+use TYPO3\Flow\Annotations as Flow;
 
 /**
  * Standard controller for the Beech.Document package
  *
- * @FLOW3\Scope("singleton")
+ * @Flow\Scope("singleton")
  */
 class StandardController extends \Beech\Ehrm\Controller\AbstractController {
 
