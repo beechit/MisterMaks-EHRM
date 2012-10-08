@@ -16,7 +16,7 @@
 		"bin-dir": "bin"
 	},
 	"require": {
-		"typo3/flow3": "dev-master",
+		"typo3/flow": "dev-master",
 		"beech/cla": "dev-development",
 		"beech/document": "dev-development",
 		"beech/ehrm": "dev-development",
