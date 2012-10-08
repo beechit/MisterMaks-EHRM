@@ -24,14 +24,14 @@
       package: 'Beech.Ehrm'
 
 ##
-# FLOW3 subroutes
+# Flow subroutes
 #
 
 -
-  name: 'FLOW3'
-  uriPattern: '<FLOW3Subroutes>'
+  name: 'Flow'
+  uriPattern: '<FlowSubroutes>'
   defaults:
     '@format': 'html'
   subRoutes:
-    FLOW3Subroutes:
-      package: 'TYPO3.FLOW3'
+    FlowSubroutes:
+      package: 'TYPO3.Flow'
