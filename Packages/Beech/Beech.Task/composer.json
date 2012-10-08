@@ -1,1 +1,15 @@
-{"name":"beech\/task","type":"flow3-package","description":"","version":"","require":{"typo3\/flow3":"*"},"autoload":{"psr-0":{"Beech\\Task":"Classes"}}}
+{
+	"name": "beech\/task",
+	"type": "typo3-flow-package",
+	"description": "",
+	"version": "",
+	"require": {
+		"typo3\/flow": "*",
+		"beech\/ehrm": "*"
+	},
+	"autoload": {
+		"psr-0": {
+			"Beech\\Task": "Classes"
+		}
+	}
+}
