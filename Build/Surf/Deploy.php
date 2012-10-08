@@ -44,7 +44,7 @@ $deployment->onInitialize(function() use ($workflow, $application) {
 			'command' => 'cd {releasePath} && php Build/Essentials/fetchQueuedPatches.php'
 		))
 		->defineTask('beech.clearcache', 'typo3.surf:shell', array(
-			'command' => 'cd {releasePath} && FLOW3_CONTEXT=Production ./flow3 flow3:cache:flush --force'
+			'command' => 'cd {releasePath} && FLOW_CONTEXT=Production ./flow flow:cache:flush --force'
 		))
 
 		->beforeTask('typo3.surf:composer:install', 'typo3.surf:composer:download', $application)

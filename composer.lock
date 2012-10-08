@@ -28,13 +28,13 @@
             "source": {
                 "type": "git",
                 "url": "ssh://git.beech.local/EHRM/Package/Document.git",
-                "reference": "127b6540d6ec4908e21e92f2b9a4cf8ad7ae4131"
+                "reference": "4a4261011039d7ea277f2db4304e3a04af24cd78"
             },
             "require": {
                 "typo3/flow": "*",
                 "beech/ehrm": "*"
             },
-            "time": "1349694538",
+            "time": "1349701019",
             "type": "typo3-flow-package",
             "installation-source": "source",
             "autoload": {
@@ -49,12 +49,12 @@
             "source": {
                 "type": "git",
                 "url": "ssh://git.beech.local/EHRM/Package/Ehrm.git",
-                "reference": "b73fc6824296e0fdf63dc659ba1e97c0c533a23a"
+                "reference": "6e812fffa6a7e2516a319b862802f14006b45741"
             },
             "require": {
                 "typo3/flow": "*"
             },
-            "time": "1349694658",
+            "time": "1349707293",
             "type": "typo3-flow-package",
             "installation-source": "source",
             "autoload": {
@@ -90,13 +90,13 @@
             "source": {
                 "type": "git",
                 "url": "ssh://git.beech.local/EHRM/Package/Party.git",
-                "reference": "a07044f6e4b235e1ef2910e78a236e84e658fdc7"
+                "reference": "7e3b0192e2a474561a17d1eac36fb78d0eb09343"
             },
             "require": {
                 "typo3/flow": "*",
                 "beech/ehrm": "*"
             },
-            "time": "1349695137",
+            "time": "1349707765",
             "type": "typo3-flow-package",
             "installation-source": "source",
             "autoload": {
@@ -111,13 +111,13 @@
             "source": {
                 "type": "git",
                 "url": "ssh://git.beech.local/EHRM/Package/Task.git",
-                "reference": "ca59d0d9bfdaf30b7ce236ab43654a2dcae1d3ff"
+                "reference": "8bfd665dbe0a10828d92c69a306034d1050d94f3"
             },
             "require": {
                 "typo3/flow": "*",
                 "beech/ehrm": "*"
             },
-            "time": "1349695160",
+            "time": "1349701132",
             "type": "typo3-flow-package",
             "installation-source": "source",
             "autoload": {
@@ -132,13 +132,13 @@
             "source": {
                 "type": "git",
                 "url": "ssh://git.beech.local/EHRM/Package/WorkFlow.git",
-                "reference": "c8db051d393bfbbeebcf2ebb84f6d0d3ea41a9e2"
+                "reference": "d6103847a17a31ff3c02ffafb78a0467781083c1"
             },
             "require": {
                 "typo3/flow": "*",
                 "beech/ehrm": "*"
             },
-            "time": "1349695170",
+            "time": "1349701193",
             "type": "typo3-flow-package",
             "installation-source": "source",
             "autoload": {
@@ -676,20 +676,20 @@
             "source": {
                 "type": "git",
                 "url": "git://git.typo3.org/FLOW3/Packages/LDAP.git",
-                "reference": "9157c8d41eb6d3512b1791abc27b3ba2e260c452"
+                "reference": "3e621f8d2e2ae2f6082dd58638a4330c05fbd115"
             },
             "require": {
                 "typo3/flow": "*"
             },
-            "time": "1349695660",
-            "type": "flow3-package",
+            "time": "1349709668",
+            "type": "typo3-flow-library",
             "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "TYPO3\\LDAP": "Classes"
                 }
             },
-            "description": "LDAP Authentication for FLOW3"
+            "description": "LDAP Authentication for Flow"
         },
         {
             "name": "typo3/party",
@@ -742,12 +742,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/radmiraal/TYPO3.TcPdf.git",
-                "reference": "b1d5c051a0e21ab5b94e9052d661842145c610d9"
+                "reference": "b75b7cba5b9d2142b8a21c947e021651b8349a77"
             },
             "require": {
                 "typo3/flow": "*"
             },
-            "time": "1349696808",
+            "time": "1349706968",
             "type": "typo3-flow-library",
             "installation-source": "source",
             "autoload": {
@@ -785,16 +785,16 @@
             "source": {
                 "type": "git",
                 "url": "ssh://git.beech.local/Beech/BuildEssentials.git",
-                "reference": "ef81d93caad631a857ed0c0f76292cb631dff0aa"
+                "reference": "c2c3e7696cbff61f2d7b390c4bf35b049f3fd2c0"
             },
             "require": {
                 "php": ">=5.3.2",
                 "typo3/flow-composer-installers": "*"
             },
-            "time": "1349698687",
+            "time": "1349701634",
             "type": "typo3-flow-build",
             "installation-source": "source",
-            "description": "Beech FLOW3 Build Toolchain Essentials"
+            "description": "Beech Flow Build Toolchain Essentials"
         },
         {
             "name": "beech/style",
