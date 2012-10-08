@@ -11,7 +11,7 @@ use Beech\WorkFlow\Domain\Model\Action as Action;
 
 /**
  */
-class ActionTest extends \TYPO3\FLOW3\Tests\UnitTestCase {
+class ActionTest extends \TYPO3\Flow\Tests\UnitTestCase {
 
 	/**
 	 * @var \Beech\WorkFlow\Domain\Model\Action

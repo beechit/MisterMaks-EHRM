@@ -7,13 +7,13 @@ namespace Beech\WorkFlow\Domain\Model;
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
-use TYPO3\FLOW3\Annotations as FLOW3;
+use TYPO3\Flow\Annotations as Flow;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * An Action
  *
- * @FLOW3\Entity
+ * @Flow\Entity
  * @ORM\HasLifecycleCallbacks
  */
 class Action implements \Beech\WorkFlow\Core\ActionInterface {
@@ -86,7 +86,7 @@ class Action implements \Beech\WorkFlow\Core\ActionInterface {
 	protected $outputHandlers;
 
 	/**
-	 * @var \TYPO3\FLOW3\Persistence\PersistenceManagerInterface
+	 * @var \TYPO3\Flow\Persistence\PersistenceManagerInterface
 	 */
 	protected $persistenceManager;
 
@@ -101,12 +101,12 @@ class Action implements \Beech\WorkFlow\Core\ActionInterface {
 	}
 
 	/**
-	 * Injects the FLOW3 Persistence Manager
+	 * Injects the Flow Persistence Manager
 	 *
-	 * @param \TYPO3\FLOW3\Persistence\PersistenceManagerInterface $persistenceManager
+	 * @param \TYPO3\Flow\Persistence\PersistenceManagerInterface $persistenceManager
 	 * @return void
 	 */
-	public function injectPersistenceManager(\TYPO3\FLOW3\Persistence\PersistenceManagerInterface $persistenceManager) {
+	public function injectPersistenceManager(\TYPO3\Flow\Persistence\PersistenceManagerInterface $persistenceManager) {
 		$this->persistenceManager = $persistenceManager;
 	}
 

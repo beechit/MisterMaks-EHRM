@@ -7,7 +7,7 @@ namespace Beech\WorkFlow\WorkFlow;
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
-use TYPO3\FLOW3\Annotations as FLOW3;
+use TYPO3\Flow\Annotations as Flow;
 
 /**
  * Dispatch actions
@@ -16,7 +16,7 @@ class ActionDispatcher {
 
 	/**
 	 * @var \Beech\WorkFlow\Domain\Repository\ActionRepository
-	 * @FLOW3\Inject
+	 * @Flow\Inject
 	 */
 	protected $actionRepository;
 

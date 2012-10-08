@@ -7,7 +7,7 @@ namespace Beech\WorkFlow\Tests\Functional;
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
-use TYPO3\FLOW3\Annotations as FLOW3,
+use TYPO3\Flow\Annotations as Flow,
 	Beech\WorkFlow\Domain\Model\Action,
 	Beech\Party\Domain\Model\Company,
 	Beech\Party\Domain\Model\ToDo;
@@ -15,7 +15,7 @@ use TYPO3\FLOW3\Annotations as FLOW3,
 /**
  * Test the actual persistence of actions
  */
-class PersistenceTest extends \TYPO3\FLOW3\Tests\FunctionalTestCase {
+class PersistenceTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 
 	/**
 	* @var boolean
@@ -43,12 +43,12 @@ class PersistenceTest extends \TYPO3\FLOW3\Tests\FunctionalTestCase {
 	protected $personRepository;
 
 	/**
-	 * @var \TYPO3\FLOW3\Security\AccountRepository
+	 * @var \TYPO3\Flow\Security\AccountRepository
 	 */
 	protected $accountRepository;
 
 	/**
-	 * @var \TYPO3\FLOW3\Security\AccountFactory
+	 * @var \TYPO3\Flow\Security\AccountFactory
 	 */
 	protected $accountFactory;
 
@@ -61,8 +61,8 @@ class PersistenceTest extends \TYPO3\FLOW3\Tests\FunctionalTestCase {
 		$this->companyRepository = $this->objectManager->get('\Beech\Party\Domain\Repository\CompanyRepository');
 		$this->toDoRepository = $this->objectManager->get('\Beech\Party\Domain\Repository\ToDoRepository');
 		$this->personRepository = $this->objectManager->get('Beech\Party\Domain\Repository\PersonRepository');
-		$this->accountRepository = $this->objectManager->get('TYPO3\FLOW3\Security\AccountRepository');
-		$this->accountFactory = $this->objectManager->get('TYPO3\FLOW3\Security\AccountFactory');
+		$this->accountRepository = $this->objectManager->get('TYPO3\Flow\Security\AccountRepository');
+		$this->accountFactory = $this->objectManager->get('TYPO3\Flow\Security\AccountFactory');
 	}
 
 	/**

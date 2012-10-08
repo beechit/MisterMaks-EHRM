@@ -7,7 +7,7 @@ namespace Beech\WorkFlow\WorkFlow;
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
-use TYPO3\FLOW3\Annotations as FLOW3;
+use TYPO3\Flow\Annotations as Flow;
 use Beech\WorkFlow\Domain\Model\Action as Action;
 
 /**
@@ -232,7 +232,7 @@ class ActionFactory {
 	 * @return string the absolute path and filename of the form with the specified $workflowName
 	 */
 	protected function getWorkflowPathAndFileName($workflowName) {
-		return \TYPO3\FLOW3\Utility\Files::concatenatePaths(array($this->getResourcePath(), sprintf('%s.yaml', $workflowName)));
+		return \TYPO3\Flow\Utility\Files::concatenatePaths(array($this->getResourcePath(), sprintf('%s.yaml', $workflowName)));
 	}
 
 	/**

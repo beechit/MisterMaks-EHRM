@@ -11,7 +11,7 @@ use Beech\WorkFlow\Domain\Model\Action as Action;
 
 /**
  */
-class ActionFactoryTest extends \TYPO3\FLOW3\Tests\UnitTestCase {
+class ActionFactoryTest extends \TYPO3\Flow\Tests\UnitTestCase {
 
 	/**
 	 * @param string $workflowName

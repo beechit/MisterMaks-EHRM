@@ -7,14 +7,14 @@ namespace Beech\WorkFlow\Tests\Unit\Validators\Property;
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
-use TYPO3\FLOW3\Annotations as FLOW3;
+use TYPO3\Flow\Annotations as Flow;
 use Beech\Party\Domain\Model\Company as Company;
 use Beech\Party\Domain\Model\Company\TaxData as TaxData;
 
 /**
  * Unittests for the EmptyValidator
  */
-class EmptyValidatorTest extends \TYPO3\FLOW3\Tests\UnitTestCase {
+class EmptyValidatorTest extends \TYPO3\Flow\Tests\UnitTestCase {
 
 	/**
 	 * @return array
