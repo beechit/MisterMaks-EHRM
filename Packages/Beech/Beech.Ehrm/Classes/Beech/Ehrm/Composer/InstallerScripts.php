@@ -12,7 +12,7 @@ use Composer\Script\Event;
 /**
  *
  */
-class InstallerScripts extends \TYPO3\FLOW3\Composer\InstallerScripts {
+class InstallerScripts extends \TYPO3\Flow\Composer\InstallerScripts {
 
 	/**
 	 * @param \Composer\Script\Event $event
