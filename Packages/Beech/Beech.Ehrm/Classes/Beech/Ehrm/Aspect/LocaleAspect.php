@@ -7,19 +7,19 @@ namespace Beech\Ehrm\Aspect;
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
-use TYPO3\FLOW3\Annotations as FLOW3;
+use TYPO3\Flow\Annotations as Flow;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Setting locale for session
  *
- * @FLOW3\Aspect
+ * @Flow\Aspect
  */
 class LocaleAspect {
 
 	/**
-	 * @var \TYPO3\FLOW3\Security\Context
-	 * @FLOW3\Inject
+	 * @var \TYPO3\Flow\Security\Context
+	 * @Flow\Inject
 	 */
 	protected $securityContext;
 
@@ -27,22 +27,22 @@ class LocaleAspect {
 	 * Added to support the addExampleAction()
 	 *
 	 * @var \Beech\Ehrm\Log\ApplicationLoggerInterface
-	 * @FLOW3\Inject
+	 * @Flow\Inject
 	 */
 	protected $applicationLogger;
 
 	/**
-	 * @FLOW3\Around("method(TYPO3\FLOW3\I18n\Configuration->getCurrentLocale())")
-	 * @param \TYPO3\FLOW3\Aop\JoinPointInterface $joinPoint The current join point
-	 * @return \TYPO3\FLOW3\I18n\Locale
+	 * @Flow\Around("method(TYPO3\Flow\I18n\Configuration->getCurrentLocale())")
+	 * @param \TYPO3\Flow\Aop\JoinPointInterface $joinPoint The current join point
+	 * @return \TYPO3\Flow\I18n\Locale
 	 */
-	public function overrideCurrentLocaleByUserSettings(\TYPO3\FLOW3\Aop\JoinPointInterface $joinPoint) {
-		if ($this->securityContext->isInitialized() && $this->securityContext->getAccount() instanceof \TYPO3\FLOW3\Security\Account) {
+	public function overrideCurrentLocaleByUserSettings(\TYPO3\Flow\Aop\JoinPointInterface $joinPoint) {
+		if ($this->securityContext->isInitialized() && $this->securityContext->getAccount() instanceof \TYPO3\Flow\Security\Account) {
 			$person = $this->securityContext->getAccount()->getParty();
 			if ($person instanceof \Beech\Party\Domain\Model\Person) {
 				try {
 					if ($person->getPreferences()->get('locale')) {
-						return new \TYPO3\FLOW3\I18n\Locale($person->getPreferences()->get('locale'));
+						return new \TYPO3\Flow\I18n\Locale($person->getPreferences()->get('locale'));
 					}
 				} catch (\Exception $exception) {
 					$this->applicationLogger->log(sprintf(

@@ -7,19 +7,19 @@ namespace Beech\Ehrm\TypoScript;
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
-use TYPO3\FLOW3\Annotations as FLOW3;
+use TYPO3\Flow\Annotations as Flow;
 
 /**
  * HeaderData added to the HTML header. Like for example JavaScript configuration
  * which needs to be rendered on the server side.
  *
- * @FLOW3\Scope("prototype")
+ * @Flow\Scope("prototype")
  */
 class HeaderParts extends AbstractTypoScriptObject {
 
 	/**
-	 * @var \TYPO3\FLOW3\Security\Authentication\AuthenticationManagerInterface
-	 * @FLOW3\Inject
+	 * @var \TYPO3\Flow\Security\Authentication\AuthenticationManagerInterface
+	 * @Flow\Inject
 	 */
 	protected $authenticationManager;
 

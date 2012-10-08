@@ -7,10 +7,10 @@ namespace Beech\Ehrm\Frontend;
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
-use \TYPO3\FLOW3\Annotations as FLOW3;
+use \TYPO3\Flow\Annotations as Flow;
 
 /**
- * @FLOW3\Scope("session")
+ * @Flow\Scope("session")
  */
 class Session {
 
@@ -32,7 +32,7 @@ class Session {
 	/**
 	 * Initialize Session object
 	 *
-	 * @FLOW3\Session(autoStart=true)
+	 * @Flow\Session(autoStart=true)
 	 * @return void
 	 */
 	public function initialize() {

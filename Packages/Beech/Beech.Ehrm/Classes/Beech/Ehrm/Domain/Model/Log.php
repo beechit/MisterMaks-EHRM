@@ -7,13 +7,13 @@ namespace Beech\Ehrm\Domain\Model;
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
-use TYPO3\FLOW3\Annotations as FLOW3;
+use TYPO3\Flow\Annotations as Flow;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * A Log
  *
- * @FLOW3\Entity
+ * @Flow\Entity
  */
 class Log {
 

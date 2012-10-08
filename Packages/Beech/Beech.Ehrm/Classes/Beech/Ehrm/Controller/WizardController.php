@@ -7,20 +7,20 @@ namespace Beech\Ehrm\Controller;
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
-use TYPO3\FLOW3\Annotations as FLOW3;
+use TYPO3\Flow\Annotations as Flow;
 
 /**
  * Modal controller for the Beech.Ehrm package
  *
- * @FLOW3\Scope("singleton")
+ * @Flow\Scope("singleton")
  */
 class WizardController extends AbstractController {
 
 	/**
-	 * @param \TYPO3\FLOW3\Mvc\View\ViewInterface $view
+	 * @param \TYPO3\Flow\Mvc\View\ViewInterface $view
 	 * @return void
 	 */
-	public function initializeView(\TYPO3\FLOW3\Mvc\View\ViewInterface $view) {
+	public function initializeView(\TYPO3\Flow\Mvc\View\ViewInterface $view) {
 	}
 
 	/**

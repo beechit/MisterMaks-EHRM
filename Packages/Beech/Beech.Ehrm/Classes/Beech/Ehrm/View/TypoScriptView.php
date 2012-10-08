@@ -7,10 +7,10 @@ namespace Beech\Ehrm\View;
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
-use TYPO3\FLOW3\Annotations as FLOW3;
+use TYPO3\Flow\Annotations as Flow;
 
 /**
- * @FLOW3\Scope("singleton")
+ * @Flow\Scope("singleton")
  */
 class TypoScriptView extends \TYPO3\TypoScript\View\TypoScriptView {
 
@@ -21,7 +21,7 @@ class TypoScriptView extends \TYPO3\TypoScript\View\TypoScriptView {
 
 	/**
 	 * @var \TYPO3\Fluid\View\TemplateView
-	 * @FLOW3\Inject
+	 * @Flow\Inject
 	 */
 	protected $fallbackView;
 

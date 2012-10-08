@@ -7,19 +7,19 @@ namespace Beech\Ehrm\Aspect;
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
-use TYPO3\FLOW3\Annotations as FLOW3;
+use TYPO3\Flow\Annotations as Flow;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Softdelete functionality for Beech packages
  *
- * @FLOW3\Aspect
+ * @Flow\Aspect
  */
 class SoftDeleteAspect {
 
 	/**
-	 * @var \TYPO3\FLOW3\Reflection\ReflectionService
-	 * @FLOW3\Inject
+	 * @var \TYPO3\Flow\Reflection\ReflectionService
+	 * @Flow\Inject
 	 */
 	protected $reflectionService;
 
@@ -29,7 +29,7 @@ class SoftDeleteAspect {
 //	 *
 //	 * @var boolean
 //	 * @ORM\Column(nullable=TRUE)
-//	 * @FLOW3\Introduce("class(Beech\.*\Domain\Model\.*)")
+//	 * @Flow\Introduce("class(Beech\.*\Domain\Model\.*)")
 //	 */
 //	protected $deleted = FALSE;
 
@@ -37,11 +37,11 @@ class SoftDeleteAspect {
 	 * Advice ensures soft-deletion by setting a property to deleted and update the model,
 	 * instead of actually removing it
 	 *
-	 * @param  \TYPO3\FLOW3\Aop\JoinPointInterface $joinPoint
-	 * @FLOW3\Around("method(Beech\.*\Domain\Repository\.*->remove())")
+	 * @param  \TYPO3\Flow\Aop\JoinPointInterface $joinPoint
+	 * @Flow\Around("method(Beech\.*\Domain\Repository\.*->remove())")
 	 * @return void
 	 */
-	public function softDelete(\TYPO3\FLOW3\Aop\JoinPointInterface $joinPoint) {
+	public function softDelete(\TYPO3\Flow\Aop\JoinPointInterface $joinPoint) {
 		$model = $joinPoint->getMethodArgument('object');
 
 		if (method_exists($model, 'setDeleted')) {
@@ -55,13 +55,13 @@ class SoftDeleteAspect {
 	/**
 	 * Only fetch objects which are not softdeleted
 	 *
-	 * @param \TYPO3\FLOW3\Aop\JoinPointInterface $joinPoint
-	 * @FLOW3\Around("within(TYPO3\FLOW3\Persistence\QueryInterface) && method(.*->(execute|count)())")
-	 * @return \TYPO3\FLOW3\Persistence\Doctrine\Query
+	 * @param \TYPO3\Flow\Aop\JoinPointInterface $joinPoint
+	 * @Flow\Around("within(TYPO3\Flow\Persistence\QueryInterface) && method(.*->(execute|count)())")
+	 * @return \TYPO3\Flow\Persistence\Doctrine\Query
 	 */
-	public function filterDeletedObjects(\TYPO3\FLOW3\Aop\JoinPointInterface $joinPoint) {
+	public function filterDeletedObjects(\TYPO3\Flow\Aop\JoinPointInterface $joinPoint) {
 		if (substr($joinPoint->getProxy()->getType(), 0, 5) === 'Beech') {
-				/** @var $query \TYPO3\FLOW3\Persistence\Doctrine\Query */
+				/** @var $query \TYPO3\Flow\Persistence\Doctrine\Query */
 			$query = $joinPoint->getProxy();
 
 			/**

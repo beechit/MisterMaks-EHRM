@@ -13,7 +13,7 @@ use \Beech\Party\Domain\Model\Company;
 /**
  * Test suite for the SoftDelete functionality
  */
-class SoftDeleteTest extends \TYPO3\FLOW3\Tests\FunctionalTestCase {
+class SoftDeleteTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 
 	/**
 	 * @var boolean

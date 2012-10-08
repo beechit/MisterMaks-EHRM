@@ -7,24 +7,24 @@ namespace Beech\Ehrm\Controller;
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
-use TYPO3\FLOW3\Annotations as FLOW3;
+use TYPO3\Flow\Annotations as Flow;
 
 /**
  * Standard controller for the Beech.Ehrm package
  *
- * @FLOW3\Scope("singleton")
+ * @Flow\Scope("singleton")
  */
 class StandardController extends AbstractController {
 
 	/**
 	 * @var \Beech\Party\Domain\Repository\ToDoRepository
-	 * @FLOW3\Inject
+	 * @Flow\Inject
 	 */
 	protected $toDoRepository;
 
 	/**
-	 * @var \TYPO3\FLOW3\Security\Context
-	 * @FLOW3\Inject
+	 * @var \TYPO3\Flow\Security\Context
+	 * @Flow\Inject
 	 */
 	protected $securityContext;
 
@@ -33,7 +33,7 @@ class StandardController extends AbstractController {
 	 */
 	public function indexAction() {
 		$ownerAccount = $this->securityContext->getAccount();
-		if ($ownerAccount instanceof \TYPO3\FLOW3\Security\Account) {
+		if ($ownerAccount instanceof \TYPO3\Flow\Security\Account) {
 			$owner = $ownerAccount->getParty();
 			$this->view->assign('todos', $this->toDoRepository->findByOwner($owner));
 		}

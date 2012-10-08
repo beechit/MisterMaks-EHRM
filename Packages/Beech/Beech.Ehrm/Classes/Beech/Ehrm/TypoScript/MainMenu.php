@@ -7,18 +7,18 @@ namespace Beech\Ehrm\TypoScript;
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
-use TYPO3\FLOW3\Annotations as FLOW3;
+use TYPO3\Flow\Annotations as Flow;
 
 /**
  * MainMenu renderer
  *
- * @FLOW3\Scope("prototype")
+ * @Flow\Scope("prototype")
  */
 class MainMenu extends AbstractTypoScriptObject {
 
 	/**
 	 * @var \Beech\Ehrm\Helper\SettingsHelper
-	 * @FLOW3\Inject
+	 * @Flow\Inject
 	 */
 	protected $settingsHelper;
 

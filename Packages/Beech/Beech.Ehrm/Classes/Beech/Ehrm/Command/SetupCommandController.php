@@ -7,24 +7,24 @@ namespace Beech\Ehrm\Command;
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
-use TYPO3\FLOW3\Annotations as FLOW3;
+use TYPO3\Flow\Annotations as Flow;
 
 /**
  * Setup command controller for the Beech.Ehrm package
  *
- * @FLOW3\Scope("singleton")
+ * @Flow\Scope("singleton")
  */
-class SetupCommandController extends \TYPO3\FLOW3\Cli\CommandController {
+class SetupCommandController extends \TYPO3\Flow\Cli\CommandController {
 
 	/**
 	 * @var \Beech\Party\Domain\Repository\CompanyRepository
-	 * @FLOW3\Inject
+	 * @Flow\Inject
 	 */
 	protected $companyRepository;
 
 	/**
 	 * @var \Beech\Ehrm\Domain\Repository\ApplicationRepository
-	 * @FLOW3\Inject
+	 * @Flow\Inject
 	 */
 	protected $applicationRepository;
 

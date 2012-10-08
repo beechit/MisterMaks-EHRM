@@ -7,14 +7,14 @@ namespace Beech\Ehrm\Aspect;
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
-use TYPO3\FLOW3\Annotations as FLOW3;
+use TYPO3\Flow\Annotations as Flow;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\DomCrawler;
 
 /**
  * Open link in modal box functionality
  *
- * @FLOW3\Aspect
+ * @Flow\Aspect
  */
 class OpenInModalAspect {
 
@@ -24,11 +24,11 @@ class OpenInModalAspect {
 	 *
 	 * By setting option modalId, its possible to open content in specified modal.
 	 *
-	 * @FLOW3\Around("method(Twitter\Bootstrap\ViewHelpers\Navigation\MenuViewHelper->render())")
-	 * @param \TYPO3\FLOW3\Aop\JoinPointInterface $joinPoint
+	 * @Flow\Around("method(Twitter\Bootstrap\ViewHelpers\Navigation\MenuViewHelper->render())")
+	 * @param \TYPO3\Flow\Aop\JoinPointInterface $joinPoint
 	 * @return string
 	 */
-	public function addModalArguments(\TYPO3\FLOW3\Aop\JoinPointInterface $joinPoint) {
+	public function addModalArguments(\TYPO3\Flow\Aop\JoinPointInterface $joinPoint) {
 		$result = $joinPoint->getAdviceChain()->proceed($joinPoint);
 		$items = $joinPoint->getMethodArgument('items');
 		foreach ($items as $item) {

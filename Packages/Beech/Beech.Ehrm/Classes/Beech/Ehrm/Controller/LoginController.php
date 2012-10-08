@@ -7,14 +7,14 @@ namespace Beech\Ehrm\Controller;
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
-use TYPO3\FLOW3\Annotations as FLOW3;
+use TYPO3\Flow\Annotations as Flow;
 
 /**
  * Login controller for the Beech.Ehrm package
  *
- * @FLOW3\Scope("singleton")
+ * @Flow\Scope("singleton")
  */
-class LoginController extends \TYPO3\FLOW3\Security\Authentication\Controller\AbstractAuthenticationController {
+class LoginController extends \TYPO3\Flow\Security\Authentication\Controller\AbstractAuthenticationController {
 
 	/**
 	 * @param string $username
@@ -25,10 +25,10 @@ class LoginController extends \TYPO3\FLOW3\Security\Authentication\Controller\Ab
 	}
 
 	/**
-	 * @param \TYPO3\FLOW3\Mvc\ActionRequest $originalRequest
+	 * @param \TYPO3\Flow\Mvc\ActionRequest $originalRequest
 	 * @return void
 	 */
-	public function onAuthenticationSuccess(\TYPO3\FLOW3\Mvc\ActionRequest $originalRequest = NULL) {
+	public function onAuthenticationSuccess(\TYPO3\Flow\Mvc\ActionRequest $originalRequest = NULL) {
 		$this->redirect('index', 'Standard', 'Beech.Ehrm');
 	}
 

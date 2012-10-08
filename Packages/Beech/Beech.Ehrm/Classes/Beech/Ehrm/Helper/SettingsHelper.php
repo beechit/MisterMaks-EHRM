@@ -7,10 +7,10 @@ namespace Beech\Ehrm\Helper;
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
-use TYPO3\FLOW3\Annotations as FLOW3;
+use TYPO3\Flow\Annotations as Flow;
 
 /**
- * @FLOW3\Scope("prototype")
+ * @Flow\Scope("prototype")
  */
 class SettingsHelper {
 
@@ -20,31 +20,31 @@ class SettingsHelper {
 	protected $settings;
 
 	/**
-	 * @var \TYPO3\FLOW3\Security\Authorization\AccessDecisionManagerInterface
-	 * @FLOW3\Inject
+	 * @var \TYPO3\Flow\Security\Authorization\AccessDecisionManagerInterface
+	 * @Flow\Inject
 	 */
 	protected $accessDecisionManager;
 
 	/**
-	 * @var \TYPO3\FLOW3\Mvc\Routing\UriBuilder
+	 * @var \TYPO3\Flow\Mvc\Routing\UriBuilder
 	 */
 	protected $uriBuilder;
 
 	/**
-	 * @var \TYPO3\FLOW3\Core\Bootstrap
-	 * @FLOW3\Inject
+	 * @var \TYPO3\Flow\Core\Bootstrap
+	 * @Flow\Inject
 	 */
 	protected $bootstrap;
 
 	/**
 	 * @var \Beech\Party\Domain\Repository\ToDoRepository
-	 * @FLOW3\Inject
+	 * @Flow\Inject
 	 */
 	protected $toDoRepository;
 
 	/**
-	 * @var \TYPO3\FLOW3\I18n\Translator
-	 * @FLOW3\Inject
+	 * @var \TYPO3\Flow\I18n\Translator
+	 * @Flow\Inject
 	 */
 	protected $translator;
 
@@ -61,17 +61,17 @@ class SettingsHelper {
 	 * @return void
 	 */
 	public function initializeObject() {
-		$this->uriBuilder = new \TYPO3\FLOW3\Mvc\Routing\UriBuilder();
+		$this->uriBuilder = new \TYPO3\Flow\Mvc\Routing\UriBuilder();
 		$this->uriBuilder->setRequest($this->bootstrap->getActiveRequestHandler()->getHttpRequest()->createActionRequest());
 		$this->convertMenuActionsToUrls();
 		$this->appendNumberOfOpenToDos();
 	}
 
 	/**
-	 * @param \TYPO3\FLOW3\Mvc\Routing\UriBuilder $uriBuilder
+	 * @param \TYPO3\Flow\Mvc\Routing\UriBuilder $uriBuilder
 	 * @return void
 	 */
-	public function setUriBuilder(\TYPO3\FLOW3\Mvc\Routing\UriBuilder $uriBuilder) {
+	public function setUriBuilder(\TYPO3\Flow\Mvc\Routing\UriBuilder $uriBuilder) {
 		$this->uriBuilder = $uriBuilder;
 	}
 
@@ -79,7 +79,7 @@ class SettingsHelper {
 	 * @return void
 	 */
 	public function convertMenuActionsToUrls() {
-		$defaults = \TYPO3\FLOW3\Utility\Arrays::arrayMergeRecursiveOverrule(
+		$defaults = \TYPO3\Flow\Utility\Arrays::arrayMergeRecursiveOverrule(
 			array('package' => NULL, 'controller' => 'Standard', 'action' => 'index'),
 			$this->settings['menu']['defaults']
 		);
@@ -149,7 +149,7 @@ class SettingsHelper {
 							continue;
 						}
 						if (!isset($linkItem['menuGroup']) || substr($linkItem['menuGroup'], 0, strlen($identifier) + 1) === $identifier . ':') {
-							$label = ($this->translator instanceof \TYPO3\FLOW3\I18n\Translator) ? $this->translator->translateByOriginalLabel($linkItem['label'], array(), NULL, NULL, 'Main', 'Beech.Ehrm') : $linkItem['label'];
+							$label = ($this->translator instanceof \TYPO3\Flow\I18n\Translator) ? $this->translator->translateByOriginalLabel($linkItem['label'], array(), NULL, NULL, 'Main', 'Beech.Ehrm') : $linkItem['label'];
 							$linkItem['label'] = $label;
 							$linkCollection[] = $linkItem;
 						}
@@ -164,7 +164,7 @@ class SettingsHelper {
 					continue;
 				}
 				if (!isset($linkItem['menuGroup']) || substr($linkItem['menuGroup'], 0, strlen($identifier) + 1) === $identifier . ':') {
-					$label = ($this->translator instanceof \TYPO3\FLOW3\I18n\Translator) ? $this->translator->translateByOriginalLabel($linkItem['label'], array(), NULL, NULL, 'Main', 'Beech.Ehrm') : $linkItem['label'];
+					$label = ($this->translator instanceof \TYPO3\Flow\I18n\Translator) ? $this->translator->translateByOriginalLabel($linkItem['label'], array(), NULL, NULL, 'Main', 'Beech.Ehrm') : $linkItem['label'];
 					$linkItem['label'] = $label;
 					$linkCollection[] = $linkItem;
 				}
@@ -183,7 +183,7 @@ class SettingsHelper {
 		if (isset($this->settings['menu'][$identifier]['groups'])) {
 			$menuGroups = self::sortSettingsByPriority($this->settings['menu'][$identifier]['groups']);
 			foreach ($menuGroups as $groupIdentifier => $groupConfig) {
-				$label = ($this->translator instanceof \TYPO3\FLOW3\I18n\Translator) ? $this->translator->translateByOriginalLabel($groupConfig['label'], array(), NULL, NULL, 'Main', 'Beech.Ehrm') :$groupConfig['label'];
+				$label = ($this->translator instanceof \TYPO3\Flow\I18n\Translator) ? $this->translator->translateByOriginalLabel($groupConfig['label'], array(), NULL, NULL, 'Main', 'Beech.Ehrm') :$groupConfig['label'];
 				$items['group:' . $groupIdentifier] = array(
 					'label' => $label,
 					'items' => array()
@@ -263,7 +263,7 @@ class SettingsHelper {
 	protected function hasAccessToResource($resource) {
 		try {
 			$this->accessDecisionManager->decideOnResource($resource);
-		} catch (\TYPO3\FLOW3\Security\Exception\AccessDeniedException $e) {
+		} catch (\TYPO3\Flow\Security\Exception\AccessDeniedException $e) {
 			return FALSE;
 		}
 

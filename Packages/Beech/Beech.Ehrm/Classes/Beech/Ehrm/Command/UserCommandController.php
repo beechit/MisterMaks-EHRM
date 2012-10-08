@@ -7,30 +7,30 @@ namespace Beech\Ehrm\Command;
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
-use TYPO3\FLOW3\Annotations as FLOW3;
+use TYPO3\Flow\Annotations as Flow;
 
 /**
  * setup command controller for the Beech.Ehrm package
  *
- * @FLOW3\Scope("singleton")
+ * @Flow\Scope("singleton")
  */
-class UserCommandController extends \TYPO3\FLOW3\Cli\CommandController {
+class UserCommandController extends \TYPO3\Flow\Cli\CommandController {
 
 	/**
-	 * @var \TYPO3\FLOW3\Security\AccountRepository
-	 * @FLOW3\Inject
+	 * @var \TYPO3\Flow\Security\AccountRepository
+	 * @Flow\Inject
 	 */
 	protected $accountRepository;
 
 	/**
 	 * @var \Beech\Party\Domain\Repository\PersonRepository
-	 * @FLOW3\Inject
+	 * @Flow\Inject
 	 */
 	protected $personRepository;
 
 	/**
-	 * @var \TYPO3\FLOW3\Security\AccountFactory
-	 * @FLOW3\Inject
+	 * @var \TYPO3\Flow\Security\AccountFactory
+	 * @Flow\Inject
 	 */
 	protected $accountFactory;
 
@@ -46,7 +46,7 @@ class UserCommandController extends \TYPO3\FLOW3\Cli\CommandController {
 	 */
 	public function createCommand($username, $password, $firstName, $lastName, $roles) {
 		$account = $this->accountRepository->findByAccountIdentifierAndAuthenticationProviderName($username, 'DefaultProvider');
-		if ($account instanceof \TYPO3\FLOW3\Security\Account) {
+		if ($account instanceof \TYPO3\Flow\Security\Account) {
 			$this->outputLine('User "%s" already exists.', array($username));
 			return;
 		}
@@ -85,7 +85,7 @@ class UserCommandController extends \TYPO3\FLOW3\Cli\CommandController {
 	 */
 	public function settingCommand($username, $setting, $value = NULL) {
 		$account = $this->accountRepository->findByAccountIdentifierAndAuthenticationProviderName($username, 'DefaultProvider');
-		if (!$account instanceof \TYPO3\FLOW3\Security\Account) {
+		if (!$account instanceof \TYPO3\Flow\Security\Account) {
 			$this->outputLine('Account "%s" not found', array($username));
 		}
 

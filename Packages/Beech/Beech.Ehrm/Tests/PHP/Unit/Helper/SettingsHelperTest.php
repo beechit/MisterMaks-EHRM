@@ -6,26 +6,26 @@ namespace Beech\Ehrm\Tests\Unit\Helper;
  *                                                                        *
  *                                                                        */
 
-use TYPO3\FLOW3\Http\Request as HttpRequest;
-use TYPO3\FLOW3\Http\Uri;
+use TYPO3\Flow\Http\Request as HttpRequest;
+use TYPO3\Flow\Http\Uri;
 
 /**
  * Testcase for SettingsHelper
  */
-class SettingsHelperTest extends \TYPO3\FLOW3\Tests\UnitTestCase {
+class SettingsHelperTest extends \TYPO3\Flow\Tests\UnitTestCase {
 
 	/**
-	 * @var \TYPO3\FLOW3\Mvc\Routing\RouterInterface
+	 * @var \TYPO3\Flow\Mvc\Routing\RouterInterface
 	 */
 	protected $mockRouter;
 
 	/**
-	 * @var \TYPO3\FLOW3\Mvc\ActionRequest
+	 * @var \TYPO3\Flow\Mvc\ActionRequest
 	 */
 	protected $mockMainRequest;
 
 	/**
-	 * @var \TYPO3\FLOW3\Mvc\Routing\UriBuilder
+	 * @var \TYPO3\Flow\Mvc\Routing\UriBuilder
 	 */
 	protected $uriBuilder;
 
@@ -44,7 +44,7 @@ class SettingsHelperTest extends \TYPO3\FLOW3\Tests\UnitTestCase {
 		$settings = \Symfony\Component\Yaml\Yaml::parse($settingsYaml);
 		$this->settingsHelper->injectSettings($settings['Beech']['Ehrm']);
 
-		$this->uriBuilder = $this->getAccessibleMock('TYPO3\FLOW3\Mvc\Routing\UriBuilder');
+		$this->uriBuilder = $this->getAccessibleMock('TYPO3\Flow\Mvc\Routing\UriBuilder');
 		$this->uriBuilder->expects($this->any())->method('uriFor')->will($this->returnValue('beech.ehrm/standard/index'));
 		$this->uriBuilder->expects($this->any())->method('reset')->will($this->returnValue($this->uriBuilder));
 		$this->uriBuilder->expects($this->any())->method('setCreateAbsoluteUri')->will($this->returnValue($this->uriBuilder));

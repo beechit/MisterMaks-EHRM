@@ -13,7 +13,7 @@ use \Beech\Party\Domain\Model\Company as Company;
 /**
  * Test suite for the Application model
  */
-class ApplicationTest extends \TYPO3\FLOW3\Tests\FunctionalTestCase {
+class ApplicationTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 
 	/**
 	 * @var boolean
@@ -61,7 +61,7 @@ class ApplicationTest extends \TYPO3\FLOW3\Tests\FunctionalTestCase {
 
 	/**
 	 * @test
-	 * @expectedException \TYPO3\FLOW3\Persistence\Exception\ObjectValidationFailedException
+	 * @expectedException \TYPO3\Flow\Persistence\Exception\ObjectValidationFailedException
 	 */
 	public function anEntityWithoutCompanyThrowsAnError() {
 		$this->assertEquals(0, $this->applicationRepository->countAll());

@@ -7,13 +7,13 @@ namespace Beech\Ehrm\TypoScript;
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
-use TYPO3\FLOW3\Annotations as FLOW3;
+use TYPO3\Flow\Annotations as Flow;
 
 /**
  * This is the base TypoScriptObject to use in Mister Maks. Every evaluate() method should
  * call $this->initializeView() first to use the automatic path resolving.
  *
- * @FLOW3\Scope("prototype")
+ * @Flow\Scope("prototype")
  */
 abstract class AbstractTypoScriptObject extends \TYPO3\TypoScript\TypoScriptObjects\AbstractTypoScriptObject {
 

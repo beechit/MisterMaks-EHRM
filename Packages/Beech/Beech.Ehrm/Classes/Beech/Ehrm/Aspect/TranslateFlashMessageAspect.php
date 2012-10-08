@@ -7,28 +7,28 @@ namespace Beech\Ehrm\Aspect;
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
-use TYPO3\FLOW3\Annotations as FLOW3;
+use TYPO3\Flow\Annotations as Flow;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Translation for flash message
  *
- * @FLOW3\Aspect
+ * @Flow\Aspect
  */
 class TranslateFlashMessageAspect {
 
 	/**
-	 * @var \TYPO3\FLOW3\I18n\Translator
-	 * @FLOW3\Inject
+	 * @var \TYPO3\Flow\I18n\Translator
+	 * @Flow\Inject
 	 */
 	protected $translator;
 
 	/**
-	 * @param \TYPO3\FLOW3\Aop\JoinPointInterface $joinPoint
-	 * @FLOW3\Before("method(Beech\.*\Controller\.*->addFlashMessage())")
+	 * @param \TYPO3\Flow\Aop\JoinPointInterface $joinPoint
+	 * @Flow\Before("method(Beech\.*\Controller\.*->addFlashMessage())")
 	 * @return void
 	 */
-	public function translateFlashMessageOnAdd(\TYPO3\FLOW3\Aop\JoinPointInterface $joinPoint) {
+	public function translateFlashMessageOnAdd(\TYPO3\Flow\Aop\JoinPointInterface $joinPoint) {
 		$joinPoint->setMethodArgument('messageBody', $this->translator->translateByOriginalLabel($joinPoint->getMethodArgument('messageBody')));
 	}
 }

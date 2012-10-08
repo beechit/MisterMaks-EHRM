@@ -7,7 +7,7 @@ namespace Beech\Ehrm\Controller;
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
-use TYPO3\FLOW3\Annotations as FLOW3;
+use TYPO3\Flow\Annotations as Flow;
 
 use \Beech\Ehrm\Domain\Model\Log;
 use \Beech\Ehrm\Log\Backend\DatabaseBackend;
@@ -15,12 +15,12 @@ use \Beech\Ehrm\Log\Backend\DatabaseBackend;
 /**
  * Log controller for the Beech.Ehrm package
  *
- * @FLOW3\Scope("singleton")
+ * @Flow\Scope("singleton")
  */
 class LogController extends AbstractController {
 
 	/**
-	 * @FLOW3\Inject
+	 * @Flow\Inject
 	 * @var \Beech\Ehrm\Domain\Repository\LogRepository
 	 */
 	protected $logRepository;

@@ -30,7 +30,7 @@ renderables:
                 defaultValue: ''
                 validators:
                     -
-                        identifier: 'TYPO3.FLOW3:NotEmpty'
+                        identifier: 'TYPO3.Flow:NotEmpty'
             -
                 type: 'TYPO3.Form:SingleLineText'
                 identifier: chamberOfCommerceNumber
@@ -40,7 +40,7 @@ renderables:
                 defaultValue: ''
                 validators:
                     -
-                        identifier: 'TYPO3.FLOW3:NotEmpty'
+                        identifier: 'TYPO3.Flow:NotEmpty'
     -
         type: 'TYPO3.Form:Page'
         identifier: page2
@@ -55,7 +55,7 @@ renderables:
                 defaultValue: ''
                 validators:
                     -
-                        identifier: 'TYPO3.FLOW3:Text'
+                        identifier: 'TYPO3.Flow:Text'
             -
                 type: 'TYPO3.Form:SingleLineText'
                 identifier: address.houseNumber
@@ -65,7 +65,7 @@ renderables:
                 defaultValue: ''
                 validators:
                     -
-                        identifier: 'TYPO3.FLOW3:Integer'
+                        identifier: 'TYPO3.Flow:Integer'
             -
                 type: 'TYPO3.Form:SingleLineText'
                 identifier: address.residence
@@ -75,4 +75,4 @@ renderables:
                 defaultValue: ''
                 validators:
                     -
-                        identifier: 'TYPO3.FLOW3:Text'
+                        identifier: 'TYPO3.Flow:Text'

@@ -7,14 +7,14 @@ namespace Beech\Ehrm\Controller;
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
-use TYPO3\FLOW3\Annotations as FLOW3;
+use TYPO3\Flow\Annotations as Flow;
 
 /**
  * Abstract controller for the Beech.Ehrm package
  *
- * @FLOW3\Scope("singleton")
+ * @Flow\Scope("singleton")
  */
-abstract class AbstractController extends \TYPO3\FLOW3\Mvc\Controller\ActionController {
+abstract class AbstractController extends \TYPO3\Flow\Mvc\Controller\ActionController {
 
 	/**
 	 * @var string

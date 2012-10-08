@@ -7,12 +7,12 @@ namespace Beech\Ehrm\Log\Backend;
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
-use TYPO3\FLOW3\Annotations as FLOW3;
+use TYPO3\Flow\Annotations as Flow;
 
 /**
  * A log backend which writes log entries into the database
  */
-class DatabaseBackend extends \TYPO3\FLOW3\Log\Backend\AbstractBackend {
+class DatabaseBackend extends \TYPO3\Flow\Log\Backend\AbstractBackend {
 
 	/**
 	 * An array of severity labels, indexed by their integer constant
@@ -31,7 +31,7 @@ class DatabaseBackend extends \TYPO3\FLOW3\Log\Backend\AbstractBackend {
 
 	/**
 	 * @var \Beech\Ehrm\Domain\Repository\LogRepository
-	 * @FLOW3\Inject
+	 * @Flow\Inject
 	 */
 	protected $logRepository;
 
