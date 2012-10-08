@@ -7,32 +7,32 @@ namespace Beech\Party\Controller\Management;
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
-use TYPO3\FLOW3\Annotations as FLOW3;
+use TYPO3\Flow\Annotations as Flow;
 use Beech\Party\Domain\Model\Person;
 use TYPO3\Party\Domain\Model\PersonName;
 
 /**
  * To-Do controller for the Beech.Party package
  *
- * @FLOW3\Scope("singleton")
+ * @Flow\Scope("singleton")
  */
 class ToDoController extends \Beech\Ehrm\Controller\AbstractController {
 
 	/**
 	 * @var \Beech\Party\Domain\Repository\ToDoRepository
-	 * @FLOW3\Inject
+	 * @Flow\Inject
 	 */
 	protected $toDoRepository;
 
 	/**
-	 * @var \TYPO3\FLOW3\Security\Context
-	 * @FLOW3\Inject
+	 * @var \TYPO3\Flow\Security\Context
+	 * @Flow\Inject
 	 */
 	protected $securityContext;
 
 	/**
 	 * @var Beech\Party\Domain\Repository\PersonRepository
-	 * @FLOW3\Inject
+	 * @Flow\Inject
 	 */
 	protected $personRepository;
 
@@ -43,8 +43,8 @@ class ToDoController extends \Beech\Ehrm\Controller\AbstractController {
 	 */
 	public function indexAction() {
 			// TODO Sort on null values first then the ascending archivedDateTime (something like ISNULL(archivedDateTime)
-		$orderings = array(	'archivedDateTime' => \TYPO3\FLOW3\Persistence\QueryInterface::ORDER_ASCENDING,
-							'priority' => \TYPO3\FLOW3\Persistence\QueryInterface::ORDER_DESCENDING);
+		$orderings = array(	'archivedDateTime' => \TYPO3\Flow\Persistence\QueryInterface::ORDER_ASCENDING,
+							'priority' => \TYPO3\Flow\Persistence\QueryInterface::ORDER_DESCENDING);
 		$this->toDoRepository->setDefaultOrderings($orderings);
 		$this->view->assign('todos', $this->toDoRepository->findAll());
 		$this->view->assign('priorities', \Beech\Party\Domain\Model\ToDo::getPriorities());

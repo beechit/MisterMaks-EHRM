@@ -7,31 +7,31 @@ namespace Beech\Party\Aspect;
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
-use TYPO3\FLOW3\Annotations as FLOW3;
+use TYPO3\Flow\Annotations as Flow;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * To-Do functionality for Beech packages
  *
- * @FLOW3\Aspect
+ * @Flow\Aspect
  */
 class ToDoAspect {
 
 	/**
-	 * @var \TYPO3\FLOW3\Persistence\PersistenceManagerInterface
-	 * @FLOW3\Inject
+	 * @var \TYPO3\Flow\Persistence\PersistenceManagerInterface
+	 * @Flow\Inject
 	 */
 	protected $persistenceManager;
 
 	/**
 	 * @var \Beech\Party\Domain\Repository\ToDoRepository
-	 * @FLOW3\Inject
+	 * @Flow\Inject
 	 */
 	protected $toDoRepository;
 
 	/**
-	 * @var \TYPO3\FLOW3\Security\Context
-	 * @FLOW3\Inject
+	 * @var \TYPO3\Flow\Security\Context
+	 * @Flow\Inject
 	 */
 	protected $securityContext;
 
@@ -50,11 +50,11 @@ class ToDoAspect {
 	}
 
 	/**
-	 * @param \TYPO3\FLOW3\AOP\JoinPointInterface $joinPoint
-	 * @FLOW3\After("method(Beech\Party\Controller\Management\CompanyController->createAddressAction())")
+	 * @param \TYPO3\Flow\AOP\JoinPointInterface $joinPoint
+	 * @Flow\After("method(Beech\Party\Controller\Management\CompanyController->createAddressAction())")
 	 * @return void
 	 */
-	public function archiveToDoAfterAddressCreate(\TYPO3\FLOW3\AOP\JoinPointInterface $joinPoint) {
+	public function archiveToDoAfterAddressCreate(\TYPO3\Flow\AOP\JoinPointInterface $joinPoint) {
 		$company = $this->persistenceManager->getIdentifierByObject($joinPoint->getMethodArgument('company'));
 		$toDo = $this->toDoRepository->findOneByControllerActionAndArguments('management\company', 'newAddress', serialize(array('company' => $company)));
 		if ($toDo instanceof \Beech\Party\Domain\Model\ToDo) {

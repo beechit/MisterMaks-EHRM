@@ -7,18 +7,18 @@ namespace Beech\Party\Command;
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
-use TYPO3\FLOW3\Annotations as FLOW3;
+use TYPO3\Flow\Annotations as Flow;
 
 /**
  * TODO command controller for the Beech.Party package
  *
- * @FLOW3\Scope("singleton")
+ * @Flow\Scope("singleton")
  */
-class NotificationCommandController extends \TYPO3\FLOW3\Cli\CommandController {
+class NotificationCommandController extends \TYPO3\Flow\Cli\CommandController {
 
 	/**
 	 * @var \Beech\Party\Domain\Repository\NotificationRepository
-	 * @FLOW3\Inject
+	 * @Flow\Inject
 	 */
 	protected $notificationRepository;
 

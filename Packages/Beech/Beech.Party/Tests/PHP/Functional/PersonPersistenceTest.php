@@ -5,7 +5,7 @@ namespace Beech\Party\Tests\Functional;
  * Date: 28-08-12 16:04
  * All code (c) Beech Applications B.V. all rights reserved
  */
-use TYPO3\FLOW3\Annotations as FLOW3;
+use TYPO3\Flow\Annotations as Flow;
 use Beech\Party\Domain\Model\Person;
 use Beech\Party\Domain\Model\ElectronicAddress;
 use TYPO3\Party\Domain\Model\PersonName;
@@ -13,7 +13,7 @@ use TYPO3\Party\Domain\Model\PersonName;
 /**
  * Persistence test for Person entity
  */
-class PersonPersistenceTest extends \TYPO3\FLOW3\Tests\FunctionalTestCase {
+class PersonPersistenceTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 
 	/**
 	 * @var boolean
@@ -26,12 +26,12 @@ class PersonPersistenceTest extends \TYPO3\FLOW3\Tests\FunctionalTestCase {
 	protected $personRepository;
 
 	/**
-	 * @var \TYPO3\FLOW3\Security\AccountRepository
+	 * @var \TYPO3\Flow\Security\AccountRepository
 	 */
 	protected $accountRepository;
 
 	/**
-	 * @var \TYPO3\FLOW3\Security\AccountFactory
+	 * @var \TYPO3\Flow\Security\AccountFactory
 	 */
 	protected $accountFactory;
 
@@ -40,8 +40,8 @@ class PersonPersistenceTest extends \TYPO3\FLOW3\Tests\FunctionalTestCase {
 	public function setUp() {
 		parent::setUp();
 		$this->personRepository = $this->objectManager->get('Beech\Party\Domain\Repository\PersonRepository');
-		$this->accountRepository = $this->objectManager->get('TYPO3\FLOW3\Security\AccountRepository');
-		$this->accountFactory = $this->objectManager->get('TYPO3\FLOW3\Security\AccountFactory');
+		$this->accountRepository = $this->objectManager->get('TYPO3\Flow\Security\AccountRepository');
+		$this->accountFactory = $this->objectManager->get('TYPO3\Flow\Security\AccountFactory');
 	}
 
 	/**

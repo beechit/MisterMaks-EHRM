@@ -7,13 +7,13 @@ namespace Beech\Party\Domain\Model;
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
-use TYPO3\FLOW3\Annotations as FLOW3;
+use TYPO3\Flow\Annotations as Flow;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * An ElectronicAddress
  *
- * @FLOW3\Entity
+ * @Flow\Entity
  */
 class ElectronicAddress extends \TYPO3\Party\Domain\Model\ElectronicAddress {
 
@@ -22,8 +22,8 @@ class ElectronicAddress extends \TYPO3\Party\Domain\Model\ElectronicAddress {
 
 	/**
 	 * @var string
-	 * @FLOW3\Validate(type="Alphanumeric")
-	 * @FLOW3\Validate(type="StringLength", options={ "minimum"=1, "maximum"=30 })
+	 * @Flow\Validate(type="Alphanumeric")
+	 * @Flow\Validate(type="StringLength", options={ "minimum"=1, "maximum"=30 })
 	 * @ORM\Column(length=30)
 	 */
 	protected $type;

@@ -7,13 +7,13 @@ namespace Beech\Party\Domain\Model;
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
-use TYPO3\FLOW3\Annotations as FLOW3;
+use TYPO3\Flow\Annotations as Flow;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * A Company
  *
- * @FLOW3\Entity
+ * @Flow\Entity
  */
 class Company {
 
@@ -21,7 +21,7 @@ class Company {
 	 * The company name
 	 *
 	 * @var string
-	 * @FLOW3\Validate(type="NotEmpty", validationGroups={"Controller"})
+	 * @Flow\Validate(type="NotEmpty", validationGroups={"Controller"})
 	 */
 	protected $name;
 
@@ -76,14 +76,14 @@ class Company {
 	/**
 	 * @var \Doctrine\Common\Collections\Collection<\Beech\Party\Domain\Model\Company>
 	 * @ORM\OneToMany(mappedBy="parentCompany")
-	 * @FLOW3\Lazy
+	 * @Flow\Lazy
 	 */
 	protected $departments;
 
 	/**
 	 * @var \Doctrine\Common\Collections\Collection<\Beech\Party\Domain\Model\Person>
 	 * @ORM\ManyToMany
-	 * @FLOW3\Lazy
+	 * @Flow\Lazy
 	 */
 	protected $contactPersons;
 
@@ -91,7 +91,7 @@ class Company {
 	 * @var \Beech\Party\Domain\Model\Company
 	 * @ORM\ManyToOne(inversedBy="departments")
 	 * @ORM\JoinColumn(name="parent_company_id")
-	 * @FLOW3\Lazy
+	 * @Flow\Lazy
 	 */
 	protected $parentCompany;
 

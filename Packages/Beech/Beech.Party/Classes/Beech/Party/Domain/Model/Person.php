@@ -7,21 +7,21 @@ namespace Beech\Party\Domain\Model;
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
-use TYPO3\FLOW3\Annotations as FLOW3;
+use TYPO3\Flow\Annotations as Flow;
 use Doctrine\ORM\Mapping as ORM;
 use Beech\Party\Domain\Model\ElectronicAddress;
 
 /**
  * A Person
  *
- * @FLOW3\Entity
+ * @Flow\Entity
  */
 class Person extends \TYPO3\Party\Domain\Model\Person {
 
 	/**
 	 * @var \TYPO3\Party\Domain\Model\PersonName
 	 * @ORM\OneToOne
-	 * @FLOW3\Validate(type="NotEmpty", validationGroups={"Controller"})
+	 * @Flow\Validate(type="NotEmpty", validationGroups={"Controller"})
 	 */
 	protected $name;
 

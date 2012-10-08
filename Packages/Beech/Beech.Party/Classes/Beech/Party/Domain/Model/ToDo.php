@@ -7,13 +7,13 @@ namespace Beech\Party\Domain\Model;
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
-use TYPO3\FLOW3\Annotations as FLOW3;
+use TYPO3\Flow\Annotations as Flow;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * A To-Do Model
  *
- * @FLOW3\Entity
+ * @Flow\Entity
  */
 class ToDo {
 
@@ -80,7 +80,7 @@ class ToDo {
 	 * Priority of this task 0-100
 	 *
 	 * @var integer
-	 * @FLOW3\Validate(type="NumberRange", options={ "minimum"=0, "maximum"=100 })
+	 * @Flow\Validate(type="NumberRange", options={ "minimum"=0, "maximum"=100 })
 	 */
 	protected $priority;
 

@@ -7,31 +7,31 @@ namespace Beech\Party\Controller\Management;
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
-use TYPO3\FLOW3\Annotations as FLOW3;
+use TYPO3\Flow\Annotations as Flow;
 use Beech\Party\Domain\Model\Company;
 
 /**
  * Company controller for the Beech.Party package
  *
- * @FLOW3\Scope("singleton")
+ * @Flow\Scope("singleton")
  */
 class CompanyController extends \Beech\Ehrm\Controller\AbstractController {
 
 	/**
 	 * @var \Beech\Party\Domain\Repository\AddressRepository
-	 * @FLOW3\Inject
+	 * @Flow\Inject
 	 */
 	protected $addressRepository;
 
 	/**
 	 * @var \Beech\Party\Domain\Repository\CompanyRepository
-	 * @FLOW3\Inject
+	 * @Flow\Inject
 	 */
 	protected $companyRepository;
 
 	/**
 	 * @var \Beech\Party\I18n\Translator
-	 * @FLOW3\Inject
+	 * @Flow\Inject
 	 */
 	protected $translator;
 
@@ -103,7 +103,7 @@ class CompanyController extends \Beech\Ehrm\Controller\AbstractController {
 	 * Shows a form for editing an existing company object
 	 *
 	 * @param \Beech\Party\Domain\Model\Company $company The company to edit
-	 * @FLOW3\IgnoreValidation("$company")
+	 * @Flow\IgnoreValidation("$company")
 	 * @return void
 	 */
 	public function editAction(Company $company) {

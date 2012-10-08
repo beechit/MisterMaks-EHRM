@@ -7,18 +7,18 @@ namespace Beech\Party\Domain\Repository;
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
-use TYPO3\FLOW3\Annotations as FLOW3;
+use TYPO3\Flow\Annotations as Flow;
 
 /**
  * A repository for ToDo
  *
- * @FLOW3\Scope("singleton")
+ * @Flow\Scope("singleton")
  */
-class ToDoRepository extends \TYPO3\FLOW3\Persistence\Repository {
+class ToDoRepository extends \TYPO3\Flow\Persistence\Repository {
 
 	/**
 	 * @var \Beech\Party\Domain\Repository\NotificationRepository
-	 * @FLOW3\Inject
+	 * @Flow\Inject
 	 */
 	protected $notificationRepository;
 
@@ -37,7 +37,7 @@ class ToDoRepository extends \TYPO3\FLOW3\Persistence\Repository {
 	 * @param string $controllerName
 	 * @param string $controllerAction
 	 * @param string $controllerArguments
-	 * @return \TYPO3\FLOW3\Persistence\QueryResultInterface
+	 * @return \TYPO3\Flow\Persistence\QueryResultInterface
 	 */
 	public function findOneByControllerActionAndArguments($controllerName, $controllerAction, $controllerArguments) {
 		$query = $this->createQuery();

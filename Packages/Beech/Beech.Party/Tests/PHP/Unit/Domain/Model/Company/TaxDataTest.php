@@ -4,7 +4,7 @@ namespace Beech\Party\Tests\Unit\Domain\Model\Company;
 /**
  * Testcase for company
  */
-class TaxDataTest extends \TYPO3\FLOW3\Tests\UnitTestCase {
+class TaxDataTest extends \TYPO3\Flow\Tests\UnitTestCase {
 
 	/**
 	 * @test

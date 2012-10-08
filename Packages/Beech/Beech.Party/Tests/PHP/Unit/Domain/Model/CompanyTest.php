@@ -9,7 +9,7 @@ use \TYPO3\Party\Domain\Model\PersonName;
 /**
  * Testcase for company
  */
-class CompanyTest extends \TYPO3\FLOW3\Tests\UnitTestCase {
+class CompanyTest extends \TYPO3\Flow\Tests\UnitTestCase {
 
 	/**
 	 * @test

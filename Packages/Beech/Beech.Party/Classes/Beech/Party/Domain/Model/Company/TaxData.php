@@ -7,14 +7,14 @@ namespace Beech\Party\Domain\Model\Company;
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
-use TYPO3\FLOW3\Annotations as FLOW3;
+use TYPO3\Flow\Annotations as Flow;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Company tax data
  *
- * @FLOW3\Scope("prototype")
- * @FLOW3\Entity
+ * @Flow\Scope("prototype")
+ * @Flow\Entity
  */
 class TaxData {
 
@@ -22,7 +22,7 @@ class TaxData {
 	 * The wageTax number
 	 *
 	 * @var string
-	 * @FLOW3\Validate(type="NotEmpty", validationGroups={"Controller"})
+	 * @Flow\Validate(type="NotEmpty", validationGroups={"Controller"})
 	 */
 	protected $wageTaxNumber;
 
@@ -30,7 +30,7 @@ class TaxData {
 	 * The vat number (BTW)
 	 *
 	 * @var string
-	 * @FLOW3\Validate(type="NotEmpty", validationGroups={"Controller"})
+	 * @Flow\Validate(type="NotEmpty", validationGroups={"Controller"})
 	 */
 	protected $vatNumber;
 

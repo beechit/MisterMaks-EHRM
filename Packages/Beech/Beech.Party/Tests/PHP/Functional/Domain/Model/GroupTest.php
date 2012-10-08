@@ -7,13 +7,13 @@ namespace Beech\Party\Tests\Functional\Domain\Model;
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
-use TYPO3\FLOW3\Annotations as FLOW3;
+use TYPO3\Flow\Annotations as Flow;
 use \Beech\Party\Domain\Model\Group;
 use \Beech\Party\Domain\Model\Group\Type;
 
 /**
  */
-class GroupTest extends \TYPO3\FLOW3\Tests\FunctionalTestCase {
+class GroupTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 
 	/**
 	* @var boolean

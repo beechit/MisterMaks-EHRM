@@ -7,29 +7,29 @@ namespace Beech\Party\Controller\Rest;
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
-use TYPO3\FLOW3\Annotations as FLOW3;
+use TYPO3\Flow\Annotations as Flow;
 
 /**
  * Notification Resy controller for the Beech.Party package
  *
  */
-class NotificationController extends \TYPO3\FLOW3\Mvc\Controller\RestController {
+class NotificationController extends \TYPO3\Flow\Mvc\Controller\RestController {
 
 	/**
 	 * @var \Beech\Party\Domain\Repository\NotificationRepository
-	 * @FLOW3\Inject
+	 * @Flow\Inject
 	 */
 	protected $notificationRepository;
 
 	/**
-	 * @var \TYPO3\FLOW3\Security\Context
-	 * @FLOW3\Inject
+	 * @var \TYPO3\Flow\Security\Context
+	 * @Flow\Inject
 	 */
 	protected $securityContext;
 
 	/**
 	 * @var \Beech\Party\I18n\Translator
-	 * @FLOW3\Inject
+	 * @Flow\Inject
 	 */
 	protected $translator;
 

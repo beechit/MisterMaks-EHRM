@@ -7,14 +7,14 @@ namespace Beech\Party\Domain\Repository;
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
-use TYPO3\FLOW3\Annotations as FLOW3;
+use TYPO3\Flow\Annotations as Flow;
 
 /**
  * A repository for Notification
  *
- * @FLOW3\Scope("singleton")
+ * @Flow\Scope("singleton")
  */
-class NotificationRepository extends \TYPO3\FLOW3\Persistence\Repository {
+class NotificationRepository extends \TYPO3\Flow\Persistence\Repository {
 
 	/**
 	 * Deletes notifications from a given to-do

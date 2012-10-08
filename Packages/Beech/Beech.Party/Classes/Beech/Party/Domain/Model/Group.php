@@ -7,13 +7,13 @@ namespace Beech\Party\Domain\Model;
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
-use TYPO3\FLOW3\Annotations as FLOW3;
+use TYPO3\Flow\Annotations as Flow;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * A Group
  *
- * @FLOW3\Entity
+ * @Flow\Entity
  */
 class Group {
 
@@ -33,7 +33,7 @@ class Group {
 	 *
 	 * @var \Beech\Party\Domain\Model\Group\Type
 	 * @ORM\ManyToOne
-	 * @FLOW3\Validate(type="NotEmpty")
+	 * @Flow\Validate(type="NotEmpty")
 	 */
 	protected $type;
 

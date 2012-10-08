@@ -7,19 +7,19 @@ namespace Beech\Party\Controller\Management;
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
-use TYPO3\FLOW3\Annotations as FLOW3;
+use TYPO3\Flow\Annotations as Flow;
 use \Beech\Party\Domain\Model\Person;
 
 /**
  * Person controller for the Beech.Party package
  *
- * @FLOW3\Scope("singleton")
+ * @Flow\Scope("singleton")
  */
 class PersonController extends \Beech\Ehrm\Controller\AbstractController {
 
 	/**
 	 * @var \Beech\Party\Domain\Repository\PersonRepository
-	 * @FLOW3\Inject
+	 * @Flow\Inject
 	 */
 	protected $personRepository;
 
