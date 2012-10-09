@@ -1,10 +1,11 @@
 <?php
 namespace Beech\Ehrm\Tests\Unit\Helper;
 
-/*                                                                        *
- * This script belongs to the FLOW3 package "Beech.Ehrm".                 *
- *                                                                        *
- *                                                                        */
+/*
+ * This source file is proprietary property of Beech Applications B.V.
+ * Date: 09-10-12 09:56
+ * All code (c) Beech Applications B.V. all rights reserved
+ */
 
 use TYPO3\Flow\Http\Request as HttpRequest;
 use TYPO3\Flow\Http\Uri;

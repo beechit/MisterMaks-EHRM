@@ -36,12 +36,12 @@ validate the model, but using the Wizard we want to skip most of them.
 
 Consider having a Wizardform just to add name-details. The model it works on could be ``Person``, which
 probably has some required address-details as well. The trick is to only validate the required field when
-called using a controller. FLOW3 has neat annotation for this, the validationGroup: ::
+called using a controller. Flow has neat annotation for this, the validationGroup: ::
 
 	class Person {
 
 		/**
-		 * @FLOW3\Validate(type="NotEmpty", validationGroups={"Controller"})
+		 * @Flow\Validate(type="NotEmpty", validationGroups={"Controller"})
 		 */
 		protected $street;
 

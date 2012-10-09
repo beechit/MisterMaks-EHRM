@@ -25,7 +25,7 @@ class SoftDeleteAspect {
 
 //	/**
 //	 * NOTE:
-//	 * Property introduction does not work yet because of a bug in FLOW3. A Bugreport was submitted
+//	 * Property introduction does not work yet because of a bug in Flow. A Bugreport was submitted
 //	 *
 //	 * @var boolean
 //	 * @ORM\Column(nullable=TRUE)
