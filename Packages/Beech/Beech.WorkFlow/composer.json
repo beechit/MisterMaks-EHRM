@@ -6,7 +6,7 @@
 	"require": {
 		"typo3\/flow": "*",
 		"beech\/ehrm": "*",
-		"typo3\/queue\/redis": "*"
+		"typo3\/queue-redis": "*"
 	},
 	"autoload": {
 		"psr-0": {
