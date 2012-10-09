@@ -49,12 +49,12 @@
             "source": {
                 "type": "git",
                 "url": "ssh://git.beech.local/EHRM/Package/Ehrm.git",
-                "reference": "6e812fffa6a7e2516a319b862802f14006b45741"
+                "reference": "4872ee4bf276495df618ade9ff0dc87151e74e5b"
             },
             "require": {
                 "typo3/flow": "*"
             },
-            "time": "1349707293",
+            "time": "1349730240",
             "type": "typo3-flow-package",
             "installation-source": "source",
             "autoload": {
@@ -90,13 +90,13 @@
             "source": {
                 "type": "git",
                 "url": "ssh://git.beech.local/EHRM/Package/Party.git",
-                "reference": "7e3b0192e2a474561a17d1eac36fb78d0eb09343"
+                "reference": "3b189654670efddb24f9128b9a5ad5dbc18ef485"
             },
             "require": {
                 "typo3/flow": "*",
                 "beech/ehrm": "*"
             },
-            "time": "1349707765",
+            "time": "1349731092",
             "type": "typo3-flow-package",
             "installation-source": "source",
             "autoload": {
@@ -132,13 +132,13 @@
             "source": {
                 "type": "git",
                 "url": "ssh://git.beech.local/EHRM/Package/WorkFlow.git",
-                "reference": "d6103847a17a31ff3c02ffafb78a0467781083c1"
+                "reference": "b38e5aac4237aa4fd76ad103a774dd46d6fcad8e"
             },
             "require": {
                 "typo3/flow": "*",
                 "beech/ehrm": "*"
             },
-            "time": "1349701193",
+            "time": "1349730797",
             "type": "typo3-flow-package",
             "installation-source": "source",
             "autoload": {
@@ -528,7 +528,7 @@
             "source": {
                 "type": "git",
                 "url": "git://git.typo3.org/FLOW3/Packages/TYPO3.FLOW3.git",
-                "reference": "94a43b695cb216c1654c21b3b824d1bbb7593f7c"
+                "reference": "b744c359a9ff0373a5c22926cf3577468bbe952e"
             },
             "require": {
                 "php": ">=5.3.2",
@@ -544,7 +544,7 @@
                 "symfony/dom-crawler": ">2.0.16",
                 "typo3/flow-composer-installers": "*"
             },
-            "time": "1349369189",
+            "time": "1349768169",
             "type": "typo3-flow-framework",
             "installation-source": "source",
             "autoload": {
