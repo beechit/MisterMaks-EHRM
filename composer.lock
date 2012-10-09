@@ -1,5 +1,5 @@
 {
-    "hash": "c4f705544c359ac85b9d8feec9a7ecae",
+    "hash": "fe5001444ba83f97a5a0e48239f6d323",
     "packages": [
         {
             "name": "beech/cla",
@@ -49,12 +49,12 @@
             "source": {
                 "type": "git",
                 "url": "ssh://git.beech.local/EHRM/Package/Ehrm.git",
-                "reference": "4872ee4bf276495df618ade9ff0dc87151e74e5b"
+                "reference": "988854b7fe8bbbed84814d2b1f5dcc7e8517483a"
             },
             "require": {
                 "typo3/flow": "*"
             },
-            "time": "1349730240",
+            "time": "1349770462",
             "type": "typo3-flow-package",
             "installation-source": "source",
             "autoload": {
@@ -671,6 +671,28 @@
             "description": "Extensible and flexible API for building web forms"
         },
         {
+            "name": "typo3/formbuilder",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git://git.typo3.org/FLOW3/Packages/TYPO3.FormBuilder.git",
+                "reference": "f1ae42cb7a1d890f6a181e5f59bfca9821a20c4e"
+            },
+            "require": {
+                "typo3/flow": "*",
+                "typo3/form": "*"
+            },
+            "time": "1349773007",
+            "type": "typo3-flow-library",
+            "installation-source": "source",
+            "autoload": {
+                "psr-0": {
+                    "TYPO3\\FormBuilder": "Classes"
+                }
+            },
+            "description": "Graphical User Interface for creating and editing Forms based on the TYPO3 Flow Form Framework"
+        },
+        {
             "name": "typo3/ldap",
             "version": "dev-master",
             "source": {
@@ -741,13 +763,13 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git://github.com/radmiraal/TYPO3.TcPdf.git",
-                "reference": "b75b7cba5b9d2142b8a21c947e021651b8349a77"
+                "url": "git://git.typo3.org/FLOW3/Packages/TYPO3.TcPdf.git",
+                "reference": "2ee8dae83ad93c9d56394e2aede9458772865725"
             },
             "require": {
                 "typo3/flow": "*"
             },
-            "time": "1349706968",
+            "time": "1349777876",
             "type": "typo3-flow-library",
             "installation-source": "source",
             "autoload": {
@@ -898,6 +920,14 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "typo3/flow": 20,
+        "typo3/eel": 20,
+        "typo3/form": 20,
+        "typo3/formbuilder": 20,
+        "typo3/tcpdf": 20,
+        "typo3/typoscript": 20,
+        "typo3/surf": 20,
+        "typo3/ldap": 20,
+        "twitter/bootstrap": 20,
         "beech/cla": 20,
         "beech/document": 20,
         "beech/ehrm": 20,
@@ -905,13 +935,6 @@
         "beech/party": 20,
         "beech/workflow": 20,
         "beech/minutes": 20,
-        "twitter/bootstrap": 20,
-        "typo3/eel": 20,
-        "typo3/form": 20,
-        "typo3/tcpdf": 20,
-        "typo3/typoscript": 20,
-        "typo3/surf": 20,
-        "typo3/ldap": 20,
         "typo3/buildessentials": 20,
         "beech/essentials": 20,
         "typo3/kickstart": 20,
