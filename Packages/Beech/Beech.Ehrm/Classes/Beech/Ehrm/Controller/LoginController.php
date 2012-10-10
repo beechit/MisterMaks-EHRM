@@ -22,6 +22,12 @@ class LoginController extends \TYPO3\Flow\Security\Authentication\Controller\Abs
 	protected $defaultViewObjectName = 'Beech\\Ehrm\\View\\TypoScriptView';
 
 	/**
+	 * @var \TYPO3\Flow\I18n\Translator
+	 * @Flow\Inject
+	 */
+	protected $translator;
+
+	/**
 	 * @var \Beech\Ehrm\Domain\Repository\ApplicationRepository
 	 * @Flow\Inject
 	 */
@@ -51,7 +57,38 @@ class LoginController extends \TYPO3\Flow\Security\Authentication\Controller\Abs
 	 * @return void
 	 */
 	public function onAuthenticationSuccess(\TYPO3\Flow\Mvc\ActionRequest $originalRequest = NULL) {
+		if ($originalRequest !== NULL) {
+			$this->redirectToRequest($originalRequest);
+		}
 		$this->redirect('index', 'Standard', 'Beech.Ehrm');
+	}
+
+	/**
+	 * Is called if authentication failed.
+	 *
+	 * Override default method.
+	 *
+	 * @param \TYPO3\Flow\Security\Exception\AuthenticationRequiredException $exception The exception thrown when the authentication process fails
+	 * @return void
+	 */
+	protected function onAuthenticationFailure(\TYPO3\Flow\Security\Exception\AuthenticationRequiredException $exception = NULL) {}
+
+	/**
+	 * A template method for displaying custom error flash messages, or to
+	 * display no flash message at all on errors. Override this to customize
+	 * the flash message in your action controller.
+	 *
+	 * This method is used to overwrite default error messages template TYPO3.Flow package
+	 *
+	 * @return \TYPO3\Flow\Error\Error The flash message
+	 */
+	protected function getErrorFlashMessage() {
+		return new \TYPO3\Flow\Error\Message(
+			$this->translator->translateById('message.authentication.failed.wrongCredentials', array(), NULL, NULL, 'Main', 'Beech.Ehrm'),
+			NULL,
+			array(),
+			$this->translator->translateById('message.authentication.failed', array(), NULL, NULL, 'Main', 'Beech.Ehrm')
+		);
 	}
 
 	/**

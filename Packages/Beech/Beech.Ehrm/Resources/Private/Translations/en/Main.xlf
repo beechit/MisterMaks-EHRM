@@ -98,6 +98,12 @@
 			<trans-unit id="message.error">
 				<source>Error!</source>
 			</trans-unit>
+			<trans-unit id="message.authentication.failed">
+				<source>Authentication failed</source>
+			</trans-unit>
+			<trans-unit id="message.authentication.failed.wrongCredentials">
+				<source>Wrong credentials</source>
+			</trans-unit>
 			<trans-unit id="action.back">
 				<source>Back</source>
 			</trans-unit>

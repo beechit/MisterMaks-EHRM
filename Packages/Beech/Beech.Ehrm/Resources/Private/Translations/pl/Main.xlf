@@ -122,6 +122,14 @@
 				<source>No logs created yet</source>
 				<target>Brak logow w systemie</target>
 			</trans-unit>
+			<trans-unit id="message.authentication.failed">
+				<source>Authentication failed</source>
+				<target>Autoryzacja nieudana</target>
+			</trans-unit>
+			<trans-unit id="message.authentication.failed.wrongCredentials">
+				<source>Wrong credentials</source>
+				<target>Nieprawidłowy login lub hasło</target>
+			</trans-unit>
 			<trans-unit id="message.application.notCreated">
 				<source>No primary company configured, please contact your System Administrator.</source>
 				<target>Nieprawidlowa konfiguracja, brak domyslych ustawien dla organizacji. Skontaktuj sie z Administratorem.</target>

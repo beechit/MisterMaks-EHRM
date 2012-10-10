@@ -81,13 +81,15 @@ class ThemeHelper {
 	 * @return array
 	 */
 	public function getSelectedTheme() {
-		$application = $this->applicationRepository->findApplication();
-		$defaultTheme = $application->getPreferences()->get('theme');
-
 		$availableThemes = $this->getAvailableThemes();
 
-		if ($defaultTheme !== NULL && isset($availableThemes[$defaultTheme])) {
-			return $availableThemes[$defaultTheme];
+		$application = $this->applicationRepository->findApplication();
+		if ($application !== NULL) {
+			$defaultTheme = $application->getPreferences()->get('theme');
+
+			if ($defaultTheme !== NULL && isset($availableThemes[$defaultTheme])) {
+				return $availableThemes[$defaultTheme];
+			}
 		}
 
 		return $availableThemes['Default'];
