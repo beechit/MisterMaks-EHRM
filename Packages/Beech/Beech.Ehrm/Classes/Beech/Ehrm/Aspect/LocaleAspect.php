@@ -62,11 +62,12 @@ class LocaleAspect {
 
 			// Us the global settings
 		$application = $this->applicationRepository->findApplication();
-		$defaultLocale = $application->getPreferences()->get('defaultLocale');
-		if ($defaultLocale !== NULL) {
-			return new \TYPO3\Flow\I18n\Locale($defaultLocale);
+		if ($application instanceof \Beech\Ehrm\Domain\Model\Application) {
+			$defaultLocale = $application->getPreferences()->get('defaultLocale');
+			if ($defaultLocale !== NULL) {
+				return new \TYPO3\Flow\I18n\Locale($defaultLocale);
+			}
 		}
-
 		return $joinPoint->getAdviceChain()->proceed($joinPoint);
 	}
 

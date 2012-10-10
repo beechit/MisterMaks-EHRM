@@ -89,6 +89,12 @@
 			<trans-unit id="message.log.noResult">
 				<source>No logs created yet</source>
 			</trans-unit>
+			<trans-unit id="message.application.notCreated">
+				<source>No primary company configured, please contact your System Administrator.</source>
+			</trans-unit>
+			<trans-unit id="message.error">
+				<source>Error!</source>
+			</trans-unit>
 			<trans-unit id="action.back">
 				<source>Back</source>
 			</trans-unit>

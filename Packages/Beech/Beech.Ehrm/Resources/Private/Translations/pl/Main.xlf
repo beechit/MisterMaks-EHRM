@@ -118,6 +118,14 @@
 				<source>No logs created yet</source>
 				<target>Brak logow w systemie</target>
 			</trans-unit>
+			<trans-unit id="message.application.notCreated">
+				<source>No primary company configured, please contact your System Administrator.</source>
+				<target>Nieprawidlowa konfiguracja, brak domyslych ustawien dla organizacji. Skontaktuj sie z Administratorem.</target>
+			</trans-unit>
+			<trans-unit id="message.error">
+				<source>Error!</source>
+				<target>Błąd!</target>
+			</trans-unit>
 			<trans-unit id="action.back">
 				<source>Back</source>
 				<target>Powrót</target>

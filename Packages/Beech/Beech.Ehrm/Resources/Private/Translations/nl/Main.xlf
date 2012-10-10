@@ -118,6 +118,14 @@
 				<source>No logs created yet</source>
 				<target>Geen logs gevonden</target>
 			</trans-unit>
+			<trans-unit id="message.application.notCreated">
+				<source>No primary company configured, please contact your System Administrator.</source>
+				<target>Geen bedrijf gekoppeld aan installatie, neem contact op met uw systeembeheerder.</target>
+			</trans-unit>
+			<trans-unit id="message.error">
+				<source>Error!</source>
+				<target>Fout!</target>
+			</trans-unit>
 			<trans-unit id="action.back">
 				<source>Back</source>
 				<target>Terug</target>

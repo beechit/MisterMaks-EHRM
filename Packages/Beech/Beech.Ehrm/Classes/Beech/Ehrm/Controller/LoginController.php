@@ -17,10 +17,18 @@ use TYPO3\Flow\Annotations as Flow;
 class LoginController extends \TYPO3\Flow\Security\Authentication\Controller\AbstractAuthenticationController {
 
 	/**
+	 * @var \Beech\Ehrm\Domain\Repository\ApplicationRepository
+	 * @Flow\Inject
+	 */
+	protected $applicationRepository;
+
+	/**
 	 * @param string $username
 	 * @return void
 	 */
 	public function loginAction($username = NULL) {
+		$application = $this->applicationRepository->findApplication();
+		$this->view->assign('applicationConfigured', $application instanceof \Beech\Ehrm\Domain\Model\Application);
 		$this->view->assign('username', $username);
 	}
 
