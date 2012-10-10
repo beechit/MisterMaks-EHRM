@@ -39,7 +39,8 @@
 		"typo3/kickstart": "dev-master",
 		"mikey179/vfsstream": "1.1.*",
 		"beech/style": "dev-development",
-		"debug/toolbar": "dev-master"
+		"debug/toolbar": "dev-master",
+		"sandstorm/plumber": "dev-master"
 	},
 	"minimum-stability": "dev",
 	"scripts": {

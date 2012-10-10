@@ -1,5 +1,5 @@
 {
-    "hash": "ce6069deacad826dc73104178bab6543",
+    "hash": "bcf733d29bf1e6ec2855b3ba893ddeea",
     "packages": [
         {
             "name": "beech/cla",
@@ -980,6 +980,87 @@
             "homepage": "http://vfs.bovigo.org/"
         },
         {
+            "name": "sandstorm/phpprofiler",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "git://github.com/sandstorm/PhpProfiler.git",
+                "reference": "1.0.1"
+            },
+            "time": "2012-10-10 06:01:43",
+            "type": "typo3-flow-library",
+            "installation-source": "source",
+            "autoload": {
+                "psr-0": {
+                    "Sandstorm\\PhpProfiler": "Classes"
+                }
+            },
+            "license": [
+                "GPL-3.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Kurfürst",
+                    "homepage": "http://sandstorm-media.de",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Base package for collecting timers and xhprof traces. To be used with sandstorm|plumber for visualization.",
+            "support": {
+                "issues": "https://github.com/sandstorm/Plumber/issues",
+                "irc": "irc://irc.freenode.net/flow",
+                "source": "https://github.com/sandstorm/Plumber"
+            }
+        },
+        {
+            "name": "sandstorm/plumber",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git://github.com/sandstorm/Plumber.git",
+                "reference": "79c425c692278ff9910312c282205f014ea953dc"
+            },
+            "require": {
+                "typo3/flow": "*",
+                "sandstorm/phpprofiler": "1.0.*"
+            },
+            "time": "1349848986",
+            "type": "typo3-flow-library",
+            "installation-source": "source",
+            "autoload": {
+                "psr-0": {
+                    "Sandstorm\\Plumber": "Classes"
+                }
+            },
+            "license": [
+                "GPL-3.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Kurfürst",
+                    "homepage": "http://sandstorm-media.de",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Profiling Toolkit for TYPO3 Flow and Neos",
+            "keywords": [
+                "profiling",
+                "profiler",
+                "benchmark",
+                "debugging",
+                "xhprof",
+                "Flow",
+                "TYPO3 Flow",
+                "Neos",
+                "TYPO3 Neos"
+            ],
+            "support": {
+                "issues": "https://github.com/sandstorm/Plumber/issues",
+                "irc": "irc://irc.freenode.net/flow",
+                "source": "https://github.com/sandstorm/Plumber"
+            }
+        },
+        {
             "name": "typo3/buildessentials",
             "version": "dev-master",
             "source": {
@@ -1049,6 +1130,7 @@
         "beech/essentials": 20,
         "typo3/kickstart": 20,
         "beech/style": 20,
-        "debug/toolbar": 20
+        "debug/toolbar": 20,
+        "sandstorm/plumber": 20
     }
 }
