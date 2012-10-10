@@ -1,0 +1,19 @@
+Beech:
+  Ehrm:
+    menu:
+      main:
+        groups:
+          dev:
+            priority: 99
+            label: 'Development'
+
+    modules:
+      plumber:
+        menu:
+          plumber:
+            label: 'Profiling'
+            priority: 10
+            menuGroup: 'main:dev'
+            package: 'Sandstorm.Plumber'
+            controller: 'Standard'
+            action: 'index'
