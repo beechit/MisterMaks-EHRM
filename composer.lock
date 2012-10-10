@@ -1,5 +1,5 @@
 {
-    "hash": "fe5001444ba83f97a5a0e48239f6d323",
+    "hash": "ce6069deacad826dc73104178bab6543",
     "packages": [
         {
             "name": "beech/cla",
@@ -7,13 +7,13 @@
             "source": {
                 "type": "git",
                 "url": "ssh://git.beech.local/EHRM/Package/CLA.git",
-                "reference": "37aab3fbc77a552d1e9d44266aa9361d6df2d2a0"
+                "reference": "309970e91f6d76efae78e91f996f66e0aaaac9cc"
             },
             "require": {
                 "typo3/flow": "*",
                 "beech/ehrm": "*"
             },
-            "time": "1349694465",
+            "time": "1349800269",
             "type": "typo3-flow-package",
             "installation-source": "source",
             "autoload": {
@@ -49,12 +49,12 @@
             "source": {
                 "type": "git",
                 "url": "ssh://git.beech.local/EHRM/Package/Ehrm.git",
-                "reference": "dcad408e76aa67eebccb22aad44f449d54b3c2a1"
+                "reference": "497989b51ce1380799c18c21db377a46e7fefcdd"
             },
             "require": {
                 "typo3/flow": "*"
             },
-            "time": "1349785525",
+            "time": "1349801346",
             "type": "typo3-flow-package",
             "installation-source": "source",
             "autoload": {
@@ -90,13 +90,13 @@
             "source": {
                 "type": "git",
                 "url": "ssh://git.beech.local/EHRM/Package/Party.git",
-                "reference": "bfdba8bf18e33b55012f701e7346a20ee3525e5f"
+                "reference": "d728ddf0c154b8562335ea837ab3a37bc8196acd"
             },
             "require": {
                 "typo3/flow": "*",
                 "beech/ehrm": "*"
             },
-            "time": "1349783981",
+            "time": "1349795980",
             "type": "typo3-flow-package",
             "installation-source": "source",
             "autoload": {
@@ -380,6 +380,53 @@
             "keywords": [
                 "database",
                 "orm"
+            ]
+        },
+        {
+            "name": "predis/predis",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git://github.com/nrk/predis.git",
+                "reference": "2b4cf80d9084113dfe5b9c242f78987a52c2d213"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/nrk/predis/zipball/2b4cf80d9084113dfe5b9c242f78987a52c2d213",
+                "reference": "2b4cf80d9084113dfe5b9c242f78987a52c2d213",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "suggest": {
+                "ext-phpiredis": "Allows faster serialization and deserialization of the Redis protocol",
+                "ext-curl": "Allows access to Webdis when paired with phpiredis"
+            },
+            "time": "1347984311",
+            "type": "library",
+            "installation-source": "source",
+            "autoload": {
+                "psr-0": {
+                    "Predis": "lib/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniele Alessandri",
+                    "email": "suppakilla@gmail.com",
+                    "homepage": "http://clorophilla.net"
+                }
+            ],
+            "description": "Flexible and feature-complete PHP client library for Redis",
+            "homepage": "http://github.com/nrk/predis",
+            "keywords": [
+                "nosql",
+                "redis",
+                "predis"
             ]
         },
         {
@@ -745,12 +792,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/radmiraal/TYPO3.Queue.git",
-                "reference": "9ceaf20273de475354076f786817f44951fda72d"
+                "reference": "6fd6469e97b56116d479998273ce494a1b4e95c0"
             },
             "require": {
                 "typo3/flow": "*"
             },
-            "time": "1349697649",
+            "time": "1349857489",
             "type": "typo3-flow-library",
             "installation-source": "source",
             "autoload": {
@@ -764,15 +811,15 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git://github.com/radmiraal/TYPO3.Queue.Redis.git",
-                "reference": "7dba3ce3f92d284d293c671052f7ec385e0778cc"
+                "url": "git://git.typo3.org/FLOW3/Packages/TYPO3.Queue.Redis.git",
+                "reference": "bbfdf6ada94caf6ad5c147a99f0aac1cbc0e3ddc"
             },
             "require": {
                 "typo3/flow": "*",
                 "typo3/queue": "*",
                 "predis/predis": "*"
             },
-            "time": "1349794986",
+            "time": "1349851779",
             "type": "typo3-flow-library",
             "installation-source": "source",
             "autoload": {
@@ -867,18 +914,38 @@
             "source": {
                 "type": "git",
                 "url": "ssh://git.beech.local/EHRM/Package/Style.git",
-                "reference": "e60f751af2c8b365023b639b976ef8a2f3a78b4d"
+                "reference": "6b5865c94764783813cd040c45bc1b2e1dc4bcb2"
             },
             "require": {
                 "typo3/flow": "*",
                 "beech/ehrm": "*"
             },
-            "time": "1349695149",
+            "time": "1349802060",
             "type": "typo3-flow-tools",
             "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "Beech\\Style": "Classes"
+                }
+            }
+        },
+        {
+            "name": "debug/toolbar",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git://github.com/mneuhaus/Debug.Toolbar.git",
+                "reference": "7f4d7d5d9eaf46e0dc631e772cb065858a8e2b5c"
+            },
+            "require": {
+                "typo3/flow": "*"
+            },
+            "time": "1349860298",
+            "type": "typo3-flow-library",
+            "installation-source": "source",
+            "autoload": {
+                "psr-0": {
+                    "Debug\\Toolbar": "Classes"
                 }
             }
         },
@@ -911,53 +978,6 @@
                 "BSD"
             ],
             "homepage": "http://vfs.bovigo.org/"
-        },
-        {
-            "name": "predis/predis",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "git://github.com/nrk/predis.git",
-                "reference": "2b4cf80d9084113dfe5b9c242f78987a52c2d213"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://github.com/nrk/predis/zipball/2b4cf80d9084113dfe5b9c242f78987a52c2d213",
-                "reference": "2b4cf80d9084113dfe5b9c242f78987a52c2d213",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "suggest": {
-                "ext-phpiredis": "Allows faster serialization and deserialization of the Redis protocol",
-                "ext-curl": "Allows access to Webdis when paired with phpiredis"
-            },
-            "time": "1347984311",
-            "type": "library",
-            "installation-source": "source",
-            "autoload": {
-                "psr-0": {
-                    "Predis": "lib/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Daniele Alessandri",
-                    "email": "suppakilla@gmail.com",
-                    "homepage": "http://clorophilla.net"
-                }
-            ],
-            "description": "Flexible and feature-complete PHP client library for Redis",
-            "homepage": "http://github.com/nrk/predis",
-            "keywords": [
-                "nosql",
-                "redis",
-                "predis"
-            ]
         },
         {
             "name": "typo3/buildessentials",
@@ -1018,16 +1038,17 @@
         "typo3/surf": 20,
         "typo3/ldap": 20,
         "twitter/bootstrap": 20,
+        "beech/ehrm": 20,
+        "beech/party": 20,
+        "beech/task": 20,
         "beech/cla": 20,
         "beech/document": 20,
-        "beech/ehrm": 20,
-        "beech/task": 20,
-        "beech/party": 20,
         "beech/workflow": 20,
         "beech/minutes": 20,
         "typo3/buildessentials": 20,
         "beech/essentials": 20,
         "typo3/kickstart": 20,
-        "beech/style": 20
+        "beech/style": 20,
+        "debug/toolbar": 20
     }
 }
