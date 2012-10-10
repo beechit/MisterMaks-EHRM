@@ -41,7 +41,13 @@ class InstallerScripts extends \TYPO3\Flow\Composer\InstallerScripts {
 						}
 
 						$cmd = sprintf('cd %s%s/ && ' . implode('&&', $commands), $mainDir, $package);
-						shell_exec($cmd);
+						exec($cmd, $output, $return);
+
+							// Check if there's a branch checked out
+						exec(sprintf('cd %s%s/ && git status', $mainDir, $package), $output, $return);
+						if (strpos($output[0], 'Not currently on any branch.') !== FALSE) {
+							exec(sprintf('cd %s%s/ && git checkout -B development origin/development && git pull --rebase', $mainDir, $package));
+						}
 					}
 				}
 			}
