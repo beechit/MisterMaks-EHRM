@@ -3,16 +3,11 @@
 	<head>
 		<title>Mister Maks</title>
 		<f:base />
-
-		<f:render partial="HeaderInclude" arguments="{_all}" />
-
+		<typoscript:renderTypoScript path="headerParts" />
 	</head>
 	<body>
-
 		<typoscript:renderTypoScript path="headerMenu" />
-
 		<section class="container-fluid">
-
 			<div class="row-fluid">
 				<div class="span2"><typoscript:renderTypoScript path="administrationMenu" /></div>
 				<div class="span10">

@@ -23,6 +23,12 @@ class ApplicationController extends \Beech\Ehrm\Controller\AbstractController {
 	protected $settingsHelper;
 
 	/**
+	 * @var \Beech\Ehrm\Helper\ThemeHelper
+	 * @Flow\Inject
+	 */
+	protected $themeHelper;
+
+	/**
 	 * @var \TYPO3\Flow\Security\Context
 	 * @Flow\Inject
 	 */
@@ -47,16 +53,29 @@ class ApplicationController extends \Beech\Ehrm\Controller\AbstractController {
 	 */
 	public function indexAction() {
 		$application = $this->applicationRepository->findApplication();
-		$this->view->assign('locale', $application->getPreferences()->get('defaultLocale'));
-		$this->view->assign('languages', $this->settingsHelper->getAvailableLanguages() );
+
+		$themes = $this->themeHelper->getAvailableThemes();
+		foreach ($themes as $name => $config) {
+			$themes[$name] = $name;
+		}
+
+		$this->view->assignMultiple(array(
+			'currentLocale' => $application->getPreferences()->get('locale'),
+			'locales' => $this->settingsHelper->getAvailableLanguages(),
+			'currentTheme' => $application->getPreferences()->get('theme'),
+			'themes' => $themes
+		));
 	}
 
 	/**
 	 * @param string $locale
+	 * @param string $theme
+	 * @return void
 	 */
-	public function updateAction($locale = 'EN_en') {
+	public function updateAction($locale = 'EN_en', $theme = 'Default') {
 		$application = $this->applicationRepository->findApplication();
-		$application->getPreferences()->set('defaultLocale', $locale);
+		$application->getPreferences()->set('locale', $locale);
+		$application->getPreferences()->set('theme', $theme);
 		$this->applicationRepository->update($application);
 		$this->redirect('index');
 	}

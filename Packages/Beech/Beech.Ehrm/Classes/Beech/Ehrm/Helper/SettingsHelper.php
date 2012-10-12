@@ -296,6 +296,7 @@ class SettingsHelper {
 			return array();
 		}
 	}
+
 }
 
 ?>

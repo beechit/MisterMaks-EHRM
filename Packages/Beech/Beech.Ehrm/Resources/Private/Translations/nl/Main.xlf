@@ -70,6 +70,10 @@
 				<source>Settings</source>
 				<target>Instellingen</target>
 			</trans-unit>
+			<trans-unit id='menu.themes'>
+				<source>Themes</source>
+				<target>Thema's</target>
+			</trans-unit>
 			<trans-unit id='menu.todo'>
 				<source>Todo</source>
 				<target>Todo</target>

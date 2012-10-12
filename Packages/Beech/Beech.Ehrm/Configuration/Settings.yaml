@@ -44,6 +44,14 @@ Beech:
         action: 'index'
     languages: [EN_en, NL_nl, PL_pl]
 
+    resources:
+      themes: []
+
+      styleSheets:
+        - 'Beech.Ehrm/StyleSheets/main.css'
+        - 'Beech.Ehrm/Library/dataTables/media/css/jquery.dataTables.TwitterBootstrap.css'
+        - 'Beech.Ehrm/Library/dataTables/media/css/jquery.dataTables.css'
+
 TYPO3:
   Form:
     presets:
@@ -120,3 +128,11 @@ Famelo:
           @package: 'Beech.Ehrm'
           @controller: 'Setup'
           @action: 'index'
+      application:
+        label: 'Application'
+        arguments:
+          @package: 'Beech.Ehrm'
+          @controller: 'Setup\Application'
+          @action: 'index'
+
+

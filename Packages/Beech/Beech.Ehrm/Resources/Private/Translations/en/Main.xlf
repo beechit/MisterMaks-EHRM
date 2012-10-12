@@ -53,6 +53,9 @@
 			<trans-unit id='menu.settings'>
 				<source>Settings</source>
 			</trans-unit>
+			<trans-unit id='menu.themes'>
+				<source>Themes</source>
+			</trans-unit>
 			<trans-unit id='menu.todo'>
 				<source>Todo</source>
 			</trans-unit>

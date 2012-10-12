@@ -17,6 +17,12 @@ use TYPO3\Flow\Annotations as Flow;
 class Template extends \TYPO3\TypoScript\TypoScriptObjects\TemplateImplementation {
 
 	/**
+	 * @var \Beech\Ehrm\Helper\SettingsHelper
+	 * @Flow\Inject
+	 */
+	protected $settingsHelper;
+
+	/**
 	 * @return mixed
 	 */
 	public function evaluate() {

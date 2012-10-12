@@ -63,7 +63,7 @@ class LocaleAspect {
 			// Us the global settings
 		$application = $this->applicationRepository->findApplication();
 		if ($application instanceof \Beech\Ehrm\Domain\Model\Application) {
-			$defaultLocale = $application->getPreferences()->get('defaultLocale');
+			$defaultLocale = $application->getPreferences()->get('locale');
 			if ($defaultLocale !== NULL) {
 				return new \TYPO3\Flow\I18n\Locale($defaultLocale);
 			}

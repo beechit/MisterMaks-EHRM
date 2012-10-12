@@ -1,20 +1,14 @@
-<!DOCTYPE html>{namespace bootstrap=TYPO3\Twitter\Bootstrap\ViewHelpers}{namespace typoscript=TYPO3\TypoScript\ViewHelpers}
+<!DOCTYPE html>{namespace beechStyle=Beech\Style\ViewHelpers}{namespace typoscript=TYPO3\TypoScript\ViewHelpers}
 <html>
 	<head>
 		<title>Mister Maks</title>
 		<f:base />
-
-		<f:render partial="HeaderInclude" arguments="{_all}" />
-
+		<typoscript:renderTypoScript path="headerParts" />
 	</head>
 	<body>
-
 		<typoscript:renderTypoScript path="headerMenu" />
-
 		<section class="container-fluid">
-
 			<f:flashMessages class="flashmessages alert" />
-
 			<typoscript:renderTypoScript path="body" />
 
 			<div class="loading hide">
