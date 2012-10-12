@@ -69,3 +69,22 @@ jQuery Form
 ::
 
 	TODO: Add
+
+InfoVis
+=======
+
+InfoVis(jit) is javascript library which can be used to trees, diagrams or charts.
+
+Library is used to visualize a diagram of organizational structure of company
+
+**Demo**
+	Simple visualization with example of use is located here:
+	Menu > Development > Diagram overview
+**Url:**
+	http://philogb.github.com/jit/downloads/Jit-2.0.1.zip
+**Downloaded version:**
+	2.0.1
+**Documentation**
+	http://philogb.github.com/jit/static/v20/Docs/files/Core/Core-js.html
+**More information**
+	http://philogb.github.com/jit/
