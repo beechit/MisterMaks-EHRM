@@ -27,6 +27,14 @@ Beech:
             controller: 'Management\Person'
             resource: 'ManagementControllers'
             action: 'list'
+          groupTypeList:
+            label: 'Group Types'
+            priority: 40
+            menuGroup: 'main:manage'
+            package: 'Beech.Party'
+            controller: 'Management\Group\Type'
+            resource: 'ManagementControllers'
+            action: 'list'
 
     menu:
       administration:

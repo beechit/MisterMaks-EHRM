@@ -142,6 +142,14 @@
 				<source>No employees added yet</source>
 				<target>Brak osob w systemie</target>
 			</trans-unit>
+			<trans-unit id="groupType.name">
+				<source>Group type</source>
+				<target>Typ grupy</target>
+			</trans-unit>
+			<trans-unit id="message.groupType.noResult">
+				<source>No group types created yet.</source>
+				<target>Brak typ grup w systemie</target>
+			</trans-unit>
 			<trans-unit id="action">
 				<source>Action</source>
 				<target>Akcja</target>

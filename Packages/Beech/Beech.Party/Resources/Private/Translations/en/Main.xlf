@@ -104,6 +104,12 @@
 			<trans-unit id="person.description">
 				<source>Description</source>
 			</trans-unit>
+			<trans-unit id="groupType.name">
+				<source>Group type</source>
+			</trans-unit>
+			<trans-unit id="message.groupType.noResult">
+				<source>No group types created yet.</source>
+			</trans-unit>
 			<trans-unit id="action">
 				<source>Action</source>
 			</trans-unit>

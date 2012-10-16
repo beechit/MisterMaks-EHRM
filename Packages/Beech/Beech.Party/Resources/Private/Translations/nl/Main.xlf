@@ -146,6 +146,14 @@
 				<source>No employees added yet</source>
 				<target>Nog geen medewerkers aangemaakt</target>
 			</trans-unit>
+			<trans-unit id="groupType.name">
+				<source>Group type</source>
+				<target>Groeptype</target>
+			</trans-unit>
+			<trans-unit id="message.groupType.noResult">
+				<source>No group types created yet.</source>
+				<target>Nog geen groeptypes aangemaakt</target>
+			</trans-unit>
 			<trans-unit id="action">
 				<source>Action</source>
 				<target>Actie</target>
