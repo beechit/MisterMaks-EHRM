@@ -125,6 +125,21 @@
 			<trans-unit id="message.groupType.noResult">
 				<source>No group types created yet.</source>
 			</trans-unit>
+			<trans-unit id="group.name">
+				<source>Group name</source>
+			</trans-unit>
+			<trans-unit id="group.type">
+				<source>Group type</source>
+			</trans-unit>
+			<trans-unit id="group.members">
+				<source>Members</source>
+			</trans-unit>
+			<trans-unit id="group.children">
+				<source>Subgroups</source>
+			</trans-unit>
+			<trans-unit id="message.group.noResult">
+				<source>No group created yet.</source>
+			</trans-unit>
 			<trans-unit id="action">
 				<source>Action</source>
 			</trans-unit>

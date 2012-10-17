@@ -16,6 +16,19 @@ use TYPO3\Flow\Annotations as Flow;
  */
 class GroupRepository extends \TYPO3\Flow\Persistence\Repository {
 
+	/**
+	 * @param \Beech\Party\Domain\Model\Group $group
+	 * @return \TYPO3\Flow\Persistence\QueryResultInterface
+	 */
+	public function findPossibleChildren(\Beech\Party\Domain\Model\Group $group) {
+		$query = $this->createQuery();
+		$query->matching(
+			$query->logicalNot(
+				$query->equals('name', $group->getName())
+			)
+		);
+		return $query->execute();
+	}
 }
 
 ?>

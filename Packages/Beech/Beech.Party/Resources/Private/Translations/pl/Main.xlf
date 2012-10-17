@@ -170,6 +170,26 @@
 				<source>No group types created yet.</source>
 				<target>Brak typ grup w systemie</target>
 			</trans-unit>
+			<trans-unit id="group.name">
+				<source>Group name</source>
+				<target>Nazwa grupy</target>
+			</trans-unit>
+			<trans-unit id="group.type">
+				<source>Group type</source>
+				<target>Typ grupy</target>
+			</trans-unit>
+			<trans-unit id="group.members">
+				<source>Members</source>
+				<target>Członkowie</target>
+			</trans-unit>
+			<trans-unit id="group.children">
+				<source>Children</source>
+				<target>Podgrupy</target>
+			</trans-unit>
+			<trans-unit id="message.group.noResult">
+				<source>No group created yet.</source>
+				<target>Brak grup w systemie</target>
+			</trans-unit>
 			<trans-unit id="action">
 				<source>Action</source>
 				<target>Akcja</target>

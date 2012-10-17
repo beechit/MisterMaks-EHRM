@@ -9,9 +9,6 @@ Beech:
           companies:
             priority: 20
             label: 'Companies'
-          accounts:
-            priority: 30
-            label: 'Users'
       account:
         menu:
           settings:
@@ -45,4 +42,10 @@ Famelo:
         arguments:
           @package: 'Beech.Party'
           @controller: 'Management\Group\Type'
+          @action: 'list'
+      groups:
+        label: 'Groups'
+        arguments:
+          @package: 'Beech.Party'
+          @controller: 'Management\Group'
           @action: 'list'
