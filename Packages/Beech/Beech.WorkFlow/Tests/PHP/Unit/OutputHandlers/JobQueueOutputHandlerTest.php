@@ -44,6 +44,13 @@ class JobQueueOutputHandlerTest extends \TYPO3\Flow\Tests\UnitTestCase {
 	 * @test
 	 */
 	public function jobQueueOutputHandlerPublishesMessageToQueue() {
+		try {
+			$redisClient = new \Predis\Client(array());
+			$redisClient->connect();
+		} catch (\Exception $exception) {
+			$this->markTestSkipped('Redis: ' . $exception->getMessage());
+		}
+
 		$jobQueueOutputHandler = new \Beech\WorkFlow\OutputHandlers\JobQueueOutputHandler();
 		$jobQueueOutputHandler->setJobClassName('someClassName');
 		$jobQueueOutputHandler->setJobMethodName('someMethodName');
@@ -53,7 +60,7 @@ class JobQueueOutputHandlerTest extends \TYPO3\Flow\Tests\UnitTestCase {
 		$testQueue = $this->queueManager->getQueue('WorkFlow');
 		$message = $testQueue->peek();
 
-		$this->assertTrue(count($message)==1);
+		$this->assertTrue(count($message) === 1);
 		$this->assertInstanceOf('TYPO3\Queue\Message', $message[0]);
 	}
 
