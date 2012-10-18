@@ -7,15 +7,12 @@ Beech:
         action: 'index'
       main:
         groups:
-          manage:
-            priority: 40
-            label: 'Manage'
-          new:
+          employee:
             priority: 10
-            label: 'New'
-          edit:
+            label: 'Employees'
+          organization:
             priority: 20
-            label: 'Edit'
+            label: 'Organization'
           report:
             priority: 30
             label: 'Report'
@@ -26,9 +23,28 @@ Beech:
       account:
         groups:
         menu:
+          management:
+            label: 'Administration'
+            priority: 100
+            package: 'Beech.Ehrm'
+            controller: 'Management\Administration'
+            resource: 'ManagementControllers'
+            action: 'index'
+          setupApplication:
+            label: 'Setup application'
+            priority: 998
+            package: 'Beech.Ehrm'
+            controller: 'Setup\Application'
+            resource: 'ManagementControllers'
+            action: 'index'
+          logmanager:
+            label: 'System log'
+            priority: 999
+            controller: 'Log'
+            resource: 'ManagementControllers'
           logout:
             label: 'Logout'
-            priority: 99
+            priority: 9999
             controller: 'Login'
             action: 'logout'
     search:
@@ -38,23 +54,6 @@ Beech:
         package: 'Beech.Ehrm'
         controller: 'Standard'
         action: 'index'
-      base:
-        menu:
-          logmanager:
-            label: 'System log'
-            priority: 9999
-            menuGroup: 'main:manage'
-            controller: 'Log'
-            resource: 'ManagementControllers'
-          setupApplication:
-            label: 'Setup application'
-            priority: 90
-            menuGroup: 'main:manage'
-            package: 'Beech.Ehrm'
-            controller: 'Setup\Application'
-            resource: 'ManagementControllers'
-            action: 'index'
-
     languages: [EN_en, NL_nl, PL_pl]
 
 TYPO3:
@@ -117,3 +116,19 @@ TYPO3:
             entryPoint: 'WebRedirect'
             entryPointOptions:
               uri: 'login.html'
+
+Famelo:
+  Scaff:
+    modules:
+      logViewer:
+        label: 'Log Viewer'
+        arguments:
+          @package: 'Beech.Ehrm'
+          @controller: 'Log'
+          @action: 'index'
+      setup:
+        label: 'Setup'
+        arguments:
+          @package: 'Beech.Ehrm'
+          @controller: 'Setup'
+          @action: 'index'

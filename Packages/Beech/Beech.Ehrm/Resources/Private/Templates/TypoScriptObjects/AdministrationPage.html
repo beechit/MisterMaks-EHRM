@@ -1,0 +1,28 @@
+<!DOCTYPE html>{namespace bootstrap=TYPO3\Twitter\Bootstrap\ViewHelpers}{namespace typoscript=TYPO3\TypoScript\ViewHelpers}
+<html>
+	<head>
+		<title>Mister Maks</title>
+		<f:base />
+
+		<f:render partial="HeaderInclude" arguments="{_all}" />
+
+	</head>
+	<body>
+
+		<typoscript:renderTypoScript path="headerMenu" />
+
+		<section class="container-fluid">
+
+			<f:flashMessages class="flashmessages alert" />
+
+			<div class="row-fluid">
+				<div class="span2"><typoscript:renderTypoScript path="administrationMenu" /></div>
+				<div class="span10"><f:render partial="AdministrationBody" arguments="{_all}" /></div>
+			</div>
+
+			<div class="loading hide">
+				<f:render partial="ModalContent"/>
+			</div>
+		</section>
+	</body>
+</html>

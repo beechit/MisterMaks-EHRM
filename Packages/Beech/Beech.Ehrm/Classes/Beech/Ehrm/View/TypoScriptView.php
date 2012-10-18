@@ -35,6 +35,10 @@ class TypoScriptView extends \TYPO3\TypoScript\View\TypoScriptView {
 			parent::initializeTypoScriptPathForCurrentRequest();
 		}
 
+		if ($this->controllerContext->getRequest()->hasArgument('@typoScriptPath')) {
+			$this->typoScriptPath .= '/' . $this->controllerContext->getRequest()->getArgument('@typoScriptPath');
+		}
+
 			// Check if TypoScript is found for full path (controller and action)
 		if (!$this->isTypoScriptFoundForCurrentRequest()) {
 				// Remove the action, and check if TypoScript is found for the controller
@@ -45,6 +49,18 @@ class TypoScriptView extends \TYPO3\TypoScript\View\TypoScriptView {
 			}
 		}
 	}
+
+	/**
+	 * Determine whether we are able to find TypoScript at the requested position
+	 *
+	 * @return boolean TRUE if TypoScript exists at $this->typoScriptPath; FALSE otherwise
+	 */
+	protected function isTypoScriptFoundForCurrentRequest() {
+		$typoScriptRuntime = new \TYPO3\TypoScript\Core\Runtime($this->parsedTypoScript, $this->controllerContext);
+		return $typoScriptRuntime->canRender($this->typoScriptPath);
+		return (\TYPO3\Flow\Utility\Arrays::getValueByPath($this->parsedTypoScript, str_replace('/', '.', $this->typoScriptPath)) !== NULL);
+	}
+
 
 }
 ?>

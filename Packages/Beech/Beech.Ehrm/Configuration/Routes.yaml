@@ -8,6 +8,16 @@
     '@format': 'html'
 
 -
+  name: 'Administration'
+  uriPattern: 'administration(/{@action})'
+  defaults:
+    '@package': 'Beech.Ehrm'
+    '@controller': 'Management\Administration'
+    '@action': 'index'
+    '@format': 'html'
+  appendExceedingArguments: TRUE
+
+-
   name: 'Wizard'
   uriPattern: 'wizard/show/{formPersistenceIdentifier}'
   toLowerCase: false

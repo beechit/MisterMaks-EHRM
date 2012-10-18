@@ -1,0 +1,9 @@
+{namespace bootstrap=TYPO3\Twitter\Bootstrap\ViewHelpers}{namespace scaff=Famelo\Scaff\ViewHelpers}
+<ul class="nav nav-list">
+	<!-- TODO: Make dynamic -->
+	<li class="nav-header">Administration</li>
+	<li><scaff:link.module package="Beech.Ehrm" controller="Management\Administration" action="index" path="logViewer" namespace="content">Log viewer</scaff:link.module></li>
+	<li><scaff:link.module package="Beech.Ehrm" controller="Management\Administration" action="index" path="setup" namespace="content">Setup</scaff:link.module></li>
+	<li><scaff:link.module package="Beech.Ehrm" controller="Management\Administration" action="index" path="persons" namespace="content">Persons</scaff:link.module></li>
+	<li><scaff:link.module package="Beech.Ehrm" controller="Management\Administration" action="index" path="companies" namespace="content">Companies</scaff:link.module></li>
+</ul>

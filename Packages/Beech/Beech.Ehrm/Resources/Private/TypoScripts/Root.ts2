@@ -10,6 +10,7 @@ prototype(TYPO3.Expose:Limits).implementationClassName = 'TYPO3\\Expose\\TypoScr
 prototype(TYPO3.Expose:Search).implementationClassName = 'TYPO3\\Expose\\TypoScriptObjects\\Search'
 
 prototype(Beech.Ehrm.MainMenu).@class = 'Beech\\Ehrm\\TypoScript\\MainMenu'
+prototype(Beech.Ehrm.AdministrationMenu).@class = 'Beech\\Ehrm\\TypoScript\\AdministrationMenu'
 prototype(Beech.Ehrm.HeaderParts).@class = 'Beech\\Ehrm\\TypoScript\\HeaderParts'
 prototype(Beech.Ehrm.Page).@class = 'Beech\\Ehrm\\TypoScript\\Template'
 
@@ -28,10 +29,22 @@ prototype(Beech.Ehrm:Page) {
 Application = Beech.Ehrm:Page {
 	headerMenu = Beech.Ehrm.MainMenu
 	headerParts = Beech.Ehrm.HeaderParts
+	administrationMenu = Beech.Ehrm.AdministrationMenu
 
 	body {
 		sectionName = 'Body'
 	}
+}
+
+Scaff = Template {
+	templatePath = 'resource://Beech.Ehrm/Private/Templates/TypoScriptObjects/Partials/AdministrationBody.html'
+	body = Template {
+		sectionName = 'Body'
+	}
+}
+
+Beech.Ehrm.Management.AdministrationController < Application {
+	templatePath = 'resource://Beech.Ehrm/Private/Templates/TypoScriptObjects/AdministrationPage.html'
 }
 
 Beech.Ehrm.WizardController = Beech.Ehrm:Page {
