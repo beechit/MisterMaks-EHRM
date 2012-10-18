@@ -10,7 +10,7 @@ namespace Beech\Minutes\Tests\Functional;
 use TYPO3\Flow\Annotations as Flow;
 use Beech\Minutes\Domain\Model\Minute;
 use Beech\Party\Domain\Model\Person;
-use TYPO3\Party\Domain\Model\PersonName;
+use Beech\Party\Domain\Model\PersonName;
 
 /**
  * Persistence test for Minute entity
