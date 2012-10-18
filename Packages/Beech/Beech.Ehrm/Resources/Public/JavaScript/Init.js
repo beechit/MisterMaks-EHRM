@@ -9,7 +9,7 @@ require(
 			'jquery-ui-lib': 'Beech.Ehrm/Library/jquery-ui/js/jquery-ui-1.9.rc1',
 			'form': 'Beech.Ehrm/Library/jquery.form',
 			'emberjs': 'Beech.Ehrm/Library/emberjs/ember-0.9.8',
-			'bootstrap': 'Twitter.Bootstrap/2.1/js/bootstrap.min',
+			'bootstrap': 'TYPO3.Twitter.Bootstrap/2.1/js/bootstrap.min',
 			'data-tables-twitterbootstrap': 'Beech.Ehrm/Library/dataTables/media/js/jquery.dataTables.TwitterBootstrap',
 			'i18n': 'Beech.Ehrm/JavaScript/i18n'
 		},

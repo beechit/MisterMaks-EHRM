@@ -24,7 +24,7 @@ class OpenInModalAspect {
 	 *
 	 * By setting option modalId, its possible to open content in specified modal.
 	 *
-	 * @Flow\Around("method(Twitter\Bootstrap\ViewHelpers\Navigation\MenuViewHelper->render())")
+	 * @Flow\Around("method(TYPO3\Twitter\Bootstrap\ViewHelpers\Navigation\MenuViewHelper->render())")
 	 * @param \TYPO3\Flow\Aop\JoinPointInterface $joinPoint
 	 * @return string
 	 */
