@@ -35,8 +35,8 @@ class NotificationPersistenceTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 	 * @return array
 	 */
 	public function notificationDataProvider() {
-		$person = new \TYPO3\Party\Domain\Model\Person();
-		$person->addPersonName(new \TYPO3\Party\Domain\Model\PersonName('', 'John', 'Doe'));
+		$person = new \Beech\Party\Domain\Model\Person();
+		$person->setName(new \Beech\Party\Domain\Model\PersonName('', 'John', 'Doe'));
 
 		return array(
 			array('Closeable TRUE, Sticky FALSE', $person, TRUE, FALSE),

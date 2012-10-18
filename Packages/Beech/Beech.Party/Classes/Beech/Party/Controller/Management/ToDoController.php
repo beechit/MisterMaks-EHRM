@@ -8,8 +8,6 @@ namespace Beech\Party\Controller\Management;
  */
 
 use TYPO3\Flow\Annotations as Flow;
-use Beech\Party\Domain\Model\Person;
-use TYPO3\Party\Domain\Model\PersonName;
 
 /**
  * To-Do controller for the Beech.Party package

@@ -7,9 +7,9 @@ namespace Beech\Party\Domain\Model;
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
-use TYPO3\Flow\Annotations as Flow;
-use Doctrine\ORM\Mapping as ORM;
-use Beech\Party\Domain\Model\ElectronicAddress;
+use TYPO3\Flow\Annotations as Flow,
+	Doctrine\ORM\Mapping as ORM,
+	Beech\Party\Domain\Model\ElectronicAddress;
 
 /**
  * A Person
@@ -19,7 +19,7 @@ use Beech\Party\Domain\Model\ElectronicAddress;
 class Person extends \TYPO3\Party\Domain\Model\AbstractParty {
 
 	/**
-	 * @var \TYPO3\Party\Domain\Model\PersonName
+	 * @var \Beech\Party\Domain\Model\PersonName
 	 * @ORM\OneToOne
 	 * @Flow\Validate(type="NotEmpty", validationGroups={"Controller"})
 	 */
@@ -70,17 +70,17 @@ class Person extends \TYPO3\Party\Domain\Model\AbstractParty {
 	/**
 	 * Adds the person name to this person.
 	 *
-	 * @param \TYPO3\Party\Domain\Model\PersonName $personName The person name
+	 * @param \Beech\Party\Domain\Model\PersonName $personName The person name
 	 * @return void
 	 */
-	public function addPersonName(\TYPO3\Party\Domain\Model\PersonName $personName) {
+	public function addPersonName(\Beech\Party\Domain\Model\PersonName $personName) {
 		$this->name = $personName;
 	}
 
 	/**
 	 * Returns the current name of this person
 	 *
-	 * @return \TYPO3\Party\Domain\Model\PersonName Name of this person
+	 * @return \Beech\Party\Domain\Model\PersonName Name of this person
 	 */
 	public function getName() {
 		return $this->name;
