@@ -1,4 +1,4 @@
-<header>{namespace bootstrap=TYPO3\Twitter\Bootstrap\ViewHelpers}
+<header>{namespace bootstrap=TYPO3\Twitter\Bootstrap\ViewHelpers}{namespace ehrm=Beech\Ehrm\ViewHelpers}
 	<nav class="navbar navbar-fixed-top">
 		<div class="navbar-inner">
 			<div class="container">
@@ -19,14 +19,7 @@
 					<div class="btn-group pull-right">
 						<a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#">
 							<i class="icon-user icon-white"></i>
-							<f:if condition="{activeTokens.DefaultProvider.account}">
-								<f:then>
-									{activeTokens.DefaultProvider.account.accountidentifier}
-								</f:then>
-								<f:else>
-									<f:translate id="menu.account">Account</f:translate>
-								</f:else>
-							</f:if>
+							<ehrm:security.account />
 							<span class="caret"></span>
 						</a>
 						<bootstrap:navigation.menu items="{accountMenuItems}" classNames="{0:'dropdown-menu'}" />
