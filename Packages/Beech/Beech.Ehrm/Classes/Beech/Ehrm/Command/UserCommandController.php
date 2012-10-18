@@ -52,7 +52,7 @@ class UserCommandController extends \TYPO3\Flow\Cli\CommandController {
 		}
 
 		$person = new \Beech\Party\Domain\Model\Person();
-		$person->setName(new \TYPO3\Party\Domain\Model\PersonName(NULL, $firstName, NULL, $lastName));
+		$person->setName(new \Beech\Party\Domain\Model\PersonName(NULL, $firstName, NULL, $lastName));
 		$this->personRepository->add($person);
 
 			// TODO remove when https://review.typo3.org/#/c/13868/ is merged
