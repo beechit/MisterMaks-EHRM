@@ -24,7 +24,7 @@
 		"typo3/typoscript": "dev-master",
 		"typo3/surf": "dev-master",
 		"typo3/ldap": "dev-master",
-		"twitter/bootstrap": "dev-master",
+		"typo3/twitter-bootstrap": "dev-master",
 		"beech/ehrm": "dev-development",
 		"beech/party": "dev-development",
 		"beech/task": "dev-development",
