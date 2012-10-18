@@ -46,12 +46,12 @@ class ThemeHelper {
 			// Read themes from disk
 		$iterator = new \DirectoryIterator($this->themePath);
 		foreach ($iterator as $file) {
-			$styleSheet = \TYPO3\Flow\Utility\Files::concatenatePaths(array($file->getPathname(), 'css/style.min.css'));
+			$styleSheet = \TYPO3\Flow\Utility\Files::concatenatePaths(array($file->getPathname(), 'style.css'));
 			if (!$file->isDot() && $file->isDir() && is_file($styleSheet)) {
 				$themes[$file->getFileName()] = array(
 					'name' => $file->getFileName(),
 					'package' => 'Beech.Ehrm',
-					'path' => 'Beech.Ehrm/StyleSheets/Themes/' . $file->getFileName() . '/css/style.min.css'
+					'path' => 'Beech.Ehrm/StyleSheets/Themes/' . $file->getFileName() . '/style.css'
 				);
 			}
 		}

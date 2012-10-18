@@ -1,0 +1,131 @@
+/*!
+ * Bootstrap v2.1.1
+ *
+ * Copyright 2012 Twitter, Inc
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Designed and built with all the love in the world @twitter by @mdo and @fat.
+ */
+
+// IMPORTANT: Remember not to include the sprites! (Replaced by fontawesome)
+
+// Core variables and mixins
+@import "../../SassTwitterBootstrap/lib/variables"; // Modify this for custom colors, font-sizes, etc
+@import "../../SassTwitterBootstrap/lib/mixins";
+
+// CSS Reset
+@import "../../SassTwitterBootstrap/lib/reset";
+
+// Grid system and page structure
+@import "../../SassTwitterBootstrap/lib/scaffolding";
+@import "../../SassTwitterBootstrap/lib/grid";
+@import "../../SassTwitterBootstrap/lib/layouts";
+
+// Base CSS
+@import "../../SassTwitterBootstrap/lib/type";
+@import "../../SassTwitterBootstrap/lib/code";
+@import "../../SassTwitterBootstrap/lib/forms";
+@import "../../SassTwitterBootstrap/lib/tables";
+
+// Components: common
+@import "../../SassTwitterBootstrap/lib/dropdowns";
+@import "../../SassTwitterBootstrap/lib/wells";
+@import "../../SassTwitterBootstrap/lib/component-animations";
+@import "../../SassTwitterBootstrap/lib/close";
+
+// Components: Buttons & Alerts
+@import "../../SassTwitterBootstrap/lib/buttons";
+@import "../../SassTwitterBootstrap/lib/button-groups";
+@import "../../SassTwitterBootstrap/lib/alerts"; // Note: alerts share common CSS with buttons and thus have styles in buttons
+
+// Components: Nav
+@import "../../SassTwitterBootstrap/lib/navs";
+@import "../../SassTwitterBootstrap/lib/navbar";
+@import "../../SassTwitterBootstrap/lib/breadcrumbs";
+@import "../../SassTwitterBootstrap/lib/pagination";
+@import "../../SassTwitterBootstrap/lib/pager";
+
+// Components: Popovers
+@import "../../SassTwitterBootstrap/lib/modals";
+@import "../../SassTwitterBootstrap/lib/tooltip";
+@import "../../SassTwitterBootstrap/lib/popovers";
+
+// Components: Misc
+@import "../../SassTwitterBootstrap/lib/thumbnails";
+@import "../../SassTwitterBootstrap/lib/labels-badges";
+@import "../../SassTwitterBootstrap/lib/progress-bars";
+@import "../../SassTwitterBootstrap/lib/accordion";
+@import "../../SassTwitterBootstrap/lib/carousel";
+@import "../../SassTwitterBootstrap/lib/hero-unit";
+
+// Utility classes
+@import "../../SassTwitterBootstrap/lib/utilities"; // Has to be last to override when necessary
+
+// Import responsive CSS
+@import "../../SassTwitterBootstrap/lib/responsive";
+
+// Groei service override
+// Core variables and mixins
+@import "Bootstrap/variables"; // Modify this for custom colors, font-sizes, etc
+@import "Bootstrap/mixins";
+
+// CSS Reset
+@import "Bootstrap/reset";
+
+// Grid system and page structure
+@import "Bootstrap/scaffolding";
+@import "Bootstrap/grid";
+@import "Bootstrap/layouts";
+
+// Base CSS
+@import "Bootstrap/type";
+@import "Bootstrap/code";
+@import "Bootstrap/forms";
+@import "Bootstrap/tables";
+
+// Components: common
+@import "Bootstrap/dropdowns";
+@import "Bootstrap/wells";
+@import "Bootstrap/component-animations";
+@import "Bootstrap/close";
+
+// Components: Buttons & Alerts
+@import "Bootstrap/buttons";
+@import "Bootstrap/button-groups";
+@import "Bootstrap/alerts"; // Note: alerts share common CSS with buttons and thus have styles in buttons
+
+// Components: Nav
+@import "Bootstrap/navs";
+@import "Bootstrap/navbar";
+@import "Bootstrap/breadcrumbs";
+@import "Bootstrap/pagination";
+@import "Bootstrap/pager";
+
+// Components: Popovers
+@import "Bootstrap/modals";
+@import "Bootstrap/tooltip";
+@import "Bootstrap/popovers";
+
+// Components: Misc
+@import "Bootstrap/thumbnails";
+@import "Bootstrap/labels-badges";
+@import "Bootstrap/progress-bars";
+@import "Bootstrap/accordion";
+@import "Bootstrap/carousel";
+@import "Bootstrap/hero-unit";
+
+// Utility classes
+@import "Bootstrap/utilities"; // Has to be last to override when necessary
+
+// Import responsive CSS
+@import "Bootstrap/responsive";
+
+// Font Awesome
+$fontAwesomePath: "Library/fontawesome/font/fontawesome-webfont" !default;
+[class^="icon-"], [class*=" icon-"] {
+	background: none;
+}
+@import "../../Fontawesome/font-awesome";
+
+@import "_groeiservice";

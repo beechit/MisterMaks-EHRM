@@ -58,7 +58,6 @@ class TypoScriptView extends \TYPO3\TypoScript\View\TypoScriptView {
 	protected function isTypoScriptFoundForCurrentRequest() {
 		$typoScriptRuntime = new \TYPO3\TypoScript\Core\Runtime($this->parsedTypoScript, $this->controllerContext);
 		return $typoScriptRuntime->canRender($this->typoScriptPath);
-		return (\TYPO3\Flow\Utility\Arrays::getValueByPath($this->parsedTypoScript, str_replace('/', '.', $this->typoScriptPath)) !== NULL);
 	}
 
 

@@ -1,56 +1,49 @@
-<!DOCTYPE html>{namespace bootstrap=TYPO3\Twitter\Bootstrap\ViewHelpers}
-<html>
-	<head>
-		<title>EHRM</title>
-		<f:base />
-		<link rel="stylesheet" type="text/css" href="{f:uri.resource(path: '2.1/css/bootstrap.min.css', package: 'TYPO3.Twitter.Bootstrap')}" />
-		<link rel="stylesheet" type="text/css" href="{f:uri.resource(path: 'StyleSheets/main.css', package: 'Beech.Ehrm')}" />
-	</head>
-	<body>
-		<nav class="navbar navbar-fixed-top">
-			<div class="navbar-inner">
-				<div class="container-fluid">
-					<f:link.action package="Beech.Ehrm" controller="Standard" action="index" class="brand">Mister Maks</f:link.action>
-				</div>
+<!DOCTYPE html>
+
+<f:section name="Body">
+	<nav class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container-fluid">
+				<f:link.action package="Beech.Ehrm" controller="Standard" action="index" class="brand">Mister Maks</f:link.action>
 			</div>
-		</nav>
-		<section class="container">
+		</div>
+	</nav>
+	<section class="container">
 
-			<f:flashMessages class="flashmessages alert" />
+		<f:flashMessages class="flashmessages alert" />
 
-			<f:if condition="{applicationConfigured}">
-				<f:then>
-					<div class="row">
-						<f:form action="authenticate" class="form-horizontal">
-							<fieldset>
-								<legend><f:translate id="panel.login.legend">Login panel</f:translate></legend>
-								<div class="control-group">
-									<label class="control-label" for="username"><f:translate id="panel.login.username">Username</f:translate></label>
-									<div class="controls">
-										<f:form.textfield name="__authentication[TYPO3][Flow][Security][Authentication][Token][UsernamePassword][username]" class="input-xlarge" id="username" value="{username}" />
-									</div>
-									<label class="control-label" for="password"><f:translate id="panel.login.password">Password</f:translate></label>
-									<div class="controls">
-										<f:form.password name="__authentication[TYPO3][Flow][Security][Authentication][Token][UsernamePassword][password]" class="input-xlarge" id="password" />
-									</div>
+		<f:if condition="{applicationConfigured}">
+			<f:then>
+				<div class="row">
+					<f:form action="authenticate" class="form-horizontal">
+						<fieldset>
+							<legend><f:translate id="panel.login.legend">Login panel</f:translate></legend>
+							<div class="control-group">
+								<label class="control-label" for="username"><f:translate id="panel.login.username">Username</f:translate></label>
+								<div class="controls">
+									<f:form.textfield name="__authentication[TYPO3][Flow][Security][Authentication][Token][UsernamePassword][username]" class="input-xlarge" id="username" value="{username}" />
 								</div>
-							</fieldset>
-
-							<div class="form-actions">
-								<button type="submit" class="btn btn-primary"><f:translate id="action.login">Login</f:translate></button>
+								<label class="control-label" for="password"><f:translate id="panel.login.password">Password</f:translate></label>
+								<div class="controls">
+									<f:form.password name="__authentication[TYPO3][Flow][Security][Authentication][Token][UsernamePassword][password]" class="input-xlarge" id="password" />
+								</div>
 							</div>
-						</f:form>
-					</div>
-				</f:then>
-				<f:else>
-					<p class="alert alert-block alert-error">
-						<b><f:translate id="message.error">Error!</f:translate></b><br/>
-						<f:translate id="message.application.notCreated">No primary company configured, please contact your System Administrator.</f:translate>
-					</p>
-				</f:else>
+						</fieldset>
 
-			</f:if>
+						<div class="form-actions">
+							<button type="submit" class="btn btn-primary"><f:translate id="action.login">Login</f:translate></button>
+						</div>
+					</f:form>
+				</div>
+			</f:then>
+			<f:else>
+				<p class="alert alert-block alert-error">
+					<b><f:translate id="message.error">Error!</f:translate></b><br/>
+					<f:translate id="message.application.notCreated">No primary company configured, please contact your System Administrator.</f:translate>
+				</p>
+			</f:else>
 
-		</section>
-	</body>
-</html>
+		</f:if>
+
+	</section>
+</f:section>
