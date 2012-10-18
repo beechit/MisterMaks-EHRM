@@ -25,6 +25,8 @@
 		"typo3/surf": "dev-master",
 		"typo3/ldap": "dev-master",
 		"typo3/twitter-bootstrap": "dev-master",
+		"famelo/scaff": "dev-master",
+		"typo3/expose": "dev-master",
 		"beech/ehrm": "dev-development",
 		"beech/party": "dev-development",
 		"beech/task": "dev-development",
