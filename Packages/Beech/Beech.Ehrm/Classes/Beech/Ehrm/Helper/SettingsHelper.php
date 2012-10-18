@@ -49,6 +49,12 @@ class SettingsHelper {
 	protected $translator;
 
 	/**
+	 * @var \Beech\Ehrm\Log\ApplicationLoggerInterface
+	 * @Flow\Inject
+	 */
+	protected $applicationLogger;
+
+	/**
 	 * @param array $settings
 	 */
 	public function injectSettings(array $settings) {
@@ -197,8 +203,12 @@ class SettingsHelper {
 		foreach ($linkCollection as $linkItem) {
 			$group = isset($linkItem['menuGroup']) ? str_replace($identifier . ':', '', $linkItem['menuGroup']) : NULL;
 			if ($group !== NULL) {
+				if (isset($menuGroups[$group])) {
+					$items['group:' . $group]['items'][] = $linkItem;
+				} else {
+					$this->applicationLogger->log(sprintf('Menu group "%s" is used, but not available', $group), LOG_INFO);
+				}
 				unset($linkItem['menuGroup']);
-				$items['group:' . $group]['items'][] = $linkItem;
 			} else {
 				if (!isset($items['items'])) {
 					$items['items'] = array();
