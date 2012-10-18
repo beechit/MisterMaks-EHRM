@@ -33,3 +33,21 @@
     '@action': 'list'
     '@format': 'html'
 
+-
+  name: 'Accounts management'
+  uriPattern: 'management/account(/{@action})'
+  defaults:
+    '@package': 'Beech.Party'
+    '@controller': 'Management\Account'
+    '@action': 'list'
+    '@format': 'html'
+
+-
+  name: 'ToDo list'
+  uriPattern: 'management/todo(/{@action})'
+  defaults:
+    '@package': 'Beech.Party'
+    '@controller': 'Management\ToDo'
+    '@action': 'index'
+    '@format': 'html'
+

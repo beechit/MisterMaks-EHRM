@@ -1,0 +1,37 @@
+<f:layout name="Default" />
+
+<f:section name="Body">
+	<h1><f:translate id="action.edit">Edit</f:translate></h1>
+	<f:form.validationResults for="account">
+		<f:if condition="{validationResults.flattenedErrors}">
+			<div class="error">
+				<f:for each="{validationResults.flattenedErrors}" key="propertyPath" as="errors">{propertyPath}: <f:for each="{errors}" as="error">{error}</f:for></f:for>
+			</div>
+		</f:if>
+	</f:form.validationResults>
+	<f:form action="update" object="{account}" name="account" class="form-horizontal well">
+		<div class="control-group">
+			<label class="control-label" for="accountIdentifier"><f:translate id="account.accountIdentifier">Account identifier</f:translate></label>
+			<div class="controls">
+				<f:form.textfield property="accountIdentifier" id="accountIdentifier" />
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label"><f:translate id="account.creationDate">Creation Date</f:translate></label>
+			<div class="controls">
+				{account.creationDate -> f:format.date(format: 'Y-m-d H:i')}
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="account.expirationDate"><f:translate id="account.expirationDate">Expiration Date</f:translate></label>
+			<div class="controls">
+				<f:form.textfield name="expirationDate" id="expirationDate" />
+			</div>
+		</div>
+		<div class="form-actions">
+			<f:form.submit value="{f:translate(id: 'action.create')}"/>
+		</div>
+	</f:form>
+</f:section>
+
+<f:section name="Left" />

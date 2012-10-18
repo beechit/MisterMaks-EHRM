@@ -101,6 +101,24 @@
 			<trans-unit id="person.description">
 				<source>Description</source>
 			</trans-unit>
+			<trans-unit id="accounts">
+				<source>Users</source>
+			</trans-unit>
+			<trans-unit id="account.accountIdentifier">
+				<source>User identifier</source>
+			</trans-unit>
+			<trans-unit id="account.creationDate">
+				<source>Creation Date</source>
+			</trans-unit>
+			<trans-unit id="account.expirationDate">
+				<source>Expiration Date</source>
+			</trans-unit>
+			<trans-unit id="account.password">
+				<source>Password</source>
+			</trans-unit>
+			<trans-unit id="message.account.noResult">
+				<source>No users created yet</source>
+			</trans-unit>
 			<trans-unit id="groupType.name">
 				<source>Group type</source>
 			</trans-unit>

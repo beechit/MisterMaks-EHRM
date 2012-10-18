@@ -138,6 +138,30 @@
 				<source>No employees added yet</source>
 				<target>Brak osob w systemie</target>
 			</trans-unit>
+			<trans-unit id="accounts">
+				<source>Users</source>
+				<target>Użytkownicy</target>
+			</trans-unit>
+			<trans-unit id="account.accountIdentifier">
+				<source>User identifier</source>
+				<target>Identyfikator użytkownika</target>
+			</trans-unit>
+			<trans-unit id="account.creationDate">
+				<source>Creation Date</source>
+				<target>Data utworzenia</target>
+			</trans-unit>
+			<trans-unit id="account.expirationDate">
+				<source>Expiration Date</source>
+				<target>Data ważności</target>
+			</trans-unit>
+			<trans-unit id="account.password">
+				<source>Password</source>
+				<target>Hasło</target>
+			</trans-unit>
+			<trans-unit id="message.account.noResult">
+				<source>No users created yet</source>
+				<target>Brak użytkowników w systemie</target>
+			</trans-unit>
 			<trans-unit id="groupType.name">
 				<source>Group type</source>
 				<target>Typ grupy</target>
@@ -156,11 +180,11 @@
 			</trans-unit>
 			<trans-unit id="action.create">
 				<source>Create</source>
-				<target>Stworz</target>
+				<target>Stwórz</target>
 			</trans-unit>
 			<trans-unit id="action.show">
 				<source>Show</source>
-				<target>Pokaz</target>
+				<target>Pokaż</target>
 			</trans-unit>
 			<trans-unit id="action.edit">
 				<source>Edit</source>
@@ -184,11 +208,11 @@
 			</trans-unit>
 			<trans-unit id="action.back">
 				<source>Back</source>
-				<target>Wroc</target>
+				<target>Wróć</target>
 			</trans-unit>
 			<trans-unit id="action.newDepartment">
 				<source>Create new department</source>
-				<target>Nowy dzial</target>
+				<target>Nowy dział</target>
 			</trans-unit>
 			<trans-unit id="action.add.company.address">
 				<source>Add company address</source>
@@ -196,7 +220,7 @@
 			</trans-unit>
 			<trans-unit id="flashmessage.newDepartment">
 				<source>Created new department</source>
-				<target>Dodano nowy dzial</target>
+				<target>Dodano nowy dział</target>
 			</trans-unit>
 			<trans-unit id="flashmessage.createdCompany">
 				<source>New company created.</source>
@@ -204,7 +228,7 @@
 			</trans-unit>
 			<trans-unit id="flashmessage.updatedCompany">
 				<source>CompanyData updated</source>
-				<target>Dane firmy zostaly zaaktualizowane</target>
+				<target>Dane firmy zostały zaaktualizowane</target>
 			</trans-unit>
 			<trans-unit id="flashmessage.deletedCompany">
 				<source>Companydata deleted</source>
@@ -212,7 +236,7 @@
 			</trans-unit>
 			<trans-unit id="flashmessage.addedAddress">
 				<source>New company address was successfully added.</source>
-				<target>Nowy adres firmy zostal pomyslnie dodany.</target>
+				<target>Nowy adres firmy został pomyślnie dodany.</target>
 			</trans-unit>
 			<trans-unit id="loading">
 				<source>Mister Maks</source>

@@ -142,6 +142,30 @@
 				<source>No employees added yet</source>
 				<target>Nog geen medewerkers aangemaakt</target>
 			</trans-unit>
+			<trans-unit id="accounts">
+				<source>Users</source>
+				<target>Gebruikers</target>
+			</trans-unit>
+			<trans-unit id="account.accountIdentifier">
+				<source>User identifier</source>
+				<target>Gebruikersidentificatie</target>
+			</trans-unit>
+			<trans-unit id="account.creationDate">
+				<source>Creation Date</source>
+				<target>Aanmaakdatum</target>
+			</trans-unit>
+			<trans-unit id="account.expirationDate">
+				<source>Expiration Date</source>
+				<target>Verloopdatum</target>
+			</trans-unit>
+			<trans-unit id="account.password">
+				<source>Password</source>
+				<target>Wachtwoord</target>
+			</trans-unit>
+			<trans-unit id="message.account.noResult">
+				<source>No users created yet</source>
+				<target>Nog geen gebruikers aangemaakt</target>
+			</trans-unit>
 			<trans-unit id="groupType.name">
 				<source>Group type</source>
 				<target>Groeptype</target>
