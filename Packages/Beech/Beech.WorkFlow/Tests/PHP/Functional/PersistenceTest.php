@@ -367,7 +367,7 @@ class PersistenceTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 	 */
 	private function createPerson() {
 		$person = new \Beech\Party\Domain\Model\Person();
-		$person->setName(new \TYPO3\Party\Domain\Model\PersonName('', 'John', '', 'Doe'));
+		$person->setName(new \Beech\Party\Domain\Model\PersonName('', 'John', '', 'Doe'));
 		$account = $this->accountFactory->createAccountWithPassword('user@domain.ext', $this->persistenceManager->getIdentifierByObject($person));
 		$this->accountRepository->add($account);
 		$person->addAccount($account);
