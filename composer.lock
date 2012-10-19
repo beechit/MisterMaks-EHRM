@@ -1,19 +1,41 @@
 {
-    "hash": "bcf733d29bf1e6ec2855b3ba893ddeea",
+    "hash": "15c36a880b08395e1641984b8766cf37",
     "packages": [
+        {
+            "name": "beech/calendar",
+            "version": "dev-development",
+            "source": {
+                "type": "git",
+                "url": "ssh://git.beech.local/EHRM/Package/Calendar.git",
+                "reference": "5575957ccc35942508de578435d614c7b58f3211"
+            },
+            "require": {
+                "typo3/flow": "*",
+                "beech/ehrm": "*",
+                "beech/party": "*"
+            },
+            "time": "1350552042",
+            "type": "typo3-flow-package",
+            "installation-source": "source",
+            "autoload": {
+                "psr-0": {
+                    "Beech\\Calendar": "Classes"
+                }
+            }
+        },
         {
             "name": "beech/cla",
             "version": "dev-development",
             "source": {
                 "type": "git",
                 "url": "ssh://git.beech.local/EHRM/Package/CLA.git",
-                "reference": "309970e91f6d76efae78e91f996f66e0aaaac9cc"
+                "reference": "b3e1dcc4405ded8639289dddd8de9659bb6d148d"
             },
             "require": {
                 "typo3/flow": "*",
                 "beech/ehrm": "*"
             },
-            "time": "1349800269",
+            "time": "1350463619",
             "type": "typo3-flow-package",
             "installation-source": "source",
             "autoload": {
@@ -49,12 +71,12 @@
             "source": {
                 "type": "git",
                 "url": "ssh://git.beech.local/EHRM/Package/Ehrm.git",
-                "reference": "497989b51ce1380799c18c21db377a46e7fefcdd"
+                "reference": "94c7d4fd81ce94351c424d00bbfe7ba6657d264b"
             },
             "require": {
                 "typo3/flow": "*"
             },
-            "time": "1349801346",
+            "time": "1350605254",
             "type": "typo3-flow-package",
             "installation-source": "source",
             "autoload": {
@@ -69,13 +91,13 @@
             "source": {
                 "type": "git",
                 "url": "ssh://git.beech.local/EHRM/Package/Minutes.git",
-                "reference": "af6939c8ac9b6daebf976e0d1b8c25bb1ce5c802"
+                "reference": "c11f20fcd8a6b7eec4c4128f59fec9d5530b2a3c"
             },
             "require": {
                 "typo3/flow": "*",
                 "beech/ehrm": "*"
             },
-            "time": "1349694776",
+            "time": "1350605668",
             "type": "typo3-flow-package",
             "installation-source": "source",
             "autoload": {
@@ -90,13 +112,13 @@
             "source": {
                 "type": "git",
                 "url": "ssh://git.beech.local/EHRM/Package/Party.git",
-                "reference": "d728ddf0c154b8562335ea837ab3a37bc8196acd"
+                "reference": "7983a31d22dcbc4994b4beabcae61ceabe328e28"
             },
             "require": {
                 "typo3/flow": "*",
                 "beech/ehrm": "*"
             },
-            "time": "1349795980",
+            "time": "1350605053",
             "type": "typo3-flow-package",
             "installation-source": "source",
             "autoload": {
@@ -132,14 +154,14 @@
             "source": {
                 "type": "git",
                 "url": "ssh://git.beech.local/EHRM/Package/WorkFlow.git",
-                "reference": "a53961c4d3f8767280a00cf7ddd5d49c9b695e7e"
+                "reference": "d93d22c5cadc24d2ed612208f0fefd797e4091b8"
             },
             "require": {
                 "typo3/flow": "*",
                 "beech/ehrm": "*",
                 "typo3/queue-redis": "*"
             },
-            "time": "1349792178",
+            "time": "1350605301",
             "type": "typo3-flow-package",
             "installation-source": "source",
             "autoload": {
@@ -276,12 +298,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/migrations",
-                "reference": "b38ddb190ec78d389b2c2de838b2a4d646ad1ce2"
+                "reference": "v1.0-ALPHA1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/doctrine/migrations/zipball/b38ddb190ec78d389b2c2de838b2a4d646ad1ce2",
-                "reference": "b38ddb190ec78d389b2c2de838b2a4d646ad1ce2",
+                "url": "https://github.com/doctrine/migrations/zipball/v1.0-ALPHA1",
+                "reference": "v1.0-ALPHA1",
                 "shasum": ""
             },
             "require": {
@@ -383,17 +405,37 @@
             ]
         },
         {
+            "name": "famelo/scaff",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git://github.com/mneuhaus/Famelo.Scaff.git",
+                "reference": "0decbf4207f212a1f8237fe55651625bd6c9a14a"
+            },
+            "require": {
+                "typo3/flow": "*"
+            },
+            "time": "1350517526",
+            "type": "typo3-flow-library",
+            "installation-source": "source",
+            "autoload": {
+                "psr-0": {
+                    "Famelo\\Scaff": "Classes"
+                }
+            }
+        },
+        {
             "name": "predis/predis",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "git://github.com/nrk/predis.git",
-                "reference": "2b4cf80d9084113dfe5b9c242f78987a52c2d213"
+                "reference": "deb64c295a36937a11caa1d40efde612a5b3695a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/nrk/predis/zipball/2b4cf80d9084113dfe5b9c242f78987a52c2d213",
-                "reference": "2b4cf80d9084113dfe5b9c242f78987a52c2d213",
+                "url": "https://github.com/nrk/predis/zipball/deb64c295a36937a11caa1d40efde612a5b3695a",
+                "reference": "deb64c295a36937a11caa1d40efde612a5b3695a",
                 "shasum": ""
             },
             "require": {
@@ -403,7 +445,7 @@
                 "ext-phpiredis": "Allows faster serialization and deserialization of the Redis protocol",
                 "ext-curl": "Allows access to Webdis when paired with phpiredis"
             },
-            "time": "1347984311",
+            "time": "1350074625",
             "type": "library",
             "installation-source": "source",
             "autoload": {
@@ -430,18 +472,38 @@
             ]
         },
         {
+            "name": "radmiraal/emberjs",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git://github.com/radmiraal/Radmiraal.Emberjs.git",
+                "reference": "b60b328ffc30efe25dd703497f5effd0b57fc769"
+            },
+            "require": {
+                "typo3/flow": "*"
+            },
+            "time": "1350603386",
+            "type": "typo3-flow-library",
+            "installation-source": "source",
+            "autoload": {
+                "psr-0": {
+                    "Radmiraal\\Emberjs": "Classes"
+                }
+            }
+        },
+        {
             "name": "symfony/dom-crawler",
             "version": "dev-master",
             "target-dir": "Symfony/Component/DomCrawler",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/DomCrawler",
-                "reference": "33f52798e13a5be2c4579ba5a6dd7ecbfbe4fe28"
+                "reference": "9e655ad78168f441b1a8ca065c6f68912ea59bb2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/DomCrawler/zipball/33f52798e13a5be2c4579ba5a6dd7ecbfbe4fe28",
-                "reference": "33f52798e13a5be2c4579ba5a6dd7ecbfbe4fe28",
+                "url": "https://github.com/symfony/DomCrawler/zipball/9e655ad78168f441b1a8ca065c6f68912ea59bb2",
+                "reference": "9e655ad78168f441b1a8ca065c6f68912ea59bb2",
                 "shasum": ""
             },
             "require": {
@@ -453,7 +515,7 @@
             "suggest": {
                 "symfony/css-selector": "2.2.*"
             },
-            "time": "1349785579",
+            "time": "1350594979",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -530,38 +592,17 @@
             "homepage": "http://symfony.com"
         },
         {
-            "name": "twitter/bootstrap",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "git://git.typo3.org/FLOW3/Packages/Twitter.Bootstrap.git",
-                "reference": "661368624b54464d2af838bb9b871835903c7581"
-            },
-            "require": {
-                "typo3/flow": "*"
-            },
-            "time": "1349122871",
-            "type": "typo3-flow-library",
-            "installation-source": "source",
-            "autoload": {
-                "psr-0": {
-                    "Twitter\\Bootstrap": "Classes"
-                }
-            },
-            "description": "Simple and flexible HTML, CSS, and Javascript for popular user interface components and interactions."
-        },
-        {
             "name": "typo3/eel",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "git://git.typo3.org/FLOW3/Packages/TYPO3.Eel.git",
-                "reference": "e22fc1aa7dc198b31abfc29f47e7a92b36bd2f33"
+                "reference": "3c92516a303bea9a368c31dbd566481a1f364ab5"
             },
             "require": {
                 "typo3/flow": "*"
             },
-            "time": "1349121276",
+            "time": "1350462923",
             "type": "typo3-flow-library",
             "installation-source": "source",
             "autoload": {
@@ -571,12 +612,39 @@
             }
         },
         {
+            "name": "typo3/expose",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git://git.typo3.org/FLOW3/Packages/TYPO3.Expose.git",
+                "reference": "870b5419d0cd50a9235c6af250a178bcf068493c"
+            },
+            "require": {
+                "typo3/flow-composer-installers": "*",
+                "typo3/flow": "*",
+                "typo3/form": "*",
+                "typo3/typoscript": "*"
+            },
+            "time": "1350549203",
+            "type": "typo3-flow-library",
+            "installation-source": "source",
+            "autoload": {
+                "psr-0": {
+                    "TYPO3\\Expose": "Classes"
+                }
+            },
+            "license": [
+                "LGPL-3.0+"
+            ],
+            "description": "Package to expose models"
+        },
+        {
             "name": "typo3/flow",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "git://git.typo3.org/FLOW3/Packages/TYPO3.FLOW3.git",
-                "reference": "ee8f8e1d898c15549c22278e3fe80cd5702df182"
+                "reference": "84341d19e3e9d8cabacf255b373ebff251d1357c"
             },
             "require": {
                 "php": ">=5.3.2",
@@ -592,7 +660,7 @@
                 "symfony/dom-crawler": ">2.0.16",
                 "typo3/flow-composer-installers": "*"
             },
-            "time": "1349782946",
+            "time": "1350594129",
             "type": "typo3-flow-framework",
             "installation-source": "source",
             "autoload": {
@@ -621,7 +689,7 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/christianjul/installers.git",
-                "reference": "1fe72c0bfad09668a47acfa3c60da2db429adb4d"
+                "reference": "53318d52eeda45dee97be288b8f744be00662f37"
             },
             "replace": {
                 "shama/baton": "*"
@@ -629,7 +697,7 @@
             "require-dev": {
                 "composer/composer": "1.0.*"
             },
-            "time": "1349285823",
+            "time": "1350315157",
             "type": "composer-installer",
             "extra": {
                 "class": "Composer\\Installers\\Installer"
@@ -834,12 +902,12 @@
             "source": {
                 "type": "git",
                 "url": "git://git.typo3.org/FLOW3/Packages/TYPO3.Surf.git",
-                "reference": "b90619df329ae54a1ac0719c0bbce6782f055600"
+                "reference": "e5f730f22e17ad92038d08aacc82e08d7fb41f66"
             },
             "require": {
                 "typo3/flow": "*"
             },
-            "time": "1349360854",
+            "time": "1349603190",
             "type": "typo3-flow-library",
             "installation-source": "source",
             "autoload": {
@@ -869,18 +937,39 @@
             }
         },
         {
+            "name": "typo3/twitter-bootstrap",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git://git.typo3.org/FLOW3/Packages/Twitter.Bootstrap.git",
+                "reference": "514322c57533f3eb0590e464f3f369df55b76937"
+            },
+            "require": {
+                "typo3/flow": "*"
+            },
+            "time": "1350483987",
+            "type": "typo3-flow-library",
+            "installation-source": "source",
+            "autoload": {
+                "psr-0": {
+                    "TYPO3\\Twitter\\Bootstrap": "Classes"
+                }
+            },
+            "description": "Simple and flexible HTML, CSS, and Javascript for popular user interface components and interactions. Packaged for use with TYPO3 Flow"
+        },
+        {
             "name": "typo3/typoscript",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "git://git.typo3.org/FLOW3/Packages/TYPO3.TypoScript.git",
-                "reference": "a5f2488c660065c316c06d2dde912500c1fcb456"
+                "reference": "8fd5640bb12199c86f03df7f5962eefad71d8f98"
             },
             "require": {
                 "typo3/flow": "*",
                 "typo3/eel": "*"
             },
-            "time": "1349122770",
+            "time": "1350462960",
             "type": "typo3-flow-library",
             "installation-source": "source",
             "autoload": {
@@ -897,13 +986,13 @@
             "source": {
                 "type": "git",
                 "url": "ssh://git.beech.local/Beech/BuildEssentials.git",
-                "reference": "c2c3e7696cbff61f2d7b390c4bf35b049f3fd2c0"
+                "reference": "34a6de436af926418d8f489e99e31e9445ba5789"
             },
             "require": {
                 "php": ">=5.3.2",
                 "typo3/flow-composer-installers": "*"
             },
-            "time": "1349701634",
+            "time": "1350461784",
             "type": "typo3-flow-build",
             "installation-source": "source",
             "description": "Beech Flow Build Toolchain Essentials"
@@ -914,13 +1003,13 @@
             "source": {
                 "type": "git",
                 "url": "ssh://git.beech.local/EHRM/Package/Style.git",
-                "reference": "6b5865c94764783813cd040c45bc1b2e1dc4bcb2"
+                "reference": "5c8ad7703193b4e1b461b23c3326d3b61434ac10"
             },
             "require": {
                 "typo3/flow": "*",
                 "beech/ehrm": "*"
             },
-            "time": "1349802060",
+            "time": "1349868966",
             "type": "typo3-flow-tools",
             "installation-source": "source",
             "autoload": {
@@ -935,12 +1024,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/mneuhaus/Debug.Toolbar.git",
-                "reference": "7f4d7d5d9eaf46e0dc631e772cb065858a8e2b5c"
+                "reference": "9b2ecc615c4ea34555e280a7b4df3e9a1b34fcea"
             },
             "require": {
                 "typo3/flow": "*"
             },
-            "time": "1349860298",
+            "time": "1349861750",
             "type": "typo3-flow-library",
             "installation-source": "source",
             "autoload": {
@@ -1018,13 +1107,13 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/sandstorm/Plumber.git",
-                "reference": "79c425c692278ff9910312c282205f014ea953dc"
+                "reference": "cfd9b70e9c3ae2160107cacff8e45812712cc45b"
             },
             "require": {
                 "typo3/flow": "*",
                 "sandstorm/phpprofiler": "1.0.*"
             },
-            "time": "1349848986",
+            "time": "1350578368",
             "type": "typo3-flow-library",
             "installation-source": "source",
             "autoload": {
@@ -1066,13 +1155,13 @@
             "source": {
                 "type": "git",
                 "url": "git://git.typo3.org/FLOW3/BuildEssentials.git",
-                "reference": "66c20c4e3815baedf75c9054cd0ae7d51ca4def3"
+                "reference": "eeb5a5272766712430dd0c9c9c38417b05baac9f"
             },
             "require": {
                 "php": ">=5.3.2",
                 "typo3/flow-composer-installers": "*"
             },
-            "time": "1349466255",
+            "time": "1350311922",
             "type": "typo3-flow-build",
             "installation-source": "source",
             "license": [
@@ -1118,10 +1207,14 @@
         "typo3/typoscript": 20,
         "typo3/surf": 20,
         "typo3/ldap": 20,
-        "twitter/bootstrap": 20,
+        "typo3/twitter-bootstrap": 20,
+        "radmiraal/emberjs": 20,
+        "famelo/scaff": 20,
+        "typo3/expose": 20,
         "beech/ehrm": 20,
         "beech/party": 20,
         "beech/task": 20,
+        "beech/calendar": 20,
         "beech/cla": 20,
         "beech/document": 20,
         "beech/workflow": 20,
