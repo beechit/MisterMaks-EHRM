@@ -31,6 +31,7 @@
 		"beech/ehrm": "dev-development",
 		"beech/party": "dev-development",
 		"beech/task": "dev-development",
+		"beech/calendar": "dev-development",
 		"beech/cla": "dev-development",
 		"beech/document": "dev-development",
 		"beech/workflow": "dev-development",
