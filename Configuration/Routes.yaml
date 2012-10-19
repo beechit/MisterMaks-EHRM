@@ -11,6 +11,18 @@
       package: 'Beech.Party'
 
 ##
+# Subroutes for Minute package
+#
+-
+  name: 'Beech Minute'
+  uriPattern: '<BeechMinuteSubroutes>'
+  defaults:
+    '@format': 'html'
+  subRoutes:
+    BeechMinuteSubroutes:
+      package: 'Beech.Minutes'
+
+##
 # EHRM.Common subroutes
 #
 -
