@@ -1,6 +1,7 @@
-<f:layout name="Default" />
+<f:layout name="Default" />{namespace ehrm=Beech\Ehrm\ViewHelpers}{namespace expose=TYPO3\Expose\ViewHelpers}
 
 <f:section name="Body">
+
 	<h1><f:translate id="action.edit">Edit</f:translate> "{person.name}"</h1>
 	<f:form.validationResults for="person">
 		<f:if condition="{validationResults.flattenedErrors}">
@@ -9,41 +10,9 @@
 			</div>
 		</f:if>
 	</f:form.validationResults>
-	<f:form action="update" object="{person}" name="person" class="form-horizontal well">
-		<div class="control-group">
-			<label class="control-label" for="name.firstName"><f:translate id="person.firstName">First name</f:translate></label>
-			<div class="controls">
-				<f:form.textfield property="name.firstName" id="name.firstName" />
-			</div>
-		</div>
-		<div class="control-group">
-			<label class="control-label" for="name.lastName"><f:translate id="person.lastName">Last name</f:translate></label>
-			<div class="controls">
-				<f:form.textfield property="name.lastName" id="name.lastName" />
-			</div>
-		</div>
-		<div class="control-group">
-			<label class="control-label" for="email"><f:translate id="person.email">Email</f:translate></label>
-			<div class="controls">
-				<f:form.textfield name="email" id="email" />
-			</div>
-		</div>
-		<div class="control-group">
-			<label class="control-label" for="phone"><f:translate id="person.phone">Phone</f:translate></label>
-			<div class="controls">
-				<f:form.textfield name="phone" id="phone" />
-			</div>
-		</div>
-		<div class="control-group">
-			<label class="control-label" for="description"><f:translate id="person.description">Description</f:translate></label>
-			<div class="controls">
-				<f:form.textfield property="description" id="description" />
-			</div>
-		</div>
-		<div class="form-actions">
-			<f:form.submit value="Update"/>
-		</div>
-	</f:form>
+
+	<expose:render.form object="{person}" callbackAction="update" />
+
 </f:section>
 
 <f:section name="Left" />

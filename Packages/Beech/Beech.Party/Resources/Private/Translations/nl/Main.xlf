@@ -152,7 +152,7 @@
 			</trans-unit>
 			<trans-unit id="action.new">
 				<source>New</source>
-				<target>Tonen</target>
+				<target>Nieuw</target>
 			</trans-unit>
 			<trans-unit id="action.create">
 				<source>Create</source>

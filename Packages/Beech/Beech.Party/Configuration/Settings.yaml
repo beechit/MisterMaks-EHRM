@@ -29,6 +29,14 @@ Beech:
             action: 'list'
 
     menu:
+      administration:
+        groups:
+          persons:
+            priority: 10
+            label: 'Persons'
+          companies:
+            priority: 20
+            label: 'Companies'
       account:
         menu:
           todo:
@@ -43,3 +51,18 @@ Beech:
             priority: 20
             controller: 'Setup'
             action: 'index'
+Famelo:
+  Scaff:
+    modules:
+      persons:
+        label: 'Persons'
+        arguments:
+          @package: 'Beech.Party'
+          @controller: 'Management\Person'
+          @action: 'list'
+      companies:
+        label: 'Companies'
+        arguments:
+          @package: 'Beech.Party'
+          @controller: 'Management\Company'
+          @action: 'list'

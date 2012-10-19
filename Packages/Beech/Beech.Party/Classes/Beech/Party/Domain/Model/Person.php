@@ -9,7 +9,9 @@ namespace Beech\Party\Domain\Model;
 
 use TYPO3\Flow\Annotations as Flow,
 	Doctrine\ORM\Mapping as ORM,
-	Beech\Party\Domain\Model\ElectronicAddress;
+	Beech\Party\Domain\Model\ElectronicAddress,
+	TYPO3\Expose\Annotations as Expose,
+	Radmiraal\Emberjs\Annotations as Emberjs;
 
 /**
  * A Person
@@ -19,27 +21,40 @@ use TYPO3\Flow\Annotations as Flow,
 class Person extends \TYPO3\Party\Domain\Model\AbstractParty {
 
 	/**
+	 * @var \Doctrine\Common\Collections\Collection<\TYPO3\Flow\Security\Account>
+	 * @ORM\OneToMany(mappedBy="party")
+	 * @Emberjs\Ignore
+	 * @Expose\Ignore
+	 */
+	protected $accounts;
+
+	/**
 	 * @var \Beech\Party\Domain\Model\PersonName
 	 * @ORM\OneToOne
 	 * @Flow\Validate(type="NotEmpty", validationGroups={"Controller"})
+	 * @Expose\Inline(element="TYPO3.Expose:InlineSeamless")
 	 */
 	protected $name;
 
 	/**
 	 * @var \Doctrine\Common\Collections\Collection<\Beech\Party\Domain\Model\ElectronicAddress>
 	 * @ORM\ManyToMany
+	 * @Expose\Inline(element="TYPO3.Expose:InlineStacked")
 	 */
 	protected $electronicAddresses;
 
 	/**
 	 * @var \Beech\Party\Domain\Model\ElectronicAddress
 	 * @ORM\ManyToOne
+	 * @Emberjs\Ignore
+	 * @Expose\Ignore
 	 */
 	protected $primaryElectronicAddress;
 
 	/**
 	 * @var \Doctrine\Common\Collections\Collection<\Beech\Party\Domain\Model\Address>
 	 * @ORM\ManyToMany
+	 * @Expose\Inline(element="TYPO3.Expose:InlineStacked")
 	 */
 	protected $addresses;
 
@@ -54,6 +69,8 @@ class Person extends \TYPO3\Party\Domain\Model\AbstractParty {
 	 *
 	 * @var \Beech\Ehrm\Domain\Model\Preferences
 	 * @ORM\OneToOne
+	 * @Emberjs\Ignore
+	 * @Expose\Ignore
 	 */
 	protected $preferences;
 
@@ -75,6 +92,16 @@ class Person extends \TYPO3\Party\Domain\Model\AbstractParty {
 	 */
 	public function addPersonName(\Beech\Party\Domain\Model\PersonName $personName) {
 		$this->name = $personName;
+	}
+
+	/**
+	 * Adds the person name to this person.
+	 *
+	 * @param \Beech\Party\Domain\Model\PersonName $personName The person name
+	 * @return void
+	 */
+	public function setName(\Beech\Party\Domain\Model\PersonName $personName) {
+		$this->addPersonName($personName);
 	}
 
 	/**
@@ -150,6 +177,16 @@ class Person extends \TYPO3\Party\Domain\Model\AbstractParty {
 	}
 
 	/**
+	 * Sets all known electronic addresses of this person.
+	 *
+	 * @param \Doctrine\Common\Collections\Collection<\TYPO3\Party\Domain\Model\ElectronicAddress>
+	 * @return void
+	 */
+	public function setElectronicAddresses(\Doctrine\Common\Collections\Collection $electronicAddresses) {
+		$this->electronicAddresses = $electronicAddresses;
+	}
+
+	/**
 	 * Sets (and adds if necessary) the primary electronic address of this person.
 	 *
 	 * @param \Beech\Party\Domain\Model\ElectronicAddress $electronicAddress The electronic address
@@ -203,6 +240,14 @@ class Person extends \TYPO3\Party\Domain\Model\AbstractParty {
 		if (!is_null($this->addresses)) {
 			return clone $this->addresses;
 		}
+	}
+
+	/**
+	 * @param \Doctrine\Common\Collections\Collection $addresses
+	 * @return void
+	 */
+	public function setAddresses(\Doctrine\Common\Collections\Collection $addresses) {
+		$this->addresses = $addresses;
 	}
 
 	/**

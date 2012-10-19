@@ -15,98 +15,66 @@ use \Beech\Party\Domain\Model\Person;
  *
  * @Flow\Scope("singleton")
  */
-class PersonController extends \Beech\Ehrm\Controller\AbstractController {
+class PersonController extends \Beech\Ehrm\Controller\Management\AbstractManagementController {
 
 	/**
-	 * @var \Beech\Party\Domain\Repository\PersonRepository
-	 * @Flow\Inject
+	 * @var string
 	 */
-	protected $personRepository;
+	protected $entityClassName = '\Beech\Party\Domain\Model\Person';
 
 	/**
-	 * Shows a list of people
-	 *
+	 * @var string
+	 */
+	protected $repositoryClassName = '\Beech\Party\Domain\Repository\PersonRepository';
+
+	/**
 	 * @return void
 	 */
-	public function listAction() {
-		$this->view->assign('people', $this->personRepository->findAll());
-	}
-
-	/**
-	 * Shows a single person object
-	 *
-	 * @param \Beech\Party\Domain\Model\Person $person The person to show
-	 * @return void
-	 */
-	public function showAction(Person $person) {
-		$this->view->assign('person', $person);
-	}
-
-	/**
-	 * Shows a form for creating a new person object
-	 *
-	 * @return void
-	 */
-	public function newAction() {
-	}
-
-	/**
-	 * Adds the given new person object to the person repository
-	 *
-	 * @param \Beech\Party\Domain\Model\Person $newPerson A new person to add
-	 * @param string $email
-	 * @param string $phone
-	 * @return void
-	 */
-	public function createAction(Person $newPerson, $email, $phone) {
-		$newPerson->addEmail($email);
-		$newPerson->addPhone($phone);
-		$this->personRepository->add($newPerson);
+	public function createAction() {
+		$this->storeData('add');
 		$this->addFlashMessage('Created a new person.');
 		$this->redirect('list');
 	}
 
 	/**
-	 * Shows a form for editing an existing person object
-	 *
-	 * @param \Beech\Party\Domain\Model\Person $person The person to edit
 	 * @return void
 	 */
-	public function editAction(Person $person) {
-		$this->view->assign('person', $person);
-	}
-
-	/**
-	 * Updates the given person object
-	 *
-	 * @param \Beech\Party\Domain\Model\Person $person The person to update
-	 * @return void
-	 */
-	public function updateAction(Person $person) {
-		$this->personRepository->update($person);
+	public function updateAction() {
+		$this->storeData('update');
 		$this->addFlashMessage('Updated the person.');
 		$this->redirect('list');
 	}
 
 	/**
-	 * Removes the given person object from the person repository
-	 *
-	 * @param \Beech\Party\Domain\Model\Person $person The person to delete
+	 * @param \Beech\Party\Domain\Model\Person $person
 	 * @return void
 	 */
-	public function deleteAction(Person $person) {
-		$this->personRepository->remove($person);
-		$this->addFlashMessage('Deleted a person.');
+	public function editAction(\Beech\Party\Domain\Model\Person $person) {
+		$this->view->assign('person', $person);
+	}
+
+	/**
+	 * @param \Beech\Party\Domain\Model\Person $person
+	 * @return void
+	 */
+	public function deleteAction(\Beech\Party\Domain\Model\Person $person) {
+		$this->repository->remove($person);
 		$this->redirect('list');
 	}
 
 	/**
-	 * Redirect to list action
-	 *
+	 * Stores the data in the repository object
+	 * @param string $method Either 'add' or 'update'
+	 * @throws \Exception
 	 * @return void
 	 */
-	public function redirectAction() {
-		$this->redirect('list');
+	protected function storeData($method) {
+		$objects = $this->request->getInternalArgument('__objects');
+		if (isset($objects[0]) && $objects[0] instanceof \Beech\Party\Domain\Model\Person) {
+			$this->repository->$method($objects[0]);
+		} else {
+			throw \Exception('Required argument \$person not set');
+		}
 	}
 
 }

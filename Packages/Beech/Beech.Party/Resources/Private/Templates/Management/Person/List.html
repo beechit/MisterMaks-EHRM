@@ -1,8 +1,6 @@
-<f:layout name="Default" />
-
 <f:section name="Body">
 	<h1><f:translate id="persons">Persons</f:translate></h1>
-	<f:if condition="{people}">
+	<f:if condition="{entities}">
 		<f:then>
 			<table class="table">
 				<thead>
@@ -13,7 +11,7 @@
 				</tr>
 				</thead>
 				<tbody>
-				<f:for each="{people}" as="person" iteration="iterator">
+				<f:for each="{entities}" as="person" iteration="iterator">
 					<tr>
 						<td>
 							<strong><f:link.action action="show" arguments="{person: person}">{person.name.firstName}</f:link.action></strong>
@@ -35,8 +33,6 @@
 		</f:else>
 	</f:if>
 	<div class="form-actions">
-		<a class="btn btn-primary" href="/{f:uri.action(package: 'Beech.Ehrm', controller: 'Wizard', arguments: {formPersistenceIdentifier: 'newPerson'})}" data-toggle="modal" data-target="#entityModal"><i class="icon-leaf icon-white"></i> <f:translate id="action.create">Create</f:translate></a>
+		<a class="btn btn-primary" href="/{f:uri.action(package: 'Beech.Party', controller: 'Management\Person', action: 'new')}" ><i class="icon-plus icon-white"></i> <f:translate id="action.create">Create</f:translate></a>
 	</div>
 </f:section>
-
-<f:section name="Left" />
