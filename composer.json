@@ -35,7 +35,8 @@
 		"beech/cla": "dev-development",
 		"beech/document": "dev-development",
 		"beech/workflow": "dev-development",
-		"beech/minutes": "dev-development"
+		"beech/minutes": "dev-development",
+		"beech/absense": "dev-development"
 	},
 	"require-dev": {
 		"typo3/buildessentials": "dev-master",

@@ -1,6 +1,27 @@
 {
-    "hash": "15c36a880b08395e1641984b8766cf37",
+    "hash": "b8f13185c206f29f7228dee183830c96",
     "packages": [
+        {
+            "name": "beech/absense",
+            "version": "dev-development",
+            "source": {
+                "type": "git",
+                "url": "ssh://git.beech.local/EHRM/Package/Absense.git",
+                "reference": "40521d92aa10e947d6a485d4b9aa3e3baff5d41a"
+            },
+            "require": {
+                "typo3/flow": "*",
+                "beech/ehrm": "*"
+            },
+            "time": "1350639304",
+            "type": "typo3-flow-package",
+            "installation-source": "source",
+            "autoload": {
+                "psr-0": {
+                    "Beech\\Absense": "Classes"
+                }
+            }
+        },
         {
             "name": "beech/calendar",
             "version": "dev-development",
@@ -979,221 +1000,7 @@
             }
         }
     ],
-    "packages-dev": [
-        {
-            "name": "beech/essentials",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "ssh://git.beech.local/Beech/BuildEssentials.git",
-                "reference": "34a6de436af926418d8f489e99e31e9445ba5789"
-            },
-            "require": {
-                "php": ">=5.3.2",
-                "typo3/flow-composer-installers": "*"
-            },
-            "time": "1350461784",
-            "type": "typo3-flow-build",
-            "installation-source": "source",
-            "description": "Beech Flow Build Toolchain Essentials"
-        },
-        {
-            "name": "beech/style",
-            "version": "dev-development",
-            "source": {
-                "type": "git",
-                "url": "ssh://git.beech.local/EHRM/Package/Style.git",
-                "reference": "5c8ad7703193b4e1b461b23c3326d3b61434ac10"
-            },
-            "require": {
-                "typo3/flow": "*",
-                "beech/ehrm": "*"
-            },
-            "time": "1349868966",
-            "type": "typo3-flow-tools",
-            "installation-source": "source",
-            "autoload": {
-                "psr-0": {
-                    "Beech\\Style": "Classes"
-                }
-            }
-        },
-        {
-            "name": "debug/toolbar",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "git://github.com/mneuhaus/Debug.Toolbar.git",
-                "reference": "9b2ecc615c4ea34555e280a7b4df3e9a1b34fcea"
-            },
-            "require": {
-                "typo3/flow": "*"
-            },
-            "time": "1349861750",
-            "type": "typo3-flow-library",
-            "installation-source": "source",
-            "autoload": {
-                "psr-0": {
-                    "Debug\\Toolbar": "Classes"
-                }
-            }
-        },
-        {
-            "name": "mikey179/vfsStream",
-            "version": "v1.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/mikey179/vfsStream",
-                "reference": "v1.1.0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://github.com/mikey179/vfsStream/zipball/v1.1.0",
-                "reference": "v1.1.0",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "time": "2012-08-25 12:49:29",
-            "type": "library",
-            "installation-source": "dist",
-            "autoload": {
-                "psr-0": {
-                    "org\\bovigo\\vfs": "src/main/php"
-                }
-            },
-            "license": [
-                "BSD"
-            ],
-            "homepage": "http://vfs.bovigo.org/"
-        },
-        {
-            "name": "sandstorm/phpprofiler",
-            "version": "1.0.1",
-            "source": {
-                "type": "git",
-                "url": "git://github.com/sandstorm/PhpProfiler.git",
-                "reference": "1.0.1"
-            },
-            "time": "2012-10-10 06:01:43",
-            "type": "typo3-flow-library",
-            "installation-source": "source",
-            "autoload": {
-                "psr-0": {
-                    "Sandstorm\\PhpProfiler": "Classes"
-                }
-            },
-            "license": [
-                "GPL-3.0+"
-            ],
-            "authors": [
-                {
-                    "name": "Sebastian Kurfürst",
-                    "homepage": "http://sandstorm-media.de",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Base package for collecting timers and xhprof traces. To be used with sandstorm|plumber for visualization.",
-            "support": {
-                "issues": "https://github.com/sandstorm/Plumber/issues",
-                "irc": "irc://irc.freenode.net/flow",
-                "source": "https://github.com/sandstorm/Plumber"
-            }
-        },
-        {
-            "name": "sandstorm/plumber",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "git://github.com/sandstorm/Plumber.git",
-                "reference": "cfd9b70e9c3ae2160107cacff8e45812712cc45b"
-            },
-            "require": {
-                "typo3/flow": "*",
-                "sandstorm/phpprofiler": "1.0.*"
-            },
-            "time": "1350578368",
-            "type": "typo3-flow-library",
-            "installation-source": "source",
-            "autoload": {
-                "psr-0": {
-                    "Sandstorm\\Plumber": "Classes"
-                }
-            },
-            "license": [
-                "GPL-3.0+"
-            ],
-            "authors": [
-                {
-                    "name": "Sebastian Kurfürst",
-                    "homepage": "http://sandstorm-media.de",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Profiling Toolkit for TYPO3 Flow and Neos",
-            "keywords": [
-                "profiling",
-                "profiler",
-                "benchmark",
-                "debugging",
-                "xhprof",
-                "Flow",
-                "TYPO3 Flow",
-                "Neos",
-                "TYPO3 Neos"
-            ],
-            "support": {
-                "issues": "https://github.com/sandstorm/Plumber/issues",
-                "irc": "irc://irc.freenode.net/flow",
-                "source": "https://github.com/sandstorm/Plumber"
-            }
-        },
-        {
-            "name": "typo3/buildessentials",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "git://git.typo3.org/FLOW3/BuildEssentials.git",
-                "reference": "eeb5a5272766712430dd0c9c9c38417b05baac9f"
-            },
-            "require": {
-                "php": ">=5.3.2",
-                "typo3/flow-composer-installers": "*"
-            },
-            "time": "1350311922",
-            "type": "typo3-flow-build",
-            "installation-source": "source",
-            "license": [
-                "LGPL-3.0+"
-            ],
-            "description": "TYPO3 Flow Build Toolchain Essentials"
-        },
-        {
-            "name": "typo3/kickstart",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "git://git.typo3.org/FLOW3/Packages/TYPO3.Kickstart.git",
-                "reference": "4280efb254988ba03c6c1d2013377fd026cd1e29"
-            },
-            "require": {
-                "typo3/flow": "*"
-            },
-            "time": "1349281880",
-            "type": "typo3-flow-framework",
-            "installation-source": "source",
-            "autoload": {
-                "psr-0": {
-                    "TYPO3\\Kickstart": "Classes"
-                }
-            },
-            "license": [
-                "LGPL-3.0+"
-            ],
-            "description": "A simple generator for controller and views."
-        }
-    ],
+    "packages-dev": null,
     "aliases": [
 
     ],
@@ -1219,6 +1026,7 @@
         "beech/document": 20,
         "beech/workflow": 20,
         "beech/minutes": 20,
+        "beech/absense": 20,
         "typo3/buildessentials": 20,
         "beech/essentials": 20,
         "typo3/kickstart": 20,
