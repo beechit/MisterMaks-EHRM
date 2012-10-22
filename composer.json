@@ -36,7 +36,7 @@
 		"beech/document": "dev-development",
 		"beech/workflow": "dev-development",
 		"beech/minutes": "dev-development",
-		"beech/absense": "dev-development"
+		"beech/absence": "dev-development"
 	},
 	"require-dev": {
 		"typo3/buildessentials": "dev-master",
