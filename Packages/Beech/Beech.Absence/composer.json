@@ -1,6 +1,6 @@
 {
 	"name": "beech/absence",
-	"type": "typo3-flow-package",
+	"type": "typo3-flow-beech",
 	"description": "",
 	"version": "",
 	"require": {
