@@ -1,10 +1,10 @@
 {
-	"name": "beech\/ehrm",
-	"type": "typo3-flow-package",
+	"name": "beech/ehrm",
+	"type": "typo3-flow-beech",
 	"description": "",
 	"version": "",
 	"require": {
-		"typo3\/flow": "*"
+		"typo3/flow": "*"
 	},
 	"autoload": {
 		"psr-0": {
