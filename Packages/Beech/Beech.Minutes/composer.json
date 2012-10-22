@@ -1,11 +1,11 @@
 {
-	"name": "beech\/minutes",
-	"type": "typo3-flow-package",
+	"name": "beech/minutes",
+	"type": "typo3-flow-beech",
 	"description": "",
 	"version": "",
 	"require": {
-		"typo3\/flow": "*",
-		"beech\/ehrm": "*"
+		"typo3/flow": "*",
+		"beech/ehrm": "*"
 	},
 	"autoload": {
 		"psr-0": {
