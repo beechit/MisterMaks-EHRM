@@ -1,5 +1,5 @@
 {
-    "hash": "51b98d673859239ae4be0fdeba98a187",
+    "hash": "a83f4a576f19bdd35a8c638e04a6e12c",
     "packages": [
         {
             "name": "beech/absence",
@@ -77,14 +77,14 @@
                 "typo3/flow": "*",
                 "beech/ehrm": "*"
             },
+            "time": "1349786559",
             "type": "typo3-flow-package",
             "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "Beech\\Document": "Classes"
                 }
-            },
-            "time": "1349786559"
+            }
         },
         {
             "name": "beech/ehrm",
@@ -160,14 +160,14 @@
                 "typo3/flow": "*",
                 "beech/ehrm": "*"
             },
+            "time": "1349701132",
             "type": "typo3-flow-package",
             "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "Beech\\Task": "Classes"
                 }
-            },
-            "time": "1349701132"
+            }
         },
         {
             "name": "beech/workflow",
@@ -208,7 +208,7 @@
             "require": {
                 "php": ">=5.3.2"
             },
-            "time": "2012-08-29 08:04:14",
+            "time": "2012-08-29 01:04:14",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -239,9 +239,9 @@
                     "email": "kontakt@beberlei.de"
                 },
                 {
-                    "name": "Johannes Schmitt",
+                    "name": "Johannes M. Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "https://github.com/schmittjoh",
+                    "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -273,7 +273,7 @@
                 "php": ">=5.3.2",
                 "doctrine/common": ">=2.2.0,<=2.2.99"
             },
-            "time": "2012-04-13 07:56:12",
+            "time": "2012-04-13 00:56:12",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -387,7 +387,7 @@
                 "doctrine/common": ">=2.2.0,<2.2.99",
                 "doctrine/dbal": ">=2.2.1,<2.2.99"
             },
-            "time": "2012-04-13 08:02:34",
+            "time": "2012-04-13 01:02:34",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -466,6 +466,7 @@
                 "ext-phpiredis": "Allows faster serialization and deserialization of the Redis protocol",
                 "ext-curl": "Allows access to Webdis when paired with phpiredis"
             },
+            "time": "1350074625",
             "type": "library",
             "installation-source": "source",
             "autoload": {
@@ -489,8 +490,7 @@
                 "nosql",
                 "redis",
                 "predis"
-            ],
-            "time": "1350074625"
+            ]
         },
         {
             "name": "radmiraal/emberjs",
@@ -718,6 +718,7 @@
             "require-dev": {
                 "composer/composer": "1.0.*"
             },
+            "time": "1350315157",
             "type": "composer-installer",
             "extra": {
                 "class": "Composer\\Installers\\Installer"
@@ -758,8 +759,7 @@
                 "zend",
                 "silverstripe",
                 "TYPO3 Flow"
-            ],
-            "time": "1350315157"
+            ]
         },
         {
             "name": "typo3/fluid",
@@ -773,6 +773,7 @@
                 "typo3/flow-composer-installers": "*",
                 "typo3/flow": "*"
             },
+            "time": "1349283709",
             "type": "typo3-flow-framework",
             "installation-source": "source",
             "autoload": {
@@ -783,8 +784,7 @@
             "license": [
                 "LGPL-3.0+"
             ],
-            "description": "Next-Generation Templating Framework for TYPO3 Flow and TYPO3 5.0, also backported to TYPO3 4.x",
-            "time": "1349283709"
+            "description": "Next-Generation Templating Framework for TYPO3 Flow and TYPO3 5.0, also backported to TYPO3 4.x"
         },
         {
             "name": "typo3/form",
@@ -819,6 +819,7 @@
                 "typo3/flow": "*",
                 "typo3/form": "*"
             },
+            "time": "1349783475",
             "type": "typo3-flow-library",
             "installation-source": "source",
             "autoload": {
@@ -826,8 +827,7 @@
                     "TYPO3\\FormBuilder": "Classes"
                 }
             },
-            "description": "Graphical User Interface for creating and editing Forms based on the TYPO3 Flow Form Framework",
-            "time": "1349783475"
+            "description": "Graphical User Interface for creating and editing Forms based on the TYPO3 Flow Form Framework"
         },
         {
             "name": "typo3/ldap",
@@ -840,6 +840,7 @@
             "require": {
                 "typo3/flow": "*"
             },
+            "time": "1349709668",
             "type": "typo3-flow-library",
             "installation-source": "source",
             "autoload": {
@@ -847,8 +848,7 @@
                     "TYPO3\\LDAP": "Classes"
                 }
             },
-            "description": "LDAP Authentication for Flow",
-            "time": "1349709668"
+            "description": "LDAP Authentication for Flow"
         },
         {
             "name": "typo3/party",
@@ -862,6 +862,7 @@
                 "typo3/flow-composer-installers": "*",
                 "typo3/flow": "*"
             },
+            "time": "1349341725",
             "type": "typo3-flow-framework",
             "installation-source": "source",
             "autoload": {
@@ -872,8 +873,7 @@
             "license": [
                 "LGPL-3.0+"
             ],
-            "description": "A PHP implementation of the OASIS Customer Information Quality (CIQ) XML Standard.",
-            "time": "1349341725"
+            "description": "A PHP implementation of the OASIS Customer Information Quality (CIQ) XML Standard."
         },
         {
             "name": "typo3/queue",
@@ -886,14 +886,14 @@
             "require": {
                 "typo3/flow": "*"
             },
+            "time": "1349857489",
             "type": "typo3-flow-library",
             "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "TYPO3\\Queue": "Classes"
                 }
-            },
-            "time": "1349857489"
+            }
         },
         {
             "name": "typo3/queue-redis",
@@ -908,14 +908,14 @@
                 "typo3/queue": "*",
                 "predis/predis": "*"
             },
+            "time": "1349851779",
             "type": "typo3-flow-library",
             "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "TYPO3\\Queue\\Redis": "Classes"
                 }
-            },
-            "time": "1349851779"
+            }
         },
         {
             "name": "typo3/surf",
@@ -948,14 +948,14 @@
             "require": {
                 "typo3/flow": "*"
             },
+            "time": "1349777876",
             "type": "typo3-flow-library",
             "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "TYPO3\\TcPdf": "Classes"
                 }
-            },
-            "time": "1349777876"
+            }
         },
         {
             "name": "typo3/twitter-bootstrap",
@@ -1030,14 +1030,14 @@
                 "typo3/flow": "*",
                 "beech/ehrm": "*"
             },
+            "time": "1349868966",
             "type": "typo3-flow-tools",
             "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "Beech\\Style": "Classes"
                 }
-            },
-            "time": "1349868966"
+            }
         },
         {
             "name": "debug/toolbar",
@@ -1050,14 +1050,14 @@
             "require": {
                 "typo3/flow": "*"
             },
+            "time": "1349861750",
             "type": "typo3-flow-library",
             "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "Debug\\Toolbar": "Classes"
                 }
-            },
-            "time": "1349861750"
+            }
         },
         {
             "name": "mikey179/vfsStream",
@@ -1076,7 +1076,7 @@
             "require": {
                 "php": ">=5.3.0"
             },
-            "time": "2012-08-25 12:49:29",
+            "time": "2012-08-25 05:49:29",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -1201,6 +1201,7 @@
             "require": {
                 "typo3/flow": "*"
             },
+            "time": "1349281880",
             "type": "typo3-flow-framework",
             "installation-source": "source",
             "autoload": {
@@ -1211,8 +1212,7 @@
             "license": [
                 "LGPL-3.0+"
             ],
-            "description": "A simple generator for controller and views.",
-            "time": "1349281880"
+            "description": "A simple generator for controller and views."
         }
     ],
     "aliases": [
