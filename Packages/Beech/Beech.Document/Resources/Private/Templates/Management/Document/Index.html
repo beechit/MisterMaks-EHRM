@@ -1,46 +1,74 @@
 <f:layout name="Default"/>
 
 <f:section name="Body">
-	<h1><f:translate id="document.documents">Documents</f:translate></h1>
-	<f:if condition="{documents}">
-		<f:then>
-			<table class="table table-striped">
-				<f:for each="{documents}" as="document">
-					<tr>
-						<td>
-							<f:link.action action="delete" arguments="{document: document}"><i class="icon icon-trash"></i></f:link.action>
-						</td>
-						<td>{document.name}</td>
-						<td></td>
-						<td></td>
-					</tr>
-					<f:for each="{document.resources}" as="resource">
-						<tr>
-							<td></td>
-							<td>
-								<f:link.external uri="{f:uri.resource(resource: resource.originalResource)}" target="_blank"><i class="icon icon-eye-open"></i></f:link.external>
-							</td>
-							<td>
-								<f:format.date format="d-m-Y H:i">{resource.creationDateTime}</f:format.date>
-							</td>
-							<td>
-								<f:link.action action="deleteResource" arguments="{resource: resource}"><i class="icon icon-trash"></i></f:link.action>
-							</td>
-						</tr>
-					</f:for>
-				</f:for>
-			</table>
-		</f:then>
-		<f:else>
-			<p><f:translate id="document.noDocumentsFound">No documents found</f:translate></p>
-		</f:else>
-	</f:if>
+	<h1><f:translate id="document.document" quantity="2">Documents</f:translate></h1>
 
-	<f:form method="post" action="create" name="newResource" object="{newResource}" class="form-horizontal well" enctype="multipart/form-data">
-		<f:form.upload property="originalResource" />
-		<f:form.submit value="Upload" />
-	</f:form>
-
+	<div class="row-fluid">
+		<div class="span8">
+			<f:if condition="{documents}">
+				<f:then>
+					<table class="table table-striped">
+						<f:for each="{documents}" as="document" iteration="documentIterator">
+							<tr>
+								<td>
+									<f:link.action action="delete" arguments="{document: document}"><i class="icon icon-trash"></i></f:link.action>
+									<f:link.action action="edit" arguments="{document: document}"><i class="icon icon-edit"></i></f:link.action>
+								</td>
+								<td>{document.name}</td>
+								<td colspan="2">
+									<a href="#document{documentIterator.index}" class="btn btn-small" data-toggle="modal"><f:translate id="document.upload" /></a>
+									<f:form id="document{documentIterator.index}" method="post" action="addResource" name="newResource" object="{newResource}" arguments="{document: document}" class="form-horizontal modal hide fade" enctype="multipart/form-data">
+										<div class="modal-header">
+											<f:translate id="document.new" />
+										</div>
+										<div class="modal-body">
+											<f:form.upload property="originalResource" />
+										</div>
+										<div class="modal-footer">
+											<f:form.submit value="{f:translate(id:'document.upload')}" />
+										</div>
+									</f:form>
+								</td>
+							</tr>
+							<f:for each="{document.resources}" as="resource">
+								<tr>
+									<td>&nbsp;</td>
+									<td>
+										<f:link.external uri="{f:uri.resource(resource: resource.originalResource)}" target="_blank">
+											{resource.originalResource.filename}
+										</f:link.external>
+									</td>
+									<td>
+										<f:format.date format="d-m-Y H:i">{resource.creationDateTime}</f:format.date>
+									</td>
+									<td>
+										<f:link.external uri="{f:uri.resource(resource: resource.originalResource)}" target="_blank">
+											<i class="icon icon-eye-open"></i>
+										</f:link.external>
+										<f:link.action action="deleteResource" arguments="{resource: resource}"><i class="icon icon-trash"></i></f:link.action>
+									</td>
+								</tr>
+							</f:for>
+						</f:for>
+					</table>
+				</f:then>
+				<f:else>
+					<p><f:translate id="document.noDocumentsFound">No documents found</f:translate></p>
+				</f:else>
+			</f:if>
+		</div>
+		<div class="span4">
+			<fieldset>
+				<legend><f:translate id="document.new">New</f:translate></legend>
+				<f:form method="post" action="create" name="newResource" object="{newResource}" class="form-horizontal" enctype="multipart/form-data">
+					<div class="control-group">
+						<f:form.upload property="originalResource" id="originalResource" />
+					</div>
+					<div class="control-group">
+						<f:form.submit value="{f:translate(id:'document.upload')}" class="btn btn-primary"/>
+					</div>
+				</f:form>
+			</fieldset>
+		</div>
+	</div>
 </f:section>
-
-<f:section name="Left" />

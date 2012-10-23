@@ -31,12 +31,6 @@ class DocumentController extends \Beech\Ehrm\Controller\AbstractController {
 	protected $documentRepository;
 
 	/**
-	 * @var \Beech\Document\Domain\Repository\ResourceRepository
-	 * @Flow\Inject
-	 */
-	protected $resourceRepository;
-
-	/**
 	 * @var \TYPO3\Flow\Object\ObjectManagerInterface
 	 * @Flow\Inject
 	 */
@@ -60,15 +54,7 @@ class DocumentController extends \Beech\Ehrm\Controller\AbstractController {
 	 * @return void
 	 */
 	public function createAction(\Beech\Document\Domain\Model\Resource $newResource = NULL) {
-		if (!is_object($newResource)) {
-			$this->addFlashMessage($this->translator->translateById('document.noFileSelected', array(), NULL, NULL, 'Main', 'Beech.Document'));
-			$this->redirect('index');
-		}
-
-		if ($this->isFileExtensionAllowed($newResource->getOriginalResource()) === FALSE) {
-			$this->addFlashMessage($this->translator->translateById('document.fileExtensionNotAllowed', array($newResource->getOriginalResource()->getFileExtension()), NULL, NULL, 'Main', 'Beech.Document'));
-			$this->redirect('index');
-		}
+		$this->verifyResource($newResource);
 
 		$newDocument = new \Beech\Document\Domain\Model\Document;
 		$newDocument->setName($newResource->getOriginalResource()->getFilename());
@@ -81,13 +67,75 @@ class DocumentController extends \Beech\Ehrm\Controller\AbstractController {
 	}
 
 	/**
+	 * Shows a list of documents
+	 *
+	 * @param \Beech\Document\Domain\Model\Document $document
+	 * @return void
+	 */
+	public function editAction(\Beech\Document\Domain\Model\Document $document = NULL) {
+		$this->view->assign('document', $document);
+	}
+
+	/**
+	 * Updates the given document object
+	 *
+	 * @param \Beech\Document\Domain\Model\Document $document The document to update
+	 * @return void
+	 */
+	public function updateAction(\Beech\Document\Domain\Model\Document $document) {
+		$this->documentRepository->update($document);
+		$this->redirect('index');
+	}
+
+	/**
+	 * Add resource to document given document object
+	 *
+	 * @param \Beech\Document\Domain\Model\Resource $newResource The document to update
+	 * @param \Beech\Document\Domain\Model\Document $document The document to update
+	 * @return void
+	 */
+	public function addResourceAction(\Beech\Document\Domain\Model\Resource $newResource, \Beech\Document\Domain\Model\Document $document) {
+		$this->verifyResource($newResource);
+
+		$newResource->setDocument($document);
+		$document->addResource($newResource);
+		$this->documentRepository->update($document);
+		$this->redirect('index');
+	}
+
+	/**
+	 * Shows a list of documents
+	 *
+	 * @param \Beech\Document\Domain\Model\Resource $resource
+	 * @return void
+	 */
+	public function editResourceAction(\Beech\Document\Domain\Model\Resource $resource) {
+		$this->view->assign('resource', $resource);
+	}
+
+	/**
+	 * Updates the given document object
+	 *
+	 * @param \Beech\Document\Domain\Model\Resource $resource The document to update
+	 * @param string $filename
+	 * @return void
+	 */
+	public function updateResourceAction(\Beech\Document\Domain\Model\Resource $resource, $filename) {
+		$resource->getOriginalResource()->setFilename($filename);
+		$this->documentRepository->update($resource->getDocument());
+		$this->redirect('index');
+	}
+
+	/**
 	 * Removes the given resource object from the document
 	 *
 	 * @param \Beech\Document\Domain\Model\Resource $resource The resource to delete
 	 * @return void
 	 */
 	public function deleteResourceAction(\Beech\Document\Domain\Model\Resource $resource) {
-		$this->resourceRepository->remove($resource);
+		$document = $resource->getDocument();
+		$document->removeResource($resource);
+		$this->documentRepository->update($document);
 		$this->addFlashMessage($this->translator->translateById('document.documentDeleted', array(), NULL, NULL, 'Main', 'Beech.Document'));
 		$this->redirect('index');
 	}
@@ -99,10 +147,6 @@ class DocumentController extends \Beech\Ehrm\Controller\AbstractController {
 	 * @return void
 	 */
 	public function deleteAction(\Beech\Document\Domain\Model\Document $document) {
-		$resources = $document->getResources();
-		foreach ($resources as $resource) {
-			$this->resourceRepository->remove($resource);
-		}
 		$this->documentRepository->remove($document);
 		$this->addFlashMessage($this->translator->translateById('document.documentDeleted', array(), NULL, NULL, 'Main', 'Beech.Document'));
 		$this->redirect('index');
@@ -121,6 +165,23 @@ class DocumentController extends \Beech\Ehrm\Controller\AbstractController {
 			return TRUE;
 		}
 		return FALSE;
+	}
+
+	/**
+	 * Verify if resource is valid
+	 *
+	 * @param $resource
+	 */
+	protected function verifyResource($resource) {
+		if (!is_object($resource)) {
+			$this->addFlashMessage($this->translator->translateById('document.noFileSelected', array(), NULL, NULL, 'Main', 'Beech.Document'));
+			$this->redirect('index');
+		}
+
+		if ($this->isFileExtensionAllowed($resource->getOriginalResource()) === FALSE) {
+			$this->addFlashMessage($this->translator->translateById('document.fileExtensionNotAllowed', array($resource->getOriginalResource()->getFileExtension()), NULL, NULL, 'Main', 'Beech.Document'));
+			$this->redirect('index');
+		}
 	}
 }
 

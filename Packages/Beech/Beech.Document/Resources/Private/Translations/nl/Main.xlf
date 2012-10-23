@@ -6,6 +6,16 @@
 				<source>Documents</source>
 				<target>Documenten</target>
 			</trans-unit>
+			<group id="document.document" restype="x-gettext-plurals">
+				<trans-unit id="document.document[0]">
+					<source>Document</source>
+					<target>Document</target>
+				</trans-unit>
+				<trans-unit id="document.document[1]">
+					<source>Documents</source>
+					<target>Documenten</target>
+				</trans-unit>
+			</group>
 			<trans-unit id="document.noDocumentsFound">
 				<source>No documents found</source>
 				<target>Geen documenten gevonden</target>
@@ -21,6 +31,10 @@
 			<trans-unit id="document.documentUploaded">
 				<source>Document uploaded</source>
 				<target>Document geupload</target>
+			</trans-unit>
+			<trans-unit id="document.new">
+				<source>New</source>
+				<target>Nieuw</target>
 			</trans-unit>
 			<trans-unit id="document.documentDeleted">
 				<source>Document deleted</source>

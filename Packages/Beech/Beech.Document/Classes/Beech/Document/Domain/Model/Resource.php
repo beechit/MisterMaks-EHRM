@@ -26,7 +26,7 @@ class Resource {
 
 	/**
 	 * @var \TYPO3\Flow\Resource\Resource
-	 * @ORM\OneToOne
+	 * @ORM\OneToOne(cascade={"persist"})
 	 * @Flow\Validate(type="NotEmpty")
 	 */
 	protected $originalResource;

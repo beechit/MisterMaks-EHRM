@@ -67,6 +67,16 @@ class Document {
 	}
 
 	/**
+	 * Remove a resource
+	 *
+	 * @param \Beech\Document\Domain\Model\Resource $resource
+	 * @return void
+	 */
+	public function removeResource(\Beech\Document\Domain\Model\Resource $resource) {
+		$this->resources->removeElement($resource);
+	}
+
+	/**
 	 * Returns the original resource
 	 *
 	 * @return \Beech\Document\Domain\Model\Resource $resources

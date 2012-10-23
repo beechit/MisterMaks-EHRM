@@ -1,15 +1,2 @@
-Beech:
-  Ehrm:
-    modules:
-      admin:
-        menu:
-          documentList:
-            label: 'Documents'
-            priority: 20
-            menuGroup: 'main:manage'
-            package: 'Beech.Document'
-            controller: 'Management\Document'
-            resource: 'ManagementControllers'
-            action: 'index'
 Document:
-  allowedFileExtensions: 'jpg, jpeg, gif, png, pdf'
+  allowedFileExtensions: 'jpg, jpeg, gif, png, pdf, txt, doc'
