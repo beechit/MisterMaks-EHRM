@@ -35,7 +35,32 @@ class StandardController extends AbstractController {
 		$ownerAccount = $this->securityContext->getAccount();
 		if ($ownerAccount instanceof \TYPO3\Flow\Security\Account) {
 			$owner = $ownerAccount->getParty();
-			$this->view->assign('todos', $this->toDoRepository->findByOwner($owner));
+
+			$todosGroupedByPriority = array(
+				'veryHigh' => array('label' => 'Very high', 'todos' => array(), 'class' => 'important'),
+				'high' => array('label' => 'High', 'todos' => array(), 'class' => 'important'),
+				'normal' => array('label' => 'Normal', 'todos' => array(), 'class' => 'warning'),
+				'low' => array('label' => 'Low', 'todos' => array(), 'class' => 'success')
+			);
+			$allTodos = $this->toDoRepository->findByOwner($owner);
+
+			foreach ($allTodos as $todo) {
+				$stringPriority = '';
+
+				if ($todo->getPriority() <= 50) {
+					$stringPriority = \Beech\Party\Domain\Model\Todo::PRIORITY_LOW;
+				} elseif ($todo->getPriority() <= 75) {
+					$stringPriority = \Beech\Party\Domain\Model\Todo::PRIORITY_NORMAL;
+				} elseif ($todo->getPriority() <= 100) {
+					$stringPriority = \Beech\Party\Domain\Model\Todo::PRIORITY_HIGH;
+				} elseif ($todo->getPriority() > 100) {
+					$stringPriority = \Beech\Party\Domain\Model\Todo::PRIORITY_VERY_HIGH;
+				}
+
+				$todosGroupedByPriority[$stringPriority]['todos'][] = $todo;
+			}
+
+			$this->view->assign('groupedTodos', $todosGroupedByPriority);
 		}
 	}
 }
