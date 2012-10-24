@@ -1,41 +1,5 @@
 Beech:
   Ehrm:
-    modules:
-      admin:
-        menu:
-          companyNew:
-            label: 'Company'
-            priority: 20
-            menuGroup: 'main:new'
-            package: 'Beech.Party'
-            controller: 'Management\Company'
-            resource: 'ManagementControllers'
-            action: 'new'
-          companyList:
-            label: 'Companies'
-            priority: 20
-            menuGroup: 'main:manage'
-            package: 'Beech.Party'
-            controller: 'Management\Company'
-            resource: 'ManagementControllers'
-            action: 'list'
-          personList:
-            label: 'People'
-            priority: 30
-            menuGroup: 'main:manage'
-            package: 'Beech.Party'
-            controller: 'Management\Person'
-            resource: 'ManagementControllers'
-            action: 'list'
-          groupTypeList:
-            label: 'Group Types'
-            priority: 40
-            menuGroup: 'main:manage'
-            package: 'Beech.Party'
-            controller: 'Management\Group\Type'
-            resource: 'ManagementControllers'
-            action: 'list'
-
     menu:
       administration:
         groups:
@@ -73,4 +37,10 @@ Famelo:
         arguments:
           @package: 'Beech.Party'
           @controller: 'Management\Company'
+          @action: 'list'
+      groupTypes:
+        label: 'Group types'
+        arguments:
+          @package: 'Beech.Party'
+          @controller: 'Management\Group\Type'
           @action: 'list'
