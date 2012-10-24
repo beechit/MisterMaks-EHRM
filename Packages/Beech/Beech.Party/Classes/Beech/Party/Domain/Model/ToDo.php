@@ -102,7 +102,7 @@ class ToDo {
 	 * The url to execute this task
 	 *
 	 * @var \Doctrine\Common\Collections\ArrayCollection<\Beech\Party\Domain\Model\Notification>
-	 * @ORM\OneToMany(mappedBy="todo",cascade={"persist"})
+	 * @ORM\OneToMany(mappedBy="toDo",cascade={"persist"})
 	 */
 	protected $notifications;
 
