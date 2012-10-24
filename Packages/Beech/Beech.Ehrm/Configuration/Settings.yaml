@@ -30,18 +30,6 @@ Beech:
             controller: 'Management\Administration'
             resource: 'ManagementControllers'
             action: 'index'
-          setupApplication:
-            label: 'Setup application'
-            priority: 998
-            package: 'Beech.Ehrm'
-            controller: 'Setup\Application'
-            resource: 'ManagementControllers'
-            action: 'index'
-          logmanager:
-            label: 'System log'
-            priority: 999
-            controller: 'Log'
-            resource: 'ManagementControllers'
           logout:
             label: 'Logout'
             priority: 9999
