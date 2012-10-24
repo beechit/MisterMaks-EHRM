@@ -1,21 +1,10 @@
-Beech:
-  Ehrm:
+Famelo:
+  Scaff:
     modules:
       minutes:
-        menu:
-          new:
-            label: 'Minute'
-            priority: 20
-            menuGroup: 'main:new'
-            package: 'Beech.Minutes'
-            controller: 'Minute'
-            resource: 'ApplicationControllers'
-            action: 'new'
-          list:
-            label: 'Minutes'
-            priority: 20
-            menuGroup: 'main:manage'
-            package: 'Beech.Minutes'
-            controller: 'Management\Minute'
-            resource: 'ManagementControllers'
-            action: 'list'
+        label: 'Minutes'
+        arguments:
+          @package: 'Beech.Minutes'
+          @controller: 'Management\Minute'
+          @action: 'list'
+
