@@ -13,11 +13,12 @@
 
 		<section class="container-fluid">
 
-			<f:flashMessages class="flashmessages alert" />
-
 			<div class="row-fluid">
 				<div class="span2"><typoscript:renderTypoScript path="administrationMenu" /></div>
-				<div class="span10"><f:render partial="AdministrationBody" arguments="{_all}" /></div>
+				<div class="span10">
+					<f:flashMessages class="flashmessages alert" />
+					<f:render partial="AdministrationBody" arguments="{_all}" />
+				</div>
 			</div>
 
 			<div class="loading hide">
