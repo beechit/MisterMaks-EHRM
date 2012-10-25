@@ -1,0 +1,8 @@
+-
+  name: 'ToDo list'
+  uriPattern: 'todo(/{@action})'
+  defaults:
+    '@package': 'Beech.Task'
+    '@controller': 'ToDo'
+    '@action': 'index'
+    '@format': 'html'

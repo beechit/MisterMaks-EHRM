@@ -1,0 +1,11 @@
+Beech:
+  Ehrm:
+    menu:
+      account:
+        menu:
+          todo:
+            label: 'Todo'
+            priority: 30
+            package: 'Beech.Task'
+            controller: 'todo'
+            action: 'index'
