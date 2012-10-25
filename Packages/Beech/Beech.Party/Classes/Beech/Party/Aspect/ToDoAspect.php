@@ -73,7 +73,7 @@ class ToDoAspect {
 	 * @return void
 	 */
 	private function createToDo($task, \TYPO3\Party\Domain\Model\AbstractParty $owner, $controllerAction, $controllerName, $controllerArguments, $priority, $userMayArchive) {
-		$notification = new \Beech\Party\Domain\Model\Notification();
+		$notification = new \Beech\Ehrm\Domain\Model\Notification();
 		$notification->setLabel($task);
 		$notification->setSticky(TRUE);
 		$notification->setCloseable(TRUE);

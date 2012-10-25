@@ -17,7 +17,7 @@ use TYPO3\Flow\Annotations as Flow;
 class ToDoRepository extends \TYPO3\Flow\Persistence\Repository {
 
 	/**
-	 * @var \Beech\Party\Domain\Repository\NotificationRepository
+	 * @var \Beech\Ehrm\Domain\Repository\NotificationRepository
 	 * @Flow\Inject
 	 */
 	protected $notificationRepository;

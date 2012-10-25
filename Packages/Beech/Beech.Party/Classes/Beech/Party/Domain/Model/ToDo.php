@@ -101,7 +101,7 @@ class ToDo {
 	/**
 	 * The url to execute this task
 	 *
-	 * @var \Doctrine\Common\Collections\ArrayCollection<\Beech\Party\Domain\Model\Notification>
+	 * @var \Doctrine\Common\Collections\ArrayCollection<\Beech\Ehrm\Domain\Model\Notification>
 	 * @ORM\OneToMany(mappedBy="toDo",cascade={"persist"})
 	 */
 	protected $notifications;
@@ -268,12 +268,12 @@ class ToDo {
 	}
 
 	/**
-	 * Adds an notification to the current to-do.
+	 * Adds a notification to the current to-do.
 	 *
-	 * @param \Beech\Party\Domain\Model\Notification $notification
+	 * @param \Beech\Ehrm\Domain\Model\Notification $notification
 	 * @return void
 	 */
-	public function addNotification(\Beech\Party\Domain\Model\Notification $notification) {
+	public function addNotification(\Beech\Ehrm\Domain\Model\Notification $notification) {
 		$notification->setToDo($this);
 		$this->notifications->add($notification);
 	}

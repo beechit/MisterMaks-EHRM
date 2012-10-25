@@ -161,12 +161,6 @@
 			<trans-unit id="flashmessage.addedAddress">
 				<source>New company address was successfully added.</source>
 			</trans-unit>
-			<trans-unit id="notification.addAddress">
-				<source>Add address to company</source>
-			</trans-unit>
-			<trans-unit id="notification.addCompanyContact">
-				<source>Add company contact</source>
-			</trans-unit>
 			<trans-unit id="toDo.status">
 				<source>Status</source>
 			</trans-unit>

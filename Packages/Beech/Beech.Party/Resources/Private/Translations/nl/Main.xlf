@@ -222,14 +222,6 @@
 				<source>New company address was successfully added.</source>
 				<target>Nieuw adres van het bedrijf werd toegevoegd.</target>
 			</trans-unit>
-			<trans-unit id="notification.addAddress">
-				<source>Add address to company</source>
-				<target>Voeg adresgegevens toe aan het bedrijf</target>
-			</trans-unit>
-			<trans-unit id="notification.addCompanyContact">
-				<source>Add company contact</source>
-				<target>Voeg een contactpersoon toe</target>
-			</trans-unit>
 			<trans-unit id="toDo.status">
 				<source>Status</source>
 				<target>Status</target>

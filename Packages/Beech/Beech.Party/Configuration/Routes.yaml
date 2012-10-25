@@ -1,22 +1,4 @@
 -
-  name: 'Notification REST service'
-  uriPattern: 'rest/notification'
-  defaults:
-    '@package': 'Beech.Party'
-    '@controller': 'Rest\Notification'
-    '@action': 'list'
-    '@format': 'json'
-
--
-  name: 'Notification REST service'
-  uriPattern: 'rest/notification(/{resource})'
-  defaults:
-    '@package': 'Beech.Party'
-    '@controller': 'Rest\Notification'
-    '@action': 'delete'
-    '@format': 'json'
-
--
   name: 'Company management'
   uriPattern: 'management/company(/{@action})'
   defaults:
