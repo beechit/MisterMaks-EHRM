@@ -11,13 +11,6 @@ Beech:
             label: 'Companies'
       account:
         menu:
-          todo:
-            label: 'Todo'
-            priority: 30
-            package: 'Beech.Party'
-            controller: 'management\todo'
-            action: 'index'
-
           settings:
             label: 'Settings'
             priority: 20

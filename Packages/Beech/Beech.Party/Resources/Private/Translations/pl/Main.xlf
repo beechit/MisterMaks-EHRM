@@ -106,10 +106,6 @@
 				<source>No company created yet</source>
 				<target>Brak firm w systemie</target>
 			</trans-unit>
-			<trans-unit id="todo.viewArchived">
-				<source>View archived items</source>
-				<target>Pokaz zarchiwizowane zadania</target>
-			</trans-unit>
 			<trans-unit id="persons">
 				<source>Persons</source>
 				<target>Osoby</target>

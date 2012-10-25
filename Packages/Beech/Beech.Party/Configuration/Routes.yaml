@@ -33,11 +33,3 @@
     '@action': 'list'
     '@format': 'html'
 
--
-  name: 'ToDo list'
-  uriPattern: 'management/todo(/{@action})'
-  defaults:
-    '@package': 'Beech.Party'
-    '@controller': 'Management\ToDo'
-    '@action': 'index'
-    '@format': 'html'

@@ -110,10 +110,6 @@
 				<source>No department created yet</source>
 				<target>Nog geen afdeling aangemaakt</target>
 			</trans-unit>
-			<trans-unit id="todo.viewArchived">
-				<source>View archived items</source>
-				<target>Bekijk gearchiveerde items</target>
-			</trans-unit>
 			<trans-unit id="persons">
 				<source>Persons</source>
 				<target>Gebruikers</target>
@@ -221,30 +217,6 @@
 			<trans-unit id="flashmessage.addedAddress">
 				<source>New company address was successfully added.</source>
 				<target>Nieuw adres van het bedrijf werd toegevoegd.</target>
-			</trans-unit>
-			<trans-unit id="toDo.status">
-				<source>Status</source>
-				<target>Status</target>
-			</trans-unit>
-			<trans-unit id="toDo.priority">
-				<source>Priority</source>
-				<target>Prioriteit</target>
-			</trans-unit>
-			<trans-unit id="toDo.task">
-				<source>Task</source>
-				<target>Taak</target>
-			</trans-unit>
-			<trans-unit id="toDo.doTask">
-				<source>Do task</source>
-				<target>Taak uitvoeren</target>
-			</trans-unit>
-			<trans-unit id="toDo.archiveTask">
-				<source>Archive task</source>
-				<target>Taak archiveren</target>
-			</trans-unit>
-			<trans-unit id="toDo.noToDo">
-				<source>No todo's</source>
-				<target>Geen taken</target>
 			</trans-unit>
 			<trans-unit id="loading">
 				<source>Mister Maks</source>
