@@ -10,7 +10,7 @@ namespace Beech\WorkFlow\Tests\Functional;
 use TYPO3\Flow\Annotations as Flow,
 	Beech\WorkFlow\Domain\Model\Action,
 	Beech\Party\Domain\Model\Company,
-	Beech\Party\Domain\Model\ToDo;
+	Beech\Task\Domain\Model\ToDo;
 
 /**
  * Test the actual persistence of actions
@@ -33,7 +33,7 @@ class PersistenceTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 	protected $companyRepository;
 
 	/**
-	 * @var \Beech\Party\Domain\Repository\ToDoRepository
+	 * @var \Beech\Task\Domain\Repository\ToDoRepository
 	 */
 	protected $toDoRepository;
 
@@ -59,7 +59,7 @@ class PersistenceTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 		parent::setUp();
 		$this->actionRepository = $this->objectManager->get('\Beech\WorkFlow\Domain\Repository\ActionRepository');
 		$this->companyRepository = $this->objectManager->get('\Beech\Party\Domain\Repository\CompanyRepository');
-		$this->toDoRepository = $this->objectManager->get('\Beech\Party\Domain\Repository\ToDoRepository');
+		$this->toDoRepository = $this->objectManager->get('\Beech\Task\Domain\Repository\ToDoRepository');
 		$this->personRepository = $this->objectManager->get('Beech\Party\Domain\Repository\PersonRepository');
 		$this->accountRepository = $this->objectManager->get('TYPO3\Flow\Security\AccountRepository');
 		$this->accountFactory = $this->objectManager->get('TYPO3\Flow\Security\AccountFactory');
@@ -250,7 +250,7 @@ class PersistenceTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 		$this->persistenceManager->persistAll();
 		$this->persistenceManager->clearState();
 
-		$this->assertEquals(2, $this->actionRepository->countAll(2));
+		$this->assertEquals(2, $this->actionRepository->countAll());
 	}
 
 	/**
@@ -350,10 +350,10 @@ class PersistenceTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 	 * @param array $controllerArguments The arguments
 	 * @param integer $priority Priority of this task 0-100
 	 * @param boolean $userMayArchive True if user is allowed to archive this task manual
-	 * @return \Beech\Party\Domain\Model\ToDo
+	 * @return \Beech\Task\Domain\Model\ToDo
 	 */
-	private function createToDoOutput($task, \TYPO3\Party\Domain\Model\AbstractParty $owner, $controllerAction, $controllerName, $controllerArguments, $priority, $userMayArchive) {
-		$todo = new \Beech\Party\Domain\Model\ToDo();
+	protected function createToDoOutput($task, \TYPO3\Party\Domain\Model\AbstractParty $owner, $controllerAction, $controllerName, $controllerArguments, $priority, $userMayArchive) {
+		$todo = new \Beech\Task\Domain\Model\ToDo();
 		$todo->setTask($task);
 		$todo->setOwner($owner);
 		$todo->setPriority($priority);
@@ -369,7 +369,7 @@ class PersistenceTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 	 * Add a person to we can test with
 	 * @return \TYPO3\Party\Domain\Model\AbstractParty
 	 */
-	private function createPerson() {
+	protected function createPerson() {
 		$person = new \Beech\Party\Domain\Model\Person();
 		$account = $this->accountFactory->createAccountWithPassword(uniqid() . '@domain.ext', $this->persistenceManager->getIdentifierByObject($person));
 		$this->accountRepository->add($account);
@@ -388,7 +388,7 @@ class PersistenceTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 	 * @param string $status
 	 * @return \Beech\WorkFlow\Domain\Model\Action
 	 */
-	private function createAction(array $preConditions, array $validators, array $outputHandlers, $status = NULL) {
+	protected function createAction(array $preConditions, array $validators, array $outputHandlers, $status = NULL) {
 		$action = new Action();
 
 		if ($status) {

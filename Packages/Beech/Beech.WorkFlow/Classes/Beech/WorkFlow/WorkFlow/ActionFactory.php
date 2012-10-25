@@ -215,7 +215,7 @@ class ActionFactory {
 			case 'ENTITY':
 					// todo add other entity types
 				if ($propertyParts[1] === 'TODO') {
-					$property = new \Beech\Party\Domain\Model\ToDo();
+					$property = new \Beech\Task\Domain\Model\ToDo();
 				} elseif ($propertyParts[1] === 'ACTION') {
 					$property = new \Beech\WorkFlow\Domain\Model\Action();
 				}

@@ -169,7 +169,7 @@ class ActionFactoryTest extends \TYPO3\Flow\Tests\UnitTestCase {
 		$outputHandler1 = new \Beech\WorkFlow\OutputHandlers\EntityOutputHandler();
 
 			// Work around time differences during running the tests
-		$todoEntity = new \Beech\Party\Domain\Model\ToDo();
+		$todoEntity = new \Beech\Task\Domain\Model\ToDo();
 		$todoEntity->setDateTime($factoryOutput[0]->getOutputHandlers()->first()->getEntity()->getDateTime());
 		$outputHandler1->setEntity($todoEntity);
 
@@ -204,7 +204,7 @@ class ActionFactoryTest extends \TYPO3\Flow\Tests\UnitTestCase {
 		$validator2->setMatchCondition(\Beech\WorkFlow\Validators\DateValidator::MATCH_CONDITION_SMALLER_THEN);
 
 		$outputHandler1 = new \Beech\WorkFlow\OutputHandlers\EntityOutputHandler();
-		$todoEntity = new \Beech\Party\Domain\Model\ToDo();
+		$todoEntity = new \Beech\Task\Domain\Model\ToDo();
 		$todoEntity->setDateTime($factoryOutput[0]->getOutputHandlers()->first()->getEntity()->getDateTime());
 		$outputHandler1->setEntity($todoEntity);
 
@@ -244,7 +244,7 @@ class ActionFactoryTest extends \TYPO3\Flow\Tests\UnitTestCase {
 		$validator->setMatchCondition(\Beech\WorkFlow\Validators\DateValidator::MATCH_CONDITION_EQUAL);
 
 		$outputHandler = new \Beech\WorkFlow\OutputHandlers\EntityOutputHandler();
-		$todoEntity = new \Beech\Party\Domain\Model\ToDo();
+		$todoEntity = new \Beech\Task\Domain\Model\ToDo();
 		$todoEntity->setDateTime($factoryOutput[0]->getOutputHandlers()->first()->getEntity()->getDateTime());
 		$outputHandler->setEntity($todoEntity);
 

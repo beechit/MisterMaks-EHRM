@@ -27,6 +27,10 @@ class ActionDispatcher {
 	public function run() {
 		$actions = $this->actionRepository->findActive();
 
+		if (!is_array($actions)) {
+			return;
+		}
+
 		foreach ($actions as $action) {
 			$action->dispatch();
 			$this->actionRepository->update($action);

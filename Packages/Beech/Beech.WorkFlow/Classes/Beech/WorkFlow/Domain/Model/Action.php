@@ -134,7 +134,7 @@ class Action implements \Beech\WorkFlow\Core\ActionInterface {
 	 */
 	protected function start() {
 		if ($this->status === self::STATUS_NEW) {
-			foreach ($this->preConditions AS $preCondition) {
+			foreach ($this->preConditions as $preCondition) {
 				if (!$preCondition->isMet()) {
 					return FALSE;
 				}
@@ -143,7 +143,7 @@ class Action implements \Beech\WorkFlow\Core\ActionInterface {
 			$this->status = self::STATUS_STARTED;
 		}
 
-		// todo: throw exception(?)
+			// todo: throw exception(?)
 	}
 
 	/**
@@ -152,7 +152,7 @@ class Action implements \Beech\WorkFlow\Core\ActionInterface {
 	 */
 	protected function finish() {
 		if ($this->status === self::STATUS_STARTED) {
-			foreach ($this->validators AS $validator) {
+			foreach ($this->validators as $validator) {
 				if (!$validator->isValid()) {
 					return FALSE;
 				}
@@ -170,7 +170,7 @@ class Action implements \Beech\WorkFlow\Core\ActionInterface {
 	 */
 	protected function runOutputHandlers() {
 		if ($this->status === self::STATUS_FINISHED) {
-			foreach ($this->outputHandlers AS $outputHandler) {
+			foreach ($this->outputHandlers as $outputHandler) {
 				$outputHandler->invoke();
 			}
 		}
