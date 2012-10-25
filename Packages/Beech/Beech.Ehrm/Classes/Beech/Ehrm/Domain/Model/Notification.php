@@ -43,7 +43,7 @@ class Notification {
 	protected $sticky;
 
 	/**
-	 * @var \Beech\Party\Domain\Model\ToDo
+	 * @var \Beech\Task\Domain\Model\ToDo
 	 * @ORM\ManyToOne(inversedBy="notifications")
 	 */
 	protected $toDo;
@@ -127,17 +127,17 @@ class Notification {
 	/**
 	 * Sets the todo
 	 *
-	 * @param \Beech\Party\Domain\Model\ToDo $toDo
+	 * @param \Beech\Task\Domain\Model\ToDo $toDo
 	 * @return void
 	 */
-	public function setToDo(\Beech\Party\Domain\Model\ToDo $toDo) {
+	public function setToDo(\Beech\Task\Domain\Model\ToDo $toDo) {
 		$this->toDo = $toDo;
 	}
 
 	/**
 	 * Returns the todo
 	 *
-	 * @return \Beech\Party\Domain\Model\ToDo
+	 * @return \Beech\Task\Domain\Model\ToDo
 	 */
 	public function getToDo() {
 		return $this->toDo;

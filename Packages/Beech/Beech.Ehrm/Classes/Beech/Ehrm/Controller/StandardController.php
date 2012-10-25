@@ -17,7 +17,7 @@ use TYPO3\Flow\Annotations as Flow;
 class StandardController extends AbstractController {
 
 	/**
-	 * @var \Beech\Party\Domain\Repository\ToDoRepository
+	 * @var \Beech\Task\Domain\Repository\ToDoRepository
 	 * @Flow\Inject
 	 */
 	protected $toDoRepository;
@@ -48,13 +48,13 @@ class StandardController extends AbstractController {
 				$stringPriority = '';
 
 				if ($todo->getPriority() <= 50) {
-					$stringPriority = \Beech\Party\Domain\Model\Todo::PRIORITY_LOW;
+					$stringPriority = \Beech\Task\Domain\Model\Todo::PRIORITY_LOW;
 				} elseif ($todo->getPriority() <= 75) {
-					$stringPriority = \Beech\Party\Domain\Model\Todo::PRIORITY_NORMAL;
+					$stringPriority = \Beech\Task\Domain\Model\Todo::PRIORITY_NORMAL;
 				} elseif ($todo->getPriority() <= 100) {
-					$stringPriority = \Beech\Party\Domain\Model\Todo::PRIORITY_HIGH;
+					$stringPriority = \Beech\Task\Domain\Model\Todo::PRIORITY_HIGH;
 				} elseif ($todo->getPriority() > 100) {
-					$stringPriority = \Beech\Party\Domain\Model\Todo::PRIORITY_VERY_HIGH;
+					$stringPriority = \Beech\Task\Domain\Model\Todo::PRIORITY_VERY_HIGH;
 				}
 
 				$todosGroupedByPriority[$stringPriority]['todos'][] = $todo;

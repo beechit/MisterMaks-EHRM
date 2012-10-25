@@ -37,7 +37,7 @@ class SettingsHelper {
 	protected $bootstrap;
 
 	/**
-	 * @var \Beech\Party\Domain\Repository\ToDoRepository
+	 * @var \Beech\Task\Domain\Repository\ToDoRepository
 	 * @Flow\Inject
 	 */
 	protected $toDoRepository;
