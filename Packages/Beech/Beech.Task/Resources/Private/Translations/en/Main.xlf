@@ -2,23 +2,20 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
 	<file original="" source-language="en" target-language="en" datatype="plaintext">
 		<body>
-			<trans-unit id="todo.viewArchived">
-				<source>View archived items</source>
-			</trans-unit>
 			<trans-unit id="toDo.status">
 				<source>Status</source>
 			</trans-unit>
 			<trans-unit id="toDo.priority">
 				<source>Priority</source>
 			</trans-unit>
-			<trans-unit id="toDo.task">
+			<trans-unit id="toDo.description">
 				<source>Task</source>
 			</trans-unit>
 			<trans-unit id="toDo.doTask">
 				<source>Do task</source>
 			</trans-unit>
-			<trans-unit id="toDo.archiveTask">
-				<source>Archive task</source>
+			<trans-unit id="toDo.setTaskDone">
+				<source>Close</source>
 			</trans-unit>
 			<trans-unit id="toDo.noToDo">
 				<source>No todo's</source>

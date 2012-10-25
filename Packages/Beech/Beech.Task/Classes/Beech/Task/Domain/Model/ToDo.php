@@ -14,6 +14,7 @@ use Doctrine\ORM\Mapping as ORM;
  * A To-Do Model
  *
  * @Flow\Entity
+ * @ORM\HasLifecycleCallbacks
  */
 class ToDo {
 
@@ -23,58 +24,29 @@ class ToDo {
 	const PRIORITY_VERY_HIGH = 'veryHigh';
 
 	/**
-	 * The task name
+	 * The task description
 	 *
 	 * @var string
 	 */
-	protected $task;
-
-	/**
-	 * The controller name to complete this task
-	 *
-	 * @var string
-	 * @ORM\Column(nullable=true)
-	 */
-	protected $controllerName;
-
-	/**
-	 * The action name to complete this task
-	 *
-	 * @var string
-	 * @ORM\Column(nullable=true)
-	 */
-	protected $controllerAction;
-
-	/**
-	 * The arguments to complete this task
-	 *
-	 * @var string
-	 * @ORM\Column(nullable=true)
-	 */
-	protected $controllerArguments;
+	protected $description;
 
 	/**
 	 * The task owner
 	 *
-	 * @var \Beech\Party\Domain\Model\Person
+	 * @var \TYPO3\Party\Domain\Model\AbstractParty
 	 * @ORM\ManyToOne
 	 */
 	protected $owner;
 
 	/**
 	 * The task starter
+	 * Property is nullable, because a task can be started by the system instead of a user
 	 *
-	 * @var \Beech\Party\Domain\Model\Person
+	 * @var \TYPO3\Party\Domain\Model\AbstractParty
 	 * @ORM\ManyToOne
+	 * @ORM\Column(nullable=true)
 	 */
 	protected $starter;
-
-	/**
-	 * The dateTime
-	 *
-	 * @var \DateTime
-	 */
-	protected $dateTime;
 
 	/**
 	 * Priority of this task 0-100
@@ -85,49 +57,94 @@ class ToDo {
 	protected $priority;
 
 	/**
-	 * The datetime the task is archived
+	 * The dateTime this task was created
+	 *
+	 * @var \DateTime
+	 */
+	protected $creationDateTime;
+
+	/**
+	 * The datetime this task was closed
+	 *
 	 * @var \DateTime
 	 * @ORM\Column(nullable=true)
 	 */
-	protected $archivedDateTime;
+	protected $closeDateTime;
 
 	/**
-	 * Is true if a user may archive an item
+	 * Sets the task description
 	 *
-	 * @var boolean
+	 * @param string $description
+	 * @return void
 	 */
-	protected $userMayArchive;
-
-	/**
-	 * @var \Doctrine\Common\Collections\ArrayCollection<\Beech\Ehrm\Domain\Model\Notification>
-	 * @ORM\OneToMany(mappedBy="toDo",cascade={"persist"})
-	 */
-	protected $notifications;
-
-	/**
-	 * Construct the object, sets default value for dateTime
-	 */
-	public function __construct() {
-		$this->dateTime = new \DateTime();
-		$this->notifications = new \Doctrine\Common\Collections\ArrayCollection();
+	public function setDescription($description) {
+		$this->description = $description;
 	}
 
 	/**
-	 * Sets the dateTime
-	 *
-	 * @param string $dateTime
-	 */
-	public function setDateTime($dateTime) {
-		$this->dateTime = $dateTime;
-	}
-
-	/**
-	 * Returns the dateTime
+	 * Return the task description
 	 *
 	 * @return string
 	 */
-	public function getDateTime() {
-		return $this->dateTime;
+	public function getDescription() {
+		return $this->description;
+	}
+
+	/**
+	 * Sets the owner for this task
+	 *
+	 * @param \TYPO3\Party\Domain\Model\AbstractParty $owner
+	 * @return void
+	 */
+	public function setOwner(\TYPO3\Party\Domain\Model\AbstractParty $owner) {
+		$this->owner = $owner;
+	}
+
+	/**
+	 * Returns the owner for this task
+	 *
+	 * @return \TYPO3\Party\Domain\Model\AbstractParty
+	 */
+	public function getOwner() {
+		return $this->owner;
+	}
+
+	/**
+	 * Sets the starter of this task, load the current user if NULL was emitted
+	 * We use the top-level AbstractParty class as typehint, because a task can also
+	 * be started by a systemprocess
+	 *
+	 * @param \TYPO3\Party\Domain\Model\AbstractParty $starter
+	 * @ORM\PrePersist
+	 * @return void
+	 */
+	public function setStarter(\TYPO3\Party\Domain\Model\AbstractParty $starter = NULL) {
+		if ($starter === NULL ) {
+			if (is_object($this->securityContext->getAccount())
+				&& $this->securityContext->getAccount()->getParty() instanceof \Beech\Party\Domain\Model\Person) {
+				$starter = $this->securityContext->getAccount()->getParty();
+			}
+		}
+		$this->starter = $starter;
+	}
+
+	/**
+	 * Returns the starter for this task
+	 *
+	 * @return \TYPO3\Party\Domain\Model\AbstractParty
+	 */
+	public function getStarter() {
+		return $this->starter;
+	}
+
+	/**
+	 * Sets the priority, value between 0-100
+	 *
+	 * @param integer $priority
+	 * @return void
+	 */
+	public function setPriority($priority) {
+		$this->priority = $priority;
 	}
 
 	/**
@@ -145,20 +162,10 @@ class ToDo {
 	 * @return array
 	 */
 	public static function getPriorities() {
-		return array(	100 => self::PRIORITY_VERY_HIGH,
-						75 => self::PRIORITY_HIGH,
-						50 => self::PRIORITY_NORMAL,
-						25 => self::PRIORITY_LOW);
-	}
-
-	/**
-	 * Sets the priority, value between 0-100
-	 *
-	 * @param integer $priority
-	 * @return void
-	 */
-	public function setPriority($priority) {
-		$this->priority = $priority;
+		return array( 100 => self::PRIORITY_VERY_HIGH,
+			75 => self::PRIORITY_HIGH,
+			50 => self::PRIORITY_NORMAL,
+			25 => self::PRIORITY_LOW);
 	}
 
 	/**
@@ -181,175 +188,59 @@ class ToDo {
 	}
 
 	/**
-	 * Sets the owner for this task
+	 * Set the dateTime of creation
 	 *
-	 * @param \TYPO3\Party\Domain\Model\AbstractParty $owner
+	 * @param \DateTime $creationDateTime
+	 * @ORM\PrePersist
 	 * @return void
 	 */
-	public function setOwner($owner) {
-		$this->owner = $owner;
+	public function setCreationDateTime(\DateTime $creationDateTime = NULL) {
+		if ($creationDateTime === NULL) {
+			$creationDateTime = new \DateTime();
+		}
+		$this->creationDateTime = $creationDateTime;
 	}
 
 	/**
-	 * Returns the owner for this task
-	 *
-	 * @return \TYPO3\Party\Domain\Model\AbstractParty
-	 */
-	public function getOwner() {
-		return $this->owner;
-	}
-
-	/**
-	 * Sets the starter
-	 *
-	 * @param \TYPO3\Party\Domain\Model\AbstractParty $starter
-	 * @return void
-	 */
-	public function setStarter($starter) {
-		$this->starter = $starter;
-	}
-
-	/**
-	 * Returns the starter for this task
-	 *
-	 * @return \TYPO3\Party\Domain\Model\AbstractParty
-	 */
-	public function getStarter() {
-		return $this->starter;
-	}
-
-	/**
-	 * Sets the task name
-	 *
-	 * @param string $task
-	 * @return void
-	 */
-	public function setTask($task) {
-		$this->task = $task;
-	}
-
-	/**
-	 * Return the task name
-	 *
-	 * @return string
-	 */
-	public function getTask() {
-		return $this->task;
-	}
-
-	/**
-	 * Archive the task
-	 *
-	 * @return void
-	 */
-	public function setArchived() {
-		$this->setArchivedDateTime(new \DateTime());
-	}
-
-	/**
-	 * Set the archived dateTime
-	 *
-	 * @param \DateTime $archivedDateTime
-	 * @return void
-	 */
-	public function setArchivedDateTime(\DateTime $archivedDateTime) {
-		$this->archivedDateTime = $archivedDateTime;
-	}
-
-	/**
-	 * Returns the archived dateTime
-	 *
 	 * @return \DateTime
 	 */
-	public function getArchivedDateTime() {
-		return $this->archivedDateTime;
+	public function getCreationDateTime() {
+		return $this->creationDateTime;
 	}
 
 	/**
-	 * Adds a notification to the current to-do.
+	 * Set the dateTime this task was set to closed
 	 *
-	 * @param \Beech\Ehrm\Domain\Model\Notification $notification
+	 * @param \DateTime $closeDateTime
 	 * @return void
 	 */
-	public function addNotification(\Beech\Ehrm\Domain\Model\Notification $notification) {
-		$notification->setToDo($this);
-		$this->notifications->add($notification);
+	public function setCloseDateTime(\DateTime $closeDateTime) {
+		$this->closeDateTime = $closeDateTime;
 	}
 
 	/**
-	 * Sets the controllerName
-	 *
-	 * @param string $controllerName
-	 * @return void
+	 * @return \DateTime
 	 */
-	public function setControllerName($controllerName) {
-		$this->controllerName = $controllerName;
+	public function getCloseDateTime() {
+		return $this->closeDateTime;
 	}
 
 	/**
-	 * Returns the controllerName
-	 *
-	 * @return string
-	 */
-	public function getControllerName() {
-		return $this->controllerName;
-	}
-
-	/**
-	 * Sets the controllerAction
-	 *
-	 * @param string $controllerAction
-	 * @return void
-	 */
-	public function setControllerAction($controllerAction) {
-		$this->controllerAction = $controllerAction;
-	}
-
-	/**
-	 * Returns the controllerAction
-	 *
-	 * @return string
-	 */
-	public function getControllerAction() {
-		return $this->controllerAction;
-	}
-
-	/**
-	 * Sets the controllerArguments
-	 *
-	 * @param string $controllerArguments
-	 * @return void
-	 */
-	public function setControllerArguments($controllerArguments) {
-		$this->controllerArguments = $controllerArguments;
-	}
-
-	/**
-	 * Returns the controllerArguments
-	 *
-	 * @return string
-	 */
-	public function getControllerArguments() {
-		return unserialize($this->controllerArguments);
-	}
-
-	/**
-	 * Sets userMayArchive
-	 *
-	 * @param boolean $userMayArchive
-	 * @return void
-	 */
-	public function setUserMayArchive($userMayArchive) {
-		$this->userMayArchive = $userMayArchive;
-	}
-
-	/**
-	 * Returns userMayArchive
+	 * Determine if a task is set closed
 	 *
 	 * @return boolean
 	 */
-	public function getUserMayArchive() {
-		return $this->userMayArchive;
+	public function isClosed() {
+		return NULL !== $this->closeDateTime;
+	}
+
+	/**
+	 * Close the current task
+	 *
+	 * @return void
+	 */
+	public function close() {
+		$this->setCloseDateTime(new \DateTime());
 	}
 }
 ?>
