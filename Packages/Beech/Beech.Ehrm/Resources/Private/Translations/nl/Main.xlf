@@ -134,6 +134,14 @@
 				<source>Language</source>
 				<target>Taal</target>
 			</trans-unit>
+			<trans-unit id="notification.addAddress">
+				<source>Add address to company</source>
+				<target>Voeg adresgegevens toe aan het bedrijf</target>
+			</trans-unit>
+			<trans-unit id="notification.addCompanyContact">
+				<source>Add company contact</source>
+				<target>Voeg een contactpersoon toe</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

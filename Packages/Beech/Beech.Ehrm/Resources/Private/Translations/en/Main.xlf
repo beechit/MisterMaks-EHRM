@@ -101,6 +101,12 @@
 			<trans-unit id='language'>
 				<source>Language</source>
 			</trans-unit>
+			<trans-unit id="notification.addAddress">
+				<source>Add address to company</source>
+			</trans-unit>
+			<trans-unit id="notification.addCompanyContact">
+				<source>Add company contact</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

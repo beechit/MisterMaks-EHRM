@@ -134,6 +134,14 @@
 				<source>Language</source>
 				<target>Język</target>
 			</trans-unit>
+			<trans-unit id="notification.addAddress">
+				<source>Add address to company</source>
+				<target>Dodaj adres do firmy</target>
+			</trans-unit>
+			<trans-unit id="notification.addCompanyContact">
+				<source>Add company contact</source>
+				<target>Dodaj kontakt</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
