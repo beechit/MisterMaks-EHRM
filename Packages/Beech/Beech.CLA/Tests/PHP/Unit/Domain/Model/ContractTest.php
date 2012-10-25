@@ -49,18 +49,46 @@ class ContractTest extends \TYPO3\Flow\Tests\UnitTestCase {
 	 * @test
 	 */
 	public function setEmployeeJobPositionAndWage() {
-		$contract = new Contract();
+		$wage = new \Beech\CLA\Domain\Model\Wage();
+		$wage->setAmount(123.56);
+
 		$person = new \Beech\Party\Domain\Model\Person();
-		$wage = new \Beech\CLA\Domain\Model\Wage(123.56);
 		$jobPosition = new \Beech\CLA\Domain\Model\JobPosition('Shop Assistant', 3);
+		$contract = new Contract();
 		$contract->setEmployee($person);
-		$contract->setWage($wage);
+		$contract->addWage($wage);
 		$contract->setJobPosition($jobPosition);
+
 		$this->assertInstanceOf('Beech\Party\Domain\Model\Person', $contract->getEmployee());
 		$this->assertInstanceOf('Beech\CLA\Domain\Model\Wage', $contract->getWage());
 		$this->assertInstanceOf('Beech\CLA\Domain\Model\JobPosition', $contract->getJobPosition());
 	}
 
+	/**
+	 * @test
+	 */
+	public function getWageReturnsTheLatestWage() {
+		$wage = new \Beech\CLA\Domain\Model\Wage();
+		$wage->setAmount(123.56);
+		$wage2 = new \Beech\CLA\Domain\Model\Wage();
+		$wage2->setAmount(125.56);
+		$wage3 = new \Beech\CLA\Domain\Model\Wage();
+		$wage3->setAmount(127.56);
+		$contract = new Contract();
+			// Model adds descending order...
+		$contract->addWage($wage3);
+		$contract->addWage($wage2);
+		$contract->addWage($wage);
+		$this->assertEquals($wage3, $contract->getWage());
+	}
+
+	/**
+	 * @test
+	 */
+	public function getNoWageReturnsNull() {
+		$contract = new Contract();
+		$this->assertEquals(NULL, $contract->getWage());
+	}
 }
 
 ?>

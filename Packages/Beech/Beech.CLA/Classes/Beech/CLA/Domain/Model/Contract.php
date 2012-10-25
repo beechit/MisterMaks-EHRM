@@ -36,10 +36,12 @@ class Contract {
 	protected $jobPosition;
 
 	/**
-	 * @var \Beech\CLA\Domain\Model\Wage
-	 * @ORM\OneToOne
+	 * @var \Doctrine\Common\Collections\Collection<\Beech\CLA\Domain\Model\Wage>
+	 * @ORM\OneToMany(mappedBy="contract")
+	 * @ORM\OrderBy({"creationDateTime" = "DESC"})
+	 * @Flow\Validate(type="Count", options={ "minimum"=1 })
 	 */
-	protected $wage;
+	protected $wages;
 
 	/**
 	 * @var \Beech\Party\Domain\Model\Company
@@ -77,6 +79,13 @@ class Contract {
 	 * @ORM\Column(nullable=TRUE)
 	 */
 	protected $expirationDate;
+
+	/**
+	 * Construct the object
+	 */
+	public function __construct() {
+		$this->wages = new \Doctrine\Common\Collections\ArrayCollection();
+	}
 
 	/**
 	 * @param \DateTime $creationDate
@@ -178,18 +187,35 @@ class Contract {
 
 	/**
 	 * @param \Beech\CLA\Domain\Model\Wage $wage
+	 * @return void
 	 */
-	public function setWage($wage) {
-		$this->wage = $wage;
+	public function addWage(\Beech\CLA\Domain\Model\Wage $wage) {
+		$this->wages->add($wage);
 	}
 
 	/**
-	 * @return \Beech\CLA\Domain\Model\Wage
+	 * @param \Beech\CLA\Domain\Model\Wage $wage
+	 * @return void
 	 */
-	public function getWage() {
-		return $this->wage;
+	public function removeWage(\Beech\CLA\Domain\Model\Wage $wage) {
+		$this->wages->removeElement($wage);
 	}
 
+	/**
+	 * @return \Doctrine\Common\Collections\Collection
+	 */
+	public function getWages() {
+		return $this->wages;
+	}
+
+	/**
+	 * Return the most recent wage object
+	 *
+	 * @return \Beech\CLA\Domain\Model\Wage $wage
+	 */
+	public function getWage() {
+		return $this->wages->first();
+	}
 }
 
 ?>

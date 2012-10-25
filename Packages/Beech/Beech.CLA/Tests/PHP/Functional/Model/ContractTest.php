@@ -45,7 +45,11 @@ class ContractTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 		$contract->setStatus(\Beech\CLA\Domain\Model\Contract::STATUS_ACTIVE);
 		$contract->setCreationDate(new \DateTime);
 
+		$wage = new \Beech\CLA\Domain\Model\Wage();
+		$wage->setAmount(9999);
+		$wage->setType($wage::TYPE_DAILY);
 
+		$contract->addWage($wage);
 		$this->contractRepository->add($contract);
 
 		$this->persistenceManager->persistAll();
@@ -54,8 +58,20 @@ class ContractTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 		$this->assertEquals(1, $this->contractRepository->countAll());
 	}
 
+	/**
+	 * @test
+	 * @expectedException \TYPO3\Flow\Persistence\Exception\ObjectValidationFailedException
+	 */
+	public function testContractWithoutWageDoesNotValidate() {
+		$contract = new \Beech\CLA\Domain\Model\Contract();
+		$contract->setStatus(\Beech\CLA\Domain\Model\Contract::STATUS_ACTIVE);
+		$contract->setCreationDate(new \DateTime);
+		$this->contractRepository->add($contract);
 
+		$this->persistenceManager->persistAll();
+		$this->persistenceManager->clearState();
 
-
+		$this->assertEquals(1, $this->contractRepository->countAll());
+	}
 }
 ?>
