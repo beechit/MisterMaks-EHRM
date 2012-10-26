@@ -5,6 +5,7 @@ return array(
 		'items' => array(
 			0 => array(
 				'label' => 'Test',
+				'menuGroup' => 'main:new',
 				'href' => 'beech.ehrm/standard/index',
 			)
 		)
@@ -14,10 +15,12 @@ return array(
 		'items' => array(
 			0 => array(
 				'label' => 'Admin index',
+				'menuGroup' => 'main:manage',
 				'href' => 'beech.ehrm/standard/index',
 			),
 			1 => array(
 				'label' => 'Admin index',
+				'menuGroup' => 'main:manage',
 				'href' => 'beech.ehrm/standard/index',
 			)
 		)
