@@ -28,14 +28,14 @@
             "source": {
                 "type": "git",
                 "url": "ssh://git.beech.local/EHRM/Package/Calendar.git",
-                "reference": "d2dc2b77106eb2c02989b2665760d70b6b21b2d4"
+                "reference": "cb84b8899f8f210eb6d50179cb5ae59b9075cef0"
             },
             "require": {
                 "typo3/flow": "*",
                 "beech/ehrm": "*",
                 "beech/party": "*"
             },
-            "time": "1350903804",
+            "time": "1351280626",
             "type": "typo3-flow-beech",
             "installation-source": "source",
             "autoload": {
@@ -92,7 +92,7 @@
             "source": {
                 "type": "git",
                 "url": "ssh://git.beech.local/EHRM/Package/Ehrm.git",
-                "reference": "989848ba57f3161db143cc572ff39caf05c0592f"
+                "reference": "ba06f7833082d93e411644facc0062926a07d36b"
             },
             "require": {
                 "typo3/flow": "*"
@@ -112,13 +112,13 @@
             "source": {
                 "type": "git",
                 "url": "ssh://git.beech.local/EHRM/Package/Minutes.git",
-                "reference": "a8c10a06a89d8c5c819e9aa84806fe44ffaba8db"
+                "reference": "f5fda7f0ea957340279f1676d4530ff9501a1148"
             },
             "require": {
                 "typo3/flow": "*",
                 "beech/ehrm": "*"
             },
-            "time": "1351085529",
+            "time": "1351280507",
             "type": "typo3-flow-beech",
             "installation-source": "source",
             "autoload": {
@@ -1019,12 +1019,12 @@
             "source": {
                 "type": "git",
                 "url": "ssh://git.beech.local/EHRM/Package/DevTools.git",
-                "reference": "5bad1af55e08ee99716c97506d7ed55ab85f07ee"
+                "reference": "53201979175bb09638d2b7b6be6303027e7698cf"
             },
             "require": {
                 "typo3/flow": "*"
             },
-            "time": "1351238067",
+            "time": "1351262613",
             "type": "typo3-flow-beech",
             "installation-source": "source",
             "autoload": {
