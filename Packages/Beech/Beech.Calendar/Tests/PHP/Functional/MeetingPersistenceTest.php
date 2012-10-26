@@ -9,8 +9,6 @@ namespace Beech\Calendar\Tests\Functional;
 
 use TYPO3\Flow\Annotations as Flow;
 use Beech\Calendar\Domain\Model\Meeting as Meeting;
-use Beech\Party\Domain\Model\Person as Person;
-use TYPO3\Party\Domain\Model\PersonName as PersonName;
 
 /**
  * Persistence test for Meeting entity
@@ -23,12 +21,12 @@ class MeetingPersistenceTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 	static protected $testablePersistenceEnabled = TRUE;
 
 	/**
-	 * @var Beech\Calendar\Domain\Repository\MeetingRepository
+	 * @var \Beech\Calendar\Domain\Repository\MeetingRepository
 	 */
 	protected $meetingRepository;
 
 	/**
-	 * @var Beech\Party\Domain\Repository\PersonRepository
+	 * @var \Beech\Party\Domain\Repository\PersonRepository
 	 */
 	protected $personRepository;
 
@@ -46,13 +44,13 @@ class MeetingPersistenceTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 	 * @test
 	 */
 	public function meetingCanBePersistedAndRetrieved() {
-		$personOne = new Person();
-		$personOne->addPersonName(new PersonName('', 'Bram', '', 'Verhaegh'));
+		$personOne = new \Beech\Party\Domain\Model\Person();
+		$personOne->addPersonName(new \Beech\Party\Domain\Model\PersonName('', 'Bram', '', 'Verhaegh'));
 		$personOne->addEmail('joe@initiator.nl');
 		$this->personRepository->add($personOne);
 
-		$personTwo = new Person();
-		$personTwo->addPersonName(new PersonName('', 'Edward', '', 'Lenssen'));
+		$personTwo = new \Beech\Party\Domain\Model\Person();
+		$personTwo->addPersonName(new \Beech\Party\Domain\Model\PersonName('', 'Edward', '', 'Lenssen'));
 		$personTwo->addEmail('jack@subject.nl');
 		$this->personRepository->add($personTwo);
 
