@@ -7,10 +7,8 @@ namespace Beech\Minutes\Tests\Functional;
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
-use TYPO3\Flow\Annotations as Flow;
-use Beech\Minutes\Domain\Model\Minute;
-use Beech\Party\Domain\Model\Person;
-use Beech\Party\Domain\Model\PersonName;
+use TYPO3\Flow\Annotations as Flow,
+	Beech\Minutes\Domain\Model\Minute;
 
 /**
  * Persistence test for Minute entity
@@ -23,12 +21,12 @@ class MinutePersistenceTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 	static protected $testablePersistenceEnabled = TRUE;
 
 	/**
-	 * @var Beech\Minutes\Domain\Repository\MinuteRepository
+	 * @var \Beech\Minutes\Domain\Repository\MinuteRepository
 	 */
 	protected $minuteRepository;
 
 	/**
-	 * @var Beech\Party\Domain\Repository\PersonRepository
+	 * @var \Beech\Party\Domain\Repository\PersonRepository
 	 */
 	protected $personRepository;
 
@@ -46,13 +44,13 @@ class MinutePersistenceTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 	 * @test
 	 */
 	public function minuteCanBePersistedAndRetrieved() {
-		$initiator = new Person();
-		$initiator->addPersonName(new PersonName('', 'Joe', '', 'Initiator'));
+		$initiator = new \Beech\Party\Domain\Model\Person();
+		$initiator->addPersonName(new \Beech\Party\Domain\Model\PersonName('', 'Joe', '', 'Initiator'));
 		$initiator->addEmail('joe@initiator.nl');
 		$this->personRepository->add($initiator);
 
-		$subject = new Person();
-		$subject->addPersonName(new PersonName('', 'Jack', '', 'Subject'));
+		$subject = new \Beech\Party\Domain\Model\Person();
+		$subject->addPersonName(new \Beech\Party\Domain\Model\PersonName('', 'Jack', '', 'Subject'));
 		$subject->addEmail('jack@subject.nl');
 		$this->personRepository->add($subject);
 
