@@ -7,14 +7,14 @@
             "source": {
                 "type": "git",
                 "url": "ssh://git.beech.local/EHRM/Package/Absence.git",
-                "reference": "51e2f0541bb91cb02441f45fcef7fa16f2a40c9b"
+                "reference": "164912cffa5e72935f6bd5e78015143bd281e391"
             },
             "require": {
                 "typo3/flow": "*",
                 "beech/ehrm": "*"
             },
-            "time": "1350896242",
-            "type": "typo3-flow-package",
+            "time": "1350903747",
+            "type": "typo3-flow-beech",
             "installation-source": "source",
             "autoload": {
                 "psr-0": {
@@ -28,15 +28,15 @@
             "source": {
                 "type": "git",
                 "url": "ssh://git.beech.local/EHRM/Package/Calendar.git",
-                "reference": "5575957ccc35942508de578435d614c7b58f3211"
+                "reference": "d2dc2b77106eb2c02989b2665760d70b6b21b2d4"
             },
             "require": {
                 "typo3/flow": "*",
                 "beech/ehrm": "*",
                 "beech/party": "*"
             },
-            "time": "1350552042",
-            "type": "typo3-flow-package",
+            "time": "1350903804",
+            "type": "typo3-flow-beech",
             "installation-source": "source",
             "autoload": {
                 "psr-0": {
@@ -50,14 +50,14 @@
             "source": {
                 "type": "git",
                 "url": "ssh://git.beech.local/EHRM/Package/CLA.git",
-                "reference": "b3e1dcc4405ded8639289dddd8de9659bb6d148d"
+                "reference": "a3f2a4992fd238a8430ea3d1de20a88d0067dff1"
             },
             "require": {
                 "typo3/flow": "*",
                 "beech/ehrm": "*"
             },
-            "time": "1350463619",
-            "type": "typo3-flow-package",
+            "time": "1350903877",
+            "type": "typo3-flow-beech",
             "installation-source": "source",
             "autoload": {
                 "psr-0": {
@@ -71,14 +71,14 @@
             "source": {
                 "type": "git",
                 "url": "ssh://git.beech.local/EHRM/Package/Document.git",
-                "reference": "91e7cb1da5f73985bb5320bd25e7d81b635595ec"
+                "reference": "edea5fb5c75d1f862262c06af3f01767b981dc5e"
             },
             "require": {
                 "typo3/flow": "*",
                 "beech/ehrm": "*"
             },
-            "time": "1349786559",
-            "type": "typo3-flow-package",
+            "time": "1350903910",
+            "type": "typo3-flow-beech",
             "installation-source": "source",
             "autoload": {
                 "psr-0": {
@@ -92,13 +92,13 @@
             "source": {
                 "type": "git",
                 "url": "ssh://git.beech.local/EHRM/Package/Ehrm.git",
-                "reference": "94c7d4fd81ce94351c424d00bbfe7ba6657d264b"
+                "reference": "045c17eb8735b07751febaac7724ada214042b35"
             },
             "require": {
                 "typo3/flow": "*"
             },
-            "time": "1350605254",
-            "type": "typo3-flow-package",
+            "time": "1350903937",
+            "type": "typo3-flow-beech",
             "installation-source": "source",
             "autoload": {
                 "psr-0": {
@@ -112,14 +112,14 @@
             "source": {
                 "type": "git",
                 "url": "ssh://git.beech.local/EHRM/Package/Minutes.git",
-                "reference": "c11f20fcd8a6b7eec4c4128f59fec9d5530b2a3c"
+                "reference": "181610f9de37efc658a93ab6d256b0b417dfe149"
             },
             "require": {
                 "typo3/flow": "*",
                 "beech/ehrm": "*"
             },
-            "time": "1350605668",
-            "type": "typo3-flow-package",
+            "time": "1350903964",
+            "type": "typo3-flow-beech",
             "installation-source": "source",
             "autoload": {
                 "psr-0": {
@@ -133,14 +133,14 @@
             "source": {
                 "type": "git",
                 "url": "ssh://git.beech.local/EHRM/Package/Party.git",
-                "reference": "7983a31d22dcbc4994b4beabcae61ceabe328e28"
+                "reference": "461125b55ebc8801ae640e6e84759367bbcf56b8"
             },
             "require": {
                 "typo3/flow": "*",
                 "beech/ehrm": "*"
             },
-            "time": "1350605053",
-            "type": "typo3-flow-package",
+            "time": "1350903993",
+            "type": "typo3-flow-beech",
             "installation-source": "source",
             "autoload": {
                 "psr-0": {
@@ -154,14 +154,14 @@
             "source": {
                 "type": "git",
                 "url": "ssh://git.beech.local/EHRM/Package/Task.git",
-                "reference": "8bfd665dbe0a10828d92c69a306034d1050d94f3"
+                "reference": "33c64a91e2e8d909d918339380b92d4f3b402852"
             },
             "require": {
                 "typo3/flow": "*",
                 "beech/ehrm": "*"
             },
-            "time": "1349701132",
-            "type": "typo3-flow-package",
+            "time": "1350904095",
+            "type": "typo3-flow-beech",
             "installation-source": "source",
             "autoload": {
                 "psr-0": {
@@ -175,15 +175,15 @@
             "source": {
                 "type": "git",
                 "url": "ssh://git.beech.local/EHRM/Package/WorkFlow.git",
-                "reference": "d93d22c5cadc24d2ed612208f0fefd797e4091b8"
+                "reference": "b28d32940b7d3f027b49de363d7a226e4bfa3262"
             },
             "require": {
                 "typo3/flow": "*",
                 "beech/ehrm": "*",
                 "typo3/queue-redis": "*"
             },
-            "time": "1350605301",
-            "type": "typo3-flow-package",
+            "time": "1350904122",
+            "type": "typo3-flow-beech",
             "installation-source": "source",
             "autoload": {
                 "psr-0": {
@@ -430,14 +430,20 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git://github.com/mneuhaus/Famelo.Scaff.git",
+                "url": "https://github.com/mneuhaus/Famelo.Scaff",
                 "reference": "0decbf4207f212a1f8237fe55651625bd6c9a14a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/mneuhaus/Famelo.Scaff/zipball/0decbf4207f212a1f8237fe55651625bd6c9a14a",
+                "reference": "0decbf4207f212a1f8237fe55651625bd6c9a14a",
+                "shasum": ""
             },
             "require": {
                 "typo3/flow": "*"
             },
             "time": "1350517526",
-            "type": "typo3-flow-library",
+            "type": "typo3-flow-package",
             "installation-source": "source",
             "autoload": {
                 "psr-0": {
@@ -451,22 +457,22 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/nrk/predis.git",
-                "reference": "deb64c295a36937a11caa1d40efde612a5b3695a"
+                "reference": "v0.8.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/nrk/predis/zipball/deb64c295a36937a11caa1d40efde612a5b3695a",
-                "reference": "deb64c295a36937a11caa1d40efde612a5b3695a",
+                "url": "https://github.com/nrk/predis/zipball/v0.8.0",
+                "reference": "v0.8.0",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.0"
+                "php": ">=5.3.2"
             },
             "suggest": {
                 "ext-phpiredis": "Allows faster serialization and deserialization of the Redis protocol",
                 "ext-curl": "Allows access to Webdis when paired with phpiredis"
             },
-            "time": "1350074625",
+            "time": "1350949565",
             "type": "library",
             "installation-source": "source",
             "autoload": {
@@ -500,11 +506,17 @@
                 "url": "git://github.com/radmiraal/Radmiraal.Emberjs.git",
                 "reference": "b60b328ffc30efe25dd703497f5effd0b57fc769"
             },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/radmiraal/Radmiraal.Emberjs/zipball/b60b328ffc30efe25dd703497f5effd0b57fc769",
+                "reference": "b60b328ffc30efe25dd703497f5effd0b57fc769",
+                "shasum": ""
+            },
             "require": {
                 "typo3/flow": "*"
             },
             "time": "1350603386",
-            "type": "typo3-flow-library",
+            "type": "typo3-flow-package",
             "installation-source": "source",
             "autoload": {
                 "psr-0": {
@@ -624,7 +636,7 @@
                 "typo3/flow": "*"
             },
             "time": "1350462923",
-            "type": "typo3-flow-library",
+            "type": "typo3-flow-package",
             "installation-source": "source",
             "autoload": {
                 "psr-0": {
@@ -647,7 +659,7 @@
                 "typo3/typoscript": "*"
             },
             "time": "1350549203",
-            "type": "typo3-flow-library",
+            "type": "typo3-flow-package",
             "installation-source": "source",
             "autoload": {
                 "psr-0": {
@@ -798,7 +810,7 @@
                 "typo3/flow": "*"
             },
             "time": "1350810784",
-            "type": "typo3-flow-library",
+            "type": "typo3-flow-package",
             "installation-source": "source",
             "autoload": {
                 "psr-0": {
@@ -820,7 +832,7 @@
                 "typo3/form": "*"
             },
             "time": "1349783475",
-            "type": "typo3-flow-library",
+            "type": "typo3-flow-package",
             "installation-source": "source",
             "autoload": {
                 "psr-0": {
@@ -841,7 +853,7 @@
                 "typo3/flow": "*"
             },
             "time": "1349709668",
-            "type": "typo3-flow-library",
+            "type": "typo3-flow-package",
             "installation-source": "source",
             "autoload": {
                 "psr-0": {
@@ -887,7 +899,7 @@
                 "typo3/flow": "*"
             },
             "time": "1349857489",
-            "type": "typo3-flow-library",
+            "type": "typo3-flow-package",
             "installation-source": "source",
             "autoload": {
                 "psr-0": {
@@ -909,7 +921,7 @@
                 "predis/predis": "*"
             },
             "time": "1349851779",
-            "type": "typo3-flow-library",
+            "type": "typo3-flow-package",
             "installation-source": "source",
             "autoload": {
                 "psr-0": {
@@ -929,7 +941,7 @@
                 "typo3/flow": "*"
             },
             "time": "1349603190",
-            "type": "typo3-flow-library",
+            "type": "typo3-flow-package",
             "installation-source": "source",
             "autoload": {
                 "psr-0": {
@@ -949,7 +961,7 @@
                 "typo3/flow": "*"
             },
             "time": "1349777876",
-            "type": "typo3-flow-library",
+            "type": "typo3-flow-package",
             "installation-source": "source",
             "autoload": {
                 "psr-0": {
@@ -969,7 +981,7 @@
                 "typo3/flow": "*"
             },
             "time": "1350483987",
-            "type": "typo3-flow-library",
+            "type": "typo3-flow-package",
             "installation-source": "source",
             "autoload": {
                 "psr-0": {
@@ -991,7 +1003,7 @@
                 "typo3/eel": "*"
             },
             "time": "1350462960",
-            "type": "typo3-flow-library",
+            "type": "typo3-flow-package",
             "installation-source": "source",
             "autoload": {
                 "psr-0": {
@@ -1007,13 +1019,13 @@
             "source": {
                 "type": "git",
                 "url": "ssh://git.beech.local/Beech/BuildEssentials.git",
-                "reference": "34a6de436af926418d8f489e99e31e9445ba5789"
+                "reference": "d7e869a2ec2c0cc53f616dd2e106f832d24b7c60"
             },
             "require": {
                 "php": ">=5.3.2",
                 "typo3/flow-composer-installers": "*"
             },
-            "time": "1350461784",
+            "time": "1350906442",
             "type": "typo3-flow-build",
             "installation-source": "source",
             "description": "Beech Flow Build Toolchain Essentials"
@@ -1024,14 +1036,14 @@
             "source": {
                 "type": "git",
                 "url": "ssh://git.beech.local/EHRM/Package/Style.git",
-                "reference": "5c8ad7703193b4e1b461b23c3326d3b61434ac10"
+                "reference": "b096ac96d4e9f7e7f41d1bf40f08101ce1ebad0e"
             },
             "require": {
                 "typo3/flow": "*",
                 "beech/ehrm": "*"
             },
-            "time": "1349868966",
-            "type": "typo3-flow-tools",
+            "time": "1350904053",
+            "type": "typo3-flow-beech",
             "installation-source": "source",
             "autoload": {
                 "psr-0": {
@@ -1044,14 +1056,20 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git://github.com/mneuhaus/Debug.Toolbar.git",
+                "url": "https://github.com/mneuhaus/Debug.Toolbar",
                 "reference": "9b2ecc615c4ea34555e280a7b4df3e9a1b34fcea"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/mneuhaus/Debug.Toolbar/zipball/9b2ecc615c4ea34555e280a7b4df3e9a1b34fcea",
+                "reference": "9b2ecc615c4ea34555e280a7b4df3e9a1b34fcea",
+                "shasum": ""
             },
             "require": {
                 "typo3/flow": "*"
             },
             "time": "1349861750",
-            "type": "typo3-flow-library",
+            "type": "typo3-flow-package",
             "installation-source": "source",
             "autoload": {
                 "psr-0": {
@@ -1094,12 +1112,18 @@
             "version": "1.0.2",
             "source": {
                 "type": "git",
-                "url": "git://github.com/sandstorm/PhpProfiler.git",
+                "url": "https://github.com/sandstorm/PhpProfiler.git",
                 "reference": "1.0.2"
             },
-            "time": "2012-10-19 06:04:24",
-            "type": "typo3-flow-library",
-            "installation-source": "source",
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/sandstorm/PhpProfiler/zipball/1.0.2",
+                "reference": "1.0.2",
+                "shasum": ""
+            },
+            "time": "2012-10-18 23:04:24",
+            "type": "typo3-flow-package",
+            "installation-source": "dist",
             "autoload": {
                 "psr-0": {
                     "Sandstorm\\PhpProfiler": "Classes"
@@ -1115,12 +1139,7 @@
                     "role": "Developer"
                 }
             ],
-            "description": "Base package for collecting timers and xhprof traces. To be used with sandstorm|plumber for visualization.",
-            "support": {
-                "issues": "https://github.com/sandstorm/Plumber/issues",
-                "irc": "irc://irc.freenode.net/flow",
-                "source": "https://github.com/sandstorm/Plumber"
-            }
+            "description": "Base package for collecting timers and xhprof traces. To be used with sandstorm|plumber for visualization."
         },
         {
             "name": "sandstorm/plumber",
@@ -1130,12 +1149,18 @@
                 "url": "git://github.com/sandstorm/Plumber.git",
                 "reference": "46fbbdff070169facfdf1ca0679454379767bbdd"
             },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/sandstorm/Plumber/zipball/46fbbdff070169facfdf1ca0679454379767bbdd",
+                "reference": "46fbbdff070169facfdf1ca0679454379767bbdd",
+                "shasum": ""
+            },
             "require": {
                 "typo3/flow": "*",
                 "sandstorm/phpprofiler": "1.0.*"
             },
             "time": "1350628170",
-            "type": "typo3-flow-library",
+            "type": "typo3-flow-package",
             "installation-source": "source",
             "autoload": {
                 "psr-0": {
@@ -1154,21 +1179,16 @@
             ],
             "description": "Profiling Toolkit for TYPO3 Flow and Neos",
             "keywords": [
-                "profiling",
-                "profiler",
-                "benchmark",
+                "flow",
                 "debugging",
+                "profiler",
+                "profiling",
                 "xhprof",
-                "Flow",
+                "benchmark",
                 "TYPO3 Flow",
                 "Neos",
                 "TYPO3 Neos"
-            ],
-            "support": {
-                "issues": "https://github.com/sandstorm/Plumber/issues",
-                "irc": "irc://irc.freenode.net/flow",
-                "source": "https://github.com/sandstorm/Plumber"
-            }
+            ]
         },
         {
             "name": "typo3/buildessentials",
