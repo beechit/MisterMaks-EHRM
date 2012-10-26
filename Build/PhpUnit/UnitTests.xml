@@ -6,12 +6,12 @@
 		convertWarningsToExceptions="true">
 	<testsuites>
 		<testsuite name="All tests">
-			<directory>../../Packages/Application/*/Tests/PHP/Unit/</directory>
+			<directory>../../Packages/Beech/*/Tests/PHP/Unit/</directory>
 		</testsuite>
 	</testsuites>
 	<filter>
 		<whitelist addUncoveredFilesFromWhitelist="false">
-			<directory>../../Packages/Application/*/Classes</directory>
+			<directory>../../Packages/Beech/*/Classes</directory>
 		</whitelist>
 	</filter>
 	<logging>
