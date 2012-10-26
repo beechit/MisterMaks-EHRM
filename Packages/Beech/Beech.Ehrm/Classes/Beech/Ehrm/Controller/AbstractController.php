@@ -14,7 +14,7 @@ use TYPO3\Flow\Annotations as Flow;
  *
  * @Flow\Scope("singleton")
  */
-abstract class AbstractController extends \TYPO3\Flow\Mvc\Controller\ActionController {
+class AbstractController extends \TYPO3\Flow\Mvc\Controller\ActionController {
 
 	/**
 	 * @var string
