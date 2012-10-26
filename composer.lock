@@ -1,5 +1,5 @@
 {
-    "hash": "a83f4a576f19bdd35a8c638e04a6e12c",
+    "hash": "5937a637fa5b6ff534f339cad33e322d",
     "packages": [
         {
             "name": "beech/absence",
@@ -92,12 +92,12 @@
             "source": {
                 "type": "git",
                 "url": "ssh://git.beech.local/EHRM/Package/Ehrm.git",
-                "reference": "045c17eb8735b07751febaac7724ada214042b35"
+                "reference": "b0d0ebe67d3475dbc924b46e3b6c165f497edd09"
             },
             "require": {
                 "typo3/flow": "*"
             },
-            "time": "1350903937",
+            "time": "1351160081",
             "type": "typo3-flow-beech",
             "installation-source": "source",
             "autoload": {
@@ -112,13 +112,13 @@
             "source": {
                 "type": "git",
                 "url": "ssh://git.beech.local/EHRM/Package/Minutes.git",
-                "reference": "181610f9de37efc658a93ab6d256b0b417dfe149"
+                "reference": "a8c10a06a89d8c5c819e9aa84806fe44ffaba8db"
             },
             "require": {
                 "typo3/flow": "*",
                 "beech/ehrm": "*"
             },
-            "time": "1350903964",
+            "time": "1351085529",
             "type": "typo3-flow-beech",
             "installation-source": "source",
             "autoload": {
@@ -133,13 +133,13 @@
             "source": {
                 "type": "git",
                 "url": "ssh://git.beech.local/EHRM/Package/Party.git",
-                "reference": "461125b55ebc8801ae640e6e84759367bbcf56b8"
+                "reference": "64c91fff26acdbcebeb4281d47f2fc009cbd6ee1"
             },
             "require": {
                 "typo3/flow": "*",
                 "beech/ehrm": "*"
             },
-            "time": "1350903993",
+            "time": "1351085343",
             "type": "typo3-flow-beech",
             "installation-source": "source",
             "autoload": {
@@ -154,13 +154,13 @@
             "source": {
                 "type": "git",
                 "url": "ssh://git.beech.local/EHRM/Package/Task.git",
-                "reference": "33c64a91e2e8d909d918339380b92d4f3b402852"
+                "reference": "39f1ec8dd1162f9f0215e999379f2d6eb7583748"
             },
             "require": {
                 "typo3/flow": "*",
                 "beech/ehrm": "*"
             },
-            "time": "1350904095",
+            "time": "1351159877",
             "type": "typo3-flow-beech",
             "installation-source": "source",
             "autoload": {
@@ -584,18 +584,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Yaml",
-                "reference": "1f7ba14c4b263dbf701e25705b0b2175a850a784"
+                "reference": "76256c6d9f7f113eb31077883657191510ff0532"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/Yaml/zipball/1f7ba14c4b263dbf701e25705b0b2175a850a784",
-                "reference": "1f7ba14c4b263dbf701e25705b0b2175a850a784",
+                "url": "https://github.com/symfony/Yaml/zipball/76256c6d9f7f113eb31077883657191510ff0532",
+                "reference": "76256c6d9f7f113eb31077883657191510ff0532",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "1349553479",
+            "time": "1351093287",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -677,7 +677,7 @@
             "source": {
                 "type": "git",
                 "url": "git://git.typo3.org/FLOW3/Packages/TYPO3.FLOW3.git",
-                "reference": "99f42a0ba5abc882decbe12c0b6804beb211e92c"
+                "reference": "6b38ecd74290595b72b515166d2c087ea21d53dd"
             },
             "require": {
                 "php": ">=5.3.2",
@@ -693,7 +693,7 @@
                 "symfony/dom-crawler": ">2.0.16",
                 "typo3/flow-composer-installers": "*"
             },
-            "time": "1350856006",
+            "time": "1351242710",
             "type": "typo3-flow-framework",
             "installation-source": "source",
             "autoload": {
@@ -1014,18 +1014,38 @@
     ],
     "packages-dev": [
         {
+            "name": "beech/dev-tools",
+            "version": "dev-development",
+            "source": {
+                "type": "git",
+                "url": "ssh://git.beech.local/EHRM/Package/DevTools.git",
+                "reference": "5bad1af55e08ee99716c97506d7ed55ab85f07ee"
+            },
+            "require": {
+                "typo3/flow": "*"
+            },
+            "time": "1351238067",
+            "type": "typo3-flow-beech",
+            "installation-source": "source",
+            "autoload": {
+                "psr-0": {
+                    "Beech\\DevTools": "Classes"
+                }
+            }
+        },
+        {
             "name": "beech/essentials",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "ssh://git.beech.local/Beech/BuildEssentials.git",
-                "reference": "d7e869a2ec2c0cc53f616dd2e106f832d24b7c60"
+                "reference": "5cc0671daef9e22f0aa61d793813a83d9d0234a6"
             },
             "require": {
                 "php": ">=5.3.2",
                 "typo3/flow-composer-installers": "*"
             },
-            "time": "1350906442",
+            "time": "1351242794",
             "type": "typo3-flow-build",
             "installation-source": "source",
             "description": "Beech Flow Build Toolchain Essentials"
@@ -1263,6 +1283,7 @@
         "beech/absence": 20,
         "typo3/buildessentials": 20,
         "beech/essentials": 20,
+        "beech/dev-tools": 20,
         "typo3/kickstart": 20,
         "beech/style": 20,
         "debug/toolbar": 20,
