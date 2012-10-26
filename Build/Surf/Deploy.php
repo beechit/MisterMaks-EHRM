@@ -41,7 +41,7 @@ $deployment->onInitialize(function() use ($workflow, $application) {
 			'branch' => 'development'
 		))
 		->defineTask('beech.fetchQueuedPatches', 'typo3.surf:shell', array(
-			'command' => 'cd {releasePath} && php Build/Essentials/fetchQueuedPatches.php'
+			'command' => 'cd {releasePath} && php Build/essentials/fetchQueuedPatches.php'
 		))
 		->defineTask('beech.clearcache', 'typo3.surf:shell', array(
 			'command' => 'cd {releasePath} && FLOW_CONTEXT=Production ./flow flow:cache:flush --force'
