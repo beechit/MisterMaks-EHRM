@@ -38,7 +38,7 @@ class PersistenceTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 	protected $toDoRepository;
 
 	/**
-	 * @var Beech\Party\Domain\Repository\PersonRepository
+	 * @var \Beech\Party\Domain\Repository\PersonRepository
 	 */
 	protected $personRepository;
 
