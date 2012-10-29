@@ -123,7 +123,7 @@ class HeaderParts extends AbstractTypoScriptObject {
 				'restNotificationUri' => $this->tsRuntime->getControllerContext()->getUriBuilder()
 					->reset()
 					->setFormat('json')
-					->uriFor('list', array(), 'Rest\Notification', 'Beech.Party')
+					->uriFor('list', array(), 'Rest\Notification', 'Beech.Ehrm')
 			),
 			'locale' => 'EN_en'
 		);
