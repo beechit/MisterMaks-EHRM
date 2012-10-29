@@ -133,13 +133,13 @@
             "source": {
                 "type": "git",
                 "url": "ssh://git.beech.local/EHRM/Package/Party.git",
-                "reference": "98a5ba9f0dabec07324f178e749c305778b46f23"
+                "reference": "19980912c1ed11136aa90bc95b006e0edc689603"
             },
             "require": {
                 "typo3/flow": "*",
                 "beech/ehrm": "*"
             },
-            "time": "1351514703",
+            "time": "1351514862",
             "type": "typo3-flow-beech",
             "installation-source": "source",
             "autoload": {
@@ -175,14 +175,14 @@
             "source": {
                 "type": "git",
                 "url": "ssh://git.beech.local/EHRM/Package/WorkFlow.git",
-                "reference": "63942e1f45ef1bbf32bfe85b122d87c779b48b27"
+                "reference": "bf709590ffd8dcec93c8b1b13c69c201fcc7b5ad"
             },
             "require": {
                 "typo3/flow": "*",
                 "beech/ehrm": "*",
                 "typo3/queue-redis": "*"
             },
-            "time": "1351513917",
+            "time": "1351519014",
             "type": "typo3-flow-beech",
             "installation-source": "source",
             "autoload": {
