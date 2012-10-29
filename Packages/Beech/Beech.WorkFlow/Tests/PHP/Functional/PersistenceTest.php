@@ -158,20 +158,26 @@ class PersistenceTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 	/**
 	 * @test
 	 */
-	public function anOutputHandlerCanBePersistedAndRetrieved() {
-		$action = new Action();
+	public function anEntityOutputHandlerCanPersistDifferentTypesOfEntities() {
+		$outputHandler = new \Beech\WorkFlow\OutputHandlers\EntityOutputHandler();
+		$outputHandler->setEntity($this->createTodoOutput('addAddress', $this->createPerson(), 'newAddress', 'management\company', serialize(array()), 100, TRUE));
+		$outputHandler->invoke();
 
-		$outputHandler = new \Beech\WorkFlow\OutputHandlers\TodoOutputHandler();
-		$outputHandler->setToDoEntity($this->createTodoOutput('addAddress', $this->createPerson(), 'newAddress', 'management\company', serialize(array()), 100, TRUE));
-
-		$action->addOutputHandler($outputHandler);
-		$this->actionRepository->add($action);
+		$this->assertEquals(0, $this->toDoRepository->countAll());
 
 		$this->persistenceManager->persistAll();
 
-		$persistedAction = $this->actionRepository->findAll()->getFirst();
+		$this->assertEquals(1, $this->toDoRepository->countAll());
 
-		$this->assertEquals($action, $persistedAction);
+		$outputHandler = new \Beech\WorkFlow\OutputHandlers\EntityOutputHandler();
+		$outputHandler->setEntity($this->createCompany('Foo', 1, 1, 'type', 'description', 'bar'));
+		$outputHandler->invoke();
+
+		$this->assertEquals(0, $this->companyRepository->countAll());
+
+		$this->persistenceManager->persistAll();
+
+		$this->assertEquals(1, $this->companyRepository->countAll());
 	}
 
 	/**
@@ -232,7 +238,7 @@ class PersistenceTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 		$this->actionRepository->add($action);
 
 		$this->persistenceManager->persistAll();
-		$persistedAction = $this->actionRepository->findAll()->getFirst();
+		$this->persistenceManager->clearState();
 
 		$this->assertEquals(1, $this->actionRepository->countAll());
 		$this->assertEquals(1, $this->actionRepository->countByStatus(Action::STATUS_NEW));
@@ -242,6 +248,7 @@ class PersistenceTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 		$dispatcher->run();
 
 		$this->persistenceManager->persistAll();
+		$this->persistenceManager->clearState();
 
 		$this->assertEquals(2, $this->actionRepository->countAll(2));
 	}
@@ -338,24 +345,21 @@ class PersistenceTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 	/**
 	 * @param string $task The task name
 	 * @param \TYPO3\Party\Domain\Model\AbstractParty $owner
-	 * @param string $action The action to execute
-	 * @param string $controller The controller to execute
-	 * @param array $arguments The arguments
+	 * @param string $controllerAction The action to execute
+	 * @param string $controllerName The controller to execute
+	 * @param array $controllerArguments The arguments
 	 * @param integer $priority Priority of this task 0-100
-	 * @param string $controllerName The controller name
-	 * @param string $controllerAction The controller action
-	 * @param string $controllerArgument The controller arguments
 	 * @param boolean $userMayArchive True if user is allowed to archive this task manual
-	 * @return void
+	 * @return \Beech\Party\Domain\Model\ToDo
 	 */
-	private function createToDoOutput($task, \TYPO3\Party\Domain\Model\AbstractParty $owner, $controllerAction, $controllerName, $controllerArgument, $priority, $userMayArchive) {
+	private function createToDoOutput($task, \TYPO3\Party\Domain\Model\AbstractParty $owner, $controllerAction, $controllerName, $controllerArguments, $priority, $userMayArchive) {
 		$todo = new \Beech\Party\Domain\Model\ToDo();
 		$todo->setTask($task);
 		$todo->setOwner($owner);
 		$todo->setPriority($priority);
 		$todo->setControllerName($controllerName);
 		$todo->setControllerAction($controllerAction);
-		$todo->setControllerArguments($controllerArgument);
+		$todo->setControllerArguments($controllerArguments);
 		$todo->setUserMayArchive($userMayArchive);
 
 		return $todo;
@@ -367,8 +371,7 @@ class PersistenceTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 	 */
 	private function createPerson() {
 		$person = new \Beech\Party\Domain\Model\Person();
-		$person->setName(new \Beech\Party\Domain\Model\PersonName('', 'John', '', 'Doe'));
-		$account = $this->accountFactory->createAccountWithPassword('user@domain.ext', $this->persistenceManager->getIdentifierByObject($person));
+		$account = $this->accountFactory->createAccountWithPassword(uniqid() . '@domain.ext', $this->persistenceManager->getIdentifierByObject($person));
 		$this->accountRepository->add($account);
 		$person->addAccount($account);
 
@@ -400,7 +403,7 @@ class PersistenceTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 			$action->addValidator($validator);
 		}
 
-		foreach( $outputHandlers as $outputHandler) {
+		foreach ($outputHandlers as $outputHandler) {
 			$action->addOutputHandler($outputHandler);
 		}
 
