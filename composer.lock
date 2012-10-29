@@ -531,12 +531,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/DomCrawler",
-                "reference": "9e655ad78168f441b1a8ca065c6f68912ea59bb2"
+                "reference": "d78183b7cb0eba2807cb0d6ba75e50c031ee1610"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/DomCrawler/zipball/9e655ad78168f441b1a8ca065c6f68912ea59bb2",
-                "reference": "9e655ad78168f441b1a8ca065c6f68912ea59bb2",
+                "url": "https://github.com/symfony/DomCrawler/zipball/d78183b7cb0eba2807cb0d6ba75e50c031ee1610",
+                "reference": "d78183b7cb0eba2807cb0d6ba75e50c031ee1610",
                 "shasum": ""
             },
             "require": {
@@ -548,7 +548,7 @@
             "suggest": {
                 "symfony/css-selector": "2.2.*"
             },
-            "time": "1350594979",
+            "time": "1351466734",
             "type": "library",
             "extra": {
                 "branch-alias": {
