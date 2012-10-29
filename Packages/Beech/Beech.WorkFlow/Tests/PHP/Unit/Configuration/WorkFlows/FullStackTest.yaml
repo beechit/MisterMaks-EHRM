@@ -14,9 +14,9 @@ action:
 
     outputHandlers:
       -
-        className: TodoOutputHandler
+        className: EntityOutputHandler
         properties:
-          toDoEntity: 'ENTITY:TODO'
+          entity: 'ENTITY:TODO'
       -
         className: ActionExpiredOutputHandler
         properties:

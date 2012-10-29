@@ -166,12 +166,12 @@ class ActionFactoryTest extends \TYPO3\Flow\Tests\UnitTestCase {
 			// Create mock action object
 		$action = new Action();
 
-		$outputHandler1 = new \Beech\WorkFlow\OutputHandlers\TodoOutputHandler();
+		$outputHandler1 = new \Beech\WorkFlow\OutputHandlers\EntityOutputHandler();
 
 			// Work around time differences during running the tests
 		$todoEntity = new \Beech\Party\Domain\Model\ToDo();
-		$todoEntity->setDateTime($factoryOutput[0]->getOutputHandlers()->first()->getToDoEntity()->getDateTime());
-		$outputHandler1->setToDoEntity($todoEntity);
+		$todoEntity->setDateTime($factoryOutput[0]->getOutputHandlers()->first()->getEntity()->getDateTime());
+		$outputHandler1->setEntity($todoEntity);
 
 		$outputHandler2 = new \Beech\WorkFlow\OutputHandlers\ActionExpiredOutputHandler();
 		$outputHandler2->setActionEntity(new \Beech\WorkFlow\Domain\Model\Action());
@@ -203,10 +203,10 @@ class ActionFactoryTest extends \TYPO3\Flow\Tests\UnitTestCase {
 		$validator2->setValue(new \DateTime('2012-01-01'));
 		$validator2->setMatchCondition(\Beech\WorkFlow\Validators\DateValidator::MATCH_CONDITION_SMALLER_THEN);
 
-		$outputHandler1 = new \Beech\WorkFlow\OutputHandlers\TodoOutputHandler();
+		$outputHandler1 = new \Beech\WorkFlow\OutputHandlers\EntityOutputHandler();
 		$todoEntity = new \Beech\Party\Domain\Model\ToDo();
-		$todoEntity->setDateTime($factoryOutput[0]->getOutputHandlers()->first()->getToDoEntity()->getDateTime());
-		$outputHandler1->setToDoEntity($todoEntity);
+		$todoEntity->setDateTime($factoryOutput[0]->getOutputHandlers()->first()->getEntity()->getDateTime());
+		$outputHandler1->setEntity($todoEntity);
 
 		$outputHandler2 = new \Beech\WorkFlow\OutputHandlers\ActionExpiredOutputHandler();
 		$outputHandler2->setActionEntity(new \Beech\WorkFlow\Domain\Model\Action());
@@ -243,10 +243,10 @@ class ActionFactoryTest extends \TYPO3\Flow\Tests\UnitTestCase {
 		$validator->setValue(new \DateTime('today'));
 		$validator->setMatchCondition(\Beech\WorkFlow\Validators\DateValidator::MATCH_CONDITION_EQUAL);
 
-		$outputHandler = new \Beech\WorkFlow\OutputHandlers\TodoOutputHandler();
+		$outputHandler = new \Beech\WorkFlow\OutputHandlers\EntityOutputHandler();
 		$todoEntity = new \Beech\Party\Domain\Model\ToDo();
-		$todoEntity->setDateTime($factoryOutput[0]->getOutputHandlers()->first()->getToDoEntity()->getDateTime());
-		$outputHandler->setToDoEntity($todoEntity);
+		$todoEntity->setDateTime($factoryOutput[0]->getOutputHandlers()->first()->getEntity()->getDateTime());
+		$outputHandler->setEntity($todoEntity);
 
 		$preCondition = new \Beech\WorkFlow\PreConditions\DatePreCondition();
 		$preCondition->setValue(new \DateTime('today'));

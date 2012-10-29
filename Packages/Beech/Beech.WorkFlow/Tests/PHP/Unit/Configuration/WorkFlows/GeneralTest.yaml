@@ -11,6 +11,6 @@ action:
           value: 'DATETIME:2012-04-15'
           matchCondition: 'CONST:MATCH_CONDITION_EQUAL'
     outputHandlers:
-      TodoOutputHandler:
+      EntityOutputHandler:
         properties:
-          toDoEntity: 'ENTITY:TODO'
+          entity: 'ENTITY:TODO'

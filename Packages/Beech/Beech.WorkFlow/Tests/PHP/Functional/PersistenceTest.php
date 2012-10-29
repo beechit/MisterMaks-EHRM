@@ -283,12 +283,12 @@ class PersistenceTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 		$person = $this->createPerson();
 
 			// Add 2 ToDo outputhandlers
-		$outputHandler = new \Beech\WorkFlow\OutputHandlers\TodoOutputHandler();
-		$outputHandler->setToDoEntity($this->createTodoOutput('addAddress', $person, 'newAddress', 'management\company', serialize(array('company' => $this->persistenceManager->getIdentifierByObject($persistedCompany))), 100, TRUE));
+		$outputHandler = new \Beech\WorkFlow\OutputHandlers\EntityOutputHandler();
+		$outputHandler->setEntity($this->createTodoOutput('addAddress', $person, 'newAddress', 'management\company', serialize(array('company' => $this->persistenceManager->getIdentifierByObject($persistedCompany))), 100, TRUE));
 		$outputHandlers[] = $outputHandler;
 
-		$outputHandler = new \Beech\WorkFlow\OutputHandlers\TodoOutputHandler();
-		$outputHandler->setToDoEntity($this->createTodoOutput('addHomeNumber', $person, 'newAddress', 'management\company', serialize(array('company' => $this->persistenceManager->getIdentifierByObject($persistedCompany))), 100, TRUE));
+		$outputHandler = new \Beech\WorkFlow\OutputHandlers\EntityOutputHandler();
+		$outputHandler->setEntity($this->createTodoOutput('addHomeNumber', $person, 'newAddress', 'management\company', serialize(array('company' => $this->persistenceManager->getIdentifierByObject($persistedCompany))), 100, TRUE));
 		$outputHandlers[] = $outputHandler;
 
 			// Create the action

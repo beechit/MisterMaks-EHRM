@@ -8,9 +8,9 @@ action:
           matchCondition: 'CONSTANT:MATCH_CONDITION_EQUAL'
     outputHandlers:
       -
-        className: TodoOutputHandler
+        className: EntityOutputHandler
         properties:
-          toDoEntity: 'ENTITY:TODO'
+          entity: 'ENTITY:TODO'
     preConditions:
       -
         className: DatePreCondition
@@ -26,9 +26,9 @@ action:
           matchCondition: 'CONSTANT:MATCH_CONDITION_EQUAL'
     outputHandlers:
       -
-        className: TodoOutputHandler
+        className: EntityOutputHandler
         properties:
-          toDoEntity: 'ENTITY:TODO'
+          entity: 'ENTITY:TODO'
     preConditions:
       -
         className: DatePreCondition
