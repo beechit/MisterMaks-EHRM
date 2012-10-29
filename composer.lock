@@ -92,12 +92,12 @@
             "source": {
                 "type": "git",
                 "url": "ssh://git.beech.local/EHRM/Package/Ehrm.git",
-                "reference": "e8128ea29e548a02caa498a9dc6545619de3d69d"
+                "reference": "bcdaeb9f812db48f450497a098de6615b6647998"
             },
             "require": {
                 "typo3/flow": "*"
             },
-            "time": "1351519463",
+            "time": "1351520533",
             "type": "typo3-flow-beech",
             "installation-source": "source",
             "autoload": {
