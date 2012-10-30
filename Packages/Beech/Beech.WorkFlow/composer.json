@@ -5,6 +5,7 @@
 	"version": "",
 	"require": {
 		"typo3/flow": "*",
+		"typo3/party": "*",
 		"beech/ehrm": "*",
 		"typo3/queue-redis": "*"
 	},
