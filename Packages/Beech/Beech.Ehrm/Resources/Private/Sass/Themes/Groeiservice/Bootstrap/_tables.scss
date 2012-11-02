@@ -44,11 +44,17 @@ table {
     text-align: left;
     vertical-align: top;
     border-top: 1px solid $tableBorder;
+
+    label {
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
   }
 
   th {
     padding-top: 5px;
     padding-bottom: 5px;
+    font-weight: normal;
   }
 
   // Bottom align for column headings
@@ -180,6 +186,10 @@ table {
     td {
       /*padding-left: 12px;*/
     }
+    tr:nth-child(odd) th {
+      background-color: $blueDark;
+      color: $white;
+    }
   }
 }
 
@@ -192,6 +202,10 @@ table {
     tr:hover td{
       background-color: $tableBackgroundHover;
     }
+    tr:hover th{
+      background-color: $blueDark;
+      color: $white;
+    }
     th {
       background-color: $blueDark;
       color: $white;
@@ -200,7 +214,7 @@ table {
 }
 
 
-// TABLE CELL SIZING
+   // TABLE CELL SIZING
 // -----------------
 
 // Reset default grid behavior

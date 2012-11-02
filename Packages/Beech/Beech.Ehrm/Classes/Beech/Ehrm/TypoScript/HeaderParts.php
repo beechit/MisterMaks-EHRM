@@ -81,12 +81,15 @@ class HeaderParts extends AbstractTypoScriptObject {
 	protected function addThemeStyleSheet() {
 		$theme = $this->themeHelper->getSelectedTheme();
 		$availableThemes = $this->themeHelper->getAvailableThemes();
-
-		$this->output .= sprintf(
-			'<link rel="stylesheet" type="text/css" href="%1$sPackages/%2$s" />',
-			$this->resourcePublisher->getStaticResourcesWebBaseUri(),
-			$availableThemes[$theme['name']]['path']
-		);
+			// Rare case scenario that no path is set because no stylesheet was found.
+			// This should not occur but is technically possible.
+		if (!empty($theme['name']['path'])) {
+			$this->output .= sprintf(
+				'<link rel="stylesheet" type="text/css" href="%1$sPackages/%2$s" />',
+				$this->resourcePublisher->getStaticResourcesWebBaseUri(),
+				$availableThemes[$theme['name']]['path']
+			);
+		}
 	}
 
 	/**
