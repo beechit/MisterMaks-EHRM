@@ -458,12 +458,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/nrk/predis.git",
-                "reference": "v0.8.0"
+                "reference": "daa36a980da5cf211c1b82dcecabff4e859966d5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/nrk/predis/zipball/v0.8.0",
-                "reference": "v0.8.0",
+                "url": "https://github.com/nrk/predis/zipball/daa36a980da5cf211c1b82dcecabff4e859966d5",
+                "reference": "daa36a980da5cf211c1b82dcecabff4e859966d5",
                 "shasum": ""
             },
             "require": {
@@ -473,7 +473,7 @@
                 "ext-phpiredis": "Allows faster serialization and deserialization of the Redis protocol",
                 "ext-curl": "Allows access to Webdis when paired with phpiredis"
             },
-            "time": "1350949565",
+            "time": "1351952512",
             "type": "library",
             "installation-source": "source",
             "autoload": {
