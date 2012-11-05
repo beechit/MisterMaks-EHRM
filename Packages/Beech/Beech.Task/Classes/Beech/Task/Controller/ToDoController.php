@@ -40,8 +40,8 @@ class ToDoController extends \Beech\Ehrm\Controller\AbstractController {
 	 * @return void
 	 */
 	public function indexAction() {
-			// TODO Sort on null values first then the ascending archivedDateTime (something like ISNULL(archivedDateTime)
-		$orderings = array(	'archivedDateTime' => \TYPO3\Flow\Persistence\QueryInterface::ORDER_ASCENDING,
+			// TODO Sort on null values first then the ascending closeDateTime (something like ISNULL(closeDateTime)
+		$orderings = array(	'closeDateTime' => \TYPO3\Flow\Persistence\QueryInterface::ORDER_ASCENDING,
 							'priority' => \TYPO3\Flow\Persistence\QueryInterface::ORDER_DESCENDING);
 		$this->toDoRepository->setDefaultOrderings($orderings);
 		$this->view->assign('todos', $this->toDoRepository->findAll());
@@ -52,35 +52,27 @@ class ToDoController extends \Beech\Ehrm\Controller\AbstractController {
 	 * Creates a todo
 	 *
 	 * @param \Beech\Task\Domain\Model\ToDo $newToDo
-	 * @param boolean $userMayArchive
 	 * @return void
 	 */
-	public function createAction(\Beech\Task\Domain\Model\ToDo $newToDo, $userMayArchive = TRUE) {
-		$account = $this->securityContext->getAccount();
-
-		if ($this->securityContext->getAccount()->getParty() instanceof \TYPO3\Party\Domain\Model\AbstractParty) {
-			$newToDo->setOwner($account->getParty());
-			$newToDo->setStarter($account->getParty());
+	public function createAction(\Beech\Task\Domain\Model\ToDo $newToDo) {
+		if (is_object($this->securityContext->getAccount())
+			&& $this->securityContext->getAccount()->getParty() instanceof \TYPO3\Party\Domain\Model\AbstractParty) {
+				$newToDo->setOwner($this->securityContext->getAccount()->getParty());
 		}
 
-		$newToDo->setUserMayArchive($userMayArchive);
 		$this->toDoRepository->add($newToDo);
-
 		$this->redirect('index');
 	}
 
 	/**
-	 * User archives a todo
+	 * A task is marked done
 	 *
 	 * @param \Beech\Task\Domain\Model\ToDo $toDo
 	 * @return void
 	 */
-	public function userArchiveAction(\Beech\Task\Domain\Model\ToDo $toDo) {
-		if ($toDo->getUserMayArchive() === TRUE) {
-			$dateTime = new \DateTime();
-			$toDo->setArchivedDateTime($dateTime);
-			$this->toDoRepository->update($toDo);
-		}
+	public function setDoneAction(\Beech\Task\Domain\Model\ToDo $toDo) {
+		$toDo->close();
+		$this->toDoRepository->update($toDo);
 		$this->redirect('index');
 	}
 }

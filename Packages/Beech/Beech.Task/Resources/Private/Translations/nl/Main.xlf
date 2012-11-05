@@ -2,10 +2,6 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
 	<file original="" source-language="en" target-language="nl" datatype="plaintext">
 		<body>
-			<trans-unit id="todo.viewArchived">
-				<source>View archived items</source>
-				<target>Bekijk gearchiveerde items</target>
-			</trans-unit>
 			<trans-unit id="toDo.status">
 				<source>Status</source>
 				<target>Status</target>
@@ -14,7 +10,7 @@
 				<source>Priority</source>
 				<target>Prioriteit</target>
 			</trans-unit>
-			<trans-unit id="toDo.task">
+			<trans-unit id="toDo.description">
 				<source>Task</source>
 				<target>Taak</target>
 			</trans-unit>
@@ -22,9 +18,9 @@
 				<source>Do task</source>
 				<target>Taak uitvoeren</target>
 			</trans-unit>
-			<trans-unit id="toDo.archiveTask">
-				<source>Archive task</source>
-				<target>Taak archiveren</target>
+			<trans-unit id="toDo.setTaskDone">
+				<source>Close</source>
+				<target>Sluiten</target>
 			</trans-unit>
 			<trans-unit id="toDo.noToDo">
 				<source>No todo's</source>
