@@ -85,7 +85,7 @@ class HeaderParts extends AbstractTypoScriptObject {
 		$this->output .= sprintf(
 			'<link rel="stylesheet" type="text/css" href="%1$sPackages/%2$s" />',
 			$this->resourcePublisher->getStaticResourcesWebBaseUri(),
-			$availableThemes[$theme]['path']
+			$availableThemes[$theme['name']]['path']
 		);
 	}
 

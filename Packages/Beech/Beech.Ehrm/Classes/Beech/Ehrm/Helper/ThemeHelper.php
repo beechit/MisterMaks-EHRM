@@ -87,7 +87,7 @@ class ThemeHelper {
 		$availableThemes = $this->getAvailableThemes();
 
 		if ($defaultTheme !== NULL && isset($availableThemes[$defaultTheme])) {
-			return $defaultTheme;
+			return $availableThemes[$defaultTheme];
 		}
 
 		return $availableThemes['Default'];
