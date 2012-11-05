@@ -72,14 +72,6 @@ class ToDo {
 	protected $closeDateTime;
 
 	/**
-	 * What this task is linked to
-	 *
-	 * @var \Beech\Ehrm\Domain\Model\Link
-	 * @ORM\ManyToOne
-	 */
-	protected $link;
-
-	/**
 	 * Sets the task description
 	 *
 	 * @param string $description
@@ -249,25 +241,6 @@ class ToDo {
 	 */
 	public function close() {
 		$this->setCloseDateTime(new \DateTime());
-	}
-
-	/**
-	 * Sets the link for this task
-	 *
-	 * @param \Beech\Ehrm\Domain\Model\Link $link
-	 * @return void
-	 */
-	public function setLink(\Beech\Ehrm\Domain\Model\Link $link) {
-		$this->link = $link;
-	}
-
-	/**
-	 * Returns the link for this task
-	 *
-	 * @return \Beech\Ehrm\Domain\Model\Link
-	 */
-	public function getLink() {
-		return $this->link;
 	}
 }
 ?>
