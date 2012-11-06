@@ -435,18 +435,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/mneuhaus/Famelo.Scaff",
-                "reference": "0decbf4207f212a1f8237fe55651625bd6c9a14a"
+                "reference": "ff39c3e28a7960211c27bea1bf9a5f95f044da3e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/mneuhaus/Famelo.Scaff/zipball/0decbf4207f212a1f8237fe55651625bd6c9a14a",
-                "reference": "0decbf4207f212a1f8237fe55651625bd6c9a14a",
+                "url": "https://github.com/mneuhaus/Famelo.Scaff/archive/ff39c3e28a7960211c27bea1bf9a5f95f044da3e.zip",
+                "reference": "ff39c3e28a7960211c27bea1bf9a5f95f044da3e",
                 "shasum": ""
             },
             "require": {
                 "typo3/flow": "*"
             },
-            "time": "1350517526",
+            "time": "1352212484",
             "type": "typo3-flow-package",
             "installation-source": "source",
             "autoload": {
