@@ -791,7 +791,7 @@
             "source": {
                 "type": "git",
                 "url": "git://git.typo3.org/FLOW3/Packages/TYPO3.FLOW3.git",
-                "reference": "c4d09fdbfe61e973690b131c921608c84c612973"
+                "reference": "0b08f0401883ecfddd206d6af529f094510d45f4"
             },
             "require": {
                 "php": ">=5.3.2",
@@ -808,7 +808,7 @@
                 "symfony/dom-crawler": ">2.0.16",
                 "typo3/flow-composer-installers": "*"
             },
-            "time": "1352385385",
+            "time": "1352387400",
             "type": "typo3-flow-framework",
             "installation-source": "source",
             "autoload": {
