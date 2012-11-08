@@ -1331,13 +1331,13 @@
             "source": {
                 "type": "git",
                 "url": "git://git.typo3.org/FLOW3/BuildEssentials.git",
-                "reference": "eeb5a5272766712430dd0c9c9c38417b05baac9f"
+                "reference": "3084766f15019a2a029c22a5039cfe58f37f8f97"
             },
             "require": {
                 "php": ">=5.3.2",
                 "typo3/flow-composer-installers": "*"
             },
-            "time": "1350311922",
+            "time": "1352409208",
             "type": "typo3-flow-build",
             "installation-source": "source",
             "license": [
