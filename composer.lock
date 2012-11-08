@@ -983,13 +983,13 @@
             "source": {
                 "type": "git",
                 "url": "git://git.typo3.org/FLOW3/Packages/TYPO3.Party.git",
-                "reference": "930a1d41535f8fbe771e215d04eba5f71ccdb5bc"
+                "reference": "aae5f6ee2cbf6adb1728bf23a04707347785f4a9"
             },
             "require": {
                 "typo3/flow-composer-installers": "*",
                 "typo3/flow": "*"
             },
-            "time": "1349341725",
+            "time": "1352382512",
             "type": "typo3-flow-framework",
             "installation-source": "source",
             "autoload": {
