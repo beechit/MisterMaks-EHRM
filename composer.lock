@@ -919,12 +919,12 @@
             "source": {
                 "type": "git",
                 "url": "git://git.typo3.org/FLOW3/Packages/TYPO3.Form.git",
-                "reference": "1aec7b4f29efd3d2f4d999d11788d94d621277fb"
+                "reference": "17c1d68862875009ef94ec4c8560d0debeac187b"
             },
             "require": {
                 "typo3/flow": "*"
             },
-            "time": "1350810784",
+            "time": "1352405055",
             "type": "typo3-flow-package",
             "installation-source": "source",
             "autoload": {
@@ -1090,12 +1090,12 @@
             "source": {
                 "type": "git",
                 "url": "git://git.typo3.org/FLOW3/Packages/Twitter.Bootstrap.git",
-                "reference": "514322c57533f3eb0590e464f3f369df55b76937"
+                "reference": "c1343bce953a2d81419b60cac3b83fec6fa22318"
             },
             "require": {
                 "typo3/flow": "*"
             },
-            "time": "1350483987",
+            "time": "1352404249",
             "type": "typo3-flow-package",
             "installation-source": "source",
             "autoload": {
