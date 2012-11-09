@@ -1111,13 +1111,13 @@
             "source": {
                 "type": "git",
                 "url": "git://git.typo3.org/FLOW3/Packages/TYPO3.TypoScript.git",
-                "reference": "3c167c19a7f546704a96a95b37fc0cb6322384e3"
+                "reference": "cfc7826d065ca05062a25103e96d464c5e78d91a"
             },
             "require": {
                 "typo3/flow": "*",
                 "typo3/eel": "*"
             },
-            "time": "1351670807",
+            "time": "1352457066",
             "type": "typo3-flow-package",
             "installation-source": "source",
             "autoload": {
