@@ -1050,12 +1050,12 @@
             "source": {
                 "type": "git",
                 "url": "git://git.typo3.org/FLOW3/Packages/TYPO3.Surf.git",
-                "reference": "e5f730f22e17ad92038d08aacc82e08d7fb41f66"
+                "reference": "f95422f0d9a82a99bce5869da80b2be0eaf1973c"
             },
             "require": {
                 "typo3/flow": "*"
             },
-            "time": "1349603190",
+            "time": "1352459156",
             "type": "typo3-flow-package",
             "installation-source": "source",
             "autoload": {
