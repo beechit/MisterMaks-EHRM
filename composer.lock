@@ -598,18 +598,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Console",
-                "reference": "fb16385d9301046b519740f273b25bcd7032ed54"
+                "reference": "7907e712997a6cb40cce3227a754636461d7e502"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/Console/archive/fb16385d9301046b519740f273b25bcd7032ed54.zip",
-                "reference": "fb16385d9301046b519740f273b25bcd7032ed54",
+                "url": "https://github.com/symfony/Console/archive/7907e712997a6cb40cce3227a754636461d7e502.zip",
+                "reference": "7907e712997a6cb40cce3227a754636461d7e502",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "1352166980",
+            "time": "1352466606",
             "type": "library",
             "extra": {
                 "branch-alias": {
