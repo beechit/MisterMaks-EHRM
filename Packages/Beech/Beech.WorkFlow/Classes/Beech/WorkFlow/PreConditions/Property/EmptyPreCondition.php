@@ -95,4 +95,5 @@ class EmptyPreCondition implements \Beech\WorkFlow\Core\PreConditionInterface {
 		return FALSE;
 	}
 }
+
 ?>

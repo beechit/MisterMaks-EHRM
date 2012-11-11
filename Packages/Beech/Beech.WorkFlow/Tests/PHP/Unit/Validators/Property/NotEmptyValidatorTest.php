@@ -52,7 +52,7 @@ class NotEmptyValidatorTest extends \TYPO3\Flow\Tests\UnitTestCase {
 	 * @param boolean $addTaxData
 	 * @return \Beech\Party\Domain\Model\Company
 	 */
-	protected function createCompany($name, $companyNumber, $addTaxData = false) {
+	protected function createCompany($name, $companyNumber, $addTaxData = FALSE) {
 		$company = new Company();
 		$company->setName($name);
 		$company->setCompanyNumber($companyNumber);

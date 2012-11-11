@@ -40,8 +40,8 @@ class NotEmptyPreCondition implements \Beech\WorkFlow\Core\PreConditionInterface
 					return count($propertyValue) > 0;
 				case 'string':
 					return trim($propertyValue) !== '';
-				// default includes integer, boolean, double (yes, not float but double), resource, NULL, 'unknown type'
 				default:
+						// default includes integer, boolean, double (yes, not float but double), resource, NULL, 'unknown type'
 					return !empty($propertyValue);
 			}
 		}
@@ -95,4 +95,5 @@ class NotEmptyPreCondition implements \Beech\WorkFlow\Core\PreConditionInterface
 		return FALSE;
 	}
 }
+
 ?>

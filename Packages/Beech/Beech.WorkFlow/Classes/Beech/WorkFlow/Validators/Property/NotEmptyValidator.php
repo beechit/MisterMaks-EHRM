@@ -95,4 +95,5 @@ class NotEmptyValidator implements \Beech\WorkFlow\Core\ValidatorInterface {
 		return FALSE;
 	}
 }
+
 ?>

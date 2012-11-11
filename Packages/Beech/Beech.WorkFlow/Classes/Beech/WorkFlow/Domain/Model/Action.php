@@ -143,7 +143,7 @@ class Action implements \Beech\WorkFlow\Core\ActionInterface {
 			$this->status = self::STATUS_STARTED;
 		}
 
-			// todo: throw exception(?)
+		// todo: throw exception(?)
 	}
 
 	/**
