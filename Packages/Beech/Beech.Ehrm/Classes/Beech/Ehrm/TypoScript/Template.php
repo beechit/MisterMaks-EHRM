@@ -67,3 +67,5 @@ class Template extends \TYPO3\TypoScript\TypoScriptObjects\TemplateImplementatio
 		}
 	}
 }
+
+?>

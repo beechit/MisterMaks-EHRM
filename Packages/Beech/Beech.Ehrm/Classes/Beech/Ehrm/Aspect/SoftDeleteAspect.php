@@ -23,16 +23,6 @@ class SoftDeleteAspect {
 	 */
 	protected $reflectionService;
 
-//	/**
-//	 * NOTE:
-//	 * Property introduction does not work yet because of a bug in Flow. A Bugreport was submitted
-//	 *
-//	 * @var boolean
-//	 * @ORM\Column(nullable=TRUE)
-//	 * @Flow\Introduce("class(Beech\.*\Domain\Model\.*)")
-//	 */
-//	protected $deleted = FALSE;
-
 	/**
 	 * Advice ensures soft-deletion by setting a property to deleted and update the model,
 	 * instead of actually removing it
