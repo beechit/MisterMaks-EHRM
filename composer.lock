@@ -1192,18 +1192,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/mneuhaus/Debug.Toolbar",
-                "reference": "9b2ecc615c4ea34555e280a7b4df3e9a1b34fcea"
+                "reference": "2b93fa2748cde604823c5dd7033660ac6431ada4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/mneuhaus/Debug.Toolbar/zipball/9b2ecc615c4ea34555e280a7b4df3e9a1b34fcea",
-                "reference": "9b2ecc615c4ea34555e280a7b4df3e9a1b34fcea",
+                "url": "https://github.com/mneuhaus/Debug.Toolbar/archive/2b93fa2748cde604823c5dd7033660ac6431ada4.zip",
+                "reference": "2b93fa2748cde604823c5dd7033660ac6431ada4",
                 "shasum": ""
             },
             "require": {
                 "typo3/flow": "*"
             },
-            "time": "1349861750",
+            "time": "1352644169",
             "type": "typo3-flow-package",
             "installation-source": "source",
             "autoload": {
