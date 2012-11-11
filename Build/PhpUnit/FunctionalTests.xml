@@ -7,7 +7,7 @@
 		timeoutForSmallTests="0">
 	<testsuites>
 		<testsuite name="All tests">
-			<directory>../../Packages/Application/*/Tests/PHP/Functional/</directory>
+			<directory>../../Packages/Beech/*/Tests/PHP/Functional/</directory>
 		</testsuite>
 	</testsuites>
 	<filter>
