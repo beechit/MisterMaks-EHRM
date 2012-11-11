@@ -20,7 +20,7 @@ class NotificationPersistenceTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 	static protected $testablePersistenceEnabled = TRUE;
 
 	/**
-	 * @var Beech\Ehrm\Domain\Repository\NotificationRepository
+	 * @var \Beech\Ehrm\Domain\Repository\NotificationRepository
 	 */
 	protected $notificationRepository;
 
