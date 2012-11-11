@@ -22,7 +22,7 @@ class ModuleViewHelper extends \Famelo\Scaff\ViewHelpers\SubRequestViewHelper {
 			return parent::render($namespace, $typoScriptPath);
 		}
 
-			// TODO: implement module index
+		// TODO: implement module index
 	}
 
 }
