@@ -178,7 +178,7 @@
             "source": {
                 "type": "git",
                 "url": "ssh://git.beech.local/EHRM/Package/WorkFlow.git",
-                "reference": "df02203af14d54308a969b7f4457e3b68f3ea5b3"
+                "reference": "23fd46b80f3fa777e24d0d8eff62dcb26037bb63"
             },
             "require": {
                 "typo3/flow": "*",
@@ -186,7 +186,7 @@
                 "beech/ehrm": "*",
                 "typo3/queue-redis": "*"
             },
-            "time": "1351612683",
+            "time": "1352677212",
             "type": "typo3-flow-beech",
             "installation-source": "source",
             "autoload": {
