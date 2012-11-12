@@ -72,6 +72,12 @@ class ToDo {
 	protected $closeDateTime;
 
 	/**
+	 * @var \Beech\Ehrm\Domain\Model\Notification
+	 * @ORM\OneToMany(mappedBy="toDo")
+	 */
+	protected $notifications;
+
+	/**
 	 * Sets the task description
 	 *
 	 * @param string $description
@@ -242,5 +248,24 @@ class ToDo {
 	public function close() {
 		$this->setCloseDateTime(new \DateTime());
 	}
+
+	/**
+	 * Set related notifications
+	 *
+	 * @param $notifications
+	 */
+	public function setNotifications($notifications) {
+		$this->notifications = $notifications;
+	}
+
+	/**
+	 * Get related notifications
+	 *
+	 * @return \Beech\Ehrm\Domain\Model\Notification
+	 */
+	public function getNotifications() {
+		return $this->notifications;
+	}
+
 }
 ?>
