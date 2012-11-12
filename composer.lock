@@ -94,12 +94,12 @@
             "source": {
                 "type": "git",
                 "url": "ssh://git.beech.local/EHRM/Package/Ehrm.git",
-                "reference": "438ac678871350e5854da3d368bd0f89ef643181"
+                "reference": "7e5bf17be180e18fefdefe9d1ef44b6997ebe5df"
             },
             "require": {
                 "typo3/flow": "*"
             },
-            "time": "1352678451",
+            "time": "1352733560",
             "type": "typo3-flow-beech",
             "installation-source": "source",
             "autoload": {
@@ -157,13 +157,13 @@
             "source": {
                 "type": "git",
                 "url": "ssh://git.beech.local/EHRM/Package/Task.git",
-                "reference": "dca3fa3985c9df163d1cf788dfbe9a0ca2f877ef"
+                "reference": "a747294d5f2953431fe9aab0e743d9da1522ebe4"
             },
             "require": {
                 "typo3/flow": "*",
                 "beech/ehrm": "*"
             },
-            "time": "1352722981",
+            "time": "1352733631",
             "type": "typo3-flow-beech",
             "installation-source": "source",
             "autoload": {
