@@ -7,14 +7,14 @@
             "source": {
                 "type": "git",
                 "url": "ssh://git.beech.local/EHRM/Package/Absence.git",
-                "reference": "5ca3c0915ed16711b2cf9fca8d509ea4527dd7f3"
+                "reference": "254325056d3ea4886282c570ea5fffb3232042e1"
             },
             "require": {
                 "typo3/flow": "*",
                 "beech/ehrm": "*",
                 "beech/party": "*"
             },
-            "time": "1351613197",
+            "time": "1352734831",
             "type": "typo3-flow-beech",
             "installation-source": "source",
             "autoload": {
