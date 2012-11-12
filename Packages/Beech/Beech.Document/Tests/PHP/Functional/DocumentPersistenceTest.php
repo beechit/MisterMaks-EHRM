@@ -33,13 +33,13 @@ class DocumentPersistenceTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 	}
 
 	/**
-	 * @return array Signature: name
+	 * @return array Signature: name, type
 	 */
 	public function documentsDataProvider() {
 		return array(
-			array('bla'),
-			array('$%&'),
-			array('poool')
+			array('bla', 'type1'),
+			array('$%&', 'type2'),
+			array('poool', 'type3')
 		);
 	}
 
@@ -47,16 +47,15 @@ class DocumentPersistenceTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 	 * @dataProvider documentsDataProvider
 	 * @test
 	 */
-	public function documentsPersistingAndRetrievingWorksCorrectly($name) {
+	public function documentsPersistingAndRetrievingWorksCorrectly($name, $type) {
 		$document = new Document();
 		$document->setName($name);
+		$document->setType($type);
+
 		$this->documentRepository->add($document);
-
 		$this->persistenceManager->persistAll();
-
-		$this->assertEquals(1, $this->documentRepository->countAll());
-
 		$this->persistenceManager->clearState();
+		$this->assertEquals(1, $this->documentRepository->countAll());
 	}
 }
 ?>

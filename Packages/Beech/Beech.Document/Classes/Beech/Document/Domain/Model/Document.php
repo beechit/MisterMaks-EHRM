@@ -17,11 +17,26 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Document {
 
+	const TYPE_IDENTIFICATION = 'Identification';
+	const TYPE_RESUME = 'Resume';
+	const TYPE_REPORT = 'Report';
+	const TYPE_PERMIT = 'Permit';
+	const TYPE_DIPLOMA = 'Diploma';
+	const TYPE_CERTIFICATE = 'Certificate';
+	const TYPE_DRIVERS_LICENSE = 'Drivers licence';
+	const TYPE_OTHER = 'Other';
+
 	/**
-	 * The name
+	 * The Document name
 	 * @var string
 	 */
 	protected $name;
+
+	/**
+	 * The Document type
+	 * @var string
+	 */
+	protected $type;
 
 	/**
 	 * @var \Doctrine\Common\Collections\Collection<\Beech\Document\Domain\Model\Resource>
@@ -54,6 +69,25 @@ class Document {
 	 */
 	public function setName($name) {
 		$this->name = $name;
+	}
+
+	/**
+	 * Get the Document's type
+	 *
+	 * @return string The Document's type
+	 */
+	public function getType() {
+		return $this->type;
+	}
+
+	/**
+	 * Sets this Document's type
+	 *
+	 * @param string $type If possible, use one of the TYPE_ constants
+	 * @return void
+	 */
+	public function setType($type) {
+		$this->type = $type;
 	}
 
 	/**

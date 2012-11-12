@@ -10,7 +10,7 @@ namespace Beech\Document\Tests\Unit;
 use Beech\Document\Controller\Management\DocumentController;
 
 /**
- * Unittest for the Document model
+ * Unit test for the Document model
  */
 class DocumentTest extends \TYPO3\Flow\Tests\UnitTestCase {
 
@@ -20,7 +20,9 @@ class DocumentTest extends \TYPO3\Flow\Tests\UnitTestCase {
 	public function nameGetterAndSetterReturnTheSame() {
 		$document = new \Beech\Document\Domain\Model\Document;
 		$document->setName('Polski');
+		$document->setType($document::TYPE_RESUME);
 		$this->assertSame($document->getName(), 'Polski');
+		$this->assertSame($document->getType(), 'Resume');
 	}
 
 	/**
