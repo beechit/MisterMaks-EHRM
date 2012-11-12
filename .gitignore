@@ -22,3 +22,4 @@ Thumbs.db
 /flow.bat
 /*.txt
 /node_modules/
+/bin/
