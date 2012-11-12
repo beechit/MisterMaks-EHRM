@@ -36,13 +36,6 @@ Application = Beech.Ehrm:Page {
 	}
 }
 
-Scaff = Template {
-	templatePath = 'resource://Beech.Ehrm/Private/Templates/TypoScriptObjects/Partials/AdministrationBody.html'
-	body = Template {
-		sectionName = 'Body'
-	}
-}
-
 Beech.Ehrm.Management.AdministrationController < Application {
 	templatePath = 'resource://Beech.Ehrm/Private/Templates/TypoScriptObjects/AdministrationPage.html'
 }
