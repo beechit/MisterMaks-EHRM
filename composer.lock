@@ -497,18 +497,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/mneuhaus/Famelo.Scaff",
-                "reference": "ff39c3e28a7960211c27bea1bf9a5f95f044da3e"
+                "reference": "260b9a3033771f8c6a29088179fb6d953f16ed32"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/mneuhaus/Famelo.Scaff/archive/ff39c3e28a7960211c27bea1bf9a5f95f044da3e.zip",
-                "reference": "ff39c3e28a7960211c27bea1bf9a5f95f044da3e",
+                "url": "https://github.com/mneuhaus/Famelo.Scaff/archive/260b9a3033771f8c6a29088179fb6d953f16ed32.zip",
+                "reference": "260b9a3033771f8c6a29088179fb6d953f16ed32",
                 "shasum": ""
             },
             "require": {
                 "typo3/flow": "*"
             },
-            "time": "1352212484",
+            "time": "1352457877",
             "type": "typo3-flow-package",
             "installation-source": "source",
             "autoload": {
@@ -523,12 +523,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/nrk/predis.git",
-                "reference": "b4b8b0cd37f0bd77a7e5c0976b58179fde0a5dfb"
+                "reference": "5476af1a7a286d59bba6e983b5ef18e584e7fc1d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/nrk/predis/archive/b4b8b0cd37f0bd77a7e5c0976b58179fde0a5dfb.zip",
-                "reference": "b4b8b0cd37f0bd77a7e5c0976b58179fde0a5dfb",
+                "url": "https://github.com/nrk/predis/archive/5476af1a7a286d59bba6e983b5ef18e584e7fc1d.zip",
+                "reference": "5476af1a7a286d59bba6e983b5ef18e584e7fc1d",
                 "shasum": ""
             },
             "require": {
@@ -538,7 +538,7 @@
                 "ext-phpiredis": "Allows faster serialization and deserialization of the Redis protocol",
                 "ext-curl": "Allows access to Webdis when paired with phpiredis"
             },
-            "time": "1352376390",
+            "time": "1352799369",
             "type": "library",
             "installation-source": "source",
             "autoload": {
@@ -790,7 +790,7 @@
             "source": {
                 "type": "git",
                 "url": "git://git.typo3.org/FLOW3/Packages/TYPO3.FLOW3.git",
-                "reference": "beac8272f684c69cc08df4b5f5e90736279aa654"
+                "reference": "8daa495e5a6d1677334d6a29be353652dc3324e7"
             },
             "require": {
                 "php": ">=5.3.2",
@@ -807,7 +807,7 @@
                 "symfony/dom-crawler": ">2.0.16",
                 "typo3/flow-composer-installers": "*"
             },
-            "time": "1352491606",
+            "time": "1352757756",
             "type": "typo3-flow-framework",
             "installation-source": "source",
             "autoload": {
