@@ -50,14 +50,14 @@
             "source": {
                 "type": "git",
                 "url": "ssh://git.beech.local/EHRM/Package/CLA.git",
-                "reference": "7e4e0b013a434d300be528fba172ce4cb2626cfa"
+                "reference": "cddeb2728fb6af00799575a5bf2645ac41c67d77"
             },
             "require": {
                 "typo3/flow": "*",
                 "beech/ehrm": "*",
                 "beech/party": "*"
             },
-            "time": "1352895773",
+            "time": "1352899319",
             "type": "typo3-flow-beech",
             "installation-source": "source",
             "autoload": {
