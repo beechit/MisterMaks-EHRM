@@ -23,11 +23,14 @@ class AccountViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper 
 	 */
 	public function render($propertyPath = 'party.name') {
 		$tokens = $this->securityContext->getAuthenticationTokens();
+
 		foreach ($tokens as $token) {
 			if ($token->isAuthenticated()) {
-				return \TYPO3\Flow\Reflection\ObjectAccess::getPropertyPath($token->getAccount(), $propertyPath);
+				return (string)\TYPO3\Flow\Reflection\ObjectAccess::getPropertyPath($token->getAccount(), $propertyPath);
 			}
 		}
+
+		return '';
 	}
 }
 
