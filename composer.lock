@@ -93,12 +93,12 @@
             "source": {
                 "type": "git",
                 "url": "ssh://git.beech.local/EHRM/Package/Ehrm.git",
-                "reference": "729b0e8a16cea0f0ead28212c58974abbed67666"
+                "reference": "5916702c2251bb721fcb71a19af79f7430239edd"
             },
             "require": {
                 "typo3/flow": "*"
             },
-            "time": "1352748770",
+            "time": "1352903180",
             "type": "typo3-flow-beech",
             "installation-source": "source",
             "autoload": {
@@ -1191,18 +1191,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/mneuhaus/Debug.Toolbar",
-                "reference": "2b93fa2748cde604823c5dd7033660ac6431ada4"
+                "reference": "53abe22441a09a7217006e89ead8d0ea3bf3b429"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/mneuhaus/Debug.Toolbar/archive/2b93fa2748cde604823c5dd7033660ac6431ada4.zip",
-                "reference": "2b93fa2748cde604823c5dd7033660ac6431ada4",
+                "url": "https://github.com/mneuhaus/Debug.Toolbar/archive/53abe22441a09a7217006e89ead8d0ea3bf3b429.zip",
+                "reference": "53abe22441a09a7217006e89ead8d0ea3bf3b429",
                 "shasum": ""
             },
             "require": {
                 "typo3/flow": "*"
             },
-            "time": "1352644169",
+            "time": "1352901426",
             "type": "typo3-flow-package",
             "installation-source": "source",
             "autoload": {
