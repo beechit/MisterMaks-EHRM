@@ -9,6 +9,9 @@ namespace Beech\Ehrm\Helper;
 
 use TYPO3\Flow\Annotations as Flow;
 
+/**
+ * @Flow\Scope("singleton")
+ */
 class ThemeHelper {
 
 	/**

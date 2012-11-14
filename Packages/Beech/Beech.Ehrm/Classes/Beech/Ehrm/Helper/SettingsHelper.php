@@ -130,7 +130,7 @@ class SettingsHelper {
 					->setCreateAbsoluteUri(TRUE)
 					->uriFor(
 						isset($menuItem['action']) ? $menuItem['action'] : $defaults['action'],
-						array(),
+						isset($menuItem['arguments']) ? $menuItem['arguments'] : array(),
 						isset($menuItem['controller']) ? $menuItem['controller'] : $defaults['controller'],
 						isset($menuItem['package']) ? $menuItem['package'] : $defaults['package']
 				);
