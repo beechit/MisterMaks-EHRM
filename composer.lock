@@ -108,6 +108,23 @@
             }
         },
         {
+            "name": "beech/essentials",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "ssh://git.beech.local/Beech/BuildEssentials.git",
+                "reference": "5cc0671daef9e22f0aa61d793813a83d9d0234a6"
+            },
+            "require": {
+                "php": ">=5.3.2",
+                "typo3/flow-composer-installers": "*"
+            },
+            "time": "1351242794",
+            "type": "typo3-flow-build",
+            "installation-source": "source",
+            "description": "Beech Flow Build Toolchain Essentials"
+        },
+        {
             "name": "beech/minutes",
             "version": "dev-development",
             "source": {
