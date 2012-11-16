@@ -35,14 +35,14 @@
                 "beech/ehrm": "*",
                 "beech/party": "*"
             },
+            "time": "1351612567",
             "type": "typo3-flow-beech",
             "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "Beech\\Calendar": "Classes"
                 }
-            },
-            "time": "1351612567"
+            }
         },
         {
             "name": "beech/cla",
@@ -78,14 +78,14 @@
                 "typo3/flow": "*",
                 "beech/ehrm": "*"
             },
+            "time": "1351612600",
             "type": "typo3-flow-beech",
             "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "Beech\\Document": "Classes"
                 }
-            },
-            "time": "1351612600"
+            }
         },
         {
             "name": "beech/ehrm",
@@ -108,23 +108,6 @@
             }
         },
         {
-            "name": "beech/essentials",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "ssh://git.beech.local/Beech/BuildEssentials.git",
-                "reference": "5cc0671daef9e22f0aa61d793813a83d9d0234a6"
-            },
-            "require": {
-                "php": ">=5.3.2",
-                "typo3/flow-composer-installers": "*"
-            },
-            "time": "1351242794",
-            "type": "typo3-flow-build",
-            "installation-source": "source",
-            "description": "Beech Flow Build Toolchain Essentials"
-        },
-        {
             "name": "beech/minutes",
             "version": "dev-development",
             "source": {
@@ -137,14 +120,14 @@
                 "beech/ehrm": "*",
                 "beech/party": "*"
             },
+            "time": "1351612633",
             "type": "typo3-flow-beech",
             "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "Beech\\Minutes": "Classes"
                 }
-            },
-            "time": "1351612633"
+            }
         },
         {
             "name": "beech/party",
@@ -228,6 +211,7 @@
             "require": {
                 "php": ">=5.3.2"
             },
+            "time": "1348120518",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -277,8 +261,7 @@
                 "eventmanager",
                 "annotations",
                 "persistence"
-            ],
-            "time": "1348120518"
+            ]
         },
         {
             "name": "doctrine/data-fixtures",
@@ -297,6 +280,7 @@
             "require": {
                 "php": ">=5.3.2"
             },
+            "time": "1351735543",
             "type": "library",
             "installation-source": "source",
             "autoload": {
@@ -318,8 +302,7 @@
             "homepage": "http://www.doctrine-project.org",
             "keywords": [
                 "database"
-            ],
-            "time": "1351735543"
+            ]
         },
         {
             "name": "doctrine/dbal",
@@ -339,6 +322,7 @@
                 "php": ">=5.3.2",
                 "doctrine/common": "2.3.*"
             },
+            "time": "1352716871",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -381,8 +365,7 @@
                 "persistence",
                 "dbal",
                 "queryobject"
-            ],
-            "time": "1352716871"
+            ]
         },
         {
             "name": "doctrine/migrations",
@@ -461,6 +444,7 @@
             "suggest": {
                 "symfony/yaml": "If you want to use YAML Metadata Mapping Driver"
             },
+            "time": "1352731781",
             "bin": [
                 "bin/doctrine",
                 "bin/doctrine.php"
@@ -505,8 +489,7 @@
             "keywords": [
                 "database",
                 "orm"
-            ],
-            "time": "1352731781"
+            ]
         },
         {
             "name": "famelo/scaff",
@@ -961,6 +944,7 @@
                 "typo3/flow-composer-installers": "*",
                 "typo3/flow": "*"
             },
+            "time": "1352278752",
             "type": "typo3-flow-framework",
             "installation-source": "source",
             "autoload": {
@@ -971,8 +955,7 @@
             "license": [
                 "LGPL-3.0+"
             ],
-            "description": "Next-Generation Templating Framework for TYPO3 Flow and TYPO3 5.0, also backported to TYPO3 4.x",
-            "time": "1352278752"
+            "description": "Next-Generation Templating Framework for TYPO3 Flow and TYPO3 5.0, also backported to TYPO3 4.x"
         },
         {
             "name": "typo3/form",
