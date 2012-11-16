@@ -3,6 +3,14 @@
 	"description": "Mister Maks Base Distribution",
 	"repositories": [
 		{
+			"type": "git",
+			"url": "git://github.com/radmiraal/Radmiraal.CouchDB.git"
+		},
+		{
+			"type": "git",
+			"url": "git://github.com/radmiraal/TYPO3.CouchDB.git"
+		},
+		{
 			"type": "composer",
 			"url": "http://ci.beech.local:8080/job/composer-packages/ws/mistermaks/"
 		},
@@ -36,11 +44,12 @@
 		"beech/document": "dev-development",
 		"beech/workflow": "dev-development",
 		"beech/minutes": "dev-development",
-		"beech/absence": "dev-development"
+		"beech/absence": "dev-development",
+		"beech/essentials": "dev-master",
+		"radmiraal/couchdb": "dev-master"
 	},
 	"require-dev": {
 		"typo3/buildessentials": "dev-master",
-		"beech/essentials": "dev-master",
 		"beech/dev-tools": "dev-development",
 		"typo3/kickstart": "dev-master",
 		"mikey179/vfsstream": "1.1.*",
