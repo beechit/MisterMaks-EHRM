@@ -1,5 +1,4 @@
 <?php
-use \TYPO3\Surf\Domain\Model\Workflow;
 use \TYPO3\Surf\Domain\Model\Node;
 use \TYPO3\Surf\Domain\Model\SimpleWorkflow;
 
@@ -11,7 +10,7 @@ use \TYPO3\Surf\Domain\Model\SimpleWorkflow;
  * DEPLOYMENT_USER: username to connect to the remote server
  */
 
-$application = new \TYPO3\Surf\Application\FLOW3();
+$application = new \TYPO3\Surf\Application\TYPO3\Flow();
 if (getenv('DEPLOYMENT_PATH')) {
 	$application->setDeploymentPath(getenv('DEPLOYMENT_PATH'));
 } else {
@@ -32,16 +31,16 @@ $workflow->setEnableRollback(getenv('ENABLE_ROLLBACK') ? (boolean)getenv('ENABLE
 
 $deployment->setWorkflow($workflow);
 
-$deployment->onInitialize(function() use ($workflow, $application) {
+$deployment->onInitialize(function() use ($workflow, $application, $phpPath) {
 	$workflow
 		->removeTask('typo3.surf:flow3:setfilepermissions')
 		->removeTask('typo3.surf:flow3:copyconfiguration')
 
 		->defineTask('typo3.surf:gitcheckout', 'typo3.surf:gitcheckout', array(
-			'branch' => 'development'
+			'branch' => getenv('DEPLOYMENT_BRANCH') ? getenv('DEPLOYMENT_BRANCH') : 'development'
 		))
 		->defineTask('beech.fetchQueuedPatches', 'typo3.surf:shell', array(
-			'command' => 'cd {releasePath} && php Build/essentials/fetchQueuedPatches.php'
+			'command' => 'cd {releasePath} && ' . $phpPath . ' Build/essentials/fetchQueuedPatches.php'
 		))
 		->defineTask('beech.clearcache', 'typo3.surf:shell', array(
 			'command' => 'cd {releasePath} && FLOW_CONTEXT=Production ./flow flow:cache:flush --force'
