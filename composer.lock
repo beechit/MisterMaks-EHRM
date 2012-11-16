@@ -1,9 +1,9 @@
 {
-    "hash": "2544f082088be630d6aab5a6493ddb7a",
+    "hash": "b753c8fec942dac556b3e5f1577e9dec",
     "packages": [
         {
             "name": "beech/absence",
-            "version": "dev-development",
+            "version": "1.0.0.x-dev",
             "source": {
                 "type": "git",
                 "url": "ssh://git.beech.local/EHRM/Package/Absence.git",
@@ -24,7 +24,7 @@
         },
         {
             "name": "beech/calendar",
-            "version": "dev-development",
+            "version": "1.0.0.x-dev",
             "source": {
                 "type": "git",
                 "url": "ssh://git.beech.local/EHRM/Package/Calendar.git",
@@ -46,7 +46,7 @@
         },
         {
             "name": "beech/cla",
-            "version": "dev-development",
+            "version": "1.0.0.x-dev",
             "source": {
                 "type": "git",
                 "url": "ssh://git.beech.local/EHRM/Package/CLA.git",
@@ -68,7 +68,7 @@
         },
         {
             "name": "beech/document",
-            "version": "dev-development",
+            "version": "1.0.0.x-dev",
             "source": {
                 "type": "git",
                 "url": "ssh://git.beech.local/EHRM/Package/Document.git",
@@ -89,7 +89,7 @@
         },
         {
             "name": "beech/ehrm",
-            "version": "dev-development",
+            "version": "1.0.0.x-dev",
             "source": {
                 "type": "git",
                 "url": "ssh://git.beech.local/EHRM/Package/Ehrm.git",
@@ -126,7 +126,7 @@
         },
         {
             "name": "beech/minutes",
-            "version": "dev-development",
+            "version": "1.0.0.x-dev",
             "source": {
                 "type": "git",
                 "url": "ssh://git.beech.local/EHRM/Package/Minutes.git",
@@ -148,7 +148,7 @@
         },
         {
             "name": "beech/party",
-            "version": "dev-development",
+            "version": "1.0.0.x-dev",
             "source": {
                 "type": "git",
                 "url": "ssh://git.beech.local/EHRM/Package/Party.git",
@@ -169,7 +169,7 @@
         },
         {
             "name": "beech/task",
-            "version": "dev-development",
+            "version": "1.0.0.x-dev",
             "source": {
                 "type": "git",
                 "url": "ssh://git.beech.local/EHRM/Package/Task.git",
@@ -190,7 +190,7 @@
         },
         {
             "name": "beech/workflow",
-            "version": "dev-development",
+            "version": "1.0.0.x-dev",
             "source": {
                 "type": "git",
                 "url": "ssh://git.beech.local/EHRM/Package/WorkFlow.git",
@@ -228,7 +228,6 @@
             "require": {
                 "php": ">=5.3.2"
             },
-            "time": "1348120518",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -278,7 +277,8 @@
                 "eventmanager",
                 "annotations",
                 "persistence"
-            ]
+            ],
+            "time": "1348120518"
         },
         {
             "name": "doctrine/data-fixtures",
@@ -297,7 +297,6 @@
             "require": {
                 "php": ">=5.3.2"
             },
-            "time": "1351735543",
             "type": "library",
             "installation-source": "source",
             "autoload": {
@@ -319,7 +318,8 @@
             "homepage": "http://www.doctrine-project.org",
             "keywords": [
                 "database"
-            ]
+            ],
+            "time": "1351735543"
         },
         {
             "name": "doctrine/dbal",
@@ -339,7 +339,6 @@
                 "php": ">=5.3.2",
                 "doctrine/common": "2.3.*"
             },
-            "time": "1352716871",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -382,7 +381,8 @@
                 "persistence",
                 "dbal",
                 "queryobject"
-            ]
+            ],
+            "time": "1352716871"
         },
         {
             "name": "doctrine/migrations",
@@ -461,7 +461,6 @@
             "suggest": {
                 "symfony/yaml": "If you want to use YAML Metadata Mapping Driver"
             },
-            "time": "1352731781",
             "bin": [
                 "bin/doctrine",
                 "bin/doctrine.php"
@@ -506,7 +505,8 @@
             "keywords": [
                 "database",
                 "orm"
-            ]
+            ],
+            "time": "1352731781"
         },
         {
             "name": "famelo/scaff",
@@ -961,7 +961,6 @@
                 "typo3/flow-composer-installers": "*",
                 "typo3/flow": "*"
             },
-            "time": "1352278752",
             "type": "typo3-flow-framework",
             "installation-source": "source",
             "autoload": {
@@ -972,7 +971,8 @@
             "license": [
                 "LGPL-3.0+"
             ],
-            "description": "Next-Generation Templating Framework for TYPO3 Flow and TYPO3 5.0, also backported to TYPO3 4.x"
+            "description": "Next-Generation Templating Framework for TYPO3 Flow and TYPO3 5.0, also backported to TYPO3 4.x",
+            "time": "1352278752"
         },
         {
             "name": "typo3/form",
@@ -1190,26 +1190,6 @@
     ],
     "packages-dev": [
         {
-            "name": "beech/dev-tools",
-            "version": "dev-development",
-            "source": {
-                "type": "git",
-                "url": "ssh://git.beech.local/EHRM/Package/DevTools.git",
-                "reference": "53201979175bb09638d2b7b6be6303027e7698cf"
-            },
-            "require": {
-                "typo3/flow": "*"
-            },
-            "time": "1351262613",
-            "type": "typo3-flow-beech",
-            "installation-source": "source",
-            "autoload": {
-                "psr-0": {
-                    "Beech\\DevTools": "Classes"
-                }
-            }
-        },
-        {
             "name": "beech/style",
             "version": "dev-development",
             "source": {
@@ -1285,6 +1265,40 @@
                 "BSD"
             ],
             "homepage": "http://vfs.bovigo.org/"
+        },
+        {
+            "name": "radmiraal/dev-tools",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git://github.com/radmiraal/Radmiraal.DevTools.git",
+                "reference": "d31b3658388e52dd68d0009955e111be83de57d2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/radmiraal/Radmiraal.DevTools/archive/d31b3658388e52dd68d0009955e111be83de57d2.zip",
+                "reference": "d31b3658388e52dd68d0009955e111be83de57d2",
+                "shasum": ""
+            },
+            "require": {
+                "typo3/flow": "*"
+            },
+            "time": "1351967519",
+            "type": "typo3-flow-package",
+            "installation-source": "source",
+            "autoload": {
+                "psr-0": {
+                    "Radmiraal\\DevTools": "Classes"
+                }
+            },
+            "license": [
+                "LGPL-3.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Rens Admiraal"
+                }
+            ]
         },
         {
             "name": "sandstorm/phpprofiler",
@@ -1431,19 +1445,10 @@
         "radmiraal/emberjs": 20,
         "famelo/scaff": 20,
         "typo3/expose": 20,
-        "beech/ehrm": 20,
-        "beech/party": 20,
-        "beech/task": 20,
-        "beech/calendar": 20,
-        "beech/cla": 20,
-        "beech/document": 20,
-        "beech/workflow": 20,
-        "beech/minutes": 20,
-        "beech/absence": 20,
         "beech/essentials": 20,
         "radmiraal/couchdb": 20,
         "typo3/buildessentials": 20,
-        "beech/dev-tools": 20,
+        "radmiraal/dev-tools": 20,
         "typo3/kickstart": 20,
         "beech/style": 20,
         "debug/toolbar": 20,
