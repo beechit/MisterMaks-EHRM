@@ -7,10 +7,6 @@
 			"url": "git://github.com/radmiraal/Radmiraal.CouchDB.git"
 		},
 		{
-			"type": "git",
-			"url": "git://github.com/radmiraal/TYPO3.CouchDB.git"
-		},
-		{
 			"type": "composer",
 			"url": "http://ci.beech.local:8080/job/composer-packages/ws/mistermaks/"
 		},
@@ -46,7 +42,7 @@
 		"beech/minutes": "1.0.x",
 		"beech/absence": "1.0.x",
 		"beech/essentials": "dev-master",
-		"radmiraal/couchdb": "dev-master"
+		"radmiraal/couchdb": "dev-doctrine"
 	},
 	"require-dev": {
 		"typo3/buildessentials": "dev-master",

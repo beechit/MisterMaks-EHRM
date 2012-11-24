@@ -1,5 +1,5 @@
 {
-    "hash": "b753c8fec942dac556b3e5f1577e9dec",
+    "hash": "29e870d2160929f060311f89c4b337a8",
     "packages": [
         {
             "name": "beech/absence",
@@ -221,13 +221,14 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/doctrine/common/zipball/bb0aebbf234db52df476a2b473d434745b34221c",
+                "url": "https://github.com/doctrine/common/archive/bb0aebbf234db52df476a2b473d434745b34221c.zip",
                 "reference": "bb0aebbf234db52df476a2b473d434745b34221c",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2"
             },
+            "time": "1348120518",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -277,8 +278,107 @@
                 "eventmanager",
                 "annotations",
                 "persistence"
+            ]
+        },
+        {
+            "name": "doctrine/couchdb",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/doctrine/couchdb-client.git",
+                "reference": "dc13c5db96a62819f4d0f1f62e1a43076fdcd91c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/doctrine/couchdb-client/archive/dc13c5db96a62819f4d0f1f62e1a43076fdcd91c.zip",
+                "reference": "dc13c5db96a62819f4d0f1f62e1a43076fdcd91c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2",
+                "doctrine/common": "*"
+            },
+            "time": "1352808869",
+            "type": "library",
+            "installation-source": "source",
+            "autoload": {
+                "psr-0": {
+                    "Doctrine\\CouchDB": "lib/"
+                }
+            },
+            "license": [
+                "LGPL"
             ],
-            "time": "1348120518"
+            "authors": [
+                {
+                    "name": "Benjamin Eberlei",
+                    "email": "kontakt@beberlei.de"
+                },
+                {
+                    "name": "Lukas Kahwe Smith",
+                    "email": "smith@pooteeweet.org"
+                }
+            ],
+            "description": "CouchDB Client",
+            "homepage": "http://www.doctrine-project.org",
+            "keywords": [
+                "persistence",
+                "couchdb"
+            ]
+        },
+        {
+            "name": "doctrine/couchdb-odm",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git://github.com/doctrine/couchdb-odm.git",
+                "reference": "0422b958f438036940e9b5de0a750d64d88b41aa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/doctrine/couchdb-odm/archive/0422b958f438036940e9b5de0a750d64d88b41aa.zip",
+                "reference": "0422b958f438036940e9b5de0a750d64d88b41aa",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2",
+                "doctrine/couchdb": "*",
+                "symfony/console": ">=2.0",
+                "doctrine/common": ">=2.2.0,<2.4"
+            },
+            "require-dev": {
+                "symfony/yaml": ">=2.0.0,<2.2.0-dev"
+            },
+            "suggest": {
+                "symfony/yaml": ">=2.0.0,<2.2.0-dev"
+            },
+            "time": "1352847928",
+            "type": "library",
+            "installation-source": "source",
+            "autoload": {
+                "psr-0": {
+                    "Doctrine\\ODM\\CouchDB": "lib/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Benjamin Eberlei",
+                    "email": "kontakt@beberlei.de"
+                },
+                {
+                    "name": "Lukas Kahwe Smith",
+                    "email": "smith@pooteeweet.org"
+                }
+            ],
+            "description": "CouchDB Document Object Mapper",
+            "homepage": "http://www.doctrine-project.org",
+            "keywords": [
+                "persistence",
+                "couchdb"
+            ]
         },
         {
             "name": "doctrine/data-fixtures",
@@ -286,17 +386,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/data-fixtures.git",
-                "reference": "a95d7839a7794c7c9b22d64e859ee70658d977fe"
+                "reference": "a28b6bde290b0a908d32938e3393244086c2d89d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/doctrine/data-fixtures/archive/a95d7839a7794c7c9b22d64e859ee70658d977fe.zip",
-                "reference": "a95d7839a7794c7c9b22d64e859ee70658d977fe",
+                "url": "https://github.com/doctrine/data-fixtures/archive/a28b6bde290b0a908d32938e3393244086c2d89d.zip",
+                "reference": "a28b6bde290b0a908d32938e3393244086c2d89d",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2"
             },
+            "time": "1353557065",
             "type": "library",
             "installation-source": "source",
             "autoload": {
@@ -318,8 +419,7 @@
             "homepage": "http://www.doctrine-project.org",
             "keywords": [
                 "database"
-            ],
-            "time": "1351735543"
+            ]
         },
         {
             "name": "doctrine/dbal",
@@ -339,6 +439,7 @@
                 "php": ">=5.3.2",
                 "doctrine/common": "2.3.*"
             },
+            "time": "1352716871",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -381,8 +482,7 @@
                 "persistence",
                 "dbal",
                 "queryobject"
-            ],
-            "time": "1352716871"
+            ]
         },
         {
             "name": "doctrine/migrations",
@@ -394,7 +494,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/doctrine/migrations/zipball/c1d875ce7d092dd1bc7508c3867b5c6b97431e43",
+                "url": "https://github.com/doctrine/migrations/archive/c1d875ce7d092dd1bc7508c3867b5c6b97431e43.zip",
                 "reference": "c1d875ce7d092dd1bc7508c3867b5c6b97431e43",
                 "shasum": ""
             },
@@ -461,6 +561,7 @@
             "suggest": {
                 "symfony/yaml": "If you want to use YAML Metadata Mapping Driver"
             },
+            "time": "1352731781",
             "bin": [
                 "bin/doctrine",
                 "bin/doctrine.php"
@@ -505,8 +606,7 @@
             "keywords": [
                 "database",
                 "orm"
-            ],
-            "time": "1352731781"
+            ]
         },
         {
             "name": "famelo/scaff",
@@ -540,12 +640,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/nrk/predis.git",
-                "reference": "b26d6103a62b0eff495b785ec15edf0ad7020ea8"
+                "reference": "51b466267d8f11aa0ad6da1ae13f9d86b1e4837e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/nrk/predis/archive/b26d6103a62b0eff495b785ec15edf0ad7020ea8.zip",
-                "reference": "b26d6103a62b0eff495b785ec15edf0ad7020ea8",
+                "url": "https://github.com/nrk/predis/archive/51b466267d8f11aa0ad6da1ae13f9d86b1e4837e.zip",
+                "reference": "51b466267d8f11aa0ad6da1ae13f9d86b1e4837e",
                 "shasum": ""
             },
             "require": {
@@ -555,7 +655,7 @@
                 "ext-phpiredis": "Allows faster serialization and deserialization of the Redis protocol",
                 "ext-curl": "Allows access to Webdis when paired with phpiredis"
             },
-            "time": "1352821495",
+            "time": "1353535043",
             "type": "library",
             "installation-source": "source",
             "autoload": {
@@ -583,17 +683,17 @@
         },
         {
             "name": "radmiraal/couchdb",
-            "version": "dev-master",
+            "version": "dev-doctrine",
             "source": {
                 "type": "git",
                 "url": "git://github.com/radmiraal/Radmiraal.CouchDB.git",
-                "reference": "ea7f000f23491ea7201e4d124c89d2dc8cf3bb0b"
+                "reference": "d2206b45ce81c770f9084aac947dd6d7e80803f4"
             },
             "require": {
                 "typo3/flow": "*",
-                "typo3/couchdb": "*"
+                "doctrine/couchdb-odm": "dev-master"
             },
-            "time": "1353021011",
+            "time": "1353790472",
             "type": "typo3-flow-package",
             "installation-source": "source",
             "autoload": {
@@ -638,18 +738,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Console",
-                "reference": "6da537054e8f9f795e64a5b02eb7f9646c9b59e7"
+                "reference": "003a487a674175a1d2e62f205ecd91ffe85554b1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/Console/archive/6da537054e8f9f795e64a5b02eb7f9646c9b59e7.zip",
-                "reference": "6da537054e8f9f795e64a5b02eb7f9646c9b59e7",
+                "url": "https://github.com/symfony/Console/archive/003a487a674175a1d2e62f205ecd91ffe85554b1.zip",
+                "reference": "003a487a674175a1d2e62f205ecd91ffe85554b1",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "1352815684",
+            "time": "1353329932",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -685,12 +785,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/DomCrawler",
-                "reference": "e3aad2db097c953400a830fdd2f6edb2a42329c1"
+                "reference": "9d95ebb0e1c1a037732a8899af5cc376db82561d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/DomCrawler/archive/e3aad2db097c953400a830fdd2f6edb2a42329c1.zip",
-                "reference": "e3aad2db097c953400a830fdd2f6edb2a42329c1",
+                "url": "https://github.com/symfony/DomCrawler/archive/9d95ebb0e1c1a037732a8899af5cc376db82561d.zip",
+                "reference": "9d95ebb0e1c1a037732a8899af5cc376db82561d",
                 "shasum": ""
             },
             "require": {
@@ -702,7 +802,7 @@
             "suggest": {
                 "symfony/css-selector": "2.2.*"
             },
-            "time": "1352815684",
+            "time": "1353329932",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -779,27 +879,6 @@
             "homepage": "http://symfony.com"
         },
         {
-            "name": "typo3/couchdb",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "git://github.com/radmiraal/TYPO3.CouchDB.git",
-                "reference": "f22d0c122a228d5befd9f60a2ec5960175157cb4"
-            },
-            "require": {
-                "typo3/flow": "*"
-            },
-            "time": "1353012756",
-            "type": "typo3-flow-package",
-            "installation-source": "source",
-            "autoload": {
-                "psr-0": {
-                    "TYPO3\\CouchDB": "Classes"
-                }
-            },
-            "description": "A CouchDB persistence backend for Flow with automatic query to view conversion"
-        },
-        {
             "name": "typo3/eel",
             "version": "dev-master",
             "source": {
@@ -825,7 +904,7 @@
             "source": {
                 "type": "git",
                 "url": "git://git.typo3.org/FLOW3/Packages/TYPO3.Expose.git",
-                "reference": "870b5419d0cd50a9235c6af250a178bcf068493c"
+                "reference": "e40d4de84ecf7378d041f4187e296d8be7bff5e6"
             },
             "require": {
                 "typo3/flow-composer-installers": "*",
@@ -833,7 +912,7 @@
                 "typo3/form": "*",
                 "typo3/typoscript": "*"
             },
-            "time": "1350549203",
+            "time": "1353620872",
             "type": "typo3-flow-package",
             "installation-source": "source",
             "autoload": {
@@ -852,7 +931,7 @@
             "source": {
                 "type": "git",
                 "url": "git://git.typo3.org/FLOW3/Packages/TYPO3.FLOW3.git",
-                "reference": "8daa495e5a6d1677334d6a29be353652dc3324e7"
+                "reference": "fefb00eadefe768c1e8415fc6faac6b1f84c81bc"
             },
             "require": {
                 "php": ">=5.3.2",
@@ -869,7 +948,7 @@
                 "symfony/dom-crawler": ">2.0.16",
                 "typo3/flow-composer-installers": "*"
             },
-            "time": "1352757756",
+            "time": "1353504700",
             "type": "typo3-flow-framework",
             "installation-source": "source",
             "autoload": {
@@ -955,12 +1034,13 @@
             "source": {
                 "type": "git",
                 "url": "git://git.typo3.org/FLOW3/Packages/TYPO3.Fluid.git",
-                "reference": "65ea61e4c17f6d635ef828afd90f2e01b3795e52"
+                "reference": "5504beef578d5ef2e6c0f394fbed1a6e240d70c5"
             },
             "require": {
                 "typo3/flow-composer-installers": "*",
                 "typo3/flow": "*"
             },
+            "time": "1353671663",
             "type": "typo3-flow-framework",
             "installation-source": "source",
             "autoload": {
@@ -971,8 +1051,7 @@
             "license": [
                 "LGPL-3.0+"
             ],
-            "description": "Next-Generation Templating Framework for TYPO3 Flow and TYPO3 5.0, also backported to TYPO3 4.x",
-            "time": "1352278752"
+            "description": "Next-Generation Templating Framework for TYPO3 Flow and TYPO3 5.0, also backported to TYPO3 4.x"
         },
         {
             "name": "typo3/form",
@@ -1409,12 +1488,12 @@
             "source": {
                 "type": "git",
                 "url": "git://git.typo3.org/FLOW3/Packages/TYPO3.Kickstart.git",
-                "reference": "4280efb254988ba03c6c1d2013377fd026cd1e29"
+                "reference": "7a4886a83d696a9e2db3f10286875b2cac9be723"
             },
             "require": {
                 "typo3/flow": "*"
             },
-            "time": "1349281880",
+            "time": "1353509162",
             "type": "typo3-flow-framework",
             "installation-source": "source",
             "autoload": {

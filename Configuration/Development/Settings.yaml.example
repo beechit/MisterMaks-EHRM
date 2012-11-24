@@ -19,10 +19,13 @@ TYPO3:
        # if you want to log executed SQL queries, enable the next 2 lines
 #      doctrine:
 #        sqlLogger: 'TYPO3\Flow\Persistence\Doctrine\Logging\SqlLogger'
-
-
 Radmiraal:
   CouchDB:
     persistence:
       backendOptions:
         databaseName: ''
+        host: 'localhost'
+        port: 5984
+        username: ''
+        password: ''
+        ip: '127.0.0.1'
