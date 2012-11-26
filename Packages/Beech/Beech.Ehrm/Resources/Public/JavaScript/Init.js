@@ -3,8 +3,8 @@ require(
 		baseUrl: '//' + window.location.host + '/_Resources/Static/Packages/',
 		urlArgs: 'bust=' + (new Date()).getTime(),
 		paths: {
-			'jquery': 'Beech.Ehrm/JavaScript/jquery',
-			'jquery-ui': 'Beech.Ehrm/JavaScript/jquery-ui',
+			'jquery': 'Beech.Ehrm/Library/jquery',
+			'jquery-ui': 'Beech.Ehrm/Library/jquery-ui',
 			'jquery-lib': 'Beech.Ehrm/Library/jquery-ui/js/jquery-1.7.2.min',
 			'jquery-ui-lib': 'Beech.Ehrm/Library/jquery-ui/js/jquery-ui-1.9.rc1',
 			'form': 'Beech.Ehrm/Library/jquery.form',
@@ -12,7 +12,7 @@ require(
 			'emberjs': 'Beech.Ehrm/Library/emberjs/ember-1.0.0-pre.2',
 			'bootstrap': 'Beech.Ehrm/Library/bootstrap/js/bootstrap.min',
 			'data-tables-twitterbootstrap': 'Beech.Ehrm/Library/dataTables/media/js/jquery.dataTables.TwitterBootstrap',
-			'i18n': 'Beech.Ehrm/JavaScript/i18n'
+			'i18n': 'Beech.Ehrm/Library/requirejs/i18n'
 		},
 		shim: {
 			'jquery-lib': {
@@ -26,11 +26,13 @@ require(
 				'exports': 'Ember'
 			},
 			'data-tables-twitterbootstrap': {
-				'deps':
-				[
+				'deps': [
 					'bootstrap',
 					'Beech.Ehrm/Library/dataTables/media/js/jquery.dataTables'
 				]
+			},
+			'rGraph': {
+				'exports': 'RGraph'
 			}
 		},
 		config: {
@@ -45,8 +47,8 @@ require(
 		'jquery-ui',
 		'bootstrap'
 	],
-	function($, Ember) {
-		$(document).ready(function() {
+	function ($, Ember) {
+		$(document).ready(function () {
 			if (MM.authenticated) {
 				if (MM.init.onLoad) {
 					for (var i in MM.init.onLoad) {
@@ -94,7 +96,6 @@ require(
 								}
 							}
 						}
-
 
 					}
 				);

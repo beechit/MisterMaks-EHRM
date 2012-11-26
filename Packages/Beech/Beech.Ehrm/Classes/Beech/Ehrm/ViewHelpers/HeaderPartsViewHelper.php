@@ -61,7 +61,7 @@ class HeaderPartsViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHel
 				'<script data-main="%1$sPackages/%2$s" src="%1$sPackages/%3$s"></script>',
 				$this->resourcePublisher->getStaticResourcesWebBaseUri(),
 				'Beech.Ehrm/JavaScript/Init.js',
-				'Beech.Ehrm/JavaScript/require.js'
+				'Beech.Ehrm/Library/requirejs/require.js'
 			);
 		}
 
@@ -76,8 +76,8 @@ class HeaderPartsViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHel
 	protected function addThemeStyleSheet() {
 		$theme = $this->themeHelper->getSelectedTheme();
 		$availableThemes = $this->themeHelper->getAvailableThemes();
-		// Rare case scenario that no path is set because no stylesheet was found.
-		// This should not occur but is technically possible.
+			// Rare case scenario that no path is set because no stylesheet was found.
+			// This should not occur but is technically possible.
 		if (!empty($theme['name']['path'])) {
 			$this->output .= sprintf(
 				'<link rel="stylesheet" type="text/css" href="%1$sPackages/%2$s" />',

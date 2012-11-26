@@ -1,6 +1,7 @@
 resources:
   methods:
-    ApplicationControllers: 'method(Beech\.*\Controller\.*(?<!Login)Controller->(?<!initialize).*Action())'
+    AuthenticationControllers: 'method(\Beech\Ehrm\Controller\LoginController->.*())'
+    ApplicationControllers: 'method(\Beech\.*\Controller\.*->(?<!initialize).*Action())'
     ManagementControllers: 'method(\Beech\.*\Management\.*Controller->(?<!initialize).*Action())'
     SetupController: 'method(\Beech\Ehrm\SetupController->(?<!initialize).*Action())'
 
@@ -21,3 +22,7 @@ acls:
   Everybody:
     methods:
       ApplicationControllers: GRANT
+      AuthenticationControllers: GRANT
+  Anonymous:
+    methods:
+      AuthenticationControllers: GRANT
