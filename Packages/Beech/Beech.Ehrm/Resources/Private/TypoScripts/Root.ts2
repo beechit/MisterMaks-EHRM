@@ -9,6 +9,11 @@ prototype(Beech.Ehrm.AdministrationMenu).@class = 'Beech\\Ehrm\\TypoScript\\Admi
 prototype(Beech.Ehrm.HeaderParts).@class = 'Beech\\Ehrm\\TypoScript\\HeaderParts'
 prototype(Beech.Ehrm.Page).@class = 'Beech\\Ehrm\\TypoScript\\Template'
 
+prototype(TYPO3.TypoScript:Template) {
+#	partialRootPath = 'resource://Beech.Ehrm/Private/Partials'
+#	layoutRootPath = 'resource://Beech.Ehrm/Private/Layouts'
+}
+
 prototype(Beech.Ehrm:Page) < prototype(TYPO3.TypoScript:Template)
 prototype(Beech.Ehrm:Page) {
 	templatePath = 'resource://Beech.Ehrm/Private/Templates/TypoScriptObjects/Page.html'
@@ -19,15 +24,14 @@ prototype(Beech.Ehrm:Page) {
 Application = Beech.Ehrm:Page {
 	headerMenu = Beech.Ehrm.MainMenu
 	headerParts = Beech.Ehrm.HeaderParts
-	administrationMenu = Beech.Ehrm.AdministrationMenu
 
 	body {
 		sectionName = 'Body'
 	}
 }
 
-Beech.Ehrm.Management.AdministrationController < Application {
-	templatePath = 'resource://Beech.Ehrm/Private/Templates/TypoScriptObjects/AdministrationPage.html'
+Beech.Ehrm.LoginController < Application {
+	templatePath = 'resource://Beech.Ehrm/Private/Templates/TypoScriptObjects/Default.html'
 }
 
 Beech.Ehrm.WizardController = Beech.Ehrm:Page {
