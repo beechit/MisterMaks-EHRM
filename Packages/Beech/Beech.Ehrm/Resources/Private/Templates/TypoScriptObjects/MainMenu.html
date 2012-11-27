@@ -1,13 +1,10 @@
-<header>{namespace bootstrap=TYPO3\Twitter\Bootstrap\ViewHelpers}{namespace ehrm=Beech\Ehrm\ViewHelpers}
+<header>{namespace ehrm=Beech\Ehrm\ViewHelpers}
 	<nav class="navbar navbar-fixed-top">
 		<div class="navbar-inner">
 			<div class="container-fluid">
 				<f:link.action package="Beech.Ehrm" controller="Standard" action="index" class="brand">Mister Maks</f:link.action>
 
 				<f:security.ifAuthenticated>
-					<bootstrap:navigation.menu items="{mainMenuItems}" classNames="{0:'nav'}" />
-
-					<bootstrap:navigation.menu items="{actionMenuItems}" classNames="{0:'nav',1:'pull-right'}" />
 					<f:if condition="{settings.search.enabled}">
 						<f:then>
 							<form class="navbar-form pull-right">
@@ -17,12 +14,9 @@
 					</f:if>
 
 					<div class="btn-group pull-right">
-						<a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#">
-							<i class="icon-user icon-white"></i>
-							<ehrm:security.account />
-							<span class="caret"></span>
+						<a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="#">
+							<i class="icon-user icon-white"></i> <ehrm:security.account /> <span class="caret"></span>
 						</a>
-						<bootstrap:navigation.menu items="{accountMenuItems}" classNames="{0:'dropdown-menu'}" />
 					</div>
 
 				</f:security.ifAuthenticated>

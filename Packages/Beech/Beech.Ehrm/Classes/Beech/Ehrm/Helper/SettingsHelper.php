@@ -110,7 +110,7 @@ class SettingsHelper {
 			if (isset($configuration['menu'])) {
 				foreach ($this->settings['menu'][$subIdentifier]['menu'] as $key => $item) {
 					if ($key === 'todo') {
-						$this->settings['menu'][$subIdentifier]['menu']['todo']['label'] .= ' (' . $this->toDoRepository->countByArchivedDateTime(NULL) . ')';
+						$this->settings['menu'][$subIdentifier]['menu']['todo']['label'] .= ' <span class="badge badge-info">' . $this->toDoRepository->countByArchivedDateTime(NULL) . '</span>';
 					}
 				}
 			}
