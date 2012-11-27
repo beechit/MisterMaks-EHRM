@@ -93,12 +93,12 @@
             "source": {
                 "type": "git",
                 "url": "ssh://git.beech.local/EHRM/Package/Ehrm.git",
-                "reference": "fd77a4c8f1ac88e77de558340f665c59b1403914"
+                "reference": "8353d81444d7f1a91e06f1d396611628a46cb9a4"
             },
             "require": {
                 "typo3/flow": "*"
             },
-            "time": "1353070408",
+            "time": "1354026119",
             "type": "typo3-flow-beech",
             "installation-source": "source",
             "autoload": {
@@ -113,13 +113,13 @@
             "source": {
                 "type": "git",
                 "url": "ssh://git.beech.local/Beech/BuildEssentials.git",
-                "reference": "5cc0671daef9e22f0aa61d793813a83d9d0234a6"
+                "reference": "18724a02ec81e3dae60ea5c474d320cec31118d6"
             },
             "require": {
                 "php": ">=5.3.2",
                 "typo3/flow-composer-installers": "*"
             },
-            "time": "1351242794",
+            "time": "1354025264",
             "type": "typo3-flow-build",
             "installation-source": "source",
             "description": "Beech Flow Build Toolchain Essentials"
@@ -152,13 +152,13 @@
             "source": {
                 "type": "git",
                 "url": "ssh://git.beech.local/EHRM/Package/Party.git",
-                "reference": "fbb28657e761c97f0463703fc218ff5606fd7e15"
+                "reference": "94ff7bbf822e7bde1b6792cab6028017edfd5ad2"
             },
             "require": {
                 "typo3/flow": "*",
                 "beech/ehrm": "*"
             },
-            "time": "1352747187",
+            "time": "1354018469",
             "type": "typo3-flow-beech",
             "installation-source": "source",
             "autoload": {
@@ -878,7 +878,7 @@
             "source": {
                 "type": "git",
                 "url": "git://git.typo3.org/FLOW3/Packages/TYPO3.FLOW3.git",
-                "reference": "1bfd4fc492db0c92aff197e0428bbfff415afe1c"
+                "reference": "b8465e92fe7aede8b9dbcfd0cd95f84c70cd26a7"
             },
             "require": {
                 "php": ">=5.3.2",
@@ -895,7 +895,7 @@
                 "symfony/dom-crawler": ">2.0.16",
                 "typo3/flow-composer-installers": "*"
             },
-            "time": "1353942169",
+            "time": "1354032717",
             "type": "typo3-flow-framework",
             "installation-source": "source",
             "autoload": {

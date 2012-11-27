@@ -33,22 +33,22 @@ $deployment->setWorkflow($workflow);
 
 $deployment->onInitialize(function() use ($workflow, $application, $phpPath) {
 	$workflow
-		->removeTask('typo3.surf:flow3:setfilepermissions')
-		->removeTask('typo3.surf:flow3:copyconfiguration')
+		->removeTask('typo3.surf:typo3:flow:setfilepermissions')
+		->removeTask('typo3.surf:typo3:flow:copyconfiguration')
 
 		->defineTask('typo3.surf:gitcheckout', 'typo3.surf:gitcheckout', array(
 			'branch' => getenv('DEPLOYMENT_BRANCH') ? getenv('DEPLOYMENT_BRANCH') : 'development'
 		))
-		->defineTask('beech.fetchQueuedPatches', 'typo3.surf:shell', array(
-			'command' => 'cd {releasePath} && ' . $phpPath . ' Build/essentials/fetchQueuedPatches.php'
+		->defineTask('gerrit.update', 'typo3.surf:shell', array(
+			'command' => 'cd {releasePath} && FLOW_CONTEXT=Production ./flow gerrit:update'
 		))
-		->defineTask('beech.clearcache', 'typo3.surf:shell', array(
-			'command' => 'cd {releasePath} && FLOW_CONTEXT=Production ./flow flow:cache:flush --force'
+		->defineTask('couchdb.migrate', 'typo3.surf:shell', array(
+			'command' => 'cd {releasePath} && FLOW_CONTEXT=Production ./flow migrate:designs'
 		))
 
 		->beforeTask('typo3.surf:composer:install', 'typo3.surf:composer:download', $application)
-		->afterTask('typo3.surf:gitcheckout', 'beech.fetchQueuedPatches', $application)
-		->addTask('beech.clearcache', 'update', $application);
+		->afterTask('typo3.surf:gitcheckout', 'gerrit.update', $application)
+		->addTask('couchdb.migrate', 'update', $application);
 });
 
 if (getenv('DEPLOYMENT_HOST')) {
