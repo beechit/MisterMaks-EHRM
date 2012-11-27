@@ -8,7 +8,6 @@ namespace Beech\Party\Domain\Model;
  */
 
 use TYPO3\Flow\Annotations as Flow,
-	TYPO3\Expose\Annotations as Expose,
 	Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -50,7 +49,6 @@ class PersonName {
 
 	/**
 	 * @var string
-	 * @Expose\Ignore
 	 */
 	protected $fullName;
 

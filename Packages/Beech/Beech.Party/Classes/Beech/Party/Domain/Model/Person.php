@@ -9,9 +9,7 @@ namespace Beech\Party\Domain\Model;
 
 use TYPO3\Flow\Annotations as Flow,
 	Doctrine\ORM\Mapping as ORM,
-	Beech\Party\Domain\Model\ElectronicAddress,
-	TYPO3\Expose\Annotations as Expose,
-	Radmiraal\Emberjs\Annotations as Emberjs;
+	Beech\Party\Domain\Model\ElectronicAddress;
 
 /**
  * A Person
@@ -23,8 +21,6 @@ class Person extends \TYPO3\Party\Domain\Model\AbstractParty {
 	/**
 	 * @var \Doctrine\Common\Collections\Collection<\TYPO3\Flow\Security\Account>
 	 * @ORM\OneToMany(mappedBy="party")
-	 * @Emberjs\Ignore
-	 * @Expose\Ignore
 	 */
 	protected $accounts;
 
@@ -32,29 +28,24 @@ class Person extends \TYPO3\Party\Domain\Model\AbstractParty {
 	 * @var \Beech\Party\Domain\Model\PersonName
 	 * @ORM\OneToOne
 	 * @Flow\Validate(type="NotEmpty", validationGroups={"Controller"})
-	 * @Expose\Inline(element="TYPO3.Expose:InlineSeamless")
 	 */
 	protected $name;
 
 	/**
 	 * @var \Doctrine\Common\Collections\Collection<\Beech\Party\Domain\Model\ElectronicAddress>
 	 * @ORM\ManyToMany
-	 * @Expose\Inline(element="TYPO3.Expose:InlineStacked")
 	 */
 	protected $electronicAddresses;
 
 	/**
 	 * @var \Beech\Party\Domain\Model\ElectronicAddress
 	 * @ORM\ManyToOne
-	 * @Emberjs\Ignore
-	 * @Expose\Ignore
 	 */
 	protected $primaryElectronicAddress;
 
 	/**
 	 * @var \Doctrine\Common\Collections\Collection<\Beech\Party\Domain\Model\Address>
 	 * @ORM\ManyToMany
-	 * @Expose\Inline(element="TYPO3.Expose:InlineStacked")
 	 */
 	protected $addresses;
 
@@ -69,8 +60,6 @@ class Person extends \TYPO3\Party\Domain\Model\AbstractParty {
 	 *
 	 * @var \Beech\Ehrm\Domain\Model\Preferences
 	 * @ORM\OneToOne
-	 * @Emberjs\Ignore
-	 * @Expose\Ignore
 	 */
 	protected $preferences;
 
