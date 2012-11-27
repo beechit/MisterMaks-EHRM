@@ -1,5 +1,5 @@
 {
-    "hash": "29e870d2160929f060311f89c4b337a8",
+    "hash": "30a13cc6f6004d74a8affc7b66d570dc",
     "packages": [
         {
             "name": "beech/absence",
@@ -427,19 +427,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal",
-                "reference": "292d5edd17e0a9b9a7ee9eb20d6ae1033059153f"
+                "reference": "22a30c9cece379eab619727c83e1859288f32f89"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/doctrine/dbal/archive/292d5edd17e0a9b9a7ee9eb20d6ae1033059153f.zip",
-                "reference": "292d5edd17e0a9b9a7ee9eb20d6ae1033059153f",
+                "url": "https://github.com/doctrine/dbal/archive/22a30c9cece379eab619727c83e1859288f32f89.zip",
+                "reference": "22a30c9cece379eab619727c83e1859288f32f89",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2",
                 "doctrine/common": "2.3.*"
             },
-            "time": "1352716871",
+            "time": "1353866609",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -544,12 +544,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/doctrine/doctrine2.git",
-                "reference": "77d060ab74212919f1eaace72842ea43bf420f43"
+                "reference": "a3fea32e0e655a1c3e6bd56d3d2147d2c7d27cbd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/doctrine/doctrine2/archive/77d060ab74212919f1eaace72842ea43bf420f43.zip",
-                "reference": "77d060ab74212919f1eaace72842ea43bf420f43",
+                "url": "https://github.com/doctrine/doctrine2/archive/a3fea32e0e655a1c3e6bd56d3d2147d2c7d27cbd.zip",
+                "reference": "a3fea32e0e655a1c3e6bd56d3d2147d2c7d27cbd",
                 "shasum": ""
             },
             "require": {
@@ -561,7 +561,7 @@
             "suggest": {
                 "symfony/yaml": "If you want to use YAML Metadata Mapping Driver"
             },
-            "time": "1352731781",
+            "time": "1353870981",
             "bin": [
                 "bin/doctrine",
                 "bin/doctrine.php"
@@ -607,32 +607,6 @@
                 "database",
                 "orm"
             ]
-        },
-        {
-            "name": "famelo/scaff",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/mneuhaus/Famelo.Scaff",
-                "reference": "260b9a3033771f8c6a29088179fb6d953f16ed32"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://github.com/mneuhaus/Famelo.Scaff/archive/260b9a3033771f8c6a29088179fb6d953f16ed32.zip",
-                "reference": "260b9a3033771f8c6a29088179fb6d953f16ed32",
-                "shasum": ""
-            },
-            "require": {
-                "typo3/flow": "*"
-            },
-            "time": "1352457877",
-            "type": "typo3-flow-package",
-            "installation-source": "source",
-            "autoload": {
-                "psr-0": {
-                    "Famelo\\Scaff": "Classes"
-                }
-            }
         },
         {
             "name": "predis/predis",
@@ -687,13 +661,13 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/radmiraal/Radmiraal.CouchDB.git",
-                "reference": "d2206b45ce81c770f9084aac947dd6d7e80803f4"
+                "reference": "737bb9c34d55e50b877a9604ded6e58509123bd0"
             },
             "require": {
                 "typo3/flow": "*",
                 "doctrine/couchdb-odm": "dev-master"
             },
-            "time": "1353790472",
+            "time": "1354015449",
             "type": "typo3-flow-package",
             "installation-source": "source",
             "autoload": {
@@ -711,18 +685,18 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/radmiraal/Radmiraal.Emberjs.git",
-                "reference": "b60b328ffc30efe25dd703497f5effd0b57fc769"
+                "reference": "dba95028b7421eaf839de0242760238a1bfc807c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/radmiraal/Radmiraal.Emberjs/zipball/b60b328ffc30efe25dd703497f5effd0b57fc769",
-                "reference": "b60b328ffc30efe25dd703497f5effd0b57fc769",
+                "url": "https://github.com/radmiraal/Radmiraal.Emberjs/archive/dba95028b7421eaf839de0242760238a1bfc807c.zip",
+                "reference": "dba95028b7421eaf839de0242760238a1bfc807c",
                 "shasum": ""
             },
             "require": {
                 "typo3/flow": "*"
             },
-            "time": "1350603386",
+            "time": "1354014303",
             "type": "typo3-flow-package",
             "installation-source": "source",
             "autoload": {
@@ -899,39 +873,12 @@
             }
         },
         {
-            "name": "typo3/expose",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "git://git.typo3.org/FLOW3/Packages/TYPO3.Expose.git",
-                "reference": "e40d4de84ecf7378d041f4187e296d8be7bff5e6"
-            },
-            "require": {
-                "typo3/flow-composer-installers": "*",
-                "typo3/flow": "*",
-                "typo3/form": "*",
-                "typo3/typoscript": "*"
-            },
-            "time": "1353620872",
-            "type": "typo3-flow-package",
-            "installation-source": "source",
-            "autoload": {
-                "psr-0": {
-                    "TYPO3\\Expose": "Classes"
-                }
-            },
-            "license": [
-                "LGPL-3.0+"
-            ],
-            "description": "Package to expose models"
-        },
-        {
             "name": "typo3/flow",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "git://git.typo3.org/FLOW3/Packages/TYPO3.FLOW3.git",
-                "reference": "fefb00eadefe768c1e8415fc6faac6b1f84c81bc"
+                "reference": "1bfd4fc492db0c92aff197e0428bbfff415afe1c"
             },
             "require": {
                 "php": ">=5.3.2",
@@ -948,7 +895,7 @@
                 "symfony/dom-crawler": ">2.0.16",
                 "typo3/flow-composer-installers": "*"
             },
-            "time": "1353504700",
+            "time": "1353942169",
             "type": "typo3-flow-framework",
             "installation-source": "source",
             "autoload": {
@@ -1080,13 +1027,13 @@
             "source": {
                 "type": "git",
                 "url": "git://git.typo3.org/FLOW3/Packages/TYPO3.FormBuilder.git",
-                "reference": "51f1b6a09851d97e2440cafe6cbec5a95b5f456d"
+                "reference": "4664e5c83dd05776c913a915338a5c45eda7d9c7"
             },
             "require": {
                 "typo3/flow": "*",
                 "typo3/form": "*"
             },
-            "time": "1349783475",
+            "time": "1353672095",
             "type": "typo3-flow-package",
             "installation-source": "source",
             "autoload": {
@@ -1205,47 +1152,6 @@
             }
         },
         {
-            "name": "typo3/tcpdf",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "git://git.typo3.org/FLOW3/Packages/TYPO3.TcPdf.git",
-                "reference": "2ee8dae83ad93c9d56394e2aede9458772865725"
-            },
-            "require": {
-                "typo3/flow": "*"
-            },
-            "time": "1349777876",
-            "type": "typo3-flow-package",
-            "installation-source": "source",
-            "autoload": {
-                "psr-0": {
-                    "TYPO3\\TcPdf": "Classes"
-                }
-            }
-        },
-        {
-            "name": "typo3/twitter-bootstrap",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "git://git.typo3.org/FLOW3/Packages/Twitter.Bootstrap.git",
-                "reference": "c1343bce953a2d81419b60cac3b83fec6fa22318"
-            },
-            "require": {
-                "typo3/flow": "*"
-            },
-            "time": "1352404249",
-            "type": "typo3-flow-package",
-            "installation-source": "source",
-            "autoload": {
-                "psr-0": {
-                    "TYPO3\\Twitter\\Bootstrap": "Classes"
-                }
-            },
-            "description": "Simple and flexible HTML, CSS, and Javascript for popular user interface components and interactions. Packaged for use with TYPO3 Flow"
-        },
-        {
             "name": "typo3/typoscript",
             "version": "dev-master",
             "source": {
@@ -1295,23 +1201,43 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/mneuhaus/Debug.Toolbar",
-                "reference": "53abe22441a09a7217006e89ead8d0ea3bf3b429"
+                "reference": "d9a9cf378d23f7ba6c7957f812ccdcab3be58718"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/mneuhaus/Debug.Toolbar/archive/53abe22441a09a7217006e89ead8d0ea3bf3b429.zip",
-                "reference": "53abe22441a09a7217006e89ead8d0ea3bf3b429",
+                "url": "https://github.com/mneuhaus/Debug.Toolbar/archive/d9a9cf378d23f7ba6c7957f812ccdcab3be58718.zip",
+                "reference": "d9a9cf378d23f7ba6c7957f812ccdcab3be58718",
                 "shasum": ""
             },
             "require": {
                 "typo3/flow": "*"
             },
-            "time": "1352901426",
+            "time": "1353945046",
             "type": "typo3-flow-package",
             "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "Debug\\Toolbar": "Classes"
+                }
+            }
+        },
+        {
+            "name": "famelo/gerrit",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git://github.com/mneuhaus/Famelo.Gerrit.git",
+                "reference": "7b56866ad3bfc770459bc4f1effd3d977f86631c"
+            },
+            "require": {
+                "typo3/flow": "*"
+            },
+            "time": "1353337513",
+            "type": "typo3-flow-package",
+            "installation-source": "source",
+            "autoload": {
+                "psr-0": {
+                    "Famelo\\Gerrit": "Classes"
                 }
             }
         },
@@ -1344,40 +1270,6 @@
                 "BSD"
             ],
             "homepage": "http://vfs.bovigo.org/"
-        },
-        {
-            "name": "radmiraal/dev-tools",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "git://github.com/radmiraal/Radmiraal.DevTools.git",
-                "reference": "d31b3658388e52dd68d0009955e111be83de57d2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://github.com/radmiraal/Radmiraal.DevTools/archive/d31b3658388e52dd68d0009955e111be83de57d2.zip",
-                "reference": "d31b3658388e52dd68d0009955e111be83de57d2",
-                "shasum": ""
-            },
-            "require": {
-                "typo3/flow": "*"
-            },
-            "time": "1351967519",
-            "type": "typo3-flow-package",
-            "installation-source": "source",
-            "autoload": {
-                "psr-0": {
-                    "Radmiraal\\DevTools": "Classes"
-                }
-            },
-            "license": [
-                "LGPL-3.0+"
-            ],
-            "authors": [
-                {
-                    "name": "Rens Admiraal"
-                }
-            ]
         },
         {
             "name": "sandstorm/phpprofiler",
@@ -1488,12 +1380,12 @@
             "source": {
                 "type": "git",
                 "url": "git://git.typo3.org/FLOW3/Packages/TYPO3.Kickstart.git",
-                "reference": "7a4886a83d696a9e2db3f10286875b2cac9be723"
+                "reference": "3060ff79b14ea8ff7ca3fefb54dad911b625bc2f"
             },
             "require": {
                 "typo3/flow": "*"
             },
-            "time": "1353509162",
+            "time": "1353942280",
             "type": "typo3-flow-framework",
             "installation-source": "source",
             "autoload": {
@@ -1516,18 +1408,14 @@
         "typo3/eel": 20,
         "typo3/form": 20,
         "typo3/formbuilder": 20,
-        "typo3/tcpdf": 20,
         "typo3/typoscript": 20,
         "typo3/surf": 20,
         "typo3/ldap": 20,
-        "typo3/twitter-bootstrap": 20,
         "radmiraal/emberjs": 20,
-        "famelo/scaff": 20,
-        "typo3/expose": 20,
         "beech/essentials": 20,
         "radmiraal/couchdb": 20,
         "typo3/buildessentials": 20,
-        "radmiraal/dev-tools": 20,
+        "famelo/gerrit": 20,
         "typo3/kickstart": 20,
         "beech/style": 20,
         "debug/toolbar": 20,

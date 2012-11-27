@@ -4,6 +4,10 @@
 	"repositories": [
 		{
 			"type": "git",
+			"url": "git://github.com/mneuhaus/Famelo.Gerrit.git"
+		},
+		{
+			"type": "git",
 			"url": "git://github.com/radmiraal/Radmiraal.CouchDB.git"
 		},
 		{
@@ -24,14 +28,10 @@
 		"typo3/eel": "dev-master",
 		"typo3/form": "dev-master",
 		"typo3/formbuilder": "dev-master",
-		"typo3/tcpdf": "dev-master",
 		"typo3/typoscript": "dev-master",
 		"typo3/surf": "dev-master",
 		"typo3/ldap": "dev-master",
-		"typo3/twitter-bootstrap": "dev-master",
 		"radmiraal/emberjs": "dev-master",
-		"famelo/scaff": "dev-master",
-		"typo3/expose": "dev-master",
 		"beech/ehrm": "1.0.x",
 		"beech/party": "1.0.x",
 		"beech/task": "1.0.x",
@@ -46,7 +46,7 @@
 	},
 	"require-dev": {
 		"typo3/buildessentials": "dev-master",
-		"radmiraal/dev-tools": "dev-master",
+		"famelo/gerrit": "dev-master",
 		"typo3/kickstart": "dev-master",
 		"mikey179/vfsstream": "1.1.*",
 		"beech/style": "dev-development",
