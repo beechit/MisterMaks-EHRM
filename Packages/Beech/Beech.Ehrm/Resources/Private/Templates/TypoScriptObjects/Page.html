@@ -1,19 +1,16 @@
-<!DOCTYPE html>{namespace beechStyle=Beech\Style\ViewHelpers}{namespace typoscript=TYPO3\TypoScript\ViewHelpers}
+<!DOCTYPE html>{namespace typoscript=TYPO3\TypoScript\ViewHelpers}{namespace emberjs=Radmiraal\Emberjs\ViewHelpers}
 <html>
 	<head>
 		<title>Mister Maks</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<f:base />
 		<typoscript:renderTypoScript path="headerParts" />
 	</head>
 	<body>
-		<typoscript:renderTypoScript path="headerMenu" />
-		<section class="container-fluid">
-			<f:flashMessages class="flashmessages alert" />
-			<typoscript:renderTypoScript path="body" />
 
-			<div class="loading hide">
-				<f:render partial="ModalContent"/>
-			</div>
-		</section>
+		<emberjs:handlebars paths="{0: 'resource://Beech.Ehrm/Private/HandlebarTemplates'}" />
+
+		<f:render partial="Modals" />
+
 	</body>
 </html>
