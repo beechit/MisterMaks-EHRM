@@ -19,8 +19,6 @@ class InstallerScripts extends \TYPO3\Flow\Composer\InstallerScripts {
 	 * @return void
 	 */
 	static public function postUpdateAndInstall(Event $event) {
-		require_once('Build/essentials/fetchQueuedPatches.php');
-
 		if (isset($_SERVER['argv'][2]) && $_SERVER['argv'][2] === '--dev') {
 			$mainDir = realpath(__DIR__ . '/../../../../../../../') . '/';
 
@@ -29,9 +27,25 @@ class InstallerScripts extends \TYPO3\Flow\Composer\InstallerScripts {
 				$packages = glob($packageFolder . '/**');
 				foreach ($packages as $package) {
 					if (is_dir($package) && strpos($package, 'Beech.') !== FALSE) {
+
+						// Get current branch
+						$cmd = sprintf('cd %s && git branch', $mainDir);
+						exec($cmd, $output, $return);
+						$currentBranch = NULL;
+						foreach ($output as $outputLine) {
+							if (substr($outputLine, 0, 1) === '*') {
+								$currentBranch = trim(substr($outputLine, 1));
+							}
+						}
+
+						if ($currentBranch === NULL) {
+							exec(sprintf('cd %s%s/ && git checkout -B development origin/development && git pull --rebase', $mainDir, $package));
+							$currentBranch = 'development';
+						}
+
 						$commands = array(
 							'scp -p git.beech.local:hooks/commit-msg .git/hooks/',
-							'git config remote.origin.push HEAD:refs/for/development'
+							'git config remote.origin.push HEAD:refs/for/' . $currentBranch
 						);
 
 						foreach ($_SERVER['argv'] as $arg) {
@@ -42,12 +56,6 @@ class InstallerScripts extends \TYPO3\Flow\Composer\InstallerScripts {
 
 						$cmd = sprintf('cd %s%s/ && ' . implode('&&', $commands), $mainDir, $package);
 						exec($cmd, $output, $return);
-
-							// Check if there's a branch checked out
-						exec(sprintf('cd %s%s/ && git status', $mainDir, $package), $output, $return);
-						if (strpos($output[0], 'Not currently on any branch.') !== FALSE) {
-							exec(sprintf('cd %s%s/ && git checkout -B development origin/development && git pull --rebase', $mainDir, $package));
-						}
 					}
 				}
 			}
