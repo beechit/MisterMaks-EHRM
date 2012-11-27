@@ -128,8 +128,9 @@ class ActionFactoryTest extends \TYPO3\Flow\Tests\UnitTestCase {
 
 			// Use factory to create the action
 		$factory = $this->createFactory('ValidatorTest', __DIR__ . '/Configuration/WorkFlows');
+		$createdActionList = $factory->create();
 
-		$this->assertEquals(array($action), $factory->create());
+		$this->assertEquals($action->toArray(), $createdActionList[0]->toArray());
 	}
 
 	/**
@@ -151,8 +152,9 @@ class ActionFactoryTest extends \TYPO3\Flow\Tests\UnitTestCase {
 
 			// Use factory to create the action
 		$factory = $this->createFactory('PreConditionTest', __DIR__ . '/Configuration/WorkFlows');
+		$createdActionList = $factory->create();
 
-		$this->assertEquals(array($action), $factory->create());
+		$this->assertEquals($action->toArray(), $createdActionList[0]->toArray());
 	}
 
 	/**
@@ -182,7 +184,7 @@ class ActionFactoryTest extends \TYPO3\Flow\Tests\UnitTestCase {
 		$action->addOutputHandler($outputHandler2);
 		$action->addOutputHandler($outputHandler3);
 
-		$this->assertEquals(array($action), $factoryOutput);
+		$this->assertEquals($action->toArray(), $factoryOutput[0]->toArray());
 	}
 
 	/**
@@ -225,7 +227,7 @@ class ActionFactoryTest extends \TYPO3\Flow\Tests\UnitTestCase {
 		$action->addValidator($validator1);
 		$action->addValidator($validator2);
 
-		$this->assertEquals(array($action), $factoryOutput);
+		$this->assertEquals($action->toArray(), $factoryOutput[0]->toArray());
 	}
 
 	/**
@@ -254,7 +256,9 @@ class ActionFactoryTest extends \TYPO3\Flow\Tests\UnitTestCase {
 		$action->addOutputHandler($outputHandler);
 		$action->addValidator($validator);
 
-		$this->assertEquals(array($action, $action), $factoryOutput);
+		$this->assertEquals($action->toArray(), $factoryOutput[0]->toArray());
+		$this->assertEquals($action->toArray(), $factoryOutput[1]->toArray());
 	}
 }
+
 ?>

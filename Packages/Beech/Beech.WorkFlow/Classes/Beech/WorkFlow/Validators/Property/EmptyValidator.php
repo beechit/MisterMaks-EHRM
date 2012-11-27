@@ -7,10 +7,13 @@ namespace Beech\WorkFlow\Validators\Property;
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
-use TYPO3\Flow\Annotations as Flow;
+use TYPO3\Flow\Annotations as Flow,
+	Doctrine\ODM\CouchDB\Mapping\Annotations as ODM;;
 
 /**
  * The NotEmptyValidator checks if a property of an entity is not empty
+ * @ODM\EmbeddedDocument
+ * @ODM\Document
  */
 class EmptyValidator implements \Beech\WorkFlow\Core\ValidatorInterface {
 

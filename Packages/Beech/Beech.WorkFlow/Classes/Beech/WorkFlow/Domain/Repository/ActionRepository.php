@@ -15,21 +15,21 @@ use TYPO3\Flow\Annotations as Flow,
  *
  * @Flow\Scope("singleton")
  */
-class ActionRepository extends \TYPO3\Flow\Persistence\Repository {
+class ActionRepository extends \Radmiraal\CouchDB\Persistence\AbstractRepository {
 
 	/**
 	 * Get all active actions, which are those with status NEW or status STARTED
 	 *
-	 * @return \TYPO3\Flow\Persistence\QueryResultInterface
+	 * @return array
 	 */
 	public function findActive() {
-		$query = $this->createQuery();
-		return $query->matching(
-			$query->logicalOr(
-				$query->equals('status', Action::STATUS_NEW),
-				$query->equals('status', Action::STATUS_STARTED)
-			)
-		)->execute();
+			// TODO: optimize
+		$new = $this->findByStatus(Action::STATUS_NEW);
+		$started = $this->findByStatus(Action::STATUS_STARTED);
+
+		return array_merge($new, $started);
 	}
+
 }
+
 ?>

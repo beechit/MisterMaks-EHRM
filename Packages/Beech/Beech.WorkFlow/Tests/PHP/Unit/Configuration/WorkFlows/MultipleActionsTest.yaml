@@ -2,36 +2,36 @@ action:
   -
     validators:
       -
-        className: DateValidator
+        className: 'Beech\WorkFlow\Validators\DateValidator'
         properties:
           value: 'DATETIME:today'
           matchCondition: 'CONSTANT:MATCH_CONDITION_EQUAL'
     outputHandlers:
       -
-        className: EntityOutputHandler
+        className: 'Beech\WorkFlow\OutputHandlers\EntityOutputHandler'
         properties:
           entity: 'ENTITY:TODO'
     preConditions:
       -
-        className: DatePreCondition
+        className: 'Beech\WorkFlow\PreConditions\DatePreCondition'
         properties:
           value: 'DATETIME:today'
           matchCondition: 'CONSTANT:MATCH_CONDITION_EQUAL'
   -
     validators:
       -
-        className: DateValidator
+        className: 'Beech\WorkFlow\Validators\DateValidator'
         properties:
           value: 'DATETIME:today'
           matchCondition: 'CONSTANT:MATCH_CONDITION_EQUAL'
     outputHandlers:
       -
-        className: EntityOutputHandler
+        className: 'Beech\WorkFlow\OutputHandlers\EntityOutputHandler'
         properties:
           entity: 'ENTITY:TODO'
     preConditions:
       -
-        className: DatePreCondition
+        className: 'Beech\WorkFlow\PreConditions\DatePreCondition'
         properties:
           value: 'DATETIME:today'
           matchCondition: 'CONSTANT:MATCH_CONDITION_EQUAL'

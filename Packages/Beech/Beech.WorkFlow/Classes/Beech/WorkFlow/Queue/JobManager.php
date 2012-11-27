@@ -27,5 +27,7 @@ class JobManager extends \TYPO3\Queue\Job\JobManager {
 	public function setQueueManager(\TYPO3\Queue\QueueManager $queueManager) {
 		$this->queueManager = $queueManager;
 	}
+
 }
+
 ?>

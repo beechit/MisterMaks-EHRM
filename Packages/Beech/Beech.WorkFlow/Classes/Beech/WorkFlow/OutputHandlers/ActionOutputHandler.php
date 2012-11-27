@@ -7,11 +7,14 @@ namespace Beech\WorkFlow\OutputHandlers;
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
-use TYPO3\Flow\Annotations as Flow;
-use Beech\WorkFlow\WorkFlow\ActionFactory as ActionFactory;
+use TYPO3\Flow\Annotations as Flow,
+	Doctrine\ODM\CouchDB\Mapping\Annotations as ODM,
+	Beech\WorkFlow\WorkFlow\ActionFactory as ActionFactory;
 
 /**
  * ActionOutputHandler persists a new Action entity
+ * @ODM\EmbeddedDocument
+ * @ODM\Document
  */
 class ActionOutputHandler implements \Beech\WorkFlow\Core\OutputHandlerInterface {
 

@@ -7,11 +7,14 @@ namespace Beech\WorkFlow\OutputHandlers;
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
-use TYPO3\Flow\Annotations as Flow;
-use Beech\WorkFlow\Domain\Model\Action as Action;
+use TYPO3\Flow\Annotations as Flow,
+	Doctrine\ODM\CouchDB\Mapping\Annotations as ODM,
+	Beech\WorkFlow\Domain\Model\Action as Action;
 
 /**
  * ActionExpiredOutputHandler sets the status of an action to expired
+ * @ODM\EmbeddedDocument
+ * @ODM\Document
  */
 class ActionExpiredOutputHandler implements \Beech\WorkFlow\Core\OutputHandlerInterface {
 

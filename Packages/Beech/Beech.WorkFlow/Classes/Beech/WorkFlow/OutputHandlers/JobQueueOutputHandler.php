@@ -7,10 +7,13 @@ namespace Beech\WorkFlow\OutputHandlers;
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
-use TYPO3\Flow\Annotations as Flow;
+use TYPO3\Flow\Annotations as Flow,
+	Doctrine\ODM\CouchDB\Mapping\Annotations as ODM;;
 
 /**
  * JobQueueOutputHandler adds a Job to the TYPO3.Queue
+ * @ODM\EmbeddedDocument
+ * @ODM\Document
  */
 class JobQueueOutputHandler implements \Beech\WorkFlow\Core\OutputHandlerInterface {
 

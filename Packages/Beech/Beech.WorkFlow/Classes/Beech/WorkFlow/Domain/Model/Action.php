@@ -7,86 +7,88 @@ namespace Beech\WorkFlow\Domain\Model;
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
-use TYPO3\Flow\Annotations as Flow;
-use Doctrine\ORM\Mapping as ORM;
+use TYPO3\Flow\Annotations as Flow,
+	Doctrine\ODM\CouchDB\Mapping\Annotations as ODM;
 
 /**
  * An Action
- *
- * @Flow\Entity
- * @ORM\HasLifecycleCallbacks
+ * @ODM\Document(indexed=true)
  */
-class Action implements \Beech\WorkFlow\Core\ActionInterface {
+class Action extends \Radmiraal\CouchDB\Persistence\AbstractDocument implements \Beech\WorkFlow\Core\ActionInterface {
 
 	/**
 	 * @var \DateTime
+	 * @ODM\Field(type="datetime")
 	 */
 	protected $creationDateTime;
 
 	/**
 	 * @var \DateTime
-	 * @ORM\Column(nullable=true)
+	 * @ODM\Field(type="datetime")
 	 */
 	protected $startDateTime;
 
 	/**
 	 * @var \DateTime
-	 * @ORM\Column(nullable=true)
+	 * @ODM\Field(type="datetime")
 	 */
 	protected $expirationDateTime;
 
 	/**
 	 * @var integer
+	 * @ODM\Field(type="integer")
+	 * @ODM\Index
 	 */
 	protected $status;
 
 	/**
 	 * @var \TYPO3\Party\Domain\Model\AbstractParty
-	 * @ORM\OneToOne
+	 * @ODM\Field(type="string")
 	 */
 	protected $startedBy;
 
 	/**
 	 * @var \TYPO3\Party\Domain\Model\AbstractParty
-	 * @ORM\OneToOne
+	 * @ODM\Field(type="string")
 	 */
 	protected $closedBy;
 
 	/**
 	 * @var string
-	 * @ORM\Column(nullable=true)
+	 * @ODM\Field(type="string")
 	 */
 	protected $targetClassName;
 
 	/**
 	 * @var string
-	 * @ORM\Column(nullable=true)
+	 * @ODM\Field(type="string")
 	 */
 	protected $targetIdentifier;
 
 	/**
 	 * The validators
-	 * @var \Doctrine\Common\Collections\Collection<\Beech\WorkFlow\Core\ValidatorInterface>
-	 * @ORM\Column(nullable=true)
+	 * @var \Doctrine\Common\Collections\ArrayCollection<\Beech\WorkFlow\Core\ValidatorInterface>
+	 * @ODM\EmbedMany(targetDocument="Beech\WorkFlow\Core\ValidatorInterface")
 	 */
 	protected $validators;
 
 	/**
 	 * The preconditions
-	 * @var \Doctrine\Common\Collections\Collection<\Beech\WorkFlow\Core\PreConditionInterface>
-	 * @ORM\Column(nullable=true)
+	 * @var \Doctrine\Common\Collections\ArrayCollection<\Beech\WorkFlow\Core\PreConditionInterface>
+	 * @ODM\EmbedMany(targetDocument="Beech\WorkFlow\Core\PreConditionInterface")
 	 */
 	protected $preConditions;
 
 	/**
 	 * The outputHandlers
-	 * @var \Doctrine\Common\Collections\Collection<\Beech\WorkFlow\Core\OutputHandlerInterface>
-	 * @ORM\Column(nullable=true)
+	 * @var \Doctrine\Common\Collections\ArrayCollection<\Beech\WorkFlow\Core\OutputHandlerInterface>
+	 * @ODM\EmbedMany(targetDocument="Beech\WorkFlow\Core\OutputHandlerInterface")
 	 */
 	protected $outputHandlers;
 
 	/**
 	 * @var \TYPO3\Flow\Persistence\PersistenceManagerInterface
+	 * @Flow\Transient
 	 */
 	protected $persistenceManager;
 
@@ -94,6 +96,7 @@ class Action implements \Beech\WorkFlow\Core\ActionInterface {
 	 * Constructs the Action
 	 */
 	public function __construct() {
+		$this->setCreationDateTime();
 		$this->status = self::STATUS_NEW;
 		$this->validators = new \Doctrine\Common\Collections\ArrayCollection();
 		$this->preConditions = new \Doctrine\Common\Collections\ArrayCollection();
@@ -181,7 +184,7 @@ class Action implements \Beech\WorkFlow\Core\ActionInterface {
 	 * @return void
 	 */
 	public function addPreCondition(\Beech\WorkFlow\Core\PreConditionInterface $preCondition) {
-		$this->preConditions->add($preCondition);
+		$this->preConditions[] = $preCondition;
 	}
 
 	/**
@@ -193,18 +196,10 @@ class Action implements \Beech\WorkFlow\Core\ActionInterface {
 	}
 
 	/**
-	 * @return \Doctrine\Common\Collections\Collection<\Beech\WorkFlow\Core\PreConditionInterface>
+	 * @return \Doctrine\Common\Collections\ArrayCollection<\Beech\WorkFlow\Core\PreConditionInterface>
 	 */
 	public function getPreConditions() {
 		return $this->preConditions;
-	}
-
-	/**
-	 * @param \Doctrine\Common\Collections\Collection<\Beech\WorkFlow\Core\PreConditionInterface> $preConditions
-	 * @return void
-	 */
-	public function setPreConditions(\Doctrine\Common\Collections\Collection $preConditions) {
-		$this->preConditions = $preConditions;
 	}
 
 	/**
@@ -212,7 +207,7 @@ class Action implements \Beech\WorkFlow\Core\ActionInterface {
 	 * @return void
 	 */
 	public function addValidator(\Beech\WorkFlow\Core\ValidatorInterface $validator) {
-		$this->validators->add($validator);
+		$this->validators[] = $validator;
 	}
 
 	/**
@@ -224,26 +219,18 @@ class Action implements \Beech\WorkFlow\Core\ActionInterface {
 	}
 
 	/**
-	 * @return \Doctrine\Common\Collections\Collection<\Beech\WorkFlow\Core\ValidatorInterface>
+	 * @return \Doctrine\Common\Collections\ArrayCollection<\Beech\WorkFlow\Core\ValidatorInterface>
 	 */
 	public function getValidators() {
 		return $this->validators;
 	}
 
 	/**
-	 * @param \Doctrine\Common\Collections\Collection<\Beech\WorkFlow\Core\ValidatorInterface> $validators
-	 * @return void
-	 */
-	public function setValidators(\Doctrine\Common\Collections\Collection $validators) {
-		$this->validators = $validators;
-	}
-
-	/**
-	 * @param \Beech\WorkFlow\Core\OutputHandlerInterface $output
+	 * @param \Beech\WorkFlow\Core\OutputHandlerInterface $outputHandler
 	 * @return void
 	 */
 	public function addOutputHandler(\Beech\WorkFlow\Core\OutputHandlerInterface $outputHandler) {
-		$this->outputHandlers->add($outputHandler);
+		$this->outputHandlers[] = $outputHandler;
 	}
 
 	/**
@@ -255,18 +242,10 @@ class Action implements \Beech\WorkFlow\Core\ActionInterface {
 	}
 
 	/**
-	 * @return \Doctrine\Common\Collections\Collection<\Beech\WorkFlow\Core\OutputHandlerInterface>
+	 * @return \Doctrine\Common\Collections\ArrayCollection<\Beech\WorkFlow\Core\OutputHandlerInterface>
 	 */
 	public function getOutputHandlers() {
 		return $this->outputHandlers;
-	}
-
-	/**
-	 * @param \Doctrine\Common\Collections\Collection<\Beech\WorkFlow\Core\OutputHandlerInterface> $outputHandlers
-	 * @return void
-	 */
-	public function setOutputHandlers(\Doctrine\Common\Collections\Collection $outputHandlers) {
-		$this->outputHandlers = $outputHandlers;
 	}
 
 	/**
@@ -286,7 +265,6 @@ class Action implements \Beech\WorkFlow\Core\ActionInterface {
 	/**
 	 * @param \DateTime $creationDateTime
 	 * @return void
-	 * @ORM\PrePersist
 	 */
 	public function setCreationDateTime(\DateTime $creationDateTime = NULL) {
 		if ($creationDateTime === NULL) {
@@ -347,7 +325,7 @@ class Action implements \Beech\WorkFlow\Core\ActionInterface {
 	/**
 	 * @param \DateTime $expirationDateTime
 	 */
-	public function setExpirationDateTime(\DateTime$expirationDateTime) {
+	public function setExpirationDateTime(\DateTime $expirationDateTime) {
 		$this->expirationDateTime = $expirationDateTime;
 	}
 
@@ -361,7 +339,7 @@ class Action implements \Beech\WorkFlow\Core\ActionInterface {
 	/**
 	 * @param \DateTime $startDateTime
 	 */
-	public function setStartDateTime($startDateTime) {
+	public function setStartDateTime(\DateTime $startDateTime) {
 		$this->startDateTime = $startDateTime;
 	}
 
@@ -375,7 +353,7 @@ class Action implements \Beech\WorkFlow\Core\ActionInterface {
 	/**
 	 * @param \TYPO3\Party\Domain\Model\AbstractParty $startedBy
 	 */
-	public function setStartedBy($startedBy) {
+	public function setStartedBy(\TYPO3\Party\Domain\Model\AbstractParty $startedBy) {
 		$this->startedBy = $startedBy;
 	}
 
@@ -387,4 +365,5 @@ class Action implements \Beech\WorkFlow\Core\ActionInterface {
 	}
 
 }
+
 ?>

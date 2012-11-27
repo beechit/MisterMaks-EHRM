@@ -2,12 +2,12 @@ action:
   -
     preConditions:
       -
-        className: DatePreCondition
+        className: 'Beech\WorkFlow\PreConditions\DatePreCondition'
         properties:
           value: 'DATETIME:today'
           matchCondition: 'CONSTANT:MATCH_CONDITION_EQUAL'
       -
-        className: DatePreCondition
+        className: 'Beech\WorkFlow\PreConditions\DatePreCondition'
         properties:
           value: 'DATETIME:2012-01-01'
           matchCondition: 'CONSTANT:MATCH_CONDITION_SMALLER_THEN'

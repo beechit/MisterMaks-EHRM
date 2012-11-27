@@ -7,10 +7,13 @@ namespace Beech\WorkFlow\PreConditions\Property;
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
-use TYPO3\Flow\Annotations as Flow;
+use TYPO3\Flow\Annotations as Flow,
+	Doctrine\ODM\CouchDB\Mapping\Annotations as ODM;;
 
 /**
  * The EmptyPreCondition checks if a property of an entity is empty
+ * @ODM\EmbeddedDocument
+ * @ODM\Document
  */
 class EmptyPreCondition implements \Beech\WorkFlow\Core\PreConditionInterface {
 

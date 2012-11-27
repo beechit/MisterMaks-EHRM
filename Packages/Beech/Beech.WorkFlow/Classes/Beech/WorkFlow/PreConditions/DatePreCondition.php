@@ -7,10 +7,13 @@ namespace Beech\WorkFlow\PreConditions;
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
-use TYPO3\Flow\Annotations as Flow;
+use TYPO3\Flow\Annotations as Flow,
+	Doctrine\ODM\CouchDB\Mapping\Annotations as ODM;
 
 /**
  * The DatePreCondition allows for checking a Date condition
+ * @ODM\EmbeddedDocument
+ * @ODM\Document
  */
 class DatePreCondition implements \Beech\WorkFlow\Core\PreConditionInterface {
 

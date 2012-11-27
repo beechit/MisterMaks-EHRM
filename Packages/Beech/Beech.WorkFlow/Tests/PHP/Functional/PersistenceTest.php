@@ -15,7 +15,7 @@ use TYPO3\Flow\Annotations as Flow,
 /**
  * Test the actual persistence of actions
  */
-class PersistenceTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
+class PersistenceTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFunctionalTest {
 
 	/**
 	* @var boolean
@@ -57,7 +57,10 @@ class PersistenceTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 	 */
 	public function setUp() {
 		parent::setUp();
+
 		$this->actionRepository = $this->objectManager->get('\Beech\WorkFlow\Domain\Repository\ActionRepository');
+		$this->actionRepository->injectDocumentManagerFactory($this->documentManagerFactory);
+
 		$this->companyRepository = $this->objectManager->get('\Beech\Party\Domain\Repository\CompanyRepository');
 		$this->toDoRepository = $this->objectManager->get('\Beech\Task\Domain\Repository\ToDoRepository');
 		$this->personRepository = $this->objectManager->get('Beech\Party\Domain\Repository\PersonRepository');
@@ -72,7 +75,7 @@ class PersistenceTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 		$action = new Action();
 		$this->actionRepository->add($action);
 
-		$this->persistenceManager->persistAll();
+		$this->documentManager->flush();
 
 		$this->assertEquals(1, $this->actionRepository->countAll());
 	}
@@ -86,11 +89,11 @@ class PersistenceTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 		$action->addValidator($namePropertyNotEmptyValidator);
 		$this->actionRepository->add($action);
 
-		$this->persistenceManager->persistAll();
+		$this->documentManager->flush();
 
-		$persistedAction = $this->actionRepository->findAll()->getFirst();
+		$persistedActions = $this->actionRepository->findAll();
 
-		$this->assertEquals($action, $persistedAction);
+		$this->assertEquals($action, $persistedActions[0]);
 	}
 
 	/**
@@ -110,12 +113,12 @@ class PersistenceTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 		$action->setTarget($company);
 		$this->actionRepository->add($action);
 
-		$this->persistenceManager->persistAll();
+		$this->documentManager->flush();
 		$this->assertEquals(1, $this->actionRepository->countAll());
 
-		$persistedAction = $this->actionRepository->findAll()->getFirst();
-		$this->assertEquals($persistedAction->getTargetClassName(), 'Beech\Party\Domain\Model\Company');
-		$this->assertEquals($persistedAction->getTargetIdentifier(), $this->persistenceManager->getIdentifierByObject($company));
+		$persistedActions = $this->actionRepository->findAll();
+		$this->assertEquals($persistedActions[0]->getTargetClassName(), 'Beech\Party\Domain\Model\Company');
+		$this->assertEquals($persistedActions[0]->getTargetIdentifier(), $this->persistenceManager->getIdentifierByObject($company));
 	}
 
 	/**
@@ -142,10 +145,10 @@ class PersistenceTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 			$this->actionRepository->add($action);
 		}
 
-		$this->persistenceManager->persistAll();
+		$this->documentManager->flush();
 
 			// test the findActive method
-		$this->assertEquals(6, $this->actionRepository->findActive()->count());
+		$this->assertEquals(6, count($this->actionRepository->findActive()));
 
 			// test the countByStatus method
 		$this->assertEquals(3, $this->actionRepository->countByStatus(Action::STATUS_EXPIRED));
@@ -159,11 +162,9 @@ class PersistenceTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 	 * @test
 	 */
 	public function anEntityOutputHandlerCanPersistDifferentTypesOfEntities() {
-			// TODO: Fix after CouchDB implementation
-		$this->markTestSkipped('Skipped');
-
 		$outputHandler = new \Beech\WorkFlow\OutputHandlers\EntityOutputHandler();
-		$outputHandler->setEntity($this->createTodoOutput($this->createPerson(), 100));
+		$todoOutput = $this->createTodoOutput($this->createPerson(), 100);
+		$outputHandler->setEntity($todoOutput);
 		$outputHandler->invoke();
 
 		$this->assertEquals(0, $this->toDoRepository->countAll());
@@ -196,31 +197,28 @@ class PersistenceTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 		$action->addPreCondition($preCondition);
 		$this->actionRepository->add($action);
 
-		$this->persistenceManager->persistAll();
+		$this->documentManager->flush();
 
-		$persistedAction = $this->actionRepository->findAll()->getFirst();
+		$persistedActions = $this->actionRepository->findAll();
 
-		$this->assertEquals($action, $persistedAction);
+		$this->assertEquals($action, $persistedActions[0]);
 	}
 
 	/**
 	 * @test
 	 */
 	public function theActionExpiredOutputHandlerCanExpireAnAction() {
-			// Add an action to test with
-		$action = new Action();
-
-		$this->actionRepository->add($action);
-		$this->persistenceManager->persistAll();
-		$persistedAction = $this->actionRepository->findAll()->getFirst();
+		$this->actionRepository->add(new Action());
+		$this->documentManager->flush();
+		$persistedActions = $this->actionRepository->findAll();
 
 		$this->assertEquals(1, $this->actionRepository->countByStatus(Action::STATUS_NEW));
 
 		$outputHandler = new \Beech\WorkFlow\OutputHandlers\ActionExpiredOutputHandler();
-		$outputHandler->setActionEntity($persistedAction);
+		$outputHandler->setActionEntity($persistedActions[0]);
 		$outputHandler->invoke();
 
-		$this->persistenceManager->persistAll();
+		$this->documentManager->flush();
 
 		$this->assertEquals(1, $this->actionRepository->countByStatus(Action::STATUS_EXPIRED));
 	}
@@ -229,9 +227,6 @@ class PersistenceTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 	 * @test
 	 */
 	public function theActionOutputHandlerCanAddANewAction() {
-			// TODO: Fix after CouchDB implementation
-		$this->markTestSkipped('Skipped');
-
 		$company = $this->createCompany('Foo', 1, 1, 'type', 'description', 'bar');
 
 		$outputHandler = new \Beech\WorkFlow\OutputHandlers\ActionOutputHandler();
@@ -243,8 +238,7 @@ class PersistenceTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 		$action->addOutputHandler($outputHandler);
 		$this->actionRepository->add($action);
 
-		$this->persistenceManager->persistAll();
-		$this->persistenceManager->clearState();
+		$this->documentManager->flush();
 
 		$this->assertEquals(1, $this->actionRepository->countAll());
 		$this->assertEquals(1, $this->actionRepository->countByStatus(Action::STATUS_NEW));
@@ -253,8 +247,7 @@ class PersistenceTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 		$dispatcher = new \Beech\WorkFlow\WorkFlow\ActionDispatcher();
 		$dispatcher->run();
 
-		$this->persistenceManager->persistAll();
-		$this->persistenceManager->clearState();
+		$this->documentManager->flush();
 
 		$this->assertEquals(2, $this->actionRepository->countAll());
 	}
@@ -263,10 +256,7 @@ class PersistenceTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 	 * @test
 	 */
 	public function anActionWithMultiplePreconditionsAndMultipleValidatorsAndMultipleOutputhandlersCanBePersistedAndDispatched() {
-			// TODO: Fix after CouchDB implementation
-		$this->markTestSkipped('Skipped');
-
-		// Add company we can test the validator on
+			// Add company we can test the validator on
 		$company = $this->createCompany('Foo', 1, 1, 'type', 'description', 'bar');
 		$this->companyRepository->add($company);
 		$this->persistenceManager->persistAll();
@@ -274,51 +264,51 @@ class PersistenceTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 
 		$persistedCompany = $this->companyRepository->findAll()->getFirst();
 
+		$person = $this->createPerson();
+		$action = new Action();
+
 			// Add 2 preconditions which will be met
 		$preCondition = new \Beech\WorkFlow\PreConditions\DatePreCondition();
 		$preCondition->setValue(new \DateTime('tomorrow'));
 		$preCondition->setMatchCondition(\Beech\WorkFlow\PreConditions\DatePreCondition::MATCH_CONDITION_GREATER_THEN);
-		$preConditions[] = $preCondition;
+		$action->addPreCondition($preCondition);
 
 		$preCondition = new \Beech\WorkFlow\PreConditions\DatePreCondition();
 		$preCondition->setValue(new \DateTime('yesterday'));
 		$preCondition->setMatchCondition(\Beech\WorkFlow\PreConditions\DatePreCondition::MATCH_CONDITION_SMALLER_THEN);
-		$preConditions[] = $preCondition;
+		$action->addPreCondition($preCondition);
 
 			// Add 2 validators which will pass
 		$validator = new \Beech\WorkFlow\Validators\Property\NotEmptyValidator();
 		$validator->setPropertyName('name');
 		$validator->setTargetEntity($persistedCompany);
-		$validators[] = $validator;
+		$action->addValidator($validator);
 
 		$validator = new \Beech\WorkFlow\Validators\Property\NotEmptyValidator();
 		$validator->setPropertyName('description');
 		$validator->setTargetEntity($persistedCompany);
-		$validators[] = $validator;
-
-		$person = $this->createPerson();
+		$action->addValidator($validator);
 
 			// Add 2 ToDo outputhandlers
 		$outputHandler = new \Beech\WorkFlow\OutputHandlers\EntityOutputHandler();
 		$outputHandler->setEntity($this->createTodoOutput($person, 100));
-		$outputHandlers[] = $outputHandler;
+		$action->addOutputHandler($outputHandler);
 
 		$outputHandler = new \Beech\WorkFlow\OutputHandlers\EntityOutputHandler();
-		$outputHandler->setEntity($this->createTodoOutput($person, 100));
-		$outputHandlers[] = $outputHandler;
+		$outputHandler->setEntity($this->createTodoOutput($person, 20));
+		$action->addOutputHandler($outputHandler);
 
-			// Create the action
-		$action = $this->createAction($preConditions, $validators, $outputHandlers);
+		$this->actionRepository->add($action);
 
-		$this->persistenceManager->persistAll();
+		$this->documentManager->flush();
 
-		$persistedAction = $this->actionRepository->findAll()->getFirst();
-		$this->assertEquals($action, $persistedAction);
+		$persistedActions = $this->actionRepository->findAll();
+		$this->assertEquals($action, $persistedActions[0]);
 
 			// Make sure no todo was added already
 		$this->assertEquals(0, $this->toDoRepository->countAll());
 
-		$persistedAction->dispatch();
+		$persistedActions[0]->dispatch();
 
 		$this->persistenceManager->persistAll();
 
@@ -326,8 +316,8 @@ class PersistenceTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 		$this->assertEquals(2, $this->toDoRepository->countAll());
 
 			// Check the status of the action
-		$persistedAction = $this->actionRepository->findAll()->getFirst();
-		$this->assertEquals(\Beech\WorkFlow\Domain\Model\Action::STATUS_FINISHED, $persistedAction->getStatus());
+		$persistedActions = $this->actionRepository->findAll();
+		$this->assertEquals(\Beech\WorkFlow\Domain\Model\Action::STATUS_FINISHED, $persistedActions[0]->getStatus());
 	}
 
 	/**
@@ -381,36 +371,6 @@ class PersistenceTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 		return $person;
 	}
 
-	/**
-	 * Create an action to test with
-	 * @param array $preConditions
-	 * @param array $validators
-	 * @param array $outputHandlers
-	 * @param string $status
-	 * @return \Beech\WorkFlow\Domain\Model\Action
-	 */
-	protected function createAction(array $preConditions, array $validators, array $outputHandlers, $status = NULL) {
-		$action = new Action();
-
-		if ($status) {
-			$action->setStatus($status);
-		}
-
-		foreach ($preConditions as $preCondition) {
-			$action->addPreCondition($preCondition);
-		}
-
-		foreach ($validators as $validator) {
-			$action->addValidator($validator);
-		}
-
-		foreach ($outputHandlers as $outputHandler) {
-			$action->addOutputHandler($outputHandler);
-		}
-
-		$this->actionRepository->add($action);
-		$this->persistenceManager->persistAll();
-		return $action;
-	}
 }
+
 ?>

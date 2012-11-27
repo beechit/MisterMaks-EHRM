@@ -57,16 +57,18 @@ class ActionFactory {
 			foreach ($parsedData['action'] as $actionSettings) {
 				$action = new Action();
 
-				if (array_key_exists('validators', $actionSettings)) {
-					$this->addValidators($actionSettings['validators'], $action);
-				}
+				$handlerTypes = array(
+					'validators' => 'addValidator',
+					'preConditions' => 'addPreCondition',
+					'outputHandlers' => 'addOutputHandler'
+				);
 
-				if (array_key_exists('preConditions', $actionSettings)) {
-					$this->addPreConditions($actionSettings['preConditions'], $action);
-				}
-
-				if (array_key_exists('outputHandlers', $actionSettings)) {
-					$this->addOutputHandlers($actionSettings['outputHandlers'], $action);
+				foreach ($handlerTypes as $type => $addMethod) {
+					if (isset($actionSettings[$type]) && is_array($actionSettings[$type])) {
+						foreach ($actionSettings[$type] as $configuration) {
+							$action->$addMethod($this->createHandlerInstance($configuration));
+						}
+					}
 				}
 
 				$actionObjects[] = $action;
@@ -77,96 +79,34 @@ class ActionFactory {
 	}
 
 	/**
-	 * Gets the className of a handler.
-	 *
-	 * @param string $className
-	 * @param string $handlerType
-	 * @return null|string NULL if class does not exist, otherwise the className
+	 * @param array $configuration
+	 * @return mixed
+	 * @throws \Beech\WorkFlow\Exception
 	 */
-	protected function getHandlerClassName($className, $handlerType) {
-		if (class_exists($className)) {
-			return $className;
-		} elseif (class_exists('\\Beech\\WorkFlow\\' . $handlerType . 's\\' . $className)) {
-			return '\\Beech\\WorkFlow\\' . $handlerType . 's\\' . $className;
+	protected function createHandlerInstance(array $configuration) {
+		if (!isset($configuration['className'])
+				|| !isset($configuration['properties'])
+				|| !is_array($configuration['properties'])) {
+			throw new \Beech\WorkFlow\Exception('Invalid handler configuration');
 		}
-		return NULL;
-	}
 
-	/**
-	 * Add validators to the action object
-	 *
-	 * @param array $validators
-	 * @param \Beech\WorkFlow\Domain\Model\Action $action
-	 * @return void
-	 */
-	protected function addValidators(array $validators, $action) {
-		foreach ($validators as $validatorSettings) {
-			$validatorClassName = $this->getHandlerClassName($validatorSettings['className'], 'Validator');
-
-			if ($validatorClassName !== NULL && isset($validatorSettings['properties'])) {
-				$action->addValidator($this->createClassInstanceAndSetProperties($validatorClassName, $validatorSettings['properties']));
-			}
+		if (!class_exists($configuration['className'])) {
+			throw new \Beech\WorkFlow\Exception('Handler class is undefined');
 		}
-	}
 
-	/**
-	 * Add preConditions to the action object
-	 *
-	 * @param array $preConditions
-	 * @param \Beech\WorkFlow\Domain\Model\Action $action
-	 * @return void
-	 */
-	protected function addPreConditions(array $preConditions, $action) {
-		foreach ($preConditions as $preConditionSettings) {
-			$preConditionClassName = $this->getHandlerClassName($preConditionSettings['className'], 'PreCondition');
-
-			if ($preConditionClassName !== NULL && isset($preConditionSettings['properties'])) {
-				$action->addPreCondition($this->createClassInstanceAndSetProperties($preConditionClassName, $preConditionSettings['properties']));
-			}
-		}
-	}
-
-	/**
-	 * Add outputHandlers to the action object
-	 *
-	 * @param array $outputHandlers
-	 * @param \Beech\WorkFlow\Domain\Model\Action $action
-	 * @return void
-	 */
-	protected function addOutputHandlers(array $outputHandlers, $action) {
-		foreach ($outputHandlers as $outputHandlerSettings) {
-			$outputHandlersClassName = $this->getHandlerClassName($outputHandlerSettings['className'], 'OutputHandler');
-
-			if ($outputHandlersClassName !== NULL && isset($outputHandlerSettings['properties'])) {
-				$action->addOutputHandler($this->createClassInstanceAndSetProperties($outputHandlersClassName, $outputHandlerSettings['properties']));
-			}
-		}
-	}
-
-	/**
-	 * Creates an instance of $className and calls all setters for keys in the properties array,
-	 * and sets the corresponding value
-	 *
-	 * @param string $className
-	 * @param array $properties
-	 * @return object An instance of $className
-	 */
-	protected function createClassInstanceAndSetProperties($className, array $properties) {
-		$object = new $className();
-
-		foreach ($properties as $propertyName => $propertyDefinition) {
+		$handler = new $configuration['className']();
+		foreach ($configuration['properties'] as $propertyName => $propertyDefinition) {
 			$setMethod = 'set' . ucfirst($propertyName);
 
-			if (method_exists($object, $setMethod)) {
-				$property = $this->getPropertyFromDefinition($propertyDefinition, $className);
+			if (method_exists($handler, $setMethod)) {
+				$property = $this->getPropertyFromDefinition($propertyDefinition, $configuration['className']);
 
 				if ($property !== FALSE) {
-					$object->$setMethod($property);
+					$handler->$setMethod($property);
 				}
 			}
 		}
-
-		return $object;
+		return $handler;
 	}
 
 	/**
