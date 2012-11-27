@@ -5,16 +5,16 @@ resources:
     SetupController: 'method(\Beech\Ehrm\SetupController->(?<!initialize).*Action())'
 
 roles:
-  'Beech.Ehrm.Administrator': [ Beech.Ehrm.SuperUser ]
-  'Beech.Ehrm.SuperUser': [ Beech.Ehrm.User ]
-  'Beech.Ehrm.User': [ ]
+  Administrator: [ SuperUser ]
+  SuperUser: [ User ]
+  User: [ ]
 
 acls:
-  'Beech.Ehrm.Administrator':
+  Administrator:
     methods:
       ManagementControllers: GRANT
       SetupController: GRANT
-  'Beech.Ehrm.SuperUser':
+  SuperUser:
     methods:
       ManagementControllers: GRANT
       SetupController: GRANT
