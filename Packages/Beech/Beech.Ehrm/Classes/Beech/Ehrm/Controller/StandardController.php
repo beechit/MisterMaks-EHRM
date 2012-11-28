@@ -36,6 +36,7 @@ class StandardController extends AbstractController {
 		if ($ownerAccount instanceof \TYPO3\Flow\Security\Account) {
 			$owner = $ownerAccount->getParty();
 
+			// TODO: To Be Removed... Reworked
 			$todosGroupedByPriority = array(
 				'veryHigh' => array('label' => 'Very high', 'todos' => array(), 'class' => 'important'),
 				'high' => array('label' => 'High', 'todos' => array(), 'class' => 'important'),
@@ -61,6 +62,7 @@ class StandardController extends AbstractController {
 			}
 
 			$this->view->assign('groupedTodos', $todosGroupedByPriority);
+			// To Be Removed... Reworked END//
 		}
 	}
 }

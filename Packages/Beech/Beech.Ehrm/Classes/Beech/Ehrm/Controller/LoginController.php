@@ -17,11 +17,6 @@ use TYPO3\Flow\Annotations as Flow;
 class LoginController extends \TYPO3\Flow\Security\Authentication\Controller\AbstractAuthenticationController {
 
 	/**
-	 * @var string
-	 */
-	protected $defaultViewObjectName = 'Beech\\Ehrm\\View\\TypoScriptView';
-
-	/**
 	 * @var \TYPO3\Flow\I18n\Translator
 	 * @Flow\Inject
 	 */

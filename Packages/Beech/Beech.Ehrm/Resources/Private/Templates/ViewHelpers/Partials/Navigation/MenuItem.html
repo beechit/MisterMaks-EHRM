@@ -1,0 +1,24 @@
+{namespace ehrm=Beech\Ehrm\ViewHelpers}
+<f:if condition="{item.items}">
+	<f:then>
+		<li class="dropdown" id="{item.id}">
+			<a class="dropdown-toggle" data-toggle="dropdown" href="{item.href}">
+				<f:if condition="{item.iconClass}">
+					<i class="{item.iconClass} {f:if(condition: item.invertIcon, then: 'icon-white')}">&nbsp;</i>
+				</f:if>
+				{item.label -> f:format.raw()}<b class="caret"></b>
+			</a>
+			<ehrm:navigation.menu items="{item.items}" classNames="{0: 'dropdown-menu'}" />
+		</li>
+	</f:then>
+	<f:else>
+		<li id="{item.id}">
+			<a href="{item.href}" {item.transition -> ehrm:ember.helper()}>
+				<f:if condition="{item.iconClass}">
+					<i class="{item.iconClass} {f:if(condition: item.invertIcon, then: 'icon-white')}">&nbsp;</i>
+				</f:if>
+				{item.label -> f:format.raw()}
+			</a>
+		</li>
+	</f:else>
+ </f:if>

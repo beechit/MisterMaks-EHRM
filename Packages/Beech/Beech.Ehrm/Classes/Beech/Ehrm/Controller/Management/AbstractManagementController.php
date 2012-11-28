@@ -42,6 +42,8 @@ class AbstractManagementController extends \Beech\Ehrm\Controller\AbstractContro
 	 * @return void
 	 */
 	public function initializeAction() {
+		parent::initializeAction();
+
 		if (!isset($this->entityClassName) || !class_exists($this->entityClassName)) {
 			throw new \Exception('Entity class name on management controller not set or does not exist');
 		}

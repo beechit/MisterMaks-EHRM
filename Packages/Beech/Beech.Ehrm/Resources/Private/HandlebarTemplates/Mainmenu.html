@@ -1,18 +1,8 @@
-<ul class="nav">
-	<li><a href="#"><i class="icon-home"></i> Home</a></li>
-	<li><a href="#modal" class="" data-toggle="modal"><i class="icon-fire"></i> Modal</a></li>
-	<li><a href="#" {{action showManagement}}><i class="icon-globe"></i> Management</a></li>
-	<li><a href="#" {{action showAdministration}}><i class="icon-warning-sign"></i> Administration</a></li>
-</ul>
+{namespace ehrm=Beech\Ehrm\ViewHelpers}
+<ehrm:navigation.menu items="{mainMenuItems}" classNames="{0:'nav'}" />
 <div class="btn-group pull-right">
-	<a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="#">
-		<i class="icon-user icon-white"></i> John Doe <span class="caret"></span>
+	<a class="btn btn-small dropdown-toggle btn-inverse" data-toggle="dropdown" href="#">
+		<i class="icon-user icon-white"></i> <ehrm:security.account /> <span class="caret"></span>
 	</a>
-	<ul class="dropdown-menu">
-		<li><a href="#" {{action showSettings}}><i class="icon-wrench"></i> Settings</a></li>
-		<li><a href="#" {{action showModuleTask}}><i class="icon-tasks"></i> Todo <span class="badge badge-info">3</span></a></li>
-		<li><a href="#" {{action showModuleDocument}}><i class="icon-folder-open"></i> Documents</a></li>
-		<li><a href="#" {{action showAdministration}}><i class="icon-warning-sign"></i> Administration</a></li>
-		<li><a href="login.html" data-confirm-header="Uitloggen" data-confirm-message="Weet je zeker dat je uit wilt loggen?" class="confirm"><i class="icon-off"></i> Logout</a></li>
-	</ul>
+	<ehrm:navigation.menu items="{accountMenuItems}" classNames="{0:'dropdown-menu'}" />
 </div>

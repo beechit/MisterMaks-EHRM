@@ -23,6 +23,12 @@ Beech:
       account:
         groups:
         menu:
+          settings:
+            label: 'Settings'
+            priority: 20
+            controller: 'Setup'
+            action: 'index'
+            transition: 'showSettings'
           management:
             label: 'Administration'
             priority: 100
@@ -30,6 +36,7 @@ Beech:
             controller: 'Management\Administration'
             resource: 'ManagementControllers'
             action: 'index'
+            transition: 'showAdministration'
           logout:
             label: 'Logout'
             priority: 9999
@@ -51,6 +58,12 @@ Beech:
         - 'Beech.Ehrm/StyleSheets/main.css'
         - 'Beech.Ehrm/Library/dataTables/media/css/jquery.dataTables.TwitterBootstrap.css'
         - 'Beech.Ehrm/Library/dataTables/media/css/jquery.dataTables.css'
+
+    viewHelpers:
+      partialRootPath: 'resource://Beech.Ehrm/Private/Templates/ViewHelpers/Partials/'
+      templates:
+        'Beech\Ehrm\ViewHelpers\Navigation\MenuViewHelper': 'resource://Beech.Ehrm/Private/Templates/ViewHelpers/Navigation/Menu.html'
+
 
 TYPO3:
   Form:
@@ -113,26 +126,26 @@ TYPO3:
             entryPointOptions:
               uri: 'login.html'
 
-Famelo:
-  Scaff:
-    modules:
-      logViewer:
-        label: 'Log Viewer'
-        arguments:
-          @package: 'Beech.Ehrm'
-          @controller: 'Log'
-          @action: 'index'
-      setup:
-        label: 'Setup'
-        arguments:
-          @package: 'Beech.Ehrm'
-          @controller: 'Setup'
-          @action: 'index'
-      application:
-        label: 'Application'
-        arguments:
-          @package: 'Beech.Ehrm'
-          @controller: 'Setup\Application'
-          @action: 'index'
+
+Radmiraal:
+  Emberjs:
+    handlebar:
+      view:
+        assignHelpers:
+          mainmenu:
+            mainMenuItems:
+              class: 'Beech\Ehrm\Helper\SettingsHelper'
+              method: 'getMenuItems'
+              arguments: ['main']
+            actionMenuItems:
+              class: 'Beech\Ehrm\Helper\SettingsHelper'
+              method: 'getMenuItems'
+              arguments: ['action']
+            accountMenuItems:
+              class: 'Beech\Ehrm\Helper\SettingsHelper'
+              method: 'getMenuItems'
+              arguments: ['account']
+
+
 
 

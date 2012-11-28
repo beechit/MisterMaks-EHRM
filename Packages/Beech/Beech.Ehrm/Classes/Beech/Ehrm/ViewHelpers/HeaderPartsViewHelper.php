@@ -1,21 +1,15 @@
 <?php
-namespace Beech\Ehrm\TypoScript;
+namespace Beech\Ehrm\ViewHelpers;
 
 /*
  * This source file is proprietary property of Beech Applications B.V.
- * Date: 24-09-12 10:05
+ * Date: 29-08-12 12:19
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
 use TYPO3\Flow\Annotations as Flow;
 
-/**
- * HeaderData added to the HTML header. Like for example JavaScript configuration
- * which needs to be rendered on the server side.
- *
- * @Flow\Scope("prototype")
- */
-class HeaderParts extends AbstractTypoScriptObject {
+class HeaderPartsViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper {
 
 	/**
 	 * @var \TYPO3\Flow\Security\Authentication\AuthenticationManagerInterface
@@ -56,9 +50,7 @@ class HeaderParts extends AbstractTypoScriptObject {
 	/**
 	 * @return string
 	 */
-	public function evaluate() {
-		$this->initializeView();
-
+	public function render() {
 		$this->addJavaScriptConfiguration();
 		$this->addThemeStyleSheet();
 		$this->addStyleSheetIncludes();
@@ -81,8 +73,8 @@ class HeaderParts extends AbstractTypoScriptObject {
 	protected function addThemeStyleSheet() {
 		$theme = $this->themeHelper->getSelectedTheme();
 		$availableThemes = $this->themeHelper->getAvailableThemes();
-			// Rare case scenario that no path is set because no stylesheet was found.
-			// This should not occur but is technically possible.
+		// Rare case scenario that no path is set because no stylesheet was found.
+		// This should not occur but is technically possible.
 		if (!empty($theme['name']['path'])) {
 			$this->output .= sprintf(
 				'<link rel="stylesheet" type="text/css" href="%1$sPackages/%2$s" />',
@@ -123,7 +115,7 @@ class HeaderParts extends AbstractTypoScriptObject {
 				'preInitialize' => array()
 			),
 			'configuration' => (object)array(
-				'restNotificationUri' => $this->tsRuntime->getControllerContext()->getUriBuilder()
+				'restNotificationUri' => $this->controllerContext->getUriBuilder()
 					->reset()
 					->setFormat('json')
 					->uriFor('list', array(), 'Rest\Notification', 'Beech.Ehrm')
@@ -137,7 +129,5 @@ class HeaderParts extends AbstractTypoScriptObject {
 
 		$this->output .= sprintf('<script>var MM = %s;</script>', json_encode((object)$settings));
 	}
-
 }
-
 ?>

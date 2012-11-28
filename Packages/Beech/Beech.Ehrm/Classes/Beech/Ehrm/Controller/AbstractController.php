@@ -17,9 +17,14 @@ use TYPO3\Flow\Annotations as Flow;
 class AbstractController extends \TYPO3\Flow\Mvc\Controller\ActionController {
 
 	/**
-	 * @var string
+	 *
 	 */
-	protected $defaultViewObjectName = 'Beech\\Ehrm\\View\\TypoScriptView';
+	public function callActionMethod() {
+		parent::callActionMethod();
+		if ($this->request->getFormat() === 'jsonp') {
+			$this->response->setHeader('Content-Type', 'application/javascript');
+		}
+	}
 
 }
 
