@@ -9,3 +9,5 @@ Beech:
             package: 'Beech.Task'
             controller: 'todo'
             action: 'index'
+            transition: 'showModuleTask'
+            format: 'jsonp'
