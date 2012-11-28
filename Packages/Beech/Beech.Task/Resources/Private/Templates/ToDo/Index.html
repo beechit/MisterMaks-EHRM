@@ -1,31 +1,31 @@
 <f:layout name="Default"/>
 
 <f:section name="Body">
-	<f:if condition="{todos}">
+	<f:if condition="{tasks}">
 		<f:then>
 			<table class="table">
 				<tr>
-					<th><f:translate id="toDo.priority">Priority</f:translate></th>
-					<th><f:translate id="toDo.description">Task</f:translate></th>
+					<th><f:translate id="task.priority">Priority</f:translate></th>
+					<th><f:translate id="task.description">Task</f:translate></th>
 					<th></th>
 				</tr>
-				<f:for each="{todos}" as="todo">
-					<f:if condition="{todo.closeDateTime}">
+				<f:for each="{tasks}" as="task">
+					<f:if condition="{task.closeDateTime}">
 						<f:then>
 							<tr>
-								<td><i class="icon-ok"></i> <f:format.date format="d.m.Y - H:i:s">{todo.closeDateTime}</f:format.date></td>
-								<td>{todo.priorityTextual}</td>
-								<td>{todo.description}</td>
+								<td><i class="icon-ok"></i> <f:format.date format="d.m.Y - H:i:s">{task.closeDateTime}</f:format.date></td>
+								<td>{task.priorityTextual}</td>
+								<td>{task.description}</td>
 								<td>Link</td>
 							</tr>
 						</f:then>
 						<f:else>
 							<tr>
-								<td>{todo.priorityTextual}</td>
-								<td>{todo.task}</td>
+								<td>{task.priorityTextual}</td>
+								<td>{task.task}</td>
 								<td>
-									<f:if condition="{todo}">
-										<f:link.action action="close" arguments="{toDo: todo}"><f:translate id="toDo.setTaskDone">Close</f:translate></f:link.action>
+									<f:if condition="{task}">
+										<f:link.action action="close" arguments="{task: task}"><f:translate id="task.setTaskDone">Close</f:translate></f:link.action>
 									</f:if></td>
 							</tr>
 						</f:else>
@@ -34,11 +34,11 @@
 			</table>
 		</f:then>
 		<f:else>
-			<p><f:translate id="toDo.noToDo">Nothing to do.</f:translate></p>
+			<p><f:translate id="task.noTask">Nothing to do.</f:translate></p>
 		</f:else>
 	</f:if>
 	<div>
-		<f:form action="create" name="newToDo" class="form-horizontal well">
+		<f:form action="create" name="newTask" class="form-horizontal well">
 			<f:form.textfield property="description" id="description" placeholder="Task"/>
 			<f:form.select property="priority" options="{priorities}" />
 			<f:form.submit value="{f:translate(id: 'action.create')}" class="btn btn-primary"/>

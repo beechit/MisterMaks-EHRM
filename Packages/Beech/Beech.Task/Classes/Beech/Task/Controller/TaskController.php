@@ -14,13 +14,13 @@ use TYPO3\Flow\Annotations as Flow;
  *
  * @Flow\Scope("singleton")
  */
-class ToDoController extends \Beech\Ehrm\Controller\AbstractController {
+class TaskController extends \Beech\Ehrm\Controller\AbstractController {
 
 	/**
-	 * @var \Beech\Task\Domain\Repository\ToDoRepository
+	 * @var \Beech\Task\Domain\Repository\TaskRepository
 	 * @Flow\Inject
 	 */
-	protected $toDoRepository;
+	protected $taskRepository;
 
 	/**
 	 * @var \TYPO3\Flow\Security\Context
@@ -29,13 +29,13 @@ class ToDoController extends \Beech\Ehrm\Controller\AbstractController {
 	protected $securityContext;
 
 	/**
-	 * @var Beech\Party\Domain\Repository\PersonRepository
+	 * @var \Beech\Party\Domain\Repository\PersonRepository
 	 * @Flow\Inject
 	 */
 	protected $personRepository;
 
 	/**
-	 * Shows a list of todos
+	 * Shows a list of tasks
 	 *
 	 * @return void
 	 */
@@ -43,36 +43,36 @@ class ToDoController extends \Beech\Ehrm\Controller\AbstractController {
 			// TODO Sort on null values first then the ascending closeDateTime (something like ISNULL(closeDateTime)
 		$orderings = array(	'closeDateTime' => \TYPO3\Flow\Persistence\QueryInterface::ORDER_ASCENDING,
 							'priority' => \TYPO3\Flow\Persistence\QueryInterface::ORDER_DESCENDING);
-		$this->toDoRepository->setDefaultOrderings($orderings);
-		$this->view->assign('todos', $this->toDoRepository->findAll());
-		$this->view->assign('priorities', \Beech\Task\Domain\Model\ToDo::getPriorities());
+		$this->taskRepository->setDefaultOrderings($orderings);
+		$this->view->assign('tasks', $this->taskRepository->findAll());
+		$this->view->assign('priorities', \Beech\Task\Domain\Model\Task::getPriorities());
 	}
 
 	/**
-	 * Creates a todo
+	 * Creates a task
 	 *
-	 * @param \Beech\Task\Domain\Model\ToDo $newToDo
+	 * @param \Beech\Task\Domain\Model\Task $newTask
 	 * @return void
 	 */
-	public function createAction(\Beech\Task\Domain\Model\ToDo $newToDo) {
+	public function createAction(\Beech\Task\Domain\Model\Task $newTask) {
 		if (is_object($this->securityContext->getAccount())
 			&& $this->securityContext->getAccount()->getParty() instanceof \TYPO3\Party\Domain\Model\AbstractParty) {
-				$newToDo->setOwner($this->securityContext->getAccount()->getParty());
+				$newTask->setOwner($this->securityContext->getAccount()->getParty());
 		}
 
-		$this->toDoRepository->add($newToDo);
+		$this->taskRepository->add($newTask);
 		$this->redirect('index');
 	}
 
 	/**
 	 * A task is marked done
 	 *
-	 * @param \Beech\Task\Domain\Model\ToDo $toDo
+	 * @param \Beech\Task\Domain\Model\Task $task
 	 * @return void
 	 */
-	public function setDoneAction(\Beech\Task\Domain\Model\ToDo $toDo) {
-		$toDo->close();
-		$this->toDoRepository->update($toDo);
+	public function setDoneAction(\Beech\Task\Domain\Model\Task $task) {
+		$task->close();
+		$this->taskRepository->update($task);
 		$this->redirect('index');
 	}
 }

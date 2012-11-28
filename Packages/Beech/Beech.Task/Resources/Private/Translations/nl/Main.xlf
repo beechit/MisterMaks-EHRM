@@ -2,28 +2,28 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
 	<file original="" source-language="en" target-language="nl" datatype="plaintext">
 		<body>
-			<trans-unit id="toDo.status">
+			<trans-unit id="task.status">
 				<source>Status</source>
 				<target>Status</target>
 			</trans-unit>
-			<trans-unit id="toDo.priority">
+			<trans-unit id="task.priority">
 				<source>Priority</source>
 				<target>Prioriteit</target>
 			</trans-unit>
-			<trans-unit id="toDo.description">
+			<trans-unit id="task.description">
 				<source>Task</source>
 				<target>Taak</target>
 			</trans-unit>
-			<trans-unit id="toDo.doTask">
+			<trans-unit id="task.doTask">
 				<source>Do task</source>
 				<target>Taak uitvoeren</target>
 			</trans-unit>
-			<trans-unit id="toDo.setTaskDone">
+			<trans-unit id="task.setTaskDone">
 				<source>Close</source>
 				<target>Sluiten</target>
 			</trans-unit>
-			<trans-unit id="toDo.noToDo">
-				<source>No todo's</source>
+			<trans-unit id="task.noTask">
+				<source>No tasks</source>
 				<target>Geen taken</target>
 			</trans-unit>
 		</body>

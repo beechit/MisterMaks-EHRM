@@ -7,26 +7,40 @@ namespace Beech\Task\Domain\Model;
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
-use TYPO3\Flow\Annotations as Flow;
-use Doctrine\ORM\Mapping as ORM;
+use TYPO3\Flow\Annotations as Flow,
+	Doctrine\ODM\CouchDB\Mapping\Annotations as ODM;
 
 /**
- * A To-Do Model
+ * A Task Model
  *
- * @Flow\Entity
- * @ORM\HasLifecycleCallbacks
+ * @ODM\Document(indexed=true)
  */
-class ToDo {
+class Task extends \Radmiraal\CouchDB\Persistence\AbstractDocument {
 
-	const PRIORITY_LOW = 'low';
-	const PRIORITY_NORMAL = 'normal';
-	const PRIORITY_HIGH = 'high';
-	const PRIORITY_VERY_HIGH = 'veryHigh';
+	const PRIORITY_LOW = 0;
+	const PRIORITY_NORMAL = 1;
+	const PRIORITY_HIGH = 2;
+	const PRIORITY_VERY_HIGH = 3;
+
+	/**
+	 * @var \TYPO3\Flow\Persistence\PersistenceManagerInterface
+	 * @Flow\Inject
+	 * @Flow\Transient
+	 */
+	protected $persistenceManager;
+
+	/**
+	 * @var \TYPO3\Flow\Security\Context
+	 * @Flow\Inject
+	 * @Flow\Transient
+	 */
+	protected $securityContext;
 
 	/**
 	 * The task description
 	 *
 	 * @var string
+	 * @ODM\Field(type="string")
 	 */
 	protected $description;
 
@@ -34,25 +48,27 @@ class ToDo {
 	 * The task owner
 	 *
 	 * @var \TYPO3\Party\Domain\Model\AbstractParty
-	 * @ORM\ManyToOne
+	 * @ODM\Field(type="string")
+	 * @ODM\Index
 	 */
-	protected $owner;
+	protected $assignedTo;
 
 	/**
 	 * The task starter
 	 * Property is nullable, because a task can be started by the system instead of a user
 	 *
 	 * @var \TYPO3\Party\Domain\Model\AbstractParty
-	 * @ORM\ManyToOne
-	 * @ORM\Column(nullable=true)
+	 * @ODM\Field(type="string")
 	 */
-	protected $starter;
+	protected $createdBy;
 
 	/**
-	 * Priority of this task 0-100
+	 * Priority of this task 0-4
 	 *
 	 * @var integer
-	 * @Flow\Validate(type="NumberRange", options={ "minimum"=0, "maximum"=100 })
+	 * @Flow\Validate(type="NumberRange", options={ "minimum"=0, "maximum"=4 })
+	 * @ODM\Field(type="integer")
+	 * @ODM\Index
 	 */
 	protected $priority;
 
@@ -60,6 +76,7 @@ class ToDo {
 	 * The dateTime this task was created
 	 *
 	 * @var \DateTime
+	 * @ODM\Field(type="datetime")
 	 */
 	protected $creationDateTime;
 
@@ -67,15 +84,24 @@ class ToDo {
 	 * The datetime this task was closed
 	 *
 	 * @var \DateTime
-	 * @ORM\Column(nullable=true)
+	 * @ODM\Field(type="datetime")
 	 */
 	protected $closeDateTime;
 
 	/**
-	 * @var \Beech\Ehrm\Domain\Model\Notification
-	 * @ORM\OneToMany(mappedBy="toDo")
+	 * @var boolean
+	 * @ODM\Field(type="boolean")
+	 * @ODM\Index
 	 */
-	protected $notifications;
+	protected $closed = FALSE;
+
+	/**
+	 * Initialize object
+	 * @return void
+	 */
+	public function initializeObject() {
+		$this->setCreatedBy();
+	}
 
 	/**
 	 * Sets the task description
@@ -99,11 +125,11 @@ class ToDo {
 	/**
 	 * Sets the owner for this task
 	 *
-	 * @param \TYPO3\Party\Domain\Model\AbstractParty $owner
+	 * @param \TYPO3\Party\Domain\Model\AbstractParty $assignee
 	 * @return void
 	 */
-	public function setOwner(\TYPO3\Party\Domain\Model\AbstractParty $owner) {
-		$this->owner = $owner;
+	public function setAssignedTo(\TYPO3\Party\Domain\Model\AbstractParty $assignee) {
+		$this->assignedTo = $this->persistenceManager->getIdentifierByObject($assignee, 'Beech\Party\Domain\Model\Person');
 	}
 
 	/**
@@ -111,27 +137,32 @@ class ToDo {
 	 *
 	 * @return \TYPO3\Party\Domain\Model\AbstractParty
 	 */
-	public function getOwner() {
-		return $this->owner;
+	public function getAssignedTo() {
+		if (isset($this->assignedTo)) {
+			return $this->persistenceManager->getObjectByIdentifier($this->assignedTo, 'Beech\Party\Domain\Model\Person');
+		}
+		return NULL;
 	}
 
 	/**
 	 * Sets the starter of this task, load the current user if NULL was emitted
 	 * We use the top-level AbstractParty class as typehint, because a task can also
-	 * be started by a systemprocess
+	 * be started by a system process
 	 *
-	 * @param \TYPO3\Party\Domain\Model\AbstractParty $starter
-	 * @ORM\PrePersist
+	 * @param \TYPO3\Party\Domain\Model\AbstractParty $creator
 	 * @return void
 	 */
-	public function setStarter(\TYPO3\Party\Domain\Model\AbstractParty $starter = NULL) {
-		if ($starter === NULL ) {
-			if (is_object($this->securityContext->getAccount())
-				&& $this->securityContext->getAccount()->getParty() instanceof \Beech\Party\Domain\Model\Person) {
-				$starter = $this->securityContext->getAccount()->getParty();
+	public function setCreatedBy(\TYPO3\Party\Domain\Model\AbstractParty $creator = NULL) {
+		if ($creator === NULL ) {
+			if (isset($this->securityContext) && $this->securityContext->isInitialized()
+					&& $this->securityContext->getAccount()->getParty() instanceof \Beech\Party\Domain\Model\Person) {
+				$creator = $this->securityContext->getAccount()->getParty();
 			}
 		}
-		$this->starter = $starter;
+
+		if ($creator !== NULL) {
+			$this->createdBy = $this->persistenceManager->getIdentifierByObject($creator, 'Beech\Party\Domain\Model\Person');
+		}
 	}
 
 	/**
@@ -139,12 +170,15 @@ class ToDo {
 	 *
 	 * @return \TYPO3\Party\Domain\Model\AbstractParty
 	 */
-	public function getStarter() {
-		return $this->starter;
+	public function getCreatedBy() {
+		if (isset($this->createdBy)) {
+			return $this->persistenceManager->getObjectByIdentifier($this->createdBy, 'Beech\Party\Domain\Model\Person');
+		}
+		return NULL;
 	}
 
 	/**
-	 * Sets the priority, value between 0-100
+	 * Sets the priority, accepts one of the self::PRIORITY_* constants
 	 *
 	 * @param integer $priority
 	 * @return void
@@ -163,41 +197,9 @@ class ToDo {
 	}
 
 	/**
-	 * Returns the priorities
-	 *
-	 * @return array
-	 */
-	public static function getPriorities() {
-		return array( 100 => self::PRIORITY_VERY_HIGH,
-			75 => self::PRIORITY_HIGH,
-			50 => self::PRIORITY_NORMAL,
-			25 => self::PRIORITY_LOW);
-	}
-
-	/**
-	 * Returns the priority in an textual presentation
-	 *
-	 * @return string
-	 */
-	public function getPriorityTextual() {
-		switch(ceil($this->priority / 25)) {
-			case 4:
-				return self::PRIORITY_VERY_HIGH;
-			case 3:
-				return self::PRIORITY_HIGH;
-			case 2:
-				return self::PRIORITY_NORMAL;
-			case 1:
-			default:
-				return self::PRIORITY_LOW;
-		}
-	}
-
-	/**
 	 * Set the dateTime of creation
 	 *
 	 * @param \DateTime $creationDateTime
-	 * @ORM\PrePersist
 	 * @return void
 	 */
 	public function setCreationDateTime(\DateTime $creationDateTime = NULL) {
@@ -222,6 +224,7 @@ class ToDo {
 	 */
 	public function setCloseDateTime(\DateTime $closeDateTime) {
 		$this->closeDateTime = $closeDateTime;
+		$this->closed = TRUE;
 	}
 
 	/**
@@ -237,7 +240,7 @@ class ToDo {
 	 * @return boolean
 	 */
 	public function isClosed() {
-		return NULL !== $this->closeDateTime;
+		return $this->closed;
 	}
 
 	/**
@@ -249,23 +252,6 @@ class ToDo {
 		$this->setCloseDateTime(new \DateTime());
 	}
 
-	/**
-	 * Set related notifications
-	 *
-	 * @param $notifications
-	 */
-	public function setNotifications($notifications) {
-		$this->notifications = $notifications;
-	}
-
-	/**
-	 * Get related notifications
-	 *
-	 * @return \Beech\Ehrm\Domain\Model\Notification
-	 */
-	public function getNotifications() {
-		return $this->notifications;
-	}
-
 }
+
 ?>

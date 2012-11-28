@@ -3,11 +3,11 @@ Beech:
     menu:
       account:
         menu:
-          todo:
-            label: 'Todo'
+          task:
+            label: 'Tasks'
             priority: 30
             package: 'Beech.Task'
-            controller: 'todo'
+            controller: 'task'
             action: 'index'
             transition: 'showModuleTask'
             format: 'jsonp'
