@@ -321,6 +321,29 @@ class PersistenceTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFuncti
 	}
 
 	/**
+	 * @test
+	 */
+	public function outputHandlersAreCorrectlyRetrievedFromTheDatabase() {
+		$action = new Action();
+		$entityOutputHandler = new \Beech\WorkFlow\OutputHandlers\EntityOutputHandler();
+		$actionExpiredOutputHandler = new \Beech\WorkFlow\OutputHandlers\ActionExpiredOutputHandler();
+
+		$action->addOutputHandler($entityOutputHandler);
+		$action->addOutputHandler($actionExpiredOutputHandler);
+
+		$this->actionRepository->add($action);
+		$this->documentManager->flush();
+
+		$this->assertEquals(1, $this->actionRepository->countAll());
+
+		$persistedActions = $this->actionRepository->findAll();
+		$outputHandlersOnPersistedAction = $persistedActions[0]->getOutputHandlers();
+
+		$this->assertInstanceOf('Beech\WorkFlow\OutputHandlers\EntityOutputHandler', $outputHandlersOnPersistedAction[0]);
+		$this->assertInstanceOf('Beech\WorkFlow\OutputHandlers\ActionExpiredOutputHandler', $outputHandlersOnPersistedAction[1]);
+	}
+
+	/**
 	 * @param string $name
 	 * @param string $companyNumber
 	 * @param string $chamberOfCommerceNumber
