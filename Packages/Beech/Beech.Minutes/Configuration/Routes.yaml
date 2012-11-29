@@ -1,7 +1,0 @@
--
-  name: 'Minute Management'
-  uriPattern: 'management/minute(/{@action})'
-  defaults:
-    '@package': 'Beech.Minutes'
-    '@controller': 'Management\Minute'
-    '@action': 'list'

@@ -45,12 +45,12 @@ class MinuteTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 	 */
 	public function minuteCanBePersistedAndRetrieved() {
 		$initiator = new \Beech\Party\Domain\Model\Person();
-		$initiator->addPersonName(new \Beech\Party\Domain\Model\PersonName('', 'Joe', '', 'Initiator'));
+		$initiator->addPersonName(new \TYPO3\Party\Domain\Model\PersonName('', 'Joe', '', 'Initiator'));
 		$initiator->addEmail('joe@initiator.nl');
 		$this->personRepository->add($initiator);
 
 		$subject = new \Beech\Party\Domain\Model\Person();
-		$subject->addPersonName(new \Beech\Party\Domain\Model\PersonName('', 'Jack', '', 'Subject'));
+		$subject->addPersonName(new \TYPO3\Party\Domain\Model\PersonName('', 'Jack', '', 'Subject'));
 		$subject->addEmail('jack@subject.nl');
 		$this->personRepository->add($subject);
 
