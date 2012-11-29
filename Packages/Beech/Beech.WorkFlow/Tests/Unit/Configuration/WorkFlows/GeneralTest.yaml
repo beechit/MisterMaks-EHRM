@@ -13,4 +13,4 @@ action:
     outputHandlers:
       EntityOutputHandler:
         properties:
-          entity: 'ENTITY:TODO'
+          entity: 'ENTITY:Beech\WorkFlow\Tests\Unit\Fixtures\Domain\Model\Entity'

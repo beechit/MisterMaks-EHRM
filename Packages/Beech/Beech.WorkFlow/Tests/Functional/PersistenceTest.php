@@ -10,7 +10,7 @@ namespace Beech\WorkFlow\Tests\Functional;
 use TYPO3\Flow\Annotations as Flow,
 	Beech\WorkFlow\Domain\Model\Action,
 	Beech\Party\Domain\Model\Company,
-	Beech\Task\Domain\Model\ToDo;
+	Beech\Task\Domain\Model\Task;
 
 /**
  * Test the actual persistence of actions
@@ -23,6 +23,11 @@ class PersistenceTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFuncti
 	static protected $testablePersistenceEnabled = TRUE;
 
 	/**
+	 * @var boolean
+	 */
+	protected $testableSecurityEnabled = TRUE;
+
+	/**
 	 * @var \Beech\WorkFlow\Domain\Repository\ActionRepository
 	 */
 	protected $actionRepository;
@@ -33,9 +38,9 @@ class PersistenceTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFuncti
 	protected $companyRepository;
 
 	/**
-	 * @var \Beech\Task\Domain\Repository\ToDoRepository
+	 * @var \Beech\WorkFlow\Tests\Functional\Fixtures\Domain\Repository\EntityRepository
 	 */
-	protected $toDoRepository;
+	protected $entityRepository;
 
 	/**
 	 * @var \Beech\Party\Domain\Repository\PersonRepository
@@ -58,11 +63,19 @@ class PersistenceTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFuncti
 	public function setUp() {
 		parent::setUp();
 
-		$this->actionRepository = $this->objectManager->get('\Beech\WorkFlow\Domain\Repository\ActionRepository');
+		$person = new \Beech\Party\Domain\Model\Person();
+		$person->setName(new \Beech\Party\Domain\Model\PersonName(NULL, 'John', NULL, 'Doe'));
+
+		$account = new \TYPO3\Flow\Security\Account();
+		$account->setParty($person);
+
+		$this->authenticateAccount($account);
+
+		$this->actionRepository = $this->objectManager->get('Beech\WorkFlow\Domain\Repository\ActionRepository');
 		$this->actionRepository->injectDocumentManagerFactory($this->documentManagerFactory);
 
-		$this->companyRepository = $this->objectManager->get('\Beech\Party\Domain\Repository\CompanyRepository');
-		$this->toDoRepository = $this->objectManager->get('\Beech\Task\Domain\Repository\ToDoRepository');
+		$this->companyRepository = $this->objectManager->get('Beech\Party\Domain\Repository\CompanyRepository');
+		$this->entityRepository = $this->objectManager->get('Beech\WorkFlow\Tests\Functional\Fixtures\Domain\Repository\EntityRepository');
 		$this->personRepository = $this->objectManager->get('Beech\Party\Domain\Repository\PersonRepository');
 		$this->accountRepository = $this->objectManager->get('TYPO3\Flow\Security\AccountRepository');
 		$this->accountFactory = $this->objectManager->get('TYPO3\Flow\Security\AccountFactory');
@@ -163,15 +176,16 @@ class PersistenceTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFuncti
 	 */
 	public function anEntityOutputHandlerCanPersistDifferentTypesOfEntities() {
 		$outputHandler = new \Beech\WorkFlow\OutputHandlers\EntityOutputHandler();
-		$todoOutput = $this->createTodoOutput($this->createPerson(), 100);
-		$outputHandler->setEntity($todoOutput);
+		$entityOutput = new \Beech\WorkFlow\Tests\Functional\Fixtures\Domain\Model\Entity();
+		$entityOutput->setTitle('foo');
+		$outputHandler->setEntity($entityOutput);
 		$outputHandler->invoke();
 
-		$this->assertEquals(0, $this->toDoRepository->countAll());
+		$this->assertEquals(0, $this->entityRepository->countAll());
 
 		$this->persistenceManager->persistAll();
 
-		$this->assertEquals(1, $this->toDoRepository->countAll());
+		$this->assertEquals(1, $this->entityRepository->countAll());
 
 		$outputHandler = new \Beech\WorkFlow\OutputHandlers\EntityOutputHandler();
 		$outputHandler->setEntity($this->createCompany('Foo', 1, 1, 'type', 'description', 'bar'));
@@ -289,13 +303,17 @@ class PersistenceTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFuncti
 		$validator->setTargetEntity($persistedCompany);
 		$action->addValidator($validator);
 
-			// Add 2 ToDo outputhandlers
+			// Add 2 Task outputhandlers
 		$outputHandler = new \Beech\WorkFlow\OutputHandlers\EntityOutputHandler();
-		$outputHandler->setEntity($this->createTodoOutput($person, 100));
+		$entity = new \Beech\WorkFlow\Tests\Functional\Fixtures\Domain\Model\Entity();
+		$entity->setTitle('bar');
+		$outputHandler->setEntity($entity);
 		$action->addOutputHandler($outputHandler);
 
 		$outputHandler = new \Beech\WorkFlow\OutputHandlers\EntityOutputHandler();
-		$outputHandler->setEntity($this->createTodoOutput($person, 20));
+		$entity = new \Beech\WorkFlow\Tests\Functional\Fixtures\Domain\Model\Entity();
+		$entity->setTitle('foo');
+		$outputHandler->setEntity($entity);
 		$action->addOutputHandler($outputHandler);
 
 		$this->actionRepository->add($action);
@@ -306,14 +324,14 @@ class PersistenceTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFuncti
 		$this->assertEquals($action, $persistedActions[0]);
 
 			// Make sure no todo was added already
-		$this->assertEquals(0, $this->toDoRepository->countAll());
+		$this->assertEquals(0, $this->entityRepository->countAll());
 
 		$persistedActions[0]->dispatch();
 
 		$this->persistenceManager->persistAll();
 
 			// Test if a todo entity was added
-		$this->assertEquals(2, $this->toDoRepository->countAll());
+		$this->assertEquals(2, $this->entityRepository->countAll());
 
 			// Check the status of the action
 		$persistedActions = $this->actionRepository->findAll();
@@ -362,21 +380,6 @@ class PersistenceTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFuncti
 		$company->setLegalForm($legalForm);
 
 		return $company;
-	}
-
-	/**
-	 * @param \TYPO3\Party\Domain\Model\AbstractParty $owner
-	 * @param integer $priority Priority of this task 0-100
-	 * @return \Beech\Task\Domain\Model\ToDo
-	 */
-	protected function createToDoOutput(\TYPO3\Party\Domain\Model\AbstractParty $owner, $priority) {
-		$todo = new \Beech\Task\Domain\Model\ToDo();
-
-		$todo->setOwner($owner);
-		$todo->setStarter($owner);
-		$todo->setPriority($priority);
-
-		return $todo;
 	}
 
 	/**

@@ -16,11 +16,11 @@ action:
       -
         className: 'Beech\WorkFlow\OutputHandlers\EntityOutputHandler'
         properties:
-          entity: 'ENTITY:TODO'
+          entity: 'ENTITY:Beech\WorkFlow\Tests\Unit\Fixtures\Domain\Model\Entity'
       -
         className: 'Beech\WorkFlow\OutputHandlers\ActionExpiredOutputHandler'
         properties:
-          actionEntity: 'ENTITY:ACTION'
+          actionEntity: 'ENTITY:Beech\WorkFlow\Domain\Model\Action'
 
     preConditions:
       -

@@ -153,11 +153,10 @@ class ActionFactory {
 				}
 			break;
 			case 'ENTITY':
-					// todo add other entity types
-				if ($propertyParts[1] === 'TODO') {
-					$property = new \Beech\Task\Domain\Model\ToDo();
-				} elseif ($propertyParts[1] === 'ACTION') {
-					$property = new \Beech\WorkFlow\Domain\Model\Action();
+				if (class_exists($propertyParts[1])) {
+					$property = new $propertyParts[1]();
+				} else {
+					throw new \Beech\WorkFlow\Exception(sprintf('Unknown entity type "%s"', $propertyParts[1]));
 				}
 			break;
 		}
