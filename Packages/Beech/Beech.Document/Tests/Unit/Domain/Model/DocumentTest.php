@@ -1,5 +1,5 @@
 <?php
-namespace Beech\Document\Tests\Unit;
+namespace Beech\Document\Tests\Unit\Domain\Model;
 
 /*
  * This source file is proprietary property of Beech Applications B.V.

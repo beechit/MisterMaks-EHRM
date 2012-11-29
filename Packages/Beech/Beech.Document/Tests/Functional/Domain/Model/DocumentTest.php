@@ -1,5 +1,5 @@
 <?php
-namespace Beech\Document\Tests\Functional;
+namespace Beech\Document\Tests\Functional\Domain\Model;
 
 /*
  * This source file is proprietary property of Beech Applications B.V.
@@ -13,7 +13,7 @@ use Beech\Document\Domain\Model\Document;
 /**
  * Functional test for DocumentPersistence
  */
-class DocumentPersistenceTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
+class DocumentTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 
 	/**
 	 * @var boolean
@@ -21,7 +21,7 @@ class DocumentPersistenceTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 	static protected $testablePersistenceEnabled = TRUE;
 
 	/**
-	 * @var Beech\Document\Domain\Repository\DocumentRepository
+	 * @var \Beech\Document\Domain\Repository\DocumentRepository
 	 */
 	protected $documentRepository;
 
