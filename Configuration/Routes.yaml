@@ -1,28 +1,4 @@
 ##
-# Subroutes for Party package
-#
--
-  name: 'Beech Party'
-  uriPattern: '<BeechPartySubroutes>'
-  defaults:
-    '@format': 'html'
-  subRoutes:
-    BeechPartySubroutes:
-      package: 'Beech.Party'
-
-##
-# Subroutes for Minute package
-#
--
-  name: 'Beech Minute'
-  uriPattern: '<BeechMinuteSubroutes>'
-  defaults:
-    '@format': 'html'
-  subRoutes:
-    BeechMinuteSubroutes:
-      package: 'Beech.Minutes'
-
-##
 # EHRM.Common subroutes
 #
 -
@@ -33,18 +9,6 @@
   subRoutes:
     BeechEhrmSubroutes:
       package: 'Beech.Ehrm'
-
-##
-# EHRM.Document subroutes
-#
--
-  name: 'Beech Document'
-  uriPattern: '<BeechDocumentSubroutes>'
-  defaults:
-    '@format': 'html'
-  subRoutes:
-    BeechDocumentSubroutes:
-      package: 'Beech.Document'
 
 ##
 # Flow subroutes
