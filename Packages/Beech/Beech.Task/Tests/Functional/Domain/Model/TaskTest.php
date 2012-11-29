@@ -1,5 +1,5 @@
 <?php
-namespace Beech\Ehrm\Tests\Functional\Domain\Model;
+namespace Beech\Task\Tests\Functional\Domain\Model;
 
 /*
  * This source file is proprietary property of Beech Applications B.V.
