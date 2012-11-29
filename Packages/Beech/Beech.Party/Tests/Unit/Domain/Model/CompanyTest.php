@@ -4,7 +4,7 @@ namespace Beech\Party\Tests\Unit\Domain\Model;
 use \Beech\Party\Domain\Model\Company;
 use \Beech\Party\Domain\Model\Person;
 use \Beech\Party\Domain\Model\ElectronicAddress;
-use \Beech\Party\Domain\Model\PersonName;
+use \TYPO3\Party\Domain\Model\PersonName;
 
 /**
  * Testcase for company

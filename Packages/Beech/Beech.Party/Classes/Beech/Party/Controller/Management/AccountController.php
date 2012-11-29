@@ -74,7 +74,7 @@ class AccountController extends \Beech\Ehrm\Controller\AbstractController {
 	 */
 	public function createAction($accountIdentifier, $password, $firstName, $lastName, $roles) {
 		$person = new \Beech\Party\Domain\Model\Person();
-		$person->addPersonName(new \Beech\Party\Domain\Model\PersonName(NULL, $firstName, NULL, $lastName));
+		$person->addPersonName(new \TYPO3\Party\Domain\Model\PersonName(NULL, $firstName, NULL, $lastName));
 		$this->personRepository->add($person);
 
 		$authenticationProviderName = 'DefaultProvider';

@@ -7,7 +7,7 @@ namespace Beech\Party\Tests\Functional\Domain\Model;
  */
 use TYPO3\Flow\Annotations as Flow;
 use Beech\Party\Domain\Model\Person;
-use Beech\Party\Domain\Model\PersonName;
+use TYPO3\Party\Domain\Model\PersonName;
 
 /**
  * Persistence test for Person entity
