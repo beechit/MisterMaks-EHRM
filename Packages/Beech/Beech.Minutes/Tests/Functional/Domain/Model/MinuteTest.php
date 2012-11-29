@@ -1,5 +1,5 @@
 <?php
-namespace Beech\Minutes\Tests\Functional;
+namespace Beech\Minutes\Tests\Functional\Domain\Model;
 
 /*
  * This source file is proprietary property of Beech Applications B.V.
@@ -13,7 +13,7 @@ use TYPO3\Flow\Annotations as Flow,
 /**
  * Persistence test for Minute entity
  */
-class MinutePersistenceTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
+class MinuteTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 
 	/**
 	 * @var boolean
