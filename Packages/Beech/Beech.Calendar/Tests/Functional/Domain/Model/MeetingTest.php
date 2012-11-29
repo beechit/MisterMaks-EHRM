@@ -45,12 +45,12 @@ class MeetingTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 	 */
 	public function meetingCanBePersistedAndRetrieved() {
 		$personOne = new \Beech\Party\Domain\Model\Person();
-		$personOne->addPersonName(new \Beech\Party\Domain\Model\PersonName('', 'Bram', '', 'Verhaegh'));
+		$personOne->addPersonName(new \TYPO3\Party\Domain\Model\PersonName('', 'Bram', '', 'Verhaegh'));
 		$personOne->addEmail('joe@initiator.nl');
 		$this->personRepository->add($personOne);
 
 		$personTwo = new \Beech\Party\Domain\Model\Person();
-		$personTwo->addPersonName(new \Beech\Party\Domain\Model\PersonName('', 'Edward', '', 'Lenssen'));
+		$personTwo->addPersonName(new \TYPO3\Party\Domain\Model\PersonName('', 'Edward', '', 'Lenssen'));
 		$personTwo->addEmail('jack@subject.nl');
 		$this->personRepository->add($personTwo);
 
