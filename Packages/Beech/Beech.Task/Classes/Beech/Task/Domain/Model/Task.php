@@ -63,10 +63,19 @@ class Task extends \Radmiraal\CouchDB\Persistence\AbstractDocument {
 	protected $createdBy;
 
 	/**
-	 * Priority of this task 0-4
+	 * The person who closed the task
+	 * Property is nullable, because a task can be started by the system instead of a user
+	 *
+	 * @var \TYPO3\Party\Domain\Model\AbstractParty
+	 * @ODM\Field(type="string")
+	 */
+	protected $closedBy;
+
+	/**
+	 * Priority of this task 0-3
 	 *
 	 * @var integer
-	 * @Flow\Validate(type="NumberRange", options={ "minimum"=0, "maximum"=4 })
+	 * @Flow\Validate(type="NumberRange", options={ "minimum"=0, "maximum"=3 })
 	 * @ODM\Field(type="integer")
 	 * @ODM\Index
 	 */
@@ -96,11 +105,38 @@ class Task extends \Radmiraal\CouchDB\Persistence\AbstractDocument {
 	protected $closed = FALSE;
 
 	/**
+	 * @var boolean
+	 */
+	protected $closeableByAssignee = FALSE;
+
+	/**
 	 * Initialize object
 	 * @return void
 	 */
 	public function initializeObject() {
 		$this->setCreatedBy();
+	}
+
+	/**
+	 * @return \TYPO3\Party\Domain\Model\AbstractParty
+	 */
+	protected function getCurrentParty() {
+		if (isset($this->securityContext) && $this->securityContext->isInitialized()
+			&& $this->securityContext->getAccount()->getParty() instanceof \Beech\Party\Domain\Model\Person) {
+			return $this->securityContext->getAccount()->getParty();
+		}
+		return NULL;
+	}
+
+	/**
+	 * @return string
+	 */
+	protected function getCurrentPartyIdentifier() {
+		$currentParty = $this->getCurrentParty();
+		if ($currentParty !== NULL) {
+			return $this->persistenceManager->getIdentifierByObject($currentParty);
+		}
+		return NULL;
 	}
 
 	/**
@@ -154,13 +190,8 @@ class Task extends \Radmiraal\CouchDB\Persistence\AbstractDocument {
 	 */
 	public function setCreatedBy(\TYPO3\Party\Domain\Model\AbstractParty $creator = NULL) {
 		if ($creator === NULL ) {
-			if (isset($this->securityContext) && $this->securityContext->isInitialized()
-					&& $this->securityContext->getAccount()->getParty() instanceof \Beech\Party\Domain\Model\Person) {
-				$creator = $this->securityContext->getAccount()->getParty();
-			}
-		}
-
-		if ($creator !== NULL) {
+			$this->createdBy = $this->getCurrentPartyIdentifier();
+		} else {
 			$this->createdBy = $this->persistenceManager->getIdentifierByObject($creator, 'Beech\Party\Domain\Model\Person');
 		}
 	}
@@ -173,6 +204,28 @@ class Task extends \Radmiraal\CouchDB\Persistence\AbstractDocument {
 	public function getCreatedBy() {
 		if (isset($this->createdBy)) {
 			return $this->persistenceManager->getObjectByIdentifier($this->createdBy, 'Beech\Party\Domain\Model\Person');
+		}
+		return NULL;
+	}
+
+	/**
+	 * @param \TYPO3\Party\Domain\Model\AbstractParty $person
+	 * @return void
+	 */
+	public function setClosedBy(\TYPO3\Party\Domain\Model\AbstractParty $person = NULL) {
+		if ($person === NULL ) {
+			$this->closedBy = $this->getCurrentPartyIdentifier();
+		} else {
+			$this->closedBy = $this->persistenceManager->getIdentifierByObject($person, 'Beech\Party\Domain\Model\Person');
+		}
+	}
+
+	/**
+	 * @return \TYPO3\Party\Domain\Model\AbstractParty
+	 */
+	public function getClosedBy() {
+		if (isset($this->closedBy)) {
+			return $this->persistenceManager->getObjectByIdentifier($this->closedBy, 'Beech\Party\Domain\Model\Person');
 		}
 		return NULL;
 	}
@@ -224,7 +277,6 @@ class Task extends \Radmiraal\CouchDB\Persistence\AbstractDocument {
 	 */
 	public function setCloseDateTime(\DateTime $closeDateTime) {
 		$this->closeDateTime = $closeDateTime;
-		$this->closed = TRUE;
 	}
 
 	/**
@@ -244,12 +296,48 @@ class Task extends \Radmiraal\CouchDB\Persistence\AbstractDocument {
 	}
 
 	/**
+	 * @return boolean
+	 */
+	protected function canBeClosedByCurrentParty() {
+		if (!empty($this->createdBy) && $this->createdBy === $this->getCurrentPartyIdentifier()) {
+			return TRUE;
+		}
+
+		if ($this->closeableByAssignee === TRUE && $this->assignedTo === $this->getCurrentPartyIdentifier()) {
+			return TRUE;
+		}
+
+		return FALSE;
+	}
+
+	/**
 	 * Close the current task
 	 *
+	 * @throws \Beech\Task\Exception
 	 * @return void
 	 */
 	public function close() {
+		if (!$this->canBeClosedByCurrentParty()) {
+			throw new \Beech\Task\Exception('This task can not be closed by current party');
+		}
+
+		$this->closedBy = $this->getCurrentPartyIdentifier();
 		$this->setCloseDateTime(new \DateTime());
+		$this->closed = TRUE;
+	}
+
+	/**
+	 * @param boolean $closeableByAssignee
+	 */
+	public function setCloseableByAssignee($closeableByAssignee) {
+		$this->closeableByAssignee = $closeableByAssignee;
+	}
+
+	/**
+	 * @return boolean
+	 */
+	public function getCloseableByAssignee() {
+		return $this->closeableByAssignee;
 	}
 
 }

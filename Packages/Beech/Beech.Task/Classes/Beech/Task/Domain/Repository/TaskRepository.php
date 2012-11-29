@@ -36,4 +36,5 @@ class TaskRepository extends \Radmiraal\CouchDB\Persistence\AbstractRepository {
 	}
 
 }
+
 ?>

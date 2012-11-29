@@ -119,10 +119,15 @@ class TaskTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFunctionalTes
 
 		$this->personRepository->add($john);
 
+		$johnsAccount = new \TYPO3\Flow\Security\Account();
+		$johnsAccount->setParty($john);
+		$this->authenticateAccount($johnsAccount);
+
 		$this->persistenceManager->persistAll();
 
 		for ($i = 0; $i < 10; $i ++) {
 			$task = new \Beech\Task\Domain\Model\Task();
+			$task->setCloseableByAssignee(TRUE);
 			$task->setAssignedTo($john);
 			$task->setDescription('Task ' . $i);
 			if ($i > 4) {
@@ -137,6 +142,107 @@ class TaskTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFunctionalTes
 
 		$this->assertEquals(10, $this->taskRepository->countByAssignedTo($john));
 		$this->assertEquals(5, $this->taskRepository->countOpenTasksByPerson($john));
+	}
+
+	/**
+	 * @test
+	 */
+	public function testIfALinkCanBePersistedOnATaskDocument() {
+		$link = new \Beech\Ehrm\Domain\Model\Link();
+		$link->setControllerName('Test');
+
+		$task = new \Beech\Task\Domain\Model\Task();
+		$task->setDescription('Link Test');
+		$task->setLink($link);
+
+		$this->taskRepository->add($task);
+		$this->documentManager->flush();
+
+		$tasks = $this->taskRepository->findAll();
+		$lastPersistedTask = $tasks[count($tasks) - 1];
+
+		$this->assertEquals('Test', $lastPersistedTask->getLink()->getControllerName());
+	}
+
+	/**
+	 * @test
+	 * @expectedException \Beech\Task\Exception
+	 */
+	public function taskCanNotBeClosedByPartyThatNotCreatedTheTask() {
+		$john = new \Beech\Party\Domain\Model\Person();
+		$john->setName(new \Beech\Party\Domain\Model\PersonName(NULL, 'John', NULL, 'Doe'));
+		$jane = new \Beech\Party\Domain\Model\Person();
+		$jane->setName(new \Beech\Party\Domain\Model\PersonName(NULL, 'Jane', NULL, 'Doe'));
+
+		$janesAccount = new \TYPO3\Flow\Security\Account();
+		$janesAccount->setParty($jane);
+		$this->authenticateAccount($janesAccount);
+
+		$task = new \Beech\Task\Domain\Model\Task();
+		$task->setCreatedBy($john);
+
+		$task->close();
+	}
+
+	/**
+	 * @test
+	 */
+	public function taskCanBeClosedByPartyThatCreatedTheTask() {
+		$jane = new \Beech\Party\Domain\Model\Person();
+		$jane->setName(new \Beech\Party\Domain\Model\PersonName(NULL, 'Jane', NULL, 'Doe'));
+
+		$janesAccount = new \TYPO3\Flow\Security\Account();
+		$janesAccount->setParty($jane);
+		$this->authenticateAccount($janesAccount);
+
+		$task = new \Beech\Task\Domain\Model\Task();
+		$task->setCreatedBy($jane);
+
+		$task->close();
+
+		$this->assertTrue($task->isClosed());
+	}
+
+	/**
+	 * @test
+	 * @expectedException \Beech\Task\Exception
+	 */
+	public function taskCanNotBeClosedByAssigneeIfTaskIsNotCloseableByAssignee() {
+		$john = new \Beech\Party\Domain\Model\Person();
+		$john->setName(new \Beech\Party\Domain\Model\PersonName(NULL, 'John', NULL, 'Doe'));
+		$jane = new \Beech\Party\Domain\Model\Person();
+		$jane->setName(new \Beech\Party\Domain\Model\PersonName(NULL, 'Jane', NULL, 'Doe'));
+
+		$janesAccount = new \TYPO3\Flow\Security\Account();
+		$janesAccount->setParty($jane);
+		$this->authenticateAccount($janesAccount);
+
+		$task = new \Beech\Task\Domain\Model\Task();
+		$task->setCreatedBy($john);
+		$task->setCloseableByAssignee(FALSE);
+		$task->setAssignedTo($jane);
+
+		$task->close();
+	}
+
+	/**
+	 * @test
+	 */
+	public function taskCanBeClosedByAssigneeIfTaskIsCloseableByAssignee() {
+		$jane = new \Beech\Party\Domain\Model\Person();
+		$jane->setName(new \Beech\Party\Domain\Model\PersonName(NULL, 'Jane', NULL, 'Doe'));
+
+		$janesAccount = new \TYPO3\Flow\Security\Account();
+		$janesAccount->setParty($jane);
+		$this->authenticateAccount($janesAccount);
+
+		$task = new \Beech\Task\Domain\Model\Task();
+		$task->setCloseableByAssignee(TRUE);
+		$task->setAssignedTo($jane);
+
+		$task->close();
+
+		$this->assertTrue($task->isClosed());
 	}
 
 }
