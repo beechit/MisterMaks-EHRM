@@ -48,6 +48,7 @@ class SettingsHelperTest extends \TYPO3\Flow\Tests\UnitTestCase {
 		$this->uriBuilder = $this->getAccessibleMock('TYPO3\Flow\Mvc\Routing\UriBuilder');
 		$this->uriBuilder->expects($this->any())->method('uriFor')->will($this->returnValue('beech.ehrm/standard/index'));
 		$this->uriBuilder->expects($this->any())->method('reset')->will($this->returnValue($this->uriBuilder));
+		$this->uriBuilder->expects($this->any())->method('setFormat')->will($this->returnValue($this->uriBuilder));
 		$this->uriBuilder->expects($this->any())->method('setCreateAbsoluteUri')->will($this->returnValue($this->uriBuilder));
 
 		$this->settingsHelper->setUriBuilder($this->uriBuilder);
