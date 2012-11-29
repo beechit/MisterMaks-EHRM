@@ -44,7 +44,7 @@ class TaskTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFunctionalTes
 		$this->inject($this->taskRepository, 'persistenceManager', $this->persistenceManager);
 
 		$person = new \Beech\Party\Domain\Model\Person();
-		$person->setName(new \Beech\Party\Domain\Model\PersonName(NULL, 'John', NULL, 'Doe'));
+		$person->setName(new \TYPO3\Party\Domain\Model\PersonName(NULL, 'John', NULL, 'Doe'));
 
 		$this->personRepository->add($person);
 		$this->persistenceManager->persistAll();
@@ -79,9 +79,9 @@ class TaskTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFunctionalTes
 	 */
 	public function countByAssignedToReturnsTheCorrectNumberOfTasks() {
 		$john = new \Beech\Party\Domain\Model\Person();
-		$john->setName(new \Beech\Party\Domain\Model\PersonName(NULL, 'John', NULL, 'Doe'));
+		$john->setName(new \TYPO3\Party\Domain\Model\PersonName(NULL, 'John', NULL, 'Doe'));
 		$jane = new \Beech\Party\Domain\Model\Person();
-		$jane->setName(new \Beech\Party\Domain\Model\PersonName(NULL, 'Jane', NULL, 'Doe'));
+		$jane->setName(new \TYPO3\Party\Domain\Model\PersonName(NULL, 'Jane', NULL, 'Doe'));
 
 		$this->personRepository->add($john);
 		$this->personRepository->add($jane);
@@ -115,7 +115,7 @@ class TaskTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFunctionalTes
 	 */
 	public function countOpenTasksByPersonReturnsTheCorrectNumberOfTasks() {
 		$john = new \Beech\Party\Domain\Model\Person();
-		$john->setName(new \Beech\Party\Domain\Model\PersonName(NULL, 'John', NULL, 'Doe'));
+		$john->setName(new \TYPO3\Party\Domain\Model\PersonName(NULL, 'John', NULL, 'Doe'));
 
 		$this->personRepository->add($john);
 
@@ -170,9 +170,9 @@ class TaskTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFunctionalTes
 	 */
 	public function taskCanNotBeClosedByPartyThatNotCreatedTheTask() {
 		$john = new \Beech\Party\Domain\Model\Person();
-		$john->setName(new \Beech\Party\Domain\Model\PersonName(NULL, 'John', NULL, 'Doe'));
+		$john->setName(new \TYPO3\Party\Domain\Model\PersonName(NULL, 'John', NULL, 'Doe'));
 		$jane = new \Beech\Party\Domain\Model\Person();
-		$jane->setName(new \Beech\Party\Domain\Model\PersonName(NULL, 'Jane', NULL, 'Doe'));
+		$jane->setName(new \TYPO3\Party\Domain\Model\PersonName(NULL, 'Jane', NULL, 'Doe'));
 
 		$janesAccount = new \TYPO3\Flow\Security\Account();
 		$janesAccount->setParty($jane);
@@ -189,7 +189,7 @@ class TaskTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFunctionalTes
 	 */
 	public function taskCanBeClosedByPartyThatCreatedTheTask() {
 		$jane = new \Beech\Party\Domain\Model\Person();
-		$jane->setName(new \Beech\Party\Domain\Model\PersonName(NULL, 'Jane', NULL, 'Doe'));
+		$jane->setName(new \TYPO3\Party\Domain\Model\PersonName(NULL, 'Jane', NULL, 'Doe'));
 
 		$janesAccount = new \TYPO3\Flow\Security\Account();
 		$janesAccount->setParty($jane);
@@ -209,9 +209,9 @@ class TaskTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFunctionalTes
 	 */
 	public function taskCanNotBeClosedByAssigneeIfTaskIsNotCloseableByAssignee() {
 		$john = new \Beech\Party\Domain\Model\Person();
-		$john->setName(new \Beech\Party\Domain\Model\PersonName(NULL, 'John', NULL, 'Doe'));
+		$john->setName(new \TYPO3\Party\Domain\Model\PersonName(NULL, 'John', NULL, 'Doe'));
 		$jane = new \Beech\Party\Domain\Model\Person();
-		$jane->setName(new \Beech\Party\Domain\Model\PersonName(NULL, 'Jane', NULL, 'Doe'));
+		$jane->setName(new \TYPO3\Party\Domain\Model\PersonName(NULL, 'Jane', NULL, 'Doe'));
 
 		$janesAccount = new \TYPO3\Flow\Security\Account();
 		$janesAccount->setParty($jane);
@@ -230,7 +230,7 @@ class TaskTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFunctionalTes
 	 */
 	public function taskCanBeClosedByAssigneeIfTaskIsCloseableByAssignee() {
 		$jane = new \Beech\Party\Domain\Model\Person();
-		$jane->setName(new \Beech\Party\Domain\Model\PersonName(NULL, 'Jane', NULL, 'Doe'));
+		$jane->setName(new \TYPO3\Party\Domain\Model\PersonName(NULL, 'Jane', NULL, 'Doe'));
 
 		$janesAccount = new \TYPO3\Flow\Security\Account();
 		$janesAccount->setParty($jane);
