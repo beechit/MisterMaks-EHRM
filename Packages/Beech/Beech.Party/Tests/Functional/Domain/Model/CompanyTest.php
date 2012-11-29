@@ -1,5 +1,5 @@
 <?php
-namespace Beech\Party\Tests\Functional;
+namespace Beech\Party\Tests\Functional\Domain\Model;
 
 /*
  * This source file is proprietary property of Beech Applications B.V.
@@ -14,7 +14,7 @@ use Beech\Party\Domain\Model\Address;
 /**
  * Persistence test for Company entity
  */
-class CompanyPersistenceTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
+class CompanyTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 
 	/**
 	 * @var boolean
@@ -22,7 +22,7 @@ class CompanyPersistenceTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 	static protected $testablePersistenceEnabled = TRUE;
 
 	/**
-	 * @var Beech\Party\Domain\Repository\CompanyRepository
+	 * @var \Beech\Party\Domain\Repository\CompanyRepository
 	 */
 	protected $companyRepository;
 
