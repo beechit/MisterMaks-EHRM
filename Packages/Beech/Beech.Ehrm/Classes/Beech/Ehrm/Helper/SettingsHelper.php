@@ -37,10 +37,10 @@ class SettingsHelper {
 	protected $bootstrap;
 
 	/**
-	 * @var \Beech\Task\Domain\Repository\ToDoRepository
+	 * @var \Beech\Task\Domain\Repository\TaskRepository
 	 * @Flow\Inject
 	 */
-	protected $toDoRepository;
+	protected $taskRepository;
 
 	/**
 	 * @var \TYPO3\Flow\I18n\Translator
@@ -53,6 +53,12 @@ class SettingsHelper {
 	 * @Flow\Inject
 	 */
 	protected $applicationLogger;
+
+	/**
+	 * @var \TYPO3\Flow\Security\Context
+	 * @Flow\Inject
+	 */
+	protected $securityContext;
 
 	/**
 	 * @param array $settings
@@ -106,11 +112,21 @@ class SettingsHelper {
 	 * @return void
 	 */
 	protected function appendNumberOfOpenToDos() {
+		if (!$this->securityContext->isInitialized()) {
+			return;
+		}
+
+			// TODO: optimize (would be cool if it was some kind of setting in Settings.yaml, like 'append: ...'
 		foreach ($this->settings['menu'] as $subIdentifier => $configuration) {
 			if (isset($configuration['menu'])) {
 				foreach ($this->settings['menu'][$subIdentifier]['menu'] as $key => $item) {
-					if ($key === 'todo') {
-						$this->settings['menu'][$subIdentifier]['menu']['todo']['label'] .= ' <span class="badge badge-info">' . $this->toDoRepository->countByArchivedDateTime(NULL) . '</span>';
+					if ($key === 'task') {
+						$this->settings['menu'][$subIdentifier]['menu']['task']['label']
+							.= sprintf(' <span class="badge badge-info">%s</span>',
+								$this->taskRepository->countOpenTasksByPerson(
+									$this->securityContext->getAccount()->getParty()
+								)
+							);
 					}
 				}
 			}

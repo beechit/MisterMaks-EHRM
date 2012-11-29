@@ -43,12 +43,6 @@ class Notification {
 	protected $sticky;
 
 	/**
-	 * @var \Beech\Task\Domain\Model\ToDo
-	 * @ORM\ManyToOne(inversedBy="notifications")
-	 */
-	protected $toDo;
-
-	/**
 	 * Get the Notification's label
 	 *
 	 * @return string The Notification's label
@@ -122,25 +116,6 @@ class Notification {
 	 */
 	public function setSticky($sticky) {
 		$this->sticky = $sticky;
-	}
-
-	/**
-	 * Sets the todo
-	 *
-	 * @param \Beech\Task\Domain\Model\ToDo $toDo
-	 * @return void
-	 */
-	public function setToDo(\Beech\Task\Domain\Model\ToDo $toDo) {
-		$this->toDo = $toDo;
-	}
-
-	/**
-	 * Returns the todo
-	 *
-	 * @return \Beech\Task\Domain\Model\ToDo
-	 */
-	public function getToDo() {
-		return $this->toDo;
 	}
 
 }
