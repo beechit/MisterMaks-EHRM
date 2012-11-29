@@ -1,5 +1,5 @@
 <?php
-namespace Beech\CLA\Tests\Functional;
+namespace Beech\CLA\Tests\Functional\Domain\Model;
 
 /*
  * This source file is proprietary property of Beech Applications B.V.
