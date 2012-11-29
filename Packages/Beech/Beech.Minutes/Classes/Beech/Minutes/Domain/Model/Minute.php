@@ -7,19 +7,25 @@ namespace Beech\Minutes\Domain\Model;
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
-use TYPO3\Flow\Annotations as Flow;
-use Doctrine\ORM\Mapping as ORM;
+use TYPO3\Flow\Annotations as Flow,
+	Doctrine\ODM\CouchDB\Mapping\Annotations as ODM;
 
 /**
  * A Minute
  *
- * @Flow\Entity
- * @ORM\HasLifecycleCallbacks
+ * @ODM\Document(indexed=true)
  */
 class Minute {
 
 	const TYPE_APPRAISAL = 'Appraisal';
 	const TYPE_MEETING = 'Meeting';
+
+	/**
+	 * @var \TYPO3\Flow\Persistence\PersistenceManagerInterface
+	 * @Flow\Inject
+	 * @Flow\Transient
+	 */
+	protected $persistenceManager;
 
 	/**
 	 * @var \TYPO3\Flow\Security\Context
@@ -32,8 +38,9 @@ class Minute {
 	 * The person who is subject of this Minute
 	 *
 	 * @var \Beech\Party\Domain\Model\Person
-	 * @ORM\ManyToOne
 	 * @Flow\Validate(type="NotEmpty")
+	 * @ODM\Field(type="string")
+	 * @ODM\Index
 	 */
 	protected $personSubject;
 
@@ -41,7 +48,8 @@ class Minute {
 	 * The person initiating this minute
 	 *
 	 * @var \Beech\Party\Domain\Model\Person
-	 * @ORM\ManyToOne
+	 * @ODM\Field(type="string")
+	 * @ODM\Index
 	 */
 	protected $personInitiator;
 
@@ -50,6 +58,8 @@ class Minute {
 	 *
 	 * @var string
 	 * @Flow\Validate(type="NotEmpty", validationGroups={"Controller"})
+	 * @ODM\Field(type="string")
+	 * @ODM\Index
 	 */
 	protected $title;
 
@@ -57,7 +67,8 @@ class Minute {
 	 * The minute's type
 	 *
 	 * @var string
-	 * @ORM\Column(nullable=TRUE)
+	 * @ODM\Field(type="string")
+	 * @ODM\Index
 	 */
 	protected $minuteType;
 
@@ -65,12 +76,15 @@ class Minute {
 	 * The minute's content
 	 *
 	 * @var string
-	 * @ORM\Column(nullable=TRUE)
+	 * @ODM\Field(type="string")
+	 * @ODM\Index
 	 */
 	protected $content;
 
 	/**
 	 * @var \DateTime
+	 * @ODM\Field(type="datetime")
+	 * @ODM\Index
 	 */
 	protected $creationDateTime;
 
@@ -81,7 +95,7 @@ class Minute {
 	 * @return void
 	 */
 	public function setPersonSubject(\Beech\Party\Domain\Model\Person $personSubject) {
-		$this->personSubject = $personSubject;
+		$this->personSubject = $this->persistenceManager->getIdentifierByObject($personSubject, '\Beech\Party\Domain\Model\Person');
 	}
 
 	/**
@@ -90,7 +104,10 @@ class Minute {
 	 * @return \Beech\Party\Domain\Model\Person
 	 */
 	public function getPersonSubject() {
-		return $this->personSubject;
+		if (isset($this->personSubject)) {
+			return $this->persistenceManager->getObjectByIdentifier($this->personSubject, '\Beech\Party\Domain\Model\Person');
+		}
+		return NULL;
 	}
 
 	/**
@@ -99,7 +116,6 @@ class Minute {
 	 *
 	 * @param \Beech\Party\Domain\Model\Person $personInitiator
 	 * @return void
-	 * @ORM\PrePersist
 	 */
 	public function setPersonInitiator(\Beech\Party\Domain\Model\Person $personInitiator = NULL) {
 		if ($personInitiator === NULL ) {
@@ -108,7 +124,7 @@ class Minute {
 					$personInitiator = $this->securityContext->getAccount()->getParty();
 			}
 		}
-		$this->personInitiator = $personInitiator;
+		$this->personInitiator = $this->persistenceManager->getIdentifierByObject($personInitiator, '\Beech\Party\Domain\Model\Person');
 	}
 
 	/**
@@ -117,7 +133,10 @@ class Minute {
 	 * @return \Beech\Party\Domain\Model\Person
 	 */
 	public function getPersonInitiator() {
-		return $this->personInitiator;
+		if (isset($this->personInitiator)) {
+			return $this->persistenceManager->getObjectByIdentifier($this->personInitiator, '\Beech\Party\Domain\Model\Person');
+		}
+		return NULL;
 	}
 
 	/**
@@ -161,7 +180,6 @@ class Minute {
 	/**
 	 * @param \DateTime $creationDateTime
 	 * @return void
-	 * @ORM\PrePersist
 	 */
 	public function setCreationDateTime(\DateTime $creationDateTime = NULL) {
 		if ($creationDateTime === NULL) {
