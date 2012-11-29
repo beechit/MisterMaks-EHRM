@@ -1,5 +1,5 @@
 <?php
-namespace Beech\Calendar\Tests\Functional;
+namespace Beech\Calendar\Tests\Functional\Domain\Model;
 
 /*
  * This source file is proprietary property of Beech Applications B.V.
@@ -13,7 +13,7 @@ use Beech\Calendar\Domain\Model\Meeting as Meeting;
 /**
  * Persistence test for Meeting entity
  */
-class MeetingPersistenceTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
+class MeetingTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 
 	/**
 	 * @var boolean
