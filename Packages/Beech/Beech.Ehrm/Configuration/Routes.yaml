@@ -8,52 +8,6 @@
     '@format': 'html'
 
 -
-  name: 'Administration'
-  uriPattern: 'administration(/{@action})'
-  defaults:
-    '@package': 'Beech.Ehrm'
-    '@controller': 'Management\Administration'
-    '@action': 'index'
-    '@format': 'html'
-  appendExceedingArguments: TRUE
-
--
-  name: 'Wizard'
-  uriPattern: 'wizard/show/{formPersistenceIdentifier}'
-  toLowerCase: false
-  defaults:
-    '@package': 'Beech.Ehrm'
-    '@controller': 'Wizard'
-    '@action': 'show'
-    presetName: 'wizard'
-
--
-  name: 'Wizard'
-  uriPattern: 'wizard/{entity}/{id}'
-  toLowerCase: false
-  defaults:
-    '@package': 'Beech.Ehrm'
-    '@controller': 'Wizard'
-    '@action': 'index'
-    presetName: 'wizard'
-
--
-  name: 'Setup user settings'
-  uriPattern: 'setup/user(/{@action})'
-  defaults:
-    '@package': 'Beech.Ehrm'
-    '@controller': 'Setup\UserPreferences'
-    '@action': 'index'
-
--
-  name: 'Setup application settings'
-  uriPattern: 'setup/application(/{@action})'
-  defaults:
-    '@package': 'Beech.Ehrm'
-    '@controller': 'Setup\Application'
-    '@action': 'index'
-
--
   name: 'Default'
   uriPattern: ''
   defaults:
@@ -61,6 +15,7 @@
     '@controller': 'Standard'
     '@action': 'index'
     '@format': 'html'
+
 -
   name: 'Notification REST service'
   uriPattern: 'rest/notification'
