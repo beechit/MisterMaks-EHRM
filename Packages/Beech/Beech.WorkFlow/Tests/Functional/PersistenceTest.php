@@ -64,7 +64,7 @@ class PersistenceTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFuncti
 		parent::setUp();
 
 		$person = new \Beech\Party\Domain\Model\Person();
-		$person->setName(new \Beech\Party\Domain\Model\PersonName(NULL, 'John', NULL, 'Doe'));
+		$person->setName(new \TYPO3\Party\Domain\Model\PersonName(NULL, 'John', NULL, 'Doe'));
 
 		$account = new \TYPO3\Flow\Security\Account();
 		$account->setParty($person);
