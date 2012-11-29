@@ -8,8 +8,6 @@ namespace Beech\WorkFlow\Tests\Unit\Validators\Property;
  */
 
 use TYPO3\Flow\Annotations as Flow;
-use Beech\Party\Domain\Model\Company as Company;
-use Beech\Party\Domain\Model\Company\TaxData as TaxData;
 
 /**
  * Unittests for the EmptyValidator
@@ -21,16 +19,16 @@ class EmptyValidatorTest extends \TYPO3\Flow\Tests\UnitTestCase {
 	 */
 	public function dataProvider() {
 		return array(
-			array('name', $this->createCompany('Foo', 1), FALSE),
-			array('taxData', $this->createCompany('Foo', 1, TRUE), FALSE),
-			array('taxData', $this->createCompany('Foo', 1, FALSE), TRUE),
-			array('name', $this->createCompany(array('1', '2'), 1), FALSE),
-			array('name', $this->createCompany(array(), 1), TRUE),
-			array('name', $this->createCompany('', 1), TRUE),
-			array('name', $this->createCompany(' ', 1), TRUE),
-			array('name', $this->createCompany(NULL, 1), TRUE),
+			array('name', $this->createCompany('Foo'), FALSE),
+			array('entity', $this->createCompany('Foo', TRUE), FALSE),
+			array('entity', $this->createCompany('Foo', FALSE), TRUE),
+			array('name', $this->createCompany(array('1', '2')), FALSE),
+			array('name', $this->createCompany(array()), TRUE),
+			array('name', $this->createCompany(''), TRUE),
+			array('name', $this->createCompany(' '), TRUE),
+			array('name', $this->createCompany(NULL), TRUE),
 			array('name', 'notAClassInstance', TRUE),
-			array('noneExistingProperty', $this->createCompany('Foo', 1), TRUE),
+			array('noneExistingProperty', $this->createCompany('Foo'), TRUE),
 		);
 	}
 
@@ -48,24 +46,22 @@ class EmptyValidatorTest extends \TYPO3\Flow\Tests\UnitTestCase {
 
 	/**
 	 * @param string $name
-	 * @param integer $companyNumber
-	 * @param boolean $addTaxData
-	 * @return \Beech\Party\Domain\Model\Company
+	 * @param boolean $addEntity
+	 * @return \Beech\WorkFlow\Tests\Unit\Fixtures\Domain\Model\Company
 	 */
-	protected function createCompany($name, $companyNumber, $addTaxData = FALSE) {
-		$company = new Company();
+	protected function createCompany($name, $addEntity = FALSE) {
+		$company = new \Beech\WorkFlow\Tests\Unit\Fixtures\Domain\Model\Company();
 		$company->setName($name);
-		$company->setCompanyNumber($companyNumber);
 
-		if ($addTaxData) {
-			$taxData = new TaxData();
-			$taxData->setVatNumber('123456');
-			$taxData->setWageTaxNumber('789');
-			$company->setTaxData($taxData);
+		if ($addEntity) {
+			$entity = new \Beech\WorkFlow\Tests\Unit\Fixtures\Domain\Model\Entity();
+			$entity->setTitle('Foo');
+			$company->setEntity($entity);
 		}
 
 		return $company;
 	}
+
 }
 
 ?>

@@ -8,9 +8,7 @@ namespace Beech\WorkFlow\Tests\Functional;
  */
 
 use TYPO3\Flow\Annotations as Flow,
-	Beech\WorkFlow\Domain\Model\Action,
-	Beech\Party\Domain\Model\Company,
-	Beech\Task\Domain\Model\Task;
+	Beech\WorkFlow\Domain\Model\Action;
 
 /**
  * Test the actual persistence of actions
@@ -33,14 +31,14 @@ class PersistenceTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFuncti
 	protected $actionRepository;
 
 	/**
-	 * @var \Beech\Party\Domain\Repository\CompanyRepository
-	 */
-	protected $companyRepository;
-
-	/**
 	 * @var \Beech\WorkFlow\Tests\Functional\Fixtures\Domain\Repository\EntityRepository
 	 */
 	protected $entityRepository;
+
+	/**
+	 * @var \Beech\WorkFlow\Tests\Functional\Fixtures\Domain\Repository\CompanyRepository
+	 */
+	protected $companyRepository;
 
 	/**
 	 * @var \Beech\Party\Domain\Repository\PersonRepository
@@ -74,8 +72,8 @@ class PersistenceTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFuncti
 		$this->actionRepository = $this->objectManager->get('Beech\WorkFlow\Domain\Repository\ActionRepository');
 		$this->actionRepository->injectDocumentManagerFactory($this->documentManagerFactory);
 
-		$this->companyRepository = $this->objectManager->get('Beech\Party\Domain\Repository\CompanyRepository');
 		$this->entityRepository = $this->objectManager->get('Beech\WorkFlow\Tests\Functional\Fixtures\Domain\Repository\EntityRepository');
+		$this->companyRepository = $this->objectManager->get('Beech\WorkFlow\Tests\Functional\Fixtures\Domain\Repository\CompanyRepository');
 		$this->personRepository = $this->objectManager->get('Beech\Party\Domain\Repository\PersonRepository');
 		$this->accountRepository = $this->objectManager->get('TYPO3\Flow\Security\AccountRepository');
 		$this->accountFactory = $this->objectManager->get('TYPO3\Flow\Security\AccountFactory');
@@ -113,25 +111,26 @@ class PersistenceTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFuncti
 	 * @test
 	 */
 	public function aTargetEntityCanBePersistedAndRetrieved() {
-		$this->assertEquals(0, $this->companyRepository->countAll());
+		$this->assertEquals(0, $this->entityRepository->countAll());
 		$this->assertEquals(0, $this->actionRepository->countAll());
 
-		$company = $this->createCompany('Foo', 1, 1, 'type', 'description', 'bar');
-		$this->companyRepository->add($company);
+		$entity = new \Beech\WorkFlow\Tests\Functional\Fixtures\Domain\Model\Entity();
+		$entity->setTitle('foo');
+		$this->entityRepository->add($entity);
 
 		$this->persistenceManager->persistAll();
-		$this->assertEquals(1, $this->companyRepository->countAll());
+		$this->assertEquals(1, $this->entityRepository->countAll());
 
 		$action = new Action();
-		$action->setTarget($company);
+		$action->setTarget($entity);
 		$this->actionRepository->add($action);
 
 		$this->documentManager->flush();
 		$this->assertEquals(1, $this->actionRepository->countAll());
 
 		$persistedActions = $this->actionRepository->findAll();
-		$this->assertEquals($persistedActions[0]->getTargetClassName(), 'Beech\Party\Domain\Model\Company');
-		$this->assertEquals($persistedActions[0]->getTargetIdentifier(), $this->persistenceManager->getIdentifierByObject($company));
+		$this->assertEquals($persistedActions[0]->getTargetClassName(), 'Beech\WorkFlow\Tests\Functional\Fixtures\Domain\Model\Entity');
+		$this->assertEquals($persistedActions[0]->getTargetIdentifier(), $this->persistenceManager->getIdentifierByObject($entity));
 	}
 
 	/**
@@ -176,25 +175,25 @@ class PersistenceTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFuncti
 	 */
 	public function anEntityOutputHandlerCanPersistDifferentTypesOfEntities() {
 		$outputHandler = new \Beech\WorkFlow\OutputHandlers\EntityOutputHandler();
+
 		$entityOutput = new \Beech\WorkFlow\Tests\Functional\Fixtures\Domain\Model\Entity();
 		$entityOutput->setTitle('foo');
 		$outputHandler->setEntity($entityOutput);
-		$outputHandler->invoke();
 
 		$this->assertEquals(0, $this->entityRepository->countAll());
-
+		$outputHandler->invoke();
 		$this->persistenceManager->persistAll();
-
 		$this->assertEquals(1, $this->entityRepository->countAll());
 
+		$company = new \Beech\WorkFlow\Tests\Functional\Fixtures\Domain\Model\Company();
+		$company->setTitle('foo');
+
 		$outputHandler = new \Beech\WorkFlow\OutputHandlers\EntityOutputHandler();
-		$outputHandler->setEntity($this->createCompany('Foo', 1, 1, 'type', 'description', 'bar'));
-		$outputHandler->invoke();
+		$outputHandler->setEntity($company);
 
 		$this->assertEquals(0, $this->companyRepository->countAll());
-
+		$outputHandler->invoke();
 		$this->persistenceManager->persistAll();
-
 		$this->assertEquals(1, $this->companyRepository->countAll());
 	}
 
@@ -241,12 +240,13 @@ class PersistenceTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFuncti
 	 * @test
 	 */
 	public function theActionOutputHandlerCanAddANewAction() {
-		$company = $this->createCompany('Foo', 1, 1, 'type', 'description', 'bar');
+		$entity = new \Beech\WorkFlow\Tests\Functional\Fixtures\Domain\Model\Entity();
+		$entity->setTitle('foo');
 
 		$outputHandler = new \Beech\WorkFlow\OutputHandlers\ActionOutputHandler();
 		$outputHandler->setWorkflowName('ActionOutputHandlerTest');
 		$outputHandler->setResourcePath(__DIR__ . '/Fixtures/');
-		$outputHandler->setTargetEntity($company);
+		$outputHandler->setTargetEntity($entity);
 
 		$action = new Action();
 		$action->addOutputHandler($outputHandler);
@@ -270,15 +270,16 @@ class PersistenceTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFuncti
 	 * @test
 	 */
 	public function anActionWithMultiplePreconditionsAndMultipleValidatorsAndMultipleOutputhandlersCanBePersistedAndDispatched() {
-			// Add company we can test the validator on
-		$company = $this->createCompany('Foo', 1, 1, 'type', 'description', 'bar');
-		$this->companyRepository->add($company);
+		$entity = new \Beech\WorkFlow\Tests\Functional\Fixtures\Domain\Model\Entity();
+		$entity->setTitle('foo');
+		$entity->setLabel('bar');
+
+		$this->entityRepository->add($entity);
 		$this->persistenceManager->persistAll();
-		$this->assertEquals(1, $this->companyRepository->countAll());
 
-		$persistedCompany = $this->companyRepository->findAll()->getFirst();
+		$this->assertEquals(1, $this->entityRepository->countAll());
+		$persistedEntity = $this->entityRepository->findAll()->getFirst();
 
-		$person = $this->createPerson();
 		$action = new Action();
 
 			// Add 2 preconditions which will be met
@@ -294,26 +295,26 @@ class PersistenceTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFuncti
 
 			// Add 2 validators which will pass
 		$validator = new \Beech\WorkFlow\Validators\Property\NotEmptyValidator();
-		$validator->setPropertyName('name');
-		$validator->setTargetEntity($persistedCompany);
+		$validator->setPropertyName('title');
+		$validator->setTargetEntity($persistedEntity);
 		$action->addValidator($validator);
 
 		$validator = new \Beech\WorkFlow\Validators\Property\NotEmptyValidator();
-		$validator->setPropertyName('description');
-		$validator->setTargetEntity($persistedCompany);
+		$validator->setPropertyName('label');
+		$validator->setTargetEntity($persistedEntity);
 		$action->addValidator($validator);
 
 			// Add 2 Task outputhandlers
 		$outputHandler = new \Beech\WorkFlow\OutputHandlers\EntityOutputHandler();
-		$entity = new \Beech\WorkFlow\Tests\Functional\Fixtures\Domain\Model\Entity();
-		$entity->setTitle('bar');
-		$outputHandler->setEntity($entity);
+		$company = new \Beech\WorkFlow\Tests\Functional\Fixtures\Domain\Model\Company();
+		$company->setTitle('bar');
+		$outputHandler->setEntity($company);
 		$action->addOutputHandler($outputHandler);
 
 		$outputHandler = new \Beech\WorkFlow\OutputHandlers\EntityOutputHandler();
-		$entity = new \Beech\WorkFlow\Tests\Functional\Fixtures\Domain\Model\Entity();
-		$entity->setTitle('foo');
-		$outputHandler->setEntity($entity);
+		$company = new \Beech\WorkFlow\Tests\Functional\Fixtures\Domain\Model\Company();
+		$company->setTitle('foo');
+		$outputHandler->setEntity($company);
 		$action->addOutputHandler($outputHandler);
 
 		$this->actionRepository->add($action);
@@ -323,15 +324,14 @@ class PersistenceTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFuncti
 		$persistedActions = $this->actionRepository->findAll();
 		$this->assertEquals($action, $persistedActions[0]);
 
-			// Make sure no todo was added already
-		$this->assertEquals(0, $this->entityRepository->countAll());
+			// Make sure no company was added already
+		$this->assertEquals(0, $this->companyRepository->countAll());
 
 		$persistedActions[0]->dispatch();
-
 		$this->persistenceManager->persistAll();
 
-			// Test if a todo entity was added
-		$this->assertEquals(2, $this->entityRepository->countAll());
+			// Test if a company entity was added
+		$this->assertEquals(2, $this->companyRepository->countAll());
 
 			// Check the status of the action
 		$persistedActions = $this->actionRepository->findAll();
@@ -359,27 +359,6 @@ class PersistenceTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFuncti
 
 		$this->assertInstanceOf('Beech\WorkFlow\OutputHandlers\EntityOutputHandler', $outputHandlersOnPersistedAction[0]);
 		$this->assertInstanceOf('Beech\WorkFlow\OutputHandlers\ActionExpiredOutputHandler', $outputHandlersOnPersistedAction[1]);
-	}
-
-	/**
-	 * @param string $name
-	 * @param string $companyNumber
-	 * @param string $chamberOfCommerceNumber
-	 * @param string $type
-	 * @param string $description
-	 * @param string $legalForm
-	 * @return \Beech\Party\Domain\Model\Company
-	 */
-	protected function createCompany($name, $companyNumber, $chamberOfCommerceNumber, $type, $description, $legalForm) {
-		$company = new Company();
-		$company->setName($name);
-		$company->setCompanyNumber($companyNumber);
-		$company->setChamberOfCommerceNumber($chamberOfCommerceNumber);
-		$company->setCompanyType($type);
-		$company->setDescription($description);
-		$company->setLegalForm($legalForm);
-
-		return $company;
 	}
 
 	/**

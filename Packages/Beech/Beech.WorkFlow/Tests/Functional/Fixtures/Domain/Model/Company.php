@@ -13,18 +13,12 @@ use TYPO3\Flow\Annotations as Flow,
 /**
  * @Flow\Entity
  */
-class Entity {
+class Company {
 
 	/**
 	 * @var string
 	 */
 	protected $title;
-
-	/**
-	 * @var string
-	 * @ORM\Column(nullable=true)
-	 */
-	protected $label;
 
 	/**
 	 * @param string $title
@@ -38,20 +32,6 @@ class Entity {
 	 */
 	public function getTitle() {
 		return $this->title;
-	}
-
-	/**
-	 * @param string $label
-	 */
-	public function setLabel($label) {
-		$this->label = $label;
-	}
-
-	/**
-	 * @return string
-	 */
-	public function getLabel() {
-		return $this->label;
 	}
 
 }

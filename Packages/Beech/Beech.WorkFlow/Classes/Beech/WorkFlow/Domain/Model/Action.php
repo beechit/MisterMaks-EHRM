@@ -97,7 +97,7 @@ class Action extends \Radmiraal\CouchDB\Persistence\AbstractDocument implements 
 	 */
 	public function __construct() {
 		$this->setCreationDateTime();
-		$this->status = self::STATUS_NEW;
+		$this->setStatus(self::STATUS_NEW);
 		$this->validators = new \Doctrine\Common\Collections\ArrayCollection();
 		$this->preConditions = new \Doctrine\Common\Collections\ArrayCollection();
 		$this->outputHandlers = new \Doctrine\Common\Collections\ArrayCollection();
@@ -136,14 +136,14 @@ class Action extends \Radmiraal\CouchDB\Persistence\AbstractDocument implements 
 	 * @return void
 	 */
 	protected function start() {
-		if ($this->status === self::STATUS_NEW) {
+		if ($this->getStatus() === self::STATUS_NEW) {
 			foreach ($this->preConditions as $preCondition) {
 				if (!$preCondition->isMet()) {
-					return FALSE;
+					return;
 				}
 			}
 
-			$this->status = self::STATUS_STARTED;
+			$this->setStatus(self::STATUS_STARTED);
 		}
 
 		// todo: throw exception(?)
@@ -154,14 +154,14 @@ class Action extends \Radmiraal\CouchDB\Persistence\AbstractDocument implements 
 	 * @return void
 	 */
 	protected function finish() {
-		if ($this->status === self::STATUS_STARTED) {
+		if ($this->getStatus() === self::STATUS_STARTED) {
 			foreach ($this->validators as $validator) {
 				if (!$validator->isValid()) {
-					return FALSE;
+					return;
 				}
 			}
 
-			$this->status = self::STATUS_FINISHED;
+			$this->setStatus(self::STATUS_FINISHED);
 		}
 
 		// todo: throw exception(?)
@@ -172,7 +172,7 @@ class Action extends \Radmiraal\CouchDB\Persistence\AbstractDocument implements 
 	 * @return void
 	 */
 	protected function runOutputHandlers() {
-		if ($this->status === self::STATUS_FINISHED) {
+		if ($this->getStatus() === self::STATUS_FINISHED) {
 			foreach ($this->outputHandlers as $outputHandler) {
 				$outputHandler->invoke();
 			}
