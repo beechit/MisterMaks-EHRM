@@ -7,73 +7,76 @@ namespace Beech\Ehrm\Domain\Model;
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
-use TYPO3\Flow\Annotations as Flow;
-use Doctrine\ORM\Mapping as ORM;
+use TYPO3\Flow\Annotations as Flow,
+	Doctrine\ODM\CouchDB\Mapping\Annotations as ODM;
 
 /**
  * A Log
  *
- * @Flow\Entity
+ * @ODM\Document
  */
-class Log {
+class Log extends \Radmiraal\CouchDB\Persistence\AbstractDocument {
 
 	/**
 	 * The message
 	 * @var string
+	 * @ODM\Field(type="string")
 	 */
 	protected $message;
 
 	/**
 	 * The severity
 	 * @var string
+	 * @ODM\Field(type="string")
 	 */
 	protected $severity;
 
 	/**
 	 * The additional data
 	 * @var string
-	 * @ORM\Column(nullable=true)
+	 * @ODM\Field(type="string")
 	 */
 	protected $additionalData;
 
 	/**
 	 * The package key
 	 * @var string
-	 * @ORM\Column(nullable=true)
+	 * @ODM\Field(type="string")
 	 */
 	protected $packageKey;
 
 	/**
 	 * The class name
 	 * @var string
-	 * @ORM\Column(nullable=true)
+	 * @ODM\Field(type="string")
 	 */
 	protected $className;
 
 	/**
 	 * The method name
 	 * @var string
-	 * @ORM\Column(nullable=true)
+	 * @ODM\Field(type="string")
 	 */
 	protected $methodName;
 
 	/**
 	 * The ip address
 	 * @var string
-	 * @ORM\Column(nullable=true)
+	 * @ODM\Field(type="string")
 	 */
 	protected $ipAddress;
 
 	/**
 	 * The process id
 	 * @var string
-	 * @ORM\Column(nullable=true)
+	 * @ODM\Field(type="string")
 	 */
 	protected $processId;
 
 	/**
 	 * The timestamp
 	 * @var \DateTime
+	 * @ODM\Field(type="datetime")
 	 */
 	protected $timestamp;
 
@@ -246,4 +249,5 @@ class Log {
 	}
 
 }
+
 ?>

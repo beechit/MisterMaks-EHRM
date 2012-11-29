@@ -7,19 +7,19 @@ namespace Beech\Ehrm\Domain\Model;
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
-use Doctrine\ORM\Mapping as ORM;
-use TYPO3\Flow\Annotations as Flow;
+use TYPO3\Flow\Annotations as Flow,
+	Doctrine\ODM\CouchDB\Mapping\Annotations as ODM;
 
 /**
- * @Flow\Entity
- * @Flow\Scope("prototype")
+ * @ODM\Document
  */
-class Preferences {
+class Preferences extends \Radmiraal\CouchDB\Persistence\AbstractDocument {
 
 	/**
 	 * The actual settings
 	 *
 	 * @var array<string>
+	 * @ODM\Field(type="mixed")
 	 */
 	protected $preferences = array();
 

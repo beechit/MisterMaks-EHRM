@@ -7,38 +7,48 @@ namespace Beech\Ehrm\Domain\Model;
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
-use TYPO3\Flow\Annotations as Flow;
-use Doctrine\ORM\Mapping as ORM;
+use TYPO3\Flow\Annotations as Flow,
+	Doctrine\ODM\CouchDB\Mapping\Annotations as ODM;
 
 /**
  * A Notification
  *
- * @Flow\Entity
+ * @ODM\Document(indexed=true)
  */
 class Notification {
 
 	/**
+	 * @var \TYPO3\Flow\Persistence\PersistenceManagerInterface
+	 * @Flow\Inject
+	 * @Flow\Transient
+	 */
+	protected $persistenceManager;
+
+	/**
 	 * The label
 	 * @var string
+	 * @ODM\Field(type="string")
 	 */
 	protected $label;
 
 	/**
 	 * The party
 	 * @var \TYPO3\Party\Domain\Model\AbstractParty
-	 * @ORM\ManyToOne(cascade={"persist"})
+	 * @ODM\Field(type="string")
 	 */
 	protected $party;
 
 	/**
 	 * The closeable
 	 * @var boolean
+	 * @ODM\Field(type="boolean")
 	 */
 	protected $closeable;
 
 	/**
 	 * The sticky
 	 * @var boolean
+	 * @ODM\Field(type="boolean")
 	 */
 	protected $sticky;
 
@@ -67,7 +77,10 @@ class Notification {
 	 * @return \TYPO3\Party\Domain\Model\AbstractParty The Notification's partu
 	 */
 	public function getParty() {
-		return $this->party;
+		if (isset($this->party)) {
+			return $this->persistenceManager->getObjectByIdentifier($this->party);
+		}
+		return NULL;
 	}
 
 	/**
@@ -77,7 +90,7 @@ class Notification {
 	 * @return void
 	 */
 	public function setParty(\TYPO3\Party\Domain\Model\AbstractParty $party) {
-		$this->party = $party;
+		$this->party = $this->persistenceManager->getIdentifierByObject($party);
 	}
 
 	/**

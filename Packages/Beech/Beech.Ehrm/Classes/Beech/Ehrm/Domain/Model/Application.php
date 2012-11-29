@@ -30,7 +30,6 @@ class Application {
 	 * Global preferences for this application
 	 *
 	 * @var \Beech\Ehrm\Domain\Model\Preferences
-	 * @ORM\OneToOne
 	 */
 	protected $preferences;
 

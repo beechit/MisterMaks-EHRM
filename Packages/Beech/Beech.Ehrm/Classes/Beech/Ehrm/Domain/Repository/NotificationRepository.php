@@ -14,19 +14,8 @@ use TYPO3\Flow\Annotations as Flow;
  *
  * @Flow\Scope("singleton")
  */
-class NotificationRepository extends \TYPO3\Flow\Persistence\Repository {
+class NotificationRepository extends \Radmiraal\CouchDB\Persistence\AbstractRepository {
 
-	/**
-	 * Deletes notifications from a given to-do
-	 *
-	 * @param \Beech\Task\Domain\Model\ToDo $toDo
-	 */
-	public function deleteByToDo(\Beech\Task\Domain\Model\ToDo $toDo) {
-		$notificationObjects = $this->findByToDo($toDo);
-		foreach ($notificationObjects as $notificationObject) {
-			$this->remove($notificationObject);
-		}
-	}
 }
 
 ?>
