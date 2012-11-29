@@ -62,6 +62,20 @@ class Company extends \TYPO3\Party\Domain\Model\AbstractParty {
 	}
 
 	/**
+	 * @param string $name
+	 */
+	public function setName($name) {
+		$this->name = $name;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getName() {
+		return $this->name;
+	}
+
+	/**
 	 * @param string $chamberOfCommerceNumber
 	 * @return void
 	 */

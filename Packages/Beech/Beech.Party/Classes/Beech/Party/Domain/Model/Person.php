@@ -15,7 +15,7 @@ use TYPO3\Flow\Annotations as Flow,
  *
  * @Flow\Entity
  */
-class Person extends \TYPO3\Party\Domain\Model\AbstractParty {
+class Person extends \TYPO3\Party\Domain\Model\Person {
 
 	/**
 	 * @var \TYPO3\Party\Domain\Model\PersonName

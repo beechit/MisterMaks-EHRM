@@ -30,29 +30,9 @@ class CompanyTest extends \TYPO3\Flow\Tests\UnitTestCase {
 	 */
 	public function settingSimpleProperties($name, $companyNumber, $companyType, $description, $legalForm, $chamberOfCommerceNumber) {
 		$this->company->setName($name);
-		$this->company->setCompanyNumber($companyNumber);
-		$this->company->setCompanyType($companyType);
-		$this->company->setDescription($description);
-		$this->company->setLegalForm($legalForm);
 		$this->company->setChamberOfCommerceNumber($chamberOfCommerceNumber);
 		$this->assertSame($this->company->getName(), $name);
-		$this->assertSame($this->company->getCompanyNumber(), $companyNumber);
-		$this->assertSame($this->company->getCompanyType(), $companyType);
-		$this->assertSame($this->company->getDescription(), $description);
-		$this->assertSame($this->company->getLegalForm(), $legalForm);
 		$this->assertSame($this->company->getChamberOfCommerceNumber(), $chamberOfCommerceNumber);
-	}
-
-	/**
-	 * @test
-	 */
-	public function addTaxData() {
-			// check if company has no tax data
-		$this->assertNull($this->company->getTaxData());
-			// check if company has tax data
-		$taxData = new \Beech\Party\Domain\Model\Company\TaxData();
-		$this->company->setTaxData($taxData);
-		$this->assertNotNull($this->company->getTaxData());
 	}
 
 	/**
@@ -82,52 +62,6 @@ class CompanyTest extends \TYPO3\Flow\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
-	public function addAndRemoveAddresses() {
-			// check if company has no address
-		$this->assertEquals(0, $this->company->getAddresses()->count());
-			// create first department
-		$address = new \Beech\Party\Domain\Model\Address();
-		$this->company->addAddress($address);
-			// check if company has address
-		$this->assertEquals(1, $this->company->getAddresses()->count());
-		$this->company->removeAddress($address);
-			// check if address were removed
-		$this->assertEquals(0, $this->company->getAddresses()->count());
-	}
-
-	/**
-	 * @test
-	 */
-	public function addAndRemoveElectronicAddresses() {
-			// check if company has no electronic address
-		$this->assertCount(0, $this->company->getElectronicAddresses());
-			// add email
-		$email = new ElectronicAddress();
-		$email->setType(ElectronicAddress::TYPE_EMAIL);
-		$this->company->setPrimaryElectronicAddress($email);
-			// check if company has got electronic address
-		$this->assertCount(1, $this->company->getElectronicAddresses());
-			// check if its email
-		$this->assertEquals(ElectronicAddress::TYPE_EMAIL, $this->company->getElectronicAddresses()->get(0)->getType());
-			// add phone
-		$phone = new ElectronicAddress();
-		$phone->setType(ElectronicAddress::TYPE_PHONE);
-		$this->company->addElectronicAddress($phone);
-			// check if company has got two electronic addresses
-		$this->assertCount(2, $this->company->getElectronicAddresses());
-			// check if its phone
-		$this->assertEquals(ElectronicAddress::TYPE_PHONE, $this->company->getElectronicAddresses()->get(1)->getType());
-			// check if primary electronic address is email
-		$this->assertEquals(ElectronicAddress::TYPE_EMAIL, $this->company->getPrimaryElectronicAddress()->getType());
-			// removing data
-		$this->company->removeElectronicAddress($email);
-		$this->company->removeElectronicAddress($phone);
-		$this->assertCount(0, $this->company->getElectronicAddresses());
-	}
-
-	/**
-	 * @test
-	 */
 	public function setAsDeleted() {
 			// check if its not set as deleted
 		$this->assertFalse($this->company->getDeleted());
@@ -144,40 +78,6 @@ class CompanyTest extends \TYPO3\Flow\Tests\UnitTestCase {
 		$department->setName('Department');
 		$this->company->addDepartment($department);
 		$this->assertEquals($this->company, $department->getParentCompany());
-	}
-
-	/**
-	 * @test
-	 */
-	public function addAndRemoveContactPerson() {
-		$person = new Person();
-		$person->addPersonName(new PersonName('Mr', 'John', '', 'Matrix'));
-		$this->assertCount(0, $this->company->getContactPersons());
-		$this->company->addContactPerson($person);
-		$this->assertCount(1, $this->company->getContactPersons());
-			// is it really the same person ?
-		$this->assertEquals($person, $this->company->getContactPersons()->get(0));
-			// are you sure ?
-		$this->assertEquals('Mr John Matrix', $this->company->getContactPersons()->get(0)->getName()->getFullName());
-			// John you are fired!
-		$this->company->removeContactPerson($person);
-		$this->assertCount(0, $this->company->getContactPersons());
-	}
-
-	/**
-	 * @test
-	 */
-	public function setCollectionOfContactPersons() {
-		$john = new Person();
-		$bob = new Person();
-		$emmy = new Person();
-		$this->company->addContactPerson($john);
-		$this->company->addContactPerson($bob);
-		$this->company->addContactPerson($emmy);
-		$newCompany = new Company();
-			// copy contact list...
-		$newCompany->setContactPersons($this->company->getContactPersons());
-		$this->assertEquals($this->company->getContactPersons(), $newCompany->getContactPersons());
 	}
 
 	/**
