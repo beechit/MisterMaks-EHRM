@@ -1,8 +1,0 @@
--
-  name: 'Document management'
-  uriPattern: 'management/document(/{@action})'
-  defaults:
-    '@package': 'Beech.Document'
-    '@controller': 'Management\Document'
-    '@action': 'index'
-    '@format': 'html'
