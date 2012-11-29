@@ -7,21 +7,29 @@ namespace Beech\Calendar\Domain\Model;
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
-use TYPO3\Flow\Annotations as Flow;
-use Doctrine\ORM\Mapping as ORM;
+use TYPO3\Flow\Annotations as Flow,
+	Doctrine\ODM\CouchDB\Mapping\Annotations as ODM;
 
 /**
  * A Meeting
  *
- * @Flow\Entity
+ * @ODM\Document(indexed=true)
  */
-class Meeting {
+class Meeting extends \Radmiraal\CouchDB\Persistence\AbstractDocument {
+
+	/**
+	 * @var \TYPO3\Flow\Persistence\PersistenceManagerInterface
+	 * @Flow\Inject
+	 * @Flow\Transient
+	 */
+	protected $persistenceManager;
 
 	/**
 	 * The subject
 	 *
 	 * @var string
 	 * @Flow\Validate(type="NotEmpty", validationGroups={"Controller"})
+	 * @ODM\Field(type="string")
 	 */
 	protected $subject;
 
@@ -29,17 +37,19 @@ class Meeting {
 	 * The description
 	 *
 	 * @var string
-	 * @ORM\Column(nullable=TRUE)
+	 * @ODM\Field(type="string")
 	 */
 	protected $description;
 
 	/**
 	 * @var \DateTime
+	 * @ODM\Field(type="datetime")
 	 */
 	protected $startDateTime;
 
 	/**
 	 * @var \DateTime
+	 * @ODM\Field(type="datetime")
 	 */
 	protected $endDateTime;
 
@@ -47,9 +57,9 @@ class Meeting {
 	 * The attendees for this Meeting
 	 *
 	 * @var \Doctrine\Common\Collections\Collection<\Beech\Party\Domain\Model\Person>
-	 * @ORM\ManyToMany
+	 * @ODM\Field(type="mixed")
 	 */
-	protected $attendees;
+	protected $attendees = array();
 
 	/**
 	 * Constructs the Meeting
@@ -133,7 +143,9 @@ class Meeting {
 	 * @return void
 	 */
 	public function addAttendee(\Beech\Party\Domain\Model\Person $attendee) {
-		$this->attendees->add($attendee);
+		$this->attendees->add(
+			$this->persistenceManager->getIdentifierByObject($attendee)
+		);
 	}
 
 	/**
@@ -143,7 +155,9 @@ class Meeting {
 	 * @return void
 	 */
 	public function removeAttendee(\Beech\Party\Domain\Model\Person $attendee) {
-		$this->attendees->removeElement($attendee);
+		$this->attendees->removeElement(
+			$this->persistenceManager->getIdentifierByObject($attendee)
+		);
 	}
 
 	/**
@@ -152,9 +166,15 @@ class Meeting {
 	 * @return \Doctrine\Common\Collections\Collection<\Beech\Party\Domain\Model\Person>
 	 */
 	public function getAttendees() {
+		$returnValue = new \Doctrine\Common\Collections\ArrayCollection();
 		if (!is_null($this->attendees)) {
-			return clone $this->attendees;
+			foreach ($this->attendees as $attendee) {
+				$returnValue->add($this->persistenceManager->getObjectByIdentifier($attendee));
+			}
 		}
+		return $returnValue;
 	}
+
 }
+
 ?>
