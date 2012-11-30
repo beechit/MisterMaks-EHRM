@@ -70,10 +70,6 @@ require(
 						'Beech.Ehrm/JavaScript/Component/Management',
 						'Beech.Ehrm/JavaScript/Component/Administration',
 						'Beech.Ehrm/JavaScript/Component/Router'
-						//'Beech.Ehrm/JavaScript/UserInterface',
-						//'Beech.Ehrm/JavaScript/Notification',
-						//'Beech.Ehrm/JavaScript/MessageQueue',
-						//'Beech.Ehrm/JavaScript/Log'
 					],
 					function (Router) {
 						window.App = Ember.Application.create({

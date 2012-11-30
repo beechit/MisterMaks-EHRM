@@ -1,4 +1,4 @@
-define(['jquery', 'jquery-ui-lib'], function($) {
+define(['jquery', 'emberjs', 'jquery-ui-lib'], function($, Ember) {
 	window.JQ = {};
 
 	/**
