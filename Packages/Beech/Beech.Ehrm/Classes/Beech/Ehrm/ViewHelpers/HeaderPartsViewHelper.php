@@ -48,19 +48,22 @@ class HeaderPartsViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHel
 	}
 
 	/**
+	 * @param boolean $loadJavaScript
 	 * @return string
 	 */
-	public function render() {
+	public function render($loadJavaScript = TRUE) {
 		$this->addJavaScriptConfiguration();
 		$this->addThemeStyleSheet();
 		$this->addStyleSheetIncludes();
 
-		$this->output .= sprintf(
-			'<script data-main="%1$sPackages/%2$s" src="%1$sPackages/%3$s"></script>',
-			$this->resourcePublisher->getStaticResourcesWebBaseUri(),
-			'Beech.Ehrm/JavaScript/Init.js',
-			'Beech.Ehrm/JavaScript/require.js'
-		);
+		if ($loadJavaScript === TRUE) {
+			$this->output .= sprintf(
+				'<script data-main="%1$sPackages/%2$s" src="%1$sPackages/%3$s"></script>',
+				$this->resourcePublisher->getStaticResourcesWebBaseUri(),
+				'Beech.Ehrm/JavaScript/Init.js',
+				'Beech.Ehrm/JavaScript/require.js'
+			);
+		}
 
 		return $this->output;
 	}

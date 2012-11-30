@@ -10,7 +10,7 @@ require(
 			'form': 'Beech.Ehrm/Library/jquery.form',
 			'handlebars': 'Beech.Ehrm/Library/emberjs/handlebars-1.0.rc.1',
 			'emberjs': 'Beech.Ehrm/Library/emberjs/ember-1.0.0-pre.2',
-			'bootstrap': 'TYPO3.Twitter.Bootstrap/2.1/js/bootstrap.min',
+			'bootstrap': 'Beech.Ehrm/Library/bootstrap/js/bootstrap.min',
 			'data-tables-twitterbootstrap': 'Beech.Ehrm/Library/dataTables/media/js/jquery.dataTables.TwitterBootstrap',
 			'i18n': 'Beech.Ehrm/JavaScript/i18n'
 		},
