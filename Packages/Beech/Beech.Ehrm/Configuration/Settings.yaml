@@ -77,9 +77,9 @@ TYPO3:
         formElementTypes:
           'TYPO3.Form:Base':
             renderingOptions:
-              templatePathPattern: 'resource://Beech.Ehrm/Private/Form/{@type}.html'
-              partialPathPattern: 'resource://Beech.Ehrm/Private/Form/Partials/{@type}.html'
-              layoutPathPattern: 'resource://Beech.Ehrm/Private/Form/Layouts/{@type}.html'
+              templatePathPattern: 'resource://Beech.Ehrm/Private/Templates/FormElements/{@type}.html'
+              partialPathPattern: 'resource://Beech.Ehrm/Private/Templates/FormElements/Partials/{@type}.html'
+              layoutPathPattern: 'resource://Beech.Ehrm/Private/Templates/FormElements/Layouts/{@type}.html'
           'TYPO3.Form:Form':
             formBuilder:
               editors:
@@ -91,7 +91,7 @@ TYPO3:
   FormBuilder:
     handlebarsTemplates:
       # include the handlebars template
-      Finisher-DatabaseFinisher: resource://Beech.Ehrm/Private/FormBuilderTemplates/DatabaseFinisher.html
+      Finisher-DatabaseFinisher: resource://Beech.Ehrm/Private/Templates/FormBuilder/DatabaseFinisher.html
 
   Flow:
     security:
