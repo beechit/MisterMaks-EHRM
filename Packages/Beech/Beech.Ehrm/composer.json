@@ -4,7 +4,12 @@
 	"description": "",
 	"version": "",
 	"require": {
-		"typo3/flow": "*"
+		"typo3/flow": "*",
+		"typo3/formbuilder": "*",
+		"typo3/ldap": "dev-master",
+		"radmiraal/emberjs": "dev-master",
+		"beech/essentials": "dev-master",
+		"radmiraal/couchdb": "dev-doctrine"
 	},
 	"autoload": {
 		"psr-0": {
