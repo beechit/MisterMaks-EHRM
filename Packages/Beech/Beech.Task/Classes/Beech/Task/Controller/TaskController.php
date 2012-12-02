@@ -40,12 +40,8 @@ class TaskController extends \Beech\Ehrm\Controller\AbstractController {
 	 * @return void
 	 */
 	public function indexAction() {
-			// TODO Sort on null values first then the ascending closeDateTime (something like ISNULL(closeDateTime)
-		$orderings = array(	'closeDateTime' => \TYPO3\Flow\Persistence\QueryInterface::ORDER_ASCENDING,
-							'priority' => \TYPO3\Flow\Persistence\QueryInterface::ORDER_DESCENDING);
-		$this->taskRepository->setDefaultOrderings($orderings);
 		$this->view->assign('tasks', $this->taskRepository->findAll());
-		$this->view->assign('priorities', \Beech\Task\Domain\Model\Task::getPriorities());
+		$this->view->assign('priorities', array(0 => 'low', 1 => 'normal', 2 => 'high', 3 => 'immediate'));
 	}
 
 	/**

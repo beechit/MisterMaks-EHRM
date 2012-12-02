@@ -20,7 +20,7 @@ class Task extends \Radmiraal\CouchDB\Persistence\AbstractDocument {
 	const PRIORITY_LOW = 0;
 	const PRIORITY_NORMAL = 1;
 	const PRIORITY_HIGH = 2;
-	const PRIORITY_VERY_HIGH = 3;
+	const PRIORITY_IMMEDIATE = 3;
 
 	/**
 	 * @var \TYPO3\Flow\Persistence\PersistenceManagerInterface
