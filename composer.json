@@ -24,24 +24,11 @@
 		"bin-dir": "bin"
 	},
 	"require": {
-		"typo3/flow": "dev-master",
-		"typo3/eel": "dev-master",
-		"typo3/form": "dev-master",
-		"typo3/formbuilder": "dev-master",
-		"typo3/typoscript": "dev-master",
+		"typo3/flow": "*",
+		"beech/ehrm": "1.0.x",
 		"typo3/surf": "dev-master",
 		"typo3/ldap": "dev-master",
 		"radmiraal/emberjs": "dev-master",
-		"beech/ehrm": "1.0.x",
-		"beech/party": "1.0.x",
-		"beech/task": "1.0.x",
-		"beech/calendar": "1.0.x",
-		"beech/cla": "1.0.x",
-		"beech/document": "1.0.x",
-		"beech/workflow": "1.0.x",
-		"beech/minutes": "1.0.x",
-		"beech/absence": "1.0.x",
-		"beech/essentials": "dev-master",
 		"radmiraal/couchdb": "dev-doctrine"
 	},
 	"require-dev": {
@@ -49,9 +36,7 @@
 		"famelo/gerrit": "dev-master",
 		"typo3/kickstart": "dev-master",
 		"mikey179/vfsstream": "1.1.*",
-		"beech/style": "dev-development",
-		"debug/toolbar": "dev-master",
-		"sandstorm/plumber": "dev-master"
+		"beech/style": "dev-development"
 	},
 	"minimum-stability": "dev",
 	"scripts": {

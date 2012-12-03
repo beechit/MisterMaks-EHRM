@@ -1,6 +1,8 @@
 {
 	"TYPO3.Flow": {
-		"[TASK] Code cleanup": "16572",
 		"[!!!][FEATURE] Handle roles consistently as objects": "13868"
+	},
+	"TYPO3.Fluid": {
+		"[TASK] Add packageKey attribute to ifHasRole view helper": "13989"
 	}
 }
