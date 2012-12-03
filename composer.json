@@ -40,7 +40,7 @@
 	},
 	"minimum-stability": "dev",
 	"scripts": {
-		"post-update-cmd": "Beech\\Ehrm\\Composer\\InstallerScripts::postUpdateAndInstall",
-		"post-install-cmd": "Beech\\Ehrm\\Composer\\InstallerScripts::postUpdateAndInstall"
+		"post-update-cmd": "Beech\\Essentials\\Composer\\InstallerScripts::postUpdateAndInstall",
+		"post-install-cmd": "Beech\\Essentials\\Composer\\InstallerScripts::postUpdateAndInstall"
 	}
 }
