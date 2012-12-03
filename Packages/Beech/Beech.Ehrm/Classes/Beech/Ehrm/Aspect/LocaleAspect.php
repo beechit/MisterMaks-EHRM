@@ -60,7 +60,7 @@ class LocaleAspect {
 			}
 		}
 
-			// Us the global settings
+			// Use the global settings
 		$application = $this->applicationRepository->findApplication();
 		if ($application instanceof \Beech\Ehrm\Domain\Model\Application) {
 			$defaultLocale = $application->getPreferences()->get('locale');

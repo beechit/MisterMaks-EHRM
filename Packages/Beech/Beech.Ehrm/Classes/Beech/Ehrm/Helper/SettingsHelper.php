@@ -112,7 +112,8 @@ class SettingsHelper {
 	 * @return void
 	 */
 	protected function appendNumberOfOpenToDos() {
-		if (!$this->securityContext->isInitialized()) {
+		if (!$this->securityContext->isInitialized()
+				|| !$this->securityContext->getAccount() instanceof \TYPO3\Flow\Security\Account) {
 			return;
 		}
 

@@ -126,7 +126,6 @@ TYPO3:
             entryPointOptions:
               uri: 'login.html'
 
-
 Radmiraal:
   Emberjs:
     handlebar:

@@ -71,7 +71,7 @@ require(
 						'Beech.Ehrm/JavaScript/Component/Administration',
 						'Beech.Ehrm/JavaScript/Component/Router'
 					],
-					function (Router) {
+					function () {
 						window.App = Ember.Application.create({
 							autoinit: false
 						});
