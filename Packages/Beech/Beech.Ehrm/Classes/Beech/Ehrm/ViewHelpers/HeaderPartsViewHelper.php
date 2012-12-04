@@ -117,6 +117,7 @@ class HeaderPartsViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHel
 				'afterInitialize' => array(),
 				'preInitialize' => array()
 			),
+			'transitions' => (object)$this->getEmberRouterTransitionLinks(),
 			'configuration' => (object)array(
 				'restNotificationUri' => $this->controllerContext->getUriBuilder()
 					->reset()
@@ -132,5 +133,43 @@ class HeaderPartsViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHel
 
 		$this->output .= sprintf('<script>var MM = %s;</script>', json_encode((object)$settings));
 	}
+
+	/**
+	 * @return array
+	 */
+	protected function getEmberRouterTransitionLinks() {
+		$transitions = array();
+
+		foreach ($this->settings['menu'] as $menuIdentifier => $menuConfiguration) {
+			if (isset($menuConfiguration['menu'])) {
+				foreach ($menuConfiguration['menu'] as $menuItemIdentifier => $menuItemConfiguration) {
+					if (isset($menuItemConfiguration['transition'])) {
+
+						$options = \TYPO3\Flow\Utility\Arrays::arrayMergeRecursiveOverrule(
+							$this->settings['menu']['defaults'],
+							$menuItemConfiguration
+						);
+
+						$transitions[$menuItemConfiguration['transition']] = array(
+							'url' => $this->controllerContext->getUriBuilder()
+								->reset()
+								->setFormat('jsonp')
+								->setCreateAbsoluteUri(TRUE)
+								->uriFor(
+									$options['action'],
+									$options['arguments'],
+									$options['controller'],
+									$options['package']
+								)
+						);
+					}
+				}
+			}
+		}
+
+		return $transitions;
+	}
+
 }
+
 ?>

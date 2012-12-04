@@ -17,6 +17,22 @@ use TYPO3\Flow\Annotations as Flow;
 class StandardController extends AbstractController {
 
 	/**
+	 * @var \TYPO3\Flow\Security\Authentication\AuthenticationManagerInterface
+	 * @FLOW\Inject
+	 */
+	protected $authenticationManager;
+
+	/**
+	 * @return void
+	 */
+	public function initializeAction() {
+		parent::initializeAction();
+		if ($this->authenticationManager->isAuthenticated() === FALSE) {
+			$this->redirect('login', 'Login');
+		}
+	}
+
+	/**
 	 *
 	 */
 	public function indexAction() {

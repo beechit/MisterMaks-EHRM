@@ -1,6 +1,9 @@
 define(
-	['emberjs'],
-	function (Ember) {
+	[
+		'jquery',
+		'emberjs'
+	],
+	function ($, Ember) {
 		MM.init.preInitialize.push(function() {
 			App.Router = Ember.Router.extend({
 				enableLogging: true,
@@ -11,6 +14,7 @@ define(
 					showSettings: Ember.Route.transitionTo('settings'),
 					showManagement: Ember.Route.transitionTo('management'),
 					showAdministration: Ember.Route.transitionTo('administration'),
+					showDashboard: Ember.Route.transitionTo('dashboard'),
 
 					// Routes
 					dashboard: Ember.Route.extend({

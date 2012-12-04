@@ -17,12 +17,35 @@ use TYPO3\Flow\Annotations as Flow;
 class AbstractController extends \TYPO3\Flow\Mvc\Controller\ActionController {
 
 	/**
+	 * @var array
+	 */
+	protected $defaultViewObjectName = 'Beech\Ehrm\View\TemplateView';
+
+	/**
 	 *
 	 */
 	public function callActionMethod() {
-		parent::callActionMethod();
 		if ($this->request->getFormat() === 'jsonp') {
+			try {
+				parent::callActionMethod();
+			} catch (\Exception $exception) {
+				$this->response->setContent(sprintf('<div class="alert alert-error">%s</div>', $exception->getMessage()));
+			}
+
 			$this->response->setHeader('Content-Type', 'application/javascript');
+
+			$content = $this->response->getContent();
+			$content = str_replace(array("\n", "\r", "\t"), '', $content);
+
+			$this->response->setContent(sprintf(
+				'%s(%s)',
+				$this->request->getArgument('callback'),
+				json_encode((object)array(
+					'html' => $content
+				))
+			));
+		} else {
+			parent::callActionMethod();
 		}
 	}
 

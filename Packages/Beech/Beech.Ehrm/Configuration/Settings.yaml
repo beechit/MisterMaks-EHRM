@@ -5,6 +5,7 @@ Beech:
         package: 'Beech.Ehrm'
         controller: 'Standard'
         action: 'index'
+        arguments: []
       main:
         groups:
           employee:
