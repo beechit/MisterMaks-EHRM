@@ -1,0 +1,36 @@
+<f:if condition="{tasks}">
+	<f:then>
+		<table class="table">
+			<tr>
+				<th><f:translate id="task.priority">Priority</f:translate></th>
+				<th><f:translate id="task.description">Task</f:translate></th>
+				<th></th>
+			</tr>
+			<f:for each="{tasks}" as="task">
+				<f:if condition="{task.closeDateTime}">
+					<f:then>
+						<tr>
+							<td><i class="icon-ok"></i> <f:format.date format="d.m.Y - H:i:s">{task.closeDateTime}</f:format.date></td>
+							<td>{task.priorityTextual}</td>
+							<td>{task.description}</td>
+							<td>Link</td>
+						</tr>
+					</f:then>
+					<f:else>
+						<tr>
+							<td>{task.priorityTextual}</td>
+							<td>{task.task}</td>
+							<td>
+								<f:if condition="{task}">
+									<f:link.action action="close" arguments="{task: task}"><f:translate id="task.setTaskDone">Close</f:translate></f:link.action>
+								</f:if></td>
+						</tr>
+					</f:else>
+				</f:if>
+			</f:for>
+		</table>
+	</f:then>
+	<f:else>
+		<p><f:translate id="task.noTask">Nothing to do.</f:translate></p>
+	</f:else>
+</f:if>

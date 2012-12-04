@@ -1,0 +1,7 @@
+<div>
+	<f:form action="create" name="newTask" class="form-horizontal well">
+		<f:form.textfield property="description" id="description" placeholder="Task"/>
+		<f:form.select property="priority" options="{priorities}" />
+		<f:form.submit value="{f:translate(id: 'action.create')}" class="btn btn-primary"/>
+	</f:form>
+</div>
