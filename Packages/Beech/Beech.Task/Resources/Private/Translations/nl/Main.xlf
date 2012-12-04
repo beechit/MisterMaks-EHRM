@@ -26,6 +26,22 @@
 				<source>No tasks</source>
 				<target>Geen taken</target>
 			</trans-unit>
+			<trans-unit id="task.priority.0">
+				<source>Low</source>
+				<target>Laag</target>
+			</trans-unit>
+			<trans-unit id="task.priority.1">
+				<source>Normal</source>
+				<target>Normaal</target>
+			</trans-unit>
+			<trans-unit id="task.priority.2">
+				<source>High</source>
+				<target>Hoog</target>
+			</trans-unit>
+			<trans-unit id="task.priority.3">
+				<source>Immediate</source>
+				<target>Onmiddelijk</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

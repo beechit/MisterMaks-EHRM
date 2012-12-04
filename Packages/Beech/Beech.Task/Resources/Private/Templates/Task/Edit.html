@@ -1,0 +1,10 @@
+<f:layout />
+<f:section name="Body">
+	<div>
+		<f:form action="update" name="task" object="{task}" class="form-horizontal well">
+			<f:form.hidden property="id" />
+			<f:render partial="Task/FormElements" arguments="{_all}" />
+			<f:form.submit value="{f:translate(id: 'action.submit', package: 'Beech.Ehrm', source: 'Wizard')}" class="btn btn-primary"/>
+		</f:form>
+	</div>
+</f:section>

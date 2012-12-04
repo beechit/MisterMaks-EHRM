@@ -79,7 +79,7 @@ class Task extends \Radmiraal\CouchDB\Persistence\AbstractDocument {
 	 * @ODM\Field(type="integer")
 	 * @ODM\Index
 	 */
-	protected $priority;
+	protected $priority = 1;
 
 	/**
 	 * The dateTime this task was created
@@ -133,6 +133,7 @@ class Task extends \Radmiraal\CouchDB\Persistence\AbstractDocument {
 	 */
 	protected function getCurrentPartyIdentifier() {
 		$currentParty = $this->getCurrentParty();
+
 		if ($currentParty !== NULL) {
 			return $this->persistenceManager->getIdentifierByObject($currentParty);
 		}
@@ -298,7 +299,7 @@ class Task extends \Radmiraal\CouchDB\Persistence\AbstractDocument {
 	/**
 	 * @return boolean
 	 */
-	protected function canBeClosedByCurrentParty() {
+	public function getCanBeClosedByCurrentParty() {
 		if (!empty($this->createdBy) && $this->createdBy === $this->getCurrentPartyIdentifier()) {
 			return TRUE;
 		}
@@ -317,7 +318,7 @@ class Task extends \Radmiraal\CouchDB\Persistence\AbstractDocument {
 	 * @return void
 	 */
 	public function close() {
-		if (!$this->canBeClosedByCurrentParty()) {
+		if (!$this->getCanBeClosedByCurrentParty()) {
 			throw new \Beech\Task\Exception('This task can not be closed by current party');
 		}
 

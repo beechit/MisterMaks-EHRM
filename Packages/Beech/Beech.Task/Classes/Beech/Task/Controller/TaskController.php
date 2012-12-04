@@ -45,6 +45,28 @@ class TaskController extends \Beech\Ehrm\Controller\AbstractController {
 	}
 
 	/**
+	 * Edit a task
+	 *
+	 * @param \Beech\Task\Domain\Model\Task $task
+	 * @return void
+	 */
+	public function editAction(\Beech\Task\Domain\Model\Task $task) {
+		$this->view->assign('task', $task);
+		$this->view->assign('priorities', array(0 => 'low', 1 => 'normal', 2 => 'high', 3 => 'immediate'));
+	}
+
+	/**
+	 * Update a task
+	 *
+	 * @param \Beech\Task\Domain\Model\Task $task
+	 * @return void
+	 */
+	public function updateAction(\Beech\Task\Domain\Model\Task $task) {
+		$this->taskRepository->update($task);
+		$this->redirect('index');
+	}
+
+	/**
 	 * Creates a task
 	 *
 	 * @param \Beech\Task\Domain\Model\Task $newTask
@@ -71,5 +93,7 @@ class TaskController extends \Beech\Ehrm\Controller\AbstractController {
 		$this->taskRepository->update($task);
 		$this->redirect('index');
 	}
+
 }
+
 ?>

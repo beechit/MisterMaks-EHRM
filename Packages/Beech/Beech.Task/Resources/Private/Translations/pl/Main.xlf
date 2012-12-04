@@ -26,6 +26,22 @@
 				<source>No tasks</source>
 				<target>Brak zadań</target>
 			</trans-unit>
+			<trans-unit id="task.priority.0">
+				<source>Low</source>
+				<target>Niski</target>
+			</trans-unit>
+			<trans-unit id="task.priority.1">
+				<source>Normal</source>
+				<target>Normalny</target>
+			</trans-unit>
+			<trans-unit id="task.priority.2">
+				<source>High</source>
+				<target>Wysoki</target>
+			</trans-unit>
+			<trans-unit id="task.priority.3">
+				<source>Immediate</source>
+				<target>Natychmiastowy</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
