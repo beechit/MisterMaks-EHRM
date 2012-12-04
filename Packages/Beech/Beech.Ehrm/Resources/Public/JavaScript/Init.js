@@ -12,7 +12,8 @@ require(
 			'emberjs': 'Beech.Ehrm/Library/emberjs/ember-1.0.0-pre.2',
 			'bootstrap': 'Beech.Ehrm/Library/bootstrap/js/bootstrap.min',
 			'data-tables-twitterbootstrap': 'Beech.Ehrm/Library/dataTables/media/js/jquery.dataTables.TwitterBootstrap',
-			'i18n': 'Beech.Ehrm/Library/requirejs/i18n'
+			'i18n': 'Beech.Ehrm/Library/requirejs/i18n',
+			'ModuleHandler': 'Beech.Ehrm/JavaScript/ModuleHandler'
 		},
 		shim: {
 			'jquery-lib': {
@@ -46,46 +47,11 @@ require(
 		'emberjs',
 		'jquery-ui',
 		'bootstrap',
-		'form'
+		'form',
+		'ModuleHandler'
 	],
 	function ($, Ember) {
 		$(document).ready(function () {
-
-			var setModuleHtml = function(html) {
-				$('.ehrm-module').html(html).find('form').each(function() {
-					$(this).attr('action', jsonpifyUrl($(this).attr('action')));
-				});
-
-				$('.ehrm-module').find('form').ajaxForm({
-					dataType: 'jsonp',
-					success: function(result) {
-						setModuleHtml(result.html);
-					}
-				});
-
-
-			}, jsonpifyUrl = function(url) {
-				url = url.replace('.html', '.jsonp');
-				if (!url.match(/\.jsonp/)) {
-					url = url.replace('?', '.jsonp?');
-				}
-				return url;
-			};
-
-			$('.ehrm-module a').live('click', function(event) {
-				if ($(this).attr('href').match(/#/) === null) {
-					$.ajax({
-						format: 'jsonp',
-						dataType: 'jsonp',
-						context: this,
-						url: jsonpifyUrl($(this).attr('href')),
-						success: function(result) {
-							setModuleHtml(result.html);
-						}
-					});
-					return false;
-				}
-			});
 
 			if (MM.authenticated) {
 				if (MM.init.onLoad) {
