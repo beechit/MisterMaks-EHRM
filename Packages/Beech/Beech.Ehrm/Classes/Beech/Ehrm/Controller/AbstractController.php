@@ -49,6 +49,40 @@ class AbstractController extends \TYPO3\Flow\Mvc\Controller\ActionController {
 		}
 	}
 
+	/**
+	 * Redirects the request to another action and / or controller.
+	 *
+	 * Redirect will be sent to the client which then performs another request to the new URI.
+	 *
+	 * NOTE: This method only supports web requests and will throw an exception
+	 * if used with other request types.
+	 *
+	 * @param string $actionName Name of the action to forward to
+	 * @param string $controllerName Unqualified object name of the controller to forward to. If not specified, the current controller is used.
+	 * @param string $packageKey Key of the package containing the controller to forward to. If not specified, the current package is assumed.
+	 * @param array $arguments Array of arguments for the target action
+	 * @param integer $delay (optional) The delay in seconds. Default is no delay.
+	 * @param integer $statusCode (optional) The HTTP status code for the redirect. Default is "303 See Other"
+	 * @param string $format The format to use for the redirect URI
+	 * @return void
+	 * @throws \TYPO3\Flow\Mvc\Exception\StopActionException
+	 * @see forward()
+	 * @api
+	 */
+	protected function redirect($actionName, $controllerName = NULL, $packageKey = NULL, array $arguments = NULL, $delay = 0, $statusCode = 303, $format = NULL) {
+		if ($this->request->hasArgument('callback')) {
+			if ($arguments === NULL) {
+				$arguments['callback'] = $this->request->getArgument('callback');
+			} else {
+				$arguments = array(
+					'callback' => $this->request->getArgument('callback')
+				);
+			}
+		}
+
+		parent::redirect($actionName, $controllerName, $packageKey, $arguments, $delay, $statusCode, $format);
+	}
+
 }
 
 ?>

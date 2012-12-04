@@ -23,7 +23,7 @@ define (
 				}
 			});
 			App.ModuleTaskView = Ember.View.extend({
-				templateName: 'module-task',
+				templateName: 'module-fullwidth',
 				didInsertElement: function() {
 					this.get('controller').loadContent();
 				}

@@ -45,10 +45,48 @@ require(
 		'jquery',
 		'emberjs',
 		'jquery-ui',
-		'bootstrap'
+		'bootstrap',
+		'form'
 	],
 	function ($, Ember) {
 		$(document).ready(function () {
+
+			var setModuleHtml = function(html) {
+				$('.ehrm-module').html(html).find('form').each(function() {
+					$(this).attr('action', jsonpifyUrl($(this).attr('action')));
+				});
+
+				$('.ehrm-module').find('form').ajaxForm({
+					dataType: 'jsonp',
+					success: function(result) {
+						setModuleHtml(result.html);
+					}
+				});
+
+
+			}, jsonpifyUrl = function(url) {
+				url = url.replace('.html', '.jsonp');
+				if (!url.match(/\.jsonp/)) {
+					url = url.replace('?', '.jsonp?');
+				}
+				return url;
+			};
+
+			$('.ehrm-module a').live('click', function(event) {
+				if ($(this).attr('href').match(/#/) === null) {
+					$.ajax({
+						format: 'jsonp',
+						dataType: 'jsonp',
+						context: this,
+						url: jsonpifyUrl($(this).attr('href')),
+						success: function(result) {
+							setModuleHtml(result.html);
+						}
+					});
+					return false;
+				}
+			});
+
 			if (MM.authenticated) {
 				if (MM.init.onLoad) {
 					for (var i in MM.init.onLoad) {

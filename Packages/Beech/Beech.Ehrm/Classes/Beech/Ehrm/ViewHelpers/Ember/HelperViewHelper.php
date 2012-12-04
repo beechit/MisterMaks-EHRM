@@ -25,6 +25,10 @@ class HelperViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper {
 			$action = $this->renderChildren();
 		}
 
-		return '{{' . $type . ' ' . $action . '}}';
+		if (!empty($action)) {
+			return '{{' . $type . ' ' . $action . '}}';
+		}
+
+		return '';
 	}
 }
