@@ -44,7 +44,7 @@ class Company extends \TYPO3\Party\Domain\Model\AbstractParty {
 	 * The chamber of commerce number (KvK)
 	 *
 	 * @var string
-	 * @ORM\Column(nullable=TRUE)
+	 * @ORM\Column(nullable=TRUE,length=20)
 	 */
 	protected $chamberOfCommerceNumber;
 

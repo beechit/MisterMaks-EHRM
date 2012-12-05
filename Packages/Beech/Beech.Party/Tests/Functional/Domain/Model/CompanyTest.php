@@ -9,7 +9,6 @@ namespace Beech\Party\Tests\Functional\Domain\Model;
 
 use TYPO3\Flow\Annotations as Flow;
 use Beech\Party\Domain\Model\Company;
-use Beech\Party\Domain\Model\Address;
 
 /**
  * Persistence test for Company entity

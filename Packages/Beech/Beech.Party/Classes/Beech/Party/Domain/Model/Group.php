@@ -31,16 +31,23 @@ class Group {
 	/**
 	 * The type of the group
 	 *
-	 * @var \Beech\Party\Domain\Model\Group\Type
+	 * @var \Beech\Party\Domain\Model\GroupType
 	 * @ORM\ManyToOne
 	 * @Flow\Validate(type="NotEmpty")
 	 */
 	protected $type;
 
 	/**
+	 * @var \Beech\Party\Domain\Model\Group
+	 * @ORM\ManyToOne(inversedBy="children")
+	 * @ORM\JoinColumn(name="parent_id")
+	 */
+	protected $parent;
+
+	/**
 	 * @var \Doctrine\Common\Collections\Collection<\Beech\Party\Domain\Model\Group>
-	 * @ORM\ManyToMany
-	 * @ORM\JoinTable(inverseJoinColumns={@ORM\JoinColumn(name="parent_group_id")})
+	 * @ORM\OneToMany(mappedBy="parent")
+	 * @Flow\Lazy
 	 */
 	protected $children;
 
@@ -68,17 +75,17 @@ class Group {
 	/**
 	 * Sets the Group Type
 	 *
-	 * @param \Beech\Party\Domain\Model\Group\Type $type
+	 * @param \Beech\Party\Domain\Model\GroupType $type
 	 * @return void
 	 */
-	public function setType(\Beech\Party\Domain\Model\Group\Type $type) {
+	public function setType(\Beech\Party\Domain\Model\GroupType $type) {
 		$this->type = $type;
 	}
 
 	/**
 	 * Returns the Group Type of this application
 	 *
-	 * @return \Beech\Party\Domain\Model\Group\Type
+	 * @return \Beech\Party\Domain\Model\GroupType
 	 */
 	public function getType() {
 		return $this->type;
@@ -144,5 +151,21 @@ class Group {
 	public function removeMember(\TYPO3\Party\Domain\Model\AbstractParty $member) {
 		$this->members->removeElement($member);
 	}
+
+	/**
+	 * @param \Beech\Party\Domain\Model\Group $parent
+	 */
+	public function setParent(\Beech\Party\Domain\Model\Group $parent) {
+		$this->parent = $parent;
+	}
+
+	/**
+	 * @return \Beech\Party\Domain\Model\Group
+	 */
+	public function getParent() {
+		return $this->parent;
+	}
+
 }
+
 ?>

@@ -25,37 +25,10 @@ class Person extends \TYPO3\Party\Domain\Model\Person {
 	protected $name;
 
 	/**
-	 * Preferences of this user
-	 *
-	 * @var \Beech\Ehrm\Domain\Model\Preferences
-	 * @ORM\OneToOne
-	 */
-	protected $preferences;
-
-	/**
 	 * Construct the object
 	 */
 	public function __construct() {
 		parent::__construct();
-		$this->preferences = new \Beech\Ehrm\Domain\Model\Preferences();
-	}
-
-	/**
-	 * @param \Beech\Ehrm\Domain\Model\Preferences $preferences
-	 * @return void
-	 */
-	public function setPreferences(\Beech\Ehrm\Domain\Model\Preferences $preferences) {
-		$this->preferences = $preferences;
-	}
-
-	/**
-	 * @return \Beech\Ehrm\Domain\Model\Preferences
-	 */
-	public function getPreferences() {
-		if (!$this->preferences instanceof \Beech\Ehrm\Domain\Model\Preferences) {
-			$this->preferences = new \Beech\Ehrm\Domain\Model\Preferences();
-		}
-		return $this->preferences;
 	}
 
 }

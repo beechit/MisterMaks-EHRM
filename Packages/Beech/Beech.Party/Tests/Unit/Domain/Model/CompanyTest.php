@@ -1,10 +1,13 @@
 <?php
 namespace Beech\Party\Tests\Unit\Domain\Model;
 
-use \Beech\Party\Domain\Model\Company;
-use \Beech\Party\Domain\Model\Person;
-use \Beech\Party\Domain\Model\ElectronicAddress;
-use \TYPO3\Party\Domain\Model\PersonName;
+/*
+ * This source file is proprietary property of Beech Applications B.V.
+ * Date: 06-12-12 00:09
+ * All code (c) Beech Applications B.V. all rights reserved
+ */
+
+use Beech\Party\Domain\Model\Company;
 
 /**
  * Testcase for company

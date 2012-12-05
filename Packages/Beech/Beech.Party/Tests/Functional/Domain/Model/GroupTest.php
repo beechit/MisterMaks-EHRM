@@ -8,8 +8,6 @@ namespace Beech\Party\Tests\Functional\Domain\Model;
  */
 
 use TYPO3\Flow\Annotations as Flow;
-use \Beech\Party\Domain\Model\Group;
-use \Beech\Party\Domain\Model\Group\Type;
 
 /**
  */
@@ -43,25 +41,25 @@ class GroupTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 	 */
 	public function nestedGroupsCanBePersistedAndRetrievingWorksCorrectly() {
 
-		$type = new Type();
+		$type = new \Beech\Party\Domain\Model\GroupType();
 		$type->setName('Foo');
 		$this->typeRepository->add($type);
 
-		$group1 = new Group();
+		$group1 = new \Beech\Party\Domain\Model\Group();
 		$group1->setName('Group 1');
 		$group1->setType($type);
 
-		$group2 = new Group();
+		$group2 = new \Beech\Party\Domain\Model\Group();
 		$group2->setName('Group 2');
 		$group2->setType($type);
 
-		$group3 = new Group();
+		$group3 = new \Beech\Party\Domain\Model\Group();
 		$group3->setName('Group 3');
 		$group3->setType($type);
 
 		$group1->addChild($group3);
 
-		$group4 = new Group();
+		$group4 = new \Beech\Party\Domain\Model\Group();
 		$group4->setName('Group 4');
 		$group4->setType($type);
 

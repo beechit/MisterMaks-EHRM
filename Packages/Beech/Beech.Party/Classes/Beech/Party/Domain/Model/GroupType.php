@@ -1,5 +1,5 @@
 <?php
-namespace Beech\Party\Domain\Model\Group;
+namespace Beech\Party\Domain\Model;
 
 /*
  * This source file is proprietary property of Beech Applications B.V.
@@ -16,7 +16,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @Flow\Scope("prototype")
  * @Flow\Entity
  */
-class Type {
+class GroupType {
 
 	/**
 	 * The type name
