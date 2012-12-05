@@ -27,13 +27,6 @@ class Application {
 	protected $company;
 
 	/**
-	 * Global preferences for this application
-	 *
-	 * @var \Beech\Ehrm\Domain\Model\Preferences
-	 */
-	protected $preferences;
-
-	/**
 	 * Sets the primary company for this application.
 	 *
 	 * @param \Beech\Party\Domain\Model\Company $company
@@ -52,22 +45,6 @@ class Application {
 		return $this->company;
 	}
 
-	/**
-	 * @param \Beech\Ehrm\Domain\Model\Preferences $preferences
-	 * @return void
-	 */
-	public function setPreferences(\Beech\Ehrm\Domain\Model\Preferences $preferences) {
-		$this->preferences = $preferences;
-	}
-
-	/**
-	 * @return \Beech\Ehrm\Domain\Model\Preferences
-	 */
-	public function getPreferences() {
-		if (!$this->preferences instanceof \Beech\Ehrm\Domain\Model\Preferences) {
-			$this->preferences = new \Beech\Ehrm\Domain\Model\Preferences();
-		}
-		return $this->preferences;
-	}
 }
+
 ?>

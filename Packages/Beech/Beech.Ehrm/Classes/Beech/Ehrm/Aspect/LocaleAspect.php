@@ -11,7 +11,7 @@ use TYPO3\Flow\Annotations as Flow;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Setting locale for session
+ * Get the locale from the user settings
  *
  * @Flow\Aspect
  */

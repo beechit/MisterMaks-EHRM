@@ -7,13 +7,12 @@ namespace Beech\Ehrm\Tests\Functional\Persistence;
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
-use \Beech\Ehrm\Domain\Model\Log;
 use \Beech\Party\Domain\Model\Company;
 
 /**
  * Test suite for the SoftDelete functionality
  */
-class SoftDeleteTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
+class SoftDeleteTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFunctionalTest {
 
 	/**
 	 * @var boolean
@@ -21,19 +20,19 @@ class SoftDeleteTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 	static protected $testablePersistenceEnabled = TRUE;
 
 	/**
-	 * @var \Beech\Ehrm\Domain\Repository\LogRepository
+	 * @var \Beech\Ehrm\Tests\Functional\Fixtures\Domain\Repository\CompanyRepository
 	 */
-	protected $logRepository;
+	protected $companyRepository;
 
 	/**
 	 * @var \Beech\Party\Domain\Repository\CompanyRepository
 	 */
-	protected $companyRepository;
+	protected $fixtureCompanyRepository;
 
 	public function setUp() {
 		parent::setUp();
-		$this->logRepository = $this->objectManager->get('Beech\Ehrm\Domain\Repository\LogRepository');
 		$this->companyRepository = $this->objectManager->get('Beech\Party\Domain\Repository\CompanyRepository');
+		$this->fixtureCompanyRepository = $this->objectManager->get('Beech\Ehrm\Tests\Functional\Fixtures\Domain\Repository\CompanyRepository');
 	}
 
 	/**
@@ -41,18 +40,14 @@ class SoftDeleteTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 	 */
 	public function anEntityCanBeCreatedPersistedAndRetrieved() {
 		$this->assertEquals(0, $this->companyRepository->countAll());
-		$this->assertEquals(0, $this->logRepository->countAll());
 
 		$company = $this->createCompany('Foo', 1, 1, 'type', 'description', 'bar');
 		$this->companyRepository->add($company);
 
-		$log = $this->createLog('foo');
-		$this->logRepository->add($log);
-
 		$this->persistenceManager->persistAll();
+		$this->documentManager->flush();
 
 		$this->assertEquals(1, $this->companyRepository->countAll());
-		$this->assertEquals(1, $this->logRepository->countAll());
 	}
 
 	/**
@@ -87,7 +82,6 @@ class SoftDeleteTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 		$this->persistenceManager->persistAll();
 
 		$this->assertEquals(1, $this->companyRepository->countAll());
-
 		$this->companyRepository->remove($company);
 
 		$this->persistenceManager->persistAll();
@@ -99,54 +93,37 @@ class SoftDeleteTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 	 * @test
 	 */
 	public function anEntityWithoutDeletedPropertyIsDeletedIfTheRemoveMethodOfTheRepositoryIsCalled() {
-		$this->assertEquals(0, $this->logRepository->countAll());
+		$this->assertEquals(0, $this->fixtureCompanyRepository->countAll());
 
-		$log = $this->createLog('You did something!');
-		$this->logRepository->add($log);
+		$fixtureCompany = new \Beech\Ehrm\Tests\Functional\Fixtures\Domain\Model\Company();
+		$fixtureCompany->setTitle('Foo');
 
+		$this->fixtureCompanyRepository->add($fixtureCompany);
 		$this->persistenceManager->persistAll();
 
-		$this->assertEquals(1, $this->logRepository->countAll());
+		$this->assertEquals(1, $this->fixtureCompanyRepository->countAll());
 
-		$this->logRepository->remove($log);
-
+		$this->fixtureCompanyRepository->remove($fixtureCompany);
 		$this->persistenceManager->persistAll();
 
-		$this->assertEquals(0, $this->logRepository->countAll());
+		$this->assertEquals(0, $this->fixtureCompanyRepository->countAll());
 	}
 
 	/**
 	 * @param string $name
-	 * @param integer $companyNumber
 	 * @param integer $chamberOfCommerceNumber
-	 * @param string $type
-	 * @param string $description
 	 * @return \Beech\Party\Domain\Model\Company
 	 */
-	protected function createCompany($name, $companyNumber, $chamberOfCommerceNumber, $type, $description, $legalFrom) {
+	protected function createCompany($name, $chamberOfCommerceNumber) {
 		$company = new Company();
 		$company->setName($name);
-		$company->setCompanyNumber($companyNumber);
 		$company->setChamberOfCommerceNumber($chamberOfCommerceNumber);
-		$company->setCompanyType($type);
-		$company->setDescription($description);
-		$company->setLegalForm($legalFrom);
 
 		return $company;
 	}
 
-	/**
-	 * @param string $message
-	 * @param integer $severity
-	 * @return \Beech\Ehrm\Domain\Model\Log
-	 */
-	protected function createLog($message, $severity = LOG_ALERT) {
-		$log = new Log();
-		$log->setMessage($message);
-		$log->setSeverity($severity);
 
-		return $log;
-	}
 
 }
+
 ?>

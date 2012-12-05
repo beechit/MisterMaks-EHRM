@@ -12,12 +12,7 @@ use TYPO3\Flow\Annotations as Flow;
 /**
  * Persistence test for Notification entity
  */
-class NotificationTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
-
-	/**
-	 * @var boolean
-	 */
-	static protected $testablePersistenceEnabled = TRUE;
+class NotificationTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFunctionalTest {
 
 	/**
 	 * @var \Beech\Ehrm\Domain\Repository\NotificationRepository
@@ -25,24 +20,33 @@ class NotificationTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 	protected $notificationRepository;
 
 	/**
+	 * @var \Beech\Party\Domain\Repository\CompanyRepository
+	 */
+	protected $companyRepository;
+
+	/**
+	 * @var boolean
+	 */
+	static protected $testablePersistenceEnabled = TRUE;
+
+	/**
 	 */
 	public function setUp() {
 		parent::setUp();
 		$this->notificationRepository = $this->objectManager->get('Beech\Ehrm\Domain\Repository\NotificationRepository');
+		$this->notificationRepository->injectDocumentManagerFactory($this->documentManagerFactory);
+		$this->companyRepository = $this->objectManager->get('Beech\Party\Domain\Repository\CompanyRepository');
 	}
 
 	/**
 	 * @return array
 	 */
 	public function notificationDataProvider() {
-		$person = new \Beech\Party\Domain\Model\Person();
-		$person->setName(new \TYPO3\Party\Domain\Model\PersonName('', 'John', 'Doe'));
-
 		return array(
-			array('Closeable TRUE, Sticky FALSE', $person, TRUE, FALSE),
-			array('Closeable TRUE, Sticky TRUE', $person, TRUE, TRUE),
-			array('Closeable FALSE, Sticky TRUE', $person, FALSE, TRUE),
-			array('Closeable FALSE, Sticky FALSE', $person, FALSE, FALSE)
+			array('Closeable TRUE, Sticky FALSE', TRUE, FALSE),
+			array('Closeable TRUE, Sticky TRUE', TRUE, TRUE),
+			array('Closeable FALSE, Sticky TRUE', FALSE, TRUE),
+			array('Closeable FALSE, Sticky FALSE', FALSE, FALSE)
 		);
 	}
 
@@ -52,28 +56,30 @@ class NotificationTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 	 * @dataProvider notificationDataProvider
 	 * @test
 	 */
-	public function notificationPerstinceAndRetrievalWorksCorrectly($label, \TYPO3\Party\Domain\Model\AbstractParty $party, $closeable, $sticky) {
+	public function notificationPersistenceAndRetrievalWorksCorrectly($label, $closeable, $sticky) {
+		$company = new \Beech\Party\Domain\Model\Company();
+		$company->setName('Foo');
+		$this->companyRepository->add($company);
+
 		$notification = new \Beech\Ehrm\Domain\Model\Notification();
 		$notification->setLabel($label);
-		$notification->setParty($party);
+		$notification->setParty($company);
 		$notification->setCloseable($closeable);
 		$notification->setSticky($sticky);
 
 		$this->notificationRepository->add($notification);
-
-		$this->persistenceManager->persistAll();
+		$this->documentManager->flush();
 
 		$this->assertEquals(1, $this->notificationRepository->countAll());
 
-		$notification = $this->notificationRepository->findAll()->getFirst();
+		$notifications = $this->notificationRepository->findAll();
 
-		$this->assertEquals('John Doe', $notification->getParty()->getName()->getFullName());
-		$this->assertEquals($label, $notification->getLabel());
-		$this->assertEquals($closeable, $notification->getCloseable());
-		$this->assertEquals($sticky, $notification->getSticky());
-
-		$this->persistenceManager->clearState();
+		$this->assertEquals('Foo', $notifications[0]->getParty()->getName());
+		$this->assertEquals($label, $notifications[0]->getLabel());
+		$this->assertEquals($closeable, $notifications[0]->getCloseable());
+		$this->assertEquals($sticky, $notifications[0]->getSticky());
 	}
+
 }
 
 ?>

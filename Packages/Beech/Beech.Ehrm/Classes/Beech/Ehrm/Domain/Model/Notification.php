@@ -15,7 +15,7 @@ use TYPO3\Flow\Annotations as Flow,
  *
  * @ODM\Document(indexed=true)
  */
-class Notification {
+class Notification extends \Radmiraal\CouchDB\Persistence\AbstractDocument {
 
 	/**
 	 * @var \TYPO3\Flow\Persistence\PersistenceManagerInterface
@@ -78,7 +78,7 @@ class Notification {
 	 */
 	public function getParty() {
 		if (isset($this->party)) {
-			return $this->persistenceManager->getObjectByIdentifier($this->party);
+			return $this->persistenceManager->getObjectByIdentifier($this->party, '\TYPO3\Party\Domain\Model\AbstractParty');
 		}
 		return NULL;
 	}
