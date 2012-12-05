@@ -1,0 +1,43 @@
+<f:layout />
+
+<f:section name="Body">
+	<f:flashMessages />
+	<h1><f:translate id="document.document" quantity="2">Documents</f:translate></h1>
+
+	<div class="row-fluid">
+		<div class="span8">
+			<f:if condition="{documents}">
+				<f:then>
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th><f:translate id="name">Name</f:translate></th>
+								<th><f:translate id="versions">Versions</f:translate></th>
+								<th>&nbsp;</th>
+							</tr>
+						</thead>
+						<f:for each="{documents}" as="document" iteration="documentIterator">
+							<tr>
+								<td><f:link.action action="show" arguments="{document:document}">{document.name}</f:link.action></td>
+								<td>{document.resources -> f:count()}</td>
+								<td>
+									<f:link.action action="delete" arguments="{document: document}"> <i class="icon icon-trash"></i></f:link.action>
+									<f:link.action action="edit" arguments="{document: document}"> <i class="icon icon-edit"></i></f:link.action>
+								</td>
+							</tr>
+						</f:for>
+					</table>
+				</f:then>
+				<f:else>
+					<p><f:translate id="document.noDocumentsFound">No documents found</f:translate></p>
+				</f:else>
+			</f:if>
+		</div>
+		<div class="span4">
+			<fieldset>
+				<legend><f:translate id="document.new">New</f:translate></legend>
+				<f:render partial="Form/New" />
+			</fieldset>
+		</div>
+	</div>
+</f:section>

@@ -7,13 +7,10 @@ namespace Beech\Document\Tests\Functional\Domain\Model;
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
-use TYPO3\Flow\Annotations as Flow;
-use Beech\Document\Domain\Model\Document;
-
 /**
  * Functional test for DocumentPersistence
  */
-class DocumentTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
+class DocumentTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFunctionalTest {
 
 	/**
 	 * @var boolean
@@ -30,32 +27,24 @@ class DocumentTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 	public function setUp() {
 		parent::setUp();
 		$this->documentRepository = $this->objectManager->get('Beech\Document\Domain\Repository\DocumentRepository');
+		$this->documentRepository->injectDocumentManagerFactory($this->documentManagerFactory);
+		$this->inject($this->documentRepository, 'reflectionService', $this->objectManager->get('TYPO3\Flow\Reflection\ReflectionService'));
+		$this->inject($this->documentRepository, 'persistenceManager', $this->persistenceManager);
 	}
 
 	/**
-	 * @return array Signature: name, type
-	 */
-	public function documentsDataProvider() {
-		return array(
-			array('bla', 'type1'),
-			array('$%&', 'type2'),
-			array('poool', 'type3')
-		);
-	}
-
-	/**
-	 * @dataProvider documentsDataProvider
 	 * @test
 	 */
-	public function documentsPersistingAndRetrievingWorksCorrectly($name, $type) {
-		$document = new Document();
-		$document->setName($name);
-		$document->setType($type);
+	public function documentPersistingAndRetrievingWorksCorrectly() {
+		for ($i = 0; $i < 10; $i ++) {
+			$document = new \Beech\Document\Domain\Model\Document();
+			$document->setName('Name ' . $i);
+			$document->setDocumentType('Type ' . $i);
+			$this->documentRepository->add($document);
+		}
 
-		$this->documentRepository->add($document);
-		$this->persistenceManager->persistAll();
-		$this->persistenceManager->clearState();
-		$this->assertEquals(1, $this->documentRepository->countAll());
+		$this->documentManager->flush();
+		$this->assertEquals(10, count($this->documentRepository->findAll()));
 	}
 }
 ?>

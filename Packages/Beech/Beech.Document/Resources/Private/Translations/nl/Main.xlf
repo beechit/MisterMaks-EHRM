@@ -20,9 +20,9 @@
 				<source>No documents found</source>
 				<target>Geen documenten gevonden</target>
 			</trans-unit>
-			<trans-unit id="document.fileExtensionNotAllowed">
-				<source>File extension not allowed</source>
-				<target>Bestandsextensie niet toegestaan</target>
+			<trans-unit id="document.mimeTypeNotAllowed">
+				<source>Mime type {0} not allowed</source>
+				<target>Bestandstype {0} niet toegestaan</target>
 			</trans-unit>
 			<trans-unit id="document.noFileSelected">
 				<source>No file was selected for upload</source>
@@ -43,6 +43,14 @@
 			<trans-unit id="document.upload">
 				<source>Upload</source>
 				<target>Upload</target>
+			</trans-unit>
+			<trans-unit id="name">
+				<source>Name</source>
+				<target>Naam</target>
+			</trans-unit>
+			<trans-unit id="versions">
+				<source>Versions</source>
+				<target>Versies</target>
 			</trans-unit>
 		</body>
 	</file>

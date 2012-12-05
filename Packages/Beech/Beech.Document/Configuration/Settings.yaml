@@ -1,2 +1,14 @@
-Document:
-  allowedFileExtensions: 'jpg, jpeg, gif, png, pdf, txt, doc'
+Beech:
+  Document:
+    allowedMimeTypes:
+      - 'image/jpg'
+      - 'image/jpeg'
+      - 'image/gif'
+      - 'image/png'
+      - 'application/pdf'
+      - 'text/plain'
+      - 'application/msword'
+      - 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+      - 'application/vnd.openxmlformats-officedocument.wordprocessingml.template'
+      - 'application/vnd.ms-excel'
+      - 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'

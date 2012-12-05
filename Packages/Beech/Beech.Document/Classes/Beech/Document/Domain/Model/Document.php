@@ -7,15 +7,15 @@ namespace Beech\Document\Domain\Model;
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
-use TYPO3\Flow\Annotations as Flow;
-use Doctrine\ORM\Mapping as ORM;
+use TYPO3\Flow\Annotations as Flow,
+	Doctrine\ODM\CouchDB\Mapping\Annotations as ODM;
 
 /**
- * A Document
+ * A Document Model
  *
- * @Flow\Entity
+ * @ODM\Document(indexed=true)
  */
-class Document {
+class Document extends \Radmiraal\CouchDB\Persistence\AbstractDocument {
 
 	const TYPE_IDENTIFICATION = 'Identification';
 	const TYPE_RESUME = 'Resume';
@@ -28,29 +28,27 @@ class Document {
 
 	/**
 	 * The Document name
+	 *
 	 * @var string
+	 * @ODM\Field(type="string")
+	 * @ODM\Index
 	 */
 	protected $name;
 
 	/**
 	 * The Document type
+	 *
 	 * @var string
+	 * @ODM\Field(type="string")
+	 * @ODM\Index
 	 */
-	protected $type;
+	protected $documentType;
 
 	/**
-	 * @var \Doctrine\Common\Collections\Collection<\Beech\Document\Domain\Model\Resource>
-	 * @ORM\OneToMany(mappedBy="document", cascade={"persist"})
-	 * @Flow\Validate(type="NotEmpty")
+	 * @var array<\Doctrine\CouchDB\Attachment>
+	 * @ODM\Attachments
 	 */
 	protected $resources;
-
-	/**
-	 * Construct the object
-	 */
-	public function __construct() {
-		$this->resources = new \Doctrine\Common\Collections\ArrayCollection();
-	}
 
 	/**
 	 * Get the Document's name
@@ -76,47 +74,57 @@ class Document {
 	 *
 	 * @return string The Document's type
 	 */
-	public function getType() {
-		return $this->type;
+	public function getDocumentType() {
+		return $this->documentType;
 	}
 
 	/**
 	 * Sets this Document's type
 	 *
-	 * @param string $type If possible, use one of the TYPE_ constants
+	 * @param string $documentType If possible, use one of the TYPE_ constants
 	 * @return void
 	 */
-	public function setType($type) {
-		$this->type = $type;
+	public function setDocumentType($documentType) {
+		$this->documentType = $documentType;
 	}
 
 	/**
-	 * Adds a resource
-	 *
-	 * @param \Beech\Document\Domain\Model\Resource $resource
+	 * @param \Doctrine\CouchDB\Attachment $resource
 	 * @return void
 	 */
-	public function addResource(\Beech\Document\Domain\Model\Resource $resource) {
-		$this->resources->add($resource);
+	public function addResource(\Doctrine\CouchDB\Attachment $resource) {
+		if (!in_array($resource, $this->resources)) {
+			$index = max(array_keys($this->resources)) + 1;
+			$this->resources[$index] = $resource;
+		}
 	}
 
 	/**
-	 * Remove a resource
-	 *
-	 * @param \Beech\Document\Domain\Model\Resource $resource
+	 * @param \Doctrine\CouchDB\Attachment $resource
 	 * @return void
 	 */
-	public function removeResource(\Beech\Document\Domain\Model\Resource $resource) {
-		$this->resources->removeElement($resource);
+	public function removeResource(\Doctrine\CouchDB\Attachment $resource) {
+		$index = array_search($resource, $this->resources, TRUE);
+		if ($index !== FALSE) {
+			unset($this->resources[$index]);
+		}
 	}
 
 	/**
-	 * Returns the original resource
-	 *
-	 * @return \Beech\Document\Domain\Model\Resource $resources
+	 * @param array $resources<\Doctrine\CouchDB\Attachment>
+	 * @return void
+	 */
+	public function setResources(array $resources) {
+		$this->resources = $resources;
+	}
+
+	/**
+	 * @return array
 	 */
 	public function getResources() {
 		return $this->resources;
 	}
+
 }
+
 ?>

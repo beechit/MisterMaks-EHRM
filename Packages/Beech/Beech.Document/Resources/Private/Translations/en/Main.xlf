@@ -13,8 +13,8 @@
 			<trans-unit id="document.noDocumentsFound">
 				<source>No documents found</source>
 			</trans-unit>
-			<trans-unit id="document.fileExtensionNotAllowed">
-				<source>File extension {0} not allowed</source>
+			<trans-unit id="document.mimeTypeNotAllowed">
+				<source>Mime type {0} not allowed</source>
 			</trans-unit>
 			<trans-unit id="document.noFileSelected">
 				<source>No file was selected for upload</source>
@@ -30,6 +30,12 @@
 			</trans-unit>
 			<trans-unit id="document.upload">
 				<source>Upload</source>
+			</trans-unit>
+			<trans-unit id="name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="versions">
+				<source>Versions</source>
 			</trans-unit>
 		</body>
 	</file>

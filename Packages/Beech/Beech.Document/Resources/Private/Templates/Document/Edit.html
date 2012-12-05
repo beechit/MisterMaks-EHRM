@@ -1,4 +1,4 @@
-<f:layout name="Default"/>
+<f:layout />
 
 <f:section name="Body">
 	<h1><f:translate id="action.edit">Edit</f:translate><f:translate id="document.documents">Documents</f:translate></h1>
@@ -10,17 +10,16 @@
 			</div>
 		</f:if>
 	</f:form.validationResults>
-	<f:form action="updateResource" object="{resource}" name="resource" class="form-horizontal well" >
+
+	<f:form action="update" object="{document}" name="document" class="form-horizontal well">
 		<div class="control-group">
-			<label class="control-label" for="originalResource.filename">File name</label>
-			<f:form.textfield id="originalResource.filename" name="filename" class="input-xxlarge" value="{resource.originalResource.filename}"/>
+			<label class="control-label" for="name"><f:translate id="document.name">Document name</f:translate></label>
+			<div class="controls">
+				<f:form.textfield property="name" id="name" class="input-xxlarge"/>
+			</div>
 		</div>
 		<div class="form-actions">
 			<f:form.submit value="{f:translate(id: 'action.update')}" class="btn btn-primary"/>
 		</div>
 	</f:form>
-
-
 </f:section>
-
-<f:section name="Left" />

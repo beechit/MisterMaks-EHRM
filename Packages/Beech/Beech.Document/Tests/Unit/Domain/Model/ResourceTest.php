@@ -16,22 +16,9 @@ class ResourceTest extends \TYPO3\Flow\Tests\UnitTestCase {
 	 * @test
 	 */
 	public function documentGetterAndSetterReturnTheSame() {
-		$resource = new \Beech\Document\Domain\Model\Resource;
-		$document = new \Beech\Document\Domain\Model\Document;
+		$resource = new \Beech\Document\Domain\Model\Resource();
 
-		$resource->setDocument($document);
-		$this->assertEquals($resource->getDocument(), $document);
-	}
-
-	/**
-	 * @test
-	 */
-	public function originalSourceGetterAndSetterReturnTheSame() {
-		$resource = new \Beech\Document\Domain\Model\Resource;
-		$originalResource = new \TYPO3\Flow\Resource\Resource();
-
-		$resource->setOriginalResource($originalResource);
-		$this->assertEquals($resource->getOriginalResource(), $originalResource);
+		$this->assertInstanceOf('Beech\Document\Domain\Model\Resource', $resource);
 	}
 }
 ?>

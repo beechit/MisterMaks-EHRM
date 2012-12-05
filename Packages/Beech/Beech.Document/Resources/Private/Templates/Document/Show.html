@@ -1,0 +1,14 @@
+<f:layout />
+
+<f:section name="Body">
+	<h1>{document.name}</h1>
+
+	<table class="table table-striped">
+		<f:for each="{document.resources}" as="resource" key="version">
+			<tr>
+				<td>{version}</td>
+				<td><i class="icon icon-eye-open"></i></td>
+			</tr>
+		</f:for>
+	</table>
+</f:section>
