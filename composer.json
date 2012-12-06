@@ -25,16 +25,16 @@
 	},
 	"require": {
 		"typo3/flow": "*",
+		"beech/essentials": "dev-master",
 		"beech/ehrm": "1.0.x",
 		"typo3/surf": "dev-master",
 		"typo3/ldap": "dev-master",
 		"radmiraal/emberjs": "dev-master",
 		"radmiraal/couchdb": "dev-doctrine",
-		"beech/essentials": "dev-master"
+		"famelo/gerrit": "dev-master"
 	},
 	"require-dev": {
 		"typo3/buildessentials": "dev-master",
-		"famelo/gerrit": "dev-master",
 		"typo3/kickstart": "dev-master",
 		"mikey179/vfsstream": "1.1.*",
 		"beech/style": "dev-development"
