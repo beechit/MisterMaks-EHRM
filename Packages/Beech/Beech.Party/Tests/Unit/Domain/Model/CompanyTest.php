@@ -3,7 +3,7 @@ namespace Beech\Party\Tests\Unit\Domain\Model;
 
 /*
  * This source file is proprietary property of Beech Applications B.V.
- * Date: 06-12-12 00:09
+ * Date: 06-12-12 01:03
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
@@ -71,16 +71,6 @@ class CompanyTest extends \TYPO3\Flow\Tests\UnitTestCase {
 			// check if its set as deleted
 		$this->company->setDeleted(TRUE);
 		$this->assertTrue($this->company->getDeleted());
-	}
-
-	/**
-	 * @test
-	 */
-	public function checkParentCompanyOfDepartment() {
-		$department = new Company();
-		$department->setName('Department');
-		$this->company->addDepartment($department);
-		$this->assertEquals($this->company, $department->getParentCompany());
 	}
 
 	/**

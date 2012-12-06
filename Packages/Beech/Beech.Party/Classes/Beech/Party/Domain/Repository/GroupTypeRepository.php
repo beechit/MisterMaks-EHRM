@@ -1,5 +1,5 @@
 <?php
-namespace Beech\Party\Domain\Repository\Group;
+namespace Beech\Party\Domain\Repository;
 
 /*
  * This source file is proprietary property of Beech Applications B.V.
@@ -14,7 +14,7 @@ use TYPO3\Flow\Annotations as Flow;
  *
  * @Flow\Scope("singleton")
  */
-class TypeRepository extends \TYPO3\Flow\Persistence\Repository {
+class GroupTypeRepository extends \TYPO3\Flow\Persistence\Repository {
 
 }
 

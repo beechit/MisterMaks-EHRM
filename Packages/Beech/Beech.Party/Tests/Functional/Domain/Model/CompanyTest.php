@@ -33,7 +33,7 @@ class CompanyTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 	}
 
 	/**
-	 * @return array Company: companyName, companyNumber, companyType, description, chamberOfCommerce, legalForm, address
+	 * @return array Company: companyName, chamberOfCommerce, legalForm
 	 */
 	public function companiesDataProvider() {
 		return array(
@@ -60,10 +60,6 @@ class CompanyTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 		$this->persistenceManager->clearState();
 
 		$this->assertEquals(1, $this->companyRepository->countAll());
-
-		$company = $this->companyRepository->findAll()->getFirst();
-
-		$this->assertEquals(1, $company->getAddresses()->count());
 	}
 
 }

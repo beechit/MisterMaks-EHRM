@@ -27,18 +27,11 @@ class Company extends \TYPO3\Party\Domain\Model\AbstractParty {
 
 	/**
 	 * @var \Doctrine\Common\Collections\Collection<\Beech\Party\Domain\Model\Company>
-	 * @ORM\OneToMany(mappedBy="parentCompany")
+	 * @ORM\ManyToMany
+	 * @ORM\JoinTable(inverseJoinColumns={@ORM\JoinColumn(unique=true)})
 	 * @Flow\Lazy
 	 */
 	protected $departments;
-
-	/**
-	 * @var \Beech\Party\Domain\Model\Company
-	 * @ORM\ManyToOne(inversedBy="departments")
-	 * @ORM\JoinColumn(name="parent_company_id")
-	 * @Flow\Lazy
-	 */
-	protected $parentCompany;
 
 	/**
 	 * The chamber of commerce number (KvK)
@@ -96,7 +89,6 @@ class Company extends \TYPO3\Party\Domain\Model\AbstractParty {
 	 */
 	public function addDepartment(\Beech\Party\Domain\Model\Company $department) {
 		$this->departments->add($department);
-		$department->setParentCompany($this);
 	}
 
 	/**
@@ -105,7 +97,6 @@ class Company extends \TYPO3\Party\Domain\Model\AbstractParty {
 	 */
 	public function removeDepartment(\Beech\Party\Domain\Model\Company $department) {
 		$this->departments->removeElement($department);
-		$department->setParentCompany(NULL);
 	}
 
 	/**
@@ -113,21 +104,6 @@ class Company extends \TYPO3\Party\Domain\Model\AbstractParty {
 	 */
 	public function getDepartments() {
 		return $this->departments;
-	}
-
-	/**
-	 * @param \Beech\Party\Domain\Model\Company $parentCompany
-	 * @return void
-	 */
-	public function setParentCompany($parentCompany) {
-		$this->parentCompany = $parentCompany;
-	}
-
-	/**
-	 * @return \Beech\Party\Domain\Model\Company
-	 */
-	public function getParentCompany() {
-		return $this->parentCompany;
 	}
 
 	/**

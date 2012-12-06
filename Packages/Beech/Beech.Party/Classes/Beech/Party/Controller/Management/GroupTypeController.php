@@ -1,5 +1,5 @@
 <?php
-namespace Beech\Party\Controller\Management\Group;
+namespace Beech\Party\Controller\Management;
 
 /*
  * This source file is proprietary property of Beech Applications B.V.
@@ -9,18 +9,18 @@ namespace Beech\Party\Controller\Management\Group;
 
 use TYPO3\Flow\Annotations as Flow;
 
-use \Beech\Party\Domain\Model\Group\Type as GroupType;
+use \Beech\Party\Domain\Model\GroupType as GroupType;
 
 /**
  * GroupType controller for the Beech.Party package
  *
  * @Flow\Scope("singleton")
  */
-class TypeController extends \Beech\Ehrm\Controller\AbstractController {
+class GroupTypeController extends \Beech\Ehrm\Controller\AbstractController {
 
 	/**
 	 * @Flow\Inject
-	 * @var \Beech\Party\Domain\Repository\Group\TypeRepository
+	 * @var \Beech\Party\Domain\Repository\GroupTypeRepository
 	 */
 	protected $groupTypeRepository;
 
@@ -36,7 +36,7 @@ class TypeController extends \Beech\Ehrm\Controller\AbstractController {
 	/**
 	 * Shows a single group type object
 	 *
-	 * @param \Beech\Party\Domain\Model\Group\Type $groupType The group type to show
+	 * @param \Beech\Party\Domain\Model\GroupType $groupType The group type to show
 	 * @return void
 	 */
 	public function showAction(GroupType $groupType) {
@@ -54,7 +54,7 @@ class TypeController extends \Beech\Ehrm\Controller\AbstractController {
 	/**
 	 * Adds the given new group type object to the group type repository
 	 *
-	 * @param \Beech\Party\Domain\Model\Group\Type $newGroupType A new group type to add
+	 * @param \Beech\Party\Domain\Model\GroupType $newGroupType A new group type to add
 	 * @return void
 	 */
 	public function createAction(GroupType $newGroupType) {
@@ -66,7 +66,7 @@ class TypeController extends \Beech\Ehrm\Controller\AbstractController {
 	/**
 	 * Shows a form for editing an existing group type object
 	 *
-	 * @param \Beech\Party\Domain\Model\Group\Type $groupType The group type to edit
+	 * @param \Beech\Party\Domain\Model\GroupType $groupType The group type to edit
 	 * @return void
 	 */
 	public function editAction(GroupType $groupType) {
@@ -76,7 +76,7 @@ class TypeController extends \Beech\Ehrm\Controller\AbstractController {
 	/**
 	 * Updates the given group type object
 	 *
-	 * @param \Beech\Party\Domain\Model\Group\Type $groupType The group type to update
+	 * @param \Beech\Party\Domain\Model\GroupType $groupType The group type to update
 	 * @return void
 	 */
 	public function updateAction(GroupType $groupType) {
@@ -88,7 +88,7 @@ class TypeController extends \Beech\Ehrm\Controller\AbstractController {
 	/**
 	 * Removes the given group type object from the group type repository
 	 *
-	 * @param \Beech\Party\Domain\Model\Group\Type $groupType The group type to delete
+	 * @param \Beech\Party\Domain\Model\GroupType $groupType The group type to delete
 	 * @return void
 	 */
 	public function deleteAction(GroupType $groupType) {

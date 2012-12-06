@@ -24,7 +24,7 @@ class GroupTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 	protected $groupRepository;
 
 	/**
-	 * @var \Beech\Party\Domain\Repository\Group\TypeRepository
+	 * @var \Beech\Party\Domain\Repository\GroupTypeRepository
 	 */
 	protected $typeRepository;
 
@@ -33,36 +33,21 @@ class GroupTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 	public function setUp() {
 		parent::setUp();
 		$this->groupRepository = $this->objectManager->get('Beech\Party\Domain\Repository\GroupRepository');
-		$this->typeRepository = $this->objectManager->get('Beech\Party\Domain\Repository\Group\TypeRepository');
-	}
+		$this->typeRepository = $this->objectManager->get('Beech\Party\Domain\Repository\GroupTypeRepository');
 
-	/**
-	 * @test
-	 */
-	public function nestedGroupsCanBePersistedAndRetrievingWorksCorrectly() {
-
+			// Create some dummy groups
 		$type = new \Beech\Party\Domain\Model\GroupType();
 		$type->setName('Foo');
 		$this->typeRepository->add($type);
 
-		$group1 = new \Beech\Party\Domain\Model\Group();
-		$group1->setName('Group 1');
-		$group1->setType($type);
-
-		$group2 = new \Beech\Party\Domain\Model\Group();
-		$group2->setName('Group 2');
-		$group2->setType($type);
-
-		$group3 = new \Beech\Party\Domain\Model\Group();
-		$group3->setName('Group 3');
-		$group3->setType($type);
+		for ($i = 1; $i <= 4; $i ++) {
+			$groupVar = 'group' . $i;
+			$$groupVar = new \Beech\Party\Domain\Model\Group();
+			$$groupVar->setName('Group ' . $i);
+			$$groupVar->setType($type);
+		}
 
 		$group1->addChild($group3);
-
-		$group4 = new \Beech\Party\Domain\Model\Group();
-		$group4->setName('Group 4');
-		$group4->setType($type);
-
 		$group3->addChild($group4);
 
 		$this->groupRepository->add($group1);
@@ -71,16 +56,30 @@ class GroupTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 		$this->groupRepository->add($group4);
 
 		$this->persistenceManager->persistAll();
-
-		$this->assertEquals(4, $this->groupRepository->countAll());
-
 		$this->persistenceManager->clearState();
+	}
 
+	/**
+	 * @test
+	 */
+	public function groupsCanBePersisted() {
+		$this->assertEquals(4, $this->groupRepository->countAll());
+	}
+
+	/**
+	 * @test
+	 */
+	public function groupsCanBeRetriedByName() {
 		$this->assertEquals(1, $this->groupRepository->countByName('Group 1'));
 		$this->assertEquals(1, $this->groupRepository->countByName('Group 2'));
 		$this->assertEquals(1, $this->groupRepository->countByName('Group 3'));
 		$this->assertEquals(1, $this->groupRepository->countByName('Group 4'));
+	}
 
+	/**
+	 * @test
+	 */
+	public function groupsCanHaveSubGroups() {
 		$group1 = $this->groupRepository->findOneByName('Group 1');
 		$this->assertEquals(1, $group1->getChildren()->count());
 

@@ -31,7 +31,7 @@ class GroupController extends \Beech\Ehrm\Controller\AbstractController {
 
 	/**
 	 * @Flow\Inject
-	 * @var \Beech\Party\Domain\Repository\Group\TypeRepository
+	 * @var \Beech\Party\Domain\Repository\GroupTypeRepository
 	 */
 	protected $groupTypeRepository;
 

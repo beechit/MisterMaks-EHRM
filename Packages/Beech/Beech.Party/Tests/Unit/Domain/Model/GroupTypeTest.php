@@ -1,7 +1,7 @@
 <?php
 namespace Beech\Party\Tests\Unit\Domain\Model\Group;
 
-use \Beech\Party\Domain\Model\Group\Type as GroupType;
+use \Beech\Party\Domain\Model\GroupType;
 
 /**
  * Testcase for Group type
@@ -9,7 +9,7 @@ use \Beech\Party\Domain\Model\Group\Type as GroupType;
 class GroupTypeTest extends \TYPO3\Flow\Tests\UnitTestCase {
 
 	/**
-	 * @var \Beech\Party\Domain\Model\Group\Type
+	 * @var \Beech\Party\Domain\Model\GroupType
 	 */
 	protected $groupType;
 

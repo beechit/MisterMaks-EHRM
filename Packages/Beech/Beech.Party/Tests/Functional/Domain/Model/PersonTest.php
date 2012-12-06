@@ -59,25 +59,50 @@ class PersonTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 	 * @test
 	 */
 	public function personsAndAccountPersistingAndRetrievingWorksCorrectly($firstName, $middleName, $lastName, $emailAddress) {
+		$person = $this->createPerson($firstName, $middleName, $lastName, $emailAddress);
+		$this->assertEquals(1, $this->personRepository->countAll());
+	}
+
+	/**
+	 * @dataProvider personsDataProvider
+	 * @test
+	 */
+	public function aPersistedPersonCanBeRetrieved($firstName, $middleName, $lastName, $emailAddress) {
+		$person = $this->createPerson($firstName, $middleName, $lastName, $emailAddress);
+		$foundPerson = $this->personRepository->findByIdentifier($this->persistenceManager->getIdentifierByObject($person));
+		$this->assertInstanceOf('Beech\Party\Domain\Model\Person', $foundPerson);
+	}
+
+	/**
+	 * @dataProvider personsDataProvider
+	 * @test
+	 */
+	public function theFullNameOfThePersonCanBeRetrieved($firstName, $middleName, $lastName, $emailAddress) {
+		$person = $this->createPerson($firstName, $middleName, $lastName, $emailAddress);
+		$foundPerson = $this->personRepository->findByIdentifier($this->persistenceManager->getIdentifierByObject($person));
+		$this->assertEquals($foundPerson->getName()->getFullName(), $person->getName()->getFullName());
+	}
+
+	/**
+	 * @param string $firstName
+	 * @param string $middleName
+	 * @param string $lastName
+	 * @param string $emailAddress
+	 * @return \Beech\Party\Domain\Model\Person
+	 */
+	protected function createPerson($firstName, $middleName, $lastName, $emailAddress) {
 		$person = new Person();
-		$person->addPersonName(new PersonName('', $firstName, $middleName, $lastName));
-		$person->setDescription('Person');
-		$person->addEmail($emailAddress);
+		$person->setName(new PersonName('', $firstName, $middleName, $lastName));
+
 		$account = $this->accountFactory->createAccountWithPassword($emailAddress, $this->persistenceManager->getIdentifierByObject($person));
 		$this->accountRepository->add($account);
 		$person->addAccount($account);
 		$this->personRepository->add($person);
+
 		$this->persistenceManager->persistAll();
-			// check if person was added
-		$this->assertEquals(1, $this->personRepository->countAll());
-			// get this person
-		$foundPerson = $this->personRepository->findByIdentifier($this->persistenceManager->getIdentifierByObject($person));
-			// check if full name is correct
-		$this->assertEquals($foundPerson->getName()->getFullName(), $person->getName()->getFullName());
-			// check if email was added
-		$this->assertEquals($foundPerson->getPrimaryElectronicAddress()->getIdentifier(), $emailAddress);
-			// clear data
 		$this->persistenceManager->clearState();
+
+		return $person;
 	}
 }
 

@@ -38,15 +38,9 @@ class Group {
 	protected $type;
 
 	/**
-	 * @var \Beech\Party\Domain\Model\Group
-	 * @ORM\ManyToOne(inversedBy="children")
-	 * @ORM\JoinColumn(name="parent_id")
-	 */
-	protected $parent;
-
-	/**
 	 * @var \Doctrine\Common\Collections\Collection<\Beech\Party\Domain\Model\Group>
-	 * @ORM\OneToMany(mappedBy="parent")
+	 * @ORM\ManyToMany
+	 * @ORM\JoinTable(inverseJoinColumns={@ORM\JoinColumn(unique=true)})
 	 * @Flow\Lazy
 	 */
 	protected $children;
@@ -150,20 +144,6 @@ class Group {
 	 */
 	public function removeMember(\TYPO3\Party\Domain\Model\AbstractParty $member) {
 		$this->members->removeElement($member);
-	}
-
-	/**
-	 * @param \Beech\Party\Domain\Model\Group $parent
-	 */
-	public function setParent(\Beech\Party\Domain\Model\Group $parent) {
-		$this->parent = $parent;
-	}
-
-	/**
-	 * @return \Beech\Party\Domain\Model\Group
-	 */
-	public function getParent() {
-		return $this->parent;
 	}
 
 }
