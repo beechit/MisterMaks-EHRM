@@ -7,15 +7,13 @@ namespace Beech\CLA\Domain\Model;
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
-use TYPO3\Flow\Annotations as Flow;
-use Doctrine\ORM\Mapping as ORM;
+use TYPO3\Flow\Annotations as Flow,
+	Doctrine\ODM\CouchDB\Mapping\Annotations as ODM;
 
 /**
  * A Wage
  *
- * @Flow\Scope("prototype")
- * @Flow\Entity
- * @ORM\HasLifecycleCallbacks
+ * @ODM\Document(indexed=true)
  */
 class Wage {
 
@@ -29,26 +27,36 @@ class Wage {
 	 * The amount
 	 *
 	 * @var integer
+	 * @ODM\Field(type="integer")
 	 */
 	protected $amount;
 
 	/**
-	 * The type
+	 * The wage type
 	 *
 	 * @var string
+	 * @ODM\Field(type="string")
 	 */
-	protected $type;
+	protected $wageType;
 
 	/**
 	 * @var string
-	 * @ORM\Column(nullable=TRUE)
+	 * @ODM\Field(type="string")
 	 */
 	protected $description;
 
 	/**
 	 * @var \DateTime
+	 * @ODM\Field(type="datetime")
 	 */
 	protected $creationDateTime;
+
+	/**
+	 * Constructs this wage document
+	 */
+	public function __construct() {
+		$this->creationDateTime = new \DateTime();
+	}
 
 	/**
 	 * Get the Wage's amount
@@ -70,26 +78,23 @@ class Wage {
 	}
 
 	/**
-	 * Get the Wage's type
-	 *
-	 * @return string The Wage's type
+	 * @param string $wageType
+	 * @return void
 	 */
-	public function getType() {
-		return $this->type;
+	public function setWageType($wageType) {
+		$this->wageType = $wageType;
 	}
 
 	/**
-	 * Sets this Wage's type
-	 *
-	 * @param string $type The Wage's type
-	 * @return void
+	 * @return string
 	 */
-	public function setType($type) {
-		$this->type = $type;
+	public function getWageType() {
+		return $this->wageType;
 	}
 
 	/**
 	 * @param string $description
+	 * @return void
 	 */
 	public function setDescription($description) {
 		$this->description = $description;
@@ -104,12 +109,9 @@ class Wage {
 
 	/**
 	 * @param \DateTime $creationDateTime
-	 * @ORM\PrePersist
+	 * @return void
 	 */
-	public function setCreationDateTime(\DateTime $creationDateTime = NULL) {
-		if ($creationDateTime === NULL) {
-			$creationDateTime = new \DateTime();
-		}
+	public function setCreationDateTime(\DateTime $creationDateTime) {
 		$this->creationDateTime = $creationDateTime;
 	}
 
