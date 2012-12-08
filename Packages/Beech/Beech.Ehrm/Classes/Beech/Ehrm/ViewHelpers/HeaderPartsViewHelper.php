@@ -12,6 +12,12 @@ use TYPO3\Flow\Annotations as Flow;
 class HeaderPartsViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper {
 
 	/**
+	 * @var \Beech\Ehrm\Utility\PreferenceUtility
+	 * @Flow\Inject
+	 */
+	protected $preferenceUtility;
+
+	/**
 	 * @var \TYPO3\Flow\Security\Authentication\AuthenticationManagerInterface
 	 * @Flow\Inject
 	 */
@@ -124,12 +130,8 @@ class HeaderPartsViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHel
 					->setFormat('json')
 					->uriFor('list', array(), 'Rest\Notification', 'Beech.Ehrm')
 			),
-			'locale' => 'EN_en'
+			'locale' => $this->preferenceUtility->getApplicationPreference('locale')
 		);
-
-		if ($this->authenticationManager->isAuthenticated()) {
-			$settings['locale'] = $this->authenticationManager->getSecurityContext()->getParty()->getPreferences()->get('locale');
-		}
 
 		$this->output .= sprintf('<script>var MM = %s;</script>', json_encode((object)$settings));
 	}

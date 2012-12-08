@@ -17,6 +17,12 @@ use TYPO3\Flow\Annotations as Flow;
 class UserCommandController extends \TYPO3\Flow\Cli\CommandController {
 
 	/**
+	 * @var \Beech\Ehrm\Utility\PreferenceUtility
+	 * @Flow\Inject
+	 */
+	protected $preferenceUtility;
+
+	/**
 	 * @var \TYPO3\Flow\Security\AccountRepository
 	 * @Flow\Inject
 	 */
@@ -95,11 +101,10 @@ class UserCommandController extends \TYPO3\Flow\Cli\CommandController {
 			$this->outputLine('Setting "%s" for "%s" contains value "%s"', array(
 				$setting,
 				$account->getParty()->getName()->getFullName(),
-				$account->getParty()->getPreferences()->get($setting)
+				$this->preferenceUtility->getModelPreference($account->getParty(), \Beech\Ehrm\Utility\PreferenceUtility::CATEGORY_USER, $setting)
 			));
 		} else {
-			$account->getParty()->getPreferences()->set($setting, $value);
-			$this->accountRepository->update($account);
+			$this->preferenceUtility->setModelPreference($account->getParty(), \Beech\Ehrm\Utility\PreferenceUtility::CATEGORY_USER, $setting, $value);
 
 			$this->outputLine('Setting "%s" for "%s" set to "%s"', array(
 				$setting,

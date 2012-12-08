@@ -32,10 +32,10 @@ class LocaleAspect {
 	protected $applicationLogger;
 
 	/**
-	 * @var \Beech\Ehrm\Domain\Repository\ApplicationRepository
+	 * @var \Beech\Ehrm\Utility\PreferenceUtility
 	 * @Flow\Inject
 	 */
-	protected $applicationRepository;
+	protected $preferenceUtility;
 
 	/**
 	 * @Flow\Around("method(TYPO3\Flow\I18n\Configuration->getCurrentLocale())")
@@ -43,31 +43,26 @@ class LocaleAspect {
 	 * @return \TYPO3\Flow\I18n\Locale
 	 */
 	public function overrideCurrentLocaleByUserSettings(\TYPO3\Flow\Aop\JoinPointInterface $joinPoint) {
-		if ($this->securityContext->isInitialized() && $this->securityContext->getAccount() instanceof \TYPO3\Flow\Security\Account) {
-			$person = $this->securityContext->getAccount()->getParty();
-			if ($person instanceof \Beech\Party\Domain\Model\Person) {
-				try {
-						// User specific setting found
-					if ($person->getPreferences()->get('locale')) {
-						return new \TYPO3\Flow\I18n\Locale($person->getPreferences()->get('locale'));
-					}
-				} catch (\Exception $exception) {
-					$this->applicationLogger->log(sprintf(
-						'Invalid locale identifier (%s) for person "%s" found',
-						array($person->getPreferences()->get('locale'), $this->securityContext->getAccount()->getAccountIdentifier()))
-					);
-				};
-			}
+		$localeIdentifier = $this->preferenceUtility->getApplicationPreference('locale');
+		if (empty($localeIdentifier)) {
+			$localeIdentifier = 'mul_ZZ';
 		}
+		try {
+			return new \TYPO3\Flow\I18n\Locale($localeIdentifier);
+		} catch (\Exception $exception) {
+			if ($this->securityContext->isInitialized()) {
+				$this->applicationLogger->log(sprintf(
+					'Invalid locale identifier (%s) for person "%s" found',
+					array($localeIdentifier, $this->securityContext->getAccount()->getAccountIdentifier()))
+				);
+			} else {
+				$this->applicationLogger->log(sprintf(
+						'Invalid locale identifier (%s) for application',
+						array($localeIdentifier)
+				));
+			}
+		};
 
-			// Use the global settings
-		$application = $this->applicationRepository->findApplication();
-		if ($application instanceof \Beech\Ehrm\Domain\Model\Application) {
-			$defaultLocale = $application->getPreferences()->get('locale');
-			if ($defaultLocale !== NULL) {
-				return new \TYPO3\Flow\I18n\Locale($defaultLocale);
-			}
-		}
 		return $joinPoint->getAdviceChain()->proceed($joinPoint);
 	}
 

@@ -13,7 +13,7 @@ use TYPO3\Flow\Annotations as Flow,
 /**
  * @ODM\Document(indexed=true)
  */
-class Preferences extends \Radmiraal\CouchDB\Persistence\AbstractDocument {
+class Preference extends \Radmiraal\CouchDB\Persistence\AbstractDocument {
 
 	/**
 	 * The identifier of the target entity / document
@@ -29,7 +29,7 @@ class Preferences extends \Radmiraal\CouchDB\Persistence\AbstractDocument {
 	 * @ODM\Field(type="string")
 	 * @ODM\Index
 	 */
-	protected $type;
+	protected $category;
 
 	/**
 	 * The actual settings
@@ -38,6 +38,15 @@ class Preferences extends \Radmiraal\CouchDB\Persistence\AbstractDocument {
 	 * @ODM\Field(type="mixed")
 	 */
 	protected $preferences = array();
+
+	/**
+	 * @param string $category
+	 * @param array $preferences
+	 */
+	public function __construct($category, array $preferences = array()) {
+		$this->setCategory($category);
+		$this->setAll($preferences);
+	}
 
 	/**
 	 * @param string $identifier
@@ -54,17 +63,17 @@ class Preferences extends \Radmiraal\CouchDB\Persistence\AbstractDocument {
 	}
 
 	/**
-	 * @param string $type
+	 * @param string $category
 	 */
-	public function setType($type) {
-		$this->type = $type;
+	public function setCategory($category) {
+		$this->category = $category;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getType() {
-		return $this->type;
+	public function getCategory() {
+		return $this->category;
 	}
 
 	/**

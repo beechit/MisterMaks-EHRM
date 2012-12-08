@@ -17,16 +17,22 @@ use TYPO3\Flow\Annotations as Flow;
 class SetupCommandController extends \TYPO3\Flow\Cli\CommandController {
 
 	/**
+	 * @var \TYPO3\Flow\Persistence\PersistenceManagerInterface
+	 * @Flow\Inject
+	 */
+	protected $persistenceManager;
+
+	/**
+	 * @var \Beech\Ehrm\Utility\PreferenceUtility
+	 * @Flow\Inject
+	 */
+	protected $preferenceUtility;
+
+	/**
 	 * @var \Beech\Party\Domain\Repository\CompanyRepository
 	 * @Flow\Inject
 	 */
 	protected $companyRepository;
-
-	/**
-	 * @var \Beech\Ehrm\Domain\Repository\ApplicationRepository
-	 * @Flow\Inject
-	 */
-	protected $applicationRepository;
 
 	/**
 	 * Create a company
@@ -35,9 +41,13 @@ class SetupCommandController extends \TYPO3\Flow\Cli\CommandController {
 	 * @return void
 	 */
 	public function initializeCommand($companyName) {
+		if ($this->preferenceUtility->getApplicationPreference('company') !== NULL) {
+			$this->outputLine('Application is already initialized');
+			$this->quit(1);
+		}
 		if ($this->companyRepository->countByName($companyName) > 0) {
 			$this->outputLine('Company "%s" already exists.', array($companyName));
-			return;
+			$this->quit(1);
 		}
 
 			// Create the company
@@ -45,10 +55,9 @@ class SetupCommandController extends \TYPO3\Flow\Cli\CommandController {
 		$company->setName($companyName);
 		$company->setChamberOfCommerceNumber('');
 
-			// Create a new application
-		$application = new \Beech\Ehrm\Domain\Model\Application($company);
-		$application->setCompany($company);
-		$this->applicationRepository->add($application);
+		$this->companyRepository->add($company);
+
+		$this->preferenceUtility->setApplicationPreference('company', $this->persistenceManager->getIdentifierByObject($company));
 
 		$this->outputLine('Created an application for company "%s".', array($companyName));
 	}
