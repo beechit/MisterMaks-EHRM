@@ -41,10 +41,10 @@ class ApplicationController extends \Beech\Ehrm\Controller\AbstractController {
 	protected $applicationLogger;
 
 	/**
-	 * @var \Beech\Ehrm\Domain\Repository\ApplicationRepository
+	 * @var \Beech\Ehrm\Utility\PreferenceUtility
 	 * @Flow\Inject
 	 */
-	protected $applicationRepository;
+	protected $preferenceUtility;
 
 	/**
 	 * Index action
@@ -52,7 +52,6 @@ class ApplicationController extends \Beech\Ehrm\Controller\AbstractController {
 	 * @return void
 	 */
 	public function indexAction() {
-		$application = $this->applicationRepository->findApplication();
 
 		$themes = $this->themeHelper->getAvailableThemes();
 		foreach ($themes as $name => $config) {
@@ -60,9 +59,9 @@ class ApplicationController extends \Beech\Ehrm\Controller\AbstractController {
 		}
 
 		$this->view->assignMultiple(array(
-			'currentLocale' => $application->getPreferences()->get('locale'),
+			'currentLocale' => $this->preferenceUtility->getApplicationPreference('locale', FALSE),
 			'locales' => $this->settingsHelper->getAvailableLanguages(),
-			'currentTheme' => $application->getPreferences()->get('theme'),
+			'currentTheme' => $this->preferenceUtility->getApplicationPreference('theme', FALSE),
 			'themes' => $themes
 		));
 	}
