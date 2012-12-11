@@ -7,15 +7,14 @@ namespace Beech\CLA\Domain\Model;
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
-use TYPO3\Flow\Annotations as Flow;
-use Doctrine\ORM\Mapping as ORM;
+use TYPO3\Flow\Annotations as Flow,
+	Doctrine\ODM\CouchDB\Mapping\Annotations as ODM;
 
 /**
  * A Job rating
  * Equivalent of FUWA
  *
- * @Flow\Scope("prototype")
- * @Flow\Entity
+ * @ODM\Document(indexed=true)
  */
 class JobRating {
 
@@ -23,7 +22,8 @@ class JobRating {
 	 * The collective labor agreement
 	 *
 	 * @var \Beech\CLA\Domain\Model\LaborAgreement
-	 * @ORM\ManyToOne
+	 * @ODM\Field(type="string")
+	 * @ODM\Index
 	 */
 	protected $laborAgreement;
 
@@ -33,7 +33,10 @@ class JobRating {
 	 * @return \Beech\CLA\Domain\Model\LaborAgreement
 	 */
 	public function getLaborAgreement() {
-		return $this->laborAgreement;
+		if (isset($this->laborAgreement)) {
+			return $this->persistenceManager->getObjectByIdentifier($this->laborAgreement, '\Beech\CLA\Domain\Model\LaborAgreement');
+		}
+		return NULL;
 	}
 
 	/**
@@ -43,7 +46,7 @@ class JobRating {
 	 * @return void
 	 */
 	public function setLaborAgreement(\Beech\CLA\Domain\Model\LaborAgreement $laborAgreement) {
-		$this->laborAgreement = $laborAgreement;
+		$this->laborAgreement = $this->persistenceManager->getIdentifierByObject($laborAgreement, '\Beech\CLA\Domain\Model\LaborAgreement');
 	}
 
 }

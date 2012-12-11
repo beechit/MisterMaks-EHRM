@@ -21,6 +21,7 @@ class JobPosition {
 	 * The name
 	 * @var string
 	 * @ODM\Field(type="string")
+	 * @ODM\Index
 	 */
 	protected $name;
 

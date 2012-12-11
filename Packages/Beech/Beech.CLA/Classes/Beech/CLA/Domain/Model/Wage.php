@@ -36,6 +36,7 @@ class Wage {
 	 *
 	 * @var string
 	 * @ODM\Field(type="string")
+	 * @ODM\Index
 	 */
 	protected $wageType;
 
@@ -48,6 +49,7 @@ class Wage {
 	/**
 	 * @var \DateTime
 	 * @ODM\Field(type="datetime")
+	 * @ODM\Index
 	 */
 	protected $creationDateTime;
 
