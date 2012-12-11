@@ -19,9 +19,17 @@ use TYPO3\Flow\Annotations as Flow,
 class JobRating {
 
 	/**
+	 * @var \TYPO3\Flow\Persistence\PersistenceManagerInterface
+	 * @Flow\Inject
+	 * @Flow\Transient
+	 */
+	protected $persistenceManager;
+
+	/**
 	 * The collective labor agreement
 	 *
 	 * @var \Beech\CLA\Domain\Model\LaborAgreement
+	 * @FLOW\Validate(type="NotEmpty")
 	 * @ODM\Field(type="string")
 	 * @ODM\Index
 	 */

@@ -17,7 +17,7 @@ class WageTest extends \TYPO3\Flow\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
-	public function checkAmount() {
+	public function setAndGetAmount() {
 		$wage = new Wage();
 		$wage->setAmount(9999);
 		$this->assertEquals(9999, $wage->getAmount());
@@ -26,11 +26,27 @@ class WageTest extends \TYPO3\Flow\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
-	public function checkStatus() {
+	public function setAndGetStatus() {
 		$wage = new Wage();
-		$wage->setType(Wage::TYPE_DAILY);
-		$this->assertEquals(Wage::TYPE_DAILY, $wage->getType());
+		$wage->setWageType(Wage::TYPE_DAILY);
+		$this->assertEquals(Wage::TYPE_DAILY, $wage->getWageType());
 	}
 
+	/**
+	 * @test
+	 */
+	public function setAndGetDescription() {
+		$wage = new Wage();
+		$wage->setDescription('This is a dummy description');
+		$this->assertEquals('This is a dummy description', $wage->getDescription());
+	}
+
+	/**
+	 * @test
+	 */
+	public function onCreationCreationDateTimeIsSet() {
+		$wage = new Wage();
+		$this->assertInstanceOf('DateTime', $wage->getCreationDateTime());
+	}
 }
 ?>

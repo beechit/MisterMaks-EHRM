@@ -17,9 +17,16 @@ class JobRatingTest extends \TYPO3\Flow\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
-	public function createJobRating() {
+	public function aJobRatingCanBeCreated() {
 		$jobRating = new JobRating();
-		$jobRating->setLaborAgreement(new \Beech\CLA\Domain\Model\LaborAgreement());
+		$laborAgreement = new \Beech\CLA\Domain\Model\LaborAgreement();
+
+		$mockPersistenceManager = $this->getMock('TYPO3\Flow\Persistence\Doctrine\PersistenceManager', array(), array(), '', FALSE);
+		$mockPersistenceManager->expects($this->any())->method('getIdentifierByObject')->will($this->returnValue('abc123'));
+		$mockPersistenceManager->expects($this->any())->method('getObjectByIdentifier')->will($this->returnValue($laborAgreement));
+
+		$this->inject($jobRating, 'persistenceManager', $mockPersistenceManager);
+		$jobRating->setLaborAgreement($laborAgreement);
 		$this->assertInstanceOf('\Beech\CLA\Domain\Model\JobRating', $jobRating);
 		$this->assertInstanceOf('\Beech\CLA\Domain\Model\LaborAgreement', $jobRating->getLaborAgreement());
 	}
