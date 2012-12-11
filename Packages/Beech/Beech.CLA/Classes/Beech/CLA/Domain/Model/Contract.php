@@ -8,7 +8,8 @@ namespace Beech\CLA\Domain\Model;
  */
 
 use TYPO3\Flow\Annotations as Flow;
-use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping as ORM,
+	Doctrine\ODM\CouchDB\Mapping\Annotations as ODM;
 
 /**
  * A Contract
@@ -37,8 +38,7 @@ class Contract {
 
 	/**
 	 * @var \Doctrine\Common\Collections\Collection<\Beech\CLA\Domain\Model\Wage>
-	 * @ORM\OneToMany(mappedBy="contract")
-	 * @ORM\OrderBy({"creationDateTime" = "DESC"})
+	 * @ODM\ReferenceMany(targetDocument="\Beech\CLA\Domain\Model\Wage")
 	 * @Flow\Validate(type="Count", options={ "minimum"=1 })
 	 */
 	protected $wages;
