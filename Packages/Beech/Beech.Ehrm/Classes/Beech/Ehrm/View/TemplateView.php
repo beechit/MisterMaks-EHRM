@@ -14,6 +14,12 @@ use TYPO3\Flow\Annotations as Flow;
 class TemplateView extends \TYPO3\Fluid\View\TemplateView {
 
 	/**
+	 * Directory pattern for global partials. Not part of the public API, should not be changed for now.
+	 * @var string
+	 */
+	private $partialPathAndFilenamePattern = '@partialRoot/@subpackage/@partial.@format';
+
+	/**
 	 * Resolve the path and file name of the layout file, based on
 	 * $this->layoutPathAndFilename and $this->layoutPathAndFilenamePattern.
 	 *
