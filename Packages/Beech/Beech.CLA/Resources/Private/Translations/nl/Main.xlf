@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file original="" source-language="en" target-language="nl" datatype="plaintext">
+		<body>
+			<trans-unit id="contract.Period">
+				<source>Start, duration and end om employment</source>
+				<target>Aanvang, duur en einde van het dienstverband</target>
+			</trans-unit>
+			<trans-unit id="probation">
+				<source>Probation</source>
+				<target>Proeftijd</target>
+			</trans-unit>
+			<trans-unit id="job.Title">
+				<source>Job Titlee</source>
+				<target>Functienaam</target>
+			</trans-unit>
+			<trans-unit id="hours.a.week">
+				<source>Hours a week</source>
+				<target>Arbeidsduur</target>
+			<trans-unit id="day[1]">
+				<source>Day</source>
+				<target>Dag</target>
+			</trans-unit>
+			<trans-unit id="day[2]">
+				<source>Days</source>
+				<target>Dagen</target>
+			</trans-unit>
+			<trans-unit id="week[1]">
+				<source>Week</source>
+				<target>Week</target>
+			</trans-unit>
+			<trans-unit id="week[2]">
+				<source>Weeks</source>
+				<target>Weken</target>
+			</trans-unit>
+			<trans-unit id="month[1]">
+				<source>Month</source>
+				<target>Maand</target>
+			</trans-unit>
+			<trans-unit id="month[2]">
+				<source>Months</source>
+				<target>Maanden</target>
+			</trans-unit>
+			<trans-unit id="year[1]">
+				<source>Year</source>
+			<target>Jaar</target>
+			</trans-unit>
+			<trans-unit id="year[2]">
+				<source>Years</source>
+				<target>Jaren</target>
+			</trans-unit>
+
+			</trans-unit>
+			<trans-unit id="working.Hours">
+				<source>Working hours</source>
+				<target>Werktijden</target>
+			</trans-unit>
+			<trans-unit id="work.Location">
+				<source>Work location</source>
+				<target>Standplaats</target>
+			</trans-unit>
+			<trans-unit id="salary">
+				<source>Salary</source>
+				<target>Salaris</target>
+			</trans-unit>
+			<trans-unit id="travel.Expenses.Home">
+				<source>Travel expenses home work traffic</source>
+				<target>Reiskostenvergoeding woon-werk verkeer</target>
+			</trans-unit>
+			<trans-unit id="travel.Expenses.Work">
+				<source>Travel expenses business trips</source>
+				<target>Reiskostenvergoeding zakelijk verkeer</target>
+			</trans-unit>
+			<trans-unit id="study.Expenses">
+				<source>Study expenses</source>
+				<target>Studiekosten</target>
+			</trans-unit>
+			<trans-unit id="vacation.Allowance">
+				<source>Vacation allowance</source>
+				<target>Vakantietoeslag</target>
+			</trans-unit>
+			<trans-unit id="vacation.Entitlement">
+				<source>Vacation entitlement</source>
+				<target>Wettelijke vakantierechten</target>
+			</trans-unit>
+			<trans-unit id="flexible.Employment.Benefits">
+				<source>Flexible employment benefits</source>
+				<target>Flexibele secundaire voorwaarden</target>
+			</trans-unit>
+			<trans-unit id="mobile.Phone.Provision">
+				<source>Provision of mobile phone</source>
+				<target>Ter beschikking stelling mobiele telefoon</target>
+			</trans-unit>
+			<trans-unit id="laptop.Provision">
+				<source>Provision of laptop</source>
+				<target>Ter beschikking stelling laptop</target>
+			</trans-unit>
+			<trans-unit id="competition.Clause">
+				<source>Competition clause</source>
+				<target>Non-concurrentiebeding</target>
+			</trans-unit>
+			<trans-unit id="confidentiality.Clause">
+				<source>Confidentiality clause</source>
+				<target>Geheimhoudingbeding</target>
+			</trans-unit>
+			<trans-unit id="additional.Positions">
+				<source>Additional positions</source>
+				<target>Nevenfuncties</target>
+			</trans-unit>
+			<trans-unit id="general.Benefits">
+				<source>General benefits</source>
+				<target>Algemene Arbeidsvoorwaarden</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
