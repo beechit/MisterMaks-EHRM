@@ -77,10 +77,10 @@ class UserCommandController extends \TYPO3\Flow\Cli\CommandController {
 	 * Example:
 	 *
 	 * CORRECT
-	 * ./flow3 user:setting admin locale --value NL_nl
+	 * ./flow3 user:setting admin locale --value nl_NL
 	 *
 	 * NOT CORRECT
-	 * ./flow3 user:setting admin locale NL_nl
+	 * ./flow3 user:setting admin locale nl_NL
 	 *
 	 * @param string $username
 	 * @param string $setting
