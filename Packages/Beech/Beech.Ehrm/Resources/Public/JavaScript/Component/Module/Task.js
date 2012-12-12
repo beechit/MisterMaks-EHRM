@@ -6,7 +6,7 @@ define (
 	],
 	function ($, Ember, ModuleHandler) {
 		MM.init.preInitialize.push(function() {
-			App.ModuleTaskController = Ember.Controller.extend({
+			App.ModuleTaskController = App.ModuleTaskController.reopen({
 				content: '',
 
 				loadContent: function() {
@@ -14,8 +14,7 @@ define (
 					ModuleHandler.loadUrl(MM.transitions.showModuleTask.url);
 				}
 			});
-			App.ModuleTaskView = Ember.View.extend({
-				templateName: 'module-fullwidth',
+			App.ModuleTaskView = App.ModuleTaskView.reopen({
 				didInsertElement: function() {
 					this.get('controller').loadContent();
 				}

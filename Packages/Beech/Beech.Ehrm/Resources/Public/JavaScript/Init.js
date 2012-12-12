@@ -8,8 +8,8 @@ require(
 			'jquery-lib': 'Beech.Ehrm/Library/jquery-ui/js/jquery-1.7.2.min',
 			'jquery-ui-lib': 'Beech.Ehrm/Library/jquery-ui/js/jquery-ui-1.9.rc1',
 			'form': 'Beech.Ehrm/Library/jquery.form',
-			'handlebars': 'Beech.Ehrm/Library/emberjs/handlebars-1.0.rc.1',
-			'emberjs': 'Beech.Ehrm/Library/emberjs/ember-1.0.0-pre.2',
+			'handlebars': 'Radmiraal.Emberjs/emberjs/1.0.0-pre.2/handlebars.min',
+			'emberjs': 'Radmiraal.Emberjs/emberjs/1.0.0-pre.2/ember.min',
 			'bootstrap': 'Beech.Ehrm/Library/bootstrap/js/bootstrap.min',
 			'data-tables-twitterbootstrap': 'Beech.Ehrm/Library/dataTables/media/js/jquery.dataTables.TwitterBootstrap',
 			'i18n': 'Beech.Ehrm/Library/requirejs/i18n',
@@ -53,6 +53,10 @@ require(
 	function ($, Ember) {
 		$(document).ready(function () {
 
+			window.App = Ember.Application.create({
+				autoinit: false
+			});
+
 			if (MM.authenticated) {
 				if (MM.init.onLoad) {
 					for (var i in MM.init.onLoad) {
@@ -64,23 +68,20 @@ require(
 
 				require(
 					[
-						'Beech.Ehrm/JavaScript/Component/Application',
+						'Beech.Ehrm/JavaScript/Application',
+						'Beech.Ehrm/JavaScript/Router',
 						'Beech.Ehrm/JavaScript/Component/MainMenu',
-						'Beech.Ehrm/JavaScript/Component/Dashboard',
+						'Beech.Ehrm/JavaScript/Component/Dashboard/DashboardWidget',
+						'Beech.Ehrm/JavaScript/Component/Dashboard/Widget/AllTodos',
 						'Beech.Ehrm/JavaScript/Component/Module/Task',
-						'Beech.Ehrm/JavaScript/Component/Module/Document',
-						'Beech.Ehrm/JavaScript/Component/DashboardWidget',
-						'Beech.Ehrm/JavaScript/Component/Todo',
-						'Beech.Ehrm/JavaScript/Component/AllTodos',
-						'Beech.Ehrm/JavaScript/Component/Settings',
-						'Beech.Ehrm/JavaScript/Component/Management',
-						'Beech.Ehrm/JavaScript/Component/Administration',
-						'Beech.Ehrm/JavaScript/Component/Router'
+						'Beech.Ehrm/JavaScript/Component/Module/Settings',
+						'Beech.Ehrm/JavaScript/Component/Module/Administration'
 					],
 					function () {
-						window.App = Ember.Application.create({
-							autoinit: false
-						});
+						/**
+						 * If needed window.App = window.App.reopen() can be used here to extend
+						 * the Application object
+						 */
 
 						if (MM.init.preInitialize) {
 							for (var i in MM.init.preInitialize) {

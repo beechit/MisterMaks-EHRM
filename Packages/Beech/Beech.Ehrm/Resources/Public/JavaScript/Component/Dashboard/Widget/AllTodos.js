@@ -21,6 +21,10 @@ define (
 					];
 				}
 			});
+
+			App.AllTodosView = App.AllTodosView.reopen({
+				classNames: ['well']
+			});
 		});
 	}
 );

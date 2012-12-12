@@ -91,7 +91,7 @@ class PreferenceUtility {
 		if (!$this->securityContext->isInitialized()
 				|| !$this->securityContext->getAccount() instanceof \TYPO3\Flow\Security\Account
 				|| !$this->securityContext->getAccount()->getParty() instanceof \Beech\Party\Domain\Model\Person) {
-			throw new \Beech\Ehrm\Exception\NoActiveSessionException('No active session');
+			return new \Beech\Ehrm\Domain\Model\Preference('user');
 		}
 
 		if (!isset($this->userPreference)) {

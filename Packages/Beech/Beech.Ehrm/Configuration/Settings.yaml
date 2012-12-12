@@ -145,7 +145,62 @@ Radmiraal:
               class: 'Beech\Ehrm\Helper\SettingsHelper'
               method: 'getMenuItems'
               arguments: ['account']
+    applications:
+      MisterMaks:
+        mvc:
+          controller:
+            application: []
+            dashboard: []
+            administration: []
+            management: []
+            settings: []
+            moduleTask:
+              templateName: 'module-fullwidth'
+            allTodos:
+              templateName: 'alltodos'
+            document:
+              templateName: 'module-fullwidth'
+            dashboardWidget:
+              templateName: 'dashboardwidget'
 
 
-
-
+        router:
+          defaults:
+            outlets: []
+          dashboard:
+            path: '/'
+            outlets:
+              view:
+                target: 'applicationController'
+                controller: 'dashboard'
+                context: 'App.Todo.find()'
+          moduleDocument:
+            path: '/documents'
+            outlets:
+              view:
+                target: 'applicationController'
+                controller: 'moduleDocument'
+          moduleTask:
+            path: '/tasks'
+            outlets:
+              view:
+                target: 'applicationController'
+                controller: 'moduleTask'
+          management:
+            path: '/management'
+            outlets:
+              view:
+                target: 'applicationController'
+                controller: 'management'
+          administration:
+            path: '/administration'
+            outlets:
+              view:
+                target: 'applicationController'
+                controller: 'administration'
+          settings:
+            path: '/settings'
+            outlets:
+              view:
+                target: 'applicationController'
+                controller: 'settings'

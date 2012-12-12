@@ -128,7 +128,17 @@ class HeaderPartsViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHel
 				'restNotificationUri' => $this->controllerContext->getUriBuilder()
 					->reset()
 					->setFormat('json')
-					->uriFor('list', array(), 'Rest\Notification', 'Beech.Ehrm')
+					->uriFor('list', array(), 'Rest\Notification', 'Beech.Ehrm'),
+				'routerConfigurationUrl' => $this->controllerContext->getUriBuilder()
+					->reset()
+					->setFormat('js')
+					->setCreateAbsoluteUri(TRUE)
+					->uriFor('router', array('application' => 'MisterMaks'), 'Configuration', 'Radmiraal.Emberjs'),
+				'mvcConfigurationUrl' => $this->controllerContext->getUriBuilder()
+					->reset()
+					->setFormat('js')
+					->setCreateAbsoluteUri(TRUE)
+					->uriFor('mvc', array('application' => 'MisterMaks'), 'Configuration', 'Radmiraal.Emberjs')
 			),
 			'locale' => $this->preferenceUtility->getApplicationPreference('locale')
 		);
