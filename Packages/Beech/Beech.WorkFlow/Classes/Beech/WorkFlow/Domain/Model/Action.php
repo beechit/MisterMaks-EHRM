@@ -255,7 +255,7 @@ class Action extends \Radmiraal\CouchDB\Persistence\AbstractDocument implements 
 	 */
 	public function setTarget($targetEntity) {
 		if (!is_object($targetEntity) || !$this->persistenceManager->getIdentifierByObject($targetEntity)) {
-			throw new \Beech\WorkFlow\Exception\InvalidArgumentException(sprintf('Target "%s" is not an existing entity', $targetEntity), 1343866565);
+			throw new \Beech\WorkFlow\Exception\InvalidArgumentException(sprintf('Target is not an existing entity'), 1343866565);
 		}
 
 		$this->targetClassName = get_class($targetEntity);
