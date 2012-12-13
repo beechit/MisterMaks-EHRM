@@ -42,8 +42,8 @@ class PreferenceTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFunctio
 	 * @test
 	 */
 	public function applicationWidePreferencesCanBePersisted() {
-		$preferences = new \Beech\Ehrm\Domain\Model\Preference('application', array('foo' => 'bar'));
-		$this->preferenceRepository->add($preferences);
+		$preference = new \Beech\Ehrm\Domain\Model\Preference('application', array('foo' => 'bar'));
+		$this->preferenceRepository->add($preference);
 		$this->documentManager->flush();
 
 		$this->assertEquals(1, $this->preferenceRepository->countAll());

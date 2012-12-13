@@ -4,13 +4,14 @@
 		<title>Mister Maks</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<f:base />
+		<emberjs:include loadJQuery="TRUE" version="1.0.0-pre.2" minified="FALSE" />
 		<ehrm:headerParts />
+		<!--<script src="{f:uri.action(controller:'Configuration', package: 'Radmiraal.Emberjs', action: 'mvc', arguments: {application: 'MisterMaks'})}"></script>-->
+		<script src="resource://Beech.Ehrm/Public/JavaScript/Router.js"></script>
+		<script src="{f:uri.action(controller:'Configuration', package: 'Radmiraal.Emberjs', action: 'router', arguments: {application: 'MisterMaks'})}"></script>
+		<emberjs:handlebars paths="{0: 'resource://Beech.Ehrm/Private/Templates/Handlebar'}" />
 	</head>
 	<body>
-
-		<emberjs:handlebars paths="{0: 'resource://Beech.Ehrm/Private/Templates/Handlebar'}" />
-
 		<f:render partial="Modals" />
-
 	</body>
 </html>

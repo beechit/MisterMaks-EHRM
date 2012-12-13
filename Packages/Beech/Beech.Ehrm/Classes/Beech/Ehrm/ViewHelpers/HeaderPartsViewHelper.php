@@ -54,24 +54,81 @@ class HeaderPartsViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHel
 	}
 
 	/**
+	 * @var \TYPO3\Flow\Core\Bootstrap
+	 * @Flow\Inject
+	 */
+	protected $bootstrap;
+
+	/**
 	 * @param boolean $loadJavaScript
 	 * @return string
 	 */
 	public function render($loadJavaScript = TRUE) {
 		$this->addJavaScriptConfiguration();
+
+		if ($loadJavaScript === TRUE) {
+			$this->output .= sprintf('<script src="%s"></script>', $this->resourcePublisher->getStaticResourcesWebBaseUri() . 'Packages/Beech.Ehrm/JavaScript/Init.js');
+
+			$this->output .= chr(10) . chr(10);
+			$libraries = $this->getJavascriptIncludes('libraries');
+			$sources = $this->getJavaScriptIncludes('sources');
+
+			$javaScripts = array_merge($libraries, $sources);
+
+			foreach ($javaScripts as $javaScript) {
+				if (substr($javaScript, 0, 4) === 'http') {
+					$this->output .= sprintf('<script src="%s"></script>', $javaScript);
+				} else {
+					$this->output .= sprintf('<script src="%sPackages/%s"></script>', $this->resourcePublisher->getStaticResourcesWebBaseUri(), $javaScript);
+				}
+
+			}
+		}
+
 		$this->addThemeStyleSheet();
 		$this->addStyleSheetIncludes();
 
-		if ($loadJavaScript === TRUE) {
-			$this->output .= sprintf(
-				'<script data-main="%1$sPackages/%2$s" src="%1$sPackages/%3$s"></script>',
-				$this->resourcePublisher->getStaticResourcesWebBaseUri(),
-				'Beech.Ehrm/JavaScript/Init.js',
-				'Beech.Ehrm/Library/requirejs/require.js'
-			);
+		return $this->output;
+	}
+
+	/**
+	 * @param string $type
+	 * @return array
+	 */
+	protected function getJavaScriptIncludes($type) {
+		$uriBuilder = new \TYPO3\Flow\Mvc\Routing\UriBuilder();
+		$uriBuilder->setRequest($this->bootstrap->getActiveRequestHandler()->getHttpRequest()->createActionRequest());
+
+		$source = \TYPO3\Flow\Utility\Arrays::getValueByPath($this->settings, array('resources', 'javaScript', $type));
+		if (!is_array($source)) {
+			return array();
 		}
 
-		return $this->output;
+		$includeCollection = new \Beech\Ehrm\Utility\DependencyAwareCollection();
+		foreach ($source as $identifier => $file) {
+			if (isset($file['uri'])) {
+				$source[$identifier]['path'] = $file['path'] = $uriBuilder
+					->reset()
+					->setFormat('js')
+					->setCreateAbsoluteUri(TRUE)
+					->setLinkProtectionEnabled(FALSE)
+					->uriFor(
+						$file['uri']['action'],
+						$file['uri']['arguments'],
+						$file['uri']['controller'],
+						$file['uri']['package']
+					);
+			}
+
+			$includeCollection->add($identifier, is_array($file) && isset($file['deps']) ? $file['deps'] : array());
+		}
+
+		$files = array();
+		$sortedIncludes = $includeCollection->getItems();
+		foreach ($sortedIncludes as $include) {
+			$files[] = is_array($source[$include['identifier']]) ? $source[$include['identifier']]['path'] : $source[$include['identifier']];
+		}
+		return $files;
 	}
 
 	/**
@@ -128,19 +185,7 @@ class HeaderPartsViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHel
 				'restNotificationUri' => $this->controllerContext->getUriBuilder()
 					->reset()
 					->setFormat('json')
-					->uriFor('list', array(), 'Rest\Notification', 'Beech.Ehrm'),
-				'routerConfigurationUrl' => $this->controllerContext->getUriBuilder()
-					->reset()
-					->setLinkProtectionEnabled(FALSE)
-					->setFormat('js')
-					->setCreateAbsoluteUri(TRUE)
-					->uriFor('router', array('application' => 'MisterMaks'), 'Configuration', 'Radmiraal.Emberjs'),
-				'mvcConfigurationUrl' => $this->controllerContext->getUriBuilder()
-					->reset()
-					->setLinkProtectionEnabled(FALSE)
-					->setFormat('js')
-					->setCreateAbsoluteUri(TRUE)
-					->uriFor('mvc', array('application' => 'MisterMaks'), 'Configuration', 'Radmiraal.Emberjs')
+					->uriFor('list', array(), 'Rest\Notification', 'Beech.Ehrm')
 			),
 			'locale' => $this->preferenceUtility->getApplicationPreference('locale')
 		);

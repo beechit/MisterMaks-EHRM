@@ -50,7 +50,7 @@ Beech:
         package: 'Beech.Ehrm'
         controller: 'Standard'
         action: 'index'
-    languages: [EN_en, NL_nl, PL_pl]
+    languages: ['en_EN', 'nl_NL', 'pl_PL']
 
     resources:
       themes: []
@@ -59,6 +59,29 @@ Beech:
         - 'Beech.Ehrm/StyleSheets/main.css'
         - 'Beech.Ehrm/Library/dataTables/media/css/jquery.dataTables.TwitterBootstrap.css'
         - 'Beech.Ehrm/Library/dataTables/media/css/jquery.dataTables.css'
+
+      javaScript:
+        libraries:
+          - 'Beech.Ehrm/Library/jquery-ui/js/jquery-ui-1.9.rc1.js'
+          - 'Beech.Ehrm/Library/bootstrap/js/bootstrap.min.js'
+          - 'Beech.Ehrm/Library/jquery.form.js'
+          - 'Beech.Ehrm/JavaScript/ModuleHandler.js'
+          - 'Beech.Ehrm/JavaScript/Mixins/Module.js'
+          -
+            uri:
+              package: 'Radmiraal.Emberjs'
+              controller: 'Configuration'
+              action: 'mvc'
+              arguments:
+                application: 'MisterMaks'
+
+        sources:
+          application: 'Beech.Ehrm/JavaScript/Application.js'
+          mainMenu: 'Beech.Ehrm/JavaScript/Component/MainMenu.js'
+          dashboardWidget: 'Beech.Ehrm/JavaScript/Component/Dashboard/DashboardWidget.js'
+          taskModuleAllTodos: 'Beech.Ehrm/JavaScript/Component/Dashboard/Widget/AllTodos.js'
+          settings: 'Beech.Ehrm/JavaScript/Component/Module/Settings.js'
+          administration: 'Beech.Ehrm/JavaScript/Component/Module/Administration.js'
 
     viewHelpers:
       partialRootPath: 'resource://Beech.Ehrm/Private/Templates/ViewHelpers/Partials/'
@@ -121,15 +144,17 @@ Radmiraal:
             administration: []
             management: []
             settings: []
-            moduleTask:
+            taskModule:
               templateName: 'module-fullwidth'
+              mixin:
+                controller: 'App.ModuleControllerMixin'
+                view: 'App.ModuleViewMixin'
             allTodos:
               templateName: 'alltodos'
             document:
               templateName: 'module-fullwidth'
             dashboardWidget:
               templateName: 'dashboardwidget'
-
 
         router:
           defaults:
@@ -141,18 +166,18 @@ Radmiraal:
                 target: 'applicationController'
                 controller: 'dashboard'
                 context: 'App.Todo.find()'
-          moduleDocument:
+          documentModule:
             path: '/documents'
             outlets:
               view:
                 target: 'applicationController'
-                controller: 'moduleDocument'
-          moduleTask:
+                controller: 'documentModule'
+          taskModule:
             path: '/tasks'
             outlets:
               view:
                 target: 'applicationController'
-                controller: 'moduleTask'
+                controller: 'taskModule'
           management:
             path: '/management'
             outlets:

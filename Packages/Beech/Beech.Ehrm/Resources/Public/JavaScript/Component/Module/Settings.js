@@ -1,10 +1,6 @@
-define (
-	['emberjs'],
-	function (Ember) {
-		MM.init.preInitialize.push(function() {
-			App.SettingsController = App.SettingsController.reopen({
-				content: 'Foo'
-			});
-		});
-	}
-);
+(function() {
+	'use strict';
+	App.SettingsController = App.SettingsController.reopen({
+		content: 'Foo'
+	});
+}).call(this);
