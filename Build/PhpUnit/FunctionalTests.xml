@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <phpunit strict="true"
-		bootstrap="../buildessentials/PhpUnit/FunctionalTestBootstrap.php"
+		bootstrap="../BuildEssentials/PhpUnit/FunctionalTestBootstrap.php"
 		convertErrorsToExceptions="true"
 		convertNoticesToExceptions="true"
 		convertWarningsToExceptions="true"
