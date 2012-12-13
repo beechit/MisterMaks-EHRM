@@ -3,7 +3,6 @@
 		"[!!!][FEATURE] Handle roles consistently as objects": "13868"
 	},
 	"TYPO3.Fluid": {
-		"[TASK] Add packageKey attribute to ifHasRole view helper": "13989",
-		"[BUGFIX] Make name attribute of LayoutViewHelper optional": "16950"
+		"[TASK] Add packageKey attribute to ifHasRole view helper": "13989"
 	}
 }

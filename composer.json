@@ -24,7 +24,7 @@
 		"bin-dir": "bin"
 	},
 	"require": {
-		"typo3/flow": "*",
+		"typo3/flow": "2.0.*",
 		"beech/essentials": "dev-master",
 		"beech/ehrm": "1.0.x",
 		"typo3/surf": "dev-master",
