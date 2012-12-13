@@ -94,39 +94,6 @@ TYPO3:
       # include the handlebars template
       Finisher-DatabaseFinisher: resource://Beech.Ehrm/Private/Templates/FormBuilder/DatabaseFinisher.html
 
-  Flow:
-    security:
-      authentication:
-        authenticationStrategy: oneToken
-        providers:
-          LdapProvider:
-            provider: TYPO3\LDAP\Security\Authentication\Provider\LDAPProvider
-            providerOptions:
-              type: 'LDAP'
-              host: '172.31.100.1'
-              port: 389
-              baseDn: 'dc=beech,dc=it'
-
-              bind:
-                anonymous: TRUE
-
-              ldapOptions:
-                protocol_version: 3
-
-              filter:
-                account: '(uid=?)'
-                ignoreDomain: TRUE
-
-            entryPoint: 'WebRedirect'
-            entryPointOptions:
-              uri: 'login.html'
-
-          DefaultProvider:
-            provider: PersistedUsernamePasswordProvider
-            entryPoint: 'WebRedirect'
-            entryPointOptions:
-              uri: 'login.html'
-
 Radmiraal:
   Emberjs:
     handlebar:
