@@ -11,6 +11,19 @@
       package: 'Beech.Ehrm'
 
 ##
+# Radmiraal.Emberjs subroutes
+#
+-
+  name: 'Emberjs'
+  uriPattern: '<RadmiraalEmberjsSubroutes>'
+  defaults:
+    '@format': 'js'
+  subRoutes:
+    RadmiraalEmberjsSubroutes:
+      package: 'Radmiraal.Emberjs'
+
+
+##
 # Flow subroutes
 #
 -
