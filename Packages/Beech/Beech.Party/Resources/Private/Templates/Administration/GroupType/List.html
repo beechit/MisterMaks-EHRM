@@ -1,0 +1,33 @@
+<f:layout />
+
+<f:section name="Body">
+	<f:if condition="{groupTypes}">
+		<f:then>
+			<table class="table">
+				<thead>
+				<tr>
+					<th><f:translate id="groupType.name">Group type</f:translate></th>
+					<th><f:translate id="action">Action</f:translate></th>
+				</tr>
+				</thead>
+				<tbody>
+				<f:for each="{groupTypes}" as="groupType" iteration="iterator">
+				<tr>
+					<td>
+						<f:link.action action="show" arguments="{groupType: groupType}">{groupType.name}</f:link.action>
+					</td>
+					<td>
+						<f:link.action action="edit" arguments="{groupType: groupType}"><i class="icon-pencil"></i></f:link.action>
+						<f:link.action action="delete" arguments="{groupType: groupType}"><i class="icon-trash"></i></f:link.action>
+					</td>
+				</tr>
+				</f:for>
+				</tbody>
+			</table>
+		</f:then>
+		<f:else>
+			<p><f:translate id="message.groupType.noResult">No group types created yet.</f:translate></p>
+		</f:else>
+	</f:if>
+	<p><f:link.action action="new"><f:translate id="action.create">Create</f:translate></f:link.action></p>
+</f:section>

@@ -1,0 +1,23 @@
+<f:layout />
+
+<f:section name="Body">
+	<dl class="dl-horizontal well">
+		<dt><f:translate id="group.name">Group name</f:translate></dt>
+		<dd>{group.name}</dd>
+		<dt><f:translate id="group.type">Group type</f:translate></dt>
+		<dd>{group.type.name}</dd>
+		<dt><f:translate id="group.members">Members</f:translate></dt>
+		<dd>
+			<f:for each="{group.members}" as="member">
+				{member.name}<br/>
+			</f:for>
+		</dd>
+		<dt><f:translate id="group.children">Subgroups</f:translate></dt>
+		<dd>
+			<f:for each="{group.children}" as="child">
+				<f:link.action action="show" arguments="{group: child}">{child.name}</f:link.action><br/>
+			</f:for>
+		</dd>
+	</dl>
+	<f:link.action action="list"><f:translate id="action.back">Back</f:translate></f:link.action>
+</f:section>
