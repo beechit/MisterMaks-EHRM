@@ -92,7 +92,7 @@ class SettingsHelper {
 	 */
 	public function convertMenuActionsToUrls() {
 		$defaults = \TYPO3\Flow\Utility\Arrays::arrayMergeRecursiveOverrule(
-			array('package' => NULL, 'controller' => 'Standard', 'action' => 'index', 'format' => 'html', 'arguments' => array()),
+			array('package' => NULL, 'controller' => 'Standard', 'action' => 'index', 'format' => 'html', 'arguments' => array(), 'subpackage' => NULL),
 			$this->settings['menu']['defaults']
 		);
 
@@ -148,7 +148,7 @@ class SettingsHelper {
 					->reset()
 					->setCreateAbsoluteUri(TRUE)
 					->setFormat($options['format'])
-					->uriFor($options['action'], $options['arguments'], $options['controller'], $options['package']);
+					->uriFor($options['action'], $options['arguments'], $options['controller'], $options['package'], $options['subpackage']);
 			}
 		}
 	}

@@ -5,28 +5,31 @@
 		init: function() {
 			var that = this;
 
-			$('.ehrm-module a').live('click', function(event) {
+			$('.ehrm-module a, .ehrm-module-menu a').live('click', function(event) {
 				if ($(this).attr('href').match(/#/) === null) {
-					that.loadUrl($(this).attr('href'));
+					that.loadUrl($(this).attr('href'), '.ehrm-module');
 					return false;
 				}
 			});
 		},
 
-		loadUrl: function(url) {
+		loadUrl: function(url, target) {
 			$.ajax({
 				format: 'jsonp',
 				dataType: 'jsonp',
 				context: this,
 				url: this.jsonpifyUrl(url),
 				success: function(result) {
-					this.loadContent(result.html);
+					this.loadContent(result.html, target);
 				}
 			});
 		},
 
-		loadContent: function(html) {
-			var that = this, $moduleContainer = $('.ehrm-module');
+		loadContent: function(html, target) {
+			if (!target) {
+				target = '.ehrm-module';
+			}
+			var that = this, $moduleContainer = $(target);
 
 			$moduleContainer.html(html);
 
@@ -37,7 +40,7 @@
 			$moduleContainer.find('form').ajaxForm({
 				dataType: 'jsonp',
 				success: function(result) {
-					that.loadContent(result.html);
+					that.loadContent(result.html, '.ehrm-module');
 				}
 			});
 		},

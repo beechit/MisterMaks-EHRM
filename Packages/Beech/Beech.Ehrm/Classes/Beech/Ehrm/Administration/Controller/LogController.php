@@ -1,5 +1,5 @@
 <?php
-namespace Beech\Ehrm\Controller;
+namespace Beech\Ehrm\Administration\Controller;
 
 /*
  * This source file is proprietary property of Beech Applications B.V.
@@ -17,7 +17,7 @@ use \Beech\Ehrm\Log\Backend\DatabaseBackend;
  *
  * @Flow\Scope("singleton")
  */
-class LogController extends AbstractController {
+class LogController extends \Beech\Ehrm\Controller\AbstractController {
 
 	/**
 	 * @Flow\Inject

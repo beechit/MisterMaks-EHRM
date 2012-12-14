@@ -17,6 +17,12 @@ use TYPO3\Flow\Annotations as Flow;
 class StandardController extends AbstractController {
 
 	/**
+	 * @var \Beech\Ehrm\Helper\SettingsHelper
+	 * @Flow\Inject
+	 */
+	protected $settingsHelper;
+
+	/**
 	 * @var \TYPO3\Flow\Security\Authentication\AuthenticationManagerInterface
 	 * @FLOW\Inject
 	 */
@@ -36,6 +42,13 @@ class StandardController extends AbstractController {
 	 *
 	 */
 	public function indexAction() {
+	}
+
+	/**
+	 * @param string $identifier
+	 */
+	public function menuAction($identifier) {
+		$this->view->assign('menuItems', $this->settingsHelper->getMenuItems($identifier));
 	}
 
 }

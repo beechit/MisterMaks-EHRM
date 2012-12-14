@@ -8,6 +8,18 @@
     '@format': 'html'
 
 -
+  name: 'Management'
+  uriPattern: '{@package}/management/{@controller}/{@action}.{@format}'
+  defaults:
+    '@subpackage': 'Management'
+
+-
+  name: 'Administration'
+  uriPattern: '{@package}/administration/{@controller}/{@action}.{@format}'
+  defaults:
+    '@subpackage': 'Administration'
+
+-
   name: 'Default'
   uriPattern: ''
   defaults:

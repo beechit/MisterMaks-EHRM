@@ -14,7 +14,13 @@ use TYPO3\Flow\Annotations as Flow;
  *
  * @Flow\Scope("singleton")
  */
-class SetupController extends AbstractController {
+class UserPreferencesController extends AbstractController {
+
+	/**
+	 * @var \Beech\Ehrm\Utility\PreferenceUtility
+	 * @Flow\Inject
+	 */
+	protected $preferenceUtility;
 
 	/**
 	 * @var \Beech\Ehrm\Helper\SettingsHelper
@@ -52,10 +58,8 @@ class SetupController extends AbstractController {
 	 * @return void
 	 */
 	public function indexAction() {
-		if ($this->securityContext->isInitialized()) {
-			$this->view->assign('locale', $this->securityContext->getAccount()->getParty()->getPreferences()->get('locale'));
-		}
-		$this->view->assign('languages', $this->settingsHelper->getAvailableLanguages() );
+		$this->view->assign('locale', $this->preferenceUtility->getUserPreference('locale'));
+		$this->view->assign('languages', $this->settingsHelper->getAvailableLanguages());
 	}
 
 	/**
@@ -64,14 +68,8 @@ class SetupController extends AbstractController {
 	 * @param string $locale
 	 * @return void
 	 */
-	public function updateAction($locale = 'EN_en') {
-		$accountIdentifier = $this->securityContext->getAccount()->getAccountIdentifier();
-		$account = $this->accountRepository->findByAccountIdentifierAndAuthenticationProviderName($accountIdentifier, 'DefaultProvider');
-		if ($account->getParty() instanceof \Beech\Party\Domain\Model\Person) {
-				$account->getParty()->getPreferences()->set('locale', $locale);
-				$this->accountRepository->update($account);
-				$this->personRepository->update($account->getParty());
-		}
+	public function updateAction($locale = 'en_EN') {
+		$this->preferenceUtility->setUserPreference('locale', $locale);
 		$this->redirect('index');
 	}
 

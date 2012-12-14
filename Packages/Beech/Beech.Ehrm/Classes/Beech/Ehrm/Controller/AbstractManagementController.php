@@ -1,5 +1,5 @@
 <?php
-namespace Beech\Ehrm\Controller\Management;
+namespace Beech\Ehrm\Controller;
 
 /*
  * This source file is proprietary property of Beech Applications B.V.

@@ -1,5 +1,5 @@
 <?php
-namespace Beech\Ehrm\Controller\Management;
+namespace Beech\Ehrm\Controller;
 
 /*
  * This source file is proprietary property of Beech Applications B.V.
@@ -12,7 +12,7 @@ use TYPO3\Flow\Annotations as Flow;
 /**
  * @Flow\Scope("singleton")
  */
-class AdministrationController extends \Beech\Ehrm\Controller\AbstractController {
+class AbstractAdministrationController extends AbstractManagementController {
 
 	/**
 	 * Index view for Administration controller

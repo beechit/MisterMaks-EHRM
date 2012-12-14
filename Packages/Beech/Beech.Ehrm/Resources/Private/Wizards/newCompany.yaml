@@ -13,7 +13,8 @@ finishers:
         identifier: 'TYPO3.Form:Redirect'
         options:
             package: Beech.Party
-            controller: Management\Company
+            controller: Company
+            subpackage: Management
             action: list
 renderables:
     -

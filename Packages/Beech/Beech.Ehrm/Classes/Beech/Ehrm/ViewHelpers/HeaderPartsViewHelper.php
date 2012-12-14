@@ -180,6 +180,20 @@ class HeaderPartsViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHel
 				'afterInitialize' => array(),
 				'preInitialize' => array()
 			),
+			'url' => (object)array(
+				'module' => (object)array(
+					'administration' => (object)array(
+						'index' => $this->controllerContext->getUriBuilder()
+							->reset()
+							->setFormat('jsonp')
+							->uriFor('list', array(), 'Person', 'Beech.Party', 'Administration'), // TODO: Make index page to show dynamic
+						'menu' => $this->controllerContext->getUriBuilder()
+							->reset()
+							->setFormat('jsonp')
+							->uriFor('menu', array('identifier' => 'administration'), 'Standard', 'Beech.Ehrm'),
+					)
+				)
+			),
 			'transitions' => (object)$this->getEmberRouterTransitionLinks(),
 			'configuration' => (object)array(
 				'restNotificationUri' => $this->controllerContext->getUriBuilder()
@@ -218,7 +232,8 @@ class HeaderPartsViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHel
 									$options['action'],
 									$options['arguments'],
 									$options['controller'],
-									$options['package']
+									$options['package'],
+									isset($options['subpackage']) ? $options['subpackage'] : NULL
 								)
 						);
 					}

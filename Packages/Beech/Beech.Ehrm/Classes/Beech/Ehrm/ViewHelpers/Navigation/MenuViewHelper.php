@@ -30,6 +30,7 @@ class MenuViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper {
 	 */
 	protected function getView() {
 		$view = new \TYPO3\Fluid\View\StandaloneView($this->controllerContext->getRequest());
+		$view->setFormat('html');
 		if (is_file($this->settings['viewHelpers']['templates'][get_class($this)])) {
 			$view->setPartialRootPath($this->settings['viewHelpers']['partialRootPath']);
 			$view->setTemplatePathAndFilename($this->settings['viewHelpers']['templates'][get_class($this)]);

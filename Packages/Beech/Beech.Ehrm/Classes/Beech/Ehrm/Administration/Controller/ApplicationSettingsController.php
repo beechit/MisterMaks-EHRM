@@ -1,5 +1,5 @@
 <?php
-namespace Beech\Ehrm\Controller\Setup;
+namespace Beech\Ehrm\Administration\Controller;
 
 /*
  * This source file is proprietary property of Beech Applications B.V.
@@ -14,7 +14,7 @@ use TYPO3\Flow\Annotations as Flow;
  *
  * @Flow\Scope("singleton")
  */
-class ApplicationController extends \Beech\Ehrm\Controller\AbstractController {
+class ApplicationSettingsController extends \Beech\Ehrm\Controller\AbstractController {
 
 	/**
 	 * @var \Beech\Ehrm\Helper\SettingsHelper
@@ -71,11 +71,9 @@ class ApplicationController extends \Beech\Ehrm\Controller\AbstractController {
 	 * @param string $theme
 	 * @return void
 	 */
-	public function updateAction($locale = 'EN_en', $theme = 'Default') {
-		$application = $this->applicationRepository->findApplication();
-		$application->getPreferences()->set('locale', $locale);
-		$application->getPreferences()->set('theme', $theme);
-		$this->applicationRepository->update($application);
+	public function updateAction($locale = 'en_EN', $theme = 'Default') {
+		$this->preferenceUtility->setApplicationPreference('locale', $locale);
+		$this->preferenceUtility->setApplicationPreference('theme', $theme);
 		$this->redirect('index');
 	}
 

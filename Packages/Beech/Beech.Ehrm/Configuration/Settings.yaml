@@ -5,6 +5,7 @@ Beech:
         package: 'Beech.Ehrm'
         controller: 'Standard'
         action: 'index'
+        subpackage: ''
         arguments: []
       main:
         groups:
@@ -21,22 +22,91 @@ Beech:
       action:
         groups:
         menu:
+      administration:
+        groups:
+          party:
+            priority: 10
+            label: 'Party'
+          cla:
+            priority: 20
+            label: 'Cla'
+          system:
+            priority: 99
+            label: 'System'
+        menu:
+          accounts:
+            label: 'Accounts'
+            package: 'Beech.Party'
+            subpackage: 'Administration'
+            controller: 'Account'
+            action: 'list'
+            menuGroup: 'administration:party'
+          company:
+            label: 'Companies'
+            package: 'Beech.Party'
+            subpackage: 'Administration'
+            controller: 'Company'
+            action: 'list'
+            menuGroup: 'administration:party'
+          group:
+            label: 'Groups'
+            package: 'Beech.Party'
+            subpackage: 'Administration'
+            controller: 'Group'
+            action: 'list'
+            menuGroup: 'administration:party'
+          groupTypes:
+            label: 'Group Types'
+            package: 'Beech.Party'
+            subpackage: 'Administration'
+            controller: 'GroupType'
+            action: 'list'
+            menuGroup: 'administration:party'
+          persons:
+            label: 'Persons'
+            package: 'Beech.Party'
+            subpackage: 'Administration'
+            controller: 'Person'
+            action: 'list'
+            menuGroup: 'administration:party'
+          settings:
+            label: 'Settings'
+            package: 'Beech.Ehrm'
+            subpackage: 'Administration'
+            controller: 'ApplicationSettings'
+            action: 'list'
+            menuGroup: 'administration:system'
+          log:
+            label: 'Logging'
+            package: 'Beech.Ehrm'
+            subpackage: 'Administration'
+            controller: 'Log'
+            action: 'list'
+            menuGroup: 'administration:system'
+
       account:
         groups:
         menu:
+          documents:
+            label: 'Documents'
+            priority: 15
+            controller: 'Document'
+            action: 'index'
+            package: 'Beech.Document'
+            transition: 'showDocumentModule'
           settings:
             label: 'Settings'
             priority: 20
-            controller: 'Setup'
+            controller: 'UserPreferences'
             action: 'index'
             transition: 'showSettings'
           management:
             label: 'Administration'
             priority: 100
-            package: 'Beech.Ehrm'
-            controller: 'Management\Administration'
-            resource: 'ManagementControllers'
+            subpackage: 'Administration'
+            controller: 'Standard'
             action: 'index'
+            resource: 'ManagementControllers'
             transition: 'showAdministration'
           logout:
             label: 'Logout'
@@ -80,7 +150,6 @@ Beech:
           mainMenu: 'Beech.Ehrm/JavaScript/Component/MainMenu.js'
           dashboardWidget: 'Beech.Ehrm/JavaScript/Component/Dashboard/DashboardWidget.js'
           taskModuleAllTodos: 'Beech.Ehrm/JavaScript/Component/Dashboard/Widget/AllTodos.js'
-          settings: 'Beech.Ehrm/JavaScript/Component/Module/Settings.js'
           administration: 'Beech.Ehrm/JavaScript/Component/Module/Administration.js'
 
     viewHelpers:
@@ -141,20 +210,58 @@ Radmiraal:
           controller:
             application: []
             dashboard: []
-            administration: []
-            management: []
-            settings: []
+            administration:
+              controller:
+                mixin: 'App.ModuleControllerMixin'
+                options:
+                  menuUrl: 'javascript://MM.url.module.administration.menu'
+                  contentUrl: 'javascript://MM.url.module.administration.index'
+              view:
+                mixin: 'App.ModuleViewMixin'
+                options:
+                  templateName: 'module-2column'
+            management:
+              controller:
+                mixin: 'App.ModuleControllerMixin'
+              view:
+                mixin: 'App.ModuleViewMixin'
+                options:
+                  templateName: 'module-2column'
+            settings:
+              view:
+                mixin: 'App.ModuleViewMixin'
+                options:
+                  templateName: 'module-fullwidth'
+              controller:
+                mixin: 'App.ModuleControllerMixin'
+                options:
+                  contentUrl: 'javascript://MM.transitions.showSettings.url'
             taskModule:
-              templateName: 'module-fullwidth'
-              mixin:
-                controller: 'App.ModuleControllerMixin'
-                view: 'App.ModuleViewMixin'
+              view:
+                mixin: 'App.ModuleViewMixin'
+                options:
+                  templateName: 'module-fullwidth'
+              controller:
+                mixin: 'App.ModuleControllerMixin'
+                options:
+                  contentUrl: 'javascript://MM.transitions.showTaskModule.url'
             allTodos:
-              templateName: 'alltodos'
-            document:
-              templateName: 'module-fullwidth'
+              view:
+                options:
+                  templateName: 'alltodos'
+            documentModule:
+              controller:
+                mixin: 'App.ModuleControllerMixin'
+                options:
+                  contentUrl: 'javascript://MM.transitions.showDocumentModule.url'
+              view:
+                mixin: 'App.ModuleViewMixin'
+                options:
+                  templateName: 'module-fullwidth'
             dashboardWidget:
-              templateName: 'dashboardwidget'
+              view:
+                options:
+                  templateName: 'dashboardwidget'
 
         router:
           defaults:
