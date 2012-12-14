@@ -81,7 +81,6 @@ class HeaderPartsViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHel
 				} else {
 					$this->output .= sprintf('<script src="%sPackages/%s"></script>', $this->resourcePublisher->getStaticResourcesWebBaseUri(), $javaScript);
 				}
-
 			}
 		}
 
@@ -106,7 +105,7 @@ class HeaderPartsViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHel
 
 		$includeCollection = new \Beech\Ehrm\Utility\DependencyAwareCollection();
 		foreach ($source as $identifier => $file) {
-			if (isset($file['uri'])) {
+			if (is_array($file) && isset($file['uri'])) {
 				$source[$identifier]['path'] = $file['path'] = $uriBuilder
 					->reset()
 					->setFormat('js')
