@@ -1,5 +1,5 @@
 <?php
-namespace Beech\Minutes\Controller\Management;
+namespace Beech\Minutes\Management\Controller;
 
 /*
  * This source file is proprietary property of Beech Applications B.V.
@@ -9,7 +9,7 @@ namespace Beech\Minutes\Controller\Management;
 
 use TYPO3\Flow\Annotations as Flow;
 
-class MinuteController extends \Beech\Ehrm\Controller\Management\AbstractManagementController {
+class MinuteController extends \Beech\Ehrm\Controller\AbstractManagementController {
 
 	protected $entityClassName = 'Beech\Minutes\Domain\Model\Minute';
 
