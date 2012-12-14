@@ -9,5 +9,5 @@ Beech:
             package: 'Beech.Task'
             controller: 'task'
             action: 'index'
-            transition: 'showModuleTask'
+            transition: 'showTaskModule'
             format: 'jsonp'
