@@ -1,0 +1,82 @@
+Beech.MisterMaks:
+########################################################################
+# This file is the template for the GS Contract Temp fieldStaff leasecar
+# and is the base for the following contracts
+# Arbeidsovereenkomst voor bepaalde tijd buitendienst met leaseauto
+########################################################################
+  contract:
+
+# version of this document
+
+    version: '17-12-2012'.
+
+# CLA that is connected with this contracttemplate
+
+    CLA: 'None'
+      CLAversion: ''
+      CLAversiondate: ''
+
+# This defines the available languages in which the contract can be generated
+
+    availableLanguages: [ nl_NL ]
+  -
+    contractTitle:
+      nl: 'Arbeidsovereenkomst voor bepaalde tijd'
+      en: ''
+      pl: ''
+  -
+    employer:
+      nl: 'vertegenwoordigd door haar directeur, de heer <roleEmployer>, hierna te noemen werkgever,'
+      en: ''
+      pl: ''
+  -
+    employee:
+      nl: 'hierna te noemen werknemer, gezamenlijk te noemen partijen,'
+      en: ''
+      pl: ''
+  -
+    contractstatemement:
+      nl: 'verklaren een arbeidsovereenkomst voor bepaalde te zijn aangegaan, waarop de volgende bepalingen van toepassing zijn.
+      en: ''
+      pl: ''
+  -
+    articles: [ 10000 , 10001 , 10002 , 10003 , 10004 , 10005 , 10006 , 10055 , 10056 , 10009 , 10010 , 10011 , 10054 , 10012 , 10013 , 10014 , 10064 , 10015 , 10051 , 10052, 10053 , 10057 , 10058 , 10059 , 10060 , 10022 , 10023 , 10024 , 10025, 10026 , 10027 , 10028 , 10029 , 10030 , 10031 , 10032 , 10033 , 10034 , 10035 , 10036 , 10037 , 10038 , 10068 , 10039 , 10040 , 10041 , 10042 , 10043 , 10044 , 10045 , 10046 , 10047 , 10048 , 10049 , 10050 , 10051 , 10052 , 10053 ]
+  -
+    creationDatePlace:
+      nl: Deze arbeidsovereenkomst is opgemaakt te <SignLocation>, op <signDate>.'
+      en: ''
+      pl: ''
+    values:
+  -
+    creationDatePlace:
+      nl: Deze arbeidsovereenkomst is opgemaakt te <SignLocation>, op <signDate>.'
+      en: ''
+      pl: ''
+    values:
+  -
+    signlocation:
+      label:
+        nl: 'Plaats'
+        en: 'Sign location'
+        pl: ''
+      values:
+        default: 'CompanyLocation'
+  -
+    signdate:
+      label:
+       nl: 'Datum'
+       en: 'Sign date'
+       pl: ''
+    type:
+    validation: [ (0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}( \d{1,2}[:-]\d{2}([:-]\d{2,3})*)? ]
+#The following settings are contract template settings which do not show in contact but are set here.
+    ContacttemplateSettings:
+      typeofemployment: [ Dagdienst]
+# Als de werkgever geen loondoorbetalingverplichting voor een bepaalde werknemer heeft, kan hij dit door middel van de
+# indicator “loondoorbetalingverplichting” aangeven. De werknemer valt dan buiten de verzekering.
+# Dit heeft voornamelijk betrekking op stagiairs, oproepkrachten en uitzendkrachten.
+      wagePaymentObligation: 'true'
+# set if the employee is a shareholder
+      DGA: 'false'
+#   set defaultpayment interval,
+      paymentIintervalDefault: 'month'
