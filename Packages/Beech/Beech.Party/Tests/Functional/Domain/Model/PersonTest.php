@@ -12,7 +12,7 @@ use TYPO3\Party\Domain\Model\PersonName;
 /**
  * Persistence test for Person entity
  */
-class PersonTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
+class PersonTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFunctionalTest {
 
 	/**
 	 * @var boolean
@@ -38,6 +38,7 @@ class PersonTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 	 */
 	public function setUp() {
 		parent::setUp();
+
 		$this->personRepository = $this->objectManager->get('Beech\Party\Domain\Repository\PersonRepository');
 		$this->accountRepository = $this->objectManager->get('TYPO3\Flow\Security\AccountRepository');
 		$this->accountFactory = $this->objectManager->get('TYPO3\Flow\Security\AccountFactory');
@@ -92,6 +93,7 @@ class PersonTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 	 */
 	protected function createPerson($firstName, $middleName, $lastName, $emailAddress) {
 		$person = new Person();
+		$person->injectDocumentManagerFactory($this->documentManagerFactory);
 		$person->setName(new PersonName('', $firstName, $middleName, $lastName));
 
 		$account = $this->accountFactory->createAccountWithPassword($emailAddress, $this->persistenceManager->getIdentifierByObject($person));
@@ -104,6 +106,43 @@ class PersonTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 
 		return $person;
 	}
+
+	/**
+	 * @test
+	 */
+	public function thePersonDocumentCanBePersistedAndRetrieved() {
+		$person = new Person();
+		$person->injectDocumentManagerFactory($this->documentManagerFactory);
+		$person->setName(new PersonName('', 'John', '', 'Doe'));
+		$documentId = $person->getDocument()->getId();
+
+		$this->personRepository->add($person);
+		$this->documentManager->persist($person->getDocument());
+
+		$this->persistenceManager->persistAll();
+		$this->documentManager->flush();
+
+		$this->assertEquals($documentId, $person->getDocument()->getId());
+
+		$persons = $this->personRepository->findAll();
+		$this->assertEquals($documentId, $persons[0]->getDocument()->getId());
+	}
+
+	/**
+	 * @test
+	 */
+	public function gettingAnUnknownPropertyOfAPersonIsSetAndRetrievedFromTheDocument() {
+		$person = new Person();
+		$person->injectDocumentManagerFactory($this->documentManagerFactory);
+		$person->setName(new PersonName('', 'John', '', 'Doe'));
+
+		$person->setFoo('bar');
+		$person->setBar('foo');
+
+		$this->assertEquals('bar', $person->getFoo());
+		$this->assertEquals('bar', $person->getDocument()->foo);
+	}
+
 }
 
 ?>

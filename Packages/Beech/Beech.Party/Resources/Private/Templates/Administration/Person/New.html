@@ -1,3 +1,35 @@
-<f:section name="Body">{namespace ehrm=Beech\Ehrm\ViewHelpers}
-	Create form
+<f:layout />
+
+<f:section name="Body">
+	<h1><f:translate id="action.new">New</f:translate></h1>
+	<f:form.validationResults for="account">
+		<f:if condition="{validationResults.flattenedErrors}">
+			<div class="error">
+				<f:for each="{validationResults.flattenedErrors}" key="propertyPath" as="errors">{propertyPath}: <f:for each="{errors}" as="error">{error}</f:for></f:for>
+			</div>
+		</f:if>
+	</f:form.validationResults>
+	<f:form action="create" name="person" object="{person}" method="post" class="form-horizontal well">
+		<div class="control-group">
+			<label class="control-label">Name</label>
+			<div class="controls">
+				<f:form.textfield property="name.firstName" />
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label">Gender</label>
+			<div class="controls">
+				<f:form.select property="gender" options="{male: 'Male', female: 'Female'}" value="male" />
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label">Date of death</label>
+			<div class="controls">
+				<f:form.textfield property="doei" />
+			</div>
+		</div>
+		<div class="form-actions">
+			<f:form.submit value="{f:translate(id: 'action.create')}" />
+		</div>
+	</f:form>
 </f:section>

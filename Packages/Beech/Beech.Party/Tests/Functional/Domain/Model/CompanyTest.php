@@ -13,7 +13,7 @@ use Beech\Party\Domain\Model\Company;
 /**
  * Persistence test for Company entity
  */
-class CompanyTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
+class CompanyTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFunctionalTest {
 
 	/**
 	 * @var boolean

@@ -17,4 +17,5 @@ use TYPO3\Flow\Annotations as Flow;
 class PersonRepository extends \TYPO3\Flow\Persistence\Repository {
 
 }
+
 ?>
