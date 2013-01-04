@@ -169,7 +169,7 @@ class Meeting extends \Radmiraal\CouchDB\Persistence\AbstractDocument {
 		$returnValue = new \Doctrine\Common\Collections\ArrayCollection();
 		if (!is_null($this->attendees)) {
 			foreach ($this->attendees as $attendee) {
-				$returnValue->add($this->persistenceManager->getObjectByIdentifier($attendee));
+				$returnValue->add($this->persistenceManager->getObjectByIdentifier($attendee, 'Beech\Party\Domain\Model\Person'));
 			}
 		}
 		return $returnValue;

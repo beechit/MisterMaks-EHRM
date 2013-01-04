@@ -13,7 +13,7 @@ use Beech\Calendar\Domain\Model\Meeting as Meeting;
 /**
  * Persistence test for Meeting entity
  */
-class MeetingTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
+class MeetingTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFunctionalTest {
 
 	/**
 	 * @var boolean
@@ -52,6 +52,8 @@ class MeetingTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 		$personTwo->setName(new \TYPO3\Party\Domain\Model\PersonName('', 'Edward', '', 'Lenssen'));
 		$this->personRepository->add($personTwo);
 
+		$this->persistenceManager->persistAll();
+
 		$meeting = new Meeting();
 		$meeting->setSubject('Title of this meeting');
 		$meeting->setDescription('Description of this meeting');
@@ -61,12 +63,16 @@ class MeetingTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 		$meeting->addAttendee($personTwo);
 		$this->meetingRepository->add($meeting);
 
-		$this->persistenceManager->persistAll();
+		$this->documentManager->flush();
 
-		$persistedMeeting = $this->meetingRepository->findAll()->getFirst();
+		$persistedMeetings = $this->meetingRepository->findAll();
 
-		$this->assertEquals($meeting, $persistedMeeting);
-		$this->assertEquals(2, count($persistedMeeting->getAttendees()));
+		$this->assertEquals($meeting, $persistedMeetings[0]);
+		$attendees = $persistedMeetings[0]->getAttendees();
+		$this->assertEquals(2, count($attendees));
+
+		$this->assertEquals('Bram Verhaegh', $attendees[0]->getName()->getFullName());
+		$this->assertEquals('Edward Lenssen', $attendees[1]->getName()->getFullName());
 	}
 }
 ?>
