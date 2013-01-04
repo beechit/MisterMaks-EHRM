@@ -7,14 +7,14 @@ namespace Beech\CLA\Domain\Model;
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
-use TYPO3\Flow\Annotations as Flow;
-use Doctrine\ORM\Mapping as ORM;
+use TYPO3\Flow\Annotations as Flow,
+	Doctrine\ODM\CouchDB\Mapping\Annotations as ODM;
 
 /**
  * A LaborAgreement
  *
  * @Flow\Scope("prototype")
- * @Flow\Entity
+ * @ODM\Document(indexed="true")
  */
 class LaborAgreement {
 
@@ -22,6 +22,8 @@ class LaborAgreement {
 	 * The name
 	 *
 	 * @var string
+	 * @ODM\Index
+	 * @ODM\Field(type="string")
 	 */
 	protected $name;
 

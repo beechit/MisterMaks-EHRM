@@ -7,16 +7,14 @@ namespace Beech\CLA\Domain\Model;
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
-use TYPO3\Flow\Annotations as Flow;
-use Doctrine\ORM\Mapping as ORM,
+use TYPO3\Flow\Annotations as Flow,
 	Doctrine\ODM\CouchDB\Mapping\Annotations as ODM;
 
 /**
  * A Contract
  *
  * @Flow\Scope("prototype")
- * @Flow\Entity
- * @ORM\HasLifecycleCallbacks
+ * @ODM\Document(indexed="true")
  */
 class Contract {
 
@@ -31,60 +29,83 @@ class Contract {
 
 	/**
 	 * @var \Beech\CLA\Domain\Model\JobPosition
-	 * @ORM\OneToOne
-	 * @ORM\Column(nullable=TRUE)
+	 * @ODM\ReferenceOne(targetDocument="\Beech\CLA\Domain\Model\JobPosition")
 	 */
 	protected $jobPosition;
 
 	/**
 	 * @var \Doctrine\Common\Collections\Collection<\Beech\CLA\Domain\Model\Wage>
 	 * @ODM\ReferenceMany(targetDocument="\Beech\CLA\Domain\Model\Wage")
-	 * @Flow\Validate(type="Count", options={ "minimum"=1 })
+	 * @Flow\Validate(type="NotEmpty")
 	 */
 	protected $wages;
 
 	/**
 	 * @var \Beech\Party\Domain\Model\Company
-	 * @ORM\OneToOne
+	 * @ODM\Field(type="string")
+	 * @ODM\Index
 	 */
 	protected $employer;
 
 	/**
 	 * @var \Beech\Party\Domain\Model\Person
-	 * @ORM\ManyToOne
+	 * @ODM\Field(type="string")
+	 * @ODM\Index
 	 */
 	protected $employee;
 
 	/**
 	 * @var string
+	 * @ODM\Field(type="string")
+	 * @ODM\Index
 	 */
 	protected $status;
 
 	/**
 	 * The create date
 	 * @var \DateTime
+	 * @ODM\Field(type="datetime")
 	 */
 	protected $creationDate;
 
 	/**
 	 * The start date
 	 * @var \DateTime
-	 * @ORM\Column(nullable=TRUE)
+	 * @ODM\Field(type="datetime")
+	 * @ODM\Index
 	 */
 	protected $startDate;
 
 	/**
 	 * The expire date
 	 * @var \DateTime
-	 * @ORM\Column(nullable=TRUE)
+	 * @ODM\Field(type="datetime")
+	 * @ODM\Index
 	 */
 	protected $expirationDate;
+
+	/**
+	 * @var \TYPO3\Flow\Persistence\PersistenceManagerInterface
+	 * @Flow\Transient
+	 */
+	protected $persistenceManager;
 
 	/**
 	 * Construct the object
 	 */
 	public function __construct() {
-		$this->wages = new \Doctrine\Common\Collections\ArrayCollection();
+		$this->wages = array();
+		$this->setCreationDate(new \DateTime());
+	}
+
+	/**
+	 * Injects the Flow Persistence Manager
+	 *
+	 * @param \TYPO3\Flow\Persistence\PersistenceManagerInterface $persistenceManager
+	 * @return void
+	 */
+	public function injectPersistenceManager(\TYPO3\Flow\Persistence\PersistenceManagerInterface $persistenceManager) {
+		$this->persistenceManager = $persistenceManager;
 	}
 
 	/**
@@ -105,28 +126,28 @@ class Contract {
 	 * @param \Beech\Party\Domain\Model\Person $employee
 	 */
 	public function setEmployee($employee) {
-		$this->employee = $employee;
+		$this->employee = $this->persistenceManager->getIdentifierByObject($employee);
 	}
 
 	/**
 	 * @return \Beech\Party\Domain\Model\Person
 	 */
 	public function getEmployee() {
-		return $this->employee;
+		return $this->persistenceManager->getObjectByIdentifier($this->employee);
 	}
 
 	/**
 	 * @param \Beech\Party\Domain\Model\Company $employer
 	 */
-	public function setEmployer($employer) {
-		$this->employer = $employer;
+	public function setEmployer(\Beech\Party\Domain\Model\Company $employer) {
+		$this->employer = $this->persistenceManager->getIdentifierByObject($employer);
 	}
 
 	/**
 	 * @return \Beech\Party\Domain\Model\Company
 	 */
 	public function getEmployer() {
-		return $this->employer;
+		return $this->persistenceManager->getObjectByIdentifier($this->employer);
 	}
 
 	/**
