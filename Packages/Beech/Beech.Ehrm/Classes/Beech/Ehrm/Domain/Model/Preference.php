@@ -22,7 +22,7 @@ class Preference extends \Radmiraal\CouchDB\Persistence\AbstractDocument {
 	 * @ODM\Field(type="string")
 	 * @ODM\Index
 	 */
-	protected $identifier;
+	protected $identifier = '';
 
 	/**
 	 * @var string

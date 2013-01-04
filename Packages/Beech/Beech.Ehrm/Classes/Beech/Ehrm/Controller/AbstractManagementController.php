@@ -36,6 +36,25 @@ class AbstractManagementController extends \Beech\Ehrm\Controller\AbstractContro
 	protected $flashMessageContainer;
 
 	/**
+	 * @var \Doctrine\ODM\CouchDB\DocumentManager
+	 */
+	protected $documentManager;
+
+	/**
+	 * @var \Radmiraal\CouchDB\Persistence\DocumentManagerFactory
+	 */
+	protected $documentManagementFactory;
+
+	/**
+	 * @param \Radmiraal\CouchDB\Persistence\DocumentManagerFactory $documentManagerFactory
+	 * @return void
+	 */
+	public function injectDocumentManagerFactory(\Radmiraal\CouchDB\Persistence\DocumentManagerFactory $documentManagerFactory) {
+		$this->documentManagementFactory = $documentManagerFactory;
+		$this->documentManager = $this->documentManagementFactory->create();
+	}
+
+	/**
 	 * Initializes the action
 	 *
 	 * @throws \Exception

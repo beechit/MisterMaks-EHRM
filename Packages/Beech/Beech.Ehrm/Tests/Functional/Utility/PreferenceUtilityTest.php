@@ -18,11 +18,6 @@ class PreferenceUtilityTest extends \Radmiraal\CouchDB\Tests\Functional\Abstract
 	static protected $testablePersistenceEnabled = TRUE;
 
 	/**
-	 * @var \Beech\Ehrm\Utility\PreferenceUtility
-	 */
-	protected $preferenceUtility;
-
-	/**
 	 * @var \Beech\Ehrm\Domain\Repository\PreferenceRepository
 	 */
 	protected $preferenceRepository;
@@ -37,8 +32,8 @@ class PreferenceUtilityTest extends \Radmiraal\CouchDB\Tests\Functional\Abstract
 	 */
 	public function setUp() {
 		parent::setUp();
-		$this->preferenceUtility = $this->objectManager->get('Beech\Ehrm\Utility\PreferenceUtility');
 		$this->preferenceRepository = $this->objectManager->get('Beech\Ehrm\Domain\Repository\PreferenceRepository');
+		$this->preferenceRepository->injectDocumentManagerFactory($this->documentManagerFactory);
 		$this->personRepository = $this->objectManager->get('Beech\Party\Domain\Repository\PersonRepository');
 	}
 
@@ -49,17 +44,22 @@ class PreferenceUtilityTest extends \Radmiraal\CouchDB\Tests\Functional\Abstract
 	 * @test
 	 */
 	public function settingAndGettingApplicationSettingsWorks() {
-		$this->preferenceUtility->setApplicationPreference('language.default', 'nl_NL');
-		$this->assertEquals('nl_NL', $this->preferenceUtility->getApplicationPreference('language.default'));
+		$preferenceUtility = new \Beech\Ehrm\Utility\PreferenceUtility();
+		$preferenceUtility->setApplicationPreference('language.default', 'nl_NL');
+
+		$this->assertEquals('nl_NL', $preferenceUtility->getApplicationPreference('language.default'));
 	}
 
 	/**
 	 * @test
 	 */
 	public function preferencesDocumentIsPersistedAfterFirstCallToSetApplicationPreference() {
+		$preferenceUtility = new \Beech\Ehrm\Utility\PreferenceUtility();
+
 		$this->assertEquals(0, $this->preferenceRepository->countByCategory('application'));
-		$this->preferenceUtility->setApplicationPreference('language.default', 'nl_NL');
+		$preferenceUtility->setApplicationPreference('language.default', 'nl_NL');
 		$this->documentManager->flush();
+
 		$this->assertEquals(1, $this->preferenceRepository->countByCategory('application'));
 	}
 
@@ -73,14 +73,6 @@ class PreferenceUtilityTest extends \Radmiraal\CouchDB\Tests\Functional\Abstract
 
 		$preferenceUtility = new \Beech\Ehrm\Utility\PreferenceUtility();
 		$this->assertEquals('nl_NL', $preferenceUtility->getApplicationPreference('language'));
-	}
-
-	/**
-	 * @test
-	 * @expectedException \Beech\Ehrm\Exception\NoActiveSessionException
-	 */
-	public function getUserPreferenceThrowsExceptionIfNoSession() {
-		$this->preferenceUtility->getUserPreference('locale');
 	}
 
 	/**
@@ -111,7 +103,8 @@ class PreferenceUtilityTest extends \Radmiraal\CouchDB\Tests\Functional\Abstract
 		$model1 = new \Beech\Ehrm\Tests\Functional\Fixtures\Domain\Model\Document();
 		$model1->setId('abc');
 
-		$this->preferenceUtility->setModelPreference($model1, 'test', 'locale', 'nl_NL');
+		$preferenceUtility = new \Beech\Ehrm\Utility\PreferenceUtility();
+		$preferenceUtility->setModelPreference($model1, 'test', 'locale', 'nl_NL');
 
 		$this->documentManager->flush();
 
@@ -128,11 +121,13 @@ class PreferenceUtilityTest extends \Radmiraal\CouchDB\Tests\Functional\Abstract
 	public function ifAnIdentifierIsSetItsNotPossibleToAddPreferenceDocumentsWithTheSameCategoryByUpdatingAnotherDocument() {
 		$model1 = new \Beech\Ehrm\Tests\Functional\Fixtures\Domain\Model\Document();
 		$model1->setId('abc');
-		$this->preferenceUtility->setModelPreference($model1, 'test', 'locale', 'nl_NL');
+
+		$preferenceUtility = new \Beech\Ehrm\Utility\PreferenceUtility();
+		$preferenceUtility->setModelPreference($model1, 'test', 'locale', 'nl_NL');
 
 		$model2 = new \Beech\Ehrm\Tests\Functional\Fixtures\Domain\Model\Document();
 		$model2->setId('def');
-		$this->preferenceUtility->setModelPreference($model2, 'test', 'locale', 'nl_NL');
+		$preferenceUtility->setModelPreference($model2, 'test', 'locale', 'nl_NL');
 
 		$this->documentManager->flush();
 
@@ -155,13 +150,14 @@ class PreferenceUtilityTest extends \Radmiraal\CouchDB\Tests\Functional\Abstract
 		$mockSecurityContext->expects($this->any())->method('isInitialized')->will($this->returnValue(TRUE));
 		$mockSecurityContext->expects($this->any())->method('getAccount')->will($this->returnValue($account));
 
-		$this->inject($this->preferenceUtility, 'securityContext', $mockSecurityContext);
+		$preferenceUtility = new \Beech\Ehrm\Utility\PreferenceUtility();
+		$this->inject($preferenceUtility, 'securityContext', $mockSecurityContext);
 
-		$this->preferenceUtility->setApplicationPreference('locale', 'nl_NL');
-		$this->assertEquals('nl_NL', $this->preferenceUtility->getApplicationPreference('locale'));
+		$preferenceUtility->setApplicationPreference('locale', 'nl_NL');
+		$this->assertEquals('nl_NL', $preferenceUtility->getApplicationPreference('locale'));
 
-		$this->preferenceUtility->setUserPreference('locale', 'de_VENLO');
-		$this->assertEquals('de_VENLO', $this->preferenceUtility->getApplicationPreference('locale'));
+		$preferenceUtility->setUserPreference('locale', 'de_VENLO');
+		$this->assertEquals('de_VENLO', $preferenceUtility->getApplicationPreference('locale'));
 	}
 
 	/**
@@ -174,17 +170,18 @@ class PreferenceUtilityTest extends \Radmiraal\CouchDB\Tests\Functional\Abstract
 		$mockSecurityContext->expects($this->any())->method('isInitialized')->will($this->returnValue(TRUE));
 		$mockSecurityContext->expects($this->any())->method('getAccount')->will($this->returnValue($account));
 
-		$this->inject($this->preferenceUtility, 'securityContext', $mockSecurityContext);
+		$preferenceUtility = new \Beech\Ehrm\Utility\PreferenceUtility();
+		$this->inject($preferenceUtility, 'securityContext', $mockSecurityContext);
 
-		$this->preferenceUtility->setApplicationPreference('locale', NULL);
-		$this->preferenceUtility->setUserPreference('locale', NULL);
+		$preferenceUtility->setApplicationPreference('locale', NULL);
+		$preferenceUtility->setUserPreference('locale', NULL);
 
-		$this->preferenceUtility->setApplicationPreference('locale', 'nl_NL');
-		$this->assertEquals('nl_NL', $this->preferenceUtility->getApplicationPreference('locale'));
+		$preferenceUtility->setApplicationPreference('locale', 'nl_NL');
+		$this->assertEquals('nl_NL', $preferenceUtility->getApplicationPreference('locale'));
 
-		$this->preferenceUtility->setUserPreference('locale', 'de_VENLO');
-		$this->assertEquals('de_VENLO', $this->preferenceUtility->getUserPreference('locale'));
-		$this->assertEquals('nl_NL', $this->preferenceUtility->getApplicationPreference('locale', FALSE));
+		$preferenceUtility->setUserPreference('locale', 'de_VENLO');
+		$this->assertEquals('de_VENLO', $preferenceUtility->getUserPreference('locale'));
+		$this->assertEquals('nl_NL', $preferenceUtility->getApplicationPreference('locale', FALSE));
 	}
 
 	/**

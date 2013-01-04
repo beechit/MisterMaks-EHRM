@@ -84,7 +84,6 @@ class PreferenceUtility {
 	}
 
 	/**
-	 * @throws \Beech\Ehrm\Exception\NoActiveSessionException
 	 * @return \Beech\Ehrm\Domain\Model\Preference
 	 */
 	public function getUserPreferenceDocument() {
@@ -172,7 +171,6 @@ class PreferenceUtility {
 			$preferenceDocument = new \Beech\Ehrm\Domain\Model\Preference($category);
 			$preferenceDocument->setIdentifier($modelIdentifier);
 			$this->preferenceRepository->add($preferenceDocument);
-
 			return $preferenceDocument;
 		}
 

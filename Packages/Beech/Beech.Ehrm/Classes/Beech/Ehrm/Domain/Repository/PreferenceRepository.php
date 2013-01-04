@@ -56,9 +56,8 @@ class PreferenceRepository extends \Radmiraal\CouchDB\Persistence\AbstractReposi
 	 */
 	public function add($object) {
 		$identifier = $object->getIdentifier() !== NULL ? $object->getIdentifier() : '';
-		$category = $object->getCategory();
 
-		if ($this->countByModelAndCategory($identifier, $category) > 0) {
+		if ($this->countByModelAndCategory($identifier, $object->getCategory()) > 0) {
 			throw new \Beech\Ehrm\Exception\DuplicateApplicationPreferenceException('Adding multiple preference documents with "application" category is not allowed');
 		}
 		parent::add($object);
@@ -71,9 +70,8 @@ class PreferenceRepository extends \Radmiraal\CouchDB\Persistence\AbstractReposi
 	 */
 	public function update($object) {
 		$identifier = $object->getIdentifier() !== NULL ? $object->getIdentifier() : '';
-		$category = $object->getCategory();
 
-		$availableApplicationPreferenceDocuments = $this->findByModelAndCategory($identifier, $category);
+		$availableApplicationPreferenceDocuments = $this->findByModelAndCategory($identifier, $object->getCategory());
 		if (count($availableApplicationPreferenceDocuments) > 0
 				&& $availableApplicationPreferenceDocuments[0]->getId() !== $object->getId()) {
 			throw new \Beech\Ehrm\Exception\DuplicateApplicationPreferenceException('Adding multiple preference documents with "application" category is not allowed');

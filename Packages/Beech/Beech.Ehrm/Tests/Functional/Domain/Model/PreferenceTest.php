@@ -29,6 +29,7 @@ class PreferenceTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFunctio
 		parent::setUp();
 		$this->preferenceUtility = $this->objectManager->get('Beech\Ehrm\Utility\PreferenceUtility');
 		$this->preferenceRepository = $this->objectManager->get('Beech\Ehrm\Domain\Repository\PreferenceRepository');
+		$this->preferenceRepository->injectDocumentManagerFactory($this->documentManagerFactory);
 	}
 
 	/**
