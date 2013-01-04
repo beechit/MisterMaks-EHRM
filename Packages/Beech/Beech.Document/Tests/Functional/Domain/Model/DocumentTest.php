@@ -27,24 +27,21 @@ class DocumentTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFunctiona
 	public function setUp() {
 		parent::setUp();
 		$this->documentRepository = $this->objectManager->get('Beech\Document\Domain\Repository\DocumentRepository');
-		$this->documentRepository->injectDocumentManagerFactory($this->documentManagerFactory);
-		$this->inject($this->documentRepository, 'reflectionService', $this->objectManager->get('TYPO3\Flow\Reflection\ReflectionService'));
-		$this->inject($this->documentRepository, 'persistenceManager', $this->persistenceManager);
 	}
 
 	/**
 	 * @test
 	 */
 	public function documentPersistingAndRetrievingWorksCorrectly() {
-		for ($i = 0; $i < 10; $i ++) {
-			$document = new \Beech\Document\Domain\Model\Document();
-			$document->setName('Name ' . $i);
-			$document->setDocumentType('Type ' . $i);
-			$this->documentRepository->add($document);
-		}
+		$document = new \Beech\Document\Domain\Model\Document();
+		$document->setName('Foo');
+		$this->documentRepository->add($document);
 
 		$this->documentManager->flush();
-		$this->assertEquals(10, count($this->documentRepository->findAll()));
+
+		$this->assertEquals(1, count($this->documentRepository->findAll()));
 	}
+
 }
+
 ?>
