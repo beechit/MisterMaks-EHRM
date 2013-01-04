@@ -122,7 +122,8 @@ class Task extends \Radmiraal\CouchDB\Persistence\AbstractDocument {
 	 */
 	protected function getCurrentParty() {
 		if (isset($this->securityContext) && $this->securityContext->isInitialized()
-			&& $this->securityContext->getAccount()->getParty() instanceof \Beech\Party\Domain\Model\Person) {
+				&& $this->securityContext->getAccount() instanceof \TYPO3\Flow\Security\Account
+				&& $this->securityContext->getAccount()->getParty() instanceof \Beech\Party\Domain\Model\Person) {
 			return $this->securityContext->getAccount()->getParty();
 		}
 		return NULL;

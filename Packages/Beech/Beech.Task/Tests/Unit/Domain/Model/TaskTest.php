@@ -62,9 +62,9 @@ class TaskTest extends \TYPO3\Flow\Tests\UnitTestCase {
 		$task = new Task();
 
 		$john = new \Beech\Party\Domain\Model\Person();
-		$john->setName(new \TYPO3\Party\Domain\Model\PersonName(NULL, 'John', '', 'Doe'));
+		$john->setName(new \TYPO3\Party\Domain\Model\PersonName('', 'John', '', 'Doe'));
 		$jane = new \Beech\Party\Domain\Model\Person();
-		$jane->setName(new \TYPO3\Party\Domain\Model\PersonName(NULL, 'Jane', '', 'Doe'));
+		$jane->setName(new \TYPO3\Party\Domain\Model\PersonName('', 'Jane', '', 'Doe'));
 
 		$mockPersistenceManager = $this->getMock('TYPO3\Flow\Persistence\Doctrine\PersistenceManager', array(), array(), '', FALSE);
 
@@ -86,9 +86,9 @@ class TaskTest extends \TYPO3\Flow\Tests\UnitTestCase {
 		$task = new Task();
 
 		$john = new \Beech\Party\Domain\Model\Person();
-		$john->setName(new \TYPO3\Party\Domain\Model\PersonName(NULL, 'John', '', 'Doe'));
+		$john->setName(new \TYPO3\Party\Domain\Model\PersonName('', 'John', '', 'Doe'));
 		$jane = new \Beech\Party\Domain\Model\Person();
-		$jane->setName(new \TYPO3\Party\Domain\Model\PersonName(NULL, 'Jane', '', 'Doe'));
+		$jane->setName(new \TYPO3\Party\Domain\Model\PersonName('', 'Jane', '', 'Doe'));
 
 		$mockPersistenceManager = $this->getMock('TYPO3\Flow\Persistence\Doctrine\PersistenceManager', array(), array(), '', FALSE);
 
