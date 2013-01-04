@@ -13,7 +13,7 @@ use TYPO3\Flow\Annotations as Flow,
 /**
  * Persistence test for Minute entity
  */
-class MinuteTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
+class MinuteTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFunctionalTest {
 
 	/**
 	 * @var boolean
@@ -35,6 +35,7 @@ class MinuteTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 	public function setUp() {
 		parent::setUp();
 		$this->minuteRepository = $this->objectManager->get('Beech\Minutes\Domain\Repository\MinuteRepository');
+		$this->minuteRepository->injectDocumentManager($this->documentManager);
 		$this->personRepository = $this->objectManager->get('Beech\Party\Domain\Repository\PersonRepository');
 	}
 
@@ -60,9 +61,10 @@ class MinuteTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 		$minute->setCreationDateTime(new \DateTime('2012-01-01 00:00:01'));
 		$this->minuteRepository->add($minute);
 
-		$this->persistenceManager->persistAll();
-		$persistedMinute = $this->minuteRepository->findAll()->getFirst();
-		$this->assertEquals($minute, $persistedMinute);
+		$this->documentManager->flush();
+
+		$persistedMinutes = $this->minuteRepository->findAll();
+		$this->assertEquals($minute, $persistedMinutes[0]);
 
 			// Add another minute to ensure the ManyToOne relation is correct
 		$anotherMinute = new Minute();
@@ -73,8 +75,7 @@ class MinuteTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 		$anotherMinute->setCreationDateTime(new \DateTime('2011-01-01 00:00:01'));
 		$this->minuteRepository->add($anotherMinute);
 
-		$this->persistenceManager->persistAll();
-		$this->persistenceManager->clearState();
+		$this->documentManager->flush();
 
 		$this->assertEquals(2, $this->minuteRepository->countAll());
 	}
