@@ -2,265 +2,577 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
 	<file original="" source-language="en" target-language="pl" datatype="plaintext">
 		<body>
+			<trans-unit id="company.company.companyIDnumber">
+				<source>companyIDnumber</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.PolicyNumberAbsenceInsurer">
+				<source>PolicyNumberAbsenceInsurer</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.legalForm">
+				<source>legalForm</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.CompanyType">
+				<source>CompanyType</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.address">
+				<source>address</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.addressType">
+				<source>addressType</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.streetName">
+				<source>company.streetName</source>
+			<target></target>
+			</trans-unit>
+			<trans-unit id="company.primaryPostAddress">
+				<source>primaryPostAddress</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.primaryLocation">
+				<source>primaryLocation</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.postBoxNumber">
+				<source>postBoxNumber</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.houseNumber">
+				<source>houseNumber</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.houseNumberAddition">
+				<source>houseNumberAddition</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.postalCodeNL">
+				<source>postalCodeNL</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.postalCodeAbroad">
+				<source>postalCodeAbroad</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.residence">
+				<source>residence</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.country">
+				<source>country</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.addressDescription">
+				<source></source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.electronicAddresses">
+				<source>electronicAddresses</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.Email">
+				<source>Email</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.Skype">
+				<source>Skype</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.websiteUrl">
+				<source>websiteUrl</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.twitter">
+				<source>twitter</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.facebook">
+				<source>facebook</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.linkedin">
+				<source>linkedin</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.hyves">
+				<source>hyves</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.telephone">
+				<source>telephone</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.telephoneType">
+				<source>telephoneType</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.telephoneNumber">
+				<source>telephoneNumber</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.foreignTelePhoneNumber">
+				<source>foreignTelePhoneNumber</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.vatNumber">
+				<source>vat Number</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.wageTaxNumber">
+				<source>Wage Tax Number</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.companyDescription">
+				<source>Company description"></source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.bankinformation">
+				<source>Bank information</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.accountType">
+				<source>Account type</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.bankName">
+				<source>bankname</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.primaryBankAccount">
+				<source>primaryBankAccount</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.Giro">
+				<source>Giro</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.bic">
+				<source>bic</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.accountNumber">
+				<source>accountNumber</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.ibanNumber">
+				<source>ibanNumber</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.countryBank">
+				<source>countryBank</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.bankResidence">
+				<source>bankResidence</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.serviceType">
+				<source>serviceType</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.creationDate">
+				<source>creationDate</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.createdBy">
+				<source>createdBy</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.Modification">
+				<source>Modification</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.modificationDate">
+				<source>modificationDate</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.Modifiedby">
+				<source>Modifiedby</source>
+				<target></target>
+			</trans-unit>
 			<trans-unit id="company">
 				<source>Company</source>
-				<target>Firma</target>
+				<target></target>
 			</trans-unit>
 			<trans-unit id="lead.new.company">
 				<source>Fill out the following form to create a new company</source>
-				<target>Aby stworzyc profil firmowy wypelnij ponizszy formularz</target>
+				<target></target>
 			</trans-unit>
 			<trans-unit id="lead.edit.company">
 				<source>Use the following form to edit a company</source>
-				<target>Use the following form to edit a company</target>
+				<target></target>
 			</trans-unit>
 			<trans-unit id="lead.new.address">
 				<source>Fill out the following form to create a new address</source>
-				<target>Fill out the following form to create a new address</target>
+				<target></target>
 			</trans-unit>
 			<trans-unit id="company.name">
 				<source>Company name</source>
-				<target>Nazwa firmy</target>
-			</trans-unit>
-			<trans-unit id="company.number">
-				<source>Company number</source>
-				<target>Numer firmy</target>
-			</trans-unit>
-			<trans-unit id="company.type">
-				<source>Company Type</source>
-				<target>Typ firmy</target>
-			</trans-unit>
-			<trans-unit id="company.description">
-				<source>Description</source>
-				<target>Opis</target>
-			</trans-unit>
-			<trans-unit id="company.phone">
-				<source>Phone</source>
-				<target>Telefon</target>
-			</trans-unit>
-			<trans-unit id="company.website">
-				<source>Website</source>
-				<target>Strona www</target>
-			</trans-unit>
-			<trans-unit id="company.legalForm">
-				<source>Legal form</source>
-				<target>Forma prawna</target>
-			</trans-unit>
-			<trans-unit id="company.wageTaxNumber">
-				<source>Wage tax number</source>
-				<target>Loonheffingsnummer</target>
-			</trans-unit>
-			<trans-unit id="company.chamberOfCommerceNumber">
-				<source>Chamber of commerce number</source>
-				<target>Numer REGON</target>
-			</trans-unit>
-			<trans-unit id="company.vatNumber">
-				<source>VAT number</source>
-				<target>Numer NIP</target>
-			</trans-unit>
-			<trans-unit id="company.address">
-				<source>Company addresses</source>
-				<target>Adresy firmy</target>
-			</trans-unit>
-			<trans-unit id="company.contacts">
-				<source>Company contacts</source>
-				<target>Kontakty firmy</target>
-			</trans-unit>
-			<trans-unit id="address.type">
-				<source>Type</source>
-				<target>Typ</target>
-			</trans-unit>
-			<trans-unit id="address.code">
-				<source>Code</source>
-				<target>Code</target>
-			</trans-unit>
-			<trans-unit id="address.postalCode">
-				<source>Postal code</source>
-				<target>Postal code</target>
-			</trans-unit>
-			<trans-unit id="address.postBox">
-				<source>Postbox</source>
-				<target>Postbox</target>
-			</trans-unit>
-			<trans-unit id="address.residence">
-				<source>Residence</source>
-				<target>Residence</target>
-			</trans-unit>
-			<trans-unit id="address.street">
-				<source>Street</source>
-				<target>Street</target>
-			</trans-unit>
-			<trans-unit id="address.houseNumber">
-				<source>House number</source>
-				<target>House number</target>
-			</trans-unit>
-			<trans-unit id="address.description">
-				<source>Description</source>
-				<target>Opis</target>
+				<target></target>
 			</trans-unit>
 			<trans-unit id="department.name">
 				<source>Department name</source>
-				<target>Nazwa dzialu</target>
+				<target></target>
 			</trans-unit>
 			<trans-unit id="message.company.noResult">
 				<source>No company created yet</source>
-				<target>Brak firm w systemie</target>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="message.department.noResult">
+				<source>No department created yet</source>
+				<target></target>
 			</trans-unit>
 			<trans-unit id="persons">
 				<source>Persons</source>
-				<target>Osoby</target>
-			</trans-unit>
-			<trans-unit id="person">
-				<source>Person</source>
-				<target>Osoba</target>
-			</trans-unit>
-			<trans-unit id="person.firstName">
-				<source>First name</source>
-				<target>Imie</target>
-			</trans-unit>
-			<trans-unit id="person.lastName">
-				<source>Last name</source>
-				<target>Nazwisko</target>
-			</trans-unit>
-			<trans-unit id="person.email">
-				<source>Email</source>
-				<target>Email</target>
-			</trans-unit>
-			<trans-unit id="person.phone">
-				<source>Phone</source>
-				<target>Telefon</target>
-			</trans-unit>
-			<trans-unit id="person.description">
-				<source>Description</source>
-				<target>Opis</target>
-			</trans-unit>
-			<trans-unit id="message.person.noResult">
-				<source>No employees added yet</source>
-				<target>Brak osob w systemie</target>
+				<target></target>
 			</trans-unit>
 			<trans-unit id="accounts">
 				<source>Users</source>
-				<target>Użytkownicy</target>
+				<target></target>
 			</trans-unit>
 			<trans-unit id="account.accountIdentifier">
 				<source>User identifier</source>
-				<target>Identyfikator użytkownika</target>
+				<target></target>
 			</trans-unit>
 			<trans-unit id="account.creationDate">
 				<source>Creation Date</source>
-				<target>Data utworzenia</target>
+				<target></target>
 			</trans-unit>
 			<trans-unit id="account.expirationDate">
 				<source>Expiration Date</source>
-				<target>Data ważności</target>
+				<target></target>
 			</trans-unit>
 			<trans-unit id="account.password">
 				<source>Password</source>
-				<target>Hasło</target>
+				<target></target>
 			</trans-unit>
 			<trans-unit id="message.account.noResult">
 				<source>No users created yet</source>
-				<target>Brak użytkowników w systemie</target>
+				<target></target>
 			</trans-unit>
 			<trans-unit id="groupType.name">
 				<source>Group type</source>
-				<target>Typ grupy</target>
+				<target></target>
 			</trans-unit>
 			<trans-unit id="message.groupType.noResult">
 				<source>No group types created yet.</source>
-				<target>Brak typ grup w systemie</target>
+				<target></target>
 			</trans-unit>
 			<trans-unit id="group.name">
 				<source>Group name</source>
-				<target>Nazwa grupy</target>
+				<target></target>
 			</trans-unit>
 			<trans-unit id="group.type">
 				<source>Group type</source>
-				<target>Typ grupy</target>
+				<target></target>
 			</trans-unit>
 			<trans-unit id="group.members">
 				<source>Members</source>
-				<target>Członkowie</target>
+				<target></target>
 			</trans-unit>
 			<trans-unit id="group.children">
-				<source>Children</source>
-				<target>Podgrupy</target>
+				<source>Subgroups</source>
+				<target></target>
 			</trans-unit>
 			<trans-unit id="message.group.noResult">
 				<source>No group created yet.</source>
-				<target>Brak grup w systemie</target>
+				<target></target>
 			</trans-unit>
 			<trans-unit id="action">
 				<source>Action</source>
-				<target>Akcja</target>
+				<target></target>
 			</trans-unit>
 			<trans-unit id="action.new">
 				<source>New</source>
-				<target>Nowy</target>
+				<target></target>
 			</trans-unit>
 			<trans-unit id="action.create">
 				<source>Create</source>
-				<target>Stwórz</target>
+				<target></target>
 			</trans-unit>
 			<trans-unit id="action.show">
 				<source>Show</source>
-				<target>Pokaż</target>
+				<target></target>
 			</trans-unit>
 			<trans-unit id="action.edit">
 				<source>Edit</source>
-				<target>Edytuj</target>
+				<target></target>
 			</trans-unit>
 			<trans-unit id="action.save">
 				<source>Save</source>
-				<target>Zapisz</target>
+				<target></target>
 			</trans-unit>
 			<trans-unit id="action.update">
 				<source>Update</source>
-				<target>Zaktualizuj</target>
+				<target></target>
 			</trans-unit>
 			<trans-unit id="action.cancel">
 				<source>Cancel</source>
-				<target>Anuluj</target>
+				<target></target>
 			</trans-unit>
 			<trans-unit id="action.close">
 				<source>Close</source>
-				<target>Zamknij</target>
+				<target></target>
 			</trans-unit>
 			<trans-unit id="action.back">
 				<source>Back</source>
-				<target>Wróć</target>
+				<target></target>
 			</trans-unit>
 			<trans-unit id="action.newDepartment">
 				<source>Create new department</source>
-				<target>Nowy dział</target>
+				<target></target>
 			</trans-unit>
 			<trans-unit id="action.add.company.address">
 				<source>Add company address</source>
-				<target>Dodaj adres firmy</target>
+				<target></target>
 			</trans-unit>
 			<trans-unit id="flashmessage.newDepartment">
 				<source>Created new department</source>
-				<target>Dodano nowy dział</target>
+				<target></target>
 			</trans-unit>
 			<trans-unit id="flashmessage.createdCompany">
 				<source>New company created.</source>
-				<target>Nowa firma utworzona.</target>
+				<target></target>
 			</trans-unit>
 			<trans-unit id="flashmessage.updatedCompany">
 				<source>CompanyData updated</source>
-				<target>Dane firmy zostały zaaktualizowane</target>
+				<target></target>
 			</trans-unit>
 			<trans-unit id="flashmessage.deletedCompany">
 				<source>Companydata deleted</source>
-				<target>Firma zostala usunieta</target>
+				<target></target>
 			</trans-unit>
 			<trans-unit id="flashmessage.addedAddress">
 				<source>New company address was successfully added.</source>
-				<target>Nowy adres firmy został pomyślnie dodany.</target>
+				<target></target>
 			</trans-unit>
 			<trans-unit id="loading">
 				<source>Mister Maks</source>
-				<target>Mister Maks</target>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.Initials">
+				<source>Initials</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.birthName">
+				<source>birthName</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.dateofBirth">
+				<source>dateofBirth</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.dateofDeath">
+				<source>dateofDeath</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.gender">
+				<source>gender</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.civilStatus">
+				<source>civilStatus</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.image">
+				<source>image</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.preferedCommunictationMethod">
+				<source>preferedCommunictationMethod</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.electronicaddresses.email">
+				<source>email</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.electronicaddresses.skype">
+				<source></source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.electronicaddresses.websiteUrl">
+				<source>websiteUrl</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.electronicaddresses.twitter">
+				<source>twitter</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.electronicaddresses.facebook">
+				<source>facebook/source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.electronicaddresses.linkedin">
+				<source>linkedin</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.electronicaddresses.hyves">
+				<source>hyves</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.telephone.telephonetype">
+				<source>telephonetype</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.telephone.telephoneNumber">
+				<source>telephoneNumber</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.telephone.foreignTelePhoneNumber">
+				<source>foreignTelePhoneNumber</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.Addresses.addresstype">
+				<source>addresstype</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.Addresses.primaryPostaddress">
+				<source>primaryPostaddress</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.Addresses.primaryResidentialAddress">
+				<source>primaryResidentialAddress</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.Addresses.streetName">
+				<source>streetName</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.Addresses.postboxNumber">
+				<source>postboxNumber</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.Addresses.houseNumber">
+				<source>houseNumber</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.Addresses.houseNumberAddition">
+				<source>houseNumberAddition</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.Addresses.postalCodeNL">
+				<source>postalCodeNL</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.Addresses.postalCodeAbroad">
+				<source>postalCodeAbroad</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.Addresses.residence">
+				<source>residence</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.Addresses.region">
+				<source>region</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.Addresses.country">
+				<source>country</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.Addresses.houseBoatReference">
+				<source>houseBoatReference</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.Addresses.mobileHomeReference">
+				<source>mobileHomeReference</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.employeeNumber">
+				<source>employeeNumber</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.bsn">
+				<source>bsn</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.employmentDisabled">
+				<source>employmentDisabled</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.WAOWia">
+				<source>WAOWia</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.WAOWiaPercentage">
+				<source>WAOWiaPercentage</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.WAOWiaStartDate">
+				<source>WAOWiaStartDate</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.bankinformation.accountName">
+				<source>accountName</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.bankinformation.accountType">
+				<source>accountType</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.bankinformation.bankName">
+				<source>bankName</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.bankinformation.primaryBankAccount">
+				<source>primaryBankAccount</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.bankinformation.Giro">
+				<source>Giro</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.bankinformation.bic">
+				<source>bic</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.bankinformation.accountNumber">
+				<source>accountNumber</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.person.bankinformation.ibanNumber">
+				<source>ibanNumber</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.bankinformation.countryBank">
+				<source>countryBank</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.bankinformation.bankResidence">
+				<source>bankResidence</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.jobTitle">
+				<source>jobTitle</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.freeRemarks">
+				<source>freeRemarks</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.creationDate">
+				<source>creationDate</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.createdBy">
+				<source>createdBy</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.Modification">
+				<source>Modification</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.modificationDate">
+				<source>modificationDate</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.Modifiedby">>
+				<source>Modifiedby</source>
+				<target></target>
 			</trans-unit>
 		</body>
 	</file>
