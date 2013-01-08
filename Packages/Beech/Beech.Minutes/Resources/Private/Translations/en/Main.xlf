@@ -2,6 +2,42 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
 	<file original="" source-language="en" target-language="en" datatype="plaintext">
 		<body>
+			<trans-unit id="minute.minuteType">
+				<source>Minute type</source>
+			</trans-unit>
+			<trans-unit id="minute.minuteContent">
+				<source>Minute content</source>
+			</trans-unit>
+			<trans-unit id="minute.followUpActionRequired">
+				<source>Follow up action required</source>
+			</trans-unit>
+			<trans-unit id="minute.needSigning">
+				<source>Needs signing</source>
+			</trans-unit>
+			<trans-unit id="minute.action">
+				<source>action</source>
+			</trans-unit>
+			<trans-unit id="minute.documentRequired">
+				<source>document required</source>
+			</trans-unit>
+			<trans-unit id="minute.visability">
+				<source>visability</source>
+			</trans-unit>
+			<trans-unit id="minute.creationDate">
+				<source>creation date</source>
+			</trans-unit>
+			<trans-unit id="minute.createdBy">
+				<source>Created by</source>
+			</trans-unit>
+			<trans-unit id="minute.modification">
+				<source>Modification</source>
+			</trans-unit>
+			<trans-unit id="minute.modificationDate">
+				<source>Modificatmion date</source>
+			</trans-unit>
+			<trans-unit id="minute.modifiedby">
+				<source>Modified by</source>
+			</trans-unit>
 			<trans-unit id="flashmessage.createdMinute">
 				<source>New minute created</source>
 			</trans-unit>

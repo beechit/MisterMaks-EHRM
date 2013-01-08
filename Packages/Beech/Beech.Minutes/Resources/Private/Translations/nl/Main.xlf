@@ -2,17 +2,65 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
 	<file original="" source-language="en" target-language="nl" datatype="plaintext">
 		<body>
+			<trans-unit id="minute.minuteType">
+				<source>Minute type</source>
+				<target>Verslag type </target>
+			</trans-unit>
+			<trans-unit id="minute.minuteContent">
+				<source>Minute content</source>
+				<target>Verslag inhoud</target>
+			</trans-unit>
+			<trans-unit id="minute.followUpActionRequired">
+				<source>Follow up action required</source>
+				<target>Vervolgacties </target>
+			</trans-unit>
+			<trans-unit id="minute.needSigning">
+				<source>Needs signing</source>
+				<target>Moet ondertekend worden </target>
+			</trans-unit>
+			<trans-unit id="minute.action">
+				<source>action</source>
+				<target>actie </target>
+			</trans-unit>
+			<trans-unit id="minute.documentRequired">
+				<source>document required</source>
+				<target>document verplicht </target>
+			</trans-unit>
+			<trans-unit id="minute.visability">
+				<source>visability</source>
+				<target>toegankelijkheid </target>
+			</trans-unit>
+			<trans-unit id="minute.creationDate">
+				<source>creation date</source>
+				<target>Aanmaak datum </target>
+			</trans-unit>
+			<trans-unit id="minute.createdBy">
+				<source>Created by</source>
+				<target>Aangemaakt door </target>
+			</trans-unit>
+			<trans-unit id="minute.modification">
+				<source>Modification</source>
+				<target>Wijziging </target>
+			</trans-unit>
+			<trans-unit id="minute.modificationDate">
+				<source>Modification date</source>
+				<target>Wijzigingsdatum </target>
+			</trans-unit>
+			<trans-unit id="minute.modifiedby">
+				<source>Modified by</source>
+				<target>Gewijzigd door </target>
+			</trans-unit>
 			<trans-unit id="flashmessage.createdMinute">
 				<source>New minute created</source>
-				<target>Nieuwe notulen aangemaakt</target>
+				<target>Nieuw verslag aangemaakt</target>
 			</trans-unit>
 			<trans-unit id="flashmessage.updatedMinute">
 				<source>Minute was updated</source>
-				<target>Notulen bijgewerkt</target>
+				<target>Verslag bijgewerkt</target>
 			</trans-unit>
 			<trans-unit id="flashmessage.deletedMinute">
 				<source>Minute was deleted</source>
-				<target>Notulen verwijderd</target>
+				<target>verslag verwijderd</target>
 			</trans-unit>
 		</body>
 	</file>
