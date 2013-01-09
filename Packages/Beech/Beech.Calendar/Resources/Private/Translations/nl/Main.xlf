@@ -1,0 +1,151 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file original="" source-language="en" target-language="nl" datatype="plaintext">
+		<body>
+			<trans-unit id="meeting.meetingId">
+				<source>meetingid</source>
+				<target>afspraak id</target>
+			</trans-unit>
+			<trans-unit id="meeting.status">
+				<source>Status</source>
+				<target>Status</target>
+			</trans-unit>
+			<trans-unit id="meeting.summary">
+				<source>Summary</source>
+				<target>Samenvatting</target>
+			</trans-unit>
+			<trans-unit id="meeting.description">
+				<source>description</source>
+				<target>Omschrijving</target>
+			</trans-unit>
+			<trans-unit id="meeting.location">
+				<source>location</source>
+				<target>locatie</target>
+			</trans-unit>
+			<trans-unit id="meeting.creatorId">
+				<source>Creator</source>
+				<target>Eigenaar</target>
+			</trans-unit>
+			<trans-unit id="meeting.creatorSelf">
+				<source>Eigenaar zelf</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="meeting.organiserId">
+				<source>Organiser ID</source>
+				<target>Organisator</target>
+			</trans-unit>
+			<trans-unit id="meeting.organiserSelf">
+				<source>Organiser self</source>
+				<target>Organisator</target>
+			</trans-unit>
+			<trans-unit id="meeting.start">
+				<source>meeting start</source>
+				<target>Starttijd</target>
+			</trans-unit>
+			<trans-unit id="meeting.end">
+				<source>meeting end</source>
+				<target>Eindtijd</target>
+			</trans-unit>
+			<trans-unit id="meeting.endTimeUnspecified">
+				<source>End time Unspecified</source>
+				<target>Eindtijd ongesprecificeerd</target>
+			</trans-unit>
+			<trans-unit id="meeting.recurringEventId">
+				<source>Recurring event</source>
+				<target>Repeterende afspraak</target>
+			</trans-unit>
+			<trans-unit id="meeting.originalStartTime">
+				<source>Original start time</source>
+				<target>Orginele starttijd</target>
+			</trans-unit>
+			<trans-unit id="meeting.transparency">
+				<source>Block time in calendar</source>
+				<target>Blokkeer tijdstip in agenda</target>
+			</trans-unit>
+			<trans-unit id="meeting.visibility">
+				<source>Visibility</source>
+				<target>Zichtbaarheid</target>
+			</trans-unit>
+			<trans-unit id="meeting.sequence">
+				<source>Sequence</source>
+				<target>Frequentie</target>
+			</trans-unit>
+			<trans-unit id="meeting.attendees">
+				<source>Attendees</source>
+				<target>Deelnemers</target>
+			</trans-unit>
+			<trans-unit id="meeting.optional">
+				<source>Optional</source>
+				<target>Optioneel</target>
+			</trans-unit>
+			<trans-unit id="meeting.responseStatus">
+				<source>Response status</source>
+				<target>Status van aanmelding</target>
+			</trans-unit>
+			<trans-unit id="meeting.comment">
+				<source>comment</source>
+				<target>Opmerking</target>
+			</trans-unit>
+			<trans-unit id="meeting.relations">
+				<source>Relations</source>
+				<target>Relaties</target>
+			</trans-unit>
+			<trans-unit id="meeting.minutesId">
+				<source>Minute</source>
+				<target>Verslag</target>
+			</trans-unit>
+			<trans-unit id="meeting.documentId">
+				<source>Document</source>
+				<target>Document</target>
+			</trans-unit>
+			<trans-unit id="meeting.documentRequired">
+				<source>document required</source>
+				<target>Document vereist</target>
+			</trans-unit>
+			<trans-unit id="meeting.documentRequired">
+				<source>minute required</source>
+				<target>Verslag vereist</target>
+			</trans-unit>
+			<trans-unit id="meeting.documentType">
+				<source>document type</source>
+				<target>Documenttype</target>
+			</trans-unit>
+			<trans-unit id="meeting.actionId">
+				<source>action</source>
+				<target>Actie</target>
+			</trans-unit>
+			<trans-unit id="meeting.planNextMeeting">
+				<source>plan next meeting</source>
+				<target>plan vervolg bijeenkomst</target>
+			</trans-unit>
+			<trans-unit id="meeting.notification">
+				<source>notification</source>
+				<target>notificatie</target>
+			</trans-unit>
+			<trans-unit id="meeting.notificationWindow">
+				<source>notification window</source>
+				<target>notificatie termijn</target>
+			</trans-unit>
+			<trans-unit id="meeting.notificationMethod">
+				<source>notification method</source>
+				<target>notificeer methode</target>
+			</trans-unit>
+			<trans-unit id="meeting.creationDate">
+				<source>Creation Date</source>
+				<target>toevoegdatum</target>
+			</trans-unit>
+			<trans-unit id="meeting.createdBy">
+				<source>Created by</source>
+				<target>toegevoegd door</target>
+			</trans-unit>
+			<trans-unit id="meeting.Modification">
+				<source>Modification</source>
+				<target>Wijziging</target>
+			</trans-unit>
+			<trans-unit id="meeting.modificationDate">
+				<source>modification date</source>
+				<target>wijzigingsdatum</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

@@ -1,0 +1,152 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file original="" source-language="en" target-language="pl" datatype="plaintext">
+		<body>
+			<trans-unit id="meeting.meetingId">
+				<source>meetingid</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="meeting.status">
+				<source>Status</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="meeting.summary">
+				<source>Summary</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="meeting.description">
+				<source>description</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="meeting.location">
+				<source>location</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="meeting.creatorId">
+				<source>Creator</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="meeting.creatorSelf">
+				<source>Creator Self</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="meeting.organiserId">
+				<source>Organiser ID</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="meeting.organiserSelf">
+				<source>Organiser self</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="meeting.start">
+				<source>meeting start</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="meeting.end">
+				<source>meeting end</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="meeting.endTimeUnspecified">
+				<source>End time Unspecified</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="meeting.recurringEventId">
+				<source>Recurring event</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="meeting.originalStartTime">
+				<source>Original start time</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="meeting.transparency">
+				<source>block time in calendar</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="meeting.visibility">
+				<source>visibility</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="meeting.sequence">
+				<source>sequence</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="meeting.attendees">
+				<source>meeting</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="meeting.optional">
+				<source>optional</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="meeting.responseStatus">
+				<source>Response status</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="meeting.comment">
+				<source>comment</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="meeting.relations">
+				<source>relations</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="meeting.minutesId">
+				<source>minute</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="meeting.documentId">
+				<source>document</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="meeting.documentRequired">
+				<source>document required</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="meeting.documentRequired">
+				<source>minute required</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="meeting.documentType">
+				<source>document type</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="meeting.actionId">
+				<source>action</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="meeting.planNextMeeting">
+				<source>plan next meeting</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="meeting.notification">
+				<source>notification</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="meeting.notificationWindow">
+				<source>notification window</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="meeting.notificationMethod">
+				<source>notification method</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="meeting.creationDate">
+				<source>Creation Date</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="meeting.createdBy">
+				<source>Created by</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="meeting.modification">
+				<source>Modification</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="meeting.modificationDate">
+				<source>modification date</source>
+				<target></target>
+			</trans-unit>
+		</body>
+	</file>
+	</file>
+</xliff>
