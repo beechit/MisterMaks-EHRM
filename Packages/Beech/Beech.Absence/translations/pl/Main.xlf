@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file original="" source-language="en" target-language="pl" datatype="plaintext">
+		<body>
+			<trans-unit id="absence.absenceType">
+				<source>Type of absence</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="absence.personid">
+				<source>Person</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="absence.departementid">
+				<source>department</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="absence.firstSickDay">
+				<source>First sick day</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="absence.disabilitypercentage">
+				<source>disability percentage</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="absence.disabilitybackup">
+				<source>disability backup/source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="absence.recoverydate">
+				<source>Recovery date</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="absence.arboActionType">
+				<source>Action to take by Arbodienst</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="absence.creationDate">
+				<source>Creation Date</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="absence.createdBy">
+				<source>Created by</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="absence.Modification">
+				<source>Modification</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="absence.modificationDate">
+				<source>modification date</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="absence.Modifiedby">
+				<source>Modified by</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="absence.flashmessage.createdAbsenseReport">
+				<source>New absence report created</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="absence.flashmessage.updatedAbsenceReport">
+				<source>Absense report was updated</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="absence.flashmessage.deletedAbsenceReport">
+				<source>Absense report was deleted</source>
+				<target></target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
