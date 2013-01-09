@@ -1,0 +1,754 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file original="" source-language="en" target-language="en" datatype="plaintext">
+		<body>
+			<trans-unit id="AD">
+				<source>Andorra (Principality)</source>
+			</trans-unit>
+			<trans-unit id="AE">
+				<source>United Arab Emirates</source>
+			</trans-unit>
+			<trans-unit id="AF">
+				<source>Afghanistan</source>
+			</trans-unit>
+			<trans-unit id="AG">
+				<source>Antigua and Barbuda</source>
+			</trans-unit>
+			<trans-unit id="AI">
+				<source>Anguilla</source>
+			</trans-unit>
+			<trans-unit id="AL">
+				<source>Albania</source>
+			</trans-unit>
+			<trans-unit id="AM">
+				<source>Armenia (Republic)</source>
+			</trans-unit>
+			<trans-unit id="AO">
+				<source>Angola</source>
+			</trans-unit>
+			<trans-unit id="AQ">
+				<source>Antarctica</source>
+			</trans-unit>
+			<trans-unit id="AR">
+				<source>Argentina</source>
+			</trans-unit>
+			<trans-unit id="AS">
+				<source>American Samoa</source>
+			</trans-unit>
+			<trans-unit id="AT">
+				<source>Austria</source>
+			</trans-unit>
+			<trans-unit id="AU">
+				<source>Australia</source>
+			</trans-unit>
+			<trans-unit id="AW">
+				<source>Aruba</source>
+			</trans-unit>
+			<trans-unit id="AX">
+				<source>Åland Islands</source>
+			</trans-unit>
+			<trans-unit id="AZ">
+				<source>Azerbaijan (Republic)</source>
+			</trans-unit>
+			<trans-unit id="BA">
+				<source>Bosnia-Herzegovina (Republic)</source>
+			</trans-unit>
+			<trans-unit id="BB">
+				<source>Barbados</source>
+			</trans-unit>
+			<trans-unit id="BD">
+				<source>Bangladesh</source>
+			</trans-unit>
+			<trans-unit id="BE">
+				<source>Belgium</source>
+			</trans-unit>
+			<trans-unit id="BF">
+				<source>Burkina Faso</source>
+			</trans-unit>
+			<trans-unit id="BG">
+				<source>Bulgaria</source>
+			</trans-unit>
+			<trans-unit id="BH">
+				<source>Bahrain</source>
+			</trans-unit>
+			<trans-unit id="BI">
+				<source>Burundi</source>
+			</trans-unit>
+			<trans-unit id="BJ">
+				<source>Benin (Republic)</source>
+			</trans-unit>
+			<trans-unit id="BL">
+				<source>Saint Barthélemy</source>
+			</trans-unit>
+			<trans-unit id="BM">
+				<source>Bermuda</source>
+			</trans-unit>
+			<trans-unit id="BN">
+				<source>Brunei</source>
+			</trans-unit>
+			<trans-unit id="BO">
+				<source>Bolivia</source>
+			</trans-unit>
+			<trans-unit id="BQ">
+				<source>Bonaire, Sint Eustatius and Saba</source>
+			</trans-unit>
+			<trans-unit id="BR">
+				<source>Brazil</source>
+			</trans-unit>
+			<trans-unit id="BS">
+				<source>Bahamas</source>
+			</trans-unit>
+			<trans-unit id="BT">
+				<source>Bhutan</source>
+			</trans-unit>
+			<trans-unit id="BV">
+				<source>Bouvet Island</source>
+			</trans-unit>
+			<trans-unit id="BW">
+				<source>Botswana</source>
+			</trans-unit>
+			<trans-unit id="BY">
+				<source>Belarus</source>
+			</trans-unit>
+			<trans-unit id="BZ">
+				<source>Belize</source>
+			</trans-unit>
+			<trans-unit id="CA">
+				<source>Canada</source>
+			</trans-unit>
+			<trans-unit id="CC">
+				<source>Cocos</source>
+			</trans-unit>
+			<trans-unit id="CD">
+				<source>Congo (Democratic Republic)</source>
+			</trans-unit>
+			<trans-unit id="CF">
+				<source>Central African Republic</source>
+			</trans-unit>
+			<trans-unit id="CG">
+				<source>Congo (People's Republic)</source>
+			</trans-unit>
+			<trans-unit id="CH">
+				<source>Switzerland</source>
+			</trans-unit>
+			<trans-unit id="CI">
+				<source>Côte-d'Ivoire</source>
+			</trans-unit>
+			<trans-unit id="CK">
+				<source>Cook</source>
+			</trans-unit>
+			<trans-unit id="CL">
+				<source>Chile</source>
+			</trans-unit>
+			<trans-unit id="CM">
+				<source>Cameroon</source>
+			</trans-unit>
+			<trans-unit id="CN">
+				<source>China ( People's Republic)</source>
+			</trans-unit>
+			<trans-unit id="CO">
+				<source>Colombia</source>
+			</trans-unit>
+			<trans-unit id="CR">
+				<source>Costa Rica</source>
+			</trans-unit>
+			<trans-unit id="CU">
+				<source>Cuba</source>
+			</trans-unit>
+			<trans-unit id="CV">
+				<source>Cape Verde (Republic)</source>
+			</trans-unit>
+			<trans-unit id="CW">
+				<source>Curaçao</source>
+			</trans-unit>
+			<trans-unit id="CX">
+				<source>Christmas Island</source>
+			</trans-unit>
+			<trans-unit id="CY">
+				<source>Cyprus</source>
+			</trans-unit>
+			<trans-unit id="CZ">
+				<source>Czechia (Czech Republic)</source>
+			</trans-unit>
+			<trans-unit id="DE">
+				<source>Germany (Federal Republic)</source>
+			</trans-unit>
+			<trans-unit id="DJ">
+				<source>Djibouti (Republic)</source>
+			</trans-unit>
+			<trans-unit id="DK">
+				<source>Denmark</source>
+			</trans-unit>
+			<trans-unit id="DM">
+				<source>Dominica (Republic)</source>
+			</trans-unit>
+			<trans-unit id="DO">
+				<source>Dominican Republic</source>
+			</trans-unit>
+			<trans-unit id="DZ">
+				<source>Algeria</source>
+			</trans-unit>
+			<trans-unit id="EC">
+				<source>Ecuador</source>
+			</trans-unit>
+			<trans-unit id="EE">
+				<source>Estonia (Republic)</source>
+			</trans-unit>
+			<trans-unit id="EG">
+				<source>Egypt (Arab Republic)</source>
+			</trans-unit>
+			<trans-unit id="EH">
+				<source>West Sahara</source>
+			</trans-unit>
+			<trans-unit id="ER">
+				<source>Eritrea</source>
+			</trans-unit>
+			<trans-unit id="ES">
+				<source>Spain</source>
+			</trans-unit>
+			<trans-unit id="ET">
+				<source>Ethiopia</source>
+			</trans-unit>
+			<trans-unit id="FI">
+				<source>Finland</source>
+			</trans-unit>
+			<trans-unit id="FJ">
+				<source>Fiji</source>
+			</trans-unit>
+			<trans-unit id="FK">
+				<source>Falkland</source>
+			</trans-unit>
+			<trans-unit id="FM">
+				<source>Micronesia ( Federate States)</source>
+			</trans-unit>
+			<trans-unit id="FO">
+				<source>Faroe</source>
+			</trans-unit>
+			<trans-unit id="FR">
+				<source>France</source>
+			</trans-unit>
+			<trans-unit id="GA">
+				<source>Gabon</source>
+			</trans-unit>
+			<trans-unit id="GB">
+				<source>United Kingdom</source>
+			</trans-unit>
+			<trans-unit id="GD">
+				<source>Grenada</source>
+			</trans-unit>
+			<trans-unit id="GE">
+				<source>Georgia (Republic)</source>
+			</trans-unit>
+			<trans-unit id="GF">
+				<source>French Guiana</source>
+			</trans-unit>
+			<trans-unit id="GG">
+				<source>Guernsey</source>
+			</trans-unit>
+			<trans-unit id="GH">
+				<source>Ghana</source>
+			</trans-unit>
+			<trans-unit id="GI">
+				<source>Gibraltar</source>
+			</trans-unit>
+			<trans-unit id="GL">
+				<source>Greenland</source>
+			</trans-unit>
+			<trans-unit id="GM">
+				<source>Gambia</source>
+			</trans-unit>
+			<trans-unit id="GN">
+				<source>Guinea</source>
+			</trans-unit>
+			<trans-unit id="GP">
+				<source>Guadeloupe</source>
+			</trans-unit>
+			<trans-unit id="GQ">
+				<source>Equatorial Guinea</source>
+			</trans-unit>
+			<trans-unit id="GR">
+				<source>Greece</source>
+			</trans-unit>
+			<trans-unit id="GS">
+				<source>South Georgia and the South Sandwich Islands</source>
+			</trans-unit>
+			<trans-unit id="GT">
+				<source>Guatemala</source>
+			</trans-unit>
+			<trans-unit id="GU">
+				<source>Guam</source>
+			</trans-unit>
+			<trans-unit id="GW">
+				<source>Guinea-Bissau</source>
+			</trans-unit>
+			<trans-unit id="GY">
+				<source>Guyana</source>
+			</trans-unit>
+			<trans-unit id="HK">
+				<source>Hongkong</source>
+			</trans-unit>
+			<trans-unit id="HM">
+				<source>Heard and McDonald</source>
+			</trans-unit>
+			<trans-unit id="HN">
+				<source>Honduras</source>
+			</trans-unit>
+			<trans-unit id="HR">
+				<source>Croatia (Republic)</source>
+			</trans-unit>
+			<trans-unit id="HT">
+				<source>Haiti</source>
+			</trans-unit>
+			<trans-unit id="HU">
+				<source>Hungary (Republic)</source>
+			</trans-unit>
+			<trans-unit id="ID">
+				<source>Indonesia</source>
+			</trans-unit>
+			<trans-unit id="IE">
+				<source>Ireland</source>
+			</trans-unit>
+			<trans-unit id="IL">
+				<source>Israel</source>
+			</trans-unit>
+			<trans-unit id="IM">
+				<source>Isle of Man</source>
+			</trans-unit>
+			<trans-unit id="IN">
+				<source>India</source>
+			</trans-unit>
+			<trans-unit id="IO">
+				<source>British indian Ocean</source>
+			</trans-unit>
+			<trans-unit id="IQ">
+				<source>Iraq</source>
+			</trans-unit>
+			<trans-unit id="IR">
+				<source>Iran</source>
+			</trans-unit>
+			<trans-unit id="IS">
+				<source>Iceland</source>
+			</trans-unit>
+			<trans-unit id="IT">
+				<source>Italy</source>
+			</trans-unit>
+			<trans-unit id="JE">
+				<source>Jersey</source>
+			</trans-unit>
+			<trans-unit id="JM">
+				<source>Jamaica</source>
+			</trans-unit>
+			<trans-unit id="JO">
+				<source>Jordan</source>
+			</trans-unit>
+			<trans-unit id="JP">
+				<source>Japan</source>
+			</trans-unit>
+			<trans-unit id="KE">
+				<source>Kenya</source>
+			</trans-unit>
+			<trans-unit id="KG">
+				<source>Kyrgyzstan (Republic)</source>
+			</trans-unit>
+			<trans-unit id="KH">
+				<source>Cambodia ( Kingdom)</source>
+			</trans-unit>
+			<trans-unit id="KI">
+				<source>Kiribati (Republic)</source>
+			</trans-unit>
+			<trans-unit id="KM">
+				<source>Comoros (Union)</source>
+			</trans-unit>
+			<trans-unit id="KN">
+				<source>Saint Kitts and Nevis (Federation)</source>
+			</trans-unit>
+			<trans-unit id="KP">
+				<source>North Korea (Democratic People's Republic)</source>
+			</trans-unit>
+			<trans-unit id="KR">
+				<source>South Korea (Republic)</source>
+			</trans-unit>
+			<trans-unit id="KW">
+				<source>Kuwait</source>
+			</trans-unit>
+			<trans-unit id="KY">
+				<source>Cayman</source>
+			</trans-unit>
+			<trans-unit id="KZ">
+				<source>Kazakstan (Republic)</source>
+			</trans-unit>
+			<trans-unit id="LA">
+				<source>Laos</source>
+			</trans-unit>
+			<trans-unit id="LB">
+				<source>Lebanon</source>
+			</trans-unit>
+			<trans-unit id="LC">
+				<source>Saint Lucia</source>
+			</trans-unit>
+			<trans-unit id="LI">
+				<source>Liechtenstein</source>
+			</trans-unit>
+			<trans-unit id="LK">
+				<source>Sri Lanka</source>
+			</trans-unit>
+			<trans-unit id="LR">
+				<source>Liberia</source>
+			</trans-unit>
+			<trans-unit id="LS">
+				<source>Lesotho</source>
+			</trans-unit>
+			<trans-unit id="LT">
+				<source>Lithuania (Republic)</source>
+			</trans-unit>
+			<trans-unit id="LU">
+				<source>Luxembourg (Grand Duchy)</source>
+			</trans-unit>
+			<trans-unit id="LV">
+				<source>Latvia (Republic)</source>
+			</trans-unit>
+			<trans-unit id="LY">
+				<source>Libya</source>
+			</trans-unit>
+			<trans-unit id="MA">
+				<source>Morocco</source>
+			</trans-unit>
+			<trans-unit id="MC">
+				<source>Monaco (Principality)</source>
+			</trans-unit>
+			<trans-unit id="MD">
+				<source>Moldova (Republic)</source>
+			</trans-unit>
+			<trans-unit id="ME">
+				<source>Montenegro (Republic)</source>
+			</trans-unit>
+			<trans-unit id="MF">
+				<source>Saint Martin (French part)</source>
+			</trans-unit>
+			<trans-unit id="MG">
+				<source>Madagascar (Democratic Republic)</source>
+			</trans-unit>
+			<trans-unit id="MH">
+				<source>Marshall (Republic)</source>
+			</trans-unit>
+			<trans-unit id="MK">
+				<source>Macedonia (Ex-Yugoslavia Republic)</source>
+			</trans-unit>
+			<trans-unit id="ML">
+				<source>Mali</source>
+			</trans-unit>
+			<trans-unit id="MM">
+				<source>Myanmar (Union)</source>
+			</trans-unit>
+			<trans-unit id="MN">
+				<source>Mongolia (People's Republic)</source>
+			</trans-unit>
+			<trans-unit id="MO">
+				<source>Macao</source>
+			</trans-unit>
+			<trans-unit id="MP">
+				<source>Northern Mariana</source>
+			</trans-unit>
+			<trans-unit id="MQ">
+				<source>Martinique</source>
+			</trans-unit>
+			<trans-unit id="MR">
+				<source>Mauritania (Islamic Republic)</source>
+			</trans-unit>
+			<trans-unit id="MS">
+				<source>Montserrat</source>
+			</trans-unit>
+			<trans-unit id="MT">
+				<source>Malta</source>
+			</trans-unit>
+			<trans-unit id="MU">
+				<source>Mauritius</source>
+			</trans-unit>
+			<trans-unit id="MV">
+				<source>Maldives</source>
+			</trans-unit>
+			<trans-unit id="MW">
+				<source>Malawi</source>
+			</trans-unit>
+			<trans-unit id="MX">
+				<source>Mexico</source>
+			</trans-unit>
+			<trans-unit id="MY">
+				<source>Malaysia</source>
+			</trans-unit>
+			<trans-unit id="MZ">
+				<source>Mozambique</source>
+			</trans-unit>
+			<trans-unit id="NA">
+				<source>Namibia</source>
+			</trans-unit>
+			<trans-unit id="NC">
+				<source>New Caledonia</source>
+			</trans-unit>
+			<trans-unit id="NE">
+				<source>Niger</source>
+			</trans-unit>
+			<trans-unit id="NF">
+				<source>Norfolk</source>
+			</trans-unit>
+			<trans-unit id="NG">
+				<source>Nigeria (Federal Republic)</source>
+			</trans-unit>
+			<trans-unit id="NI">
+				<source>Nicaragua</source>
+			</trans-unit>
+			<trans-unit id="NL">
+				<source>Netherlands</source>
+			</trans-unit>
+			<trans-unit id="NO">
+				<source>Norway</source>
+			</trans-unit>
+			<trans-unit id="NP">
+				<source>Nepal</source>
+			</trans-unit>
+			<trans-unit id="NR">
+				<source>Nauru</source>
+			</trans-unit>
+			<trans-unit id="NU">
+				<source>Niue</source>
+			</trans-unit>
+			<trans-unit id="NZ">
+				<source>New Zealand</source>
+			</trans-unit>
+			<trans-unit id="OM">
+				<source>Oman (Sultanate)</source>
+			</trans-unit>
+			<trans-unit id="PA">
+				<source>Panama</source>
+			</trans-unit>
+			<trans-unit id="PE">
+				<source>Peru</source>
+			</trans-unit>
+			<trans-unit id="PF">
+				<source>French Polynesia</source>
+			</trans-unit>
+			<trans-unit id="PG">
+				<source>Papua New Guinea</source>
+			</trans-unit>
+			<trans-unit id="PH">
+				<source>Philippines</source>
+			</trans-unit>
+			<trans-unit id="PK">
+				<source>Pakistan</source>
+			</trans-unit>
+			<trans-unit id="PL">
+				<source>Poland (Republic)</source>
+			</trans-unit>
+			<trans-unit id="PM">
+				<source>Saint-Pierre and Miquelon</source>
+			</trans-unit>
+			<trans-unit id="PN">
+				<source>Pitcairn</source>
+			</trans-unit>
+			<trans-unit id="PR">
+				<source>Puerto Rico</source>
+			</trans-unit>
+			<trans-unit id="PS">
+				<source>Palestina</source>
+			</trans-unit>
+			<trans-unit id="PT">
+				<source>Portugal</source>
+			</trans-unit>
+			<trans-unit id="PW">
+				<source>Palau</source>
+			</trans-unit>
+			<trans-unit id="PY">
+				<source>Paraguay</source>
+			</trans-unit>
+			<trans-unit id="QA">
+				<source>Qatar</source>
+			</trans-unit>
+			<trans-unit id="RE">
+				<source>Réunion</source>
+			</trans-unit>
+			<trans-unit id="RO">
+				<source>Romania</source>
+			</trans-unit>
+			<trans-unit id="RS">
+				<source>Serbia (Republic)</source>
+			</trans-unit>
+			<trans-unit id="RU">
+				<source>Russia (Federation )</source>
+			</trans-unit>
+			<trans-unit id="RW">
+				<source>Rwanda (Republic)</source>
+			</trans-unit>
+			<trans-unit id="SA">
+				<source>Saudi Arabia</source>
+			</trans-unit>
+			<trans-unit id="SB">
+				<source>Solomon</source>
+			</trans-unit>
+			<trans-unit id="SC">
+				<source>Seychelles (Republic)</source>
+			</trans-unit>
+			<trans-unit id="SD">
+				<source>Sudan</source>
+			</trans-unit>
+			<trans-unit id="SE">
+				<source>Sweden</source>
+			</trans-unit>
+			<trans-unit id="SG">
+				<source>Singapore</source>
+			</trans-unit>
+			<trans-unit id="SH">
+				<source>Saint Helena</source>
+			</trans-unit>
+			<trans-unit id="SI">
+				<source>Slovenia (Republic)</source>
+			</trans-unit>
+			<trans-unit id="SJ">
+				<source>Svalbard and Jan Mayen</source>
+			</trans-unit>
+			<trans-unit id="SK">
+				<source>Slovakia (Slovak Republic)</source>
+			</trans-unit>
+			<trans-unit id="SL">
+				<source>Sierra Leone</source>
+			</trans-unit>
+			<trans-unit id="SM">
+				<source>San Marino (Republic)</source>
+			</trans-unit>
+			<trans-unit id="SN">
+				<source>Senegal</source>
+			</trans-unit>
+			<trans-unit id="SO">
+				<source>Somalia (Republic)</source>
+			</trans-unit>
+			<trans-unit id="SR">
+				<source>Suriname</source>
+			</trans-unit>
+			<trans-unit id="SS">
+				<source>South Sudan</source>
+			</trans-unit>
+			<trans-unit id="ST">
+				<source>São Tome and Principe (Democratic Republic)</source>
+			</trans-unit>
+			<trans-unit id="SV">
+				<source>El Salvador</source>
+			</trans-unit>
+			<trans-unit id="SX">
+				<source>Saint Martin (Dutch part)</source>
+			</trans-unit>
+			<trans-unit id="SY">
+				<source>Syria (Arab Republic)</source>
+			</trans-unit>
+			<trans-unit id="SZ">
+				<source>Ngwane (Swaziland Kingdom)</source>
+			</trans-unit>
+			<trans-unit id="TC">
+				<source>Turks and Caicos</source>
+			</trans-unit>
+			<trans-unit id="TD">
+				<source>Chad</source>
+			</trans-unit>
+			<trans-unit id="TF">
+				<source>French Southern Territories</source>
+			</trans-unit>
+			<trans-unit id="TG">
+				<source>Togo</source>
+			</trans-unit>
+			<trans-unit id="TH">
+				<source>Thailand</source>
+			</trans-unit>
+			<trans-unit id="TJ">
+				<source>Tajikistan (Republic)</source>
+			</trans-unit>
+			<trans-unit id="TK">
+				<source>Tokelau</source>
+			</trans-unit>
+			<trans-unit id="TL">
+				<source>Timor Leste</source>
+			</trans-unit>
+			<trans-unit id="TM">
+				<source>Turkmenistan (Republic)</source>
+			</trans-unit>
+			<trans-unit id="TN">
+				<source>Tunisia</source>
+			</trans-unit>
+			<trans-unit id="TO">
+				<source>Tonga</source>
+			</trans-unit>
+			<trans-unit id="TR">
+				<source>Turkey</source>
+			</trans-unit>
+			<trans-unit id="TT">
+				<source>Trinidad and Tobago</source>
+			</trans-unit>
+			<trans-unit id="TV">
+				<source>Tuvalu</source>
+			</trans-unit>
+			<trans-unit id="TW">
+				<source>Taiwan</source>
+			</trans-unit>
+			<trans-unit id="TZ">
+				<source>Tanzania (United Republic)</source>
+			</trans-unit>
+			<trans-unit id="UA">
+				<source>Ukraine (Republic)</source>
+			</trans-unit>
+			<trans-unit id="UG">
+				<source>Uganda</source>
+			</trans-unit>
+			<trans-unit id="UM">
+				<source>United States Minor outlying islands</source>
+			</trans-unit>
+			<trans-unit id="US">
+				<source>United States of America</source>
+			</trans-unit>
+			<trans-unit id="UY">
+				<source>Uruguay</source>
+			</trans-unit>
+			<trans-unit id="UZ">
+				<source>Uzbekistan (Republic)</source>
+			</trans-unit>
+			<trans-unit id="VA">
+				<source>Holy See</source>
+			</trans-unit>
+			<trans-unit id="VC">
+				<source>Saint Vincent and the Grenadines</source>
+			</trans-unit>
+			<trans-unit id="VE">
+				<source>Venezuela</source>
+			</trans-unit>
+			<trans-unit id="VG">
+				<source>British Virgin Islands</source>
+			</trans-unit>
+			<trans-unit id="VI">
+				<source>American Virgin Islands</source>
+			</trans-unit>
+			<trans-unit id="VN">
+				<source>Vietnam (Socialist Republic)</source>
+			</trans-unit>
+			<trans-unit id="VU">
+				<source>Vanuatu (Republic)</source>
+			</trans-unit>
+			<trans-unit id="WF">
+				<source>Wallis and Futuna</source>
+			</trans-unit>
+			<trans-unit id="WS">
+				<source>Samoa</source>
+			</trans-unit>
+			<trans-unit id="YE">
+				<source>Yemen (Republic)</source>
+			</trans-unit>
+			<trans-unit id="YT">
+				<source>Mayotte</source>
+			</trans-unit>
+			<trans-unit id="ZA">
+				<source>South Africa (Republic)</source>
+			</trans-unit>
+			<trans-unit id="ZM">
+				<source>Zambia</source>
+			</trans-unit>
+			<trans-unit id="ZW">
+				<source>Zimbabwe</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
