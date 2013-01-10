@@ -42,7 +42,7 @@
 				<source>primaryLocation</source>
 				<target></target>
 			</trans-unit>
-			<trans-unit id="company.postBoxNumber">
+			<trans-unit id="company.postboxNumber">
 				<source>postBoxNumber</source>
 				<target></target>
 			</trans-unit>
@@ -71,7 +71,7 @@
 				<target></target>
 			</trans-unit>
 			<trans-unit id="company.addressDescription">
-				<source></source>
+				<source>Adress Description</source>
 				<target></target>
 			</trans-unit>
 			<trans-unit id="company.electronicAddresses">
@@ -82,7 +82,7 @@
 				<source>Email</source>
 				<target></target>
 			</trans-unit>
-			<trans-unit id="company.Skype">
+			<trans-unit id="company.skype">
 				<source>Skype</source>
 				<target></target>
 			</trans-unit>
@@ -194,7 +194,7 @@
 				<source>modificationDate</source>
 				<target></target>
 			</trans-unit>
-			<trans-unit id="company.Modifiedby">
+			<trans-unit id="company.modifiedby">
 				<source>Modifiedby</source>
 				<target></target>
 			</trans-unit>
@@ -358,7 +358,7 @@
 				<source>Mister Maks</source>
 				<target></target>
 			</trans-unit>
-			<trans-unit id="person.Initials">
+			<trans-unit id="person.initials">
 				<source>Initials</source>
 				<target></target>
 			</trans-unit>
@@ -430,59 +430,59 @@
 				<source>foreignTelePhoneNumber</source>
 				<target></target>
 			</trans-unit>
-			<trans-unit id="person.Addresses.addresstype">
+			<trans-unit id="person.addresses.addresstype">
 				<source>addresstype</source>
 				<target></target>
 			</trans-unit>
-			<trans-unit id="person.Addresses.primaryPostaddress">
+			<trans-unit id="person.addresses.primaryPostaddress">
 				<source>primaryPostaddress</source>
 				<target></target>
 			</trans-unit>
-			<trans-unit id="person.Addresses.primaryResidentialAddress">
+			<trans-unit id="person.addresses.primaryResidentialAddress">
 				<source>primaryResidentialAddress</source>
 				<target></target>
 			</trans-unit>
-			<trans-unit id="person.Addresses.streetName">
+			<trans-unit id="person.addresses.streetName">
 				<source>streetName</source>
 				<target></target>
 			</trans-unit>
-			<trans-unit id="person.Addresses.postboxNumber">
+			<trans-unit id="person.addresses.postboxNumber">
 				<source>postboxNumber</source>
 				<target></target>
 			</trans-unit>
-			<trans-unit id="person.Addresses.houseNumber">
+			<trans-unit id="person.addresses.houseNumber">
 				<source>houseNumber</source>
 				<target></target>
 			</trans-unit>
-			<trans-unit id="person.Addresses.houseNumberAddition">
+			<trans-unit id="person.addresses.houseNumberAddition">
 				<source>houseNumberAddition</source>
 				<target></target>
 			</trans-unit>
-			<trans-unit id="person.Addresses.postalCodeNL">
+			<trans-unit id="person.addresses.postalCodeNL">
 				<source>postalCodeNL</source>
 				<target></target>
 			</trans-unit>
-			<trans-unit id="person.Addresses.postalCodeAbroad">
+			<trans-unit id="person.addresses.postalCodeAbroad">
 				<source>postalCodeAbroad</source>
 				<target></target>
 			</trans-unit>
-			<trans-unit id="person.Addresses.residence">
+			<trans-unit id="person.addresses.residence">
 				<source>residence</source>
 				<target></target>
 			</trans-unit>
-			<trans-unit id="person.Addresses.region">
+			<trans-unit id="person.addresses.region">
 				<source>region</source>
 				<target></target>
 			</trans-unit>
-			<trans-unit id="person.Addresses.country">
+			<trans-unit id="person.addresses.country">
 				<source>country</source>
 				<target></target>
 			</trans-unit>
-			<trans-unit id="person.Addresses.houseBoatReference">
+			<trans-unit id="person.addresses.houseBoatReference">
 				<source>houseBoatReference</source>
 				<target></target>
 			</trans-unit>
-			<trans-unit id="person.Addresses.mobileHomeReference">
+			<trans-unit id="person.addresses.mobileHomeReference">
 				<source>mobileHomeReference</source>
 				<target></target>
 			</trans-unit>
@@ -498,20 +498,20 @@
 				<source>employmentDisabled</source>
 				<target></target>
 			</trans-unit>
-			<trans-unit id="person.WAOWia">
+			<trans-unit id="person.waowia">
 				<source>WAOWia</source>
 				<target></target>
 			</trans-unit>
-			<trans-unit id="person.WAOWiaPercentage">
+			<trans-unit id="person.waowiaPercentage">
 				<source>WAOWiaPercentage</source>
 				<target></target>
 			</trans-unit>
-			<trans-unit id="person.WAOWiaStartDate">
+			<trans-unit id="person.waowiaStartDate">
 				<source>WAOWiaStartDate</source>
 				<target></target>
 			</trans-unit>
 			<trans-unit id="person.bankinformation.accountName">
-				<source>accountName</source>
+				<source>Account name</source>
 				<target></target>
 			</trans-unit>
 			<trans-unit id="person.bankinformation.accountType">
@@ -526,7 +526,7 @@
 				<source>primaryBankAccount</source>
 				<target></target>
 			</trans-unit>
-			<trans-unit id="person.bankinformation.Giro">
+			<trans-unit id="person.bankinformation.giro">
 				<source>Giro</source>
 				<target></target>
 			</trans-unit>
@@ -574,7 +574,7 @@
 				<source>modificationDate</source>
 				<target></target>
 			</trans-unit>
-			<trans-unit id="person.Modifiedby">>
+			<trans-unit id="person.modifiedby">>
 				<source>Modifiedby</source>
 				<target></target>
 			</trans-unit>
@@ -582,31 +582,31 @@
 				<source>department</source>
 				<target></target>
 			</trans-unit>
-			<trans-unit id="company.SoleProprietorship">
+			<trans-unit id="company.soleProprietorship">
 				<source>Sole Proprietorship</source>
 				<target></target>
 			</trans-unit>
-			<trans-unit id="company.Partnership">
-				<source>Partnership</source>
+			<trans-unit id="company.partnership">
+				<source>partnership</source>
 				<target></target>
 			</trans-unit>
-			<trans-unit id="company.VOF">
+			<trans-unit id="company.vof">
 				<source>VOF</source>
 				<target></target>
 			</trans-unit>
-			<trans-unit id="company.CV">
+			<trans-unit id="company.cv">
 				<source>CV</source>
 				<target></target>
 			</trans-unit>
-			<trans-unit id="company.BV">
+			<trans-unit id="company.bv">
 				<source>BV</source>
 				<target></target>
 			</trans-unit>
-			<trans-unit id="company.NV">
+			<trans-unit id="company.nv">
 				<source>NV</source>
 				<target></target>
 			</trans-unit>
-			<trans-unit id="company.Association">
+			<trans-unit id="company.association">
 				<source>Association</source>
 				<target></target>
 			</trans-unit>
@@ -622,23 +622,23 @@
 				<source>primary</source>
 				<target></target>
 			</trans-unit>
-			<trans-unit id="company. Department">
+			<trans-unit id="company.department">
 				<source>Department</source>
 				<target></target>
 			</trans-unit>
-			<trans-unit id="company. subsidiary company">
+			<trans-unit id="company. subsidiarycompany">
 				<source>subsidiary company</source>
 				<target></target>
 			</trans-unit>
-			<trans-unit id="company.PartnerCompany">
+			<trans-unit id="company.partnerCompany">
 				<source>PartnerCompany</source>
 				<target></target>
 			</trans-unit>
-			<trans-unit id="company.Businessaddress">
+			<trans-unit id="company.businessAddress">
 				<source>Businessaddress</source>
 				<target></target>
 			</trans-unit>
-			<trans-unit id="company.Postbox">
+			<trans-unit id="company.postbox">
 				<source>Postbox</source>
 				<target></target>
 			</trans-unit>
@@ -662,23 +662,23 @@
 				<source>Faxnumber</source>
 				<target></target>
 			</trans-unit>
-			<trans-unit id="company.HomephoneNumber">
+			<trans-unit id="company.homephoneNumber">
 				<source>HomephoneNumber</source>
 				<target></target>
 			</trans-unit>
-			<trans-unit id="company.PrivateMobilePhone">
+			<trans-unit id="company.privateMobilePhone">
 				<source>PrivateMobilePhone</source>
 				<target></target>
 			</trans-unit>
-			<trans-unit id="company.BusinessMobilePhone">
+			<trans-unit id="company.businessMobilePhone">
 				<source>BusinessMobilePhone</source>
 				<target></target>
 			</trans-unit>
-			<trans-unit id="company.BussinessPhone">
+			<trans-unit id="company.bussinessPhone">
 				<source>BussinessPhone</source>
 				<target></target>
 			</trans-unit>
-			<trans-unit id="company.EmergencyCallnumber">
+			<trans-unit id="company.emergencyCallnumber">
 				<source>EmergencyCallnumber</source>
 				<target></target>
 			</trans-unit>
@@ -686,11 +686,11 @@
 				<source>GiroAccount</source>
 				<target></target>
 			</trans-unit>
-			<trans-unit id="company.Bankaccount">
+			<trans-unit id="company.bankaccount">
 				<source>Bankaccount</source>
 				<target></target>
 			</trans-unit>
-			<trans-unit id="company.BankAccountAbroad">
+			<trans-unit id="company.bankAccountAbroad">
 				<source>BankAccount Abroad</source>
 				<target></target>
 			</trans-unit>
