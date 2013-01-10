@@ -10,6 +10,10 @@
 				<source>PolicyNumberAbsenceInsurer</source>
 				<target>Polisnummer Verzuimverzekeraar</target>
 			</trans-unit>
+				<trans-unit id="chamberOfCommerceNumber">
+				<source>Chamber of Commerce Number</source>
+				<target>KvK nummer</target>
+			</trans-unit>
 			<trans-unit id="company.legalForm">
 				<source>legalForm</source>
 				<target>Rechtsvorm</target>
@@ -296,7 +300,7 @@
 			</trans-unit>
 			<trans-unit id="action.show">
 				<source>Show</source>
-				<target>Tonen/target>
+				<target>Tonen</target>
 			</trans-unit>
 			<trans-unit id="action.edit">
 				<source>Edit</source>
@@ -403,7 +407,7 @@
 				<target>twitter</target>
 			</trans-unit>
 			<trans-unit id="person.electronicaddresses.facebook">
-				<source>facebook/source>
+				<source>facebook</source>
 				<target>facebook</target>
 			</trans-unit>
 			<trans-unit id="person.electronicaddresses.linkedin">
@@ -570,9 +574,245 @@
 				<source>modificationDate</source>
 				<target>Datum wijziging</target>
 			</trans-unit>
-			<trans-unit id="person.Modifiedby">>
+			<trans-unit id="person.Modifiedby">
 				<source>Modifiedby</source>
 				<target>Gewijzigd door</target>
+			</trans-unit>
+			<trans-unit id="company.department">
+				<source>department</source>
+				<target>afdeling</target>
+			</trans-unit>
+			<trans-unit id="company.SoleProprietorship">
+				<source>Sole Proprietorship</source>
+				<target>Eenmanszaak</target>
+			</trans-unit>
+			<trans-unit id="company.Partnership">
+				<source>Partnership</source>
+				<target>Maatschap</target>
+			</trans-unit>
+			<trans-unit id="company.VOF">
+				<source>VOF</source>
+				<target>VOF</target>
+			</trans-unit>
+			<trans-unit id="company.CV">
+				<source>CV</source>
+				<target>CV</target>
+			</trans-unit>
+			<trans-unit id="company.BV">
+				<source>BV</source>
+				<target>BV</target>
+			</trans-unit>
+			<trans-unit id="company.NV">
+				<source>NV</source>
+				<target>NV</target>
+			</trans-unit>
+			<trans-unit id="company.Association">
+				<source>Association</source>
+				<target>Vereniging</target>
+			</trans-unit>
+			<trans-unit id="company.foundation">
+				<source>Foundation</source>
+				<target>Stichting</target>
+			</trans-unit>
+			<trans-unit id="company.cooperative">
+				<source>Cooperative</source>
+				<target>Cooperatie</target>
+			</trans-unit>
+			<trans-unit id="company.primary">
+				<source>primary</source>
+				<target>Primair</target>
+			</trans-unit>
+			<trans-unit id="company. Department">
+				<source>Department</source>
+				<target>afdeling</target>
+			</trans-unit>
+			<trans-unit id="company. subsidiary company">
+				<source>subsidiary company</source>
+				<target>Dochteronderneming</target>
+			</trans-unit>
+			<trans-unit id="company.PartnerCompany">
+				<source>PartnerCompany</source>
+				<target>Partner bedrijf</target>
+			</trans-unit>
+			<trans-unit id="company.Businessaddress">
+				<source>Businessaddress</source>
+				<target>Vestigingsadres</target>
+			</trans-unit>
+			<trans-unit id="company.Postbox">
+				<source>Postbox</source>
+				<target>PostBus</target>
+			</trans-unit>
+			<trans-unit id="company.Mailingaddress">
+				<source>mailingaddress</source>
+				<target>Postadres</target>
+			</trans-unit>
+			<trans-unit id="company.Worklocation">
+				<source>Worklocation</source>
+				<target>werklocatie</target>
+			</trans-unit>
+			<trans-unit id="company.AddressAbroad">
+				<source>AddressAbroad</source>
+				<target>Buitenlandsadres</target>
+			</trans-unit>
+			<trans-unit id="company.WorkLocationNumber">
+				<source>WorkLocationNumber</source>
+				<target>TelefoonnummerWerk</target>
+			</trans-unit>
+			<trans-unit id="company.Faxnumber">
+				<source>Faxnumber</source>
+				<target>Faxnumber</target>
+			</trans-unit>
+			<trans-unit id="company.HomephoneNumber">
+				<source>HomephoneNumber</source>
+				<target>Privé nummer</target>
+			</trans-unit>
+			<trans-unit id="company.PrivateMobilePhone">
+				<source>PrivateMobilePhone</source>
+				<target>Privé Mobiel nummer</target>
+			</trans-unit>
+			<trans-unit id="company.BusinessMobilePhone">
+				<source>BusinessMobilePhone</source>
+				<target>Mobiel nummer</target>
+			</trans-unit>
+			<trans-unit id="company.BussinessPhone">
+				<source>BussinessPhone</source>
+				<target>Algemeen bedrijfsnummer</target>
+			</trans-unit>
+			<trans-unit id="company.EmergencyCallnumber">
+				<source>EmergencyCallnumber</source>
+				<target>Nummer noodgevallen</target>
+			</trans-unit>
+			<trans-unit id="company.GiroAccount">
+				<source>GiroAccount</source>
+				<target>GiroRekening</target>
+			</trans-unit>
+			<trans-unit id="company.Bankaccount">
+				<source>Bankaccount</source>
+				<target>Bankrekening</target>
+			</trans-unit>
+			<trans-unit id="company.BankAccountAbroad">
+				<source>BankAccount Abroad</source>
+				<target>Bankrekening buitenland</target>
+			</trans-unit>
+			<trans-unit id="person.male">
+				<source>Male</source>
+				<target>Man</target>
+			</trans-unit>
+			<trans-unit id="person.female">
+				<source>Female</source>
+				<target>Vrouw</target>
+			</trans-unit>
+			<trans-unit id="person.unknown">
+				<source>Unknown</source>
+				<target>Onbekend</target>
+			</trans-unit>
+			<trans-unit id="person.umarried">
+				<source>Unmarried</source>
+				<target>Ongehuwd</target>
+			</trans-unit>
+			<trans-unit id="person.married">
+				<source>Married</source>
+				<target>Gehuwd</target>
+			</trans-unit>
+			<trans-unit id="person.livingtogether">
+				<source>Living together</source>
+				<target>Samenwonend</target>
+			</trans-unit>
+			<trans-unit id="person.widowWidower">
+				<source>Widow / Widower</source>
+				<target>Weduwe/Weduwnaar</target>
+			</trans-unit>
+			<trans-unit id="person.sustainableSeparated">
+				<source>Sustainable separated</source>
+				<target>Duurzaam gescheiden</target>
+			</trans-unit>
+			<trans-unit id="person.divorced">
+				<source>Divorced</source>
+				<target>Gescheiden</target>
+			</trans-unit>
+			<trans-unit id="person.email">
+				<source>e-mail</source>
+				<target>e-mail</target>
+			</trans-unit>
+			<trans-unit id="person.sms">
+				<source>sms</source>
+				<target>sms</target>
+			</trans-unit>
+			<trans-unit id="person.post">
+				<source>Post</source>
+				<target>post</target>
+			</trans-unit>
+			<trans-unit id="person.phone">
+				<source>Phone</source>
+				<target>telefoon</target>
+			</trans-unit>
+			<trans-unit id="person.workLocationNumber">
+				<source>WorkLocationNumber</source>
+				<target>Werklocatie nummer</target>
+			</trans-unit>
+			<trans-unit id="person.homephoneNumber">
+				<source>Home phone number</source>
+				<target>Privé telefoonnummer</target>
+			</trans-unit>
+			<trans-unit id="person.privateMobilePhone">
+				<source>Private mobile phone</source>
+				<target>Privé mobiel nummer</target>
+			</trans-unit>
+			<trans-unit id="person.businessMobilePhone">
+				<source>Business mobile phone</source>
+				<target>Zakelijk mobiel nummer</target>
+			</trans-unit>
+			<trans-unit id="person.emergencyCallnumber">
+				<source>Emergency call number</source>
+				<target>Noodgevallen Nummer</target>
+			</trans-unit>
+			<trans-unit id="person.telephonedescription">
+				<source>Telephone description</source>
+				<target>Omschrijving telefoonnummer</target>
+			</trans-unit>
+			<trans-unit id="person.temporaryAddress">
+				<source>Temporaryaddress</source>
+				<target>Tijdelijk adres</target>
+			</trans-unit>
+			<trans-unit id="person.businessAddress">
+				<source>Businessaddress</source>
+				<target>Zakelijk adres</target>
+			</trans-unit>
+			<trans-unit id="person. postAddress">
+				<source>Postaddress</source>
+				<target>Postadres</target>
+			</trans-unit>
+			<trans-unit id="person.addressAbroad">
+				<source>AddressAbroad</source>
+				<target>Adres buitenland</target>
+			</trans-unit>
+			<trans-unit id="person.TemporaryAddressAbroad">
+				<source>Temporaryaddressabroad</source>
+				<target>Tijdelijk adres buitenlands</target>
+			</trans-unit>
+			<trans-unit id="person.recoveryAddress">
+				<source>Recoveryaddress</source>
+				<target>Verpleeglocatie</target>
+			</trans-unit>
+			<trans-unit id="person.giroAccount">
+				<source>GiroAccount</source>
+				<target>GiroRekening</target>
+			</trans-unit>
+			<trans-unit id="person.bankaccount">
+				<source>Bankaccount</source>
+				<target>Bankrekening</target>
+			</trans-unit>
+			<trans-unit id="person.bankAccountabroad">
+				<source>BankAccount Abroad</source>
+				<target>Bankrekening buitenland</target>
+			</trans-unit>
+			<trans-unit id="person.AB">
+				<source>Houseboat</source>
+				<target>Woonboot</target>
+			</trans-unit>
+			<trans-unit id="person.WW">
+				<source>Mobile home</source>
+				<target>Woonwagen</target>
 			</trans-unit>
 		</body>
 	</file>

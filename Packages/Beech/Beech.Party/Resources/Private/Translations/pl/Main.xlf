@@ -14,6 +14,10 @@
 				<source>legalForm</source>
 				<target></target>
 			</trans-unit>
+				<trans-unit id="chamberOfCommerceNumber">
+				<source>Chamber of Commerce Number</source>
+				<target></target>
+			</trans-unit>
 			<trans-unit id="company.CompanyType">
 				<source>CompanyType</source>
 				<target></target>
@@ -572,6 +576,242 @@
 			</trans-unit>
 			<trans-unit id="person.Modifiedby">>
 				<source>Modifiedby</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.department">
+				<source>department</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.SoleProprietorship">
+				<source>Sole Proprietorship</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.Partnership">
+				<source>Partnership</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.VOF">
+				<source>VOF</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.CV">
+				<source>CV</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.BV">
+				<source>BV</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.NV">
+				<source>NV</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.Association">
+				<source>Association</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.foundation">
+				<source>Foundation</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.cooperative">
+				<source>Cooperative</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.primary">
+				<source>primary</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company. Department">
+				<source>Department</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company. subsidiary company">
+				<source>subsidiary company</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.PartnerCompany">
+				<source>PartnerCompany</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.Businessaddress">
+				<source>Businessaddress</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.Postbox">
+				<source>Postbox</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.Mailingaddress">
+				<source>mailingaddress</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.Worklocation">
+				<source>Worklocation</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.AddressAbroad">
+				<source>AddressAbroad</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.WorkLocationNumber">
+				<source>WorkLocationNumber</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.Faxnumber">
+				<source>Faxnumber</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.HomephoneNumber">
+				<source>HomephoneNumber</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.PrivateMobilePhone">
+				<source>PrivateMobilePhone</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.BusinessMobilePhone">
+				<source>BusinessMobilePhone</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.BussinessPhone">
+				<source>BussinessPhone</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.EmergencyCallnumber">
+				<source>EmergencyCallnumber</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.GiroAccount">
+				<source>GiroAccount</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.Bankaccount">
+				<source>Bankaccount</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.BankAccountAbroad">
+				<source>BankAccount Abroad</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.male">
+				<source>Male</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.female">
+				<source>Female</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.unknown">
+				<source>Unknown</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.umarried">
+				<source>Unmarried</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.married">
+				<source>Married</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.livingtogether">
+				<source>Living together</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.widowWidower">
+				<source>Widow / Widower</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.sustainableSeparated">
+				<source>Sustainable separated</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.divorced">
+				<source>Divorced</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.email">
+				<source>e-mail</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.sms">
+				<source>sms</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.post">
+				<source>Post</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.phone">
+				<source>Phone</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.workLocationNumber">
+				<source>WorkLocationNumber</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.homephoneNumber">
+				<source>Home phone number</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.privateMobilePhone">
+				<source>Private mobile phone</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.businessMobilePhone">
+				<source>Business mobile phone</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.emergencyCallnumber">
+				<source>Emergency call number</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.telephonedescription">
+				<source>Telephone description</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.temporaryAddress">
+				<source>Temporaryaddress</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.businessAddress">
+				<source>Businessaddress</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person. postAddress">
+				<source>Postaddress</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.addressAbroad">
+				<source>AddressAbroad</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.TemporaryAddressAbroad">
+				<source>Temporaryaddressabroad</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.recoveryAddress">
+				<source>Recoveryaddress</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.giroAccount">
+				<source>GiroAccount</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.bankaccount">
+				<source>Bankaccount</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.bankAccountabroad">
+				<source>BankAccount Abroad</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.AB">
+				<source>Houseboat</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.WW">
+				<source>Mobile home</source>
 				<target></target>
 			</trans-unit>
 		</body>
