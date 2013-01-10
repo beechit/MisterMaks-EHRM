@@ -8,40 +8,36 @@ namespace Beech\Party\Administration\Controller;
  */
 
 use TYPO3\Flow\Annotations as Flow;
-use Beech\Party\Domain\Model\Company;
+use \Beech\Party\Domain\Model\Company;
 
 /**
- * Company controller for the Beech.Party package
+ * Company controller for the Beech.Party package and subpackage Administration
  *
  * @Flow\Scope("singleton")
  */
-class CompanyController extends \Beech\Ehrm\Controller\AbstractController {
+class CompanyController extends \Beech\Ehrm\Controller\AbstractManagementController {
 
 	/**
-	 * @var \Beech\Party\Domain\Repository\AddressRepository
-	 * @Flow\Inject
+	 * @var string
 	 */
-	protected $addressRepository;
+	protected $entityClassName = 'Beech\Party\Domain\Model\Company';
 
 	/**
-	 * @var \Beech\Party\Domain\Repository\CompanyRepository
-	 * @Flow\Inject
+	 * @var string
 	 */
-	protected $companyRepository;
+	protected $repositoryClassName = 'Beech\Party\Domain\Repository\CompanyRepository';
 
 	/**
-	 * @var \Beech\Party\I18n\Translator
-	 * @Flow\Inject
-	 */
-	protected $translator;
-
-	/**
-	 * Shows a list of companies
+	 * Adds the given new company object to the company repository
 	 *
+	 * @param \Beech\Party\Domain\Model\Company $company A new company to add
 	 * @return void
 	 */
-	public function listAction() {
-		$this->view->assign('companies', $this->companyRepository->findByParentCompany(NULL));
+	public function createAction(Company $company) {
+		$this->repository->add($company);
+		$this->documentManager->merge($company->getDocument());
+		$this->addFlashMessage('Created a new company');
+		$this->redirect('list');
 	}
 
 	/**
@@ -51,62 +47,6 @@ class CompanyController extends \Beech\Ehrm\Controller\AbstractController {
 	 * @return void
 	 */
 	public function showAction(Company $company) {
-		$this->view->assign('departments', $this->companyRepository->findByParentCompany($company));
-		$this->view->assign('company', $company);
-	}
-
-	/**
-	 * Shows a form for creating a new company object
-	 *
-	 * @return void
-	 */
-	public function newAction() {
-	}
-
-	/**
-	 * Adds the given new company object to the company repository
-	 *
-	 * @param \Beech\Party\Domain\Model\Company $newCompany A new company to add
-	 * @return void
-	 */
-	public function createAction(\Beech\Party\Domain\Model\Company $newCompany) {
-		$this->companyRepository->add($newCompany);
-		$this->addFlashMessage($this->translator->translateId('flashmessage.createdCompany'));
-		$this->redirect('list');
-	}
-
-	/**
-	 * Shows a form for creating a new company object
-	 *
-	 * @param \Beech\Party\Domain\Model\Company $company The parent company
-	 * @return void
-	 */
-	public function newDepartmentAction(\Beech\Party\Domain\Model\Company $company) {
-		$this->view->assign('company', $company);
-	}
-
-	/**
-	 * Adds the given new company object to the company repository
-	 *
-	 * @param \Beech\Party\Domain\Model\Company $newDepartment A new department to add
-	 * @param \Beech\Party\Domain\Model\Company $company The parent company
-	 * @return void
-	 */
-	public function addDepartmentAction(Company $newDepartment, Company $company) {
-		$newDepartment->setParentCompany($company);
-		$this->companyRepository->add($newDepartment);
-		$this->addFlashMessage($this->translator->translateId('flashmessage.newDepartment'));
-		$this->redirect('list');
-	}
-
-	/**
-	 * Shows a form for editing an existing company object
-	 *
-	 * @param \Beech\Party\Domain\Model\Company $company The company to edit
-	 * @Flow\IgnoreValidation("$company")
-	 * @return void
-	 */
-	public function editAction(Company $company) {
 		$this->view->assign('company', $company);
 	}
 
@@ -117,9 +57,19 @@ class CompanyController extends \Beech\Ehrm\Controller\AbstractController {
 	 * @return void
 	 */
 	public function updateAction(Company $company) {
-		$this->companyRepository->update($company);
-		$this->addFlashMessage($this->translator->translateId('flashmessage.updatedCompany'));
+		$this->repository->update($company);
+		$this->addFlashMessage('Updated the company.');
 		$this->redirect('list');
+	}
+
+	/**
+	 * Shows a form for editing an existing company object
+	 *
+	 * @param \Beech\Party\Domain\Model\Company $company The company to edit
+	 * @return void
+	 */
+	public function editAction(Company $company) {
+		$this->view->assign('company', $company);
 	}
 
 	/**
@@ -128,44 +78,11 @@ class CompanyController extends \Beech\Ehrm\Controller\AbstractController {
 	 * @param \Beech\Party\Domain\Model\Company $company The company to delete
 	 * @return void
 	 */
-	public function deleteAction(\Beech\Party\Domain\Model\Company $company) {
-		$this->companyRepository->remove($company);
-		$this->addFlashMessage($this->translator->translateId('flashmessage.deletedCompany'));
+	public function deleteAction(Company $company) {
+		$this->repository->remove($company);
 		$this->redirect('list');
 	}
 
-	/**
-	 * Redirect to list action
-	 *
-	 * @return void
-	 */
-	public function redirectAction() {
-		$this->redirect('list');
-	}
-
-	/**
-	 * @param \Beech\Party\Domain\Model\Company $company
-	 * @param \Beech\Party\Domain\Model\Address $newAddress
-	 * @return void
-	 */
-	public function newAddressAction(\Beech\Party\Domain\Model\Company $company, \Beech\Party\Domain\Model\Address $newAddress = NULL) {
-		$this->view->assign('company', $company);
-		$this->view->assign('newAddress', $newAddress);
-	}
-
-	/**
-	 * Adds the given new company object to the company repository
-	 *
-	 * @param \Beech\Party\Domain\Model\Company $company The company
-	 * @param \Beech\Party\Domain\Model\Address $newAddress A new address to add
-	 * @return void
-	 */
-	public function createAddressAction(\Beech\Party\Domain\Model\Company $company, \Beech\Party\Domain\Model\Address $newAddress) {
-		$company->addAddress($newAddress);
-		$this->companyRepository->update($company);
-		$this->addFlashMessage($this->translator->translateId('flashmessage.addedAddress'));
-		$this->redirect('show', 'Management\Company', NULL, array('company' => $company));
-	}
 }
 
 ?>

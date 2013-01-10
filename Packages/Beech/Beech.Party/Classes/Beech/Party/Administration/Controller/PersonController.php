@@ -8,12 +8,13 @@ namespace Beech\Party\Administration\Controller;
  */
 
 use TYPO3\Flow\Annotations as Flow;
+use \Beech\Party\Domain\Model\Person;
 
 /**
- * Person controller for the Beech.Party package
- *
- * @Flow\Scope("singleton")
- */
+* Person controller for the Beech.Party package  and subpackage Administration
+*
+* @Flow\Scope("singleton")
+*/
 class PersonController extends \Beech\Ehrm\Controller\AbstractManagementController {
 
 	/**
@@ -27,47 +28,57 @@ class PersonController extends \Beech\Ehrm\Controller\AbstractManagementControll
 	protected $repositoryClassName = 'Beech\Party\Domain\Repository\PersonRepository';
 
 	/**
-	 * @param \Beech\Party\Domain\Model\Person $person
-	 * @return void
-	 */
-	public function createAction(\Beech\Party\Domain\Model\Person $person) {
+	* Adds the given new person object to the person repository
+	*
+	* @param \Beech\Party\Domain\Model\Person $person A new person to add
+	* @return void
+	*/
+	public function createAction(Person $person) {
 		$this->repository->add($person);
 		$this->documentManager->merge($person->getDocument());
-		$this->addFlashMessage('Created a new person.');
+		$this->addFlashMessage('Created a new person');
 		$this->redirect('list');
 	}
 
 	/**
-	 * @param \Beech\Party\Domain\Model\Person $person
-	 * @return void
-	 */
-	public function showAction(\Beech\Party\Domain\Model\Person $person) {
+	* Shows a single person object
+	*
+	* @param \Beech\Party\Domain\Model\Person $person The person to show
+	* @return void
+	*/
+	public function showAction(Person $person) {
 		$this->view->assign('person', $person);
 	}
 
 	/**
-	 * @param \Beech\Party\Domain\Model\Person $person
-	 * @return void
-	 */
-	public function updateAction(\Beech\Party\Domain\Model\Person $person) {
+	* Updates the given person object
+	*
+	* @param \Beech\Party\Domain\Model\Person $person The person to update
+	* @return void
+	*/
+	public function updateAction(Person $person) {
 		$this->repository->update($person);
 		$this->addFlashMessage('Updated the person.');
 		$this->redirect('list');
 	}
 
 	/**
-	 * @param \Beech\Party\Domain\Model\Person $person
-	 * @return void
-	 */
-	public function editAction(\Beech\Party\Domain\Model\Person $person) {
+	* Shows a form for editing an existing person object
+	*
+	* @param \Beech\Party\Domain\Model\Person $person The person to edit
+	* @return void
+	*/
+	public function editAction(Person $person) {
 		$this->view->assign('person', $person);
 	}
 
 	/**
-	 * @param \Beech\Party\Domain\Model\Person $person
-	 * @return void
-	 */
-	public function deleteAction(\Beech\Party\Domain\Model\Person $person) {
+	* Removes the given person object from the person repository
+	*
+	* @param \Beech\Party\Domain\Model\Person $person The person to delete
+	* @return void
+	*/
+	public function deleteAction(Person $person) {
 		$this->repository->remove($person);
 		$this->redirect('list');
 	}

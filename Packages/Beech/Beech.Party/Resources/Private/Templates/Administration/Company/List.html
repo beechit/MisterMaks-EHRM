@@ -1,48 +1,41 @@
-<f:layout />
-
+<f:layout/>
 <f:section name="Body">
-	<h1><f:translate id="company">Company</f:translate></h1>
-	<f:if condition="{companies}">
+	<h1>
+		<f:translate id="company">Company</f:translate>
+	</h1>
+	<f:if condition="{entities}">
 		<f:then>
 			<table class="table">
 				<thead>
-				<tr>
-					<th><f:translate id="company">Company</f:translate></th><th><f:translate id="department.name">Department name</f:translate></th><th><f:translate id="action">Action</f:translate></th>
-				</tr>
+					<tr>
+						<th>
+							<f:translate>Name of company</f:translate>
+						</th>
+						<th></th>
+					</tr>
 				</thead>
 				<tbody>
-					<f:for each="{companies}" as="company" iteration="iterator">
+					<f:for each="{entities}" as="company" iteration="iterator">
 						<tr>
 							<td>
-								<strong><f:link.action action="show" arguments="{company: company}">{company.name}</f:link.action></strong>
+								<f:link.action action="show" arguments="{company: company}"><strong>{company.name}</strong></f:link.action>
 							</td>
-							<td></td>
 							<td>
 								<f:link.action action="edit" arguments="{company: company}"><i class="icon-pencil"></i></f:link.action>
-								<f:link.action action="newDepartment" arguments="{company: company}"><i class="icon icon-plus"></i></f:link.action></td>
+								<f:link.action action="delete" arguments="{company: company}"><i class="icon-trash"></i></f:link.action>
+							</td>
 						</tr>
-						<f:if condition="{company.departments}">
-						<f:then>
-							<f:for each="{company.departments}" as="department">
-								<tr>
-									<td></td>
-									<td><f:link.action action="show" arguments="{company: department}">{department.name}</f:link.action></td>
-									<td>
-										<f:link.action action="edit" arguments="{company: department}"><i class="icon-pencil"></i></f:link.action>
-									</td>
-								</tr>
-							</f:for>
-						</f:then>
-						</f:if>
 					</f:for>
 				</tbody>
 			</table>
 		</f:then>
 		<f:else>
-			<p><f:translate id="message.company.noResult">No company created yet</f:translate></p>
+			<p></p>
 		</f:else>
 	</f:if>
 	<div class="form-actions">
-		<a class="btn btn-primary" href="/{f:uri.action(package: 'Beech.Ehrm', action: 'show', controller: 'Wizard', arguments: {formPersistenceIdentifier: 'newCompany'})}" data-toggle="modal" data-target="#entityModal"><i class="icon-leaf icon-white"></i> <f:translate id="action.create">Create</f:translate></a>
+		<a class="btn btn-primary" href="/{f:uri.action(package: 'Beech.Party', subpackage: 'Administration', controller: 'Company', action: 'new')}"><i class="icon-plus icon-white"></i>
+			<f:translate id="action.create">Create</f:translate>
+		</a>
 	</div>
 </f:section>
