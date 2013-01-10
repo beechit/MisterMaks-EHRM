@@ -69,8 +69,8 @@ class TemplateView extends \TYPO3\Fluid\View\TemplateView {
 		$actionName = ucfirst($actionName);
 		$subpackageKey = $this->controllerContext->getRequest()->getControllerSubpackageKey();
 		$this->controllerContext->getRequest()->setControllerSubpackageKey(ucfirst($subpackageKey));
-
 		$paths = $this->expandGenericPathPattern($this->templatePathAndFilenamePattern, FALSE, FALSE);
+
 		foreach ($paths as &$templatePathAndFilename) {
 			$templatePathAndFilename = str_replace('@action', $actionName, $templatePathAndFilename);
 			if (file_exists($templatePathAndFilename)) {
