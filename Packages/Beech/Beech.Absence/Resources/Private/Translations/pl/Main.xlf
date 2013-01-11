@@ -1,70 +1,70 @@
 <?xml version="1.0"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-	<file original="" source-language="en" target-language="nl" datatype="plaintext">
+	<file original="" source-language="en" target-language="pl" datatype="plaintext">
 		<body>
 			<trans-unit id="absence.absenceType">
 				<source>Type of absence</source>
-				<target>Verzuim type</target>
+				<target></target>
 			</trans-unit>
-			<trans-unit id="absence.personid">
+			<trans-unit id="absence.personId">
 				<source>Person</source>
-				<target>Persoon</target>
+				<target></target>
 			</trans-unit>
-			<trans-unit id="absence.departementid">
+			<trans-unit id="absence.departementId">
 				<source>department</source>
-				<target>Afdeling</target>
+				<target></target>
 			</trans-unit>
 			<trans-unit id="absence.firstSickDay">
-				<source>First absence day</source>
-				<target>Eerste verzuimdag</target>
+				<source>First sick day</source>
+				<target></target>
 			</trans-unit>
-			<trans-unit id="absence.disabilitypercentage">
+			<trans-unit id="absence.disabilityPercentage">
 				<source>disability percentage</source>
-				<target>arbeidsongeschiktheidspercentage</target>
+				<target></target>
 			</trans-unit>
-			<trans-unit id="absence.disabilitybackup">
+			<trans-unit id="absence.disabilityBackup">
 				<source>disability backup/source>
-				<target>vangnet</target>
+				<target></target>
 			</trans-unit>
-			<trans-unit id="absence.recoverydate">
+			<trans-unit id="absence.recoveryDate">
 				<source>Recovery date</source>
-				<target>Herstel datum</target>
+				<target></target>
 			</trans-unit>
 			<trans-unit id="absence.arboActionType">
 				<source>Action to take by Arbodienst</source>
-				<target>Actie van arboddienst</target>
+				<target></target>
 			</trans-unit>
 			<trans-unit id="absence.creationDate">
 				<source>Creation Date</source>
-				<target>Toevoeg datum</target>
+				<target></target>
 			</trans-unit>
 			<trans-unit id="absence.createdBy">
 				<source>Created by</source>
-				<target>Toegevoegd door</target>
+				<target></target>
 			</trans-unit>
-			<trans-unit id="absence.Modification">
+			<trans-unit id="absence.modification">
 				<source>Modification</source>
-				<target>Wijziging</target>
+				<target></target>
 			</trans-unit>
 			<trans-unit id="absence.modificationDate">
 				<source>modification date</source>
-				<target>Datum wijziging</target>
+				<target></target>
 			</trans-unit>
-			<trans-unit id="absence.Modifiedby">
+			<trans-unit id="absence.modifiedBy">
 				<source>Modified by</source>
-				<target>Gewijzigd door</target>
+				<target></target>
 			</trans-unit>
 			<trans-unit id="absence.flashmessage.createdAbsenseReport">
 				<source>New absence report created</source>
-				<target>Nieuwe verauimmelding toegevoegd</target>
+				<target></target>
 			</trans-unit>
 			<trans-unit id="absence.flashmessage.updatedAbsenceReport">
 				<source>Absense report was updated</source>
-				<target>Verzuimmelding is bijgewerkt</target>
+				<target></target>
 			</trans-unit>
 			<trans-unit id="absence.flashmessage.deletedAbsenceReport">
 				<source>Absense report was deleted</source>
-				<target>Verzuimmelding is verwijderd</target>
+				<target></target>
 			</trans-unit>
 		</body>
 	</file>

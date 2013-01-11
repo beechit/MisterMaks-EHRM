@@ -5,22 +5,22 @@
 			<trans-unit id="absence.absenceType">
 				<source>Type of absence</source>
 			</trans-unit>
-			<trans-unit id="absence.personid">
+			<trans-unit id="absence.personId">
 				<source>Person</source>
 			</trans-unit>
-			<trans-unit id="absence.departementid">
+			<trans-unit id="absence.departementId">
 				<source>department</source>
 			</trans-unit>
 			<trans-unit id="absence.firstSickDay">
 				<source>First absence day</source>
 			</trans-unit>
-			<trans-unit id="absence.disabilitypercentage">
+			<trans-unit id="absence.disabilityPercentage">
 				<source>disability percentage</source>
 			</trans-unit>
 			<trans-unit id="absence.disabilitybackup">
 				<source>disability backup/source>
 			</trans-unit>
-			<trans-unit id="absence.recoverydate">
+			<trans-unit id="absence.recoveryDate">
 				<source>Recovery date</source>
 			</trans-unit>
 			<trans-unit id="absence.arboActionType">
@@ -32,22 +32,22 @@
 			<trans-unit id="absence.createdBy">
 				<source>Created by</source>
 			</trans-unit>
-			<trans-unit id="absence.Modification">
+			<trans-unit id="absence.modification">
 				<source>Modification</source>
 			</trans-unit>
 			<trans-unit id="absence.modificationDate">
 				<source>modification date</source>
 			</trans-unit>
-			<trans-unit id="absence.Modifiedby">
+			<trans-unit id="absence.modifiedBy">
 				<source>Modified by</source>
 			</trans-unit>
-			<trans-unit id="absence.flashmessage.createdMinute">
+			<trans-unit id="absence.flashmessage.createdAbsence">
 				<source>New minute created</source>
 			</trans-unit>
-			<trans-unit id="absence.flashmessage.updatedMinute">
+			<trans-unit id="absence.flashmessage.updatedAbsence">
 				<source>Minute was updated</source>
 			</trans-unit>
-			<trans-unit id="absence.flashmessage.deletedMinute">
+			<trans-unit id="absence.flashmessage.deletedAbsense">
 				<source>Minute was deleted</source>
 			</trans-unit>
 		</body>
