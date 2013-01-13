@@ -8,10 +8,8 @@ ul.flashmessages {
 }
 
 /* Start Notifications */
-.midgardNotifications-container,
-.midgardNotifications-item-outer{
-	z-index:10001;
-	width: 150px;
+.notifications {
+	z-index: 10001;
 }
 /* End Notifications */
 

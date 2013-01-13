@@ -129,11 +129,16 @@ Beech:
         - 'Beech.Ehrm/StyleSheets/main.css'
         - 'Beech.Ehrm/Library/dataTables/media/css/jquery.dataTables.TwitterBootstrap.css'
         - 'Beech.Ehrm/Library/dataTables/media/css/jquery.dataTables.css'
+        - 'Beech.Ehrm/Library/bootstrap-notify/css/bootstrap-notify.css'
+        - 'Beech.Ehrm/Library/bootstrap-notify/css/styles/alert-blackgloss.css'
+        - 'Beech.Ehrm/Library/bootstrap-notify/css/styles/alert-notification-animations.css'
 
       javaScript:
         libraries:
           - 'Beech.Ehrm/Library/jquery-ui/js/jquery-ui-1.9.rc1.js'
           - 'Beech.Ehrm/Library/bootstrap/js/bootstrap.min.js'
+          - 'Beech.Ehrm/Library/bootstrap-notify/js/bootstrap-notify.js'
+          - 'Beech.Ehrm/Library/jquery.gracefulWebSocket.js'
           - 'Beech.Ehrm/Library/jquery.form.js'
           - 'Beech.Ehrm/JavaScript/ModuleHandler.js'
           - 'Beech.Ehrm/JavaScript/Mixins/Module.js'
@@ -151,6 +156,7 @@ Beech:
           dashboardWidget: 'Beech.Ehrm/JavaScript/Component/Dashboard/DashboardWidget.js'
           taskModuleAllTodos: 'Beech.Ehrm/JavaScript/Component/Dashboard/Widget/AllTodos.js'
           administration: 'Beech.Ehrm/JavaScript/Component/Module/Administration.js'
+          notificationService: 'Beech.Ehrm/JavaScript/Service/Notification.js'
 
     viewHelpers:
       partialRootPath: 'resource://Beech.Ehrm/Private/Templates/ViewHelpers/Partials/'

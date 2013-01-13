@@ -1,15 +1,49 @@
 App = Ember.Application.create({
-	autoinit: false
-});
+	autoinit: false,
+	Service: {},
+	Socket: null,
+	SocketMessageListeners: null,
 
-define = function() {
-	for (var i in arguments) {
-		if (typeof arguments[i] === 'function') {
-			MM.init.preInitialize.push(arguments[i]);
-			return;
-		}
+	initializeWebSocket: function() {
+		this.Socket = $.gracefulWebSocket("ws://127.0.0.1:8000/");
+		this.Socket.onopen = function(msg) {
+			console.log('Connection successfully opened (readyState ' + this.readyState+')');
+		};
+		this.Socket.onclose = function(msg) {
+			if(this.readyState == 2) {
+				console.log(
+					'Closing... The connection is going through '
+						+ 'the closing handshake (readyState '+this.readyState+')'
+				);
+			} else if(this.readyState == 3) {
+				App.Service.Notification.showError('Connection to the server has been lost or could not be opened.');
+				setTimeout(function() {
+					App.initializeWebSocket();
+				}, 6000);
+			} else {
+				console.log('Connection closed... (unhandled readyState '+this.readyState+')');
+			}
+		};
+		this.Socket.onerror = function(event) {
+			console.log(event.data);
+		};
+		this.Socket.onmessage = function(event) {
+			App.SocketMessageListeners.forEach(function(item) {
+				item.call(this, event);
+			});
+		};
+	},
+
+	initialize: function() {
+		this.SocketMessageListeners = Ember.ArrayProxy.create({
+			content: []
+		});
+
+		this.initializeWebSocket();
+
+		this._super();
 	}
-};
+});
 
 $(document).ready(function () {
 	if (MM.authenticated) {

@@ -8,6 +8,15 @@
     '@format': 'html'
 
 -
+  name: 'Logout'
+  uriPattern: 'logout.html'
+  defaults:
+    '@package': 'Beech.Ehrm'
+    '@controller': 'Login'
+    '@action': 'logout'
+    '@format': 'html'
+
+-
   name: 'Management'
   uriPattern: '{@package}/management/{@controller}/{@action}.{@format}'
   defaults:
