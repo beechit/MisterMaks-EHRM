@@ -80,17 +80,17 @@
 			<trans-unit id="company.hyves">
 				<source>hyves</source>
 			</trans-unit>
-			<trans-unit id="company.telephone">
-				<source>telephone</source>
+			<trans-unit id="company.phone">
+				<source>phone</source>
 			</trans-unit>
-			<trans-unit id="company.telephoneType">
-				<source>telephoneType</source>
+			<trans-unit id="company.phoneType">
+				<source>phoneType</source>
 			</trans-unit>
-			<trans-unit id="company.telephoneNumber">
-				<source>telephoneNumber</source>
+			<trans-unit id="company.phoneNumber">
+				<source>phoneNumber</source>
 			</trans-unit>
-			<trans-unit id="company.foreignTelePhoneNumber">
-				<source>foreignTelePhoneNumber</source>
+			<trans-unit id="company.foreignPhoneNumber">
+				<source>foreignPhoneNumber</source>
 			</trans-unit>
 			<trans-unit id="company.vatNumber">
 				<source>vat Number</source>
@@ -101,7 +101,7 @@
 			<trans-unit id="company.companyDescription">
 				<source>Company description"></source>
 			</trans-unit>
-			<trans-unit id="company.bankinformation">
+			<trans-unit id="company.bankInformation">
 				<source>Bank information</source>
 			</trans-unit>
 			<trans-unit id="company.accountType">
@@ -146,7 +146,7 @@
 			<trans-unit id="company.modificationDate">
 				<source>modification Date</source>
 			</trans-unit>
-			<trans-unit id="company.modifiedby">
+			<trans-unit id="company.modifiedBy">
 				<source>Modified by</source>
 			</trans-unit>
 			<trans-unit id="company">
@@ -314,14 +314,14 @@
 			<trans-unit id="person.electronicaddresses.hyves">
 				<source>hyves</source>
 			</trans-unit>
-			<trans-unit id="person.telephone.telephonetype">
-				<source>telephonetype</source>
+			<trans-unit id="person.phone.phoneType">
+				<source>phonetype</source>
 			</trans-unit>
-			<trans-unit id="person.telephone.telephoneNumber">
-				<source>telephoneNumber</source>
+			<trans-unit id="person.phone.phoneNumber">
+				<source>phoneNumber</source>
 			</trans-unit>
-			<trans-unit id="person.telephone.foreignTelePhoneNumber">
-				<source>foreignTelePhoneNumber</source>
+			<trans-unit id="person.phone.foreignPhoneNumber">
+				<source>foreignphoneNumber</source>
 			</trans-unit>
 			<trans-unit id="person.addresses.addresstype">
 				<source>addresstype</source>
@@ -383,34 +383,34 @@
 			<trans-unit id="person.waowiaStartDate">
 				<source>WAOWiaStartDate</source>
 			</trans-unit>
-			<trans-unit id="person.bankinformation.accountName">
+			<trans-unit id="person.bankInformation.accountName">
 				<source>Account name</source>
 			</trans-unit>
-			<trans-unit id="person.bankinformation.accountType">
+			<trans-unit id="person.bankInformation.accountType">
 				<source>accountType</source>
 			</trans-unit>
-			<trans-unit id="person.bankinformation.bankName">
+			<trans-unit id="person.bankInformation.bankName">
 				<source>bankName</source>
 			</trans-unit>
-			<trans-unit id="person.bankinformation.primaryBankAccount">
+			<trans-unit id="person.bankInformation.primaryBankAccount">
 				<source>primaryBankAccount</source>
 			</trans-unit>
-			<trans-unit id="person.bankinformation.giro">
+			<trans-unit id="person.bankInformation.giro">
 				<source>Giro</source>
 			</trans-unit>
-			<trans-unit id="person.bankinformation.bic">
+			<trans-unit id="person.bankInformation.bic">
 				<source>bic</source>
 			</trans-unit>
-			<trans-unit id="person.bankinformation.accountNumber">
+			<trans-unit id="person.bankInformation.accountNumber">
 				<source>accountNumber</source>
 			</trans-unit>
-			<trans-unit id="company.person.bankinformation.ibanNumber">
+			<trans-unit id="company.person.bankInformation.ibanNumber">
 				<source>ibanNumber</source>
 			</trans-unit>
-			<trans-unit id="person.bankinformation.countryBank">
+			<trans-unit id="person.bankInformation.countryBank">
 				<source>countryBank</source>
 			</trans-unit>
-			<trans-unit id="person.bankinformation.bankResidence">
+			<trans-unit id="person.bankInformation.bankResidence">
 				<source>bankResidence</source>
 			</trans-unit>
 			<trans-unit id="person.jobTitle">
@@ -575,8 +575,8 @@
 			<trans-unit id="person.emergencyCallnumber">
 				<source>Emergency call number</source>
 			</trans-unit>
-			<trans-unit id="person.telephonedescription">
-				<source>Telephone description</source>
+			<trans-unit id="person.phonedescription">
+				<source>phone description</source>
 			</trans-unit>
 			<trans-unit id="person.temporaryAddress">
 				<source>Temporaryaddress</source>

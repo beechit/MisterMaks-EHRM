@@ -106,20 +106,20 @@
 				<source>hyves</source>
 				<target>hyves</target>
 			</trans-unit>
-			<trans-unit id="company.telephone">
-				<source>telephone</source>
+			<trans-unit id="company.phone">
+				<source>phone</source>
 				<target>telefoonnummer</target>
 			</trans-unit>
-			<trans-unit id="company.telephoneType">
-				<source>telephoneType</source>
+			<trans-unit id="company.phoneType">
+				<source>phoneType</source>
 				<target>telefoontype</target>
 			</trans-unit>
-			<trans-unit id="company.telephoneNumber">
-				<source>telephoneNumber</source>
+			<trans-unit id="company.phoneNumber">
+				<source>phoneNumber</source>
 				<target>telefoonnummer</target>
 			</trans-unit>
-			<trans-unit id="company.foreignTelePhoneNumber">
-				<source>foreignTelePhoneNumber</source>
+			<trans-unit id="company.foreignphoneNumber">
+				<source>foreignphoneNumber</source>
 				<target>telefoonnummer buitenland</target>
 			</trans-unit>
 			<trans-unit id="company.vatNumber">
@@ -134,7 +134,7 @@
 				<source>Company description"></source>
 				<target>Bedrijfsomschrijving</target>
 			</trans-unit>
-			<trans-unit id="company.bankinformation">
+			<trans-unit id="company.bankInformation">
 				<source>Bank information</source>
 				<target>Bank info</target>
 			</trans-unit>
@@ -418,16 +418,16 @@
 				<source>hyves</source>
 				<target>hyves</target>
 			</trans-unit>
-			<trans-unit id="person.telephone.telephonetype">
-				<source>telephonetype</source>
+			<trans-unit id="person.phone.phonetype">
+				<source>phonetype</source>
 				<target>Type telefoonnummer</target>
 			</trans-unit>
-			<trans-unit id="person.telephone.telephoneNumber">
-				<source>telephoneNumber</source>
+			<trans-unit id="person.phone.phoneNumber">
+				<source>phoneNumber</source>
 				<target>Telefoonnnummer</target>
 			</trans-unit>
-			<trans-unit id="person.telephone.foreignTelePhoneNumber">
-				<source>foreignTelePhoneNumber</source>
+			<trans-unit id="person.phone.foreignphoneNumber">
+				<source>foreignphoneNumber</source>
 				<target>Telefoonnummer buitenland</target>
 			</trans-unit>
 			<trans-unit id="person.addresses.addresstype">
@@ -510,43 +510,43 @@
 				<source>WAOWiaStartDate</source>
 				<target>Ingangsdatum WAO WIA</target>
 			</trans-unit>
-			<trans-unit id="person.bankinformation.accountName">
+			<trans-unit id="person.bankInformation.accountName">
 				<source>Account name</source>
 				<target>Naam Rekening</target>
 			</trans-unit>
-			<trans-unit id="person.bankinformation.accountType">
+			<trans-unit id="person.bankInformation.accountType">
 				<source>accountType</source>
 				<target>Rekening type</target>
 			</trans-unit>
-			<trans-unit id="person.bankinformation.bankName">
+			<trans-unit id="person.bankInformation.bankName">
 				<source>bankName</source>
 				<target>Bank naam</target>
 			</trans-unit>
-			<trans-unit id="person.bankinformation.primaryBankAccount">
+			<trans-unit id="person.bankInformation.primaryBankAccount">
 				<source>primaryBankAccount</source>
 				<target>Primaire Bankrekening</target>
 			</trans-unit>
-			<trans-unit id="person.bankinformation.giro">
+			<trans-unit id="person.bankInformation.giro">
 				<source>Giro</source>
 				<target>Giro</target>
 			</trans-unit>
-			<trans-unit id="person.bankinformation.bic">
+			<trans-unit id="person.bankInformation.bic">
 				<source>bic</source>
 				<target>bic code</target>
 			</trans-unit>
-			<trans-unit id="person.bankinformation.accountNumber">
+			<trans-unit id="person.bankInformation.accountNumber">
 				<source>accountNumber</source>
 				<target>Bankrekeningnummer</target>
 			</trans-unit>
-			<trans-unit id="company.person.bankinformation.ibanNumber">
+			<trans-unit id="company.person.bankInformation.ibanNumber">
 				<source>ibanNumber</source>
 				<target>IBAN nummer</target>
 			</trans-unit>
-			<trans-unit id="person.bankinformation.countryBank">
+			<trans-unit id="person.bankInformation.countryBank">
 				<source>countryBank</source>
 				<target>Land</target>
 			</trans-unit>
-			<trans-unit id="person.bankinformation.bankResidence">
+			<trans-unit id="person.bankInformation.bankResidence">
 				<source>bankResidence</source>
 				<target>Vestigingsplaats</target>
 			</trans-unit>
@@ -766,8 +766,8 @@
 				<source>Emergency call number</source>
 				<target>Noodgevallen Nummer</target>
 			</trans-unit>
-			<trans-unit id="person.telephonedescription">
-				<source>Telephone description</source>
+			<trans-unit id="person.phonedescription">
+				<source>phone description</source>
 				<target>Omschrijving telefoonnummer</target>
 			</trans-unit>
 			<trans-unit id="person.temporaryAddress">
