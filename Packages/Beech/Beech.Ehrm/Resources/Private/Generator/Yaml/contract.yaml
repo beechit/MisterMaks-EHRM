@@ -1,0 +1,425 @@
+###############################################################
+# this is the contact document model
+# this is based on the contract dataset and the data needed for
+# generation of contract see /MisterMaks/DataSet/ContractBased/GS/yaml/contractArticlesGS.yaml
+###############################################################
+
+model:
+  modelName: 'contract'
+properties:
+  -
+    id: 'subjectId'
+    label: 'Subject id'
+    type: '\Beech\Party\Domain\Model\Person'
+    validation: ''
+    onlist: TRUE
+    visible: TRUE
+    required: TRUE
+  -
+    id: 'departementId'
+    label: 'Department id'
+    type: '\Beech\Party\Domain\Model\Company'
+    validation: ''
+    visible: TRUE
+    required: FALSE
+  -
+    id: 'contractStartDate'
+    label: 'Contract start date'
+    type: 'dateTime'
+    validation: ''
+    onList: TRUE
+    visible: TRUE
+    required: TRUE
+  -
+    id: 'contractEnddate'
+    label: 'Contract end date'
+    type: 'dateTime'
+    validation: ''
+    visible: TRUE
+    required: TRUE
+  -
+    id: 'contractType'
+    label: 'Contract type'
+    type: 'string(20)'
+    validation: ''
+    options:
+      values: [ GSContractPermanentFieldStaff , GSContractPermanentFieldStaffLease , GSContractPermanentOfficeStaff , GSContractTempFieldstaff , GSContractTempFieldStaffLeaseCar , GSContractTempOfficeStaff ]
+    visible: TRUE
+    required: TRUE
+  -
+    id: 'contactDocumentId'
+    label: 'contract document id'
+    type: 'string(20)'
+    validation: ''
+    visible: TRUE
+    required: FALSE
+  -
+    id: 'probation'
+    label: 'Probation'
+    type: 'boolean'
+    validation: ''
+    visible: TRUE
+    required: TRUE
+  -
+    id: 'probationPeriod'
+    label: 'Probation period'
+    type: 'string(20)'
+    validation: ''
+    visible: TRUE
+    required: TRUE
+  -
+    id: 'unitOfTime'
+    label: 'unit of time'
+    type: 'string(20)'
+    validation: ''
+    values: [day, days, week, weeks, month, months, year, years ]
+    visible: TRUE
+    required: TRUE
+  -
+    id: 'hoursAWeek'
+    label: 'hours a week'
+    type: 'decimal(2.2)'
+    validation: ''
+    visible: TRUE
+    required: TRUE
+  -
+    id: 'jobDescriptionId'
+    label: 'job description id'
+    type: 'string(10)'
+    validation: ''
+    visible: TRUE
+    required: TRUE
+  -
+    id: 'noticePeriod'
+    label: 'Notice period'
+    type: 'string(10)'
+    validation: ''
+    visible: TRUE
+    required: TRUE
+  -
+    id: 'workingHours'
+    label: 'Working hours'
+    type: 'string(20)'
+    validation: ''
+    visible: TRUE
+    required: TRUE
+  -
+    id: 'startWorkDay'
+    label: 'Start of work day'
+    type: 'dateTime'
+    validation: ''
+    visible: TRUE
+    required: TRUE
+  -
+    id: 'endWorkday'
+    label: 'End of workday'
+    type: 'dateTime'
+    validation: ''
+    visible: TRUE
+    required: TRUE
+  -
+    id: 'workLocation'
+    label: 'Worklocation'
+    type: 'string(20)'
+    validation: ''
+    visible: TRUE
+    required: TRUE
+  -
+    id: 'workAtHome'
+    label: 'Work at home'
+    type: 'boolean'
+    validation: ''
+    visible: TRUE
+    required: TRUE
+  -
+    id: 'salary'
+    label: 'Salary'
+    type: 'decimal(5.2)'
+    validation: ''
+    visible: TRUE
+    required: TRUE
+  -
+    id: 'salaryScale'
+    label: 'Salary scale'
+    type: 'string(20)'
+    validation: ''
+    visible: TRUE
+    required: TRUE
+  -
+    id: 'salaryScaleNumber'
+    label: 'Salary scale number'
+    type: 'string(20)'
+    validation: ''
+    visible: TRUE
+    required: TRUE
+  -
+    id: 'wageID'
+    label: 'WageID'
+    type: 'string(20)'
+    validation: ''
+    visible: TRUE
+    required: TRUE
+  -
+    id: 'paymentinterval'
+    label: 'Payment interval'
+    type: 'string(10)'
+    validation: ''
+    options:
+      values: [ daily , weekly, monthly, 4weeks ]
+    visible: TRUE
+    required: TRUE
+  -
+    id: 'pensionplan'
+    label: 'Pension plan'
+    type: 'boolean'
+    validation: ''
+    visible: TRUE
+    required: TRUE
+  -
+    id: 'pensionProvider'
+    label: 'pension provider'
+    type: 'string(20)'
+    validation: ''
+    visible: TRUE
+    required: TRUE
+  -
+    id: 'pensionArrangement'
+    label: 'Pension arrangement'
+    type: 'string(20)'
+    validation: ''
+    visible: TRUE
+    required: TRUE
+  -
+    id: 'expenseAllowance'
+    label: 'Expense allowance'
+    type: 'boolean'
+    validation: ''
+    visible: TRUE
+    required: TRUE
+  -
+    id: 'expenseAllowanceAmmount'
+    label: 'Expense allowance ammount'
+    type: 'decimal(3.2)'
+    validation: ''
+    visible: TRUE
+    required: TRUE
+  -
+    id: 'kmAllowance'
+    label: 'Business travel expenses'
+    type: 'boolean'
+    validation: ''
+    visible: TRUE
+    required: TRUE
+  -
+    id: 'kmAllowanceWork'
+    label: 'km allowance for businesstravel'
+    type: 'decimal(2.3)'
+    validation: ''
+    visible: TRUE
+    required: TRUE
+  -
+    id: 'leaseCarProvision'
+    label: 'Lease car provision'
+    type: 'boolean'
+    validation: ''
+    visible: TRUE
+    required: TRUE
+  -
+    id: 'leaseCarArrangement'
+    label: 'Lease car arrangement'
+    type: 'boolean'
+    validation: ''
+    visible: TRUE
+    required: TRUE
+  -
+    id: 'studyExpenses'
+    label: 'Study expenses'
+    type: 'boolean'
+    validation: ''
+    visible: TRUE
+    required: TRUE
+  -
+    id: 'StudyExpensesArrangment'
+    label: 'Study expenses arrangment'
+    type: 'text'
+    validation: ''
+    visible: TRUE
+    required: TRUE
+  -
+    id: 'vacationAllowance'
+    label: 'Vacation allowance'
+    type: 'boolean'
+    validation: ''
+    visible: TRUE
+    required: TRUE
+  -
+    id: 'vacationAllowanceAmount'
+    label: 'Vacation allowance amount'
+    type: 'decimal(2.2)'
+    validation: ''
+    visible: TRUE
+    required: TRUE
+  -
+    id: 'flexibleEmploymentBenefits'
+    abel: 'Flexible employment benefits'
+    type: 'boolean'
+    validation: ''
+    visible: TRUE
+    required: TRUE
+  -
+    id: 'flexibleEmploymentBenefitsPercentage'
+    label: 'Flexible employment benefits percentage'
+    type: 'decimal(2.2)'
+    validation: ''
+    visible: TRUE
+    required: TRUE
+  -
+    id: 'flexibleEmploymentBenefitsOptions'
+    label: 'Flexible employment benefits options'
+    type: 'string(20)'
+    validation: ''
+    visible: TRUE
+    required: TRUE
+  -
+    id: 'mobilePhoneProvision'
+    label: 'Mobile phone provision'
+    type: 'boolean'
+    validation: ''
+    visible: TRUE
+    required: TRUE
+  -
+    id: 'limitedPrivateUse'
+    label: 'Limited privateUse'
+    type: 'boolean'
+    validation: ''
+    visible: TRUE
+    required: TRUE
+  -
+    id: 'percentagePrivateUse'
+    label: 'Percentage private use'
+    type: 'decimal(2.2)'
+    validation: ''
+    visible: TRUE
+    required: TRUE
+  -
+    id: 'laptopProvision'
+    label: 'Laptop provision'
+    type: 'boolean'
+    validation: ''
+    visible: TRUE
+    required: TRUE
+  -
+    id: 'PrivateUseLaptop'
+    label: 'Private use of laptop'
+    type: 'boolean'
+    validation: ''
+    visible: TRUE
+    required: TRUE
+  -
+    id: 'noCompetitionClause'
+    label: 'No competition clause'
+    type: 'boolean'
+    validation: ''
+    visible: TRUE
+    required: TRUE
+  -
+    id: 'noCompetitionPenalty'
+    label: 'No competitionpenalty'
+    type: 'boolean'
+    validation: ''
+    visible: TRUE
+    required: TRUE
+  -
+    id: 'noCompetitionPenaltyFine'
+    label: 'No competitionpenalty fine'
+    type: 'string(5)'
+    validation: ''
+    visible: TRUE
+    required: TRUE
+  -
+    id: 'noCompetitionPenaltyDayFine'
+    label: 'No competitionPenalty day fine'
+    type: 'string(4)'
+    validation: ''
+    visible: TRUE
+    required: TRUE
+  -
+    id: 'confidentialityClause'
+    label: 'Confidentiality clause'
+    type: 'boolean'
+    validation: ''
+    visible: TRUE
+    required: TRUE
+  -
+    id: 'confidentialityPenalty'
+    label: 'Confidentialitypenalty'
+    type: 'boolean'
+    validation: ''
+    visible: TRUE
+    required: TRUE
+  -
+    id: 'confidentialityPenaltyFine'
+    label: 'ConfidentialityPenalty fine'
+    type: 'string(5)'
+    validation: ''
+    visible: TRUE
+    required: TRUE
+  -
+    id: 'confidentialityPenaltyDayFine'
+    label: 'Confidentialitypenalty dayfine'
+    type: 'string(4)'
+    validation: ''
+    visible: TRUE
+    required: TRUE
+  -
+    id: 'additionalPositions'
+    label: 'Additional positions'
+    type: 'boolean'
+    validation: ''
+    visible: TRUE
+    required: TRUE
+  -
+    id: 'addtionalPositionsRemarks'
+    label: 'Additional positions remarks'
+    type: 'text'
+    validation: ''
+    visible: TRUE
+    required: FALSE
+  # logging
+  -
+    id: 'creationDate'
+    label: 'creation date'
+    type: 'dateTime'
+    validation: '(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}( \d{1,2}[:-]\d{2}([:-]\d{2,3})*)?'
+    default: 'now'
+    visible: FALSE
+    required: TRUE
+  -
+    id: 'createdBy'
+    label: 'creation by'
+    type: '\Beech\Party\Domain\Model\Person'
+    default: 'currentUser'
+    validation: ''
+    visible: FALSE
+    required: TRUE
+  -
+    id: 'modification'
+    label: 'ModificationLog'
+    type: 'array'
+    items:
+     -
+       id: 'modificationDate'
+       label: 'Modification date'
+       type: 'dateTime'
+       validation: '(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}( \d{1,2}[:-]\d{2}([:-]\d{2,3})*)?'
+       default: 'now'
+       visible: FALSE
+       required: TRUE
+     -
+       id: 'modifiedBy'
+       label: 'Modifiedby'
+       type: '\Beech\Party\Domain\Model\Person'
+       validation: ''
+       default: 'currentUser'
+       visible: FALSE
+       required: TRUE
