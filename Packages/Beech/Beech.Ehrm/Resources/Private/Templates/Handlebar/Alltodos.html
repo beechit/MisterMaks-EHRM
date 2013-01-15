@@ -1,36 +1,40 @@
-<h4><i class="icon-tasks"></i> Things to do</h4>
-
-<div class="accordion" id="todo-list-widget">
+<h3>Tasks <a href="Tasks.html" class="pull-right" rel="tooltip" data-placement="left" title="Go to all tasks"><i class="icon-tasks"></i></a></h3>
+<div class="accordion " id="tasklist">
 	<div class="accordion-group">
 		<div class="accordion-heading">
-			<a class="accordion-toggle" data-toggle="collapse" data-parent="#todo-list-widget" href="#todo-list-widget-veryHigh"><span class="badge badge-important">0</span> Very high</a>
+			<a class="accordion-toggle" data-toggle="collapse" data-parent="#tasklist" href="#collapseOne">
+				High Prio
+			</a>
+			<span class="badge badge-important">3</span>
 		</div>
-		<div id="todo-list-widget-veryHigh" class="accordion-body collapse">
-			<div class="accordion-inner"></div>
+		<div id="collapseOne" class="accordion-body collapse">
+			<div class="accordion-inner">
+				<ul class="unstyled">
+					<li>Item</li>
+					<li>Item</li>
+					<li>Item</li>
+				</ul>
+			</div>
 		</div>
 	</div>
 	<div class="accordion-group">
 		<div class="accordion-heading">
-			<a class="accordion-toggle" data-toggle="collapse" data-parent="#todo-list-widget" href="#todo-list-widget-high"><span class="badge badge-important">0</span> High</a>
+			<a class="accordion-toggle" data-toggle="collapse" data-parent="#tasklist" href="#collapseTwo">
+				Normal Prio
+			</a>
+			<span class="badge badge-important">6</span>
 		</div>
-		<div id="todo-list-widget-high" class="accordion-body collapse">
-			<div class="accordion-inner"></div>
-		</div>
-	</div>
-	<div class="accordion-group">
-		<div class="accordion-heading">
-			<a class="accordion-toggle" data-toggle="collapse" data-parent="#todo-list-widget" href="#todo-list-widget-normal"><span class="badge badge-warning">0</span> Normal</a>
-		</div>
-		<div id="todo-list-widget-normal" class="accordion-body collapse">
-			<div class="accordion-inner"></div>
-		</div>
-	</div>
-	<div class="accordion-group">
-		<div class="accordion-heading">
-			<a class="accordion-toggle" data-toggle="collapse" data-parent="#todo-list-widget" href="#todo-list-widget-low"><span class="badge badge-success">0</span> Low</a>
-		</div>
-		<div id="todo-list-widget-low" class="accordion-body collapse">
-			<div class="accordion-inner"></div>
+		<div id="collapseTwo" class="accordion-body collapse">
+			<div class="accordion-inner">
+				<ul class="unstyled">
+					<li>Item</li>
+					<li>Item</li>
+					<li>Item</li>
+					<li>Item</li>
+					<li>Item</li>
+					<li>Item</li>
+				</ul>
+			</div>
 		</div>
 	</div>
 </div>

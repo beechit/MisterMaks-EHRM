@@ -21,8 +21,6 @@
 		}
 	});
 
-	App.AllTodosView = App.AllTodosView.reopen({
-		classNames: ['well']
-	});
+	App.AllTodosView = App.AllTodosView.reopen();
 
 }).call(this);

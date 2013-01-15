@@ -1,73 +1,169 @@
-/*!
- * Bootstrap v2.1.1
- *
- * Copyright 2012 Twitter, Inc
- * Licensed under the Apache License v2.0
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Designed and built with all the love in the world @twitter by @mdo and @fat.
- */
+@import "partials/variables";
+@import "partials/mixins";
+@import "partials/accordion";
 
-// IMPORTANT: Remember not to include the sprites! (Replaced by fontawesome)
-
-// Core variables and mixins
-@import "../../SassTwitterBootstrap/lib/variables"; // Modify this for custom colors, font-sizes, etc
-@import "../../SassTwitterBootstrap/lib/mixins";
-
-// CSS Reset
-@import "../../SassTwitterBootstrap/lib/reset";
-
-// Grid system and page structure
-@import "../../SassTwitterBootstrap/lib/scaffolding";
-@import "../../SassTwitterBootstrap/lib/grid";
-@import "../../SassTwitterBootstrap/lib/layouts";
-
-// Base CSS
-@import "../../SassTwitterBootstrap/lib/type";
-@import "../../SassTwitterBootstrap/lib/code";
-@import "../../SassTwitterBootstrap/lib/forms";
-@import "../../SassTwitterBootstrap/lib/tables";
-
-// Components: common
-@import "../../SassTwitterBootstrap/lib/dropdowns";
-@import "../../SassTwitterBootstrap/lib/wells";
-@import "../../SassTwitterBootstrap/lib/component-animations";
-@import "../../SassTwitterBootstrap/lib/close";
-
-// Components: Buttons & Alerts
-@import "../../SassTwitterBootstrap/lib/buttons";
-@import "../../SassTwitterBootstrap/lib/button-groups";
-@import "../../SassTwitterBootstrap/lib/alerts"; // Note: alerts share common CSS with buttons and thus have styles in buttons
-
-// Components: Nav
-@import "../../SassTwitterBootstrap/lib/navs";
-@import "../../SassTwitterBootstrap/lib/navbar";
-@import "../../SassTwitterBootstrap/lib/breadcrumbs";
-@import "../../SassTwitterBootstrap/lib/pagination";
-@import "../../SassTwitterBootstrap/lib/pager";
-
-// Components: Popovers
-@import "../../SassTwitterBootstrap/lib/modals";
-@import "../../SassTwitterBootstrap/lib/tooltip";
-@import "../../SassTwitterBootstrap/lib/popovers";
-
-// Components: Misc
-@import "../../SassTwitterBootstrap/lib/thumbnails";
-@import "../../SassTwitterBootstrap/lib/labels-badges";
-@import "../../SassTwitterBootstrap/lib/progress-bars";
-@import "../../SassTwitterBootstrap/lib/accordion";
-@import "../../SassTwitterBootstrap/lib/carousel";
-@import "../../SassTwitterBootstrap/lib/hero-unit";
-
-// Utility classes
-@import "../../SassTwitterBootstrap/lib/utilities"; // Has to be last to override when necessary
-
-// Import responsive CSS
-@import "../../SassTwitterBootstrap/lib/responsive";
-
-// Font Awesome
-$fontAwesomePath: "Library/fontawesome/font/fontawesome-webfont" !default;
-[class^="icon-"], [class*=" icon-"] {
-	background: none;
+// General
+html, body {
+	font-family: 'Raleway', sans-serif;
+	height: 100%;
 }
-@import "../../Fontawesome/font-awesome";
+// Sticky Footer Begin
+.body {
+	min-height: 100%;
+	height: 100%;
+	height: auto !important;
+	margin: 0 auto -40px !important;
+}
+footer, .push {
+	height: 40px;
+}
+footer {
+	margin-top: -80px !important;
+}
+// Sticky Footer End
+.container-fluid {
+	max-width: 960px;
+	margin: 0 auto;
+}
+footer {
+	position: relative;
+	font-size: small;
+	font-weight: 100;
+	.footer {
+		float: left;
+	}
+	.logo {
+		float: right;
+		letter-spacing: -0.1em;
+		color: $blue;
+		position: relative;
+		i {
+			position: absolute;
+			left: -8px;
+			top: 1px;
+			font-size: 0.8em;
+		}
+	}
+}
+
+.page-header {
+	position: relative;
+	.home {
+		font-size: 300%;
+		position: absolute;
+		bottom: 15px;
+		color: $blue;
+	}
+	h1 {
+		text-align: right;
+		color: $grayLighter;
+	}
+}
+.left {
+	h3 {
+		font-size: 1em;
+		font-weight: normal;
+		text-transform: uppercase;
+		letter-spacing: -1px;
+		margin-bottom: 0;
+	}
+	// Tasks
+	.accordion {
+		.accordion-heading {
+			position: relative;
+			.badge {
+				position: absolute;
+				right: 10px;
+				top: 10px;
+			}
+		}
+	}
+	// Search
+	form fieldset {
+		position: relative;
+		.icon-search {
+			position: absolute;
+			top: 8px;
+			right: 8px;
+			color: $blue;
+		}
+	}
+}
+
+.block {
+	position: relative;
+	text-align: center;
+	font-size: 1.2em;
+	margin-bottom: 20px;
+	padding: 30px 0 20px 0;
+	.badge {
+		position: absolute;
+		top: -5px;
+		right: -10px;
+	}
+}
+
+.tooltip {
+	text-transform: lowercase;
+	letter-spacing: normal;
+	.tooltip-inner {
+		line-height: 1.8em;
+		padding: 5px 20px;
+	}
+}
+
+.breadcrumb {
+	background: none;
+	padding: 0;
+}
+
+.align-center {
+	text-align: center;
+}
+
+// Index
+.jumbotron {
+	margin: 100px 0;
+	text-align: center;
+	h1 {
+		letter-spacing: -0.1em;
+		color: $blue;
+		i {
+			margin-right: 8px;
+		}
+	}
+	.lead {
+		text-transform: uppercase;
+		font-size: small;
+		letter-spacing: -0.05em;
+	}
+}
+.index {
+	text-align: center;
+	.btn {
+		padding: 20px 30px;
+		position: relative;
+		i {
+			position: absolute;
+			top: 5px;
+			left: 8px;
+		}
+	}
+}
+
+#chart {
+	height: 200px;
+}
+
+.muted {
+	opacity: 0.6;
+}
+.stack {
+	display: inline-block;
+	i {
+		display: block;
+		clear: both;
+		height: 6px;
+		line-height: 10px;
+	}
+}

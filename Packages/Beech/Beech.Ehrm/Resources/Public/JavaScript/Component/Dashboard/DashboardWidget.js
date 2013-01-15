@@ -2,7 +2,7 @@
 	'use strict';
 
 	App.DashboardWidgetView = App.DashboardWidgetView.reopen({
-		classNames: ['span10']
+		classNames: []
 	});
 
 }).call(this);

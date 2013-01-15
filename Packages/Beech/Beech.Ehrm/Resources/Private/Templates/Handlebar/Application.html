@@ -1,14 +1,25 @@
-<header>
-	<nav class="navbar navbar-fixed-top">
-		<div class="navbar-inner">
-			<div class="container-fluid">
-				<a class="brand" href="#" {{action showDashboard}}>{{title}}</a>
-				{{view App.MainMenu}}
-			</div>
-		</div>
-	</nav>
-</header>
+<div class="container-fluid body">
+	<header class="row-fluid page-header">
+		<nav class="home">
+			<a class="brand" href="#" {{action showDashboard}}><i class="icon-home"></i></a>
+		</nav>
+		{{view App.BreadcrumbMenuView}}
+	</header>
 
-<div class="container-fluid">
-	{{outlet}}
+	<div class="row-fluid">
+		{{outlet view}}
+	</div>
+	<div class="push"></div>
 </div>
+
+<footer class="container-fluid">
+	<hr />
+	<div class="row-fluid">
+		<div class="footer">
+			<p>&copy; Beech Applications, 2013</p>
+		</div>
+		<div class="logo pull-right">
+			<p><i class="icon-github"></i> mister Maks</p>
+		</div>
+	</div>
+</footer>

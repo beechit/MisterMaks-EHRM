@@ -85,8 +85,8 @@ class HeaderPartsViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHel
 			}
 		}
 
-		$this->addThemeStyleSheet();
 		$this->addStyleSheetIncludes();
+		$this->addThemeStyleSheet();
 
 		return $this->output;
 	}

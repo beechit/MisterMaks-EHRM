@@ -126,6 +126,9 @@ Beech:
       themes: []
 
       styleSheets:
+        - 'Beech.Ehrm/Library/bootstrap/css/bootstrap.css'
+        - 'Beech.Ehrm/Library/bootstrap/css/bootstrap-responsive.css'
+        - 'Beech.Ehrm/Library/fontawesome/css/font-awesome.min.css'
         - 'Beech.Ehrm/StyleSheets/main.css'
         - 'Beech.Ehrm/Library/dataTables/media/css/jquery.dataTables.TwitterBootstrap.css'
         - 'Beech.Ehrm/Library/dataTables/media/css/jquery.dataTables.css'
@@ -135,7 +138,6 @@ Beech:
 
       javaScript:
         libraries:
-          - 'Beech.Ehrm/Library/jquery-ui/js/jquery-ui-1.9.rc1.js'
           - 'Beech.Ehrm/Library/bootstrap/js/bootstrap.min.js'
           - 'Beech.Ehrm/Library/bootstrap-notify/js/bootstrap-notify.js'
           - 'Beech.Ehrm/Library/jquery.gracefulWebSocket.js'
@@ -194,28 +196,13 @@ TYPO3:
 
 Radmiraal:
   Emberjs:
-    handlebar:
-      view:
-        assignHelpers:
-          mainmenu:
-            mainMenuItems:
-              class: 'Beech\Ehrm\Helper\SettingsHelper'
-              method: 'getMenuItems'
-              arguments: ['main']
-            actionMenuItems:
-              class: 'Beech\Ehrm\Helper\SettingsHelper'
-              method: 'getMenuItems'
-              arguments: ['action']
-            accountMenuItems:
-              class: 'Beech\Ehrm\Helper\SettingsHelper'
-              method: 'getMenuItems'
-              arguments: ['account']
     applications:
       MisterMaks:
         mvc:
           controller:
             application: []
             dashboard: []
+            breadcrumbMenu: []
             administration:
               controller:
                 mixin: 'App.ModuleControllerMixin'
@@ -237,7 +224,7 @@ Radmiraal:
               view:
                 mixin: 'App.ModuleViewMixin'
                 options:
-                  templateName: 'module-fullwidth'
+                  templateName: 'module-2column'
               controller:
                 mixin: 'App.ModuleControllerMixin'
                 options:
@@ -246,7 +233,7 @@ Radmiraal:
               view:
                 mixin: 'App.ModuleViewMixin'
                 options:
-                  templateName: 'module-fullwidth'
+                  templateName: 'module-2column'
               controller:
                 mixin: 'App.ModuleControllerMixin'
                 options:
@@ -263,7 +250,7 @@ Radmiraal:
               view:
                 mixin: 'App.ModuleViewMixin'
                 options:
-                  templateName: 'module-fullwidth'
+                  templateName: 'module-2column'
             dashboardWidget:
               view:
                 options:

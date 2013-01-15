@@ -1,0 +1,14 @@
+//
+// Accordion
+// --------------------------------------------------
+
+.accordion {
+	border: 1px solid #e5e5e5;
+	@include border-radius($baseBorderRadius);
+}
+// Group == heading + body
+.accordion-group {
+  margin-bottom: 2px;
+  border: none;
+}
+

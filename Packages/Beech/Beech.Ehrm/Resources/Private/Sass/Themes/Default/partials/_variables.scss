@@ -1,0 +1,55 @@
+// Grays
+// -------------------------
+$black:                 #000 !default;
+$grayDarker:            #222 !default;
+$grayDark:              #333 !default;
+$gray:                  #555 !default;
+$grayLight:             #999 !default;
+$grayLighter:           #eee !default;
+$white:                 #fff !default;
+
+// Accent colors
+// -------------------------
+$blue:                  #049cdb !default;
+$blueDark:              #0064cd !default;
+$green:                 #46a546 !default;
+$red:                   #9d261d !default;
+$yellow:                #ffc40d !default;
+$orange:                #f89406 !default;
+$pink:                  #c3325f !default;
+$purple:                #7a43b6 !default;
+
+// Links
+// -------------------------
+$linkColor:             #08c !default;
+$linkColorHover:        darken($linkColor, 15%) !default;
+
+$baseBorderRadius:      4px;
+$borderRadiusLarge:     6px;
+$borderRadiusSmall:     3px;
+
+// Buttons
+// -------------------------
+$blockBackground:                     $white !default;
+$blockBackgroundHighlight:            darken($white, 10%) !default;
+$blockBorder:                         #bbb !default;
+
+$blockPrimaryBackground:              $linkColor !default;
+$blockPrimaryBackgroundHighlight:     adjust-hue($blockPrimaryBackground, 20%) !default;
+
+$blockInfoBackground:                 $blue !default;
+$blockInfoBackgroundHighlight:        $blueDark !default;
+
+$blockSuccessBackground:              #62c462 !default;
+$blockSuccessBackgroundHighlight:     #51a351 !default;
+
+$blockWarningBackground:              lighten($orange, 15%) !default;
+$blockWarningBackgroundHighlight:     $orange !default;
+
+$blockDangerBackground:               #ee5f5b !default;
+$blockDangerBackgroundHighlight:      #bd362f !default;
+
+$blockInverseBackground:              #444 !default;
+$blockInverseBackgroundHighlight:     $grayDarker !default;
+
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900);
