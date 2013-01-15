@@ -34,12 +34,12 @@ class StandardController extends AbstractController {
 	public function initializeAction() {
 		parent::initializeAction();
 		if ($this->authenticationManager->isAuthenticated() === FALSE) {
-			$this->redirect('login', 'Login');
+			$this->redirect('intro', 'Login');
 		}
 	}
 
 	/**
-	 *
+	 * @return void
 	 */
 	public function indexAction() {
 	}

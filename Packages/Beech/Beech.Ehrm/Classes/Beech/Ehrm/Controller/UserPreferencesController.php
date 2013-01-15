@@ -70,6 +70,7 @@ class UserPreferencesController extends AbstractController {
 	 */
 	public function updateAction($locale = 'en_EN') {
 		$this->preferenceUtility->setUserPreference('locale', $locale);
+		$this->addFlashMessage('User preferences updated');
 		$this->redirect('index');
 	}
 

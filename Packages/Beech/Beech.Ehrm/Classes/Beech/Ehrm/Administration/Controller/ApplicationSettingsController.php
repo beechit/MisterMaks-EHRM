@@ -74,6 +74,7 @@ class ApplicationSettingsController extends \Beech\Ehrm\Controller\AbstractContr
 	public function updateAction($locale = 'en_EN', $theme = 'Default') {
 		$this->preferenceUtility->setApplicationPreference('locale', $locale);
 		$this->preferenceUtility->setApplicationPreference('theme', $theme);
+		$this->addFlashMessage('Application preferences updated');
 		$this->redirect('index');
 	}
 

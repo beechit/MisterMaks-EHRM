@@ -96,6 +96,15 @@ class LoginController extends \TYPO3\Flow\Security\Authentication\Controller\Abs
 		$this->redirect('login');
 	}
 
+	/**
+	 * @return void
+	 */
+	public function introAction() {
+		if ($this->authenticationManager->isAuthenticated() === TRUE) {
+			$this->redirect('index');
+		}
+	}
+
 }
 
 ?>
