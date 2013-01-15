@@ -1,0 +1,352 @@
+#############################################################
+# Yaml respresentation of the partnercompany document mister maks;
+# Version 21-12-2012
+# the companydocument extends Beech\Party\Domain\Model\Company
+#############################################################
+
+model:
+  modelName: 'Company'
+properties:
+  -
+    id: 'name'
+    label: 'Name of company'
+    type: 'string(30)'
+    validation: ''
+  -
+    id: 'companyType'
+    label: 'Companytype'
+    type: 'string(20)'
+    validation: ''
+    value: 'partnerCompany'
+  -
+    id: 'chamberOfCommerceNumber'
+    label: 'Chamber of Commerce Number'
+    type: 'string(20)'
+    validation: ''
+  -
+    id: 'companyIdNumber'
+    label: 'Company Id Number'
+    type: 'integer(6)'
+    validation: ''
+  -
+    id: 'legalForm'
+    label: 'LegalForm'
+    type: 'string(30)'
+    validation: ''
+    options:
+      values: [ department, SoleProprietorship, Partnership, VOF, CV, BV, NV, Association, Foundation, Cooperative ]
+  -
+    id: 'companyType'
+    label: 'Company type'
+    type: 'string(20)'
+    validation: ''
+    options:
+    values: [ primary , department , subsidiaryCompany , partnerCompany ]
+  -
+    id: 'addresses'
+    label: 'Addresses'
+    type: 'array'
+    items:
+      -
+        id: 'addressType'
+        label: 'Address type'
+        type: 'string(20)'
+        validation: ''
+        options:
+          values: [ businessAddress , postbox ,  mailingAddress , workLocation , addressAbroad ]
+        required: FALSE
+        visible: TRUE
+      -
+        id: 'streetName'
+        label: 'Street name'
+        type: 'string(30)'
+        validation: '[a-zA-Z\-\s\’]{2,30}'
+        required: TRUE
+        visible: TRUE
+      -
+        id: 'primaryPostAddress'
+        label: 'Primary postaddress'
+        type: 'boolean'
+        validation: ''
+        required: TRUE
+        visible: TRUE
+      -
+        id: 'primaryLocation'
+        label: 'Primary Location'
+        type: 'boolean'
+        validation: ''
+        required: TRUE
+        visible: TRUE
+      -
+        id: 'postBoxNumber'
+        label: 'Postbox number'
+        type: 'integer(5)'
+        validation: '[0-9]{1,5}'
+        required: TRUE
+        visible: TRUE
+      -
+        id: 'houseNumber'
+        label: 'House number'
+        type: 'integer(5)'
+        validation: '[0-9]{1,5}'
+        required: TRUE
+        visible: TRUE
+      -
+        id: 'houseNumberAddition'
+        label: 'House number addition'
+        type: 'string(10)'
+        validation: '[a-zA-Z0-9\-]{0,10}'
+        required: FALSE
+        visible: TRUE
+      -
+        id: 'postalCodeNL'
+        label: 'Postal code'
+        type: 'string(6)'
+        validation: '\d{4}\s?[a-z]{2}'
+        required: TRUE
+        visible: TRUE
+      -
+        id: 'postalCodeAbroad'
+        label: 'Postal code'
+        type: 'string(10)'
+        validation: '[a-zA-Z0-9\-]{0,10}'
+        required: FALSE
+        visible: TRUE
+      -
+        id: 'residence'
+        label: 'Residence'
+        type: 'string(30)'
+        validation: '[a-zA-Z\-\s\’]{2,30}'
+        required: TRUE
+        visible: TRUE
+      -
+        id: 'country'
+        label: 'Country'
+        type: 'string(30)'
+        validation: ''
+        required: TRUE
+        visible: TRUE
+      -
+        id: 'addressDescription'
+        label: 'Address description'
+        type: 'text'
+        validation: ''
+        required: FALSE
+        visible: TRUE
+  -
+    id: 'electronicAddresses'
+    label: 'Electronic addresses'
+    type: 'array'
+    items:
+      -
+        id: 'email'
+        label: 'E-mailAddress'
+        type: 'string'
+        validation: '([\w\-\.]+)@((\[([0-9]{1,3}\.){3}[0-9]{1,3}\])|(([\w\-]+\.)+)([a-zA-Z]{2,4}))'
+        required: TRUE
+        visible: TRUE
+      -
+        id: 'skype'
+        label: 'Skype'
+        type: 'string'
+        validation: '[a-zA-Z][a-zA-Z0-9]{5,31}]'
+        required: TRUE
+        visible: TRUE
+      -
+        id: 'websiteUrl'
+        label: 'Website Url'
+        type: 'string(50)'
+        validation: '/(https?://)?(www\.)?([a-zA-Z0-9_%]*)\b\.[a-z]{2,4}(\.[a-z]{2})?((/[a-zA-Z0-9_%]*)+)?(\.[a-z]*)?/g]'
+        required: FALSE
+        visible: TRUE
+      -
+        id: 'twitter'
+        label: 'Twitter'
+        type: 'string(20)'
+        validation: ''
+        required: FALSE
+        visible: TRUE
+      -
+        id: 'facebook'
+        label: 'Facebook'
+        type: 'string(20)'
+        validation: ''
+        required: FALSE
+        visible: TRUE
+      -
+        id: 'linkedin'
+        label: 'Linkedin'
+        type: 'string(20)'
+        validation: ''
+        required: TRUE
+        visible: TRUE
+      -
+        id: 'hyves'
+        label: 'Hyves'
+        type: 'string(20)'
+        validation: ''
+        required: TRUE
+        visible: TRUE
+  -
+    id: 'phone'
+    label: 'Phone numbers'
+    type: 'array'
+    items:
+      -
+        id: 'phoneType'
+        label: 'phone type'
+        type: 'string'
+        validation: ''
+        options:
+          values: [ workLocationNumber , faxNumber , homePhoneNumber , privateMobilePhone , businessMobilePhone , bussinessPhone , emergencyCallnumber ]
+        required: TRUE
+        visible: TRUE
+      -
+        id: 'phoneNumber'
+        label: 'Phone Number'
+        type: 'string'
+        validation: '/(^\+[0-9]{2}|^\+[0-9]{2}\(0\)|^\(\+[0-9]{2}\)\(0\)|^00[0-9]{2}|^0)([0-9]{9}$|[0-9\-\s]{10}$)/gm]'
+        required: TRUE
+        visible: TRUE
+      -
+        id: 'foreignPhoneNumber'
+        label: 'Foreign phone number'
+        type: 'string'
+        validation: '/(^\+[0-9]{2}|^\+[0-9]{2}\(0\)|^\(\+[0-9]{2}\)\(0\)|^00[0-9]{2}|^0)([0-9]{9}$|[0-9\-\s]{10}$)/gm]'
+        required: TRUE
+        visible: TRUE
+  -
+    id: 'vatNumber'
+    label: 'Vat Number'
+    type: 'string(14)'
+    validation: ''
+    Required: FALSE
+    visible: TRUE
+    -
+    id: 'companyDescription'
+    label: 'Company description'
+    type: 'text'
+    validation: ''
+    visible: TRUE
+    required: FALSE
+    -
+    id: 'bankinformation'
+    label: 'Bank information'
+    type: 'array'
+    items:
+      -
+        id: 'accountType'
+        label: 'account type'
+        type: 'string(20)'
+        validation: ''
+        options:
+          values: [ GiroAccount , Bankaccount , BankAccount Abroad ]
+        visible: TRUE
+        required: TRUE
+      -
+        id: 'bankName'
+        label: 'Bank name'
+        type: 'string(20)'
+        validation: '[a-zA-Z\-\s\’]{2,20}'
+        visible: TRUE
+        required: FALSE
+      -
+        id: 'primaryBankAccount'
+        label: 'Primary Bankaccount'
+        type: 'boolean'
+        validation: ''
+        visible: TRUE
+        required: FALSE
+      -
+        id: 'giro'
+        label: 'Giro'
+        type: 'string(7)'
+        validation: '\d{1,7}'
+        visible: TRUE
+        required: FALSE
+      -
+        id: 'bic'
+        label: 'Bic code'
+        type: 'string(11)'
+        validation: '[1-9]{8}|[1-9]{11}'
+        visible: TRUE
+        required: FALSE
+      -
+        id: 'accountNumber'
+        label: 'Account number'
+        type: 'integer(11)'
+        validation: '[P,B]{1}[0-9]{10}'
+        visible: TRUE
+        required: TRUE
+      -
+        id: 'ibanNumber'
+        label: 'IBAN number'
+        type: 'string(34)'
+        validation: '/[a-zA-Z]{2}[0-9]{2}[a-zA-Z0-9]{4}[0-9]{7}([a-zA-Z0-9]?){0,16}/g'
+        visible: TRUE
+        required: FALSE
+      -
+    # use countrylist
+        id: 'countryBank'
+        label: 'Country bank'
+        type: 'string(40)'
+        validation: ''
+        default: 'NL'
+        visible: TRUE
+        required: TRUE
+      -
+        id: 'bankResidence'
+        label: 'bank residence'
+        type: 'string(30)'
+        validation: '[a-zA-Z0-9\-\’]{2,30}'
+        visible: TRUE
+        required: FALSE
+  -
+     id: 'serviceTypes'
+     label: 'Servicetypes'
+     type: 'array'
+     validation: ''
+     items:
+       -
+        id: 'serviceType'
+        label: 'Service type'
+        type: 'string(20)'
+        values: [ hrSupport , payrollServices ]
+  # logging
+  -
+    id: 'creationDate'
+    label: 'creation date'
+    type: 'dateTime'
+    validation: '(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}( \d{1,2}[:-]\d{2}([:-]\d{2,3})*)?'
+    default: 'now'
+    visible: FALSE
+    required: TRUE
+  -
+    id: 'createdBy'
+    label: 'creation by'
+    type: '\Beech\Party\Domain\Model\Person'
+    default: 'currentUser'
+    validation: ''
+    visible: FALSE
+    required: TRUE
+  -
+    id: 'modification'
+    label: 'ModificationLog'
+    type: 'array'
+    items:
+     -
+       id: 'modificationDate'
+       label: 'Modification date'
+       type: 'dateTime'
+       validation: '(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}( \d{1,2}[:-]\d{2}([:-]\d{2,3})*)?'
+       default: 'now'
+       visible: FALSE
+       required: TRUE
+     -
+       id: 'modifiedBy'
+       label: 'Modifiedby'
+       type: '\Beech\Party\Domain\Model\Person'
+       validation: ''
+       default: 'currentUser'
+       visible: FALSE
+       required: TRUE
