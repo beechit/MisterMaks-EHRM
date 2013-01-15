@@ -1,0 +1,181 @@
+###################################################
+# this is the model for jobdescriptions
+# this model is designed for GS
+# and used for storing the GS jobdescriptions in couchDB
+###################################################
+
+model: 'jobdescriptions'
+properties:
+  -
+    id: 'cla'
+    label: 'Cla'
+    type: 'string(20)'
+    validation: ''
+  -
+    id: 'departement'
+    label: 'Department'
+    type: '\Beech\Party\Domain\Model\Company'
+    validation: ''
+  -
+    id: 'jobTitle'
+    label: 'Job title'
+    type: 'string(20)'
+    validation: ''
+  -
+    id: 'jobDescriptionID'
+    label: 'Job description ID'
+    type: 'string(5)'
+    validation: ''
+  -
+    id: 'salaryscale'
+    label: 'Salary scale'
+    type: 'string(5)'
+    validation: ''
+  -
+    id: 'jobversion'
+    label: 'Version'
+    type: 'string(20)'
+    validation: ''
+  -
+    id: 'versiondate'
+    label: 'Version date'
+    type: 'dateTime'
+    validation: ''
+  -
+    id: 'generalTitle'
+    label: 'Generaltitle'
+    type: 'text'
+    validation: ''
+  -
+    id: 'generalText'
+    label: 'Generaltext'
+    type: 'text'
+    validation: ''
+  -
+    id: 'levelDifferentiation'
+    label: 'Level differentiation'
+    type: 'text'
+    validation: ''
+  -
+    id: 'jobGoalTitle'
+    label: 'job Goal Title'
+    type: 'text'
+    validation: ''
+  -
+    id: 'jobGoal'
+    label: 'Jobgoal'
+    type: 'text'
+    validation: ''
+  -
+    id: 'hierarchicalPositionTitle'
+    label: 'Hierarchical position title'
+    type: 'text'
+    validation: ''
+  -
+    id: 'hierarchicalPositionUp'
+    label: 'Hierarchical position up'
+    type: 'text'
+    validation: ''
+  -
+    id: 'hierarchicalPositionDown'
+    label: 'Hierarchical postition down'
+    type: 'text'
+    validation: ''
+  -
+    id: 'resultAreaTitle'
+    label: 'Result area title'
+    type: 'text'
+    validation: ''
+  -
+    id: 'ResultAreas'
+    label: 'Result areas'
+    type: 'array'
+    items:
+      -
+        id: 'resultArea'
+        label: 'Result area'
+        type: 'text'
+        validation: ''
+      -
+        id: 'resultAreaResult'
+        Label: 'Result area result'
+        type: 'text'
+        validations: ''
+      -
+        id: 'resultAreaSubItems'
+        label: 'Result area subitems'
+        type: 'array'
+        items:
+          -
+            id: 'resultAreaSubItem'
+            label: 'Result area subitem'
+            type: 'text'
+            validation: ''
+  -
+    id: 'knowledgeTitle'
+    label: 'Knowledge title'
+    type: 'text'
+    validation: ''
+  -
+    id: 'knowledge'
+    label: 'Knowledge'
+    type: 'array'
+    items:
+      -
+        id: 'knowledgeItem'
+        label: 'Knowledge item'
+        type: 'text'
+        validation: ''
+  -
+    id: 'jobCharacteristicsTitle'
+    label: 'Job characteristics title'
+    type: 'text'
+    validation: ''
+  -
+    id: 'jobCharacteristics'
+    label: 'Job characteristics'
+    type: 'array'
+    items:
+      -
+        id: 'jobCharacteristicsItem'
+        label: 'job characteristics item'
+        type: 'text'
+        validation: ''
+  # logging
+  -
+    id: 'creationDate'
+    label: 'creation date'
+    type: 'dateTime'
+    validation: '(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}( \d{1,2}[:-]\d{2}([:-]\d{2,3})*)?'
+    default: 'now'
+    visible: FALSE
+    required: TRUE
+  -
+    id: 'createdBy'
+    label: 'creation by'
+    type: '\Beech\Party\Domain\Model\Person'
+    default: 'currentUser'
+    validation: ''
+    visible: FALSE
+    required: TRUE
+  -
+    id: 'modification'
+    label: 'ModificationLog'
+    type: 'array'
+    items:
+     -
+       id: 'modificationDate'
+       label: 'Modification date'
+       type: 'dateTime'
+       validation: '(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}( \d{1,2}[:-]\d{2}([:-]\d{2,3})*)?'
+       default: 'now'
+       visible: FALSE
+       required: TRUE
+     -
+       id: 'modifiedBy'
+       label: 'Modifiedby'
+       type: '\Beech\Party\Domain\Model\Person'
+       validation: ''
+       default: 'currentUser'
+       visible: FALSE
+       required: TRUE
