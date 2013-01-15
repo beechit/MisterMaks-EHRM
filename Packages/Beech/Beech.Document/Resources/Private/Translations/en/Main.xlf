@@ -37,6 +37,138 @@
 			<trans-unit id="versions">
 				<source>Versions</source>
 			</trans-unit>
+			<trans-unit id="documentOwner">
+				<source>Owner</source>
+			</trans-unit>
+			<trans-unit id="departmentId">
+				<source>DepartmentID</source>
+			</trans-unit>
+			<trans-unit id="documentType">
+				<source>Document type</source>
+			</trans-unit>
+			<trans-unit id="identification">
+				<source>Identification</source>
+			</trans-unit>
+			<trans-unit id="resume">
+				<source>Resumé</source>
+			</trans-unit>
+			<trans-unit id="report">
+				<source>Report</source>
+			</trans-unit>
+			<trans-unit id="permit">
+				<source>Workpermit</source>
+			</trans-unit>
+			<trans-unit id="diploma">
+				<source>Diploma</source>
+			</trans-unit>
+			<trans-unit id="certificate">
+				<source>Certificate</source>
+			</trans-unit>
+			<trans-unit id="other">
+				<source>Other</source>
+			</trans-unit>
+			<trans-unit id="driversLicenceType">
+				<source>Drivers licence</source>
+			</trans-unit>
+			<trans-unit id="A">
+				<source>A</source>
+			</trans-unit>
+			<trans-unit id="B">
+				<source>B</source>
+			</trans-unit>
+			<trans-unit id="C">
+				<source>C</source>
+			</trans-unit>
+			<trans-unit id="D">
+				<source>D</source>
+			</trans-unit>
+			<trans-unit id="E">
+				<source>E</source>
+			</trans-unit>
+			<trans-unit id="tractor">
+				<source>Tractor</source>
+			</trans-unit>
+			<trans-unit id="forklift">
+				<source>forklift</source>
+			</trans-unit>
+			<trans-unit id="identificationType">
+				<source>Identification type</source>
+			</trans-unit>
+			<trans-unit id="IdCard">
+				<source>IDCard</source>
+			</trans-unit>
+			<trans-unit id="passport">
+				<source>Passport</source>
+			</trans-unit>
+			<trans-unit id="foreignPassport">
+				<source>Foreign Passport</source>
+			</trans-unit>
+			<trans-unit id="foreignIDCard">
+				<source>Foreign IDCard</source>
+			</trans-unit>
+			<trans-unit id="expirationDate">
+				<source>Expiration date</source>
+			</trans-unit>
+			<trans-unit id="resource">
+				<source>Resource</source>
+			</trans-unit>
+			<trans-unit id="trackIfisValid">
+				<source></source>
+			</trans-unit>
+			<trans-unit id="documentDate">
+				<source>Document date</source>
+			</trans-unit>
+			<trans-unit id="documentDescription">
+				<source>Document description</source>
+			</trans-unit>
+			<trans-unit id="privateDocument">
+				<source>Private document</source>
+			</trans-unit>
+			<trans-unit id="visible">
+				<source>Visible</source>
+			</trans-unit>
+			<trans-unit id="connections">
+				<source>Connections</source>
+			</trans-unit>
+			<trans-unit id="minuteId">
+				<source>MinuteID</source>
+			</trans-unit>
+			<trans-unit id="contractId">
+				<source>ContractID</source>
+			</trans-unit>
+			<trans-unit id="meetingId">
+				<source>MeetingID</source>
+			</trans-unit>
+			<trans-unit id="absenceId">
+				<source>AbsenceID</source>
+			</trans-unit>
+			<trans-unit id="leaveId">
+				<source>LeaveID</source>
+			</trans-unit>
+			<trans-unit id="documentId">
+				<source>DocumentID</source>
+			</trans-unit>
+			<trans-unit id="personId">
+				<source>PersonID</source>
+			</trans-unit>
+			<trans-unit id="creationDate">
+				<source>Creation date</source>
+			</trans-unit>
+			<trans-unit id="createdBy">
+				<source>Created byr</source>
+			</trans-unit>
+			<trans-unit id="modification">
+				<source>Modification</source>
+			</trans-unit>
+			<trans-unit id="modificationDate">
+				<source>Modification date</source>
+			</trans-unit>
+			<trans-unit id="modifiedBy">
+				<source>Modified By</source>
+ 			</trans-unit>
+			<trans-unit id="action.update">
+				<source>Update</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

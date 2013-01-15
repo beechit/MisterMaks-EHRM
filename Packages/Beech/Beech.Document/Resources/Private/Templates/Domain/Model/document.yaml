@@ -37,7 +37,7 @@ model:
       type: 'string(20)'
       validation: ''
       options:
-        values: [ 'identification' , 'resume' , 'report' , 'permit' , 'diploma' , 'certificate' , 'driveslicence' , 'other' ]
+        values: [ identification , resume , report , permit , diploma , certificate , driverslicence , other ]
       visible: TRUE
       required: TRUE
       -
@@ -45,7 +45,7 @@ model:
          label: 'DriverslicenceType'
          type: 'string(20)'
          validation: ''
-         values: [ 'A' , 'B'  , 'C' , 'D' , 'E' , 'tractorDrivingLicense' , 'forkliftCertificate' ]
+         values: [ A , B  , C , D , E , tractor , forklift ]
          visible: TRUE
          required: FALSE
       -
@@ -53,7 +53,7 @@ model:
          label: 'Identification Type'
          type: 'string(20)'
          validation: ''
-         values: [ 'IDCard' , 'Passport' , 'foreignPassport' , 'foreignIDCard' ]
+         values: [ idcard , passport , foreignPassport , foreignIdCard ]
          visible: TRUE
          required: FALSE
       -
@@ -119,48 +119,48 @@ model:
         validation: ''
           -
            id: 'minuteId'
-           label: 'MinuteID'
+           label: 'MinuteId'
           type: ''
           validation: ''
           visible: TRUE
           required: FALSE
         -
           id: 'contractId'
-           label: 'ContractID'
+           label: 'ContractId'
           type: '\Beech\CLA\Domain\Model\Contract'
           validation: ''
           visible: TRUE
           required: FALSE
         -
           id: 'meetingId'
-          label: 'MeetingID'
+          label: 'MeetingId'
           type: '\Beech\Calendar\Domain\Model\Meeting'
           validation: ''
           visible: TRUE
           required: FALSE
         -
-          id: 'absenseId'
-          label: 'absenseID'
-          type: '\Beech\Absence\Domain\Model\Absense'
+          id: 'absenceId'
+          label: 'absenceId'
+          type: '\Beech\Absence\Domain\Model\Absence'
           validation: ''
           visible: TRUE
           required: FALSE
         -
           id: 'leaveId'
-          label: 'LeaveID'
+          label: 'LeaveId'
           type: '\Beech\Absence\Domain\Model\Leave'
           validation: ''
           visible: TRUE
           required: FALSE
         -
-          id: 'documentID'
+          id: 'documentId'
           label: 'DocumentID'
           type: '\Beech\Document\Domain\Model\Document'
           validation: ''
           visible: TRUE
           required: FALSE
         -
-          id : 'personID'
+          id : 'personId'
           label: 'PersonID'
           type: '\Beech\Party\Domain\Mode\Person'
           validation: ''
