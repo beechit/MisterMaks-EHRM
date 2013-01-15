@@ -237,11 +237,11 @@ properties:
       required: TRUE
     -
       id: 'companyDescription'
-      label: 'companyDescription'
+      label: 'Company description'
       type: 'text'
       validation: ''
       visible: TRUE
-      required: TRUE
+      required: FALSE
   -
     id: 'bankinformation'
     label: 'Bank information'
@@ -249,57 +249,72 @@ properties:
     items:
       -
         id: 'accountType'
-        label: 'Account type'
+        label: 'account type'
         type: 'string(20)'
         validation: ''
         options:
           values: [ GiroAccount , Bankaccount , BankAccount Abroad ]
+        visible: TRUE
+        required: TRUE
       -
         id: 'bankName'
         label: 'Bank name'
         type: 'string(20)'
         validation: '[a-zA-Z\-\s\’]{2,20}'
+        visible: TRUE
+        required: FALSE
       -
         id: 'primaryBankAccount'
-        label: 'Primary bank account'
+        label: 'Primary Bankaccount'
         type: 'boolean'
         validation: ''
-        options:
-          values: [ true, false ]
+        visible: TRUE
+        required: FALSE
       -
         id: 'giro'
         label: 'Giro'
         type: 'string(7)'
         validation: '\d{1,7}'
+        visible: TRUE
+        required: FALSE
       -
         id: 'bic'
-        label: 'bic code'
+        label: 'Bic code'
         type: 'string(11)'
         validation: '[1-9]{8}|[1-9]{11}'
+        visible: TRUE
+        required: FALSE
       -
         id: 'accountNumber'
-        label: 'Accountnumber'
+        label: 'Account number'
         type: 'integer(11)'
         validation: '[P,B]{1}[0-9]{10}'
+        visible: TRUE
+        required: TRUE
       -
         id: 'ibanNumber'
         label: 'IBAN number'
         type: 'string(34)'
         validation: '/[a-zA-Z]{2}[0-9]{2}[a-zA-Z0-9]{4}[0-9]{7}([a-zA-Z0-9]?){0,16}/g'
+        visible: TRUE
+        required: FALSE
       -
   # use countrylist
         id: 'countryBank'
-        label: 'Country'
+        label: 'Country bank'
         type: 'string(40)'
         validation: ''
+        default: 'NL'
+        visible: TRUE
+        required: TRUE
       -
         id: 'bankResidence'
-        label: 'Bank residence'
+        label: 'bank residence'
         type: 'string(30)'
         validation: '[a-zA-Z0-9\-\’]{2,30}'
-
+        visible: TRUE
+        required: FALSE
 #  Values in case that company is a department
-
 #  values in case that company is a partnercompany
   -
      id: 'serviceType'

@@ -15,58 +15,73 @@ properties:
     type: '\Beech\Party\Domain\Model\Person'
     validation: ''
     onlist: TRUE
+    visible: FALSE
+    required: TRUE
   -
     id: 'departementId'
     label: 'Department id'
     type: '\Beech\Party\Domain\Model\Company'
     validation: ''
+    visible: FALSE
+    required: TRUE
   -
     id: 'minuteType'
     label: 'minuteType'
     type: 'string(20)'
     validation: ''
     options:
-      values: [ ]
+      values: [ periodicConversation , callReporting, assessment, performanceReveiw, compensationConversation, other , sickReportUpdate ]
+    visible: TRUE
+    required: TRUE
   -
     id: 'minuteContent'
     label: 'minuteContent'
     type: 'text'
     validation: ''
+    visible: TRUE
+    required: TRUE
   -
 # depends on type of minute, to load more complex minute templates in the future.
     id: 'minuteTemplate'
     label: 'minuteTemplate'
     type: 'string(20)'
     validation: ''
+    visible: TRUE
+    required: TRUE
   -
 # depends on type of minute
     id: 'followUpActionRequired'
     label: 'followUpActionRequired'
     type: 'boolean'
     validation: ''
-    options:
+    default: ''
+    visible: TRUE
+    required: TRUE
   -
 # depends on type of minute
     id: 'needSigning'
     label: 'needsSigning'
     type: 'boolean'
     validation: ''
-    options:
-      values: [ true , false ]
+    default: ''
+    visible: TRUE
+    required: TRUE
   -
     id: 'action'
     label: 'action'
     type: 'string(20)'
     validation: ''
+    visible: TRUE
+    required: TRUE
   -
   # depends on type of minute
     id: 'documentRequired'
     label: 'documentRequired'
     type: 'boolean'
     validation: ''
-    options:
-     values: [ true, false ]
-     default: ''
+    default: ''
+    visible: TRUE
+    required: TRUE
   -
     id: 'visability'
     label: 'visability'
@@ -74,10 +89,9 @@ properties:
     validation: ''
     options:
       values: [ public , subjects , managers , creator ]
-      translations:
-        nl:
-        en:
-        pl:
+    visible: TRUE
+    required: TRUE
+
   # logging
   -
     id: 'creationDate'

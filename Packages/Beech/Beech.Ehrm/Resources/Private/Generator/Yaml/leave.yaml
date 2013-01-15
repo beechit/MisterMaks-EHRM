@@ -14,22 +14,30 @@ properties:
     type: '\Beech\Party\Domain\Model\Person'
     validation: ''
     onlist: TRUE
+    visible: FALSE
+    required: TRUE
 # connection to department
   -
     id: 'departementid'
     label: 'departmentid'
     type: '\Beech\Party\Domain\Model\Company'
     validation: ''
+    visible: FALSE
+    required: TRUE
   -
     id: 'leaveDateTimeStart'
     label: 'leaveDateTimeStart'
     type: 'dateTime'
     validation: ''
+    visible: TRUE
+    required: TRUE
   -
     id: 'leaveDateEnd'
     label: 'leaveDateEnd'
     type: 'dateTime'
     validation: ''
+    visible: TRUE
+    required: TRUE
   -
     id: 'leaveType'
     label: 'leaveType'
@@ -37,6 +45,8 @@ properties:
     validation: ''
     options:
       values: [ vacation, bereavementLeave,  unpaidLeave, specialLeave, parentalLeave, adoptionleave, short-termCare, longtermCare, maternityLeave, emergencyLeaveAndOtherShortAbsence]
+    visible: TRUE
+    required: TRUE
   -
 # depends on leavetype
     id: 'deductFromBalance'
@@ -44,16 +54,18 @@ properties:
     type: 'boolean'
     validation: ' ]
     options:
-      default: 'true'
+      default: 'TRUE'
+    visible: TRUE
+    required: TRUE
   -
 # depends on leavetype
     id: 'paidLeave'
     label: 'paidLeave'
     type: 'boolean'
     validation: ''
-    options:
-      values: [ true, false ]
       default: 'true'
+    visible: TRUE
+    required: TRUE
   -
     id: 'remark'
     label: 'Remark'
@@ -67,20 +79,22 @@ properties:
         validation: ''
         options:
           values: [ ReasonLeaveRequest , remarkLeaveRequest , remarkLeaveDecline ]
-          translations:
-           nl: [ ]
-           en: [ ReasonLeaveRequest , remarkLeaveRequest , remarkLeaveDecline ]
-           pl: [ ]
+         visible: TRUE
+         required: TRUE
       -
         id: 'remarkContent'
         label: 'RemarkContent'
         type: 'text'
         validation:
+        visible: TRUE
+        required: FALSE
       -
         ìd: 'remarkDate'
         label: 'Remark Date'
         type: 'dateTime'
         validation: ''
+        visible: TRUE
+        required: FALSE
   -
     id: 'leavebalance'
     label: 'leavebalance'
@@ -94,11 +108,15 @@ properties:
         validation: ''
         options:
           values: [ 2005 , 2006, 2007 , 2008 , 2009 , 2010 , 2011 , 2012 , 2013 , 2014, 2015 , 2016 , 2017 , 2018 , 2019 , 2020 ]
+        visible: TRUE
+        required: TRUE
       -
         id: 'leaveBalance'
         label: 'leaveBalance'
         type: 'integer(3)'
         validation: ''
+        visible: TRUE
+        required: TRUE
   -
     id: 'leaveRequeststatus'
     label: 'leaverequeststatus'
@@ -106,17 +124,15 @@ properties:
     validation: ''
     options:
       values: [ Pending , Approved, declined ]
-      translations:
-       nl: [ ]
-       en: [ Pending , Approved, declined ]
-       pl: [ ]
-      default: ''
+    visible: TRUE
+    required: TRUE
   -
     id: 'approveDeclineDate'
     label: 'approveDeclineDate'
     type: 'dateTime'
     validation: ''
-
+    visible: TRUE
+    required: TRUE
   # logging
   -
     id: 'creationDate'

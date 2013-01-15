@@ -12,11 +12,15 @@ properties:
     label: 'MeetingID'
     type: 'string(20)'
     validation: ''
+    visible: FALSE
+    required: TRUE
   -
     id: 'departementId'
     label: 'Department id'
     type: '\Beech\Party\Domain\Model\Company'
     validation: ''
+    visible: FALSE
+    required: TRUE
   -
     id: 'status'
     label: 'Status'
@@ -24,81 +28,114 @@ properties:
     validation: ''
     options:
       values: [ confirmed , tentative , cancelled ]
+      default: 'tentative'
+    visible: TRUE
+    required: TRUE
   -
     id: 'summary'
     label: 'Summary'
     type: 'text'
     validation: ''
+    visible: TRUE
+    required: TRUE
   -
     id: 'description'
     label: 'description'
     type: 'string(20)'
     validation: ''
+    visible: TRUE
+    required: TRUE
   -
     id: 'location'
-    label: 'location'
+    label: 'Meeting location'
     type: 'string(30)'
     validation: ''
+    visible: TRUE
+    required: TRUE
   -
     id: 'creatorid'
     label: 'creatorid'
     type: '\Beech\Party\Domain\Model\Person'
     validation: ''
+    visible: TRUE
+    required: TRUE
   -
     id: 'creatorself'
     label: 'creatorself'
     type: 'boolean'
     validation: ''
+    visible: TRUE
+    required: TRUE
   -
     id: 'organiserId'
     label: 'Organiser id'
     type: '\Beech\Party\Domain\Model\Person'
     validation: ''
+    visible: TRUE
+    required: TRUE
   -
     id: 'organiserSelf'
     label: 'Organiser self'
     type: 'boolean'
     validation: ''
+    visible: TRUE
+    required: TRUE
   -
     id: 'start'
     label: 'Start'
     type: 'dateTime'
     validation: ''
+    visible: TRUE
+    required: TRUE
   -
     id: 'end'
     label: 'End'
     type: 'dateTime'
     validation: ''
+    visible: TRUE
+    required: TRUE
   -
     id: 'endTimeUnspecified'
     abel: 'End time uUnspecified'
     type: 'dateTime'
     validation: ''
+    visible: TRUE
+    required: TRUE
   -
     id:  'recurringEventId'
     label: 'Recurring event Id'
     type: 'string(20)'
     validation: ''
+    visible: TRUE
+    required: TRUE
   -
     id:  'originalStartTime'
     label: 'original start time'
     type: 'dateTime'
     validation: ''
+    visible: TRUE
+    required: TRUE
   -
     id: 'transparency'
     label: 'Transparency'
     type: 'string(20)'
     validation: ''
+    visible: TRUE
+    required: TRUE
   -
     id: 'visibility'
     label: 'Visibility'
     type: 'string(20)'
     validation: ''
+    visible: TRUE
+    required: TRUE
   -
     id: 'sequence'
     label: 'id'
     type: 'integer(10)'
     validation: ''
+    visible: TRUE
+    required: TRUE
   -
     id: 'attendees'
     label: 'attendees'
@@ -110,11 +147,15 @@ properties:
         label: 'Personid'
         type: '\Beech\Party\Domain\Model\Person'
         validation: ''
+        visible: TRUE
+        required: TRUE
       -
         id: 'optional'
         label: 'optional'
         type: 'boolean'
         validation: ''
+        visible: TRUE
+        required: TRUE
       -
         id: 'responseStatus'
         label: 'responseStatus'
@@ -122,11 +163,15 @@ properties:
         validation: ''
         options:
           values: [ needsAction , declined , tentative , accepted ]
+        visible: TRUE
+        required: TRUE
       -
         id: 'comment'
         label: 'comment'
         type: 'text'
-    validation: ''
+        validation: ''
+        visible: TRUE
+        required: TRUE
 # relations of other resources.
   -
     id: 'relations'
@@ -139,16 +184,22 @@ properties:
         label: 'Minutes id'
         type: 'string(20)'
         validation: ''
+        visible: TRUE
+        required: FALSE
       -
         id: 'documentId'
         label: 'Documentid'
         type: 'string(20)'
         validation: ''
+        visible: TRUE
+        required: FALSE
       -
         id: 'documentRequired'
         label: 'Document required'
         type: 'boolean'
         validation: ''
+        visible: TRUE
+        required: FALSE
       -
         id: 'documentType'
         label: 'Document type'
@@ -156,22 +207,30 @@ properties:
         validation: ''
         options:
           values: [ ]
+        visible: TRUE
+        required: FALSE
       -
         id: 'actionIid'
         label: 'Action Id'
         type: 'string(20)'
         validation: ''
+        visible: TRUE
+        required: FALSE
   -
     id: 'planNextMeeting'
     label: 'Plan next meeting'
     type: 'boolean'
     validation: ''
+    visible: TRUE
+    required: FALSE
 
   -
     id: 'notification'
     label: 'Notification'
     type: 'boolean'
     validation: ''
+    visible: TRUE
+    required: FALSE
   -
     id: 'notificationWindow'
     label: 'Notification window'
@@ -179,6 +238,8 @@ properties:
     validation: ''
     options:
       values : [ 1 , 2 , 3 , 4 , 5 , 6 ]
+    visible: TRUE
+    required: FALSE
   -
     id: 'notificationMethod'
     label: 'Notification method'
@@ -186,6 +247,8 @@ properties:
     validation: ''
     options:
       values: [ e-mail , sms , notification , other, none ]
+    visible: TRUE
+    required: FALSE
   # logging
   -
     id: 'creationDate'

@@ -100,15 +100,6 @@ properties:
     options:
       values: [ Male, Female ]
   -
-    id: 'civilStatus'
-    label: 'Civil status'
-    type: 'string(15)'
-    validation: ''
-    options:
-      values: [ unknown , umarried , married , livingtogether , widowWidower , sustainableSeparated , divorced ]
-    visable: TRUE
-    required: FALSE
-  -
     id: 'image'
     label: 'Image'
     type: ''
