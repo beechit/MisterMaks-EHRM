@@ -74,6 +74,34 @@
 				<source>Minute was deleted</source>
 				<target>Protokoły są usuwane</target>
 			</trans-unit>
+			<trans-unit id="periodicconversation">
+				<source>Periodic conversation</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="callReporting">
+				<source>Conversation report</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="assessment">
+				<source>Work assessment</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="performanceReveiw">
+				<source>Performance review</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="compensationConversation">
+				<source>Correction conversation</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="other">
+				<source>Other</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="sickReportUpdate">
+				<source>Sick report updater</source>
+				<target></target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

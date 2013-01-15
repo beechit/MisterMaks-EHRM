@@ -47,6 +47,27 @@
 			<trans-unit id="flashmessage.deletedMinute">
 				<source>Minute was deleted</source>
 			</trans-unit>
+			<trans-unit id="periodicconversation">
+				<source>Periodic conversation</source>
+			</trans-unit>
+			<trans-unit id="callReporting">
+				<source>Conversation report</source>
+			</trans-unit>
+			<trans-unit id="assessment">
+				<source>Work assessment</source>
+			</trans-unit>
+			<trans-unit id="performanceReveiw">
+				<source>Performance review</source>
+			</trans-unit>
+			<trans-unit id="compensationConversation">
+				<source>Correction conversation</source>
+			</trans-unit>
+			<trans-unit id="other">
+				<source>Other</source>
+			</trans-unit>
+			<trans-unit id="sickReportUpdate">
+				<source>Sick report updateOther</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

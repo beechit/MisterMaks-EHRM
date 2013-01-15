@@ -62,6 +62,34 @@
 				<source>Minute was deleted</source>
 				<target>verslag verwijderd</target>
 			</trans-unit>
+			<trans-unit id="periodicconversation">
+				<source>Periodic conversation</source>
+				<target>Periodiek overleg</target>
+			</trans-unit>
+			<trans-unit id="callReporting">
+				<source>Conversation report</source>
+				<target>Telefonisch verslag</target>
+			</trans-unit>
+			<trans-unit id="assessment">
+				<source>Work assessment</source>
+				<target>Beoordelingsgesprek</target>
+			</trans-unit>
+			<trans-unit id="performanceReveiw">
+				<source>Performance review</source>
+				<target>Functioneringsgesprek</target>
+			</trans-unit>
+			<trans-unit id="compensationConversation">
+				<source>Correction conversation</source>
+				<target>Correctie gesprek</target>
+			</trans-unit>
+			<trans-unit id="other">
+				<source>Other</source>
+				<target>Anders</target>
+			</trans-unit>
+			<trans-unit id="sickReportUpdate">
+				<source>Sick report updater</source>
+				<target>verzuim verslag</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
