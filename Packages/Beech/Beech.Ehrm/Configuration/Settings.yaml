@@ -135,6 +135,7 @@ Beech:
         - 'Beech.Ehrm/Library/bootstrap-notify/css/bootstrap-notify.css'
         - 'Beech.Ehrm/Library/bootstrap-notify/css/styles/alert-blackgloss.css'
         - 'Beech.Ehrm/Library/bootstrap-notify/css/styles/alert-notification-animations.css'
+        - 'Beech.Ehrm/Library/datepicker/css/datepicker.css'
 
       javaScript:
         libraries:
@@ -142,6 +143,7 @@ Beech:
           - 'Beech.Ehrm/Library/bootstrap-notify/js/bootstrap-notify.js'
           - 'Beech.Ehrm/Library/jquery.gracefulWebSocket.js'
           - 'Beech.Ehrm/Library/jquery.form.js'
+          - 'Beech.Ehrm/Library/datepicker/js/bootstrap-datepicker.js'
           - 'Beech.Ehrm/JavaScript/ModuleHandler.js'
           - 'Beech.Ehrm/JavaScript/Mixins/Module.js'
           -
