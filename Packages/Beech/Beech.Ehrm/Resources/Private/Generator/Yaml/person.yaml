@@ -106,7 +106,7 @@ properties:
     type: 'string(15)'
     validation: ''
     options:
-      values: [ unknown , umarried , married , livingtogether , widowWidower , sustainableSeparated , divorced ]
+      values: [ unknown , umarried , married , livingTogether , widowWidower , sustainableSeparated , divorced ]
     visable: TRUE
     required: FALSE
   -
@@ -137,7 +137,7 @@ properties:
         type: 'string(20)'
         validation: ''
         options:
-          values: [ Businessaddress , Postbox ,  mailingaddress , Worklocation , AddressAbroad ]
+          values: [ businessAddress , postbox ,  mailingAddress , workLocation , addressAbroad ]
         required: FALSE
         visible: TRUE
       -
@@ -301,7 +301,7 @@ properties:
         type: 'string'
         validation: ''
         options:
-          values: [ WorkLocationNumber , Faxnumber , HomephoneNumber , PrivateMobilePhone , BusinessMobilePhone , BussinessPhone , EmergencyCallnumber ]
+          values: [ workLocationNumber , faxNumber , homePhoneNumber , privateMobilePhone , businessMobilePhone , bussinessPhone , emergencyCallnumber ]
         required: TRUE
         visible: TRUE
       -

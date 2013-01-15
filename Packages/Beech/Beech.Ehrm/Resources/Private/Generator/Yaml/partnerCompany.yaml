@@ -1,5 +1,5 @@
 #############################################################
-# Yaml respresentation of the company document mister maks;
+# Yaml respresentation of the partnercompany document mister maks;
 # Version 21-12-2012
 # the companydocument extends Beech\Party\Domain\Model\Company
 #############################################################
@@ -12,6 +12,12 @@ properties:
     label: 'Name of company'
     type: 'string(30)'
     validation: ''
+  -
+    id: 'companyType'
+    label: 'Companytype'
+    type: 'string(20)'
+    validation: ''
+    value: 'partnerCompany'
   -
     id: 'chamberOfCommerceNumber'
     label: 'Chamber of Commerce Number'
@@ -35,7 +41,7 @@ properties:
     type: 'string(20)'
     validation: ''
     options:
-    values: [ primary , Department , subsidiary company , PartnerCompany ]
+    values: [ primary , department , subsidiaryCompany , partnerCompany ]
   -
     id: 'addresses'
     label: 'Addresses'
@@ -47,7 +53,7 @@ properties:
         type: 'string(20)'
         validation: ''
         options:
-          values: [ Businessaddress , Postbox ,  mailingaddress , Worklocation , AddressAbroad ]
+          values: [ businessAddress , postbox ,  mailingAddress , workLocation , addressAbroad ]
         required: FALSE
         visible: TRUE
       -
@@ -192,7 +198,7 @@ properties:
         type: 'string'
         validation: ''
         options:
-          values: [ WorkLocationNumber , Faxnumber , HomephoneNumber , PrivateMobilePhone , BusinessMobilePhone , BussinessPhone , EmergencyCallnumber ]
+          values: [ workLocationNumber , faxNumber , homePhoneNumber , privateMobilePhone , businessMobilePhone , bussinessPhone , emergencyCallnumber ]
         required: TRUE
         visible: TRUE
       -

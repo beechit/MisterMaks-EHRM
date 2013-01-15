@@ -44,7 +44,7 @@ properties:
     type: 'string(20)'
     validation: ''
     options:
-    values: [ primary , Department , subsidiary company , PartnerCompany ]
+    values: [ primary , department , subsidiaryCompany , partnerCompany ]
     visible: TRUE
     required: TRUE
   -
@@ -58,7 +58,7 @@ properties:
         type: 'string(20)'
         validation: ''
         options:
-          values: [ Businessaddress , Postbox ,  mailingaddress , Worklocation , AddressAbroad ]
+          values: [ businessAddress , postbox ,  mailingAddress , workLocation , addressAbroad ]
         required: FALSE
         visible: TRUE
       -
@@ -204,7 +204,7 @@ properties:
         type: 'string'
         validation: ''
         options:
-          values: [ WorkLocationNumber , Faxnumber , HomephoneNumber , PrivateMobilePhone , BusinessMobilePhone , BussinessPhone , EmergencyCallnumber ]
+          values: [ workLocationNumber , faxNumber , homePhoneNumber , privateMobilePhone , businessMobilePhone , bussinessPhone , emergencyCallnumber ]
         required: TRUE
         visible: TRUE
       -
