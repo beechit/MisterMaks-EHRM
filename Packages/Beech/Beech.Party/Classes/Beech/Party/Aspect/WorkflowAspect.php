@@ -39,7 +39,8 @@ class WorkflowAspect {
 	 */
 	public function newModelAspect(\TYPO3\Flow\Aop\JoinPointInterface $joinPoint) {
 		$model = NULL;
-		if ($joinPoint->getMethodArgument('company')) {
+		$arguments = $joinPoint->getMethodArguments();
+		if (isset($arguments['company']) && $joinPoint->getMethodArgument('company')) {
 			$notification = new \Beech\Ehrm\Domain\Model\Notification();
 			$notification->setLabel('New company created');
 			$this->notificationRepository->add($notification);
@@ -63,6 +64,8 @@ class WorkflowAspect {
 
 			$this->actionRepository->add($action);
 		}
+		$result = $joinPoint->getAdviceChain()->proceed($joinPoint);
+		return $result;
 	}
 
 }
