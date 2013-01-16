@@ -1,18 +1,17 @@
 <f:layout />
 
 <f:section name="Body">
-	<p>Just fill out the following form to create a new group type:</p>
-
-	<f:form action="create" name="newGroupType">
-		<ol>
-			<li>
-				<label for="name">Name</label>
+	<f:form action="create" name="newGroupType" class="form-horizontal well">
+		<div class="control-group">
+			<label class="control-label"for="name">Name</label>
+			<div class="controls">
 				<f:form.textfield property="name" id="name" />
-			</li>
-
-			<li>
-				<f:form.submit value="Create" />
-			</li>
-		</ol>
+			</div>
+		</div>
+		<div class="control-group">
+			<div class="controls">
+				<f:form.submit value="Create" class="btn btn-primary"/>
+			</div>
+		</div>
 	</f:form>
 </f:section>
