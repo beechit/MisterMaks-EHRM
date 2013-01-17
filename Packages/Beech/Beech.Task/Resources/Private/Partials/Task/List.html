@@ -10,8 +10,8 @@
 				<f:if condition="{task.closed}">
 					<f:then>
 						<tr>
-							<td><f:translate id="task.priority.{task.priority}" /></td>
 							<td>{task.description}</td>
+							<td><f:translate id="task.priority.{task.priority}" /></td>
 							<td><i class="icon-ok"></i> <f:format.date format="d.m.Y - H:i:s">{task.closeDateTime}</f:format.date></td>
 						</tr>
 					</f:then>
