@@ -1,0 +1,83 @@
+########################################################################
+# This file is a contains the jobdescription of : Directeur
+#######################################################################
+
+model:
+  modelName: 'jobDescription'
+properties:
+  version: '18-12-2012'
+  # CLA that is connected with this contracttemplate
+  cla: 'none'
+  department: 'Directie'
+  jobTitle: 'Directeur'
+  jobDescriptionID: '12a'
+  salaryscale: '12'
+  jobversion: 'Definitief'
+  jobDate: '17-12-2012'
+  generalTitle: 'Algemene kenmerken'
+  generalText: 'LTO Groeiservice is voor Nederlandse producenten van bloemen en planten en glas- en vollegrondsgroenteproducten hét tuinbouwnetwerk op het gebied van vaktechniek en ondernemerschap. Groeiservice ondersteunt tuinbouwondernemers in hun vooruitgang, door het verrijken van hun kennis op het gebied van teelt, bedrijfsvoering en afzet. Daarbij is Groeiservice een organisatie van, voor en door tuinders. Groeiservice helpt tuinders hun kennis over teelt, bedrijfsvoering en afzet te vergroten. Daarnaast behartigt Groeiservice hun vaktechnische belangen. Groeiservice verzorgt thematische activiteiten, zoals excursies en lezingen. Tevens biedt Groeiservice diensten op maat, zoals bedrijfsvergelijking, het begeleiden van ondernemersverenigingen en het opzetten van praktijkproeven. Gewasleden van Groeiservice profiteren van diverse voordelen, zoals deelname aan gewasspecifieke bijeenkomsten, gewasnieuwsbrieven en kortingen op gewasdagen en workshops.'
+  levelDifferentiation:
+  jobGoalTitle: 'Doel van de functie'
+  jobGoal: 'Het opstellen, (mede) vaststellen en realiseren van het strategisch beleid van de organisatie. Het besturen van de organisatie om de continuïteit te waarborgen.'
+  hierarchicalPositionTitle: 'Organisatorische positie'
+  hierarchicalPositionUp: 'De Directeur legt intern verantwoording af voor het strategische beleid en de operationele continuïteit (RvC, AvA).'
+  hierarchicalPostionDown: 'De Directeur zit het Management Team voor en geeft hiërarchisch leiding aan de Teamleiders Gewasmanagement en Themaspecialisten, de Manager Innovatie, de Teamleider Marketing & Communicatie, de Teamleider Financiën & Administratie en de Directiesecretaresse (circa 5 FTE).'
+  resultAreaTitle: 'resultaatgebieden'
+  resultAreas:
+    1:
+      resultArea: 'Medewerkers aansturen.'
+      resultAreaSubItems:
+        1: 'Optimaliseert de inzet en de werkomgeving van medewerkers.'
+        2: 'Geeft leiding aan de organisatie in algemene zin op het gebied van organisatorische, personele en budgettaire aangelegenheden, binnen de daartoe gestelde beleidskaders.'
+        3: 'Ziet toe op de voortgang van werkzaamheden en faciliteert bij het oplossen van problemen.'
+        4: 'Signaleert knelpunten in werkprocessen, doet verbetervoorstellen naar aanleiding hiervan en implementeert deze na goedkeuring.'
+        5: 'Houdt personeelsgesprekken met medewerkers en begeleidt en adviseert hen met betrekking tot hun ontwikkeling.'
+        6: 'Initieert en begeleidt structureel werkoverleg.'
+      result: 'resultaat: Medewerkers aangestuurd en begeleid in hun functioneren, zodanig dat de vastgestelde resultaten behaald worden. Efficiënt en effectief werkende organisatie.'
+    2:
+      resultArea: 'Strategisch ondernemingsbeleid ontwikkelen.'
+      resultAreaSubItems:
+        1: 'Analyseert interne ontwikkelingen en de ontwikkelingen in de markt. Volgt ontwikkelingen ten aanzien van de interne bedrijfsvoering, de ontwikkeling en afzet van producten en diensten. Geeft kansen en bedreigingen aan en werkt met het managementteam een voorstel uit voor de marktopstelling, de inrichting van de organisatie en eventuele (des)investeringen.'
+        2: 'Bereidt, op basis van de interne en marktontwikkelingen en de bedrijfsresultaten, het strategisch beleid voor van de organisatie. Is na vaststelling van het strategisch beleid verantwoordelijk voor de realisatie van de doelstellingen.'
+        3: 'Ontwikkelt een sectoroverschrijdende visie ten aanzien van de positionering van de organisatie; vertaalt deze visie in concrete consequenties voor LTO Groeiservice.'
+        4: 'Evalueert periodiek het gevoerde strategische beleid. Geeft de consequenties aan die daaruit volgen voor de continuering of bijstelling van het strategisch beleid.'
+        5: 'Zorgt voor draagvlak binnen de organisatie (Management Team en Medezeggenschapsraad).'
+      result: 'resultaat Strategisch beleid ontwikkeld, zodanig dat het specifiek, meetbaar, acceptabel, resultaatgericht en tijdsgebonden gedefinieerd is en afgestemd is op interne ontwikkelingen, marktontwikkelingen en de ontwikkelingen van bedrijfsresultaten.'
+    3:
+      resultArea: 'Strategisch beleid (doen) realiseren.'
+      resultAreaSubItems:
+        1: 'Geeft leiding aan de organisatie in algemene zin op het gebied van organisatorische, personele en budgettaire aangelegenheden binnen de daartoe gestelde beleidskaders.'
+        2: 'Vertaalt het strategisch beleid in een concrete strategie en in een meerjarenplanning, stelt prioriteiten en zorgt voor de realisatie hiervan. Stuurt het Management Team aan zodanig dat zij een bijdrage leveren aan het opstellen van de jaarplannen en bijdragen aan de strategische meerjarenplanning.'
+        3: 'Waarborgt de financiële en operationele continuïteit van de organisatie.'
+        4: 'Stelt, in samenwerking met de Teamleider Financiën & Administratie, investeringsplannen op ten behoeve van grote investeringen en zorgt dat deze wordt beoordeeld op financiering en de rentabiliteit. Legt het investeringsvoorstel voor aan het Management Team.'
+        5: 'Ontwikkelt plannen voor de inrichting van de organisatie (op het gebied van de operationele processen, de bemensing, het functioneren van medewerkers, huisvesting et cetera). Zorgt voor de realisatie van de ontwikkelingsplannen.'
+        6: 'Zorgt, op basis van de beleidsvoorstellen / jaarplannen van de verschillende afdelingen en in overleg met de verschillende afdelingshoofden, voor een efficiënte, effectieve en resultaatgerichte organisatie op het gebied van automatisering, positionering, profilering, producten en diensten, procedures, personeelsbeleid et cetera.'
+        7: 'Ziet erop toe dat operationele doelstellingen, op het gebied van Gewassen, Innovatie en overige thema’s, gerealiseerd worden; stuurt hiertoe de Teamleiders aan.'
+        8: 'Draagt zorg voor de afhandeling van juridische conflicten.'
+        9: 'Houdt zicht, via periodiek overleg met de Teamleider Financiën & Administratie, op de hoogte van de resultaatontwikkeling van de organisatie. Bewaakt budgetten en stuurt zonodig bij.'
+        10: 'Zorgt, bij conflicten binnen de organisatie of bij tegenvallende resultaten, dat deze worden verholpen en verkomen.'
+        11: 'Fungeert als inhoudelijk klankbord voor de afdelingshoofden.'
+      result: 'resultaat: Optimaal en tijdig gerealiseerde strategische doelstellingen. Efficiënte, effectieve en resultaatgerichte organisatie zowel op korte als op lange termijn.'
+    4:
+      resultArea: 'Verantwoording afleggen.'
+      resultAreaSubItems:
+        1: 'Rapporteert over het gevoerde beleid, alsmede het te voeren beleid, de resultaatontwikkeling en de algemene gang van zaken van de organisatie (RvC, AvA). Informeert de RvA ten aanzien van beleid en resultaatontwikkelingen.'
+        2: 'Rapporteert periodiek de kerncijfers, de financiële positie en de resultaten van de organisatie.'
+        3: 'Vertegenwoordigt de organisatie. Draagt mede verantwoordelijkheid voor externe profilering en positionering van de organisatie.'
+      result: 'resultaat: Tijdig aangeleverde betrouwbare managementinformatie. De organisatie is optimaal vertegenwoordigd.'
+  knowledgeTitle : 'Kennis'
+  knowledge:
+    k1: 'Academisch werk- en denkniveau.'
+    k2: 'Kennis van en inzicht in maatschappelijke, politieke en economische processen.'
+    k3: 'Kennis van en inzicht in de afzetmarkt.'
+    k4: 'Kennis van en inzicht in de administratieve en bedrijfseconomische processen en inrichting van de afdeling, alsmede in de administratieve organisatie.'
+    k5: 'Kennis van personeelsmanagement.'
+    k6: 'Kennis van relevante juridische aspecten.'
+    k7: 'Kennis van toegepaste softwareapplicaties.'
+  jobCharacteristicsTitle: 'Specifieke functiekenmerken'
+  jobCharacteristics:
+    j1: 'Analytisch en methodisch werk- en denkvermogen; voor het analyseren van marktgegevens en het evalueren van het strategisch beleid.'
+    j2: 'Mondelinge en schriftelijke uitdrukkingsvaardigheid in de Nederlandse taal voor het formuleren, verdedigen van en rapporteren over het strategisch beleid.'
+    j3: 'Anticipatievermogen; om in de complexiteit van de bestuurlijke omgeving zetten van actoren te voorzien en passende actie te ondernemen.'
+    j4: 'Besluitvaardigheid; voor het in complexe situaties met niet altijd volledige informatie de juiste beslissing te nemen.'
+    j5: 'Inschattingsvermogen; om in besluitvormingsprocessen achterliggende belangen naar hun waarde te schatten en te vertalen naar de betekenis voor de organisatie.'

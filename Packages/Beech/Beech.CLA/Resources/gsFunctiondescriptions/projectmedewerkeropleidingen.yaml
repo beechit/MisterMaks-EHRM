@@ -1,0 +1,72 @@
+########################################################################
+# This file is a contains the jobdescription of : Projectmedewerker Opleidingen en Cursussen
+#######################################################################
+
+# version of this document
+modelName: 'jobDescriptions'
+version: '18-12-2012'
+# CLA that is connected with this contracttemplate
+cla: 'none'
+department: 'Opleidingen'
+jobTitle: 'Projectmedewerker Opleidingen en Cursussen'
+jobDescriptionID: '8a'
+salaryscale: '8'
+jobversion: 'definitief'
+jobDate: '17-12-2012'
+generalTitle: 'Algemene kenmerken'
+generalText: 'LTO Groeiservice is voor Nederlandse producenten van bloemen en planten en glas- en vollegrondsgroenteproducten hét tuinbouwnetwerk op het gebied van vaktechniek en ondernemerschap. Groeiservice ondersteunt tuinbouwondernemers in hun vooruitgang, door het verrijken van hun kennis op het gebied van teelt, bedrijfsvoering en afzet. Daarbij is Groeiservice een organisatie van, voor en door tuinders. Groeiservice helpt tuinders hun kennis over teelt, bedrijfsvoering en afzet te vergroten. Daarnaast behartigt Groeiservice hun vaktechnische belangen. Groeiservice verzorgt thematische activiteiten, zoals excursies en lezingen. Tevens biedt Groeiservice diensten op maat, zoals bedrijfsvergelijking, het begeleiden van ondernemersverenigingen en het opzetten van praktijkproeven. Gewasleden van Groeiservice profiteren van diverse voordelen, zoals deelname aan gewasspecifieke bijeenkomsten, gewasnieuwsbrieven en kortingen op gewasdagen en workshops.'
+levelDifferentiation:
+jobGoalTitle: 'Doel van de functie'
+jobGoal: 'Het, binnen een toegewezen verantwoordelijkheidsgebied, administratief en operationeel ondersteunen van de Projectleider Opleidingen en Cursussen in het initiëren en realiseren van projecten voor ondernemers teneinde kennisuitwisseling- en verbreding te bevorderen en ontwikkelingen binnen de tuinbouwsector te stimuleren.'
+hierarchicalPositionTitle: 'Organisatorische positie'
+hierarchicalPositionUp: 'De Projectmedewerker Opleidingen en Cursussen ressorteert hiërarchisch onder de Projectleider Opleidingen en Cursussen.'
+hierarchicalPostionDown: 'De Projectmedewerker Opleidingen en Cursussen geeft zelf geen leiding.'
+resultAreaTitle: 'resultaatgebieden'
+resultAreas:
+  1:
+    resultArea: 'Ontwikkelingen volgen.'
+    resultSubItems:
+      1: 'Volgt actief trends en ontwikkelingen binnen de tuinbouwsector en specifiek op het gebied van afzet, teelt en bedrijfsvoering bij (groepen van) ondernemers.'
+      2: 'Vertaalt deze, in samenwerking met de Projectleider Opleidingen en Cursussen, naar concrete acties voor de sector. Brengt, in samenwerking met wisselende externe consortia, speerpunten en thema’s in beeld.'
+    result: 'resultaat: Ontwikkelingen gevolgd, zodanig dat een volledig beeld ontstaat van de belangrijkste trends en ontwikkelingen binnen de tuinbouwsector en bij ondernemers.'
+  2:
+    resultArea: 'Beleidsvormgeving ondersteunen.'
+    resultAreaSubItems:
+      1: 'Levert vanuit het eigen vakgebied een bijdrage aan de ontwikkeling, optimalisatie en realisatie van het afdelingsbeleid (op basis van de doelstellingen en strategie van de organisatie).'
+      2: 'Ondersteunt, binnen strategische kaders, bij het opstellen van een jaarplan voor de afdeling Opleidingen en de vertaling hiervan in concrete acties / speerpunten.'
+    result: 'resultaat: Beleidsvormgeving ondersteund, zodanig dat de afdeling optimaal ondersteund is bij de ontwikkeling van beleid en de vertaling in jaarplannen.'
+  3:
+    resultArea: '(Kleine) Projecten / diensten mede initiëren en realiseren.'
+    resultAreaSubItems:
+      1: 'Onderhoudt contacten met belanghebbenden om wensen en verwachtingen te peilen en te bespreken.'
+      2: 'Formuleert aandachtspunten en ondersteunt bij de totstandkoming van projectplannen. Stelt zelfstandig projectplannen op voor kleine projecten en bespreekt deze met de leidinggevende.'
+      3: 'Behandelt vragen / problemen; levert consistent een specialistische bijdrage aan de sector. Signaleert problemen / vraagstukken en initieert oplossingen.'
+      4: 'Zoekt (desgevraagd) uiteenlopende thema’s administratief uit.'
+      5: 'Bewerkt informatie en gegevens ter ondersteuning van de realisatie van projecten en/of de ontwikkeling van diensten.'
+      6: 'Plant afspraken voor medewerkers, houdt hierbij rekening met een efficiënte tijdsindeling.'
+      7: 'Controleert en bewaakt de voortgang van kleine projecten met betrekking tot tijd, budget en kwaliteit.'
+      8: 'Voegt persoonlijke deskundigheid toe aan gedefinieerde oplossingen ten aanzien van specifieke vakgebieden. Draagt zorg voor het verzamelen, bewerken en verspreiden van kennis, gegevens en andere informatie.'
+      9: 'Signaleert knelpunten en/of problemen en draagt verbeterende maatregelen aan.'
+      10: 'Ondersteunt de feitelijke realisatie van diensten / projecten (informatie / kennis verzamelen, bijeenkomsten organiseren).'
+      11: 'Draagt, onder meer middels evaluatieformulieren, mede zorg voor effectmetingen van diensten / projecten. Inventariseert feedback en signaleert vervolgacties.'
+    result: 'resultaat: Projecten / diensten gerealiseerd, die een bijdrage leveren aan kennisuitwisseling en- verbreding.'
+  4:
+    resultArea: 'Contacten onderhouden en informatie verstrekken.'
+    resultAreaSubItems:
+      1: 'Ondersteunt voorlichtingsacties en geeft informatie en advies over relevante onderwerpen aan in- en externe belanghebbenden. Organiseert excursies, symposia, specifieke activiteiten en/of verzorgt publicaties teneinde kennisuitwisseling en –verbreding te'
+      2: 'Levert vanuit het vakgebied een actieve bijdrage in projectteams.'
+      3: 'Draagt zorg voor de afstemming van de eigen werkzaamheden op overige interne processen (Gewasmanagement, Marketing & Communicatie, Specialisten Innovatie, Gewasbescherming, Water etcetera).'
+    result: 'resultaat: Contacten onderhouden, zodanig dat kennisuitwisseling en –verbreding is bevorderd, eigen autoriteit wordt ontwikkeld.'
+knowledgeTitle : 'Kennis'
+knowledge:
+  k1: 'MBO+ / HBO werk- en denkniveau.'
+  k2: 'Kennis van en affiniteit met de tuinbouwsector.'
+  k3: 'Kennis van projectmanagement.'
+  k4: 'Kennis van toegepaste softwareapplicaties.'
+  k5: 'Affiniteit met opleidingskunde'
+jobCharacteristicsTitle: 'Specifieke functiekenmerken'
+jobCharacteristics:
+  j1: 'Sociale vaardigheden voor het onderhouden van relaties alsmede het kunnen interesseren, adviseren en overtuigen van in- en externe betrokkenen.'
+  j2: 'Mondelinge en schriftelijke uitdrukkingsvaardigheid bij het onderhouden van in- en externe contacten.'
+  j3: 'Samenwerkend vermogen om binnen de gehele organisatie in goede verstandhouding al dan niet in projecten samen te werken met anderen en dit proces te stimuleren.'
+  j4: 'Plan- en organisatievermogen voor het plannen en organiseren van projecten en werkzaamheden.'

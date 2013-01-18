@@ -1,0 +1,82 @@
+########################################################################
+# This file is a contains the jobdescription of : innovatieadviseur A
+#######################################################################
+
+
+model:
+  modelName: 'jobDescription'
+properties:
+  version: '18-12-2012'
+  # CLA that is connected with this contracttemplate
+  cla: 'none'
+  department: 'Innovatie'
+  jobTitle: 'innovatieadviseur A'
+  jobDescriptionID: '9b'
+  salaryscale: '9'
+  jobversion: 'Definitief'
+  jobDate: '17-12-2012'
+  generalTitle: 'Algemene kenmerken'
+  generalText: 'LTO Groeiservice is voor Nederlandse producenten van bloemen en planten en glas- en vollegrondsgroenteproducten hét tuinbouwnetwerk op het gebied van vaktechniek en ondernemerschap. Groeiservice ondersteunt tuinbouwondernemers in hun vooruitgang, door het verrijken van hun kennis op het gebied van teelt, bedrijfsvoering en afzet. Daarbij is Groeiservice een organisatie van, voor en door tuinders. Groeiservice helpt tuinders hun kennis over teelt, bedrijfsvoering en afzet te vergroten. Daarnaast behartigt Groeiservice hun vaktechnische belangen. Groeiservice verzorgt thematische activiteiten, zoals excursies en lezingen. Tevens biedt Groeiservice diensten op maat, zoals bedrijfsvergelijking, het begeleiden van ondernemersverenigingen en het opzetten van praktijkproeven. Gewasleden van Groeiservice profiteren van diverse voordelen, zoals deelname aan gewasspecifieke bijeenkomsten, gewasnieuwsbrieven en kortingen op gewasdagen en workshops.'
+  levelDifferentiation: 'De Innovatieadviseur komt op drie niveaus voor binnen LTO Groeiservice; de innovatieadviseur B, de Innovatieadviseur A (vakvolwassen en eventueel met een of meerdere specialismen in ontwikkeling) en de Senior Innovatieadviseur (met een specialisme). De taken en verantwoordelijkheden variëren van het bieden van operationeel administratieve ondersteuning tot het initiëren en begeleiden van multidisciplinaire projecten.De Innovatieadviseurs worden aangestuurd door een Manager Innovatie. De afdeling Innovatie initieert, realiseert en implementeert innovatieve projecten, diensten en producten voor de sector. Het betreft het, in samenwerking met uiteenlopende consortia uit de markt, initiëren van technische innovaties / installaties. Hierbij richten de innovatieadviseurs zich op het signaleren en analyseren van vragen uit de markt en het vertalen van deze vragen naar concrete toepassingen en ontwikkelingsprojecten Vervolgens richt de functionaris zich op het financieren en realiseren van technisch, innovatieve projecten. De Innovatieadviseurs zijn actief in een markt waarin specialistische vakkennis en kennis van methoden en technieken snel veranderen waarmee van de functionarissen verwacht wordt dat deze vragen en speerpunten in de markt proactief signaleren en vertalen naar concrete projecten met toegevoegde waarde voor de sector.'
+  jobGoalTitle: 'Doel van de functie'
+  jobGoal: 'Het initiëren, ontwikkelen en begeleiden van projecten met / voor (groepen van) marktpartijen teneinde bij te dragen aan het behouden / versterken van de positie van de Nederlandse tuinbouwsector.'
+  hierarchicalPositionTitle: 'Organisatorische positie'
+  hierarchicalPositionUp: 'De Innovatieadviseur A ontvangt hiërarchisch leiding van Manager Innovatie.'
+  hierarchicalPostionDown: 'De Innovatieadviseur A geeft indien nodig operationeel leiding aan in- en externe projectgroepen.'
+  resultAreaTitle: 'resultaatgebieden'
+  resultareas:
+    1:
+      resultArea: 'Ontwikkelingen volgen en mede vertalen naar visies en toekomstbeelden.'
+      resultAreaSubItems:
+        1: 'Volgt actief trends en ontwikkelingen binnen de tuinbouwsector op het toegewezen aandachtsgebied.'
+        2: 'Analyseert en interpreteert ontwikkelingen en vertaalt deze naar een visie / een projectplan.'
+        3: 'Signaleert specifieke vraagstukken, knelpunten en/of problemen en bedenkt mogelijke oplossingen / toepassingen.'
+      result: 'resultaat: Ontwikkelingen actief gevolgd, zodanig dat een volledig beeld ontstaat van de belangrijkste trends en ontwikkelingen binnen de tuinbouwsector en bij ondernemers waarop de benodigde acties zijn ondernomen zoals het initiëren van oplossingen / dienstverlening.'
+    2:
+      resultArea: 'Beleid voor de eigen afdeling (mede) mede vormgeven en uitvoeren.'
+      resultAreaSubItems:
+        1: 'Levert een bijdrage aan de ontwikkeling, optimalisatie en realisatie van het –op de doelstellingen en strategie van de organisatie toegesneden- beleid van de eigen afdeling.'
+        2: 'Vertaalt beleidsuitgangspunten naar de consequenties voor het toegewezen aandachtsgebied. Werkt, binnen strategische kaders, een jaarplan uit en vertaalt dit in concrete acties / speerpunten.'
+        3: 'Legt het jaarplan voor aan de Manager Innovatie en draagt na goedkeuring verantwoordelijkheid voor de realisatie.'
+        4: 'Initieert, coördineert en geeft, binnen de daartoe vastgestelde grenzen, zelfstandig of in teamverband, uitvoering aan de diverse (project)activiteiten.'
+      result: 'resultaat: Een aantoonbare bijdrage geleverd aan de ontwikkeling, optimalisatie en realisatie van het beleid voor de eigen afdeling.'
+    3:
+      resultArea: 'Projecten initiëren en realiseren.'
+      resultAreaSubItems:
+        1: 'Begeleidt (groepen van) ondernemers bij het realiseren van de oplossing / dienstverlening. Brengt zijn / haar inhoudelijke expertise in op het snijvlak van project- en verandermanagement.'
+        2: 'Ondersteunt (groepen van) ondernemers in de voorbereidingsfase bij het formuleren van de juiste uitgangspunten bij vraagstukken. Beoordeelt in dit kader onder andere ideeën en mogelijkheden, de technische haalbaarheid, de risico’s, de economische haalbaarheid inclusief planning en financieel plan.'
+        3: 'Formuleert, in samenwerking met een (groep van) ondernemer(s), een concreet plan van aanpak, inclusief de beoordeling van de scope en de randvoorwaarden. Stelt de planning, de begroting, de kwaliteitsnormen en acceptatiecriteria vast. Werkt projectenplannen uit conform de vraagstukspecificatie.'
+        4: 'Organiseert en draagt zorg voor de inrichting van samenwerkingsverbanden en benadert betrokken externe partners (zoals MKB-toeleveranciers, kennisinstituten, ontwikkelaars, adviseurs et cetera).'
+        5: 'Levert een actieve bijdrage aan de totstandkoming van de financiering van projecten. Levert inhoudelijke (project)informatie aan op basis waarvan de Manager Projectfinanciering potentiële financiële partners benadert.'
+        6: 'Draagt, wanneer het overzichtelijke projecten / diensten betreft, zelfstandig zorg voor de financiering.'
+        7: 'Geeft zonodig ondersteuning en projectleiding aan de uitvoering van in- en externe projecten.'
+        8: 'Voegt persoonlijke deskundigheid toe aan gedefinieerde oplossingen en/of coacht projectleden ten aanzien van specifieke vakgebieden, daar waar nodig.'
+        9: 'Bewaakt de kwaliteit van uitvoering. Signaleert knelpunten en/of problemen en zorgt dat deze worden opgelost.'
+        10: 'Begeleidt desgewenst (groepen van) ondernemers bij kennisbescherming en intellectuele eigendomsrechten (octrooien).'
+        11: 'Zorgt primair met specifieke kennis, ervaring en kunde er voor dat projecten op een zodanige wijze tot een start komen dat de kans op succes en concreet resultaat zo groot als mogelijk is (organiseert themabijeenkomsten, publiceert over relevante thema’s, zet samenwerkingsverbanden op binnen de concept projecten).'
+        12: 'Zorgt secundair met zijn of haar activiteiten voor een extern te factureren waarde die bijdraagt aan het resultaat van de afdeling en die tenminste in een verhouding staat met zijn of haar kosten (intern ondernemerschap).'
+      result: 'resultaat: (Groepen van) ondernemers geadviseerd en begeleid, zodanig dat zij zich ondersteund voelen in hun concrete acties. Advies geleverd dat is afgestemd op de kennis, kunde en ervaring van betrokken ondernemers en partijen. De totale minimale R&D waarde van de per jaar door de Innovatieadviseur te ontwikkelen projecten wordt jaarlijks vastgesteld in een persoonlijk ontwikkelingsplan.'
+    4:
+      resultArea: 'Netwerk onderhouden en uitbreiden.'
+      resultAreaSubItems:
+        1: 'Onderhoudt een breed netwerk met (groepen van) ondernemers teneinde hen actief te ondersteunen alsmede met betrokken partijen (zoals MKB-toeleveranciers, ontwikkelaars, adviseurs, kennisinstituten, financiële instellingen, overheden et cetera).'
+        2: 'Geeft voorlichting, informatie en advies over relevante onderwerpen aan in- en externe belanghebbenden door middel van voorlichting, symposia, specifieke activiteiten en/of publicaties teneinde kennisuitwisseling en –verbreding te bevorderen. Stemt deze activiteiten af met de afdeling marketing- en communicatie.'
+        3: 'Ontwikkelt (mede) specifieke cursussen voor (groepen van) ondernemers en geeft hieraan uitvoering.'
+        4: 'Neemt deel aan werkgroepen teneinde kennisuitwisseling en –verbreding te bevorderen.'
+        5: 'Zorgt dat (project)resultaten in- en extern actief worden uitgedragen.'
+      result: 'resultaat: Netwerken onderhouden, ontwikkeld en versterkt, zodanig dat concrete kennisuitwisseling en –verbreding wordt bevorderd. (Project)resultaten zijn actief uitgedragen, zodanig dat concreet en aantoonbaar wordt bijgedragen aan het versterken van de sector.'
+  knowledgeTitle : 'Kennis'
+  knowledge:
+    k1: 'HBO+ werk- en denkniveau.'
+    k2: 'Kennis van de markt, marktpartijen en gewassen.'
+    k3: 'Kennis van projectmanagement.'
+    k4: 'Kennis van toegepaste softwareapplicaties.'
+  jobCharacteristicsTitle: 'Specifieke functiekenmerken'
+  jobCharacteristics:
+    j1: 'Analytisch vermogen voor het vertalen van trends en ontwikkelingen naar een visie voor de sector voor de (middel)lange termijn.'
+    j2: 'Zelfstandig, proactief, innovatief en ondernemend in het signaleren en inspelen op relevante trends en ontwikkelingen en het vertalen hiervan in speerpunten en innovatieve oplossingen.'
+    j3: 'Plan- en organisatievermogen voor het opzetten en uitvoeren van projecten, het bewaken van de voortgang en bijsturen daar waar nodig en voor het aansturen van meerdere projecten tegelijkertijd.'
+    j4: 'Sociale vaardigheden voor het onderhouden van relaties alsmede het kunnen interesseren, adviseren en overtuigen van in- en externe betrokkenen.'
+    j5: 'Mondelinge en schriftelijke uitdrukkingsvaardigheid bij het onderhouden van in- en externe contacten en bij het geven van voorlichting, schrijven van publicaties et cetera.'
+    j6: 'Samenwerkend vermogen om binnen de gehele organisatie in goede verstandhouding al dan niet in projecten samen te werken met anderen en dit proces te stimuleren.'
+    j7: 'Organiserend vermogen zodanig dat samenwerking tussen potentiële concurrenten wordt gerealiseerd om tot een win-win te komen.'
