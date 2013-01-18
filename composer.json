@@ -18,14 +18,15 @@
 	"require": {
 		"typo3/flow": "2.0.0-beta1",
 		"beech/essentials": "dev-master",
-		"beech/ehrm": "1.0.*",
 		"typo3/surf": "dev-master",
 		"typo3/ldap": "dev-master",
 		"radmiraal/emberjs": "dev-master",
 		"radmiraal/couchdb": "dev-doctrine",
 		"famelo/gerrit": "dev-master",
 		"doctrine/dbal": "2.3.1",
-		"doctrine/orm": "2.3.1"
+		"doctrine/orm": "2.3.1",
+		"typo3/formbuilder": "dev-master",
+		"typo3/queue-redis": "*"
 	},
 	"require-dev": {
 		"typo3/buildessentials": "dev-master",
