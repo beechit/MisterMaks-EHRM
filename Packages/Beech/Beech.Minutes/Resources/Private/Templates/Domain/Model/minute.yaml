@@ -1,132 +1,135 @@
 #############################################################
-# Yaml respresentation of the meeting document mister maks;
-# Version 21-12-2012
-# the companydocument extends Beech\minutes\domain\Model\minutes
+# validated yaml for the minute model
+# this is the minute model.
 #############################################################
 
+---
 model:
-  modelName: 'minute'
-
+  modelName: minute
 properties:
-# connection to person
   -
-    id: 'subjectId'
-    label: 'Subject id'
-    type: '\Beech\Party\Domain\Model\Person'
-    validation: ''
-    onlist: TRUE
-    visible: FALSE
-    required: TRUE
+    id: subjectId
+    label: "Subject id"
+    onlist: true
+    required: true
+    type: \Beech\Party\Domain\Model\Person
+    validation: ""
+    visible: false
   -
-    id: 'departementId'
-    label: 'Department id'
-    type: '\Beech\Party\Domain\Model\Company'
-    validation: ''
-    visible: FALSE
-    required: TRUE
+    id: departementId
+    label: "Department id"
+    required: true
+    type: \Beech\Party\Domain\Model\Company
+    validation: ""
+    visible: false
   -
-    id: 'minuteType'
-    label: 'minuteType'
-    type: 'string(20)'
-    validation: ''
+    id: minuteType
+    label: minuteType
     options:
-      values: [ periodicConversation , callReporting, assessment, performanceReveiw, compensationConversation, other , sickReportUpdate ]
-    visible: TRUE
-    required: TRUE
+      values:
+        - periodicConversation
+        - callReporting
+        - assessment
+        - performanceReveiw
+        - compensationConversation
+        - other
+        - sickReportUpdate
+    required: true
+    type: string(20)
+    validation: ""
+    visible: true
   -
-    id: 'minuteContent'
-    label: 'minuteContent'
-    type: 'text'
-    validation: ''
-    visible: TRUE
-    required: TRUE
+    id: minuteContent
+    label: minuteContent
+    required: true
+    type: text
+    validation: ""
+    visible: true
   -
-# depends on type of minute, to load more complex minute templates in the future.
-    id: 'minuteTemplate'
-    label: 'minuteTemplate'
-    type: 'string(20)'
-    validation: ''
-    visible: TRUE
-    required: TRUE
+    id: minuteTemplate
+    label: minuteTemplate
+    required: true
+    type: string(20)
+    validation: ""
+    visible: true
   -
-# depends on type of minute
-    id: 'followUpActionRequired'
-    label: 'followUpActionRequired'
-    type: 'boolean'
-    validation: ''
-    default: ''
-    visible: TRUE
-    required: TRUE
+    default: ""
+    id: followUpActionRequired
+    label: followUpActionRequired
+    required: true
+    type: boolean
+    validation: ""
+    visible: true
   -
-# depends on type of minute
-    id: 'needSigning'
-    label: 'needsSigning'
-    type: 'boolean'
-    validation: ''
-    default: ''
-    visible: TRUE
-    required: TRUE
+    default: ""
+    id: needSigning
+    label: needsSigning
+    required: true
+    type: boolean
+    validation: ""
+    visible: true
   -
-    id: 'action'
-    label: 'action'
-    type: 'string(20)'
-    validation: ''
-    visible: TRUE
-    required: TRUE
+    id: action
+    label: action
+    required: true
+    type: string(20)
+    validation: ""
+    visible: true
   -
-  # depends on type of minute
-    id: 'documentRequired'
-    label: 'documentRequired'
-    type: 'boolean'
-    validation: ''
-    default: ''
-    visible: TRUE
-    required: TRUE
+    default: ""
+    id: documentRequired
+    label: documentRequired
+    required: true
+    type: boolean
+    validation: ""
+    visible: true
   -
-    id: 'visability'
-    label: 'visability'
-    type: 'string(20)'
-    validation: ''
+    id: visability
+    label: visability
     options:
-      values: [ public , subjects , managers , creator ]
-    visible: TRUE
-    required: TRUE
-
-  # logging
+      values:
+        - public
+        - subjects
+        - managers
+        - creator
+    required: true
+    type: string(20)
+    validation: ""
+    visible: true
   -
-    id: 'creationDate'
-    label: 'creation date'
-    type: 'dateTime'
-    validation: '(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}( \d{1,2}[:-]\d{2}([:-]\d{2,3})*)?'
-    default: 'now'
-    visible: FALSE
-    required: TRUE
+    default: now
+    id: creationDate
+    label: "creation date"
+    required: true
+    type: dateTime
+    validation: "(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?"
+    visible: false
   -
-    id: 'createdBy'
-    label: 'creation by'
-    type: '\Beech\Party\Domain\Model\Person'
-    default: 'currentUser'
-    validation: ''
-    visible: FALSE
-    required: TRUE
+    default: currentUser
+    id: createdBy
+    label: "creation by"
+    required: true
+    type: \Beech\Party\Domain\Model\Person
+    validation: ""
+    visible: false
   -
-    id: 'modification'
-    label: 'ModificationLog'
-    type: 'array'
+    id: modification
     items:
-     -
-       id: 'modificationDate'
-       label: 'Modification date'
-       type: 'dateTime'
-       validation: '(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}( \d{1,2}[:-]\d{2}([:-]\d{2,3})*)?'
-       default: 'now'
-       visible: FALSE
-       required: TRUE
-     -
-       id: 'modifiedBy'
-       label: 'Modifiedby'
-       type: '\Beech\Party\Domain\Model\Person'
-       validation: ''
-       default: 'currentUser'
-       visible: FALSE
-       required: TRUE
+      -
+        default: now
+        id: modificationDate
+        label: "Modification date"
+        required: true
+        type: dateTime
+        validation: "(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?"
+        visible: false
+      -
+        default: currentUser
+        id: modifiedBy
+        label: Modifiedby
+        required: true
+        type: \Beech\Party\Domain\Model\Person
+        validation: ""
+        visible: false
+    label: ModificationLog
+    type: array

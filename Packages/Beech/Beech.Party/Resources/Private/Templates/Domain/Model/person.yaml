@@ -1,500 +1,517 @@
 #############################################################
-# Yaml respresentation of the person document mister maks;
-# Version 21-12-2012
-# the persondocument extends Typo3.party and Beech.party
+# validated yaml for the person
+# this is the person model.
 #############################################################
 
+---
 model:
-  modelName: 'Person'
-
+  modelName: Person
 properties:
   -
-    id: 'companyID'
-    label: 'Company id'
-    type: '\Beech\Party\Domain\Model\Company'
-    validation: ''
-    visable: FALSE
-    required: TRUE
+    id: companyID
+    label: "Company id"
+    required: true
+    type: \Beech\Party\Domain\Model\Company
+    validation: ""
+    visable: false
   -
-    id: 'departementId'
-    label: 'Department id'
-    type: '\Beech\Party\Domain\Model\Company'
-    validation: ''
-    visable: TRUE
-    required: FALSE
+    id: departementId
+    label: "Department id"
+    required: false
+    type: \Beech\Party\Domain\Model\Company
+    validation: ""
+    visable: true
   -
-    id: 'name.title'
-    label: 'title'
-    type: 'string(10)'
-    validation: ''
-    visable: TRUE
-    required: FALSE
+    id: name.title
+    label: title
+    required: false
+    type: string(10)
+    validation: ""
+    visable: true
   -
-    id: 'name.firstName'
-    label: 'First name '
-    type: 'string(20)'
-    validation: ''
-    visable: TRUE
-    required: TRUE
+    id: name.firstName
+    label: "First name"
+    required: true
+    type: string(20)
+    validation: ""
+    visable: true
   -
-    id: 'name.middleName'
-    label: 'Middle name'
-    type: 'string(20)'
-    validation: ''
-    visable: TRUE
-    required: FALSE
+    id: name.middleName
+    label: "Middle name"
+    required: false
+    type: string(20)
+    validation: ""
+    visable: true
   -
-    id: 'name.lastname'
-    label: 'Last name'
-    type: 'string(20)'
-    validation: ''
-    visable: TRUE
-    required: TRUE
+    id: name.lastname
+    label: "Last name"
+    required: true
+    type: string(20)
+    validation: ""
+    visable: true
   -
-# in case of a maried Female that carries husbands name.
-    id: 'otherName'
-    label: 'Birthname'
-    type: 'string(30)'
-    validation: '[\w\-]{2,30}]'
-    visable: TRUE
-    required: FALSE
+    id: otherName
+    label: Birthname
+    required: false
+    type: string(30)
+    validation: "[\\w\\-]{2,30}]"
+    visable: true
   -
-    id: 'alias'
-    label: 'Alias'
-    type: 'string(15)'
-    validation: ''
-    visable: TRUE
-    required: FALSE
+    id: alias
+    label: Alias
+    required: false
+    type: string(15)
+    validation: ""
+    visable: true
   -
-    id: 'fullName'
-    label: 'FullName'
-    type: 'string(30)'
-    validation: ''
-    visable: TRUE
-    required: FALSE
+    id: fullName
+    label: FullName
+    required: false
+    type: string(30)
+    validation: ""
+    visable: true
   -
-    id: 'initials'
-    label: 'Initials'
-    type: 'string(10)'
-    validation: '[a-zA-Z\.\s]{0,10}'
-    visable: TRUE
-    required: TRUE
+    id: initials
+    label: Initials
+    required: true
+    type: string(10)
+    validation: "[a-zA-Z\\.\\s]{0,10}"
+    visable: true
   -
-    id: 'dateofBirth'
-    label: 'Date of Birth'
-    type: 'dateTime'
-    validation: '(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}( \d{1,2}[:-]\d{2}([:-]\d{2,3})*)?'
-    visable: TRUE
-    required: FALSE
+    id: dateofBirth
+    label: "Date of Birth"
+    required: false
+    type: dateTime
+    validation: "(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?"
+    visable: true
   -
-    id: 'dateofDeath'
-    label: 'Date of death'
-    type: 'dateTime'
-    validation: '(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}( \d{1,2}[:-]\d{2}([:-]\d{2,3})*)?'
-    visable: TRUE
-    required: FALSE
+    id: dateofDeath
+    label: "Date of death"
+    required: false
+    type: dateTime
+    validation: "(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?"
+    visable: true
   -
-    id: 'gender'
-    label: 'Gender'
-    type: 'string(6)'
-    validation: ''
+    id: gender
+    label: Gender
     options:
-      values: [ Male, Female ]
+      values:
+        - Male
+        - Female
+    type: string(6)
+    validation: ""
   -
-    id: 'civilStatus'
-    label: 'Civil status'
-    type: 'string(15)'
-    validation: ''
+    id: civilStatus
+    label: "Civil status"
     options:
-      values: [ unknown , umarried , married , livingTogether , widowWidower , sustainableSeparated , divorced ]
-    visable: TRUE
-    required: FALSE
+      values:
+        - unknown
+        - umarried
+        - married
+        - livingTogether
+        - widowWidower
+        - sustainableSeparated
+        - divorced
+    required: false
+    type: string(15)
+    validation: ""
+    visable: true
   -
-    id: 'image'
-    label: 'Image'
-    type: ''
-    validation: ''
-    visable: TRUE
-    required: FALSE
+    id: image
+    label: Image
+    required: false
+    type: ""
+    validation: ""
+    visable: true
   -
-    id: 'preferedCommunicationMethod'
-    label: 'Prefered communication Method'
-    type: 'string(15)'
-    validation: ''
+    defauyt: none
+    id: preferedCommunicationMethod
+    label: "Prefered communication Method"
     options:
-      values: [ none , email , sms , post , phone ]
-    defauyt: 'none'
-    visable: TRUE
-    required: TRUE
+      values:
+        - none
+        - email
+        - sms
+        - post
+        - phone
+    required: true
+    type: string(15)
+    validation: ""
+    visable: true
   -
-    id: 'addresses'
-    label: 'Addresses'
-    type: 'array'
+    id: addresses
     items:
       -
-        id: 'addressType'
-        label: 'Address type'
-        type: 'string(20)'
-        validation: ''
+        id: addressType
+        label: "Address type"
         options:
-          values: [ businessAddress , postbox ,  mailingAddress , workLocation , addressAbroad ]
-        required: FALSE
-        visible: TRUE
+          values:
+            - businessAddress
+            - postbox
+            - mailingAddress
+            - workLocation
+            - addressAbroad
+        required: false
+        type: string(20)
+        validation: ""
+        visible: true
       -
-        id: 'streetName'
-        label: 'Street name'
-        type: 'string(30)'
-        validation: '[a-zA-Z\-\s\’]{2,30}'
-        required: TRUE
-        visible: TRUE
+        id: streetName
+        label: "Street name"
+        required: true
+        type: string(30)
+        validation: "[a-zA-Z\\-\\s\\’]{2,30}"
+        visible: true
       -
-        id: 'primaryPostAddress'
-        label: 'Primary postaddress'
-        type: 'boolean'
-        validation: ''
-        required: TRUE
-        visible: TRUE
+        id: primaryPostAddress
+        label: "Primary postaddress"
+        required: true
+        type: boolean
+        validation: ""
+        visible: true
       -
-        id: 'primaryLocation'
-        label: 'Primary Location'
-        type: 'boolean'
-        validation: ''
-        required: TRUE
-        visible: TRUE
+        id: primaryLocation
+        label: "Primary Location"
+        required: true
+        type: boolean
+        validation: ""
+        visible: true
       -
-        id: 'postBoxNumber'
-        label: 'Postbox number'
-        type: 'integer(5)'
-        validation: '[0-9]{1,5}'
-        required: TRUE
-        visible: TRUE
+        id: postBoxNumber
+        label: "Postbox number"
+        required: true
+        type: integer(5)
+        validation: "[0-9]{1,5}"
+        visible: true
       -
-        id: 'houseNumber'
-        label: 'House number'
-        type: 'integer(5)'
-        validation: '[0-9]{1,5}'
-        required: TRUE
-        visible: TRUE
+        id: houseNumber
+        label: "House number"
+        required: true
+        type: integer(5)
+        validation: "[0-9]{1,5}"
+        visible: true
       -
-        id: 'houseNumberAddition'
-        label: 'House number addition'
-        type: 'string(10)'
-        validation: '[a-zA-Z0-9\-]{0,10}'
-        required: FALSE
-        visible: TRUE
+        id: houseNumberAddition
+        label: "House number addition"
+        required: false
+        type: string(10)
+        validation: "[a-zA-Z0-9\\-]{0,10}"
+        visible: true
       -
-        id: 'postalCodeNL'
-        label: 'Postal code'
-        type: 'string(6)'
-        validation: '\d{4}\s?[a-z]{2}'
-        required: TRUE
-        visible: TRUE
+        id: postalCodeNL
+        label: "Postal code"
+        required: true
+        type: string(6)
+        validation: "\\d{4}\\s?[a-z]{2}"
+        visible: true
       -
-        id: 'postalCodeAbroad'
-        label: 'Postal code'
-        type: 'string(10)'
-        validation: '[a-zA-Z0-9\-]{0,10}'
-        required: FALSE
-        visible: TRUE
+        id: postalCodeAbroad
+        label: "Postal code"
+        required: false
+        type: string(10)
+        validation: "[a-zA-Z0-9\\-]{0,10}"
+        visible: true
       -
-        id: 'residence'
-        label: 'Residence'
-        type: 'string(30)'
-        validation: '[a-zA-Z\-\s\’]{2,30}'
-        required: TRUE
-        visible: TRUE
+        id: residence
+        label: Residence
+        required: true
+        type: string(30)
+        validation: "[a-zA-Z\\-\\s\\’]{2,30}"
+        visible: true
       -
-        id: 'country'
-        label: 'Country'
-        type: 'string(30)'
-        validation: ''
-        required: TRUE
-        visible: TRUE
+        id: country
+        label: Country
+        required: true
+        type: string(30)
+        validation: ""
+        visible: true
       -
-        id: 'addressDescription'
-        label: 'Address description'
-        type: 'text'
-        validation: ''
-        required: FALSE
-        visible: TRUE
+        id: addressDescription
+        label: "Address description"
+        required: false
+        type: text
+        validation: ""
+        visible: true
       -
-        id: 'houseBoatReference'
-        label: 'Houseboat reference'
-        type: 'string'
-        validation: ''
+        id: houseBoatReference
+        label: "Houseboat reference"
         options:
-          values: [ '' , AB ]
-        visable: TRUE
-        required: FALSE
+          values:
+            - ""
+            - AB
+        required: false
+        type: string
+        validation: ""
+        visable: true
       -
-        id: 'mobileHomeReference'
-        label: 'Mobile home reference'
-        type: 'string'
-        validation: ''
+        id: mobileHomeReference
+        label: "Mobile home reference"
         options:
-          values: [ '' , WW ]
-        visable: TRUE
-        required: TRUE
+          values:
+            - ""
+            - WW
+        required: true
+        type: string
+        validation: ""
+        visable: true
+    label: Addresses
+    type: array
   -
-    id: 'electronicAddresses'
-    label: 'Electronic addresses'
-    type: 'array'
+    id: electronicAddresses
     items:
       -
-        id: 'email'
-        label: 'E-mailAddress'
-        type: 'string'
-        validation: '([\w\-\.]+)@((\[([0-9]{1,3}\.){3}[0-9]{1,3}\])|(([\w\-]+\.)+)([a-zA-Z]{2,4}))'
-        required: TRUE
-        visible: TRUE
-
+        id: email
+        label: E-mailAddress
+        required: true
+        type: string
+        validation: "([\\w\\-\\.]+)@((\\[([0-9]{1,3}\\.){3}[0-9]{1,3}\\])|(([\\w\\-]+\\.)+)([a-zA-Z]{2,4}))"
+        visible: true
       -
-        id: 'skype'
-        label: 'Skype'
-        type: 'string'
-        validation: '[a-zA-Z][a-zA-Z0-9]{5,31}]'
-        required: TRUE
-        visible: TRUE
+        id: skype
+        label: Skype
+        required: true
+        type: string
+        validation: "[a-zA-Z][a-zA-Z0-9]{5,31}]"
+        visible: true
       -
-        id: 'websiteUrl'
-        label: 'Website Url'
-        type: 'string(50)'
-        validation: '/(https?://)?(www\.)?([a-zA-Z0-9_%]*)\b\.[a-z]{2,4}(\.[a-z]{2})?((/[a-zA-Z0-9_%]*)+)?(\.[a-z]*)?/g]'
-        required: FALSE
-        visible: TRUE
+        id: websiteUrl
+        label: "Website Url"
+        required: false
+        type: string(50)
+        validation: "/(https?://)?(www\\.)?([a-zA-Z0-9_%]*)\\b\\.[a-z]{2,4}(\\.[a-z]{2})?((/[a-zA-Z0-9_%]*)+)?(\\.[a-z]*)?/g]"
+        visible: true
       -
-        id: 'twitter'
-        label: 'Twitter'
-        type: 'string(20)'
-        validation: ''
-        required: FALSE
-        visible: TRUE
+        id: twitter
+        label: Twitter
+        required: false
+        type: string(20)
+        validation: ""
+        visible: true
       -
-        id: 'facebook'
-        label: 'Facebook'
-        type: 'string(20)'
-        validation: ''
-        required: FALSE
-        visible: TRUE
+        id: facebook
+        label: Facebook
+        required: false
+        type: string(20)
+        validation: ""
+        visible: true
       -
-        id: 'linkedin'
-        label: 'Linkedin'
-        type: 'string(20)'
-        validation: ''
-        required: TRUE
-        visible: TRUE
+        id: linkedin
+        label: Linkedin
+        required: true
+        type: string(20)
+        validation: ""
+        visible: true
       -
-        id: 'hyves'
-        label: 'Hyves'
-        type: 'string(20)'
-        validation: ''
-        required: TRUE
-        visible: TRUE
+        id: hyves
+        label: Hyves
+        required: true
+        type: string(20)
+        validation: ""
+        visible: true
+    label: "Electronic addresses"
+    type: array
   -
-    id: 'phone'
-    label: 'Phone numbers'
-    type: 'array'
+    id: phone
     items:
       -
-        id: 'phoneType'
-        label: 'phone type'
-        type: 'string'
-        validation: ''
+        id: phoneType
+        label: "phone type"
         options:
-          values: [ workLocationNumber , faxNumber , homePhoneNumber , privateMobilePhone , businessMobilePhone , bussinessPhone , emergencyCallnumber ]
-        required: TRUE
-        visible: TRUE
+          values:
+            - workLocationNumber
+            - faxNumber
+            - homePhoneNumber
+            - privateMobilePhone
+            - businessMobilePhone
+            - bussinessPhone
+            - emergencyCallnumber
+        required: true
+        type: string
+        validation: ""
+        visible: true
       -
-        id: 'phoneNumber'
-        label: 'Phone Number'
-        type: 'string'
-        validation: '/(^\+[0-9]{2}|^\+[0-9]{2}\(0\)|^\(\+[0-9]{2}\)\(0\)|^00[0-9]{2}|^0)([0-9]{9}$|[0-9\-\s]{10}$)/gm]'
-        required: TRUE
-        visible: TRUE
+        id: phoneNumber
+        label: "Phone Number"
+        required: true
+        type: string
+        validation: "/(^\\+[0-9]{2}|^\\+[0-9]{2}\\(0\\)|^\\(\\+[0-9]{2}\\)\\(0\\)|^00[0-9]{2}|^0)([0-9]{9}$|[0-9\\-\\s]{10}$)/gm]"
+        visible: true
       -
-        id: 'foreignPhoneNumber'
-        label: 'Foreign phone number'
-        type: 'string'
-        validation: '/(^\+[0-9]{2}|^\+[0-9]{2}\(0\)|^\(\+[0-9]{2}\)\(0\)|^00[0-9]{2}|^0)([0-9]{9}$|[0-9\-\s]{10}$)/gm]'
-        required: TRUE
-        visible: TRUE
-  # in case person is an employee
+        id: foreignPhoneNumber
+        label: "Foreign phone number"
+        required: true
+        type: string
+        validation: "/(^\\+[0-9]{2}|^\\+[0-9]{2}\\(0\\)|^\\(\\+[0-9]{2}\\)\\(0\\)|^00[0-9]{2}|^0)([0-9]{9}$|[0-9\\-\\s]{10}$)/gm]"
+        visible: true
+    label: "Phone numbers"
+    type: array
   -
-    id: 'employeeNumber'
-    label: 'Employee number'
-    type: 'string'
-    validation: '[0-9A-Za-z\-_]{0,15}'
+    id: employeeNumber
+    label: "Employee number"
+    type: string
+    validation: "[0-9A-Za-z\\-_]{0,15}"
   -
-    id: 'bsn'
-    label: 'BSN number'
-    type: 'integer'
-    validation: '[0-9]{9}'
-  # for more about validation of bns look at http://docs.beech.local/MisterMaks/DataSet/Models/yaml/verifybsn.html
+    id: bsn
+    label: "BSN number"
+    type: integer
+    validation: "[0-9]{9}"
   -
-    id: 'employmentDisabled'
-    label: 'Employment disabled'
-    type: 'boolean'
-    validation: ''
-    visable: TRUE
-    required: FALSE
+    id: employmentDisabled
+    label: "Employment disabled"
+    required: false
+    type: boolean
+    validation: ""
+    visable: true
   -
-    id: 'waowia'
-    label: 'WAO or Wia'
-    type: 'boolean'
-    validation: ''
-    visable: TRUE
-    required: FALSE
+    id: waowia
+    label: "WAO or Wia"
+    required: false
+    type: boolean
+    validation: ""
+    visable: true
   -
-    id: 'waowiaPercentage'
-    label: 'WAO or Wia Percentage'
-    type: 'decimal(3.2)'
-    validation: '/^((100)|(\d{0,2}))$/g'
-    visable: TRUE
-    required: FALSE
+    id: waowiaPercentage
+    label: "WAO or Wia Percentage"
+    required: false
+    type: decimal(3.2)
+    validation: "/^((100)|(\\d{0,2}))$/g"
+    visable: true
   -
-    id: 'waowiaStartDate'
-    label: 'WAO or Wia Startdate'
-    type: 'dateTime'
-    validation: '(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}( \d{1,2}[:-]\d{2}([:-]\d{2,3})*)?'
-    visable: TRUE
-    required: FALSE
+    id: waowiaStartDate
+    label: "WAO or Wia Startdate"
+    required: false
+    type: dateTime
+    validation: "(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?"
+    visable: true
   -
-    id: 'bankinformation'
-    label: 'Bank information'
-    type: 'array'
+    id: bankinformation
     items:
       -
-        id: 'accountName'
-        label: 'accountName'
-        type: 'string(20)'
-        validation: ''
-        visable: TRUE
-        required: FALSE
+        id: accountName
+        label: accountName
+        required: false
+        type: string(20)
+        validation: ""
+        visable: true
       -
-        id: 'accountType'
-        label: 'account type'
-        type: 'string(20)'
-        validation: ''
+        id: accountType
+        label: "account type"
         options:
-          values: [ giroAccount , bankaccount , bankAccountabroad ]
-        visable: TRUE
-        required: FALSE
+          values:
+            - giroAccount
+            - bankaccount
+            - bankAccountabroad
+        required: false
+        type: string(20)
+        validation: ""
+        visable: true
       -
-        id: 'bankName'
-        label: 'bank name'
-        type: 'string(20)'
-        validation: '[a-zA-Z\-\s\’]{2,20}'
-        visable: TRUE
-        required: FALSE
+        id: bankName
+        label: "bank name"
+        required: false
+        type: string(20)
+        validation: "[a-zA-Z\\-\\s\\’]{2,20}"
+        visable: true
       -
-        id: 'primaryBankAccount'
-        label: 'primary bank account'
-        type: 'boolean'
-        validation: ''.
-        visable: TRUE
-        required: TRUE
+        id: primaryBankAccount
+        label: "primary bank account"
+        required: true
+        type: boolean
+        validation: ""
+        visable: true
       -
-        id: 'giro'
-        label: 'Giro'
-        type: 'string(7)'
-        validation: '\d{1,7}'
-        visable: TRUE
-        required: FALSE
+        id: giro
+        label: Giro
+        required: false
+        type: string(7)
+        validation: "\\d{1,7}"
+        visable: true
       -
-        id: 'bic'
-        label: 'Bic code'
-        type: 'string(11)'
-        validation: '[1-9]{8}|[1-9]{11}'
-        visable: TRUE
-        required: FALSE
+        id: bic
+        label: "Bic code"
+        required: false
+        type: string(11)
+        validation: "[1-9]{8}|[1-9]{11}"
+        visable: true
       -
-        id: 'accountNumber'
-        label: 'Account number'
-        type: 'integer(11)'
-        validation: '[P,B]{1}[0-9]{10}'
-        visable: TRUE
-        required: FALSE
+        id: accountNumber
+        label: "Account number"
+        required: false
+        type: integer(11)
+        validation: "[P,B]{1}[0-9]{10}"
+        visable: true
       -
-        id: 'ibanNumber'
-        label: 'IBAN number'
-        type: 'string(34)'
-        validation: '/[a-zA-Z]{2}[0-9]{2}[a-zA-Z0-9]{4}[0-9]{7}([a-zA-Z0-9]?){0,16}/g'
-        visable: TRUE
-        required: FALSE
+        id: ibanNumber
+        label: "IBAN number"
+        required: false
+        type: string(34)
+        validation: "/[a-zA-Z]{2}[0-9]{2}[a-zA-Z0-9]{4}[0-9]{7}([a-zA-Z0-9]?){0,16}/g"
+        visable: true
       -
-  # use countrylist
-        id: 'countryBank'
-        label: 'Country bank'
-        type: 'string(40)'
-        validation: ''
-        visable: TRUE
-        required: FALSE
+        id: countryBank
+        label: "Country bank"
+        required: false
+        type: string(40)
+        validation: ""
+        visable: true
       -
-        id: 'bankResidence'
-        label: 'Bank residence'
-        type: 'string(30)'
-        validation: '[a-zA-Z0-9\-\’]{2,30}'
-        visable: TRUE
-        required: FALSE
-
-  # in case person is a companycontact
-        id: 'jobTitle'
-        label: 'jobTitle'
-        type: 'string(30)'
-        validation: ''
-        visible: TRUE
-        required:  FALSE
-                                                                                                                                              ,
-  # in case person is a partnercompany Contact
-      - id: 'jobTitle'
-        label: 'Jobtitle'
-        type: 'string(20)'
-        validation: ''
-        visable: TRUE
-        required: FALSE
+        id: jobTitle
+        label: jobTitle
+        required: "FALSE ,\n"
+        type: string(30)
+        validation: ""
+        visable: true
+        visible: true
       -
-        id: 'freeRemarks'
-        label: 'Free Remarks'
-        type: 'text'
-        validation: ''
-        visable: TRUE
-        required: FALSE
-
-  # logging
+        id: jobTitle
+        label: Jobtitle
+        required: false
+        type: string(20)
+        validation: ""
+        visable: true
+      -
+        id: freeRemarks
+        label: "Free Remarks"
+        required: false
+        type: text
+        validation: ""
+        visable: true
+    label: "Bank information"
+    type: array
   -
-    id: 'creationDate'
-    label: 'creation date'
-    type: 'dateTime'
-    validation: '(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}( \d{1,2}[:-]\d{2}([:-]\d{2,3})*)?'
-    default: 'now'
-    visible: FALSE
-    required: TRUE
+    default: now
+    id: creationDate
+    label: "creation date"
+    required: true
+    type: dateTime
+    validation: "(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?"
+    visible: false
   -
-    id: 'createdBy'
-    label: 'creation by'
-    type: '\Beech\Party\Domain\Model\Person'
-    default: 'currentUser'
-    validation: ''
-    visible: FALSE
-    required: TRUE
+    default: currentUser
+    id: createdBy
+    label: "creation by"
+    required: true
+    type: \Beech\Party\Domain\Model\Person
+    validation: ""
+    visible: false
   -
-    id: 'modification'
-    label: 'ModificationLog'
-    type: 'array'
+    id: modification
     items:
-     -
-       id: 'modificationDate'
-       label: 'Modification date'
-       type: 'dateTime'
-       validation: '(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}( \d{1,2}[:-]\d{2}([:-]\d{2,3})*)?'
-       default: 'now'
-       visible: FALSE
-       required: TRUE
-     -
-       id: 'modifiedBy'
-       label: 'Modifiedby'
-       type: '\Beech\Party\Domain\Model\Person'
-       validation: ''
-       default: 'currentUser'
-       visible: FALSE
-       required: TRUE
+      -
+        default: now
+        id: modificationDate
+        label: "Modification date"
+        required: true
+        type: dateTime
+        validation: "(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?"
+        visible: false
+      -
+        default: currentUser
+        id: modifiedBy
+        label: Modifiedby
+        required: true
+        type: \Beech\Party\Domain\Model\Person
+        validation: ""
+        visible: false
+    label: ModificationLog
+    type: array

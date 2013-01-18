@@ -1,181 +1,180 @@
-###################################################
-# this is the model for jobdescriptions
-# this model is designed for GS
-# and used for storing the GS jobdescriptions in couchDB
-###################################################
+#############################################################
+# validated yaml for the jobDescriptions model
+# this is the jobDescriptions model.
+#############################################################
 
-model: 'jobdescriptions'
+---
+model: jobdescriptions
 properties:
   -
-    id: 'cla'
-    label: 'Cla'
-    type: 'string(20)'
-    validation: ''
+    id: cla
+    label: Cla
+    type: string(20)
+    validation: ""
   -
-    id: 'departement'
-    label: 'Department'
-    type: '\Beech\Party\Domain\Model\Company'
-    validation: ''
+    id: departement
+    label: Department
+    type: \Beech\Party\Domain\Model\Company
+    validation: ""
   -
-    id: 'jobTitle'
-    label: 'Job title'
-    type: 'string(20)'
-    validation: ''
+    id: jobTitle
+    label: "Job title"
+    type: string(20)
+    validation: ""
   -
-    id: 'jobDescriptionID'
-    label: 'Job description ID'
-    type: 'string(5)'
-    validation: ''
+    id: jobDescriptionID
+    label: "Job description ID"
+    type: string(5)
+    validation: ""
   -
-    id: 'salaryscale'
-    label: 'Salary scale'
-    type: 'string(5)'
-    validation: ''
+    id: salaryscale
+    label: "Salary scale"
+    type: string(5)
+    validation: ""
   -
-    id: 'jobversion'
-    label: 'Version'
-    type: 'string(20)'
-    validation: ''
+    id: jobversion
+    label: Version
+    type: string(20)
+    validation: ""
   -
-    id: 'versiondate'
-    label: 'Version date'
-    type: 'dateTime'
-    validation: ''
+    id: versiondate
+    label: "Version date"
+    type: dateTime
+    validation: ""
   -
-    id: 'generalTitle'
-    label: 'Generaltitle'
-    type: 'text'
-    validation: ''
+    id: generalTitle
+    label: Generaltitle
+    type: text
+    validation: ""
   -
-    id: 'generalText'
-    label: 'Generaltext'
-    type: 'text'
-    validation: ''
+    id: generalText
+    label: Generaltext
+    type: text
+    validation: ""
   -
-    id: 'levelDifferentiation'
-    label: 'Level differentiation'
-    type: 'text'
-    validation: ''
+    id: levelDifferentiation
+    label: "Level differentiation"
+    type: text
+    validation: ""
   -
-    id: 'jobGoalTitle'
-    label: 'job Goal Title'
-    type: 'text'
-    validation: ''
+    id: jobGoalTitle
+    label: "job Goal Title"
+    type: text
+    validation: ""
   -
-    id: 'jobGoal'
-    label: 'Jobgoal'
-    type: 'text'
-    validation: ''
+    id: jobGoal
+    label: Jobgoal
+    type: text
+    validation: ""
   -
-    id: 'hierarchicalPositionTitle'
-    label: 'Hierarchical position title'
-    type: 'text'
-    validation: ''
+    id: hierarchicalPositionTitle
+    label: "Hierarchical position title"
+    type: text
+    validation: ""
   -
-    id: 'hierarchicalPositionUp'
-    label: 'Hierarchical position up'
-    type: 'text'
-    validation: ''
+    id: hierarchicalPositionUp
+    label: "Hierarchical position up"
+    type: text
+    validation: ""
   -
-    id: 'hierarchicalPositionDown'
-    label: 'Hierarchical postition down'
-    type: 'text'
-    validation: ''
+    id: hierarchicalPositionDown
+    label: "Hierarchical postition down"
+    type: text
+    validation: ""
   -
-    id: 'resultAreaTitle'
-    label: 'Result area title'
-    type: 'text'
-    validation: ''
+    id: resultAreaTitle
+    label: "Result area title"
+    type: text
+    validation: ""
   -
-    id: 'ResultAreas'
-    label: 'Result areas'
-    type: 'array'
+    id: ResultAreas
     items:
       -
-        id: 'resultArea'
-        label: 'Result area'
-        type: 'text'
-        validation: ''
+        id: resultArea
+        label: "Result area"
+        type: text
+        validation: ""
       -
-        id: 'resultAreaResult'
-        Label: 'Result area result'
-        type: 'text'
-        validations: ''
+        Label: "Result area result"
+        id: resultAreaResult
+        type: text
+        validations: ""
       -
-        id: 'resultAreaSubItems'
-        label: 'Result area subitems'
-        type: 'array'
+        id: resultAreaSubItems
         items:
           -
-            id: 'resultAreaSubItem'
-            label: 'Result area subitem'
-            type: 'text'
-            validation: ''
+            id: resultAreaSubItem
+            label: "Result area subitem"
+            type: text
+            validation: ""
+        label: "Result area subitems"
+        type: array
+    label: "Result areas"
+    type: array
   -
-    id: 'knowledgeTitle'
-    label: 'Knowledge title'
-    type: 'text'
-    validation: ''
+    id: knowledgeTitle
+    label: "Knowledge title"
+    type: text
+    validation: ""
   -
-    id: 'knowledge'
-    label: 'Knowledge'
-    type: 'array'
+    id: knowledge
     items:
       -
-        id: 'knowledgeItem'
-        label: 'Knowledge item'
-        type: 'text'
-        validation: ''
+        id: knowledgeItem
+        label: "Knowledge item"
+        type: text
+        validation: ""
+    label: Knowledge
+    type: array
   -
-    id: 'jobCharacteristicsTitle'
-    label: 'Job characteristics title'
-    type: 'text'
-    validation: ''
+    id: jobCharacteristicsTitle
+    label: "Job characteristics title"
+    type: text
+    validation: ""
   -
-    id: 'jobCharacteristics'
-    label: 'Job characteristics'
-    type: 'array'
+    id: jobCharacteristics
     items:
       -
-        id: 'jobCharacteristicsItem'
-        label: 'job characteristics item'
-        type: 'text'
-        validation: ''
-  # logging
+        id: jobCharacteristicsItem
+        label: "job characteristics item"
+        type: text
+        validation: ""
+    label: "Job characteristics"
+    type: array
   -
-    id: 'creationDate'
-    label: 'creation date'
-    type: 'dateTime'
-    validation: '(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}( \d{1,2}[:-]\d{2}([:-]\d{2,3})*)?'
-    default: 'now'
-    visible: FALSE
-    required: TRUE
+    default: now
+    id: creationDate
+    label: "creation date"
+    required: true
+    type: dateTime
+    validation: "(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?"
+    visible: false
   -
-    id: 'createdBy'
-    label: 'creation by'
-    type: '\Beech\Party\Domain\Model\Person'
-    default: 'currentUser'
-    validation: ''
-    visible: FALSE
-    required: TRUE
+    default: currentUser
+    id: createdBy
+    label: "creation by"
+    required: true
+    type: \Beech\Party\Domain\Model\Person
+    validation: ""
+    visible: false
   -
-    id: 'modification'
-    label: 'ModificationLog'
-    type: 'array'
+    id: modification
     items:
-     -
-       id: 'modificationDate'
-       label: 'Modification date'
-       type: 'dateTime'
-       validation: '(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}( \d{1,2}[:-]\d{2}([:-]\d{2,3})*)?'
-       default: 'now'
-       visible: FALSE
-       required: TRUE
-     -
-       id: 'modifiedBy'
-       label: 'Modifiedby'
-       type: '\Beech\Party\Domain\Model\Person'
-       validation: ''
-       default: 'currentUser'
-       visible: FALSE
-       required: TRUE
+      -
+        default: now
+        id: modificationDate
+        label: "Modification date"
+        required: true
+        type: dateTime
+        validation: "(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?"
+        visible: false
+      -
+        default: currentUser
+        id: modifiedBy
+        label: Modifiedby
+        required: true
+        type: \Beech\Party\Domain\Model\Person
+        validation: ""
+        visible: false
+    label: ModificationLog
+    type: array
