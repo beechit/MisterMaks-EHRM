@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file original="" source-language="en" target-language="en" datatype="plaintext">
+		<body>
+			<trans-unit id="absence.absenceType">
+				<source>Type of absence</source>
+			</trans-unit>
+			<trans-unit id="absence.personId">
+				<source>Person</source>
+			</trans-unit>
+			<trans-unit id="absence.departementId">
+				<source>department</source>
+			</trans-unit>
+			<trans-unit id="absence.firstSickDay">
+				<source>First absence day</source>
+			</trans-unit>
+			<trans-unit id="absence.disabilityPercentage">
+				<source>disability percentage</source>
+			</trans-unit>
+			<trans-unit id="absence.disabilitybackup">
+				<source>disability backup/source>
+			</trans-unit>
+			<trans-unit id="absence.recoveryDate">
+				<source>Recovery date</source>
+			</trans-unit>
+			<trans-unit id="absence.arboActionType">
+				<source>Action to take by Arbodienst</source>
+			</trans-unit>
+			<trans-unit id="absence.creationDate">
+				<source>Creation Date</source>
+			</trans-unit>
+			<trans-unit id="absence.createdBy">
+				<source>Created by</source>
+			</trans-unit>
+			<trans-unit id="absence.modification">
+				<source>Modification</source>
+			</trans-unit>
+			<trans-unit id="absence.modificationDate">
+				<source>modification date</source>
+			</trans-unit>
+			<trans-unit id="absence.modifiedBy">
+				<source>Modified by</source>
+			</trans-unit>
+			<trans-unit id="absence.flashmessage.createdAbsence">
+				<source>New minute created</source>
+			</trans-unit>
+			<trans-unit id="absence.flashmessage.updatedAbsence">
+				<source>Minute was updated</source>
+			</trans-unit>
+			<trans-unit id="absence.flashmessage.deletedAbsense">
+				<source>Minute was deleted</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
