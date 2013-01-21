@@ -1,0 +1,16 @@
+{
+	"name": "beech/calendar",
+	"type": "typo3-flow-beech",
+	"description": "",
+	"version": "",
+	"require": {
+		"typo3/flow": "*",
+		"beech/ehrm": "*",
+		"beech/party": "*"
+	},
+	"autoload": {
+		"psr-0": {
+			"Beech\\Calendar": "Classes"
+		}
+	}
+}
