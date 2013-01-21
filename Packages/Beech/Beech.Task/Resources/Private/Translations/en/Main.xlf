@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file original="" source-language="en" target-language="en" datatype="plaintext">
+		<body>
+			<trans-unit id="task.status">
+				<source>Status</source>
+			</trans-unit>
+			<trans-unit id="task.priority">
+				<source>Priority</source>
+			</trans-unit>
+			<trans-unit id="task.description">
+				<source>Task</source>
+			</trans-unit>
+			<trans-unit id="task.doTask">
+				<source>Do task</source>
+			</trans-unit>
+			<trans-unit id="task.setTaskDone">
+				<source>Close</source>
+			</trans-unit>
+			<trans-unit id="task.noTask">
+				<source>No tasks</source>
+			</trans-unit>
+			<trans-unit id="task.priority.0">
+				<source>Low</source>
+			</trans-unit>
+			<trans-unit id="task.priority.1">
+				<source>Normal</source>
+			</trans-unit>
+			<trans-unit id="task.priority.2">
+				<source>High</source>
+			</trans-unit>
+			<trans-unit id="task.priority.3">
+				<source>Immediate</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

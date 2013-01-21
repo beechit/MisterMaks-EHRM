@@ -1,0 +1,13 @@
+Beech:
+  Ehrm:
+    menu:
+      account:
+        menu:
+          task:
+            label: 'Tasks'
+            priority: 30
+            package: 'Beech.Task'
+            controller: 'task'
+            action: 'index'
+            transition: 'showTaskModule'
+            format: 'jsonp'

@@ -1,0 +1,8 @@
+-
+  name: 'Task list'
+  uriPattern: 'task(/{@action})'
+  defaults:
+    '@package': 'Beech.Task'
+    '@controller': 'Task'
+    '@action': 'index'
+    '@format': 'html'
