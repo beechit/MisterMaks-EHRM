@@ -40,7 +40,7 @@ class TaskController extends \Beech\Ehrm\Controller\AbstractController {
 	 * @return void
 	 */
 	public function indexAction() {
-		$this->view->assign('tasks', $this->taskRepository->findAll());
+		$this->view->assign('tasks', $this->taskRepository->findOpenTasks());
 		$this->view->assign('priorities', array(0 => 'low', 1 => 'normal', 2 => 'high', 3 => 'immediate'));
 	}
 
