@@ -1,0 +1,25 @@
+<f:layout />
+
+<f:section name="Body">
+	<h1><f:translate id="action.edit">Edit</f:translate><f:translate id="document.documents">Documents</f:translate></h1>
+
+	<f:form.validationResults for="document">
+		<f:if condition="{validationResults.flattenedErrors}">
+			<div class="error">
+				<f:for each="{validationResults.flattenedErrors}" key="propertyPath" as="errors">{propertyPath}: <f:for each="{errors}" as="error">{error}</f:for></f:for>
+			</div>
+		</f:if>
+	</f:form.validationResults>
+
+	<f:form action="update" object="{document}" name="document" class="form-horizontal well">
+		<div class="control-group">
+			<label class="control-label" for="name"><f:translate id="document.name">Document name</f:translate></label>
+			<div class="controls">
+				<f:form.textfield property="name" id="name" class="input-xxlarge"/>
+			</div>
+		</div>
+		<div class="form-actions">
+			<f:form.submit value="{f:translate(id: 'action.update')}" class="btn btn-primary"/>
+		</div>
+	</f:form>
+</f:section>

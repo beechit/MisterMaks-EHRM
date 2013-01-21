@@ -1,0 +1,223 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file original="" source-language="en" target-language="pl" datatype="plaintext">
+		<body>
+			<trans-unit id="document.documents">
+				<source>Documents</source>
+				<target>Akta</target>
+			</trans-unit>
+			<trans-unit id="document.noDocumentsFound">
+				<source>No documents found</source>
+				<target>Nie znaleziono plików</target>
+			</trans-unit>
+			<trans-unit id="document.mimeTypeNotAllowed">
+				<source>Mime type {0} not allowed</source>
+				<target>Plik z tym rozszerzeniem jest niedozwolony</target>
+			</trans-unit>
+			<trans-unit id="document.noFileSelected">
+				<source>No file was selected for upload</source>
+				<target>Nie wybrano pliku do uploadu</target>
+			</trans-unit>
+			<trans-unit id="document.documentUploaded">
+				<source>Document uploaded</source>
+				<target>Przesłany plik</target>
+			</trans-unit>
+			<trans-unit id="document.new">
+				<source>New</source>
+				<target>Nowy</target>
+			</trans-unit>
+			<trans-unit id="document.documentDeleted">
+				<source>Document deleted</source>
+				<target>Plik usunięty</target>
+			</trans-unit>
+			<trans-unit id="document.upload">
+				<source>Upload</source>
+				<target>Prześlij</target>
+			</trans-unit>
+			<trans-unit id="name">
+				<source>Name</source>
+				<target>Name</target>
+			</trans-unit>
+			<trans-unit id="versions">
+				<source>Versions</source>
+				<target>Versions</target>
+			</trans-unit>
+			<trans-unit id="documentOwner">
+				<source>Owner</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="departmentId">
+				<source>DepartmentID</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="documentType">
+				<source>Document type</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="identification">
+				<source>Identification</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="resume">
+				<source>Resumé</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="report">
+				<source>Report</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="permit">
+				<source>Workpermit</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="diploma">
+				<source>Diploma</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="certificate">
+				<source>Certificate</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="other">
+				<source>Other</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="driversLicenceType">
+				<source>Drivers licence</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="A">
+				<source>A</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="B">
+				<source>B</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="C">
+				<source>C</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="D">
+				<source>D</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="E">
+				<source>E</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="tractor">
+				<source>Tractor</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="forklift">
+				<source>forklift</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="identificationType">
+				<source>Identification type</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="IdCard">
+				<source>IDCard</source>
+			    <target></target>
+			</trans-unit>
+			<trans-unit id="passport">
+				<source>Passport</source>
+			    <target></target>
+			</trans-unit>
+			<trans-unit id="foreignPassport">
+				<source>Foreign Passport</source>
+			    <target></target>
+			</trans-unit>
+			<trans-unit id="foreignIDCard">
+				<source>Foreign IDCard</source>
+			    <target></target>
+			</trans-unit>
+			<trans-unit id="expirationDate">
+				<source>Expiration date</source>
+			    <target></target>
+			</trans-unit>
+			<trans-unit id="resource">
+				<source>Resource</source>
+			    <target></target>
+			</trans-unit>
+			<trans-unit id="trackIfisValid">
+				<source></source>
+			    <target></target>
+			</trans-unit>
+			<trans-unit id="documentDate">
+				<source>Document date</source>
+			    <target></target>
+			</trans-unit>
+			<trans-unit id="documentDescription">
+				<source>Document description</source>
+			    <target></target>
+			</trans-unit>
+			<trans-unit id="privateDocument">
+				<source>Private document</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="visible">
+				<source>Visible</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="connections">
+				<source>Connections</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="minuteId">
+				<source>MinuteID</source>
+			    <target></target>
+			</trans-unit>
+			<trans-unit id="contractId">
+				<source>ContractID</source>
+			    <target></target>
+			</trans-unit>
+			<trans-unit id="meetingId">
+				<source>MeetingID</source>
+			    <target></target>
+			</trans-unit>
+			<trans-unit id="absenceId">
+				<source>AbsenceID</source>
+			    <target></target>
+			</trans-unit>
+			<trans-unit id="leaveId">
+				<source>LeaveID</source>
+			    <target></target>
+			</trans-unit>
+			<trans-unit id="documentId">
+				<source>DocumentID</source>
+			    <target></target>
+			</trans-unit>
+			<trans-unit id="personId">
+				<source>PersonID</source>
+			    <target></target>
+			</trans-unit>
+			<trans-unit id="creationDate">
+				<source>Creation date</source>
+			    <target></target>
+			</trans-unit>
+			<trans-unit id="createdBy">
+				<source>Created by</source>
+			    <target></target>
+			</trans-unit>
+			<trans-unit id="modification">
+				<source>Modification</source>
+			    <target></target>
+			</trans-unit>
+			<trans-unit id="modificationDate">
+				<source>Modification date</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="modifiedBy">
+				<source>Modified By</source>
+ 			    <target></target>
+			</trans-unit>
+			<trans-unit id="action.update">
+				<source>Update</source>
+				<target></target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

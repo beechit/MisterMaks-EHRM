@@ -1,0 +1,11 @@
+<f:form method="post" action="create" name="document" object="{document}" class="form-horizontal" enctype="multipart/form-data">
+	<div class="control-group">
+		<f:form.textfield property="name" />
+	</div>
+	<div class="control-group">
+		<f:form.upload property="resources.0" />
+	</div>
+	<div class="control-group">
+		<f:form.submit value="{f:translate(id:'document.upload')}" class="btn btn-primary"/>
+	</div>
+</f:form>

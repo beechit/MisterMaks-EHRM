@@ -1,0 +1,233 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file original="" source-language="en" target-language="nl" datatype="plaintext">
+		<body>
+			<trans-unit id="document.documents">
+				<source>Documents</source>
+				<target>Documenten</target>
+			</trans-unit>
+			<group id="document.document" restype="x-gettext-plurals">
+				<trans-unit id="document.document[0]">
+					<source>Document</source>
+					<target>Document</target>
+				</trans-unit>
+				<trans-unit id="document.document[1]">
+					<source>Documents</source>
+					<target>Documenten</target>
+				</trans-unit>
+			</group>
+			<trans-unit id="document.noDocumentsFound">
+				<source>No documents found</source>
+				<target>Geen documenten gevonden</target>
+			</trans-unit>
+			<trans-unit id="document.mimeTypeNotAllowed">
+				<source>Mime type {0} not allowed</source>
+				<target>Bestandstype {0} niet toegestaan</target>
+			</trans-unit>
+			<trans-unit id="document.noFileSelected">
+				<source>No file was selected for upload</source>
+				<target>Geen bestand geselecteerd voor upload</target>
+			</trans-unit>
+			<trans-unit id="document.documentUploaded">
+				<source>Document uploaded</source>
+				<target>Document geupload</target>
+			</trans-unit>
+			<trans-unit id="document.new">
+				<source>New</source>
+				<target>Nieuw</target>
+			</trans-unit>
+			<trans-unit id="document.documentDeleted">
+				<source>Document deleted</source>
+				<target>Document verwijderd</target>
+			</trans-unit>
+			<trans-unit id="document.upload">
+				<source>Upload</source>
+				<target>Upload</target>
+			</trans-unit>
+			<trans-unit id="name">
+				<source>Name</source>
+				<target>Naam</target>
+			</trans-unit>
+			<trans-unit id="versions">
+				<source>Versions</source>
+				<target>Versies</target>
+			</trans-unit>
+			<trans-unit id="documentOwner">
+				<source>Owner</source>
+				<target>Eigenaar</target>
+			</trans-unit>
+			<trans-unit id="departmentId">
+				<source>DepartmentID</source>
+				<target>Afdelingsnummer</target>
+			</trans-unit>
+			<trans-unit id="documentType">
+				<source>Document type</source>
+				<target>Document type</target>
+			</trans-unit>
+			<trans-unit id="identification">
+				<source>Identification</source>
+				<target>Legitimatie</target>
+			</trans-unit>
+			<trans-unit id="resume">
+				<source>Resumé</source>
+				<target>CV</target>
+			</trans-unit>
+			<trans-unit id="report">
+				<source>Report</source>
+				<target>Rapport</target>
+			</trans-unit>
+			<trans-unit id="permit">
+				<source>Workpermit</source>
+				<target>Tewerkstellingsvergunning</target>
+			</trans-unit>
+			<trans-unit id="diploma">
+				<source>Diploma</source>
+				<target>Diploma</target>
+			</trans-unit>
+			<trans-unit id="certificate">
+				<source>Certificate</source>
+				<target>Certificaat</target>
+			</trans-unit>
+			<trans-unit id="other">
+				<source>Other</source>
+				<target>Anders</target>
+			</trans-unit>
+			<trans-unit id="driversLicenceType">
+				<source>Drivers licence</source>
+				<target>Rijbewijs</target>
+			</trans-unit>
+			<trans-unit id="A">
+				<source>A</source>
+				<target>A</target>
+			</trans-unit>
+			<trans-unit id="B">
+				<source>B</source>
+				<target>B</target>
+			</trans-unit>
+			<trans-unit id="C">
+				<source>C</source>
+				<target>C</target>
+			</trans-unit>
+			<trans-unit id="D">
+				<source>D</source>
+				<target>D</target>
+			</trans-unit>
+			<trans-unit id="E">
+				<source>E</source>
+				<target>E</target>
+			</trans-unit>
+			<trans-unit id="tractor">
+				<source>Tractor</source>
+				<target>Tractor</target>
+			</trans-unit>
+			<trans-unit id="forklift">
+				<source>forklift</source>
+				<target>Heftruck</target>
+			</trans-unit>
+			<trans-unit id="identificationType">
+				<source>Identification type</source>
+				<target>\Legitimatie Type</target>
+			</trans-unit>
+			<trans-unit id="IdCard">
+				<source>IDCard</source>
+			    <target>ID kaart</target>
+			</trans-unit>
+			<trans-unit id="passport">
+				<source>Passport</source>
+			    <target>Paspoort</target>
+			</trans-unit>
+			<trans-unit id="foreignPassport">
+				<source>Foreign Passport</source>
+			    <target>Buitenlands Paspoort</target>
+			</trans-unit>
+			<trans-unit id="foreignIDCard">
+				<source>Foreign IDCard</source>
+			    <target>Buitenlandse ID kaart</target>
+			</trans-unit>
+			<trans-unit id="expirationDate">
+				<source>Expiration date</source>
+			    <target>Verloopdatum</target>
+			</trans-unit>
+			<trans-unit id="resource">
+				<source>Resource</source>
+			    <target>Bronnen</target>
+			</trans-unit>
+			<trans-unit id="trackIfisValid">
+				<source>Check expiredate ?</source>
+			    <target>Geldigheid bewaken? </target>
+			</trans-unit>
+			<trans-unit id="documentDate">
+				<source>Date</source>
+			    <target>Datum</target>
+			</trans-unit>
+			<trans-unit id="documentDescription">
+				<source>Document description</source>
+			    <target>Document omschrijving</target>
+			</trans-unit>
+			<trans-unit id="privateDocument">
+				<source>Private document</source>
+				<target>Privé document</target>
+			</trans-unit>
+			<trans-unit id="visible">
+				<source>Visible</source>
+				<target>Zichtbaar</target>
+			</trans-unit>
+			<trans-unit id="connections">
+				<source>Connections</source>
+				<target>Verbindingen</target>
+			</trans-unit>
+			<trans-unit id="minuteId">
+				<source>MinuteID</source>
+			    <target>Verslagnummer</target>
+			</trans-unit>
+			<trans-unit id="contractId">
+				<source>ContractID</source>
+			    <target>Contractnummer</target>
+			</trans-unit>
+			<trans-unit id="meetingId">
+				<source>MeetingID</source>
+			    <target>Afspraaknummer</target>
+			</trans-unit>
+			<trans-unit id="absenceId">
+				<source>AbsenceID</source>
+			    <target>Verzuimnummer</target>
+			</trans-unit>
+			<trans-unit id="leaveId">
+				<source>LeaveID</source>
+			    <target>Verlofnummer</target>
+			</trans-unit>
+			<trans-unit id="documentId">
+				<source>DocumentID</source>
+			    <target>Documentnummer</target>
+			</trans-unit>
+			<trans-unit id="personId">
+				<source>PersonID</source>
+			    <target>Persoonsnummer</target>
+			</trans-unit>
+			<trans-unit id="creationDate">
+				<source>Creation date</source>
+			    <target>toevoegdatum</target>
+			</trans-unit>
+			<trans-unit id="createdBy">
+				<source>Toegevoegd door</source>
+			    <target>Gewijzigd door</target>
+			</trans-unit>
+			<trans-unit id="modification">
+				<source>Modification</source>
+			    <target>Wijziging</target>
+			</trans-unit>
+			<trans-unit id="modificationDate">
+				<source>Modification date</source>
+				<target>Wijziging datum</target>
+			</trans-unit>
+			<trans-unit id="modifiedBy">
+				<source>Modified By</source>
+ 			    <target>Gewijzigd door</target>
+			</trans-unit>
+			<trans-unit id="action.update">
+				<source>Update</source>
+				<target>Bijwerken</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
