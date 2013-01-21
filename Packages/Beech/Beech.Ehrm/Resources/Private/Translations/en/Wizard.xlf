@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file original="" source-language="en" target-language="en" datatype="plaintext">
+		<body>
+			<trans-unit id="action.previous">
+				<source>Previous page</source>
+			</trans-unit>
+			<trans-unit id="action.next">
+				<source>Next page</source>
+			</trans-unit>
+			<trans-unit id="action.cancel">
+				<source>Cancel</source>
+			</trans-unit>
+			<trans-unit id="action.create">
+				<source>Create</source>
+			</trans-unit>
+			<trans-unit id="action.replace.file">
+				<source>Replace File</source>
+			</trans-unit>
+			<trans-unit id="action.replace.image">
+				<source>Replace Image</source>
+			</trans-unit>
+			<trans-unit id="action.submit">
+				<source>Submit</source>
+			</trans-unit>
+			<trans-unit id="loading">
+				<source>Mister Maks</source>
+			</trans-unit>
+			<trans-unit id="label.companyName">
+				<source>Company name</source>
+			</trans-unit>
+			<trans-unit id="label.chamberOfCommerceNumber">
+				<source>Chamber Of Commerce Number</source>
+			</trans-unit>
+			<trans-unit id="label.house">
+				<source>House number</source>
+			</trans-unit>
+			<trans-unit id="label.street">
+				<source>Street</source>
+			</trans-unit>
+			<trans-unit id="label.residence">
+				<source>Residence</source>
+			</trans-unit>
+			<trans-unit id="Step 1 - Creating company">
+				<source>Step 1 - Creating company</source>
+			</trans-unit>
+			<trans-unit id="Step 2 - Adding address">
+				<source>Step 2 - Adding address</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

@@ -1,0 +1,30 @@
+<f:layout />
+
+<f:section name="Body">
+	<f:flashMessages class="flashmessages success" />
+	<f:form action="update" class="form-horizontal" name="settings">
+		<fieldset>
+			<legend><f:translate id="menu.settings">Settings</f:translate></legend>
+			<div class="control-group">
+				<label class="control-label" for="locale"><f:translate id="language">Language</f:translate></label>
+				<div class="controls">
+					<f:form.select id="locale" name="locale" options="{locales}" value="{currentLocale}"/>
+				</div>
+			</div>
+		</fieldset>
+		<fieldset>
+			<legend><f:translate id="menu.themes">Themes</f:translate></legend>
+			<div class="control-group">
+				<div class="controls">
+					{currentTheme.name}
+					<f:form.select id="theme" name="theme" options="{themes}" value="{currentTheme}" />
+				</div>
+			</div>
+		</fieldset>
+		<div class="control-group">
+			<div class="controls">
+				<button type="submit" class="btn btn-primary"><f:translate id="action.save">Save</f:translate></button>
+			</div>
+		</div>
+	</f:form>
+</f:section>

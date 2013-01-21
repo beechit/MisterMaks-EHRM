@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file original="" source-language="en" target-language="pl" datatype="plaintext">
+		<body>
+			<trans-unit id="action.previous">
+				<source>Previous page</source>
+				<target>Poprzednia strona</target>
+			</trans-unit>
+			<trans-unit id="action.next">
+				<source>Next page</source>
+				<target>Nastepna strona</target>
+			</trans-unit>
+			<trans-unit id="action.cancel">
+				<source>Cancel</source>
+				<target>Anuluj</target>
+			</trans-unit>
+			<trans-unit id="action.create">
+				<source>Create</source>
+				<target>Stwórz</target>
+			</trans-unit>
+			<trans-unit id="action.replace.file">
+				<source>Replace File</source>
+				<target>Zamien plik</target>
+			</trans-unit>
+			<trans-unit id="action.replace.image">
+				<source>Replace Image</source>
+				<target>Zmien obraz</target>
+			</trans-unit>
+			<trans-unit id="action.submit">
+				<source>Submit</source>
+				<target>Zapisz</target>
+			</trans-unit>
+			<trans-unit id="loading">
+				<source>Mister Maks</source>
+				<target>Mister Maks</target>
+			</trans-unit>
+			<trans-unit id="label.companyName">
+				<source>Company name</source>
+				<target>Nazwa firmy</target>
+			</trans-unit>
+			<trans-unit id="label.chamberOfCommerceNumber">
+				<source>Chamber Of Commerce Number</source>
+				<target>Numer regon</target>
+			</trans-unit>
+			<trans-unit id="label.house">
+				<source>House number</source>
+				<target>Numer domu</target>
+			</trans-unit>
+			<trans-unit id="label.street">
+				<source>Street</source>
+				<target>Ulica</target>
+			</trans-unit>
+			<trans-unit id="label.residence">
+				<source>Residence</source>
+				<target>Miasto</target>
+			</trans-unit>
+			<trans-unit id="Step 1 - Creating company">
+				<source>Step 1 - Creating company</source>
+				<target>Krok 1 - Tworzenie firmy</target>
+			</trans-unit>
+			<trans-unit id="Step 2 - Adding address">
+				<source>Step 2 - Adding address</source>
+				<target>Krok 2 - Dodawanie adresu</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

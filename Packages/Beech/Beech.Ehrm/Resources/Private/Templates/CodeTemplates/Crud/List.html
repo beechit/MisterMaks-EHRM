@@ -1,0 +1,68 @@
+<![CDATA[
+<f:layout/>{namespace ehrm=Beech\Ehrm\ViewHelpers}
+<f:section name="Body">]]>
+	<h1><![CDATA[
+		<f:translate id="]]>{entity}<![CDATA[">]]>{model.modelName}<![CDATA[</f:translate>
+		]]>
+	</h1>
+	<![CDATA[
+	<f:if condition="{entities}">
+		<f:then>
+			<table class="table">
+				<thead>
+				<tr>]]>
+					<f:for each="{properties}" as="property" key="propertyName">
+						<f:if condition="{property.onList} == 'TRUE'">
+							<f:then>
+								<![CDATA[
+								<th>
+									<f:translate>]]>{property.label}<![CDATA[</f:translate>
+								</th>
+								]]>
+							</f:then>
+						</f:if>
+					</f:for>
+					<th></th>
+					<![CDATA[
+				</tr>
+				</thead>
+				<tbody>
+				<f:for each="{entities}" as="]]>{entity}<![CDATA[" iteration="iterator">
+					<tr>]]>
+						<f:for each="{properties}" as="property" key="propertyName">
+							<f:if condition="{property.onList} == 'TRUE'">
+								<f:then>
+									<![CDATA[
+									<td>
+										<f:link.action action="show"
+													   arguments="{]]>{entity}: {entity}<![CDATA[}"><strong>{]]>{entity}.{property.id}<![CDATA[}</strong>
+										</f:link.action>
+									</td>
+									]]>
+								</f:then>
+							</f:if>
+						</f:for>
+						<![CDATA[
+						<td>
+							<f:link.action action="edit" arguments="{]]>{entity}: {entity}<![CDATA[}"><i class="icon-pencil"></i></f:link.action>
+							<f:link.action action="delete" arguments="{]]>{entity}: {entity}<![CDATA[}"><i class="icon-trash"></i></f:link.action>
+						</td>
+					</tr>
+				</f:for>
+				</tbody>
+			</table>
+		</f:then>
+		<f:else>
+			<p></p>
+		</f:else>
+	</f:if>
+	]]>
+	<div class="form-actions">
+		<![CDATA[<a class="btn btn-primary"
+					href="/{f:uri.action(package: ']]>{packageKey}<![CDATA[', subpackage: 'Administration', controller: ']]>{model.modelName}<![CDATA[', action: 'new')}"><i
+			class="icon-plus icon-white"></i>
+		<f:translate id="action.create">Create</f:translate>
+	</a>]]>
+	</div>
+	<![CDATA[
+</f:section>]]>

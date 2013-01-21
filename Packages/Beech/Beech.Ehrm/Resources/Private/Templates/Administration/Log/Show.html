@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<f:section name="Title">Log "{log}"</f:section>
+
+<f:section name="Body">
+	<dl class="dl-horizontal well">
+		<dt><f:translate id="log.timestamp">Time</f:translate></dt>
+		<dd>{log.timestamp -> f:format.date(format: 'Y-m-d H:i')}&nbsp;</dd>
+
+		<dt><f:translate id="log.message">Message</f:translate></dt>
+		<dd>{log.message}&nbsp;</dd>
+
+		<dt><f:translate id="log.severity">Severity</f:translate></dt>
+		<dd>{log.severity}&nbsp;</dd>
+
+		<dt><f:translate id="log.packageKey">Package key</f:translate></dt>
+		<dd>{log.packageKey}&nbsp;</dd>
+
+		<dt><f:translate id="log.className">Class name</f:translate></dt>
+		<dd>{log.className}&nbsp;</dd>
+
+		<dt><f:translate id="log.methodName">Method name</f:translate></dt>
+		<dd>{log.methodName}&nbsp;</dd>
+
+		<dt><f:translate id="log.ipAddress">Ip address</f:translate></dt>
+		<dd>{log.ipAddress}&nbsp;</dd>
+
+		<dt><f:translate id="log.processId">Process id</f:translate></dt>
+		<dd>{log.processId}&nbsp;</dd>
+
+		<dt><f:translate id="log.additionalData">Additional data</f:translate></dt>
+		<dd>{log.additionalData}&nbsp;</dd>
+	</dl>
+	<div class="form-actions"><f:link.action action="index"><f:translate id="action.back">Back</f:translate></f:link.action></div>
+</f:section>

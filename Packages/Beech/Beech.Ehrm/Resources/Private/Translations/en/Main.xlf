@@ -1,0 +1,121 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file original="" source-language="en" target-language="en" datatype="plaintext">
+		<body>
+			<trans-unit id="action.close">
+				<source>Close</source>
+			</trans-unit>
+			<trans-unit id="action.save">
+				<source>Save</source>
+			</trans-unit>
+			<trans-unit id="action.login">
+				<source>Login</source>
+			</trans-unit>
+			<trans-unit id="action.logout">
+				<source>Logout</source>
+			</trans-unit>
+			<trans-unit id="do.task">
+				<source>Do task</source>
+			</trans-unit>
+			<trans-unit id="no.active.tasks">
+				<source>No active tasks</source>
+			</trans-unit>
+			<trans-unit id="panel.login.legend">
+				<source>Login panel</source>
+			</trans-unit>
+			<trans-unit id="panel.login.username">
+				<source>Username</source>
+			</trans-unit>
+			<trans-unit id="panel.login.password">
+				<source>Password</source>
+			</trans-unit>
+			<trans-unit id="status.logged.in">
+				<source>Logged in</source>
+			</trans-unit>
+			<trans-unit id="status.logged.out">
+				<source>Logged out</source>
+			</trans-unit>
+			<trans-unit id='menu.new'>
+				<source>New</source>
+			</trans-unit>
+			<trans-unit id='menu.manage'>
+				<source>Manage</source>
+			</trans-unit>
+			<trans-unit id='menu.company'>
+				<source>Company</source>
+			</trans-unit>
+			<trans-unit id='menu.companies'>
+				<source>Companies</source>
+			</trans-unit>
+			<trans-unit id='menu.people'>
+				<source>People</source>
+			</trans-unit>
+			<trans-unit id='menu.settings'>
+				<source>Settings</source>
+			</trans-unit>
+			<trans-unit id='menu.themes'>
+				<source>Themes</source>
+			</trans-unit>
+			<trans-unit id='menu.todo'>
+				<source>Todo</source>
+			</trans-unit>
+			<trans-unit id='menu.account'>
+				<source>Account</source>
+			</trans-unit>
+			<trans-unit id='log.timestamp'>
+				<source>Timestamp</source>
+			</trans-unit>
+			<trans-unit id='log.message'>
+				<source>Message</source>
+			</trans-unit>
+			<trans-unit id='log.severity'>
+				<source>Severity</source>
+			</trans-unit>
+			<trans-unit id='log.packageKey'>
+				<source>Package key</source>
+			</trans-unit>
+			<trans-unit id='log.className'>
+				<source>Class name</source>
+			</trans-unit>
+			<trans-unit id='log.methodName'>
+				<source>Method name</source>
+			</trans-unit>
+			<trans-unit id='log.ipAddress'>
+				<source>IP Address</source>
+			</trans-unit>
+			<trans-unit id='log.processId'>
+				<source>Process Id</source>
+			</trans-unit>
+			<trans-unit id='log.additionalData'>
+				<source>Additional data</source>
+			</trans-unit>
+			<trans-unit id="message.log.noResult">
+				<source>No logs created yet</source>
+			</trans-unit>
+			<trans-unit id="message.application.notCreated">
+				<source>No primary company configured, please contact your System Administrator.</source>
+			</trans-unit>
+			<trans-unit id="message.error">
+				<source>Error!</source>
+			</trans-unit>
+			<trans-unit id="message.authentication.failed">
+				<source>Authentication failed</source>
+			</trans-unit>
+			<trans-unit id="message.authentication.failed.wrongCredentials">
+				<source>Wrong credentials</source>
+			</trans-unit>
+			<trans-unit id="action.back">
+				<source>Back</source>
+			</trans-unit>
+			<trans-unit id='language'>
+				<source>Language</source>
+			</trans-unit>
+			<trans-unit id="notification.addAddress">
+				<source>Add address to company</source>
+			</trans-unit>
+			<trans-unit id="notification.addCompanyContact">
+				<source>Add company contact</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

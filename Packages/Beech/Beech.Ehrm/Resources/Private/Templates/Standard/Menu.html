@@ -1,0 +1,10 @@
+<ul class="nav nav-list">
+	<f:for each="{menuItems}" as="category">
+		<f:if condition="{category.items}">
+			<li class="nav-header">{category.label}</li>
+			<f:for each="{category.items}" as="item">
+				<li><a href="{item.href}">{item.label}</a></li>
+			</f:for>
+		</f:if>
+	</f:for>
+</ul>

@@ -1,0 +1,38 @@
+body {
+	padding-top: 60px;
+}
+
+ul.flashmessages {
+	list-style-type: none;
+	margin-left: 0px;
+}
+
+/* Start Notifications */
+.notifications {
+	z-index: 10001;
+}
+/* End Notifications */
+
+/* Start Modal box / Wizard */
+.modal-body-content {
+	width: 100%;
+	height: 320px;
+}
+
+iframe {
+	border: none;
+}
+/* End Modal box / Wizard */
+
+/* Start DataTables */
+table.dataTable thead th,
+table.dataTable td {
+	padding: 8px;
+}
+table.dataTable tfoot td {
+	padding: 1px 0px 1px 8px;
+}
+table.dataTable tfoot input {
+	width: 90%;
+}
+/* End DataTables */

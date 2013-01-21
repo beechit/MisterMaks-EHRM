@@ -1,0 +1,159 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file original="" source-language="en" target-language="nl" datatype="plaintext">
+		<body>
+			<trans-unit id="action.close">
+				<source>Close</source>
+				<target>Sluiten</target>
+			</trans-unit>
+			<trans-unit id="action.save">
+				<source>Save</source>
+				<target>Opslaan</target>
+			</trans-unit>
+			<trans-unit id="action.login">
+				<source>Login</source>
+				<target>Log in</target>
+			</trans-unit>
+			<trans-unit id="action.logout">
+				<source>Logout</source>
+				<target>Uitloggen</target>
+			</trans-unit>
+			<trans-unit id="do.task">
+				<source>Do task</source>
+				<target>Taak uitvoeren</target>
+			</trans-unit>
+			<trans-unit id="no.active.tasks">
+				<source>No active tasks</source>
+				<target>Geen open taken</target>
+			</trans-unit>
+			<trans-unit id="panel.login.legend">
+				<source>Login panel</source>
+				<target>Inloggen</target>
+			</trans-unit>
+			<trans-unit id="panel.login.username">
+				<source>Username</source>
+				<target>Gebruikersnaam</target>
+			</trans-unit>
+			<trans-unit id="panel.login.password">
+				<source>Password</source>
+				<target>Wachtwoord</target>
+			</trans-unit>
+			<trans-unit id="status.logged.in">
+				<source>Logged in</source>
+				<target>Ingelogd</target>
+			</trans-unit>
+			<trans-unit id="status.logged.out">
+				<source>Logged out</source>
+				<target>Uitgelogd</target>
+			</trans-unit>
+			<trans-unit id='menu.new'>
+				<source>New</source>
+				<target>Nieuw</target>
+			</trans-unit>
+			<trans-unit id='menu.manage'>
+				<source>Manage</source>
+				<target>Beheer</target>
+			</trans-unit>
+			<trans-unit id='menu.company'>
+				<source>Company</source>
+				<target>Bedrijf</target>
+			</trans-unit>
+			<trans-unit id='menu.companies'>
+				<source>Companies</source>
+				<target>Bedrijven</target>
+			</trans-unit>
+			<trans-unit id='menu.people'>
+				<source>People</source>
+				<target>Personen</target>
+			</trans-unit>
+			<trans-unit id='menu.settings'>
+				<source>Settings</source>
+				<target>Instellingen</target>
+			</trans-unit>
+			<trans-unit id='menu.themes'>
+				<source>Themes</source>
+				<target>Thema's</target>
+			</trans-unit>
+			<trans-unit id='menu.todo'>
+				<source>Todo</source>
+				<target>Todo</target>
+			</trans-unit>
+			<trans-unit id='menu.account'>
+				<source>Account</source>
+				<target>Account</target>
+			</trans-unit>
+			<trans-unit id='log.timestamp'>
+				<source>Timestamp</source>
+				<target>Timestamp</target>
+			</trans-unit>
+			<trans-unit id='log.message'>
+				<source>Message</source>
+				<target>Message</target>
+			</trans-unit>
+			<trans-unit id='log.severity'>
+				<source>Severity</source>
+				<target>Severity</target>
+			</trans-unit>
+			<trans-unit id='log.packageKey'>
+				<source>Package key</source>
+				<target>Package key</target>
+			</trans-unit>
+			<trans-unit id='log.className'>
+				<source>Class name</source>
+				<target>Class name</target>
+			</trans-unit>
+			<trans-unit id='log.methodName'>
+				<source>Method name</source>
+				<target>Method name</target>
+			</trans-unit>
+			<trans-unit id='log.ipAddress'>
+				<source>IP Address</source>
+				<target>IP Address</target>
+			</trans-unit>
+			<trans-unit id='log.processId'>
+				<source>Process Id</source>
+				<target>Process Id</target>
+			</trans-unit>
+			<trans-unit id='log.additionalData'>
+				<source>Additional data</source>
+				<target>Additional data</target>
+			</trans-unit>
+			<trans-unit id="message.log.noResult">
+				<source>No logs created yet</source>
+				<target>Geen logs gevonden</target>
+			</trans-unit>
+			<trans-unit id="message.authentication.failed">
+				<source>Authentication failed</source>
+				<target>Aanmelding mislukt</target>
+			</trans-unit>
+			<trans-unit id="message.authentication.failed.wrongCredentials">
+				<source>Wrong credentials</source>
+				<target>Onjuiste gebruikersnaam of onjuist wachtwoord.</target>
+			</trans-unit>
+			<trans-unit id="message.application.notCreated">
+				<source>No primary company configured, please contact your System Administrator.</source>
+				<target>Geen bedrijf gekoppeld aan installatie, neem contact op met uw systeembeheerder.</target>
+			</trans-unit>
+			<trans-unit id="message.error">
+				<source>Error!</source>
+				<target>Fout!</target>
+			</trans-unit>
+			<trans-unit id="action.back">
+				<source>Back</source>
+				<target>Terug</target>
+			</trans-unit>
+			<trans-unit id='language'>
+				<source>Language</source>
+				<target>Taal</target>
+			</trans-unit>
+			<trans-unit id="notification.addAddress">
+				<source>Add address to company</source>
+				<target>Voeg adresgegevens toe aan het bedrijf</target>
+			</trans-unit>
+			<trans-unit id="notification.addCompanyContact">
+				<source>Add company contact</source>
+				<target>Voeg een contactpersoon toe</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

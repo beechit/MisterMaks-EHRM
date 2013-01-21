@@ -1,0 +1,43 @@
+<f:layout />
+
+<f:section name="Body">
+
+	<section class="container">
+
+		<f:flashMessages class="flashmessages alert" />
+
+		<f:if condition="{applicationConfigured}">
+			<f:then>
+				<div class="row">
+					<f:form action="authenticate" class="form-horizontal">
+						<fieldset>
+							<legend><f:translate id="panel.login.legend">Login panel</f:translate></legend>
+							<div class="control-group">
+								<label class="control-label" for="username"><f:translate id="panel.login.username">Username</f:translate></label>
+								<div class="controls">
+									<f:form.textfield name="__authentication[TYPO3][Flow][Security][Authentication][Token][UsernamePassword][username]" class="input-xlarge" id="username" value="{username}" />
+								</div>
+								<label class="control-label" for="password"><f:translate id="panel.login.password">Password</f:translate></label>
+								<div class="controls">
+									<f:form.password name="__authentication[TYPO3][Flow][Security][Authentication][Token][UsernamePassword][password]" class="input-xlarge" id="password" />
+								</div>
+							</div>
+						</fieldset>
+
+						<div class="form-actions">
+							<button type="submit" class="btn btn-primary"><f:translate id="action.login">Login</f:translate></button>
+						</div>
+					</f:form>
+				</div>
+			</f:then>
+			<f:else>
+				<p class="alert alert-block alert-error">
+					<b><f:translate id="message.error">Error!</f:translate></b><br/>
+					<f:translate id="message.application.notCreated">No primary company configured, please contact your System Administrator.</f:translate>
+				</p>
+			</f:else>
+
+		</f:if>
+
+	</section>
+</f:section>

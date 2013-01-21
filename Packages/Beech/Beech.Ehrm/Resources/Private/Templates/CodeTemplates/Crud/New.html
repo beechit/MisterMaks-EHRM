@@ -1,0 +1,67 @@
+<![CDATA[
+<f:layout/>{namespace ehrm=Beech\Ehrm\ViewHelpers}
+<f:section name="Body">]]>
+<![CDATA[
+<f:form.validationResults for="]]>{entity}<![CDATA[">
+	<f:if condition="{validationResults.flattenedErrors}">
+		<div class="error">
+			<f:for each="{validationResults.flattenedErrors}" key="propertyPath" as="errors">{propertyPath}:
+				<f:for each="{errors}" as="error">{error}</f:for>
+			</f:for>
+		</div>
+	</f:if>
+</f:form.validationResults>
+]]>
+<![CDATA[
+<f:form action="create" object="{]]>{entity}<![CDATA[}]]>" name="{entity}" class="form-horizontal well">
+	<f:for each="{properties}" as="property" key="propertyName">
+		<f:if condition="{0: property.fieldType} == {0: 'hidden'}">
+			<f:then>
+				<![CDATA[<f:form.hidden]]> property="{property.id}" id="{property.id}" />
+			</f:then>
+			<f:else>
+				<div class="control-group">
+					<f:if condition="{0: property.fieldType} == {0: 'textfield'}">
+						<f:then><label class="control-label" for="{property.id}"><![CDATA[<f:translate id="]]>{property.id}">{property.label}<![CDATA[</f:translate>]]></label>
+
+							<div class="controls"><![CDATA[<f:form.textfield]]> property="{property.id}" id="{property.id}" /></div>
+						</f:then>
+					</f:if>
+					<f:if condition="{0: property.fieldType} == {0: 'select'}">
+						<f:then><label class="control-label" for="{property.id}"><![CDATA[<f:translate id="]]>{property.id}">{property.label}<![CDATA[</f:translate>]]></label>
+							<div class="controls"><![CDATA[<f:form.select]]> property="{property.id}" id="{property.id}" options="{property.options.values}"/></div>
+						</f:then>
+					</f:if>
+					<f:if condition="{0: property.fieldType} == {0: 'fieldset'}">
+						<f:then>
+							<fieldset>
+								<legend>{property.label}</legend>
+								<f:for each="{property.items}" as="item" key="itemName">
+									<f:if condition="{0: item.fieldType} == {0: 'textfield'}">
+										<f:then><label class="control-label" for="{item.id}"><![CDATA[<f:translate id="]]>{item.id}">{item.label}<![CDATA[</f:translate>]]></label>
+
+											<div class="controls"><![CDATA[<f:form.textfield]]> property="{item.id}" id="{item.id}" /></div>
+										</f:then>
+									</f:if>
+									<f:if condition="{0: item.fieldType} == {0: 'select'}">{item.options.values}
+										<f:then><label class="control-label" for="{item.id}"><![CDATA[<f:translate id="]]>{item.id}">{item.label}<![CDATA[</f:translate>]]></label>
+
+											<div class="controls"><![CDATA[<f:form.select]]> property="{item.id}" id="{item.id}" options="{item.options.values}"/></div>
+										</f:then>
+									</f:if>
+								</f:for>
+							</fieldset>
+						</f:then>
+					</f:if>
+				</div>
+			</f:else>
+		</f:if>
+
+	</f:for>
+	<div class="control-group">
+		<![CDATA[
+		<f:form.submit value="{f:translate(id: 'action.create')}" class="btn btn-primary"/>
+	</div>
+</f:form>
+]]>
+<![CDATA[</f:section>]]>

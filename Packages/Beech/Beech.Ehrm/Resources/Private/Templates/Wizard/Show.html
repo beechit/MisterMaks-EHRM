@@ -1,0 +1,14 @@
+<!DOCTYPE html>{namespace form=TYPO3\Form\ViewHelpers}
+<f:layout/>
+<f:section name="Header">
+	<form:renderHead presetName="{presetName}" />
+</f:section>
+
+<f:section name="Body">
+	<div id="presetSelector">
+		<f:form action="show" method="get">
+			<f:form.hidden name="formPersistenceIdentifier" value="{formPersistenceIdentifier}" />
+		</f:form>
+	</div>
+	<form:render persistenceIdentifier="{formPersistenceIdentifier}" presetName="{presetName}" />
+</f:section>

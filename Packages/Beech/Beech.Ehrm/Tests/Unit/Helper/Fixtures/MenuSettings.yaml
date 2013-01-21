@@ -1,0 +1,55 @@
+Beech:
+  Ehrm:
+    menu:
+      defaults:
+        package: 'Beech.Ehrm'
+        controller: 'Standard'
+        action: 'index'
+      main:
+        groups:
+          manage:
+            priority: 40
+            label: 'Beheer'
+          new:
+            priority: 10
+            label: 'Nieuw'
+          edit:
+            priority: 20
+            label: 'Bewerk'
+          report:
+            priority: 30
+            label: 'Rapporteer'
+        menu:
+          something:
+            label: 'Something'
+            priority: 450
+      action:
+        menu:
+          admin:
+            label: 'Admin'
+            priority: 10
+          logout:
+            label: 'Uitloggen'
+            priority: 99
+            controller: 'Login'
+            action: 'logout'
+    modules:
+      admin:
+        menu:
+          index:
+            label: 'Admin index'
+            priority: 10
+            menuGroup: 'main:manage'
+      timecard:
+        menu:
+          index:
+            label: 'Admin index'
+            priority: 20
+            menuGroup: 'main:manage'
+      absence:
+        menu:
+          new:
+            label: 'Test'
+            priority: 40
+            menuGroup: 'main:new'
+
