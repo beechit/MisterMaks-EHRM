@@ -1,0 +1,132 @@
+#############################################################
+# Yaml respresentation of the meeting document mister maks;
+# Version 21-12-2012
+# the companydocument extends Beech\minutes\domain\Model\minutes
+#############################################################
+
+model:
+  modelName: 'minute'
+
+properties:
+# connection to person
+  -
+    id: 'subjectId'
+    label: 'Subject id'
+    type: '\Beech\Party\Domain\Model\Person'
+    validation: ''
+    onlist: TRUE
+    visible: FALSE
+    required: TRUE
+  -
+    id: 'departementId'
+    label: 'Department id'
+    type: '\Beech\Party\Domain\Model\Company'
+    validation: ''
+    visible: FALSE
+    required: TRUE
+  -
+    id: 'minuteType'
+    label: 'minuteType'
+    type: 'string(20)'
+    validation: ''
+    options:
+      values: [ periodicConversation , callReporting, assessment, performanceReveiw, compensationConversation, other , sickReportUpdate ]
+    visible: TRUE
+    required: TRUE
+  -
+    id: 'minuteContent'
+    label: 'minuteContent'
+    type: 'text'
+    validation: ''
+    visible: TRUE
+    required: TRUE
+  -
+# depends on type of minute, to load more complex minute templates in the future.
+    id: 'minuteTemplate'
+    label: 'minuteTemplate'
+    type: 'string(20)'
+    validation: ''
+    visible: TRUE
+    required: TRUE
+  -
+# depends on type of minute
+    id: 'followUpActionRequired'
+    label: 'followUpActionRequired'
+    type: 'boolean'
+    validation: ''
+    default: ''
+    visible: TRUE
+    required: TRUE
+  -
+# depends on type of minute
+    id: 'needSigning'
+    label: 'needsSigning'
+    type: 'boolean'
+    validation: ''
+    default: ''
+    visible: TRUE
+    required: TRUE
+  -
+    id: 'action'
+    label: 'action'
+    type: 'string(20)'
+    validation: ''
+    visible: TRUE
+    required: TRUE
+  -
+  # depends on type of minute
+    id: 'documentRequired'
+    label: 'documentRequired'
+    type: 'boolean'
+    validation: ''
+    default: ''
+    visible: TRUE
+    required: TRUE
+  -
+    id: 'visability'
+    label: 'visability'
+    type: 'string(20)'
+    validation: ''
+    options:
+      values: [ public , subjects , managers , creator ]
+    visible: TRUE
+    required: TRUE
+
+  # logging
+  -
+    id: 'creationDate'
+    label: 'creation date'
+    type: 'dateTime'
+    validation: '(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}( \d{1,2}[:-]\d{2}([:-]\d{2,3})*)?'
+    default: 'now'
+    visible: FALSE
+    required: TRUE
+  -
+    id: 'createdBy'
+    label: 'creation by'
+    type: '\Beech\Party\Domain\Model\Person'
+    default: 'currentUser'
+    validation: ''
+    visible: FALSE
+    required: TRUE
+  -
+    id: 'modification'
+    label: 'ModificationLog'
+    type: 'array'
+    items:
+     -
+       id: 'modificationDate'
+       label: 'Modification date'
+       type: 'dateTime'
+       validation: '(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}( \d{1,2}[:-]\d{2}([:-]\d{2,3})*)?'
+       default: 'now'
+       visible: FALSE
+       required: TRUE
+     -
+       id: 'modifiedBy'
+       label: 'Modifiedby'
+       type: '\Beech\Party\Domain\Model\Person'
+       validation: ''
+       default: 'currentUser'
+       visible: FALSE
+       required: TRUE
