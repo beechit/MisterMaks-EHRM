@@ -1,0 +1,11 @@
+Beech:
+  Ehrm:
+    workflow:
+      defaults:
+
+
+      worflows:
+
+        sickness-notice:
+          defaults:
+            expiration: '+1 day'

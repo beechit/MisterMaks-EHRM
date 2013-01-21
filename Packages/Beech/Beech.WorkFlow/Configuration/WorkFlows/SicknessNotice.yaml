@@ -1,0 +1,23 @@
+action:
+  validators:
+    -
+      className: NotEmptyValidator
+      properties:
+        targetEntity: 'ENTITY:TARGET'
+        propertyName: 'naamProperty'
+    -
+      className: 'Beech\WorkFlow\Validators\DateValidator'
+      properties:
+        value: '2012-12-28'
+        matchCondition: 'CONSTANT:MATCH_CONDITION_GREATER_THEN'
+  preConditions:
+    -
+      className: 'Beech\WorkFlow\PreConditions\DatePreCondition'
+      properties:
+        value: '2012-04-15'
+        matchCondition: 'CONST:MATCH_CONDITION_EQUAL'
+  outputHandlers:
+    -
+      className: 'Beech\WorkFlow\OutputHandlers\EntityOutputHandler'
+      properties:
+        entity: 'ENTITY:TODO'

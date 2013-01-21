@@ -1,0 +1,15 @@
+action:
+  outputHandlers:
+    -
+      className: 'Beech\WorkFlow\OutputHandlers\EntityOutputHandler'
+      properties:
+        entity: 'ENTITY:TODO'
+    -
+      className: 'Beech\WorkFlow\OutputHandlers\ActionExpiredOutputHandler'
+      properties:
+        actionEntity: 'ENTITY:ACTION'
+    -
+      className: ActionOutputHandler
+      properties:
+        workflowName: 'SicknessNotice'
+        resourcePath: ''

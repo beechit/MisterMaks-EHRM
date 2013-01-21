@@ -1,0 +1,16 @@
+action:
+  -
+    validators:
+      DateValidator:
+        properties:
+          value: 'DATETIME:2012-12-28'
+          matchCondition: 'CONSTANT:MATCH_CONDITION_GREATER_THEN'
+    preConditions:
+      DatePreCondition:
+        properties:
+          value: 'DATETIME:2012-04-15'
+          matchCondition: 'CONST:MATCH_CONDITION_EQUAL'
+    outputHandlers:
+      EntityOutputHandler:
+        properties:
+          entity: 'ENTITY:Beech\WorkFlow\Tests\Unit\Fixtures\Domain\Model\Entity'
