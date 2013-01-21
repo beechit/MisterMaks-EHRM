@@ -1,0 +1,250 @@
+#############################################################
+# Yaml respresentation of an applicatant document mister maks;
+# Version 21-12-2012
+# the persondocument extends Typo3.party and Beech.party
+#############################################################
+
+
+# applicant document
+
+model:
+  modelName: 'Person'
+
+properties:
+  -
+    id: 'personType'
+    label: 'persontype'
+    type: 'string(20)'
+    validation: ''
+    value: 'Applicant'
+    visible: FALSE
+    required: TRUE
+  -
+    id: 'name.title'
+    label: 'title'
+    type: 'string(10)'
+    validation: ''
+    visible: TRUE
+    required: TRUE
+  -
+    id: 'name.firstName'
+    label: 'personname'
+    type: 'string(20)'
+    validation: ''
+    visible: TRUE
+    required: TRUE
+  -
+    id: 'name.middleName'
+    label: 'Middle name'
+    type: 'string(20)'
+    validation: ''
+    visible: TRUE
+    required: FALSE
+  -
+    id: 'name.lastName'
+    label: 'Last name'
+    type: 'string(20)'
+    validation: ''
+    visible: TRUE
+    required: TRUE
+  -
+    id: 'otherName'
+    label: 'Birthname'
+    type: 'string(30)'
+    validation: '[\w\-]{2,30}]'
+    visible: TRUE
+    required: FALSE
+  -
+    id: 'alias'
+    label: 'Alias'
+    type: 'string(15)'
+    validation: ''
+    visible: TRUE
+    required: FALSE
+  -
+    id: 'fullName'
+    label: 'FullName'
+    type: 'string(30)'
+    validation: ''
+    visible: FALSE
+    required: FALSE
+  -
+    id: 'initials'
+    label: 'Initials'
+    type: 'string(10)'
+    validation: '[a-zA-Z\.\s]{0,10}'
+    visible: TRUE
+    required: TRUE
+  -
+    id: 'dateofBirth'
+    label: 'Date of Birth'
+    type: 'dateTime'
+    validation: '(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}( \d{1,2}[:-]\d{2}([:-]\d{2,3})*)?'
+    visible: TRUE
+    required: TRUE
+  -
+    id: 'gender'
+    label: 'Gender'
+    type: 'string(6)'
+    validation: ''
+    options:
+      values: [ Male, Female ]
+    visible: TRUE
+    required: TRUE
+  -
+    id: 'civilStatus'
+    label: 'Civil status'
+    type: 'string(15)'
+    validation: ''
+      options:
+        values: [ unknown , unmarried , married , livingTogether , widowWidower , sustainableSeparated , divorced ]
+      visible: TRUE
+      required: TRUE
+  -
+    id: 'image'
+    label: 'Image'
+    type: ''
+    validation: ''
+    visible: TRUE
+    required: FALSE
+  -
+    id: 'preferedCommunictationMethod'
+    label: 'Prefered communication Method'
+    type: 'string(15)'
+    validation: ''
+    options:
+      values: [ none, e-mail , sms , post , phone ]
+    visible: TRUE
+    required: FALSE
+  -
+    id: 'electronicAddresses'
+    label: 'Electronic addresses'
+    type: 'array'
+    items:
+      -
+        id: 'email'
+        label: 'E-mailAddress'
+        type: 'string'
+        validation: '([\w\-\.]+)@((\[([0-9]{1,3}\.){3}[0-9]{1,3}\])|(([\w\-]+\.)+)([a-zA-Z]{2,4}))'
+        visible: TRUE
+        required: FALSE
+      -
+        id: 'skype'
+        label: 'Skype'
+        type: 'string'
+        validation: '[a-zA-Z][a-zA-Z0-9]{5,31}]'
+        visible: TRUE
+        required: FALSE
+      -
+        id: 'websiteUrl'
+        label: 'Website Url'
+        type: 'string(50)'
+        validation: '/(https?://)?(www\.)?([a-zA-Z0-9_%]*)\b\.[a-z]{2,4}(\.[a-z]{2})?((/[a-zA-Z0-9_%]*)+)?(\.[a-z]*)?/g]'
+        visible: TRUE
+        required: FALSE
+      -
+        id: 'twitter'
+        label: 'Twitter'
+        type: 'string(20)'
+        validation: ''
+        visible: TRUE
+        required: FALSE
+      -
+        id: 'facebook'
+        label: 'Facebook'
+        type: 'string(20)'
+        validation: ''
+        visible: TRUE
+        required: FALSE
+      -
+        id: 'linkedin'
+        label: 'Linkedin'
+        type: 'string(20)'
+        validation: ''
+        visible: TRUE
+        required: FALSE
+      -
+        id: 'hyves'
+        label: 'Hyves'
+        type: 'string(20)'
+        validation: ''
+        visible: TRUE
+        required: FALSE
+  -
+    id: 'phone'
+    label: 'Phone numbers'
+    type: 'array'
+    items:
+      -
+        id: 'phoneType'
+        label: 'phone type'
+        type: 'string'
+        validation: ''
+        options:
+          values: [ workLocationNumber , faxNumber , homePhoneNumber , privateMobilePhone , businessMobilePhone , bussinessPhone , emergencyCallnumber ]
+          required: TRUE
+          visible: TRUE
+      -
+        id: 'phoneNumber'
+        label: 'Phone Number'
+        type: 'string'
+        validation: '/(^\+[0-9]{2}|^\+[0-9]{2}\(0\)|^\(\+[0-9]{2}\)\(0\)|^00[0-9]{2}|^0)([0-9]{9}$|[0-9\-\s]{10}$)/gm]'
+        visible: TRUE
+        required: TRUE
+      -
+        id: 'foreignPhoneNumber'
+        label: 'Foreign phone number'
+        type: 'string'
+        validation: '/(^\+[0-9]{2}|^\+[0-9]{2}\(0\)|^\(\+[0-9]{2}\)\(0\)|^00[0-9]{2}|^0)([0-9]{9}$|[0-9\-\s]{10}$)/gm]'
+        visible: TRUE
+        required: FALSE
+    -
+      id: 'freeRemarks'
+      label: 'Free Remarks'
+      type: 'text'
+      validation: ''
+      visible: TRUE
+      required: FALSE
+    -
+      id: 'bsn'
+      label: 'BSN number'
+      type: 'integer'
+      validation: '[0-9]{9}'
+  # logging
+  -
+    id: 'creationDate'
+    label: 'creation date'
+    type: 'dateTime'
+    validation: '(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}( \d{1,2}[:-]\d{2}([:-]\d{2,3})*)?'
+    default: 'now'
+    visible: FALSE
+    required: TRUE
+  -
+    id: 'createdBy'
+    label: 'creation by'
+    type: '\Beech\Party\Domain\Model\Person'
+    default: 'currentUser'
+    validation: ''
+    visible: FALSE
+    required: TRUE
+  -
+    id: 'modification'
+    label: 'ModificationLog'
+    type: 'array'
+    items:
+     -
+       id: 'modificationDate'
+       label: 'Modification date'
+       type: 'dateTime'
+       validation: '(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}( \d{1,2}[:-]\d{2}([:-]\d{2,3})*)?'
+       default: 'now'
+       visible: FALSE
+       required: TRUE
+     -
+       id: 'modifiedBy'
+       label: 'Modifiedby'
+       type: '\Beech\Party\Domain\Model\Person'
+       validation: ''
+       default: 'currentUser'
+       visible: FALSE
+       required: TRUE

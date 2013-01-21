@@ -1,0 +1,11 @@
+Beech:
+  Ehrm:
+    menu:
+      administration:
+        groups:
+          persons:
+            priority: 10
+            label: 'Persons'
+          companies:
+            priority: 20
+            label: 'Companies'

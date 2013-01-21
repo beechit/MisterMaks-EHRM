@@ -1,0 +1,53 @@
+<f:layout/>
+<f:section name="Body">
+	<h1>
+		<f:translate id="person">Person</f:translate>
+	</h1>
+	<f:if condition="{entities}">
+		<f:then>
+			<table class="table">
+				<thead>
+					<tr>
+						<th>
+							<f:translate>First name</f:translate>
+						</th>
+						<th>
+							<f:translate>Last name</f:translate>
+						</th>
+						<th>
+							<f:translate>FullName</f:translate>
+						</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<f:for each="{entities}" as="person" iteration="iterator">
+						<tr>
+							<td>
+								<f:link.action action="show" arguments="{person: person}"><strong>{person.name.firstName}</strong></f:link.action>
+							</td>
+							<td>
+								<f:link.action action="show" arguments="{person: person}"><strong>{person.name.lastName}</strong></f:link.action>
+							</td>
+							<td>
+								<f:link.action action="show" arguments="{person: person}"><strong>{person.fullName}</strong></f:link.action>
+							</td>
+							<td>
+								<f:link.action action="edit" arguments="{person: person}"><i class="icon-pencil"></i></f:link.action>
+								<f:link.action action="delete" arguments="{person: person}"><i class="icon-trash"></i></f:link.action>
+							</td>
+						</tr>
+					</f:for>
+				</tbody>
+			</table>
+		</f:then>
+		<f:else>
+			<p></p>
+		</f:else>
+	</f:if>
+	<div class="form-actions">
+		<a class="btn btn-primary" href="/{f:uri.action(package: 'Beech.Party', subpackage: 'Administration', controller: 'Person', action: 'new')}"><i class="icon-plus icon-white"></i>
+			<f:translate id="action.create">Create</f:translate>
+		</a>
+	</div>
+</f:section>

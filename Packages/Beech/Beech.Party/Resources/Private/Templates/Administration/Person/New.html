@@ -1,0 +1,494 @@
+<f:layout/>
+<f:section name="Body">
+	<f:form.validationResults for="person">
+		<f:if condition="{validationResults.flattenedErrors}">
+			<div class="error">
+				<f:for each="{validationResults.flattenedErrors}" key="propertyPath" as="errors">{propertyPath}:
+					<f:for each="{errors}" as="error">{error}</f:for>
+				</f:for>
+			</div>
+		</f:if>
+	</f:form.validationResults>
+	<f:form action="create" object="{person}" name="person" class="form-horizontal well">
+		<div class="control-group">
+			<label class="control-label" for="companyID">
+				<f:translate id="companyID">Company id</f:translate>
+			</label>
+
+			<div class="controls">
+				<f:form.textfield property="companyID" id="companyID"/>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="departementId">
+				<f:translate id="departementId">Department id</f:translate>
+			</label>
+
+			<div class="controls">
+				<f:form.textfield property="departementId" id="departementId"/>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="name.title">
+				<f:translate id="name.title">title</f:translate>
+			</label>
+
+			<div class="controls">
+				<f:form.textfield property="name.title" id="name.title"/>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="name.firstName">
+				<f:translate id="name.firstName">First name</f:translate>
+			</label>
+
+			<div class="controls">
+				<f:form.textfield property="name.firstName" id="name.firstName"/>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="name.middleName">
+				<f:translate id="name.middleName">Middle name</f:translate>
+			</label>
+
+			<div class="controls">
+				<f:form.textfield property="name.middleName" id="name.middleName"/>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="name.lastName">
+				<f:translate id="name.lastName">Last name</f:translate>
+			</label>
+
+			<div class="controls">
+				<f:form.textfield property="name.lastName" id="name.lastName"/>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="otherName">
+				<f:translate id="otherName">Birthname</f:translate>
+			</label>
+
+			<div class="controls">
+				<f:form.textfield property="otherName" id="otherName"/>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="alias">
+				<f:translate id="alias">Alias</f:translate>
+			</label>
+
+			<div class="controls">
+				<f:form.textfield property="alias" id="alias"/>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="fullName">
+				<f:translate id="fullName">FullName</f:translate>
+			</label>
+
+			<div class="controls">
+				<f:form.textfield property="fullName" id="fullName"/>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="initials">
+				<f:translate id="initials">Initials</f:translate>
+			</label>
+
+			<div class="controls">
+				<f:form.textfield property="initials" id="initials"/>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="dateofBirth">
+				<f:translate id="dateofBirth">Date of Birth</f:translate>
+			</label>
+
+			<div class="controls">
+				<f:form.textfield property="dateofBirth" id="dateofBirth"/>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="dateofDeath">
+				<f:translate id="dateofDeath">Date of death</f:translate>
+			</label>
+
+			<div class="controls">
+				<f:form.textfield property="dateofDeath" id="dateofDeath"/>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="gender">
+				<f:translate id="gender">Gender</f:translate>
+			</label>
+
+			<div class="controls">
+				<f:form.select property="gender" id="gender" options="{0:'Male', 1:'Female'}"/>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="civilStatus">
+				<f:translate id="civilStatus">Civil status</f:translate>
+			</label>
+
+			<div class="controls">
+				<f:form.select property="civilStatus" id="civilStatus" options="{0:'unknown', 1:'umarried', 2:'married', 3:'livingtogether', 4:'widowWidower', 5:'sustainableSeparated', 6:'divorced'}"/>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="image">
+				<f:translate id="image">Image</f:translate>
+			</label>
+
+			<div class="controls">
+				<f:form.textfield property="image" id="image"/>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="preferedCommunictationMethod">
+				<f:translate id="preferedCommunictationMethod">Prefered communication Method</f:translate>
+			</label>
+
+			<div class="controls">
+				<f:form.select property="preferedCommunictationMethod" id="preferedCommunictationMethod" options="{0:'email', 1:'sms', 2:'post', 3:'phone'}"/>
+			</div>
+		</div>
+		<div class="control-group">
+			<fieldset>
+				<legend>Electronic addresses</legend>
+				<label class="control-label" for="email">
+					<f:translate id="email">E-mailaddress</f:translate>
+				</label>
+
+				<div class="controls">
+					<f:form.textfield property="email" id="email"/>
+				</div>
+				<label class="control-label" for="skype">
+					<f:translate id="skype">Skype</f:translate>
+				</label>
+
+				<div class="controls">
+					<f:form.textfield property="skype" id="skype"/>
+				</div>
+				<label class="control-label" for="websiteUrl">
+					<f:translate id="websiteUrl">Website Url</f:translate>
+				</label>
+
+				<div class="controls">
+					<f:form.textfield property="websiteUrl" id="websiteUrl"/>
+				</div>
+				<label class="control-label" for="twitter">
+					<f:translate id="twitter">Twitter</f:translate>
+				</label>
+
+				<div class="controls">
+					<f:form.textfield property="twitter" id="twitter"/>
+				</div>
+				<label class="control-label" for="facebook">
+					<f:translate id="facebook">Facebook</f:translate>
+				</label>
+
+				<div class="controls">
+					<f:form.textfield property="facebook" id="facebook"/>
+				</div>
+				<label class="control-label" for="linkedin">
+					<f:translate id="linkedin">Linkedin</f:translate>
+				</label>
+
+				<div class="controls">
+					<f:form.textfield property="linkedin" id="linkedin"/>
+				</div>
+				<label class="control-label" for="hyves">
+					<f:translate id="hyves">Hyves</f:translate>
+				</label>
+
+				<div class="controls">
+					<f:form.textfield property="hyves" id="hyves"/>
+				</div>
+			</fieldset>
+		</div>
+		<div class="control-group">
+			<fieldset>
+				<legend>Telephones</legend>
+				<label class="control-label" for="telephonetype">
+					<f:translate id="telephonetype">Telephone type</f:translate>
+				</label>
+
+				<div class="controls">
+					<f:form.select property="telephonetype" id="telephonetype" options="{0:'workLocationNumber', 1:'homephoneNumber', 2:'privateMobilePhone', 3:'businessMobilePhone', 4:'emergencyCallnumber'}"/>
+				</div>
+				<label class="control-label" for="telephonedescription">
+					<f:translate id="telephonedescription">Telephone description</f:translate>
+				</label>
+
+				<div class="controls">
+					<f:form.textfield property="telephonedescription" id="telephonedescription"/>
+				</div>
+				<label class="control-label" for="telephoneNumber">
+					<f:translate id="telephoneNumber">Telephone Number</f:translate>
+				</label>
+
+				<div class="controls">
+					<f:form.textfield property="telephoneNumber" id="telephoneNumber"/>
+				</div>
+				<label class="control-label" for="foreignTelePhoneNumber">
+					<f:translate id="foreignTelePhoneNumber">Foreign telephone number</f:translate>
+				</label>
+
+				<div class="controls">
+					<f:form.textfield property="foreignTelePhoneNumber" id="foreignTelePhoneNumber"/>
+				</div>
+			</fieldset>
+		</div>
+		<div class="control-group">
+			<fieldset>
+				<legend>Addresses</legend>
+				<label class="control-label" for="addresstype">
+					<f:translate id="addresstype">Address type</f:translate>
+				</label>
+
+				<div class="controls">
+					<f:form.select property="addresstype" id="addresstype" options="{0:'temporaryAddress', 1:'businessaddress', 2:'postAddress', 3:'addressAbroad', 4:'temporaryAddressAbroad', 5:'recoveryAddress'}"/>
+				</div>
+				<label class="control-label" for="primaryPostaddress">
+					<f:translate id="primaryPostaddress">Primary postaddress</f:translate>
+				</label>
+
+				<div class="controls">
+					<f:form.textfield property="primaryPostaddress" id="primaryPostaddress"/>
+				</div>
+				<label class="control-label" for="primaryResidentialAddress">
+					<f:translate id="primaryResidentialAddress">Primary residential address</f:translate>
+				</label>
+
+				<div class="controls">
+					<f:form.textfield property="primaryResidentialAddress" id="primaryResidentialAddress"/>
+				</div>
+				<label class="control-label" for="streetName">
+					<f:translate id="streetName">Street name</f:translate>
+				</label>
+
+				<div class="controls">
+					<f:form.textfield property="streetName" id="streetName"/>
+				</div>
+				<label class="control-label" for="postboxNumber">
+					<f:translate id="postboxNumber">Postbox number</f:translate>
+				</label>
+
+				<div class="controls">
+					<f:form.textfield property="postboxNumber" id="postboxNumber"/>
+				</div>
+				<label class="control-label" for="houseNumber">
+					<f:translate id="houseNumber">House number</f:translate>
+				</label>
+
+				<div class="controls">
+					<f:form.textfield property="houseNumber" id="houseNumber"/>
+				</div>
+				<label class="control-label" for="houseNumberAddition">
+					<f:translate id="houseNumberAddition">House number addition</f:translate>
+				</label>
+
+				<div class="controls">
+					<f:form.textfield property="houseNumberAddition" id="houseNumberAddition"/>
+				</div>
+				<label class="control-label" for="postalCodeNL">
+					<f:translate id="postalCodeNL">Postal code</f:translate>
+				</label>
+
+				<div class="controls">
+					<f:form.textfield property="postalCodeNL" id="postalCodeNL"/>
+				</div>
+				<label class="control-label" for="postalCodeAbroad">
+					<f:translate id="postalCodeAbroad">Postal code</f:translate>
+				</label>
+
+				<div class="controls">
+					<f:form.textfield property="postalCodeAbroad" id="postalCodeAbroad"/>
+				</div>
+				<label class="control-label" for="residence">
+					<f:translate id="residence">Residence</f:translate>
+				</label>
+
+				<div class="controls">
+					<f:form.textfield property="residence" id="residence"/>
+				</div>
+				<label class="control-label" for="region">
+					<f:translate id="region">Region</f:translate>
+				</label>
+
+				<div class="controls">
+					<f:form.textfield property="region" id="region"/>
+				</div>
+				<label class="control-label" for="country">
+					<f:translate id="country">Country</f:translate>
+				</label>
+
+				<div class="controls">
+					<f:form.select property="country" id="country" options="{AD:'Andorra (Principality)', AE:'United Arab Emirates', AF:'Afghanistan', AG:'Antigua and Barbuda', AI:'Anguilla', AL:'Albania', AM:'Armenia (Republic)', AO:'Angola', AQ:'Antarctica', AR:'Argentina', AS:'American Samoa', AT:'Austria', AU:'Australia', AW:'Aruba', AX:'Åland Islands', AZ:'Azerbaijan (Republic)', BA:'Bosnia-Herzegovina (Republic)', BB:'Barbados', BD:'Bangladesh', BE:'Belgium', BF:'Burkina Faso', BG:'Bulgaria', BH:'Bahrain', BI:'Burundi', BJ:'Benin (Republic)', BL:'Saint Barthélemy', BM:'Bermuda', BN:'Brunei', BO:'Bolivia', BQ:'Bonaire, Sint Eustatius and Saba', BR:'Brazil', BS:'Bahamas', BT:'Bhutan', BV:'Bouvet Island', BW:'Botswana', BY:'Belarus', BZ:'Belize', CA:'Canada', CC:'Cocos', CD:'Congo (Democratic Republic)', CF:'Central African Republic', CG:'Congo (Peoples Republic)', CH:'Switzerland', CI:'Côte-dIvoire', CK:'Cook', CL:'Chile', CM:'Cameroon', CN:'China ( Peoples Republic)', CO:'Colombia', CR:'Costa Rica', CU:'Cuba', CV:'Cape Verde (Republic)', CW:'Curaçao', CX:'Christmas Island', CY:'Cyprus', CZ:'Czechia (Czech Republic)', DE:'Germany (Federal Republic)', DJ:'Djibouti (Republic)', DK:'Denmark', DM:'Dominica (Republic)', DO:'Dominican Republic', DZ:'Algeria', EC:'Ecuador', EE:'Estonia (Republic)', EG:'Egypt (Arab Republic)', EH:'West Sahara', ER:'Eritrea', ES:'Spain', ET:'Ethiopia', FI:'Finland', FJ:'Fiji', FK:'Falkland', FM:'Micronesia ( Federate States)', FO:'Faroe', FR:'France', GA:'Gabon', GB:'United Kingdom', GD:'Grenada', GE:'Georgia (Republic)', GF:'French Guiana', GG:'Guernsey', GH:'Ghana', GI:'Gibraltar', GL:'Greenland', GM:'Gambia', GN:'Guinea', GP:'Guadeloupe', GQ:'Equatorial Guinea', GR:'Greece', GS:'South Georgia and the South Sandwich Islands', GT:'Guatemala', GU:'Guam', GW:'Guinea-Bissau', GY:'Guyana', HK:'Hongkong', HM:'Heard and McDonald', HN:'Honduras', HR:'Croatia (Republic)', HT:'Haiti', HU:'Hungary (Republic)', ID:'Indonesia', IE:'Ireland', IL:'Israel', IM:'Isle of Man', IN:'India', IO:'British indian Ocean', IQ:'Iraq', IR:'Iran', IS:'Iceland', IT:'Italy', JE:'Jersey', JM:'Jamaica', JO:'Jordan', JP:'Japan', KE:'Kenya', KG:'Kyrgyzstan (Republic)', KH:'Cambodia ( Kingdom)', KI:'Kiribati (Republic)', KM:'Comoros (Union)', KN:'Saint Kitts and Nevis (Federation)', KP:'North Korea (Democratic Peoples Republic)', KR:'South Korea (Republic)', KW:'Kuwait', KY:'Cayman', KZ:'Kazakstan (Republic)', LA:'Laos', LB:'Lebanon', LC:'Saint Lucia', LI:'Liechtenstein', LK:'Sri Lanka', LR:'Liberia', LS:'Lesotho', LT:'Lithuania (Republic)', LU:'Luxembourg (Grand Duchy)', LV:'Latvia (Republic)', LY:'Libya', MA:'Morocco', MC:'Monaco (Principality)', MD:'Moldova (Republic)', ME:'Montenegro (Republic)', MF:'Saint Martin (French part)', MG:'Madagascar (Democratic Republic)', MH:'Marshall (Republic)', MK:'Macedonia (Ex-Yugoslavia Republic)', ML:'Mali', MM:'Myanmar (Union)', MN:'Mongolia (Peoples Republic)', MO:'Macao', MP:'Northern Mariana', MQ:'Martinique', MR:'Mauritania (Islamic Republic)', MS:'Montserrat', MT:'Malta', MU:'Mauritius', MV:'Maldives', MW:'Malawi', MX:'Mexico', MY:'Malaysia', MZ:'Mozambique', NA:'Namibia', NC:'New Caledonia', NE:'Niger', NF:'Norfolk', NG:'Nigeria (Federal Republic)', NI:'Nicaragua', NL:'Netherlands', NO:'Norway', NP:'Nepal', NR:'Nauru', NU:'Niue', NZ:'New Zealand', OM:'Oman (Sultanate)', PA:'Panama', PE:'Peru', PF:'French Polynesia', PG:'Papua New Guinea', PH:'Philippines', PK:'Pakistan', PL:'Poland (Republic)', PM:'Saint-Pierre and Miquelon', PN:'Pitcairn', PR:'Puerto Rico', PS:'Palestina', PT:'Portugal', PW:'Palau', PY:'Paraguay', QA:'Qatar', RE:'Réunion', RO:'Romania', RS:'Serbia (Republic)', RU:'Russia (Federation )', RW:'Rwanda (Republic)', SA:'Saudi Arabia', SB:'Solomon', SC:'Seychelles (Republic)', SD:'Sudan', SE:'Sweden', SG:'Singapore', SH:'Saint Helena', SI:'Slovenia (Republic)', SJ:'Svalbard and Jan Mayen', SK:'Slovakia (Slovak Republic)', SL:'Sierra Leone', SM:'San Marino (Republic)', SN:'Senegal', SO:'Somalia (Republic)', SR:'Suriname', SS:'South Sudan', ST:'São Tome and Principe (Democratic Republic)', SV:'El Salvador', SX:'Saint Martin (Dutch part)', SY:'Syria (Arab Republic)', SZ:'Ngwane (Swaziland Kingdom)', TC:'Turks and Caicos', TD:'Chad', TF:'French Southern Territories', TG:'Togo', TH:'Thailand', TJ:'Tajikistan (Republic)', TK:'Tokelau', TL:'Timor Leste', TM:'Turkmenistan (Republic)', TN:'Tunisia', TO:'Tonga', TR:'Turkey', TT:'Trinidad and Tobago', TV:'Tuvalu', TW:'Taiwan', TZ:'Tanzania (United Republic)', UA:'Ukraine (Republic)', UG:'Uganda', UM:'United States Minor outlying islands', US:'United States of America', UY:'Uruguay', UZ:'Uzbekistan (Republic)', VA:'Holy See', VC:'Saint Vincent and the Grenadines', VE:'Venezuela', VG:'British Virgin Islands', VI:'American Virgin Islands', VN:'Vietnam (Socialist Republic)', VU:'Vanuatu (Republic)', WF:'Wallis and Futuna', WS:'Samoa', YE:'Yemen (Republic)', YT:'Mayotte', ZA:'South Africa (Republic)', ZM:'Zambia', ZW:'Zimbabwe'}"/>
+				</div>
+				<label class="control-label" for="houseBoatReference">
+					<f:translate id="houseBoatReference">Houseboat reference</f:translate>
+				</label>
+
+				<div class="controls">
+					<f:form.select property="houseBoatReference" id="houseBoatReference" options="{0:'', 1:'AB'}"/>
+				</div>
+				<label class="control-label" for="mobileHomeReference">
+					<f:translate id="mobileHomeReference">Mobile home reference</f:translate>
+				</label>
+
+				<div class="controls">
+					<f:form.select property="mobileHomeReference" id="mobileHomeReference" options="{0:'', 1:'WW'}"/>
+				</div>
+			</fieldset>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="employeeNumber">
+				<f:translate id="employeeNumber">Employee number</f:translate>
+			</label>
+
+			<div class="controls">
+				<f:form.textfield property="employeeNumber" id="employeeNumber"/>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="bsn">
+				<f:translate id="bsn">BSN number</f:translate>
+			</label>
+
+			<div class="controls">
+				<f:form.textfield property="bsn" id="bsn"/>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="employmentDisabled">
+				<f:translate id="employmentDisabled">Employment disabled</f:translate>
+			</label>
+
+			<div class="controls">
+				<f:form.textfield property="employmentDisabled" id="employmentDisabled"/>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="waowia">
+				<f:translate id="waowia">WAO or Wia</f:translate>
+			</label>
+
+			<div class="controls">
+				<f:form.textfield property="waowia" id="waowia"/>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="waowiaPercentage">
+				<f:translate id="waowiaPercentage">WAO or Wia Percentage</f:translate>
+			</label>
+
+			<div class="controls">
+				<f:form.textfield property="waowiaPercentage" id="waowiaPercentage"/>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="waowiaStartDate">
+				<f:translate id="waowiaStartDate">WAO or Wia Startdate</f:translate>
+			</label>
+
+			<div class="controls">
+				<f:form.textfield property="waowiaStartDate" id="waowiaStartDate"/>
+			</div>
+		</div>
+		<div class="control-group">
+			<fieldset>
+				<legend>Bank information</legend>
+				<label class="control-label" for="accountName">
+					<f:translate id="accountName">accountName</f:translate>
+				</label>
+
+				<div class="controls">
+					<f:form.textfield property="accountName" id="accountName"/>
+				</div>
+				<label class="control-label" for="accountType">
+					<f:translate id="accountType">account type</f:translate>
+				</label>
+
+				<div class="controls">
+					<f:form.select property="accountType" id="accountType" options="{0:'giroAccount', 1:'bankaccount', 2:'bankAccountabroad'}"/>
+				</div>
+				<label class="control-label" for="bankName">
+					<f:translate id="bankName">bank name</f:translate>
+				</label>
+
+				<div class="controls">
+					<f:form.textfield property="bankName" id="bankName"/>
+				</div>
+				<label class="control-label" for="primaryBankAccount">
+					<f:translate id="primaryBankAccount">primary bank account</f:translate>
+				</label>
+
+				<div class="controls">
+					<f:form.textfield property="primaryBankAccount" id="primaryBankAccount"/>
+				</div>
+				<label class="control-label" for="giro">
+					<f:translate id="giro">Giro</f:translate>
+				</label>
+
+				<div class="controls">
+					<f:form.textfield property="giro" id="giro"/>
+				</div>
+				<label class="control-label" for="bic">
+					<f:translate id="bic">Bic code</f:translate>
+				</label>
+
+				<div class="controls">
+					<f:form.textfield property="bic" id="bic"/>
+				</div>
+				<label class="control-label" for="accountNumber">
+					<f:translate id="accountNumber">Account number</f:translate>
+				</label>
+
+				<div class="controls">
+					<f:form.textfield property="accountNumber" id="accountNumber"/>
+				</div>
+				<label class="control-label" for="ibanNumber">
+					<f:translate id="ibanNumber">IBAN number</f:translate>
+				</label>
+
+				<div class="controls">
+					<f:form.textfield property="ibanNumber" id="ibanNumber"/>
+				</div>
+				<label class="control-label" for="countryBank">
+					<f:translate id="countryBank">Country bank</f:translate>
+				</label>
+
+				<div class="controls">
+					<f:form.select property="countryBank" id="countryBank" options="{AD:'Andorra (Principality)', AE:'United Arab Emirates', AF:'Afghanistan', AG:'Antigua and Barbuda', AI:'Anguilla', AL:'Albania', AM:'Armenia (Republic)', AO:'Angola', AQ:'Antarctica', AR:'Argentina', AS:'American Samoa', AT:'Austria', AU:'Australia', AW:'Aruba', AX:'Åland Islands', AZ:'Azerbaijan (Republic)', BA:'Bosnia-Herzegovina (Republic)', BB:'Barbados', BD:'Bangladesh', BE:'Belgium', BF:'Burkina Faso', BG:'Bulgaria', BH:'Bahrain', BI:'Burundi', BJ:'Benin (Republic)', BL:'Saint Barthélemy', BM:'Bermuda', BN:'Brunei', BO:'Bolivia', BQ:'Bonaire, Sint Eustatius and Saba', BR:'Brazil', BS:'Bahamas', BT:'Bhutan', BV:'Bouvet Island', BW:'Botswana', BY:'Belarus', BZ:'Belize', CA:'Canada', CC:'Cocos', CD:'Congo (Democratic Republic)', CF:'Central African Republic', CG:'Congo (Peoples Republic)', CH:'Switzerland', CI:'Côte-dIvoire', CK:'Cook', CL:'Chile', CM:'Cameroon', CN:'China ( Peoples Republic)', CO:'Colombia', CR:'Costa Rica', CU:'Cuba', CV:'Cape Verde (Republic)', CW:'Curaçao', CX:'Christmas Island', CY:'Cyprus', CZ:'Czechia (Czech Republic)', DE:'Germany (Federal Republic)', DJ:'Djibouti (Republic)', DK:'Denmark', DM:'Dominica (Republic)', DO:'Dominican Republic', DZ:'Algeria', EC:'Ecuador', EE:'Estonia (Republic)', EG:'Egypt (Arab Republic)', EH:'West Sahara', ER:'Eritrea', ES:'Spain', ET:'Ethiopia', FI:'Finland', FJ:'Fiji', FK:'Falkland', FM:'Micronesia ( Federate States)', FO:'Faroe', FR:'France', GA:'Gabon', GB:'United Kingdom', GD:'Grenada', GE:'Georgia (Republic)', GF:'French Guiana', GG:'Guernsey', GH:'Ghana', GI:'Gibraltar', GL:'Greenland', GM:'Gambia', GN:'Guinea', GP:'Guadeloupe', GQ:'Equatorial Guinea', GR:'Greece', GS:'South Georgia and the South Sandwich Islands', GT:'Guatemala', GU:'Guam', GW:'Guinea-Bissau', GY:'Guyana', HK:'Hongkong', HM:'Heard and McDonald', HN:'Honduras', HR:'Croatia (Republic)', HT:'Haiti', HU:'Hungary (Republic)', ID:'Indonesia', IE:'Ireland', IL:'Israel', IM:'Isle of Man', IN:'India', IO:'British indian Ocean', IQ:'Iraq', IR:'Iran', IS:'Iceland', IT:'Italy', JE:'Jersey', JM:'Jamaica', JO:'Jordan', JP:'Japan', KE:'Kenya', KG:'Kyrgyzstan (Republic)', KH:'Cambodia ( Kingdom)', KI:'Kiribati (Republic)', KM:'Comoros (Union)', KN:'Saint Kitts and Nevis (Federation)', KP:'North Korea (Democratic Peoples Republic)', KR:'South Korea (Republic)', KW:'Kuwait', KY:'Cayman', KZ:'Kazakstan (Republic)', LA:'Laos', LB:'Lebanon', LC:'Saint Lucia', LI:'Liechtenstein', LK:'Sri Lanka', LR:'Liberia', LS:'Lesotho', LT:'Lithuania (Republic)', LU:'Luxembourg (Grand Duchy)', LV:'Latvia (Republic)', LY:'Libya', MA:'Morocco', MC:'Monaco (Principality)', MD:'Moldova (Republic)', ME:'Montenegro (Republic)', MF:'Saint Martin (French part)', MG:'Madagascar (Democratic Republic)', MH:'Marshall (Republic)', MK:'Macedonia (Ex-Yugoslavia Republic)', ML:'Mali', MM:'Myanmar (Union)', MN:'Mongolia (Peoples Republic)', MO:'Macao', MP:'Northern Mariana', MQ:'Martinique', MR:'Mauritania (Islamic Republic)', MS:'Montserrat', MT:'Malta', MU:'Mauritius', MV:'Maldives', MW:'Malawi', MX:'Mexico', MY:'Malaysia', MZ:'Mozambique', NA:'Namibia', NC:'New Caledonia', NE:'Niger', NF:'Norfolk', NG:'Nigeria (Federal Republic)', NI:'Nicaragua', NL:'Netherlands', NO:'Norway', NP:'Nepal', NR:'Nauru', NU:'Niue', NZ:'New Zealand', OM:'Oman (Sultanate)', PA:'Panama', PE:'Peru', PF:'French Polynesia', PG:'Papua New Guinea', PH:'Philippines', PK:'Pakistan', PL:'Poland (Republic)', PM:'Saint-Pierre and Miquelon', PN:'Pitcairn', PR:'Puerto Rico', PS:'Palestina', PT:'Portugal', PW:'Palau', PY:'Paraguay', QA:'Qatar', RE:'Réunion', RO:'Romania', RS:'Serbia (Republic)', RU:'Russia (Federation )', RW:'Rwanda (Republic)', SA:'Saudi Arabia', SB:'Solomon', SC:'Seychelles (Republic)', SD:'Sudan', SE:'Sweden', SG:'Singapore', SH:'Saint Helena', SI:'Slovenia (Republic)', SJ:'Svalbard and Jan Mayen', SK:'Slovakia (Slovak Republic)', SL:'Sierra Leone', SM:'San Marino (Republic)', SN:'Senegal', SO:'Somalia (Republic)', SR:'Suriname', SS:'South Sudan', ST:'São Tome and Principe (Democratic Republic)', SV:'El Salvador', SX:'Saint Martin (Dutch part)', SY:'Syria (Arab Republic)', SZ:'Ngwane (Swaziland Kingdom)', TC:'Turks and Caicos', TD:'Chad', TF:'French Southern Territories', TG:'Togo', TH:'Thailand', TJ:'Tajikistan (Republic)', TK:'Tokelau', TL:'Timor Leste', TM:'Turkmenistan (Republic)', TN:'Tunisia', TO:'Tonga', TR:'Turkey', TT:'Trinidad and Tobago', TV:'Tuvalu', TW:'Taiwan', TZ:'Tanzania (United Republic)', UA:'Ukraine (Republic)', UG:'Uganda', UM:'United States Minor outlying islands', US:'United States of America', UY:'Uruguay', UZ:'Uzbekistan (Republic)', VA:'Holy See', VC:'Saint Vincent and the Grenadines', VE:'Venezuela', VG:'British Virgin Islands', VI:'American Virgin Islands', VN:'Vietnam (Socialist Republic)', VU:'Vanuatu (Republic)', WF:'Wallis and Futuna', WS:'Samoa', YE:'Yemen (Republic)', YT:'Mayotte', ZA:'South Africa (Republic)', ZM:'Zambia', ZW:'Zimbabwe'}"/>
+				</div>
+				<label class="control-label" for="bankResidence">
+					<f:translate id="bankResidence">Bank residence</f:translate>
+				</label>
+
+				<div class="controls">
+					<f:form.textfield property="bankResidence" id="bankResidence"/>
+				</div>
+				<label class="control-label" for="jobTitle">
+					<f:translate id="jobTitle">Jobtitle</f:translate>
+				</label>
+
+				<div class="controls">
+					<f:form.textfield property="jobTitle" id="jobTitle"/>
+				</div>
+				<label class="control-label" for="freeRemarks">
+					<f:translate id="freeRemarks">Free Remarks</f:translate>
+				</label>
+
+				<div class="controls">
+					<f:form.textfield property="freeRemarks" id="freeRemarks"/>
+				</div>
+			</fieldset>
+		</div>
+		<div class="control-group">
+			<f:form.submit value="{f:translate(id: 'action.create')}" class="btn btn-primary"/>
+		</div>
+	</f:form>
+</f:section>
