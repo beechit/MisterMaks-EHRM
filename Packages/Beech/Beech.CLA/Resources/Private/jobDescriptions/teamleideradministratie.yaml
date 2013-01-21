@@ -1,0 +1,80 @@
+########################################################################
+# This file is a contains the jobdescription of : Teamleider Financiën & Administratie
+#######################################################################
+
+# version of this document
+
+modelName: 'jobDescription'
+version: '18-12-2012'
+cla: 'none'
+department: 'Staf / Ondersteuning'
+jobTitle: 'Teamleider Financiën & Administratie'
+jobDescriptionID: '10f'
+salaryscale: '10'
+jobversion: 'Definitief'
+jobDate: '17-12-2012'
+generalTitle: 'Algemene kenmerken'
+generalText: 'LTO Groeiservice is voor Nederlandse producenten van bloemen en planten en glas- en vollegrondsgroenteproducten hét tuinbouwnetwerk op het gebied van vaktechniek en ondernemerschap. Groeiservice ondersteunt tuinbouwondernemers in hun vooruitgang, door het verrijken van hun kennis op het gebied van teelt, bedrijfsvoering en afzet. Daarbij is Groeiservice een organisatie van, voor en door tuinders. Groeiservice helpt tuinders hun kennis over teelt, bedrijfsvoering en afzet te vergroten. Daarnaast behartigt Groeiservice hun vaktechnische belangen. Groeiservice verzorgt thematische activiteiten, zoals excursies en lezingen. Tevens biedt Groeiservice diensten op maat, zoals bedrijfsvergelijking, het begeleiden van ondernemersverenigingen en het opzetten van praktijkproeven. Gewasleden van Groeiservice profiteren van diverse voordelen, zoals deelname aan gewasspecifieke bijeenkomsten, gewasnieuwsbrieven en kortingen op gewasdagen en workshops.'
+levelDifferentiation:
+jobGoalTitle: 'Doel van de functie'
+jobGoal: 'Het aansturen van de afdeling teneinde een sluitende financiële-, personele- en projectadministratie te realiseren.'
+hierarchicalPositionTitle: 'Organisatorische positie'
+hierarchicalPositionUp: 'De Teamleider Financiën & Administratie ontvangt hiërarchisch leiding van de Directeur.'
+hierarchicalPostionDown: 'De Teamleider Financiën & Administratie geeft hiërarchisch leiding aan de Medewerkers Financiële Administratie en de Medewerker Ledenadministratie (circa 3 FTE).'
+resultAreaTitle: 'resultaatgebieden'
+resultAreas:
+  1:
+    resultArea: 'Medewerkers aansturen.'
+    resultAreaSubItems:
+      1: 'Optimaliseert de inzet en de werkomgeving van medewerkers.'
+      2: 'Geeft leiding aan de afdeling in algemene zin op het gebied van organisatorische, personele en budgettaire aangelegenheden, binnen de daartoe gestelde beleidskaders.'
+      3: 'Ziet toe op de voortgang van werkzaamheden en faciliteert bij het oplossen van problemen.'
+      4: 'Signaleert knelpunten in werkprocessen, doet verbetervoorstellen naar aanleiding hiervan en implementeert deze na goedkeuring.'
+      5: 'Houdt personeelsgesprekken met medewerkers en begeleidt en adviseert hen met betrekking tot hun ontwikkeling.'
+      6: 'Initieert en begeleidt structureel werkoverleg.'
+    result: 'resultaat: Medewerkers aangestuurd en begeleid in hun functioneren, zodanig dat de vastgestelde resultaten behaald worden. Efficiënt en effectief werkende afdeling.'
+  2:
+    resultArea: 'Financiële administraties beheren.'
+    resultAreaSubItems:
+      1: 'Draagt verantwoordelijkheid voor de project-, crediteuren- en debiteurenadministratie. Ziet erop toe dat betalingsverplichtingen en uitstaande vorderingen conform de geldende richtlijnen, procedures en wettelijke regelingen voldaan worden.'
+      2: 'Controleert de dagelijkse mutatie- en verwerkingsverslagen van het grootboek-, debiteuren- en crediteurensysteem.'
+      3: 'Zoekt opmerkelijke zaken uit, eventueel in overleg met de Directeur.'
+      4: 'Controleert de specificatie van betalingen aan crediteuren voordat de opdracht naar de bank gaat.'
+      5: 'Draagt zorg voor het incassobeleid van contributies en overige debiteuren en ziet toe op de incasso van openstaande posten.'
+      6: 'Controleert aangeleverde personele gegevens met betrekking tot de salarissen.'
+      7: 'Draagt zorg voor de voorbereiding van belastingaangelegenheden (BTW, Vennootschaps-belasting en Loonbelasting).'
+    result: 'resultaat: Financiële administratie gevoerd, zodanig dat deze correct en sluitend is.'
+  3:
+    resultArea: 'Financiële overzichten en rapportages samenstellen.'
+    resultAreaSubItems:
+      1: 'Stelt ten behoeve van de directie en ten behoeve van de jaarlijkse accountantscontrole, financiële overzichten en/of jaarverslagen samen. Geeft technische toelichting op de cijfers en geeft uitleg over posten.'
+      2: 'Stelt mede budget en budgetverslag samen en verzamelt ten behoeve van deze verslaglegging de benodigde gegevens.'
+      3: 'Verstrekt op verzoek informatie aan de budgethouders.'
+    result: 'resultaat: Financiële overzichten en rapportages samengesteld, zodanig dat belanghebbenden tijdig van betrouwbare en inzichtelijke informatie zijn voorzien.'
+  4:
+    resultArea: 'Liquiditeitspositie van de organisatie beheren.'
+    resultAreaSubItems:
+      1: 'Stelt een liquiditeitsplanning op en houdt op grond hiervan een saldo op de betalingsrekening aan om aan lopende verplichtingen te kunnen voldoen.'
+      2: 'Stelt subsidieafrekeningen op.'
+    result: 'resultaat: Liquiditeitspositie van de organisatie beheerd binnen de hiertoe opgestelde richtlijnen en procedures, zodanig dat deze optimaal is.'
+  5:
+    resultArea:
+    resultAreaSubItems:
+      1: 'Overige werkzaamheden verrichten.'
+      2: 'Draagt zorg voor de personeelsadministratie inclusief de pensioenregelingen; ziet erop toe dat deze actuele en relevante gegevens bevat en dat mutaties tijdig en correct verwerkt zijn.'
+      3: 'Draagt verantwoordelijkheid voor de verzuimregistratie; fungeert als aanspreekpunt voor Arbo- en reïntegratiegerelateerde aangelegenheden.'
+    result: 'resultaat: Overige werkzaamheden conform richtlijnen en procedures verricht. '
+knowledgeTitle : 'Kennis'
+knowledge:
+  k1: 'HBO werk- en denkniveau.'
+  k2: 'Kennis van en inzicht in de financieel administratieve inrichting van de organisatie.'
+  k3: 'Kennis van wet- en regelgeving.'
+  k4: 'Kennis van de in gebruik zijnde geautomatiseerde systemen'
+jobCharacteristicsTitle: 'Specifieke functiekenmerken'
+jobCharacteristics:
+  j1: 'Individueel en groepsgericht leiderschap: om medewerkers afzonderlijk, teams en de afdeling als geheel succesvol aan te kunnen sturen.'
+  j2: 'Accuratesse: voor het voeren van de diverse administraties.'
+  j3: 'Informatiegericht: voor het zorgdragen voor de aanwezigheid van informatie voor een efficiënte en effectieve bedrijfsvoering.'
+  j4: 'Mondeling en schriftelijk uitdrukkingsvaardig: om professioneel te communiceren.'
+  j5: 'Integriteit: bij het verwerken van vertrouwelijke gegevens.'
+  j6: 'Stressbestendig voor het voor het werken onder druk van een planning.'

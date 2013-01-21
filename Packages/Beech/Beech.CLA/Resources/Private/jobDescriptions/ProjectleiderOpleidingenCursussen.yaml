@@ -1,0 +1,79 @@
+########################################################################
+# This file is a contains the jobdescription of : Projectleider opleidingen en cursussen
+#######################################################################
+
+# version of this document
+modelName: 'jobDescriptions'
+version: '18-12-2012'
+# CLA that is connected with this contracttemplate
+cla: 'none'
+department: 'Projecten'
+jobTitle: 'Projectleider opleidingen en cursussen'
+jobDescriptionID: '10a'
+salaryscale: '10'
+jobversion: 'Definitief'
+jobDate: '17-12-2012'
+generalTitle: 'Algemene kenmerken'
+generalText: 'LTO Groeiservice is voor Nederlandse producenten van bloemen en planten en glas- en vollegrondsgroenteproducten hét tuinbouwnetwerk op het gebied van vaktechniek en ondernemerschap. Groeiservice ondersteunt tuinbouwondernemers in hun vooruitgang, door het verrijken van hun kennis op het gebied van teelt, bedrijfsvoering en afzet. Daarbij is Groeiservice een organisatie van, voor en door tuinders. Groeiservice helpt tuinders hun kennis over teelt, bedrijfsvoering en afzet te vergroten. Daarnaast behartigt Groeiservice hun vaktechnische belangen. Groeiservice verzorgt thematische activiteiten, zoals excursies en lezingen. Tevens biedt Groeiservice diensten op maat, zoals bedrijfsvergelijking, het begeleiden van ondernemersverenigingen en het opzetten van praktijkproeven. Gewasleden van Groeiservice profiteren van diverse voordelen, zoals deelname aan gewasspecifieke bijeenkomsten, gewasnieuwsbrieven en kortingen op gewasdagen en workshops.'
+levelDifferentiation:
+jobGoalTitle: 'Doel van de functie'
+jobGoal: 'Het initiëren, ontwikkelen en begeleiden van projecten met / voor (groepen van) marktpartijen ten einde bij te dragen aan het behouden / versterken van de positie van de Nederlandse tuinbouwsector'
+hierarchicalPositionTitle: 'Organisatorische positie'
+hierarchicalPositionUp: 'De Projectleider opleidingen en cursussen ontvangt hiërarchisch leiding van de Directeur. '
+hierarchicalPostionDown: 'De Projectleider opleidingen en cursussen geeft operationeel leiding aan in- en externe projectgroepen.'
+resultAreaTitle: 'resultaatgebieden'
+resultareas:
+  1:
+    resultArea: 'Ontwikkelingen volgen, interpreteren en vertalen naar visies en toekomstbeelden'
+    resultAreaSubItems:
+      1: 'Volgt proactief trends en ontwikkelingen binnen de tuinbouwsector op het toegewezen aandachtsgebied.'
+      2: 'Analyseert en interpreteert ontwikkelingen en vertaalt deze naar een visie / projectplan.'
+      3: 'Signaleert specifieke vraagstukken, knelpunten en/of problemen en bedenkt mogelijke oplossingen / toepassingen.'
+    result: 'resultaat: Ontwikkelingen actief gevolgd en zodanig dat een volledig beeld ontstaat van de belangrijkste trends en ontwikkelingen binnen de tuinbouwsector en bij ondernemers waarop de benodigde acties zijn ondernomen zoals het initiëren van oplossingen / dienstverlening.'
+  2:
+    resultArea: 'Beleid voor de eigen afdeling (mede) vormgeven en uitvoeren'
+    resultAreaSubItems:
+      1: 'Ontwikkelt, optimaliseert en realiseert – op de doelstellingen en strategie van de organisatie toegesneden - beleid voor de eigen afdeling.'
+      2: 'Vertaalt beleidsuitgangspunten naar de consequenties voor het toegewezen aandachtsgebied. Werkt, binnen strategische kaders, een jaarplan uit en vertaalt dit in concrete acties / speerpunten.'
+      3: 'Is na goedkeuring verantwoordelijk voor de realisatie.'
+      4: 'Initieert, coördineert en geeft, binnen de daartoe vastgestelde grenzen, zelfstandig of in het teamverband, uitvoering aan de diverse (project) activiteiten.'
+    result: 'resultaat: Een aantoonbare bijdrage geleverd aan de ontwikkeling, optimalisatie en realisatie van het beleid voor de eigen subafdeling.'
+  3:
+    resultArea: 'Projecten initiëren en realiseren'
+    resultAreaSubItems:
+      1: 'Begeleidt (groepen van) kritische ondernemers bij het realiseren van de oplossing / dienstverlening. Brengt zijn/ haar expertise in op het snijvlak van project- en verandermanagement.'
+      2: 'Analyseert projecten en toetst deze op de technische haalbaarheid, de risico’s en de economische haalbaarheid inclusief planning en financieel plan.'
+      3: 'Formuleert, in samenwerking met een (groep van) ondernemer(s) en / of een (groep van) interne medewerkers, een concreet plan van aanpak inclusief de beoordeling van de scope en de randvoorwaarden. Stelt de planning, de begroting, de kwaliteitsnormen en acceptatiecriteria vast. Werkt projectplannen uit conform de vraagstukspecificatie.'
+      4: 'Organiseert en draagt zorg voor de inrichting van samenwerkingsverbanden en benaderd betrokken externe en interne partners (zoals gewasmanagers, trainers, opleidingsinstituten, adviseurs, ontwikkelaars, financiele instellingen, overheden).'
+      5: 'Levert een actieve bijdrage aan de totstandkoming van de financiering van projecten.'
+      6: 'Draagt zelfstandig zorg voor de financiering.'
+      7: 'Geeft zo nodig ondersteuning en projectleiding aan de uitvoering van in- en externe projecten.'
+      8: 'Voegt persoonlijke deskundigheid toe aan gedefinieerde oplossingen en / of coacht projectleden ten aanzien van specifieke vakgebieden, daar waar nodig.'
+      9: 'Bewaakt de kwaliteit van uitvoering. Signaleert knelpunten en / of problemen en zorgt dat deze worden opgelost.'
+      10: 'Begeleid desgewenst (groepen van) ondernemers bij kennis- en scholingsvraagstukken.'
+      11: 'Zorgt primair met specifieke kennis, ervaring en kunde er voor dat projecten op een zodanige wijze tot een start komen dat de kans op succes en concreet resultaat zo groot mogelijk is (organiseert onder meer themaworkshops, - cursussen, - opleidingen, publiceert over relevante thema’s, zet samenwerkingsverbanden op).'
+      12: 'Zorgt met zijn of haar activiteiten voor een extern te facturen waarde die bijdraagt aan het resultaat van de afdeling die in een verhouding staat met zijn of haar kosten (intern ondernemerschap).'
+    result: 'resultaat: (Groepen van) ondernemers geadviseerd en begeleid, zodanig dat zij zich ondersteund voelen. Advies geleverd dat is afgestemd op de kennis, kunde en ervaring van de betrokken deelnemers (ondernemers/bedrijfsleiders/ medewerkers) en partijen. De minimale waarde van de per jaar door de Projectleider opleidingen en cursussen te ontwikkelen projecten wordt jaarlijks vastgelegd in een persoonlijk ontwikkelingsplan.'
+  4:
+    resultArea: 'Netwerk onderhouden en uitbreiden'
+    resultAreaSubItems:
+      1: 'Onderhoudt een breed netwerk met (groepen van) ondernemers en interne medewerkers teneinde hen actief te ondersteunen alsmede met betrokken partijen (zoals trainers, onderzoekers, opleidingsinstituten, adviseurs, toeleveranciers, financiële instellingen,'
+      2: 'Geeft voorlichting, informatie en advies over relevante onderwerpen aan in- en externe belanghebbenden door middel van voorlichting, symposia, specifieke activiteiten en / of publicaties teneinde kennisuitwisseling en – verbreding te bevorderen. Stemt deze activiteiten af met de afdeling marketing- en communicatie.'
+      3: 'Ontwikkelt specifieke cursussen voor (groepen van) ondernemers en geeft hieraan (mede) uitvoering.'
+      4: 'Neemt deel aan (net)werkgroepen teneinde kennisuitwisseling en kennisverbreding te bevorderen.'
+      5: 'Zorgt dat projectresultaten in- en extern worden uitgedragen.'
+    result: 'resultaat: Netwerken onderhouden, ontwikkeld en versterkt, zodanig dat concrete kennisuitwisseling en – verbreding wordt bevorderd. (Project) resultaten zijn actief uitgedragen, zodanig dat concreet en aantoonbaar wordt bijgedragen aan het versterken van de sector.'
+knowledgeTitle : 'Kennis'
+knowledge:
+  k1: 'HBO (+) / academisch werk- en denkniveau'
+  k2: 'Kennis van en ervaring met de markt, marktpartijen en gewassen'
+  k3: 'Kennis van projectmanagement'
+  k4: 'Kennis van toegepaste softwareapplicaties'
+jobCharacteristicsTitle: 'Specifieke functiekenmerken'
+jobCharacteristics:
+  j1: 'Analytisch vermogen voor het vertalen van trends en ontwikkelingen naar een visie voor de sector voor de lange termijn.'
+  j2: 'Zelfstandig, proactief, innovatief en ondernemend in het signaleren en inspelen op relevante trends en ontwikkelingen en het vertalen hiervan in speerpunten en innovatieve oplossingen.'
+  j3: 'Plan- en organisatievermogen voor het opzetten en uitvoeren van projecten, het bewaken van de voortgang en bijsturen daar waar nodig en voor het aansturen van meerdere projecten tegelijkertijd.'
+  j4: 'Sociale vaardigheden voor het onderhouden van relaties alsmede het kunnen interesseren, adviseren en overtuigen van in- en extern betrokkenen.'
+  j5: 'Mondelinge en schriftelijke uitdrukkingsvaardigheid bij het onderhouden van in- en externe contacten en bij het geven van voorlichting, schrijven van publicaties et cetera.'
+  j6: 'Samenwerkend vermogen om binnen de gehele organisatie in goede verstandhouding al dan niet in projecten samen te werken met anderen en dit proces te stimuleren.'

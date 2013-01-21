@@ -1,0 +1,57 @@
+########################################################################
+# This file is a contains the jobdescription of : Repromedewerker
+#######################################################################
+
+# version of this document
+modelName: 'jobDescriptions'
+version: '18-12-2012'
+# CLA that is connected with this contracttemplate
+cla: 'none'
+department: 'Staf / Ondersteuning'
+jobTitle: 'Repromedewerker'
+jobDescriptionID: '2a'
+salaryscale: '2'
+jobversion: 'Definitief'
+jobDate: '17-12-2012'
+generalTitle: 'Algemene kenmerken'
+generalText: 'LTO Groeiservice is voor Nederlandse producenten van bloemen en planten en glas- en vollegrondsgroenteproducten hét tuinbouwnetwerk op het gebied van vaktechniek en ondernemerschap. Groeiservice ondersteunt tuinbouwondernemers in hun vooruitgang, door het verrijken van hun kennis op het gebied van teelt, bedrijfsvoering en afzet. Daarbij is Groeiservice een organisatie van, voor en door tuinders. Groeiservice helpt tuinders hun kennis over teelt, bedrijfsvoering en afzet te vergroten. Daarnaast behartigt Groeiservice hun vaktechnische belangen. Groeiservice verzorgt thematische activiteiten, zoals excursies en lezingen. Tevens biedt Groeiservice diensten op maat, zoals bedrijfsvergelijking, het begeleiden van ondernemersverenigingen en het opzetten van praktijkproeven. Gewasleden van Groeiservice profiteren van diverse voordelen, zoals deelname aan gewasspecifieke bijeenkomsten, gewasnieuwsbrieven en kortingen op gewasdagen en workshops.'
+levelDifferentiation:
+jobGoalTitle: 'Doel van de functie'
+jobGoal: 'Het verzorgen van kopieer- en verzendwerkzaamheden voor interne opdrachtgevers.'
+hierarchicalPositionTitle: 'Organisatorische positie'
+hierarchicalPositionUp: 'De Repromedewerker ontvangt hiërarchisch leiding van de Directiesecretaresse.'
+hierarchicalPostionDown: 'De Repromedewerker geeft zelf geen leiding.'
+resultAreaTitle: 'resultaatgebieden'
+resultAreas:
+  1:
+    resultArea: 'Het verzorgen van het interne en externe kopieer- en verzendwerkzaamheden.'
+    resultAreaSubItems:
+      1: 'Verricht op aanvraag interne opdrachtgever kopieer- en verzendwerkzaamheden (agenda’s, uitnodigingen, mailings, nieuwsbrieven, boekjes).'
+      2: 'Bewaakt de huisstijl.'
+      3: 'Drukt het werk in één of meerdere drukgangen af.'
+      4: 'Bewerkt het drukwerk na (door middel van het op maat snijden van drukwerk, het aanbrengen van perforaties, lijmen, nieten, et cetera).'
+      5: 'Beheert en bewaakt de voorraad papier en overige drukwerkbenodigdheden. Bestelt nieuwe materialen bij diverse leveranciers in overleg met de leidinggevende.'
+      6: 'Verzorgt het dagelijkse onderhoud aan de benodigde apparatuur. Lost vaak voorkomende storingen zelfstandig op. Schakelt indien nodig, in overleg met de leidinggevende, de servicedienst van de leverancier in.'
+    result: 'resultaat: In- en externe kopieer- en verzendwerkzaamheden uitgevoerd, zodanig dat betrokkenen tijdig over de juiste uitgaven beschikken en mailings en andere zendingen tijdig en volledig gerealiseerd zijn.'
+  2:
+    resultArea: 'Overige werkzaamheden verrichten.'
+    resultAreaSubItems:
+      1: 'Verricht kopieerwerkzaamheden (grotere oplagen) op verzoek van medewerkers.'
+      2: 'Houdt de papiervoorraad van de kopieerapparaten en faxen op peil. Verhelpt (kleine) storingen in de apparatuur. Schakelt indien nodig de technische dienst in.'
+      3: 'Formuleert wensen en eisen vanuit de gebruiker bij de aanschaf van nieuwe (kopieer)apparatuur en adviseert de leidinggevende(n) hieromtrent.'
+      4: 'Verricht uiteenlopende huishoudelijke taken (keuken, groenvoorziening).'
+      5: 'Verleent desgevraagd administratieve ondersteuning aan het secretariaat en/of de Telefoniste / Receptioniste.'
+    result: 'resultaat: Overige werkzaamheden conform richtlijnen en procedures verricht.'
+knowledgeTitle : 'Kennis'
+knowledge:
+  k1: 'VMBO werk- en denkniveau.'
+  k2: 'Kennis van administratieve / operationele processen.'
+  k3: 'Kennis van en inzicht in de organisatie, werkprocessen en de sector.'
+  k4: 'Kennis van toegepaste softwareapplicaties en technische apparatuur.'
+jobCharacteristicsTitle: 'Specifieke functiekenmerken'
+jobCharacteristics:
+  j1: 'Sociale vaardigheden voor het omgaan met collega’s binnen diverse geledingen van de organisatie.'
+  j2: 'Mondelinge en schriftelijke uitdrukkingsvaardigheid in de Nederlandse taal voor het opstellen van eenvoudige correspondentie en/of rapportages.'
+  j3: 'Accuratesse en systematisch kunnen werken bij het verwerken administratieve gegevens.'
+  j4: 'Integriteit en zorgvuldigheid voor de omgang met bedrijfsgevoelige informatie.'
+  j5: 'Proactieve en dienstverlenende instelling.'

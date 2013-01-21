@@ -1,0 +1,95 @@
+########################################################################
+# This file is a contains the jobdescription of : Manager Innovatie
+#######################################################################
+
+
+model:
+  modelName: 'jobDescription'
+properties:
+  version: '18-12-2012'
+  # CLA that is connected with this contracttemplate
+  cla: 'none'
+  department: 'Innovatie'
+  jobTitle: 'Manager Innovatie'
+  jobDescriptionID: '11a'
+  salaryscale: '11'
+  jobversion: 'Definitief'
+  jobDate: '17-12-2012'
+  generalTitle: 'Algemene kenmerken'
+  generalText: 'LTO Groeiservice is voor Nederlandse producenten van bloemen en planten en glas- en vollegrondsgroenteproducten hét tuinbouwnetwerk op het gebied van vaktechniek en ondernemerschap. Groeiservice ondersteunt tuinbouwondernemers in hun vooruitgang, door het verrijken van hun kennis op het gebied van teelt, bedrijfsvoering en afzet. Daarbij is Groeiservice een organisatie van, voor en door tuinders. Groeiservice helpt tuinders hun kennis over teelt, bedrijfsvoering en afzet te vergroten. Daarnaast behartigt Groeiservice hun vaktechnische belangen. Groeiservice verzorgt thematische activiteiten, zoals excursies en lezingen. Tevens biedt Groeiservice diensten op maat, zoals bedrijfsvergelijking, het begeleiden van ondernemersverenigingen en het opzetten van praktijkproeven. Gewasleden van Groeiservice profiteren van diverse voordelen, zoals deelname aan gewasspecifieke bijeenkomsten, gewasnieuwsbrieven en kortingen op gewasdagen en workshops.'
+  levelDifferentiation:
+  jobGoalTitle: 'Doel van de functie'
+  jobGoal: 'Het ontwikkelen en (doen) realiseren van de strategische / tactische doelstellingen van de afdeling Innovatie zodanig dat is bijgedragen aan de gewenste positionering van LTO Groeiservice en kennisuitwisseling is bevorderd.'
+  hierarchicalPositionTitle: 'Organisatorische positie'
+  hierarchicalPositionUp: 'De Manager Innovatie ontvangt hiërarchisch leiding van de Directeur en maakt onderdeel uit van het Management Team.'
+  hierarchicalPostionDown: 'De Manager Innovatie geeft hiërarchisch leiding aan de (B, A en Senior) Innovatieadviseurs en de Specialist Innovatiefinanciering (circa 5 FTE).'
+  resultAreaTitle: 'resultaatgebieden'
+  resultAreas:
+    1:
+      resultArea: 'Medewerkers aansturen.'
+      resultAreaSubItems:
+      1: 'Optimaliseert de inzet en de werkomgeving van medewerkers.'
+      2: 'Geeft leiding aan de afdeling in algemene zin op het gebied van organisatorische, personele en budgettaire aangelegenheden, binnen de daartoe gestelde beleidskaders.'
+      3: 'Ziet toe op de voortgang van werkzaamheden en faciliteert bij het oplossen van problemen.'
+      4: 'Signaleert knelpunten in werkprocessen, doet verbetervoorstellen naar aanleiding hiervan en implementeert deze na goedkeuring.'
+      5: 'Houdt personeelsgesprekken met medewerkers en begeleidt en adviseert hen met betrekking tot hun ontwikkeling.'
+      6: 'Initieert en begeleidt structureel werkoverleg.'
+      result: 'resultaat: Medewerkers aangestuurd en begeleid in hun functioneren, zodanig dat de vastgestelde resultaten behaald worden. Efficiënt en effectief werkende afdeling.'
+    2:
+      resultArea: 'Beleid ontwikkelen.'
+      resultAreaSubItems:
+        1: 'Geeft vanuit het eigen werkgebied, op basis van gesignaleerde trends en ontwikkelingen en evaluatie van gevoerd beleid, input voor het strategisch / tactisch beleid, gericht op verbetering van de kwaliteit en verbetering van de prestaties.'
+        2: 'Ontwikkelt een visie ten aanzien van innovatie en innovatieve producten voor de sector; signaleert ontwikkelingen op het gebied van technologie en innovatie en draagt verantwoordelijkheid voor de afstemming van het afdelingsbeleid op het beleid ten aanzien van Gewasmanagement en Marketing & Communicatie.'
+        3: 'Stelt, op basis van het strategische organisatiebeleid, het beleid voor de eigen afdeling op en legt dit ter goedkeuring voor aan de Directeur.'
+        4: 'Levert een strategisch raamwerk aan waarbinnen de Innovatieadviseurs concrete jaarplannen ontwikkelen. Draagt zorg voor de samenhang tussen de jaarplannen.'
+      result: 'resultaat: Beleid opgesteld, zodanig dat heldere en concrete doelstellingen geformuleerd zijn die de doelstellingen vanuit de organisatie als geheel ondersteunen.'
+    3:
+      resultArea: 'Beleid realiseren.'
+      resultAreaSubItems:
+        1: 'Begeleidt de Innovatieadviseurs bij de concrete invulling van de jaarplannen (op het gebied van technologie en innovatie).'
+        2: 'Coördineert op hoofdlijnen de uitvoering van de jaarplannen. Delegeert werkzaamheden en ziet toe op de uitvoering hiervan.'
+        3: 'Coördineert en bewaakt de uitvoering van sectoroverschrijdende werkzaamheden.'
+        4: 'Fungeert als inhoudelijk klankbord voor de Innovatieadviseurs; deelt kennis en expertise teneinde projecten / diensten optimaal te (doen) realiseren.'
+        5: 'Heeft een signalerende, evaluerende, analyserende en rapporterende rol naar de Algemeen Directeur met betrekking tot knelpunten in de uitvoering van het operationele en tactische beleid.'
+        6: 'Stimuleert actief de samenwerking binnen de afdeling en afstemming met andere afdelingen. Signaleert afdelingsoverschrijdende kansen en bedreigingen en volgt deze op in samenwerking met het Hoofd Gewasmanagement en het Hoofd Marketing & Communicatie.'
+        7: 'Is verantwoordelijk voor de kwaliteit van de processen op basis van vastgestelde kwaliteitsnormen- en eisen.'
+        8: 'Ziet erop toe dat projecten / diensten conform richtlijnen en procedures gefinancierd worden. Stuurt hiertoe de Specialist Innovatiefinanciering aan.'
+        9: 'Spreekt Innovatieadviseurs aan op declarabiliteit, budgetbeheer en commerciële verantwoordelijkheid.'
+        10: 'Evalueert gerealiseerd beleid (zowel inhoudelijk als organisatorisch) en werkprocessen, signaleert verbetermogelijkheden en neemt initiatief daartoe.'
+        11: 'Analyseert en presenteert managementinformatie.'
+      result: 'resultaat: Beleid voor de eigen afdeling gerealiseerd, zodanig dat de doelstellingen voor de afdeling tijdig, volgens gestelde kwaliteitseisen en conform budget zijn gerealiseerd.'
+  -
+    4:
+      resultArea: 'Netwerk onderhouden en uitbreiden.'
+      resultAreaSubItems:
+        1: 'Onderhoudt een breed netwerk met (groepen van ondernemers) en relevante partijen (zoals Productschap Tuinbouw, overheid, LTO-organisaties, onderzoekinstellingen et cetera).'
+        2: 'Brengt de participatiegraad van leden in kaart. Initieert acties om de ledenbetrokkenheid te vergroten.'
+        3: 'Geeft voorlichting, informatie en advies over relevante onderwerpen / innovatieve oplossingen aan in- en externe belanghebbenden door middel van voorlichting, symposia, specifieke activiteiten en/of publicaties teneinde kennisuitwisseling en –verbreding te bevorderen. Stemt marketing- en communicatieactiviteiten af met de afdeling marketing- en communicatie.'
+        4: 'Ontwikkelt cursussen voor (groepen van) ondernemers en geeft hieraan uitvoering.'
+        5: 'Neemt deel aan werkgroepen teneinde kennisuitwisseling en –verbreding te bevorderen.'
+        6: 'Zorgt dat (project)resultaten in- en extern actief worden uitgedragen.'
+      result: 'resultaat: Netwerken onderhouden en uitgebreid, zodanig dat kennisuitwisseling en –verbreding is bevorderd en innovatie is gestimuleerd. (Project)resultaten zijn actief uitgedragen, zodanig dat is bijgedragen aan de gewenste positionering van LTO Groeiservice.'
+    5:
+      resultArea:
+      resultAreaSubItems:
+        1: 'Financiële doelstellingen behalen.'
+        2: 'Doet voorstellen voor de begroting en het budget van de afdeling en realiseert deze na overleg met en vaststelling door de Algemeen Directeur.'
+        3: 'Draagt, in samenwerking met de Manager Innovatiefinanciering, bij aan het vaststellen van de begroting en het budget van projecten.'
+        4: 'Bewaakt het budget en onderneemt actie bij dreigende tekorten en/of overschotten.'
+      result: 'resultaat: Financiële doelstellingen zijn behaald, zodanig dat voldaan is aan de begroting en het budget gehaald is.'
+  knowledgeTitle : 'Kennis'
+  knowledge:
+    k1: 'Academisch werk- en denkniveau.'
+    k2: 'Kennis van de sector, relevante stakeholders en het productenaanbod van ondernemers.'
+    k3: 'Kennis van en inzicht in de organisatie om de afstemming van de werkzaamheden van de afdeling met andere (beleids)terreinen tot stand te brengen.'
+    k4: 'Kennis van organisatie-, personeels-, financieel- en kwaliteitsbeleid.'
+    k5: 'Kennis van toegepaste softwareapplicaties.'
+  jobCharacteristicsTitle: 'Specifieke functiekenmerken'
+  jobCharacteristics:
+    j1: 'Analytisch vermogen voor het doorzien van relevante in- en externe ontwikkelingen, voor het geven van input voor het tactisch/strategisch beleid en voor het vertalen van dit beleid in plannen/operationeel beleid.'
+    j2: 'Sociale en communicatieve vaardigheden voor het inspireren, motiveren en corrigeren van medewerkers.'
+    j3: 'Proactief, innovatief en ondernemend in het signaleren en inspelen op relevante trends en ontwikkelingen en het vertalen hiervan in speerpunten en innovatieve oplossingen en het vertalen hiervan in beleid.'
+    j4: 'Mondelinge en schriftelijke uitdrukkingsvaardigheid voor het opstellen, uitdragen en verdedigen van (beleids)plannen, voor het onderhouden van contact met in- en externen en bij het geven van voorlichting, schrijven van publicaties et cetera.'
+    j5: 'Sociale vaardigheden, tact en overtuigingskracht voor het onderhouden van relaties alsmede het kunnen interesseren, adviseren en overtuigen van in- en externe betrokkenen.'
+    j6: 'Samenwerkend vermogen om binnen de gehele organisatie in goede verstandhouding al dan niet in projecten samen te werken met anderen en dit proces te stimuleren.'
+    j7: 'resultaatgerichtheid voor het behalen van doelen en het willen afleggen van verantwoording hiervoor.'

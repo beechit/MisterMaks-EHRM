@@ -1,0 +1,70 @@
+########################################################################
+# This file is a contains the jobdescription of : Financieel Administratief Medewerker B
+#######################################################################
+
+# version of this document
+
+model:
+  modelName: 'jobDescription'
+properties:
+  version: '18-12-2012'
+  cla: 'none'
+  department: 'Staf / Ondersteuning'
+  jobTitle: 'Financieel Administratief Medewerker B'
+  jobDescriptionID: '5a'
+  salaryscale: '5'
+  jobversion: 'Definitief'
+  jobDate: '17-12-2012'
+  generalTitle: 'Algemene kenmerken'
+  generalText: 'LTO Groeiservice is voor Nederlandse producenten van bloemen en planten en glas- en vollegrondsgroenteproducten hét tuinbouwnetwerk op het gebied van vaktechniek en ondernemerschap. Groeiservice ondersteunt tuinbouwondernemers in hun vooruitgang, door het verrijken van hun kennis op het gebied van teelt, bedrijfsvoering en afzet. Daarbij is Groeiservice een organisatie van, voor en door tuinders. Groeiservice helpt tuinders hun kennis over teelt, bedrijfsvoering en afzet te vergroten. Daarnaast behartigt Groeiservice hun vaktechnische belangen. Groeiservice verzorgt thematische activiteiten, zoals excursies en lezingen. Tevens biedt Groeiservice diensten op maat, zoals bedrijfsvergelijking, het begeleiden van ondernemersverenigingen en het opzetten van praktijkproeven. Gewasleden van Groeiservice profiteren van diverse voordelen, zoals deelname aan gewasspecifieke bijeenkomsten, gewasnieuwsbrieven en kortingen op gewasdagen en workshops.'
+  levelDifferentiation:
+  jobGoalTitle: 'Doel van de functie'
+  jobGoal: 'Het verrichten van financieel administratieve werkzaamheden ten aanzien van de financiële- en projectadministratie.'
+  hierarchicalPositionTitle: 'Organisatorische positie'
+  hierarchicalPositionUp: 'De Financieel Administratief Medewerker B ontvangt hiërarchisch leiding van de Teamleider Financiën & Administratie.'
+  hierarchicalPostionDown: 'De Financieel Administratief Medewerker B geeft zelf geen leiding.'
+  resultAreaTitle: 'resultaatgebieden'
+  resultAreas:
+    1:
+      resultArea: 'Werkzaamheden ten aanzien van de crediteuren- en debiteurenadministratie verrichten.'
+      ResultAreaSubItems:
+        1: 'Draagt zorg voor de facturering van door de organisatie geleverde diensten.'
+        2: 'Stelt facturen op op basis van informatie van de Projectleiders, maakt activiteitencodes aan en verzendt de facturen.'
+        3: 'Draagt zorg voor tijdige incasso en draagt vorderingen over aan het incassobureau.'
+        4: 'Signaleert en registreert afwijkingen en geeft de oorzaken aan.'
+        5: 'Neemt bij onduidelijkheden contact op met betrokken personen en organisaties.'
+        6: 'Verwerkt de ontvangen betalingen in het geautomatiseerde systeem, controleert openstaande posten en verstuurt herinneringsnota’s conform de procedure.'
+        7: 'Beantwoordt vragen van leden, zowel schriftelijk als mondeling.'
+        8: 'Legt specifieke financieel-administratieve problemen voor aan de Teamleider Financiën & Administratie.'
+      result: 'resultaat: Werkzaamheden verricht, zodanig dat sprake is van een correcte en actuele debiteurenadministratie en tijdige betalingen van debiteuren.'
+    2:
+      resultArea: 'Werkzaamheden verrichten ten behoeve van de projectadministratie.'
+      resultAreaSubItems:
+        1: 'Controleert / beheert projectbegrotingen voor subsidie- en promotieprojecten); spreekt Projectleiders en overige intern betrokkenen aan wanneer afgeweken wordt van begrotingen.'
+        2: 'Ondersteunt Projectleiders desgevraagd bij het opstellen van afrekeningen. Controleert door Projectleiders opgestelde afrekeningen.'
+        3: 'Controleert de (door leidinggevenden geaccordeerde) urenregistraties van medewerkers.'
+        4: 'Draagt zorg voor de interne doorbelasting van projectwerkzaamheden.'
+        5: 'Draagt zorg voor de facturatie van externe projectwerkzaamheden.'
+        6: 'Contacteert klanten en Projectleiders wanneer facturen niet of niet volledig betaald zijn.'
+        7: 'Draagt zorg voor volledige en actuele projectdossiers (NAW-gegevens, rekeningsnummers, begrotingen et cetera).'
+      result: 'resultaat: Werkzaamheden verricht, zodanig dat de projectadministratie adequaat, correct en tijdig gevoerd is.'
+    3:
+      resultArea: 'Overige administratieve werkzaamheden verrichten.'
+      resultAreaSubItems:
+        1: 'Archiveert declaraties en facturen. Sorteert declaraties ten behoeve van de administratieve verwerking, verslaglegging en voortgangscontrole. Verstrekt informatie aan derden.'
+        2: 'Beheert (mede) de kleine kas ten behoeve van declaraties van het personeel en houdt het kasboek bij.'
+        3: 'Ondersteunt de Administratief Medewerker (A) bij uiteenlopende werkzaamheden; vervangt de Administratief Medewerker (A) bij afwezigheid.'
+        4: 'Voert op aangeven van de Teamleider Financiën & Administratie overige voorkomende financieel-administratieve werkzaamheden uit.'
+      result: 'resultaat: Overige werkzaamheden conform richtlijnen en procedures verricht.'
+  knowledgeTitle : 'Kennis'
+  knowledge:
+    k1: 'MBO werk- en denkniveau.'
+    k2: 'Kennis van en inzicht in projectadministratie.'
+    k3: 'Kennis van toegepaste softwareapplicaties.'
+  jobCharacteristicsTitle: 'Specifieke functiekenmerken'
+  jobCharacteristics:
+    j1: 'Sociale vaardigheden, voor het omgaan met collega’s binnen diverse geledingen van de organisatie.'
+    j2: 'Mondelinge en schriftelijke uitdrukkingsvaardigheid in de Nederlandse taal voor het opstellen van eenvoudige rapportages.'
+    j3: 'Accuratesse en systematisch kunnen werken bij het verwerken financieel-administratieve gegevens.'
+    j4: 'Integriteit en zorgvuldigheid voor de omgang met vertrouwelijke gegevens en managementinformatie.'
+    j5: 'Plan- en organisatievermogen en een dienstverlenende instelling voor het organisatorisch ondersteunen van de Teamleider Financiën & Administratie.'

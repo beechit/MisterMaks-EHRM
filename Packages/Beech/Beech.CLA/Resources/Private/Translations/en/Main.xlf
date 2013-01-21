@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file original="" source-language="en" target-language="en" datatype="plaintext">
+		<body>
+			<trans-unit id="contract.Period">
+				<source>Aanvang, duur en einde van het dienstverband</source>
+			</trans-unit>
+			<trans-unit id="probation">
+				<source>Probation</source>
+			</trans-unit>
+			<trans-unit id="job.Title">
+				<source>Job Titlee</source>
+			</trans-unit>
+			<trans-unit id="hours.a.week">
+				<source>Hours a week</source>
+			</trans-unit>
+			<trans-unit id="day[1]">
+				<source>Day</source>
+			</trans-unit>
+			<trans-unit id="day[2]">
+				<source>Days</source>
+			</trans-unit>
+			<trans-unit id="week[1]">
+				<source>Week</source>
+			</trans-unit>
+			<trans-unit id="week[2]">
+				<source>Weeks</source>
+			</trans-unit>
+			<trans-unit id="month[1]">
+				<source>Month</source>
+			</trans-unit>
+			<trans-unit id="month[2]">
+				<source>Months</source>
+			</trans-unit>
+			<trans-unit id="year[1]">
+				<source>Year</source>
+			</trans-unit>
+			<trans-unit id="year[2]">
+				<source>Years</source>
+			</trans-unit>
+			<trans-unit id="working.Hours">
+				<source>Working hours</source>
+			</trans-unit>
+			<trans-unit id="work.Location">
+				<source>Work location</source>
+			</trans-unit>
+			<trans-unit id="salary">
+				<source>Salary</source>
+			</trans-unit>
+			<trans-unit id="travel.Expenses.Home">
+				<source>Travel expenses home work traffic</source>
+			</trans-unit>
+			<trans-unit id="travel.Expenses.Work">
+				<source>Travel expenses business trips</source>
+			</trans-unit>
+			<trans-unit id="study.Expenses">
+				<source>Study expenses</source>
+			</trans-unit>
+			<trans-unit id="vacation.Allowance">
+				<source>Vacation allowance</source>
+			</trans-unit>
+			<trans-unit id="vacation.Entitlement">
+				<source>Vacation entitlement</source>
+			</trans-unit>
+			<trans-unit id="flexible.Employment.Benefits">
+				<source>Flexible employment benefits</source>
+			</trans-unit>
+			<trans-unit id="mobile.Phone.Provision">
+				<source>Provision of mobile phone</source>
+			</trans-unit>
+			<trans-unit id="laptop.Provision">
+				<source>Provision of laptop</source>
+			</trans-unit>
+			<trans-unit id="competition.Clause">
+				<source>Competition clause</source>
+			</trans-unit>
+			<trans-unit id="confidentiality.Clause">
+				<source>Confidentiality clause</source>
+			</trans-unit>
+			<trans-unit id="additional.Positions">
+				<source>Additional positions</source>
+			</trans-unit>
+			<trans-unit id="general.Benefits">
+				<source>General benefits</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
