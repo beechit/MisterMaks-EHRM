@@ -17,7 +17,9 @@
 .DS_Store
 Thumbs.db
 /index.html
-/Packages/
+/Packages/*
+!/Packages/Beech/
+/Packages/Beech/Beech.Style
 /composer.phar
 /flow.bat
 /*.txt
