@@ -1,0 +1,12 @@
+<![CDATA[{]]>
+	"groups": [<f:for each="{priorities}" as="priority" iteration="iteration" key="key">
+		<![CDATA[{]]>"label": "{priority}"<![CDATA[}]]>{f:if(condition: iteration.isLast, else: ',')}</f:for>
+	<![CDATA[],
+	"items": []]><f:for each="{tasks}" as="task" iteration="iteration">
+		<![CDATA[{]]>
+			"priority": "{task.priority}",
+			"label": "{task.description}"
+		}{f:if(condition: iteration.isLast, else: ',')}</f:for>
+	<![CDATA[],
+	"result": { "status": "success" }
+}]]>

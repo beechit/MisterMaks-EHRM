@@ -24,10 +24,16 @@ TYPO3:
 
             entryPoint: 'WebRedirect'
             entryPointOptions:
-              uri: 'login.html'
+              routeValues:
+              '@package': 'Beech.Ehrm'
+              '@controller': 'Login'
+              '@action': 'login'
 
           DefaultProvider:
             provider: PersistedUsernamePasswordProvider
             entryPoint: 'WebRedirect'
             entryPointOptions:
-              uri: 'login.html'
+              routeValues:
+              '@package': 'Beech.Ehrm'
+              '@controller': 'Login'
+              '@action': 'login'

@@ -36,21 +36,3 @@
     '@controller': 'Standard'
     '@action': 'index'
     '@format': 'html'
-
--
-  name: 'Notification REST service'
-  uriPattern: 'rest/notification'
-  defaults:
-    '@package': 'Beech.Ehrm'
-    '@controller': 'Rest\Notification'
-    '@action': 'list'
-    '@format': 'json'
-
--
-  name: 'Notification REST service'
-  uriPattern: 'rest/notification(/{resource})'
-  defaults:
-    '@package': 'Beech.Ehrm'
-    '@controller': 'Rest\Notification'
-    '@action': 'delete'
-    '@format': 'json'
