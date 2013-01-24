@@ -35,6 +35,15 @@ class TaskRepository extends \Radmiraal\CouchDB\Persistence\AbstractRepository {
 		));
 	}
 
+	/**
+	 * Find all open tasks
+	 * @return array
+	 */
+	public function findOpenTasks() {
+		return $this->backend->findBy(array(
+			'closed' => FALSE
+		));
+	}
 }
 
 ?>
