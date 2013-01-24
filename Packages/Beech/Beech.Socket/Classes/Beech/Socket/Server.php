@@ -301,7 +301,7 @@ class Server {
 		if ($length <= 125) {
 			$header = pack('CC', $b1, $length);
 		} elseif ($length > 125 && $length < 65536) {
-			$header = pack('CCS', $b1, 126, $length);
+			$header = pack('CCn', $b1, 126, $length);
 		} elseif ($length >= 65536) {
 			$header = pack('CCN', $b1, 127, $length);
 		}
