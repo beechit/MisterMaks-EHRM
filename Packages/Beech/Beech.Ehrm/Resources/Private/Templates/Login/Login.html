@@ -1,25 +1,31 @@
-<f:layout />
+<f:layout name="Login" />
 
 <f:section name="Body">
 
 	<section class="container">
+		<div class="row" id="content">
 
-		<f:flashMessages class="flashmessages alert" />
+			<f:flashMessages class="flashmessages alert" />
 
-		<f:if condition="{applicationConfigured}">
-			<f:then>
-				<div class="row">
-					<f:form action="authenticate" class="form-horizontal">
+			<f:if condition="{applicationConfigured}">
+				<f:then>
+					<f:form action="authenticate" class="form" additionalAttributes="{data-target:'#modal-body-only'}">
 						<fieldset>
 							<legend><f:translate id="panel.login.legend">Login panel</f:translate></legend>
 							<div class="control-group">
-								<label class="control-label" for="username"><f:translate id="panel.login.username">Username</f:translate></label>
 								<div class="controls">
-									<f:form.textfield name="__authentication[TYPO3][Flow][Security][Authentication][Token][UsernamePassword][username]" class="input-xlarge" id="username" value="{username}" />
+									<div class="input-prepend">
+										<span class="add-on"><i class="icon-user"></i></span>
+										<f:form.textfield name="__authentication[TYPO3][Flow][Security][Authentication][Token][UsernamePassword][username]" class="input-xlarge" id="username" value="{username}" placeholder="{f:translate(id:'panel.login.username')}" />
+									</div>
 								</div>
-								<label class="control-label" for="password"><f:translate id="panel.login.password">Password</f:translate></label>
+							</div>
+							<div class="control-group">
 								<div class="controls">
-									<f:form.password name="__authentication[TYPO3][Flow][Security][Authentication][Token][UsernamePassword][password]" class="input-xlarge" id="password" />
+									<div class="input-prepend">
+										<span class="add-on"><i class="icon-key"></i></span>
+										<f:form.password name="__authentication[TYPO3][Flow][Security][Authentication][Token][UsernamePassword][password]" class="input-xlarge" id="password" additionalAttributes="{placeholder: '{f:translate(id:\'panel.login.password\')}'}" />
+									</div>
 								</div>
 							</div>
 						</fieldset>
@@ -28,16 +34,16 @@
 							<button type="submit" class="btn btn-primary"><f:translate id="action.login">Login</f:translate></button>
 						</div>
 					</f:form>
-				</div>
-			</f:then>
-			<f:else>
-				<p class="alert alert-block alert-error">
-					<b><f:translate id="message.error">Error!</f:translate></b><br/>
-					<f:translate id="message.application.notCreated">No primary company configured, please contact your System Administrator.</f:translate>
-				</p>
-			</f:else>
+				</f:then>
+				<f:else>
+					<p class="alert alert-block alert-error">
+						<b><f:translate id="message.error">Error!</f:translate></b><br/>
+						<f:translate id="message.application.notCreated">No primary company configured, please contact your System Administrator.</f:translate>
+					</p>
+				</f:else>
 
-		</f:if>
+			</f:if>
+		</div>
 
 	</section>
 </f:section>

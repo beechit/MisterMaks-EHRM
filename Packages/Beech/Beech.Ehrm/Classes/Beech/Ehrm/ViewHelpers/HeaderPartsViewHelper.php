@@ -60,18 +60,23 @@ class HeaderPartsViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHel
 	protected $bootstrap;
 
 	/**
-	 * @param boolean $loadJavaScript
+	 * @param boolean $loadJavaScriptLibraries
+	 * @param boolean $loadJavaScriptSources
 	 * @return string
 	 */
-	public function render($loadJavaScript = TRUE) {
+	public function render($loadJavaScriptLibraries = TRUE, $loadJavaScriptSources = TRUE) {
 		$this->addJavaScriptConfiguration();
 
-		if ($loadJavaScript === TRUE) {
-			$this->output .= sprintf('<script src="%s"></script>', $this->resourcePublisher->getStaticResourcesWebBaseUri() . 'Packages/Beech.Ehrm/JavaScript/Init.js');
+		if ($loadJavaScriptLibraries === TRUE || $loadJavaScriptSources === TRUE) {
+			$libraries = array();
+			$sources = array();
 
-			$this->output .= chr(10) . chr(10);
-			$libraries = $this->getJavascriptIncludes('libraries');
-			$sources = $this->getJavaScriptIncludes('sources');
+			if ($loadJavaScriptLibraries === TRUE) {
+				$libraries = $this->getJavascriptIncludes('libraries');
+			}
+			if ($loadJavaScriptSources === TRUE) {
+				$sources = $this->getJavaScriptIncludes('sources');
+			}
 
 			$javaScripts = array_merge($libraries, $sources);
 

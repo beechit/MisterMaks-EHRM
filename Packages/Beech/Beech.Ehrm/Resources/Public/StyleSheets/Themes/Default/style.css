@@ -53,3 +53,11 @@ footer .logo i { position: absolute; left: -8px; top: 1px; font-size: 0.8em; }
 
 .stack { display: inline-block; }
 .stack i { display: block; clear: both; height: 6px; line-height: 10px; }
+
+#modal-body-only .modal-body { padding: 30px 0 0 0; }
+#modal-body-only .modal-body .icon-spin { margin: 0 30px 30px; }
+#modal-body-only form { margin: 0; }
+#modal-body-only form fieldset { padding: 20px 0 20px 140px; }
+#modal-body-only form fieldset legend { margin-bottom: 0; border: none; }
+#modal-body-only form fieldset legend + .control-group { margin-top: 0; }
+#modal-body-only form .form-actions { margin-bottom: 0; padding-left: 140px; }

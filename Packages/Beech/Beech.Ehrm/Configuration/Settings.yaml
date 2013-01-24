@@ -139,17 +139,18 @@ Beech:
           - 'Beech.Ehrm/Library/jquery.gracefulWebSocket.js'
           - 'Beech.Ehrm/Library/jquery.form.js'
           - 'Beech.Ehrm/Library/datepicker/js/bootstrap-datepicker.js'
-          - 'Beech.Ehrm/JavaScript/ModuleHandler.js'
-          - 'Beech.Ehrm/JavaScript/Mixins/Module.js'
-          -
+
+        sources:
+          init: 'Beech.Ehrm/JavaScript/Init.js'
+          moduleHandler: 'Beech.Ehrm/JavaScript/ModuleHandler.js'
+          module: 'Beech.Ehrm/JavaScript/Mixins/Module.js'
+          mvc:
             uri:
               package: 'Radmiraal.Emberjs'
               controller: 'Configuration'
               action: 'mvc'
               arguments:
                 application: 'MisterMaks'
-
-        sources:
           application: 'Beech.Ehrm/JavaScript/Application.js'
           mainMenu: 'Beech.Ehrm/JavaScript/Component/MainMenu.js'
           dashboardWidget: 'Beech.Ehrm/JavaScript/Component/Dashboard/DashboardWidget.js'

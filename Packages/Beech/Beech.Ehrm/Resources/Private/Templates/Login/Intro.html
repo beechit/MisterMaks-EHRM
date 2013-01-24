@@ -12,7 +12,7 @@
 
 		<hr>
 		<div class="row-fluid index">
-			<a class="btn btn-large btn-success" href="{f:uri.action(controller:'Login', action: 'login')}"><i class="icon-user-md"></i> Login</a>
+			<a class="btn btn-large btn-success login" data-target="#modal-body-only" data-toggle="modal" href="{f:uri.action(controller:'Login', action: 'login')}"><i class="icon-user-md"></i> Login</a>
 			<a class="btn btn-large btn-primary offset1" href="#"><i class="icon-truck"></i> Tour</a>
 			<a class="btn btn-large btn-inverse offset1" href="#"><i class="icon-comment"></i> Contact</a>
 		</div>
@@ -35,4 +35,6 @@
 			</div>
 		</div>
 	</footer>
+
+	<f:render partial="Modals" />
 </f:section>
