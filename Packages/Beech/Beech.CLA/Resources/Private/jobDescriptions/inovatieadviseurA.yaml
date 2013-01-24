@@ -21,8 +21,8 @@ properties:
   jobGoalTitle: 'Doel van de functie'
   jobGoal: 'Het initiëren, ontwikkelen en begeleiden van projecten met / voor (groepen van) marktpartijen teneinde bij te dragen aan het behouden / versterken van de positie van de Nederlandse tuinbouwsector.'
   hierarchicalPositionTitle: 'Organisatorische positie'
-  hierarchicalPositionUp: 'De Innovatieadviseur A ontvangt hiërarchisch leiding van Manager Innovatie.'
-  hierarchicalPostionDown: 'De Innovatieadviseur A geeft indien nodig operationeel leiding aan in- en externe projectgroepen.'
+  reportsTo: 'De Innovatieadviseur A ontvangt hiërarchisch leiding van Manager Innovatie.'
+  manages: 'De Innovatieadviseur A geeft indien nodig operationeel leiding aan in- en externe projectgroepen.'
   resultAreaTitle: 'resultaatgebieden'
   resultareas:
     1:

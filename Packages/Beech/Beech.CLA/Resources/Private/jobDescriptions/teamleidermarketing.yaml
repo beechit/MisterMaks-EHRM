@@ -18,8 +18,8 @@ levelDifferentiation:
 jobGoalTitle: 'Doel van de functie'
 jobGoal: 'Het realiseren van de strategische/tactische doelstellingen van de afdeling zodanig dat is bijgedragen aan de gewenste positionering van LTO Groeiservice en kennisuitwisseling is bevorderd'
 hierarchicalPositionTitle: 'Organisatorische positie'
-hierarchicalPositionUp: 'De Teamleider Marketing en Communicatie ontvangt hiërarchisch leiding van de Directeur en maakt onderdeel uit van het Management Team.'
-hierarchicalPostionDown: 'De Teamleider Marketing en Communicatie geeft hiërarchisch leiding aan de medewerkers binnen de afdeling (tot 5 FTE).'
+reportsTo: 'De Teamleider Marketing en Communicatie ontvangt hiërarchisch leiding van de Directeur en maakt onderdeel uit van het Management Team.'
+manages: 'De Teamleider Marketing en Communicatie geeft hiërarchisch leiding aan de medewerkers binnen de afdeling (tot 5 FTE).'
 resultAreaTitle: 'resultaatgebieden'
 resultAreas:
   1:

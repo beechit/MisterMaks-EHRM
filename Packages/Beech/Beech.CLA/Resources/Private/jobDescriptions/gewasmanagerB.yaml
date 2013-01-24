@@ -21,8 +21,8 @@ properties:
   jobGoalTitle: 'Doel van de functie'
   jobGoal: 'Het, binnen een toegewezen verantwoordelijkheidsgebied, administratief en operationeel ondersteunen van de Gewasmanagers welke projecten voor ondernemers initiëren en realiseren teneinde kennisuitwisseling- en verbreding te bevorderen en ontwikkelingen binnen de tuinbouwsector te stimuleren.'
   hierarchicalPositionTitle: 'Organisatorische positie'
-  hierarchicalPositionUp: 'De Gewasmanager B ressorteert hiërarchisch onder de Teamleider Gewasmanagement. De werkzaamheden van de Gewasmanager B worden mede functioneel aangestuurd door de Senior Gewasmanager.'
-  hierarchicalPostionDown: 'De Gewasmanager B geeft zelf geen leiding.'
+  reportsTo: 'De Gewasmanager B ressorteert hiërarchisch onder de Teamleider Gewasmanagement. De werkzaamheden van de Gewasmanager B worden mede functioneel aangestuurd door de Senior Gewasmanager.'
+  manages: 'De Gewasmanager B geeft zelf geen leiding.'
   resultAreaTitle: 'resultaatgebieden'
   resultAreas:
     1:

@@ -18,8 +18,8 @@ properties:
   jobGoalTitle: 'Doel van de functie'
   jobGoal: 'Het, binnen een toegewezen verantwoordelijkheidsgebied, proactief ondersteunen van (groepen van) ondernemers teneinde kennisuitwisseling- en verbreding te bevorderen en ontwikkelingen binnen de tuinbouwsector te stimuleren.'
   hierarchicalPositionTitle: 'Organisatorische positie'
-  hierarchicalPositionUp: 'De Gewasmanagers worden aangestuurd door een Teamleider Gewasmanagement; een rol die zowel bij een Gewasmanager A als een Senior Gewasmanager belegd kan worden.'
-  hierarchicalPostionDown: 'De Gewasmanager A geeft zelf geen leiding.'
+  reportsTo: 'De Gewasmanagers worden aangestuurd door een Teamleider Gewasmanagement; een rol die zowel bij een Gewasmanager A als een Senior Gewasmanager belegd kan worden.'
+  manages: 'De Gewasmanager A geeft zelf geen leiding.'
   resultAreaTitle: 'resultaatgebieden'
   resultAreas:
     1:

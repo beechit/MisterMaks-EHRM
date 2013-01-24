@@ -20,8 +20,8 @@ properties:
   jobGoalTitle: 'Doel van de functie'
   jobGoal: 'Het opstellen, (mede) vaststellen en realiseren van het strategisch beleid van de organisatie. Het besturen van de organisatie om de continuïteit te waarborgen.'
   hierarchicalPositionTitle: 'Organisatorische positie'
-  hierarchicalPositionUp: 'De Directeur legt intern verantwoording af voor het strategische beleid en de operationele continuïteit (RvC, AvA).'
-  hierarchicalPostionDown: 'De Directeur zit het Management Team voor en geeft hiërarchisch leiding aan de Teamleiders Gewasmanagement en Themaspecialisten, de Manager Innovatie, de Teamleider Marketing & Communicatie, de Teamleider Financiën & Administratie en de Directiesecretaresse (circa 5 FTE).'
+  reportsTo: 'De Directeur legt intern verantwoording af voor het strategische beleid en de operationele continuïteit (RvC, AvA).'
+  manages: 'De Directeur zit het Management Team voor en geeft hiërarchisch leiding aan de Teamleiders Gewasmanagement en Themaspecialisten, de Manager Innovatie, de Teamleider Marketing & Communicatie, de Teamleider Financiën & Administratie en de Directiesecretaresse (circa 5 FTE).'
   resultAreaTitle: 'resultaatgebieden'
   resultAreas:
     1:

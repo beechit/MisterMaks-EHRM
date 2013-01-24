@@ -19,8 +19,8 @@ levelDifferentiation: 'De Innovatieadviseur komt op drie niveaus voor binnen LTO
 jobGoalTitle: 'Doel van de functie'
 jobGoal: 'Het initiëren, ontwikkelen en begeleiden van projecten met / voor (groepen van) marktpartijen teneinde bij te dragen aan het behouden / versterken van de positie van de Nederlandse tuinbouwsector.'
 hierarchicalPositionTitle: 'Organisatorische positie'
-hierarchicalPositionUp: 'De Senior Innovatieadviseur ontvangt hiërarchisch leiding van Manager Innovatie.'
-hierarchicalPostionDown: 'De Senior Innovatieadviseur geeft operationeel leiding aan in- en externe projectgroepen en zonodig aan de Innovatieadviseurs B en/of A.'
+reportsTo: 'De Senior Innovatieadviseur ontvangt hiërarchisch leiding van Manager Innovatie.'
+manages: 'De Senior Innovatieadviseur geeft operationeel leiding aan in- en externe projectgroepen en zonodig aan de Innovatieadviseurs B en/of A.'
 resultAreaTitle: 'resultaatgebieden'
 resultAreas:
   1:

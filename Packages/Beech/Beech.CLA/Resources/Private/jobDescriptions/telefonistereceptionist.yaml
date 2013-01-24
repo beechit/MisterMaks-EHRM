@@ -21,8 +21,8 @@ levelDifferentiation:
 jobGoalTitle: 'Doel van de functie'
 jobGoal: 'Het zorgdragen voor de afhandeling van het inkomende telefoonverkeer en het ontvangen van bezoekers.'
 hierarchicalPositionTitle: 'Organisatorische positie'
-hierarchicalPositionUp: 'De Telefoniste / Receptioniste ontvangt hiërarchisch leiding van Directiesecretaresse.'
-hierarchicalPostionDown: 'De Telefoniste / Receptioniste geeft zelf geen leiding.'
+reportsTo: 'De Telefoniste / Receptioniste ontvangt hiërarchisch leiding van Directiesecretaresse.'
+manages: 'De Telefoniste / Receptioniste geeft zelf geen leiding.'
 resultAreaTitle: 'resultaatgebieden'
 resultAreas:
   1:

@@ -19,8 +19,8 @@ levelDifferentiation:
 jobGoalTitle: 'Doel van de functie'
 jobGoal: 'Het mede opstellen en/of financieel uitwerken van marktplannen, het verkrijgen van financiering en subsidie voor complexe projecten en het (mede) beheren van verkregen budgetten.'
 hierarchicalPositionTitle: 'Organisatorische positie'
-hierarchicalPositionUp: 'De Specialist Innovatiefinanciering ontvangt hiërarchisch leiding van de Manager Innovatie.'
-hierarchicalPostionDown: 'De Specialist Innovatiefinanciering geeft zelf geen leiding.'
+reportsTo: 'De Specialist Innovatiefinanciering ontvangt hiërarchisch leiding van de Manager Innovatie.'
+manages: 'De Specialist Innovatiefinanciering geeft zelf geen leiding.'
 resultAreaTitle: 'resultaatgebieden'
 resultAreas:
   1:

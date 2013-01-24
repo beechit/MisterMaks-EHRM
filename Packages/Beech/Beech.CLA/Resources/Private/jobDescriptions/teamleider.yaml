@@ -17,8 +17,8 @@ levelDifferentiation:
 jobGoalTitle: 'Doel van de functie'
 jobGoal: 'Het hiërarchisch aansturen van een team van Gewasmanagers of Themaspecialisten; het sturen op ontwikkeling en realisatie van de gestelde (afdelings)doelstellingen.'
 hierarchicalPositionTitle: 'Organisatorische positie'
-hierarchicalPositionUp: 'De Teamleider ontvangt hiërarchisch leiding van Directeur.'
-hierarchicalPostionDown: 'De Teamleider geeft hiërarchisch leiding aan een groep Gewasmanagers of Themaspecialisten op verschillende niveaus (tot 10 FTE).'
+reportsTo: 'De Teamleider ontvangt hiërarchisch leiding van Directeur.'
+manages: 'De Teamleider geeft hiërarchisch leiding aan een groep Gewasmanagers of Themaspecialisten op verschillende niveaus (tot 10 FTE).'
 resultAreaTitle: 'resultaatgebieden'
 resultAreas:
   1:
