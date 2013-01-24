@@ -1,627 +1,127 @@
-#############################################################
-# validated yaml for the contract model
-# this is the contract model.
-#############################################################
+##################################################################
+# This is a yaml representation of the contractmodel GTB
+#
+##################################################################
 
 
----
 model:
-  modelName: contract
+  modelName: 'contract'
 properties:
   -
-    id: subjectId
-    label: "Subject id"
-    onlist: true
-    required: true
-    type: \Beech\Party\Domain\Model\Person
-    validation: ""
-    visible: true
+    id: 'subjectId'
+    label: 'Subject id'
+    type: '\Beech\Party\Domain\Model\Person'
+    validation: ''
+    visible: TRUE
+    required: TRUE
   -
-    id: departementId
-    label: "Department id"
-    required: false
-    type: \Beech\Party\Domain\Model\Company
-    validation: ""
+    id: 'departementId'
+    label: 'Department id'
+    type: '\Beech\Party\Domain\Model\Company'
+    validation: ''
+    visible: TRUE
+    required: FALSE
+  -
+    id: contractVersion
+    label: 'contractversion'
+    type: 'string(10)'
+    validation: ''
+    visible: TRUE
+    required: FALSE
+  -
+    id: contractStatus
+    label: 'Status of the contract'
+    type: string(20)
+    validation: ''
+    visible: TRUE
+    required: TRUE
+    options: [ signed , pending , rejected , draft ]
+  -
+    id: firstContract
+    label: 'First contract'
+    type: boolean
+    validation: ''
+    visible: FALSE
+    required: TRUE
+  -
+    id: 'contractGenerationDate'
+    label: 'The date the contract was created'
+    type: dateTime
+    validation: ''
     visible: true
+    required: true
+  -
+    id: contractAcceptanceDate
+    label: 'Date contract was accepted'
+    type: dateTime
+    validation: ''
+    visible: ''
+    required: false
+  -
+    id: contractSigned
+    label: 'Contract signed'
+    type: boolean
+    validation: ''
+    visible: false
+    required: true
+  -
+    id: contractSignDate
+    label: 'Date of signing contract'
+    type: dateTime
+    validation: ''
+    visible: false
+    required: true
   -
     id: contractStartDate
-    label: "Contract start date"
-    onList: true
-    required: true
+    label: 'Startdate of the contract'
     type: dateTime
-    validation: ""
-    visible: true
+    validation: ''
+    visible: TRUE
+    required: TRUE
   -
-    id: contractEnddate
-    label: "Contract end date"
-    required: true
+    id: contractExpireDate
+    label: 'Expiration date'
     type: dateTime
-    validation: ""
+    validation: ''
+    visible: TRUE
+    required: False
+  -
+    id: contactStopDate
+    label: 'Date contract is stopped'
+    type: dateTime
+    validation: ''
     visible: true
+    requied: TRUE
+  -
+    id: contactStopDateReason
+    label: 'Reason that contract was stopped'
+    type:  string(20)
+    validation: ''
+    visible: TRUE
+    required: false
+  -
+    id: contractDocumentID
+    label: 'Id of the document'
+    type: string(20)
+    validation: ''
+    visible: false
+    required: true
   -
     id: contractType
-    label: "Contract type"
-    options:
-      values:
-        - GSContractPermanentFieldStaff
-        - GSContractPermanentFieldStaffLease
-        - GSContractPermanentOfficeStaff
-        - GSContractTempFieldstaff
-        - GSContractTempFieldStaffLeaseCar
-        - GSContractTempOfficeStaff
-    required: true
+    label: 'type of the contract'
     type: string(20)
-    validation: ""
-    visible: true
-  -
-    id: contactDocumentId
-    label: "contract document id"
-    required: false
-    type: string(20)
-    validation: ""
-    visible: true
-  -
-    id: probation
-    label: Probation
-    required: true
-    type: boolean
-    validation: ""
-    visible: true
-  -
-    id: probationPeriod
-    label: "Probation period"
-    required: true
-    type: string(20)
-    validation: ""
-    visible: true
-  -
-    id: unitOfTime
-    label: "unit of time"
-    required: true
-    type: string(20)
-    validation: ""
-    values:
-      - day
-      - days
-      - week
-      - weeks
-      - month
-      - months
-      - year
-      - years
-    visible: true
-  -
-    id: hoursAWeek
-    label: "hours a week"
-    required: true
-    type: decimal(2.2)
-    validation: ""
-    visible: true
-  -
-    id: jobDescriptionId
-    label: "job description id"
-    required: true
-    type: string(10)
-    validation: ""
-    visible: true
-  -
-    id: noticePeriod
-    label: "Notice period"
-    required: true
-    type: string(10)
-    validation: ""
-    visible: true
-  -
-    id: workingHours
-    label: "Working hours"
-    required: true
-    type: string(20)
-    validation: ""
-    visible: true
-  -
-    id: startWorkDay
-    label: "Start of work day"
-    required: true
-    type: dateTime
-    validation: ""
-    visible: true
-  -
-    id: endWorkday
-    label: "End of workday"
-    required: true
-    type: dateTime
-    validation: ""
-    visible: true
-  -
-    id: workLocation
-    label: Worklocation
-    required: true
-    type: string(20)
-    validation: ""
-    visible: true
-  -
-    id: workAtHome
-    label: "Work at home"
-    required: true
-    type: boolean
-    validation: ""
-    visible: true
-  -
-    id: salary
-    label: Salary
-    required: true
-    type: decimal(5.2)
-    validation: ""
-    visible: true
-  -
-    id: salaryScale
-    label: "Salary scale"
-    required: true
-    type: string(20)
-    validation: ""
-    visible: true
-  -
-    id: salaryScaleNumber
-    label: "Salary scale number"
-    required: true
-    type: string(20)
-    validation: ""
-    visible: true
-  -
-    id: wageID
-    label: WageID
-    required: true
-    type: string(20)
-    validation: ""
-    visible: true
-  -
-    id: paymentinterval
-    label: "Payment interval"
-    options:
-      values:
-        - daily
-        - weekly
-        - monthly
-        - 4weeks
-    required: true
-    type: string(10)
-    validation: ""
-    visible: true
-  -
-    id: pensionplan
-    label: "Pension plan"
-    required: true
-    type: boolean
-    validation: ""
-    visible: true
-  -
-    id: pensionProvider
-    label: "pension provider"
-    required: true
-    type: string(20)
-    validation: ""
-    visible: true
-  -
-    id: pensionArrangement
-    label: "Pension arrangement"
-    required: true
-    type: string(20)
-    validation: ""
-    visible: true
-  -
-    id: expenseAllowance
-    label: "Expense allowance"
-    required: true
-    type: boolean
-    validation: ""
-    visible: true
-  -
-    id: expenseAllowanceAmmount
-    label: "Expense allowance ammount"
-    required: true
-    type: decimal(3.2)
-    validation: ""
-    visible: true
-  -
-    id: kmAllowance
-    label: "Business travel expenses"
-    required: true
-    type: boolean
-    validation: ""
-    visible: true
-  -
-    id: kmAllowanceWork
-    label: "km allowance for businesstravel"
-    required: true
-    type: decimal(2.3)
-    validation: ""
-    visible: true
-  -
-    id: leaseCarProvision
-    label: "Lease car provision"
-    required: true
-    type: boolean
-    validation: ""
-    visible: true
-  -
-    id: leaseCarArrangement
-    label: "Lease car arrangement"
-    required: true
-    type: boolean
-    validation: ""
-    visible: true
-  -
-    id: studyExpenses
-    label: "Study expenses"
-    required: true
-    type: boolean
-    validation: ""
-    visible: true
-  -
-    id: StudyExpensesArrangment
-    label: "Study expenses arrangment"
-    required: true
-    type: text
-    validation: ""
-    visible: true
-  -
-    id: vacationAllowance
-    label: "Vacation allowance"
-    required: true
-    type: boolean
-    validation: ""
-    visible: true
-  -
-    id: vacationAllowanceAmount
-    label: "Vacation allowance amount"
-    required: true
-    type: decimal(2.2)
-    validation: ""
-    visible: true
-  -
-    abel: "Flexible employment benefits"
-    id: flexibleEmploymentBenefits
-    required: true
-    type: boolean
-    validation: ""
-    visible: true
-  -
-    id: flexibleEmploymentBenefitsPercentage
-    label: "Flexible employment benefits percentage"
-    required: true
-    type: decimal(2.2)
-    validation: ""
-    visible: true
-  -
-    id: flexibleEmploymentBenefitsOptions
-    label: "Flexible employment benefits options"
-    required: true
-    type: string(20)
-    validation: ""
-    visible: true
-  -
-    id: mobilePhoneProvision
-    label: "Mobile phone provision"
-    required: true
-    type: boolean
-    validation: ""
-    visible: true
-  -
-    id: limitedPrivateUse
-    label: "Limited privateUse"
-    required: true
-    type: boolean
-    validation: ""
-    visible: true
-  -
-    id: percentagePrivateUse
-    label: "Percentage private use"
-    required: true
-    type: decimal(2.2)
-    validation: ""
-    visible: true
-  -
-    id: laptopProvision
-    label: "Laptop provision"
-    required: true
-    type: boolean
-    validation: ""
-    visible: true
-  -
-    id: PrivateUseLaptop
-    label: "Private use of laptop"
-    required: true
-    type: boolean
-    validation: ""
-    visible: true
-  -
-    id: noCompetitionClause
-    label: "No competition clause"
-    required: true
-    type: boolean
-    validation: ""
-    visible: true
-  -
-    id: noCompetitionPenalty
-    label: "No competitionpenalty"
-    required: true
-    type: boolean
-    validation: ""
-    visible: true
-  -
-    id: noCompetitionPenaltyFine
-    label: "No competitionpenalty fine"
-    required: true
-    type: string(5)
-    validation: ""
-    visible: true
-  -
-    id: noCompetitionPenaltyDayFine
-    label: "No competitionPenalty day fine"
-    required: true
-    type: string(4)
-    validation: ""
-    visible: true
-  -
-    id: confidentialityClause
-    label: "Confidentiality clause"
-    required: true
-    type: boolean
-    validation: ""
-    visible: true
-  -
-    id: confidentialityPenalty
-    label: Confidentialitypenalty
-    required: true
-    type: boolean
-    validation: ""
-    visible: true
-  -
-    id: confidentialityPenaltyFine
-    label: "ConfidentialityPenalty fine"
-    required: true
-    type: string(5)
-    validation: ""
-    visible: true
-  -
-    id: confidentialityPenaltyDayFine
-    label: "Confidentialitypenalty dayfine"
-    required: true
-    type: string(4)
-    validation: ""
-    visible: true
-  -
-    id: additionalPositions
-    label: "Additional positions"
-    required: true
-    type: boolean
-    validation: ""
-    visible: true
-  -
-    id: addtionalPositionsRemarks
-    label: "Additional positions remarks"
-    required: false
-    type: text
-    validation: ""
-    visible: true
-  -
-    default: now
-    id: creationDate
-    label: "creation date"
-    required: true
-    type: dateTime
-    validation: "(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?"
-    visible: false
-  -
-    default: currentUser
-    id: createdBy
-    label: "creation by"
-    required: true
-    type: \Beech\Party\Domain\Model\Person
-    validation: ""
-    visible: false
-  -
-    id: modification
-    items:
-      -
-        default: now
-        id: modificationDate
-        label: "Modification date"
-        required: true
-        type: dateTime
-        validation: "(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?"
-        visible: false
-      -
-        default: currentUser
-        id: modifiedBy
-        label: Modifiedby
-        required: TRUEel\Person
-        type: \Beech\Party\Domain\Model\Person
-        validation: ""
-        visible: false
-    label: ModificationLog
-    type: array
-    validation: ""
-    visible: false
-  -
-    id: departementid
-    label: departmentid
-    required: true
-    type: \Beech\Party\Domain\Model\Company
-    validation: ""
-    visible: false
-  -
-    id: leaveDateTimeStart
-    label: leaveDateTimeStart
-    required: true
-    type: dateTime
-    validation: ""
-    visible: true
-  -
-    id: leaveDateEnd
-    label: leaveDateEnd
-    required: true
-    type: dateTime
-    validation: ""
-    visible: true
-  -
-    id: leaveType
-    label: leaveType
-    options:
-      values:
-        - vacation
-        - bereavementLeave
-        -  unpaidLeave
-        - specialLeave
-        - parentalLeave
-        - adoptionleave
-        - short-termCare
-        - longtermCare
-        - maternityLeave
-        - emergencyLeaveAndOtherShortAbsence
-    required: true
-    type: string(20)
-    validation: ""
-    visible: true
-  -
-    id: deductFromBalance
-    label: deductFromBalance
-    options:
-      default: "TRUE"
-    required: true
-    type: boolean
-    validation: ""
-    visible: true
-  -
-    id: paidLeave
-    label: paidLeave
-    required: true
-    type: boolean
-    validation: ""
-    visible: true
-  -
-    id: remark
-    items:
-      -
-        id: remarktype
-        label: RemarkType
-        options:
-          values:
-            - reasonLeaveRequest
-            - remarkLeaveRequest
-            - remarkLeaveDecline
-        required: true
-        type: string(20)
-        validation: ""
-        visible: true
-      -
-        id: remarkContent
-        label: RemarkContent
-        required: false
-        type: text
-        validation: ~
-        visible: true
-      -
-        label: "Remark Date"
-        required: false
-        type: dateTime
-        validation: ""
-        visible: true
-        ìd: remarkDate
-    label: Remark
-    type: array
-    validation: ""
-  -
-    id: leavebalance
-    items:
-      -
-        id: leavebalanceyear
-        label: balanceyear
-        options:
-          values:
-            - 2005
-            - 2006
-            - 2007
-            - 2008
-            - 2009
-            - 2010
-            - 2011
-            - 2012
-            - 2013
-            - 2014
-            - 2015
-            - 2016
-            - 2017
-            - 2018
-            - 2019
-            - 2020
-        required: true
-        type: integer(4)
-        validation: ""
-        visible: true
-      -
-        id: leaveBalance
-        label: leaveBalance
-        required: true
-        type: integer(3)
-        validation: ""
-        visible: true
-    label: leavebalance
-    type: array
-    validation: ""
-  -
-    id: leaveRequeststatus
-    label: leaverequeststatus
-    options:
-      values:
-        - Pending
-        - Approved
-        - declined
-    required: true
-    type: string(20)
-    validation: ""
-    visible: true
-  -
-    id: approveDeclineDate
-    label: approveDeclineDate
-    required: true
-    type: dateTime
-    validation: ""
-    visible: true
-  -
-    default: now
-    id: creationDate
-    label: "creation date"
-    required: true
-    type: dateTime
-    validation: "(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?"
-    visible: false
-  -
-    default: currentUser
-    id: createdBy
-    label: "creation by"
-    required: true
-    type: \Beech\Party\Domain\Model\Person
-    validation: ""
-    visible: false
-  -
-    id: modification
-    items:
-      -
-        default: now
-        id: modificationDate
-        label: "Modification date"
-        required: true
-        type: dateTime
-        validation: "(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?"
-        visible: false
-      -
-        default: currentUser
-        id: modifiedBy
-        label: Modifiedby
-        required: true
-        type: \Beech\Party\Domain\Model\Person
-        validation: ""
-        visible: false
-    label: ModificationLog
-    type: array
+
+
+
+
+
+
+
+contractActive
+
+# for reporting and history reasons this array is used to store the identfiers from the contractarticles that were used to generate the contract
+  id: articlesInCurrentContract
+  type: array
+  articles:
+
+
