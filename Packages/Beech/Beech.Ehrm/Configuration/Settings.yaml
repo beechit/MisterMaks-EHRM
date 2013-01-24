@@ -18,10 +18,6 @@ Beech:
           report:
             priority: 30
             label: 'Report'
-        menu:
-      action:
-        groups:
-        menu:
       administration:
         groups:
           party:
@@ -85,7 +81,6 @@ Beech:
             menuGroup: 'administration:system'
 
       account:
-        groups:
         menu:
           documents:
             label: 'Documents'
