@@ -1,173 +1,199 @@
 #############################################################
-# Yaml respresentation of the leave document mister maks;
-# Version 21-12-2012
-# the company contact extends
+# validated yaml for the leave model
+# this is the leave model.
 #############################################################
 
+---
 model:
-  modelName: 'leave'
+  modelName: leave
 properties:
   -
-# connection to person
-    id: 'subjectId'
-    label: 'Subject id'
-    type: '\Beech\Party\Domain\Model\Person'
-    validation: ''
-    onlist: TRUE
-    visible: FALSE
-    required: TRUE
-# connection to department
+    id: subjectId
+    label: "Subject id"
+    onlist: true
+    required: true
+    type: \Beech\Party\Domain\Model\Person
+    validation: ""
+    visible: false
   -
-    id: 'departementid'
-    label: 'departmentid'
-    type: '\Beech\Party\Domain\Model\Company'
-    validation: ''
-    visible: FALSE
-    required: TRUE
+    id: departementid
+    label: departmentid
+    required: true
+    type: \Beech\Party\Domain\Model\Company
+    validation: ""
+    visible: false
   -
-    id: 'leaveDateTimeStart'
-    label: 'leaveDateTimeStart'
-    type: 'dateTime'
-    validation: ''
-    visible: TRUE
-    required: TRUE
+    id: leaveDateTimeStart
+    label: leaveDateTimeStart
+    required: true
+    type: dateTime
+    validation: ""
+    visible: true
   -
-    id: 'leaveDateEnd'
-    label: 'leaveDateEnd'
-    type: 'dateTime'
-    validation: ''
-    visible: TRUE
-    required: TRUE
+    id: leaveDateEnd
+    label: leaveDateEnd
+    required: true
+    type: dateTime
+    validation: ""
+    visible: true
   -
-    id: 'leaveType'
-    label: 'leaveType'
-    type: 'string(20)'
-    validation: ''
+    id: leaveType
+    label: leaveType
     options:
-      values: [ vacation, bereavementLeave,  unpaidLeave, specialLeave, parentalLeave, adoptionleave, short-termCare, longtermCare, maternityLeave, emergencyLeaveAndOtherShortAbsence]
-    visible: TRUE
-    required: TRUE
+      values:
+        - vacation
+        - bereavementLeave
+        -  unpaidLeave
+        - specialLeave
+        - parentalLeave
+        - adoptionleave
+        - short-termCare
+        - longtermCare
+        - maternityLeave
+        - emergencyLeaveAndOtherShortAbsence
+    required: true
+    type: string(20)
+    validation: ""
+    visible: true
   -
-# depends on leavetype
-    id: 'deductFromBalance'
-    label: 'deductFromBalance'
-    type: 'boolean'
-    validation: ' ]
+    id: deductFromBalance
+    label: deductFromBalance
     options:
-      default: 'TRUE'
-    visible: TRUE
-    required: TRUE
+      default: "TRUE"
+    required: true
+    type: boolean
+    validation: ""
+    visible: true
   -
-# depends on leavetype
-    id: 'paidLeave'
-    label: 'paidLeave'
-    type: 'boolean'
-    validation: ''
-      default: 'true'
-    visible: TRUE
-    required: TRUE
+    id: paidLeave
+    label: paidLeave
+    required: true
+    type: boolean
+    validation: ""
+    visible: true
   -
-    id: 'remark'
-    label: 'Remark'
-    type: 'array'
-    validation: ''
+    id: remark
     items:
       -
-        id: 'remarktype'
-        label: 'RemarkType'
-        type: 'string(20)'
-        validation: ''
+        id: remarktype
+        label: RemarkType
         options:
-          values: [ ReasonLeaveRequest , remarkLeaveRequest , remarkLeaveDecline ]
-         visible: TRUE
-         required: TRUE
+          values:
+            - reasonLeaveRequest
+            - remarkLeaveRequest
+            - remarkLeaveDecline
+        required: true
+        type: string(20)
+        validation: ""
+        visible: true
       -
-        id: 'remarkContent'
-        label: 'RemarkContent'
-        type: 'text'
-        validation:
-        visible: TRUE
-        required: FALSE
+        id: remarkContent
+        label: RemarkContent
+        required: false
+        type: text
+        validation: ~
+        visible: true
       -
-        ìd: 'remarkDate'
-        label: 'Remark Date'
-        type: 'dateTime'
-        validation: ''
-        visible: TRUE
-        required: FALSE
+        label: "Remark Date"
+        required: false
+        type: dateTime
+        validation: ""
+        visible: true
+        ìd: remarkDate
+    label: Remark
+    type: array
+    validation: ""
   -
-    id: 'leavebalance'
-    label: 'leavebalance'
-    type: 'array'
-    validation: ''
+    id: leavebalance
     items:
       -
-        id: 'leavebalanceyear'
-        label: 'balanceyear'
-        type: 'integer(4)'
-        validation: ''
+        id: leavebalanceyear
+        label: balanceyear
         options:
-          values: [ 2005 , 2006, 2007 , 2008 , 2009 , 2010 , 2011 , 2012 , 2013 , 2014, 2015 , 2016 , 2017 , 2018 , 2019 , 2020 ]
-        visible: TRUE
-        required: TRUE
+          values:
+            - 2005
+            - 2006
+            - 2007
+            - 2008
+            - 2009
+            - 2010
+            - 2011
+            - 2012
+            - 2013
+            - 2014
+            - 2015
+            - 2016
+            - 2017
+            - 2018
+            - 2019
+            - 2020
+        required: true
+        type: integer(4)
+        validation: ""
+        visible: true
       -
-        id: 'leaveBalance'
-        label: 'leaveBalance'
-        type: 'integer(3)'
-        validation: ''
-        visible: TRUE
-        required: TRUE
+        id: leaveBalance
+        label: leaveBalance
+        required: true
+        type: integer(3)
+        validation: ""
+        visible: true
+    label: leavebalance
+    type: array
+    validation: ""
   -
-    id: 'leaveRequeststatus'
-    label: 'leaverequeststatus'
-    type: 'string(20)'
-    validation: ''
+    id: leaveRequeststatus
+    label: leaverequeststatus
     options:
-      values: [ Pending , Approved, declined ]
-    visible: TRUE
-    required: TRUE
+      values:
+        - Pending
+        - Approved
+        - declined
+    required: true
+    type: string(20)
+    validation: ""
+    visible: true
   -
-    id: 'approveDeclineDate'
-    label: 'approveDeclineDate'
-    type: 'dateTime'
-    validation: ''
-    visible: TRUE
-    required: TRUE
-  # logging
+    id: approveDeclineDate
+    label: approveDeclineDate
+    required: true
+    type: dateTime
+    validation: ""
+    visible: true
   -
-    id: 'creationDate'
-    label: 'creation date'
-    type: 'dateTime'
-    validation: '(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}( \d{1,2}[:-]\d{2}([:-]\d{2,3})*)?'
-    default: 'now'
-    visible: FALSE
-    required: TRUE
+    default: now
+    id: creationDate
+    label: "creation date"
+    required: true
+    type: dateTime
+    validation: "(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?"
+    visible: false
   -
-    id: 'createdBy'
-    label: 'creation by'
-    type: '\Beech\Party\Domain\Model\Person'
-    default: 'currentUser'
-    validation: ''
-    visible: FALSE
-    required: TRUE
+    default: currentUser
+    id: createdBy
+    label: "creation by"
+    required: true
+    type: \Beech\Party\Domain\Model\Person
+    validation: ""
+    visible: false
   -
-    id: 'modification'
-    label: 'ModificationLog'
-    type: 'array'
+    id: modification
     items:
-     -
-       id: 'modificationDate'
-       label: 'Modification date'
-       type: 'dateTime'
-       validation: '(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}( \d{1,2}[:-]\d{2}([:-]\d{2,3})*)?'
-       default: 'now'
-       visible: FALSE
-       required: TRUE
-     -
-       id: 'modifiedBy'
-       label: 'Modifiedby'
-       type: '\Beech\Party\Domain\Model\Person'
-       validation: ''
-       default: 'currentUser'
-       visible: FALSE
-       required: TRUE
+      -
+        default: now
+        id: modificationDate
+        label: "Modification date"
+        required: true
+        type: dateTime
+        validation: "(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?"
+        visible: false
+      -
+        default: currentUser
+        id: modifiedBy
+        label: Modifiedby
+        required: true
+        type: \Beech\Party\Domain\Model\Person
+        validation: ""
+        visible: false
+    label: ModificationLog
+    type: array

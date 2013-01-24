@@ -1,114 +1,130 @@
 #############################################################
-# Yaml respresentation of the absence document mister maks;
-# Version 21-12-2012
+# validated yaml for the absence model
+# this is the absence model.
 #############################################################
-
+---
 model:
-  modelName: 'absence'
+  modelName: absence
 properties:
   -
-# main part about sickreport
-    id: 'absenceType'
-    label: 'Absence type'
-    type: 'string(30)'
-    validation: ''
+    id: absenceType
+    label: "Absence type"
     options:
-      values: [ 'AccidentDuckLiftStandConcentration' , 'focus' , 'pressure' , 'unknown' , 'Short-termabsenteeism' , 'labordispute', 'Other']
-    visible: TRUE
-    required: TRUE
+      values:
+        - AccidentDuckLiftStandConcentration
+        - focus
+        - pressure
+        - unknown
+        - Short-termabsenteeism
+        - labordispute
+        - Other
+    required: true
+    type: string(30)
+    validation: ""
+    visible: true
   -
-# connection to person
-    id: 'subjectId'
-    label: 'Subject id'
-    type: '\Beech\Party\Domain\Model\Person'
-    validation: ''
-    onlist: TRUE
-    visible: TRUE
-    required: TRUE
-# connection to department
+    id: subjectId
+    label: "Subject id"
+    onlist: true
+    required: true
+    type: \Beech\Party\Domain\Model\Person
+    validation: ""
+    visible: true
   -
-    id: 'departementId'
-    label: 'Department id'
-    type: '\Beech\Party\Domain\Model\Company'
-    validation: ''
-    visible: FALSE
-    required: TRUE
+    id: departementId
+    label: "Department id"
+    required: true
+    type: \Beech\Party\Domain\Model\Company
+    validation: ""
+    visible: false
   -
-    id: 'firstSickDay'
-    label: 'First sick Day'
-    type: 'dateTime'
-    validation: '(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}( \d{1,2}[:-]\d{2}([:-]\d{2,3})*)?'
-    visible: TRUE
-    required: TRUE
+    id: firstSickDay
+    label: "First sick Day"
+    required: true
+    type: dateTime
+    validation: "(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?"
+    visible: true
   -
-    id: 'disabilityPercentage'
-    label: 'Disability percentage'
-    type: 'decimal(2.2)'
-    validation: ''
-    visible: TRUE
-    required: TRUE
+    id: disabilityPercentage
+    label: "Disability percentage"
+    required: true
+    type: decimal(2.2)
+    validation: ""
+    visible: true
   -
-    id: 'disabilityBackup'
-    label: 'Disability backup'
-    type: 'string(30)'
-    validation: ''
+    id: disabilityBackup
+    label: "Disability backup"
     options:
-      values: [ 'None', 'Maternity', '(ex)WAO-er', 'absentDueToOrganDonation', 'EndOfContractWithin13Weeks', 'TemporaryCallCorker', 'absentDueToPregnancy' , 'SafetyNet' , 'adoptionLeaveFosterCare', 'workDisability', 'sickOnEndOfEmployemnt' ]    translations:
-    visible: TRUE
-    required: TRUE
-# about recovery report.
+      values:
+        - None
+        - Maternity
+        - (ex)WAO-er
+        - absentDueToOrganDonation
+        - EndOfContractWithin13Weeks
+        - TemporaryCallCorker
+        - absentDueToPregnancy
+        - SafetyNet
+        - adoptionLeaveFosterCare
+        - workDisability
+        - sickOnEndOfEmployemnt
+    required: true
+    type: string(30)
+    validation: ""
+    visible: true
   -
-    id: 'recoveryDate'
-    label: 'Recovery date'
-    type: 'dateTime'
-    validation: '(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}( \d{1,2}[:-]\d{2}([:-]\d{2,3})*)?'
-    visible: TRUE
-    required: TRUE
-# custom settings for arbodienst
+    id: recoveryDate
+    label: "Recovery date"
+    required: true
+    type: dateTime
+    validation: "(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?"
+    visible: true
   -
-    id: 'arboActionType'
-    label: 'Arbo action type'
-    type: 'string(20)'
-    validation: ''
+    id: arboActionType
+    label: "Arbo action type"
     options:
-      values: [ none, AccordingToContract , urgentinspection , contactEmployer ]
-     visible: TRUE
-     required: TRUE
-  # logging
+      values:
+        - none
+        - AccordingToContract
+        - urgentinspection
+        - contactEmployer
+    required: true
+    type: string(20)
+    validation: ""
+    visible: true
   -
-    id: 'creationDate'
-    label: 'creation date'
-    type: 'dateTime'
-    validation: '(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}( \d{1,2}[:-]\d{2}([:-]\d{2,3})*)?'
-    default: 'now'
-    visible: FALSE
-    required: TRUE
+    default: now
+    id: creationDate
+    label: "creation date"
+    required: true
+    type: dateTime
+    validation: "(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?"
+    visible: false
   -
-    id: 'createdBy'
-    label: 'creation by'
-    type: '\Beech\Party\Domain\Model\Person'
-    default: 'currentUser'
-    validation: ''
-    visible: FALSE
-    required: TRUE
+    default: currentUser
+    id: createdBy
+    label: "creation by"
+    required: true
+    type: \Beech\Party\Domain\Model\Person
+    validation: ""
+    visible: false
   -
-    id: 'modification'
-    label: 'ModificationLog'
-    type: 'array'
+    id: modification
     items:
-     -
-       id: 'modificationDate'
-       label: 'Modification date'
-       type: 'dateTime'
-       validation: '(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}( \d{1,2}[:-]\d{2}([:-]\d{2,3})*)?'
-       default: 'now'
-       visible: FALSE
-       required: TRUE
-     -
-       id: 'modifiedBy'
-       label: 'Modifiedby'
-       type: '\Beech\Party\Domain\Model\Person'
-       validation: ''
-       default: 'currentUser'
-       visible: FALSE
-       required: TRUE
+      -
+        default: now
+        id: modificationDate
+        label: "Modification date"
+        required: true
+        type: dateTime
+        validation: "(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?"
+        visible: false
+      -
+        default: currentUser
+        id: modifiedBy
+        label: Modifiedby
+        required: true
+        type: \Beech\Party\Domain\Model\Person
+        validation: ""
+        visible: false
+    label: ModificationLog
+    type: array
