@@ -6,3 +6,12 @@
     '@controller': 'Task'
     '@action': 'index'
     '@format': 'html'
+
+-
+  name: 'Tasks REST service'
+  uriPattern: 'rest/tasks'
+  defaults:
+    '@package': 'Beech.Task'
+    '@controller': 'Rest\Task'
+    '@action': 'list'
+    '@format': 'json'

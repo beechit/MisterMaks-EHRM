@@ -195,10 +195,11 @@ class HeaderPartsViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHel
 			),
 			'transitions' => (object)$this->getEmberRouterTransitionLinks(),
 			'configuration' => (object)array(
-				'restNotificationUri' => $this->controllerContext->getUriBuilder()
+				'restTaskUri' => $this->controllerContext->getUriBuilder()
 					->reset()
 					->setFormat('json')
-					->uriFor('list', array(), 'Rest\Notification', 'Beech.Ehrm')
+					->setCreateAbsoluteUri(TRUE)
+					->uriFor('list', array(), 'Rest\Task', 'Beech.Task')
 			),
 			'locale' => $this->preferenceUtility->getApplicationPreference('locale')
 		);

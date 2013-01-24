@@ -1,40 +1,22 @@
-<h3>Tasks <a href="Tasks.html" class="pull-right" rel="tooltip" data-placement="left" title="Go to all tasks"><i class="icon-tasks"></i></a></h3>
-<div class="accordion " id="tasklist">
+{namespace mm=Beech\Ehrm\ViewHelpers}<h3>Tasks <a href="#" {mm:ember.helper(action:'showTaskModule')} class="pull-right" rel="tooltip" data-placement="left" title="Go to all tasks"><i class="icon-tasks"></i></a></h3>
+<div class="accordion" id="tasklist">
+	{{#each App.AllTodosController.content}}
 	<div class="accordion-group">
 		<div class="accordion-heading">
-			<a class="accordion-toggle" data-toggle="collapse" data-parent="#tasklist" href="#collapseOne">
-				High Prio
+			<a class="accordion-toggle" data-toggle="collapse" data-parent="#tasklist" href="#{{showId}}">
+				{{label}}
 			</a>
-			<span class="badge badge-important">3</span>
+			<span class="badge badge-important">{{items.length}}</span>
 		</div>
-		<div id="collapseOne" class="accordion-body collapse">
+		<div id="{{showId}}" class="accordion-body collapse">
 			<div class="accordion-inner">
 				<ul class="unstyled">
-					<li>Item</li>
-					<li>Item</li>
-					<li>Item</li>
+					{{#each items}}
+						<li>{{label}}</li>
+					{{/each}}
 				</ul>
 			</div>
 		</div>
 	</div>
-	<div class="accordion-group">
-		<div class="accordion-heading">
-			<a class="accordion-toggle" data-toggle="collapse" data-parent="#tasklist" href="#collapseTwo">
-				Normal Prio
-			</a>
-			<span class="badge badge-important">6</span>
-		</div>
-		<div id="collapseTwo" class="accordion-body collapse">
-			<div class="accordion-inner">
-				<ul class="unstyled">
-					<li>Item</li>
-					<li>Item</li>
-					<li>Item</li>
-					<li>Item</li>
-					<li>Item</li>
-					<li>Item</li>
-				</ul>
-			</div>
-		</div>
-	</div>
+	{{/each}}
 </div>

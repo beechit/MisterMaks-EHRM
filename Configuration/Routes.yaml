@@ -11,6 +11,18 @@
       package: 'Beech.Ehrm'
 
 ##
+# EHRM.Task subroutes
+#
+-
+  name: 'Beech Task'
+  uriPattern: '<BeechTaskSubroutes>'
+  defaults:
+    '@format': 'html'
+  subRoutes:
+    BeechTaskSubroutes:
+      package: 'Beech.Task'
+
+##
 # Radmiraal.Emberjs subroutes
 #
 -
