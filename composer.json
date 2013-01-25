@@ -37,7 +37,7 @@
 	},
 	"minimum-stability": "dev",
 	"scripts": {
-		"post-update-cmd": "Beech\\Essentials\\Composer\\InstallerScripts::postUpdateAndInstall",
-		"post-install-cmd": "Beech\\Essentials\\Composer\\InstallerScripts::postUpdateAndInstall"
+		"post-update-cmd": "TYPO3\\Flow\\Composer\\InstallerScripts::postUpdateAndInstall",
+		"post-install-cmd": "TYPO3\\Flow\\Composer\\InstallerScripts::postUpdateAndInstall"
 	}
 }

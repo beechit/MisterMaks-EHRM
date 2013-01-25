@@ -1,3 +1,12 @@
+-
+  name: 'Temp route for Tasks REST controller'
+  uriPattern: 'rest/tasks'
+  defaults:
+    '@format': 'json'
+    '@package': 'Beech.Task'
+    '@controller': 'Rest\Task'
+    '@action': 'list'
+
 ##
 # EHRM.Common subroutes
 #
@@ -9,18 +18,6 @@
   subRoutes:
     BeechEhrmSubroutes:
       package: 'Beech.Ehrm'
-
-##
-# EHRM.Task subroutes
-#
--
-  name: 'Beech Task'
-  uriPattern: '<BeechTaskSubroutes>'
-  defaults:
-    '@format': 'html'
-  subRoutes:
-    BeechTaskSubroutes:
-      package: 'Beech.Task'
 
 ##
 # Radmiraal.Emberjs subroutes

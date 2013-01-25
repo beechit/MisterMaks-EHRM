@@ -26,7 +26,7 @@ class HelperViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper {
 		}
 
 		if (!empty($action)) {
-			return '{{' . $type . ' ' . $action . '}}';
+			return '{{' . $type . ' "' . $action . '"}}';
 		}
 
 		return '';

@@ -42,20 +42,19 @@ class MenuViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper {
 	 * Render the menu
 	 *
 	 * @param array $items
-	 * @param array $classNames
+	 * @param string $class
 	 * @return string
 	 */
-	public function render(array $items, array $classNames = array('nav')) {
+	public function render(array $items, $class = 'nav') {
 		$view = $this->getView();
 
 		$view->assignMultiple(array(
 			'items' => $items,
 			'settings' => $this->settings,
-			'classNames' => implode(' ', $classNames),
+			'class' => $class,
 		));
 
 		return $view->render();
-
 	}
 
 }

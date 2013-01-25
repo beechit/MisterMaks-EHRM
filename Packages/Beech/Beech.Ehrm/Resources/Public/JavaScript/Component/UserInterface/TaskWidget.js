@@ -3,21 +3,22 @@
 
 	App.Todo = Ember.Object.extend({
 		label: null,
-		priority: null
-	});
-	App.Todo.reopenClass({
+		priority: null,
 		find: function() {}
 	});
 
-	App.AllTodosView = App.AllTodosView.reopen();
+	App.TaskWidgetView = Ember.CollectionView.extend({
+		didInsertElement: function() {
+		}
+	});
 
-	App.AllTodosController = Ember.ArrayController.create({
+	App.TaskWidgetController = Ember.ArrayController.extend({
 		content: [],
 		init: function() {
 			this.loadTasks();
 		},
 		loadTasks: function() {
-			var _this = this;
+			var that = this;
 			$.ajax({
 				format: 'json',
 				dataType: 'json',
@@ -25,25 +26,24 @@
 				success: function(data) {
 					if (data.result.status == 'success') {
 						$.each(data.groups, function(priority, item) {
-							if (!_this.groupExist(priority)) {
-								_this.addGroup(item.label, priority);
+							if (!that.groupExist(priority)) {
+								that.addGroup(item.label, priority);
 							}
 						});
 						$.each(data.items, function(index, item) {
-							_this.addTaskToGroup(item.label, item.priority);
+							that.addTaskToGroup(item.label, item.priority);
 						});
-					} else {
-						alert(result.success)
 					}
 				}
 			});
 		},
 		groupExist: function(priority) {
-			var obj = this.get('content').filterProperty('priority', priority);
-			return (obj.length > 0) ? true : false;
+			return this.get('content').filterProperty('priority', priority).length > 0;
 		},
 		addGroup: function(label, priority) {
-			this.get('content').pushObject(Ember.Object.create({id: 'group-' + priority, priority: priority, label: label, items: []}));
+			this.pushObject(
+				Ember.Object.create({id: 'group-' + priority, priority: priority, label: label, items: []})
+			);
 		},
 		addTaskToGroup: function(label, index) {
 			var properties = {label: label, priority: index};

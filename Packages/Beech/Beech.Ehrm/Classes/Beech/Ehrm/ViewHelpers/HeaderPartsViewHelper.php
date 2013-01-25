@@ -178,27 +178,34 @@ class HeaderPartsViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHel
 	 */
 	protected function addJavaScriptConfiguration() {
 		$settings = array(
-			'authenticated' => $this->authenticationManager->isAuthenticated(),
 			'init' => (object)array(
 				'onLoad' => array(),
-				'afterInitialize' => array(),
-				'preInitialize' => array()
+				'afterInitialize' => array()
 			),
-			'url' => (object)array(
+			'url' => (object)array(	// TODO: those url's are just for loading modules by AJAX, should be replaced by ember-data
 				'module' => (object)array(
-					'administration' => (object)array(
-						'index' => $this->controllerContext->getUriBuilder()
-							->reset()
-							->setFormat('jsonp')
-							->uriFor('list', array(), 'Person', 'Beech.Party', 'Administration'), // TODO: Make index page to show dynamic
-						'menu' => $this->controllerContext->getUriBuilder()
-							->reset()
-							->setFormat('jsonp')
-							->uriFor('menu', array('identifier' => 'administration'), 'Standard', 'Beech.Ehrm'),
-					)
+					'tasks' => $this->controllerContext->getUriBuilder()
+						->reset()
+						->setFormat('jsonp')
+						->setCreateAbsoluteUri(TRUE)
+						->uriFor('index', array(), 'Task', 'Beech.Task'),
+					'userSettings' => $this->controllerContext->getUriBuilder()
+						->reset()
+						->setFormat('jsonp')
+						->setCreateAbsoluteUri(TRUE)
+						->uriFor('index', array(), 'UserPreferences', 'Beech.Ehrm'),
+					'applicationSettings' => $this->controllerContext->getUriBuilder()
+						->reset()
+						->setFormat('jsonp')
+						->setCreateAbsoluteUri(TRUE)
+						->uriFor('index', array(), 'ApplicationSettings', 'Beech.Ehrm', 'Administration'),
+					'documents' => $this->controllerContext->getUriBuilder()
+						->reset()
+						->setFormat('jsonp')
+						->setCreateAbsoluteUri(TRUE)
+						->uriFor('index', array(), 'Document', 'Beech.Document')
 				)
 			),
-			'transitions' => (object)$this->getEmberRouterTransitionLinks(),
 			'configuration' => (object)array(
 				'restTaskUri' => $this->controllerContext->getUriBuilder()
 					->reset()
@@ -210,43 +217,6 @@ class HeaderPartsViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHel
 		);
 
 		$this->output .= sprintf('<script>var MM = %s;</script>', json_encode((object)$settings));
-	}
-
-	/**
-	 * @return array
-	 */
-	protected function getEmberRouterTransitionLinks() {
-		$transitions = array();
-
-		foreach ($this->settings['menu'] as $menuIdentifier => $menuConfiguration) {
-			if (isset($menuConfiguration['menu'])) {
-				foreach ($menuConfiguration['menu'] as $menuItemIdentifier => $menuItemConfiguration) {
-					if (isset($menuItemConfiguration['transition'])) {
-
-						$options = \TYPO3\Flow\Utility\Arrays::arrayMergeRecursiveOverrule(
-							$this->settings['menu']['defaults'],
-							$menuItemConfiguration
-						);
-
-						$transitions[$menuItemConfiguration['transition']] = array(
-							'url' => $this->controllerContext->getUriBuilder()
-								->reset()
-								->setFormat('jsonp')
-								->setCreateAbsoluteUri(TRUE)
-								->uriFor(
-									$options['action'],
-									$options['arguments'],
-									$options['controller'],
-									$options['package'],
-									isset($options['subpackage']) ? $options['subpackage'] : NULL
-								)
-						);
-					}
-				}
-			}
-		}
-
-		return $transitions;
 	}
 
 }

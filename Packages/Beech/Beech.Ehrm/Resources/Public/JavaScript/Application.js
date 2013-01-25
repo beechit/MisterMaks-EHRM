@@ -1,9 +1,11 @@
 (function() {
 	'use strict';
 
+	App.ApplicationView = Ember.View.extend();
 	App.ApplicationView.reopen({
 		classNames: ['full']
 	});
+	App.ApplicationController = Ember.Controller.extend();
 	App.ApplicationController = App.ApplicationController.reopen({
 		title: 'Mister Maks',
 

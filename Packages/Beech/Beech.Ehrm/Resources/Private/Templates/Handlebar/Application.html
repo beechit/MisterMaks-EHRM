@@ -1,13 +1,24 @@
 <div class="container-fluid body">
 	<header class="row-fluid page-header">
 		<nav class="home">
-			<a class="brand" href="#" {{action showDashboard}}><i class="icon-home"></i></a>
+			{{#linkTo "index" class="brand" }}<i class="icon-home"></i>{{/linkTo}}
 		</nav>
-		{{view App.BreadcrumbMenuView}}
+		{{outlet breadcrumbMenu}}
 	</header>
 
 	<div class="row-fluid">
-		{{outlet view}}
+		<div class="row-fluid">
+
+			<div class="span3 left">
+				{{outlet userMenu}}
+				{{outlet sidebar}}
+			</div>
+
+			<div class="span8 offset1">
+				{{outlet main}}
+			</div>
+
+		</div>
 	</div>
 	<div class="push"></div>
 </div>

@@ -1,5 +1,5 @@
 {
-    "hash": "d48cbd4df75e1382ee85455930995336",
+    "hash": "23c5133a673e3156e65150ffe9738e71",
     "packages": [
         {
             "name": "beech/essentials",
@@ -146,12 +146,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/doctrine/couchdb-odm.git",
-                "reference": "0422b958f438036940e9b5de0a750d64d88b41aa"
+                "reference": "6e8dbe81099747f52ca44b0dfe9d0f0e225bd849"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/doctrine/couchdb-odm/archive/0422b958f438036940e9b5de0a750d64d88b41aa.zip",
-                "reference": "0422b958f438036940e9b5de0a750d64d88b41aa",
+                "url": "https://api.github.com/repos/doctrine/couchdb-odm/zipball/6e8dbe81099747f52ca44b0dfe9d0f0e225bd849",
+                "reference": "6e8dbe81099747f52ca44b0dfe9d0f0e225bd849",
                 "shasum": ""
             },
             "require": {
@@ -166,7 +166,7 @@
             "suggest": {
                 "symfony/yaml": ">=2.0.0,<2.2.0-dev"
             },
-            "time": "2012-11-13 23:05:28",
+            "time": "2013-01-28 18:04:52",
             "type": "library",
             "installation-source": "source",
             "autoload": {
@@ -447,18 +447,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/mneuhaus/Famelo.Gerrit",
-                "reference": "67acf0e064605782dccfd27e6cef1184e5dc230c"
+                "reference": "9bc5f2374e4a96262613f6acb841b331c7790b7c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/mneuhaus/Famelo.Gerrit/archive/67acf0e064605782dccfd27e6cef1184e5dc230c.zip",
-                "reference": "67acf0e064605782dccfd27e6cef1184e5dc230c",
+                "url": "https://api.github.com/repos/mneuhaus/Famelo.Gerrit/zipball/9bc5f2374e4a96262613f6acb841b331c7790b7c",
+                "reference": "9bc5f2374e4a96262613f6acb841b331c7790b7c",
                 "shasum": ""
             },
             "require": {
                 "typo3/flow": "*"
             },
-            "time": "2013-01-18 09:00:38",
+            "time": "2013-02-06 14:04:06",
             "type": "typo3-flow-package",
             "installation-source": "source",
             "autoload": {
@@ -474,12 +474,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/nrk/predis.git",
-                "reference": "v0.8.1"
+                "reference": "v0.8.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/nrk/predis/archive/v0.8.1.zip",
-                "reference": "v0.8.1",
+                "url": "https://api.github.com/repos/nrk/predis/zipball/v0.8.2",
+                "reference": "v0.8.2",
                 "shasum": ""
             },
             "require": {
@@ -489,7 +489,7 @@
                 "ext-phpiredis": "Allows faster serialization and deserialization of the Redis protocol",
                 "ext-curl": "Allows access to Webdis when paired with phpiredis"
             },
-            "time": "2013-01-19 10:18:58",
+            "time": "2013-02-03 12:59:55",
             "type": "library",
             "installation-source": "source",
             "autoload": {
@@ -548,18 +548,18 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/radmiraal/Radmiraal.Emberjs.git",
-                "reference": "4c4691b0f2e8b23f44f86658ea167bb8acac6aed"
+                "reference": "081ac3a047f5ee099d7fa2ba7990979d63c0dc52"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/radmiraal/Radmiraal.Emberjs/archive/4c4691b0f2e8b23f44f86658ea167bb8acac6aed.zip",
-                "reference": "4c4691b0f2e8b23f44f86658ea167bb8acac6aed",
+                "url": "https://api.github.com/repos/radmiraal/Radmiraal.Emberjs/zipball/081ac3a047f5ee099d7fa2ba7990979d63c0dc52",
+                "reference": "081ac3a047f5ee099d7fa2ba7990979d63c0dc52",
                 "shasum": ""
             },
             "require": {
                 "typo3/flow": "*"
             },
-            "time": "2012-12-14 13:08:02",
+            "time": "2013-01-30 07:27:35",
             "type": "typo3-flow-package",
             "installation-source": "source",
             "autoload": {
@@ -584,22 +584,22 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Console",
-                "reference": "v2.2.0-BETA2"
+                "reference": "f65e34d058f0990a724f78e8d091dc0a20e439ac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/Console/archive/v2.2.0-BETA2.zip",
-                "reference": "v2.2.0-BETA2",
+                "url": "https://api.github.com/repos/symfony/Console/zipball/f65e34d058f0990a724f78e8d091dc0a20e439ac",
+                "reference": "f65e34d058f0990a724f78e8d091dc0a20e439ac",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "2013-01-18 08:14:58",
+            "time": "2013-01-31 21:39:01",
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.2-dev"
+                    "dev-master": "2.3-dev"
                 }
             },
             "installation-source": "source",
@@ -632,12 +632,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/DomCrawler",
-                "reference": "v2.2.0-BETA2"
+                "reference": "7cc24cd7ae0107662a1854b2b593aa5a0ff45e54"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/DomCrawler/archive/v2.2.0-BETA2.zip",
-                "reference": "v2.2.0-BETA2",
+                "url": "https://api.github.com/repos/symfony/DomCrawler/zipball/7cc24cd7ae0107662a1854b2b593aa5a0ff45e54",
+                "reference": "7cc24cd7ae0107662a1854b2b593aa5a0ff45e54",
                 "shasum": ""
             },
             "require": {
@@ -649,11 +649,11 @@
             "suggest": {
                 "symfony/css-selector": "2.2.*"
             },
-            "time": "2013-01-17 15:25:59",
+            "time": "2013-01-31 21:39:01",
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.2-dev"
+                    "dev-master": "2.3-dev"
                 }
             },
             "installation-source": "source",
@@ -686,22 +686,22 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Yaml",
-                "reference": "v2.2.0-BETA2"
+                "reference": "f198ac28048eeceae852419c076123aaee59cd1c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/Yaml/archive/v2.2.0-BETA2.zip",
-                "reference": "v2.2.0-BETA2",
+                "url": "https://api.github.com/repos/symfony/Yaml/zipball/f198ac28048eeceae852419c076123aaee59cd1c",
+                "reference": "f198ac28048eeceae852419c076123aaee59cd1c",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "2013-01-23 20:21:00",
+            "time": "2013-01-31 21:39:01",
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.2-dev"
+                    "dev-master": "2.3-dev"
                 }
             },
             "installation-source": "source",
@@ -865,12 +865,12 @@
             "source": {
                 "type": "git",
                 "url": "git://git.typo3.org/FLOW3/Packages/TYPO3.Form.git",
-                "reference": "b579eb02685e971f2e295f7671878a5762935672"
+                "reference": "05be573ad81729e7c0798b97df75643671d8038e"
             },
             "require": {
                 "typo3/flow": "*"
             },
-            "time": "2013-01-07 15:59:54",
+            "time": "2013-01-24 19:05:44",
             "type": "typo3-flow-package",
             "installation-source": "source",
             "autoload": {
@@ -1077,12 +1077,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "d5949c4a80e7aace9927a83b4fa88bbc915e5e4d"
+                "reference": "bf502b4433eb0408b26c4395ad2873714e62d82b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/sebastianbergmann/php-code-coverage/archive/d5949c4a80e7aace9927a83b4fa88bbc915e5e4d.zip",
-                "reference": "d5949c4a80e7aace9927a83b4fa88bbc915e5e4d",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/bf502b4433eb0408b26c4395ad2873714e62d82b",
+                "reference": "bf502b4433eb0408b26c4395ad2873714e62d82b",
                 "shasum": ""
             },
             "require": {
@@ -1096,7 +1096,7 @@
                 "ext-dom": "*",
                 "ext-xdebug": ">=2.2.1"
             },
-            "time": "2013-01-07 10:45:57",
+            "time": "2013-02-06 09:29:32",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1228,18 +1228,18 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/sebastianbergmann/php-timer.git",
-                "reference": "6d28a5483f2b824a5bcc39c3761eb2cb9a0dd0a0"
+                "reference": "de74b17cf85c51d57480c88bc069538b83ffed2f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/sebastianbergmann/php-timer/archive/6d28a5483f2b824a5bcc39c3761eb2cb9a0dd0a0.zip",
-                "reference": "6d28a5483f2b824a5bcc39c3761eb2cb9a0dd0a0",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-timer/zipball/de74b17cf85c51d57480c88bc069538b83ffed2f",
+                "reference": "de74b17cf85c51d57480c88bc069538b83ffed2f",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.3"
+                "php": ">=5.4.7"
             },
-            "time": "2013-01-07 10:52:28",
+            "time": "2013-01-30 06:29:42",
             "type": "library",
             "installation-source": "source",
             "autoload": {
@@ -1391,12 +1391,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/sebastianbergmann/phpunit-mock-objects.git",
-                "reference": "1.2.3"
+                "reference": "d49b5683200b5db9b1c64cb06f52f50d147891c4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/sebastianbergmann/phpunit-mock-objects/archive/1.2.3.zip",
-                "reference": "1.2.3",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/d49b5683200b5db9b1c64cb06f52f50d147891c4",
+                "reference": "d49b5683200b5db9b1c64cb06f52f50d147891c4",
                 "shasum": ""
             },
             "require": {
@@ -1406,7 +1406,7 @@
             "suggest": {
                 "ext-soap": "*"
             },
-            "time": "2013-01-13 10:24:48",
+            "time": "2013-02-05 07:46:41",
             "type": "library",
             "installation-source": "source",
             "autoload": {
@@ -1477,18 +1477,16 @@
             "source": {
                 "type": "git",
                 "url": "git://git.typo3.org/FLOW3/BuildEssentials.git",
-                "reference": "8c4fdd21085b7dda3434ac748cbe1bb1a7f61cab"
+                "reference": "b6e42eaa70e9dcf36626dcc86bf8c4b2e1793e6a"
             },
             "require": {
                 "php": ">=5.3.2",
                 "typo3/flow-composer-installers": "*"
             },
-            "time": "2012-12-06 10:36:28",
+            "time": "2013-01-31 12:38:48",
             "type": "typo3-flow-build",
             "extra": {
-                "typo3/flow": {
-                    "case-sensitive-package-name": "BuildEssentials"
-                }
+                "installer-name": "BuildEssentials"
             },
             "installation-source": "source",
             "notification-url": "https://packagist.org/downloads/",

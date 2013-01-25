@@ -1,6 +1,7 @@
-{namespace mm=Beech\Ehrm\ViewHelpers}<h3>Tasks <a href="#" {mm:ember.helper(action:'showTaskModule')} class="pull-right" rel="tooltip" data-placement="left" title="Go to all tasks"><i class="icon-tasks"></i></a></h3>
+{namespace mm=Beech\Ehrm\ViewHelpers}
+<h3>Tasks <a class="pull-right" rel="tooltip" data-placement="left" title="Go to all tasks"><i class="icon-tasks"></i></a></h3>
 <div class="accordion" id="tasklist">
-	{{#each App.AllTodosController.content}}
+	{{#each view.content}}
 	<div class="accordion-group">
 		<div class="accordion-heading">
 			<a class="accordion-toggle" data-toggle="collapse" data-parent="#tasklist" href="#{{showId}}">

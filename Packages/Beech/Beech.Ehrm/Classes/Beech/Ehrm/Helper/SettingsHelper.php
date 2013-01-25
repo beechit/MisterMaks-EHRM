@@ -93,7 +93,7 @@ class SettingsHelper {
 	public function convertMenuActionsToUrls() {
 		$defaults = \TYPO3\Flow\Utility\Arrays::arrayMergeRecursiveOverrule(
 			array('package' => NULL, 'controller' => 'Standard', 'action' => 'index', 'format' => 'html', 'arguments' => array(), 'subpackage' => NULL),
-			$this->settings['menu']['defaults']
+			isset($this->settings['menu']['defaults']) ? $this->settings['menu']['defaults'] : array()
 		);
 
 		$keysToConvert = array('menu', 'modules');
@@ -144,11 +144,13 @@ class SettingsHelper {
 			foreach ($this->settings[$identifier][$subIdentifier]['menu'] as $index => $menuItem) {
 				$options = \TYPO3\Flow\Utility\Arrays::arrayMergeRecursiveOverrule($defaults, $menuItem);
 
-				$this->settings[$identifier][$subIdentifier]['menu'][$index]['href'] = $this->uriBuilder
-					->reset()
-					->setCreateAbsoluteUri(TRUE)
-					->setFormat($options['format'])
-					->uriFor($options['action'], $options['arguments'], $options['controller'], $options['package'], $options['subpackage']);
+				if (isset($options['action'])) {
+					$this->settings[$identifier][$subIdentifier]['menu'][$index]['href'] = $this->uriBuilder
+						->reset()
+						->setCreateAbsoluteUri(TRUE)
+						->setFormat($options['format'])
+						->uriFor($options['action'], $options['arguments'], $options['controller'], $options['package'], $options['subpackage']);
+				}
 			}
 		}
 	}

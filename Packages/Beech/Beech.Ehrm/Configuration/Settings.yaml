@@ -1,120 +1,5 @@
 Beech:
   Ehrm:
-    menu:
-      defaults:
-        package: 'Beech.Ehrm'
-        controller: 'Standard'
-        action: 'index'
-        subpackage: ''
-        arguments: []
-      main:
-        groups:
-          employee:
-            priority: 10
-            label: 'Employees'
-          organization:
-            priority: 20
-            label: 'Organization'
-          report:
-            priority: 30
-            label: 'Report'
-      administration:
-        groups:
-          party:
-            priority: 10
-            label: 'Party'
-          cla:
-            priority: 20
-            label: 'Cla'
-          system:
-            priority: 99
-            label: 'System'
-        menu:
-          accounts:
-            label: 'Accounts'
-            package: 'Beech.Party'
-            subpackage: 'Administration'
-            controller: 'Account'
-            action: 'list'
-            menuGroup: 'administration:party'
-          company:
-            label: 'Companies'
-            package: 'Beech.Party'
-            subpackage: 'Administration'
-            controller: 'Company'
-            action: 'list'
-            menuGroup: 'administration:party'
-          group:
-            label: 'Groups'
-            package: 'Beech.Party'
-            subpackage: 'Administration'
-            controller: 'Group'
-            action: 'list'
-            menuGroup: 'administration:party'
-          groupTypes:
-            label: 'Group Types'
-            package: 'Beech.Party'
-            subpackage: 'Administration'
-            controller: 'GroupType'
-            action: 'list'
-            menuGroup: 'administration:party'
-          persons:
-            label: 'Persons'
-            package: 'Beech.Party'
-            subpackage: 'Administration'
-            controller: 'Person'
-            action: 'list'
-            menuGroup: 'administration:party'
-          settings:
-            label: 'Settings'
-            package: 'Beech.Ehrm'
-            subpackage: 'Administration'
-            controller: 'ApplicationSettings'
-            action: 'index'
-            menuGroup: 'administration:system'
-          log:
-            label: 'Logging'
-            package: 'Beech.Ehrm'
-            subpackage: 'Administration'
-            controller: 'Log'
-            action: 'list'
-            menuGroup: 'administration:system'
-
-      account:
-        menu:
-          documents:
-            label: 'Documents'
-            priority: 15
-            controller: 'Document'
-            action: 'index'
-            package: 'Beech.Document'
-            transition: 'showDocumentModule'
-          settings:
-            label: 'Settings'
-            priority: 20
-            controller: 'UserPreferences'
-            action: 'index'
-            transition: 'showSettings'
-          management:
-            label: 'Administration'
-            priority: 100
-            subpackage: 'Administration'
-            controller: 'Standard'
-            action: 'index'
-            resource: 'ManagementControllers'
-            transition: 'showAdministration'
-          logout:
-            label: 'Logout'
-            priority: 9999
-            controller: 'Login'
-            action: 'logout'
-    search:
-      enabled: FALSE
-    modules:
-      defaults:
-        package: 'Beech.Ehrm'
-        controller: 'Standard'
-        action: 'index'
     languages: ['en_EN', 'nl_NL', 'pl_PL']
 
     resources:
@@ -142,26 +27,19 @@ Beech:
         sources:
           init: 'Beech.Ehrm/JavaScript/Init.js'
           moduleHandler: 'Beech.Ehrm/JavaScript/ModuleHandler.js'
-          module: 'Beech.Ehrm/JavaScript/Mixins/Module.js'
-          mvc:
-            uri:
-              package: 'Radmiraal.Emberjs'
-              controller: 'Configuration'
-              action: 'mvc'
-              arguments:
-                application: 'MisterMaks'
+          moduleMixin: 'Beech.Ehrm/JavaScript/Mixins/Module.js'
+          ajaxModuleMixin: 'Beech.Ehrm/JavaScript/Mixins/AjaxModule.js'
+          modelRouteMixin: 'Beech.Ehrm/JavaScript/Mixins/ModelRoute.js'
           application: 'Beech.Ehrm/JavaScript/Application.js'
-          mainMenu: 'Beech.Ehrm/JavaScript/Component/MainMenu.js'
-          dashboardWidget: 'Beech.Ehrm/JavaScript/Component/Dashboard/DashboardWidget.js'
-          taskModuleAllTodos: 'Beech.Ehrm/JavaScript/Component/Dashboard/Widget/AllTodos.js'
-          administration: 'Beech.Ehrm/JavaScript/Component/Module/Administration.js'
+          router: 'Beech.Ehrm/JavaScript/Router.js'
+          breadcrumbMenu: 'Beech.Ehrm/JavaScript/Component/UserInterface/BreadcrumbMenu.js'
+          taskModuleAllTodos: 'Beech.Ehrm/JavaScript/Component/UserInterface/TaskWidget.js'
           notificationService: 'Beech.Ehrm/JavaScript/Service/Notification.js'
 
     viewHelpers:
       partialRootPath: 'resource://Beech.Ehrm/Private/Templates/ViewHelpers/Partials/'
       templates:
         'Beech\Ehrm\ViewHelpers\Navigation\MenuViewHelper': 'resource://Beech.Ehrm/Private/Templates/ViewHelpers/Navigation/Menu.html'
-
 
 TYPO3:
   Form:
@@ -190,106 +68,3 @@ TYPO3:
     handlebarsTemplates:
       # include the handlebars template
       Finisher-DatabaseFinisher: resource://Beech.Ehrm/Private/Templates/FormBuilder/DatabaseFinisher.html
-
-Radmiraal:
-  Emberjs:
-    applications:
-      MisterMaks:
-        mvc:
-          controller:
-            application: []
-            dashboard: []
-            breadcrumbMenu: []
-            administration:
-              controller:
-                mixin: 'App.ModuleControllerMixin'
-                options:
-                  menuUrl: 'javascript://MM.url.module.administration.menu'
-                  contentUrl: 'javascript://MM.url.module.administration.index'
-              view:
-                mixin: 'App.ModuleViewMixin'
-                options:
-                  templateName: 'module-2column'
-            management:
-              controller:
-                mixin: 'App.ModuleControllerMixin'
-              view:
-                mixin: 'App.ModuleViewMixin'
-                options:
-                  templateName: 'module-2column'
-            settings:
-              view:
-                mixin: 'App.ModuleViewMixin'
-                options:
-                  templateName: 'module-2column'
-              controller:
-                mixin: 'App.ModuleControllerMixin'
-                options:
-                  contentUrl: 'javascript://MM.transitions.showSettings.url'
-            taskModule:
-              view:
-                mixin: 'App.ModuleViewMixin'
-                options:
-                  templateName: 'module-2column'
-              controller:
-                mixin: 'App.ModuleControllerMixin'
-                options:
-                  contentUrl: 'javascript://MM.transitions.showTaskModule.url'
-            allTodos:
-              view:
-                options:
-                  templateName: 'alltodos'
-            documentModule:
-              controller:
-                mixin: 'App.ModuleControllerMixin'
-                options:
-                  contentUrl: 'javascript://MM.transitions.showDocumentModule.url'
-              view:
-                mixin: 'App.ModuleViewMixin'
-                options:
-                  templateName: 'module-2column'
-            dashboardWidget:
-              view:
-                options:
-                  templateName: 'dashboardwidget'
-
-        router:
-          defaults:
-            outlets: []
-          dashboard:
-            path: '/'
-            outlets:
-              view:
-                target: 'applicationController'
-                controller: 'dashboard'
-                context: 'App.Todo.find()'
-          documentModule:
-            path: '/documents'
-            outlets:
-              view:
-                target: 'applicationController'
-                controller: 'documentModule'
-          taskModule:
-            path: '/tasks'
-            outlets:
-              view:
-                target: 'applicationController'
-                controller: 'taskModule'
-          management:
-            path: '/management'
-            outlets:
-              view:
-                target: 'applicationController'
-                controller: 'management'
-          administration:
-            path: '/administration'
-            outlets:
-              view:
-                target: 'applicationController'
-                controller: 'administration'
-          settings:
-            path: '/settings'
-            outlets:
-              view:
-                target: 'applicationController'
-                controller: 'settings'
