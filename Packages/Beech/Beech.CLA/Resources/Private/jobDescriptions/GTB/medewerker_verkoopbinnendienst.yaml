@@ -1,0 +1,14 @@
+jobDescriptionNumber: '50.01'
+jobDescription:
+  jobTitle: 'Medewerker verkoopbinnendienst'
+  jobContext: 'De functie komt voor in middelgrote tot grote glastuinbouwbedrijven.'
+  reportsTo: 'operationeel leidinggevende, zoals bijv. directie of hoofd verkoop'
+  Manages: 'niet van toepassing'
+department: Commercie
+expectations:
+  mainActivities: ["­\tverstrekken van telefonische informatie aan (po-tentiële) klanten over bedrijf en producten en ver-sturen van brochures", "­\tinplannen van bezoekafspraken t.b.v. verkoopbui-tendienst bij bestaande en nieuwe klanten", "­\tdoorgeven van boodschappen, klachten en bij-zonderheden aan de klant en verkoopbuitendienst", "­\tdeelnemen aan vergaderingen, maken van een vergaderverslag en verstrekken van informatie over lopende zaken", "­\tinvoeren van offertegegevens per klant", "­\tnavragen bij afnemers en/of contact opnemen met de verkoopbuitendienst over uitstaande offertes ", 'adviseren en begeleiden van personele ontwikkelvraag-stukken ', 'toezien op het naleven van procedures voor de toegang tot computerruimtes, de opslag van informatiedragers, het aanmaken van back-ups e.d.', 'ontwikkelen en vastleggen van back-up procedures, draaiboek m.b.t. de in noodsituaties te ondernemen acties', 'opstellen van procedures voor systeemontwikkelaars, ap-plicatiebeheerders en eindgebruikers ', 'leggen en ontstoppen van rioleringen', 'uitvoeren van voorbereidende en bijkomende werkzaam-heden als hak- en breekwerk, graafwerk, bestratingwerk-zaamheden ']
+  resultCriteria: ["­\ttijdigheid en juistheid van informatiever-strekking", "­\tcorrectheid van informatieverstrek-king/klantvriendelijkheid", "­\tefficiency en juistheid van geplande af-spraken "]
+burdeningCircumstances:
+  circumstance: ['Eenzijdige houding en belasting van oog- en rugspieren bij het werken met beeldscherm (ca. 2 uur p.d.).', 'Het functieniveau volgens ORBA is gebaseerd op de rubrieken: Functiecontext, Positie in de organisatie, Functiedoel, Resul-taatverwachting / Functionele activiteiten en Werkgerelateerde bezwaren. ', 'Het functieniveau volgens ORBA is gebaseerd op de rubrieken: Functiecontext, Positie in de organisatie, Functiedoel, Resul-taatverwachting / Functionele activiteiten en Werkgerelateerde bezwaren. ', 'Kans op letsel door aanraking van kookplaten, van gebroken glas/serviesgoed alsmede door stoten.', 'Het functieniveau volgens ORBA is gebaseerd op de rubrieken: Functiecontext, Positie in de organisatie, Functiedoel, Resul-taatverwachting / Functionele activiteiten en Werkgerelateerde bezwaren. ']
+orbaScore: '118'
+wageScaleGroup: G

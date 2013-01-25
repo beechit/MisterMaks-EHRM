@@ -1,0 +1,14 @@
+jobDescriptionNumber: '70.01'
+jobDescription:
+  jobTitle: 'Medewerker huishoudelijke dienst'
+  jobContext: 'De functie wordt meestal parttime vervuld.'
+  reportsTo: 'operationeel leidinggevende, zoals bijv. ondernemer of bedrijfsleider'
+  Manages: 'niet van toepassing'
+department: 'Staf & facility'
+expectations:
+  mainActivities: ['Aanvullen van zeep en toiletpapier, zonodig verwisselen van huishoudtextiel.', 'indelen van de werkzaamheden volgens schema, op-drachten van leidinggevende en evt. naar eigen inzicht op grond van beoordeling van de situatie', 'verzamelen van kantoorafval en afvoeren naar daartoe bestemde plaatsen ', 'maken en vastleggen van afspraken met eindgebruikers voor de planning van de batchverwerking op het centrale systeem', 'oplossen van verwerkingsproblemen met een systeem-technische achtergrond', 'reconstrueren van databases (vanuit back-ups) na opge-treden problemen', 'uitgeven en inbrengen van toegangscodes voor gebrui-kers, conform autorisatie van daartoe aangewezen lei-dinggevenden', 'toezien op het naleven van procedures voor de toegang tot computerruimtes, de opslag van informatiedragers, het aanmaken van back-ups e.d.', 'ontwikkelen en vastleggen van back-up procedures, draaiboek m.b.t. de in noodsituaties te ondernemen acties', 'opstellen van procedures voor systeemontwikkelaars, ap-plicatiebeheerders en eindgebruikers ', 'leggen en ontstoppen van rioleringen', 'uitvoeren van voorbereidende en bijkomende werkzaam-heden als hak- en breekwerk, graafwerk, bestratingwerk-zaamheden ']
+  resultCriteria: ['aanwezigheid van artikelen op locaties']
+burdeningCircumstances:
+  circumstance: ['Krachtsuitoefening tijdens handmatige schoonmaakwerkzaamheden en het verplaatsen van volle emmers met water.', 'Eenzijdige belasting van armspieren. Werken in gedwongen houdingen (bukken en buigen).', 'Onaangenaam werk bij het reinigen van sanitaire voorzieningen. Hinder van vuil, water en reinigingsmiddelen.', 'Kans op letsel/verwondingen door vallen e.d. ', 'Het functieniveau volgens ORBA is gebaseerd op de rubrieken: Functiecontext, Positie in de organisatie, Functiedoel, Resul-taatverwachting / Functionele activiteiten en Werkgerelateerde bezwaren. ']
+orbaScore: '31'
+wageScaleGroup: B1

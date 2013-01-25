@@ -1,0 +1,14 @@
+jobDescriptionNumber: '60.01'
+jobDescription:
+  jobTitle: 'Administratief medewerker'
+  jobContext: 'De functie komt voor in grotere glastuinbouw bedrijven met veelal een aparte afdeling verkoop. Functionaris werkt volledig on-der verantwoordelijkheid van het afdelingshoofd en binnen vastgestelde werkafspraken, regels en voorschriften. Maakt gebruik van standaard administratieve computerprogramma’s.'
+  reportsTo: 'operationeel leidinggevende, zoals bijv. hoofd verkoop of hoofd administratie'
+  Manages: 'niet van toepassing'
+department: 'Administratie & ICT'
+expectations:
+  mainActivities: ['archiveren van stukken, bijhouden en periodiek schonen van archieven en bestanden', 'kopiëren en verspreiden van stukken', 'registreren van klachten en claims', 'bijhouden van voorraad kantoorbenodigdheden, uitgeven en afroepen van nieuwe voorraad ', 'op verzoek raadplegen van contracten en informeren van betrokken medewerker(s) ', 'zo nodig toelichten van de offerte bij een klant', 'opstellen van een jaarcontract (afroep) en bespreken met leidinggevende ', 'mengen en storten van (kleine hoeveelheden) beton m.b.v. betonmolen', 'aanbrengen van pleisterlagen op muren en plafonds', 'zetten van vloer- en wandtegels', 'leggen en ontstoppen van rioleringen', 'uitvoeren van voorbereidende en bijkomende werkzaam-heden als hak- en breekwerk, graafwerk, bestratingwerk-zaamheden ']
+  resultCriteria: ['beschikbaarheid van archief-stukken en gegevensbestanden', 'juistheid van geregistreerde klachten en claims', 'beschikbaarheid van kantoorar-tikelen']
+burdeningCircumstances:
+  circumstance: ['Eenzijdige houding en belasting van oog- en rugspieren bij het werken met beeldscherm (ca. 3-4 uur p.d.).', 'Het functieniveau volgens ORBA is gebaseerd op de rubrieken: Functiecontext, Positie in de organisatie, Functiedoel, Resul-taatverwachting / Functionele activiteiten en Werkgerelateerde bezwaren. ', 'Het functieniveau volgens ORBA is gebaseerd op de rubrieken: Functiecontext, Positie in de organisatie, Functiedoel, Resul-taatverwachting / Functionele activiteiten en Werkgerelateerde bezwaren. ', 'Kans op letsel door contact met onder spanning staande delen, door aanraking met scherpe machineonderdelen.', 'Het functieniveau volgens ORBA is gebaseerd op de rubrieken: Functiecontext, Positie in de organisatie, Functiedoel, Resul-taatverwachting / Functionele activiteiten en Werkgerelateerde bezwaren. ']
+orbaScore: '67'
+wageScaleGroup: E

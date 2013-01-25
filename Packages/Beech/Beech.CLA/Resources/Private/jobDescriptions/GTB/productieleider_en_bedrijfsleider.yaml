@@ -1,0 +1,14 @@
+jobDescriptionNumber: '10.13'
+jobDescription:
+  jobTitle: Productieleider/bedrijfsleider
+  jobContext: 'Het betreft de functie die vooral voorkomt in de (middel)grote glastuinbouwbedrijven (groenten en bloemen/planten) waarin de uitvoerende werkzaamheden zelfstandig worden verricht. De uitvoering wordt op hoofdlijnen aangegeven. De functiehouder geeft leiding en houdt toezicht op de uitvoering door medewerkers. Tijdens bedrijfspieken zijn soms relatief grote aantallen werknemers aanwezig.'
+  reportsTo: directie
+  Manages: 'ca. 5-10 afdelingshoofden, groepsleiders en/of meewerkend voormannen, indirect ca 60-70 medewerkers (tijdens bedrijfspieken)'
+department: Productie
+expectations:
+  mainActivities: ['zorgen voor het beheer van en veiligheid op het bedrijfs-terrein', 'toezien op de naleving van deze procedures en werkin-structies', 'beoordelen van de handelingsprocessen en zo nodig doen van voorstellen tot optimalisatie', 'voorbereiden van investering- en onderhoudsplannen, opstellen van budgetten', 'beheren van de toegewezen budgetten en verzorgen van rapportages ', 'controleren van de kwaliteit van het product', 'signaleren van verstorende invloeden en deze bespreken met bedrijfsleider', 'deelnemen aan maandelijks overleg met alle vaste me-dewerkers en wekelijks overleg met het management ', 'uitzetten en verplaatsen van opgepot uitgangsmateri-aal in kas- of groeipositie (mechanisch of handmatig) ']
+  resultCriteria: ['mate van naleving van bedrijfs-regels- en procedures', 'mate van naleving van veilig-heidsvoorschriften en procedu-res', 'mate van naleving van voor-schriften en procedures ']
+burdeningCircumstances:
+  circumstance: ['Niet van toepassing.', 'Het functieniveau volgens ORBA is gebaseerd op de rubrieken: Functiecontext, Positie in de organisatie, Functiedoel, Resul-taatverwachting / Functionele activiteiten en Werkgerelateerde bezwaren. ', 'Hinder van dragen van voorgeschreven persoonlijke beschermingsmiddelen bij samenstellen of aanbrengen van voedings-/meststoffen of bestrijdingsmiddelen.', 'Het functieniveau volgens ORBA is gebaseerd op de rubrieken: Functiecontext, Positie in de organisatie, Functiedoel, Resul-taatverwachting / Functionele activiteiten en Werkgerelateerde bezwaren. ', 'Het functieniveau volgens ORBA is gebaseerd op de rubrieken: Functiecontext, Positie in de organisatie, Functiedoel, Resul-taatverwachting / Functionele activiteiten en Werkgerelateerde bezwaren. ']
+orbaScore: '197'
+wageScaleGroup: 'Boven CAO'

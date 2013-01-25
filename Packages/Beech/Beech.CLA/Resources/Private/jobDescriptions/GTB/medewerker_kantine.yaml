@@ -1,0 +1,14 @@
+jobDescriptionNumber: '70.02'
+jobDescription:
+  jobTitle: 'Medewerker kantine'
+  jobContext: 'De functie komt voor in de grotere agrarische bedrijven en meestal niet als fulltime functie. De kantinefaciliteiten zijn, met uit-zondering van de hele grote ondernemingen, veelal beperkt tot standaard drankenassortiment.'
+  reportsTo: 'bedrijfsleider of ondernemer'
+  Manages: 'niet van toepassing'
+department: 'Staf & facility'
+expectations:
+  mainActivities: ['dagelijks opruimen van de kantine', 'afruimen van tafels, schoonmaken van meubilair en vloeren', 'opruimen van overgebleven voorraden', 'afwassen van serviesgoed m.b.v. vaatwasser', 'serveren van koffie, thee en dranken bij vergaderingen', 'rondgaan met dranken en snacks bij recepties of andere bijeenkomsten', 'bijvullen en schoonhouden van automaten voor koffie, thee en frisdranken', 'toezien op het naleven van procedures voor de toegang tot computerruimtes, de opslag van informatiedragers, het aanmaken van back-ups e.d.', 'ontwikkelen en vastleggen van back-up procedures, draaiboek m.b.t. de in noodsituaties te ondernemen acties', 'opstellen van procedures voor systeemontwikkelaars, ap-plicatiebeheerders en eindgebruikers ', 'leggen en ontstoppen van rioleringen', 'uitvoeren van voorbereidende en bijkomende werkzaam-heden als hak- en breekwerk, graafwerk, bestratingwerk-zaamheden ']
+  resultCriteria: ['tijdigheid en correctheid van afruimen en opruimen', 'correctheid van naleving van netheid, hygiëne en HACCP- voorschriften', 'aanblik van kantine, lunchtafels']
+burdeningCircumstances:
+  circumstance: ['Krachtsuitoefening bij het tillen van koffie en theekannen, afruimen van serviesgoed en bij opruim- en schoonmaakwerkzaam-heden.', 'Lopend en staand werk, deels in gedwongen (gebogen) houding.', 'Hinder van dampen bij bereiding van snacks, alsmede van vuil en stof bij schoonmaakwerkzaamheden.', 'Kans op letsel door aanraking van kookplaten, van gebroken glas/serviesgoed alsmede door stoten.', 'Het functieniveau volgens ORBA is gebaseerd op de rubrieken: Functiecontext, Positie in de organisatie, Functiedoel, Resul-taatverwachting / Functionele activiteiten en Werkgerelateerde bezwaren. ']
+orbaScore: '43'
+wageScaleGroup: C

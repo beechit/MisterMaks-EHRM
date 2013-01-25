@@ -1,0 +1,14 @@
+jobDescriptionNumber: '40.04'
+jobDescription:
+  jobTitle: 'Hoofd onderhoud'
+  jobContext: 'De functie van hoofd onderhoud komt voor in m.n. middelgrote tot grotere ondernemingen. De functie is verantwoordelijk voor het onderhouden en optimaliseren van de installaties, opstallen en utiliteitsvoorzieningen. Een deel van het (meer specialistische) onderhoud/reparatiewerk is via servicecontracten uitbesteed aan machineleveranciers. Grotere nieuwbouw of wijzigingsprojecten worden door een interne projectleider (directie/bedrijfsleiding) aangestuurd.'
+  reportsTo: 'ondernemer of bedrijfsleiding '
+  Manages: '1-5 monteurs (WTB/E)'
+department: Techniek
+expectations:
+  mainActivities: ['toezien op de naleving en corrigerend optreden inzake de handhaving van de bedrijfs- en veiligheidsvoorschriften', 'regelen van vakantie en verlof', 'inwerken, instrueren van nieuw en/of tijdelijk personeel', 'begeleiden, motiveren en stimuleren van de medewerkers', '(laten) installeren en overdragen van nieuwbouwwerken aan de opdrachtgever/gebruikersorganisatie', 'meewerken aan en volgen van meer omvangrijke nieuw-bouw-, opbouw- en/of testwerkzaamheden van appara-tuur en installaties door leveranciers', 'metselen van muren, kolommen, fundaties, alsmede ver-richten van voegwerk', 'mengen en storten van (kleine hoeveelheden) beton m.b.v. betonmolen', 'aanbrengen van pleisterlagen op muren en plafonds', 'zetten van vloer- en wandtegels', 'leggen en ontstoppen van rioleringen', 'uitvoeren van voorbereidende en bijkomende werkzaam-heden als hak- en breekwerk, graafwerk, bestratingwerk-zaamheden ']
+  resultCriteria: ['mate waarin regels en voor-schriften worden nageleefd']
+burdeningCircumstances:
+  circumstance: ['Uitoefenen van kracht bij assistentie in de uitvoering van onderhoudswerk.', 'Inspannende houding bij inspecties op moeilijk toegankelijke plaatsen komt voor.', 'Hinder van lawaai en temperatuurverschillen bij verblijf in productieruimten, kassen, utiliteitsvoorzieningen e.d.', 'Kans op letsel door contact met onder spanning staande delen, door aanraking met scherpe machineonderdelen.', 'Het functieniveau volgens ORBA is gebaseerd op de rubrieken: Functiecontext, Positie in de organisatie, Functiedoel, Resul-taatverwachting / Functionele activiteiten en Werkgerelateerde bezwaren. ']
+orbaScore: '171'
+wageScaleGroup: 'Boven CAO'

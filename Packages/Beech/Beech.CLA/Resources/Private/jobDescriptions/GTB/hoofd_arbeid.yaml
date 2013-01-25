@@ -1,0 +1,14 @@
+jobDescriptionNumber: '10.12'
+jobDescription:
+  jobTitle: 'Hoofd arbeid'
+  jobContext: 'De functie komt m.n. in (middel)grote glastuinbouwbedrijven (groenten en bloemen/planten) voor. Inzake de uitvoering wordt teruggerapporteerd en achteraf verantwoording afgelegd aan bedrijfsleider of directie. Het hoofd arbeid houdt zich bezig met het inplannen van de arbeid o.b.v. de teeltplannen en werkschema’s i.s.m. een hoofd teelt of een teeltmanager.'
+  reportsTo: 'operationeel leidinggevende, zoals bijv. ondernemer of bedrijfsleider.'
+  Manages: '10-20 vaste medewerkers, aangevuld met seizoensmedewerkers (ca. 20-50)'
+department: Productie
+expectations:
+  mainActivities: ['uitvoeren van het personeelsbeheer w.o. selecteren en aannemen van nieuwe medewerkers, opleiden/begeleiden van nieuwe medewerkers, voeren van beoordelingsge-sprekken, regelen van verlof. bijhouden van diverse aan/afwezigheidgegevens', 'coachen van medewerkers', 'bijhouden van wetgeving op het gebied van personeel i.s.m. medewerker P&O', 'verrichten van overige werkzaamheden w.o. het opstellen van werkinstructies/instructiemateriaal voor medewer-kers ', 'oplossen van moeilijkheden die door medewerkers niet kunnen of mogen verholpen worden', 'controleren van de kwaliteit van het product', 'signaleren van verstorende invloeden en deze bespreken met bedrijfsleider', 'deelnemen aan maandelijks overleg met alle vaste me-dewerkers en wekelijks overleg met het management ', 'uitzetten en verplaatsen van opgepot uitgangsmateri-aal in kas- of groeipositie (mechanisch of handmatig) ']
+  resultCriteria: ['kennis van medewerkers', 'efficiency en juistheid van uit-gevoerde werkzaamheden', 'doelmatigheid van communica-tie', 'tijdigheid en juistheid oplossin-gen van afwijkingen en proble-men ']
+burdeningCircumstances:
+  circumstance: ['Soms werken/verblijven in ruimten met hinder van relatief hoge luchtvochtigheid en/of hoge temperatuur.', 'Het functieniveau volgens ORBA is gebaseerd op de rubrieken: Functiecontext, Positie in de organisatie, Functiedoel, Resul-taatverwachting / Functionele activiteiten en Werkgerelateerde bezwaren. ', 'Hinder van dragen van voorgeschreven persoonlijke beschermingsmiddelen bij samenstellen of aanbrengen van voedings-/meststoffen of bestrijdingsmiddelen.', 'Het functieniveau volgens ORBA is gebaseerd op de rubrieken: Functiecontext, Positie in de organisatie, Functiedoel, Resul-taatverwachting / Functionele activiteiten en Werkgerelateerde bezwaren. ', 'Het functieniveau volgens ORBA is gebaseerd op de rubrieken: Functiecontext, Positie in de organisatie, Functiedoel, Resul-taatverwachting / Functionele activiteiten en Werkgerelateerde bezwaren. ']
+orbaScore: '152'
+wageScaleGroup: 'Boven CAO'
