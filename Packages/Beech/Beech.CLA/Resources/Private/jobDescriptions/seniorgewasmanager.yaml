@@ -19,8 +19,8 @@ levelDifferentiation: 'De Gewasmanager komt op drie niveaus voor binnen LTO Groe
 jobGoalTitle: 'Doel van de functie'
 jobGoal: 'Het, binnen een toegewezen verantwoordelijkheidsgebied, proactief ondersteunen van (groepen van) ondernemers teneinde kennisuitwisseling en -verbreding te bevorderen en ontwikkelingen binnen de tuinbouwsector te stimuleren.'
 hierarchicalPositionTitle: 'Organisatorische positie'
-hierarchicalPositionUp: 'De Senior Gewasmanager ressorteert hiërarchisch onder de Teamleider gewasmanagement.'
-hierarchicalPostionDown: 'De Senior Gewasmanager stuurt eventueel de werkzaamheden van een of meerdere Gewasmanagers B functioneel aan.'
+reportsTo: 'De Senior Gewasmanager ressorteert hiërarchisch onder de Teamleider gewasmanagement.'
+manages: 'De Senior Gewasmanager stuurt eventueel de werkzaamheden van een of meerdere Gewasmanagers B functioneel aan.'
 resultArea: 'resultaatgebieden'
 resultAreas:
   1:

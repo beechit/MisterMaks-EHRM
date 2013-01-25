@@ -19,8 +19,8 @@ levelDifferentiation:
 jobGoalTitle: 'Doel van de functie'
 jobGoal: 'Het aansturen van de afdeling teneinde een sluitende financiële-, personele- en projectadministratie te realiseren.'
 hierarchicalPositionTitle: 'Organisatorische positie'
-hierarchicalPositionUp: 'De Teamleider Financiën & Administratie ontvangt hiërarchisch leiding van de Directeur.'
-hierarchicalPostionDown: 'De Teamleider Financiën & Administratie geeft hiërarchisch leiding aan de Medewerkers Financiële Administratie en de Medewerker Ledenadministratie (circa 3 FTE).'
+reportsTo: 'De Teamleider Financiën & Administratie ontvangt hiërarchisch leiding van de Directeur.'
+manages: 'De Teamleider Financiën & Administratie geeft hiërarchisch leiding aan de Medewerkers Financiële Administratie en de Medewerker Ledenadministratie (circa 3 FTE).'
 resultAreaTitle: 'resultaatgebieden'
 resultAreas:
   1:

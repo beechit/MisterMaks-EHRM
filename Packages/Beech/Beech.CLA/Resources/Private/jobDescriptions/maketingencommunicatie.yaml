@@ -19,8 +19,8 @@ levelDifferentiation:
 jobGoalTitle: 'Doel van de functie'
 jobGoal: 'Het adviseren, ondersteunen en begeleiden van leidinggevenden en medewerkers en het realiseren van marketing- en communicatieactiviteiten.'
 hierarchicalPositionTitle: 'Organisatorische positie'
-hierarchicalPositionUp: 'De Marketing- en Communicatieadviseur ontvangt hiërarchisch leiding van de Teamleider Marketing en Communicatie.'
-hierarchicalPostionDown: 'De Marketing- en Communicatieadviseur geeft zelf geen leiding.'
+reportsTo: 'De Marketing- en Communicatieadviseur ontvangt hiërarchisch leiding van de Teamleider Marketing en Communicatie.'
+manages: 'De Marketing- en Communicatieadviseur geeft zelf geen leiding.'
 resultAreaTitle: 'resultaatgebieden'
 resultAreas:
   1:

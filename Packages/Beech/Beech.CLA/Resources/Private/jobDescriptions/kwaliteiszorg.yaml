@@ -17,8 +17,8 @@ levelDifferentiation:
 jobGoalTitle: 'Doel van de functie'
 jobGoal: 'Het beheren van het kwaliteitszorgsysteem. De kwaliteitszorgfunctionaris voert de taken ten aanzien van kwaliteitszorg uit naast de taken behorende bij de reguliere functie van de betreffende medewerker.'
 hierarchicalPositionTitle: 'Organisatorische positie'
-hierarchicalPositionUp: ''
-hierarchicalPostionDown: ''
+reportsTo: ''
+manages: ''
 resultAreaTitle: 'resultaatgebieden'
 resultAreas:
   1:

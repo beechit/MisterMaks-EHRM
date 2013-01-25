@@ -19,8 +19,8 @@ levelDifferentiation:
 jobGoalTitle: 'Doel van de functie'
 jobGoal: 'Het, binnen een toegewezen verantwoordelijkheidsgebied, administratief en operationeel ondersteunen van de Projectleider Opleidingen en Cursussen in het initiëren en realiseren van projecten voor ondernemers teneinde kennisuitwisseling- en verbreding te bevorderen en ontwikkelingen binnen de tuinbouwsector te stimuleren.'
 hierarchicalPositionTitle: 'Organisatorische positie'
-hierarchicalPositionUp: 'De Projectmedewerker Opleidingen en Cursussen ressorteert hiërarchisch onder de Projectleider Opleidingen en Cursussen.'
-hierarchicalPostionDown: 'De Projectmedewerker Opleidingen en Cursussen geeft zelf geen leiding.'
+reportsTo: 'De Projectmedewerker Opleidingen en Cursussen ressorteert hiërarchisch onder de Projectleider Opleidingen en Cursussen.'
+manages: 'De Projectmedewerker Opleidingen en Cursussen geeft zelf geen leiding.'
 resultAreaTitle: 'resultaatgebieden'
 resultAreas:
   1:

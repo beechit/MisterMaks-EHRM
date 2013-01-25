@@ -19,8 +19,8 @@ levelDifferentiation:
 jobGoalTitle: 'Doel van de functie'
 jobGoal: 'Het initiëren, ontwikkelen en begeleiden van projecten met / voor (groepen van) marktpartijen ten einde bij te dragen aan het behouden / versterken van de positie van de Nederlandse tuinbouwsector'
 hierarchicalPositionTitle: 'Organisatorische positie'
-hierarchicalPositionUp: 'De Projectleider opleidingen en cursussen ontvangt hiërarchisch leiding van de Directeur. '
-hierarchicalPostionDown: 'De Projectleider opleidingen en cursussen geeft operationeel leiding aan in- en externe projectgroepen.'
+reportsTo: 'De Projectleider opleidingen en cursussen ontvangt hiërarchisch leiding van de Directeur. '
+manages: 'De Projectleider opleidingen en cursussen geeft operationeel leiding aan in- en externe projectgroepen.'
 resultAreaTitle: 'resultaatgebieden'
 resultareas:
   1:

@@ -19,8 +19,8 @@ levelDifferentiation: 'De Themaspecialist komt op drie niveaus voor binnen LTO G
 jobGoalTitle: 'Doel van de functie'
 jobGoal: 'Het proactief initiëren en realiseren van projecten voor / met (groepen van) marktpartijen teneinde bij te dragen aan het behouden / versterken van de positie van de Nederlandse tuinbouwsector.'
 hierarchicalPositionTitle: 'Organisatorische positie'
-hierarchicalPositionUp: 'De Senior Themaspecialist ontvangt hiërarchisch leiding van Teamleider.'
-hierarchicalPostionDown: 'De Senior Themaspecialist geeft indien nodig operationeel leiding aan in- en externe projectgroepen.'
+reportsTo: 'De Senior Themaspecialist ontvangt hiërarchisch leiding van Teamleider.'
+manages: 'De Senior Themaspecialist geeft indien nodig operationeel leiding aan in- en externe projectgroepen.'
 resultAreaTitle: 'resultaatgebieden'
 resultAreas:
   1:

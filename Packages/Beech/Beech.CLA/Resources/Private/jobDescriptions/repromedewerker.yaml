@@ -19,8 +19,8 @@ levelDifferentiation:
 jobGoalTitle: 'Doel van de functie'
 jobGoal: 'Het verzorgen van kopieer- en verzendwerkzaamheden voor interne opdrachtgevers.'
 hierarchicalPositionTitle: 'Organisatorische positie'
-hierarchicalPositionUp: 'De Repromedewerker ontvangt hiërarchisch leiding van de Directiesecretaresse.'
-hierarchicalPostionDown: 'De Repromedewerker geeft zelf geen leiding.'
+reportsTo: 'De Repromedewerker ontvangt hiërarchisch leiding van de Directiesecretaresse.'
+manages: 'De Repromedewerker geeft zelf geen leiding.'
 resultAreaTitle: 'resultaatgebieden'
 resultAreas:
   1:

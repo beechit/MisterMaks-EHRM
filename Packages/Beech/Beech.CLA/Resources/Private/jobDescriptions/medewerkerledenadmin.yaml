@@ -17,8 +17,8 @@ levelDifferentiation:
 jobGoalTitle: 'Doel van de functie'
 jobGoal: 'Het verrichten van werkzaamheden ten behoeve van de ledenadministratie en het verstrekken van informatie over (het lidmaatschap van) LTO Groeiservice.'
 hierarchicalPositionTitle: 'Organisatorische positie'
-hierarchicalPositionUp: 'De Medewerker Ledenadministratie ontvangt hiërarchisch leiding van de Teamleider Financiën & Administratie.'
-hierarchicalPostionDown: 'De Medewerker Ledenadministratie geeft zelf geen leiding.'
+reportsTo: 'De Medewerker Ledenadministratie ontvangt hiërarchisch leiding van de Teamleider Financiën & Administratie.'
+manages: 'De Medewerker Ledenadministratie geeft zelf geen leiding.'
 resultAreaTitle: 'resultaatgebieden'
 resultAreas:
   1:
