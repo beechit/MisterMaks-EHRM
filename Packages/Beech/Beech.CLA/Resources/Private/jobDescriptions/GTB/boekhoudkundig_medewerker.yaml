@@ -1,9 +1,9 @@
 jobDescriptionNumber: '60.02'
-jobDescription:
-  jobTitle: 'Boekhoudkundig medewerker'
-  jobContext: 'De afdeling boekhouding of administratie ressorteert rechtstreeks onder de directie, de directeur of de ondernemer. De boek-houdkundig medewerker voert de werkzaamheden in opdracht uit o.b.v. voorschriften en wordt achteraf steekproefsgewijs ge-controleerd.'
-  reportsTo: 'operationeel leidinggevende, zoals bijv. hoofd administratie of boekhouder'
-  Manages: 'niet van toepassing'
+jobTitle: 'Boekhoudkundig medewerker'
+jobContext: 'De afdeling boekhouding of administratie ressorteert rechtstreeks onder de directie, de directeur of de ondernemer. De boek-houdkundig medewerker voert de werkzaamheden in opdracht uit o.b.v. voorschriften en wordt achteraf steekproefsgewijs ge-controleerd.'
+reportsTo: 'operationeel leidinggevende, zoals bijv. hoofd administratie of boekhouder'
+manages: 'niet van toepassing'
+jobGoal: 'Verwerken van boekhoudkundige gegevens, zodanig dat tijdig de juiste informatie beschikbaar is.'
 department: 'Administratie & ICT'
 expectations:
   mainActivities: ['genereren, bewerken en rangschikken van gegevens uit bestanden en archieven', 'opstellen van diverse informatieve overzichten (periodiek en op verzoek)', 'aanbrengen van boekingscoderingen v.w.b. kostenplaats en kostensoort en navraag doen bij diverse bedrijfsfunc-tionarissen in geval van onduidelijkheden', 'inbrengen van boekingsgegevens in het geautomatiseerde boekhoudsysteem', 'controleren van de output (foutmeldingen) en aanbrengen van correcties evt. na ruggespraak met de boekhouder ', 'zo nodig toelichten van de offerte bij een klant', 'opstellen van een jaarcontract (afroep) en bespreken met leidinggevende ', 'mengen en storten van (kleine hoeveelheden) beton m.b.v. betonmolen', 'aanbrengen van pleisterlagen op muren en plafonds', 'zetten van vloer- en wandtegels', 'leggen en ontstoppen van rioleringen', 'uitvoeren van voorbereidende en bijkomende werkzaam-heden als hak- en breekwerk, graafwerk, bestratingwerk-zaamheden ']

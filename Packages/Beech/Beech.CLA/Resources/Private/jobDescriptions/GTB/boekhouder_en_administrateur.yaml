@@ -1,9 +1,9 @@
 jobDescriptionNumber: '60.03'
-jobDescription:
-  jobTitle: Boekhouder/administrateur
-  jobContext: 'De functie komt voor in de grotere agrarische bedrijven (veelal meer dan 50 medewerkers). Veelal is er sprake van een “1 per-soonspost” en daarmee van een zekere professionele zelfstandigheid. Ook kan er sprake zijn van een functionele en vakinhoude-lijke samenwerking met externe administratie- of accountantsorganisaties. De boekhoudkundige complexiteit is meestal beperkt. In de functie worden ook andere werkzaamheden verricht t.b.v. personeels-, salaris- en productieadministratie.'
-  reportsTo: 'operationeel leidinggevende, zoals bijv. ondernemer of bedrijfsleider '
-  Manages: 'niet van toepassing'
+jobTitle: Boekhouder/administrateur
+jobContext: 'De functie komt voor in de grotere agrarische bedrijven (veelal meer dan 50 medewerkers). Veelal is er sprake van een “1 per-soonspost” en daarmee van een zekere professionele zelfstandigheid. Ook kan er sprake zijn van een functionele en vakinhoude-lijke samenwerking met externe administratie- of accountantsorganisaties. De boekhoudkundige complexiteit is meestal beperkt. In de functie worden ook andere werkzaamheden verricht t.b.v. personeels-, salaris- en productieadministratie.'
+reportsTo: 'operationeel leidinggevende, zoals bijv. ondernemer of bedrijfsleider '
+manages: 'niet van toepassing'
+jobGoal: 'Het verzorgen van financiële administraties, zodanig dat deze bijgewerkt zijn, de juiste gegevens bevatten en met de gegevens tijdig de juiste informatie gegenereerd kan worden.'
 department: 'Administratie & ICT'
 expectations:
   mainActivities: ['samenstellen van overzichten saldilijsten per boekingspe-riode', 'vaststellen van voorraadsituaties', 'opmaken en afstemmen van aangifte BTW', 'voorleggen en bespreken met bedrijfsleiding van concep-ten en bijzonderheden ', 'controleren van de output (foutmeldingen) en aanbrengen van correcties evt. na ruggespraak met de boekhouder ', 'zo nodig toelichten van de offerte bij een klant', 'opstellen van een jaarcontract (afroep) en bespreken met leidinggevende ', 'mengen en storten van (kleine hoeveelheden) beton m.b.v. betonmolen', 'aanbrengen van pleisterlagen op muren en plafonds', 'zetten van vloer- en wandtegels', 'leggen en ontstoppen van rioleringen', 'uitvoeren van voorbereidende en bijkomende werkzaam-heden als hak- en breekwerk, graafwerk, bestratingwerk-zaamheden ']

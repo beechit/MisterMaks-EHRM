@@ -1,9 +1,9 @@
 jobDescriptionNumber: '30.01'
-jobDescription:
-  jobTitle: Laboratoriummedewerker/laborant
-  jobContext: 'De functie komt voor in middelgrote en grote bedrijven. Het laboratorium voert standaard fysische kwaliteitstesten en bepalingen uit op producten tijdens diverse stadia van het proces. De kwaliteitscontroles worden verricht o.b.v. nauwkeurige richtlijnen, re-gels en procedures. Resultaten worden direct aan de productieleiding doorgegeven.'
-  reportsTo: 'operationeel leidinggevende, zoals bijv. hoofd productie of bedrijfsleider'
-  Manages: 'niet van toepassing'
+jobTitle: Laboratoriummedewerker/laborant
+jobContext: 'De functie komt voor in middelgrote en grote bedrijven. Het laboratorium voert standaard fysische kwaliteitstesten en bepalingen uit op producten tijdens diverse stadia van het proces. De kwaliteitscontroles worden verricht o.b.v. nauwkeurige richtlijnen, re-gels en procedures. Resultaten worden direct aan de productieleiding doorgegeven.'
+reportsTo: 'operationeel leidinggevende, zoals bijv. hoofd productie of bedrijfsleider'
+manages: 'niet van toepassing'
+jobGoal: 'Uitvoeren van standaardtesten en -bepalingen ter vaststelling van de kwaliteit van producten.'
 department: 'Kwaliteit & technologie'
 expectations:
   mainActivities: ['Mede onderhouden en met standaarden ijken van analyse-apparatuur, schoonhouden van het laboratorium en op peil houden van de voorraad verbruiksmaterialen (afroepen bij leveranciers).', 'voorbereiden van de monsters door prepareren, afwegen, mengen etc.', 'instellen van apparatuur en doseren van monsters', 'meten, wegen, aflezen van analysegegevens', 'omzetten van gegevens in voor afnemers bruikbare in-formatie en doorgeven volgens afspraak (bijv. alleen bui-ten de specificaties vallende resultaten)', 'invoeren van meetgegevens in computer ', 'toezicht houden op de uitvoering en op naleving procedu-res en voorschriften (o.a. veiligheid) ', 'deelnemen aan maandelijks overleg met alle vaste me-dewerkers en wekelijks overleg met het management ', 'uitzetten en verplaatsen van opgepot uitgangsmateri-aal in kas- of groeipositie (mechanisch of handmatig) ']

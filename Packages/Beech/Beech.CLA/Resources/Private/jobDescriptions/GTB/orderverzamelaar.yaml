@@ -1,9 +1,9 @@
 jobDescriptionNumber: '20.01'
-jobDescription:
-  jobTitle: Orderverzamelaar
-  jobContext: 'De functie komt veelal voor in de (middel)grote bedrijven met veelal diverse eindproducten en eigen opslag.'
-  reportsTo: 'operationeel leidinggevende, zoals bijv. hoofd logistiek of loodschef'
-  Manages: 'niet van toepassing'
+jobTitle: Orderverzamelaar
+jobContext: 'De functie komt veelal voor in de (middel)grote bedrijven met veelal diverse eindproducten en eigen opslag.'
+reportsTo: 'operationeel leidinggevende, zoals bijv. hoofd logistiek of loodschef'
+manages: 'niet van toepassing'
+jobGoal: 'Samenstellen en verzendgereed maken van orders.'
 department: Logistiek
 expectations:
   mainActivities: ['Naleven van bedrijfsinstructies inzake veiligheid van werken e.d.', 'assisteren bij inventarisatie/telwerkzaamheden', 'schoonhouden van werkruimten', 'uitvoeren van klein onderhoud aan te gebruiken trans-portmiddelen (o.a. opladen batterijen)', 'alle voorkomende algemene ondersteuningswerkzaamhe-den ', 'controleren van de kwaliteit van het product', 'signaleren van verstorende invloeden en deze bespreken met bedrijfsleider', 'deelnemen aan maandelijks overleg met alle vaste me-dewerkers en wekelijks overleg met het management ', 'uitzetten en verplaatsen van opgepot uitgangsmateri-aal in kas- of groeipositie (mechanisch of handmatig) ']

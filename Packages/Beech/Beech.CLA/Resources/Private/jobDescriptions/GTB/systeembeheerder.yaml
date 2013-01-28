@@ -1,9 +1,9 @@
 jobDescriptionNumber: '60.05'
-jobDescription:
-  jobTitle: Systeembeheerder
-  jobContext: 'De functie van systeembeheerder komt voor in middelgrote tot grote ondernemingen. De functie werkt in een afdeling met appli-catiebeheerders en (bij grotere ondernemingen) met systeemontwikkelaars. Bij kleinere organisaties is dit specialisme uitbesteed. De systeembeheerder is verantwoordelijk voor de beschikbaarheid, prestatie (capaciteit, verwerkingssnelheid) en toegankelijk-heid van de operationele systemen en gegevensverzamelingen.'
-  reportsTo: 'operationeel leidinggevende, zoals bijv. directie of hoofd administratie'
-  Manages: 'niet van toepassing'
+jobTitle: Systeembeheerder
+jobContext: 'De functie van systeembeheerder komt voor in middelgrote tot grote ondernemingen. De functie werkt in een afdeling met appli-catiebeheerders en (bij grotere ondernemingen) met systeemontwikkelaars. Bij kleinere organisaties is dit specialisme uitbesteed. De systeembeheerder is verantwoordelijk voor de beschikbaarheid, prestatie (capaciteit, verwerkingssnelheid) en toegankelijk-heid van de operationele systemen en gegevensverzamelingen.'
+reportsTo: 'operationeel leidinggevende, zoals bijv. directie of hoofd administratie'
+manages: 'niet van toepassing'
+jobGoal: 'Beheren, operationeel houden, beveiligen en optimaliseren van de automatiseringsinfrastructuur en de daarop beschikbare centra-le informatiesystemen en gegevensbanken, zodanig dat een adequate toegankelijkheid en continue beschikbaarheid van de infor-matiesystemen en gegevensverzamelingen wordt gewaarborgd.'
 department: 'Administratie & ICT'
 expectations:
   mainActivities: ['verlenen van diverse vormen van ondersteuning aan ge-bruikers', 'installeren van werkomgevingen voor eindgebruikers, beschikbaar maken van geaccepteerde programmatuur', 'adviseren van eindgebruikers en systeemontwikkelaars over het gebruik van de systeemfaciliteiten', 'maken en vastleggen van afspraken met eindgebruikers voor de planning van de batchverwerking op het centrale systeem', 'oplossen van verwerkingsproblemen met een systeem-technische achtergrond', 'reconstrueren van databases (vanuit back-ups) na opge-treden problemen', 'uitgeven en inbrengen van toegangscodes voor gebrui-kers, conform autorisatie van daartoe aangewezen lei-dinggevenden', 'toezien op het naleven van procedures voor de toegang tot computerruimtes, de opslag van informatiedragers, het aanmaken van back-ups e.d.', 'ontwikkelen en vastleggen van back-up procedures, draaiboek m.b.t. de in noodsituaties te ondernemen acties', 'opstellen van procedures voor systeemontwikkelaars, ap-plicatiebeheerders en eindgebruikers ', 'leggen en ontstoppen van rioleringen', 'uitvoeren van voorbereidende en bijkomende werkzaam-heden als hak- en breekwerk, graafwerk, bestratingwerk-zaamheden ']
