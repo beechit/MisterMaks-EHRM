@@ -1,0 +1,14 @@
+{
+    "name": "beech/importer",
+    "type": "typo3-flow-beech",
+    "description": "",
+    "version": "",
+    "require": {
+        "typo3/flow": "*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Beech\\Importer": "Classes"
+        }
+    }
+}
