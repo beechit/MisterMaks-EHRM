@@ -15,7 +15,7 @@ use TYPO3\Flow\Annotations as Flow,
  *
  * @ODM\Document(indexed=true)
  */
-class JobPosition {
+class JobDescription extends \Radmiraal\CouchDB\Persistence\AbstractDocument {
 
 	/**
 	 * The name
