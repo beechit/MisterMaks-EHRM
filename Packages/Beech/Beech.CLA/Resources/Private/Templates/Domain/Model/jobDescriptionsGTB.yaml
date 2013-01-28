@@ -1,0 +1,77 @@
+#############################################################
+# validated yaml for the jobDescriptions model Glastuinbouw
+# this is the jobDescriptions model.
+#############################################################
+---
+model: jobdescriptions
+properties:
+  -
+    id: jobDescriptionNumber
+    type: string(10)
+    validation: ""
+  -
+    id: JobTitle
+    type: string(50)
+    validation: ""
+  -
+    id: jobContext
+    type: text
+    validation: ""
+    value: Functiecontext
+  -
+    id: PositionLabel
+    label: true
+    type: string(30)
+    validation: ""
+    value: "Positie in de organisatie"
+  -
+    id: reportsTo
+    type: text
+    validation: ""
+  -
+    id: Manages
+    type: text
+    validation: ""
+  -
+    id: department
+    type: string(20)
+    validation: ""
+  -
+    id: expectationLabel
+    label: true
+    type: string(30)
+    validation: ""
+    value: Resultaatgebieden
+  -
+    id: expectations
+    type: array
+    validation: ""
+    values:
+      - "Uitgevoerde Handelingen"
+      - "Verstrekte informatie"
+      - "Nageleefde voorschiften"
+      -
+        id: mainActivities
+        type: text
+        validatiomn: ""
+      -
+        id: resultCriteria
+        type: text
+        validation: ""
+  -
+    id: burdeningCircumstances
+    type: array
+    validation: ""
+    values:
+      -
+        id: circumstance
+        type: text
+        validation: ""
+  -
+    id: orbaScore
+    type: string(10)
+    validation: ""
+  -
+    id: wageScaleGroup
+    type: string(2)
+    validation: ""
