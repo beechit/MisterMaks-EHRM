@@ -115,7 +115,7 @@ contactArticles:
           valueId: "workLocation"
         -
           type: array
-          options: [ monday, tuesday, wednessday , thursday, friday, saturday , sunday ]
+          options: [ monday , tuesday , wednessday , thursday , friday , saturday , sunday ]
           nl: [ maandag, dinsdag, woensdag, donderdag, vrijdag, zaterdag, zondag ]
           en:
           pl:
@@ -338,9 +338,7 @@ contactArticles:
             en: ""
             nl: "Afspraken betreffende geheimhouding en werkkleding. Hier kunt u naar behoefte ook nog andere (individuele) afspraken vastleggen."
             pl: ""
-
 # articles for contact for Bepaalde tijd en OTB
-
     -
       articleHeader:
         en: ""
@@ -444,7 +442,6 @@ contactArticles:
           type: datetime
           value: ''
           valueId: 'endTime'
-
 # Articles for OBT
     -
       articleHeader:
@@ -547,12 +544,10 @@ contactArticles:
         nl: ""
         pl: ""
 
-#### possebly add article about notice period.
+# possibly add article about notice period.
 
 
-
-
-# articles belonging to the cafetaria arrangement that was made by LTO Nederland.
+# articles belonging to the cafeteria arrangement that was made by LTO Nederland.
 
       articleHeader:
         en: ""
