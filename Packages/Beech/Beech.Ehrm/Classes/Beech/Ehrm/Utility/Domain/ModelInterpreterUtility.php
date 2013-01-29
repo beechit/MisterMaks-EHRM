@@ -36,6 +36,12 @@ class ModelInterpreterUtility {
 	protected $reflectionService;
 
 	/**
+	 * Location of yaml file
+	 * @var string
+	 */
+	protected $yamlModel;
+
+	/**
 	 * @var array
 	 */
 	protected $generatedFiles = array();
@@ -51,13 +57,15 @@ class ModelInterpreterUtility {
 	 * @param bool $overwrite
 	 */
 	public function generateView($packageKey, $subpackage, $modelName, $viewName, $template, $overwrite = FALSE) {
-		$yamlFile = sprintf('resource://%s/Private/Templates/Domain/Model/%s.yaml', $packageKey, strtolower($modelName));
-		$contextVariables = Yaml::parse(\TYPO3\Flow\Utility\Files::getFileContents($yamlFile));
+		$contextVariables = Yaml::parse(\TYPO3\Flow\Utility\Files::getFileContents($this->yamlModel));
 		$contextVariables['properties'] = $this->recurrentPrepareContext($contextVariables['properties']);
 		$contextVariables['packageKey'] = $packageKey;
 		$contextVariables['controllerName'] = $modelName;
 		$contextVariables['entity'] = strtolower($modelName);
 		$contextVariables['viewName'] = $viewName;
+		/**
+		 * TODO: Tweak template generator to keep nice formatting without using 'removeEmptyLines' method
+		 */
 		$fileContent = $this->removeEmptyLines($this->renderTemplate($template, $contextVariables));
 		$viewFilename = $viewName . '.html';
 		$viewPath = 'resource://' . $packageKey . '/Private/Templates/' . $subpackage . '/'. $modelName . '/';
@@ -75,8 +83,7 @@ class ModelInterpreterUtility {
 	 * @param bool $overwrite
 	 */
 	public function generateController($packageKey, $subpackage, $modelName, $template, $overwrite = FALSE) {
-		$yamlFile = sprintf('resource://%s/Private/Templates/Domain/Model/%s.yaml', $packageKey, strtolower($modelName));
-		$contextVariables = Yaml::parse(\TYPO3\Flow\Utility\Files::getFileContents($yamlFile));
+		$contextVariables = Yaml::parse(\TYPO3\Flow\Utility\Files::getFileContents($this->yamlModel));
 		$contextVariables['properties'] = $this->recurrentPrepareContext($contextVariables['properties']);
 		$contextVariables['packageKey'] = $packageKey;
 		$contextVariables['packageNamespace'] = str_replace('.', '\\', $packageKey);
@@ -221,6 +228,17 @@ class ModelInterpreterUtility {
 		$renderingContext = $this->buildRenderingContext($contextVariables);
 
 		return $parsedTemplate->render($renderingContext);
+	}
+
+	public function setYamlModel($packageKey, $modelName, $yamlName) {
+		if (empty($yamlName)) {
+			$yamlName = strtolower($modelName).'.yaml';
+		}
+		$this->yamlModel = sprintf('resource://%s/Private/Templates/Domain/Model/%s', $packageKey, $yamlName);
+	}
+
+	public function isYamlModelAvailable() {
+		return file_exists($this->yamlModel) ? TRUE : FALSE;
 	}
 
 	/**

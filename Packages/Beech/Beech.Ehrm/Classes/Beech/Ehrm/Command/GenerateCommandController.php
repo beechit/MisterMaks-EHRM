@@ -33,13 +33,26 @@ class GenerateCommandController extends \TYPO3\Flow\Cli\CommandController {
 	 * Generate view
 	 *
 	 * @param string $packageKey
-	 * @param string $subpackage
 	 * @param string $modelName
+	 * @param string $subpackage
+	 * @param string $yaml
 	 * @return void
 	 */
-	public function viewCommand($packageKey, $subpackage, $modelName) {
+	public function viewCommand($packageKey, $modelName, $subpackage = '', $yaml = '') {
+		$this->modelInterpreter->setYamlModel($packageKey, $modelName, $yaml);
+		if (!$this->modelInterpreter->isYamlModelAvailable()) {
+			$this->outputLine("\n\r".'Yaml model for "%s" doesn\'t exists in package %s' . "\n\r", array($modelName, $packageKey));
+			if (!empty($yaml)) {
+				$this->outputLine('File "%s/Private/Templates/Domain/Model/%s.yaml" doesn\'t exist' . "\n\r", array($packageKey, $yaml));
+			}
+			$this->outputLine('Default location should be: %s/Private/Templates/Domain/Model/%s.yaml' . "\n\r", array($packageKey, strtolower($modelName)));
+			$this->quit(2);
+		}
+
 		$template = 'resource://Beech.Ehrm/Private/Templates/CodeTemplates/Crud/List.html';
 		$this->modelInterpreter->generateView($packageKey, $subpackage, $modelName, 'List', $template, TRUE);
+		$template = 'resource://Beech.Ehrm/Private/Templates/CodeTemplates/Crud/Show.html';
+		$this->modelInterpreter->generateView($packageKey, $subpackage, $modelName, 'Show', $template, TRUE);
 		$template = 'resource://Beech.Ehrm/Private/Templates/CodeTemplates/Crud/Edit.html';
 		$this->modelInterpreter->generateView($packageKey, $subpackage, $modelName, 'Edit', $template, TRUE);
 		$template = 'resource://Beech.Ehrm/Private/Templates/CodeTemplates/Crud/New.html';
