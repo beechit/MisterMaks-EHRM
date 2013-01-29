@@ -2,9 +2,9 @@
 # validated yaml for the jobDescriptions model
 # this is the jobDescriptions model.
 #############################################################
-
 ---
-model: jobdescriptions
+model:
+  modelName: JobDescription
 properties:
   -
     id: cla

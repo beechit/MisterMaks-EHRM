@@ -3,16 +3,19 @@
 # this is the jobDescriptions model.
 #############################################################
 ---
-model: jobdescriptions
+model:
+  modelName: JobDescription
 properties:
   -
     id: jobDescriptionNumber
     type: string(10)
     validation: ""
+    onList: TRUE
   -
-    id: JobTitle
+    id: jobTitle
     type: string(50)
     validation: ""
+    onList: TRUE
   -
     id: jobContext
     type: text
@@ -21,9 +24,9 @@ properties:
   -
     id: jobGoal
     type: text
-    validation ""
+    validation: ""
   -
-    id: PositionLabel
+    id: positionLabel
     label: true
     type: string(30)
     validation: ""
@@ -79,3 +82,4 @@ properties:
     id: wageScaleGroup
     type: string(2)
     validation: ""
+    onList: TRUE
