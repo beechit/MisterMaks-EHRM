@@ -1,0 +1,229 @@
+<f:layout/>
+<f:section name="Body">
+	<f:form.validationResults for="jobDescription">
+		<f:if condition="{validationResults.flattenedErrors}">
+			<div class="error">
+				<f:for each="{validationResults.flattenedErrors}" key="propertyPath" as="errors">{propertyPath}:
+					<f:for each="{errors}" as="error">{error}</f:for>
+				</f:for>
+			</div>
+		</f:if>
+	</f:form.validationResults>
+	<f:form action="create" object="{jobDescription}" name="jobDescription" class="form-horizontal well">
+		<div class="control-group">
+			<label class="control-label" for="cla">
+				<f:translate id="cla">Cla</f:translate>
+			</label>
+
+			<div class="controls">
+				<f:form.textfield property="cla" id="cla"/>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="departement">
+				<f:translate id="departement">Department</f:translate>
+			</label>
+
+			<div class="controls">
+				<f:form.textfield property="departement" id="departement"/>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="jobTitle">
+				<f:translate id="jobTitle">Job title</f:translate>
+			</label>
+
+			<div class="controls">
+				<f:form.textfield property="jobTitle" id="jobTitle"/>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="jobDescriptionID">
+				<f:translate id="jobDescriptionID">Job description ID</f:translate>
+			</label>
+
+			<div class="controls">
+				<f:form.textfield property="jobDescriptionID" id="jobDescriptionID"/>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="salaryscale">
+				<f:translate id="salaryscale">Salary scale</f:translate>
+			</label>
+
+			<div class="controls">
+				<f:form.textfield property="salaryscale" id="salaryscale"/>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="jobversion">
+				<f:translate id="jobversion">Version</f:translate>
+			</label>
+
+			<div class="controls">
+				<f:form.textfield property="jobversion" id="jobversion"/>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="versiondate">
+				<f:translate id="versiondate">Version date</f:translate>
+			</label>
+
+			<div class="controls">
+				<f:form.textfield property="versiondate" id="versiondate"/>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="generalTitle">
+				<f:translate id="generalTitle">Generaltitle</f:translate>
+			</label>
+
+			<div class="controls">
+				<f:form.textfield property="generalTitle" id="generalTitle"/>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="generalText">
+				<f:translate id="generalText">Generaltext</f:translate>
+			</label>
+
+			<div class="controls">
+				<f:form.textfield property="generalText" id="generalText"/>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="levelDifferentiation">
+				<f:translate id="levelDifferentiation">Level differentiation</f:translate>
+			</label>
+
+			<div class="controls">
+				<f:form.textfield property="levelDifferentiation" id="levelDifferentiation"/>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="jobGoalTitle">
+				<f:translate id="jobGoalTitle">job Goal Title</f:translate>
+			</label>
+
+			<div class="controls">
+				<f:form.textfield property="jobGoalTitle" id="jobGoalTitle"/>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="jobGoal">
+				<f:translate id="jobGoal">Jobgoal</f:translate>
+			</label>
+
+			<div class="controls">
+				<f:form.textfield property="jobGoal" id="jobGoal"/>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="hierarchicalPositionTitle">
+				<f:translate id="hierarchicalPositionTitle">Hierarchical position title</f:translate>
+			</label>
+
+			<div class="controls">
+				<f:form.textfield property="hierarchicalPositionTitle" id="hierarchicalPositionTitle"/>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="hierarchicalPositionUp">
+				<f:translate id="hierarchicalPositionUp">Hierarchical position up</f:translate>
+			</label>
+
+			<div class="controls">
+				<f:form.textfield property="hierarchicalPositionUp" id="hierarchicalPositionUp"/>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="hierarchicalPositionDown">
+				<f:translate id="hierarchicalPositionDown">Hierarchical postition down</f:translate>
+			</label>
+
+			<div class="controls">
+				<f:form.textfield property="hierarchicalPositionDown" id="hierarchicalPositionDown"/>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="resultAreaTitle">
+				<f:translate id="resultAreaTitle">Result area title</f:translate>
+			</label>
+
+			<div class="controls">
+				<f:form.textfield property="resultAreaTitle" id="resultAreaTitle"/>
+			</div>
+		</div>
+		<div class="control-group">
+			<fieldset>
+				<legend>Result areas</legend>
+				<label class="control-label" for="resultArea">
+					<f:translate id="resultArea">Result area</f:translate>
+				</label>
+
+				<div class="controls">
+					<f:form.textfield property="resultArea" id="resultArea"/>
+				</div>
+				<label class="control-label" for="resultAreaResult">
+					<f:translate id="resultAreaResult" />
+				</label>
+
+				<div class="controls">
+					<f:form.textfield property="resultAreaResult" id="resultAreaResult"/>
+				</div>
+			</fieldset>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="knowledgeTitle">
+				<f:translate id="knowledgeTitle">Knowledge title</f:translate>
+			</label>
+
+			<div class="controls">
+				<f:form.textfield property="knowledgeTitle" id="knowledgeTitle"/>
+			</div>
+		</div>
+		<div class="control-group">
+			<fieldset>
+				<legend>Knowledge</legend>
+				<label class="control-label" for="knowledgeItem">
+					<f:translate id="knowledgeItem">Knowledge item</f:translate>
+				</label>
+
+				<div class="controls">
+					<f:form.textfield property="knowledgeItem" id="knowledgeItem"/>
+				</div>
+			</fieldset>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="jobCharacteristicsTitle">
+				<f:translate id="jobCharacteristicsTitle">Job characteristics title</f:translate>
+			</label>
+
+			<div class="controls">
+				<f:form.textfield property="jobCharacteristicsTitle" id="jobCharacteristicsTitle"/>
+			</div>
+		</div>
+		<div class="control-group">
+			<fieldset>
+				<legend>Job characteristics</legend>
+				<label class="control-label" for="jobCharacteristicsItem">
+					<f:translate id="jobCharacteristicsItem">job characteristics item</f:translate>
+				</label>
+
+				<div class="controls">
+					<f:form.textfield property="jobCharacteristicsItem" id="jobCharacteristicsItem"/>
+				</div>
+			</fieldset>
+		</div>
+		<f:form.hidden property="creationDate" id="creationDate"/>
+		<f:form.hidden property="createdBy" id="createdBy"/>
+		<div class="control-group">
+			<fieldset>
+				<legend>ModificationLog</legend>
+			</fieldset>
+		</div>
+		<div class="control-group">
+			<f:form.submit value="{f:translate(id: 'action.create')}" class="btn btn-primary"/>
+		</div>
+	</f:form>
+</f:section>

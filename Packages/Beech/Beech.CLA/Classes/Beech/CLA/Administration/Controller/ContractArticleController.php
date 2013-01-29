@@ -7,7 +7,7 @@ namespace Beech\CLA\Administration\Controller;
  *                                                                        */
 
 use TYPO3\Flow\Annotations as Flow;
-use \Beech\CLA\Domain\Model\ContractArticle;
+use Beech\CLA\Domain\Model\ContractArticle;
 
 /**
 * ContractArticle controller for the Beech.CLA package  and subpackage Administration
@@ -27,11 +27,11 @@ class ContractArticleController extends \Beech\Ehrm\Controller\AbstractManagemen
 	protected $repositoryClassName = 'Beech\CLA\Domain\Repository\ContractArticleRepository';
 
 	/**
-	* Adds the given new article object to the article repository
-	*
-	* @param \Beech\CLA\Domain\Model\ContractArticle $contractArticle A new article to add
-	* @return void
-	*/
+	 * Adds the given new article object to the article repository
+	 *
+	 * @param \Beech\CLA\Domain\Model\ContractArticle $contractArticle A new article to add
+	 * @return void
+	 */
 	public function createAction(ContractArticle $contractArticle) {
 		$this->repository->add($contractArticle);
 		$this->documentManager->merge($contractArticle->getDocument());
@@ -40,21 +40,21 @@ class ContractArticleController extends \Beech\Ehrm\Controller\AbstractManagemen
 	}
 
 	/**
-	* Shows a single article object
-	*
-	* @param \Beech\CLA\Domain\Model\ContractArticle $ContractArticle The article to show
-	* @return void
-	*/
+	 * Shows a single article object
+	 *
+	 * @param \Beech\CLA\Domain\Model\ContractArticle $contractArticle The article to show
+	 * @return void
+	 */
 	public function showAction(ContractArticle $contractArticle) {
 		$this->view->assign('contractArticle', $contractArticle);
 	}
 
 	/**
-	* Updates the given article object
-	*
-	* @param \Beech\CLA\Domain\Model\ContractArticle $contractArticle The article to update
-	* @return void
-	*/
+	 * Updates the given article object
+	 *
+	 * @param \Beech\CLA\Domain\Model\ContractArticle $contractArticle The article to update
+	 * @return void
+	 */
 	public function updateAction(ContractArticle $contractArticle) {
 		$this->repository->update($contractArticle);
 		$this->addFlashMessage('Updated the article.');
@@ -62,21 +62,21 @@ class ContractArticleController extends \Beech\Ehrm\Controller\AbstractManagemen
 	}
 
 	/**
-	* Shows a form for editing an existing article object
-	*
-	* @param \Beech\CLA\Domain\Model\ContractArticle $contractArticle The article to edit
-	* @return void
-	*/
+	 * Shows a form for editing an existing article object
+	 *
+	 * @param \Beech\CLA\Domain\Model\ContractArticle $contractArticle The article to edit
+	 * @return void
+	 */
 	public function editAction(ContractArticle $contractArticle) {
 		$this->view->assign('contractArticle', $contractArticle);
 	}
 
 	/**
-	* Removes the given article object from the article repository
-	*
-	* @param \Beech\CLA\Domain\Model\ContractArticle $contractArticle The article to delete
-	* @return void
-	*/
+	 * Removes the given article object from the article repository
+	 *
+	 * @param \Beech\CLA\Domain\Model\ContractArticle $contractArticle The article to delete
+	 * @return void
+	 */
 	public function deleteAction(ContractArticle $contractArticle) {
 		$this->repository->remove($contractArticle);
 		$this->redirect('list');

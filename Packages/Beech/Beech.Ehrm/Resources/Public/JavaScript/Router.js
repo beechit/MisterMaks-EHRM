@@ -5,6 +5,8 @@
 		this.route('userSettings', { path: '/user/settings' });
 		this.route('applicationSettings', { path: '/administration/settings' });
 		this.route('taskModule', { path: '/tasks' });
+		this.route('jobDescriptionModule', { path: '/administration/jobdescriptions/' });
+		this.route('contractArticleModule', { path: '/administration/contractarticles/' });
 		this.route('documentModule', { path: '/documents' });
 
 			// Administration mappings
@@ -45,6 +47,8 @@
 	App.DocumentModuleRoute = App.IndexRoute.extend(App.AjaxModuleControllerMixin, { url: MM.url.module.documents });
 	App.ApplicationSettingsRoute = App.IndexRoute.extend(App.AjaxModuleControllerMixin, { url: MM.url.module.applicationSettings });
 	App.UserSettingsRoute = App.IndexRoute.extend(App.AjaxModuleControllerMixin, { url: MM.url.module.userSettings });
+	App.JobDescriptionModuleRoute = App.IndexRoute.extend(App.AjaxModuleControllerMixin, { url: MM.url.module.jobDescription });
+	App.ContractArticleModuleRoute = App.IndexRoute.extend(App.AjaxModuleControllerMixin, { url: MM.url.module.contractArticle });
 
 		// Administration routes
 	App.AdministrationRoute = Ember.Route.extend(App.ModelRouteMixin, {

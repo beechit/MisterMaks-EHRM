@@ -1,0 +1,33 @@
+<f:layout/>
+<f:section name="Body">
+	<h1><f:translate id="jobDescription">JobDescription</f:translate></h1>
+	<f:if condition="{entities}">
+		<f:then>
+			<table class="table">
+				<thead>
+					<tr>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<f:for each="{entities}" as="jobDescription" iteration="iterator">
+						<tr>
+							<td>
+								<f:link.action action="edit" arguments="{jobDescription: jobDescription}"><i class="icon-pencil"></i></f:link.action>
+								<f:link.action action="delete" arguments="{jobDescription: jobDescription}"><i class="icon-trash"></i></f:link.action>
+							</td>
+						</tr>
+					</f:for>
+				</tbody>
+			</table>
+		</f:then>
+		<f:else>
+			<p></p>
+		</f:else>
+	</f:if>
+	<div class="form-actions">
+		<a class="btn btn-primary" href="/{f:uri.action(package: 'Beech.CLA', subpackage: 'Administration', controller: 'JobDescription', action: 'new')}">
+			<i class="icon-plus icon-white"></i> <f:translate id="action.create">Create</f:translate>
+		</a>
+	</div>
+</f:section>

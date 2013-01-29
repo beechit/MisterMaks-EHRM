@@ -17,4 +17,5 @@ use TYPO3\Flow\Annotations as Flow,
  */
 class ContractArticle extends \Radmiraal\CouchDB\Persistence\AbstractDocument {
 }
+
 ?>
