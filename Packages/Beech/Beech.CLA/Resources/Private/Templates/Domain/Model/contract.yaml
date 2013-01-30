@@ -1,9 +1,8 @@
 ##################################################################
 # This is a yaml representation of the contractmodel GTB
-#
+# Please notice this model is quite complex and has to have
+# all properties that are needed so probable modifications are underway.
 ##################################################################
-
-
 model:
   modelName: 'contract'
 properties:
@@ -78,7 +77,12 @@ properties:
     label: 'Id of the document'
     type: string(20)
     validation: ''
-
+  -
+    id: jobTitle
+    label: Jobtitle
+    type: string(30)
+    validation: ''
+  -
 # settings connected to jobposition
     id: jobDescription
     label: 'Jobposition'
@@ -181,24 +185,80 @@ properties:
     label: 'Minimum wage'
     type: boolean
   -
+    id: wageScale
+    label: 'wage Scale'
+    type: string(2)
+    validation: ''
+  -
+    id: currentWageScale
+    label: 'Current wage Scale'
+    type: integer(2)
+    validation: ''
+  -
+    id: Wagestep
+    label: 'Wage step'
+    type: integer(2)
+    validation: ''
+  -
+    id: currentWageStep
+    label: 'Current Wage Step'
+    type: integer(2)
+    validation: ''
+
     id: cla
     label: 'collective labour agreement'
     type: '\Beech\CLA\Domain\Model\LaborAgreement'
     validation: ''
   -
-    id: vacationAllowance
-    label: 'Vacation Allowance'
-
-
-
-
-
-
-contractActive
-
-# for reporting and history reasons this array is used to store the identfiers from the contractarticles that were used to generate the contract
-  id: articlesInCurrentContract
-  type: array
-  articles:
+    id: vacationAllowanceGLA
+    label: 'Vacation allowance in the GLA arrangment'
+    type: decimal(2.2)
+    validation: ''
+  -
+    id: vacationAllowancePercentage
+    label: 'Vacation allowance Percentage'
+    type: decimal(2.2)
+    validation: ''
+  -
+    id: sickReportTime
+    label: 'Sickreport time'
+    type: dateTime
+    validation: ''
+  -
+    id: noticePeriod
+    label: 'Notice period'
+    type: boolean
+  -
+    id: generalCompanyRules
+    label: 'General Company Rules Apply'
+    type: boolean
+  -
+    id: identification
+    label: 'Identification arrangment'
+    type: boolean
+  -
+    id: accomodation
+    label: accomodation
+    type: boolean
+  -
+    id: accomodationRentWeek
+    label: 'Acomodation rent for a week'
+    type: decimal(3.2)
+    validation: ''
+  -
+    id: accomodationRentMonth
+    label: 'Acomodation rent a month'
+    type: decimal(3.2)
+    validation: ''
+  -
+# other Arrangments
+    id: cafetariaModel
+    label: cafetariaModel
+    type: boolean
+  -
+# for reporting and history reasons this array is used to store the identifiers from the contractarticles that were used to generate the contract
+    id: articlesInCurrentContract
+    type: array
+    validation: ''
 
 

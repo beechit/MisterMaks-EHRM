@@ -172,7 +172,7 @@ contactArticles:
         pl: ""
       values:
         -
-          type: string
+          type: string(20)
           value: "Glastuinbouw"
           valueId: 'CLA'
     -
@@ -385,12 +385,16 @@ contactArticles:
       standard: true
       articleText:
         en: ""
-        nl: "Afhandeling van vakantierechten vindt plaats door uitbetaling van vakantiegeld (bruto 8,33%) en opbouw van betaalde vakantiedagen en feestdagen conform cao."
+        nl: "Afhandeling van vakantierechten vindt plaats door uitbetaling van vakantiegeld (bruto <vacationAllowancePercentage>%) en opbouw van betaalde vakantiedagen en feestdagen conform cao."
         pl: ""
       help:
         en: ""
         nl: ""
         pl: ""
+      values:
+          type: decimal(2,2)
+          value: "8.33"
+          valueId: vacationAllowancePercentage
     -
       articleHeader:
         en: ""
@@ -498,15 +502,15 @@ contactArticles:
           type: integer
           value: ""
           valueId: probationPeriod
-          default: today
+          default:
         -
-          type: dateTime
+          type: string(10)
           options:
             - day
             - days
             - weeks
           default: weeks
-          valueId: endDate
+          valueId: ProbationTime
     -
       articleHeader:
         en: ""
@@ -537,7 +541,7 @@ contactArticles:
       standard: true
       articleText:
         en: ""
-        nl: "Op deze arbeidsovereenkomst is geen proeftijd van toepassing."
+        nl: "Deze arbeidsovereenkomst kan opgezegd worden met inachtneming van de wettelijke opzegtermijnen."
         pl: ""
       help:
         en: ""
