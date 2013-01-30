@@ -1,0 +1,35 @@
+#############################################################
+# validated yaml for the article
+# this is the article model.
+#############################################################
+---
+model:
+  modelName: Article
+properties:
+  -
+    id: articleId
+    label: "Article Id"
+    type: string(30)
+    validation: ""
+    onList: TRUE
+  -
+    id: articleLabel
+    label: "Label"
+    type: string(30)
+    validation: ""
+  -
+    id: articleHeader
+    label: "Header"
+    type: string(100)
+    validation: ""
+    onList: TRUE
+  -
+    id: articleText
+    label: "Text"
+    type: string(1000)
+    validation: ""
+  -
+    id: order
+    label: "Order"
+    type: integer
+    validation: ""
