@@ -1,7 +1,6 @@
 ######################################################################
 # varified yaml of the contract article repository CLA GTB
 ######################################################################
-
 ---
 contactArticles:
   CLA: None
@@ -15,7 +14,7 @@ contactArticles:
         nl: 'Dienstverband, functie en plaats van werkzaamheden'
         pl: ''
       articleLabel: employmentJobTitleLocation
-      id: 10000
+      articleId: 10000
       order: 100
       required: TRUE
       standard: TRUE
@@ -51,7 +50,7 @@ contactArticles:
         nl: 'Proeftijd'
         pl: ''
       articleLabel: employmentJobTitleLocation
-      id: 10001
+      articleId: 10001
       order: 150
       required: TRUE
       standard: TRUE
@@ -83,7 +82,7 @@ contactArticles:
         nl: 'Arbeidsduur en werktijden'
         pl: ''
       articleLabel: hoursAndWorkingHours
-      id: 10002
+      articleId: 10002
       order: 200
       required: TRUE
       standard: TRUE
@@ -146,7 +145,7 @@ contactArticles:
         nl: 'Beloning'
         pl: ''
       articleLabel: Wage
-      id: 10003
+      articleId: 10003
       order: 300
       required: TRUE
       standard: TRUE
@@ -170,7 +169,7 @@ contactArticles:
         nl: 'CAO'
         pl: ''
       articleLabel: CLA
-      id: 10004
+      articleId: 10004
       order: 400
       required: TRUE
       standard: TRUE
@@ -193,7 +192,7 @@ contactArticles:
         nl: 'Vakantietoeslag en vakantiedagen'
         pl: ''
       articleLabel: vacation
-      id: 10005
+      articleId: 10005
       order: 500
       required: TRUE
       standard: TRUE
@@ -216,7 +215,7 @@ contactArticles:
          nl: 'Ziekte'
          pl: ''
       articleLabel: Sickness
-      id: 10006
+      articleId: 10006
       order: 600
       required: TRUE
       standard: TRUE
@@ -239,7 +238,7 @@ contactArticles:
         nl: 'Tussentijdse opzegging'
         pl: ''
       articleLabel: noticePeriod
-      id: 10007
+      articleId: 10007
       order: 700
       required: TRUE
       standard: TRUE
@@ -257,7 +256,7 @@ contactArticles:
         nl: 'Bedrijfsreglement'
         pl: ''
       articleLabel: generalCompanyRules
-      id: 10008
+      articleId: 10008
       order: 800
       required: TRUE
       standard: TRUE
@@ -275,7 +274,7 @@ contactArticles:
         nl: 'Identificatieplicht'
         pl: ''
       articleLabel: Identification
-      id: 10009
+      articleId: 10009
       order: 900
       required: TRUE
       standard: TRUE
@@ -293,7 +292,7 @@ contactArticles:
          nl: 'Huisvesting'
          pl: ''
       articleLabel: accomodationRent
-      id: 10010
+      articleId: 10010
       order: 1000
       required: FALSE
       standard: FALSE
@@ -324,13 +323,13 @@ contactArticles:
          nl: 'Overige bepalingen'
          pl: ''
       articleLabel: otherStipulations
-      id: 10011
+      articleId: 10011
       order: 1100
       required: TRUE
       standard: TRUE
       subArticle:
         -
-          id: 10012
+          articleId: 10012
           order: 1200
           required: FALSE
           standard: TRUE
@@ -343,7 +342,7 @@ contactArticles:
             nl: 'Afspraken betreffende geheimhouding en werkkleding. Hier kunt u naar behoefte ook nog andere (individuele) afspraken vastleggen.'
             pl: ''
         -
-          id: 10013
+          articleId: 10013
           order: 1300
           required: FALSE
           standard: TRUE
@@ -362,7 +361,7 @@ contactArticles:
         nl: 'Beloning'
         pl: ''
       articleLabel: Wage
-      id: 10014
+      articleId: 10014
       order: 305
       required: TRUE
       standard: TRUE
@@ -401,7 +400,7 @@ contactArticles:
         nl: 'Vakantietoeslag en vakantiedagen'
         pl: ''
       articleLabel: Wage
-      id: 10015
+      articleId: 10015
       order: 1500
       required: TRUE
       standard: TRUE
@@ -427,7 +426,7 @@ contactArticles:
         nl: 'Arbeidsduur en werktijden'
         pl: ''
       articleLabel: hoursAndWorkingHours
-      id: 10016
+      articleId: 10016
       order: 550
       required: TRUE
       standard: TRUE
@@ -490,7 +489,7 @@ contactArticles:
         nl: 'Dienstverband, functie en plaats van werkzaamheden'
         pl: ''
       articleLabel: employmentJobTitleLocation
-      id: 10017
+      articleId: 10017
       order: 1700
       required: TRUE
       standard: TRUE
@@ -522,7 +521,7 @@ contactArticles:
         nl: 'Proeftijd'
         pl: ''
       articleLabel: probation
-      id: 10018
+      articleId: 10018
       order: 151
       required: FALSE
       standard: FALSE
@@ -542,8 +541,7 @@ contactArticles:
           validation: 'RegularExpression'
           options:
             regularExpression: '[0-9]{1,2}'
-
-          default:
+          default: ''
         -
           type: 'TYPO3.Form:SingleSelectDropdown'
           options:
@@ -558,7 +556,7 @@ contactArticles:
         nl: 'Proeftijd'
         pl: ''
       articleLabel: Probation
-      id: 10019
+      articleId: 10019
       order: 152
       required: TRUE
       standard: TRUE
@@ -576,7 +574,7 @@ contactArticles:
         nl: 'Opzegtermijn'
         pl: ''
       articleLabel: noticePeriod
-      id: 10019
+      articleId: 10019
       order: 152
       required: TRUE
       standard: TRUE
@@ -599,7 +597,7 @@ contactArticles:
         nl: 'Lidmaatschap LTO Nederland'
         pl: ''
       articleLabel: MemberLTO
-      id: 10020
+      articleId: 10020
       order: 350
       required: FALSE
       standard: TRUE
@@ -617,7 +615,7 @@ contactArticles:
         nl: 'Cafetaria Model'
         pl: ''
       articleLabel: cafetariaModel
-      id: 10021
+      articleId: 10021
       order: 352
       required: FALSE
       standard: TRUE
@@ -632,7 +630,7 @@ contactArticles:
       subarticle:
         -
           articleLabel: cafetariaModelA
-          id: 10022
+          articleId: 10022
           order: 353
           required: FALSE
           standard: TRUE
@@ -646,7 +644,7 @@ contactArticles:
             pl: ''
         -
           articleLabel: cafetariaModelB
-          id: 10023
+          articleId: 10023
           order: 354
           required: FALSE
           standard: TRUE
@@ -660,7 +658,7 @@ contactArticles:
             pl: ''
         -
           articleLabel: cafetariaModelC
-          id: 10024
+          articleId: 10024
           order: 355
           required: FALSE
           standard: TRUE
@@ -674,7 +672,7 @@ contactArticles:
             pl: ''
         -
           articleLabel: cafetariaModelD
-          id: 10025
+          articleId: 10025
           order: 356
           required: FALSE
           standard: TRUE
@@ -688,7 +686,7 @@ contactArticles:
             pl: ''
         -
           articleLabel: cafetariaModelE
-          id: 10026
+          articleId: 10026
           order: 357
           required: FALSE
           standard: TRUE
@@ -702,7 +700,7 @@ contactArticles:
             pl: ''
         -
           articleLabel: cafetariaModelF
-          id: 10027
+          articleId: 10027
           order: 358
           required: FALSE
           standard: TRUE

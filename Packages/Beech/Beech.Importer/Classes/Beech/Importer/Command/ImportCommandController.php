@@ -26,23 +26,44 @@ class ImportCommandController extends \TYPO3\Flow\Cli\CommandController {
 	/**
 	 * Command to import YAML files to CouchDb
 	 *
-	 * Examle usage:
+	 * Example usage:
 	 *
-	 * ./flow import:yaml MyCompany.OtherPackage ClassOfModel Packages/Application/MyCompany.MyPackage/Resources/Private/YamlFiles/
+	 * ./flow import:yaml MyCompany.OtherPackage ClassOfModel --sourcePath Packages/Application/MyCompany.MyPackage/Resources/Private/YamlFiles/
 	 *
-	 * @param string $sourcePath Path to directory which contain YAML files
 	 * @param string $packageKey The package key, for example "MyCompany.MyPackageName"
 	 * @param string $modelName Class name of created object
+	 * @param string $sourcePath Path to directory which contain YAML files
+	 * @param string $yamlModel Path to optional file which contain model in YAML format
 	 * @return void
 	 */
-	public function yamlCommand($packageKey, $modelName, $sourcePath = NULL) {
+	public function yamlCommand($packageKey, $modelName, $sourcePath = NULL, $yamlModel = NULL) {
 		if ($sourcePath === NULL) {
 			$sourcePath = 'resource://' . $packageKey . '/Private/Yaml/';
 		}
-		$this->yamlImportUtility->init($packageKey, $modelName);
+		$this->yamlImportUtility->init($packageKey, $modelName, $yamlModel);
 		$this->yamlImportUtility->import($sourcePath);
 		$this->outputLine('Import complete. %d objects were imported.', array($this->yamlImportUtility->getNumberOfImportedFiles()));
 	}
 
+	/**
+	 * Command to import YAML file with collection of objects
+	 *
+	 * ./flow import:collection MyCompany.OtherPackage ClassOfModel
+	 * 	--sourcePath Packages/Application/MyCompany.MyPackage/Resources/Private/YamlFiles/
+	 * 	--collectionIndex contactArticles:articles --language nl
+	 *
+	 * @param string $packageKey The package key, for example "MyCompany.MyPackageName"
+	 * @param string $modelName
+	 * @param string $sourcePath Path to YAML file
+	 * @param string $collectionIndex Index where collection is stored, for example "contractArticles:articles"
+	 * @param string $language
+	 */
+	public function collectionCommand($packageKey, $modelName, $sourcePath, $collectionIndex, $language = 'en') {
+		$this->yamlImportUtility->init($packageKey, $modelName);
+		$this->yamlImportUtility->setCollectionIndex($collectionIndex);
+		$this->yamlImportUtility->setLanguage($language);
+		$this->yamlImportUtility->import($sourcePath);
+		$this->outputLine('Import complete. %d objects were imported.', array($this->yamlImportUtility->getNumberOfImportedElements()));
+	}
 }
 ?>

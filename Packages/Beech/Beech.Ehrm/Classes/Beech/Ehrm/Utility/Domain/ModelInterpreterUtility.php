@@ -84,6 +84,25 @@ class ModelInterpreterUtility {
 	}
 
 	/**
+	 * Get properties of model from YAML file
+	 *
+	 * @param $packageKey
+	 * @param $modelName
+	 * @return array
+	 */
+	public function getModelProperties($packageKey, $modelName, $yamlModelFile = NULL) {
+		// TODO: Read content from configurationManager. On this moment configurationManager doesnt work for models
+		if (is_null($yamlModelFile)) {
+			$yamlModelFile = FLOW_PATH_PACKAGES . 'Beech/' . $packageKey . '/Configuration/Models' . $modelName . '.yaml';
+		}
+		if (file_exists($yamlModelFile)) {
+			$parsedYaml = Yaml::parse(file_get_contents(FLOW_PATH_PACKAGES . 'Beech/' . $packageKey . '/Configuration/Models' . $modelName . '.yaml'));
+			$packageKeyArray = explode('.', $packageKey);
+			return isset($parsedYaml[$packageKeyArray[0]][$packageKeyArray[1]][$modelName]['properties']) ? $parsedYaml[$packageKeyArray[0]][$packageKeyArray[1]][$modelName]['properties'] : array();
+		}
+		return array();
+	}
+	/**
 	 * Rules for selecting field type
 	 * Based on that field type, fluid create input field.
 	 *
