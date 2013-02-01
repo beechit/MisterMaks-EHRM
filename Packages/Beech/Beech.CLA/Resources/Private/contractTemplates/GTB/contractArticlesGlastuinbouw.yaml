@@ -115,7 +115,7 @@ contactArticles:
           valueId: "workLocation"
         -
           type: array
-          options: [ monday , tuesday , wednessday , thursday , friday , saturday , sunday ]
+          options: [ monday , tuesday , wednesday , thursday , friday , saturday , sunday ]
           nl: [ maandag, dinsdag, woensdag, donderdag, vrijdag, zaterdag, zondag ]
           en:
           pl:
