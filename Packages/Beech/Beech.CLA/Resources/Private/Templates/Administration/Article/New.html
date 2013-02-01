@@ -1,0 +1,47 @@
+<f:layout/>
+<f:section name="Body">
+	<f:form.validationResults for="article">
+		<f:if condition="{validationResults.flattenedErrors}">
+			<div class="error">
+				<f:for each="{validationResults.flattenedErrors}" key="propertyPath" as="errors">{propertyPath}:
+					<f:for each="{errors}" as="error">{error}</f:for>
+				</f:for>
+			</div>
+		</f:if>
+	</f:form.validationResults>
+	<f:form action="create" object="{article}" name="article" class="form-horizontal well">
+		<div class="control-group">
+			<label class="control-label" for="articleId"><f:translate id="articleId">Article Id</f:translate></label>
+			<div class="controls">
+				<f:form.textfield property="articleId" id="articleId" />
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="articleLabel"><f:translate id="articleLabel">Label</f:translate></label>
+			<div class="controls">
+				<f:form.textfield property="articleLabel" id="articleLabel" />
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="articleHeader"><f:translate id="articleHeader">Header</f:translate></label>
+			<div class="controls">
+				<f:form.textfield property="articleHeader" id="articleHeader" />
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="articleText"><f:translate id="articleText">Text</f:translate></label>
+			<div class="controls">
+				<f:form.textfield property="articleText" id="articleText" />
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="order"><f:translate id="order">Order</f:translate></label>
+			<div class="controls">
+				<f:form.textfield property="order" id="order" />
+			</div>
+		</div>
+		<div class="control-group">
+			<f:form.submit value="{f:translate(id: 'action.create')}" class="btn btn-primary"/>
+		</div>
+	</f:form>
+</f:section>

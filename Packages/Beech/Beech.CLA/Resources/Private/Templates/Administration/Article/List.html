@@ -1,0 +1,53 @@
+<f:layout/>
+<f:section name="Body">
+	<h1>
+		<f:translate id="article">Article</f:translate>
+	</h1>
+	<f:if condition="{entities}">
+		<f:then>
+			<table class="table">
+				<thead>
+				<tr>
+								<th>
+									<f:translate>Article Id</f:translate>
+								</th>
+								<th>
+									<f:translate>Header</f:translate>
+								</th>
+					<th></th>
+				</tr>
+				</thead>
+				<tbody>
+				<f:for each="{entities}" as="article" iteration="iterator">
+					<tr>
+									<td>
+										<f:link.action action="show"
+													   arguments="{article: article}"><strong>{article.articleId}</strong>
+										</f:link.action>
+									</td>
+									<td>
+										<f:link.action action="show"
+													   arguments="{article: article}"><strong>{article.articleHeader}</strong>
+										</f:link.action>
+									</td>
+						<td>
+							<f:link.action action="edit" arguments="{article: article}"><i class="icon-pencil"></i></f:link.action>
+							<f:link.action action="delete" arguments="{article: article}"><i class="icon-trash"></i></f:link.action>
+						</td>
+					</tr>
+				</f:for>
+				</tbody>
+			</table>
+		</f:then>
+		<f:else>
+			<p></p>
+		</f:else>
+	</f:if>
+	<div class="form-actions">
+		<a class="btn btn-primary"
+					href="/{f:uri.action(package: 'Beech.CLA', subpackage: 'Administration', controller: 'Article', action: 'new')}"><i
+			class="icon-plus icon-white"></i>
+		<f:translate id="action.create">Create</f:translate>
+	</a>
+	</div>
+</f:section>
