@@ -34,7 +34,7 @@ contractTemplate:
     - 10027
   availableLanguages:
     - nl_NL
-  contractTemplateName: "Temporary contract"
+  contractTemplateName: "Temporary contract with cafetaria arrangement"
   contractTitle:
     en: ""
     nl: "Arbeidsovereenkomst voor bepaalde tijd voor de regeling gelegenheidsarbeid "
