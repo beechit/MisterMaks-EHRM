@@ -8,49 +8,55 @@ model:
 properties:
   -
     id: jobDescriptionNumber
+    label: 'Job description number'
     type: string(10)
     validation: ""
     onList: TRUE
   -
     id: jobTitle
+    label: 'Job Title'
     type: string(50)
     validation: ""
     onList: TRUE
   -
     id: jobContext
+    label: 'Job context'
     type: text
     validation: ""
     value: Functiecontext
   -
     id: jobGoal
+    label: 'Job goal'
     type: text
     validation: ""
   -
     id: positionLabel
-    label: true
     type: string(30)
     validation: ""
     value: "Positie in de organisatie"
   -
     id: reportsTo
+    label: 'Reports to'
     type: text
     validation: ""
   -
     id: manages
+    label: 'Manages'
     type: text
     validation: ""
   -
     id: department
+    label: 'Department'
     type: string(20)
     validation: ""
   -
     id: expectationLabel
-    label: true
     type: string(30)
     validation: ""
     value: Resultaatgebieden
   -
     id: expectations
+    label: Expectations
     type: array
     validation: ""
     values:
@@ -59,27 +65,33 @@ properties:
       - "Nageleefde voorschiften"
       -
         id: mainActivities
+        label: 'Main activities'
         type: text
         validatiomn: ""
       -
         id: resultCriteria
+        label: 'Result criteria'
         type: text
         validation: ""
   -
     id: burdeningCircumstances
+    label: 'Burdening circumstances'
     type: array
     validation: ""
     values:
       -
         id: circumstance
+        label: circumstance
         type: text
         validation: ""
   -
     id: orbaScore
+    label: 'ORBA score'
     type: string(10)
     validation: ""
   -
     id: wageScaleGroup
+    label 'Wage scale'
     type: string(2)
     validation: ""
     onList: TRUE
