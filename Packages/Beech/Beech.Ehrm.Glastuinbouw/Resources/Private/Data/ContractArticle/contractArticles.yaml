@@ -75,7 +75,7 @@ contactArticles:
               - days
               - weeks
             default: weeks
-            valueId: endDate
+            valueId: dayWeek
     -
       articleHeader:
         en: ''
@@ -88,7 +88,7 @@ contactArticles:
       standard: TRUE
       articleText:
         en: ''
-        nl: 'De arbeidsduur bedraagt voor de totale looptijd van deze arbeidsovereenkomst <totalHours> uur. De gemiddelde arbeidsduur bedraagt <hoursAWeek per week. De werknemer werkt op de dagen <Workdays> van <startTime> tot <endTime> De werknemer stemt ermee in dat door de seizoensmatige aard van het werk de arbeidsduur kan fluctueren, waardoor dagelijks en/of wekelijks meer/minder uren worden gewerkt dan de overeengekomen gemiddelde arbeidsduur. Werkgever en werknemer maken hierover in onderling overleg werkafspraken.'
+        nl: 'De arbeidsduur bedraagt voor de totale looptijd van deze arbeidsovereenkomst <totalHours> uur. De gemiddelde arbeidsduur bedraagt <hoursAWeek> per week. De werknemer werkt op de dagen <workDays> van <startTime> tot <endTime> De werknemer stemt ermee in dat door de seizoensmatige aard van het werk de arbeidsduur kan fluctueren, waardoor dagelijks en/of wekelijks meer/minder uren worden gewerkt dan de overeengekomen gemiddelde arbeidsduur. Werkgever en werknemer maken hierover in onderling overleg werkafspraken.'
         pl: ''
       help:
         en: ''
@@ -159,7 +159,7 @@ contactArticles:
         pl: ''
       values:
         -
-          type: (4,2)
+          type: 'TYPO3.Form:SingleLineText'
           value: ''
           valueId: 'minimumWage'
           default: ''
@@ -184,7 +184,7 @@ contactArticles:
       values:
         -
           type: 'TYPO3.Form:SingleLineText'
-          value: 'Glastuinbouw'
+          default: 'Glastuinbouw'
           valueId: 'CLA'
     -
       articleHeader:
@@ -207,7 +207,7 @@ contactArticles:
       values:
         -
           type: 'TYPO3.Form:SingleLineText'
-          value: '20'
+          default: '20'
           valueId: 'vacationAllowanceGLA'
     -
       articleHeader:
@@ -229,7 +229,7 @@ contactArticles:
         pl: ''
       values:
         -
-          type: 'TYPO3.Form:DatePicker'
+          type: 'TYPO3.Form:SingleLineText'
           default: '9.00'
           valueId: 'sickReportTime'
     -
@@ -413,13 +413,14 @@ contactArticles:
         nl: ''
         pl: ''
       values:
+        -
           type: 'TYPO3.Form:SingleLineText'
           value: '8.33'
+          valueId: vacationAllowancePercentage
           validation:
             type: 'RegularExpression'
             options:
               regularExpression: '/^[0-9]{1,2}([\.][0-9]{0,2}){0,1}$/'
-          valueId: vacationAllowancePercentage
     -
       articleHeader:
         en: ''
@@ -432,7 +433,7 @@ contactArticles:
       standard: TRUE
       articleText:
         en: ''
-        nl: 'De gemiddelde arbeidsduur bedraagt <hoursAWeek> per week. De werknemer werkt op de dagen <Workdays> van <startTime> tot <endTime> De werknemer stemt ermee in dat door de seizoensmatige aard van het werk de arbeidsduur kan fluctueren, waardoor dagelijks en/of wekelijks meer/minder uren worden gewerkt dan de overeengekomen gemiddelde arbeidsduur. Werkgever en werknemer maken hierover in onderling overleg werkafspraken.'
+        nl: 'De gemiddelde arbeidsduur bedraagt <hoursAWeek> per week. De werknemer werkt op de dagen <workdays> van <startTime> tot <endTime> De werknemer stemt ermee in dat door de seizoensmatige aard van het werk de arbeidsduur kan fluctueren, waardoor dagelijks en/of wekelijks meer/minder uren worden gewerkt dan de overeengekomen gemiddelde arbeidsduur. Werkgever en werknemer maken hierover in onderling overleg werkafspraken.'
         pl: ''
       help:
         en: ''
@@ -472,13 +473,13 @@ contactArticles:
           pl:
           valueId: workDays
         -
-          type:  'TYPO3.Form:DatePicker'
+          type:  'TYPO3.Form:SingleLineText'
           value: ''
           valueId: 'startTime'
           default: '8.00'
 
         -
-          type: 'TYPO3.Form:DatePicker'
+          type: 'TYPO3.Form:SingleLineText'
           value: ''
           valueId: 'endTime'
           default: '18.00'
@@ -504,8 +505,14 @@ contactArticles:
       values:
         -
           type: 'TYPO3.Form:DatePicker'
+          properties:
+            elementClassAttribute: 'small'
+            timeSelectorClassAttribute: 'mini'
+            dateFormat: 'Y-m-d'
+            enableDatePicker: true
+            displayTimeSelector: false
           value: ''
-          valueId: Startdate
+          valueId: startDate
           default: today
         -
           type: 'TYPO3.Form:SingleLineText'
@@ -541,7 +548,7 @@ contactArticles:
           validation: 'RegularExpression'
           options:
             regularExpression: '[0-9]{1,2}'
-          default: ''
+          default: 0
         -
           type: 'TYPO3.Form:SingleSelectDropdown'
           options:

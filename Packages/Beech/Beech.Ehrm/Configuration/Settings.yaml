@@ -56,7 +56,7 @@ TYPO3:
         parentPreset: 'default'
         finisherPresets:
           'Beech.Ehrm:Database':
-             implementationClassName: 'Beech\Ehrm\Finishers\DatabaseFinisher'
+            implementationClassName: 'Beech\Ehrm\Finishers\DatabaseFinisher'
         formElementTypes:
           'TYPO3.Form:Base':
             renderingOptions:
@@ -71,6 +71,33 @@ TYPO3:
                     'Beech.Ehrm:Database':
                       label: 'Database Persistence Finisher'
                       templateName: 'Finisher-DatabaseFinisher'
+          'Beech.Party:EmployeeSelect':
+            superTypes: ['TYPO3.Form:FormElement', 'TYPO3.Form:SingleSelectDropdown']
+            implementationClassName: 'Beech\Party\FormElements\EmployeeSelect'
+            renderingOptions:
+              templatePathPattern: 'resource://Beech.Ehrm/Private/Templates/FormElements/SingleSelectDropdown.html'
+          'Beech.CLA:ContractTemplateSelect':
+            superTypes: ['TYPO3.Form:FormElement', 'TYPO3.Form:SingleSelectDropdown']
+            implementationClassName: 'Beech\CLA\FormElements\ContractTemplateSelect'
+            renderingOptions:
+              templatePathPattern: 'resource://Beech.Ehrm/Private/Templates/FormElements/SingleSelectDropdown.html'
+          'Beech.CLA:JobDescriptionSelect':
+            superTypes: ['TYPO3.Form:FormElement', 'TYPO3.Form:SingleSelectDropdown']
+            implementationClassName: 'Beech\CLA\FormElements\JobDescriptionSelect'
+            renderingOptions:
+              templatePathPattern: 'resource://Beech.Ehrm/Private/Templates/FormElements/SingleSelectDropdown.html'
+          'Beech.CLA:ContractArticlesSection':
+            superTypes: ['TYPO3.Form:Section']
+            implementationClassName: 'Beech\CLA\FormElements\ContractArticlesSection'
+            renderingOptions:
+              templatePathPattern: 'resource://Beech.CLA/Private/Templates/FormElements/ContractArticles.html'
+              partialPathPattern: 'resource://Beech.CLA/Private/Templates/FormElements/Partials/{@type}.html'
+          'Beech.CLA:ContractArticleFormElement':
+            superTypes: ['TYPO3.Form:FormElement']
+            implementationClassName: 'Beech\CLA\FormElements\ContractArticleFormElement'
+            renderingOptions:
+              templatePathPattern: 'resource://Beech.CLA/Private/Templates/FormElements/ContractArticle.html'
+              partialPathPattern: 'resource://Beech.CLA/Private/Templates/FormElements/Partials/{@type}.html'
   FormBuilder:
     handlebarsTemplates:
       # include the handlebars template
