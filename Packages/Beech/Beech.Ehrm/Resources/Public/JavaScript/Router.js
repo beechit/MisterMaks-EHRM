@@ -4,7 +4,7 @@
 	App.Router.map(function() {
 		this.route('userSettings', { path: '/user/settings' });
 		this.route('applicationSettings', { path: '/administration/settings' });
-		this.route('taskModule', { path: '/tasks' });
+
 		this.route('jobDescriptionModule', { path: '/administration/jobdescriptions' });
 		this.route('contractArticleModule', { path: '/administration/contractarticles' });
 		this.route('documentModule', { path: '/documents' });
@@ -31,6 +31,14 @@
 				this.route('edit');
 			});
 		});
+
+			// Beech.Task
+		this.resource('taskModule', { path: '/tasks' }, function() {
+			this.resource('task', { path: '/:task_id' }, function() {
+				this.route('edit', { path: '/edit' });
+			});
+			this.route('new');
+		});
 	});
 
 	App.IndexRoute = Ember.Route.extend({
@@ -44,7 +52,6 @@
 	App.PersonRoute = App.IndexRoute.extend();
 
 		// TODO: Replace AJAX module loading by full ember / ember-data modules
-	App.TaskModuleRoute = App.IndexRoute.extend(App.AjaxModuleControllerMixin, { url: MM.url.module.tasks });
 	App.DocumentModuleRoute = App.IndexRoute.extend(App.AjaxModuleControllerMixin, { url: MM.url.module.documents });
 	App.ApplicationSettingsRoute = App.IndexRoute.extend(App.AjaxModuleControllerMixin, { url: MM.url.module.applicationSettings });
 	App.UserSettingsRoute = App.IndexRoute.extend(App.AjaxModuleControllerMixin, { url: MM.url.module.userSettings });

@@ -23,6 +23,12 @@ class TaskController extends \Beech\Ehrm\Controller\AbstractController {
 	protected $taskRepository;
 
 	/**
+	 * @var \Beech\Task\Domain\Factory\TaskFactory
+	 * @Flow\Inject
+	 */
+	protected $taskFactory;
+
+	/**
 	 * @var \TYPO3\Flow\Security\Context
 	 * @Flow\Inject
 	 */
@@ -40,6 +46,7 @@ class TaskController extends \Beech\Ehrm\Controller\AbstractController {
 	 * @return void
 	 */
 	public function indexAction() {
+		$this->taskRepository->add($this->taskFactory->createTask());
 		$this->view->assign('tasks', $this->taskRepository->findOpenTasks());
 		$this->view->assign('priorities', array(0 => 'low', 1 => 'normal', 2 => 'high', 3 => 'immediate'));
 	}

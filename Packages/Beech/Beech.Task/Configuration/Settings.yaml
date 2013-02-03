@@ -1,13 +1,7 @@
-Beech:
-  Ehrm:
-    menu:
-      account:
-        menu:
-          task:
-            label: 'Tasks'
-            priority: 30
-            package: 'Beech.Task'
-            controller: 'task'
-            action: 'index'
-            transition: 'showTaskModule'
-            format: 'jsonp'
+Radmiraal:
+  Emberjs:
+    restInterfaces:
+      task:
+        routePath: 'tasks'
+        model: '\Beech\Task\Domain\Model\Task'
+        repository: '\Beech\Task\Domain\Repository\TaskRepository'

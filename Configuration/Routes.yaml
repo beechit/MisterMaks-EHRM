@@ -1,12 +1,3 @@
--
-  name: 'Temp route for Tasks REST controller'
-  uriPattern: 'rest/tasks'
-  defaults:
-    '@format': 'json'
-    '@package': 'Beech.Task'
-    '@controller': 'Rest\Task'
-    '@action': 'list'
-
 ##
 # TYPO3.UserManagement
 #
@@ -41,7 +32,6 @@
   subRoutes:
     RadmiraalEmberjsSubroutes:
       package: 'Radmiraal.Emberjs'
-
 
 ##
 # Flow subroutes

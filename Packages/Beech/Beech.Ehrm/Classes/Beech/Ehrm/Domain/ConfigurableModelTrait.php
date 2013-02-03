@@ -29,6 +29,12 @@ trait ConfigurableModelTrait {
 	protected $gettableProperties = array();
 
 	/**
+	 * @var \TYPO3\Flow\Reflection\ReflectionService
+	 * @Flow\Inject
+	 */
+	protected $reflectionService;
+
+	/**
 	 * Returns a list of properties of this model. This will be a combination
 	 * of class properties and the properties defined in Models.yaml.
 	 *
@@ -41,12 +47,18 @@ trait ConfigurableModelTrait {
 			return $this->gettableProperties;
 		}
 
-		$this->gettableProperties = get_object_vars($this);
+		$this->gettableProperties = array_keys(get_object_vars($this));
 
 		$modelConfigurationPath = str_replace(array('Domain\\Model\\', '\\'), array('', '.'), get_class($this));
 		$modelConfiguration = $this->configurationManager->getConfiguration('Models', $modelConfigurationPath);
 		if (!empty($modelConfiguration) && is_array($modelConfiguration['properties'])) {
 			$this->gettableProperties = array_merge($this->gettableProperties, array_keys($modelConfiguration['properties']));
+		}
+
+		foreach ($this->gettableProperties as $index => $property) {
+			if ($this->reflectionService->isPropertyAnnotatedWith(get_class($this), $property, 'TYPO3\Flow\Annotiations\Transient')) {
+				unset($this->gettableProperties[$index]);
+			}
 		}
 
 		return $this->gettableProperties;

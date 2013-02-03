@@ -221,13 +221,6 @@ class HeaderPartsViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHel
 						->uriFor('index', array(), 'Account', 'TYPO3.UserManagement')
 				)
 			),
-			'configuration' => (object)array(
-				'restTaskUri' => $this->controllerContext->getUriBuilder()
-					->reset()
-					->setFormat('json')
-					->setCreateAbsoluteUri(TRUE)
-					->uriFor('list', array(), 'Rest\Task', 'Beech.Task')
-			),
 			'locale' => $this->preferenceUtility->getApplicationPreference('locale')
 		);
 

@@ -9,3 +9,15 @@ Beech:
           companies:
             priority: 20
             label: 'Companies'
+
+Radmiraal:
+  Emberjs:
+    restInterfaces:
+      person:
+        routePath: 'persons'
+        model: '\Beech\Party\Domain\Model\Person'
+        repository: '\Beech\Party\Domain\Repository\PersonRepository'
+      company:
+        routePath: 'companies'
+        model: '\Beech\Party\Domain\Model\Company'
+        repository: '\Beech\Party\Domain\Repository\CompanyRepository'

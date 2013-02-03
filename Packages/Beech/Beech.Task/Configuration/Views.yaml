@@ -1,5 +1,1 @@
-Beech:
-  Task:
-    viewClassName: 'Beech\Ehrm\View\TemplateView'
-    options:
-      layoutRootPathPattern: 'resource://Beech.Ehrm/Private/Layouts'
+

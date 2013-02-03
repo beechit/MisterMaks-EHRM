@@ -7,15 +7,7 @@
 		"typo3/flow": "*",
 		"typo3/formbuilder": "*",
 		"radmiraal/emberjs": "dev-master",
-		"radmiraal/couchdb": "dev-doctrine",
-		"beech/absence": "1.0.x",
-		"beech/calendar": "1.0.x",
-		"beech/cla": "1.0.x",
-		"beech/document": "1.0.x",
-		"beech/minutes": "1.0.x",
-		"beech/party": "1.0.x",
-		"beech/task": "1.0.x",
-		"beech/workflow": "1.0.x"
+		"radmiraal/couchdb": "dev-doctrine"
 	},
 	"autoload": {
 		"psr-0": {
