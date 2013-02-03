@@ -1,6 +1,10 @@
 @import "partials/variables";
 @import "partials/mixins";
 @import "partials/accordion";
+@import "partials/flashMessages";
+@import "partials/notifications";
+@import "partials/datatables";
+@import "partials/modal";
 
 // General
 html, body {
@@ -168,26 +172,7 @@ footer {
 	}
 }
 
-#modal-body-only {
-	.modal-body {
-		padding: 30px 0 0 0;
-		.icon-spin {
-			margin: 0 30px 30px;
-		}
-	}
-	form {
-		margin: 0;
-		fieldset {
-			padding: 20px 0 20px 140px;
-			legend {
-				margin-bottom: 0;
-				border: none;
-			}
-			legend + .control-group { margin-top: 0; }
-		}
-		.form-actions {
-			margin-bottom: 0;
-			padding-left: 140px;
-		}
-	}
+/* This forces the main application div to be 100% height in order to allow for a sticky footer */
+.ember-view.full {
+	height: 100%;
 }

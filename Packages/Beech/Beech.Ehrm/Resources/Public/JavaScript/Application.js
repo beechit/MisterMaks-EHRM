@@ -1,5 +1,9 @@
 (function() {
 	'use strict';
+
+	App.ApplicationView.reopen({
+		classNames: ['full']
+	});
 	App.ApplicationController = App.ApplicationController.reopen({
 		title: 'Mister Maks',
 
