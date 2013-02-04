@@ -124,7 +124,6 @@ Beech:
         - 'Beech.Ehrm/Library/bootstrap/css/bootstrap.css'
         - 'Beech.Ehrm/Library/bootstrap/css/bootstrap-responsive.css'
         - 'Beech.Ehrm/Library/fontawesome/css/font-awesome.min.css'
-        - 'Beech.Ehrm/StyleSheets/main.css'
         - 'Beech.Ehrm/Library/dataTables/media/css/jquery.dataTables.TwitterBootstrap.css'
         - 'Beech.Ehrm/Library/dataTables/media/css/jquery.dataTables.css'
         - 'Beech.Ehrm/Library/bootstrap-notify/css/bootstrap-notify.css'
