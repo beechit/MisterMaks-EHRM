@@ -508,7 +508,7 @@ properties:
       -
         default: currentUser
         id: modifiedBy
-        label: Modifiedby
+        label: 'Modified by'
         required: true
         type: \Beech\Party\Domain\Model\Person
         validation: ""

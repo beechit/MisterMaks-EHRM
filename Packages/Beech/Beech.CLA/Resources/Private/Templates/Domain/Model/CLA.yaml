@@ -1,48 +1,42 @@
 todo: write this document
 
 
-Grant day leave balance
-
-calculationmethod leave balance
 
 
-
-
-  # logging
   -
-    id: 'creationDate'
-    label: 'creation date'
-    type: 'dateTime'
-    validation: '(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}( \d{1,2}[:-]\d{2}([:-]\d{2,3})*)?'
-    default: 'now'
-    visible: FALSE
-    required: TRUE
+    default: now
+    id: creationDate
+    label: "creation date"
+    required: true
+    type: dateTime
+    validation: "(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?"
+    visible: false
   -
-    id: 'createdBy'
-    label: 'creation by'
-    type: '\Beech\Party\Domain\Model\Person'
-    default: 'currentUser'
-    validation: ''
-    visible: FALSE
-    required: TRUE
+    default: currentUser
+    id: createdBy
+    label: "creation by"
+    required: true
+    type: \Beech\Party\Domain\Model\Person
+    validation: ""
+    visible: false
   -
-    id: 'modification'
-    label: 'ModificationLog'
-    type: 'array'
+    id: modification
     items:
-     -
-       id: 'modificationDate'
-       label: 'Modification date'
-       type: 'dateTime'
-       validation: '(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}( \d{1,2}[:-]\d{2}([:-]\d{2,3})*)?'
-       default: 'now'
-       visible: FALSE
-       required: TRUE
-     -
-       id: 'modifiedBy'
-       label: 'Modifiedby'
-       type: '\Beech\Party\Domain\Model\Person'
-       validation: ''
-       default: 'currentUser'
-       visible: FALSE
-       required: TRUE
+      -
+        default: now
+        id: modificationDate
+        label: "Modification date"
+        required: true
+        type: dateTime
+        validation: "(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?"
+        visible: false
+      -
+        default: currentUser
+        id: modifiedBy
+        label: 'Modified by'
+        required: true
+        type: \Beech\Party\Domain\Model\Person
+        validation: ""
+        visible: false
+    label: ModificationLog
+    type: array
