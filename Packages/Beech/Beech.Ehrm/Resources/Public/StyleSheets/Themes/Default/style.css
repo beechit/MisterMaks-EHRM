@@ -1,14 +1,53 @@
 @import url(http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900);
+/* First 3 need to have this order */
+/* General */
+html, body { font-family: "Raleway", sans-serif; height: 100%; }
+
+/* Sticky Footer Begin */
+.body { min-height: 100%; height: 100%; height: auto !important; margin: 0 auto -40px !important; }
+
+footer, .push { height: 40px; }
+
+footer { margin-top: -80px !important; }
+
+/* Sticky Footer End */
+.container-fluid { max-width: 960px; margin: 0 auto; }
+
+footer { position: relative; font-size: small; font-weight: 100; }
+footer .footer { float: left; }
+footer .logo { float: right; letter-spacing: -0.1em; color: #049cdb; position: relative; }
+footer .logo i { position: absolute; left: -8px; top: 1px; font-size: 0.8em; }
+
+.page-header { position: relative; }
+.page-header .home { font-size: 300%; position: absolute; bottom: 15px; color: #049cdb; }
+.page-header h1 { text-align: right; color: #eeeeee; }
+
+.left h3 { font-size: 1em; font-weight: normal; text-transform: uppercase; letter-spacing: -1px; margin-bottom: 0; }
+
+/* Breadcrumb */
+.breadcrumb { background: none; padding: 0; }
+
+/* Index */
+.jumbotron { margin: 100px 0; text-align: center; }
+.jumbotron h1 { letter-spacing: -0.1em; color: #049cdb; }
+.jumbotron h1 i { margin-right: 8px; }
+.jumbotron .lead { text-transform: uppercase; font-size: small; letter-spacing: -0.05em; }
+
+.index { text-align: center; }
+.index .btn { padding: 20px 30px; position: relative; }
+.index .btn i { position: absolute; top: 5px; left: 8px; }
+
+/* This forces the main application div to be 100% height in order to allow for a sticky footer */
+.ember-view.full { height: 100%; }
+
+/* From here add alphabetically */
 .accordion { border: 1px solid #e5e5e5; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; }
 
 .accordion-group { margin-bottom: 2px; border: none; }
 
-ul.flashmessages { list-style-type: none; margin-left: 0px; }
+.block { position: relative; text-align: center; font-size: 1.2em; margin-bottom: 20px; padding: 30px 0 20px 0; }
+.block .badge { position: absolute; top: -5px; right: -10px; }
 
-/* Start Notifications */
-.notifications { z-index: 10001; }
-
-/* End Notifications */
 /* Start DataTables */
 table.dataTable thead th, table.dataTable td { padding: 8px; }
 
@@ -17,6 +56,16 @@ table.dataTable tfoot td { padding: 1px 0px 1px 8px; }
 table.dataTable tfoot input { width: 90%; }
 
 /* End DataTables */
+ul.flashmessages { list-style-type: none; margin-left: 0px; }
+
+.left { /* Search */ }
+.left form fieldset { position: relative; }
+.left form fieldset .icon-search { position: absolute; top: 8px; right: 8px; color: #049cdb; }
+
+.align-center { text-align: center; }
+
+.muted { opacity: 0.6; }
+
 /* Start Modal box / Wizard */
 .modal-body-content { width: 100%; height: 320px; }
 
@@ -31,56 +80,16 @@ iframe { border: none; }
 #modal-body-only form .form-actions { margin-bottom: 0; padding-left: 140px; }
 
 /* End Modal box / Wizard */
-html, body { font-family: "Raleway", sans-serif; height: 100%; }
+/* Start Notifications */
+.notifications { z-index: 10001; }
 
-.body { min-height: 100%; height: 100%; height: auto !important; margin: 0 auto -40px !important; padding-top: 0; }
-
-footer, .push { height: 40px; }
-
-footer { margin-top: -80px !important; }
-
-.container-fluid { max-width: 960px; margin: 0 auto; }
-
-footer { position: relative; font-size: small; font-weight: 100; }
-footer .footer { float: left; }
-footer .logo { float: right; letter-spacing: -0.1em; color: #049cdb; position: relative; }
-footer .logo i { position: absolute; left: -8px; top: 1px; font-size: 0.8em; }
-
-.page-header { position: relative; }
-.page-header .home { font-size: 300%; position: absolute; bottom: 15px; color: #049cdb; }
-.page-header h1 { text-align: right; color: #eeeeee; }
-
-.left h3 { font-size: 1em; font-weight: normal; text-transform: uppercase; letter-spacing: -1px; margin-bottom: 0; }
-.left .accordion .accordion-heading { position: relative; }
-.left .accordion .accordion-heading .badge { position: absolute; right: 10px; top: 10px; }
-.left form fieldset { position: relative; }
-.left form fieldset .icon-search { position: absolute; top: 8px; right: 8px; color: #049cdb; }
-
-.block { position: relative; text-align: center; font-size: 1.2em; margin-bottom: 20px; padding: 30px 0 20px 0; }
-.block .badge { position: absolute; top: -5px; right: -10px; }
-
-.tooltip { text-transform: lowercase; letter-spacing: normal; }
-.tooltip .tooltip-inner { line-height: 1.8em; padding: 5px 20px; }
-
-.breadcrumb { background: none; padding: 0; }
-
-.align-center { text-align: center; }
-
-.jumbotron { margin: 100px 0; text-align: center; }
-.jumbotron h1 { letter-spacing: -0.1em; color: #049cdb; }
-.jumbotron h1 i { margin-right: 8px; }
-.jumbotron .lead { text-transform: uppercase; font-size: small; letter-spacing: -0.05em; }
-
-.index { text-align: center; }
-.index .btn { padding: 20px 30px; position: relative; }
-.index .btn i { position: absolute; top: 5px; left: 8px; }
-
-#chart { height: 200px; }
-
-.muted { opacity: 0.6; }
-
+/* End Notifications */
 .stack { display: inline-block; }
 .stack i { display: block; clear: both; height: 6px; line-height: 10px; }
 
-/* This forces the main application div to be 100% height in order to allow for a sticky footer */
-.ember-view.full { height: 100%; }
+.left { /* Tasks */ }
+.left .accordion .accordion-heading { position: relative; }
+.left .accordion .accordion-heading .badge { position: absolute; right: 10px; top: 10px; }
+
+.tooltip { text-transform: lowercase; letter-spacing: normal; }
+.tooltip .tooltip-inner { line-height: 1.8em; padding: 5px 20px; }

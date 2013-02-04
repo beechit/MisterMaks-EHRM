@@ -1,0 +1,108 @@
+/* General */
+html, body {
+	font-family: 'Raleway', sans-serif;
+	height: 100%;
+}
+/* Sticky Footer Begin */
+.body {
+	min-height: 100%;
+	height: 100%;
+	height: auto !important;
+	margin: 0 auto -40px !important;
+}
+footer, .push {
+	height: 40px;
+}
+footer {
+	margin-top: -80px !important;
+}
+/* Sticky Footer End */
+.container-fluid {
+	max-width: 960px;
+	margin: 0 auto;
+}
+footer {
+	position: relative;
+	font-size: small;
+	font-weight: 100;
+	.footer {
+		float: left;
+	}
+	.logo {
+		float: right;
+		letter-spacing: -0.1em;
+		color: $blue;
+		position: relative;
+		i {
+			position: absolute;
+			left: -8px;
+			top: 1px;
+			font-size: 0.8em;
+		}
+	}
+}
+
+.page-header {
+	position: relative;
+	.home {
+		font-size: 300%;
+		position: absolute;
+		bottom: 15px;
+		color: $blue;
+	}
+	h1 {
+		text-align: right;
+		color: $grayLighter;
+	}
+}
+.left {
+	h3 {
+		font-size: 1em;
+		font-weight: normal;
+		text-transform: uppercase;
+		letter-spacing: -1px;
+		margin-bottom: 0;
+	}
+}
+
+/* Breadcrumb */
+.breadcrumb {
+	background: none;
+	padding: 0;
+}
+
+/* Index */
+.jumbotron {
+	margin: 100px 0;
+	text-align: center;
+	h1 {
+		letter-spacing: -0.1em;
+		color: $blue;
+		i {
+			margin-right: 8px;
+		}
+	}
+	.lead {
+		text-transform: uppercase;
+		font-size: small;
+		letter-spacing: -0.05em;
+	}
+}
+
+.index {
+	text-align: center;
+	.btn {
+		padding: 20px 30px;
+		position: relative;
+		i {
+			position: absolute;
+			top: 5px;
+			left: 8px;
+		}
+	}
+}
+
+/* This forces the main application div to be 100% height in order to allow for a sticky footer */
+.ember-view.full {
+	height: 100%;
+}

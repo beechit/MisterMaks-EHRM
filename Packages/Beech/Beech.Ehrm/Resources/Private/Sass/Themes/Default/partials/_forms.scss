@@ -1,0 +1,12 @@
+.left {
+	/* Search */
+	form fieldset {
+		position: relative;
+		.icon-search {
+			position: absolute;
+			top: 8px;
+			right: 8px;
+			color: $blue;
+		}
+	}
+}
