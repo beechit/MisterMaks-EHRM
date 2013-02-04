@@ -30,22 +30,19 @@ class GenerateCommandController extends \TYPO3\Flow\Cli\CommandController {
 	protected $modelInterpreter;
 
 	/**
-	 * Generate view
+	 * Generate CRUD controller and the needed templates based on a
+	 * model configuration given in Models.yaml.
 	 *
-	 * @param string $packageKey
-	 * @param string $modelName
-	 * @param string $subpackage
-	 * @param string $yaml
+	 * @param string $packageKey The package key to work on
+	 * @param string $modelName The model name to generate
+	 * @param string $subpackage The subpackage to work on
 	 * @return void
 	 */
-	public function viewCommand($packageKey, $modelName, $subpackage = '', $yaml = '') {
-		$this->modelInterpreter->setYamlModel($packageKey, $modelName, $yaml);
-		if (!$this->modelInterpreter->isYamlModelAvailable()) {
-			$this->outputLine("\n\r".'Yaml model for "%s" doesn\'t exists in package %s' . "\n\r", array($modelName, $packageKey));
-			if (!empty($yaml)) {
-				$this->outputLine('File "%s/Private/Templates/Domain/Model/%s.yaml" doesn\'t exist' . "\n\r", array($packageKey, $yaml));
-			}
-			$this->outputLine('Default location should be: %s/Private/Templates/Domain/Model/%s.yaml' . "\n\r", array($packageKey, strtolower($modelName)));
+	public function crudControllerCommand($packageKey, $modelName, $subpackage = '') {
+		if (!$this->modelInterpreter->isModelConfigurationAvailable($packageKey, $modelName)) {
+			$this->outputLine('Yaml model for "%s" doesn\'t exists in package %s', array($modelName, $packageKey));
+			$this->outputLine();
+			$this->outputLine('Define it in "%s/Configuration/Models.yaml"', array($packageKey));
 			$this->quit(2);
 		}
 
@@ -59,7 +56,8 @@ class GenerateCommandController extends \TYPO3\Flow\Cli\CommandController {
 		$this->modelInterpreter->generateView($packageKey, $subpackage, $modelName, 'New', $template, TRUE);
 		$template = 'resource://Beech.Ehrm/Private/Templates/CodeTemplates/Crud/Controller.php.tmpl';
 		$this->modelInterpreter->generateController($packageKey, $subpackage, $modelName, $template, TRUE);
-		$this->outputLine('Create views for model %s.', array($modelName));
+
+		$this->outputLine('Created views for model %s.', array($modelName));
 	}
 
 }

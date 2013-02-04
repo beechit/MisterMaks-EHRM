@@ -15,13 +15,13 @@
 		<f:for each="{properties}" as="property" key="propertyName">
 			<div class="control-group">
 			<f:if condition="{0: property.fieldType} == {0: 'textfield'}"><f:then>
-				<label class="control-label" for="{property.id}">{property.label}</label>
+				<label class="control-label" for="{propertyName}">{property.label}</label>
 				<div class="controls">
 					<![CDATA[<f:form.textfield property="]]>{property.id}<![CDATA[" id="]]>{property.id}<![CDATA[" />]]>
 				</div>
 			</f:then></f:if>
 			<f:if condition="{0: property.fieldType} == {0: 'select'}"><f:then>
-				<label class="control-label" for="{property.id}">{property.label}</label>
+				<label class="control-label" for="{propertyName}">{property.label}</label>
 					<div class="controls"><![CDATA[<f:form.select]]> property="{property.id}" id="{property.id}" options="{property.options.values}"/></div>
 			</f:then></f:if>
 			<f:if condition="{0: property.fieldType} == {0: 'fieldset'}">
@@ -30,14 +30,14 @@
 						<legend>{property.label}</legend>
 						<f:for each="{property.items}" as="item" key="itemName">
 							<f:if condition="{0: item.fieldType} == {0: 'textfield'}">
-								<f:then><label class="control-label" for="{item.id}">{item.label}</label>
+								<f:then><label class="control-label" for="{itemName}">{item.label}</label>
 									<div class="controls">
 										<![CDATA[<f:form.textfield property="]]>{item.id}<![CDATA[" id="]]>{item.id}<![CDATA[" />]]>
 									</div>
 								</f:then>
 							</f:if>
 							<f:if condition="{0: item.fieldType} == {0: 'select'}">{item.options.values}
-								<f:then><label class="control-label" for="{item.id}">{item.label}</label>
+								<f:then><label class="control-label" for="{itemName}">{item.label}</label>
 									<div class="controls">
 										<![CDATA[<f:form.select]]> property="{item.id}" id="{item.id}" options="{item.options.values}"/>
 									</div>

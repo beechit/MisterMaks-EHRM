@@ -2,15 +2,15 @@
 namespace {packageNamespace}<f:if condition="{isInSubpackage}">\{subpackage}</f:if>\Controller;
 
 /*                                                                        *
- * This source file is proprietary property of Beech Applications B.V.
- * All code (c) Beech Applications B.V. all rights reserved
+ * This source file is proprietary property of Beech Applications B.V.    *
+ * All code (c) Beech Applications B.V. all rights reserved               *
  *                                                                        */
 
 use TYPO3\Flow\Annotations as Flow;
 use {modelFullClassName};
 
 /**
-* {controllerName} controller for the {packageKey} package <f:if condition="{isInSubpackage}"> and subpackage {subpackage}</f:if>
+* {modelName} controller for the {packageKey} package <f:if condition="{isInSubpackage}"> and subpackage {subpackage}</f:if>
 *
 * @Flow\Scope("singleton")
 */
@@ -19,12 +19,12 @@ class {controllerClassName} extends \Beech\Ehrm\Controller\AbstractManagementCon
 	/**
 	 * @var string
 	 */
-	protected $entityClassName = '{packageNamespace}\Domain\Model\{modelName}';
+	protected $entityClassName = '{packageNamespace}\Domain\Model\{modelClassName}';
 
 	/**
 	 * @var string
 	 */
-	protected $repositoryClassName = '{packageNamespace}\Domain\Repository\{modelName}Repository';
+	protected $repositoryClassName = '{repositoryClassName}';
 
 	/**
 	* Adds the given new <k:inflect.humanizeCamelCase lowercase="true">{modelName}</k:inflect.humanizeCamelCase> object to the <k:inflect.humanizeCamelCase lowercase="true">{modelName}</k:inflect.humanizeCamelCase> repository

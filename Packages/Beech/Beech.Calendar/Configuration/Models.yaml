@@ -1,0 +1,266 @@
+#############################################################
+# validated yaml for the meeting model
+# this is the meeting model.
+#############################################################
+
+Beech:
+  Calendar:
+    'Meeting':
+      properties:
+        'meetingid':
+          label: MeetingID
+          required: true
+          type: string(20)
+          validation: ''
+          visible: false
+        'departementId':
+          label: "Department id"
+          required: true
+          type: \Beech\Party\Domain\Model\Company
+          validation: ''
+          visible: false
+        'status':
+          label: Status
+          options:
+            default: tentative
+            values:
+              - confirmed
+              - tentative
+              - cancelled
+          required: true
+          type: string(20)
+          validation: ''
+          visible: true
+        'summary':
+          label: Summary
+          required: true
+          type: text
+          validation: ''
+          visible: true
+        'description':
+          label: description
+          required: true
+          type: string(20)
+          validation: ''
+          visible: true
+        'location':
+          label: "Meeting location"
+          required: true
+          type: string(30)
+          validation: ''
+          visible: true
+        'creatorid':
+          label: creatorid
+          required: true
+          type: \Beech\Party\Domain\Model\Person
+          validation: ''
+          visible: true
+        'creatorself':
+          label: creatorself
+          required: true
+          type: boolean
+          validation: ''
+          visible: true
+        'organiserId':
+          label: "Organiser id"
+          required: true
+          type: \Beech\Party\Domain\Model\Person
+          validation: ''
+          visible: true
+        'organiserSelf':
+          label: "Organiser self"
+          required: true
+          type: boolean
+          validation: ''
+          visible: true
+        'start':
+          label: Start
+          required: true
+          type: dateTime
+          validation: ''
+          visible: true
+        'end':
+          label: End
+          required: true
+          type: dateTime
+          validation: ''
+          visible: true
+        'endTimeUnspecified':
+          label: "End time Unspecified"
+          required: true
+          type: dateTime
+          validation: ''
+          visible: true
+        'recurringEventId':
+          label: "Recurring event Id"
+          required: true
+          type: string(20)
+          validation: ''
+          visible: true
+        'originalStartTime':
+          label: "original start time"
+          required: true
+          type: dateTime
+          validation: ''
+          visible: true
+        'transparency':
+          label: Transparency
+          required: true
+          type: string(20)
+          validation: ''
+          visible: true
+        'visibility':
+          label: Visibility
+          required: true
+          type: string(20)
+          validation: ''
+          visible: true
+        'sequence':
+          label: id
+          required: true
+          type: integer(10)
+          validation: ''
+          visible: true
+        'attendees':
+          items:
+            'personId':
+              label: Personid
+              required: true
+              type: \Beech\Party\Domain\Model\Person
+              validation: ''
+              visible: true
+            'optional':
+              label: optional
+              required: true
+              type: boolean
+              validation: ''
+              visible: true
+            'responseStatus':
+              label: responseStatus
+              options:
+                values:
+                  - needsAction
+                  - declined
+                  - tentative
+                  - accepted
+              required: true
+              type: string(20)
+              validation: ''
+              visible: true
+            'comment':
+              label: comment
+              required: true
+              type: text
+              validation: ''
+              visible: true
+          label: attendees
+          type: array
+          validation: ''
+        'relations':
+          items:
+            'minutesId':
+              label: "Minutes id"
+              required: false
+              type: string(20)
+              validation: ''
+              visible: true
+            'documentId':
+              label: Documentid
+              required: false
+              type: string(20)
+              validation: ''
+              visible: true
+            'documentRequired':
+              label: "Document required"
+              required: false
+              type: boolean
+              validation: ''
+              visible: true
+            'documentType':
+              label: "Document type"
+              options:
+                values: []
+              required: false
+              type: string(20)
+              validation: ''
+              visible: true
+            'actionId':
+              label: "Action Id"
+              required: false
+              type: string(20)
+              validation: ''
+              visible: true
+          label: Relations
+          type: array
+          validation: ''
+        'planNextMeeting':
+          label: "Plan next meeting"
+          required: false
+          type: boolean
+          validation: ''
+          visible: true
+        'notification':
+          label: Notification
+          required: false
+          type: boolean
+          validation: ''
+          visible: true
+        'notificationWindow':
+          label: "Notification window"
+          options:
+            values:
+              - 1
+              - 2
+              - 3
+              - 4
+              - 5
+              - 6
+          required: false
+          type: integer(2)
+          validation: ''
+          visible: true
+        'notificationMethod':
+          label: "Notification method"
+          options:
+            values:
+              - e-mail
+              - sms
+              - notification
+              - other
+              - none
+          required: false
+          type: string(20)
+          validation: ''
+          visible: true
+        'creationDate':
+          default: now
+          label: "creation date"
+          required: true
+          type: dateTime
+          validation: "(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?"
+          visible: false
+        'createdBy':
+          default: currentUser
+          label: 'Created by'
+          required: true
+          type: \Beech\Party\Domain\Model\Person
+          validation: ''
+          visible: false
+        'modification':
+          items:
+            'modificationDate':
+              default: now
+              label: "Modification date"
+              required: true
+              type: dateTime
+              validation: "(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?"
+              visible: false
+            'modifiedBy':
+              default: currentUser
+              label: 'Modified by'
+              required: true
+              type: \Beech\Party\Domain\Model\Person
+              validation: ''
+              visible: false
+          label: ModificationLog
+          type: array

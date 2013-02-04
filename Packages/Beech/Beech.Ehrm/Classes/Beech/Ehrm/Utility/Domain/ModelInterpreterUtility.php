@@ -7,15 +7,14 @@ use Symfony\Component\Yaml\Yaml;
 /**
  * Class which support generation controllers and crud action templates
  * by interpreting yaml files
- *
  */
 class ModelInterpreterUtility {
 
 	/**
-	 * @var \TYPO3\Flow\Object\ObjectManagerInterface
 	 * @Flow\Inject
+	 * @var \TYPO3\Flow\Configuration\ConfigurationManager
 	 */
-	protected $objectManager;
+	protected $configurationManager;
 
 	/**
 	 * @var \TYPO3\Flow\Package\PackageManagerInterface
@@ -30,75 +29,54 @@ class ModelInterpreterUtility {
 	protected $templateParser;
 
 	/**
-	 * @var \TYPO3\Flow\Reflection\ReflectionService
-	 * @Flow\Inject
-	 */
-	protected $reflectionService;
-
-	/**
-	 * Location of yaml file
-	 * @var string
-	 */
-	protected $yamlModel;
-
-	/**
-	 * @var array
-	 */
-	protected $generatedFiles = array();
-
-	/**
 	 * Method to generate crud templates based on yaml file.
 	 *
-	 * @param $packageKey
-	 * @param $subpackage
-	 * @param $modelName
-	 * @param $viewName
-	 * @param $template
-	 * @param bool $overwrite
+	 * @param string $packageKey
+	 * @param string $subpackage
+	 * @param string $modelName
+	 * @param string $viewName
+	 * @param string $templatePathAndFilename
+	 * @param boolean $overwrite
 	 */
-	public function generateView($packageKey, $subpackage, $modelName, $viewName, $template, $overwrite = FALSE) {
-		$contextVariables = Yaml::parse(\TYPO3\Flow\Utility\Files::getFileContents($this->yamlModel));
+	public function generateView($packageKey, $subpackage, $modelName, $viewName, $templatePathAndFilename, $overwrite = FALSE) {
+		$contextVariables = $this->configurationManager->getConfiguration('Models', $packageKey . '.' . $modelName);
 		$contextVariables['properties'] = $this->recurrentPrepareContext($contextVariables['properties']);
 		$contextVariables['packageKey'] = $packageKey;
 		$contextVariables['controllerName'] = $modelName;
 		$contextVariables['entity'] = strtolower($modelName);
 		$contextVariables['viewName'] = $viewName;
-		/**
-		 * TODO: Tweak template generator to keep nice formatting without using 'removeEmptyLines' method
-		 */
-		$fileContent = $this->removeEmptyLines($this->renderTemplate($template, $contextVariables));
-		$viewFilename = $viewName . '.html';
-		$viewPath = 'resource://' . $packageKey . '/Private/Templates/' . $subpackage . '/'. $modelName . '/';
-		$targetPathAndFilename = $viewPath . $viewFilename;
+
+		$fileContent = $this->renderTemplate($templatePathAndFilename, $contextVariables);
+		$targetPathAndFilename = 'resource://' . $packageKey . '/Private/Templates/' . $subpackage . '/' . $modelName . '/' . $viewName . '.html';
 		$this->generateFile($targetPathAndFilename, $fileContent, $overwrite);
 	}
 
 	/**
 	 * Method to generate controller based on yaml file
 	 *
-	 * @param $packageKey
-	 * @param $subpackage
-	 * @param $modelName
-	 * @param $template
-	 * @param bool $overwrite
+	 * @param string $packageKey
+	 * @param string $subpackage
+	 * @param string $modelName
+	 * @param string $templatePathAndFilename
+	 * @param boolean $overwrite
+	 * @return void
 	 */
-	public function generateController($packageKey, $subpackage, $modelName, $template, $overwrite = FALSE) {
-		$contextVariables = Yaml::parse(\TYPO3\Flow\Utility\Files::getFileContents($this->yamlModel));
+	public function generateController($packageKey, $subpackage, $modelName, $templatePathAndFilename, $overwrite = FALSE) {
+		$contextVariables = $this->configurationManager->getConfiguration('Models', $packageKey . '.' . $modelName);
 		$contextVariables['properties'] = $this->recurrentPrepareContext($contextVariables['properties']);
 		$contextVariables['packageKey'] = $packageKey;
 		$contextVariables['packageNamespace'] = str_replace('.', '\\', $packageKey);
 		$contextVariables['subpackage'] = $subpackage;
 		$contextVariables['isInSubpackage'] = ($subpackage != '');
-		$contextVariables['controllerName'] = $modelName;
-		$contextVariables['controllerClassName'] = $modelName.'Controller';
 		$contextVariables['modelName'] = $modelName;
-		$contextVariables['repositoryClassName'] = '\\' . str_replace('.', '\\', $packageKey) . '\Domain\Repository\\' . $modelName . 'Repository';
-		$contextVariables['modelFullClassName'] = '\\' . str_replace('.', '\\', $packageKey) . '\Domain\Model\\' . $modelName;
 		$contextVariables['modelClassName'] = ucfirst($contextVariables['modelName']);
+		$contextVariables['modelFullClassName'] = '\\' . str_replace('.', '\\', $packageKey) . '\Domain\Model\\' . $contextVariables['modelClassName'];
+		$contextVariables['controllerClassName'] = $contextVariables['modelClassName'] . 'Controller';
+		$contextVariables['repositoryClassName'] = '\\' . str_replace('.', '\\', $packageKey) . '\Domain\Repository\\' . $contextVariables['modelClassName'] . 'Repository';
 		$contextVariables['entity'] = strtolower($modelName);
-		$fileContent = $this->renderTemplate($template, $contextVariables);
+		$fileContent = $this->renderTemplate($templatePathAndFilename, $contextVariables);
 
-		$controllerFilename = $modelName . 'Controller.php';
+		$controllerFilename = $contextVariables['controllerClassName'] . '.php';
 		$controllerPath = $this->packageManager->getPackage($packageKey)->getClassesNamespaceEntryPath() . $subpackage . '/Controller/';
 		$targetPathAndFilename = $controllerPath . $controllerFilename;
 
@@ -109,62 +87,66 @@ class ModelInterpreterUtility {
 	 * Rules for selecting field type
 	 * Based on that field type, fluid create input field.
 	 *
-	 * @param $field
+	 * @param array $fieldConfiguration
 	 * @return string
 	 */
-	public function recognizeFieldType($field) {
+	public function recognizeFieldType(array $fieldConfiguration) {
 		$fieldType = 'textfield';
 
-		if (isset($field['visible']) && !$field['visible'] ) {
+		if (isset($fieldConfiguration['visible']) && !$fieldConfiguration['visible']) {
 			$fieldType = 'hidden';
-		} elseif (isset($field['type']) && substr($field['type'], 0, 6) === 'string') {
+		} elseif (isset($fieldConfiguration['type']) && substr($fieldConfiguration['type'], 0, 6) === 'string') {
 			$fieldType = 'textfield';
-			if (isset($field['options']) || substr($field['id'], 0, 7) === 'country') {
+			if (isset($fieldConfiguration['options']) || substr($fieldConfiguration['id'], 0, 7) === 'country') {
 				$fieldType = 'select';
 			}
-		} elseif (isset($field['type']) && $field['type'] == 'array') {
+		} elseif (isset($fieldConfiguration['type']) && $fieldConfiguration['type'] == 'array') {
 			$fieldType = 'fieldset';
 		}
+
 		return $fieldType;
 	}
 
 	/**
-	 *
-	 * @param $content
-	 * @return mixed
+	 * @param array $fieldConfiguration
+	 * @return array
 	 */
-	protected function recurrentPrepareContext($content) {
-		foreach ($content as $key => $field) {
-			$content[$key]['fieldType'] = $this->recognizeFieldType($field);
-			if ($content[$key]['fieldType'] == 'fieldset' && isset($content[$key]['items'])) {
-				$content[$key]['items'] = $this->recurrentPrepareContext($content[$key]['items']);
+	protected function recurrentPrepareContext(array $fieldConfiguration) {
+		foreach ($fieldConfiguration as $key => $value) {
+			$fieldConfiguration[$key]['fieldType'] = $this->recognizeFieldType($value);
+			if ($fieldConfiguration[$key]['fieldType'] == 'fieldset' && isset($fieldConfiguration[$key]['items'])) {
+				$fieldConfiguration[$key]['items'] = $this->recurrentPrepareContext($fieldConfiguration[$key]['items']);
 			}
-			if ($content[$key]['fieldType'] == 'select') {
-				$content[$key] = $this->prepareOptionsForSelect($field);
+			if ($fieldConfiguration[$key]['fieldType'] == 'select') {
+				$fieldConfiguration[$key] = $this->prepareOptionsForSelect($key, $value);
 			}
 		}
-		return $content;
+
+		return $fieldConfiguration;
 	}
 
 	/**
 	 * Prepare options array
 	 *
-	 * @param $field
+	 * @param string $propertyName
+	 * @param array $fieldConfiguration
+	 * @return array
 	 */
-	private function prepareOptionsForSelect($field) {
+	private function prepareOptionsForSelect($propertyName, array $fieldConfiguration) {
 		$values = array();
-		if (isset($field['options']['values']) && !empty($field['options']['values']) || substr($field['id'], 0, 7) === 'country') {
-			if (substr($field['id'], 0, 7) === 'country') {
-				$field['options']['values'] = $this->prepareCountries();
+		if (isset($fieldConfiguration['options']['values']) && !empty($fieldConfiguration['options']['values']) || substr($propertyName, 0, 7) === 'country') {
+			if (substr($propertyName, 0, 7) === 'country') {
+				$fieldConfiguration['options']['values'] = $this->prepareCountries();
 			}
-			foreach ($field['options']['values'] as $k => $value) {
-				$values[] = $k . ':' . '\'' . $value .'\'';
+			foreach ($fieldConfiguration['options']['values'] as $k => $value) {
+				$values[] = $k . ':' . '\'' . $value . '\'';
 			}
-			$field['options']['values'] = '{' . implode(', ', $values) . '}';
+			$fieldConfiguration['options']['values'] = '{' . implode(', ', $values) . '}';
 		} else {
-			$field['options']['values'] = '{0: " "}';
+			$fieldConfiguration['options']['values'] = '{0: " "}';
 		}
-		return $field;
+
+		return $fieldConfiguration;
 	}
 
 	/**
@@ -175,9 +157,10 @@ class ModelInterpreterUtility {
 		$keys = $yamlCountries['country']['values'];
 		$values = $yamlCountries['country']['translation']['en'];
 		$countries = array();
-		foreach($keys as $index => $key) {
+		foreach ($keys as $index => $key) {
 			$countries[$key] = $values[$index];
 		}
+
 		return $countries;
 	}
 
@@ -187,26 +170,16 @@ class ModelInterpreterUtility {
 	 *
 	 * @param string $targetPathAndFilename
 	 * @param string $fileContent
-	 * @param boolean $force
+	 * @param boolean $overwrite
 	 * @return void
 	 */
-	protected function generateFile($targetPathAndFilename, $fileContent, $force = FALSE) {
+	protected function generateFile($targetPathAndFilename, $fileContent, $overwrite = FALSE) {
 		if (!is_dir(dirname($targetPathAndFilename))) {
 			\TYPO3\Flow\Utility\Files::createDirectoryRecursively(dirname($targetPathAndFilename));
 		}
 
-		if (substr($targetPathAndFilename, 0, 11) === 'resource://') {
-			list($packageKey, $resourcePath) = explode('/', substr($targetPathAndFilename, 11), 2);
-			$relativeTargetPathAndFilename = $packageKey . '/Resources/' . $resourcePath;
-		} else {
-			$relativeTargetPathAndFilename = substr($targetPathAndFilename, strrpos(substr($targetPathAndFilename, 0, strpos($targetPathAndFilename, 'Classes/') - 1), '/') + 1);
-		}
-
-		if (!file_exists($targetPathAndFilename) || $force === TRUE) {
+		if (!file_exists($targetPathAndFilename) || $overwrite === TRUE) {
 			file_put_contents($targetPathAndFilename, $fileContent);
-			$this->generatedFiles[] = 'Created .../' . $relativeTargetPathAndFilename;
-		} else {
-			$this->generatedFiles[] = 'Omitted .../' . $relativeTargetPathAndFilename;
 		}
 	}
 
@@ -230,31 +203,15 @@ class ModelInterpreterUtility {
 		return $parsedTemplate->render($renderingContext);
 	}
 
-	public function setYamlModel($packageKey, $modelName, $yamlName) {
-		if (empty($yamlName)) {
-			$yamlName = strtolower($modelName).'.yaml';
-		}
-		$this->yamlModel = sprintf('resource://%s/Private/Templates/Domain/Model/%s', $packageKey, $yamlName);
-	}
-
-	public function isYamlModelAvailable() {
-		return file_exists($this->yamlModel) ? TRUE : FALSE;
-	}
-
 	/**
-	 * Remove from file content white lines which are not necessary
-	 * @param $content
-	 * @return string
+	 * @param string $packageKey
+	 * @param string $modelName
+	 * @return boolean
 	 */
-	private function removeEmptyLines($content) {
-		$contentArray = explode("\n", $content);
-		foreach ($contentArray as $lineNumber => $lineContent) {
-			if (strlen(trim($lineContent)) === 0) {
-				unset($contentArray[$lineNumber]);
-			};
-		}
-		return implode("\n", $contentArray);
+	public function isModelConfigurationAvailable($packageKey, $modelName) {
+		return $this->configurationManager->getConfiguration('Models', $packageKey . '.' . $modelName) ? TRUE : FALSE;
 	}
+
 	/**
 	 * Build the rendering context
 	 *
@@ -270,4 +227,5 @@ class ModelInterpreterUtility {
 		return $renderingContext;
 	}
 }
+
 ?>
