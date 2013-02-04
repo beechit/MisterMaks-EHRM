@@ -9,7 +9,7 @@ Beech:
     'Absence':
       properties:
         'absenceType':
-          label: "Absence type"
+          label: 'Absence type'
           options:
             values:
               - accidentDuckLiftStandConcentration
@@ -24,32 +24,32 @@ Beech:
           validation: ''
           visible: true
         'subjectId':
-          label: "Subject id"
+          label: 'Subject id'
           onlist: true
           required: true
           type: \Beech\Party\Domain\Model\Person
           validation: ''
           visible: true
-        'departementId':
-          label: "Department id"
+        'departmentId':
+          label: 'Department id'
           required: true
           type: \Beech\Party\Domain\Model\Company
           validation: ''
           visible: false
         'firstSickDay':
-          label: "First sick Day"
+          label: 'First sick Day'
           required: true
           type: dateTime
-          validation: "(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?"
+          validation: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
           visible: true
         'disabilityPercentage':
-          label: "Disability percentage"
+          label: 'Disability percentage'
           required: true
           type: decimal(2.2)
           validation: ''
           visible: true
         'disabilityBackup':
-          label: "Disability backup"
+          label: 'Disability backup'
           options:
             values:
               - none
@@ -68,13 +68,13 @@ Beech:
           validation: ''
           visible: true
         'recoveryDate':
-          label: "Recovery date"
+          label: 'Recovery date'
           required: true
           type: dateTime
-          validation: "(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?"
+          validation: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
           visible: true
         'arboActionType':
-          label: "Arbo action type"
+          label: 'Arbo action type'
           options:
             values:
               - none
@@ -87,14 +87,14 @@ Beech:
           visible: true
         'creationDate':
           default: now
-          label: "creation date"
+          label: 'creation date'
           required: true
           type: dateTime
-          validation: "(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?"
+          validation: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
           visible: false
         'createdBy':
           default: currentUser
-          label: "creation by"
+          label: 'Creation by'
           required: true
           type: \Beech\Party\Domain\Model\Person
           validation: ''
@@ -103,10 +103,10 @@ Beech:
           items:
             'modificationDate':
               default: now
-              label: "Modification date"
+              label: 'Modification date'
               required: true
               type: dateTime
-              validation: "(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?"
+              validation: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
               visible: false
             'modifiedBy':
               default: currentUser
@@ -115,7 +115,7 @@ Beech:
               type: \Beech\Party\Domain\Model\Person
               validation: ''
               visible: false
-          label: ModificationLog
+          label: 'Modification log'
           type: array
 
     #############################################################
@@ -126,14 +126,14 @@ Beech:
     'Leave':
       properties:
         'subjectId':
-          label: "Subject id"
+          label: 'Subject id'
           onlist: true
           required: true
           type: \Beech\Party\Domain\Model\Person
           validation: ''
           visible: false
-        'departementid':
-          label: departmentid
+        'departementId':
+          label: departmentId
           required: true
           type: \Beech\Party\Domain\Model\Company
           validation: ''
@@ -171,7 +171,7 @@ Beech:
         'deductFromBalance':
           label: deductFromBalance
           options:
-            default: "TRUE"
+            default: true
           required: true
           type: boolean
           validation: ''
@@ -184,8 +184,8 @@ Beech:
           visible: true
         'remark':
           items:
-            'remarktype':
-              label: RemarkType
+            'remarkType':
+              label: 'Remark type'
               options:
                 values:
                   - reasonLeaveRequest
@@ -196,13 +196,13 @@ Beech:
               validation: ''
               visible: true
             'remarkContent':
-              label: RemarkContent
+              label: 'Remark content'
               required: false
               type: text
               validation: ~
               visible: true
             'remarkDate':
-              label: "Remark Date"
+              label: 'Remark date'
               required: false
               type: dateTime
               validation: ''
@@ -210,10 +210,10 @@ Beech:
           label: Remark
           type: array
           validation: ''
-        'leavebalance':
+        'leaveBalance':
           items:
-            'leavebalanceyear':
-              label: balanceyear
+            'leaveBalanceYear':
+              label: 'Balance year'
               options:
                 values:
                   - 2005
@@ -237,41 +237,41 @@ Beech:
               validation: ''
               visible: true
             'leaveBalance':
-              label: leaveBalance
+              label: 'Leave balance'
               required: true
               type: integer(3)
               validation: ''
               visible: true
-          label: leavebalance
+          label: 'Leave balance'
           type: array
           validation: ''
-        'leaveRequeststatus':
-          label: leaverequeststatus
+        'leaveRequestStatus':
+          label: 'Leave request status'
           options:
             values:
-              - Pending
-              - Approved
+              - pending
+              - approved
               - declined
           required: true
           type: string(20)
           validation: ''
           visible: true
         'approveDeclineDate':
-          label: approveDeclineDate
+          label: 'approved Declined Date'
           required: true
           type: dateTime
           validation: ''
           visible: true
         'creationDate':
           default: now
-          label: "creation date"
+          label: 'Creation date'
           required: true
           type: dateTime
-          validation: "(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?"
+          validation: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
           visible: false
         'createdBy':
           default: currentUser
-          label: "creation by"
+          label: 'Created by'
           required: true
           type: \Beech\Party\Domain\Model\Person
           validation: ''
@@ -280,10 +280,10 @@ Beech:
           items:
             'modificationDate':
               default: now
-              label: "Modification date"
+              label: 'Modification date'
               required: true
               type: dateTime
-              validation: "(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?"
+              validation: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
               visible: false
             'modifiedBy':
               default: currentUser

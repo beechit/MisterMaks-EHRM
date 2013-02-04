@@ -4,17 +4,17 @@
 #############################################################
 
 Beech:
-  Calendar:
-    'Meeting':
+  calendar:
+    'meeting':
       properties:
-        'meetingid':
-          label: MeetingID
+        'meetingId':
+          label: 'Meeting ID'
           required: true
           type: string(20)
           validation: ''
           visible: false
-        'departementId':
-          label: "Department id"
+        'departmentId':
+          label: 'Department id'
           required: true
           type: \Beech\Party\Domain\Model\Company
           validation: ''
@@ -44,31 +44,31 @@ Beech:
           validation: ''
           visible: true
         'location':
-          label: "Meeting location"
+          label: 'Meeting location'
           required: true
           type: string(30)
           validation: ''
           visible: true
-        'creatorid':
-          label: creatorid
+        'creatorId':
+          label: 'Creator id'
           required: true
           type: \Beech\Party\Domain\Model\Person
           validation: ''
           visible: true
-        'creatorself':
-          label: creatorself
+        'creatorSelf':
+          label: 'Creator self'
           required: true
           type: boolean
           validation: ''
           visible: true
         'organiserId':
-          label: "Organiser id"
+          label: 'Organiser id'
           required: true
           type: \Beech\Party\Domain\Model\Person
           validation: ''
           visible: true
         'organiserSelf':
-          label: "Organiser self"
+          label: 'Organiser self'
           required: true
           type: boolean
           validation: ''
@@ -86,19 +86,19 @@ Beech:
           validation: ''
           visible: true
         'endTimeUnspecified':
-          label: "End time Unspecified"
+          label: 'End time Unspecified'
           required: true
           type: dateTime
           validation: ''
           visible: true
         'recurringEventId':
-          label: "Recurring event Id"
+          label: 'Recurring event Id'
           required: true
           type: string(20)
           validation: ''
           visible: true
         'originalStartTime':
-          label: "original start time"
+          label: 'original start time'
           required: true
           type: dateTime
           validation: ''
@@ -124,7 +124,7 @@ Beech:
         'attendees':
           items:
             'personId':
-              label: Personid
+              label: 'Person id'
               required: true
               type: \Beech\Party\Domain\Model\Person
               validation: ''
@@ -136,7 +136,7 @@ Beech:
               validation: ''
               visible: true
             'responseStatus':
-              label: responseStatus
+              label: 'Response status'
               options:
                 values:
                   - needsAction
@@ -153,31 +153,31 @@ Beech:
               type: text
               validation: ''
               visible: true
-          label: attendees
+          label: Attendees
           type: array
           validation: ''
         'relations':
           items:
             'minutesId':
-              label: "Minutes id"
+              label: 'Minutes id'
               required: false
               type: string(20)
               validation: ''
               visible: true
             'documentId':
-              label: Documentid
+              label: 'Document id'
               required: false
               type: string(20)
               validation: ''
               visible: true
             'documentRequired':
-              label: "Document required"
+              label: 'Document required'
               required: false
               type: boolean
               validation: ''
               visible: true
             'documentType':
-              label: "Document type"
+              label: 'Document type'
               options:
                 values: []
               required: false
@@ -185,7 +185,7 @@ Beech:
               validation: ''
               visible: true
             'actionId':
-              label: "Action Id"
+              label: 'Action Id'
               required: false
               type: string(20)
               validation: ''
@@ -194,7 +194,7 @@ Beech:
           type: array
           validation: ''
         'planNextMeeting':
-          label: "Plan next meeting"
+          label: 'Plan next meeting'
           required: false
           type: boolean
           validation: ''
@@ -206,7 +206,7 @@ Beech:
           validation: ''
           visible: true
         'notificationWindow':
-          label: "Notification window"
+          label: 'Notification window'
           options:
             values:
               - 1
@@ -220,7 +220,7 @@ Beech:
           validation: ''
           visible: true
         'notificationMethod':
-          label: "Notification method"
+          label: 'Notification method'
           options:
             values:
               - e-mail
@@ -234,10 +234,10 @@ Beech:
           visible: true
         'creationDate':
           default: now
-          label: "creation date"
+          label: 'Creation date'
           required: true
           type: dateTime
-          validation: "(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?"
+          validation: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
           visible: false
         'createdBy':
           default: currentUser
@@ -250,10 +250,10 @@ Beech:
           items:
             'modificationDate':
               default: now
-              label: "Modification date"
+              label: 'Modification date'
               required: true
               type: dateTime
-              validation: "(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?"
+              validation: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
               visible: false
             'modifiedBy':
               default: currentUser
