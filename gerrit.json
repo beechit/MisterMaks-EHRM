@@ -1,5 +1,6 @@
 {
 	"TYPO3.Flow": {
+		"[FEATURE] Allow split configuration sources": "18004",
 		"[!!!][FEATURE] Handle roles consistently as objects": "13868"
 	},
 	"TYPO3.Fluid": {
