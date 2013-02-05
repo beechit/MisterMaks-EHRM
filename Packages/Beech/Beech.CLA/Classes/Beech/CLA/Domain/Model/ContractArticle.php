@@ -11,10 +11,10 @@ use TYPO3\Flow\Annotations as Flow,
 	Doctrine\ODM\CouchDB\Mapping\Annotations as ODM;
 
 /**
- * Article, element of contract
+ * ContractArticle, element of contract
  *
  * @ODM\Document(indexed=true)
  */
-class Article extends \Radmiraal\CouchDB\Persistence\AbstractDocument {
+class ContractArticle extends \Radmiraal\CouchDB\Persistence\AbstractDocument {
 }
 ?>
