@@ -1,0 +1,117 @@
+#############################################################
+# validated yaml for the minute model
+# this is the minute model.
+#############################################################
+
+---
+beech:
+  minute:
+    properties:
+      'subjectId':
+        label: 'Subject id'
+        onlist: true
+        required: true
+        type: \Beech\Party\Domain\Model\Person
+        validation: ''
+        visible: false
+      'departmentId':
+        label: 'Department id'
+        required: true
+        type: \Beech\Party\Domain\Model\Company
+        validation: ''
+        visible: false
+      'minuteType':
+        label: minuteType
+        options:
+          values:
+            - periodicConversation
+            - callReporting
+            - assessment
+            - performanceReveiw
+            - compensationConversation
+            - other
+            - sickReportUpdate
+        required: true
+        type: string(20)
+        validation: ''
+        visible: true
+      'minuteContent':
+        label: minuteContent
+        required: true
+        type: text
+        validation: ''
+        visible: true
+      'minuteTemplate':
+        label: minuteTemplate
+        required: true
+        type: string(20)
+        validation: ''
+        visible: true
+      'followUpActionRequired':
+        label: followUpActionRequired
+        required: true
+        type: boolean
+        validation: ''
+        visible: true
+      'needSigning':
+        label: needsSigning
+        required: true
+        type: boolean
+        validation: ''
+        visible: true
+      'action':
+        label: action
+        required: true
+        type: string(20)
+        validation: ''
+        visible: true
+      'documentRequired':
+        label: documentRequired
+        required: true
+        type: boolean
+        validation: ''
+        visible: true
+      'visability':
+        label: visability
+        options:
+          values:
+            - public
+            - subjects
+            - managers
+            - creator
+        required: true
+        type: string(20)
+        validation: ''
+        visible: true
+      'creationDate':
+        default: now
+        label: 'creation date'
+        required: true
+        type: dateTime
+        validation: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
+        visible: false
+      'createdBy':
+        default: currentUser
+        label: 'Created by'
+        required: true
+        type: \Beech\Party\Domain\Model\Person
+        validation: ''
+        visible: false
+      'modification':
+        items:
+          'modificationDate':
+            default: now
+            label: 'Modification date'
+            required: true
+            type: dateTime
+            validation: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
+            visible: false
+          'modifiedBy':
+            default: currentUser
+            label: 'Modified by'
+            required: true
+            type: \Beech\Party\Domain\Model\Person
+            validation: ''
+            visible: false
+        label: 'Modification log'
+        type: array

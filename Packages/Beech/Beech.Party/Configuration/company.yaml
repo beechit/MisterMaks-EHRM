@@ -7,25 +7,25 @@ beech:
   company:
     properties:
       'name':
-        label: "Name of company"
+        label: 'Name of company'
         type: string(30)
         validation:
           type: 'NotEmpty'
       'departments':
         label: Departments
         type: \Beech\Party\Domain\Model\Company
-        validation: ""
+        validation: ''
       'chamberOfCommerceNumber':
-        label: "Chamber of Commerce Number"
+        label: 'Chamber of Commerce Number'
         type: string(20)
-        validation: ""
+        validation: ''
       'companyIdNumber':
-        label: "Company Id Number"
+        label: 'Company Id Number'
         type: integer(6)
         validation:
           type: 'NotEmpty'
       'policyNumberAbsenceInsurer':
-        label: "Policy Number Absence Insurer"
+        label: 'Policy Number Absence Insurer'
         type: integer(25)
         validation:
           type: 'RegularExpression'
@@ -36,23 +36,23 @@ beech:
         options:
           values:
           - department
-          - SoleProprietorship
-          - Partnership
-          - VOF
-          - CV
-          - BV
-          - NV
-          - Association
-          - Foundation
-          - Cooperative
+          - soleProprietorship
+          - partnership
+          - vof
+          - cv
+          - bv
+          - nv
+          - association
+          - foundation
+          - cooperative
         type: string(30)
         default: none
         validation:
           type: 'NotEmpty'
       'companyType':
-        label: "Company type"
+        label: 'Company type'
         type: string(20)
-        validation: ""
+        validation: ''
         options:
           values:
             - primary
@@ -65,7 +65,7 @@ beech:
       'addresses':
         items:
           'addressType':
-            label: "Address type"
+            label: 'Address type'
             options:
               values:
                 - businessAddress
@@ -79,7 +79,7 @@ beech:
               type: 'NotEmpty'
             visible: true
           'streetName':
-            label: "Street name"
+            label: 'Street name'
             required: true
             type: string(30)
             validation:
@@ -91,19 +91,19 @@ beech:
                   regularExpression: '[a-zA-Z\\-\\s\\’]{2,30}'
             visible: true
           'primaryPostAddress':
-            label: "Primary postaddress"
+            label: 'Primary postaddress'
             required: true
             type: boolean
-            validation: ""
+            validation: ''
             visible: true
           'primaryLocation':
-            label: "Primary Location"
+            label: 'Primary Location'
             required: true
             type: boolean
-            validation: ""
+            validation: ''
             visible: true
           'postBoxNumber':
-            label: "Postbox number"
+            label: 'Postbox number'
             required: true
             type: integer(5)
             validation:
@@ -112,7 +112,7 @@ beech:
                 regularExpression: '[0-9]{1,5}'
             visible: true
           'houseNumber':
-            label: "House number"
+            label: 'House number'
             required: true
             type: integer(5)
             validation:
@@ -124,7 +124,7 @@ beech:
                   regularExpression: '[0-9]{1,5}'
             visible: true
           'houseNumberAddition':
-            label: "House number addition"
+            label: 'House number addition'
             required: false
             type: string(10)
             validation:
@@ -133,7 +133,7 @@ beech:
                   regularExpression: '[a-zA-Z0-9\\-]{0,10}'
             visible: true
           'postalCodeNL':
-            label: "Postal code"
+            label: 'Postal code'
             required: true
             type: string(6)
             validation:
@@ -145,7 +145,7 @@ beech:
                   regularExpression: '\\d{4}\\s?[a-z]{2}'
             visible: true
           'postalCodeAbroad':
-            label: "Postal code"
+            label: 'Postal code'
             required: false
             type: string(10)
             validation:
@@ -168,14 +168,14 @@ beech:
             label: Country
             required: true
             type: string(30)
-            validation: ""
+            validation: ''
             visible: true
             default: NL
           'addressDescription':
-            label: "Address description"
+            label: 'Address description'
             required: false
             type: text
-            validation: ""
+            validation: ''
             visible: true
         label: Addresses
         type: array
@@ -191,7 +191,7 @@ beech:
               -
                 type: 'RegularExpression'
                 options:
-                  regularExpression: "([\\w\\-\\.]+)@((\\[([0-9]{1,3}\\.){3}[0-9]{1,3}\\])|(([\\w\\-]+\\.)+)([a-zA-Z]{2,4}))"
+                  regularExpression: '([\\w\\-\\.]+)@((\\[([0-9]{1,3}\\.){3}[0-9]{1,3}\\])|(([\\w\\-]+\\.)+)([a-zA-Z]{2,4}))'
             visible: true
           'skype':
             label: Skype
@@ -200,47 +200,47 @@ beech:
             validation:
               type: 'RegularExpression'
               options:
-                regularExpression: "[a-zA-Z][a-zA-Z0-9]{5,31}]"
+                regularExpression: '[a-zA-Z][a-zA-Z0-9]{5,31}]'
             visible: true
           'websiteUrl':
-            label: "Website Url"
+            label: 'Website Url'
             required: false
             type: string(50)
             validation:
               type: 'RegularExpression'
               options:
-                regularExpression: "/(https?://)?(www\\.)?([a-zA-Z0-9_%]*)\\b\\.[a-z]{2,4}(\\.[a-z]{2})?((/[a-zA-Z0-9_%]*)+)?(\\.[a-z]*)?/g]"
+                regularExpression: '/(https?://)?(www\\.)?([a-zA-Z0-9_%]*)\\b\\.[a-z]{2,4}(\\.[a-z]{2})?((/[a-zA-Z0-9_%]*)+)?(\\.[a-z]*)?/g]'
             visible: true
           'twitter':
             label: Twitter
             required: false
             type: string(20)
-            validation: ""
+            validation: ''
             visible: true
           'facebook':
             label: Facebook
             required: false
             type: string(20)
-            validation: ""
+            validation: ''
             visible: true
           'linkedin':
             label: Linkedin
             required: true
             type: string(20)
-            validation: ""
+            validation: ''
             visible: true
           'hyves':
             label: Hyves
             required: true
             type: string(20)
-            validation: ""
+            validation: ''
             visible: true
-        label: "Electronic addresses"
+        label: 'Electronic addresses'
         type: array
       'phone':
         items:
           'phoneType':
-            label: "phone type"
+            label: 'phone type'
             options:
               values:
                 - workLocationNumber
@@ -257,7 +257,7 @@ beech:
             default: businessPhone
             visible: true
           'phoneNumber':
-            label: "Phone Number"
+            label: 'Phone Number'
             required: true
             type: string
             validation:
@@ -266,44 +266,44 @@ beech:
               -
                 type: 'RegularExpression'
                 options:
-                  regularExpression: "/(^\\+[0-9]{2}|^\\+[0-9]{2}\\(0\\)|^\\(\\+[0-9]{2}\\)\\(0\\)|^00[0-9]{2}|^0)([0-9]{9}$|[0-9\\-\\s]{10}$)/gm]"
+                  regularExpression: '/(^\\+[0-9]{2}|^\\+[0-9]{2}\\(0\\)|^\\(\\+[0-9]{2}\\)\\(0\\)|^00[0-9]{2}|^0)([0-9]{9}$|[0-9\\-\\s]{10}$)/gm]'
             visible: true
           'foreignPhoneNumber':
-            label: "Foreign phone number"
+            label: 'Foreign phone number'
             required: true
             type: string
             validation:
               type: 'RegularExpression'
               options:
-                RegularExpression: "/(^\\+[0-9]{2}|^\\+[0-9]{2}\\(0\\)|^\\(\\+[0-9]{2}\\)\\(0\\)|^00[0-9]{2}|^0)([0-9]{9}$|[0-9\\-\\s]{10}$)/gm]"
+                RegularExpression: '/(^\\+[0-9]{2}|^\\+[0-9]{2}\\(0\\)|^\\(\\+[0-9]{2}\\)\\(0\\)|^00[0-9]{2}|^0)([0-9]{9}$|[0-9\\-\\s]{10}$)/gm]'
             visible: true
-        label: "Phone numbers"
+        label: 'Phone numbers'
         type: array
       'vatNumber':
         Required: false
-        label: "Vat Number"
+        label: 'Vat Number'
         type: string(14)
-        validation: ""
+        validation: ''
         visible: true
       'wageTaxNumber':
         Required: false
-        label: "wage Tax Number"
+        label: 'wage Tax Number'
         type: string(9)
         validation:
           type: 'RegularExpression'
           options:
-            regularExpression: "[0-9]{9}L[0-9]{2}"
+            regularExpression: '[0-9]{9}L[0-9]{2}'
         visible: true
       'companyDescription':
-        label: "Company description"
+        label: 'Company description'
         required: false
         type: text
-        validation: ""
+        validation: ''
         visible: true
       'bankInformation':
         items:
           'accountType':
-            label: "account type"
+            label: 'account type'
             options:
               values:
                 - giroAccount
@@ -315,19 +315,19 @@ beech:
               type: 'NotEmpty'
             visible: true
           'bankName':
-            label: "Bank name"
+            label: 'Bank name'
             required: false
             type: string(20)
             validation:
               type: 'RegularExpression'
               options:
-                regularExpression: "[a-zA-Z\\-\\s\\’]{2,20}"
+                regularExpression: '[a-zA-Z\\-\\s\\’]{2,20}'
             visible: true
           'primaryBankAccount':
-            label: "Primary Bankaccount"
+            label: 'Primary Bankaccount'
             required: false
             type: boolean
-            validation: ""
+            validation: ''
             visible: true
           'giro':
             label: Giro
@@ -336,52 +336,52 @@ beech:
             validation:
              type: 'RegularExpression'
              options:
-              regularExpression: "\\d{1,7}"
+              regularExpression: '\\d{1,7}'
             visible: true
           'bic':
-            label: "Bic code"
+            label: 'Bic code'
             required: false
             type: string(11)
             validation:
               type: 'RegularExpression'
               options:
-                regularExpression: "[1-9]{8}|[1-9]{11}"
+                regularExpression: '[1-9]{8}|[1-9]{11}'
             visible: true
           'accountNumber':
-            label: "Account number"
+            label: 'Account number'
             required: true
             type: integer(11)
             validation:
              type: 'RegularExpression'
              options:
-              regularExpression: "[P,B]{1}[0-9]{10}"
+              regularExpression: '[P,B]{1}[0-9]{10}'
             visible: true
           'ibanNumber':
-            label: "IBAN number"
+            label: 'IBAN number'
             required: false
             type: string(34)
             validation:
               type: 'RegularExpression'
               options:
-                regularExpression: "/[a-zA-Z]{2}[0-9]{2}[a-zA-Z0-9]{4}[0-9]{7}([a-zA-Z0-9]?){0,16}/g"
+                regularExpression: '/[a-zA-Z]{2}[0-9]{2}[a-zA-Z0-9]{4}[0-9]{7}([a-zA-Z0-9]?){0,16}/g'
             visible: true
           'countryOfBank':
             default: NL
-            label: "Country bank"
+            label: 'Country bank'
             required: true
             type: string(40)
-            validation: ""
+            validation: ''
             visible: true
           'bankResidence':
-            label: "bank residence"
+            label: 'bank residence'
             required: false
             type: string(30)
             validation:
               type: 'RegularExpression'
               options:
-                regularExpression: "[a-zA-Z0-9\\-\\’]{2,30}"
+                regularExpression: '[a-zA-Z0-9\\-\\’]{2,30}'
             visible: true
-        label: "Bank information"
+        label: 'Bank information'
         type: array
       'creationDate':
         default: now
