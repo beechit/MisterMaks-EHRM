@@ -10,7 +10,7 @@ beech:
         label: 'Subject id'
         type: '\Beech\Party\Domain\Model\Person'
         validation: ''
-      'departementId':
+      'departmentId':
         label: 'Department id'
         type: '\Beech\Party\Domain\Model\Company'
         validation: ''
@@ -41,9 +41,9 @@ beech:
         type: dateTime
         validation: ''
       'contractAcceptanceDate':
-         label: 'Date contract was accepted'
-         type: dateTime
-         validation: ''
+        label: 'Date contract was accepted'
+        type: dateTime
+        validation: ''
       'contractSigned':
         label: 'Contract signed'
         type: boolean
@@ -146,7 +146,7 @@ beech:
                 - sunday
           'startTime':
             label: Starttime
-            type:  dateTime
+            type: dateTime
             validation: ''
           'endTime':
             label: Starttime
@@ -226,7 +226,7 @@ beech:
         visible: false
       'createdBy':
         default: currentUser
-        label: 'Creation by'
+        label: 'Created by'
         required: true
         type: \Beech\Party\Domain\Model\Person
         validation: ''

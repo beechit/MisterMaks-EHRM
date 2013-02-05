@@ -94,7 +94,7 @@ Beech:
           visible: false
         'createdBy':
           default: currentUser
-          label: 'Creation by'
+          label: 'Created by'
           required: true
           type: \Beech\Party\Domain\Model\Person
           validation: ''
@@ -132,7 +132,7 @@ Beech:
           type: \Beech\Party\Domain\Model\Person
           validation: ''
           visible: false
-        'departementId':
+        'departmentId':
           label: departmentId
           required: true
           type: \Beech\Party\Domain\Model\Company
@@ -199,7 +199,7 @@ Beech:
               label: 'Remark content'
               required: false
               type: text
-              validation: ~
+              validation: ''
               visible: true
             'remarkDate':
               label: 'Remark date'

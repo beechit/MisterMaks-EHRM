@@ -1,6 +1,6 @@
 #############################################################
-# validated yaml for the person
-# this is the person model.
+# validated yaml for the companyContact
+# this is an extension on the person model.
 #############################################################
 
 ---
@@ -11,13 +11,15 @@ beech:
         label: 'Company id'
         required: true
         type: \Beech\Party\Domain\Model\Company
-        validation: ''
+        validation:
+          type: 'NotEmpty'
         visable: false
       'departmentId':
         label: 'Department id'
         required: false
         type: \Beech\Party\Domain\Model\Company
-        validation: ''
+        validation:
+          type: 'NotEmpty'
         visable: true
       'name.title':
         label: title
@@ -89,24 +91,6 @@ beech:
         options:
           regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
       visable: true
-    'placeOfBirth:
-      label: 'Place of birth'
-      required: false
-      type: string(20)
-      validation:
-        type: 'RegularExpresssion'
-        options:
-          regularExpression: '[a-zA-Z\\-\\s\\’]{2,30}'
-        visible: TRUE
-    'dateofDeath':
-      label: 'Date of death'
-      required: false
-      type: dateTime
-      validation:
-        type: 'RegularExpression'
-        options:
-          regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
-      visable: true
     'gender':
       label: Gender
       options:
@@ -116,35 +100,6 @@ beech:
     type: string(6)
     validation:
       type: 'NotEmpty'
-    'bsn':
-      label: bsn
-      required: true
-      type: string(20)
-      validation:
-        type: 'NotEmpty'
-      visible: true
-# add bsn validation
-    nationality:
-      label: Nationality
-      required: true
-      type: string (35)
-      validation:
-        type: 'NotEmpty'
-    'civilStatus':
-      label: 'Civil status'
-      options:
-        values:
-          - unknown
-          - umarried
-          - married
-          - livingTogether
-          - widowWidower
-          - sustainableSeparated
-          - divorced
-      required: false
-      type: string(15)
-      validation: ''
-      visable: true
     'image':
       label: Image
       required: false
@@ -381,89 +336,17 @@ beech:
               visible: true
           label: 'Phone numbers'
           type: array
-        'bankInformation':
-          items:
-            'accountType':
-              label: 'account type'
-              options:
-                values:
-                  - giroAccount
-                  - bankaccount
-                  - bankAccountAbroad
-              required: true
-              type: string(20)
-              validation:
-                type: 'NotEmpty'
-              visible: true
-            'bankName':
-              label: 'Bank name'
-              required: false
-              type: string(20)
-              validation:
-                type: 'RegularExpression'
-                options:
-                  regularExpression: '[a-zA-Z\\-\\s\\’]{2,20}'
-              visible: true
-            'primaryBankAccount':
-              label: 'Primary Bankaccount'
-              required: false
-              type: boolean
-              validation: ''
-              visible: true
-            'giro':
-              label: Giro
-              required: false
-              type: string(7)
-              validation:
-               type: 'RegularExpression'
-               options:
-                regularExpression: '\\d{1,7}'
-              visible: true
-            'bic':
-              label: 'Bic code'
-              required: false
-              type: string(11)
-              validation:
-                type: 'RegularExpression'
-                options:
-                  regularExpression: '[1-9]{8}|[1-9]{11}'
-              visible: true
-            'accountNumber':
-              label: 'Account number'
-              required: true
-              type: integer(11)
-              validation:
-               type: 'RegularExpression'
-               options:
-                regularExpression: '[P,B]{1}[0-9]{10}'
-              visible: true
-            'ibanNumber':
-              label: 'IBAN number'
-              required: false
-              type: string(34)
-              validation:
-                type: 'RegularExpression'
-                options:
-                  regularExpression: '/[a-zA-Z]{2}[0-9]{2}[a-zA-Z0-9]{4}[0-9]{7}([a-zA-Z0-9]?){0,16}/g'
-              visible: true
-            'countryOfBank':
-              default: NL
-              label: 'Country bank'
-              required: true
-              type: string(40)
-              validation: ''
-              visible: true
-            'bankResidence':
-              label: 'bank residence'
-              required: false
-              type: string(30)
-              validation:
-                type: 'RegularExpression'
-                options:
-                  regularExpression: '[a-zA-Z0-9\\-\\’]{2,30}'
-              visible: true
-          label: 'Bank information'
-          type: array
+        'jobTitle':
+          label: JobTitle
+          required: true
+          type: string(20)
+          validation:
+            type: 'NotEmpty'
+          visible: true
+# with jobposition we have to set something about hierarchy and place the company contact in this hierarchy.
+        'Jobposition':
+          label: Jobposition
+          type: string(20)
         'creationDate':
           default: now
           label: 'creation date'
