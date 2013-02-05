@@ -1,0 +1,12 @@
+{
+	"name": "beech/ehrm-groeiservice",
+	"type": "typo3-flow-beech",
+	"require": {
+		"typo3/flow": "*"
+	},
+	"autoload": {
+		"psr-0": {
+			"Beech\\Ehrm\\Groeiservice": "Classes"
+		}
+	}
+}
