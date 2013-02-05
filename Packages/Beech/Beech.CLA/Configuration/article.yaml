@@ -1,4 +1,3 @@
-
 #############################################################
 # validated yaml for the article
 # this is the article model.
@@ -38,9 +37,9 @@ beech:
         visible: false
       'createdBy':
         default: currentUser
-        label: 'Creation by'
+        label: 'Created by'
         required: true
-        type: \Beech\Party\Domain\Model\Person
+        type: string(20)
         validation: ''
         visible: false
       'modification':
