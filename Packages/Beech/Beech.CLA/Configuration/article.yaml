@@ -18,12 +18,12 @@ beech:
         validation: ''
       'articleHeader':
         label: 'Header'
-        type: string(100)
+        type: text
         validation: ''
         onList: TRUE
       'articleText':
         label: 'Text'
-        type: string(1000)
+        type: text
         validation: ''
       'order':
         label: 'Order'
