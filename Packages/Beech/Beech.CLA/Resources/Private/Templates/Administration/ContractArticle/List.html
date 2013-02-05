@@ -1,7 +1,7 @@
 <f:layout/>
 <f:section name="Body">
 	<h1>
-		<f:translate id="article">Article</f:translate>
+		<f:translate id="contractArticle">Article</f:translate>
 	</h1>
 	<f:if condition="{entities}">
 		<f:then>
@@ -18,21 +18,21 @@
 				</tr>
 				</thead>
 				<tbody>
-				<f:for each="{entities}" as="article" iteration="iterator">
+				<f:for each="{entities}" as="contractArticle" iteration="iterator">
 					<tr>
 									<td>
 										<f:link.action action="show"
-													   arguments="{article: article}"><strong>{article.articleId}</strong>
+													   arguments="{contractArticle: contractArticle}"><strong>{contractArticle.articleId}</strong>
 										</f:link.action>
 									</td>
 									<td>
 										<f:link.action action="show"
-													   arguments="{article: article}"><strong>{article.articleHeader}</strong>
+													   arguments="{contractArticle: contractArticle}"><strong>{contractArticle.articleHeader}</strong>
 										</f:link.action>
 									</td>
 						<td>
-							<f:link.action action="edit" arguments="{article: article}"><i class="icon-pencil"></i></f:link.action>
-							<f:link.action action="delete" arguments="{article: article}"><i class="icon-trash"></i></f:link.action>
+							<f:link.action action="edit" arguments="{contractArticle: contractArticle}"><i class="icon-pencil"></i></f:link.action>
+							<f:link.action action="delete" arguments="{contractArticle: contractArticle}"><i class="icon-trash"></i></f:link.action>
 						</td>
 					</tr>
 				</f:for>
@@ -45,7 +45,7 @@
 	</f:if>
 	<div class="form-actions">
 		<a class="btn btn-primary"
-					href="/{f:uri.action(package: 'Beech.CLA', subpackage: 'Administration', controller: 'Article', action: 'new')}"><i
+					href="/{f:uri.action(package: 'Beech.CLA', subpackage: 'Administration', controller: 'ContractArticle', action: 'new')}"><i
 			class="icon-plus icon-white"></i>
 		<f:translate id="action.create">Create</f:translate>
 	</a>

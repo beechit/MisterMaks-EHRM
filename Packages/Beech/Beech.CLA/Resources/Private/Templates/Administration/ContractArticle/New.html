@@ -1,6 +1,6 @@
 <f:layout/>
 <f:section name="Body">
-	<f:form.validationResults for="article">
+	<f:form.validationResults for="contractArticle">
 		<f:if condition="{validationResults.flattenedErrors}">
 			<div class="error">
 				<f:for each="{validationResults.flattenedErrors}" key="propertyPath" as="errors">{propertyPath}:
@@ -9,7 +9,7 @@
 			</div>
 		</f:if>
 	</f:form.validationResults>
-	<f:form action="create" object="{article}" name="article" class="form-horizontal well">
+	<f:form action="create" object="{contractArticle}" name="contractArticle" class="form-horizontal well">
 		<div class="control-group">
 			<label class="control-label" for="articleId"><f:translate id="articleId">Article Id</f:translate></label>
 			<div class="controls">

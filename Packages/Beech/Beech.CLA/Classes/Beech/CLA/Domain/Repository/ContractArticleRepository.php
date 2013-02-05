@@ -12,7 +12,7 @@ use TYPO3\Flow\Annotations as Flow;
 /**
  * @Flow\Scope("singleton")
  */
-class ArticleRepository extends \Radmiraal\CouchDB\Persistence\AbstractRepository {
+class ContractArticleRepository extends \Radmiraal\CouchDB\Persistence\AbstractRepository {
 }
 
 ?>
