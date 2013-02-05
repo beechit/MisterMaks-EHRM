@@ -32,11 +32,11 @@ class Notification extends \Radmiraal\CouchDB\Persistence\AbstractDocument {
 	protected $label;
 
 	/**
-	 * The party
-	 * @var \TYPO3\Party\Domain\Model\AbstractParty
+	 * The account identifier
+	 * @var string
 	 * @ODM\Field(type="string")
 	 */
-	protected $party;
+	protected $accountIdentifier;
 
 	/**
 	 * The closeable
@@ -72,25 +72,22 @@ class Notification extends \Radmiraal\CouchDB\Persistence\AbstractDocument {
 	}
 
 	/**
-	 * Get the Notification's party
+	 * Get the Notification's account identifier
 	 *
-	 * @return \TYPO3\Party\Domain\Model\AbstractParty The Notification's partu
+	 * @return string
 	 */
-	public function getParty() {
-		if (isset($this->party)) {
-			return $this->persistenceManager->getObjectByIdentifier($this->party, '\TYPO3\Party\Domain\Model\AbstractParty');
-		}
-		return NULL;
+	public function getAccountIdentifier() {
+		return $this->accountIdentifier;
 	}
 
 	/**
-	 * Sets this Notification's party
+	 * Sets this Notification's account identifier
 	 *
-	 * @param \TYPO3\Party\Domain\Model\AbstractParty $party The Notification's party
+	 * @param string $accountIdentifier The account identifier
 	 * @return void
 	 */
-	public function setParty(\TYPO3\Party\Domain\Model\AbstractParty $party) {
-		$this->party = $this->persistenceManager->getIdentifierByObject($party);
+	public function setAccountIdentifier($accountIdentifier) {
+		$this->accountIdentifier = $accountIdentifier;
 	}
 
 	/**

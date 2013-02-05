@@ -22,6 +22,7 @@ Beech:
           - 'Beech.Ehrm/Library/bootstrap-notify/js/bootstrap-notify.js'
           - 'Beech.Ehrm/Library/jquery.gracefulWebSocket.js'
           - 'Beech.Ehrm/Library/jquery.form.js'
+          - 'Beech.Ehrm/Library/jquery.cookie.js'
           - 'Beech.Ehrm/Library/datepicker/js/bootstrap-datepicker.js'
 
         sources:
@@ -68,3 +69,11 @@ TYPO3:
     handlebarsTemplates:
       # include the handlebars template
       Finisher-DatabaseFinisher: resource://Beech.Ehrm/Private/Templates/FormBuilder/DatabaseFinisher.html
+
+  Flow:
+    session:
+      cookie:
+
+        # Also allow JavaScript to retrieve the session cookie so we can pass
+        # it to the WebSocket service
+        httponly: FALSE

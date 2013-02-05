@@ -33,6 +33,12 @@ class WorkflowAspect {
 	protected $taskRepository;
 
 	/**
+	 * @var \TYPO3\Flow\Security\Context
+	 * @Flow\Inject
+	 */
+	protected $securityContext;
+
+	/**
 	 * @Flow\Around("method(Beech\Party\Administration\Controller\(Person|Company)Controller->createAction())")
 	 * @param \TYPO3\Flow\Aop\JoinPointInterface $joinPoint The current join point
 	 * @return void
@@ -44,6 +50,7 @@ class WorkflowAspect {
 
 			$notification = new \Beech\Ehrm\Domain\Model\Notification();
 			$notification->setLabel('New company created');
+			$notification->setAccountIdentifier($this->securityContext->getAccount()->getAccountIdentifier());
 			$this->notificationRepository->add($notification);
 
 			$task = new \Beech\Task\Domain\Model\Task();

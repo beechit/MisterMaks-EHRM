@@ -1,5 +1,5 @@
 {
-    "hash": "23c5133a673e3156e65150ffe9738e71",
+    "hash": "2f0f0b2125e3a7f5468111b24376c343",
     "packages": [
         {
             "name": "beech/essentials",
@@ -15,7 +15,6 @@
             },
             "time": "2013-01-17 19:45:44",
             "type": "typo3-flow-build",
-            "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "Beech\\Essentials": "Classes"
@@ -47,7 +46,6 @@
                     "dev-master": "2.3.x-dev"
                 }
             },
-            "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "Doctrine\\Common": "lib/"
@@ -86,11 +84,11 @@
             "description": "Common Library for Doctrine projects",
             "homepage": "http://www.doctrine-project.org",
             "keywords": [
-                "collections",
-                "spl",
-                "eventmanager",
                 "annotations",
-                "persistence"
+                "collections",
+                "eventmanager",
+                "persistence",
+                "spl"
             ]
         },
         {
@@ -108,12 +106,11 @@
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.2",
-                "doctrine/common": "*"
+                "doctrine/common": "*",
+                "php": ">=5.3.2"
             },
             "time": "2012-11-13 12:14:29",
             "type": "library",
-            "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "Doctrine\\CouchDB": "lib/"
@@ -136,8 +133,8 @@
             "description": "CouchDB Client",
             "homepage": "http://www.doctrine-project.org",
             "keywords": [
-                "persistence",
-                "couchdb"
+                "couchdb",
+                "persistence"
             ]
         },
         {
@@ -155,10 +152,10 @@
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.2",
+                "doctrine/common": ">=2.2.0,<2.4",
                 "doctrine/couchdb": "*",
-                "symfony/console": ">=2.0",
-                "doctrine/common": ">=2.2.0,<2.4"
+                "php": ">=5.3.2",
+                "symfony/console": ">=2.0"
             },
             "require-dev": {
                 "symfony/yaml": ">=2.0.0,<2.2.0-dev"
@@ -168,7 +165,6 @@
             },
             "time": "2013-01-28 18:04:52",
             "type": "library",
-            "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "Doctrine\\ODM\\CouchDB": "lib/"
@@ -191,8 +187,8 @@
             "description": "CouchDB Document Object Mapper",
             "homepage": "http://www.doctrine-project.org",
             "keywords": [
-                "persistence",
-                "couchdb"
+                "couchdb",
+                "persistence"
             ]
         },
         {
@@ -210,15 +206,15 @@
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.2",
-                "doctrine/common": ">=2.2,<2.5-dev"
+                "doctrine/common": ">=2.2,<2.5-dev",
+                "php": ">=5.3.2"
             },
             "require-dev": {
                 "doctrine/orm": ">=2.2,<2.5-dev"
             },
             "suggest": {
-                "doctrine/orm": "For loading ORM fixtures",
                 "doctrine/mongodb-odm": "For loading MongoDB ODM fixtures",
+                "doctrine/orm": "For loading ORM fixtures",
                 "doctrine/phpcr-odm": "For loading PHPCR ODM fixtures"
             },
             "time": "2013-01-05 13:05:52",
@@ -228,7 +224,6 @@
                     "dev-master": "1.0.x-dev"
                 }
             },
-            "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "Doctrine\\Common\\DataFixtures": "lib/"
@@ -266,8 +261,8 @@
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.2",
-                "doctrine/common": "2.3.*"
+                "doctrine/common": "2.3.*",
+                "php": ">=5.3.2"
             },
             "time": "2012-12-04 21:06:56",
             "type": "library",
@@ -276,7 +271,6 @@
                     "dev-master": "2.3.x-dev"
                 }
             },
-            "installation-source": "dist",
             "autoload": {
                 "psr-0": {
                     "Doctrine\\DBAL": "lib/"
@@ -310,8 +304,8 @@
             "homepage": "http://www.doctrine-project.org",
             "keywords": [
                 "database",
-                "persistence",
                 "dbal",
+                "persistence",
                 "queryobject"
             ]
         },
@@ -330,8 +324,8 @@
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.2",
-                "doctrine/dbal": ">=2.0,<2.5.x-dev"
+                "doctrine/dbal": ">=2.0,<2.5.x-dev",
+                "php": ">=5.3.2"
             },
             "require-dev": {
                 "symfony/console": "2.*",
@@ -342,7 +336,6 @@
             },
             "time": "2012-12-27 16:39:29",
             "type": "library",
-            "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "Doctrine\\DBAL\\Migrations": "lib"
@@ -385,9 +378,9 @@
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.2",
-                "ext-pdo": "*",
                 "doctrine/dbal": "2.3.*",
+                "ext-pdo": "*",
+                "php": ">=5.3.2",
                 "symfony/console": "2.*"
             },
             "suggest": {
@@ -404,7 +397,6 @@
                     "dev-master": "2.3.x-dev"
                 }
             },
-            "installation-source": "dist",
             "autoload": {
                 "psr-0": {
                     "Doctrine\\ORM": "lib/"
@@ -460,7 +452,6 @@
             },
             "time": "2013-02-06 14:04:06",
             "type": "typo3-flow-package",
-            "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "Famelo\\Gerrit": "Classes"
@@ -486,12 +477,11 @@
                 "php": ">=5.3.2"
             },
             "suggest": {
-                "ext-phpiredis": "Allows faster serialization and deserialization of the Redis protocol",
-                "ext-curl": "Allows access to Webdis when paired with phpiredis"
+                "ext-curl": "Allows access to Webdis when paired with phpiredis",
+                "ext-phpiredis": "Allows faster serialization and deserialization of the Redis protocol"
             },
             "time": "2013-02-03 12:59:55",
             "type": "library",
-            "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "Predis": "lib/"
@@ -512,8 +502,8 @@
             "homepage": "http://github.com/nrk/predis",
             "keywords": [
                 "nosql",
-                "redis",
-                "predis"
+                "predis",
+                "redis"
             ]
         },
         {
@@ -525,14 +515,13 @@
                 "reference": "f28a24ca7bab2968930be50aa5be6943ae59aa78"
             },
             "require": {
-                "typo3/flow": "*",
                 "doctrine/couchdb-odm": "dev-master",
                 "doctrine/dbal": "2.3.1",
-                "doctrine/orm": "2.3.1"
+                "doctrine/orm": "2.3.1",
+                "typo3/flow": "*"
             },
             "time": "2013-01-17 11:11:07",
             "type": "typo3-flow-package",
-            "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "Radmiraal\\CouchDB": "Classes"
@@ -548,20 +537,19 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/radmiraal/Radmiraal.Emberjs.git",
-                "reference": "081ac3a047f5ee099d7fa2ba7990979d63c0dc52"
+                "reference": "c8b8122927a1ae2ad599be5a12c8065af6f491d8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/radmiraal/Radmiraal.Emberjs/zipball/081ac3a047f5ee099d7fa2ba7990979d63c0dc52",
-                "reference": "081ac3a047f5ee099d7fa2ba7990979d63c0dc52",
+                "url": "https://api.github.com/repos/radmiraal/Radmiraal.Emberjs/zipball/c8b8122927a1ae2ad599be5a12c8065af6f491d8",
+                "reference": "c8b8122927a1ae2ad599be5a12c8065af6f491d8",
                 "shasum": ""
             },
             "require": {
                 "typo3/flow": "*"
             },
-            "time": "2013-01-30 07:27:35",
+            "time": "2013-02-07 09:46:53",
             "type": "typo3-flow-package",
-            "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "Radmiraal\\Emberjs": "Classes"
@@ -575,6 +563,49 @@
                 {
                     "name": "Rens Admiraal"
                 }
+            ]
+        },
+        {
+            "name": "react/event-loop",
+            "version": "dev-master",
+            "target-dir": "React/EventLoop",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/reactphp/event-loop",
+                "reference": "v0.2.7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/reactphp/event-loop/zipball/v0.2.7",
+                "reference": "v0.2.7",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "suggest": {
+                "ext-libev": "*",
+                "ext-libevent": ">=0.0.5"
+            },
+            "time": "2013-01-05 11:41:26",
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.2-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "React\\EventLoop": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Event loop abstraction layer that libraries can use for evented I/O.",
+            "keywords": [
+                "event-loop"
             ]
         },
         {
@@ -602,7 +633,6 @@
                     "dev-master": "2.3-dev"
                 }
             },
-            "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "Symfony\\Component\\Console\\": ""
@@ -656,7 +686,6 @@
                     "dev-master": "2.3-dev"
                 }
             },
-            "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "Symfony\\Component\\DomCrawler\\": ""
@@ -704,7 +733,6 @@
                     "dev-master": "2.3-dev"
                 }
             },
-            "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "Symfony\\Component\\Yaml\\": ""
@@ -736,23 +764,22 @@
                 "reference": "2.0.0-beta1"
             },
             "require": {
-                "php": ">=5.3.2",
-                "ext-zlib": "*",
-                "ext-spl": "*",
+                "doctrine/data-fixtures": "*",
+                "doctrine/migrations": "*",
+                "doctrine/orm": ">=2.3,<3.0",
                 "ext-json": ">=1.2.0",
                 "ext-session": "*",
-                "typo3/fluid": "2.0.*",
-                "typo3/party": "2.0.*",
-                "doctrine/orm": ">=2.3,<3.0",
-                "doctrine/migrations": "*",
-                "doctrine/data-fixtures": "*",
-                "symfony/yaml": ">=2.1,<3.0",
+                "ext-spl": "*",
+                "ext-zlib": "*",
+                "php": ">=5.3.2",
                 "symfony/dom-crawler": ">=2.2,<3.0",
-                "typo3/flow-composer-installers": "*"
+                "symfony/yaml": ">=2.1,<3.0",
+                "typo3/flow-composer-installers": "*",
+                "typo3/fluid": "2.0.*",
+                "typo3/party": "2.0.*"
             },
             "time": "2012-12-12 21:49:44",
             "type": "typo3-flow-framework",
-            "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "TYPO3\\Flow": "Classes"
@@ -790,7 +817,6 @@
             "extra": {
                 "class": "Composer\\Installers\\Installer"
             },
-            "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "Composer\\Installers\\": "src/"
@@ -811,26 +837,26 @@
             "description": "A multi-framework Composer library installer",
             "homepage": "http://composer.github.com/installers/",
             "keywords": [
-                "symfony",
-                "installer",
-                "zend",
-                "wordpress",
+                "TYPO3 Flow",
+                "TYPO3 Neos",
+                "agl",
                 "cakephp",
                 "codeigniter",
-                "fuelphp",
                 "drupal",
-                "lithium",
-                "li3",
+                "fuelphp",
+                "installer",
                 "joomla",
+                "kohana",
                 "laravel",
+                "li3",
+                "lithium",
+                "mako",
                 "phpbb",
                 "ppi",
                 "silverstripe",
-                "kohana",
-                "mako",
-                "TYPO3 Flow",
-                "TYPO3 Neos",
-                "agl"
+                "symfony",
+                "wordpress",
+                "zend"
             ]
         },
         {
@@ -842,12 +868,11 @@
                 "reference": "7e096556c737e64963cee43b8e3990dfcb840718"
             },
             "require": {
-                "typo3/flow-composer-installers": "*",
-                "typo3/flow": "2.0.*"
+                "typo3/flow": "2.0.*",
+                "typo3/flow-composer-installers": "*"
             },
             "time": "2013-01-10 09:53:15",
             "type": "typo3-flow-framework",
-            "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "TYPO3\\Fluid": "Classes"
@@ -872,7 +897,6 @@
             },
             "time": "2013-01-24 19:05:44",
             "type": "typo3-flow-package",
-            "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "TYPO3\\Form": "Classes"
@@ -895,7 +919,6 @@
             },
             "time": "2012-12-13 14:07:05",
             "type": "typo3-flow-package",
-            "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "TYPO3\\FormBuilder": "Classes"
@@ -916,7 +939,6 @@
             },
             "time": "2012-10-08 15:21:08",
             "type": "typo3-flow-package",
-            "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "TYPO3\\LDAP": "Classes"
@@ -934,12 +956,11 @@
                 "reference": "587018d705b5b023699cf1ab10635a79475f2ab3"
             },
             "require": {
-                "typo3/flow-composer-installers": "*",
-                "typo3/flow": "2.0.*"
+                "typo3/flow": "2.0.*",
+                "typo3/flow-composer-installers": "*"
             },
             "time": "2012-12-12 21:49:46",
             "type": "typo3-flow-framework",
-            "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "TYPO3\\Party": "Classes"
@@ -964,7 +985,6 @@
             },
             "time": "2012-10-10 08:24:49",
             "type": "typo3-flow-package",
-            "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "TYPO3\\Queue": "Classes"
@@ -980,13 +1000,12 @@
                 "reference": "bbfdf6ada94caf6ad5c147a99f0aac1cbc0e3ddc"
             },
             "require": {
+                "predis/predis": "*",
                 "typo3/flow": "*",
-                "typo3/queue": "*",
-                "predis/predis": "*"
+                "typo3/queue": "*"
             },
             "time": "2012-10-10 06:49:39",
             "type": "typo3-flow-package",
-            "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "TYPO3\\Queue\\Redis": "Classes"
@@ -1006,7 +1025,6 @@
             },
             "time": "2013-01-23 08:47:41",
             "type": "typo3-flow-package",
-            "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "TYPO3\\Surf": "Classes"
@@ -1033,7 +1051,6 @@
             },
             "time": "2013-01-18 11:10:53",
             "type": "typo3-flow-beech",
-            "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "Beech\\Style": "Classes"
@@ -1059,7 +1076,6 @@
             },
             "time": "2012-08-25 05:49:29",
             "type": "library",
-            "installation-source": "dist",
             "autoload": {
                 "psr-0": {
                     "org\\bovigo\\vfs": "src/main/php"
@@ -1088,8 +1104,8 @@
             "require": {
                 "php": ">=5.4.7",
                 "phpunit/php-file-iterator": ">=1.3.0",
-                "phpunit/php-token-stream": ">=1.1.3",
                 "phpunit/php-text-template": ">=1.1.1",
+                "phpunit/php-token-stream": ">=1.1.3",
                 "sebastian/version": ">=1.0.0"
             },
             "suggest": {
@@ -1103,7 +1119,6 @@
                     "dev-master": "1.3.x-dev"
                 }
             },
-            "installation-source": "source",
             "autoload": {
                 "classmap": [
                     "PHP/"
@@ -1126,8 +1141,8 @@
             "description": "Library that provides collection, processing, and rendering functionality for PHP code coverage information.",
             "homepage": "https://github.com/sebastianbergmann/php-code-coverage",
             "keywords": [
-                "testing",
                 "coverage",
+                "testing",
                 "xunit"
             ]
         },
@@ -1150,7 +1165,6 @@
             },
             "time": "2013-01-07 10:47:05",
             "type": "library",
-            "installation-source": "source",
             "autoload": {
                 "classmap": [
                     "File/"
@@ -1196,7 +1210,6 @@
             },
             "time": "2013-01-07 10:56:17",
             "type": "library",
-            "installation-source": "source",
             "autoload": {
                 "classmap": [
                     "Text/"
@@ -1241,7 +1254,6 @@
             },
             "time": "2013-01-30 06:29:42",
             "type": "library",
-            "installation-source": "source",
             "autoload": {
                 "classmap": [
                     "PHP/"
@@ -1287,7 +1299,6 @@
             },
             "time": "2013-01-07 10:56:35",
             "type": "library",
-            "installation-source": "source",
             "autoload": {
                 "classmap": [
                     "PHP/"
@@ -1328,23 +1339,23 @@
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.3",
-                "phpunit/php-file-iterator": ">=1.3.1",
-                "phpunit/php-text-template": ">=1.1.1",
-                "phpunit/php-code-coverage": ">=1.2.1",
-                "phpunit/php-timer": ">=1.0.2",
-                "phpunit/phpunit-mock-objects": ">=1.2.0,<1.3.0",
-                "symfony/yaml": ">=2.1.0",
                 "ext-dom": "*",
                 "ext-pcre": "*",
                 "ext-reflection": "*",
-                "ext-spl": "*"
+                "ext-spl": "*",
+                "php": ">=5.3.3",
+                "phpunit/php-code-coverage": ">=1.2.1",
+                "phpunit/php-file-iterator": ">=1.3.1",
+                "phpunit/php-text-template": ">=1.1.1",
+                "phpunit/php-timer": ">=1.0.2",
+                "phpunit/phpunit-mock-objects": ">=1.2.0,<1.3.0",
+                "symfony/yaml": ">=2.1.0"
             },
             "suggest": {
-                "phpunit/php-invoker": ">=1.1.0",
                 "ext-json": "*",
                 "ext-simplexml": "*",
-                "ext-tokenizer": "*"
+                "ext-tokenizer": "*",
+                "phpunit/php-invoker": ">=1.1.0"
             },
             "time": "2012-12-02 14:56:55",
             "bin": [
@@ -1356,7 +1367,6 @@
                     "dev-master": "3.7.x-dev"
                 }
             },
-            "installation-source": "dist",
             "autoload": {
                 "classmap": [
                     "PHPUnit/"
@@ -1380,8 +1390,8 @@
             "description": "The PHP Unit Testing framework.",
             "homepage": "http://www.phpunit.de/",
             "keywords": [
-                "testing",
                 "phpunit",
+                "testing",
                 "xunit"
             ]
         },
@@ -1408,7 +1418,6 @@
             },
             "time": "2013-02-05 07:46:41",
             "type": "library",
-            "installation-source": "source",
             "autoload": {
                 "classmap": [
                     "PHPUnit/"
@@ -1451,7 +1460,6 @@
             },
             "time": "2013-01-05 14:27:32",
             "type": "library",
-            "installation-source": "source",
             "autoload": {
                 "classmap": [
                     "src/"
@@ -1488,7 +1496,6 @@
             "extra": {
                 "installer-name": "BuildEssentials"
             },
-            "installation-source": "source",
             "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "LGPL-3.0+"
@@ -1508,7 +1515,6 @@
             },
             "time": "2012-12-10 11:04:08",
             "type": "typo3-flow-framework",
-            "installation-source": "source",
             "autoload": {
                 "psr-0": {
                     "TYPO3\\Kickstart": "Classes"

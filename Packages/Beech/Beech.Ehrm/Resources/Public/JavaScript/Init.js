@@ -13,6 +13,7 @@ var App;
 		initializeWebSocket: function() {
 			this.Socket = $.gracefulWebSocket('ws://127.0.0.1:8000/');
 			this.Socket.onopen = function(msg) {
+				this.send($.cookie('TYPO3_Flow_Session'));
 				console.log('Connection successfully opened (readyState ' + this.readyState + ')');
 			};
 			this.Socket.onclose = function(msg) {
