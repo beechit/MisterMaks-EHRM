@@ -2,6 +2,7 @@
 namespace Beech\Importer\Utility;
 
 use TYPO3\Flow\Annotations as Flow;
+use TYPO3\Flow\Reflection\ObjectAccess;
 use Symfony\Component\Yaml\Yaml;
 
 /**
@@ -12,6 +13,12 @@ use Symfony\Component\Yaml\Yaml;
 class YamlImportUtility {
 
 	/**
+	 * @Flow\Inject
+	 * @var \TYPO3\Flow\Object\ObjectManagerInterface
+	 */
+	protected $objectManager;
+
+	/**
 	 * Full path and class name of imported model
 	 * @var string
 	 */
@@ -19,7 +26,7 @@ class YamlImportUtility {
 
 	/**
 	 * Instance of repository
-	 * @var
+	 * @var \TYPO3\Flow\Persistence\RepositoryInterface
 	 */
 	protected $repository;
 
@@ -30,98 +37,80 @@ class YamlImportUtility {
 	protected $filesToImport = array();
 
 	/**
+	 * Files actually imported
+	 * @var array
+	 */
+	protected $importedFiles = array();
+
+	/**
 	 * Initialize importer.
 	 * Setting up model name and repository instance
 	 *
-	 * @param $packageKey
-	 * @param $model
+	 * @param string $packageKey
+	 * @param string $modelName
+	 * @return void
 	 */
 	public function init($packageKey, $modelName) {
-		$repositoryClassName = '\\' . str_replace('.', '\\', $packageKey) . '\Domain\Repository\\' . $modelName . 'Repository';
-		$this->repository = new $repositoryClassName();
-		$this->modelClassName = '\\' . str_replace('.', '\\', $packageKey) . '\Domain\Model\\' . $modelName;
+		$modelName = ucfirst($modelName);
+		$repositoryClassName = str_replace('.', '\\', $packageKey) . '\Domain\Repository\\' . $modelName . 'Repository';
+		$this->modelClassName = str_replace('.', '\\', $packageKey) . '\Domain\Model\\' . $modelName;
+
+		$this->repository = $this->objectManager->get($repositoryClassName);
 	}
 
 	/**
-	 * Remove all documents from database
-	 */
-	public function clean() {
-		$this->repository->removeAll();
-	}
-
-	/**
-	 * Check if document exist in database
-	 * Its possible to specify different propertyName used to compare
+	 * Process import
 	 *
-	 * @param $document
-	 * @param $propertyName
-	 * @return bool
+	 * @param string $sourcePath
+	 * @return void
 	 */
-	public function exist($document, $propertyName = 'id') {
-		$getMethod = 'get' . ucfirst($propertyName);
-		$findMethod = 'findBy' . ucfirst($propertyName);
-		return (count($this->repository->$findMethod($document->$getMethod())) > 0) ? TRUE : FALSE;
+	public function import($sourcePath) {
+		$this->importedFiles = array();
+		$this->filesToImport = \TYPO3\Flow\Utility\Files::readDirectoryRecursively($sourcePath, 'yaml');
+
+		if (count($this->filesToImport) > 0) {
+			$this->repository->removeAll();
+
+			foreach ($this->filesToImport as $pathAndFilename) {
+				$this->store(Yaml::parse($pathAndFilename));
+				$this->importedFiles[] = $pathAndFilename;
+			}
+		}
+	}
+
+	/**
+	 * Return number of YAML files imported.
+	 *
+	 * @return integer
+	 */
+	public function getNumberOfImportedFiles() {
+		return count($this->importedFiles);
+	}
+
+	/**
+	 * Store data to database through prepared document.
+	 *
+	 * @param array $parsedYaml
+	 * @return void
+	 */
+	protected function store(array $parsedYaml) {
+		$document = $this->prepareDocument($parsedYaml);
+		$this->repository->add($document);
 	}
 
 	/**
 	 * Set values for properties of document
 	 *
-	 * @param $yamlContent
+	 * @param array $parsedYaml
 	 * @return mixed Prepared document
 	 */
-	public function prepareDocument($yamlContent) {
+	protected function prepareDocument(array $parsedYaml) {
 		$document = new $this->modelClassName();
-		foreach ($yamlContent as $fieldName => $fieldValue) {
-			$methodName = 'set' . ucfirst($fieldName);
-			$document->$methodName($fieldValue);
+		foreach ($parsedYaml as $key => $value) {
+			ObjectAccess::setProperty($document, $key, $value);
 		}
 		return $document;
 	}
 
-	/**
-	 * Store prepared document to database
-	 * @param $yamlContent
-	 */
-	public function store($yamlContent) {
-		$document = $this->prepareDocument($yamlContent);
-		$this->repository->add($document);
-	}
-
-	/**
-	 * Return number of yaml files to import
-	 * @return int
-	 */
-	public function getNumberOfFiles() {
-		return count($this->filesToImport);
-	}
-
-	/**
-	 * Get array with list of files
-	 * @return array
-	 */
-	public function getFiles() {
-		return $this->filesToImport;
-	}
-
-	/**
-	 * Read yaml files for specified directory
-	 * @param $dir
-	 */
-	public function readFiles($dir) {
-		$this->filesToImport = \TYPO3\Flow\Utility\Files::readDirectoryRecursively($dir, 'yaml');
-	}
-
-	/**
-	 * Process import
-	 * @param $source
-	 */
-	public function import($source) {
-		$this->clean();
-			// get list of files
-		$this->readFiles($source);
-		foreach ($this->getFiles() as $path) {
-			$this->store(Yaml::parse($path));
-		}
-	}
 }
 ?>
