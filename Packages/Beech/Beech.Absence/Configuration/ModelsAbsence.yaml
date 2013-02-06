@@ -1,0 +1,132 @@
+#############################################################
+# validated yaml for the absence model
+# this is the absence model.
+#############################################################
+Beech:
+  Absence:
+    'Absence':
+      properties:
+        'absenceType':
+          label: 'Absence type'
+          options:
+            values:
+              - accidentDuckLiftStandConcentration
+              - focus
+              - pressure
+              - unknown
+              - short-termabsenteeism
+              - labordispute
+              - Other
+          required: true
+          type: string(30)
+          validation: ''
+          visible: true
+        'subjectId':
+          label: 'Subject id'
+          onlist: true
+          required: true
+          type: \Beech\Party\Domain\Model\Person
+          validation:
+            type: 'NotEmpty'
+          visible: true
+        'departmentId':
+          label: 'Department id'
+          required: true
+          type: \Beech\Party\Domain\Model\Company
+          validation: ''
+          visible: false
+        'firstSickDay':
+          label: 'First sick Day'
+          required: true
+          type: dateTime
+          validation:
+            type: 'RegularExpression'
+            options:
+              regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
+          visible: true
+        'disabilityPercentage':
+          label: 'Disability percentage'
+          required: true
+          type: decimal(2.2)
+          validation: ''
+          visible: true
+        'disabilityBackup':
+          label: 'Disability backup'
+          options:
+            values:
+              - none
+              - maternity
+              - (ex)WAO-er
+              - absentDueToOrganDonation
+              - endOfContractWithin13Weeks
+              - temporaryCallWorker
+              - absentDueToPregnancy
+              - disabilityBackup
+              - adoptionLeaveFosterCare
+              - workDisability
+              - sickOnEndOfEmployemnt
+          required: true
+          type: string(30)
+          validation:
+            type: 'NotEmpty'
+          visible: true
+        'recoveryDate':
+          label: 'Recovery date'
+          required: true
+          type: dateTime
+          validation:
+            type: 'RegularExpression'
+            options:
+              regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
+          visible: true
+        'arboActionType':
+          label: 'Arbo action type'
+          options:
+            values:
+              - none
+              - accordingToContract
+              - urgentinspection
+              - contactEmployer
+          required: true
+          type: string(20)
+          validation: ''
+          visible: true
+        'creationDate':
+          default: now
+          label: 'creation date'
+          required: true
+          type: dateTime
+          validation:
+            type: 'RegularExpression'
+            options:
+              regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
+          visible: false
+        'createdBy':
+          default: currentUser
+          label: 'Created by'
+          required: true
+          type: \Beech\Party\Domain\Model\Person
+          validation:
+            type: 'NotEmpty'
+          visible: false
+        'modification':
+          items:
+            'modificationDate':
+              default: now
+              label: 'Modification date'
+              required: true
+              type: dateTime
+              validation:
+                type: 'RegularExpression'
+                options:
+                  regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
+              visible: false
+            'modifiedBy':
+              default: currentUser
+              label: 'Modified by'
+              required: true
+              type: \Beech\Party\Domain\Model\Person
+              validation: ''
+              visible: false
+          label: 'Modification log'
+          type: array

@@ -4,8 +4,8 @@
 #############################################################
 
 Beech:
-  calendar:
-    'meeting':
+  Calendar:
+    'Meeting':
       properties:
         'meetingId':
           label: 'Meeting ID'
