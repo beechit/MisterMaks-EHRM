@@ -39,8 +39,9 @@ class WorkflowAspect {
 	 */
 	public function newModelAspect(\TYPO3\Flow\Aop\JoinPointInterface $joinPoint) {
 		$model = NULL;
-		$arguments = $joinPoint->getMethodArguments();
-		if (isset($arguments['company']) && $joinPoint->getMethodArgument('company')) {
+		if ($joinPoint->isMethodArgument('company')) {
+			$company = $joinPoint->getMethodArgument('company');
+
 			$notification = new \Beech\Ehrm\Domain\Model\Notification();
 			$notification->setLabel('New company created');
 			$this->notificationRepository->add($notification);
@@ -50,7 +51,7 @@ class WorkflowAspect {
 			$this->taskRepository->add($task);
 
 			$action = new \Beech\WorkFlow\Domain\Model\Action();
-			$action->setTarget($joinPoint->getMethodArgument('company'));
+			$action->setTarget($company);
 
 			$documentOutputHandler = new \Beech\WorkFlow\OutputHandlers\DocumentOutputHandler();
 			$task = new \Beech\Ehrm\Domain\Model\Notification();
@@ -59,13 +60,13 @@ class WorkflowAspect {
 
 			$cocNotEmptyValidator = new \Beech\WorkFlow\Validators\Property\NotEmptyValidator();
 			$cocNotEmptyValidator->setPropertyName('chamberOfCommerceNumber');
-			$cocNotEmptyValidator->setTargetEntity($joinPoint->getMethodArgument('company'));
+			$cocNotEmptyValidator->setTargetEntity($company);
 			$action->addValidator($cocNotEmptyValidator);
 
 			$this->actionRepository->add($action);
 		}
-		$result = $joinPoint->getAdviceChain()->proceed($joinPoint);
-		return $result;
+
+		$joinPoint->getAdviceChain()->proceed($joinPoint);
 	}
 
 }

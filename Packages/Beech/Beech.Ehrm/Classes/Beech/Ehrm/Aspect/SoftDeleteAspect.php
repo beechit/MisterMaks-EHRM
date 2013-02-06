@@ -38,7 +38,7 @@ class SoftDeleteAspect {
 			$model->setDeleted(TRUE);
 			$joinPoint->getProxy()->update($model);
 		} else {
-			return $joinPoint->getAdviceChain()->proceed($joinPoint);
+			$joinPoint->getAdviceChain()->proceed($joinPoint);
 		}
 	}
 
@@ -54,7 +54,7 @@ class SoftDeleteAspect {
 				/** @var $query \TYPO3\Flow\Persistence\Doctrine\Query */
 			$query = $joinPoint->getProxy();
 
-			/**
+			/*
 			 * Using the reflectionService, check if the model actually has a property named 'deleted'
 			 * Continue the advice chain without filtering if it does not
 			 */
@@ -62,7 +62,7 @@ class SoftDeleteAspect {
 				return $joinPoint->getAdviceChain()->proceed($joinPoint);
 			}
 
-			/**
+			/*
 			 * Check if the query already has a constraint for the deleted property. If so, then just proceed
 			 * the advice chain so it's still possible to write custom queries for querying deleted records
 			 */
@@ -71,7 +71,7 @@ class SoftDeleteAspect {
 					return $joinPoint->getAdviceChain()->proceed($joinPoint);
 			}
 
-			/**
+			/*
 			 * Perform the actual filtering
 			 */
 			if ($query->getConstraint() !== NULL) {
