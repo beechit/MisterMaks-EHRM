@@ -100,16 +100,18 @@ contactArticles:
           type: 'TYPO3.Form:SingleLineText'
           value: ""
           valueId: totalHours
-          default: ''
+          default: '0'
         -
           type: 'TYPO3.Form:SingleLineText'
           value: ""
           valueId: hoursAWeek
+          default: '38'
         -
           type: 'TYPO3.Form:SingleLineText'
           value: ""
           valueId: jobTitle
         -
+          # worklocation has to point to company and fetch the adresses that are registered
           type: 'TYPO3.Form:SingleLineText'
           value: ""
           valueId: "workLocation"
@@ -122,10 +124,20 @@ contactArticles:
           valueId: workDays
         -
           type:  'TYPO3.Form:DatePicker'
+          properties:
+            elementClassAttribute: 'small'
+            timeSelectorClassAttribute: 'mini'
+            enableDatePicker: false
+            displayTimeSelector: true
           value: ''
           valueId: 'startTime'
         -
           type: 'TYPO3.Form:DatePicker'
+          properties:
+            elementClassAttribute: 'small'
+            timeSelectorClassAttribute: 'mini'
+            enableDatePicker: false
+            displayTimeSelector: true
           value: ''
           valueId: 'endTime'
     -
@@ -305,6 +317,7 @@ contactArticles:
           type: 'TYPO3.Form:SingleLineText'
           options: [ week , maand ]
           valueId: weekMaand
+          default: 'week'
     -
       articleHeader:
          en: ""
@@ -362,6 +375,7 @@ contactArticles:
         nl: ""
         pl: ""
       values:
+# selectable values from the wagemodel.
         -
           type: 'TYPO3.Form:SingleLineText'
           value: ""
@@ -462,10 +476,13 @@ contactArticles:
           type:  'TYPO3.Form:DatePicker'
           value: ''
           valueId: 'startTime'
+          default: '8.00'
+
         -
           type: 'TYPO3.Form:DatePicker'
           value: ''
           valueId: 'endTime'
+          default: '18.00'
 # Articles for OBT
     -
       articleHeader:
@@ -534,7 +551,7 @@ contactArticles:
             - days
             - weeks
           default: weeks
-          valueId: ProbationTime
+          valueId: dayWeek
     -
       articleHeader:
         en: ""
