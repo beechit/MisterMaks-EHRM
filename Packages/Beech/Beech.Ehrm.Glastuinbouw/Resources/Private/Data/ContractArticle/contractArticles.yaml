@@ -29,21 +29,21 @@ contactArticles:
         pl: ""
       values:
           -
-            type: dateTime
+            type: 'TYPO3.Form:DatePicker'
             value: ""
-            valueId: Startdate
+            valueId: startDate
             default: today
           -
-            type: dateTime
+            type: 'TYPO3.Form:DatePicker'
             value: ""
             valueId: endDate
           -
-            type: string
+            type: 'TYPO3.Form:SingleLineText'
             value: ""
             valueId: jobTitle
           -
-            type: string
-            value: ""
+            type: 'TYPO3.Form:SingleLineText'
+            value: "\Beech\Party\Domain\Model\Company"
             valueId: "workLocation"
     -
       articleHeader:
@@ -65,12 +65,12 @@ contactArticles:
         pl: ""
       values:
           -
-            type: integer
+            type: 'TYPO3.Form:SingleLineText'
             value: ""
             valueId: probationPeriod
             default: today
           -
-            type: dateTime
+            type: 'TYPO3.Form:SingleSelectDropdown'
             options:
               - day
               - days
@@ -97,20 +97,20 @@ contactArticles:
         pl: ""
       values:
         -
-          type: dateTime
+          type: 'TYPO3.Form:SingleLineText'
           value: ""
           valueId: totalHours
           default: ''
         -
-          type: dateTime
+          type: 'TYPO3.Form:SingleLineText'
           value: ""
           valueId: hoursAWeek
         -
-          type: string
+          type: 'TYPO3.Form:SingleLineText'
           value: ""
           valueId: jobTitle
         -
-          type: string
+          type: 'TYPO3.Form:SingleLineText'
           value: ""
           valueId: "workLocation"
         -
@@ -121,11 +121,11 @@ contactArticles:
           pl:
           valueId: workDays
         -
-          type:  dateTime
+          type:  'TYPO3.Form:DatePicker'
           value: ''
           valueId: 'startTime'
         -
-          type: datetime
+          type: 'TYPO3.Form:DatePicker'
           value: ''
           valueId: 'endTime'
     -
@@ -148,7 +148,7 @@ contactArticles:
         pl: ""
       values:
         -
-          type: decimal(4,2)
+          type: (4,2)
           value: ""
           valueId: 'minimumWage'
           default: ''
@@ -172,7 +172,7 @@ contactArticles:
         pl: ""
       values:
         -
-          type: string(20)
+          type: 'TYPO3.Form:SingleLineText'
           value: "Glastuinbouw"
           valueId: 'CLA'
     -
@@ -195,7 +195,7 @@ contactArticles:
         pl: ""
       values:
         -
-          type: integer
+          type: 'TYPO3.Form:SingleLineText'
           value: "20"
           valueId: 'vacationAllowanceGLA'
     -
@@ -218,7 +218,7 @@ contactArticles:
         pl: ""
       values:
         -
-          type: datetime
+          type: 'TYPO3.Form:DatePicker'
           default: '9.00'
           valueId: 'sickReportTime'
     -
@@ -295,10 +295,14 @@ contactArticles:
         pl: ""
       values:
         -
-          type: decimal(4,2)
+          type: 'TYPO3.Form:SingleLineText'
+          validation:
+            type: 'RegularExpression'
+            options:
+              regularExpression: '/^[0-9]{1,4}([\.][0-9]{0,2}){0,1}$/'
           valueId: 'accomodationRent'
         -
-          type: string(10)
+          type: 'TYPO3.Form:SingleLineText'
           options: [ week , maand ]
           valueId: weekMaand
     -
@@ -359,19 +363,23 @@ contactArticles:
         pl: ""
       values:
         -
-          type: string(2)
+          type: 'TYPO3.Form:SingleLineText'
           value: ""
           valueId: 'wageScaleGroup'
           default: ''
         -
-          type: string(2)
+          type: 'TYPO3.Form:SingleLineText'
           value: ""
           valueId: 'wageStep'
           default: ''
         -
-          type: decimal(4,2)
+          type: 'TYPO3.Form:SingleLineText'
           value: ""
           valueId: 'hourWage'
+          validation:
+            type: 'RegularExpression'
+            options:
+              regularExpression: /^[0-9]{1,3}([\.][0-9]{0,2}){0,1}$/
           default: ''
     -
       articleHeader:
@@ -392,8 +400,12 @@ contactArticles:
         nl: ""
         pl: ""
       values:
-          type: decimal(2,2)
+          type: 'TYPO3.Form:SingleLineText'
           value: "8.33"
+          validation:
+            type: 'RegularExpression'
+            options:
+              regularExpression: '/^[0-9]{1,2}([\.][0-9]{0,2}){0,1}$/'
           valueId: vacationAllowancePercentage
     -
       articleHeader:
@@ -415,21 +427,29 @@ contactArticles:
         pl: ""
       values:
         -
-          type: dateTime
+          type: 'TYPO3.Form:SingleLineText'
           value: ""
           valueId: totalHours
+          validation:
+            type: 'RegularExpression'
+            options:
+              regularExpression: '/^[0-9]{1,4}([\.][0-9]{0,2}){0,1}$/'
           default: ''
         -
-          type: dateTime
+          type: 'TYPO3.Form:SingleLineText'
           value: ""
+          validation:
+            type: 'RegularExpression'
+            options:
+              regularExpression: /^[0-9]{1,2}([\.][0-9]{0,2}){0,1}$/
           valueId: hoursAWeek
         -
-          type: string
+          type: 'TYPO3.Form:SingleLineText'
           value: ""
           valueId: jobTitle
         -
-          type: string
-          value: ""
+          type: 'TYPO3.Form:SingleSelectDropdown'
+          value: "Beech/Party/Domain/Model/Company"
           valueId: "workLocation"
         -
           type: array
@@ -439,11 +459,11 @@ contactArticles:
           pl:
           valueId: workDays
         -
-          type:  dateTime
+          type:  'TYPO3.Form:DatePicker'
           value: ''
           valueId: 'startTime'
         -
-          type: datetime
+          type: 'TYPO3.Form:DatePicker'
           value: ''
           valueId: 'endTime'
 # Articles for OBT
@@ -467,17 +487,17 @@ contactArticles:
         pl: ""
       values:
         -
-          type: dateTime
+          type: 'TYPO3.Form:DatePicker'
           value: ""
           valueId: Startdate
           default: today
         -
-          type: string
+          type: 'TYPO3.Form:SingleLineText'
           value: ""
           valueId: jobTitle
         -
-          type: string
-          value: ""
+          type: 'TYPO3.Form:SingleSelectDropdown'
+          value: "/Beech/Party/Domain/Models/Company"
           valueId: "workLocation"
     -
       articleHeader:
@@ -499,12 +519,16 @@ contactArticles:
         pl: ""
       values:
         -
-          type: integer
+          type: 'TYPO3.Form:SingleLineText'
           value: ""
           valueId: probationPeriod
+          validation: 'RegularExpression'
+          options:
+            regularExpression: '[0-9]{1,2}'
+
           default:
         -
-          type: string(10)
+          type: 'TYPO3.Form:SingleSelectDropdown'
           options:
             - day
             - days
