@@ -188,11 +188,17 @@ Beech:
         'totalHours':
           label: 'Total hours of this contract'
           type: decimal(4.2)
-          validation: ''
+          validation:
+            type: 'RegularExpression'
+            options:
+              regularExpression: '^([1-9]\d*(\.|\,)\d*|0?(\.|\,)\d*[1-9]\d*|[1-9]\d*)$'
         'hoursAWeek':
           label: 'Hours a week'
           type: decimal(2.2)
-          validation: ''
+          validation:
+            type: 'RegularExpression'
+            options:
+              regularExpression: '^([1-9]\d*(\.|\,)\d*|0?(\.|\,)\d*[1-9]\d*|[1-9]\d*)$'
         'workRoster':
           type: array
           values:
@@ -226,7 +232,10 @@ Beech:
         'hourWage':
           label: 'Hour Wage'
           type: decimal(3.2)
-          validation: ''
+          validation:
+            type: 'RegularExpression'
+            options:
+              regularExpression: '^([1-9]\d*(\.|\,)\d*|0?(\.|\,)\d*[1-9]\d*|[1-9]\d*)$'
         'minimumWage':
           label: 'Minimum wage'
           type: boolean
@@ -253,11 +262,17 @@ Beech:
         'vacationAllowanceGLA':
           label: 'Vacation allowance in the GLA arrangment'
           type: decimal(2.2)
-          validation: ''
+          validation:
+            type: 'RegularExpression'
+            options:
+              regularExpression: '^([1-9]\d*(\.|\,)\d*|0?(\.|\,)\d*[1-9]\d*|[1-9]\d*)$'
         'vacationAllowancePercentage':
           label: 'Vacation allowance Percentage'
           type: decimal(2.2)
-          validation: ''
+          validation:
+            type: 'RegularExpression'
+            options:
+              regularExpression: '^([1-9]\d*(\.|\,)\d*|0?(\.|\,)\d*[1-9]\d*|[1-9]\d*)$'
         'sickReportTime':
           label: 'Sickreport time'
           type: dateTime
@@ -277,11 +292,17 @@ Beech:
         'accomodationRentWeek':
           label: 'Acomodation rent for a week'
           type: decimal(3.2)
-          validation: ''
+          validation:
+            type: 'RegularExpression'
+            options:
+              regularExpression: '^([1-9]\d*(\.|\,)\d*|0?(\.|\,)\d*[1-9]\d*|[1-9]\d*)$'
         'accomodationRentMonth':
           label: 'Acomodation rent a month'
           type: decimal(3.2)
-          validation: ''
+          validation:
+            type: 'RegularExpression'
+            options:
+              regularExpression: '^([1-9]\d*(\.|\,)\d*|0?(\.|\,)\d*[1-9]\d*|[1-9]\d*)$'
         'cafetariaModel':
           label: cafetariaModel
           type: boolean

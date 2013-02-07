@@ -19,7 +19,8 @@ Beech:
               - Other
           required: true
           type: string(30)
-          validation: ''
+          validation:
+            type: 'NotEmpty'
           visible: true
         'subjectId':
           label: 'Subject id'
@@ -48,7 +49,10 @@ Beech:
           label: 'Disability percentage'
           required: true
           type: decimal(2.2)
-          validation: ''
+          validation:
+            type: 'RegularExpression'
+            options:
+              regularExpression: '^([1-9]\d*(\.|\,)\d*|0?(\.|\,)\d*[1-9]\d*|[1-9]\d*)$'
           visible: true
         'disabilityBackup':
           label: 'Disability backup'

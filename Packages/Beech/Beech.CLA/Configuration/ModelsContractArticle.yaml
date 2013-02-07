@@ -22,7 +22,10 @@ Beech:
           label: 'Header'
           type: text
           validation:
-            type: 'NotEmpty'
+            -
+              type: 'NotEmpty'
+            -
+              type: 'Text'
           onList: TRUE
         'articleText':
           label: 'Text'

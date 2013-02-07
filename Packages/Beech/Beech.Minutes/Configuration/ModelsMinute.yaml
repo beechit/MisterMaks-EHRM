@@ -38,19 +38,22 @@ Beech:
           label: minuteContent
           required: true
           type: text
-          validation: ''
+          validation:
+            type: 'Text'
           visible: true
         'minuteTemplate':
           label: minuteTemplate
           required: true
           type: string(20)
-          validation: ''
+          validation:
+            type: 'StringLength'
+            options:
+              maximum: 20
           visible: true
         'followUpActionRequired':
           label: followUpActionRequired
           required: true
           type: boolean
-          validation: ''
           visible: true
         'needSigning':
           label: needsSigning
@@ -62,13 +65,15 @@ Beech:
           label: action
           required: true
           type: string(20)
-          validation: ''
+          validation:
+            type: 'StringLength'
+            options
+              maximum: 20
           visible: true
         'documentRequired':
           label: documentRequired
           required: true
           type: boolean
-          validation: ''
           visible: true
         'visability':
           label: visability
@@ -80,7 +85,10 @@ Beech:
               - creator
           required: true
           type: string(20)
-          validation: ''
+          validation:
+            type: 'Stringlength'
+            options:
+             maximum: 20
           visible: true
         'creationDate':
           default: now

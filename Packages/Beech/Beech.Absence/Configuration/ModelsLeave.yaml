@@ -90,7 +90,8 @@ Beech:
               label: 'Remark content'
               required: false
               type: text
-              validation: ''
+              validation:
+                type: 'Text'
               visible: true
             'remarkDate':
               label: 'Remark date'
