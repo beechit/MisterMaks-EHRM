@@ -1,0 +1,3 @@
+TYPO3:
+  UserManagement:
+    viewClassName: 'Beech\Ehrm\View\TemplateView'

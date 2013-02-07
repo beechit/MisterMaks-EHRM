@@ -8,6 +8,17 @@
     '@action': 'list'
 
 ##
+# TYPO3.UserManagement
+#
+
+-
+  name: 'TYPO3 UserManagement'
+  uriPattern: '<TYPO3UserManagementSubroutes>'
+  subRoutes:
+    TYPO3UserManagementSubroutes:
+      package: 'TYPO3.UserManagement'
+
+##
 # EHRM.Common subroutes
 #
 -

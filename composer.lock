@@ -1,5 +1,5 @@
 {
-    "hash": "2f0f0b2125e3a7f5468111b24376c343",
+    "hash": "6cd3c093763ace61cac27d31add73cb0",
     "packages": [
         {
             "name": "beech/essentials",
@@ -757,11 +757,11 @@
         },
         {
             "name": "typo3/flow",
-            "version": "2.0.0-beta1",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "git://git.typo3.org/FLOW3/Packages/TYPO3.FLOW3.git",
-                "reference": "2.0.0-beta1"
+                "reference": "9c5e31b69e6e3a48d03f2ffa682fc69579b20e48"
             },
             "require": {
                 "doctrine/data-fixtures": "*",
@@ -775,10 +775,10 @@
                 "symfony/dom-crawler": ">=2.2,<3.0",
                 "symfony/yaml": ">=2.1,<3.0",
                 "typo3/flow-composer-installers": "*",
-                "typo3/fluid": "2.0.*",
-                "typo3/party": "2.0.*"
+                "typo3/fluid": "*",
+                "typo3/party": "*"
             },
-            "time": "2012-12-12 21:49:44",
+            "time": "2013-02-04 17:26:37",
             "type": "typo3-flow-framework",
             "autoload": {
                 "psr-0": {
@@ -861,17 +861,17 @@
         },
         {
             "name": "typo3/fluid",
-            "version": "2.0.x-dev",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "git://git.typo3.org/FLOW3/Packages/TYPO3.Fluid.git",
-                "reference": "7e096556c737e64963cee43b8e3990dfcb840718"
+                "reference": "5e10ef28fbeacc84d3dc4541e0f62d680cdde081"
             },
             "require": {
-                "typo3/flow": "2.0.*",
+                "typo3/flow": "*",
                 "typo3/flow-composer-installers": "*"
             },
-            "time": "2013-01-10 09:53:15",
+            "time": "2013-01-31 09:12:22",
             "type": "typo3-flow-framework",
             "autoload": {
                 "psr-0": {
@@ -949,17 +949,17 @@
         },
         {
             "name": "typo3/party",
-            "version": "2.0.x-dev",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "git://git.typo3.org/FLOW3/Packages/TYPO3.Party.git",
-                "reference": "587018d705b5b023699cf1ab10635a79475f2ab3"
+                "reference": "e15b0c2ec34aee7f2e677920f9236b2964d119cd"
             },
             "require": {
-                "typo3/flow": "2.0.*",
+                "typo3/flow": "*",
                 "typo3/flow-composer-installers": "*"
             },
-            "time": "2012-12-12 21:49:46",
+            "time": "2012-12-10 11:02:21",
             "type": "typo3-flow-framework",
             "autoload": {
                 "psr-0": {
@@ -1035,6 +1035,25 @@
                 "GPL-3.0+"
             ],
             "description": "TYPO3 Surf is a deployment tool based on Flow and suited for a wide variety of applications"
+        },
+        {
+            "name": "typo3/usermanagement",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git://github.com/radmiraal/TYPO3.UserManagement.git",
+                "reference": "7273a4ca67dcdf01142ae2e6f8392efe399d155e"
+            },
+            "require": {
+                "typo3/flow": "*"
+            },
+            "time": "2013-02-07 23:23:15",
+            "type": "typo3-flow-package",
+            "autoload": {
+                "psr-0": {
+                    "TYPO3\\UserManagement": "Classes"
+                }
+            }
         }
     ],
     "packages-dev": [
@@ -1532,7 +1551,7 @@
     ],
     "minimum-stability": "dev",
     "stability-flags": {
-        "typo3/flow": 10,
+        "typo3/flow": 20,
         "beech/essentials": 20,
         "typo3/surf": 20,
         "typo3/ldap": 20,
@@ -1540,6 +1559,7 @@
         "radmiraal/couchdb": 20,
         "famelo/gerrit": 20,
         "typo3/formbuilder": 20,
+        "typo3/usermanagement": 20,
         "typo3/buildessentials": 20,
         "typo3/kickstart": 20,
         "beech/style": 20

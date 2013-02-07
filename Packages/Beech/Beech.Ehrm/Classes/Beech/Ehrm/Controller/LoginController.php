@@ -40,7 +40,7 @@ class LoginController extends \TYPO3\Flow\Security\Authentication\Controller\Abs
 	 */
 	public function loginAction($username = NULL) {
 		if ($this->authenticationManager->isAuthenticated()) {
-			$this->redirect('index', 'Standard', 'Beech.Ehrm');
+			$this->redirect('index', 'Application', 'Beech.Ehrm');
 		}
 		$this->view->assign('applicationConfigured', $this->preferenceUtility->getApplicationPreference('company') !== NULL);
 		$this->view->assign('username', $username);
@@ -54,7 +54,7 @@ class LoginController extends \TYPO3\Flow\Security\Authentication\Controller\Abs
 		if ($originalRequest !== NULL) {
 			$this->redirectToRequest($originalRequest);
 		}
-		$this->redirect('index', 'Standard', 'Beech.Ehrm');
+		$this->redirect('index', 'Application', 'Beech.Ehrm');
 	}
 
 	/**
@@ -93,16 +93,7 @@ class LoginController extends \TYPO3\Flow\Security\Authentication\Controller\Abs
 	public function logoutAction() {
 		parent::logoutAction();
 		$this->addFlashMessage('Successfully logged out.');
-		$this->redirect('intro');
-	}
-
-	/**
-	 * @return void
-	 */
-	public function introAction() {
-		if ($this->authenticationManager->isAuthenticated() === TRUE) {
-			$this->redirect('index');
-		}
+		$this->redirect('intro', 'Application');
 	}
 
 }

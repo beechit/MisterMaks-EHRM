@@ -33,6 +33,6 @@
   uriPattern: ''
   defaults:
     '@package': 'Beech.Ehrm'
-    '@controller': 'Standard'
+    '@controller': 'Application'
     '@action': 'index'
     '@format': 'html'

@@ -7,7 +7,7 @@ namespace Beech\Ehrm\Administration\Controller;
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
-class StandardController extends \Beech\Ehrm\Controller\StandardController {
+class StandardController extends \Beech\Ehrm\Controller\ApplicationController {
 
 }
 

@@ -5,12 +5,13 @@
 		this.route('userSettings', { path: '/user/settings' });
 		this.route('applicationSettings', { path: '/administration/settings' });
 		this.route('taskModule', { path: '/tasks' });
-		this.route('jobDescriptionModule', { path: '/administration/jobdescriptions/' });
-		this.route('contractArticleModule', { path: '/administration/contractarticles/' });
+		this.route('jobDescriptionModule', { path: '/administration/jobdescriptions' });
+		this.route('contractArticleModule', { path: '/administration/contractarticles' });
 		this.route('documentModule', { path: '/documents' });
 
 			// Administration mappings
 		this.route('administration');
+		this.route('userManagementModule', { path: '/administration/usermanagement' });
 		this.resource('personAdministration', { path: '/administration/persons/' }, function() {
 			this.resource('model', { path: '/:id' }, function() {
 				this.route('edit');
@@ -49,6 +50,7 @@
 	App.UserSettingsRoute = App.IndexRoute.extend(App.AjaxModuleControllerMixin, { url: MM.url.module.userSettings });
 	App.JobDescriptionModuleRoute = App.IndexRoute.extend(App.AjaxModuleControllerMixin, { url: MM.url.module.jobDescription });
 	App.ContractArticleModuleRoute = App.IndexRoute.extend(App.AjaxModuleControllerMixin, { url: MM.url.module.contractArticle });
+	App.UserManagementModuleRoute = App.IndexRoute.extend(App.AjaxModuleControllerMixin, { url: MM.url.module.userManagementModule });
 
 		// Administration routes
 	App.AdministrationRoute = Ember.Route.extend(App.ModelRouteMixin, {

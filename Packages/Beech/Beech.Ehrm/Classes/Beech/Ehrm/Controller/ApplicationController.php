@@ -10,17 +10,11 @@ namespace Beech\Ehrm\Controller;
 use TYPO3\Flow\Annotations as Flow;
 
 /**
- * Standard controller for the Beech.Ehrm package
+ * Main application controller for Mister Maks
  *
  * @Flow\Scope("singleton")
  */
-class StandardController extends AbstractController {
-
-	/**
-	 * @var \Beech\Ehrm\Helper\SettingsHelper
-	 * @Flow\Inject
-	 */
-	protected $settingsHelper;
+class ApplicationController extends AbstractController {
 
 	/**
 	 * @var \TYPO3\Flow\Security\Authentication\AuthenticationManagerInterface
@@ -31,24 +25,16 @@ class StandardController extends AbstractController {
 	/**
 	 * @return void
 	 */
-	public function initializeAction() {
-		parent::initializeAction();
+	public function indexAction() {
 		if ($this->authenticationManager->isAuthenticated() === FALSE) {
-			$this->redirect('intro', 'Login');
+			$this->redirect('intro');
 		}
 	}
 
 	/**
 	 * @return void
 	 */
-	public function indexAction() {
-	}
-
-	/**
-	 * @param string $identifier
-	 */
-	public function menuAction($identifier) {
-		$this->view->assign('menuItems', $this->settingsHelper->getMenuItems($identifier));
+	public function introAction() {
 	}
 
 }

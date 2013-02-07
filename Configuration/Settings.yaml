@@ -9,6 +9,6 @@ TYPO3:
             entryPoint: 'WebRedirect'
             entryPointOptions:
               routeValues:
-              '@package': 'Beech.Ehrm'
-              '@controller': 'Login'
-              '@action': 'login'
+                '@package': 'Beech.Ehrm'
+                '@controller': 'Application'
+                '@action': 'intro'

@@ -1,9 +1,12 @@
 {
 	"TYPO3.Flow": {
 		"[FEATURE] Allow split configuration sources": "18004",
-		"[!!!][FEATURE] Handle roles consistently as objects": "13868"
+		"[!!!][FEATURE] Handle roles consistently as objects": "13868",
+		"[!!!][FEATURE] Allow view configuration via Views.yaml": "16392",
+		"[FEATURE] Allow PolyType custom validators to be used": "18053"
 	},
 	"TYPO3.Fluid": {
-		"[TASK] Add packageKey attribute to ifHasRole view helper": "13989"
+		"[TASK] Add packageKey attribute to ifHasRole view helper": "13989",
+		"[FEATURE] Add supportedOptions and setOptions": "16393"
 	}
 }

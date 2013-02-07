@@ -7,6 +7,10 @@
 			"url": "git://github.com/radmiraal/Radmiraal.CouchDB.git"
 		},
 		{
+			"type": "git",
+			"url": "git://github.com/radmiraal/TYPO3.UserManagement.git"
+		},
+		{
 			"type": "composer",
 			"url": "http://ci.beech.local:8080/job/composer-packages/ws/mistermaks/"
 		}
@@ -17,7 +21,7 @@
 	},
 	"require": {
 		"php": ">=5.4.0",
-		"typo3/flow": "2.0.0-beta1",
+		"typo3/flow": "dev-master",
 		"beech/essentials": "dev-master",
 		"typo3/surf": "dev-master",
 		"typo3/ldap": "dev-master",
@@ -28,7 +32,8 @@
 		"doctrine/orm": "2.3.1",
 		"typo3/formbuilder": "dev-master",
 		"typo3/queue-redis": "*",
-		"react/event-loop": "*"
+		"react/event-loop": "*",
+		"typo3/usermanagement": "dev-master"
 	},
 	"require-dev": {
 		"typo3/buildessentials": "dev-master",

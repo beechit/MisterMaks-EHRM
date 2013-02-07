@@ -1,12 +1,13 @@
 resources:
   methods:
+    IntroductionPage: 'method(\Beech\Ehrm\Controller\ApplicationController->introAction())'
     AuthenticationControllers: 'method(\Beech\Ehrm\Controller\LoginController->.*())'
     ApplicationControllers: 'method(\Beech\.*\Controller\.*->(?<!initialize).*Action())'
     ManagementControllers: 'method(\Beech\.*\Management\.*Controller->(?<!initialize).*Action())'
     SetupController: 'method(\Beech\Ehrm\SetupController->(?<!initialize).*Action())'
 
 roles:
-  Administrator: [ SuperUser ]
+  Administrator: [ SuperUser, 'TYPO3.UserManagement.Administrator' ]
   SuperUser: [ User ]
   User: [ ]
 
@@ -21,8 +22,10 @@ acls:
       SetupController: GRANT
   Everybody:
     methods:
+      IntroductionPage: GRANT
       ApplicationControllers: GRANT
       AuthenticationControllers: GRANT
   Anonymous:
     methods:
+      IntroductionPage: GRANT
       AuthenticationControllers: GRANT

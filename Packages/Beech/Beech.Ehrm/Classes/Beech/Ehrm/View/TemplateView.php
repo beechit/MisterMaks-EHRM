@@ -20,6 +20,32 @@ class TemplateView extends \TYPO3\Fluid\View\TemplateView {
 	private $partialPathAndFilenamePattern = '@partialRoot/@subpackage/@partial.@format';
 
 	/**
+	 * @param string $actionName
+	 * @return string
+	 */
+	public function render($actionName = NULL) {
+		if ($this->controllerContext->getRequest()->getFormat() !== 'jsonp') {
+			return parent::render($actionName);
+		}
+
+		try {
+			$result = parent::render($actionName);
+		} catch (\Exception $exception) {
+			$result = sprintf('<div class="alert alert-error">%s</div>', $exception->getMessage());
+		}
+
+		$result = preg_replace('/(\t|\r|\n)/', '', $result);
+
+		return sprintf(
+			'%s(%s)',
+			$this->controllerContext->getRequest()->getArgument('callback'),
+			json_encode((object)array(
+				'html' => $result
+			))
+		);
+	}
+
+	/**
 	 * Resolve the path and file name of the layout file, based on
 	 * $this->layoutPathAndFilename and $this->layoutPathAndFilenamePattern.
 	 *
@@ -106,19 +132,6 @@ class TemplateView extends \TYPO3\Fluid\View\TemplateView {
 			}
 		}
 		throw new \TYPO3\Fluid\View\Exception\InvalidTemplateResourceException('The template files "' . implode('", "', $paths) . '" could not be loaded.', 1225709595);
-	}
-
-	/**
-	 * Resolves the layout root to be used inside other paths.
-	 *
-	 * @return string Path to layout root directory
-	 */
-	protected function getLayoutRootPath() {
-		if ($this->layoutRootPath !== NULL) {
-			return $this->layoutRootPath;
-		} else {
-			return str_replace('@packageResourcesPath', 'resource://Beech.Ehrm', $this->layoutRootPathPattern);
-		}
 	}
 
 }
