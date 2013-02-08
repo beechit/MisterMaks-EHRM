@@ -475,7 +475,7 @@ beech:
               type: string(11)
               validation:
                 -
-                  type: 'StringLenght'
+                  type: 'StringLength'
                   options:
                     maximum: 11
                 -

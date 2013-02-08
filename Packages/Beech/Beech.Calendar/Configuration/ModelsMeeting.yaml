@@ -2,7 +2,6 @@
 # validated yaml for the meeting model
 # this is the meeting model.
 #############################################################
-
 Beech:
   Calendar:
     'Meeting':
