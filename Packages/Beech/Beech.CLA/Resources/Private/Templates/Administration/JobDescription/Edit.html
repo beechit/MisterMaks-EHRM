@@ -10,168 +10,99 @@
 		</f:if>
 	</f:form.validationResults>
 	<f:form action="update" object="{jobDescription}" name="jobDescription" class="form-horizontal well">
-		<div class="control-group">
-			<label class="control-label" for="cla">Cla</label>
-
-			<div class="controls">
-				<f:form.textfield property="cla" id="cla"/>
-			</div>
-		</div>
-		<div class="control-group">
-			<label class="control-label" for="departement">Department</label>
-
-			<div class="controls">
-				<f:form.textfield property="departement" id="departement"/>
-			</div>
-		</div>
-		<div class="control-group">
-			<label class="control-label" for="jobTitle">Job title</label>
-
-			<div class="controls">
-				<f:form.textfield property="jobTitle" id="jobTitle"/>
-			</div>
-		</div>
-		<div class="control-group">
-			<label class="control-label" for="jobDescriptionID">Job description ID</label>
-
-			<div class="controls">
-				<f:form.textfield property="jobDescriptionID" id="jobDescriptionID"/>
-			</div>
-		</div>
-		<div class="control-group">
-			<label class="control-label" for="salaryscale">Salary scale</label>
-
-			<div class="controls">
-				<f:form.textfield property="salaryscale" id="salaryscale"/>
-			</div>
-		</div>
-		<div class="control-group">
-			<label class="control-label" for="jobversion">Version</label>
-
-			<div class="controls">
-				<f:form.textfield property="jobversion" id="jobversion"/>
-			</div>
-		</div>
-		<div class="control-group">
-			<label class="control-label" for="versiondate">Version date</label>
-
-			<div class="controls">
-				<f:form.textfield property="versiondate" id="versiondate"/>
-			</div>
-		</div>
-		<div class="control-group">
-			<label class="control-label" for="generalTitle">Generaltitle</label>
-
-			<div class="controls">
-				<f:form.textfield property="generalTitle" id="generalTitle"/>
-			</div>
-		</div>
-		<div class="control-group">
-			<label class="control-label" for="generalText">Generaltext</label>
-
-			<div class="controls">
-				<f:form.textfield property="generalText" id="generalText"/>
-			</div>
-		</div>
-		<div class="control-group">
-			<label class="control-label" for="levelDifferentiation">Level differentiation</label>
-
-			<div class="controls">
-				<f:form.textfield property="levelDifferentiation" id="levelDifferentiation"/>
-			</div>
-		</div>
-		<div class="control-group">
-			<label class="control-label" for="jobGoalTitle">job Goal Title</label>
-
-			<div class="controls">
-				<f:form.textfield property="jobGoalTitle" id="jobGoalTitle"/>
-			</div>
-		</div>
-		<div class="control-group">
-			<label class="control-label" for="jobGoal">Jobgoal</label>
-
-			<div class="controls">
-				<f:form.textfield property="jobGoal" id="jobGoal"/>
-			</div>
-		</div>
-		<div class="control-group">
-			<label class="control-label" for="hierarchicalPositionTitle">Hierarchical position title</label>
-
-			<div class="controls">
-				<f:form.textfield property="hierarchicalPositionTitle" id="hierarchicalPositionTitle"/>
-			</div>
-		</div>
-		<div class="control-group">
-			<label class="control-label" for="hierarchicalPositionUp">Hierarchical position up</label>
-
-			<div class="controls">
-				<f:form.textfield property="hierarchicalPositionUp" id="hierarchicalPositionUp"/>
-			</div>
-		</div>
-		<div class="control-group">
-			<label class="control-label" for="hierarchicalPositionDown">Hierarchical postition down</label>
-
-			<div class="controls">
-				<f:form.textfield property="hierarchicalPositionDown" id="hierarchicalPositionDown"/>
-			</div>
-		</div>
-		<div class="control-group">
-			<label class="control-label" for="resultAreaTitle">Result area title</label>
-
-			<div class="controls">
-				<f:form.textfield property="resultAreaTitle" id="resultAreaTitle"/>
-			</div>
-		</div>
-		<div class="control-group">
-			<fieldset>
-				<legend>Result areas</legend>
-				<label class="control-label" for="resultArea">Result area</label>
-
+		<fieldset>
+			<legend>Job details</legend>
+			<div class="control-group">
+				<label class="control-label" for="jobDescriptionNumber">Job description number</label>
 				<div class="controls">
-					<f:form.textfield property="resultArea" id="resultArea"/>
+					<f:form.textfield property="jobDescriptionNumber" id="jobDescriptionNumber"/>
 				</div>
-				<label class="control-label" for="resultAreaResult"></label>
-
-				<div class="controls">
-					<f:form.textfield property="resultAreaResult" id="resultAreaResult"/>
-				</div>
-			</fieldset>
-		</div>
-		<div class="control-group">
-			<label class="control-label" for="knowledgeTitle">Knowledge title</label>
-
-			<div class="controls">
-				<f:form.textfield property="knowledgeTitle" id="knowledgeTitle"/>
 			</div>
-		</div>
-		<div class="control-group">
-			<fieldset>
-				<legend>Knowledge</legend>
-				<label class="control-label" for="knowledgeItem">Knowledge item</label>
-
+			<div class="control-group">
+				<label class="control-label" for="jobTitle">Job title</label>
 				<div class="controls">
-					<f:form.textfield property="knowledgeItem" id="knowledgeItem"/>
+					<f:form.textarea property="jobTitle" id="jobTitle"/>
 				</div>
-			</fieldset>
-		</div>
-		<div class="control-group">
-			<label class="control-label" for="jobCharacteristicsTitle">Job characteristics title</label>
-
-			<div class="controls">
-				<f:form.textfield property="jobCharacteristicsTitle" id="jobCharacteristicsTitle"/>
 			</div>
-		</div>
-		<div class="control-group">
-			<fieldset>
-				<legend>Job characteristics</legend>
-				<label class="control-label" for="jobCharacteristicsItem">job characteristics item</label>
-
+			<div class="control-group">
+				<label class="control-label" for="jobContext">Job context</label>
 				<div class="controls">
-					<f:form.textfield property="jobCharacteristicsItem" id="jobCharacteristicsItem"/>
+					<f:form.textfield property="jobContext" id="jobContext"/>
 				</div>
-			</fieldset>
-		</div>
-
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="reportsTo">Reports to</label>
+				<div class="controls">
+					<f:form.textfield property="reportsTo" id="reportsTo"/>
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="manages">Manages</label>
+				<div class="controls">
+					<f:form.textfield property="manages" id="manages"/>
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="jobGoal">Jobgoal</label>
+				<div class="controls">
+					<f:form.textarea property="jobGoal" id="jobGoal"/>
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="department">Department</label>
+				<div class="controls">
+					<f:form.textarea property="department" id="department"/>
+				</div>
+			</div>
+		</fieldset>
+		<fieldset>
+			<legend>Score</legend>
+			<div class="control-group">
+				<label class="control-label" for="orbaScore">orbaScore</label>
+				<div class="controls">
+					<f:form.textfield property="orbaScore" id="orbaScore"/>
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="wageScaleGroup">Wage scale group</label>
+				<div class="controls">
+					<f:form.textfield property="wageScaleGroup" id="wageScaleGroup"/>
+				</div>
+			</div>
+		</fieldset>
+		<fieldset>
+			<legend>Main activities</legend>
+			<f:for each="{jobDescription.expectations.mainActivities}" as="mainActivity">
+				<div class="control-group">
+					<label class="control-label">-</label>
+					<div class="controls">
+						{mainActivity}
+					</div>
+				</div>
+			</f:for>
+		</fieldset>
+		<fieldset>
+			<legend>Result criteria</legend>
+			<f:for each="{jobDescription.expectations.resultCriteria}" as="resultCriteria">
+				<div class="control-group">
+					<label class="control-label">-</label>
+					<div class="controls">
+						{resultCriteria}
+					</div>
+				</div>
+			</f:for>
+		</fieldset>
+		<fieldset>
+			<legend>Burdening circumstances</legend>
+			<f:for each="{jobDescription.burdeningCircumstances.circumstance}" as="circumstance">
+				<div class="control-group">
+					<label class="control-label">-</label>
+					<div class="controls">
+						{circumstance}
+					</div>
+				</div>
+			</f:for>
+		</fieldset>
 		<div class="control-group">
 			<f:form.submit value="Update" class="btn btn-primary"/>
 		</div>

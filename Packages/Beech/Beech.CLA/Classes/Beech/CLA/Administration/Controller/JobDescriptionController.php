@@ -46,7 +46,7 @@ class JobDescriptionController extends \Beech\Ehrm\Controller\AbstractManagement
 	 * @return void
 	 */
 	public function showAction(\Beech\CLA\Domain\Model\JobDescription $jobDescription) {
-		$this->view->assign('jobdescription', $jobDescription);
+		$this->view->assign('jobDescription', $jobDescription);
 	}
 
 	/**

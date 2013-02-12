@@ -6,12 +6,16 @@
 			<table class="table">
 				<thead>
 					<tr>
+						<th><f:translate>Number</f:translate></th>
+						<th><f:translate>Job title</f:translate></th>
 						<th></th>
 					</tr>
 				</thead>
 				<tbody>
 					<f:for each="{entities}" as="jobDescription" iteration="iterator">
 						<tr>
+							<td>{jobDescription.jobDescriptionNumber}</td>
+							<td><f:link.action action="show" arguments="{jobDescription: jobDescription}">{jobDescription.jobTitle}</f:link.action></td>
 							<td>
 								<f:link.action action="edit" arguments="{jobDescription: jobDescription}"><i class="icon-pencil"></i></f:link.action>
 								<f:link.action action="delete" arguments="{jobDescription: jobDescription}"><i class="icon-trash"></i></f:link.action>

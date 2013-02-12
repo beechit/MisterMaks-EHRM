@@ -2,77 +2,74 @@
 <f:section name="Body">
 	<h1><f:translate id="action.show">Show</f:translate></h1>
 	<dl class="dl-horizontal well">
-		<dt><f:translate>Cla</f:translate></dt>
-		<dd>{jobDescription.cla}&nbsp;</dd>
-	</dl>
-	<dl class="dl-horizontal well">
-		<dt><f:translate>Department</f:translate></dt>
-		<dd>{jobDescription.departement}&nbsp;</dd>
+		<dt><f:translate>jobDescriptionNumber</f:translate></dt>
+		<dd>{jobDescription.jobDescriptionNumber}&nbsp;</dd>
 	</dl>
 	<dl class="dl-horizontal well">
 		<dt><f:translate>Job title</f:translate></dt>
 		<dd>{jobDescription.jobTitle}&nbsp;</dd>
 	</dl>
 	<dl class="dl-horizontal well">
-		<dt><f:translate>Job description ID</f:translate></dt>
-		<dd>{jobDescription.jobDescriptionID}&nbsp;</dd>
+		<dt><f:translate>jobContext</f:translate></dt>
+		<dd>{jobDescription.jobContext}&nbsp;</dd>
 	</dl>
 	<dl class="dl-horizontal well">
-		<dt><f:translate>Salary scale</f:translate></dt>
-		<dd>{jobDescription.salaryscale}&nbsp;</dd>
+		<dt><f:translate>reportsTo</f:translate></dt>
+		<dd>{jobDescription.reportsTo}&nbsp;</dd>
 	</dl>
 	<dl class="dl-horizontal well">
-		<dt><f:translate>Version</f:translate></dt>
-		<dd>{jobDescription.jobversion}&nbsp;</dd>
-	</dl>
-	<dl class="dl-horizontal well">
-		<dt><f:translate>Version date</f:translate></dt>
-		<dd>{jobDescription.versiondate}&nbsp;</dd>
-	</dl>
-	<dl class="dl-horizontal well">
-		<dt><f:translate>Generaltitle</f:translate></dt>
-		<dd>{jobDescription.generalTitle}&nbsp;</dd>
-	</dl>
-	<dl class="dl-horizontal well">
-		<dt><f:translate>Generaltext</f:translate></dt>
-		<dd>{jobDescription.generalText}&nbsp;</dd>
-	</dl>
-	<dl class="dl-horizontal well">
-		<dt><f:translate>Level differentiation</f:translate></dt>
-		<dd>{jobDescription.levelDifferentiation}&nbsp;</dd>
-	</dl>
-	<dl class="dl-horizontal well">
-		<dt><f:translate>job Goal Title</f:translate></dt>
-		<dd>{jobDescription.jobGoalTitle}&nbsp;</dd>
+		<dt><f:translate>manages</f:translate></dt>
+		<dd>{jobDescription.manages}&nbsp;</dd>
 	</dl>
 	<dl class="dl-horizontal well">
 		<dt><f:translate>Jobgoal</f:translate></dt>
 		<dd>{jobDescription.jobGoal}&nbsp;</dd>
 	</dl>
 	<dl class="dl-horizontal well">
-		<dt><f:translate>Hierarchical position title</f:translate></dt>
-		<dd>{jobDescription.hierarchicalPositionTitle}&nbsp;</dd>
+		<dt><f:translate>department</f:translate></dt>
+		<dd>{jobDescription.department}&nbsp;</dd>
 	</dl>
 	<dl class="dl-horizontal well">
-		<dt><f:translate>Hierarchical position up</f:translate></dt>
-		<dd>{jobDescription.hierarchicalPositionUp}&nbsp;</dd>
+		<dt><f:translate>orbaScore</f:translate></dt>
+		<dd>{jobDescription.orbaScore}&nbsp;</dd>
 	</dl>
 	<dl class="dl-horizontal well">
-		<dt><f:translate>Hierarchical postition down</f:translate></dt>
-		<dd>{jobDescription.hierarchicalPositionDown}&nbsp;</dd>
+		<dt><f:translate>wageScaleGroup</f:translate></dt>
+		<dd>{jobDescription.wageScaleGroup}&nbsp;</dd>
 	</dl>
 	<dl class="dl-horizontal well">
-		<dt><f:translate>Result area title</f:translate></dt>
-		<dd>{jobDescription.resultAreaTitle}&nbsp;</dd>
+		<legend>Main activities</legend>
+		<f:for each="{jobDescription.expectations.mainActivities}" as="mainActivity">
+			<div class="control-group">
+				<label class="control-label">-</label>
+				<div class="controls">
+					{mainActivity}
+				</div>
+			</div>
+		</f:for>
 	</dl>
 	<dl class="dl-horizontal well">
-		<dt><f:translate>Knowledge title</f:translate></dt>
-		<dd>{jobDescription.knowledgeTitle}&nbsp;</dd>
+		<legend>Result criteria</legend>
+		<f:for each="{jobDescription.expectations.resultCriteria}" as="resultCriteria">
+			<div class="control-group">
+				<label class="control-label">-</label>
+				<div class="controls">
+					{resultCriteria}
+				</div>
+			</div>
+		</f:for>
 	</dl>
 	<dl class="dl-horizontal well">
-		<dt><f:translate>Job characteristics title</f:translate></dt>
-		<dd>{jobDescription.jobCharacteristicsTitle}&nbsp;</dd>
-	</dl>
+		<legend>Burdening circumstances</legend>
+		<f:for each="{jobDescription.burdeningCircumstances.circumstance}" as="circumstance">
+			<div class="control-group">
+				<label class="control-label">-</label>
+				<div class="controls">
+					{circumstance}
+				</div>
+			</div>
+		</f:for>
+		</dl>
 	<div class="form-actions">
 		<f:link.action action="list"><f:translate id="action.back">Back</f:translate></f:link.action>
 	</div>
