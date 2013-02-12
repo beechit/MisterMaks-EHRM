@@ -71,6 +71,9 @@ TYPO3:
       Finisher-DatabaseFinisher: resource://Beech.Ehrm/Private/Templates/FormBuilder/DatabaseFinisher.html
 
   Flow:
+    security:
+      firewall:
+        filters: []
     session:
       cookie:
 
