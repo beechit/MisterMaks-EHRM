@@ -8,8 +8,8 @@ Beech:
       properties:
         'jobDescriptionNumber':
           label: 'Job description number'
-          type: string(10)
-          validation: ""
+          type: 'string'
+          validation:
             type: 'StringLength'
             options:
               maximum: 10
@@ -40,9 +40,10 @@ Beech:
           label: 'Job goal'
           type: text
           validation:
-            type: 'Text'
-         'positionLabel':
-          type: string(30)
+            -
+              type: 'Text'
+        'positionLabel':
+          type: 'string'
           validation:
             -
               type: 'NotEmpty'
@@ -50,25 +51,29 @@ Beech:
               type: 'Label'
             -
               type: 'StringLength'
-              options
+              options:
                 maximum: 30
-          value: "Positie in de organisatie"
+          value: 'Positie in de organisatie'
         'reportsTo':
           label: 'Reports to'
           type: text
           validation:
-            type: 'Text'
+            -
+              type: 'Text'
         'manages':
           label: 'Manages'
           type: text
           validation:
-            type: 'Text'
+            -
+              type: 'Text'
         'department':
           label: 'Department'
           type: string(20)
           validation:
-            type: 'StringLength'
-              maximum: 20
+            -
+              type: 'StringLength'
+              options:
+                maximum: 20
         'expectationLabel':
           type: string(30)
           validation:
@@ -85,11 +90,12 @@ Beech:
           label: Expectations
           type: array
           validation:
-              type: 'NotEmpty
+            -
+              type: 'NotEmpty'
           values:
-            - "Uitgevoerde Handelingen"
-            - "Verstrekte informatie"
-            - "Nageleefde voorschiften"
+            - 'Uitgevoerde Handelingen'
+            - 'Verstrekte informatie'
+            - 'Nageleefde voorschiften'
         'mainActivities':
           label: 'Main activities'
           type: text
@@ -109,7 +115,7 @@ Beech:
         'burdeningCircumstances':
           label: 'Burdening circumstances'
           type: array
-          validation: ""
+          validation: ''
           values:
             'circumstance':
             label: Circumstance
@@ -137,38 +143,38 @@ Beech:
         'creationDate':
           default: now
           label: 'creation date'
-          required: true
+          required: TRUE
           type: dateTime
           validation:
             type: 'RegularExpression'
             options:
               regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
-          visible: false
+          visible: FALSE
         'createdBy':
           default: currentUser
           label: 'Created by'
-          required: true
+          required: TRUE
           type: \Beech\Party\Domain\Model\Person
           validation: ''
-          visible: false
+          visible: FALSE
         'modification':
           items:
             'modificationDate':
               default: now
               label: 'Modification date'
-              required: true
+              required: TRUE
               type: dateTime
               validation:
                 type: 'RegularExpression'
                 options:
                   regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
-              visible: false
+              visible: FALSE
             'modifiedBy':
               default: currentUser
               label: 'Modified by'
-              required: true
+              required: TRUE
               type: \Beech\Party\Domain\Model\Person
               validation: ''
-              visible: false
+              visible: FALSE
           label: 'Modification log'
           type: array

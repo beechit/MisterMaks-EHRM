@@ -9,37 +9,37 @@ Beech:
       properties:
         'subjectId':
           label: 'Subject id'
-          onlist: true
-          required: true
+          onlist: TRUE
+          required: TRUE
           type: \Beech\Party\Domain\Model\Person
           validation:
             type: 'NotEmpty'
-          visible: false
+          visible: FALSE
         'departmentId':
           label: departmentId
-          required: true
+          required: TRUE
           type: \Beech\Party\Domain\Model\Company
           validation:
             type: 'NotEmpty'
-          visible: false
+          visible: FALSE
         'leaveDateTimeStart':
           label: leaveDateTimeStart
-          required: true
+          required: TRUE
           type: dateTime
           validation:
             type: 'RegularExpression'
             options:
              regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
-          visible: true
+          visible: TRUE
         'leaveDateEnd':
           label: leaveDateEnd
-          required: true
+          required: TRUE
           type: dateTime
           validation:
             type: 'RegularExpression'
             options:
              regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
-          visible: true
+          visible: TRUE
         'leaveType':
           label: leaveType
           options:
@@ -54,25 +54,25 @@ Beech:
               - longtermCare
               - maternityLeave
               - emergencyLeaveAndOtherShortAbsence
-          required: true
+          required: TRUE
           type: string(20)
           validation:
             type: 'NotEmpty'
-          visible: true
+          visible: TRUE
         'deductFromBalance':
           label: deductFromBalance
           options:
-            default: true
-          required: true
+            default: TRUE
+          required: TRUE
           type: boolean
           validation: ''
-          visible: true
+          visible: TRUE
         'paidLeave':
           label: paidLeave
-          required: true
+          required: TRUE
           type: boolean
           validation: ''
-          visible: true
+          visible: TRUE
         'remark':
           items:
             'remarkType':
@@ -82,26 +82,26 @@ Beech:
                   - reasonLeaveRequest
                   - remarkLeaveRequest
                   - remarkLeaveDecline
-              required: true
+              required: TRUE
               type: string(20)
               validation: ''
-              visible: true
+              visible: TRUE
             'remarkContent':
               label: 'Remark content'
-              required: false
+              required: FALSE
               type: text
               validation:
                 type: 'Text'
-              visible: true
+              visible: TRUE
             'remarkDate':
               label: 'Remark date'
-              required: false
+              required: FALSE
               type: dateTime
               validation:
                 type: 'RegularExpression'
                 options:
                   regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
-              visible: true
+              visible: TRUE
           label: Remark
           type: array
           validation: ''
@@ -127,16 +127,16 @@ Beech:
                   - 2018
                   - 2019
                   - 2020
-              required: true
+              required: TRUE
               type: integer(4)
               validation: ''
-              visible: true
+              visible: TRUE
             'leaveBalance':
               label: 'Leave balance'
-              required: true
+              required: TRUE
               type: integer(3)
               validation: ''
-              visible: true
+              visible: TRUE
           label: 'Leave balance'
           type: array
           validation: ''
@@ -147,55 +147,55 @@ Beech:
               - pending
               - approved
               - declined
-          required: true
+          required: TRUE
           type: string(20)
           validation: ''
-          visible: true
+          visible: TRUE
         'approveDeclineDate':
           label: 'approved Declined Date'
-          required: true
+          required: TRUE
           type: dateTime
           validation:
             type: 'RegularExpression'
             options:
              regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
-          visible: true
+          visible: TRUE
         'creationDate':
           default: now
           label: 'Creation date'
-          required: true
+          required: TRUE
           type: dateTime
           validation:
             type: 'RegularExpression'
             options:
              regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
-          visible: false
+          visible: FALSE
         'createdBy':
           default: currentUser
           label: 'Created by'
-          required: true
+          required: TRUE
           type: \Beech\Party\Domain\Model\Person
           validation:
             type: 'NotEmpty'
-          visible: false
+          visible: FALSE
         'modification':
           items:
             'modificationDate':
               default: now
               label: 'Modification date'
-              required: true
+              required: TRUE
               type: dateTime
               validation:
                 type: 'RegularExpression'
                 options:
                   regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
-              visible: false
+              visible: FALSE
             'modifiedBy':
               default: currentUser
               label: 'Modified by'
-              required: true
+              required: TRUE
               type: \Beech\Party\Domain\Model\Person
               validation: ''
-              visible: false
+              visible: FALSE
           label: ModificationLog
           type: array

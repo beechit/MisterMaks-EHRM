@@ -2,446 +2,445 @@
 # validated yaml for the companyContact
 # this is an extension on the person model.
 #############################################################
-
----
-beech:
-  person:
-    properties:
-      'companyId':
-        label: 'Company id'
-        required: true
-        type: \Beech\Party\Domain\Model\Company
-        validation:
-          type: 'NotEmpty'
-        visible: false
-      'departmentId':
-        label: 'Department id'
-        required: false
-        type: \Beech\Party\Domain\Model\Company
-        validation:
-          type: 'NotEmpty'
-        visible: true
-      'name.title':
-        label: title
-        required: false
-        type: string(10)
-        validation:
-          type: 'StringLength'
-          options:
-            maximum: 10
-        visible: true
-      'name.firstName':
-        label: 'First name'
-        required: true
-        type: string(20)
-        validation:
-          -
+Beech:
+  Party:
+    CompanyContact:
+      properties:
+        'companyId':
+          label: 'Company id'
+          required: TRUE
+          type: \Beech\Party\Domain\Model\Company
+          validation:
             type: 'NotEmpty'
-          -
-            type: 'StringLength'
-            options:
-              maximum: 20
-        visible: true
-      'name.middleName':
-        label: 'Middle name'
-        required: false
-        type: string(20)
-        validation:
-          type: 'StringLength'
-          options:
-            maximum: 20
-        visible: true
-      'name.lastname':
-        label: 'Last name'
-        required: true
-        type: string(20)
-        validation:
-          -
+          visible: FALSE
+        'departmentId':
+          label: 'Department id'
+          required: FALSE
+          type: \Beech\Party\Domain\Model\Company
+          validation:
             type: 'NotEmpty'
-          -
-            type: 'RegularExpression'
-            options:
-              regularexpression: '[\\w\\-]{2,30}]'
-          -
-            type: 'Stringlength'
-            options:
-              maximum: 20
-        visible: true
-      'otherName':
-        label: Birthname
-        required: false
-        type: string(30)
-        validation:
-          -
-            type: 'RegularExpression'
-            options:
-              regularExpression: '[\\w\\-]{2,30}]'.
-          -
-            type: 'Stringlength'
-            options:
-              maximum: 30
-        visible: true
-      'alias':
-        label: Alias
-        required: false
-        type: string(15)
-        validation:
-          type: 'Stringlength'
-          options:
-            maximum: 15
-        visible: true
-      'fullName':
-        label: FullName
-        required: false
-        type: string(40)
-        validation:
-          type: 'StringLength'
-          options:
-            maximum: 40
-        visible: true
-      'initials':
-        label: Initials
-        required: true
-        type: string(10)
-        validation:
-          -
-            type: 'RegularExpression'
-            options:
-              regularExpression: '[a-zA-Z\\.\\s]{0,10}'
-          -
+          visible: TRUE
+        'name.title':
+          label: title
+          required: FALSE
+          type: string(10)
+          validation:
             type: 'StringLength'
             options:
               maximum: 10
-      visible: true
-    'dateofBirth':
-      label: 'Date of Birth'
-      required: false
-      type: dateTime
-      validation:
-        type: 'RegularExpression'
-        options:
-          regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
-      visible: true
-    'placeOfBirth:
-      label: 'Place of birth'
-      required: false
-      type: string(20)
-      validation:
-        type: 'RegularExpresssion'
-        options:
-          regularExpression: '[a-zA-Z\\-\\s\\’]{2,30}'
-        visible: TRUE
-    'dateofBirth':
-      label: 'Date of Birth'
-      required: false
-      type: dateTime
-      validation:
-        type: 'RegularExpression'
-        options:
-          regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
-      visible: true
-    'gender':
-      label: Gender
-      options:
-        values:
-          - Male
-          - Female
-      type: string(6)
-      validation:
-      type: 'NotEmpty'
-    'image':
-      label: Image
-      required: false
-      type: ''
-      validation: ''
-      visible: true
-    'preferedCommunicationMethod':
-      label: 'Prefered communication Method'
-      options:
-        values:
-          - none
-          - email
-          - sms
-          - post
-          - phone
-      required: true
-      type: string(15)
-      validation: ''
-      visible: true
-    'addresses':
-      items:
-        'addressType':
-          label: 'Address type'
-          options:
-            values:
-              - businessAddress
-              - postbox
-              - mailingAddress
-              - workLocation
-              - addressAbroad
-          required: false
+          visible: TRUE
+        'name.firstName':
+          label: 'First name'
+          required: TRUE
           type: string(20)
           validation:
-            type: 'NotEmpty'
-          visible: true
-        'streetName':
-          label: 'Street name'
-          required: true
-          type: string(30)
+            -
+              type: 'NotEmpty'
+            -
+              type: 'StringLength'
+              options:
+                maximum: 20
+          visible: TRUE
+        'name.middleName':
+          label: 'Middle name'
+          required: FALSE
+          type: string(20)
+          validation:
+            type: 'StringLength'
+            options:
+              maximum: 20
+          visible: TRUE
+        'name.lastname':
+          label: 'Last name'
+          required: TRUE
+          type: string(20)
           validation:
             -
               type: 'NotEmpty'
             -
               type: 'RegularExpression'
               options:
-                regularExpression: '[a-zA-Z\\-\\s\\’]{2,30}'
-          visible: true
-        'primaryPostAddress':
-          label: 'Primary postaddress'
-          required: true
-          type: boolean
-          visible: true
-        'primaryLocation':
-          label: 'Primary Location'
-          required: true
-          type: boolean
-          visible: true
-        'postBoxNumber':
-          label: 'Postbox number'
-          required: true
-          type: integer(5)
+                regularexpression: '[\\w\\-]{2,30}]'
+            -
+              type: 'Stringlength'
+              options:
+                maximum: 20
+          visible: TRUE
+        'otherName':
+          label: Birthname
+          required: FALSE
+          type: string(30)
           validation:
-            type: 'RegularExpression'
+            -
+              type: 'RegularExpression'
+              options:
+                regularExpression: '[\\w\\-]{2,30}]'
+            -
+              type: 'Stringlength'
+              options:
+                maximum: 30
+          visible: TRUE
+        'alias':
+          label: Alias
+          required: FALSE
+          type: string(15)
+          validation:
+            type: 'Stringlength'
             options:
-              regularExpression: '[0-9]{1,5}'
-          visible: true
-        'houseNumber':
-          label: 'House number'
-          required: true
-          type: integer(5)
+              maximum: 15
+          visible: TRUE
+        'fullName':
+          label: FullName
+          required: FALSE
+          type: string(40)
+          validation:
+            type: 'StringLength'
+            options:
+              maximum: 40
+          visible: TRUE
+        'initials':
+          label: Initials
+          required: TRUE
+          type: string(10)
           validation:
             -
-              type: 'NotEmpty'
+              type: 'RegularExpression'
+              options:
+                regularExpression: '[a-zA-Z\\.\\s]{0,10}'
             -
+              type: 'StringLength'
+              options:
+                maximum: 10
+        visible: TRUE
+      'dateofBirth':
+        label: 'Date of Birth'
+        required: FALSE
+        type: dateTime
+        validation:
+          type: 'RegularExpression'
+          options:
+            regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
+        visible: TRUE
+      placeOfBirth:
+        label: 'Place of birth'
+        required: FALSE
+        type: string(20)
+        validation:
+          type: 'RegularExpresssion'
+          options:
+            regularExpression: '[a-zA-Z\\-\\s\\’]{2,30}'
+          visible: TRUE
+      'dateofBirth':
+        label: 'Date of Birth'
+        required: FALSE
+        type: dateTime
+        validation:
+          type: 'RegularExpression'
+          options:
+            regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
+        visible: TRUE
+      'gender':
+        label: Gender
+        options:
+          values:
+            - Male
+            - Female
+        type: string(6)
+        validation:
+        type: 'NotEmpty'
+      'image':
+        label: Image
+        required: FALSE
+        type: ''
+        validation: ''
+        visible: TRUE
+      'preferedCommunicationMethod':
+        label: 'Prefered communication Method'
+        options:
+          values:
+            - none
+            - email
+            - sms
+            - post
+            - phone
+        required: TRUE
+        type: string(15)
+        validation: ''
+        visible: TRUE
+      'addresses':
+        items:
+          'addressType':
+            label: 'Address type'
+            options:
+              values:
+                - businessAddress
+                - postbox
+                - mailingAddress
+                - workLocation
+                - addressAbroad
+            required: FALSE
+            type: string(20)
+            validation:
+              type: 'NotEmpty'
+            visible: TRUE
+          'streetName':
+            label: 'Street name'
+            required: TRUE
+            type: string(30)
+            validation:
+              -
+                type: 'NotEmpty'
+              -
+                type: 'RegularExpression'
+                options:
+                  regularExpression: '[a-zA-Z\\-\\s\\’]{2,30}'
+            visible: TRUE
+          'primaryPostAddress':
+            label: 'Primary postaddress'
+            required: TRUE
+            type: boolean
+            visible: TRUE
+          'primaryLocation':
+            label: 'Primary Location'
+            required: TRUE
+            type: boolean
+            visible: TRUE
+          'postBoxNumber':
+            label: 'Postbox number'
+            required: TRUE
+            type: integer(5)
+            validation:
               type: 'RegularExpression'
               options:
                 regularExpression: '[0-9]{1,5}'
-          visible: true
-        'houseNumberAddition':
-          label: 'House number addition'
-          required: false
-          type: string(10)
-          validation:
-              type: 'RegularExpression'
-              options:
-                regularExpression: '[a-zA-Z0-9\\-]{0,10}'
-          visible: true
-        'postalCodeNL':
-          label: 'Postal code'
-          required: true
-          type: string(6)
-          validation:
-            -
-              type: 'NotEmpty'
-            -
+            visible: TRUE
+          'houseNumber':
+            label: 'House number'
+            required: TRUE
+            type: integer(5)
+            validation:
+              -
+                type: 'NotEmpty'
+              -
+                type: 'RegularExpression'
+                options:
+                  regularExpression: '[0-9]{1,5}'
+            visible: TRUE
+          'houseNumberAddition':
+            label: 'House number addition'
+            required: FALSE
+            type: string(10)
+            validation:
+                type: 'RegularExpression'
+                options:
+                  regularExpression: '[a-zA-Z0-9\\-]{0,10}'
+            visible: TRUE
+          'postalCodeNL':
+            label: 'Postal code'
+            required: TRUE
+            type: string(6)
+            validation:
+              -
+                type: 'NotEmpty'
+              -
+                type: 'RegularExpression'
+                options:
+                  regularExpression: '\\d{4}\\s?[a-z]{2}'
+            visible: TRUE
+          'postalCodeAbroad':
+            label: 'Postal code'
+            required: FALSE
+            type: string(10)
+            validation:
               type: 'RegularExpression'
               options:
                 regularExpression: '\\d{4}\\s?[a-z]{2}'
-          visible: true
-        'postalCodeAbroad':
-          label: 'Postal code'
-          required: false
-          type: string(10)
-          validation:
-            type: 'RegularExpression'
-            options:
-              regularExpression: '\\d{4}\\s?[a-z]{2}'
-        'residence':
-          label: Residence
-          required: true
-          type: string(30)
-          validation:
-            -
-              type: 'NotEmpty'
-            -
-              type: 'RegularExpression'
-              options:
-                regularExpression: '[a-zA-Z\\-\\s\\’]{2,30}'
-          visible: true
-        'country':
-          label: Country
-          required: true
-          type: string(30)
-          validation: ''
-          visible: true
-          default: NL
-        'addressDescription':
-          label: 'Address description'
-          required: false
-          type: text
-          validation: ''
-          visible: true
-          label: Addresses
-          type: array
-        'electronicAddresses':
-          items:
-            'email':
-              label: E-mailAddress
-              required: true
-              type: string
-              validation:
-                -
-                  type: 'NotEmpty'
-                -
-                  type: 'EmailAddress'
-              visible: true
-            'skype':
-              label: Skype
-              required: true
-              type: string
-              validation:
-                type: 'RegularExpression'
-                options:
-                  regularExpression: '[a-zA-Z][a-zA-Z0-9]{5,31}]'
-              visible: true
-            'websiteUrl':
-              label: 'Website Url'
-              required: false
-              type: string(50)
-              validation:
-                type: 'RegularExpression'
-                options:
-                  regularExpression: '/(https?://)?(www\\.)?([a-zA-Z0-9_%]*)\\b\\.[a-z]{2,4}(\\.[a-z]{2})?((/[a-zA-Z0-9_%]*)+)?(\\.[a-z]*)?/g]'
-              visible: true
-            'twitter':
-              label: Twitter
-              required: false
-              type: string(20)
-              validation:
-                type: 'StringLength'
-                options:
-                  maximum: 20
-              visible: true
-            'facebook':
-              label: Facebook
-              required: false
-              type: string(20)
-              validation:
-                type: 'StringLength'
-                options:
-                  maximum: 20
-              visible: true
-            'linkedin':
-              label: Linkedin
-              required: true
-              type: string(20)
-              validation:
-                type: 'StringLength'
-                options:
-                  maximum: 20
-              visible: true
-            'hyves':
-              label: Hyves
-              required: true
-              validation:
-                type: 'StringLength'
-                options:
-                  maximum: 20
-              validation: ''
-              visible: true
-          label: 'Electronic addresses'
-          type: array
-        'phone':
-          items:
-            'phoneType':
-              label: 'phone type'
-              options:
-                values:
-                  - workLocationNumber
-                  - faxNumber
-                  - homePhoneNumber
-                  - privateMobilePhone
-                  - businessMobilePhone
-                  - bussinessPhone
-                  - emergencyCallnumber
-              required: true
-              type: string
-              validation:
+          'residence':
+            label: Residence
+            required: TRUE
+            type: string(30)
+            validation:
+              -
                 type: 'NotEmpty'
-              default: businessPhone
-              visible: true
-            'phoneNumber':
-              label: 'Phone Number'
-              required: true
-              type: string
-              validation:
-                -
-                  type: 'NotEmpty'
-                -
+              -
+                type: 'RegularExpression'
+                options:
+                  regularExpression: '[a-zA-Z\\-\\s\\’]{2,30}'
+            visible: TRUE
+          'country':
+            label: Country
+            required: TRUE
+            type: string(30)
+            validation: ''
+            visible: TRUE
+            default: NL
+          'addressDescription':
+            label: 'Address description'
+            required: FALSE
+            type: text
+            validation: ''
+            visible: TRUE
+            label: Addresses
+            type: array
+          'electronicAddresses':
+            items:
+              'email':
+                label: E-mailAddress
+                required: TRUE
+                type: string
+                validation:
+                  -
+                    type: 'NotEmpty'
+                  -
+                    type: 'EmailAddress'
+                visible: TRUE
+              'skype':
+                label: Skype
+                required: TRUE
+                type: string
+                validation:
                   type: 'RegularExpression'
                   options:
-                    regularExpression: '/(^\\+[0-9]{2}|^\\+[0-9]{2}\\(0\\)|^\\(\\+[0-9]{2}\\)\\(0\\)|^00[0-9]{2}|^0)([0-9]{9}$|[0-9\\-\\s]{10}$)/gm]'
-              visible: true
-            'foreignPhoneNumber':
-              label: 'Foreign phone number'
-              required: true
-              type: string
-              validation:
-                type: 'RegularExpression'
+                    regularExpression: '[a-zA-Z][a-zA-Z0-9]{5,31}]'
+                visible: TRUE
+              'websiteUrl':
+                label: 'Website Url'
+                required: FALSE
+                type: string(50)
+                validation:
+                  type: 'RegularExpression'
+                  options:
+                    regularExpression: '/(https?://)?(www\\.)?([a-zA-Z0-9_%]*)\\b\\.[a-z]{2,4}(\\.[a-z]{2})?((/[a-zA-Z0-9_%]*)+)?(\\.[a-z]*)?/g]'
+                visible: TRUE
+              'twitter':
+                label: Twitter
+                required: FALSE
+                type: string(20)
+                validation:
+                  type: 'StringLength'
+                  options:
+                    maximum: 20
+                visible: TRUE
+              'facebook':
+                label: Facebook
+                required: FALSE
+                type: string(20)
+                validation:
+                  type: 'StringLength'
+                  options:
+                    maximum: 20
+                visible: TRUE
+              'linkedin':
+                label: Linkedin
+                required: TRUE
+                type: string(20)
+                validation:
+                  type: 'StringLength'
+                  options:
+                    maximum: 20
+                visible: TRUE
+              'hyves':
+                label: Hyves
+                required: TRUE
+                validation:
+                  type: 'StringLength'
+                  options:
+                    maximum: 20
+                validation: ''
+                visible: TRUE
+            label: 'Electronic addresses'
+            type: array
+          'phone':
+            items:
+              'phoneType':
+                label: 'phone type'
                 options:
-                  RegularExpression: '/(^\\+[0-9]{2}|^\\+[0-9]{2}\\(0\\)|^\\(\\+[0-9]{2}\\)\\(0\\)|^00[0-9]{2}|^0)([0-9]{9}$|[0-9\\-\\s]{10}$)/gm]'
-              visible: true
-          label: 'Phone numbers'
-          type: array
-        'jobTitle':
-          label: JobTitle
-          required: true
-          type: string(20)
-          validation:
-            type: 'NotEmpty'
-          visible: true
-# with jobdescription we have to set something about hierarchy and place the company contact in this hierarchy.
-        'jobDescription':
-          label: jobDescription
-          type: string(20)
-        'creationDate':
-          default: now
-          label: 'creation date'
-          required: true
-          type: dateTime
-          validation:
-            -
+                  values:
+                    - workLocationNumber
+                    - faxNumber
+                    - homePhoneNumber
+                    - privateMobilePhone
+                    - businessMobilePhone
+                    - bussinessPhone
+                    - emergencyCallnumber
+                required: TRUE
+                type: string
+                validation:
+                  type: 'NotEmpty'
+                default: businessPhone
+                visible: TRUE
+              'phoneNumber':
+                label: 'Phone Number'
+                required: TRUE
+                type: string
+                validation:
+                  -
+                    type: 'NotEmpty'
+                  -
+                    type: 'RegularExpression'
+                    options:
+                      regularExpression: '/(^\\+[0-9]{2}|^\\+[0-9]{2}\\(0\\)|^\\(\\+[0-9]{2}\\)\\(0\\)|^00[0-9]{2}|^0)([0-9]{9}$|[0-9\\-\\s]{10}$)/gm]'
+                visible: TRUE
+              'foreignPhoneNumber':
+                label: 'Foreign phone number'
+                required: TRUE
+                type: string
+                validation:
+                  type: 'RegularExpression'
+                  options:
+                    RegularExpression: '/(^\\+[0-9]{2}|^\\+[0-9]{2}\\(0\\)|^\\(\\+[0-9]{2}\\)\\(0\\)|^00[0-9]{2}|^0)([0-9]{9}$|[0-9\\-\\s]{10}$)/gm]'
+                visible: TRUE
+            label: 'Phone numbers'
+            type: array
+          'jobTitle':
+            label: JobTitle
+            required: TRUE
+            type: string(20)
+            validation:
               type: 'NotEmpty'
-            -
-              type: 'RegularExpression'
-              options:
-                regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
-          visible: false
-        'createdBy':
-          default: currentUser
-          label: 'Created by'
-          required: true
-          type: \Beech\Party\Domain\Model\Person
-          validation: ''
-          visible: false
-        'modification':
-          items:
-            'modificationDate':
-              default: now
-              label: 'Modification date'
-              required: true
-              type: dateTime
-              validation:
+            visible: TRUE
+  # with jobdescription we have to set something about hierarchy and place the company contact in this hierarchy.
+          'jobDescription':
+            label: jobDescription
+            type: string(20)
+          'creationDate':
+            default: now
+            label: 'creation date'
+            required: TRUE
+            type: dateTime
+            validation:
+              -
+                type: 'NotEmpty'
+              -
                 type: 'RegularExpression'
                 options:
                   regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
-              visible: false
-            'modifiedBy':
-              default: currentUser
-              label: 'Modified by'
-              required: true
-              type: \Beech\Party\Domain\Model\Person
-              validation: ''
-              visible: false
-          label: 'Modification log'
-          type: array
+            visible: FALSE
+          'createdBy':
+            default: currentUser
+            label: 'Created by'
+            required: TRUE
+            type: \Beech\Party\Domain\Model\Person
+            validation: ''
+            visible: FALSE
+          'modification':
+            items:
+              'modificationDate':
+                default: now
+                label: 'Modification date'
+                required: TRUE
+                type: dateTime
+                validation:
+                  type: 'RegularExpression'
+                  options:
+                    regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
+                visible: FALSE
+              'modifiedBy':
+                default: currentUser
+                label: 'Modified by'
+                required: TRUE
+                type: \Beech\Party\Domain\Model\Person
+                validation: ''
+                visible: FALSE
+            label: 'Modification log'
+            type: array

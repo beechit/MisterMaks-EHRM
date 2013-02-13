@@ -8,16 +8,16 @@ Beech:
       properties:
         'meetingId':
           label: 'Meeting ID'
-          required: true
+          required: TRUE
           type: string(20)
           validation: ''
-          visible: false
+          visible: FALSE
         'departmentId':
           label: 'Department id'
-          required: true
+          required: TRUE
           type: \Beech\Party\Domain\Model\Company
           validation: ''
-          visible: false
+          visible: FALSE
         'status':
           label: Status
           options:
@@ -26,114 +26,114 @@ Beech:
               - confirmed
               - tentative
               - cancelled
-          required: true
+          required: TRUE
           type: string(20)
           validation: ''
-          visible: true
+          visible: TRUE
         'summary':
           label: Summary
-          required: true
+          required: TRUE
           type: text
           validation: ''
-          visible: true
+          visible: TRUE
         'description':
           label: description
-          required: true
+          required: TRUE
           type: string(20)
           validation: ''
-          visible: true
+          visible: TRUE
         'location':
           label: 'Meeting location'
-          required: true
+          required: TRUE
           type: string(30)
           validation: ''
-          visible: true
+          visible: TRUE
         'creatorId':
           label: 'Creator id'
-          required: true
+          required: TRUE
           type: \Beech\Party\Domain\Model\Person
           validation: ''
-          visible: true
+          visible: TRUE
         'creatorSelf':
           label: 'Creator self'
-          required: true
+          required: TRUE
           type: boolean
           validation: ''
-          visible: true
+          visible: TRUE
         'organiserId':
           label: 'Organiser id'
-          required: true
+          required: TRUE
           type: \Beech\Party\Domain\Model\Person
           validation: ''
-          visible: true
+          visible: TRUE
         'organiserSelf':
           label: 'Organiser self'
-          required: true
+          required: TRUE
           type: boolean
           validation: ''
-          visible: true
+          visible: TRUE
         'start':
           label: Start
-          required: true
+          required: TRUE
           type: dateTime
           validation: ''
-          visible: true
+          visible: TRUE
         'end':
           label: End
-          required: true
+          required: TRUE
           type: dateTime
           validation: ''
-          visible: true
+          visible: TRUE
         'endTimeUnspecified':
           label: 'End time Unspecified'
-          required: true
+          required: TRUE
           type: dateTime
           validation: ''
-          visible: true
+          visible: TRUE
         'recurringEventId':
           label: 'Recurring event Id'
-          required: true
+          required: TRUE
           type: string(20)
           validation: ''
-          visible: true
+          visible: TRUE
         'originalStartTime':
           label: 'original start time'
-          required: true
+          required: TRUE
           type: dateTime
           validation: ''
-          visible: true
+          visible: TRUE
         'transparency':
           label: Transparency
-          required: true
+          required: TRUE
           type: string(20)
           validation: ''
-          visible: true
+          visible: TRUE
         'visibility':
           label: Visibility
-          required: true
+          required: TRUE
           type: string(20)
           validation: ''
-          visible: true
+          visible: TRUE
         'sequence':
           label: id
-          required: true
+          required: TRUE
           type: integer(10)
           validation: ''
-          visible: true
+          visible: TRUE
         'attendees':
           items:
             'personId':
               label: 'Person id'
-              required: true
+              required: TRUE
               type: \Beech\Party\Domain\Model\Person
               validation: ''
-              visible: true
+              visible: TRUE
             'optional':
               label: optional
-              required: true
+              required: TRUE
               type: boolean
               validation: ''
-              visible: true
+              visible: TRUE
             'responseStatus':
               label: 'Response status'
               options:
@@ -142,17 +142,17 @@ Beech:
                   - declined
                   - tentative
                   - accepted
-              required: true
+              required: TRUE
               type: string(20)
               validation: ''
-              visible: true
+              visible: TRUE
             'comment':
               label: comment
-              required: true
+              required: TRUE
               type: text
               validation:
                 type: 'Text'
-              visible: true
+              visible: TRUE
           label: Attendees
           type: array
           validation: ''
@@ -160,51 +160,51 @@ Beech:
           items:
             'minutesId':
               label: 'Minutes id'
-              required: false
+              required: FALSE
               type: string(20)
               validation: ''
-              visible: true
+              visible: TRUE
             'documentId':
               label: 'Document id'
-              required: false
+              required: FALSE
               type: string(20)
               validation: ''
-              visible: true
+              visible: TRUE
             'documentRequired':
               label: 'Document required'
-              required: false
+              required: FALSE
               type: boolean
               validation: ''
-              visible: true
+              visible: TRUE
             'documentType':
               label: 'Document type'
               options:
                 values: []
-              required: false
+              required: FALSE
               type: string(20)
               validation: ''
-              visible: true
+              visible: TRUE
             'actionId':
               label: 'Action Id'
-              required: false
+              required: FALSE
               type: string(20)
               validation: ''
-              visible: true
+              visible: TRUE
           label: Relations
           type: array
           validation: ''
         'planNextMeeting':
           label: 'Plan next meeting'
-          required: false
+          required: FALSE
           type: boolean
           validation: ''
-          visible: true
+          visible: TRUE
         'notification':
           label: Notification
-          required: false
+          required: FALSE
           type: boolean
           validation: ''
-          visible: true
+          visible: TRUE
         'notificationWindow':
           label: 'Notification window'
           options:
@@ -215,10 +215,10 @@ Beech:
               - 4
               - 5
               - 6
-          required: false
+          required: FALSE
           type: integer(2)
           validation: ''
-          visible: true
+          visible: TRUE
         'notificationMethod':
           label: 'Notification method'
           options:
@@ -228,46 +228,46 @@ Beech:
               - notification
               - other
               - none
-          required: false
+          required: FALSE
           type: string(20)
           validation: ''
-          visible: true
+          visible: TRUE
         'creationDate':
           default: now
           label: 'creation date'
-          required: true
+          required: TRUE
           type: dateTime
           validation:
             type: 'RegularExpression'
             options:
               regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
-          visible: false
+          visible: FALSE
         'createdBy':
           default: currentUser
           label: 'Created by'
-          required: true
+          required: TRUE
           type: \Beech\Party\Domain\Model\Person
           validation:
             type: 'NotEmpty'
-          visible: false
+          visible: FALSE
         'modification':
           items:
             'modificationDate':
               default: now
               label: 'Modification date'
-              required: true
+              required: TRUE
               type: dateTime
               validation:
                 type: 'RegularExpression'
                 options:
                   regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
-              visible: false
+              visible: FALSE
             'modifiedBy':
               default: currentUser
               label: 'Modified by'
-              required: true
+              required: TRUE
               type: \Beech\Party\Domain\Model\Person
               validation: ''
-              visible: false
+              visible: FALSE
           label: 'Modification log'
           type: array

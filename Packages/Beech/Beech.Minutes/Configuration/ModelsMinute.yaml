@@ -8,17 +8,17 @@ Beech:
       properties:
         'subjectId':
           label: 'Subject id'
-          onlist: true
-          required: true
+          onlist: TRUE
+          required: TRUE
           type: \Beech\Party\Domain\Model\Person
           validation: ''
-          visible: false
+          visible: FALSE
         'departmentId':
           label: 'Department id'
-          required: true
+          required: TRUE
           type: \Beech\Party\Domain\Model\Company
           validation: ''
-          visible: false
+          visible: FALSE
         'minuteType':
           label: minuteType
           options:
@@ -30,95 +30,95 @@ Beech:
               - compensationConversation
               - other
               - sickReportUpdate
-          required: true
+          required: TRUE
           type: string(20)
           validation: ''
-          visible: true
+          visible: TRUE
         'minuteContent':
           label: minuteContent
-          required: true
+          required: TRUE
           type: text
           validation:
             type: 'Text'
-          visible: true
+          visible: TRUE
         'minuteTemplate':
           label: minuteTemplate
-          required: true
+          required: TRUE
           type: string(20)
           validation:
             type: 'StringLength'
             options:
               maximum: 20
-          visible: true
+          visible: TRUE
         'followUpActionRequired':
           label: followUpActionRequired
-          required: true
+          required: TRUE
           type: boolean
-          visible: true
+          visible: TRUE
         'needSigning':
           label: needsSigning
-          required: true
+          required: TRUE
           type: boolean
           validation: ''
-          visible: true
+          visible: TRUE
         'action':
           label: action
-          required: true
+          required: TRUE
           type: string(20)
           validation:
             type: 'StringLength'
-            options
+            options:
               maximum: 20
-          visible: true
+          visible: TRUE
         'documentRequired':
           label: documentRequired
-          required: true
+          required: TRUE
           type: boolean
-          visible: true
+          visible: TRUE
         'visability':
-          label: visability
+          label: visibility
           options:
             values:
               - public
               - subjects
               - managers
               - creator
-          required: true
+          required: TRUE
           type: string(20)
           validation:
             type: 'Stringlength'
             options:
-             maximum: 20
-          visible: true
+              maximum: 20
+          visible: TRUE
         'creationDate':
           default: now
           label: 'creation date'
-          required: true
+          required: TRUE
           type: dateTime
           validation: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
-          visible: false
+          visible: FALSE
         'createdBy':
           default: currentUser
           label: 'Created by'
-          required: true
+          required: TRUE
           type: \Beech\Party\Domain\Model\Person
           validation: ''
-          visible: false
+          visible: FALSE
         'modification':
           items:
             'modificationDate':
               default: now
               label: 'Modification date'
-              required: true
+              required: TRUE
               type: dateTime
               validation: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
-              visible: false
+              visible: FALSE
             'modifiedBy':
               default: currentUser
               label: 'Modified by'
-              required: true
+              required: TRUE
               type: \Beech\Party\Domain\Model\Person
               validation: ''
-              visible: false
+              visible: FALSE
           label: 'Modification log'
           type: array

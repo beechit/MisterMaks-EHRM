@@ -9,19 +9,19 @@ model:
 properties:
   -
     id: subjectId
-    label: "Subject id"
-    onlist: true
-    required: true
+    label: 'Subject id'
+    onlist: TRUE
+    required: TRUE
     type: \Beech\Party\Domain\Model\Person
-    validation: ""
-    visible: false
+    validation: ''
+    visible: FALSE
   -
     id: departementId
-    label: "Department id"
-    required: true
+    label: 'Department id'
+    required: TRUE
     type: \Beech\Party\Domain\Model\Company
-    validation: ""
-    visible: false
+    validation: ''
+    visible: FALSE
   -
     id: minuteType
     label: minuteType
@@ -34,55 +34,55 @@ properties:
         - compensationConversation
         - other
         - sickReportUpdate
-    required: true
+    required: TRUE
     type: string(20)
-    validation: ""
-    visible: true
+    validation: ''
+    visible: TRUE
   -
     id: minuteContent
     label: minuteContent
-    required: true
+    required: TRUE
     type: text
-    validation: ""
-    visible: true
+    validation: ''
+    visible: TRUE
   -
     id: minuteTemplate
     label: minuteTemplate
-    required: true
+    required: TRUE
     type: string(20)
-    validation: ""
-    visible: true
+    validation: ''
+    visible: TRUE
   -
-    default: ""
+    default: ''
     id: followUpActionRequired
     label: followUpActionRequired
-    required: true
+    required: TRUE
     type: boolean
-    validation: ""
-    visible: true
+    validation: ''
+    visible: TRUE
   -
-    default: ""
+    default: ''
     id: needSigning
     label: needsSigning
-    required: true
+    required: TRUE
     type: boolean
-    validation: ""
-    visible: true
+    validation: ''
+    visible: TRUE
   -
     id: action
     label: action
-    required: true
+    required: TRUE
     type: string(20)
-    validation: ""
-    visible: true
+    validation: ''
+    visible: TRUE
   -
-    default: ""
+    default: ''
     id: documentRequired
     label: documentRequired
-    required: true
+    required: TRUE
     type: boolean
-    validation: ""
-    visible: true
+    validation: ''
+    visible: TRUE
   -
     id: visability
     label: visability
@@ -92,44 +92,44 @@ properties:
         - subjects
         - managers
         - creator
-    required: true
+    required: TRUE
     type: string(20)
-    validation: ""
-    visible: true
+    validation: ''
+    visible: TRUE
   -
     default: now
     id: creationDate
-    label: "creation date"
-    required: true
+    label: 'creation date'
+    required: TRUE
     type: dateTime
-    validation: "(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?"
-    visible: false
+    validation: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
+    visible: FALSE
   -
     default: currentUser
     id: createdBy
-    label: "creation by"
-    required: true
+    label: 'creation by'
+    required: TRUE
     type: \Beech\Party\Domain\Model\Person
-    validation: ""
-    visible: false
+    validation: ''
+    visible: FALSE
   -
     id: modification
     items:
       -
         default: now
         id: modificationDate
-        label: "Modification date"
-        required: true
+        label: 'Modification date'
+        required: TRUE
         type: dateTime
-        validation: "(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?"
-        visible: false
+        validation: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
+        visible: FALSE
       -
         default: currentUser
         id: modifiedBy
         label: 'Modified by'
-        required: true
+        required: TRUE
         type: \Beech\Party\Domain\Model\Person
-        validation: ""
-        visible: false
+        validation: ''
+        visible: FALSE
     label: ModificationLog
     type: array

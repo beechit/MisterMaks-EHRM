@@ -10,171 +10,171 @@ properties:
     id: cla
     label: Cla
     type: string(20)
-    validation: ""
+    validation: ''
   -
     id: departement
     label: Department
     type: \Beech\Party\Domain\Model\Company
-    validation: ""
+    validation: ''
   -
     id: jobTitle
-    label: "Job title"
+    label: 'Job title'
     type: string(20)
-    validation: ""
+    validation: ''
   -
     id: jobDescriptionID
-    label: "Job description ID"
+    label: 'Job description ID'
     type: string(5)
-    validation: ""
+    validation: ''
   -
     id: salaryscale
-    label: "Salary scale"
+    label: 'Salary scale'
     type: string(5)
-    validation: ""
+    validation: ''
   -
     id: jobversion
     label: Version
     type: string(20)
-    validation: ""
+    validation: ''
   -
     id: versiondate
-    label: "Version date"
+    label: 'Version date'
     type: dateTime
-    validation: ""
+    validation: ''
   -
     id: generalTitle
     label: Generaltitle
     type: text
-    validation: ""
+    validation: ''
   -
     id: generalText
     label: Generaltext
     type: text
-    validation: ""
+    validation: ''
   -
     id: levelDifferentiation
-    label: "Level differentiation"
+    label: 'Level differentiation'
     type: text
-    validation: ""
+    validation: ''
   -
     id: jobGoalTitle
-    label: "job Goal Title"
+    label: 'job Goal Title'
     type: text
-    validation: ""
+    validation: ''
   -
     id: jobGoal
     label: Jobgoal
     type: text
-    validation: ""
+    validation: ''
   -
     id: hierarchicalPositionTitle
-    label: "Hierarchical position title"
+    label: 'Hierarchical position title'
     type: text
-    validation: ""
+    validation: ''
   -
     id: hierarchicalPositionUp
-    label: "Hierarchical position up"
+    label: 'Hierarchical position up'
     type: text
-    validation: ""
+    validation: ''
   -
     id: hierarchicalPositionDown
-    label: "Hierarchical postition down"
+    label: 'Hierarchical postition down'
     type: text
-    validation: ""
+    validation: ''
   -
     id: resultAreaTitle
-    label: "Result area title"
+    label: 'Result area title'
     type: text
-    validation: ""
+    validation: ''
   -
     id: ResultAreas
     items:
       -
         id: resultArea
-        label: "Result area"
+        label: 'Result area'
         type: text
-        validation: ""
+        validation: ''
       -
-        Label: "Result area result"
+        Label: 'Result area result'
         id: resultAreaResult
         type: text
-        validations: ""
+        validations: ''
       -
         id: resultAreaSubItems
         items:
           -
             id: resultAreaSubItem
-            label: "Result area subitem"
+            label: 'Result area subitem'
             type: text
-            validation: ""
-        label: "Result area subitems"
+            validation: ''
+        label: 'Result area subitems'
         type: array
-    label: "Result areas"
+    label: 'Result areas'
     type: array
   -
     id: knowledgeTitle
-    label: "Knowledge title"
+    label: 'Knowledge title'
     type: text
-    validation: ""
+    validation: ''
   -
     id: knowledge
     items:
       -
         id: knowledgeItem
-        label: "Knowledge item"
+        label: 'Knowledge item'
         type: text
-        validation: ""
+        validation: ''
     label: Knowledge
     type: array
   -
     id: jobCharacteristicsTitle
-    label: "Job characteristics title"
+    label: 'Job characteristics title'
     type: text
-    validation: ""
+    validation: ''
   -
     id: jobCharacteristics
     items:
       -
         id: jobCharacteristicsItem
-        label: "job characteristics item"
+        label: 'job characteristics item'
         type: text
-        validation: ""
-    label: "Job characteristics"
+        validation: ''
+    label: 'Job characteristics'
     type: array
   -
     default: now
     id: creationDate
-    label: "creation date"
-    required: true
+    label: 'creation date'
+    required: TRUE
     type: dateTime
-    validation: "(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?"
-    visible: false
+    validation: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
+    visible: FALSE
   -
     default: currentUser
     id: createdBy
-    label: "creation by"
-    required: true
+    label: 'creation by'
+    required: TRUE
     type: \Beech\Party\Domain\Model\Person
-    validation: ""
-    visible: false
+    validation: ''
+    visible: FALSE
   -
     id: modification
     items:
       -
         default: now
         id: modificationDate
-        label: "Modification date"
-        required: true
+        label: 'Modification date'
+        required: TRUE
         type: dateTime
-        validation: "(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?"
-        visible: false
+        validation: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
+        visible: FALSE
       -
         default: currentUser
         id: modifiedBy
         label: Modifiedby
-        required: true
+        required: TRUE
         type: \Beech\Party\Domain\Model\Person
-        validation: ""
-        visible: false
+        validation: ''
+        visible: FALSE
     label: ModificationLog
     type: array

@@ -47,13 +47,13 @@ Beech.MisterMaks:
         en: ''
         pl: ''
       type:
-      values: [ true, false ]
+      values: [ TRUE, FALSE ]
 #The following settings are contract template settings which do not show in contact but are set here.
    ContacttemplateSettings:
     typeofemployment: [ Dagdienst]
 # Als de werkgever geen loondoorbetalingverplichting voor een bepaalde werknemer heeft, kan hij dit door middel van de
 # indicator “loondoorbetalingverplichting” aangeven. De werknemer valt dan buiten de verzekering.
 # Dit heeft voornamelijk betrekking op stagiairs, oproepkrachten en uitzendkrachten.
-    wagePaymentObligation: 'true'
+    wagePaymentObligation: TRUE
 # set if the employee is a shareholder
-    DGA: 'false'
+    DGA: FALSE

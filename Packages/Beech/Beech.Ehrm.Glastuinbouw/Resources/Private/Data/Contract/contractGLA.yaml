@@ -6,7 +6,7 @@
 ---
 contractTemplate:
   CLA: Glastuinbouw
-  CLAversion: "1 juli 2012 tot en met 30 juni 2014"
+  CLAversion: '1 juli 2012 tot en met 30 juni 2014'
   CLAversiondate: 01-07-2012
   articles:
     - 10000
@@ -25,27 +25,27 @@ contractTemplate:
     - 10013
   availableLanguages:
     - nl_NL
-  contractTemplateName: "Temporary contract with GLA Arrangement"
+  contractTemplateName: 'Temporary contract with GLA Arrangement'
   contractTitle:
-    en: ""
-    nl: "Arbeidsovereenkomst voor bepaalde tijd voor de regeling gelegenheidsarbeid "
-    pl: ""
+    en: ''
+    nl: 'Arbeidsovereenkomst voor bepaalde tijd voor de regeling gelegenheidsarbeid '
+    pl: ''
   contractstatemement:
-    en: ""
-    nl: "verklaren een arbeidsovereenkomst voor bepaalde te zijn aangegaan, waarop de volgende bepalingen van toepassing zijn."
-    pl: ""
+    en: ''
+    nl: 'verklaren een arbeidsovereenkomst voor bepaalde te zijn aangegaan, waarop de volgende bepalingen van toepassing zijn.'
+    pl: ''
   creationDatePlace:
-    en: ""
-    nl: "Deze arbeidsovereenkomst is opgemaakt te <SignLocation>, op <signDate>."
-    pl: ""
+    en: ''
+    nl: 'Deze arbeidsovereenkomst is opgemaakt te <SignLocation>, op <signDate>.'
+    pl: ''
   employee:
-    en: ""
-    nl: "hierna te noemen werknemer, gezamenlijk te noemen partijen,"
-    pl: ""
+    en: ''
+    nl: 'hierna te noemen werknemer, gezamenlijk te noemen partijen,'
+    pl: ''
   employer:
-    en: ""
-    nl: "vertegenwoordigd door haar directeur, de heer <roleEmployer>, hierna te noemen werkgever,"
-    pl: ""
+    en: ''
+    nl: 'vertegenwoordigd door haar directeur, de heer <roleEmployer>, hierna te noemen werkgever,'
+    pl: ''
   values:
     -
       default: CompanyLocation

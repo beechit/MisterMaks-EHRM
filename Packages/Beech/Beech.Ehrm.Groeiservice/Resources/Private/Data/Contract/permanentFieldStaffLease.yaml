@@ -6,8 +6,8 @@
 ---
 contractTemplate:
   CLA: None
-  CLAversion: ""
-  CLAversiondate: ""
+  CLAversion: ''
+  CLAversiondate: ''
   articles:
     - 10000
     - 10001
@@ -66,27 +66,27 @@ contractTemplate:
     - 10053
   availableLanguages:
     - nl_NL
-  contractTemplateName: "Contract permanent fieldStaff lease"
+  contractTemplateName: 'Contract permanent fieldStaff lease'
   contractTitle:
-    en: ""
-    nl: "Arbeidsovereenkomst voor onbepaalde tijd"
-    pl: ""
+    en: ''
+    nl: 'Arbeidsovereenkomst voor onbepaalde tijd'
+    pl: ''
   contractstatemement:
-    en: ""
-    nl: "verklaren een arbeidsovereenkomst voor bepaalde te zijn aangegaan, waarop de volgende bepalingen van toepassing zijn."
-    pl: ""
+    en: ''
+    nl: 'verklaren een arbeidsovereenkomst voor bepaalde te zijn aangegaan, waarop de volgende bepalingen van toepassing zijn.'
+    pl: ''
   creationDatePlace:
-    en: ""
-    nl: "Deze arbeidsovereenkomst is opgemaakt te <SignLocation>, op <signDate>."
-    pl: ""
+    en: ''
+    nl: 'Deze arbeidsovereenkomst is opgemaakt te <SignLocation>, op <signDate>.'
+    pl: ''
   employee:
-    en: ""
-    nl: "hierna te noemen werknemer, gezamenlijk te noemen partijen,"
-    pl: ""
+    en: ''
+    nl: 'hierna te noemen werknemer, gezamenlijk te noemen partijen,'
+    pl: ''
   employer:
-    en: ""
-    nl: "vertegenwoordigd door haar directeur, de heer <roleEmployer>, hierna te noemen werkgever,"
-    pl: ""
+    en: ''
+    nl: 'vertegenwoordigd door haar directeur, de heer <roleEmployer>, hierna te noemen werkgever,'
+    pl: ''
   values:
     -
       default: CompanyLocation

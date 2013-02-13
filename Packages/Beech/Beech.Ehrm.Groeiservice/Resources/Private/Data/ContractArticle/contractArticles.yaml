@@ -4,123 +4,123 @@
 ---
 contactArticles:
   CLA: None
-  CLAversion: ""
-  CLAversiondate: ""
+  CLAversion: ''
+  CLAversiondate: ''
   article:
     -
       articleHeader:
-        en: "Start, duration and end om employment"
-        nl: "Aanvang, duur en einde van het dienstverband"
-        pl: ""
+        en: 'Start, duration and end om employment'
+        nl: 'Aanvang, duur en einde van het dienstverband'
+        pl: ''
       articleLabel: contractPeriod
       id: 10000
       order: 100
-      required: true
-      standard: true
+      required: TRUE
+      standard: TRUE
       subArticle:
         articleText:
-          en: ""
-          nl: "De arbeidsovereenkomst wordt aangegaan voor de periode van <contractTime>, te weten van <startDate> tot en met <endDate>. Het dienstverband eindigt op laatstgenoemde datum van rechtswege zonder dat daarvoor opzegging vereist is."
-          pl: ""
+          en: ''
+          nl: 'De arbeidsovereenkomst wordt aangegaan voor de periode van <contractTime>, te weten van <startDate> tot en met <endDate>. Het dienstverband eindigt op laatstgenoemde datum van rechtswege zonder dat daarvoor opzegging vereist is.'
+          pl: ''
         articlelabel: contractDuration
         help:
-          en: ""
-          nl: ""
-          pl: ""
+          en: ''
+          nl: ''
+          pl: ''
         id: 10001
         order: 101
-        required: true
-        standard: true
+        required: TRUE
+        standard: TRUE
         values:
           -
             type: dateTime
-            value: ""
+            value: ''
             valueId: contractTime
           -
             type: dateTime
-            value: ""
+            value: ''
             valueId: startDate
           -
             type: dateTime
-            value: ""
+            value: ''
             valueId: endDate
     -
       articleText:
-        en: ""
-        nl: "Partijen kunnen de arbeidsovereenkomst te allen tijde tussentijds opzeggen met inachtneming van een opzegtermijn van 1 maand. Opzegging dient schriftelijk, tegen het einde van de maand te geschieden."
-        pl: ""
+        en: ''
+        nl: 'Partijen kunnen de arbeidsovereenkomst te allen tijde tussentijds opzeggen met inachtneming van een opzegtermijn van 1 maand. Opzegging dient schriftelijk, tegen het einde van de maand te geschieden.'
+        pl: ''
       articlelabel: noticeperiod
       help:
-        en: ""
-        nl: ""
-        pl: ""
+        en: ''
+        nl: ''
+        pl: ''
       id: 10002
       order: 102
-      required: true
-      standard: true
+      required: TRUE
+      standard: TRUE
     -
       articleText:
-        en: ""
-        nl: "De arbeidsovereenkomst wordt aangegaan voor onbepaalde tijd."
-        pl: ""
+        en: ''
+        nl: 'De arbeidsovereenkomst wordt aangegaan voor onbepaalde tijd.'
+        pl: ''
       articlelabel: permanentContract.
       help:
-        en: ""
-        nl: ""
-        pl: ""
+        en: ''
+        nl: ''
+        pl: ''
       id: 10061
       order: 103
-      required: true
-      standard: true
+      required: TRUE
+      standard: TRUE
     -
       articleText:
-        en: ""
-        nl: "Partijen kunnen de arbeidsovereenkomst opzeggen met inachtneming van een opzegtermijn zoals beschreven in artikel 7:672 BW. Opzegging dient schriftelijk, tegen het einde van de maand te geschieden."
-        pl: ""
+        en: ''
+        nl: 'Partijen kunnen de arbeidsovereenkomst opzeggen met inachtneming van een opzegtermijn zoals beschreven in artikel 7:672 BW. Opzegging dient schriftelijk, tegen het einde van de maand te geschieden.'
+        pl: ''
       articlelabel: noticePeriodPermanentContract
       help:
-        en: ""
-        nl: ""
-        pl: ""
+        en: ''
+        nl: ''
+        pl: ''
       id: 10062
       order: 104
-      required: true
-      standard: true
+      required: TRUE
+      standard: TRUE
     -
       articleText:
-        en: ""
-        nl: "De arbeidsovereenkomst eindigt van rechtswege zonder dat daartoe opzegging is vereist op de eerste dag van de maand waarin werknemer de AOW gerechtigde leeftijd bereikt."
-        pl: ""
+        en: ''
+        nl: 'De arbeidsovereenkomst eindigt van rechtswege zonder dat daartoe opzegging is vereist op de eerste dag van de maand waarin werknemer de AOW gerechtigde leeftijd bereikt.'
+        pl: ''
       articlelabel: endPermanentContract
       help:
-        en: ""
-        nl: ""
-        pl: ""
+        en: ''
+        nl: ''
+        pl: ''
       id: 10063
       order: 105
-      required: true
-      standard: true
+      required: TRUE
+      standard: TRUE
     -
       articleHeader:
         en: Probation
         nl: Proeftijd
-        pl: ""
+        pl: ''
       articleLabel: probation
       articleText:
-        en: ""
-        nl: "De <ProbationPeriod> <unitOfTime> van het dienstverband geldt als proeftijd, waarbinnen werknemer en werkgever zonder opgaaf van redenen de arbeidsovereenkomst per direct kunnen beëindigen."
-        pl: ""
+        en: ''
+        nl: 'De <ProbationPeriod> <unitOfTime> van het dienstverband geldt als proeftijd, waarbinnen werknemer en werkgever zonder opgaaf van redenen de arbeidsovereenkomst per direct kunnen beëindigen.'
+        pl: ''
       help:
-        en: ""
-        nl: ""
-        pl: ""
+        en: ''
+        nl: ''
+        pl: ''
       id: 10003
       order: 200
-      required: false
-      standard: true
+      required: FALSE
+      standard: TRUE
       values:
         -
-          default: "1"
+          default: '1'
           options:
             - 1
             - 2
@@ -131,7 +131,7 @@ contactArticles:
             - 1
             - 2
           type: integer
-          value: ""
+          value: ''
           valueId: unitOftime
           values:
             - month
@@ -141,23 +141,23 @@ contactArticles:
       articleHeader:
         en: Probation
         nl: Proeftijd
-        pl: ""
+        pl: ''
       articleLabel: probation
       articleText:
-        en: ""
-        nl: "De <ProbationPeriod> <unit.Of.Time> van het dienstverband geldt als proeftijd, waarbinnen werknemer en werkgever zonder opgaaf van redenen de arbeidsovereenkomst per direct kunnen beëindigen."
-        pl: ""
+        en: ''
+        nl: 'De <ProbationPeriod> <unit.Of.Time> van het dienstverband geldt als proeftijd, waarbinnen werknemer en werkgever zonder opgaaf van redenen de arbeidsovereenkomst per direct kunnen beëindigen.'
+        pl: ''
       help:
-        en: ""
-        nl: ""
-        pl: ""
+        en: ''
+        nl: ''
+        pl: ''
       id: 10068
       order: 210
-      required: false
-      standard: false
+      required: FALSE
+      standard: FALSE
       values:
         -
-          default: "2"
+          default: '2'
           options:
             - 1
             - 2
@@ -168,7 +168,7 @@ contactArticles:
             - 1
             - 2
           type: integer
-          value: ""
+          value: ''
           valueId: unitOftime
           values:
             - month
@@ -176,997 +176,997 @@ contactArticles:
             - day
     -
       articleHeader:
-        en: "Job title"
+        en: 'Job title'
         nl: Functie
-        pl: ""
+        pl: ''
       articleLabel: jobTitle
       articleText:
-        en: ""
-        nl: "Werknemer wordt in beginsel aangesteld in de functie van <JobDescriptionName>"
-        pl: ""
+        en: ''
+        nl: 'Werknemer wordt in beginsel aangesteld in de functie van <JobDescriptionName>'
+        pl: ''
       help:
-        en: ""
-        nl: ""
-        pl: ""
+        en: ''
+        nl: ''
+        pl: ''
       id: 10004
       order: 300
-      required: true
-      standard: true
+      required: TRUE
+      standard: TRUE
       values:
         jobDescriptionName:
           type: string
-          value: ""
+          value: ''
     -
       articleHeader:
-        en: ""
+        en: ''
         nl: Arbeidsduur
-        pl: ""
+        pl: ''
       articleLabel: hoursAWeek
       articleText:
-        en: ""
-        nl: "De arbeidsduur bedraagt gemiddeld <hoursAWeek> uur per week."
-        pl: ""
+        en: ''
+        nl: 'De arbeidsduur bedraagt gemiddeld <hoursAWeek> uur per week.'
+        pl: ''
       help:
-        en: ""
-        nl: ""
-        pl: ""
+        en: ''
+        nl: ''
+        pl: ''
       id: 10005
       order: 400
-      required: true
-      standard: true
+      required: TRUE
+      standard: TRUE
       values:
         type: integer
-        value: ""
+        value: ''
         valueId: hoursAWeek
     -
       articleHeader:
-        en: ""
+        en: ''
         nl: Werktijden
-        pl: ""
+        pl: ''
       articleLabel: workingHours
       id: 10006
       order: 500
-      required: true
-      standard: true
+      required: TRUE
+      standard: TRUE
       subArticle:
         -
           articleText:
-            en: ""
-            nl: "De werkzaamheden zullen gebruikelijk worden uitgevoerd op doordeweekse dagen tussen <StartWorkDay> en <EndWorkDay> uur."
-            pl: ""
+            en: ''
+            nl: 'De werkzaamheden zullen gebruikelijk worden uitgevoerd op doordeweekse dagen tussen <StartWorkDay> en <EndWorkDay> uur.'
+            pl: ''
           articlelabel: workingHoursOfficestaff
           help:
-            en: ""
-            nl: ""
-            pl: ""
+            en: ''
+            nl: ''
+            pl: ''
           id: 10007
           order: 501
-          required: true
-          standard: true
+          required: TRUE
+          standard: TRUE
           values:
             -
-              default: "7.00"
+              default: '7.00'
               type: time
-              value: ""
+              value: ''
               valueId: startWorkDay
             -
-              default: "18.00"
+              default: '18.00'
               type: time
-              value: ""
+              value: ''
               valueId: endWorkdDay
     -
       articleText:
-        en: ""
-        nl: "In onderling overleg zullen werkgever en werknemer nadere afspraken maken over de tijden waarop arbeid verricht wordt."
-        pl: ""
+        en: ''
+        nl: 'In onderling overleg zullen werkgever en werknemer nadere afspraken maken over de tijden waarop arbeid verricht wordt.'
+        pl: ''
       articlelabel: workTimeagreement
       help:
-        en: ""
-        nl: ""
-        pl: ""
+        en: ''
+        nl: ''
+        pl: ''
       id: 10008
       order: 502
-      required: true
-      standard: true
+      required: TRUE
+      standard: TRUE
     -
       articleText:
-        en: ""
-        nl: "De aard van de functie brengt met zich mee dat er op onregelmatige tijden gewerkt wordt."
-        pl: ""
+        en: ''
+        nl: 'De aard van de functie brengt met zich mee dat er op onregelmatige tijden gewerkt wordt.'
+        pl: ''
       articlelabel: workTimeagreementfieldstaff
       help:
-        en: ""
-        nl: ""
-        pl: ""
+        en: ''
+        nl: ''
+        pl: ''
       id: 10055
       order: 503
-      required: true
-      standard: true
+      required: TRUE
+      standard: TRUE
       subArticle:
         articleText:
-          en: ""
-          nl: "In onderling overleg zullen werkgever en werknemer nadere afspraken maken over de tijden waarop arbeid verricht wordt. Uitgangspunt hierbij vormt optimale tegemoetkoming aan de wens van de klant."
-          pl: ""
+          en: ''
+          nl: 'In onderling overleg zullen werkgever en werknemer nadere afspraken maken over de tijden waarop arbeid verricht wordt. Uitgangspunt hierbij vormt optimale tegemoetkoming aan de wens van de klant.'
+          pl: ''
         articlelabel: workTimeagreementfieldstaff
         help:
-          en: ""
-          nl: ""
-          pl: ""
+          en: ''
+          nl: ''
+          pl: ''
         id: 10056
         order: 504
-        required: true
-        standard: true
+        required: TRUE
+        standard: TRUE
     -
       articleHeader:
-        en: "work location"
+        en: 'work location'
         nl: Standplaats
-        pl: ""
+        pl: ''
       articleLabel: workLocation
       id: 10009
       order: 600
-      required: true
-      standard: true
+      required: TRUE
+      standard: TRUE
       subArticle:
         -
           articleText:
-            en: ""
-            nl: "De werkzaamheden worden in beginsel uitgevoerd vanuit het kantoor van de werkgever."
-            pl: ""
+            en: ''
+            nl: 'De werkzaamheden worden in beginsel uitgevoerd vanuit het kantoor van de werkgever.'
+            pl: ''
           articlelabel: workLocationofficestaff
           help:
-            en: ""
-            nl: ""
-            pl: ""
+            en: ''
+            nl: ''
+            pl: ''
           id: 10010
           order: 601
-          required: true
+          required: TRUE
         -
           articleText:
-            en: ""
-            nl: "Het is werknemer toegestaan vanuit huis te werken"
-            pl: ""
+            en: ''
+            nl: 'Het is werknemer toegestaan vanuit huis te werken'
+            pl: ''
           articlelabel: workLocationhome
           help:
-            en: ""
-            nl: ""
-            pl: ""
+            en: ''
+            nl: ''
+            pl: ''
           id: 10011
           order: 602
-          required: true
-          standard: true
+          required: TRUE
+          standard: TRUE
         -
           articleText:
-            en: ""
-            nl: "De aard van de functie brengt met zich mee dat werkzaamheden regelmatig op externe locaties plaatsvinden."
-            pl: ""
+            en: ''
+            nl: 'De aard van de functie brengt met zich mee dat werkzaamheden regelmatig op externe locaties plaatsvinden.'
+            pl: ''
           articlelabel: workLocationhome
           help:
-            en: ""
-            nl: ""
-            pl: ""
+            en: ''
+            nl: ''
+            pl: ''
           id: 10054
           order: 603
-          required: true
-          standard: true
+          required: TRUE
+          standard: TRUE
     -
       articleHeader:
         en: salary
         nl: Salaris
-        pl: ""
+        pl: ''
       articleLabel: salary
       id: 10012
       order: 700
-      required: true
+      required: TRUE
     -
       articleText:
-        en: ""
-        nl: "Het salaris bedraagt bij aanvang van het dienstverband (bruto) € <Salary> per <paymentinterval>."
-        pl: ""
+        en: ''
+        nl: 'Het salaris bedraagt bij aanvang van het dienstverband (bruto) € <Salary> per <paymentinterval>.'
+        pl: ''
       articlelabel: salaryAmount
       help:
-        en: ""
-        nl: ""
-        pl: ""
+        en: ''
+        nl: ''
+        pl: ''
       id: 10013
       order: 701
-      required: true
-      standard: true
+      required: TRUE
+      standard: TRUE
       values:
         paymentInterval:
           default: month
-          value: ""
+          value: ''
           values:
             - month
             - week
         salary:
           type: decimal(4.2)
-          value: ""
+          value: ''
     -
       articleText:
-        en: ""
-        nl: "Werknemer is ingeschaald in salarisgroep <SalaryScaleNumber> conform de algemene arbeidsvoorwaarden van LTO Groeiservice ( zie ook <claArticleNumber>)."
-        pl: ""
+        en: ''
+        nl: 'Werknemer is ingeschaald in salarisgroep <SalaryScaleNumber> conform de algemene arbeidsvoorwaarden van LTO Groeiservice ( zie ook <claArticleNumber>).'
+        pl: ''
       articlelabel: salaryScale
       help:
-        en: ""
-        nl: ""
-        pl: ""
+        en: ''
+        nl: ''
+        pl: ''
       id: 10014
       order: 702
-      required: true
-      standard: true
+      required: TRUE
+      standard: TRUE
       values:
         claArticleNumber: ~
-        salaryScaleNumber: ""
+        salaryScaleNumber: ''
     -
       articleText:
-        en: ""
-        nl: "Gedurende de looptijd van de arbeidsovereenkomst voor bepaalde tijd zullen geen salarisaanpassingen plaatsvinden"
-        pl: ""
+        en: ''
+        nl: 'Gedurende de looptijd van de arbeidsovereenkomst voor bepaalde tijd zullen geen salarisaanpassingen plaatsvinden'
+        pl: ''
       articlelabel: salaryChange
       help:
-        en: ""
-        nl: ""
-        pl: ""
+        en: ''
+        nl: ''
+        pl: ''
       id: 10064
       order: 703
-      required: true
-      standaard: true
+      required: TRUE
+      standaard: TRUE
     -
       articleText:
-        en: ""
-        nl: "LTO Groeiservice kent een verplichte pensioenregeling. (Zie ook <claArticleNumber>)"
-        pl: ""
+        en: ''
+        nl: 'LTO Groeiservice kent een verplichte pensioenregeling. (Zie ook <claArticleNumber>)'
+        pl: ''
       articlelabel: pensionPlan
       help:
-        en: ""
-        nl: ""
-        pl: ""
+        en: ''
+        nl: ''
+        pl: ''
       id: 10015
       order: 704
-      required: true
-      standard: true
+      required: TRUE
+      standard: TRUE
       values:
         claArticleNumber: ~
-        value: ""
+        value: ''
     -
       articleHeader:
-        en: "expense allowance"
-        nl: "Vaste onkostenvergoeding"
-        pl: ""
+        en: 'expense allowance'
+        nl: 'Vaste onkostenvergoeding'
+        pl: ''
       articleLabel: expenseAllowance
       help:
-        en: ""
-        nl: ""
-        pl: ""
+        en: ''
+        nl: ''
+        pl: ''
       id: 10051
       order: 720
-      required: true
-      standard: true
+      required: TRUE
+      standard: TRUE
     -
       articleText:
-        en: ""
-        nl: "Aan werknemer wordt een vaste maandelijkse onkostenvergoeding verstrekt ter hoogte van €<expenseAllowanceAmount>."
-        pl: ""
+        en: ''
+        nl: 'Aan werknemer wordt een vaste maandelijkse onkostenvergoeding verstrekt ter hoogte van €<expenseAllowanceAmount>.'
+        pl: ''
       articlelabel: expenseAllowanceAmount
       help:
-        en: ""
-        nl: ""
-        pl: ""
+        en: ''
+        nl: ''
+        pl: ''
       id: 10052
       order: 721
-      required: true
-      standaard: true
+      required: TRUE
+      standaard: TRUE
       values:
-        default: "15,00"
+        default: '15,00'
         type: decimal(4.2)
         valueId: expenseAllowanceAmount
     -
       articleText:
-        en: ""
-        nl: "Genoemde vergoeding dient ter dekking van in het kader van de functie-uitoefening te maken kosten, zoals onkosten, verblijfkosten en representatiekosten, welke derhalve niet afzonderlijk gedeclareerd kunnen worden."
-        pl: ""
+        en: ''
+        nl: 'Genoemde vergoeding dient ter dekking van in het kader van de functie-uitoefening te maken kosten, zoals onkosten, verblijfkosten en representatiekosten, welke derhalve niet afzonderlijk gedeclareerd kunnen worden.'
+        pl: ''
       articlelabel: expenseAmountCoverage
       help:
-        en: ""
-        nl: ""
-        pl: ""
+        en: ''
+        nl: ''
+        pl: ''
       id: 10053
       order: 722
-      required: true
-      standard: true
+      required: TRUE
+      standard: TRUE
     -
       articleHeader:
-        en: ""
-        nl: "Reiskostenvergoeding woon-werk verkeer"
-        pl: ""
+        en: ''
+        nl: 'Reiskostenvergoeding woon-werk verkeer'
+        pl: ''
       articleLabel: travelExpensesHome
       help:
-        en: ""
-        nl: ""
-        pl: ""
+        en: ''
+        nl: ''
+        pl: ''
       id: 10016
       order: 800
-      required: true
-      standard: true
+      required: TRUE
+      standard: TRUE
     -
       articleText:
-        en: ""
-        nl: "Werknemer heeft voor woon-werk verkeer recht op een reiskostenvergoeding van € <kmAllowanceHome> per kilometer. Bij aanvang van het dienstverband bedraagt de reiskostenvergoeding € 1,90 per dag."
-        pl: ""
+        en: ''
+        nl: 'Werknemer heeft voor woon-werk verkeer recht op een reiskostenvergoeding van € <kmAllowanceHome> per kilometer. Bij aanvang van het dienstverband bedraagt de reiskostenvergoeding € 1,90 per dag.'
+        pl: ''
       articlelabel: kmAllowanceHome
       help:
-        en: ""
-        nl: ""
-        pl: ""
+        en: ''
+        nl: ''
+        pl: ''
       id: 10017
       order: 801
-      required: true
-      standaard: true
+      required: TRUE
+      standaard: TRUE
       values:
-        default: "0,19"
-        type: "decimal(1,2)"
-        value: ""
+        default: '0,19'
+        type: 'decimal(1,2)'
+        value: ''
         valueId: kmAllowanceHome
     -
       articleText:
-        en: ""
-        nl: "Voor zover fiscaal mogelijk zal de genoemde vergoeding (gedeeltelijk) belastingvrij worden verstrekt."
-        pl: ""
+        en: ''
+        nl: 'Voor zover fiscaal mogelijk zal de genoemde vergoeding (gedeeltelijk) belastingvrij worden verstrekt.'
+        pl: ''
       articlelabel: fiscalArrangementHome
       help:
-        en: ""
-        nl: ""
-        pl: ""
+        en: ''
+        nl: ''
+        pl: ''
       id: 10018
       order: 802
-      required: true
-      standard: true
+      required: TRUE
+      standard: TRUE
     -
       articleText:
-        en: ""
-        nl: "Een nadere uitwerking van de regeling reiskostenvergoeding is vastgelegd in de algemene arbeidsvoorwaarden van LTO Groeiservice (zie ook artikel <claArticleNumber>)."
-        pl: ""
+        en: ''
+        nl: 'Een nadere uitwerking van de regeling reiskostenvergoeding is vastgelegd in de algemene arbeidsvoorwaarden van LTO Groeiservice (zie ook artikel <claArticleNumber>).'
+        pl: ''
       articlelabel: travelExpensesArrangement
       help:
-        en: ""
-        nl: ""
-        pl: ""
+        en: ''
+        nl: ''
+        pl: ''
       id: 10019
       order: 803
-      required: true
-      standard: true
+      required: TRUE
+      standard: TRUE
       values:
-        value: ""
+        value: ''
         valueId: claArticleNumber
     -
       articleHeader:
-        en: ""
-        nl: "Reiskostenvergoeding zakelijk verkeer"
-        pl: ""
+        en: ''
+        nl: 'Reiskostenvergoeding zakelijk verkeer'
+        pl: ''
       articleLabel: travelExpenseswork
       id: 10020
       order: 900
-      required: true
-      standard: true
+      required: TRUE
+      standard: TRUE
       subArticle:
         -
           articleText:
-            en: ""
-            nl: "Werknemer heeft voor zakelijke ritten met de privéauto recht op een reiskostenvergoeding van € <kmAllowanceWork> per kilometer."
-            pl: ""
+            en: ''
+            nl: 'Werknemer heeft voor zakelijke ritten met de privéauto recht op een reiskostenvergoeding van € <kmAllowanceWork> per kilometer.'
+            pl: ''
           articlelabel: kmAllowanceWork
           help:
-            en: ""
-            nl: ""
-            pl: ""
+            en: ''
+            nl: ''
+            pl: ''
           id: 10065
           order: 901
-          required: true
-          standard: true
+          required: TRUE
+          standard: TRUE
           values:
-            default: "0,36"
+            default: '0,36'
             type: decimal(1.2)
-            value: ""
+            value: ''
             valueId: Allowancework
         -
           articleText:
-            en: ""
-            nl: "De genoemde vergoeding dient ter dekking van alle met de zakelijke rit samenhangende kosten, inclusief parkeer-, tol- en veergelden."
-            pl: ""
+            en: ''
+            nl: 'De genoemde vergoeding dient ter dekking van alle met de zakelijke rit samenhangende kosten, inclusief parkeer-, tol- en veergelden.'
+            pl: ''
           articlelabel: allowanceScope
           help:
-            en: ""
-            nl: ""
-            pl: ""
+            en: ''
+            nl: ''
+            pl: ''
           id: 10066
           order: 902
-          required: false
-          standard: true
+          required: FALSE
+          standard: TRUE
         -
           articleText:
-            en: ""
-            nl: "Voor zover fiscaal mogelijk zal de genoemde vergoeding (gedeeltelijk) belastingvrij worden verstrekt."
-            pl: ""
+            en: ''
+            nl: 'Voor zover fiscaal mogelijk zal de genoemde vergoeding (gedeeltelijk) belastingvrij worden verstrekt.'
+            pl: ''
           articlelabel: fiscalArrangementWork
           help:
-            en: ""
-            nl: ""
-            pl: ""
+            en: ''
+            nl: ''
+            pl: ''
           id: 10066
           order: 903
-          required: false
-          standard: true
+          required: FALSE
+          standard: TRUE
         -
           articleText:
-            en: ""
-            nl: "Een nadere uitwerking van de regeling reiskostenvergoeding is vastgelegd in de algemene arbeidsvoorwaarden van LTO Groeiservice (zie ook artikel <claArticleNumber>)."
-            pl: ""
+            en: ''
+            nl: 'Een nadere uitwerking van de regeling reiskostenvergoeding is vastgelegd in de algemene arbeidsvoorwaarden van LTO Groeiservice (zie ook artikel <claArticleNumber>).'
+            pl: ''
           articlelabel: travelExpensesArrangement
           help:
-            en: ""
-            nl: ""
-            pl: ""
+            en: ''
+            nl: ''
+            pl: ''
           id: 10021
           order: 904
-          required: true
-          standard: true
+          required: TRUE
+          standard: TRUE
           values:
-            value: ""
+            value: ''
             valueId: claArticleNumber
     -
       articleHeader:
-        en: ""
-        nl: "Ter beschikking stelling leaseauto"
-        pl: ""
+        en: ''
+        nl: 'Ter beschikking stelling leaseauto'
+        pl: ''
       articleLabel: leasecarProvision
       id: 10057
       order: 950
-      required: true
-      standard: true
+      required: TRUE
+      standard: TRUE
       subArticle:
         -
           articleText:
-            en: ""
-            nl: "Werkgever stelt aan werknemer een leaseauto ter beschikking."
-            pl: ""
+            en: ''
+            nl: 'Werkgever stelt aan werknemer een leaseauto ter beschikking.'
+            pl: ''
           articlelabel: leaseCarProvisioncontent
           help:
-            en: ""
-            nl: ""
-            pl: ""
+            en: ''
+            nl: ''
+            pl: ''
           id: 10058
           order: 951
-          required: true
-          standard: true
+          required: TRUE
+          standard: TRUE
         -
           articleText:
-            en: ""
-            nl: "Ter zake van de leaseauto gaan werknemer en werkgever een separate overeenkomst, genaamd ‘berijdersovereenkomst’ aan."
-            pl: ""
+            en: ''
+            nl: 'Ter zake van de leaseauto gaan werknemer en werkgever een separate overeenkomst, genaamd ‘berijdersovereenkomst’ aan.'
+            pl: ''
           articlelabel: leaseCarAgreement
           help:
-            en: ""
-            nl: ""
-            pl: ""
+            en: ''
+            nl: ''
+            pl: ''
           id: 10059
           order: 952
-          required: false
-          standard: true
+          required: FALSE
+          standard: TRUE
         -
           articleText:
-            en: ""
-            nl: "Een nadere uitwerking van de leaseautoregeling is vastgelegd in de algemene arbeidsvoorwaarden van LTO Groeiservice (zie ook artikel <claArticleNumber>)."
-            pl: ""
+            en: ''
+            nl: 'Een nadere uitwerking van de leaseautoregeling is vastgelegd in de algemene arbeidsvoorwaarden van LTO Groeiservice (zie ook artikel <claArticleNumber>).'
+            pl: ''
           articlelabel: leaseCarArangement
           help:
-            en: ""
-            nl: ""
-            pl: ""
+            en: ''
+            nl: ''
+            pl: ''
           id: 10060
           order: 953
-          required: true
-          standard: true
+          required: TRUE
+          standard: TRUE
           values:
-            value: ""
+            value: ''
             valueId: claArticleNumber
     -
       articleHeader:
-        en: ""
+        en: ''
         nl: Studiekosten
-        pl: ""
+        pl: ''
       articleLabel: studyExpenses
       id: 10022
       order: 1000
-      required: true
-      standard: true
+      required: TRUE
+      standard: TRUE
       subArticle:
         -
           articleText:
-            en: ""
-            nl: "Werkgever stimuleert de professionele ontwikkeling van werknemer door gehele of gedeeltelijke vergoeding van kosten voor opleidingen die verband houden met de huidige of toekomstige functie van werknemer."
-            pl: ""
+            en: ''
+            nl: 'Werkgever stimuleert de professionele ontwikkeling van werknemer door gehele of gedeeltelijke vergoeding van kosten voor opleidingen die verband houden met de huidige of toekomstige functie van werknemer.'
+            pl: ''
           articlelabel: studyAllowanceStatement
           help:
-            en: ""
-            nl: ""
-            pl: ""
+            en: ''
+            nl: ''
+            pl: ''
           id: 10023
           order: 1001
-          required: true
+          required: TRUE
         -
           articleText:
-            en: ""
-            nl: "Een nadere uitwerking van de regeling studiekostenvergoeding is vastgelegd in de algemene arbeidsvoorwaarden van LTO Groeiservice (zie ook artikel <claArticleNumber>)."
-            pl: ""
+            en: ''
+            nl: 'Een nadere uitwerking van de regeling studiekostenvergoeding is vastgelegd in de algemene arbeidsvoorwaarden van LTO Groeiservice (zie ook artikel <claArticleNumber>).'
+            pl: ''
           articlelabel: studyAllowanceArrangement
           help:
-            en: ""
-            nl: ""
-            pl: ""
+            en: ''
+            nl: ''
+            pl: ''
           id: 10024
           order: 1002
-          required: true
-          standard: true
+          required: TRUE
+          standard: TRUE
           values:
-            value: ""
+            value: ''
             valueId: claArticleNumber
     -
       articleHeader:
-        en: ""
+        en: ''
         nl: Vakantietoeslag
-        pl: ""
+        pl: ''
       articleLabel: vacationAllowance
       id: 10025
       order: 1101
-      required: true
-      standard: true
+      required: TRUE
+      standard: TRUE
       subarticle:
         -
           articleText:
-            en: ""
-            nl: "Werknemer heeft per kalenderjaar aanspraak op een vakantietoeslag van <holidayallowancepercentage> % van het bruto jaarsalaris. De vakantietoeslag zal worden uitbetaald gelijktijdig met de salarisbetaling in mei."
-            pl: ""
+            en: ''
+            nl: 'Werknemer heeft per kalenderjaar aanspraak op een vakantietoeslag van <holidayallowancepercentage> % van het bruto jaarsalaris. De vakantietoeslag zal worden uitbetaald gelijktijdig met de salarisbetaling in mei.'
+            pl: ''
           articlelabel: vacationAllowanceAmount
           help:
-            en: ""
-            nl: ""
-            pl: ""
+            en: ''
+            nl: ''
+            pl: ''
           id: 10026
           order: 1102
-          required: true
-          standard: true
+          required: TRUE
+          standard: TRUE
           values:
-            default: "8"
+            default: '8'
             type: decimal(2.2)
             valueId: holidayAllowancePercentage
         -
           articleText:
-            en: ""
-            nl: "Wanneer het dienstverband aanvangt na 1 januari of eindigt voor 31 december zal de vakantietoeslag naar rato worden berekend. In geval van uitdiensttreding zal eventueel teveel betaalde vakantietoeslag worden verrekend met het laatst toe te kennen salaris."
-            pl: ""
+            en: ''
+            nl: 'Wanneer het dienstverband aanvangt na 1 januari of eindigt voor 31 december zal de vakantietoeslag naar rato worden berekend. In geval van uitdiensttreding zal eventueel teveel betaalde vakantietoeslag worden verrekend met het laatst toe te kennen salaris.'
+            pl: ''
           articlelabel: vacationAllowanceEndContract
           help:
-            en: ""
-            nl: ""
-            pl: ""
+            en: ''
+            nl: ''
+            pl: ''
           id: 10027
           order: 1103
-          required: false
-          standard: true
+          required: FALSE
+          standard: TRUE
     -
       articleHeader:
         en: vacation.Entitlement
-        nl: "Wettelijke vakantierechten"
-        pl: ""
+        nl: 'Wettelijke vakantierechten'
+        pl: ''
       articleLabel: vacationEntitlement
       id: 10028
       order: 1200
-      required: true
-      standard: true
+      required: TRUE
+      standard: TRUE
       subArticle:
         -
           articleText:
-            en: ""
-            nl: "Werknemer heeft per volledig gewerkt kalenderjaar aanspraak op een aantal vakantie uren gelijk aan vier maal de gemiddelde wekelijkse arbeidsduur, zoals vastgelegd in artikel <hourArticle>."
-            pl: ""
+            en: ''
+            nl: 'Werknemer heeft per volledig gewerkt kalenderjaar aanspraak op een aantal vakantie uren gelijk aan vier maal de gemiddelde wekelijkse arbeidsduur, zoals vastgelegd in artikel <hourArticle>.'
+            pl: ''
           articlelabel: vacationAllowanceAmount
           help:
-            en: ""
-            nl: ""
-            pl: ""
+            en: ''
+            nl: ''
+            pl: ''
           id: 10029
           order: 1201
-          required: true
-          standard: true
+          required: TRUE
+          standard: TRUE
           values:
             default: 40
             valueId: hourArticle
         -
           articleText:
-            en: ""
-            nl: "Een nadere uitwerking van de vakantieregeling is vastgelegd in de algemene arbeidsvoorwaarden van LTO Groeiservice (zie ook artikel <claArticleNumber>)."
-            pl: ""
+            en: ''
+            nl: 'Een nadere uitwerking van de vakantieregeling is vastgelegd in de algemene arbeidsvoorwaarden van LTO Groeiservice (zie ook artikel <claArticleNumber>).'
+            pl: ''
           articlelabel: vacationArrangement
           help:
-            en: ""
-            nl: ""
-            pl: ""
+            en: ''
+            nl: ''
+            pl: ''
           id: 100030
           order: 1202
-          required: true
-          standard: true
+          required: TRUE
+          standard: TRUE
           values:
             valueId: claArticleNumber
     -
       articleHeader:
         en: flexibleEmploymentBenefits
-        nl: ""
+        nl: ''
       articleLabel: flexibleEmploymentBenefits
       id: 10031
       order: 1300
-      required: true
-      standard: true
+      required: TRUE
+      standard: TRUE
       subArticle:
         -
           articleText:
-            en: ""
-            nl: "Werknemer heeft per kalenderjaar aanspraak op <flexible.Secundairy.Percentage>% van het bruto loon excl. vakantietoeslag voor de flexibele invulling van het arbeidsvoorwaardenpakket."
-            pl: ""
+            en: ''
+            nl: 'Werknemer heeft per kalenderjaar aanspraak op <flexible.Secundairy.Percentage>% van het bruto loon excl. vakantietoeslag voor de flexibele invulling van het arbeidsvoorwaardenpakket.'
+            pl: ''
           articlelabel: flexibleSecundairyAmount
           help:
-            en: ""
-            nl: ""
-            pl: ""
+            en: ''
+            nl: ''
+            pl: ''
           id: 10032
           order: 1301
-          required: true
-          standard: true
+          required: TRUE
+          standard: TRUE
           values:
-            default: "7,23"
+            default: '7,23'
             type: decimal(2.2)
             valueId: flexibleEmploymentBenefitsPercentage
         -
           articleText:
-            en: ""
-            nl: "Deze aanspraak kan door werknemer op verschillende manieren worden genoten. Naar keuze kan deze aanspraak aangewend worden voor:"
-            pl: ""
+            en: ''
+            nl: 'Deze aanspraak kan door werknemer op verschillende manieren worden genoten. Naar keuze kan deze aanspraak aangewend worden voor:'
+            pl: ''
           articlelabel: flexibleEmploymentBenefitsOptions
           help:
-            en: ""
-            nl: ""
-            pl: ""
+            en: ''
+            nl: ''
+            pl: ''
           id: 10033
           order: 1302
-          required: true
-          standard: true
+          required: TRUE
+          standard: TRUE
           values:
             options:
-              - "een maandelijkse uitkering"
-              - "extra verlofuren"
-              - "eindejaarsuitkering"
-              - "eigen bijdrage in het geval van studiekosten"
-              - "eigen bijdrage in het geval van een leaseauto"
+              - 'een maandelijkse uitkering'
+              - 'extra verlofuren'
+              - 'eindejaarsuitkering'
+              - 'eigen bijdrage in het geval van studiekosten'
+              - 'eigen bijdrage in het geval van een leaseauto'
             tralnslations:
               en: []
               nl:
-                - "een maandelijkse uitkering"
-                - "extra verlofuren"
-                - "eindejaarsuitkering"
-                - "eigen bijdrage in het geval van studiekosten"
-                - "eigen bijdrage in het geval van een leaseauto"
+                - 'een maandelijkse uitkering'
+                - 'extra verlofuren'
+                - 'eindejaarsuitkering'
+                - 'eigen bijdrage in het geval van studiekosten'
+                - 'eigen bijdrage in het geval van een leaseauto'
               pl: []
             type: string
             valueID: flexibleEmploymentBenefitsOption
         -
           articleText:
-            en: ""
-            nl: "Een nadere uitwerking van de regeling flexibele secundaire voorwaarden is vastgelegd in de algemene arbeidsvoorwaarden van LTO Groeiservice (zie ook artikel <claArticleNumber>)."
-            pl: ""
+            en: ''
+            nl: 'Een nadere uitwerking van de regeling flexibele secundaire voorwaarden is vastgelegd in de algemene arbeidsvoorwaarden van LTO Groeiservice (zie ook artikel <claArticleNumber>).'
+            pl: ''
           articlelabel: flexibleEmploymentBenefitsArrangment
           help:
-            en: ""
-            nl: ""
-            pl: ""
+            en: ''
+            nl: ''
+            pl: ''
           id: 10034
           order: 1303
-          required: true
-          standard: true
+          required: TRUE
+          standard: TRUE
           values:
-            value: ""
+            value: ''
             valueId: claArticleNumber
     -
       articleHeader:
-        en: "Mobile phone provision"
-        nl: "Ter beschikking stelling mobiele telefoon"
-        pl: ""
+        en: 'Mobile phone provision'
+        nl: 'Ter beschikking stelling mobiele telefoon'
+        pl: ''
       articleLabel: mobilePhoneProvision
       id: 10035
       order: 1400
-      required: true
-      standard: true
+      required: TRUE
+      standard: TRUE
       subArticle:
         -
           articleText:
-            en: ""
-            nl: "Werkgever zal aan werknemer, ten behoeve van de uitvoering van de functie, een mobiele telefoon ter beschikking stellen."
-            pl: ""
+            en: ''
+            nl: 'Werkgever zal aan werknemer, ten behoeve van de uitvoering van de functie, een mobiele telefoon ter beschikking stellen.'
+            pl: ''
           articlelabel: ProvisionMobilePhone
           help:
-            en: ""
-            nl: ""
-            pl: ""
+            en: ''
+            nl: ''
+            pl: ''
           id: 10036
           order: 1401
-          required: true
-          standard: true
+          required: TRUE
+          standard: TRUE
         -
           articleText:
-            en: ""
-            nl: "De mobiele telefoon blijft eigendom van werkgever en dient op diens eerste verzoek aan de werkgever te worden geretourneerd."
-            pl: ""
+            en: ''
+            nl: 'De mobiele telefoon blijft eigendom van werkgever en dient op diens eerste verzoek aan de werkgever te worden geretourneerd.'
+            pl: ''
           articlelabel: ownershipMobilePhone
           help:
-            en: ""
-            nl: ""
-            pl: ""
+            en: ''
+            nl: ''
+            pl: ''
           id: 10037
           order: 1402
-          required: true
-          standard: true
+          required: TRUE
+          standard: TRUE
         -
           articleText:
-            en: ""
-            nl: "Werknemer is verantwoordelijk voor verlies en/of diefstal van de mobiele telefoon."
-            pl: ""
+            en: ''
+            nl: 'Werknemer is verantwoordelijk voor verlies en/of diefstal van de mobiele telefoon.'
+            pl: ''
           articlelabel: lossTheftMobilePhone
           help:
-            en: ""
-            nl: ""
-            pl: ""
+            en: ''
+            nl: ''
+            pl: ''
           id: 10038
           order: 1403
-          required: true
-          standard: true
+          required: TRUE
+          standard: TRUE
           values:
-            value: ""
+            value: ''
             valueId: claArticleNumber
         -
           articleText:
-            en: ""
-            nl: "Beperkt privégebruik binnen Nederland van de mobiele telefoon tot een maximum van <percentage.Private.Use> % is toegestaan, overig gebruik kan door werkgever aan werknemer worden doorbelast."
-            pl: ""
+            en: ''
+            nl: 'Beperkt privégebruik binnen Nederland van de mobiele telefoon tot een maximum van <percentage.Private.Use> % is toegestaan, overig gebruik kan door werkgever aan werknemer worden doorbelast.'
+            pl: ''
           articlelabel: LimitedPrivateUse
           help:
-            en: ""
-            nl: ""
-            pl: ""
+            en: ''
+            nl: ''
+            pl: ''
           id: 10068
           order: 1404
-          required: true
-          standard: true
+          required: TRUE
+          standard: TRUE
           values:
-            default: "25"
+            default: '25'
             type: decimal(2.2)
             valueId: percentagePrivateUse
     -
       articleHeader:
-        en: "laptop provision"
-        nl: "Ter beschikking stelling laptop"
-        pl: ""
+        en: 'laptop provision'
+        nl: 'Ter beschikking stelling laptop'
+        pl: ''
       articleLabel: laptopProvision
       id: 10039
       order: 1410
-      required: true
-      standard: true
+      required: TRUE
+      standard: TRUE
       subArticle:
         -
           articleText:
-            en: ""
-            nl: "Werkgever zal aan werknemer, ten behoeve van de uitvoering van de functie, een laptop ter beschikking stellen."
-            pl: ""
+            en: ''
+            nl: 'Werkgever zal aan werknemer, ten behoeve van de uitvoering van de functie, een laptop ter beschikking stellen.'
+            pl: ''
           articlelabel: laptopProvisionEmployee
           help:
-            en: ""
-            nl: ""
-            pl: ""
+            en: ''
+            nl: ''
+            pl: ''
           id: 10040
           order: 1411
-          required: true
-          standard: true
+          required: TRUE
+          standard: TRUE
         -
           articleText:
-            en: ""
-            nl: "De laptop blijft eigendom van werkgever en dient op diens eerste verzoek aan de werkgever te worden geretourneerd."
-            pl: ""
+            en: ''
+            nl: 'De laptop blijft eigendom van werkgever en dient op diens eerste verzoek aan de werkgever te worden geretourneerd.'
+            pl: ''
           articlelabel: ownershipLaptop
           help:
-            en: ""
-            nl: ""
-            pl: ""
+            en: ''
+            nl: ''
+            pl: ''
           id: 10041
           order: 1412
-          required: true
-          standard: true
+          required: TRUE
+          standard: TRUE
         -
           articleText:
-            en: ""
-            nl: "Werknemer is verantwoordelijk voor verlies en/of diefstal van de laptop."
+            en: ''
+            nl: 'Werknemer is verantwoordelijk voor verlies en/of diefstal van de laptop.'
             pl: ~
           articlelabel: responsibilityLaptop
           help:
-            en: ""
-            nl: ""
-            pl: ""
+            en: ''
+            nl: ''
+            pl: ''
           id: 10042
           order: 1413
-          required: true
-          standard: true
+          required: TRUE
+          standard: TRUE
           values:
             valueId: claArticleNumber
         -
           articleText:
-            en: ""
-            nl: "Privégebruik van de laptop is niet toegestaan. Bij privégebruik zal de nieuwwaarde van de laptop als verstrekt loon beschouwd worden, waarover gebruikelijke fiscale inhoudingen verrekend worden."
-            pl: ""
+            en: ''
+            nl: 'Privégebruik van de laptop is niet toegestaan. Bij privégebruik zal de nieuwwaarde van de laptop als verstrekt loon beschouwd worden, waarover gebruikelijke fiscale inhoudingen verrekend worden.'
+            pl: ''
           articlelabel: PrivateUseLaptop
           help:
-            en: ""
-            nl: ""
-            pl: ""
+            en: ''
+            nl: ''
+            pl: ''
           id: 10043
           order: 1414
-          required: true
-          standard: true
+          required: TRUE
+          standard: TRUE
     -
       articleHeader:
-        en: "Competition clause"
+        en: 'Competition clause'
         nl: Non-concurrentiebeding
-        pl: ""
+        pl: ''
       articleLabel: competitionClause
       id: 10044
       order: 1500
-      required: true
-      standard: true
+      required: TRUE
+      standard: TRUE
       subarticle:
         -
           articleText:
-            en: ""
-            nl: "Het non-concurrentiebeding is beperkt tot het fysieke gebied dat gedurende de laatste twaalf maanden het werkgebied van werknemer vormde."
-            pl: ""
+            en: ''
+            nl: 'Het non-concurrentiebeding is beperkt tot het fysieke gebied dat gedurende de laatste twaalf maanden het werkgebied van werknemer vormde.'
+            pl: ''
           articlelabel: nocompetitionRegional.
           help:
-            en: ""
-            nl: ""
-            pl: ""
+            en: ''
+            nl: ''
+            pl: ''
           id: 10046
           order: 1502
-          required: true
-          standard: true
+          required: TRUE
+          standard: TRUE
         -
           articleText:
-            en: ""
-            nl: "Bij overtreding is werknemer een boete ter hoogte van € <competitionPenalty>,- en voorts een schadevergoeding van € <competitionPenaltyDayFine>,- per dag dat de overtreding voortduurt verschuldigd aan werkgever. De boete is onmiddellijk opeisbaar, zonder dat daarvoor een ingebrekestelling of andere voorafgaande verklaring in de zin van artikel 6:80 e.v. Burgerlijk Wetboek nodig is."
-            pl: ""
+            en: ''
+            nl: 'Bij overtreding is werknemer een boete ter hoogte van € <competitionPenalty>,- en voorts een schadevergoeding van € <competitionPenaltyDayFine>,- per dag dat de overtreding voortduurt verschuldigd aan werkgever. De boete is onmiddellijk opeisbaar, zonder dat daarvoor een ingebrekestelling of andere voorafgaande verklaring in de zin van artikel 6:80 e.v. Burgerlijk Wetboek nodig is.'
+            pl: ''
           articlelabel: noCompetitionPenalty
           help:
-            en: ""
-            nl: ""
-            pl: ""
+            en: ''
+            nl: ''
+            pl: ''
           id: 10047
           order: 1503
-          required: true
-          stardard: true
+          required: TRUE
+          stardard: TRUE
           values:
             -
-              default: "10000"
+              default: '10000'
               type: integer
-              value: ""
+              value: ''
               valueId: competitionPenalty
             -
               valueId: competitionPenaltyDayFine
-              default: "500"
+              default: '500'
               type: integer
-              value: ""
+              value: ''
     -
-      Standard: true
+      Standard: TRUE
       articleHeader:
-        en: "Confidentiality clause"
+        en: 'Confidentiality clause'
         nl: Geheimhoudingbeding
-        pl: ""
+        pl: ''
       articleLabel: confidentialityClause
       id: 10048
       order: 1600
-      required: true
+      required: TRUE
       subArticle:
         -
           articleText:
-            en: ""
-            nl: "Het is werknemer verboden, zowel tijdens als na afloop van het dienstverband, informatie en gegevens waarvan werknemer redelijkerwijs had moeten weten dat zij niet aan derden verstrekt mogen worden, met betrekking tot het bedrijf van de werkgever en/of haar cliënten en relaties te verstrekken aan derden, daaronder begrepen andere personeelsleden van werkgever."
-            pl: ""
+            en: ''
+            nl: 'Het is werknemer verboden, zowel tijdens als na afloop van het dienstverband, informatie en gegevens waarvan werknemer redelijkerwijs had moeten weten dat zij niet aan derden verstrekt mogen worden, met betrekking tot het bedrijf van de werkgever en/of haar cliënten en relaties te verstrekken aan derden, daaronder begrepen andere personeelsleden van werkgever.'
+            pl: ''
           articlelabel: confidentiality
           help:
-            en: ""
-            nl: ""
-            pl: ""
+            en: ''
+            nl: ''
+            pl: ''
           id: 10049
           order: 1601
-          required: true
-          standard: true
+          required: TRUE
+          standard: TRUE
         -
           articleText:
-            en: ""
-            nl: "Het non-concurrentiebeding is beperkt tot het fysieke gebied dat gedurende de laatste twaalf maanden het werkgebied van werknemer vormde."
-            pl: ""
+            en: ''
+            nl: 'Het non-concurrentiebeding is beperkt tot het fysieke gebied dat gedurende de laatste twaalf maanden het werkgebied van werknemer vormde.'
+            pl: ''
           articlelabel: confidentialityLimitation
           help:
-            en: ""
-            nl: ""
-            pl: ""
+            en: ''
+            nl: ''
+            pl: ''
           id: 10050
           order: 1602
-          required: true
-          standard: true
+          required: TRUE
+          standard: TRUE
         -
           articleText:
-            en: ""
-            nl: "Bij overtreding is werknemer een boete ter hoogte van € <competitionPenalty>,- en voorts een schadevergoeding van € <competitionPenaltyDayFine>,- per dag dat de overtreding voortduurt verschuldigd aan werkgever. De boete is onmiddellijk opeisbaar, zonder dat daarvoor een ingebrekestelling of andere voorafgaande verklaring in de zin van artikel 6:80 e.v. Burgerlijk Wetboek nodig is."
-            pl: ""
+            en: ''
+            nl: 'Bij overtreding is werknemer een boete ter hoogte van € <competitionPenalty>,- en voorts een schadevergoeding van € <competitionPenaltyDayFine>,- per dag dat de overtreding voortduurt verschuldigd aan werkgever. De boete is onmiddellijk opeisbaar, zonder dat daarvoor een ingebrekestelling of andere voorafgaande verklaring in de zin van artikel 6:80 e.v. Burgerlijk Wetboek nodig is.'
+            pl: ''
           articlelabel: noCompetitionPenalty
           help:
-            en: ""
-            nl: ""
-            pl: ""
+            en: ''
+            nl: ''
+            pl: ''
           id: 10051
           order: 1603
-          required: true
-          standard: true
+          required: TRUE
+          standard: TRUE
           values:
             -
-              default: "10000"
+              default: '10000'
               type: integer
-              value: ""
+              value: ''
               valueId: competitionPenalty
             -
-              default: "500"
-              value: ""
+              default: '500'
+              value: ''
               valueId: competitionPenaltyDayFine
     -
       articleHeader:
-        en: "Additional positions"
+        en: 'Additional positions'
         nl: Nevenfuncties
-        pl: ""
+        pl: ''
       articleLabel: additionalPositions
       articleText:
-        en: ""
-        nl: "Het is werknemer niet toegestaan een al dan niet betaalde nevenfunctie te vervullen of al dan niet betaalde nevenwerkzaamheden te verrichten tenzij werkgever hiervoor schriftelijk toestemming heeft verleend."
-        pl: ""
+        en: ''
+        nl: 'Het is werknemer niet toegestaan een al dan niet betaalde nevenfunctie te vervullen of al dan niet betaalde nevenwerkzaamheden te verrichten tenzij werkgever hiervoor schriftelijk toestemming heeft verleend.'
+        pl: ''
       help:
-        en: ""
-        nl: ""
-        pl: ""
+        en: ''
+        nl: ''
+        pl: ''
       id: 10052
       order: 1700
-      required: true
-      standard: true
+      required: TRUE
+      standard: TRUE
     -
       articleHeader:
-        en: "General employee benefits"
-        nl: "Algemene Arbeidsvoorwaarden"
-        pl: ""
+        en: 'General employee benefits'
+        nl: 'Algemene Arbeidsvoorwaarden'
+        pl: ''
       articleLabel: generalBenefits
       articleText:
-        en: ""
-        nl: "Op deze overeenkomst zijn de Algemene Arbeidsvoorwaarden van LTO Groeiservice van toepassing. Een exemplaar van de Algemene Arbeidsvoorwaarden is aan de werknemer ter beschikking gesteld. Werknemer verklaart zich bekend en akkoord met de inhoud van de Algemene Arbeidsvoorwaarden."
-        pl: ""
+        en: ''
+        nl: 'Op deze overeenkomst zijn de Algemene Arbeidsvoorwaarden van LTO Groeiservice van toepassing. Een exemplaar van de Algemene Arbeidsvoorwaarden is aan de werknemer ter beschikking gesteld. Werknemer verklaart zich bekend en akkoord met de inhoud van de Algemene Arbeidsvoorwaarden.'
+        pl: ''
       help:
-        en: ""
-        nl: ""
-        pl: ""
+        en: ''
+        nl: ''
+        pl: ''
       id: 10051
       order: 1800
-      required: true
-      standard: true
+      required: TRUE
+      standard: TRUE
   availableLanguages:
     - nl_NL
   version: 17-12-2012
