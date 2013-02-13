@@ -31,7 +31,6 @@
 		"typo3/ldap": "dev-master",
 		"radmiraal/emberjs": "dev-master",
 		"radmiraal/couchdb": "dev-doctrine",
-		"famelo/gerrit": "dev-master",
 		"doctrine/dbal": "2.3.1",
 		"doctrine/orm": "2.3.1",
 		"typo3/formbuilder": "dev-master",

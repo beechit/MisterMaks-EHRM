@@ -1,5 +1,5 @@
 {
-    "hash": "7cd7e86c15be945de469d5c9349b01bb",
+    "hash": "a13e5f93a74c5497654d0bc1ae48b1f4",
     "packages": [
         {
             "name": "beech/essentials",
@@ -7,13 +7,13 @@
             "source": {
                 "type": "git",
                 "url": "ssh://git.beech.local/Beech/BuildEssentials.git",
-                "reference": "b878bbdd528101b5778390673d206b9a342b6151"
+                "reference": "56d7848245788c714a07873837dd12f77b0439a1"
             },
             "require": {
                 "php": ">=5.3.2",
                 "typo3/flow": "*"
             },
-            "time": "2013-01-17 19:45:44",
+            "time": "2013-02-13 14:31:43",
             "type": "typo3-flow-build",
             "autoload": {
                 "psr-0": {
@@ -432,32 +432,6 @@
                 "database",
                 "orm"
             ]
-        },
-        {
-            "name": "famelo/gerrit",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/mneuhaus/Famelo.Gerrit",
-                "reference": "9bc5f2374e4a96262613f6acb841b331c7790b7c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/mneuhaus/Famelo.Gerrit/zipball/9bc5f2374e4a96262613f6acb841b331c7790b7c",
-                "reference": "9bc5f2374e4a96262613f6acb841b331c7790b7c",
-                "shasum": ""
-            },
-            "require": {
-                "typo3/flow": "*"
-            },
-            "time": "2013-02-06 14:04:06",
-            "type": "typo3-flow-package",
-            "autoload": {
-                "psr-0": {
-                    "Famelo\\Gerrit": "Classes"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/"
         },
         {
             "name": "predis/predis",
@@ -1554,7 +1528,6 @@
         "typo3/ldap": 20,
         "radmiraal/emberjs": 20,
         "radmiraal/couchdb": 20,
-        "famelo/gerrit": 20,
         "typo3/formbuilder": 20,
         "typo3/usermanagement": 20,
         "typo3/buildessentials": 20,
