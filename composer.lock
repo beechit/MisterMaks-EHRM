@@ -1,5 +1,5 @@
 {
-    "hash": "6cd3c093763ace61cac27d31add73cb0",
+    "hash": "7cd7e86c15be945de469d5c9349b01bb",
     "packages": [
         {
             "name": "beech/essentials",
@@ -761,7 +761,7 @@
             "source": {
                 "type": "git",
                 "url": "git://git.typo3.org/FLOW3/Packages/TYPO3.FLOW3.git",
-                "reference": "c3a1eb5ecf0d4818409897afca36145c7424ae04"
+                "reference": "206c7371dac8d67fec6180a24098cff6cbf42f4f"
             },
             "require": {
                 "doctrine/data-fixtures": "*",
@@ -778,7 +778,7 @@
                 "typo3/fluid": "*",
                 "typo3/party": "*"
             },
-            "time": "2013-02-08 19:44:26",
+            "time": "2013-02-13 08:46:31",
             "type": "typo3-flow-framework",
             "autoload": {
                 "psr-0": {
@@ -1259,26 +1259,19 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git://github.com/sebastianbergmann/php-timer.git",
-                "reference": "de74b17cf85c51d57480c88bc069538b83ffed2f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-timer/zipball/de74b17cf85c51d57480c88bc069538b83ffed2f",
-                "reference": "de74b17cf85c51d57480c88bc069538b83ffed2f",
-                "shasum": ""
+                "url": "git@github.com:radmiraal/php-timer.git",
+                "reference": "5239e2b2e125cc0a79c386ad5773b3fc1b3305f8"
             },
             "require": {
                 "php": ">=5.4.7"
             },
-            "time": "2013-01-30 06:29:42",
+            "time": "2013-01-30 06:08:56",
             "type": "library",
             "autoload": {
                 "classmap": [
                     "PHP/"
                 ]
             },
-            "notification-url": "https://packagist.org/downloads/",
             "include-path": [
                 ""
             ],
@@ -1296,7 +1289,11 @@
             "homepage": "https://github.com/sebastianbergmann/php-timer/",
             "keywords": [
                 "timer"
-            ]
+            ],
+            "support": {
+                "issues": "https://github.com/sebastianbergmann/php-timer/issues",
+                "irc": "irc://irc.freenode.net/phpunit"
+            }
         },
         {
             "name": "phpunit/php-token-stream",
