@@ -16,7 +16,7 @@ use TYPO3\Flow\Annotations as Flow,
  * @Flow\Scope("prototype")
  * @ODM\Document(indexed="true")
  */
-class LaborAgreement {
+class LaborAgreement extends \Beech\Ehrm\Domain\Model\Document {
 
 	/**
 	 * The name

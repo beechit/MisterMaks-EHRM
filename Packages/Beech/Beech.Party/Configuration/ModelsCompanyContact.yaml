@@ -400,9 +400,9 @@ beech:
           validation:
             type: 'NotEmpty'
           visible: true
-# with jobposition we have to set something about hierarchy and place the company contact in this hierarchy.
-        'Jobposition':
-          label: Jobposition
+# with jobdescription we have to set something about hierarchy and place the company contact in this hierarchy.
+        'jobDescription':
+          label: jobDescription
           type: string(20)
         'creationDate':
           default: now

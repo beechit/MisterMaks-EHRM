@@ -15,7 +15,7 @@ use TYPO3\Flow\Annotations as Flow,
  *
  * @ODM\Document(indexed=true)
  */
-class Wage {
+class Wage extends \Beech\Ehrm\Domain\Model\Document {
 
 	const TYPE_YEARLY = 'yearly';
 	const TYPE_QUARTERLY = 'quarterly';

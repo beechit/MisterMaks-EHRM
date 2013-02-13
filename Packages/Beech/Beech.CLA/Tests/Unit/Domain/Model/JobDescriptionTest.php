@@ -8,21 +8,21 @@ namespace Beech\CLA\Tests\Unit\Domain\Model;
  */
 
 use TYPO3\Flow\Annotations as Flow,
-	Beech\CLA\Domain\Model\JobPosition;
+	Beech\CLA\Domain\Model\JobDescription;
 
 /**
  * Testcase for Job position
  */
-class JobPositionTest extends \TYPO3\Flow\Tests\UnitTestCase {
+class JobDescriptionTest extends \TYPO3\Flow\Tests\UnitTestCase {
 
 	/**
 	 * @test
 	 */
 	public function checkName() {
-		$jobPosition = new JobPosition();
+		$jobDescription = new JobDescription();
 		$expectedName = 'Software Developer';
-		$jobPosition->setName($expectedName);
-		$this->assertEquals($expectedName, $jobPosition->getName());
+		$jobDescription->setName($expectedName);
+		$this->assertEquals($expectedName, $jobDescription->getName());
 	}
 
 }

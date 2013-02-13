@@ -16,7 +16,7 @@ use TYPO3\Flow\Annotations as Flow,
  * @Flow\Scope("prototype")
  * @ODM\Document(indexed="true")
  */
-class Contract {
+class Contract extends \Beech\Ehrm\Domain\Model\Document {
 
 	const STATUS_DRAFT = 'Draft';
 	const STATUS_PENDING_APPROVAL = 'Pending approval';
@@ -28,10 +28,10 @@ class Contract {
 	const STATUS_SUSPENDED = 'Suspended';
 
 	/**
-	 * @var \Beech\CLA\Domain\Model\JobPosition
-	 * @ODM\ReferenceOne(targetDocument="\Beech\CLA\Domain\Model\JobPosition")
+	 * @var \Beech\CLA\Domain\Model\JobDescription
+	 * @ODM\ReferenceOne(targetDocument="\Beech\CLA\Domain\Model\JobDescription")
 	 */
-	protected $jobPosition;
+	protected $jobDescription;
 
 	/**
 	 * @var \Doctrine\Common\Collections\Collection<\Beech\CLA\Domain\Model\Wage>
@@ -165,17 +165,17 @@ class Contract {
 	}
 
 	/**
-	 * @param \Beech\CLA\Domain\Model\JobPosition $jobPosition
+	 * @param \Beech\CLA\Domain\Model\JobDescription $jobDescription
 	 */
-	public function setJobPosition($jobPosition) {
-		$this->jobPosition = $jobPosition;
+	public function setJobDescription($jobDescription) {
+		$this->jobDescription = $jobDescription;
 	}
 
 	/**
-	 * @return \Beech\CLA\Domain\Model\JobPosition
+	 * @return \Beech\CLA\Domain\Model\JobDescription
 	 */
-	public function getJobPosition() {
-		return $this->jobPosition;
+	public function getJobDescription() {
+		return $this->jobDescription;
 	}
 
 	/**
@@ -211,7 +211,9 @@ class Contract {
 	 * @return void
 	 */
 	public function addWage(\Beech\CLA\Domain\Model\Wage $wage) {
-		$this->wages->add($wage);
+		if (!in_array($wage, $this->wages)) {
+			$this->wages[] = $wage;
+		}
 	}
 
 	/**
@@ -219,7 +221,10 @@ class Contract {
 	 * @return void
 	 */
 	public function removeWage(\Beech\CLA\Domain\Model\Wage $wage) {
-		$this->wages->removeElement($wage);
+		$index = array_search($wage, $this->wages);
+		if ($index !== FALSE) {
+			unset($this->wages[$index]);
+		}
 	}
 
 	/**
@@ -235,7 +240,10 @@ class Contract {
 	 * @return \Beech\CLA\Domain\Model\Wage $wage
 	 */
 	public function getWage() {
-		return $this->wages->first();
+		if (count($this->wages) > 0) {
+			return $this->wages[0];
+		}
+		return NULL;
 	}
 }
 
