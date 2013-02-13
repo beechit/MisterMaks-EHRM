@@ -28,14 +28,22 @@ contactArticles:
         pl: ''
       values:
           -
-            type: 'TYPO3.Form:DatePicker'
+            type: 'Beech.Ehrm:DatePicker'
             value: ''
             valueId: startDate
             default: today
+            properties:
+              dateFormat: 'd-m-Y'
+              enableDatePicker: TRUE
+              displayTimeSelector: FALSE
           -
-            type: 'TYPO3.Form:DatePicker'
+            type: 'Beech.Ehrm:DatePicker'
             value: ''
             valueId: endDate
+            properties:
+              dateFormat: 'd-m-Y'
+              enableDatePicker: TRUE
+              displayTimeSelector: FALSE
           -
             type: 'TYPO3.Form:SingleLineText'
             value: ''
@@ -115,27 +123,28 @@ contactArticles:
           value: ''
           valueId: 'workLocation'
         -
-          type: array
-          options: [ monday , tuesday , wednesday , thursday , friday , saturday , sunday ]
-          nl: [ maandag, dinsdag, woensdag, donderdag, vrijdag, zaterdag, zondag ]
-          en:
-          pl:
+          type: 'TYPO3.Form:MultipleSelectCheckboxes'
+          options: [ maandag, dinsdag, woensdag, donderdag, vrijdag, zaterdag, zondag ]
+          translated:
+            nl: [ maandag, dinsdag, woensdag, donderdag, vrijdag, zaterdag, zondag ]
+            en: [ monday , tuesday , wednesday , thursday , friday , saturday , sunday ]
+            pl: [ poniedzialek, wtorek, sroda, czwartek, piatek, sobota, niedziela ]
           valueId: workDays
         -
-          type:  'TYPO3.Form:DatePicker'
+          type:  'Beech.Ehrm:DatePicker'
+          default: '9.00'
           properties:
-            elementClassAttribute: 'small'
-            timeSelectorClassAttribute: 'mini'
-            enableDatePicker: FALSE
+            enableDatePicker: TRUE
+            displayDateSelector: FALSE
             displayTimeSelector: TRUE
           value: ''
           valueId: 'startTime'
         -
-          type: 'TYPO3.Form:DatePicker'
+          type: 'Beech.Ehrm:DatePicker'
+          default: '17.00'
           properties:
-            elementClassAttribute: 'small'
-            timeSelectorClassAttribute: 'mini'
-            enableDatePicker: FALSE
+            enableDatePicker: TRUE
+            displayDateSelector: FALSE
             displayTimeSelector: TRUE
           value: ''
           valueId: 'endTime'
@@ -229,9 +238,13 @@ contactArticles:
         pl: ''
       values:
         -
-          type: 'TYPO3.Form:SingleLineText'
+          type: 'Beech.Ehrm:DatePicker'
           default: '9.00'
           valueId: 'sickReportTime'
+          properties:
+            enableDatePicker: TRUE
+            displayDateSelector: FALSE
+            displayTimeSelector: TRUE
     -
       articleHeader:
         en: ''
@@ -466,23 +479,31 @@ contactArticles:
           value: 'Beech/Party/Domain/Model/Company'
           valueId: 'workLocation'
         -
-          type: array
-          options: [ monday, tuesday, wednessday , thursday, friday, saturday , sunday ]
-          nl: [ maandag, dinsdag, woensdag, donderdag, vrijdag, zaterdag, zondag ]
-          en:
-          pl:
+          type: 'TYPO3.Form:MultipleSelectCheckboxes'
+          options: [ maandag, dinsdag, woensdag, donderdag, vrijdag, zaterdag, zondag ]
+          translated:
+            nl: [ maandag, dinsdag, woensdag, donderdag, vrijdag, zaterdag, zondag ]
+            en: [ monday, tuesday, wednessday , thursday, friday, saturday , sunday ]
+            pl: [ poniedzialek, wtorek, sroda, czwartek, piatek, sobota, niedziela ]
           valueId: workDays
         -
-          type:  'TYPO3.Form:SingleLineText'
+          type:  'Beech.Ehrm:DatePicker'
           value: ''
           valueId: 'startTime'
           default: '8.00'
-
+          properties:
+            enableDatePicker: TRUE
+            displayDateSelector: FALSE
+            displayTimeSelector: TRUE
         -
-          type: 'TYPO3.Form:SingleLineText'
+          type: 'Beech.Ehrm:DatePicker'
           value: ''
           valueId: 'endTime'
           default: '18.00'
+          properties:
+            enableDatePicker: TRUE
+            displayDateSelector: FALSE
+            displayTimeSelector: TRUE
 # Articles for OBT
     -
       articleHeader:
@@ -504,11 +525,9 @@ contactArticles:
         pl: ''
       values:
         -
-          type: 'TYPO3.Form:DatePicker'
+          type: 'Beech.Ehrm:DatePicker'
           properties:
-            elementClassAttribute: 'small'
-            timeSelectorClassAttribute: 'mini'
-            dateFormat: 'Y-m-d'
+            dateFormat: 'd-m-Y'
             enableDatePicker: true
             displayTimeSelector: false
           value: ''

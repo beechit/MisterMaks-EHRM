@@ -34,12 +34,18 @@ class ContractArticlesSection extends \TYPO3\Form\FormElements\Section {
 					$contractArticleValueIdentifier = 'article-' . $contractArticle->getArticleId() . '-values.' . $value['valueId'];
 					if (isset($value['type']) && preg_match('/(\w+)\.(\w+):(\w+)/', $value['type'])) {
 						$contractArticleValue = $this->createElement($contractArticleValueIdentifier, $value['type']);
-						if ($value['type'] === 'TYPO3.Form:DatePicker') {
-							$contractArticleValue->setProperty('dateFormat', 'Y-m-d');
-						} else if ($value['type'] === 'TYPO3.Form:SingleSelectDropdown') {
+						if (isset($value['properties'])) {
+							foreach ($value['properties'] as $propertyName => $property) {
+								$contractArticleValue->setProperty($propertyName, $property);
+							}
+						}
+						if ($value['type'] === 'TYPO3.Form:SingleSelectDropdown' || $value['type'] === 'TYPO3.Form:MultipleSelectCheckboxes') {
 							if (isset($value['options'])) {
 								$contractArticleValue->setProperty('options', $value['options']);
 							}
+						}
+						if (isset($value['default'])) {
+							$contractArticleValue->setDefaultValue($value['default']);
 						}
 					} else {
 						$contractArticleValue = $this->createElement($contractArticleValueIdentifier, 'TYPO3.Form:SingleLineText');
@@ -47,7 +53,6 @@ class ContractArticlesSection extends \TYPO3\Form\FormElements\Section {
 					if (isset($value['valueId'])) {
 						$contractArticleValue->setLabel($value['valueId']);
 					}
-					$contractArticleValue->setDefaultValue(isset($value['default']) ? $value['default'] : 0);
 				}
 			}
 			$contractArticleElement = $this->createElement('article-' . $contractArticle->getArticleId() . '-identifier' , 'Beech.CLA:ContractArticleFormElement');
