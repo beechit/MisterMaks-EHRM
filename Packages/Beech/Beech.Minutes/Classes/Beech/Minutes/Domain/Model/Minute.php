@@ -15,7 +15,7 @@ use TYPO3\Flow\Annotations as Flow,
  *
  * @ODM\Document(indexed=true)
  */
-class Minute extends \Radmiraal\CouchDB\Persistence\AbstractDocument {
+class Minute extends \Beech\Ehrm\Domain\Model\Document {
 
 	const TYPE_APPRAISAL = 'Appraisal';
 	const TYPE_MEETING = 'Meeting';

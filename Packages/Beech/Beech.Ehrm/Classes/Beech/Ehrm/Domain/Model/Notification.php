@@ -15,7 +15,7 @@ use TYPO3\Flow\Annotations as Flow,
  *
  * @ODM\Document(indexed=true)
  */
-class Notification extends \Radmiraal\CouchDB\Persistence\AbstractDocument {
+class Notification extends \Beech\Ehrm\Domain\Model\Document {
 
 	/**
 	 * @var \TYPO3\Flow\Persistence\PersistenceManagerInterface

@@ -15,7 +15,7 @@ use TYPO3\Flow\Annotations as Flow,
  *
  * @ODM\Document(indexed=true)
  */
-class Meeting extends \Radmiraal\CouchDB\Persistence\AbstractDocument {
+class Meeting extends \Beech\Ehrm\Domain\Model\Document {
 
 	/**
 	 * @var \TYPO3\Flow\Persistence\PersistenceManagerInterface

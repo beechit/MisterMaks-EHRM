@@ -15,7 +15,7 @@ use TYPO3\Flow\Annotations as Flow,
  *
  * @ODM\Document(indexed=true)
  */
-class Document extends \Radmiraal\CouchDB\Persistence\AbstractDocument {
+class Document extends \Beech\Ehrm\Domain\Model\Document {
 
 	const TYPE_IDENTIFICATION = 'Identification';
 	const TYPE_RESUME = 'Resume';

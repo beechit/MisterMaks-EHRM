@@ -17,7 +17,9 @@ use Doctrine\ORM\Mapping as ORM,
  * @Flow\Entity
  * @MM\EntityWithDocument
  */
-class Company extends \TYPO3\Party\Domain\Model\AbstractParty {
+class Company extends \TYPO3\Party\Domain\Model\AbstractParty implements \TYPO3\Flow\Object\DeclaresGettablePropertyNamesInterface {
+
+	use \Beech\Ehrm\Domain\ConfigurableModelTrait;
 
 	/**
 	 * The company name

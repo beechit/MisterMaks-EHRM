@@ -15,7 +15,7 @@ use TYPO3\Flow\Annotations as Flow,
  *
  * @ODM\Document(indexed=true)
  */
-class Task extends \Radmiraal\CouchDB\Persistence\AbstractDocument {
+class Task extends \Beech\Ehrm\Domain\Model\Document {
 
 	const PRIORITY_LOW = 0;
 	const PRIORITY_NORMAL = 1;

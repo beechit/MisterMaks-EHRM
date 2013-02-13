@@ -13,7 +13,7 @@ use TYPO3\Flow\Annotations as Flow,
 /**
  * @ODM\Document(indexed=true)
  */
-class Address extends \Radmiraal\CouchDB\Persistence\AbstractDocument {
+class Address extends \Beech\Ehrm\Domain\Model\Document {
 
 }
 

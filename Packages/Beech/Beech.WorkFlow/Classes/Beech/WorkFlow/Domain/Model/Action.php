@@ -14,7 +14,7 @@ use TYPO3\Flow\Annotations as Flow,
  * An Action
  * @ODM\Document(indexed=true)
  */
-class Action extends \Radmiraal\CouchDB\Persistence\AbstractDocument implements \Beech\WorkFlow\Core\ActionInterface {
+class Action extends \Beech\Ehrm\Domain\Model\Document implements \Beech\WorkFlow\Core\ActionInterface {
 
 	/**
 	 * @var \DateTime

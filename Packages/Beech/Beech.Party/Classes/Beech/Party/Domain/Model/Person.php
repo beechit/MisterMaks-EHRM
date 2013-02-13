@@ -17,7 +17,7 @@ use TYPO3\Flow\Annotations as Flow,
  * @Flow\Entity
  * @MM\EntityWithDocument
  */
-class Person extends \TYPO3\Party\Domain\Model\Person {
+class Person extends \TYPO3\Party\Domain\Model\Person implements \TYPO3\Flow\Object\DeclaresGettablePropertyNamesInterface {
 
 	/**
 	 * @var string
@@ -41,6 +41,7 @@ class Person extends \TYPO3\Party\Domain\Model\Person {
 	 * @Flow\Transient
 	 */
 	protected $documentManagementFactory;
+	use \Beech\Ehrm\Domain\ConfigurableModelTrait;
 
 	/**
 	 * @var \TYPO3\Party\Domain\Model\PersonName

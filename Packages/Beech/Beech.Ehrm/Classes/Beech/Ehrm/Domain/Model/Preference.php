@@ -13,7 +13,7 @@ use TYPO3\Flow\Annotations as Flow,
 /**
  * @ODM\Document(indexed=true)
  */
-class Preference extends \Radmiraal\CouchDB\Persistence\AbstractDocument {
+class Preference extends \Beech\Ehrm\Domain\Model\Document {
 
 	/**
 	 * The identifier of the target entity / document

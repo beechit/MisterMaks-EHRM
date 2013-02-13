@@ -15,7 +15,7 @@ use TYPO3\Flow\Annotations as Flow,
  *
  * @ODM\Document(indexed=true)
  */
-class ContractArticle extends \Radmiraal\CouchDB\Persistence\AbstractDocument {
+class ContractArticle extends \Beech\Ehrm\Domain\Model\Document {
 }
 
 ?>

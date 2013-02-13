@@ -15,7 +15,7 @@ use TYPO3\Flow\Annotations as Flow,
  *
  * @ODM\Document
  */
-class Log extends \Radmiraal\CouchDB\Persistence\AbstractDocument {
+class Log extends \Beech\Ehrm\Domain\Model\Document {
 
 	/**
 	 * The message
