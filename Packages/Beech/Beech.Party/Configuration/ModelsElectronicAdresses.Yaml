@@ -1,0 +1,96 @@
+#############################################################
+# validated yaml for the Electronic Adresses
+# here are the electronic adressesfor companys departmens, persons
+#############################################################
+---
+Beech:
+  Party:
+    'ModelElectronicAdresses':
+      properties:
+        'connectionType':
+          label: 'Connection type'
+          options:
+            values:
+              - company
+              - person
+              - department
+          validation:
+            -
+              type: 'NotEmpty'
+            -
+              Type: 'StringLength'
+              options:
+                maximum: 10
+        'personid':
+          label: 'Person ID'
+          type: \Beech\Party\Domain\Model\Person
+          validation: ''
+        'departmentId':
+          label: 'Department ID'
+          type: \Beech\Party\Domain\Model\Company
+          validation: ''
+        'electronicAddresses':
+          items:
+            'email':
+              label: 'E-mailAddress'
+              validation:
+                -
+                  type: 'NotEmpty'
+                -
+                  type: 'EmailAddress'
+                -
+                  type: 'Stringlenght'
+                  options:
+                    maximum: 35
+            'skype':
+              label: Skype
+              validation:
+                -
+                  type: 'RegularExpression'
+                  options:
+                    regularExpression: '[a-zA-Z][a-zA-Z0-9]{5,31}]'
+                -
+                  type: 'Stringlenght'
+                  options:
+                    maximum: 35
+            'websiteUrl':
+              label: 'Website Url'
+              validation:
+                -
+                  type: 'RegularExpression'
+                  options:
+                    regularExpression: '/(https?://)?(www\\.)?([a-zA-Z0-9_%]*)\\b\\.[a-z]{2,4}(\\.[a-z]{2})?((/[a-zA-Z0-9_%]*)+)?(\\.[a-z]*)?/g]'
+                -
+                  type: 'StringLength'
+                  options:
+                    maximum: 50
+            'twitter':
+              label: Twitter
+              validation:
+                -
+                  type: 'StringLength'
+                  options:
+                    maximum: 20
+            'facebook':
+              label: Facebook
+              validation:
+                -
+                  type: 'StringLength'
+                  options:
+                    maximum: 20
+            'linkedin':
+              label: Linkedin
+              validation:
+                -
+                  type: 'StringLength'
+                  options:
+                    maximum: 20
+            'hyves':
+              label: Hyves
+              validation:
+                -
+                  type: 'StringLength'
+                  options:
+                    maximum: 20
+          label: 'Electronic addresses'
+          type: array

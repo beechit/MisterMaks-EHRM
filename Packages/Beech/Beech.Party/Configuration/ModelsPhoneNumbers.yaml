@@ -1,0 +1,79 @@
+#############################################################
+# validated yaml for the Phonenumbers
+# here are the electronic adresses for companys departments,
+# persons
+#############################################################
+---
+Beech:
+  Party:
+    'ModelElectronicAdresses':
+      properties:
+        'connectionType':
+          label: 'Connection type'
+          options:
+            values:
+              - company
+              - person
+              - department
+          validation:
+            -
+              type: 'NotEmpty'
+            -
+              Type: 'StringLength'
+              options:
+                maximum: 10
+        'personid':
+          label: 'Person ID'
+          type: \Beech\Party\Domain\Model\Person
+          validation: ''
+        'departmentId':
+          label: 'Department ID'
+          type: \Beech\Party\Domain\Model\Company
+          validation: ''
+        'phone':
+          items:
+            'phoneType':
+              label: 'phone type'
+              options:
+                values:
+                  - workLocationNumber
+                  - faxNumber
+                  - homePhoneNumber
+                  - privateMobilePhone
+                  - businessMobilePhone
+                  - bussinessPhone
+                  - emergencyCallnumber
+              validation:
+                -
+                  type: 'NotEmpty'
+                -
+                  type: 'StringLength'
+                  options:
+                    maximum: 25
+              default: businessPhone
+            'phoneNumber':
+              label: 'Phone Number'
+              validation:
+                -
+                  type: 'NotEmpty'
+                -
+                  type: 'RegularExpression'
+                  options:
+                    regularExpression: '/(^\\+[0-9]{2}|^\\+[0-9]{2}\\(0\\)|^\\(\\+[0-9]{2}\\)\\(0\\)|^00[0-9]{2}|^0)([0-9]{9}$|[0-9\\-\\s]{10}$)/gm]'
+                -
+                  type: 'Stringlenght'
+                  options:
+                    maximum: 15
+            'foreignPhoneNumber':
+              label: 'Foreign phone number'
+              validation:
+                -
+                  type: 'RegularExpression'
+                  options:
+                    RegularExpression: '/(^\\+[0-9]{2}|^\\+[0-9]{2}\\(0\\)|^\\(\\+[0-9]{2}\\)\\(0\\)|^00[0-9]{2}|^0)([0-9]{9}$|[0-9\\-\\s]{10}$)/gm]'
+                -
+                  type: 'StringLength'
+                  options:
+                    maximum: 15
+          label: 'Phone numbers'
+          type: array

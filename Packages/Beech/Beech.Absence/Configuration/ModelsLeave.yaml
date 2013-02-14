@@ -1,45 +1,44 @@
-
     #############################################################
     # validated yaml for the leave model
     # this is the leave model.
     #############################################################
+---
 Beech:
   Absence:
     'Leave':
       properties:
         'subjectId':
           label: 'Subject id'
-          onlist: TRUE
-          required: TRUE
           type: \Beech\Party\Domain\Model\Person
           validation:
-            type: 'NotEmpty'
-          visible: FALSE
+            -
+              type: 'NotEmpty'
         'departmentId':
           label: departmentId
-          required: TRUE
           type: \Beech\Party\Domain\Model\Company
           validation:
-            type: 'NotEmpty'
-          visible: FALSE
+            -
+              type: 'NotEmpty'
         'leaveDateTimeStart':
           label: leaveDateTimeStart
-          required: TRUE
           type: dateTime
           validation:
-            type: 'RegularExpression'
-            options:
-             regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
-          visible: TRUE
+            -
+              type: 'NotEmpty'
+            -
+              type: 'RegularExpression'
+              options:
+                regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
         'leaveDateEnd':
           label: leaveDateEnd
-          required: TRUE
           type: dateTime
           validation:
-            type: 'RegularExpression'
-            options:
-             regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
-          visible: TRUE
+            -
+              type: 'NotEmpty'
+            -
+              type: 'RegularExpression'
+              options:
+                regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
         'leaveType':
           label: leaveType
           options:
@@ -57,22 +56,26 @@ Beech:
           required: TRUE
           type: string(20)
           validation:
-            type: 'NotEmpty'
-          visible: TRUE
-        'deductFromBalance':
+            -
+              type: 'NotEmpty'
+            -
+              type: 'StringLength'
+              options:
+                maximum: 20
+          'deductFromBalance':
           label: deductFromBalance
           options:
             default: TRUE
           required: TRUE
           type: boolean
           validation: ''
-          visible: TRUE
+
         'paidLeave':
           label: paidLeave
           required: TRUE
           type: boolean
           validation: ''
-          visible: TRUE
+
         'remark':
           items:
             'remarkType':
@@ -85,14 +88,14 @@ Beech:
               required: TRUE
               type: string(20)
               validation: ''
-              visible: TRUE
+
             'remarkContent':
               label: 'Remark content'
               required: FALSE
               type: text
               validation:
                 type: 'Text'
-              visible: TRUE
+
             'remarkDate':
               label: 'Remark date'
               required: FALSE
@@ -101,43 +104,7 @@ Beech:
                 type: 'RegularExpression'
                 options:
                   regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
-              visible: TRUE
           label: Remark
-          type: array
-          validation: ''
-        'leaveBalance':
-          items:
-            'leaveBalanceYear':
-              label: 'Balance year'
-              options:
-                values:
-                  - 2005
-                  - 2006
-                  - 2007
-                  - 2008
-                  - 2009
-                  - 2010
-                  - 2011
-                  - 2012
-                  - 2013
-                  - 2014
-                  - 2015
-                  - 2016
-                  - 2017
-                  - 2018
-                  - 2019
-                  - 2020
-              required: TRUE
-              type: integer(4)
-              validation: ''
-              visible: TRUE
-            'leaveBalance':
-              label: 'Leave balance'
-              required: TRUE
-              type: integer(3)
-              validation: ''
-              visible: TRUE
-          label: 'Leave balance'
           type: array
           validation: ''
         'leaveRequestStatus':
@@ -150,7 +117,7 @@ Beech:
           required: TRUE
           type: string(20)
           validation: ''
-          visible: TRUE
+
         'approveDeclineDate':
           label: 'approved Declined Date'
           required: TRUE
@@ -159,43 +126,138 @@ Beech:
             type: 'RegularExpression'
             options:
              regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
-          visible: TRUE
-        'creationDate':
-          default: now
-          label: 'Creation date'
-          required: TRUE
+
+#############################################################
+# validated yaml for the absence model
+# this is the absence model.
+#############################################################
+Beech:
+  Absence:
+    'Absence':
+      properties:
+        'absenceType':
+          label: 'Absence type'
+          options:
+            values:
+              - accidentDuckLiftStandConcentration
+              - focus
+              - pressure
+              - unknown
+              - short-termabsenteeism
+              - labordispute
+              - Other
+          validation:
+            -
+              type: 'NotEmpty'
+            -
+              type: 'StringLength'
+              option:
+                maximum: 30
+        'subjectId':
+          label: 'Subject id'
+          type: \Beech\Party\Domain\Model\Person
+          validation:
+            -
+              type: 'NotEmpty'
+        'departmentId':
+          label: 'Department id'
+          type: \Beech\Party\Domain\Model\Company
+          validation: ''
+        'firstSickDay':
+          label: 'First sick Day'
+          type: dateTime
+          validation:
+            -
+              type: 'NotEmpty'
+            -
+              type: 'RegularExpression'
+              options:
+                regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
+        'disabilityPercentage':
+          label: 'Disability percentage'
+          default: '0.0'
+          validation:
+            -
+              type: 'RegularExpression'
+              options:
+                regularExpression: '^([1-9]\d*(\.|\,)\d*|0?(\.|\,)\d*[1-9]\d*|[1-9]\d*)$'
+        'disabilityBackup':
+          label: 'Disability backup'
+          options:
+            values:
+              - none
+              - maternity
+              - '(ex)WAO-er'
+              - absentDueToOrganDonation
+              - endOfContractWithin13Weeks
+              - temporaryCallWorker
+              - absentDueToPregnancy
+              - disabilityBackup
+              - adoptionLeaveFosterCare
+              - workDisability
+              - sickOnEndOfEmployemnt
+          validation:
+            -
+              type: 'NotEmpty'
+            -
+              type: 'StringLength'
+              options:
+                maximum: 30
+        'recoveryDate':
+          label: 'Recovery date'
           type: dateTime
           validation:
             type: 'RegularExpression'
             options:
-             regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
-          visible: FALSE
+              regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
+        'arboActionType':
+          label: 'Arbo action type'
+          options:
+            values:
+              - none
+              - accordingToContract
+              - urgentinspection
+              - contactEmployer
+          validation:
+            -
+              type: 'NotEmpty'
+            -
+              type: 'StringLength'
+              options:
+                maximum: 20
+        'creationDate':
+          default: now
+          label: 'creation date'
+          type: dateTime
+          validation:
+            -
+              type: 'NotEmpty'
+            -
+              type: 'RegularExpression'
+              options:
+                regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
         'createdBy':
           default: currentUser
           label: 'Created by'
-          required: TRUE
           type: \Beech\Party\Domain\Model\Person
           validation:
-            type: 'NotEmpty'
-          visible: FALSE
+            -
+              type: 'NotEmpty'
         'modification':
           items:
             'modificationDate':
               default: now
               label: 'Modification date'
-              required: TRUE
               type: dateTime
               validation:
-                type: 'RegularExpression'
-                options:
-                  regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
-              visible: FALSE
+                -
+                  type: 'RegularExpression'
+                  options:
+                    regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
             'modifiedBy':
               default: currentUser
               label: 'Modified by'
               required: TRUE
               type: \Beech\Party\Domain\Model\Person
-              validation: ''
-              visible: FALSE
-          label: ModificationLog
+          label: 'Modification log'
           type: array

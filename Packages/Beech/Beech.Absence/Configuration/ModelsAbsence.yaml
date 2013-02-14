@@ -17,43 +17,41 @@ Beech:
               - short-termabsenteeism
               - labordispute
               - Other
-          required: TRUE
-          type: string(30)
           validation:
-            type: 'NotEmpty'
-          visible: TRUE
+            -
+              type: 'NotEmpty'
+            -
+              type: 'StringLength'
+              option:
+                maximum: 30
         'subjectId':
           label: 'Subject id'
-          onlist: TRUE
-          required: TRUE
           type: \Beech\Party\Domain\Model\Person
           validation:
-            type: 'NotEmpty'
-          visible: TRUE
+            -
+              type: 'NotEmpty'
         'departmentId':
           label: 'Department id'
-          required: TRUE
           type: \Beech\Party\Domain\Model\Company
           validation: ''
-          visible: FALSE
         'firstSickDay':
           label: 'First sick Day'
-          required: TRUE
           type: dateTime
           validation:
-            type: 'RegularExpression'
-            options:
-              regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
-          visible: TRUE
+            -
+              type: 'NotEmpty'
+            -
+              type: 'RegularExpression'
+              options:
+                regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
         'disabilityPercentage':
           label: 'Disability percentage'
-          required: TRUE
-          type: decimal(2.2)
+          default: '0.0'
           validation:
-            type: 'RegularExpression'
-            options:
-              regularExpression: '^([1-9]\d*(\.|\,)\d*|0?(\.|\,)\d*[1-9]\d*|[1-9]\d*)$'
-          visible: TRUE
+            -
+              type: 'RegularExpression'
+              options:
+                regularExpression: '^([1-9]\d*(\.|\,)\d*|0?(\.|\,)\d*[1-9]\d*|[1-9]\d*)$'
         'disabilityBackup':
           label: 'Disability backup'
           options:
@@ -69,11 +67,13 @@ Beech:
               - adoptionLeaveFosterCare
               - workDisability
               - sickOnEndOfEmployemnt
-          required: TRUE
-          type: string(30)
           validation:
-            type: 'NotEmpty'
-          visible: TRUE
+            -
+              type: 'NotEmpty'
+            -
+              type: 'StringLength'
+              options:
+                maximum: 30
         'recoveryDate':
           label: 'Recovery date'
           required: TRUE
@@ -82,7 +82,6 @@ Beech:
             type: 'RegularExpression'
             options:
               regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
-          visible: TRUE
         'arboActionType':
           label: 'Arbo action type'
           options:
@@ -91,46 +90,46 @@ Beech:
               - accordingToContract
               - urgentinspection
               - contactEmployer
-          required: TRUE
-          type: string(20)
-          validation: ''
-          visible: TRUE
+          validation:
+            -
+              type: 'NotEmpty'
+            -
+              type: 'StringLength'
+              options:
+                maximum: 20
         'creationDate':
           default: now
           label: 'creation date'
-          required: TRUE
           type: dateTime
           validation:
-            type: 'RegularExpression'
-            options:
-              regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
-          visible: FALSE
+            -
+              type: 'NotEmpty'
+            -
+              type: 'RegularExpression'
+              options:
+                regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
         'createdBy':
           default: currentUser
           label: 'Created by'
-          required: TRUE
           type: \Beech\Party\Domain\Model\Person
           validation:
-            type: 'NotEmpty'
-          visible: FALSE
+            -
+              type: 'NotEmpty'
         'modification':
           items:
             'modificationDate':
               default: now
               label: 'Modification date'
-              required: TRUE
               type: dateTime
               validation:
-                type: 'RegularExpression'
-                options:
-                  regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
-              visible: FALSE
+                -
+                  type: 'RegularExpression'
+                  options:
+                    regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
             'modifiedBy':
               default: currentUser
               label: 'Modified by'
               required: TRUE
               type: \Beech\Party\Domain\Model\Person
-              validation: ''
-              visible: FALSE
           label: 'Modification log'
           type: array
