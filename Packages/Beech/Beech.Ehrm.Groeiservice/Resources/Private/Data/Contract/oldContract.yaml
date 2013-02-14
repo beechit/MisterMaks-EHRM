@@ -1,0 +1,59 @@
+Beech.MisterMaks:
+###############################################################
+# This file is the template for the storage of data of old contracts
+# and gives a minimal registration of contract data for historical calculation purposes
+# old contract storage file
+###############################################################
+  contract:
+
+# version of this document
+
+    version: '17-12-2012'.
+
+# CLA that is connected with this contracttemplate
+
+    CLA: 'None'
+      CLAversion: ''
+      CLAversiondate: ''
+
+# This defines the available languages in which the contract can be generated
+
+    availableLanguages: [ nl_NL ]
+  -
+    contractTitle:
+      nl: 'Registratie oude arbeidsovereenkomst'
+      en: ''
+      pl: ''
+  -
+    contractstartdate:
+      label:
+        nl: 'Startdatum Dienstverband'
+        en: ''
+        pl: ''
+      type:
+      validation: [ (0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}( \d{1,2}[:-]\d{2}([:-]\d{2,3})*)? ]
+  -
+    contractEndDate:
+      label:
+        nl: 'Einddatum Dienstverband'
+        en: ''
+        pl: ''
+      type:
+      validation: [ (0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}( \d{1,2}[:-]\d{2}([:-]\d{2,3})*)? ]
+  -
+    probation:
+      label:
+        nl: 'Einddatum Dienstverband'
+        en: ''
+        pl: ''
+      type:
+      values: [ TRUE, FALSE ]
+#The following settings are contract template settings which do not show in contact but are set here.
+   ContacttemplateSettings:
+    typeofemployment: [ Dagdienst]
+# Als de werkgever geen loondoorbetalingverplichting voor een bepaalde werknemer heeft, kan hij dit door middel van de
+# indicator “loondoorbetalingverplichting” aangeven. De werknemer valt dan buiten de verzekering.
+# Dit heeft voornamelijk betrekking op stagiairs, oproepkrachten en uitzendkrachten.
+    wagePaymentObligation: TRUE
+# set if the employee is a shareholder
+    DGA: FALSE
