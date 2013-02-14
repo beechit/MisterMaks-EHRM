@@ -8,29 +8,62 @@ Beech:
       properties:
         'name':
           label: 'Name of company'
-          type: string(30)
           validation:
-            type: 'NotEmpty'
+            -
+              type: 'NotEmpty'
+            -
+              type: 'StringLength'
+              options:
+                maximum: 35
+        'companyType':
+          label: 'Company type'
+          validation: ''
+          options:
+            values:
+              - primary
+              - department
+              - subsidiaryCompany
+              - partnerCompany
+          default: department
+          validation:
+            -
+              type: 'NotEmpty'
+            -
+              type: 'StringLength'
+              options:
+                maximum: 20
         'departments':
           label: Departments
           type: \Beech\Party\Domain\Model\Company
           validation: ''
         'chamberOfCommerceNumber':
           label: 'Chamber of Commerce Number'
-          type: string(20)
-          validation: ''
+          validation:
+            -
+              type: 'StringLengh'
+              options:
+                maximum: 20
         'companyIdNumber':
           label: 'Company Id Number'
-          type: integer(6)
           validation:
-            type: 'NotEmpty'
+            -
+              type: 'integer'
+            -
+              type: 'Count'
+              options:
+                minimum: 1
+                maximum: 99999999
+            -
+              type: 'NotEmpty'
         'policyNumberAbsenceInsurer':
           label: 'Policy Number Absence Insurer'
-          type: integer(25)
           validation:
-            type: 'RegularExpression'
-            options:
-              regularExpression: '[1-9]{1}[0-9]{0,24}'
+            -
+              type: 'RegularExpression'
+              options:
+                regularExpression: '[1-9]{1}[0-9]{0,24}'
+            -
+              type: 'Integer'
         'legalForm':
           label: LegalForm
           options:
@@ -45,139 +78,45 @@ Beech:
             - association
             - foundation
             - cooperative
-          type: string(30)
           default: none
           validation:
-            type: 'NotEmpty'
-        'companyType':
-          label: 'Company type'
-          type: string(20)
-          validation: ''
-          options:
-            values:
-              - primary
-              - department
-              - subsidiaryCompany
-              - partnerCompany
-          default: primary
-          validation:
-            type: 'NotEmpty'
+            -
+              type: 'NotEmpty'
+            -
+              type: 'StringLength'
+              options:
+                maximum: 20
         'vatNumber':
-          required: FALSE
+
           label: 'Vat Number'
-          type: string(14)
-          validation: ''
+          validation:
+            -
+              type: 'StringLength'
+              options:
+                maximum: 14
+
           visible: TRUE
         'wageTaxNumber':
-          required: FALSE
+
           label: 'wage Tax Number'
-          type: string(9)
           validation:
-            type: 'RegularExpression'
-            options:
-              regularExpression: '[0-9]{9}L[0-9]{2}'
-          visible: TRUE
+            -
+              type: 'RegularExpression'
+              options:
+                regularExpression: '[0-9]{9}L[0-9]{2}'
+            -
+              type: 'Stringlength'
+              options:
+                maximum: 9
         'companyDescription':
           label: 'Company description'
-          required: FALSE
           type: text
-          validation: ''
-          visible: TRUE
-        'bankInformation':
-          items:
-            'accountType':
-              label: 'account type'
-              options:
-                values:
-                  - giroAccount
-                  - bankaccount
-                  - bankAccountAbroad
-              required: TRUE
-              type: string(20)
-              validation:
-                type: 'NotEmpty'
-              visible: TRUE
-            'bankName':
-              label: 'Bank name'
-              required: FALSE
-              type: string(30)
-              validation:
-                -
-                  type: 'StringLength'
-                  options:
-                    maximum: 30
-                -
-                  type: 'RegularExpression'
-                  options:
-                    regularExpression: '[a-zA-Z\\-\\s\\’]{2,20}'
-              visible: TRUE
-            'primaryBankAccount':
-              label: 'Primary Bankaccount'
-              required: FALSE
-              type: boolean
-              visible: TRUE
-            'giro':
-              label: Giro
-              required: FALSE
-              type: string(7)
-              validation:
-               type: 'RegularExpression'
-               options:
-                 regularExpression: '\\d{1,7}'
-              visible: TRUE
-            'bic':
-              label: 'Bic code'
-              required: FALSE
-              type: string(11)
-              validation:
-                -
-                  type: 'StringLength'
-                  options:
-                    maximum: 11
-                -
-                  type: 'RegularExpression'
-                  options:
-                    regularExpression: '[1-9]{8}|[1-9]{11}'
-              visible: TRUE
-            'ibanNumber':
-              label: 'IBAN number'
-              required: FALSE
-              type: string(34)
-              validation:
-                type: 'RegularExpression'
-                options:
-                  regularExpression: '/[a-zA-Z]{2}[0-9]{2}[a-zA-Z0-9]{4}[0-9]{7}([a-zA-Z0-9]?){0,16}/g'
-              visible: TRUE
-            'countryOfBank':
-              default: NL
-              label: 'Country bank'
-              required: TRUE
-              type: string(40)
-              validation:
-                type: 'StringLength'
-                options:
-                  maximum: 40
-              visible: TRUE
-            'bankResidence':
-              label: 'bank residence'
-              required: FALSE
-              type: string(30)
-              validation:
-                -
-                  type: 'StringLength'
-                  options:
-                    maximum: 30
-                -
-                  type: 'RegularExpression'
-                  options:
-                    regularExpression: '[a-zA-Z0-9\\-\\’]{2,30}'
-              visible: TRUE
-          label: 'Bank information'
-          type: array
+          validation:
+            -
+              type: 'Text'
         'creationDate':
           default: now
           label: 'creation date'
-          required: TRUE
           type: dateTime
           validation:
             -
@@ -186,32 +125,25 @@ Beech:
               type: 'RegularExpression'
               options:
                 regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
-          visible: FALSE
         'createdBy':
           default: currentUser
           label: 'Created by'
-          required: TRUE
           type: \Beech\Party\Domain\Model\Person
           validation: ''
-          visible: FALSE
         'modification':
           items:
             'modificationDate':
               default: now
               label: 'Modification date'
-              required: TRUE
               type: dateTime
               validation:
                 type: 'RegularExpression'
                 options:
                   regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
-              visible: FALSE
             'modifiedBy':
               default: currentUser
               label: 'Modified by'
-              required: TRUE
               type: \Beech\Party\Domain\Model\Person
               validation: ''
-              visible: FALSE
           label: 'Modification log'
           type: array
