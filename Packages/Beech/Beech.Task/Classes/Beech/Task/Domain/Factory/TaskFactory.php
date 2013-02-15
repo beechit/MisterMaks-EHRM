@@ -18,15 +18,25 @@ class TaskFactory {
 	/**
 	 * This function creates a model object for the task model.
 	 *
-	 * @return Beech\Task\Domain\Model\Task $task
+	 * @param \Beech\Task\Domain\Model\Priority $priority
+	 * @param string $description
+	 * @param \TYPO3\Party\Domain\Model\AbstractParty $assignedTo
+	 * @param boolean $closeableByAssignee
+	 * @param \TYPO3\Party\Domain\Model\AbstractParty $createdBy
+	 * @return \Beech\Task\Domain\Model\Task
 	 */
-	public function createTask() {
+	public static function createTask(\Beech\Task\Domain\Model\Priority $priority, $description, \TYPO3\Party\Domain\Model\AbstractParty $assignedTo = NULL, $closeableByAssignee = FALSE, \TYPO3\Party\Domain\Model\AbstractParty $createdBy = NULL) {
 		$task = new Task();
-
-		$task->setPriority(1);
-		$task->setCloseableByAssignee(TRUE);
-		$task->setCreationDateTime(new \DateTime);
-		$task->setDescription('A New Task');
+		$task->setPriority($priority);
+		$task->setCloseableByAssignee($closeableByAssignee);
+		if ($assignedTo !== NULL) {
+			$task->setAssignedTo($assignedTo);
+		}
+		if ($createdBy !== NULL) {
+			$task->setCreatedBy($createdBy);
+		}
+		$task->setCreationDateTime(new \DateTime());
+		$task->setDescription($description);
 		return $task;
 	}
 

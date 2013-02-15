@@ -17,11 +17,6 @@ use TYPO3\Flow\Annotations as Flow,
  */
 class Task extends \Beech\Ehrm\Domain\Model\Document {
 
-	const PRIORITY_LOW = 0;
-	const PRIORITY_NORMAL = 1;
-	const PRIORITY_HIGH = 2;
-	const PRIORITY_IMMEDIATE = 3;
-
 	/**
 	 * @var \TYPO3\Flow\Persistence\PersistenceManagerInterface
 	 * @Flow\Inject
@@ -75,11 +70,10 @@ class Task extends \Beech\Ehrm\Domain\Model\Document {
 	 * Priority of this task 0-3
 	 *
 	 * @var integer
-	 * @Flow\Validate(type="NumberRange", options={ "minimum"=0, "maximum"=3 })
-	 * @ODM\Field(type="integer")
+	 * @ODM\ReferenceOne(targetDocument="\Beech\Task\Domain\Model\Priority")
 	 * @ODM\Index
 	 */
-	protected $priority = 1;
+	protected $priority;
 
 	/**
 	 * The dateTime this task was created
@@ -235,17 +229,17 @@ class Task extends \Beech\Ehrm\Domain\Model\Document {
 	/**
 	 * Sets the priority, accepts one of the self::PRIORITY_* constants
 	 *
-	 * @param integer $priority
+	 * @param \Beech\Task\Domain\Model\Priority $priority
 	 * @return void
 	 */
-	public function setPriority($priority) {
+	public function setPriority(\Beech\Task\Domain\Model\Priority $priority) {
 		$this->priority = $priority;
 	}
 
 	/**
 	 * Returns the priority
 	 *
-	 * @return integer
+	 * @return \Beech\Task\Domain\Model\Priority
 	 */
 	public function getPriority() {
 		return $this->priority;
@@ -341,7 +335,6 @@ class Task extends \Beech\Ehrm\Domain\Model\Document {
 	public function getCloseableByAssignee() {
 		return $this->closeableByAssignee;
 	}
-
 }
 
 ?>

@@ -23,10 +23,10 @@ class TaskController extends \Beech\Ehrm\Controller\AbstractController {
 	protected $taskRepository;
 
 	/**
-	 * @var \Beech\Task\Domain\Factory\TaskFactory
+	 * @var \Beech\Task\Domain\Repository\PriorityRepository
 	 * @Flow\Inject
 	 */
-	protected $taskFactory;
+	protected $priorityRepository;
 
 	/**
 	 * @var \TYPO3\Flow\Security\Context
@@ -35,20 +35,12 @@ class TaskController extends \Beech\Ehrm\Controller\AbstractController {
 	protected $securityContext;
 
 	/**
-	 * @var \Beech\Party\Domain\Repository\PersonRepository
-	 * @Flow\Inject
-	 */
-	protected $personRepository;
-
-	/**
 	 * Shows a list of tasks
 	 *
 	 * @return void
 	 */
 	public function indexAction() {
-		$this->taskRepository->add($this->taskFactory->createTask());
 		$this->view->assign('tasks', $this->taskRepository->findOpenTasks());
-		$this->view->assign('priorities', array(0 => 'low', 1 => 'normal', 2 => 'high', 3 => 'immediate'));
 	}
 
 	/**
@@ -59,7 +51,7 @@ class TaskController extends \Beech\Ehrm\Controller\AbstractController {
 	 */
 	public function editAction(\Beech\Task\Domain\Model\Task $task) {
 		$this->view->assign('task', $task);
-		$this->view->assign('priorities', array(0 => 'low', 1 => 'normal', 2 => 'high', 3 => 'immediate'));
+		$this->view->assign('priorities', $this->priorityRepository->findAll());
 	}
 
 	/**
