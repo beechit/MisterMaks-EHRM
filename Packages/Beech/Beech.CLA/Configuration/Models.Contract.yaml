@@ -167,7 +167,6 @@
 # we need a custom validator here for time
     'hourWage':
       label: 'Hour Wage'
-      type: 'Decimal'
       validation:
         -
           type: 'Beech.Ehrm:Decimal'
@@ -247,7 +246,6 @@
       type: 'boolean'
     'accomodationRentWeek':
       label: 'Accomodation rent for a week'
-      type: 'Decimal'
       validation:
         -
           type: 'Beech.Ehrm:Decimal'
@@ -256,7 +254,6 @@
             decimal: 2
     'accomodationRentMonth':
       label: 'Acomodation rent a month'
-      type: 'Decimal'
       validation:
         -
           type: 'Beech.Ehrm:Decimal'

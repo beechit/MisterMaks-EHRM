@@ -16,6 +16,19 @@ use TYPO3\Flow\Annotations as Flow;
  */
 class AddressRepository extends \Radmiraal\CouchDB\Persistence\AbstractRepository {
 
+	/**
+	 * Find all work addresses of company
+	 *
+	 * @param $company
+	 * @return array
+	 */
+	public function findAllWorkAddressesByCompany($company) {
+		$filter = array(
+			'party' => $company,
+			'addressType' => 'workAddress'
+		);
+		return $this->backend->findBy($filter);
+	}
 }
 
 ?>

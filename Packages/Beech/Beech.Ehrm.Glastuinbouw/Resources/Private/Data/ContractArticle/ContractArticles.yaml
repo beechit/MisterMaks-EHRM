@@ -46,8 +46,8 @@ contractArticles:
             value: ''
             valueId: jobTitle
           -
-            type: 'Beech.CLA:SingleLineText'
-            value: 'Beech\Party\Domain\Model\Company'
+            type: 'Beech.Party:WorkLocationSelect'
+            value: ''
             valueId: 'workLocation'
     -
       articleHeader:
@@ -437,8 +437,8 @@ contractArticles:
           value: ''
           valueId: jobTitle
         -
-          type: 'Beech.CLA:SingleSelectDropdown'
-          value: 'Beech/Party/Domain/Model/Company'
+          type: 'Beech.Party:WorkLocationSelect'
+          value: ''
           valueId: 'workLocation'
         -
           type: 'Beech.CLA:MultipleSelectCheckboxes'
@@ -507,8 +507,8 @@ contractArticles:
           value: ''
           valueId: jobTitle
         -
-          type: 'Beech.CLA:SingleSelectDropdown'
-          value: '/Beech/Party/Domain/Models/Company'
+          type: 'Beech.Party:WorkLocationSelect'
+          value: ''
           valueId: 'workLocation'
     -
       articleHeader:

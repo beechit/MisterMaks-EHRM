@@ -87,6 +87,14 @@ class Contract extends \Beech\Ehrm\Domain\Model\Document {
 	protected $expirationDate;
 
 	/**
+	 * The sickReport time
+	 * @var \DateTime
+	 * @ODM\Field(type="datetime")
+	 * @ODM\Index
+	 */
+	protected $sickReportTime;
+
+	/**
 	 * The contract creater
 	 *
 	 * @var \Beech\Party\Domain\Model\Person
@@ -230,6 +238,20 @@ class Contract extends \Beech\Ehrm\Domain\Model\Document {
 	 */
 	public function getEndDate() {
 		return $this->endDate;
+	}
+
+	/**
+	 * @param \DateTime $sickReportTime
+	 */
+	public function setSickReportTime($sickReportTime) {
+		$this->sickReportTime = $sickReportTime;
+	}
+
+	/**
+	 * @return \DateTime
+	 */
+	public function getSickReportTime() {
+		return $this->sickReportTime;
 	}
 
 	/**

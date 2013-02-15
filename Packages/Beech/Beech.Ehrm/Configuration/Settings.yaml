@@ -220,6 +220,11 @@ TYPO3:
             formBuilder:
               label: 'Employee Select'
               group: custom
+          'Beech.Party:WorkLocationSelect':
+            superTypes: ['TYPO3.Form:FormElement', 'TYPO3.Form:SingleSelectDropdown']
+            implementationClassName: 'Beech\Party\FormElements\WorkLocationSelect'
+            renderingOptions:
+              templatePathPattern: 'resource://Beech.Ehrm/Private/Templates/Form/Elements/SingleSelectDropdown.html'
           'Beech.CLA:HiddenField':
             superTypes: ['TYPO3.Form:HiddenField']
             renderingOptions:

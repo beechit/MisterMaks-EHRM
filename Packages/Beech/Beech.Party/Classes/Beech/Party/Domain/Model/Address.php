@@ -34,6 +34,15 @@ class Address extends \Beech\Ehrm\Domain\Model\Document {
 	 * @ODM\Field(type="boolean")
 	 */
 	protected $primary = FALSE;
+
+	/**
+	 * Get a full address and display it as a string
+	 *
+	 * @return string
+	 */
+	public function getFullAddress() {
+		return sprintf("%s %d%s, %s", $this->getStreetName(), $this->getHouseNumber(), $this->getHouseNumberAddition(), $this->getResidence());
+	}
 }
 
 ?>
