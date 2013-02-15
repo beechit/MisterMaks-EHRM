@@ -11,7 +11,10 @@ Beech:
           label: 'Article Id'
           type: string(30)
           validation:
-            type: 'NotEmpty'
+            -
+              type: 'NotEmpty'
+            -
+              type: 'St
           onList: TRUE
         'articleLabel':
           label: 'Label'
@@ -37,40 +40,40 @@ Beech:
               type: 'Text'
         'order':
           label: 'Order'
-          type: integer(6)
           validation:
             -
               type: 'NotEmpty'
             -
               type: 'Integer'
+        'creationDate':
+          default: now
           label: 'creation date'
-          required: TRUE
           type: dateTime
           validation:
-            type: 'RegularExpression'
-            options:
-              regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
-          visible: FALSE
+            -
+              type: 'NotEmpty'
+            -
+              type: 'RegularExpression'
+              options:
+                regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
         'createdBy':
           default: currentUser
           label: 'Created by'
-          required: TRUE
           type: \Beech\Party\Domain\Model\Person
           validation:
-            type: 'NotEmpty'
-          visible: FALSE
+            -
+              type: 'NotEmpty'
         'modification':
           items:
             'modificationDate':
               default: now
               label: 'Modification date'
-              required: TRUE
               type: dateTime
               validation:
-                type: 'RegularExpression'
-                options:
-                  regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
-              visible: FALSE
+                -
+                  type: 'RegularExpression'
+                  options:
+                    regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
             'modifiedBy':
               default: currentUser
               label: 'Modified by'

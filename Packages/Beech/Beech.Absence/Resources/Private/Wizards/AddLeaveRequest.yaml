@@ -3,7 +3,8 @@
 # this can be used to add leave request for persons
 # this wizard (one page) can also be used to grant
 # or decline leave but there is a
-# todo: on how to set fields readonly.
+# todo: on how to set fields readonly in wizard yaml
+# todo: how to set conditions of showing fields in yaml
 # Based on TYPO3.Form
 #############################################################
 type: 'TYPO3.Form:Form'

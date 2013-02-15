@@ -22,7 +22,7 @@ Beech:
             values:
               - primary
               - department
-              - subsidiaryCompany
+              - subsidiary
               - partnerCompany
           default: department
           validation:
@@ -68,6 +68,7 @@ Beech:
           label: LegalForm
           options:
             values:
+            - subsidiary
             - department
             - soleProprietorship
             - partnership

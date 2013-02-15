@@ -1,175 +1,421 @@
 ################################################
-#This Yaml holds the wages of the
-#CLA Glastuinbouw at 01-01-2013.
-#This is scale A
-#De tabellen F t/m I betreffen loongebouw A. Deze tabellen zijn voor een beperkte groep van toepassing: werknemers waarvan het
-#dienstverband is aangevangen voor 1 juli 2005 en de werknemer die in 2003 en 2004 telkens ten minste 1200 uur in dienst is geweest bij
-#dezelfde werkgever. Zie artikel 17 lid 2 sub A. Voor alle andere werknemers geldt loongebouw B, de tabellen B t/m E.
+#This Yaml holds thth wages of the
+#CLA Glastuinbouw at 01-01-2013,
+#This is scalth A
+#Dth tabellen F t/m I betreffen loongebouw A, Dezth tabellen zijn voor een beperktth group van toepassing: werknemers waarvan het
+#dienstverband is aangevangen voor 1 juli 2005 en dth werknemer dith in 2003 en 2004 telkens ten minstth 1200 uur in dienst is geweest bij
+#dezelfdth werkgever, Zith artikel 17 lid 2 sub A, Voor allth anderth werknemers geldt loongebouw B, dth tabellen B t/m E,
 ################################################
 Beech:
-  Ehrm.Glastuinbouw:
+  Ehrm,Glastuinbouw:
     Wage:
       Properties:
         Wage:
           orbaPoints: ''
-            'wageScale':
-              - 'Groep B-1'
-              - 'Groep B-2'
-              - 'Groep C'
-              - 'Groep D'
-              - 'Groep E'
-              - 'Groep F'
-              - 'Groep G'
-              - 'Groep H'
-            'wageStep':
-              - '15 jaar'
-              - '16 jaar'
-              - '17 jaar'
-              - '18 jaar'
-              - '19 jaar'
-              - '20 jaar'
-              - '1e functiejaar'
-              - '2e functiejaar'
-              - '3e functiejaar'
-              - '4e functiejaar'
-              - '5e functiejaar'
-              - '6e functiejaar'
-              - '7e functiejaar'
-              - '8e functiejaar'
-              - '9e functiejaar'
-              - '10e functiejaar'
-              'groepB-1':
-                - '3,70'
-                - '4,63'
-                - '5,56'
-                - '6,48'
-                - '7,41'
-                - '8,33'
-                - '9,26'
-                - '9,56'
-                - '9,84'
-                - '10,12'
-                - '10,44'
-                - '10,70'
-                - '11,00'
-                - '11,30'
-                - ''
-                - ''
-              'groepB-2':
-                - '3,94'
-                - '4,92'
-                - '5,90'
-                - '6,89'
-                - '7,87'
-                - '8,86'
-                -  ''
-                -  ''
-                - '9,84'
-                - '10,12'
-                - '10,44'
-                - '10,70'
-                - '11,00'
-                - '11,30'
-                - '11,57'
-                - '11,86'
-              'groepC:
-                - '4,58'
-                - '5,72'
-                - '6,86'
-                - '8,01'
-                - '9,15'
-                - '10,30'
-                - '11,44'
-                - '11,65'
-                - '11,81'
-                - '11,98'
-                - '12,18'
-                - '12,35'
-                - '12,52'
-                - ''
-                - ''
-              'groepD:
-                - '4,87'
-                - '6,09'
-                - '7,31'
-                - '8,53'
-                - '9,74'
-                - '10,96'
-                - '12,18'
-                - '12,35'
-                - '12,52'
-                - '12,70'
-                - '12,86'
-                - '13,07'
-                - '13,26'
-                - '13,42'
-                - ''
-                - ''
-              'groepE':
-                - '5,11'
-                - '6,39'
-                - '7,67'
-                - '8,95'
-                - '10,22'
-                - '11,50'
-                - '12,78'
-                - '12,99'
-                - '13,17'
-                - '13,34'
-                - '13,50'
-                - '13,69'
-                - '13,87'
-                - '14,05'
-                - ''
-                - ''
-              'groepF:
-                - '5,37'
-                - '6,71'
-                - '8,05'
-                - '9,39'
-                - '10,74'
-                - '12,08'
-                - '13,42'
-                - '13,58'
-                - '13,77'
-                - '13,96'
-                - '14,13'
-                - '14,34'
-                - '14,49'
-                - '14,66'
-                - ''
-                - ''
-              'groepG':
-                - '5,58'
-                - '6,98'
-                - '8,38'
-                - '9,77'
-                - '11,17'
-                - '12,56'
-                - '13,96'
-                - '14,13'
-                - '14,34'
-                - '14,49'
-                - '14,66'
-                - '14,85'
-                - '15,04'
-                - '15,21'
-                - ''
-                - ''
-              'groepH':
-                - '5,80'
-                - '7,25'
-                - '8,69'
-                - '10,14'
-                - '11,59'
-                - '13,04'
-                - '14,49'
-                - '14,66'
-                - '14,85'
-                - '15,04'
-                - '15,21'
-                - '15,39'
-                - '15,56'
-                - '15,75'
-                - ''
-                - ''
+            'wageGroup':
+              'GroupB-1':
+                -
+                  step: '15 year'
+                  value: '3,70'
+                  age: 15
+                -
+                  step: '16 year'
+                  value: '4,63'
+                  age: 16
+                -
+                  step: '17 year'
+                  value: '5,56'
+                  age: 17
+                -
+                  step: '18 year'
+                  value: '6,48'
+                  age: 18
+                -
+                  step: '19 year'
+                  value: '7,41'
+                  age: 19
+                -
+                  step: '20 year'
+                  value: '8,33'
+                  age: 20
+                -
+                  step: '1th job year'
+                  value: '9,26'
+                -
+                  step: '2th job year'
+                  value: '9,56'
+                -
+                  step: '3th job year'
+                  value: '9,84'
+                -
+                  step: '4th job year'
+                  value: '10,12'
+                -
+                  step: '5th job year'
+                  value: '10,44'
+                -
+                  step: '6th job year'
+                  value: '10,70'
+                -
+                  step: '7th job year'
+                  value: '11,00'
+                -
+                  step: '8th job year'
+                  value: '11,30'
+                label: 'Group B-1'
+              'GroupB-2':
+                -
+                  step: '15 year'
+                  value: '3,94'
+                  age: 15
+                -
+                  step: '16 year'
+                  value: '4,92'
+                  age: 16
+                -
+                  step: '17 year'
+                  value: '5,90'
+                  age: 17
+                -
+                  step: '18 year'
+                  value: '6,89'
+                  age: 18
+                -
+                  step: '19 year'
+                  value: '7,87'
+                  age: 19
+                -
+                  step: '20 year'
+                  value: '8,86'
+                  age: 20
+                -
+                  step: '1th job year'
+                  value: ''
+                -
+                  step: '2th job year'
+                  value: ''
+                -
+                  step: '3th job year'
+                  value: '9,84'
+                -
+                  step: '4th job year'
+                  value: '10,12'
+                -
+                  step: '5th job year'
+                  value: '10,44'
+                -
+                  step: '6th job year'
+                  value: '10,70'
+                -
+                  step: '7th job year'
+                  value: '11,00'
+                -
+                  step: '8th job year'
+                  value: '11,30'
+                -
+                  step: '9th job year'
+                  value: '11,57'
+                -
+                  step: '10th job year'
+                  value: '11,86'
+                label: 'Group B-2'
+              'GroupC':
+                -
+                  step: '15 year'
+                  value: '4,58'
+                  age: 15
+                -
+                  step: '16 year'
+                  value: '5,72'
+                  age: 16
+                -
+                  step: '17 year'
+                  value: '6,86'
+                  age: 17
+                -
+                  step: '18 year'
+                  value: '8,01'
+                  age: 18
+                -
+                  step: '19 year'
+                  value: '9,15'
+                  age: 19
+                -
+                  step: '20 year'
+                  value: '10,30'
+                  age: 20
+                -
+                  step: '1th job year'
+                  value: '11,44'
+                -
+                  step: '2th job year'
+                  value: '11,65'
+                -
+                  step: '3th job year'
+                  value: '11,81'
+                -
+                  step: '4th job year'
+                  value: '11,98'
+                -
+                  step: '5th job year'
+                  value: '12,18'
+                -
+                  step: '6th job year'
+                  value: '12,35'
+                -
+                  step: '7th job year'
+                  value: '12,52'
+                -
+                  step: '8th job year'
+                  value: '12,70'
+                label: 'Group C'
+              'GroupD':
+                -
+                  step: '15 year'
+                  value: '4,87'
+                  age: 15
+                -
+                  step: '16 year'
+                  value: '6,09'
+                  age: 16
+                -
+                  step: '17 year'
+                  value: '7,31'
+                  age: 17
+                -
+                  step: '18 year'
+                  value: '8,53'
+                  age: 18
+                -
+                  step: '19 year'
+                  value: '9,74'
+                  age: 19
+                -
+                  step: '20 year'
+                  value: '10,96'
+                  age: 20
+                -
+                  step: '1th job year'
+                  value: '12,18'
+                -
+                  step: '2th job year'
+                  value: '12,35'
+                -
+                  step: '3th job year'
+                  value: '12,52'
+                -
+                  step: '4th job year'
+                  value: '12,70'
+                -
+                  step: '5th job year'
+                  value: '12,86'
+                -
+                  step: '6th job year'
+                  value: '13,07'
+                -
+                  step: '7th job year'
+                  value: '13,26'
+                -
+                  step: '8th job year'
+                  value: '13,42'
+                label: 'Group D'
+              'GroupE':
+                -
+                  step: '15 year'
+                  value: '5,11'
+                  age: 15
+                -
+                  step: '16 year'
+                  value: '6,39'
+                  age: 16
+                -
+                  step: '17 year'
+                  value: '7,67'
+                  age: 17
+                -
+                  step: '18 year'
+                  value: '8,95'
+                  age: 18
+                -
+                  step: '19 year'
+                  value: '10,22'
+                  age: 19
+                -
+                  step: '20 year'
+                  value: '11,50'
+                  age: 20
+                -
+                  step: '1th job year'
+                  value: '12,78'
+                -
+                  step: '2th job year'
+                  value: '12,99'
+                -
+                  step: '3th job year'
+                  value: '13,17'
+                -
+                  step: '4th job year'
+                  value: '13,34'
+                -
+                  step: '5th job year'
+                  value: '13,50'
+                -
+                  step: '6th job year'
+                  value: '13,69'
+                -
+                  step: '7th job year'
+                  value: '13,87'
+                -
+                  step: '8th job year'
+                  value: '14,05'
+                label: 'Group E'
+              'GroupF':
+                -
+                  step: '15 year'
+                  value: '5,37'
+                  age: 15
+                -
+                  step: '16 year'
+                  value: '6,71'
+                  age: 16
+                -
+                  step: '17 year'
+                  value: '8,05'
+                  age: 17
+                -
+                  step: '18 year'
+                  value: '9,39'
+                  age: 18
+                -
+                  step: '19 year'
+                  value: '10,74'
+                  age: 19
+                -
+                  step: '20 year'
+                  value: '12,08'
+                  age: 20
+                -
+                  step: '1th job year'
+                  value: '13,42'
+                -
+                  step: '2th job year'
+                  value: '13,58'
+                -
+                  step: '3th job year'
+                  value: '13,77'
+                -
+                  step: '4th job year'
+                  value: '13,96'
+                -
+                  step: '5th job year'
+                  value: '14,13'
+                -
+                  step: '6th job year'
+                  value: '14,34'
+                -
+                  step: '7th job year'
+                  value: '14,49'
+                -
+                  step: '8th job year'
+                  value: '14,66'
+                Label: 'Group F'
+              'GroupG':
+                -
+                  step: '15 year'
+                  value: '5,58'
+                  age: 15
+                -
+                  step: '16 year'
+                  value: '6,98'
+                  age: 16
+                -
+                  step: '17 year'
+                  value: '8,38'
+                  age: 17
+                -
+                  step: '18 year'
+                  value: '9,77'
+                  age: 18
+                -
+                  step: '19 year'
+                  value: '11,17'
+                  age: 19
+                -
+                  step: '20 year'
+                  value: '12,56'
+                  age: 20
+                -
+                  step: '1th job year'
+                  value: '13,96'
+                -
+                  step: '2th job year'
+                  value: '14,13'
+                -
+                  step: '3th job year'
+                  value: '14,34'
+                -
+                  step: '4th job year'
+                  value: '14,49'
+                -
+                  step: '5th job year'
+                  value: '14,66'
+                -
+                  step: '6th job year'
+                  value: '14,85'
+                -
+                  step: '7th job year'
+                  value: '15,04'
+                -
+                  step: '8th job year'
+                  value: '15,21'
+                label: 'Group G'
+              'GroupH':
+                -
+                  step: '15 year'
+                  value: '5,80'
+                  age: 15
+                -
+                  step: '16 year'
+                  value: '7,25'
+                  age: 16
+                -
+                  step: '17 year'
+                  value: '8,69'
+                  age: 17
+                -
+                  step: '18 year'
+                  value: '10,14'
+                  age: 18
+                -
+                  step: '19 year'
+                  value: '11,59'
+                  age: 19
+                -
+                  step: '20 year'
+                  value: '13,04'
+                  age: 20
+                -
+                  step: '1th job year'
+                  value: '14,49'
+                -
+                  step: '2th job year'
+                  value: '14,66'
+                -
+                  step: '3th job year'
+                  value: '14,85'
+                -
+                  step: '4th job year'
+                  value: '15,04'
+                -
+                  step: '5th job year'
+                  value: '15,21'
+                -
+                  step: '6th job year'
+                  value: '15,39'
+                -
+                  step: '7th job year'
+                  value: '15,56'
+                -
+                  step: '8th job year'
+                  value: '15,75'
+                label: 'Group H'
