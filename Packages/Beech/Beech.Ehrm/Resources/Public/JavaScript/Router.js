@@ -7,6 +7,7 @@
 
 		this.route('jobDescriptionModule', { path: '/administration/jobdescriptions' });
 		this.route('contractArticleModule', { path: '/administration/contractarticles' });
+		this.route('contractModule', { path: '/administration/contracts' });
 		this.route('documentModule', { path: '/documents' });
 
 			// Administration mappings
@@ -57,6 +58,7 @@
 	App.UserSettingsRoute = App.IndexRoute.extend(App.AjaxModuleControllerMixin, { url: MM.url.module.userSettings });
 	App.JobDescriptionModuleRoute = App.IndexRoute.extend(App.AjaxModuleControllerMixin, { url: MM.url.module.jobDescription });
 	App.ContractArticleModuleRoute = App.IndexRoute.extend(App.AjaxModuleControllerMixin, { url: MM.url.module.contractArticle });
+	App.ContractModuleRoute = App.IndexRoute.extend(App.AjaxModuleControllerMixin, { url: MM.url.module.contract });
 	App.UserManagementModuleRoute = App.IndexRoute.extend(App.AjaxModuleControllerMixin, { url: MM.url.module.userManagementModule });
 
 		// Administration routes
