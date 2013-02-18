@@ -10,6 +10,7 @@
 				<tr>
 					<th><f:translate>Employee</f:translate></th>
 					<th><f:translate>Job Description</f:translate></th>
+					<th><f:translate>Status</f:translate></th>
 					<th><f:translate>Creation Date</f:translate></th>
 					<th></th>
 				</tr>
@@ -19,9 +20,9 @@
 					<tr>
 						<td>{contract.employeeFullName}</td>
 						<td>{contract.jobDescriptionName}</td>
+						<td>{contract.status}</td>
 						<td>{contract.creationDate -> f:format.date(format: 'Y-m-d H:i')}</td>
 						<td>
-							<f:link.action action="edit" arguments="{contract: contract}"><i class="icon-pencil"></i></f:link.action>
 							<f:link.action action="delete" arguments="{contract: contract}"><i class="icon-trash"></i></f:link.action>
 						</td>
 					</tr>
