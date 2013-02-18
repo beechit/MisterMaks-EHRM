@@ -321,7 +321,7 @@ contactArticles:
         -
           type: 'TYPO3.Form:SingleLineText'
           validation:
-            type: 'RegularExpression'
+            type: 'TYPO3.Flow:RegularExpression'
             options:
               regularExpression: '/^[0-9]{1,4}([\.][0-9]{0,2}){0,1}$/'
           valueId: 'accomodationRent'
@@ -403,7 +403,7 @@ contactArticles:
           value: ''
           valueId: 'hourWage'
           validation:
-            type: 'RegularExpression'
+            type: 'TYPO3.Flow:RegularExpression'
             options:
               regularExpression: /^[0-9]{1,3}([\.][0-9]{0,2}){0,1}$/
           default: ''
@@ -431,7 +431,7 @@ contactArticles:
           value: '8.33'
           valueId: vacationAllowancePercentage
           validation:
-            type: 'RegularExpression'
+            type: 'TYPO3.Flow:RegularExpression'
             options:
               regularExpression: '/^[0-9]{1,2}([\.][0-9]{0,2}){0,1}$/'
     -
@@ -458,7 +458,7 @@ contactArticles:
           value: ''
           valueId: totalHours
           validation:
-            type: 'RegularExpression'
+            type: 'TYPO3.Flow:RegularExpression'
             options:
               regularExpression: '/^[0-9]{1,4}([\.][0-9]{0,2}){0,1}$/'
           default: ''
@@ -466,7 +466,7 @@ contactArticles:
           type: 'TYPO3.Form:SingleLineText'
           value: ''
           validation:
-            type: 'RegularExpression'
+            type: 'TYPO3.Flow:RegularExpression'
             options:
               regularExpression: /^[0-9]{1,2}([\.][0-9]{0,2}){0,1}$/
           valueId: hoursAWeek
@@ -564,7 +564,7 @@ contactArticles:
           type: 'TYPO3.Form:SingleLineText'
           value: ''
           valueId: probationPeriod
-          validation: 'RegularExpression'
+          validation: 'TYPO3.Flow:RegularExpression'
           options:
             regularExpression: '[0-9]{1,2}'
           default: 0

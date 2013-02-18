@@ -1,3 +1,5 @@
+# todo: delete  ?
+# a new wizard for this was added tot /beech/beech.party/resources/private/wizards
 type: 'TYPO3.Form:Form'
 identifier: newCompany
 label: Company

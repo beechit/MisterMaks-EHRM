@@ -9,7 +9,7 @@
 #############################################################
 type: 'TYPO3.Form:Form'
 identifier: wizardLeaveRegistration
-label: 'Wizard Add Bank Data'
+label: 'Wizard Add Leave registration'
 renderables:
   -
     type: 'TYPO3.Form:Page'
@@ -18,7 +18,7 @@ renderables:
     renderables:
       -
         type: 'TYPO3.Form:Section'
-        identifier: setleaveType
+        identifier: section1
         label: 'type of leave'
         renderables:
           -
@@ -97,7 +97,7 @@ renderables:
             label: 'Remark'
             validators:
               -
-                identifier: 'Text'
+                type: 'Text'
           -
             type: 'TYPO3.Form:SingleSelectDropdown'
             identifier: 'leaveRequestStatus'

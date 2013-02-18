@@ -32,6 +32,13 @@ renderables:
                 -
                   _value: bankAccountAbroad
                   _key: 'Bank Account abroad'
+            validators:
+              -
+                type: 'NotEmpty'
+              -
+                type: 'StringLength'
+                options:
+                  maximum: 20
       -
         type: 'TYPO3.Form:Section'
         identifier: 'caseBankAccount'
@@ -43,9 +50,9 @@ renderables:
             label: 'IBAN account number'
             validators:
               -
-                identifier: 'TYPO3.Flow:NotEmpty'
+                type: 'NotEmpty'
               -
-                identifier: 'TYPO3.Flow:RegularExpression'
+                type: 'RegularExpression'
                 options:
                   regularExpression: '/[a-zA-Z]{2}[0-9]{2}[a-zA-Z0-9]{4}[0-9]{7}([a-zA-Z0-9]?){0,16}/g'
       -
@@ -59,9 +66,9 @@ renderables:
             label: 'Giro Account Number'
             validators:
               -
-                identifier: 'TYPO3.Flow:NotEmpty'
+                type: 'NotEmpty'
               -
-                identifier: 'TYPO3.Flow:RegularExpression'
+                type: 'RegularExpression'
                 options:
                   regularExpression: '\\d{1,7}'
       -
@@ -75,9 +82,9 @@ renderables:
             label: 'Bankaccount number abroad'
             validators:
               -
-                identifier: 'TYPO3.Flow:NotEmpty'
+                type: 'NotEmpty'
               -
-                identifier: 'TYPO3.Flow:RegularExpression'
+                type: 'RegularExpression'
                 options:
                   regularExpression: '/[a-zA-Z]{2}[0-9]{2}[a-zA-Z0-9]{4}[0-9]{7}([a-zA-Z0-9]?){0,16}/g'
       -
@@ -105,22 +112,22 @@ renderables:
             label: 'Bank name'
             validators:
               -
-                identifier: 'TYPO3.Flow:RegularExpression'
+                type: 'RegularExpression'
                 options:
                   regularExpression: '[a-zA-Z\\-\\s\\’]{2,20}'
               -
-                identifier: 'TYPO3.Flow:NotEmpty'
+                type: 'NotEmpty'
           -
             type: 'TYPO3.Form:SingleLineText'
             identifier: 'bankResidence'
             label: 'Bank Residence'
             validators:
               -
-                identifier: 'TYPO3.Flow:RegularExpression'
+                type: 'RegularExpression'
                 options:
                   regularExpression: '[a-zA-Z\\-\\s\\’]{2,20}'
               -
-                identifier: 'TYPO3.Flow:NotEmpty'
+                type: 'NotEmpty'
           -
 # todo: implement the country form element
             type: 'TYPO3.Form:SingleSelectDropdown'
@@ -128,18 +135,18 @@ renderables:
             label: 'country of bank'
             validators:
               -
-                identifier: 'TYPO3.Flow:RegularExpression'
+                type: 'RegularExpression'
                 options:
                   regularExpression: '[a-zA-Z\\-\\s\\’]{2,20}'
               -
-                identifier: 'TYPO3.Flow:NotEmpty'
+                type: 'NotEmpty'
           -
             type: 'TYPO3.Form:SingleLineText'
             identifier: bic
             label: 'Bic code'
             validators:
               -
-                identifier: 'TYPO3.Flow:StringLength'
+                type: 'StringLength'
                 options:
                   maximum: 11
               -
