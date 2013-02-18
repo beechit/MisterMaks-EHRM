@@ -14,20 +14,20 @@ renderables:
     renderables:
       -
         type: 'TYPO3.Form:Section'
-        identifier: section1
+        identifier: setTypeAbsence
         label: 'type of Absence'
         renderables:
           -
             type: 'TYPO3.Form:SingleSelectDropdown'
-            identifier: AbsenceType
+            identifier: absenceType
             label: 'Type of absence'
             properties:
               options:
                  -
-                   _value: Accident
+                   _value: accident
                    _key: 'Accident'
                  -
-                   _value: short-termabsenteeism
+                   _value: shorttermabsenteeism
                    _key: 'Short term absenteeism'
                  -
                    _value: labordispute
@@ -40,7 +40,7 @@ renderables:
                    _key: 'Unknown'
       -
         type: 'TYPO3.Form:Section'
-        identifier: CaseOtherUnknown
+        identifier: caseOtherUnknown
         label: 'Case Other and unknown'
         renderables:
           -
@@ -49,10 +49,10 @@ renderables:
             label: 'Remark Other'
             validators:
               -
-                identifier: 'TYPO3.Flow:Text'
+                identifier: 'Text'
       -
         type: 'TYPO3.Form:Section'
-        identifier: datereg
+        identifier: dateRegistration
         label: 'registration'
         renderables:
           -
@@ -61,7 +61,7 @@ renderables:
             label: 'First Sick Day'
             validators:
               -
-                identifier: 'TYPO3.Flow:RegularExpression'
+                identifier: 'RegularExpression'
                 options:
                   regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
           -

@@ -18,7 +18,7 @@ renderables:
     renderables:
       -
         type: 'TYPO3.Form:Section'
-        identifier: section1
+        identifier: setleaveType
         label: 'type of leave'
         renderables:
           -
@@ -59,7 +59,7 @@ renderables:
                    _key: 'Emergency leave and Short Absence'
       -
         type: 'TYPO3.Form:Section'
-        identifier: section2
+        identifier: leaveTime
         label: 'Leave time'
         renderables:
           -
@@ -68,18 +68,18 @@ renderables:
             label: 'Leave start'
             validators:
               -
-                identifier: 'TYPO3.Flow:RegularExpression'
+                identifier: 'RegularExpression'
                 options:
                   regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
               -
-                identifier: 'TYPO3.Flow:NotEmpty'
+                identifier: 'NotEmpty'
           -
             type: 'TYPO3.Form:DatePicker'
             identifier: 'leaveDateTimeEnd'
             label: 'Leave End'
             validators:
               -
-                identifier: 'TYPO3.Flow:RegularExpression'
+                identifier: 'RegularExpression'
                 options:
                   regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
           -
@@ -93,7 +93,7 @@ renderables:
             label: 'Remark'
             validators:
               -
-                identifier: 'TYPO3.Flow:Text'
+                identifier: 'Text'
           -
             type: 'TYPO3.Form:SingleSelectDropdown'
             identifier: 'leaveRequestStatus'
@@ -111,7 +111,7 @@ renderables:
                   _key: 'declined'
       -
         type: 'TYPO3.Form:Section'
-        identifier: section3
+        identifier: leaveRemark
         label: 'Remark on leave Decision'
         renderables:
           -
@@ -125,6 +125,6 @@ renderables:
             label: 'Remark'
             validators:
               -
-                identifier: 'TYPO3.Flow:Text'
+                identifier: 'Text'
 renderingOptions:
   submitButtonLabel: 'Save'

@@ -14,9 +14,9 @@ Beech:
               - focus
               - pressure
               - unknown
-              - short-termabsenteeism
+              - shorttermabsenteeism
               - labordispute
-              - Other
+              - other
           validation:
             -
               type: 'NotEmpty'
@@ -58,7 +58,7 @@ Beech:
             values:
               - none
               - maternity
-              - (ex)WAO-er
+              - exWAOer
               - absentDueToOrganDonation
               - endOfContractWithin13Weeks
               - temporaryCallWorker
