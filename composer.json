@@ -4,6 +4,14 @@
 	"repositories": [
 		{
 			"type": "git",
+			"url": "git://github.com/radmiraal/TYPO3Flow.git"
+		},
+		{
+			"type": "git",
+			"url": "git://github.com/radmiraal/TYPO3SniffPool.git"
+		},
+		{
+			"type": "git",
 			"url": "git@github.com:radmiraal/php-timer.git"
 		},
 		{
@@ -42,6 +50,7 @@
 		"typo3/buildessentials": "dev-master",
 		"typo3/kickstart": "dev-master",
 		"phpunit/phpunit": "3.7.x",
+		"typo3-qa/typo3flow": "dev-master",
 		"mikey179/vfsstream": "1.1.*",
 		"beech/style": "dev-development"
 	},

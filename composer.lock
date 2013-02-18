@@ -1,5 +1,5 @@
 {
-    "hash": "a13e5f93a74c5497654d0bc1ae48b1f4",
+    "hash": "fe0903180e5f840674e4b2a8c3ee4637",
     "packages": [
         {
             "name": "beech/essentials",
@@ -438,13 +438,13 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git://github.com/nrk/predis.git",
-                "reference": "d6685a424ad863df46917b73f8b30a3189a2f0d6"
+                "url": "https://github.com/nrk/predis.git",
+                "reference": "v0.8.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nrk/predis/zipball/d6685a424ad863df46917b73f8b30a3189a2f0d6",
-                "reference": "d6685a424ad863df46917b73f8b30a3189a2f0d6",
+                "url": "https://api.github.com/repos/nrk/predis/zipball/v0.8.3",
+                "reference": "v0.8.3",
                 "shasum": ""
             },
             "require": {
@@ -454,7 +454,7 @@
                 "ext-curl": "Allows access to Webdis when paired with phpiredis",
                 "ext-phpiredis": "Allows faster serialization and deserialization of the Redis protocol"
             },
-            "time": "2013-02-09 09:11:16",
+            "time": "2013-02-18 14:03:45",
             "type": "library",
             "autoload": {
                 "psr-0": {
@@ -735,7 +735,7 @@
             "source": {
                 "type": "git",
                 "url": "git://git.typo3.org/FLOW3/Packages/TYPO3.FLOW3.git",
-                "reference": "206c7371dac8d67fec6180a24098cff6cbf42f4f"
+                "reference": "45ea227709db707db3165e4b46c68834e8b671d8"
             },
             "require": {
                 "doctrine/data-fixtures": "*",
@@ -752,7 +752,7 @@
                 "typo3/fluid": "*",
                 "typo3/party": "*"
             },
-            "time": "2013-02-13 08:46:31",
+            "time": "2013-02-15 11:55:51",
             "type": "typo3-flow-framework",
             "autoload": {
                 "psr-0": {
@@ -1086,12 +1086,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "7c93c6b2c07c19d4c8df4a54c6b278d4e5740fda"
+                "reference": "02ea50bd78b1d2558a10a373c428dc311626c6eb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/7c93c6b2c07c19d4c8df4a54c6b278d4e5740fda",
-                "reference": "7c93c6b2c07c19d4c8df4a54c6b278d4e5740fda",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/02ea50bd78b1d2558a10a373c428dc311626c6eb",
+                "reference": "02ea50bd78b1d2558a10a373c428dc311626c6eb",
                 "shasum": ""
             },
             "require": {
@@ -1105,7 +1105,7 @@
                 "ext-dom": "*",
                 "ext-xdebug": ">=2.2.1"
             },
-            "time": "2013-02-12 10:55:44",
+            "time": "2013-02-14 08:13:31",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1470,6 +1470,159 @@
             "homepage": "https://github.com/sebastianbergmann/version"
         },
         {
+            "name": "squizlabs/php_codesniffer",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
+                "reference": "e5bc3c52027e23faa58b6f1b2c98829c6b5ee93f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/e5bc3c52027e23faa58b6f1b2c98829c6b5ee93f",
+                "reference": "e5bc3c52027e23faa58b6f1b2c98829c6b5ee93f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.1.2"
+            },
+            "time": "2013-02-18 04:00:14",
+            "bin": [
+                "scripts/phpcs"
+            ],
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "CodeSniffer.php",
+                    "CodeSniffer/CLI.php",
+                    "CodeSniffer/Exception.php",
+                    "CodeSniffer/File.php",
+                    "CodeSniffer/MultiFileSniff.php",
+                    "CodeSniffer/Report.php",
+                    "CodeSniffer/Reporting.php",
+                    "CodeSniffer/Sniff.php",
+                    "CodeSniffer/Tokens.php",
+                    "CodeSniffer/Reports/",
+                    "CodeSniffer/CommentParser/",
+                    "CodeSniffer/Tokenizers/",
+                    "CodeSniffer/DocGenerators/",
+                    "CodeSniffer/Standards/AbstractPatternSniff.php",
+                    "CodeSniffer/Standards/AbstractScopeSniff.php",
+                    "CodeSniffer/Standards/AbstractVariableSniff.php",
+                    "CodeSniffer/Standards/IncorrectPatternException.php",
+                    "CodeSniffer/Standards/Generic/Sniffs/",
+                    "CodeSniffer/Standards/MySource/Sniffs/",
+                    "CodeSniffer/Standards/PEAR/Sniffs/",
+                    "CodeSniffer/Standards/PSR1/Sniffs/",
+                    "CodeSniffer/Standards/PSR2/Sniffs/",
+                    "CodeSniffer/Standards/Squiz/Sniffs/",
+                    "CodeSniffer/Standards/Zend/Sniffs/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Greg Sherwood",
+                    "role": "lead"
+                }
+            ],
+            "description": "PHP_CodeSniffer tokenises PHP, JavaScript and CSS files and detects violations of a defined set of coding standards.",
+            "homepage": "http://www.squizlabs.com/php-codesniffer",
+            "keywords": [
+                "phpcs",
+                "standards"
+            ]
+        },
+        {
+            "name": "typo3-qa/typo3flow",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git://github.com/radmiraal/TYPO3Flow.git",
+                "reference": "a33ff0acd19401e39c4140c85eb0e0d01bcbcc89"
+            },
+            "require": {
+                "php": ">=5.2.1",
+                "typo3-qa/typo3pool": "*"
+            },
+            "time": "2013-02-18 18:43:38",
+            "type": "phpcodesniffer-standard",
+            "license": [
+                "GPL-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Andy Grundwald",
+                    "email": "andy.grundwald@gmail.com",
+                    "role": "lead"
+                },
+                {
+                    "name": "Stefano Kowalke",
+                    "email": "blueduck@gmx.net",
+                    "role": "lead"
+                }
+            ],
+            "description": "This package contains a selection of sniffs which implements the Coding Guidelines for TYPO3Flow which was former known as FLOW3.",
+            "homepage": "http://forge.typo3.org/projects/show/team-php_codesniffer",
+            "keywords": [
+                "codesniffer",
+                "guidelines",
+                "standard",
+                "typo3"
+            ],
+            "support": {
+                "issues": "http://forge.typo3.org/projects/team-php_codesniffer/issues",
+                "wiki": "http://forge.typo3.org/projects/team-php_codesniffer/wiki",
+                "source": "https://github.com/typo3-ci/PHPCS_TYPO3Flow_Standard.git"
+            }
+        },
+        {
+            "name": "typo3-qa/typo3pool",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git://github.com/radmiraal/TYPO3SniffPool.git",
+                "reference": "2eccc6dce07649609783a317b3f3bcdbbbfc69e5"
+            },
+            "require": {
+                "php": ">=5.2.1",
+                "squizlabs/php_codesniffer": "*"
+            },
+            "time": "2013-02-18 18:51:25",
+            "type": "phpcodesniffer-standard",
+            "license": [
+                "GPL-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Andy Grundwald",
+                    "email": "andy.grundwald@gmail.com",
+                    "role": "lead"
+                },
+                {
+                    "name": "Stefano Kowalke",
+                    "email": "blueduck@gmx.net",
+                    "role": "lead"
+                }
+            ],
+            "description": "This repository contains custom sniffs which are compatible with the PHP_CodeSniffer. Understand this package as a sniff pool which contains all needed custom sniffs for the various TYPO3 projects.",
+            "homepage": "http://forge.typo3.org/projects/show/team-php_codesniffer",
+            "keywords": [
+                "codesniffer",
+                "guidelines",
+                "standard",
+                "typo3"
+            ],
+            "support": {
+                "issues": "http://forge.typo3.org/projects/team-php_codesniffer/issues",
+                "wiki": "http://forge.typo3.org/projects/team-php_codesniffer/wiki",
+                "source": "https://github.com/typo3-ci/PHPCS_TYPO3_SniffPool.git"
+            }
+        },
+        {
             "name": "typo3/buildessentials",
             "version": "dev-master",
             "source": {
@@ -1532,6 +1685,7 @@
         "typo3/usermanagement": 20,
         "typo3/buildessentials": 20,
         "typo3/kickstart": 20,
+        "typo3-qa/typo3flow": 20,
         "beech/style": 20
     }
 }
