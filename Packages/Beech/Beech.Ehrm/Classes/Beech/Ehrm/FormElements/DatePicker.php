@@ -29,7 +29,7 @@ class DatePicker extends \TYPO3\Form\Core\Model\AbstractFormElement {
 	 */
 	public function setDefaultValue($defaultValue) {
 		if (!$defaultValue instanceof \DateTime) {
-			if ($defaultValue == 'today') {
+			if ($defaultValue === 'today') {
 				$defaultValue = 'now';
 			}
 			$defaultValue = new \DateTime($defaultValue);
@@ -38,4 +38,5 @@ class DatePicker extends \TYPO3\Form\Core\Model\AbstractFormElement {
 	}
 
 }
+
 ?>

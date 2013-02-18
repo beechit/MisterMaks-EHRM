@@ -91,7 +91,7 @@ class WebSocketServer extends Server {
 	 * @return string The encoded text
 	 */
 	public static function encode($text) {
-		// 0x1 text frame (FIN + opcode)
+			// 0x1 text frame (FIN + opcode)
 		$b1 = 0x80 | (0x1 & 0x0f);
 		$length = strlen($text);
 
@@ -127,7 +127,8 @@ class WebSocketServer extends Server {
 		}
 
 		$text = '';
-		for ($i = 0; $i < strlen($data); ++$i) {
+		$dataLength = strlen($data);
+		for ($i = 0; $i < $dataLength; ++$i) {
 			$text .= $data[$i] ^ $masks[$i % 4];
 		}
 		return $text;
@@ -171,9 +172,9 @@ class WebSocketServer extends Server {
 		}
 		$content = implode(chr(10), $contentLines);
 
-		# FIXME: Flow\Http\Request should support setHeaders(), so move that to Message
-		# $request->setHeaders($headers);
-		# Workaround:
+			// FIXME: Flow\Http\Request should support setHeaders(), so move that to Message
+			// $request->setHeaders($headers);
+			// Workaround:
 		foreach ($headers->getAll() as $name => $value) {
 			$request->setHeader($name, $value);
 		}
@@ -192,9 +193,9 @@ class WebSocketServer extends Server {
 	 */
 	protected function getAsRaw(Response $response) {
 		$raw = 'HTTP/1.1 ' . $response->getStatus() . "\r\n";
-		foreach($response->getHeaders()->getAll() as $fieldName => $fieldValues) {
+		foreach ($response->getHeaders()->getAll() as $fieldName => $fieldValues) {
 			foreach ($fieldValues as $fieldValue) {
-				$raw .= "$fieldName: $fieldValue\r\n";
+				$raw .= sprintf("%s: %s\r\n", $fieldName, $fieldValue);
 			}
 		}
 		$raw .= "\r\n";
@@ -203,3 +204,5 @@ class WebSocketServer extends Server {
 	}
 
 }
+
+?>

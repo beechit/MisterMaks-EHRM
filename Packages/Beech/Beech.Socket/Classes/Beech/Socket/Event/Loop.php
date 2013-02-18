@@ -17,3 +17,5 @@ use React\EventLoop\StreamSelectLoop;
  */
 class Loop extends StreamSelectLoop implements LoopInterface {
 }
+
+?>

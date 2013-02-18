@@ -34,3 +34,5 @@ interface ConnectionInterface {
 	 */
 	public function getRemoteAddress();
 }
+
+?>

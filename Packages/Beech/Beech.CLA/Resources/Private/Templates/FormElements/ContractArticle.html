@@ -1,11 +1,11 @@
 <f:layout name="Beech.Ehrm:Field" />
 <f:section name="field">
 	<div class="inputs-list well" id="{element.uniqueIdentifier}">
-			<fieldset>
-				<legend>{element.label} default <f:form.checkbox checked="1" property="{element.identifier}" class="{element.properties.contractArticle.elementClassAttribute}" value="{value}" errorClass="{element.properties.elementErrorClassAttribute}" /></legend>
-				<div>
-					{element.properties.preparedArticleText -> f:format.htmlentitiesDecode()}
-				</div>
-			</fieldset>
+		<fieldset>
+			<legend>{element.label} default <f:form.checkbox checked="1" property="{element.identifier}" class="{element.properties.contractArticle.elementClassAttribute}" value="{value}" errorClass="{element.properties.elementErrorClassAttribute}" /></legend>
+			<div>
+				{element.properties.preparedArticleText -> f:format.htmlentitiesDecode()}
+			</div>
+		</fieldset>
 	</div>
 </f:section>

@@ -528,8 +528,8 @@ contactArticles:
           type: 'Beech.Ehrm:DatePicker'
           properties:
             dateFormat: 'd-m-Y'
-            enableDatePicker: true
-            displayTimeSelector: false
+            enableDatePicker: TRUE
+            displayTimeSelector: FALSE
           value: ''
           valueId: startDate
           default: today

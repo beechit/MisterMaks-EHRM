@@ -14,11 +14,14 @@ class EmployeeSelect extends \TYPO3\Form\Core\Model\AbstractFormElement {
 	 */
 	protected $personRepository;
 
+	/**
+	 * @return void
+	 */
 	public function initializeFormElement() {
 		$this->setLabel('Employee');
-		$employees = $this->personRepository->findAll();
-		$this->setProperty('options', $employees);
+		$this->setProperty('options', $this->personRepository->findAll());
 		$this->setProperty('optionLabelField', 'name');
 	}
 }
+
 ?>

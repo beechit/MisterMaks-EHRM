@@ -15,13 +15,13 @@ namespace Beech\Socket\Stream;
  */
 class WritableStream implements WritableStreamInterface {
 
-	protected $closed = false;
+	protected $closed = FALSE;
 
 	public function write($data) {
 	}
 
-	public function end($data = null) {
-		if (null !== $data) {
+	public function end($data = NULL) {
+		if (NULL !== $data) {
 			$this->write($data);
 		}
 
@@ -37,9 +37,11 @@ class WritableStream implements WritableStreamInterface {
 			return;
 		}
 
-		$this->closed = true;
+		$this->closed = TRUE;
 		$this->emit('end', $this);
 		$this->emit('close', $this);
 		$this->removeAllListeners();
 	}
 }
+
+?>

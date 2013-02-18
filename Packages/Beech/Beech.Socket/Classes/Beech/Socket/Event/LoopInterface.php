@@ -15,3 +15,5 @@ namespace Beech\Socket\Event;
  */
 interface LoopInterface extends \React\EventLoop\LoopInterface {
 }
+
+?>

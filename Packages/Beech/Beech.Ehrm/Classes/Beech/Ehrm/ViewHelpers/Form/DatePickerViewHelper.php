@@ -22,7 +22,7 @@ class DatePickerViewHelper extends \TYPO3\Fluid\ViewHelpers\Form\AbstractFormFie
 	protected $tagName = 'input';
 
 	/**
-	 * @var TYPO3\Flow\Property\PropertyMapper
+	 * @var \TYPO3\Flow\Property\PropertyMapper
 	 * @Flow\Inject
 	 */
 	protected $propertyMapper;
@@ -31,8 +31,6 @@ class DatePickerViewHelper extends \TYPO3\Fluid\ViewHelpers\Form\AbstractFormFie
 	 * Initialize the arguments.
 	 *
 	 * @return void
-
-	 * @api
 	 */
 	public function initializeArguments() {
 		parent::initializeArguments();

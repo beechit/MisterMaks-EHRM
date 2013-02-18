@@ -13,3 +13,5 @@ namespace Beech\Socket;
  */
 class Exception extends \TYPO3\Flow\Exception {
 }
+
+?>

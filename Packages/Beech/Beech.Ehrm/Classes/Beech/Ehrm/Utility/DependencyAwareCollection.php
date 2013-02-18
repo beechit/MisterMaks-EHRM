@@ -23,7 +23,7 @@ class DependencyAwareCollection {
 	 * @param array $deps
 	 * @return void
 	 */
-	public function add($identifier, array $deps = array()){
+	public function add($identifier, array $deps = array()) {
 		$this->items[$identifier] = array(
 			'identifier' => $identifier,
 			'deps' => $deps
@@ -62,7 +62,6 @@ class DependencyAwareCollection {
 
 			$recursionProtectionCounter ++;
 		} while (($changeFound === TRUE && $recursionProtectionCounter < 9999) || $recursionProtectionCounter < count($items));
-
 
 		return $items;
 	}

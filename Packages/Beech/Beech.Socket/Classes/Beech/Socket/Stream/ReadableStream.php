@@ -16,7 +16,7 @@ class ReadableStream implements ReadableStreamInterface {
 
 	use EventEmitterTrait;
 
-	protected $closed = false;
+	protected $closed = FALSE;
 
 	public function isReadable() {
 		return !$this->closed;
@@ -39,9 +39,11 @@ class ReadableStream implements ReadableStreamInterface {
 			return;
 		}
 
-		$this->closed = true;
+		$this->closed = TRUE;
 		$this->emit('end', $this);
 		$this->emit('close', $this);
 		$this->removeAllListeners();
 	}
 }
+
+?>

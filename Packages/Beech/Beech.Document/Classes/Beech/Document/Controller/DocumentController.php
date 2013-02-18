@@ -84,7 +84,7 @@ class DocumentController extends \Beech\Ehrm\Controller\AbstractController {
 			throw new \Exception('Document version %s not found', $version);
 		}
 
-		// TODO: Use the mimetype
+			// TODO: Use the mimetype
 		$this->response->setHeader('Content-Type', $attachments[$version]->getContentType());
 		$this->response->setHeader('Content-Disposition', 'attachment; filename="' . $document->getName() . '"');
 		$this->response->setContent($attachments[$version]->getRawData());

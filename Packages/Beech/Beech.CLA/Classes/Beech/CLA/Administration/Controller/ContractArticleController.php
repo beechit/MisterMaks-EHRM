@@ -43,7 +43,7 @@ class ContractArticleController extends \Beech\Ehrm\Controller\AbstractManagemen
 	/**
 	 * Shows a single article object
 	 *
-	 * @param \Beech\CLA\Domain\Model\ContractArticle $ContractArticle The article to show
+	 * @param \Beech\CLA\Domain\Model\ContractArticle $contractArticle The article to show
 	 * @return void
 	 */
 	public function showAction(ContractArticle $contractArticle) {

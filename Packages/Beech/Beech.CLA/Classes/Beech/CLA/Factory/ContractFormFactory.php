@@ -10,6 +10,9 @@ namespace Beech\CLA\Factory;
 use TYPO3\Flow\Annotations as Flow;
 use TYPO3\Form\Core\Model\FormDefinition;
 
+/**
+ * Contract form factory
+ */
 class ContractFormFactory extends \TYPO3\Form\Factory\AbstractFormFactory {
 
 	/**
@@ -29,15 +32,19 @@ class ContractFormFactory extends \TYPO3\Form\Factory\AbstractFormFactory {
 
 		$initialStep = $form->createPage('initialStep');
 
-		$employeeField = $initialStep->createElement('employee', 'Beech.Party:EmployeeSelect');
+			// Employee field
+		$initialStep->createElement('employee', 'Beech.Party:EmployeeSelect');
 
-		$contractTemplateField = $initialStep->createElement('contractTemplate', 'Beech.CLA:ContractTemplateSelect');
+			// Contract template field
+		$initialStep->createElement('contractTemplate', 'Beech.CLA:ContractTemplateSelect');
 
-		$jobDescriptionField = $initialStep->createElement('jobDescription', 'Beech.CLA:JobDescriptionSelect');
+			// Job description field
+		$initialStep->createElement('jobDescription', 'Beech.CLA:JobDescriptionSelect');
 
 		$articlesStep = $form->createPage('articlesStep');
 
-		$articlesSection = $articlesStep->createElement('articles', 'Beech.CLA:ContractArticlesSection');
+			// Articles section
+		$articlesStep->createElement('articles', 'Beech.CLA:ContractArticlesSection');
 
 		$databaseFinisher = new \Beech\Ehrm\Finishers\DatabaseFinisher();
 		$databaseFinisher->setOptions(
@@ -52,4 +59,7 @@ class ContractFormFactory extends \TYPO3\Form\Factory\AbstractFormFactory {
 		$form->addFinisher($redirectFinisher);
 		return $form;
 	}
+
 }
+
+?>

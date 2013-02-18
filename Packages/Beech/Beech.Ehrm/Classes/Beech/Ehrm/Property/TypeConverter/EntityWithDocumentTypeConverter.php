@@ -76,8 +76,8 @@ class EntityWithDocumentTypeConverter extends \TYPO3\Flow\Property\TypeConverter
 	public function convertFrom($source, $targetType, array $convertedChildProperties = array(), \TYPO3\Flow\Property\PropertyMappingConfigurationInterface $configuration = NULL) {
 		if (is_array($source)) {
 			if ($this->reflectionService->isClassAnnotatedWith($targetType, 'TYPO3\Flow\Annotations\ValueObject')) {
-				// Unset identity for valueobject to use constructor mapping, since the identity is determined from
-				// constructor arguments
+					// Unset identity for valueobject to use constructor mapping, since the identity is determined from
+					// constructor arguments
 				unset($source['__identity']);
 			}
 			$object = $this->handleArrayData($source, $targetType, $convertedChildProperties, $configuration);

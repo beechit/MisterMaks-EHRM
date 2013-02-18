@@ -22,6 +22,7 @@ class JobDescriptionSelect extends \TYPO3\Form\Core\Model\AbstractFormElement {
 
 	/**
 	 * Initialize form element
+	 * @return void
 	 */
 	public function initializeFormElement() {
 		$this->setLabel('Job Description');
@@ -32,5 +33,7 @@ class JobDescriptionSelect extends \TYPO3\Form\Core\Model\AbstractFormElement {
 		}
 		$this->setProperty('options', $jobDescriptionsArray);
 	}
+
 }
+
 ?>

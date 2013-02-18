@@ -52,13 +52,14 @@ class Server {
 	 *
 	 * @param integer $port Port number to bind to
 	 * @param string $host IP address to listen to
+	 * @throws \Beech\Socket\Exception
 	 * @return void
 	 */
 	public function listen($port, $host = '127.0.0.1') {
 		$socketUri = sprintf('tcp://%s:%s', $host, $port);
 		$this->serverSocketStream = @stream_socket_server($socketUri, $errorNumber, $errorMessage);
 		if ($this->serverSocketStream === FALSE) {
-			throw new Exception(sprintf('Could not bind to socket at %s', $socketUri), 1359994007);
+			throw new \Beech\Socket\Exception(sprintf('Could not bind to socket at %s', $socketUri), 1359994007);
 		}
 
 		stream_set_blocking($this->serverSocketStream, 0);
@@ -67,7 +68,7 @@ class Server {
 		$connectionHandler = function($serverSocketStream) use ($that) {
 			$clientSocketStream = stream_socket_accept($serverSocketStream);
 			if ($clientSocketStream === FALSE) {
-				# FIXME: Log error
+					// FIXME: Log error
 				return;
 			}
 			$that->handleConnection($clientSocketStream);

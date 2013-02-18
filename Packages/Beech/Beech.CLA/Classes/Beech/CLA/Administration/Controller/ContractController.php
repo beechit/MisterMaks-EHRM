@@ -30,7 +30,7 @@ class ContractController extends \Beech\Ehrm\Controller\AbstractManagementContro
 	/**
 	 * Adds the given new contract object to the contract repository
 	 *
-	 * @param \Beech\CLA\Domain\Model\Contract $newContract A new contract to add
+	 * @param \Beech\CLA\Domain\Model\Contract $contract A new contract to add
 	 * @return void
 	 */
 	public function createAction(Contract $contract) {
@@ -43,7 +43,7 @@ class ContractController extends \Beech\Ehrm\Controller\AbstractManagementContro
 	/**
 	 * Shows a single contract object
 	 *
-	 * @param \Beech\CLA\Domain\Model\Contract $Contract The contract to show
+	 * @param \Beech\CLA\Domain\Model\Contract $contract The contract to show
 	 * @return void
 	 */
 	public function showAction(Contract $contract) {
@@ -53,7 +53,7 @@ class ContractController extends \Beech\Ehrm\Controller\AbstractManagementContro
 	/**
 	 * Updates the given contract object
 	 *
-	 * @param \Beech\CLA\Domain\Model\Contract $Contract The contract to update
+	 * @param \Beech\CLA\Domain\Model\Contract $contract The contract to update
 	 * @return void
 	 */
 	public function updateAction(Contract $contract) {
@@ -65,7 +65,7 @@ class ContractController extends \Beech\Ehrm\Controller\AbstractManagementContro
 	/**
 	 * Shows a form for editing an existing contract object
 	 *
-	 * @param \Beech\CLA\Domain\Model\Contract $Contract The contract to edit
+	 * @param \Beech\CLA\Domain\Model\Contract $contract The contract to edit
 	 * @return void
 	 */
 	public function editAction(Contract $contract) {
@@ -75,7 +75,7 @@ class ContractController extends \Beech\Ehrm\Controller\AbstractManagementContro
 	/**
 	 * Removes the given contract object from the contract repository
 	 *
-	 * @param \Beech\CLA\Domain\Model\Contract $Contract The contract to delete
+	 * @param \Beech\CLA\Domain\Model\Contract $contract The contract to delete
 	 * @return void
 	 */
 	public function deleteAction(Contract $contract) {

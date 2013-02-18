@@ -19,9 +19,9 @@ class Stream implements ReadableStreamInterface, WritableStreamInterface {
 
 	public $bufferSize = 4096;
 	public $stream;
-	protected $readable = true;
-	protected $writable = true;
-	protected $closing = false;
+	protected $readable = TRUE;
+	protected $writable = TRUE;
+	protected $closing = FALSE;
 	protected $loop;
 	protected $buffer;
 
@@ -73,10 +73,10 @@ class Stream implements ReadableStreamInterface, WritableStreamInterface {
 			return;
 		}
 
-		$this->closing = false;
+		$this->closing = FALSE;
 
-		$this->readable = false;
-		$this->writable = false;
+		$this->readable = FALSE;
+		$this->writable = FALSE;
 
 		$this->emit('end', $this);
 		$this->emit('close', $this);
@@ -87,15 +87,15 @@ class Stream implements ReadableStreamInterface, WritableStreamInterface {
 		$this->handleClose();
 	}
 
-	public function end($data = null) {
+	public function end($data = NULL) {
 		if (!$this->writable) {
 			return;
 		}
 
-		$this->closing = true;
+		$this->closing = TRUE;
 
-		$this->readable = false;
-		$this->writable = false;
+		$this->readable = FALSE;
+		$this->writable = FALSE;
 
 		$that = $this;
 
@@ -132,3 +132,5 @@ class Stream implements ReadableStreamInterface, WritableStreamInterface {
 		return $this->buffer;
 	}
 }
+
+?>

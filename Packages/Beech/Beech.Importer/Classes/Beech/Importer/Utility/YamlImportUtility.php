@@ -32,7 +32,7 @@ class YamlImportUtility {
 
 	/**
 	 * Structure of model stored in YAML file
-	 * @var string
+	 * @var array
 	 */
 	protected $yamlModel;
 
@@ -87,8 +87,8 @@ class YamlImportUtility {
 	 */
 	public function init($packageKey, $modelName, $yamlModel = NULL) {
 		$modelName = ucfirst($modelName);
-		$repositoryClassName = str_replace('.', '\\', $packageKey) . '\Domain\Repository\\' . $modelName . 'Repository';
-		$this->modelClassName = str_replace('.', '\\', $packageKey) . '\Domain\Model\\' . $modelName;
+		$repositoryClassName = str_replace('.', '\\', $packageKey) . '\\Domain\\Repository\\' . $modelName . 'Repository';
+		$this->modelClassName = str_replace('.', '\\', $packageKey) . '\\Domain\\Model\\' . $modelName;
 
 		$this->yamlModel = $this->modelInterpreterUtility->getModelProperties($packageKey, $modelName, $yamlModel);
 		$this->repository = $this->objectManager->get($repositoryClassName);
@@ -107,6 +107,7 @@ class YamlImportUtility {
 	 * Process import
 	 *
 	 * @param string $sourcePath
+	 * @throws \Exception
 	 * @return void
 	 */
 	public function import($sourcePath) {
@@ -119,7 +120,7 @@ class YamlImportUtility {
 			}
 			$this->filesToImport[] = $sourcePath;
 		}
-		if (count($this->filesToImport) > 0) {
+		if ($this->filesToImport !== array()) {
 			$this->repository->removeAll();
 
 			foreach ($this->filesToImport as $pathAndFilename) {
@@ -212,7 +213,7 @@ class YamlImportUtility {
 			if (isset($value['default'])) {
 				if ($value['type'] === 'dateTime' && $value['default'] === 'now') {
 					$defaultValue = date('Y-m-d');
-				} else if ($value['default'] === 'currentUser') {
+				} elseif ($value['default'] === 'currentUser') {
 						// TODO: Get default user or other solution, maybe from config file?
 					$defaultValue = 'MisterMaks';
 				} else {

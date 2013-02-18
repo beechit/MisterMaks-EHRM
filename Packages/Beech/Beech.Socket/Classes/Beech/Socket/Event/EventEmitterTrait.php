@@ -104,3 +104,5 @@ trait EventEmitterTrait {
 		}
 	}
 }
+
+?>

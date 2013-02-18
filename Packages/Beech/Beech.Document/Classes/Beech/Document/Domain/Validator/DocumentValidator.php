@@ -47,7 +47,7 @@ class DocumentValidator extends \TYPO3\Flow\Validation\Validator\AbstractValidat
 			$mimeType = \TYPO3\Flow\Utility\Arrays::trimExplode(';', $finfo->buffer($resource->getRawData()));
 
 			if (!in_array($mimeType[0], $this->settings['allowedMimeTypes'])) {
-				$this->addError(sprintf('Mimetype %s for %s is not in allowed mimetypes configuration', $mimeType, $value->getName() . '.v' .$version), 1356876520);
+				$this->addError(sprintf('Mimetype %s for %s is not in allowed mimetypes configuration', $mimeType, $value->getName() . '.v' . $version), 1356876520);
 				$valid = FALSE;
 			}
 		}

@@ -18,9 +18,9 @@ class Buffer implements WritableStreamInterface {
 	use EventEmitterTrait;
 
 	public $stream;
-	public $listening = false;
+	public $listening = FALSE;
 	public $softLimit = 2048;
-	private $writable = true;
+	private $writable = TRUE;
 	private $loop;
 	private $data = '';
 	private $lastError = array(
@@ -47,7 +47,7 @@ class Buffer implements WritableStreamInterface {
 		$this->data .= $data;
 
 		if (!$this->listening) {
-			$this->listening = true;
+			$this->listening = TRUE;
 
 			$this->loop->addWriteStream($this->stream, array($this, 'handleWrite'));
 		}
@@ -57,12 +57,12 @@ class Buffer implements WritableStreamInterface {
 		return $belowSoftLimit;
 	}
 
-	public function end($data = null) {
-		if (null !== $data) {
+	public function end($data = NULL) {
+		if (NULL !== $data) {
 			$this->write($data);
 		}
 
-		$this->writable = false;
+		$this->writable = FALSE;
 
 		if ($this->listening) {
 			$this->on('full-drain', array($this, 'close'));
@@ -72,8 +72,8 @@ class Buffer implements WritableStreamInterface {
 	}
 
 	public function close() {
-		$this->writable = false;
-		$this->listening = false;
+		$this->writable = FALSE;
+		$this->listening = FALSE;
 		$this->data = '';
 
 		$this->emit('close');
@@ -90,7 +90,7 @@ class Buffer implements WritableStreamInterface {
 
 		restore_error_handler();
 
-		if (false === $sent) {
+		if (FALSE === $sent) {
 			$this->emit('error', new \ErrorException(
 				$this->lastError['message'],
 				0,
@@ -111,7 +111,7 @@ class Buffer implements WritableStreamInterface {
 
 		if (0 === strlen($this->data)) {
 			$this->loop->removeWriteStream($this->stream);
-			$this->listening = false;
+			$this->listening = FALSE;
 
 			$this->emit('full-drain');
 		}
@@ -124,3 +124,5 @@ class Buffer implements WritableStreamInterface {
 		$this->lastError['line'] = $errline;
 	}
 }
+
+?>

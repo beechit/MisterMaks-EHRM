@@ -25,7 +25,7 @@ class Connection extends Stream implements ConnectionInterface {
 	 */
 	public function handleData($stream) {
 		$data = stream_socket_recvfrom($stream, $this->bufferSize);
-		if ('' === $data || false === $data) {
+		if ('' === $data || FALSE === $data) {
 			$this->end();
 		} else {
 			$this->emit('data', $data, $this);
@@ -54,3 +54,5 @@ class Connection extends Stream implements ConnectionInterface {
 		return trim(substr($address, 0, strrpos($address, ':')), '[]');
 	}
 }
+
+?>

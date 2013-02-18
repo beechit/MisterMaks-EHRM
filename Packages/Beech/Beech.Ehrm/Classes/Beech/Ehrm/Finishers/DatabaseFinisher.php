@@ -40,7 +40,6 @@ class DatabaseFinisher extends \TYPO3\Form\Core\Model\AbstractFinisher {
 	 * @throws \TYPO3\Form\Exception\FinisherException
 	 */
 	protected function executeInternal() {
-
 		$packageNamespace = str_replace('.', '\\', $this->parseOption('package'));
 		$modelName = $this->parseOption('model');
 
@@ -58,20 +57,20 @@ class DatabaseFinisher extends \TYPO3\Form\Core\Model\AbstractFinisher {
 
 		$model = new $modelClassName();
 		$repository = new $repositoryClassName();
-			//TODO: create ContractFinisher or do DatabaseFinisher more generic
+			// TODO: create ContractFinisher or do DatabaseFinisher more generic
 		if ($modelName === 'Contract') {
 			$this->storeContract($model, $repository);
 		} else {
 				// Map form input to the model and store data
-			foreach ($this->finisherContext->getFormValues() as $key => $val) {
-				if (is_array($val)) {
+			foreach ($this->finisherContext->getFormValues() as $key => $value) {
+				if (is_array($value)) {
 					$subModelClassName = '\\' . $packageNamespace . '\\Domain\\Model\\' . ucfirst($key);
 					if (!class_exists($subModelClassName)) {
 						$subModelClassName = '\\TYPO3\\Party\\Domain\\Model\\' . ucfirst($key);
 					}
 					$subModel = new $subModelClassName();
 
-					foreach ($val as $property => $propertyValue) {
+					foreach ($value as $property => $propertyValue) {
 						$methodName = 'set' . ucfirst($property);
 						$subModel->$methodName($propertyValue);
 					}
@@ -79,7 +78,7 @@ class DatabaseFinisher extends \TYPO3\Form\Core\Model\AbstractFinisher {
 					$model->$methodName($subModel);
 				} else {
 					$methodName = 'set' . ucfirst($key);
-					$model->$methodName($val);
+					$model->$methodName($value);
 				}
 			}
 			$repository->add($model);
@@ -87,11 +86,13 @@ class DatabaseFinisher extends \TYPO3\Form\Core\Model\AbstractFinisher {
 	}
 
 	/**
-	 *
+	 * @param \Beech\CLA\Domain\Model\Contract $contract
+	 * @param \Beech\CLA\Domain\Repository\ContractRepository $repository
+	 * @return void
 	 */
-	protected function storeContract($contract, $repository) {
+	protected function storeContract(\Beech\CLA\Domain\Model\Contract $contract, \Beech\CLA\Domain\Repository\ContractRepository $repository) {
 		$formValues = $this->finisherContext->getFormValues();
-			//TODO: Maybe do this more generic
+			// TODO: Maybe do this more generic
 		if (isset($formValues['employee'])) {
 			$employeeRepository = new \Beech\Party\Domain\Repository\PersonRepository();
 			$employee = $employeeRepository->findByIdentifier($formValues['employee']);
@@ -99,7 +100,6 @@ class DatabaseFinisher extends \TYPO3\Form\Core\Model\AbstractFinisher {
 			$contract->setEmployeeFullName($employee->getName()->getFullName());
 		}
 		if (isset($formValues['jobDescription'])) {
-
 			$jobDescriptionRepository = new \Beech\CLA\Domain\Repository\JobDescriptionRepository();
 			$jobDescription = $jobDescriptionRepository->findByIdentifier($formValues['jobDescription']);
 			$contract->setJobDescription($formValues['jobDescription']);
@@ -110,7 +110,7 @@ class DatabaseFinisher extends \TYPO3\Form\Core\Model\AbstractFinisher {
 		if (isset($formValues['contractTemplate'])) {
 			$contract->setContractTemplate($formValues['contractTemplate']);
 		}
-			//TODO: Store company identifier (employer)
+			// TODO: Store company identifier (employer)
 		$articles = array();
 
 		foreach ($this->finisherContext->getFormValues() as $key => $values) {

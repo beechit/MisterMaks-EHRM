@@ -24,3 +24,5 @@ interface ReadableStreamInterface extends StreamInterface {
 	public function pipe(WritableStreamInterface $dest, array $options = array());
 
 }
+
+?>

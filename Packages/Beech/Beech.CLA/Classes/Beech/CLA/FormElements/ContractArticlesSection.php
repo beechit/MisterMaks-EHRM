@@ -22,15 +22,18 @@ class ContractArticlesSection extends \TYPO3\Form\FormElements\Section {
 
 	/**
 	 * Initialize form element
+	 *
+	 * @return void
 	 */
 	public function initializeFormElement() {
 
 		$this->setLabel('Parameters');
-			//TODO: filter by contractTemplate, results from previous page
+			// TODO: filter by contractTemplate, results from previous page
 		$contractArticles = $this->contractArticleRepository->findAll();
-		foreach ($contractArticles as $key => $contractArticle) {
-			if (!is_null($contractArticle->getValues()) ) {
-				foreach ($contractArticle->getValues() as $k => $value) {
+		foreach ($contractArticles as $contractArticle) {
+			$contractArticleValues = $contractArticle->getValues();
+			if (is_array($contractArticleValues)) {
+				foreach ($contractArticleValues as $value) {
 					$contractArticleValueIdentifier = 'article-' . $contractArticle->getArticleId() . '-values.' . $value['valueId'];
 					if (isset($value['type']) && preg_match('/(\w+)\.(\w+):(\w+)/', $value['type'])) {
 						$contractArticleValue = $this->createElement($contractArticleValueIdentifier, $value['type']);
@@ -55,7 +58,7 @@ class ContractArticlesSection extends \TYPO3\Form\FormElements\Section {
 					}
 				}
 			}
-			$contractArticleElement = $this->createElement('article-' . $contractArticle->getArticleId() . '-identifier' , 'Beech.CLA:ContractArticleFormElement');
+			$contractArticleElement = $this->createElement('article-' . $contractArticle->getArticleId() . '-identifier', 'Beech.CLA:ContractArticleFormElement');
 			$contractArticleElement->setDefaultValue($contractArticle->getArticleId());
 			$contractArticleElement->setLabel($contractArticle->getArticleHeader());
 			$contractArticleElement->setProperty('contractArticle', $contractArticle);
@@ -70,7 +73,8 @@ class ContractArticlesSection extends \TYPO3\Form\FormElements\Section {
 	 * @return void
 	 */
 	public function beforeRendering(\TYPO3\Form\Core\Runtime\FormRuntime $formRuntime) {
-		//TODO: filtering
+		// TODO: filtering
 	}
 }
+
 ?>

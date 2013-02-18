@@ -19,6 +19,8 @@ interface WritableStreamInterface extends StreamInterface {
 
 	public function write($data);
 
-	public function end($data = null);
+	public function end($data = NULL);
 
 }
+
+?>

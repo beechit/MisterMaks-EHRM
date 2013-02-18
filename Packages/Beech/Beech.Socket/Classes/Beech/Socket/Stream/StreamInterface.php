@@ -18,3 +18,5 @@ interface StreamInterface {
 	public function close();
 
 }
+
+?>
