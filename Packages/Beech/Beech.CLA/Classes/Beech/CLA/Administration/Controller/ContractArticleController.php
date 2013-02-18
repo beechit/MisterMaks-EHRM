@@ -1,19 +1,20 @@
 <?php
 namespace Beech\CLA\Administration\Controller;
 
-/*                                                                        *
+/*
  * This source file is proprietary property of Beech Applications B.V.
+ * Date: 01-02-13 09:48
  * All code (c) Beech Applications B.V. all rights reserved
- *                                                                        */
+ */
 
 use TYPO3\Flow\Annotations as Flow;
 use Beech\CLA\Domain\Model\ContractArticle;
 
 /**
-* ContractArticle controller for the Beech.CLA package  and subpackage Administration
-*
-* @Flow\Scope("singleton")
-*/
+ * ContractArticle controller for the Beech.CLA package  and subpackage Administration
+ *
+ * @Flow\Scope("singleton")
+ */
 class ContractArticleController extends \Beech\Ehrm\Controller\AbstractManagementController {
 
 	/**
@@ -42,7 +43,7 @@ class ContractArticleController extends \Beech\Ehrm\Controller\AbstractManagemen
 	/**
 	 * Shows a single article object
 	 *
-	 * @param \Beech\CLA\Domain\Model\ContractArticle $contractArticle The article to show
+	 * @param \Beech\CLA\Domain\Model\ContractArticle $ContractArticle The article to show
 	 * @return void
 	 */
 	public function showAction(ContractArticle $contractArticle) {

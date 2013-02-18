@@ -11,8 +11,8 @@ use Symfony\Component\Yaml\Yaml;
 class ModelInterpreterUtility {
 
 	/**
-	 * @Flow\Inject
 	 * @var \TYPO3\Flow\Configuration\ConfigurationManager
+	 * @Flow\Inject
 	 */
 	protected $configurationManager;
 
