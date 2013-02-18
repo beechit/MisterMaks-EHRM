@@ -22,7 +22,15 @@ beech:
           type: 'StringLength'
           options:
             maximum: 10
-        visible: TRUE
+      'Persontype':
+        label: 'Person type'
+        validation:
+          -
+            type: 'NotEmpty'
+          -
+            type: 'StringLength'
+            options:
+              maximum: 20
       'name.firstName':
         label: 'First name'
         validation:
@@ -32,10 +40,8 @@ beech:
             type: 'StringLength'
             options:
               maximum: 20
-        visible: TRUE
       'name.middleName':
         label: 'Middle name'
-        required: FALSE
         validation:
           type: 'StringLength'
           options:
@@ -78,7 +84,6 @@ beech:
             maximum: 40
       'initials':
         label: Initials
-        required: TRUE
         validation:
           -
             type: 'RegularExpression'
@@ -88,7 +93,7 @@ beech:
             type: 'StringLength'
             options:
               maximum: 10
-      visible: TRUE
+
     'dateofBirth':
       label: 'Date of Birth'
       type: dateTime
@@ -122,9 +127,10 @@ beech:
           type: 'StringLength'
           options:
             maximum: 6
+#todo: add bsn validation
     'bsn':
       label: bsn
-      required: TRUE
+
       validation:
         -
           type: 'NotEmpty'
@@ -134,12 +140,11 @@ beech:
             regularExpression: '/[0-9]{9}/'
         -
           type: 'StringLength'
-          options
-          maximum: 20
-#todo add bsn validation
-    nationality:
+          options:
+            maximum: 20
+# todo: use the country and nationality table
+    'nationality':
       label: 'Nationality'
-      required: TRUE
       validation:
         -
           type: 'NotEmpty'
@@ -168,7 +173,6 @@ beech:
       label: Image
       type: ''
       validation: ''
-      visible: TRUE
     'preferedCommunicationMethod':
       label: 'Prefered communication Method'
       options:
@@ -260,7 +264,8 @@ beech:
             'modifiedBy':
               default: currentUser
               label: 'Modified by'
-              required: TRUE
+
               type: \Beech\Party\Domain\Model\Person
+              validation: ''
           label: 'Modification log'
           type: array
