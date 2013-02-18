@@ -151,7 +151,7 @@ Beech:
               required: TRUE
               type: text
               validation:
-                type: 'Text'
+                type: 'TYPO3.Flow:Text'
               visible: TRUE
           label: Attendees
           type: array
@@ -238,7 +238,7 @@ Beech:
           required: TRUE
           type: dateTime
           validation:
-            type: 'RegularExpression'
+            type: 'TYPO3.Flow:RegularExpression'
             options:
               regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
           visible: FALSE
@@ -248,7 +248,7 @@ Beech:
           required: TRUE
           type: \Beech\Party\Domain\Model\Person
           validation:
-            type: 'NotEmpty'
+            type: 'TYPO3.Flow:NotEmpty'
           visible: FALSE
         'modification':
           items:
@@ -258,7 +258,7 @@ Beech:
               required: TRUE
               type: dateTime
               validation:
-                type: 'RegularExpression'
+                type: 'TYPO3.Flow:RegularExpression'
                 options:
                   regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
               visible: FALSE

@@ -11,8 +11,7 @@ Beech:
           label: 'Subject id'
           type: '\Beech\Party\Domain\Model\Person'
           validation:
-            -
-              type: 'NotEmpty'
+            type: 'NotEmpty'
         'departmentId':
           label: 'Department id'
           type: '\Beech\Party\Domain\Model\Company'
@@ -77,43 +76,46 @@ Beech:
           label: 'Date of signing contract'
           type: dateTime
           validation:
-           -
-              type: 'RegularExpression'
-              options:
-                regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
+            type: 'RegularExpression'
+            options:
+              regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
         'contractExpireDate':
           label: 'Expiration date'
           type: dateTime
           validation:
-            -
-              type: 'RegularExpression'
-              options:
-                regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
+            type: 'RegularExpression'
+            options:
+             regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
         'contactStopDate':
           label: 'Date contract is stopped'
           type: dateTime
           validation:
-            -
-              type: 'RegularExpression'
-              options:
-                regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
+            type: 'RegularExpression'
+            options:
+              regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
         'contactStopDateReason':
           label: 'Reason that contract was stopped'
-          validation: ''
-          options:
-            values:
-              - stoppedByEmployer
-              - stoppedByEmployee
-              - Sickness
-              - Other
+          values:
+            - stoppedByEmployer
+            - stoppedByEmployee
+            - Sickness
+            - Other
+          validation:
+            -
+              type: 'NotEmpty'
+            -
+              type: 'StringLength'
+              options:
+                maximum: 20
         'contractDocumentId':
           label: 'Id of the document'
           validation:
             -
+              type: 'NotEmpty'
+            -
               type: 'StringLength'
               options:
-                maximum: 50
-# add validator for document type ?
+                maximum: 30
         'jobTitle':
           label: Jobtitle
           validation:
@@ -122,21 +124,13 @@ Beech:
             -
               type: 'StringLength'
               options:
-                maximum: 35
+                maximum: 30
         'jobDescription':
           label: 'Jobdescription'
           type: '\Beech\CLA\Domain\Model\jobDescription'
-          validation:
-            -
-              type: 'NotEmpty'
-            -
-              type: 'StringLength'
-              options:
-                maximum: 35
         'defaultSalaryScale':
-          label: 'Default salary Scale'
+          label: defaultSalaryScale
           type: '\Beech\CLA\Domain\Model\jobDescription'
-          validation: ''
         'contractEnddate':
           label: 'Expiration date'
           type: dateTime
@@ -172,11 +166,11 @@ Beech:
           label: 'Work address House number'
           validation:
             -
-              type: 'Integer'
-            -
               type: 'RegularExpression'
               options:
                 regularExpression: '[0-9]{1,5}'
+            -
+              type: 'Integer'
         'houseNumberAddition':
           label: 'Workaddress House number addition'
           validation:
@@ -187,71 +181,63 @@ Beech:
             -
               type: 'StringLength'
               options:
-                maximum: 10
+              maximum: 10
         'postalCodeNL':
           label: 'Postal code'
           validation:
             -
+              type: 'StringLength'
+              options:
+              maximum: 6
+            -
               type: 'RegularExpression'
               options:
                 regularExpression: '\\d{4}\\s?[a-z]{2}'
-            -
-              type: 'StringLenght'
-              options:
-                maximum: 6
         'residence':
           label: Residence
           validation:
            -
              type: 'RegularExpression'
              options:
-              regularExpression: '[a-zA-Z\\-\\s\\’]{2,30}'
+               regularExpression: '[a-zA-Z\\-\\s\\’]{2,30}'
            -
-              type: 'Stringlength'
-              options:
-               maximum: 30
+             type: 'StringLength'
+             options:
+              maximum: 30
         'country':
           label: Country
           validation:
-           -
-             type: 'RegularExpression'
+            -
+             type: 'StringLength'
              options:
-              regularExpression: '[a-zA-Z\\-\\s\\’]{2,30}'
-           -
-              type: 'Stringlength'
-              options:
-               maximum: 30
+              maximum: 30
         'probation':
           label: probation
           type: boolean
-          default: ''
         'probationInDays':
           label: 'Probation in Days'
-
-          validation: ''
-           -
-             type: 'Integer'
-           -
-             type: 'Count'
-             options:
+          validation:
+            -
+              type: 'Integer'
+            -
+              type: 'Count'
+              options
               minimum: 0
-              maximum: 61
-        'totalHours':
+              maximum: 62
+          totalHours':
           label: 'Total hours of this contract'
           type: decimal(4.2)
           validation:
-            -
-              type: 'RegularExpression'
-              options:
-                regularExpression: '^([1-9]\d*(\.|\,)\d*|0?(\.|\,)\d*[1-9]\d*|[1-9]\d*)$'
+            type: 'RegularExpression'
+            options:
+              regularExpression: '^([1-9]\d*(\.|\,)\d*|0?(\.|\,)\d*[1-9]\d*|[1-9]\d*)$'
         'hoursAWeek':
           label: 'Hours a week'
           type: decimal(2.2)
           validation:
             type: 'RegularExpression'
-              -
-              options:
-                regularExpression: '^([1-9]\d*(\.|\,)\d*|0?(\.|\,)\d*[1-9]\d*|[1-9]\d*)$'
+            options:
+              regularExpression: '^([1-9]\d*(\.|\,)\d*|0?(\.|\,)\d*[1-9]\d*|[1-9]\d*)$'
         'workRoster':
           type: array
           values:
@@ -259,9 +245,9 @@ Beech:
               label: Workdays
               validation:
                 -
-                  type: 'Stringlenght'
+                  type: 'StringLength'
                   options:
-                    maximum: 10
+                    maximum: 15
               options:
                 values:
                   - monday
@@ -300,6 +286,7 @@ Beech:
           type: boolean
         'wageScale':
           label: 'wage Scale'
+          type: string(2)
           validation:
             -
               type: 'StringLength'
@@ -307,27 +294,23 @@ Beech:
                 maximum: 3
         'currentWageScale':
           label: 'Current wage Scale'
+          type: integer(2)
           validation:
             -
-              type: 'StringLength'
+              type: 'Integer'
+            -
+              type: 'Count'
               options:
-                maximum: 3
-# todo: use wagesteps from wagedocument in Beech.Ehrm.Glastuinbouw package
+               minimum: 0
+               maximum: 12
         'wagestep':
           label: 'Wage step'
-            label: 'Current wage Scale'
-            validation:
-              -
-                type: 'StringLength'
-                options:
-                  maximum: 6
+          type: integer(2)
+          validation: ''
         'currentWageStep':
           label: 'Current Wage Step'
+          type: integer(2)
           validation: ''
-            -
-              type: 'StringLenght'
-              options:
-                maximum: 6
         'cla':
           label: 'collective labour agreement'
           type: '\Beech\CLA\Domain\Model\LaborAgreement'
@@ -344,10 +327,10 @@ Beech:
           label: 'Vacation allowance Percentage'
           type: decimal(2.2)
           validation:
-             -
-               type: 'RegularExpression'
-               options:
-                 regularExpression: '^([1-9]\d*(\.|\,)\d*|0?(\.|\,)\d*[1-9]\d*|[1-9]\d*)$'
+            -
+              type: 'RegularExpression'
+              options:
+                regularExpression: '^([1-9]\d*(\.|\,)\d*|0?(\.|\,)\d*[1-9]\d*|[1-9]\d*)$'
         'sickReportTime':
           label: 'Sickreport time'
           type: dateTime
@@ -385,9 +368,7 @@ Beech:
           type: boolean
         'articlesInCurrentContract':
           type: array
-          validation:
-            -
-              type: 'NotEmpty'
+          validation: ''
         'creationDate':
           default: now
           label: 'creation date'
@@ -406,21 +387,3 @@ Beech:
           validation:
             -
               type: 'NotEmpty'
-        'modification':
-          items:
-            'modificationDate':
-              default: now
-              label: 'Modification date'
-              type: dateTime
-              validation:
-                -
-                  type: 'RegularExpression'
-                  options:
-                    regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
-            'modifiedBy':
-              default: currentUser
-              label: 'Modified by'
-              required: TRUE
-              type: \Beech\Party\Domain\Model\Person
-          label: 'Modification log'
-          type: array

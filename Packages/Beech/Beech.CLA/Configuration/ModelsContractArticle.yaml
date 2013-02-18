@@ -14,7 +14,8 @@ Beech:
             -
               type: 'NotEmpty'
             -
-              type: 'St
+              type: 'StringLength'
+
           onList: TRUE
         'articleLabel':
           label: 'Label'

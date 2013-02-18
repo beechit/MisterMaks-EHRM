@@ -41,7 +41,6 @@ Beech:
                   - 2018
                   - 2019
                   - 2020
-              required: TRUE
               validation:
                 -
                   type: 'NotEmpty'

@@ -24,11 +24,9 @@ Beech:
         'personid':
           label: 'Person ID'
           type: \Beech\Party\Domain\Model\Person
-          validation: ''
         'departmentId':
           label: 'Department ID'
           type: \Beech\Party\Domain\Model\Company
-          validation: ''
         'bankInformation':
           items:
             'accountType':
@@ -42,7 +40,7 @@ Beech:
                 -
                   type: 'NotEmpty'
                 -
-                  type: 'Stringlenght'
+                  type: 'StringLength'
                   options:
                     maximum: 20
             'bankName':

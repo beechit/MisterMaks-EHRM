@@ -15,14 +15,14 @@ beech:
       'departmentId':
         label: 'Department id'
         type: \Beech\Party\Domain\Model\Company
-        validation: ''
       'name.title':
         label: title
         validation:
-          type: 'StringLength'
-          options:
-            maximum: 10
-      'Persontype':
+          -
+            type: 'StringLength'
+            options:
+              maximum: 10
+      'personType':
         label: 'Person type'
         validation:
           -
@@ -31,6 +31,12 @@ beech:
             type: 'StringLength'
             options:
               maximum: 20
+        options:
+          values:
+            - contact
+            - companyContact
+            - employee
+            - partnerCompanyContact
       'name.firstName':
         label: 'First name'
         validation:
@@ -43,10 +49,11 @@ beech:
       'name.middleName':
         label: 'Middle name'
         validation:
-          type: 'StringLength'
-          options:
-            maximum: 20
-      'name.lastname':
+          -
+            type: 'StringLength'
+            options:
+              maximum: 20
+      'name.lastName':
         label: 'Last name'
         validation:
           -
@@ -73,15 +80,17 @@ beech:
       'alias':
         label: Alias
         validation:
-          type: 'StringLength'
-          options:
-            maximum: 15
+          -
+            type: 'StringLength'
+            options:
+              maximum: 15
       'fullName':
         label: FullName
         validation:
-          type: 'StringLength'
-          options:
-            maximum: 40
+          -
+            type: 'StringLength'
+            options:
+              maximum: 40
       'initials':
         label: Initials
         validation:
@@ -98,22 +107,25 @@ beech:
       label: 'Date of Birth'
       type: dateTime
       validation:
-        type: 'RegularExpression'
-        options:
-          regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
+        -
+          type: 'RegularExpression'
+          options:
+            regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
     'placeOfBirth':
       label: 'Place of birth'
       validation:
-        type: 'RegularExpresssion'
-        options:
-          regularExpression: '[a-zA-Z\\-\\s\\’]{2,30}'
+        -
+          type: 'RegularExpresssion'
+          options:
+            regularExpression: '[a-zA-Z\\-\\s\\’]{2,30}'
     'dateofDeath':
       label: 'Date of death'
       type: dateTime
       validation:
-        type: 'RegularExpression'
-        options:
-          regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
+        -
+          type: 'RegularExpression'
+          options:
+            regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
     'gender':
       label: Gender
       options:
@@ -172,7 +184,6 @@ beech:
     'image':
       label: Image
       type: ''
-      validation: ''
     'preferedCommunicationMethod':
       label: 'Prefered communication Method'
       options:
@@ -180,11 +191,11 @@ beech:
           - none
           - e-mail
           - sms
-          - post
+          - paper
           - phone
       validation:
         -
-          type: 'Stringlenght'
+          type: 'StringLength'
           options:
             maximum: 20
         -
@@ -266,6 +277,5 @@ beech:
               label: 'Modified by'
 
               type: \Beech\Party\Domain\Model\Person
-              validation: ''
           label: 'Modification log'
           type: array

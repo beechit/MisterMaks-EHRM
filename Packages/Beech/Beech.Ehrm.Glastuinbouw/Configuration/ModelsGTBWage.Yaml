@@ -5,13 +5,13 @@
 ---
 Beech:
   Party:
-    'ModelGTBWage':
+    'modelGTBWage':
       properties:
         'orbaPoints':
           label: 'Orba Points'
           validation:
             -
-              type: 'StringLength'
+              type: 'TYPO3.Flow:StringLength'
               options:
               maximum: 10
         'wageGroup':
@@ -20,28 +20,28 @@ Beech:
               label: 'Step'
               validation:
                 -
-                  type: 'StringLength'
+                  type: 'TYPO3.Flow:StringLength'
                   options:
                    maximum: 15
                 -
-                  type: 'NotEmpty'
+                  type: 'TYPO3.Flow:NotEmpty'
             'value':
               label: 'value'
               default: '0,0'
               validation:
                 -
-                  type: 'RegularExpression'
+                  type: 'TYPO3.Flow:RegularExpression'
                   options:
                     regularExpression: '/^[0-9]{1,2}([\.][0-9]{0,2}){0,1}$/'
                 -
-                  type: 'NotEmpty'
+                  type: 'TYPO3.Flow:NotEmpty'
             'age':
-             label: 'Age'
-             validation:
-              -
-                type: 'Integer'
-              -
-                type: 'Count
-                options:
-                  minimum:10
-                  maximum: 21
+              label: 'Age'
+              validation:
+                -
+                  type: 'TYPO3.Flow:Integer'
+                -
+                  type: 'TYPO3.Flow:Count'
+                  options:
+                    minimum: 10
+                    maximum: 21

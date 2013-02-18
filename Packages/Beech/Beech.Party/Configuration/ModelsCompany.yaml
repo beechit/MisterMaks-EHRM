@@ -17,7 +17,6 @@ Beech:
                 maximum: 35
         'companyType':
           label: 'Company type'
-          validation: ''
           options:
             values:
               - primary
@@ -35,7 +34,6 @@ Beech:
         'departments':
           label: Departments
           type: \Beech\Party\Domain\Model\Company
-          validation: ''
         'chamberOfCommerceNumber':
           label: 'Chamber of Commerce Number'
           validation:
@@ -130,7 +128,6 @@ Beech:
           default: currentUser
           label: 'Created by'
           type: \Beech\Party\Domain\Model\Person
-          validation: ''
         'modification':
           items:
             'modificationDate':
@@ -145,6 +142,5 @@ Beech:
               default: currentUser
               label: 'Modified by'
               type: \Beech\Party\Domain\Model\Person
-              validation: ''
           label: 'Modification log'
           type: array

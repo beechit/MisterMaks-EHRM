@@ -5,7 +5,7 @@
 ---
 Beech:
   Party:
-    'ModelElectronicAdresses':
+    'ModelsElectronicAdresses':
       properties:
         'connectionType':
           label: 'Connection type'
@@ -24,11 +24,10 @@ Beech:
         'personid':
           label: 'Person ID'
           type: \Beech\Party\Domain\Model\Person
-          validation: ''
         'departmentId':
           label: 'Department ID'
           type: \Beech\Party\Domain\Model\Company
-          validation: ''
+# todo: implement this that validation works on type adress selected.
         'electronicAddresses':
           items:
             'email':
@@ -39,7 +38,7 @@ Beech:
                 -
                   type: 'EmailAddress'
                 -
-                  type: 'Stringlenght'
+                  type: 'StringLength'
                   options:
                     maximum: 35
             'skype':
@@ -50,7 +49,7 @@ Beech:
                   options:
                     regularExpression: '[a-zA-Z][a-zA-Z0-9]{5,31}]'
                 -
-                  type: 'Stringlenght'
+                  type: 'StringLength'
                   options:
                     maximum: 35
             'websiteUrl':
