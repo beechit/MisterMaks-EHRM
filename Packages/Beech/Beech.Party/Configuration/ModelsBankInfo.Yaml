@@ -11,9 +11,9 @@ Beech:
           label: 'ConnectionType'
           options:
             values:
-              - company
-              - person
-              - department
+              - 'company'
+              - 'person'
+              - 'department'
           validation:
             -
               type: 'NotEmpty'
@@ -23,19 +23,19 @@ Beech:
                 maximum: 10
         'personid':
           label: 'Person ID'
-          type: \Beech\Party\Domain\Model\Person
+          type: '\Beech\Party\Domain\Model\Person'
         'departmentId':
           label: 'Department ID'
-          type: \Beech\Party\Domain\Model\Company
+          type: '\Beech\Party\Domain\Model\Company'
         'bankInformation':
           items:
             'accountType':
               label: 'account type'
               options:
                 values:
-                  - giroAccount
-                  - bankaccount
-                  - bankAccountAbroad
+                  - 'giroAccount'
+                  - 'bankaccount'
+                  - 'bankAccountAbroad'
               validation:
                 -
                   type: 'NotEmpty'
@@ -56,9 +56,9 @@ Beech:
                     regularExpression: '[a-zA-Z\\-\\s\\’]{2,20}'
             'primaryBankAccount':
               label: 'Primary Bankaccount'
-              type: boolean
+              type: 'boolean'
             'giro':
-              label: Giro
+              label: 'Giro'
               validation:
                -
                  type: 'RegularExpression'
@@ -81,7 +81,6 @@ Beech:
                     regularExpression: '[1-9]{8}|[1-9]{11}'
             'ibanNumber':
               label: 'IBAN number'
-              required: FALSE
               validation:
                 -
                   type: 'RegularExpression'
@@ -92,14 +91,14 @@ Beech:
                   options:
                     maximum: 34
             'countryOfBank':
-              default: NL
+              default: 'NL'
               label: 'Country bank'
               validation:
                 -
                   type: 'StringLength'
                   options:
                     maximum: 40
-             'bankResidence':
+            'bankResidence':
               label: 'bank residence'
               validation:
                 -
@@ -111,4 +110,4 @@ Beech:
                   options:
                     regularExpression: '[a-zA-Z0-9\\-\\’]{2,30}'
           label: 'Bank information'
-          type: array
+          type: 'array'

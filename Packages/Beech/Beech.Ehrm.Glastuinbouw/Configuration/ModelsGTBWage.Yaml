@@ -11,37 +11,37 @@ Beech:
           label: 'Orba Points'
           validation:
             -
-              type: 'TYPO3.Flow:StringLength'
+              type: 'StringLength'
               options:
-              maximum: 10
+                maximum: 10
         'wageGroup':
           -
             'step':
               label: 'Step'
               validation:
                 -
-                  type: 'TYPO3.Flow:StringLength'
+                  type: 'StringLength'
                   options:
-                   maximum: 15
+                    maximum: 15
                 -
-                  type: 'TYPO3.Flow:NotEmpty'
+                  type: 'NotEmpty'
             'value':
               label: 'value'
               default: '0,0'
               validation:
                 -
-                  type: 'TYPO3.Flow:RegularExpression'
+                  type: 'RegularExpression'
                   options:
                     regularExpression: '/^[0-9]{1,2}([\.][0-9]{0,2}){0,1}$/'
                 -
-                  type: 'TYPO3.Flow:NotEmpty'
+                  type: 'NotEmpty'
             'age':
               label: 'Age'
               validation:
                 -
-                  type: 'TYPO3.Flow:Integer'
+                  type: 'Integer'
                 -
-                  type: 'TYPO3.Flow:Count'
+                  type: 'Count'
                   options:
                     minimum: 10
                     maximum: 21

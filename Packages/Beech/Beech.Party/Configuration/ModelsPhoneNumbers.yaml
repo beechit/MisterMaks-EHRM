@@ -12,9 +12,9 @@ Beech:
           label: 'Connection type'
           options:
             values:
-              - company
-              - person
-              - department
+              - 'company'
+              - 'person'
+              - 'department'
           validation:
             -
               type: 'NotEmpty'
@@ -24,26 +24,26 @@ Beech:
                 maximum: 10
         'personid':
           label: 'Person ID'
-          type: \Beech\Party\Domain\Model\Person
+          type: '\Beech\Party\Domain\Model\Person'
           validation: ''
         'departmentId':
           label: 'Department ID'
-          type: \Beech\Party\Domain\Model\Company
+          type: '\Beech\Party\Domain\Model\Company'
         'phone':
           items:
             'phoneType':
               label: 'phone type'
               options:
                 values:
-                  - workLocationNumber
-                  - faxNumber
-                  - homePhoneNumber
-                  - privateMobilePhone
-                  - businessMobilePhone
-                  - bussinessPhone
-                  - emergencyCallnumber
-                  - other
-                  - foreignPhoneNumber
+                  - 'workLocationNumber'
+                  - 'faxNumber'
+                  - 'homePhoneNumber'
+                  - 'privateMobilePhone'
+                  - 'businessMobilePhone'
+                  - 'bussinessPhone'
+                  - 'emergencyCallnumber'
+                  - 'other'
+                  - 'foreignPhoneNumber'
               validation:
                 -
                   type: 'NotEmpty'
@@ -51,7 +51,7 @@ Beech:
                   type: 'StringLength'
                   options:
                     maximum: 25
-              default: businessPhone
+              default: 'businessPhone'
             'phoneNumber':
               label: 'Phone Number'
               validation:
@@ -77,11 +77,11 @@ Beech:
                   options:
                     maximum: 15
           label: 'Phone numbers'
-          type: array
+          type: 'array'
         'creationDate':
-          default: now
+          default: 'now'
           label: 'creation date'
-          type: dateTime
+          type: 'dateTime'
           validation:
             -
               type: 'NotEmpty'
@@ -90,27 +90,27 @@ Beech:
               options:
                 regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
         'createdBy':
-          default: currentUser
+          default: 'currentUser'
           label: 'Created by'
-          type: \Beech\Party\Domain\Model\Person
+          type: '\Beech\Party\Domain\Model\Person'
           validation:
             -
               type: 'NotEmpty'
         'modification':
           items:
             'modificationDate':
-              default: now
+              default: 'now'
               label: 'Modification date'
-              type: dateTime
+              type: 'dateTime'
               validation:
                 -
                   type: 'RegularExpression'
                   options:
                     regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
             'modifiedBy':
-              default: currentUser
+              default: 'currentUser'
               label: 'Modified by'
 
-              type: \Beech\Party\Domain\Model\Person
+              type: '\Beech\Party\Domain\Model\Person'
           label: 'Modification log'
-          type: array
+          type: 'array'

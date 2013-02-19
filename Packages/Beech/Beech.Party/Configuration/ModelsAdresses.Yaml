@@ -11,9 +11,9 @@ Beech:
           label: 'Connection type'
           options:
             values:
-              - company
-              - person
-              - department
+              - 'company'
+              - 'person'
+              - 'department'
           validation:
             -
               type: 'NotEmpty'
@@ -23,22 +23,22 @@ Beech:
                 maximum: 10
         'personid':
           label: 'Person ID'
-          type: \Beech\Party\Domain\Model\Person
+          type: '\Beech\Party\Domain\Model\Person'
         'departmentId':
           label: 'Department ID'
-          type: \Beech\Party\Domain\Model\Company
+          type: '\Beech\Party\Domain\Model\Company'
         'addresses':
           items:
             'addressType':
               label: 'Address type'
               options:
                 values:
-                  - businessAddress
-                  - postbox
-                  - mailingAddress
-                  - workLocation
-                  - addressAbroad
-                  - other
+                  - 'businessAddress'
+                  - 'postbox'
+                  - 'mailingAddress'
+                  - 'workLocation'
+                  - 'addressAbroad'
+                  - 'other'
               validation:
                 -
                   type: 'NotEmpty'
@@ -61,10 +61,10 @@ Beech:
                     maximum: 35
             'primaryPostAddress':
               label: 'Primary postaddress'
-              type: boolean
+              type: 'boolean'
             'primaryLocation':
               label: 'Primary Location'
-              type: boolean
+              type: 'boolean'
             'postBoxNumber':
               label: 'Postbox number'
               validation:
@@ -121,7 +121,7 @@ Beech:
                   options:
                     maximum: 10
             'residence':
-              label: Residence
+              label: 'Residence'
               validation:
                 -
                   type: 'NotEmpty'
@@ -134,18 +134,18 @@ Beech:
                   options:
                     maximum: 35
             'country':
-              label: Country
+              label: 'Country'
               validation:
                 -
                   type: 'StringLength'
                   options:
                     maximum: 30
-              default: NL
+              default: 'NL'
             'addressDescription':
               label: 'Address description'
               type: text
               validation:
                 -
                   type: 'Text'
-              label: Addresses
-              type: array
+              label: 'Addresses'
+              type: 'array'

@@ -19,11 +19,11 @@ Beech:
           label: 'Company type'
           options:
             values:
-              - primary
-              - department
-              - subsidiary
-              - partnerCompany
-          default: department
+              - 'primary'
+              - 'department'
+              - 'subsidiary'
+              - 'partnerCompany'
+          default: 'department'
           validation:
             -
               type: 'NotEmpty'
@@ -32,8 +32,8 @@ Beech:
               options:
                 maximum: 20
         'departments':
-          label: Departments
-          type: \Beech\Party\Domain\Model\Company
+          label: 'Departments'
+          type: '\Beech\Party\Domain\Model\Company'
         'chamberOfCommerceNumber':
           label: 'Chamber of Commerce Number'
           validation:
@@ -63,20 +63,20 @@ Beech:
             -
               type: 'Integer'
         'legalForm':
-          label: LegalForm
+          label: 'LegalForm'
           options:
             values:
-            - subsidiary
-            - department
-            - soleProprietorship
-            - partnership
-            - vof
-            - cv
-            - bv
-            - nv
-            - association
-            - foundation
-            - cooperative
+            - 'subsidiary'
+            - 'department'
+            - 'soleProprietorship'
+            - 'partnership'
+            - 'vof'
+            - 'cv'
+            - 'bv'
+            - 'nv'
+            - 'association'
+            - 'foundation'
+            - 'cooperative'
           default: none
           validation:
             -
@@ -86,17 +86,13 @@ Beech:
               options:
                 maximum: 20
         'vatNumber':
-
           label: 'Vat Number'
           validation:
             -
               type: 'StringLength'
               options:
                 maximum: 14
-
-          visible: TRUE
         'wageTaxNumber':
-
           label: 'wage Tax Number'
           validation:
             -
@@ -109,14 +105,13 @@ Beech:
                 maximum: 9
         'companyDescription':
           label: 'Company description'
-          type: text
           validation:
             -
               type: 'Text'
         'creationDate':
-          default: now
+          default: 'now'
           label: 'creation date'
-          type: dateTime
+          type: 'dateTime'
           validation:
             -
               type: 'NotEmpty'
@@ -125,22 +120,22 @@ Beech:
               options:
                 regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
         'createdBy':
-          default: currentUser
+          default: 'currentUser'
           label: 'Created by'
-          type: \Beech\Party\Domain\Model\Person
+          type: '\Beech\Party\Domain\Model\Person'
         'modification':
           items:
             'modificationDate':
-              default: now
+              default: 'now'
               label: 'Modification date'
-              type: dateTime
+              type: 'dateTime'
               validation:
                 type: 'RegularExpression'
                 options:
                   regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
             'modifiedBy':
-              default: currentUser
+              default: 'currentUser'
               label: 'Modified by'
-              type: \Beech\Party\Domain\Model\Person
+              type: '\Beech\Party\Domain\Model\Person'
           label: 'Modification log'
-          type: array
+          type: 'array'

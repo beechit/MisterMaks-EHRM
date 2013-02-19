@@ -10,13 +10,13 @@ Beech:
           label: 'Absence type'
           options:
             values:
-              - accidentDuckLiftStandConcentration
-              - focus
-              - pressure
-              - unknown
-              - shorttermabsenteeism
-              - labordispute
-              - other
+              - 'accidentDuckLiftStandConcentration'
+              - 'focus'
+              - 'pressure'
+              - 'unknown'
+              - 'shorttermabsenteeism'
+              - 'labordispute'
+              - 'other'
           validation:
             -
               type: 'NotEmpty'
@@ -26,17 +26,17 @@ Beech:
                 maximum: 30
         'subjectId':
           label: 'Subject id'
-          type: \Beech\Party\Domain\Model\Person
+          type: '\Beech\Party\Domain\Model\Person'
           validation:
             -
               type: 'NotEmpty'
         'departmentId':
           label: 'Department id'
-          type: \Beech\Party\Domain\Model\Company
+          type: '\Beech\Party\Domain\Model\Company'
           validation: ''
         'firstSickDay':
           label: 'First sick Day'
-          type: dateTime
+          type: 'dateTime'
           validation:
             -
               type: 'NotEmpty'
@@ -56,17 +56,17 @@ Beech:
           label: 'Disability backup'
           options:
             values:
-              - none
-              - maternity
-              - exWAOer
-              - absentDueToOrganDonation
-              - endOfContractWithin13Weeks
-              - temporaryCallWorker
-              - absentDueToPregnancy
-              - disabilityBackup
-              - adoptionLeaveFosterCare
-              - workDisability
-              - sickOnEndOfEmployemnt
+              - 'none'
+              - 'maternity'
+              - 'exWAOer'
+              - 'absentDueToOrganDonation'
+              - 'endOfContractWithin13Weeks'
+              - 'temporaryCallWorker'
+              - 'absentDueToPregnancy'
+              - 'disabilityBackup'
+              - 'adoptionLeaveFosterCare'
+              - 'workDisability'
+              - 'sickOnEndOfEmployment'
           validation:
             -
               type: 'NotEmpty'
@@ -76,8 +76,7 @@ Beech:
                 maximum: 30
         'recoveryDate':
           label: 'Recovery date'
-          required: TRUE
-          type: dateTime
+          type: 'dateTime'
           validation:
             -
               type: 'RegularExpression'
@@ -87,10 +86,10 @@ Beech:
           label: 'Arbo action type'
           options:
             values:
-              - none
-              - accordingToContract
-              - urgentinspection
-              - contactEmployer
+              - 'none'
+              - 'accordingToContract'
+              - 'urgentinspection'
+              - 'contactEmployer'
           validation:
             -
               type: 'NotEmpty'
@@ -99,9 +98,9 @@ Beech:
               options:
                 maximum: 20
         'creationDate':
-          default: now
+          default: 'now'
           label: 'creation date'
-          type: dateTime
+          type: 'dateTime'
           validation:
             -
               type: 'NotEmpty'
@@ -110,27 +109,26 @@ Beech:
               options:
                 regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
         'createdBy':
-          default: currentUser
+          default: 'currentUser'
           label: 'Created by'
-          type: \Beech\Party\Domain\Model\Person
+          type: '\Beech\Party\Domain\Model\Person'
           validation:
             -
               type: 'NotEmpty'
         'modification':
           items:
             'modificationDate':
-              default: now
+              default: 'now'
               label: 'Modification date'
-              type: dateTime
+              type: 'dateTime'
               validation:
                 -
                   type: 'RegularExpression'
                   options:
                     regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
             'modifiedBy':
-              default: currentUser
+              default: 'currentUser'
               label: 'Modified by'
-              required: TRUE
-              type: \Beech\Party\Domain\Model\Person
+              type: '\Beech\Party\Domain\Model\Person'
           label: 'Modification log'
-          type: array
+          type: 'array'

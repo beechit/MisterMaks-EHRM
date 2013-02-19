@@ -1,0 +1,89 @@
+#############################################################
+# validated yaml for the education
+# needed to store education properties on persons.
+#############################################################
+Beech:
+  Party:
+    'ModelsEducation':
+      properties:
+        'personid':
+          label: 'Person ID'
+          type: '\Beech\Party\Domain\Model\Person'
+        'educations':
+          items:
+            'education':
+              label: 'Education'
+              type: 'array'
+              options:
+                values:
+                 - 'primaryEducation'
+                 - 'preVocationalEducation'
+                 - 'vocationalSecondaryEducation'
+                 - 'higherVocationalEducation'
+                 - 'academicEducation'
+              validation:
+                -
+                  type: 'stringLength'
+                  options:
+                    maximum: 20
+            'nameEducationInstitute':
+              label: 'Name of the education institute'
+              validation:
+                -
+                  type: 'StringLength'
+                  options:
+                    maximum: 35
+            'educationStart':
+              label: 'Education start date'
+              type: 'dateTime'
+              validation:
+                -
+                  type: 'RegularExpression'
+                  options:
+                    regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
+            'educationEndDate':
+              label: 'Education end date'
+              type: 'dateTime'
+              validation:
+                -
+                  type: 'RegularExpression'
+                  options:
+                    regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
+            'diploma':
+              label: 'Diploma'
+              type: 'boolean'
+        'creationDate':
+          default: 'now'
+          label: 'creation date'
+          type: 'dateTime'
+          validation:
+            -
+              type: 'NotEmpty'
+            -
+              type: 'RegularExpression'
+              options:
+                regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
+        'createdBy':
+          default: 'currentUser'
+          label: 'Created by'
+          type: '\Beech\Party\Domain\Model\Person'
+          validation:
+            -
+              type: 'NotEmpty'
+        'modification':
+          items:
+            'modificationDate':
+              default: 'now'
+              label: 'Modification date'
+              type: 'dateTime'
+              validation:
+                -
+                  type: 'RegularExpression'
+                  options:
+                    regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
+            'modifiedBy':
+              default: 'currentUser'
+              label: 'Modified by'
+              type: '\Beech\Party\Domain\Model\Person'
+          label: 'Modification log'
+          type: 'array'

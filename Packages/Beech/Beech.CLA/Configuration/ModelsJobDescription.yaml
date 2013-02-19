@@ -8,10 +8,11 @@ Beech:
       properties:
         'jobDescriptionNumber':
           label: 'Job description number'
-          validation: ""
-            type: 'StringLength'
-            options:
-              maximum: 10
+          validation:
+            -
+              type: 'StringLength'
+              options:
+                maximum: 10
         'jobTitle':
           label: 'Job Title'
           validation:
@@ -36,7 +37,7 @@ Beech:
           validation:
             -
               type: 'Text'
-         'positionLabel':
+        'positionLabel':
           validation:
             -
               type: 'NotEmpty'
@@ -44,9 +45,9 @@ Beech:
               type: 'Label'
             -
               type: 'StringLength'
-              options
+              options:
                 maximum: 30
-          value: "Positie in de organisatie"
+          value: 'Positie in de organisatie'
         'reportsTo':
           label: 'Reports to'
           validation:
@@ -61,9 +62,9 @@ Beech:
           label: 'Department'
           validation:
             -
-            type: 'StringLength'
-            options:
-              maximum: 20
+              type: 'StringLength'
+              options:
+                maximum: 20
         'expectationLabel':
           validation:
             -
@@ -74,10 +75,10 @@ Beech:
               type: 'Stringlength'
               options:
                 maximum: 30
-          value: Resultaatgebieden
+          value: 'Resultaatgebieden'
         'expectations':
-          label: Expectations
-          type: array
+          label: 'Expectations'
+          type: 'array'
           validation:
               type: 'NotEmpty'
           values:
@@ -101,10 +102,10 @@ Beech:
         'burdeningCircumstances':
           label: 'Burdening circumstances'
           type: array
-          validation: ""
+          validation: ''
           values:
             'circumstance':
-            label: Circumstance
+            label: 'Circumstance'
             validation:
               -
                 type: 'NotEmpty'
@@ -127,7 +128,7 @@ Beech:
         'creationDate':
           default: now
           label: 'creation date'
-           type: dateTime
+          type: 'dateTime'
           validation:
             -
               type: 'RegularExpression'

@@ -9,13 +9,13 @@ Beech:
       properties:
         'subjectId':
           label: 'Subject id'
-          type: \Beech\Party\Domain\Model\Person
+          type: '\Beech\Party\Domain\Model\Person'
           validation:
             -
               type: 'NotEmpty'
         'departmentId':
-          label: departmentId
-          type: \Beech\Party\Domain\Model\Company
+          label: 'departmentId'
+          type: '\Beech\Party\Domain\Model\Company'
           validation:
             -
               type: 'NotEmpty'
@@ -25,22 +25,22 @@ Beech:
               label: 'Balance year'
               options:
                 values:
-                  - 2005
-                  - 2006
-                  - 2007
-                  - 2008
-                  - 2009
-                  - 2010
-                  - 2011
-                  - 2012
-                  - 2013
-                  - 2014
-                  - 2015
-                  - 2016
-                  - 2017
-                  - 2018
-                  - 2019
-                  - 2020
+                  - '2005'
+                  - '2006'
+                  - '2007'
+                  - '2008'
+                  - '2009'
+                  - '2010'
+                  - '2011'
+                  - '2012'
+                  - '2013'
+                  - '2014'
+                  - '2015'
+                  - '2016'
+                  - '2017'
+                  - '2018'
+                  - '2019'
+                  - '2020'
               validation:
                 -
                   type: 'NotEmpty'
@@ -57,5 +57,5 @@ Beech:
                       minimum: 0
                       maximum: 500
           label: 'Leave balance'
-          type: array
+          type: 'array'
           validation: ''

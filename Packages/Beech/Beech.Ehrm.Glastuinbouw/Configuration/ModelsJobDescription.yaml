@@ -10,42 +10,42 @@ Beech:
           label: 'Job description number'
           validation:
             -
-              type: 'TYPO3.Flow:StringLength'
+              type: 'StringLength'
               options:
                 maximum: 10
         'jobTitle':
           label: 'Job Title'
           validation:
             -
-              type: 'TYPO3.Flow:NotEmpty'
+              type: 'NotEmpty'
             -
-              type: 'TYPO3.Flow:StringLength'
+              type: 'StringLength'
               options:
                 maximum: 50
         'jobContext':
           label: 'Job context'
           validation:
             -
-              type: 'TYPO3.Flow:Label'
+              type: 'Label'
             -
-              type: 'TYPO3.Flow:NotEmpty'
+              type: 'NotEmpty'
             -
-              type: 'TYPO3.Flow:Text'
+              type: 'Text'
           default: 'Functiecontext'
         'jobGoal':
           label: 'Job goal'
           validation:
             -
-              type: 'TYPO3.Flow:Text'
+              type: 'Text'
         'positionLabel':
           type: 'string'
           validation:
             -
-              type: 'TYPO3.Flow:NotEmpty'
+              type: 'NotEmpty'
             -
-              type: 'TYPO3.Flow:Label'
+              type: 'Label'
             -
-              type: 'TYPO3.Flow:StringLength'
+              type: 'StringLength'
               options:
                 maximum: 30
           value: 'Positie in de organisatie'
@@ -53,36 +53,36 @@ Beech:
           label: 'Reports to'
           validation:
             -
-              type: 'TYPO3.Flow:Text'
+              type: 'Text'
         'manages':
           label: 'Manages'
           validation:
             -
-              type: 'TYPO3.Flow:Text'
+              type: 'Text'
         'department':
           label: 'Department'
           validation:
             -
-              type: 'TYPO3.Flow:StringLength'
+              type: 'StringLength'
               options:
                 maximum: 20
         'expectationLabel':
           validation:
             -
-              type: 'TYPO3.Flow:Label'
+              type: 'Label'
             -
-              type: 'TYPO3.Flow:NotEmpty'
+              type: 'NotEmpty'
             -
               type: 'Stringlength'
               options:
                 maximum: 30
-          value: Resultaatgebieden
+          value: 'Resultaatgebieden'
         'expectations':
-          label: Expectations
-          type: array
+          label: 'Expectations'
+          type: 'array'
           validation:
             -
-              type: 'TYPO3.Flow:NotEmpty'
+              type: 'NotEmpty'
           values:
             - 'Uitgevoerde Handelingen'
             - 'Verstrekte informatie'
@@ -91,74 +91,74 @@ Beech:
           label: 'Main activities'
           validation:
             -
-              type: 'TYPO3.Flow:NotEmpty'
+              type: 'NotEmpty'
             -
-              type: 'TYPO3.Flow:Text'
+              type: 'Text'
         'resultCriteria':
           label: 'Result criteria'
           validation:
             -
-              type: 'TYPO3.Flow:NotEmpty'
+              type: 'NotEmpty'
             -
-              type: 'TYPO3.Flow:Text'
+              type: 'Text'
         'burdeningCircumstances':
           label: 'Burdening circumstances'
-          type: array
+          type: 'array'
           values:
             'circumstance':
-            label: Circumstance
+            label: 'Circumstance'
             validation:
               -
-                type: 'TYPO3.Flow:NotEmpty'
+                type: 'NotEmpty'
               -
-                type: 'TYPO3.Flow:Text'
+                type: 'Text'
         'orbaScore':
           label: 'ORBA score'
           validation:
             -
-              type: 'TYPO3.Flow:StringLength'
+              type: 'StringLength'
               options:
                 maximum: 10
         'wageScaleGroup':
           label: 'Wage scale'
           validation:
             -
-              type: 'TYPO3.Flow:StringLength'
+              type: 'StringLength'
               options:
                 maximum: 2
         'creationDate':
-          default: now
+          default: 'now'
           label: 'creation date'
-          type: dateTime
+          type: 'dateTime'
           validation:
             -
-              type: 'TYPO3.Flow:NotEmpty'
+              type: 'NotEmpty'
             -
-              type: 'TYPO3.Flow:RegularExpression'
+              type: 'RegularExpression'
               options:
                 regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
         'createdBy':
-          default: currentUser
+          default: 'currentUser'
           label: 'Created by'
-          type: \Beech\Party\Domain\Model\Person
+          type: '\Beech\Party\Domain\Model\Person'
           validation:
             -
-              type: 'TYPO3.Flow:NotEmpty'
+              type: 'NotEmpty'
         'modification':
           items:
             'modificationDate':
-              default: now
+              default: 'now'
               label: 'Modification date'
-              type: dateTime
+              type: 'dateTime'
               validation:
                 -
-                  type: 'TYPO3.Flow:RegularExpression'
+                  type: 'RegularExpression'
                   options:
                     regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
             'modifiedBy':
-              default: currentUser
+              default: 'currentUser'
               label: 'Modified by'
-              type: \Beech\Party\Domain\Model\Person
+              type: '\Beech\Party\Domain\Model\Person'
               validation: ''
           label: 'Modification log'
-          type: array
+          type: 'array'

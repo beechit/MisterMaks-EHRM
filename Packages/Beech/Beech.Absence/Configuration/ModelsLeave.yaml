@@ -9,19 +9,19 @@ Beech:
       properties:
         'subjectId':
           label: 'Subject id'
-          type: \Beech\Party\Domain\Model\Person
+          type: '\Beech\Party\Domain\Model\Person'
           validation:
             -
               type: 'NotEmpty'
         'departmentId':
-          label: departmentId
-          type: \Beech\Party\Domain\Model\Company
+          label: 'departmentId'
+          type: '\Beech\Party\Domain\Model\Company'
           validation:
             -
               type: 'NotEmpty'
         'leaveDateTimeStart':
-          label: leaveDateTimeStart
-          type: dateTime
+          label: 'leaveDateTimeStart'
+          type: 'dateTime'
           validation:
             -
               type: 'NotEmpty'
@@ -30,8 +30,8 @@ Beech:
               options:
                 regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
         'leaveDateEnd':
-          label: leaveDateEnd
-          type: dateTime
+          label: 'leaveDateEnd'
+          type: 'dateTime'
           validation:
             -
               type: 'NotEmpty'
@@ -40,19 +40,19 @@ Beech:
               options:
                 regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
         'leaveType':
-          label: leaveType
+          label: 'leaveType'
           options:
             values:
-              - vacation
-              - bereavementLeave
-              - unpaidLeave
-              - specialLeave
-              - parentalLeave
-              - adoptionleave
-              - shorttermCare
-              - longtermCare
-              - maternityLeave
-              - emergencyLeaveAndOtherShortAbsence
+              - 'vacation'
+              - 'bereavementLeave'
+              - 'unpaidLeave'
+              - 'specialLeave'
+              - 'parentalLeave'
+              - 'adoptionleave'
+              - 'shorttermCare'
+              - 'longtermCare'
+              - 'maternityLeave'
+              - 'emergencyLeaveAndOtherShortAbsence'
           validation:
             -
               type: 'NotEmpty'
@@ -61,14 +61,14 @@ Beech:
               options:
                 maximum: 20
         'deductFromBalance':
-          label: deductFromBalance
+          label: 'deductFromBalance'
           options:
             default: TRUE
-          type: boolean
+          type: 'boolean'
           validation: ''
         'paidLeave':
-          label: paidLeave
-          type: boolean
+          label: 'paidLeave'
+          type: 'boolean'
           validation: ''
 
         'remark':
@@ -77,9 +77,9 @@ Beech:
               label: 'Remark type'
               options:
                 values:
-                  - reasonLeaveRequest
-                  - remarkLeaveRequest
-                  - remarkLeaveDecline
+                  - 'reasonLeaveRequest'
+                  - 'remarkLeaveRequest'
+                  - 'remarkLeaveDecline'
               validation:
                 -
                   type: 'StringLength'
@@ -90,24 +90,23 @@ Beech:
               validation:
                 -
                   type: 'Text'
-
             'remarkDate':
               label: 'Remark date'
-              type: dateTime
+              type: 'dateTime'
               validation:
                 -
                   type: 'RegularExpression'
                   options:
                     regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
-          label: Remark
-          type: array
+          label: 'Remark'
+          type: 'array'
         'leaveRequestStatus':
           label: 'Leave request status'
           options:
             values:
-              - pending
-              - approved
-              - declined
+              - 'pending'
+              - 'approved'
+              - 'declined'
           validation:
             -
               type: 'StringLength'
@@ -117,7 +116,7 @@ Beech:
               type: 'NotEmpty'
         'approveDeclineDate':
           label: 'approved Declined Date'
-          type: dateTime
+          type: 'dateTime'
           validation:
             -
               type: 'RegularExpression'
@@ -126,9 +125,9 @@ Beech:
             -
               type: 'NotEmpty'
         'creationDate':
-          default: now
+          default: 'now'
           label: 'creation date'
-          type: dateTime
+          type: 'dateTime'
           validation:
             -
               type: 'NotEmpty'
@@ -137,26 +136,26 @@ Beech:
               options:
                 regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
         'createdBy':
-          default: currentUser
+          default: 'currentUser'
           label: 'Created by'
-          type: \Beech\Party\Domain\Model\Person
+          type: '\Beech\Party\Domain\Model\Person'
           validation:
             -
               type: 'NotEmpty'
         'modification':
           items:
             'modificationDate':
-              default: now
+              default: 'now'
               label: 'Modification date'
-              type: dateTime
+              type: 'dateTime'
               validation:
                 -
                   type: 'RegularExpression'
                   options:
                     regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
             'modifiedBy':
-              default: currentUser
+              default: 'currentUser'
               label: 'Modified by'
-              type: \Beech\Party\Domain\Model\Person
+              type: '\Beech\Party\Domain\Model\Person'
           label: 'Modification log'
-          type: array
+          type: 'array'

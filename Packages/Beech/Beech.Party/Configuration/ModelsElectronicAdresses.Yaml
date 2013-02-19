@@ -11,9 +11,9 @@ Beech:
           label: 'Connection type'
           options:
             values:
-              - company
-              - person
-              - department
+              - 'company'
+              - 'person'
+              - 'department'
           validation:
             -
               type: 'NotEmpty'
@@ -23,10 +23,10 @@ Beech:
                 maximum: 10
         'personid':
           label: 'Person ID'
-          type: \Beech\Party\Domain\Model\Person
+          type: '\Beech\Party\Domain\Model\Person'
         'departmentId':
           label: 'Department ID'
-          type: \Beech\Party\Domain\Model\Company
+          type: '\Beech\Party\Domain\Model\Company'
 # todo: implement this that validation works on type adress selected.
         'electronicAddresses':
           items:
@@ -42,7 +42,7 @@ Beech:
                   options:
                     maximum: 35
             'skype':
-              label: Skype
+              label: 'Skype'
               validation:
                 -
                   type: 'RegularExpression'
@@ -64,32 +64,32 @@ Beech:
                   options:
                     maximum: 50
             'twitter':
-              label: Twitter
+              label: 'Twitter'
               validation:
                 -
                   type: 'StringLength'
                   options:
                     maximum: 20
             'facebook':
-              label: Facebook
+              label: 'Facebook'
               validation:
                 -
                   type: 'StringLength'
                   options:
                     maximum: 20
             'linkedin':
-              label: Linkedin
+              label: 'Linkedin'
               validation:
                 -
                   type: 'StringLength'
                   options:
                     maximum: 20
             'hyves':
-              label: Hyves
+              label: 'Hyves'
               validation:
                 -
                   type: 'StringLength'
                   options:
                     maximum: 20
           label: 'Electronic addresses'
-          type: array
+          type: 'array'
