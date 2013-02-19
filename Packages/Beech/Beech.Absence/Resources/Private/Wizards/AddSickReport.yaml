@@ -4,22 +4,22 @@
 # Based on TYPO3.Form
 #############################################################
 type: 'TYPO3.Form:Form'
-identifier: wizardAddSickReport
+identifier: 'wizardAddSickReport'
 label: 'Wizard Add SickReport'
 renderables:
   -
     type: 'TYPO3.Form:Page'
-    identifier: page1
+    identifier: 'page1'
     label: 'Page 1'
     renderables:
       -
         type: 'TYPO3.Form:Section'
-        identifier: setTypeAbsence
+        identifier: 'setTypeAbsence'
         label: 'type of Absence'
         renderables:
           -
             type: 'TYPO3.Form:SingleSelectDropdown'
-            identifier: absenceType
+            identifier: 'absenceType'
             label: 'Type of absence'
             properties:
               options:
@@ -40,7 +40,7 @@ renderables:
                    _key: 'Unknown'
       -
         type: 'TYPO3.Form:Section'
-        identifier: caseOtherUnknown
+        identifier: 'caseOtherUnknown'
         label: 'Case Other and unknown'
         renderables:
           -
@@ -52,16 +52,21 @@ renderables:
                 identifier: 'Text'
       -
         type: 'TYPO3.Form:Section'
-        identifier: dateRegistration
+        identifier: 'dateRegistration'
         label: 'registration'
         renderables:
           -
             type: 'TYPO3.Form:DatePicker'
             identifier: 'firstSickDay'
             label: 'First Sick Day'
+            properties:
+              dateFormat: 'd-m-Y'
+              enableDatePicker: TRUE
+              displayTimeSelector: TRUE
             validators:
               -
                 identifier: 'RegularExpression'
                 options:
                   regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
-          -
+renderingOptions:
+  submitButtonLabel: 'Save'

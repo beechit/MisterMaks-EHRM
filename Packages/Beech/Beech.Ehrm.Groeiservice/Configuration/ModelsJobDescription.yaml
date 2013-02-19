@@ -39,7 +39,7 @@ properties:
   -
     id: versiondate
     label: 'Version date'
-    type: dateTime
+    type: 'dateTime'
     validation: ''
   -
     id: generalTitle
@@ -142,15 +142,15 @@ properties:
     label: 'Job characteristics'
     type: array
   -
-    default: now
+    default: 'now'
     id: creationDate
     label: 'creation date'
     required: TRUE
-    type: dateTime
+    type: 'dateTime'
     validation: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
     visible: FALSE
   -
-    default: currentUser
+    default: 'currentUser'
     id: createdBy
     label: 'creation by'
     required: TRUE
@@ -161,15 +161,15 @@ properties:
     id: modification
     items:
       -
-        default: now
+        default: 'now'
         id: modificationDate
         label: 'Modification date'
         required: TRUE
-        type: dateTime
+        type: 'dateTime'
         validation: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
         visible: FALSE
       -
-        default: currentUser
+        default: 'currentUser'
         id: modifiedBy
         label: Modifiedby
         required: TRUE

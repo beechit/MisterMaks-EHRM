@@ -23,7 +23,7 @@ renderables:
         renderables:
           -
             type: 'TYPO3.Form:SingleSelectDropdown'
-            identifier: leaveType
+            identifier: 'leaveType'
             label: 'Type of leave'
             properties:
               options:
@@ -59,7 +59,7 @@ renderables:
                    _key: 'Emergency leave and Short Absence'
       -
         type: 'TYPO3.Form:Section'
-        identifier: leaveTime
+        identifier: 'leaveTime'
         label: 'Leave time'
         renderables:
           -
@@ -77,6 +77,10 @@ renderables:
             type: 'TYPO3.Form:DatePicker'
             identifier: 'leaveDateTimeEnd'
             label: 'Leave End'
+            properties:
+              dateFormat: 'd-m-Y'
+              enableDatePicker: TRUE
+              displayTimeSelector: TRUE
             validators:
               -
                 identifier: 'RegularExpression'
@@ -111,7 +115,7 @@ renderables:
                   _key: 'declined'
       -
         type: 'TYPO3.Form:Section'
-        identifier: leaveRemark
+        identifier: 'leaveRemark'
         label: 'Remark on leave Decision'
         renderables:
           -
