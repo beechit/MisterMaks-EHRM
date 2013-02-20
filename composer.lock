@@ -1106,7 +1106,7 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/radmiraal/phpcpd.git",
-                "reference": "9837c583064a9edc863324891a3f426bb745d829"
+                "reference": "690e4df2b07267838c002f4c4c46e87f011076d2"
             },
             "require": {
                 "php": ">=5.3.0",
@@ -1120,9 +1120,9 @@
             "require-dev": {
                 "pear-pear/pear": "1.9.4"
             },
-            "time": "2013-02-20 15:47:09",
+            "time": "2013-02-20 16:33:44",
             "bin": [
-                "phpcpd.php"
+                "composer/bin/phpcpd"
             ],
             "type": "library",
             "autoload": {
