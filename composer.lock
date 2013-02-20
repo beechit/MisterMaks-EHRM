@@ -1,5 +1,5 @@
 {
-    "hash": "fe0903180e5f840674e4b2a8c3ee4637",
+    "hash": "9a9b103e6bfe2785e1ebc0057321a270",
     "packages": [
         {
             "name": "beech/essentials",
@@ -27,7 +27,7 @@
             "version": "2.3.x-dev",
             "source": {
                 "type": "git",
-                "url": "https://github.com/doctrine/common",
+                "url": "https://github.com/doctrine/common.git",
                 "reference": "bb0aebbf234db52df476a2b473d434745b34221c"
             },
             "dist": {
@@ -142,7 +142,7 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git://github.com/doctrine/couchdb-odm.git",
+                "url": "https://github.com/doctrine/couchdb-odm.git",
                 "reference": "6e8dbe81099747f52ca44b0dfe9d0f0e225bd849"
             },
             "dist": {
@@ -314,7 +314,7 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/doctrine/migrations",
+                "url": "https://github.com/doctrine/migrations.git",
                 "reference": "e1f6efcd94993b493de5c6a413cbc327ea9c0caa"
             },
             "dist": {
@@ -510,19 +510,19 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git://github.com/radmiraal/Radmiraal.Emberjs.git",
-                "reference": "379915ee91b378dde782243d243bdd8b250455e1"
+                "url": "https://github.com/radmiraal/Radmiraal.Emberjs.git",
+                "reference": "102a59971d6ae175fd6de73a05989ba761f2e148"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/radmiraal/Radmiraal.Emberjs/zipball/379915ee91b378dde782243d243bdd8b250455e1",
-                "reference": "379915ee91b378dde782243d243bdd8b250455e1",
+                "url": "https://api.github.com/repos/radmiraal/Radmiraal.Emberjs/zipball/102a59971d6ae175fd6de73a05989ba761f2e148",
+                "reference": "102a59971d6ae175fd6de73a05989ba761f2e148",
                 "shasum": ""
             },
             "require": {
                 "typo3/flow": "*"
             },
-            "time": "2013-02-12 22:27:20",
+            "time": "2013-02-19 08:59:19",
             "type": "typo3-flow-package",
             "autoload": {
                 "psr-0": {
@@ -545,7 +545,7 @@
             "target-dir": "React/EventLoop",
             "source": {
                 "type": "git",
-                "url": "https://github.com/reactphp/event-loop",
+                "url": "https://github.com/reactphp/event-loop.git",
                 "reference": "v0.2.7"
             },
             "dist": {
@@ -588,7 +588,7 @@
             "target-dir": "Symfony/Component/Console",
             "source": {
                 "type": "git",
-                "url": "https://github.com/symfony/Console",
+                "url": "https://github.com/symfony/Console.git",
                 "reference": "f65e34d058f0990a724f78e8d091dc0a20e439ac"
             },
             "dist": {
@@ -631,17 +631,17 @@
         },
         {
             "name": "symfony/dom-crawler",
-            "version": "dev-master",
+            "version": "2.2.x-dev",
             "target-dir": "Symfony/Component/DomCrawler",
             "source": {
                 "type": "git",
-                "url": "https://github.com/symfony/DomCrawler",
-                "reference": "969ef102204e0c0ae846f4d3ed81399b8a6d7741"
+                "url": "https://github.com/symfony/DomCrawler.git",
+                "reference": "v2.2.0-RC2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/DomCrawler/zipball/969ef102204e0c0ae846f4d3ed81399b8a6d7741",
-                "reference": "969ef102204e0c0ae846f4d3ed81399b8a6d7741",
+                "url": "https://api.github.com/repos/symfony/DomCrawler/zipball/v2.2.0-RC2",
+                "reference": "v2.2.0-RC2",
                 "shasum": ""
             },
             "require": {
@@ -653,11 +653,11 @@
             "suggest": {
                 "symfony/css-selector": "2.2.*"
             },
-            "time": "2013-02-11 10:09:44",
+            "time": "2013-02-08 16:10:52",
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.3-dev"
+                    "dev-master": "2.2-dev"
                 }
             },
             "autoload": {
@@ -684,32 +684,27 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "dev-master",
+            "version": "2.1.x-dev",
             "target-dir": "Symfony/Component/Yaml",
             "source": {
                 "type": "git",
-                "url": "https://github.com/symfony/Yaml",
-                "reference": "f198ac28048eeceae852419c076123aaee59cd1c"
+                "url": "https://github.com/symfony/Yaml.git",
+                "reference": "882b70fb7072e3f1fa95d249fd527a4e3998dc1a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Yaml/zipball/f198ac28048eeceae852419c076123aaee59cd1c",
-                "reference": "f198ac28048eeceae852419c076123aaee59cd1c",
+                "url": "https://api.github.com/repos/symfony/Yaml/zipball/882b70fb7072e3f1fa95d249fd527a4e3998dc1a",
+                "reference": "882b70fb7072e3f1fa95d249fd527a4e3998dc1a",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "2013-01-31 21:39:01",
+            "time": "2013-01-27 16:12:43",
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.3-dev"
-                }
-            },
             "autoload": {
                 "psr-0": {
-                    "Symfony\\Component\\Yaml\\": ""
+                    "Symfony\\Component\\Yaml": ""
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -735,24 +730,24 @@
             "source": {
                 "type": "git",
                 "url": "git://git.typo3.org/FLOW3/Packages/TYPO3.FLOW3.git",
-                "reference": "45ea227709db707db3165e4b46c68834e8b671d8"
+                "reference": "5d68589e8244eba5e6e7ca2e9c040673770f55b2"
             },
             "require": {
                 "doctrine/data-fixtures": "*",
                 "doctrine/migrations": "*",
-                "doctrine/orm": ">=2.3,<3.0",
+                "doctrine/orm": "2.3.*",
                 "ext-json": ">=1.2.0",
                 "ext-session": "*",
                 "ext-spl": "*",
                 "ext-zlib": "*",
                 "php": ">=5.3.2",
-                "symfony/dom-crawler": ">=2.2,<3.0",
-                "symfony/yaml": ">=2.1,<3.0",
+                "symfony/dom-crawler": "2.2.*",
+                "symfony/yaml": "2.1.*",
                 "typo3/flow-composer-installers": "*",
                 "typo3/fluid": "*",
                 "typo3/party": "*"
             },
-            "time": "2013-02-15 11:55:51",
+            "time": "2013-02-20 12:50:03",
             "type": "typo3-flow-framework",
             "autoload": {
                 "psr-0": {
@@ -771,7 +766,7 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git://github.com/christianjul/installers.git",
+                "url": "https://github.com/christianjul/installers.git",
                 "reference": "bf887890333e8c73a93701ffb09f71c914b8be35"
             },
             "dist": {
@@ -839,13 +834,13 @@
             "source": {
                 "type": "git",
                 "url": "git://git.typo3.org/FLOW3/Packages/TYPO3.Fluid.git",
-                "reference": "5834d218fbd7ddb11ae77b0a9d66f1443877cc63"
+                "reference": "725a55219ac661b38472f1347c20aba0960d683b"
             },
             "require": {
                 "typo3/flow": "*",
                 "typo3/flow-composer-installers": "*"
             },
-            "time": "2013-02-08 19:45:50",
+            "time": "2013-02-17 17:18:29",
             "type": "typo3-flow-framework",
             "autoload": {
                 "psr-0": {
@@ -1081,37 +1076,139 @@
             "homepage": "http://vfs.bovigo.org/"
         },
         {
-            "name": "phpunit/php-code-coverage",
+            "name": "pdepend/pdepend",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "02ea50bd78b1d2558a10a373c428dc311626c6eb"
+                "url": "https://github.com/pdepend/pdepend.git",
+                "reference": "85b3d7f2d2c6105a76daea0f5a0aee7c7a140b25"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/02ea50bd78b1d2558a10a373c428dc311626c6eb",
-                "reference": "02ea50bd78b1d2558a10a373c428dc311626c6eb",
+                "url": "https://api.github.com/repos/pdepend/pdepend/zipball/85b3d7f2d2c6105a76daea0f5a0aee7c7a140b25",
+                "reference": "85b3d7f2d2c6105a76daea0f5a0aee7c7a140b25",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.4.7",
-                "phpunit/php-file-iterator": ">=1.3.0",
-                "phpunit/php-text-template": ">=1.1.1",
-                "phpunit/php-token-stream": ">=1.1.3",
-                "sebastian/version": ">=1.0.0"
+                "php": ">=5.2.3"
+            },
+            "time": "2013-01-25 15:09:33",
+            "bin": [
+                "src/bin/pdepend"
+            ],
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "description": "Official version of pdepend to be handled with Composer"
+        },
+        {
+            "name": "phpcd/phpcd",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git://github.com/radmiraal/phpcpd.git",
+                "reference": "19345ae6e2d0a9af0e641f66ccee0d1d525f30c2"
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "phpunit/php-timer": "*",
+                "sebastian/finder-facade": "*",
+                "symfony/finder": "*",
+                "theseer/fdomdocument": "dev-master",
+                "zetacomponents/base": "dev-master",
+                "zetacomponents/console-tools": "dev-master"
+            },
+            "require-dev": {
+                "pear-pear/pear": "1.9.4"
+            },
+            "time": "2013-02-20 14:46:52",
+            "bin": [
+                "composer/bin/phpcpd"
+            ],
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "include-path": [
+                "",
+                "../../symfony/yaml/"
+            ],
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Bergmann",
+                    "email": "sebastian@phpunit.de",
+                    "role": "lead"
+                }
+            ],
+            "description": "PHP Copy/Paste Detector (PHPCPD)",
+            "homepage": "https://github.com/sebastianbergmann/phpcpd",
+            "keywords": [
+                "phppcd"
+            ],
+            "support": {
+                "issues": "https://github.com/sebastianbergmann/phpcpd/issues"
+            }
+        },
+        {
+            "name": "phpmd/phpmd",
+            "version": "1.4.1",
+            "source": {
+                "type": "git",
+                "url": "git://github.com/phpmd/phpmd.git",
+                "reference": "1.4.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/phpmd/phpmd/archive/1.4.1.zip",
+                "reference": "1.4.1",
+                "shasum": ""
+            },
+            "require": {
+                "pdepend/pdepend": "*",
+                "php": ">=5.3.0"
+            },
+            "time": "2012-12-14 12:25:09",
+            "bin": [
+                "src/bin/phpmd"
+            ],
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "include-path": [
+                "../../pdepend/pdepend/src/main/php",
+                "src/main/php"
+            ],
+            "description": "Official version of PHPMD handled with Composer."
+        },
+        {
+            "name": "phpunit/php-code-coverage",
+            "version": "1.2.x-dev",
+            "source": {
+                "type": "git",
+                "url": "git://github.com/sebastianbergmann/php-code-coverage.git",
+                "reference": "25232ac64f081abd7478ae2d63fdb757f45e92b9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/25232ac64f081abd7478ae2d63fdb757f45e92b9",
+                "reference": "25232ac64f081abd7478ae2d63fdb757f45e92b9",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "phpunit/php-file-iterator": ">=1.3.0@stable",
+                "phpunit/php-text-template": ">=1.1.1@stable",
+                "phpunit/php-token-stream": ">=1.1.3@stable"
             },
             "suggest": {
                 "ext-dom": "*",
-                "ext-xdebug": ">=2.2.1"
+                "ext-xdebug": ">=2.0.5"
             },
-            "time": "2013-02-14 08:13:31",
+            "time": "2013-02-14 10:33:04",
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.3.x-dev"
-                }
-            },
             "autoload": {
                 "classmap": [
                     "PHP/"
@@ -1144,7 +1241,7 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git://github.com/sebastianbergmann/php-file-iterator.git",
+                "url": "https://github.com/sebastianbergmann/php-file-iterator.git",
                 "reference": "2deb24c65ea78e126daa8d45b2089ddc29ec1d26"
             },
             "dist": {
@@ -1189,7 +1286,7 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git://github.com/sebastianbergmann/php-text-template.git",
+                "url": "https://github.com/sebastianbergmann/php-text-template.git",
                 "reference": "1eeef106193d2f8c539728e566bb4793071a9e18"
             },
             "dist": {
@@ -1230,22 +1327,29 @@
         },
         {
             "name": "phpunit/php-timer",
-            "version": "dev-master",
+            "version": "1.0.x-dev",
             "source": {
                 "type": "git",
-                "url": "git@github.com:radmiraal/php-timer.git",
-                "reference": "5239e2b2e125cc0a79c386ad5773b3fc1b3305f8"
+                "url": "https://github.com/sebastianbergmann/php-timer.git",
+                "reference": "ecf7920b27003a9412b07dad79dbb5ad1249e6c3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-timer/zipball/ecf7920b27003a9412b07dad79dbb5ad1249e6c3",
+                "reference": "ecf7920b27003a9412b07dad79dbb5ad1249e6c3",
+                "shasum": ""
             },
             "require": {
-                "php": ">=5.4.7"
+                "php": ">=5.3.3"
             },
-            "time": "2013-01-30 06:08:56",
+            "time": "2013-01-30 06:08:51",
             "type": "library",
             "autoload": {
                 "classmap": [
                     "PHP/"
                 ]
             },
+            "notification-url": "https://packagist.org/downloads/",
             "include-path": [
                 ""
             ],
@@ -1263,18 +1367,14 @@
             "homepage": "https://github.com/sebastianbergmann/php-timer/",
             "keywords": [
                 "timer"
-            ],
-            "support": {
-                "issues": "https://github.com/sebastianbergmann/php-timer/issues",
-                "irc": "irc://irc.freenode.net/phpunit"
-            }
+            ]
         },
         {
             "name": "phpunit/php-token-stream",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git://github.com/sebastianbergmann/php-token-stream.git",
+                "url": "https://github.com/sebastianbergmann/php-token-stream.git",
                 "reference": "c25dd88e1592e66dee2553c99ef244203d5a1b98"
             },
             "dist": {
@@ -1316,16 +1416,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "3.7.10",
+            "version": "3.7.x-dev",
             "source": {
                 "type": "git",
-                "url": "git://github.com/sebastianbergmann/phpunit.git",
-                "reference": "3.7.10"
+                "url": "https://github.com/sebastianbergmann/phpunit.git",
+                "reference": "345be291ec18365810745391e055ffba3c97006a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/sebastianbergmann/phpunit/archive/3.7.10.zip",
-                "reference": "3.7.10",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/345be291ec18365810745391e055ffba3c97006a",
+                "reference": "345be291ec18365810745391e055ffba3c97006a",
                 "shasum": ""
             },
             "require": {
@@ -1334,20 +1434,23 @@
                 "ext-reflection": "*",
                 "ext-spl": "*",
                 "php": ">=5.3.3",
-                "phpunit/php-code-coverage": ">=1.2.1",
+                "phpunit/php-code-coverage": ">=1.2.1,<1.3.0",
                 "phpunit/php-file-iterator": ">=1.3.1",
                 "phpunit/php-text-template": ">=1.1.1",
-                "phpunit/php-timer": ">=1.0.2",
+                "phpunit/php-timer": ">=1.0.2,<1.1.0",
                 "phpunit/phpunit-mock-objects": ">=1.2.0,<1.3.0",
-                "symfony/yaml": ">=2.1.0"
+                "symfony/yaml": ">=2.1.0,<2.2.0"
+            },
+            "require-dev": {
+                "pear-pear/pear": "1.9.4"
             },
             "suggest": {
                 "ext-json": "*",
                 "ext-simplexml": "*",
                 "ext-tokenizer": "*",
-                "phpunit/php-invoker": ">=1.1.0"
+                "phpunit/php-invoker": ">=1.1.0,<1.2.0"
             },
-            "time": "2012-12-02 14:56:55",
+            "time": "2013-02-20 06:18:14",
             "bin": [
                 "composer/bin/phpunit"
             ],
@@ -1435,20 +1538,24 @@
             ]
         },
         {
-            "name": "sebastian/version",
-            "version": "dev-master",
+            "name": "sebastian/finder-facade",
+            "version": "1.0.6",
             "source": {
                 "type": "git",
-                "url": "git://github.com/sebastianbergmann/version.git",
-                "reference": "1.0.0"
+                "url": "git://github.com/sebastianbergmann/finder-facade.git",
+                "reference": "1.0.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/version/zipball/1.0.0",
-                "reference": "1.0.0",
+                "url": "https://github.com/sebastianbergmann/finder-facade/archive/1.0.6.zip",
+                "reference": "1.0.6",
                 "shasum": ""
             },
-            "time": "2013-01-05 14:27:32",
+            "require": {
+                "symfony/yaml": ">=2.1.0,<2.2.0",
+                "theseer/fdomdocument": ">=1.3.1"
+            },
+            "time": "2013-01-10 11:33:26",
             "type": "library",
             "autoload": {
                 "classmap": [
@@ -1466,8 +1573,8 @@
                     "role": "lead"
                 }
             ],
-            "description": "Library that helps with managing the version number of Git-hosted PHP projects",
-            "homepage": "https://github.com/sebastianbergmann/version"
+            "description": "FinderFacade is a convenience wrapper for Symfony's Finder component.",
+            "homepage": "https://github.com/sebastianbergmann/finder-facade"
         },
         {
             "name": "squizlabs/php_codesniffer",
@@ -1537,18 +1644,105 @@
             ]
         },
         {
+            "name": "symfony/finder",
+            "version": "dev-master",
+            "target-dir": "Symfony/Component/Finder",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/Finder.git",
+                "reference": "3b6261bea9fd81593c1083087f11816df53a7fea"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/Finder/zipball/3b6261bea9fd81593c1083087f11816df53a7fea",
+                "reference": "3b6261bea9fd81593c1083087f11816df53a7fea",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "time": "2013-02-04 12:42:02",
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.3-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Symfony\\Component\\Finder\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Finder Component",
+            "homepage": "http://symfony.com"
+        },
+        {
+            "name": "theseer/fdomdocument",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/theseer/fDOMDocument.git",
+                "reference": "a7882cf2121f30c57e9fc8ded2cf0a58001e96cc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/theseer/fDOMDocument/zipball/a7882cf2121f30c57e9fc8ded2cf0a58001e96cc",
+                "reference": "a7882cf2121f30c57e9fc8ded2cf0a58001e96cc",
+                "shasum": ""
+            },
+            "require": {
+                "ext-dom": "*",
+                "lib-libxml": "*",
+                "php": ">=5.3.3"
+            },
+            "time": "2012-12-01 00:12:40",
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Arne Blankerts",
+                    "email": "arne@blankerts.de",
+                    "role": "lead"
+                }
+            ],
+            "description": "The classes contained within this repository extend the standard DOM to use exceptions at all occasions of errors instead of PHP warnings or notices. They also add various custom methods and shortcuts for convinience and to simplify the usage of DOM.",
+            "homepage": "https://github.com/theseer/fDOMDocument"
+        },
+        {
             "name": "typo3-qa/typo3flow",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "git://github.com/radmiraal/TYPO3Flow.git",
-                "reference": "a33ff0acd19401e39c4140c85eb0e0d01bcbcc89"
+                "reference": "330d88501ac20cdc27137e864c6890f94e8c70ac"
             },
             "require": {
                 "php": ">=5.2.1",
                 "typo3-qa/typo3pool": "*"
             },
-            "time": "2013-02-18 18:43:38",
+            "time": "2013-02-18 21:41:53",
             "type": "phpcodesniffer-standard",
             "license": [
                 "GPL-2.0"
@@ -1585,13 +1779,13 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/radmiraal/TYPO3SniffPool.git",
-                "reference": "2eccc6dce07649609783a317b3f3bcdbbbfc69e5"
+                "reference": "5d5e706e77766911e8addd7d2645827266c7a6cb"
             },
             "require": {
                 "php": ">=5.2.1",
                 "squizlabs/php_codesniffer": "*"
             },
-            "time": "2013-02-18 18:51:25",
+            "time": "2013-02-18 21:42:16",
             "type": "phpcodesniffer-standard",
             "license": [
                 "GPL-2.0"
@@ -1668,6 +1862,135 @@
                 "LGPL-3.0+"
             ],
             "description": "A simple generator for controller and views."
+        },
+        {
+            "name": "zetacomponents/base",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zetacomponents/Base.git",
+                "reference": "642f63a8a72c32996f1aaf8a317fdf746bc32ce7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zetacomponents/Base/zipball/642f63a8a72c32996f1aaf8a317fdf746bc32ce7",
+                "reference": "642f63a8a72c32996f1aaf8a317fdf746bc32ce7",
+                "shasum": ""
+            },
+            "require-dev": {
+                "zetacomponents/unit-test": "*"
+            },
+            "time": "2012-05-21 11:21:36",
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Sergey Alexeev"
+                },
+                {
+                    "name": "Sebastian Bergmann"
+                },
+                {
+                    "name": "Jan Borsodi"
+                },
+                {
+                    "name": "Raymond Bosman"
+                },
+                {
+                    "name": "Frederik Holljen"
+                },
+                {
+                    "name": "Kore Nordmann"
+                },
+                {
+                    "name": "Derick Rethans"
+                },
+                {
+                    "name": "Vadym Savchuk"
+                },
+                {
+                    "name": "Tobias Schlitt"
+                },
+                {
+                    "name": "Alexandru Stanoi"
+                }
+            ],
+            "description": "The Base package provides the basic infrastructure that all packages rely on. Therefore every component relies on this package.",
+            "homepage": "https://github.com/zetacomponents"
+        },
+        {
+            "name": "zetacomponents/console-tools",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zetacomponents/ConsoleTools.git",
+                "reference": "90156abef01e4215fda8b9740f77c322f126fb02"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zetacomponents/ConsoleTools/zipball/90156abef01e4215fda8b9740f77c322f126fb02",
+                "reference": "90156abef01e4215fda8b9740f77c322f126fb02",
+                "shasum": ""
+            },
+            "require": {
+                "zetacomponents/base": "*"
+            },
+            "require-dev": {
+                "zetacomponents/unit-test": "*"
+            },
+            "time": "2012-05-21 09:55:34",
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Sergey Alexeev"
+                },
+                {
+                    "name": "Sebastian Bergmann"
+                },
+                {
+                    "name": "Jan Borsodi"
+                },
+                {
+                    "name": "Raymond Bosman"
+                },
+                {
+                    "name": "Frederik Holljen"
+                },
+                {
+                    "name": "Kore Nordmann"
+                },
+                {
+                    "name": "Derick Rethans"
+                },
+                {
+                    "name": "Vadym Savchuk"
+                },
+                {
+                    "name": "Tobias Schlitt"
+                },
+                {
+                    "name": "Alexandru Stanoi"
+                }
+            ],
+            "description": "A set of classes to do different actions with the console (also called shell). It can render a progress bar, tables and a status bar and contains a class for parsing command line options.",
+            "homepage": "https://github.com/zetacomponents"
         }
     ],
     "aliases": [
@@ -1686,6 +2009,8 @@
         "typo3/buildessentials": 20,
         "typo3/kickstart": 20,
         "typo3-qa/typo3flow": 20,
-        "beech/style": 20
+        "beech/style": 20,
+        "phpcd/phpcd": 20,
+        "pdepend/pdepend": 20
     }
 }
