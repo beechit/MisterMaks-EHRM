@@ -1,0 +1,193 @@
+#############################################################
+# this is a wizard to do a quick initial registration of the
+# company and an admin.
+# after usage of this wizard a couple of tasks have to be created
+# to get all data for company and admin.
+#############################################################
+type: 'TYPO3.Form:Form'
+identifier: 'quickCompanyWizard'
+label: 'Add a new Company'
+renderables:
+  -
+    type: 'TYPO3.Form:Page'
+    identifier: page1
+    label: 'Page 1'
+    renderables:
+      -
+        type: 'TYPO3.Form:Section'
+        identifier: 'intialCompanySetting'
+        label: 'Initial company settings'
+        renderables:
+          -
+            type: 'TYPO3.Form:SingleLineText'
+            identifier: 'company.name'
+            label: 'Name of company'
+            validators:
+                -
+                    type: 'NotEmpty'
+          -
+            type: 'TYPO3.Form:SingleSelectDropdown'
+            identifier: 'company.legalForm'
+            label: 'Legalform'
+            options:
+              values:
+                - 'department'
+                - 'soleProprietorship'
+                - 'partnership'
+                - 'vof'
+                - 'bv'
+            validators:
+              -
+                type: 'NotEmpty'
+          -
+            type: 'TYPO3.Form:SingleLineText'
+            identifier: 'company.chamberOfCommerceNumber'
+            label: 'Chamber of Commerce Number'
+            validators:
+              -
+                type: 'NotEmpty'
+              -
+                type: 'StringLength'
+                options:
+                  maximum: 15
+          -
+             type: 'TYPO3.Form:SingleLineText'
+             identifier: 'company.vatNumber'
+             label: 'Vat Number'
+             validation:
+               -
+                 type: 'StringLength'
+                 options:
+                   maximum: 14
+  -
+    type: 'TYPO3.Form:Page'
+    identifier: page2
+    label: 'Page 2'
+    renderables:
+      -
+        type: 'TYPO3.Form:Section'
+        identifier: 'addAdmin'
+        label: 'Add Admin'
+        renderables:
+          -
+            type: 'TYPO3.Form:SingleSelectDropdown'
+            identifier: 'person.gender'
+            label: 'Gender'
+            properties:
+              options:
+                 -
+                   _value: male
+                   _key: 'Male'
+                 -
+                   _value: female
+                   _key: 'Female'
+            validators:
+              -
+                type: 'NotEmpty'
+              -
+                type: 'StringLength'
+                options:
+                  maximum: 6
+          -
+            type: 'TYPO3.Form:Section'
+            identifier: 'person.personName'
+            label: 'Person name'
+            renderables:
+              -
+                type: 'TYPO3.Form:SingleLineText'
+                identifier: 'person.name.firstName'
+                label: 'First name'
+                validators:
+                  -
+                    type: 'NotEmpty'
+                  -
+                    type: 'StringLength'
+                    options:
+                      maximum: 20
+              -
+                type: 'TYPO3.Form:SingleLineText'
+                identifier: 'person.name.middleName'
+                label: 'Middle name'
+                validators:
+                 -
+                   type: 'StringLength'
+                   options:
+                     maximum: 20
+              -
+                type: 'TYPO3.Form:SingleLineText'
+                identifier: 'person.name.lastName'
+                validators:
+                  -
+                    type: 'NotEmpty'
+                  -
+                    type: 'RegularExpression'
+                    options:
+                      regularexpression: '[\\w\\-]{2,30}]'
+                  -
+                    type: 'StringLength'
+                    options:
+                      maximum: 20
+          -
+            type: 'TYPO3.Form:SingleSelectDropdown'
+            identifier: 'person.personType'
+            label: 'Person Type'
+            options:
+              - 'companyContact'
+              - 'employee'
+            validation:
+              -
+                type: 'NotEmpty'
+              -
+                type: 'StringLength'
+                options:
+                  maximum: 20
+          -
+            type: 'TYPO3.Form:Section'
+            identifier: 'setGroup'
+            label: 'setGroup'
+            renderables:
+              -
+                type: 'TYPO3.Form:SingleSelectDropdown'
+                identifier: 'group.name'
+                label: 'Group'
+                validation:
+                  -
+                    type: 'NotEmpty'
+                  -
+                    type: 'StringLength'
+                    options:
+                      maximum: 20
+# todo: implement username password change in this wizard.
+      -
+        type: 'TYPO3.Form:Section'
+        identifier: electronicAddresses
+        label: 'electronicAddresses'
+        renderables:
+          -
+            type: 'TYPO3.Form:HiddenField'
+            identifier: 'electronicAdresses.electronicAddressType'
+            default: 'email'
+            validators:
+              -
+                type: 'NotEmpty'
+          -
+            type: 'TYPO3.Form:SingleLineText'
+            identifier: 'electronicAdresses.email'
+            label: 'E-mailAddress'
+            validators:
+              -
+                type: 'NotEmpty'
+              -
+                type: 'EmailAddress'
+              -
+                type: 'StringLength'
+                options:
+                  maximum: 35
+# todo: Implement username password change here
+renderingOptions:
+  submitButtonLabel: 'Save'
+
+
+
+
+
