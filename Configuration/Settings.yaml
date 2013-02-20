@@ -12,3 +12,6 @@ TYPO3:
                 '@package': 'Beech.Ehrm'
                 '@controller': 'Application'
                 '@action': 'intro'
+    object:
+      excludeClasses:
+       'symfony.finder' : ['.*']
