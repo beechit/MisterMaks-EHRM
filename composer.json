@@ -12,7 +12,7 @@
 		},
 		{
 			"type": "git",
-			"url": "git@github.com:radmiraal/php-timer.git"
+			"url": "git://github.com/radmiraal/php-timer.git"
 		},
 		{
 			"type": "git",
