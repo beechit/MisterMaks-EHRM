@@ -10,8 +10,18 @@
 		}
 	}
 }
+
 /* Start datepicker */
 .datepickerIcon {
 	cursor: pointer;
 }
 /* End datepicker */
+
+/* Start Contract Wizard / Form */
+.country i {
+	background: url("../../../Form/Images/flags.png") no-repeat;
+	display: inline-block;
+	width: 16px;
+	height: 11px;
+}
+/* End Contract Wizard / Form */

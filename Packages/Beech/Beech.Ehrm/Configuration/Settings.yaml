@@ -53,6 +53,7 @@ Beech:
           - 'Beech.Ehrm/JavaScript/Application.js'
           - 'Beech.Ehrm/JavaScript/Component/UserInterface/BreadcrumbMenu.js'
           - 'Beech.Ehrm/JavaScript/Component/UserInterface/DatePicker.js'
+          - 'Beech.Ehrm/JavaScript/Component/UserInterface/Country.js'
           - 'Beech.Ehrm/JavaScript/Service/Notification.js'
           - 'Beech.Task/JavaScript/Controller/TaskWidget.js'
 
@@ -100,11 +101,19 @@ TYPO3:
               enableDatePicker: TRUE
               displayDateSelector: TRUE
               displayTimeSelector: FALSE
+<<<<<<< HEAD
           'Beech.Ehrm:NationalitySelect':
             superTypes: ['TYPO3.Form:FormElement', 'TYPO3.Form:SingleSelectDropdown']
             implementationClassName: 'Beech\Ehrm\FormElements\NationalitySelect'
             renderingOptions:
               templatePathPattern: 'resource://Beech.Ehrm/Private/Templates/FormElements/NationalitySelect.html'
+=======
+          'Beech.Ehrm:CountrySelect':
+            superTypes: ['TYPO3.Form:FormElement', 'TYPO3.Form:SingleSelectDropdown']
+            implementationClassName: 'Beech\Ehrm\FormElements\CountrySelect'
+            renderingOptions:
+              templatePathPattern: 'resource://Beech.Ehrm/Private/Templates/FormElements/CountrySelect.html'
+>>>>>>> d5c309f... [TASK] Create a new form element for country selection
           'Beech.Party:EmployeeSelect':
             superTypes: ['TYPO3.Form:FormElement', 'TYPO3.Form:SingleSelectDropdown']
             implementationClassName: 'Beech\Party\FormElements\EmployeeSelect'
