@@ -1032,12 +1032,12 @@
             "source": {
                 "type": "git",
                 "url": "ssh://git.beech.local/EHRM/Package/DevTools.git",
-                "reference": "53201979175bb09638d2b7b6be6303027e7698cf"
+                "reference": "2c6846cce2a556eabaf41e31478299f2e144af74"
             },
             "require": {
                 "typo3/flow": "*"
             },
-            "time": "2012-10-26 14:43:33",
+            "time": "2013-02-21 23:26:10",
             "type": "typo3-flow-beech",
             "autoload": {
                 "psr-0": {
