@@ -1,0 +1,400 @@
+##############################################################################
+#This Yaml holds the wages of the
+#CLA Glastuinbouw at 01012013.
+#This is scale B
+#de tabellen voor loongebouw B. Die gelden bij indiensttreding na 1 juli 2005.
+##############################################################################
+Beech:
+  Ehrm.Glastuinbouw:
+    Wage:
+      properties:
+        wageGroup:
+          b:
+            -
+              step: '15 year'
+              wage: '* 0,40'
+              age: '15 year'
+              type: 'calculation'
+            -
+              step: '16 year'
+              wage: '* 0,50'
+              age: '16 year'
+              type: 'calculation'
+            -
+              step: '17 year'
+              wage: '* 0,60'
+              age: '17 year'
+              type: 'calculation'
+            -
+              step: '18 year'
+              wage: '* 0,70'
+              age: '18 year'
+              type: 'calculation'
+            -
+              step: '19 year'
+              wage: '* 0,80'
+              age: '19 year'
+              type: 'calculation'
+            -
+              step: '20 year'
+              wage: '* 0,90'
+              age: '20 year'
+              type: 'calculation'
+            -
+              step: '1'
+              wage: '* 1'
+              age: '1'
+              type: 'calculation'
+            -
+              step: '2'
+              wage: '* 1,017'
+              type: 'calculation'
+            -
+              step: '3'
+              wage: '* 1,031'
+              type: 'calculation'
+            -
+              step: '4'
+              wage: '9,25'
+            -
+              step: '5'
+              wage: '9,8'
+            -
+              step: '6'
+              wage: '10,38'
+            -
+              step: '7'
+              wage: '10,93'
+          label: 'B'
+          orbaPointsStart: 21
+          orbaPointsEnd: 35
+        -
+          c:
+            -
+              step: '15 year'
+              wage: '3,98'
+              age: '15 year'
+            -
+              step: '16 year'
+              wage: '4,97'
+              age: '16 year'
+            -
+              step: '17 year'
+              wage: '5,96'
+              age: '17 year'
+            -
+              step: '18 year'
+              wage: '6,96'
+              age: '18 year'
+            -
+              step: '19 year'
+              wage: '7,95'
+              age: '19 year'
+            -
+              step: '20 year'
+              wage: '8,95'
+              age: '20 year'
+            -
+              step: '1'
+              wage: '9,94'
+            -
+              step: '2'
+              wage: '10,34'
+            -
+              step: '3'
+              wage: '10,74'
+            -
+              step: '4'
+              wage: '11,19'
+            -
+              step: '5'
+              wage: '11,64'
+            -
+              step: '6'
+              wage: '12,1'
+            -
+              step: '7'
+              wage: '12,57'
+          label: 'C'
+          orbaPointsStart: 36
+          orbaPointsEnd: 50
+         -
+          d:
+            -
+              step: '15 year'
+              wage: '4,04'
+              age: '15 year'
+            -
+              step: '16 year'
+              wage: '5,06'
+              age: '16 year'
+            -
+              step: '17 year'
+              wage: '6,07'
+              age: '17 year'
+            -
+              step: '18 year'
+              wage: '7,08'
+              age: '18 year'
+            -
+              step: '19 year'
+              wage: '8,09'
+              age: '19 year'
+            -
+              step: '20 year'
+              wage: '9,1'
+              age: '20 year'
+            -
+              step: '1'
+              wage: '10,11'
+            -
+              step: '2'
+              wage: '10,52'
+            -
+              step: '3'
+              wage: '10,94'
+            -
+              step: '4'
+              wage: '11,37'
+            -
+              step: '5'
+              wage: '11,83'
+            -
+              step: '6'
+              wage: '12,31'
+            -
+              step: '7'
+              wage: '13,03'
+          label: 'D'
+          orbaPointsStart: 51
+          orbaPointsEnd: 65
+        -
+          e:
+            -
+              step: '15 year'
+              wage: '4,21'
+              age: '15 year'
+            -
+              step: '16 year'
+              wage: '5,26'
+              age: '16 year'
+            -
+              step: '17 year'
+              wage: '6,31'
+              age: '17 year'
+            -
+              step: '18 year'
+              wage: '7,36'
+              age: '18 year'
+            -
+              step: '19 year'
+              wage: '8,42'
+              age: '19 year'
+            -
+              step: '20 year'
+              wage: '9,47'
+              age: '20 year'
+            -
+              step: '1'
+              wage: '10,52'
+            -
+              step: '2'
+              wage: '10,94'
+            -
+              step: '3'
+              wage: '11,37'
+            -
+              step: '4'
+              wage: '11,83'
+            -
+              step: '5'
+              wage: '12,31'
+            -
+              step: '6'
+              wage: '12,78'
+            -
+              step: '7'
+              wage: '13,31'
+            -
+              step: '8'
+              wage: '13,85'
+          label: 'E'
+          orbaPointsStart: 66
+          orbaPointsEnd: 85
+        -
+          f:
+            -
+              step: '15 year'
+              wage: '4,42'
+              age: '15 year'
+            -
+              step: '16 year'
+              wage: '5,53'
+              age: '16 year'
+            -
+              step: '17 year'
+              wage: '6,63'
+              age: '17 year'
+            -
+              step: '18 year'
+              wage: '7,74'
+              age: '18 year'
+            -
+              step: '19 year'
+              wage: '8,84'
+              age: '19 year'
+            -
+              step: '20 year'
+              wage: '9,95'
+              age: '20 year'
+            -
+              step: '1'
+              wage: '11,05'
+            -
+              step: '2'
+              wage: '11,49'
+            -
+              step: '3'
+              wage: '11,95'
+            -
+              step: '4'
+              wage: '12,43'
+            -
+              step: '5'
+              wage: '12,96'
+            -
+              step: '6'
+              wage: '13,45'
+            -
+              step: '7'
+              wage: '13,99'
+            -
+              step: '8'
+              wage: '14,54'
+            -
+              step: '9'
+              wage: '15,13'
+          label: 'F'
+          orbaPointsStart: 86
+          orbaPointsEnd: 105
+        -
+          g:
+            -
+              step: '15 year'
+              wage: '4,69'
+              age: '15 year'
+            -
+              step: '16 year'
+              wage: '5,86'
+              age: '16 year'
+            -
+              step: '17 year'
+              wage: '7,03'
+              age: '17 year'
+            -
+              step: '18 year'
+              wage: '8,2'
+              age: '18 year'
+            -
+              step: '19 year'
+              wage: '9,38'
+              age: '19 year'
+            -
+              step: '20 year'
+              wage: '10,55'
+              age: '20 year'
+            -
+              step: '1'
+              wage: '11,72'
+            -
+              step: '2'
+              wage: '12,19'
+            -
+              step: '3'
+              wage: '12,67'
+            -
+              step: '4'
+              wage: '13,18'
+            -
+              step: '5'
+              wage: '13,7'
+            -
+              step: '6'
+              wage: '14,23'
+            -
+              step: '7'
+              wage: '14,82'
+            -
+              step: '8'
+              wage: '15,4'
+            -
+              step: '9'
+              wage: '16,03'
+            -
+              step: '10'
+              wage: '16,65'
+          label: 'G'
+          orbaPointsStart: 106
+          orbaPointsEnd: 125
+        -
+          h:
+            -
+              step: '15 year'
+              wage: '5,1'
+              age: '15 year'
+            -
+              step: '16 year'
+              wage: '6,38'
+              age: '16 year'
+            -
+              step: '17 year'
+              wage: '7,66'
+              age: '17 year'
+            -
+              step: '18 year'
+              wage: '8,93'
+              age: '18 year'
+            -
+              step: '19 year'
+              wage: '10,21'
+              age: '19 year'
+            -
+              step: '20 year'
+              wage: '11,48'
+              age: '20 year'
+            -
+              step: '1'
+              wage: '12,76'
+            -
+              step: '2'
+              wage: '13,29'
+            -
+              step: '3'
+              wage: '13,82'
+            -
+              step: '4'
+              wage: '14,39'
+            -
+              step: '5'
+              wage: '14,95'
+            -
+              step: '6'
+              wage: '15,54'
+            -
+              step: '7'
+              wage: '16,18'
+            -
+              step: '8'
+              wage: '16,82'
+            -
+              step: '9'
+              wage: '17,51'
+            -
+              step: '10'
+              wage: '18,2'
+            -
+              step: '11'
+              wage: '18,92'
+          label: 'H'
+          orbaPointsStart: 126
+          orbaPointsEnd: 145

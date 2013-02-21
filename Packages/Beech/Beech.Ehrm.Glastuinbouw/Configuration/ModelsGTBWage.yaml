@@ -7,13 +7,6 @@ Beech:
   Party:
     'modelGTBWage':
       properties:
-        'orbaPoints':
-          label: 'Orba Points'
-          validation:
-            -
-              type: 'StringLength'
-              options:
-                maximum: 10
         'wageGroup':
           -
             'step':
@@ -45,3 +38,26 @@ Beech:
                   options:
                     minimum: 10
                     maximum: 21
+        'label':
+          label: 'label'
+          validation:
+            -
+              type: 'Label'
+            -
+              type: 'StringLength'
+              options:
+                maximum: 20
+        'orbaPointsStart':
+          label: 'Orba Points start'
+          validation:
+            -
+              type: 'StringLength'
+              options:
+                maximum: 10
+        'orbaPointsEnd':
+          label: 'Orba Points end'
+          validation:
+            -
+              type: 'StringLength'
+              options:
+                maximum: 10
