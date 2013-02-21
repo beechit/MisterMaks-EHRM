@@ -1,5 +1,5 @@
 {
-    "hash": "9a9b103e6bfe2785e1ebc0057321a270",
+    "hash": "c05d427bb0ab7297837599b35cdca4cc",
     "packages": [
         {
             "name": "beech/essentials",
@@ -511,18 +511,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/radmiraal/Radmiraal.Emberjs.git",
-                "reference": "102a59971d6ae175fd6de73a05989ba761f2e148"
+                "reference": "0f19af81d836540dc811b3269d33f4a91f15642b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/radmiraal/Radmiraal.Emberjs/zipball/102a59971d6ae175fd6de73a05989ba761f2e148",
-                "reference": "102a59971d6ae175fd6de73a05989ba761f2e148",
+                "url": "https://api.github.com/repos/radmiraal/Radmiraal.Emberjs/zipball/0f19af81d836540dc811b3269d33f4a91f15642b",
+                "reference": "0f19af81d836540dc811b3269d33f4a91f15642b",
                 "shasum": ""
             },
             "require": {
                 "typo3/flow": "*"
             },
-            "time": "2013-02-19 08:59:19",
+            "time": "2013-02-21 20:45:31",
             "type": "typo3-flow-package",
             "autoload": {
                 "psr-0": {
@@ -834,13 +834,13 @@
             "source": {
                 "type": "git",
                 "url": "git://git.typo3.org/FLOW3/Packages/TYPO3.Fluid.git",
-                "reference": "725a55219ac661b38472f1347c20aba0960d683b"
+                "reference": "ba3780fe66b345b26c47e5741ae12f7d58286d18"
             },
             "require": {
                 "typo3/flow": "*",
                 "typo3/flow-composer-installers": "*"
             },
-            "time": "2013-02-17 17:18:29",
+            "time": "2013-02-20 12:26:42",
             "type": "typo3-flow-framework",
             "autoload": {
                 "psr-0": {
@@ -1026,6 +1026,25 @@
         }
     ],
     "packages-dev": [
+        {
+            "name": "beech/dev-tools",
+            "version": "dev-development",
+            "source": {
+                "type": "git",
+                "url": "ssh://git.beech.local/EHRM/Package/DevTools.git",
+                "reference": "53201979175bb09638d2b7b6be6303027e7698cf"
+            },
+            "require": {
+                "typo3/flow": "*"
+            },
+            "time": "2012-10-26 14:43:33",
+            "type": "typo3-flow-beech",
+            "autoload": {
+                "psr-0": {
+                    "Beech\\DevTools": "Classes"
+                }
+            }
+        },
         {
             "name": "beech/style",
             "version": "dev-development",
@@ -2011,6 +2030,7 @@
         "typo3-qa/typo3flow": 20,
         "beech/style": 20,
         "phpcd/phpcd": 20,
-        "pdepend/pdepend": 20
+        "pdepend/pdepend": 20,
+        "beech/dev-tools": 20
     }
 }
