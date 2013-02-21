@@ -30,6 +30,8 @@ class TaskTest extends \TYPO3\Flow\Tests\UnitTestCase {
 		$person = new \Beech\Party\Domain\Model\Person();
 		$time = new \DateTime();
 
+		$priority = \Beech\Task\Domain\Factory\PriorityFactory::createPriority('Medium');
+
 		$mockPersistenceManager = $this->getMock('TYPO3\Flow\Persistence\Doctrine\PersistenceManager', array(), array(), '', FALSE);
 		$mockPersistenceManager->expects($this->any())->method('getIdentifierByObject')->will($this->returnValue('abc123'));
 		$mockPersistenceManager->expects($this->any())->method('getObjectByIdentifier')->will($this->returnValue($person));
@@ -43,7 +45,7 @@ class TaskTest extends \TYPO3\Flow\Tests\UnitTestCase {
 		$task->setCreationDateTime($time);
 
 		$task->setDescription('description');
-		$task->setPriority(Task::PRIORITY_HIGH);
+		$task->setPriority($priority);
 
 		$this->assertEquals($person, $task->getCreatedBy());
 		$this->assertEquals($person, $task->getAssignedTo());
@@ -52,7 +54,7 @@ class TaskTest extends \TYPO3\Flow\Tests\UnitTestCase {
 		$this->assertEquals($time, $task->getCreationDateTime());
 
 		$this->assertEquals('description', $task->getDescription());
-		$this->assertEquals(Task::PRIORITY_HIGH, $task->getPriority());
+		$this->assertEquals($priority, $task->getPriority());
 	}
 
 	/**
