@@ -4,7 +4,8 @@
 		"[!!!][FEATURE] Handle roles consistently as objects": "13868",
 		"[!!!][FEATURE] Allow view configuration via Views.yaml": "16392",
 		"[FEATURE] Allow PolyType custom validators to be used": "18053",
-		"[FEATURE] Allow classes to declare gettable properties": "18229"
+		"[FEATURE] Allow classes to declare gettable properties": "18229",
+		"[TASK] Clean up JsonView and JsonViewTest internals": "18435"
 	},
 	"TYPO3.Fluid": {
 		"[TASK] Add packageKey attribute to ifHasRole view helper": "13989",
