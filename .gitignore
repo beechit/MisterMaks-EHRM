@@ -20,6 +20,7 @@ Thumbs.db
 /Packages/*
 !/Packages/Beech/
 /Packages/Beech/Beech.Style
+/Packages/Beech/Beech.DevTools
 /composer.phar
 /flow.bat
 /*.txt

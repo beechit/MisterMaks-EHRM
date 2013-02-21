@@ -4,6 +4,18 @@
 	"repositories": [
 		{
 			"type": "git",
+			"url": "git://github.com/radmiraal/TYPO3.Queue.git"
+		},
+		{
+			"type": "git",
+			"url": "git://git.typo3.org/FLOW3/Packages/TYPO3.FormBuilder.git"
+		},
+		{
+			"type": "git",
+			"url": "git://git.typo3.org/FLOW3/Packages/TYPO3.Queue.Redis.git"
+		},
+		{
+			"type": "git",
 			"url": "git://github.com/radmiraal/phpcpd.git"
 		},
 		{
@@ -55,7 +67,8 @@
 		"beech/style": "dev-development",
 		"phpmd/phpmd": "1.4.*",
 		"phpcd/phpcd": "dev-master",
-		"pdepend/pdepend": "dev-master"
+		"pdepend/pdepend": "dev-master",
+		"beech/dev-tools": "dev-development"
 	},
 	"minimum-stability": "dev",
 	"scripts": {
