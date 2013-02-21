@@ -56,7 +56,7 @@ trait ConfigurableModelTrait {
 		}
 
 		foreach ($this->gettableProperties as $index => $property) {
-			if ($this->reflectionService->isPropertyAnnotatedWith(get_class($this), $property, 'TYPO3\Flow\Annotiations\Transient')) {
+			if ($this->reflectionService->isPropertyAnnotatedWith(get_class($this), $property, 'TYPO3\Flow\Annotations\Transient')) {
 				unset($this->gettableProperties[$index]);
 			}
 		}
