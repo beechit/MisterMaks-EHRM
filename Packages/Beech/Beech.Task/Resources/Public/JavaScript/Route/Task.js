@@ -32,7 +32,7 @@
 		},
 
 		model: function() {
-			return person.createRecord();
+			return App.store.createRecord(App.Task, {});
 		},
 
 		exit: function() {

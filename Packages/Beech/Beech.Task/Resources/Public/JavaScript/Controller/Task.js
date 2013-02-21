@@ -7,7 +7,8 @@
 			if (!confirm('Are you sure?')) {
 				return;
 			}
-			this.get('model').deleteRecord();
+
+			this.get('content').deleteRecord();
 			App.store.commit();
 			this.get('target').transitionTo('taskModule');
 		}

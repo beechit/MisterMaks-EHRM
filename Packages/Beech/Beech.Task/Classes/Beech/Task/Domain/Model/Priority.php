@@ -34,6 +34,14 @@ class Priority extends \Beech\Ehrm\Domain\Model\Document {
 	protected $label;
 
 	/**
+	 * The tasks
+	 *
+	 * @var array
+	 * @ODM\Field(type="mixed")
+	 */
+	protected $tasks;
+
+	/**
 	 * Sets the priority label
 	 *
 	 * @param string $label
@@ -50,6 +58,46 @@ class Priority extends \Beech\Ehrm\Domain\Model\Document {
 	 */
 	public function getLabel() {
 		return $this->label;
+	}
+
+	/**
+	 * Add task to tasks
+	 *
+	 * @param Task $task
+	 */
+	public function addTask(\Beech\Task\Domain\Model\Task $task) {
+		$this->tasks['tasks'][] = $task->getId();
+	}
+
+	/**
+	 * Add task to tasks
+	 *
+	 * @param Task $task
+	 */
+	public function removeTask(\Beech\Task\Domain\Model\Task $task) {
+		unset($this->tasks['tasks'][
+			array_search($task->getId(), $this->tasks['tasks'])]
+		);
+	}
+	/**
+	 * Gets the tasks
+	 *
+	 * @return array
+	 */
+	public function getTasks() {
+		if(is_array($this->tasks)){
+			return $this->tasks['tasks'];
+		}
+		return array();
+	}
+
+	/**
+	 * Sets the tasks
+	 *
+	 * @param array $tasks
+	 */
+	public function setTasks(array $tasks) {
+		$this->tasks['tasks'] = $tasks;
 	}
 
 }
