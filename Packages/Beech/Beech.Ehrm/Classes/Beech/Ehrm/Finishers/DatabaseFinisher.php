@@ -102,7 +102,7 @@ class DatabaseFinisher extends \TYPO3\Form\Core\Model\AbstractFinisher {
 		if (isset($formValues['jobDescription'])) {
 			$jobDescriptionRepository = new \Beech\CLA\Domain\Repository\JobDescriptionRepository();
 			$jobDescription = $jobDescriptionRepository->findByIdentifier($formValues['jobDescription']);
-			$contract->setJobDescription($formValues['jobDescription']);
+			$contract->setJobDescription($jobDescription);
 			$contract->setJobDescriptionName($jobDescription->getJobTitle());
 		}
 		$contract->setStatus(\Beech\CLA\Domain\Model\Contract::STATUS_DRAFT);
@@ -122,6 +122,7 @@ class DatabaseFinisher extends \TYPO3\Form\Core\Model\AbstractFinisher {
 		}
 		$contract->setArticles($articles);
 		$repository->add($contract);
+		$repository->flushDocumentManager();
 	}
 }
 
