@@ -15,9 +15,9 @@ Radmiraal:
     restInterfaces:
       person:
         routePath: 'persons'
-        model: '\Beech\Party\Domain\Model\Person'
-        repository: '\Beech\Party\Domain\Repository\PersonRepository'
+        model: 'Beech\Party\Domain\Model\Person'
+        repository: 'Beech\Party\Domain\Repository\PersonRepository'
       company:
         routePath: 'companies'
-        model: '\Beech\Party\Domain\Model\Company'
-        repository: '\Beech\Party\Domain\Repository\CompanyRepository'
+        model: 'Beech\Party\Domain\Model\Company'
+        repository: 'Beech\Party\Domain\Repository\CompanyRepository'

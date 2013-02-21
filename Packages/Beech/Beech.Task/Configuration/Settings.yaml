@@ -3,5 +3,5 @@ Radmiraal:
     restInterfaces:
       task:
         routePath: 'tasks'
-        model: '\Beech\Task\Domain\Model\Task'
-        repository: '\Beech\Task\Domain\Repository\TaskRepository'
+        model: 'Beech\Task\Domain\Model\Task'
+        repository: 'Beech\Task\Domain\Repository\TaskRepository'
