@@ -88,17 +88,17 @@ class ModelInterpreterUtility {
 	 *
 	 * @param string $packageKey
 	 * @param string $modelName
-	 * @param string $yamlModelFile
+	 * @param string $configurationPath
 	 * @return array
 	 */
-	public function getModelProperties($packageKey, $modelName, $yamlModelFile = NULL) {
-			// TODO: Read content from configurationManager. On this moment configurationManager doesnt work for models
-		if ($yamlModelFile === NULL) {
-			$yamlModelFile = \TYPO3\Flow\Utility\Files::concatenatePaths(array(FLOW_PATH_PACKAGES, 'Beech', $packageKey, '/Configuration/Models', $modelName . '.yaml'));
+	public function getModelProperties($packageKey, $modelName, $configurationPath = NULL) {
+		if ($configurationPath === NULL) {
+			$modelConfiguration = $this->configurationManager->getConfiguration('Models', $packageKey . '.' . $modelName);
+		} else {
+			$modelConfiguration = $this->configurationManager->getConfiguration('Models', $configurationPath);
 		}
-		if (file_exists($yamlModelFile)) {
-			$parsedYaml = Yaml::parse(\TYPO3\Flow\Utility\Files::getFileContents($yamlModelFile));
-			$modelProperties = \TYPO3\Flow\Utility\Arrays::getValueByPath($parsedYaml, $packageKey . '.' . $modelName . '.properties');
+		if ($modelConfiguration !== NULL) {
+			$modelProperties = \TYPO3\Flow\Utility\Arrays::getValueByPath($modelConfiguration, 'properties');
 			return is_array($modelProperties) ? $modelProperties : array();
 		}
 		return array();

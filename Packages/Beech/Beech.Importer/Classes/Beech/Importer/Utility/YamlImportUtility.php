@@ -56,7 +56,7 @@ class YamlImportUtility {
 	/**
 	 * @var string
 	 */
-	protected $collectionIndex = '';
+	protected $collectionPath = '';
 
 	/**
 	 * Number of collection elements
@@ -148,7 +148,7 @@ class YamlImportUtility {
 	}
 
 	/**
-	 * If yaml file contains collection of object, collectionIndex
+	 * If yaml file contains collection of object, collectionPath
 	 * is used to localize a position
 	 *
 	 * Example: Index contractArticles:articles
@@ -158,27 +158,13 @@ class YamlImportUtility {
 	 *
 	 * @param $collectionIndex
 	 */
-	public function setCollectionIndex($collectionIndex) {
+	public function setCollectionPath($collectionIndex) {
 		if (!empty($collectionIndex)) {
 			$this->collectionIndex = $collectionIndex;
 			$this->isCollection = TRUE;
 		} else {
 			$this->isCollection = FALSE;
 		}
-	}
-
-	/**
-	 * Get value from yaml file located at collectionIndex
-	 *
-	 * @param array $parsedYaml
-	 * @return mixed
-	 */
-	private function getByCollectionIndex(array $parsedYaml) {
-		$indexes = explode(':', $this->collectionIndex);
-		foreach ($indexes as $index) {
-			$parsedYaml = $parsedYaml[$index];
-		}
-		return $parsedYaml;
 	}
 
 	/**
@@ -189,7 +175,7 @@ class YamlImportUtility {
 	 */
 	protected function store(array $parsedYaml) {
 		if ($this->isCollection) {
-			$collection = $this->getByCollectionIndex($parsedYaml);
+			$collection = \TYPO3\Flow\Utility\Arrays::getValueByPath($parsedYaml, $this->collectionIndex);
 			foreach ($collection as $collectionElement) {
 				$this->numberOfImportedElements++;
 				$document = $this->prepareDocument($collectionElement);

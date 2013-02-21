@@ -33,14 +33,14 @@ class ImportCommandController extends \TYPO3\Flow\Cli\CommandController {
 	 * @param string $packageKey The package key, for example "MyCompany.MyPackageName"
 	 * @param string $modelName Class name of created object
 	 * @param string $sourcePath Path to directory which contain YAML files
-	 * @param string $yamlModel Path to optional file which contain model in YAML format
+	 * @param string $configurationPath Path to custom configuration
 	 * @return void
 	 */
-	public function yamlCommand($packageKey, $modelName, $sourcePath = NULL, $yamlModel = NULL) {
+	public function yamlCommand($packageKey, $modelName, $sourcePath = NULL, $configurationPath = NULL) {
 		if ($sourcePath === NULL) {
 			$sourcePath = 'resource://' . $packageKey . '/Private/Yaml/';
 		}
-		$this->yamlImportUtility->init($packageKey, $modelName, $yamlModel);
+		$this->yamlImportUtility->init($packageKey, $modelName, $configurationPath);
 		$this->yamlImportUtility->import($sourcePath);
 		$this->outputLine('Import complete. %d objects were imported.', array($this->yamlImportUtility->getNumberOfImportedFiles()));
 	}
@@ -55,12 +55,12 @@ class ImportCommandController extends \TYPO3\Flow\Cli\CommandController {
 	 * @param string $packageKey The package key, for example "MyCompany.MyPackageName"
 	 * @param string $modelName
 	 * @param string $sourcePath Path to YAML file
-	 * @param string $collectionIndex Index where collection is stored, for example "contractArticles:articles"
+	 * @param string $collectionPath Path to value of a nested array, for example "contractArticles.articles"
 	 * @param string $language
 	 */
-	public function collectionCommand($packageKey, $modelName, $sourcePath, $collectionIndex, $language = 'en') {
+	public function collectionCommand($packageKey, $modelName, $sourcePath, $collectionPath, $language = 'en') {
 		$this->yamlImportUtility->init($packageKey, $modelName);
-		$this->yamlImportUtility->setCollectionIndex($collectionIndex);
+		$this->yamlImportUtility->setCollectionPath($collectionPath);
 		$this->yamlImportUtility->setLanguage($language);
 		$this->yamlImportUtility->import($sourcePath);
 		$this->outputLine('Import complete. %d objects were imported.', array($this->yamlImportUtility->getNumberOfImportedElements()));
