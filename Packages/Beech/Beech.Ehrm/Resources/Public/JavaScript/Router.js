@@ -19,12 +19,12 @@
 			});
 			this.route('new');
 		});
-		this.resource('companyAdministration', { path: '/administration/companies/' }, function() {
-			this.resource('model', { path: '/:id' }, function() {
-				this.route('edit');
-			});
-			this.route('new');
-		});
+
+			// Beech.Party
+		this.resource('companies',{path: '/administration/companies'});
+		this.resource('company', {path: '/administration/companies/:company_id'});
+		this.route('edit_company', {path: '/administration/companies/:company_id/edit'});
+		this.route('new_company', {path: '/administration/companies/new'});
 
 			// Model mappings
 		this.resource('person', { path: 'persons/' }, function() {
@@ -70,8 +70,5 @@
 			this.render(this.get('templateName'));
 		}
 	});
-
-	App.PersonAdministrationRoute = App.AdministrationRoute.extend({ modelType: 'person' });
-	App.CompanyAdministrationRoute = App.AdministrationRoute.extend({ modelType: 'company' });
 
 }).call(this);

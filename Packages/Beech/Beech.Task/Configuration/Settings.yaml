@@ -6,6 +6,6 @@ Radmiraal:
         model: 'Beech\Task\Domain\Model\Task'
         repository: 'Beech\Task\Domain\Repository\TaskRepository'
       priority:
-        routePath: 'prioritys'
+        routePath: 'priorities'
         model: 'Beech\Task\Domain\Model\Priority'
         repository: 'Beech\Task\Domain\Repository\PriorityRepository'

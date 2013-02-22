@@ -1,0 +1,80 @@
+<h2>Company</h2>
+
+<form {{action save on="submit"}}>
+
+<p>
+	<label for="name">Name</label><br>
+	{{view Ember.TextField valueBinding="name" id="name"}}
+</p>
+
+<p>
+	<label for="departments">Departments</label><br>
+	{{view Ember.TextField valueBinding="departments" id="departments"}}
+</p>
+
+<p>
+	<label for="chamber_of_commerce_number">Chamber of commerce number</label><br>
+	{{view Ember.TextField valueBinding="chamberOfCommerceNumber" id="chamber_of_commerce_number"}}
+</p>
+
+<p>
+	<label for="accounts">Accounts</label><br>
+	{{view Ember.TextField valueBinding="accounts" id="accounts"}}
+</p>
+
+<p>
+	<label for="company_type">Company type</label><br>
+	{{view Ember.TextField valueBinding="companyType" id="company_type"}}
+</p>
+
+<p>
+	<label for="company_id_number">Company id number</label><br>
+	{{view Ember.TextField valueBinding="companyIdNumber" id="company_id_number"}}
+</p>
+
+<p>
+	<label for="policy_number_absence_insurer">Policy number absence insurer</label><br>
+	{{view Ember.TextField valueBinding="policyNumberAbsenceInsurer" id="policy_number_absence_insurer"}}
+</p>
+
+<p>
+	<label for="legal_form">Legal form</label><br>
+	{{view Ember.TextField valueBinding="legalForm" id="legal_form"}}
+</p>
+
+<p>
+	<label for="vat_number">Vat number</label><br>
+	{{view Ember.TextField valueBinding="vatNumber" id="vat_number"}}
+</p>
+
+<p>
+	<label for="wage_tax_number">Wage tax number</label><br>
+	{{view Ember.TextField valueBinding="wageTaxNumber" id="wage_tax_number"}}
+</p>
+
+<p>
+	<label for="company_description">Company description</label><br>
+	{{view Ember.TextField valueBinding="companyDescription" id="company_description"}}
+</p>
+
+<p>
+	<label for="creation_date">Creation date</label><br>
+	{{view Ember.TextField valueBinding="creationDate" id="creation_date"}}
+</p>
+
+<p>
+	<label for="created_by">Created by</label><br>
+	{{view Ember.TextField valueBinding="createdBy" id="created_by"}}
+</p>
+
+<p>
+	<label for="modification">Modification</label><br>
+	{{view Ember.TextField valueBinding="modification" id="modification"}}
+</p>
+
+<p>
+	<button type="submit" class="btn">Save</button>
+</p>
+
+</form>
+
