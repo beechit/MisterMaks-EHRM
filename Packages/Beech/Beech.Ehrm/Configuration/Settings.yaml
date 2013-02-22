@@ -95,6 +95,11 @@ TYPO3:
               enableDatePicker: TRUE
               displayDateSelector: TRUE
               displayTimeSelector: FALSE
+          'Beech.Ehrm:NationalitySelect':
+            superTypes: ['TYPO3.Form:FormElement', 'TYPO3.Form:SingleSelectDropdown']
+            implementationClassName: 'Beech\Ehrm\FormElements\NationalitySelect'
+            renderingOptions:
+              templatePathPattern: 'resource://Beech.Ehrm/Private/Templates/FormElements/NationalitySelect.html'
           'Beech.Party:EmployeeSelect':
             superTypes: ['TYPO3.Form:FormElement', 'TYPO3.Form:SingleSelectDropdown']
             implementationClassName: 'Beech\Party\FormElements\EmployeeSelect'
