@@ -23,10 +23,10 @@ Beech:
                 maximum: 10
         'personid':
           label: 'Person ID'
-          type: '\Beech\Party\Domain\Model\Person'
+          type: 'Beech\Party\Domain\Model\Person'
         'departmentId':
           label: 'Department ID'
-          type: '\Beech\Party\Domain\Model\Company'
+          type: 'Beech\Party\Domain\Model\Company'
         'addresses':
           items:
             'addressType':

@@ -26,13 +26,13 @@ Beech:
                 maximum: 30
         'subjectId':
           label: 'Subject id'
-          type: '\Beech\Party\Domain\Model\Person'
+          type: 'Beech\Party\Domain\Model\Person'
           validation:
             -
               type: 'NotEmpty'
         'departmentId':
           label: 'Department id'
-          type: '\Beech\Party\Domain\Model\Company'
+          type: 'Beech\Party\Domain\Model\Company'
           validation: ''
         'firstSickDay':
           label: 'First sick Day'
@@ -111,7 +111,7 @@ Beech:
         'createdBy':
           default: 'currentUser'
           label: 'Created by'
-          type: '\Beech\Party\Domain\Model\Person'
+          type: 'Beech\Party\Domain\Model\Person'
           validation:
             -
               type: 'NotEmpty'
@@ -129,6 +129,6 @@ Beech:
             'modifiedBy':
               default: 'currentUser'
               label: 'Modified by'
-              type: '\Beech\Party\Domain\Model\Person'
+              type: 'Beech\Party\Domain\Model\Person'
           label: 'Modification log'
           type: 'array'

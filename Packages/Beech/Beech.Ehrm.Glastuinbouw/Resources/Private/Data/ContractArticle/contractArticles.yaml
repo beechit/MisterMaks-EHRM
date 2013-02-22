@@ -50,7 +50,7 @@ contactArticles:
             valueId: jobTitle
           -
             type: 'TYPO3.Form:SingleLineText'
-            value: '\Beech\Party\Domain\Model\Company'
+            value: 'Beech\Party\Domain\Model\Company'
             valueId: 'workLocation'
     -
       articleHeader:

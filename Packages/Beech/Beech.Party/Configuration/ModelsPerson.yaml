@@ -8,13 +8,13 @@ beech:
     properties:
       'companyId':
         label: 'Company id'
-        type: '\Beech\Party\Domain\Model\Company'
+        type: 'Beech\Party\Domain\Model\Company'
         validation:
           -
             type: 'NotEmpty'
       'departmentId':
         label: 'Department id'
-        type: '\Beech\Party\Domain\Model\Company'
+        type: 'Beech\Party\Domain\Model\Company'
       'name.title':
         label: 'title'
         validation:
@@ -214,7 +214,7 @@ beech:
     'createdBy':
       default: 'currentUser'
       label: 'Created by'
-      type: '\Beech\Party\Domain\Model\Person'
+      type: 'Beech\Party\Domain\Model\Person'
       validation:
         -
           type: 'NotEmpty'
@@ -232,6 +232,6 @@ beech:
         'modifiedBy':
           default: 'currentUser'
           label: 'Modified by'
-          type: '\Beech\Party\Domain\Model\Person'
+          type: 'Beech\Party\Domain\Model\Person'
       label: 'Modification log'
       type: 'array'

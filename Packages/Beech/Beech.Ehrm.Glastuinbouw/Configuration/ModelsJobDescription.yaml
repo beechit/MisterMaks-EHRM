@@ -140,7 +140,7 @@ Beech:
         'createdBy':
           default: 'currentUser'
           label: 'Created by'
-          type: '\Beech\Party\Domain\Model\Person'
+          type: 'Beech\Party\Domain\Model\Person'
           validation:
             -
               type: 'NotEmpty'
@@ -158,7 +158,7 @@ Beech:
             'modifiedBy':
               default: 'currentUser'
               label: 'Modified by'
-              type: '\Beech\Party\Domain\Model\Person'
+              type: 'Beech\Party\Domain\Model\Person'
               validation: ''
           label: 'Modification log'
           type: 'array'

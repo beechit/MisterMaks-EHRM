@@ -24,11 +24,11 @@ Beech:
                 maximum: 10
         'personid':
           label: 'Person ID'
-          type: '\Beech\Party\Domain\Model\Person'
+          type: 'Beech\Party\Domain\Model\Person'
           validation: ''
         'departmentId':
           label: 'Department ID'
-          type: '\Beech\Party\Domain\Model\Company'
+          type: 'Beech\Party\Domain\Model\Company'
         'phone':
           items:
             'phoneType':
@@ -92,7 +92,7 @@ Beech:
         'createdBy':
           default: 'currentUser'
           label: 'Created by'
-          type: '\Beech\Party\Domain\Model\Person'
+          type: 'Beech\Party\Domain\Model\Person'
           validation:
             -
               type: 'NotEmpty'
@@ -111,6 +111,6 @@ Beech:
               default: 'currentUser'
               label: 'Modified by'
 
-              type: '\Beech\Party\Domain\Model\Person'
+              type: 'Beech\Party\Domain\Model\Person'
           label: 'Modification log'
           type: 'array'

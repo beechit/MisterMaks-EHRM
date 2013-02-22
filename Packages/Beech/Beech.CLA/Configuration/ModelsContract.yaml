@@ -9,12 +9,12 @@ Beech:
       properties:
         'subjectId':
           label: 'Subject id'
-          type: '\Beech\Party\Domain\Model\Person'
+          type: 'Beech\Party\Domain\Model\Person'
           validation:
             type: 'NotEmpty'
         'departmentId':
           label: 'Department id'
-          type: '\Beech\Party\Domain\Model\Company'
+          type: 'Beech\Party\Domain\Model\Company'
           validation: ''
         'contractVersion':
           label: 'contractversion'
@@ -132,10 +132,10 @@ Beech:
                 maximum: 30
         'jobDescription':
           label: 'Jobdescription'
-          type: '\Beech\CLA\Domain\Model\jobDescription'
+          type: 'Beech\CLA\Domain\Model\jobDescription'
         'defaultSalaryScale':
           label: 'defaultSalaryScale'
-          type: '\Beech\CLA\Domain\Model\jobDescription'
+          type: 'Beech\CLA\Domain\Model\jobDescription'
         'contractEnddate':
           label: 'Expiration date'
           type: 'dateTime'
@@ -330,7 +330,7 @@ Beech:
                 maximum: 15
         'cla':
           label: 'collective labour agreement'
-          type: '\Beech\CLA\Domain\Model\LaborAgreement'
+          type: 'Beech\CLA\Domain\Model\LaborAgreement'
         'vacationAllowanceGLA':
           label: 'Vacation allowance in the GLA arrangment'
           type: decimal(2.2)
@@ -400,7 +400,7 @@ Beech:
         'createdBy':
           default: 'currentUser'
           label: 'Created by'
-          type: '\Beech\Party\Domain\Model\Person'
+          type: 'Beech\Party\Domain\Model\Person'
           validation:
             -
               type: 'NotEmpty'
