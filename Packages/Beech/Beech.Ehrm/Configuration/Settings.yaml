@@ -52,8 +52,10 @@ Beech:
           - 'Beech.Ehrm/JavaScript/ModuleHandler.js'
           - 'Beech.Ehrm/JavaScript/Application.js'
           - 'Beech.Ehrm/JavaScript/Component/UserInterface/BreadcrumbMenu.js'
+          - 'Beech.Ehrm/JavaScript/Component/UserInterface/DatePicker.js'
           - 'Beech.Ehrm/JavaScript/Service/Notification.js'
           - 'Beech.Task/JavaScript/Controller/TaskWidget.js'
+
 
     viewHelpers:
       partialRootPath: 'resource://Beech.Ehrm/Private/Templates/ViewHelpers/Partials/'

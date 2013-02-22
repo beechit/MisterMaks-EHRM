@@ -73,26 +73,21 @@ class DatePickerViewHelper extends \TYPO3\Fluid\ViewHelpers\Form\AbstractFormFie
 			$id = 'field' . md5(uniqid());
 			$this->tag->addAttribute('id', $id);
 		}
+
 		$this->setErrorClassAttribute();
 		$content = '';
 		$content .= '<div class="input-append">';
+		if ($displayDateSelector === TRUE && $enableDatePicker === TRUE) {
+			$datePickerDateFormat = $this->convertDateFormatToDatePickerFormat($dateFormat);
+			$this->tag->addAttribute('format', $datePickerDateFormat);
+		}
 		$content .= $this->tag->render();
-		if ($displayDateSelector) {
-			$content .= '<span class="add-on"><i class="icon-calendar"></i></span>';
+		if ($displayDateSelector === TRUE) {
+			$content .= '<span class="datepickerIcon add-on"><i class="icon-calendar"></i></span>';
 		}
 		$content .= '</div>';
 		$content .= '<input type="hidden" name="' . $name . '[dateFormat]" value="' . htmlspecialchars($dateFormat) . '" />';
 
-		if ($displayDateSelector && $enableDatePicker) {
-			$datePickerDateFormat = $this->convertDateFormatToDatePickerFormat($dateFormat);
-			$content .= '<script type="text/javascript">//<![CDATA[
-				$(function() {
-					$("#' . $id . '").datepicker({
-						format: "' . $datePickerDateFormat . '"
-					});
-				});
-				//]]></script>';
-		}
 		return $content;
 	}
 

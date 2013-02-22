@@ -1,6 +1,6 @@
 /* First 4 need to have this order */
 /* General */
-html, body { font-family: "Colaborate", sans-serif; height: 100%; }
+html, body { font-family: 'Colaborate', sans-serif; height: 100%; }
 
 /* Sticky Footer Begin */
 .body { min-height: 100%; height: 100%; height: auto !important; margin: 0 auto -40px !important; }
@@ -63,6 +63,10 @@ ul.flashmessages { list-style-type: none; margin-left: 0px; }
 .left form fieldset { position: relative; }
 .left form fieldset .icon-search { position: absolute; top: 8px; right: 8px; color: #049cdb; }
 
+/* Start datepicker */
+.datepickerIcon { cursor: pointer; }
+
+/* End datepicker */
 a:hover { text-decoration: none; }
 
 .align-center { text-align: center; }
