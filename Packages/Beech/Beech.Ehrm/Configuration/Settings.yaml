@@ -32,7 +32,6 @@ Beech:
           - 'Beech.Ehrm/JavaScript/Mixins/AjaxModule.js'
           - 'Beech.Ehrm/JavaScript/Mixins/ModelRoute.js'
           - 'Beech.Ehrm/JavaScript/Mixins/Model.js'
-          - 'Beech.Task/JavaScript/Mixins/TasksFormable.js'
           - 'Beech.Task/JavaScript/Model.js'
           - 'Beech.Ehrm/JavaScript/Router.js'
           - 'Beech.Task/JavaScript/Router.js'
@@ -40,7 +39,7 @@ Beech:
           - 'Beech.Ehrm/JavaScript/Application.js'
           - 'Beech.Ehrm/JavaScript/Component/UserInterface/BreadcrumbMenu.js'
           - 'Beech.Ehrm/JavaScript/Service/Notification.js'
-          - 'Beech.Task/JavaScript/Component/Module.js'
+          - 'Beech.Task/JavaScript/Controller.js'
           - 'Beech.Task/JavaScript/Component/UserInterface/TaskWidget.js'
 
     viewHelpers:
@@ -123,3 +122,12 @@ TYPO3:
         # Also allow JavaScript to retrieve the session cookie so we can pass
         # it to the WebSocket service
         httponly: FALSE
+
+Radmiraal:
+  Emberjs:
+    properties:
+      _exclude:
+        - 'configurationManager'
+        - 'reflectionService'
+        - 'gettablePropertyNames'
+        - 'data'

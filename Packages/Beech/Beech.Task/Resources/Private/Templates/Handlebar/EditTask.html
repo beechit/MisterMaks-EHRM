@@ -1,0 +1,50 @@
+<h2>Task</h2>
+
+<form {{action save on="submit"}}>
+
+<p>
+	<label for="assigned_to">Assigned to</label><br>
+	{{view Ember.TextField valueBinding="assignedTo" id="assigned_to"}}
+</p>
+
+<p>
+	<label for="can_be_closed_by_current_party">Can be closed by current party</label><br>
+	{{view Ember.TextField valueBinding="canBeClosedByCurrentParty" id="can_be_closed_by_current_party"}}
+</p>
+
+<p>
+	<label for="close_date_time">Close date time</label><br>
+	{{view Ember.TextField valueBinding="closeDateTime" id="close_date_time"}}
+</p>
+
+<p>
+	<label for="closeable_by_assignee">Closeable by assignee</label><br>
+	{{view Ember.TextField valueBinding="closeableByAssignee" id="closeable_by_assignee"}}
+</p>
+
+<p>
+	<label for="closed">Closed</label><br>
+	{{view Ember.TextField valueBinding="closed" id="closed"}}
+</p>
+
+<p>
+	<label for="closed_by">Closed by</label><br>
+	{{view Ember.TextField valueBinding="closedBy" id="closed_by"}}
+</p>
+
+<p>
+	<label for="creation_date_time">Creation date time</label><br>
+	{{view Ember.TextField valueBinding="creationDateTime" id="creation_date_time"}}
+</p>
+
+<p>
+	<label for="description">Description</label><br>
+	{{view Ember.TextField valueBinding="description" id="description"}}
+</p>
+
+<p>
+	{{#linkTo "taskModule" class="btn"}}Cancel{{/linkTo}}
+	<button type="submit" class="btn btn-primary">Save</button>
+</p>
+
+</form>

@@ -34,12 +34,10 @@
 		});
 
 			// Beech.Task
-		this.resource('taskModule', { path: '/tasks' }, function() {
-			this.resource('task', { path: '/:task_id' }, function() {
-				this.route('edit', { path: '/edit' });
-			});
-			this.route('new');
-		});
+		this.resource('taskModule', {path: '/tasks'});
+		this.resource('task', {path: '/tasks/:task_id'});
+		this.route('edit_task', {path: '/tasks/:task_id/edit'});
+		this.route('new_task', {path: '/tasks/new'});
 	});
 
 	App.IndexRoute = Ember.Route.extend({

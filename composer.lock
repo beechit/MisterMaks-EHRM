@@ -143,12 +143,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/couchdb-odm.git",
-                "reference": "6e8dbe81099747f52ca44b0dfe9d0f0e225bd849"
+                "reference": "23f95b729edffe62430802c03da14131c2e483e6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/couchdb-odm/zipball/6e8dbe81099747f52ca44b0dfe9d0f0e225bd849",
-                "reference": "6e8dbe81099747f52ca44b0dfe9d0f0e225bd849",
+                "url": "https://api.github.com/repos/doctrine/couchdb-odm/zipball/23f95b729edffe62430802c03da14131c2e483e6",
+                "reference": "23f95b729edffe62430802c03da14131c2e483e6",
                 "shasum": ""
             },
             "require": {
@@ -163,7 +163,7 @@
             "suggest": {
                 "symfony/yaml": ">=2.0.0,<2.2.0-dev"
             },
-            "time": "2013-01-28 18:04:52",
+            "time": "2013-02-24 22:17:29",
             "type": "library",
             "autoload": {
                 "psr-0": {
@@ -486,7 +486,7 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/radmiraal/Radmiraal.CouchDB.git",
-                "reference": "f28a24ca7bab2968930be50aa5be6943ae59aa78"
+                "reference": "b87661ace46aa657b56d7b2638daa4cbae0ee5b9"
             },
             "require": {
                 "doctrine/couchdb-odm": "dev-master",
@@ -494,7 +494,7 @@
                 "doctrine/orm": "2.3.1",
                 "typo3/flow": "*"
             },
-            "time": "2013-01-17 11:11:07",
+            "time": "2013-02-25 14:37:17",
             "type": "typo3-flow-package",
             "autoload": {
                 "psr-0": {
@@ -511,18 +511,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/radmiraal/Radmiraal.Emberjs.git",
-                "reference": "0f19af81d836540dc811b3269d33f4a91f15642b"
+                "reference": "849b3c8b4d49d9aeb3cafcf74898d866d214c185"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/radmiraal/Radmiraal.Emberjs/zipball/0f19af81d836540dc811b3269d33f4a91f15642b",
-                "reference": "0f19af81d836540dc811b3269d33f4a91f15642b",
+                "url": "https://api.github.com/repos/radmiraal/Radmiraal.Emberjs/zipball/849b3c8b4d49d9aeb3cafcf74898d866d214c185",
+                "reference": "849b3c8b4d49d9aeb3cafcf74898d866d214c185",
                 "shasum": ""
             },
             "require": {
                 "typo3/flow": "*"
             },
-            "time": "2013-02-21 20:45:31",
+            "time": "2013-02-25 16:26:36",
             "type": "typo3-flow-package",
             "autoload": {
                 "psr-0": {
@@ -636,12 +636,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/DomCrawler.git",
-                "reference": "v2.2.0-RC2"
+                "reference": "v2.2.0-RC3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/DomCrawler/zipball/v2.2.0-RC2",
-                "reference": "v2.2.0-RC2",
+                "url": "https://api.github.com/repos/symfony/DomCrawler/zipball/v2.2.0-RC3",
+                "reference": "v2.2.0-RC3",
                 "shasum": ""
             },
             "require": {
@@ -653,7 +653,7 @@
             "suggest": {
                 "symfony/css-selector": "2.2.*"
             },
-            "time": "2013-02-08 16:10:52",
+            "time": "2013-02-23 06:46:07",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -689,12 +689,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Yaml.git",
-                "reference": "882b70fb7072e3f1fa95d249fd527a4e3998dc1a"
+                "reference": "v2.1.8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Yaml/zipball/882b70fb7072e3f1fa95d249fd527a4e3998dc1a",
-                "reference": "882b70fb7072e3f1fa95d249fd527a4e3998dc1a",
+                "url": "https://api.github.com/repos/symfony/Yaml/zipball/v2.1.8",
+                "reference": "v2.1.8",
                 "shasum": ""
             },
             "require": {
@@ -1032,12 +1032,12 @@
             "source": {
                 "type": "git",
                 "url": "ssh://git.beech.local/EHRM/Package/DevTools.git",
-                "reference": "2c6846cce2a556eabaf41e31478299f2e144af74"
+                "reference": "f5b151400fc14e82885609800d9506016f81dc70"
             },
             "require": {
                 "typo3/flow": "*"
             },
-            "time": "2013-02-21 23:26:10",
+            "time": "2013-02-22 11:31:30",
             "type": "typo3-flow-beech",
             "autoload": {
                 "psr-0": {
