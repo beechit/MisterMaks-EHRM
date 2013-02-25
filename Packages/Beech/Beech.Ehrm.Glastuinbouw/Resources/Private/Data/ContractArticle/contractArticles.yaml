@@ -2,7 +2,7 @@
 # varified yaml of the contract article repository CLA GTB
 ######################################################################
 ---
-contactArticles:
+contractArticles:
   CLA: None
   CLAversion: ''
   CLAversiondate: ''
