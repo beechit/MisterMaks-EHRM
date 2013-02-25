@@ -23,7 +23,7 @@
 							<td>{contract.status}</td>
 							<td>{contract.creationDate -> f:format.date(format: 'Y-m-d H:i')}</td>
 							<td>
-								<f:link.action action="delete" arguments="{contract: contract}"><i class="icon-trash"></i></f:link.action>
+								<f:link.action action="show" controller="Contract" package="Beech.CLA" subpackage="Administration" arguments="{contract: contract}"><i class="icon-camera"></i></f:link.action>
 							</td>
 						</tr>
 					</f:for>
@@ -35,7 +35,7 @@
 		</f:else>
 	</f:if>
 	<div class="form-actions">
-		<a class="btn btn-primary" href="/{f:uri.action(package: 'Beech.CLA', subpackage: 'Administration', controller: 'contract', action: 'new')}">
+		<a class="btn btn-primary" href="/{f:uri.action(package: 'Beech.CLA', subpackage: 'Administration', controller: 'contract', action: 'select')}">
 			<i class="icon-plus icon-white"></i> <f:translate id="action.create">Create</f:translate>
 		</a>
 		<a class="btn btn-primary" href="/#/persons">

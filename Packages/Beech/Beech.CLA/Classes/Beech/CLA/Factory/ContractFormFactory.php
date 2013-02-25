@@ -22,44 +22,119 @@ class ContractFormFactory extends \TYPO3\Form\Factory\AbstractFormFactory {
 	protected $modelInterpreter;
 
 	/**
+	 * @var \TYPO3\Form\Core\Model\FormDefinition
+	 */
+	protected $form;
+
+	/**
+	 * Contains setting's values passed to form
+	 *
+	 * @var array
+	 */
+	protected $factorySpecificConfiguration;
+
+	/**
+	 * Initial page index
+	 *
+	 * @var integer
+	 */
+	protected $pageIndex = 1;
+
+	/**
+	 * Number of fields per page
+	 *
+	 * @var integer
+	 */
+	protected $fieldsPerPage = 3;
+
+	/**
+	 * @param array $factorySpecificConfiguration
+	 * @param string $presetName
+	 * @return void
+	 */
+	protected function init($factorySpecificConfiguration, $presetName) {
+		$this->factorySpecificConfiguration = $factorySpecificConfiguration;
+		$formConfiguration = $this->getPresetConfiguration($presetName);
+		$this->form = new FormDefinition('contractCreator', $formConfiguration);
+	}
+
+	/**
 	 * @param array $factorySpecificConfiguration
 	 * @param string $presetName
 	 * @return \TYPO3\Form\Core\Model\FormDefinition
 	 */
 	public function build(array $factorySpecificConfiguration, $presetName) {
-		$formConfiguration = $this->getPresetConfiguration($presetName);
-		$form = new FormDefinition('contractCreator', $formConfiguration);
+		$this->init($factorySpecificConfiguration, $presetName);
+		if (!isset($this->factorySpecificConfiguration['contractTemplate'])) {
+			$selectTemplateStep = $this->form->createPage('initialStep');
+			$selectTemplateStep->createElement('contractTemplate', 'Beech.CLA:ContractTemplateSelect');
+				// Employee field
+			$selectTemplateStep->createElement('employee', 'Beech.Party:EmployeeSelect');
+				// Job description field
+			$selectTemplateStep->createElement('jobDescription', 'Beech.CLA:JobDescriptionSelect');
+			$redirectFinisher = new \Beech\CLA\Finishers\RedirectToTemplateFinisher();
+			$redirectFinisher->setOptions(
+				array(
+					'action' => 'start',
+					'controller' => 'Contract',
+					'package' => 'Beech.CLA\\Administration'
+				)
+			);
 
-		$initialStep = $form->createPage('initialStep');
+			$this->form->addFinisher($redirectFinisher);
+		} else {
+			while ($this->nextArticlesPage()) {
+				$this->pageIndex++;
+			}
+			$lastPage = $this->form->getPageByIndex(0);
+			$contractTemplateField = $lastPage->createElement('contractTemplate', 'TYPO3.Form:HiddenField');
+			$contractTemplateField->setDefaultValue($this->factorySpecificConfiguration['contractTemplate']);
+			$employeeField = $lastPage->createElement('employee', 'TYPO3.Form:HiddenField');
+			$employeeField->setDefaultValue($this->factorySpecificConfiguration['employee']);
+			$jobDescriptionField = $lastPage->createElement('jobDescription', 'TYPO3.Form:HiddenField');
+			$jobDescriptionField->setDefaultValue($this->factorySpecificConfiguration['jobDescription']);
 
-			// Employee field
-		$initialStep->createElement('employee', 'Beech.Party:EmployeeSelect');
+			$databaseFinisher = new \Beech\Ehrm\Form\Finishers\DatabaseFinisher();
+			$databaseFinisher->setOptions(
+				array(
+					'model' => 'Contract',
+					'package' => 'Beech.CLA'
+				)
+			);
+			$this->form->addFinisher($databaseFinisher);
 
-			// Contract template field
-		$initialStep->createElement('contractTemplate', 'Beech.CLA:ContractTemplateSelect');
-
-			// Job description field
-		$initialStep->createElement('jobDescription', 'Beech.CLA:JobDescriptionSelect');
-
-		$articlesStep = $form->createPage('articlesStep');
-
-			// Articles section
-		$articlesStep->createElement('articles', 'Beech.CLA:ContractArticlesSection');
-
-		$databaseFinisher = new \Beech\Ehrm\Form\Finishers\DatabaseFinisher();
-		$databaseFinisher->setOptions(
-			array('model' => 'Contract', 'package' => 'Beech.CLA')
-		);
-		$form->addFinisher($databaseFinisher);
-
-		$redirectFinisher = new \TYPO3\Form\Finishers\RedirectFinisher();
-		$redirectFinisher->setOptions(
-			array('action' => 'list')
-		);
-		$form->addFinisher($redirectFinisher);
-		return $form;
+			$redirectFinisher = new \TYPO3\Form\Finishers\RedirectFinisher();
+			$redirectFinisher->setOptions(
+				array(
+					'action' => 'list',
+					'package' => 'Beech.CLA\\Administration'
+				)
+			);
+			$this->form->addFinisher($redirectFinisher);
+		}
+		return $this->form;
 	}
 
+	/**
+	 * Create next page
+	 * Return FALSE when there is no elements on page
+	 *
+	 * @return boolean
+	 */
+	protected function nextArticlesPage() {
+		$articlesPage = $this->form->createPage('articlesStep' . $this->pageIndex);
+
+		$articlesSection = $articlesPage->createElement('articles' . $this->pageIndex, 'Beech.CLA:ContractArticlesSection');
+		$articlesSection->setContractTemplate($this->factorySpecificConfiguration['contractTemplate']);
+		$contractArticles = $articlesSection->getContractArticles(($this->pageIndex - 1) * $this->fieldsPerPage, $this->fieldsPerPage);
+		$articlesSection->initializeFormElement();
+		if (count($contractArticles) > 0) {
+			return TRUE;
+		} else {
+			$this->form->removePage($articlesPage);
+			return FALSE;
+		}
+	}
 }
 
 ?>

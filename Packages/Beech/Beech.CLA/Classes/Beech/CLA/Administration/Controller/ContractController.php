@@ -28,6 +28,25 @@ class ContractController extends \Beech\Ehrm\Controller\AbstractManagementContro
 	protected $repositoryClassName = 'Beech\CLA\Domain\Repository\ContractRepository';
 
 	/**
+	 * Select contract template
+	 */
+	public function selectAction() {
+	}
+
+	/**
+	 * @param string $contractTemplate
+	 * @param string $employee
+	 * @param string $jobDescription
+	 */
+	public function startAction($contractTemplate, $employee, $jobDescription) {
+		$this->view->assign('overrideConfiguration', array(
+			'contractTemplate' => $contractTemplate,
+			'employee' => $employee,
+			'jobDescription' => $jobDescription
+		));
+	}
+
+	/**
 	 * Adds the given new contract object to the contract repository
 	 *
 	 * @param \Beech\CLA\Domain\Model\Contract $contract A new contract to add

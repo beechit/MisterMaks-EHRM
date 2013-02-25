@@ -16,6 +16,16 @@ use TYPO3\Flow\Annotations as Flow,
  * @ODM\Document(indexed=true)
  */
 class ContractArticle extends \Beech\Ehrm\Domain\Model\Document {
+
+	/**
+	 * The articleId
+	 *
+	 * @var integer
+	 * @ODM\Field(type="integer")
+	 * @ODM\Index
+	 */
+	protected $articleId;
+
 }
 
 ?>
