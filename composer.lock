@@ -511,18 +511,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/radmiraal/Radmiraal.Emberjs.git",
-                "reference": "849b3c8b4d49d9aeb3cafcf74898d866d214c185"
+                "reference": "ccecad8dde277af2a31171214b738ab6204ccd00"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/radmiraal/Radmiraal.Emberjs/zipball/849b3c8b4d49d9aeb3cafcf74898d866d214c185",
-                "reference": "849b3c8b4d49d9aeb3cafcf74898d866d214c185",
+                "url": "https://api.github.com/repos/radmiraal/Radmiraal.Emberjs/zipball/ccecad8dde277af2a31171214b738ab6204ccd00",
+                "reference": "ccecad8dde277af2a31171214b738ab6204ccd00",
                 "shasum": ""
             },
             "require": {
                 "typo3/flow": "*"
             },
-            "time": "2013-02-25 16:26:36",
+            "time": "2013-02-25 20:51:06",
             "type": "typo3-flow-package",
             "autoload": {
                 "psr-0": {
