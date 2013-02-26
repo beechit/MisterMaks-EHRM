@@ -185,11 +185,6 @@ class HeaderPartsViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHel
 				// TODO: those url's are just for loading modules by AJAX, should be replaced by ember-data
 			'url' => (object)array(
 				'module' => (object)array(
-					'tasks' => $this->controllerContext->getUriBuilder()
-						->reset()
-						->setFormat('jsonp')
-						->setCreateAbsoluteUri(TRUE)
-						->uriFor('index', array(), 'Task', 'Beech.Task'),
 					'userSettings' => $this->controllerContext->getUriBuilder()
 						->reset()
 						->setFormat('jsonp')

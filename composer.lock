@@ -486,7 +486,7 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/radmiraal/Radmiraal.CouchDB.git",
-                "reference": "7a88a88aa52ee8d0aacbee79ba53c496f04d4c57"
+                "reference": "8163597eed0e8f50724d7be3fea992a75f07bfa2"
             },
             "require": {
                 "doctrine/couchdb-odm": "dev-master",
@@ -494,7 +494,7 @@
                 "doctrine/orm": "2.3.1",
                 "typo3/flow": "*"
             },
-            "time": "2013-02-26 09:54:12",
+            "time": "2013-02-26 10:57:07",
             "type": "typo3-flow-package",
             "autoload": {
                 "psr-0": {
