@@ -9,11 +9,11 @@
       label: 'Subject id'
       type: 'Beech\Party\Domain\Model\Person'
       validation:
-        type: 'NotEmpty'
+        -
+          type: 'NotEmpty'
     'departmentId':
       label: 'Department id'
       type: 'Beech\Party\Domain\Model\Company'
-      validation: ''
     'contractVersion':
       label: 'contractversion'
       validation:
@@ -112,13 +112,7 @@
             maximum: 20
     'contractDocumentId':
       label: 'Id of the document'
-      validation:
-        -
-          type: 'NotEmpty'
-        -
-          type: 'StringLength'
-          options:
-            maximum: 30
+      type: 'Beech\Document\Domain\Model\Document'
     'jobTitle':
       label: 'Jobtitle'
       validation:
@@ -229,7 +223,7 @@
             maximum: 62
       totalHours':
       label: 'Total hours of this contract'
-      type: decimal(4.2)
+      type: 'decimal(4.2)'
       validation:
         -
           type: 'RegularExpression'
@@ -237,7 +231,7 @@
             regularExpression: '^([1-9]\d*(\.|\,)\d*|0?(\.|\,)\d*[1-9]\d*|[1-9]\d*)$'
     'hoursAWeek':
       label: 'Hours a week'
-      type: decimal(2.2)
+      type: 'decimal(2.2)'
       validation:
         -
           type: 'RegularExpression'
@@ -280,7 +274,7 @@
                 regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
     'hourWage':
       label: 'Hour Wage'
-      type: decimal(3.2)
+      type: 'decimal(3.2)'
       validation:
         -
           type: 'RegularExpression'
@@ -331,7 +325,7 @@
       type: 'Beech\CLA\Domain\Model\LaborAgreement'
     'vacationAllowanceGLA':
       label: 'Vacation allowance in the GLA arrangment'
-      type: decimal(2.2)
+      type: 'decimal(2.2)'
       validation:
         -
           type: 'RegularExpression'
@@ -339,7 +333,7 @@
             regularExpression: '^([1-9]\d*(\.|\,)\d*|0?(\.|\,)\d*[1-9]\d*|[1-9]\d*)$'
     'vacationAllowancePercentage':
       label: 'Vacation allowance Percentage'
-      type: decimal(2.2)
+      type: 'decimal(2.2)'
       validation:
         -
           type: 'RegularExpression'
@@ -364,7 +358,7 @@
       type: 'boolean'
     'accomodationRentWeek':
       label: 'Accomodation rent for a week'
-      type: decimal(3.2)
+      type: 'decimal(3.2)'
       validation:
         -
           type: 'RegularExpression'
@@ -372,7 +366,7 @@
             regularExpression: '^([1-9]\d*(\.|\,)\d*|0?(\.|\,)\d*[1-9]\d*|[1-9]\d*)$'
     'accomodationRentMonth':
       label: 'Acomodation rent a month'
-      type: decimal(3.2)
+      type: 'decimal(3.2)'
       validation:
         -
           type: 'RegularExpression'
