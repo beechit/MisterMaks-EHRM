@@ -2,76 +2,73 @@
 # validated yaml for the contract article
 # this is the contract article model.
 #############################################################
----
-Beech:
-  CLA:
-    'ContractArticle':
-      properties:
-        'articleId':
-          label: 'Article Id'
-          validation:
-            -
-              type: 'NotEmpty'
-            -
-              type: 'StringLength'
-        'articleLabel':
-          label: 'Label'
-          validation:
-            type: 'NotEmpty'
-        'articleHeader':
-          label: 'Header'
-          validation:
-            -
-              type: 'NotEmpty'
-            -
-              type: 'Text'
-        'articleText':
-          label: 'Text'
-          validation:
-            -
-              type: 'NotEmpty'
-            -
-              type: 'Text'
-        'order':
-          label: 'Order'
-          validation:
-            -
-              type: 'NotEmpty'
-            -
-              type: 'Integer'
-        'creationDate':
+'Beech.CLA.Domain.Model.ContractArticle':
+  properties:
+    'articleId':
+      label: 'Article Id'
+      validation:
+        -
+          type: 'NotEmpty'
+        -
+          type: 'StringLength'
+    'articleLabel':
+      label: 'Label'
+      validation:
+        type: 'NotEmpty'
+    'articleHeader':
+      label: 'Header'
+      validation:
+        -
+          type: 'NotEmpty'
+        -
+          type: 'Text'
+    'articleText':
+      label: 'Text'
+      validation:
+        -
+          type: 'NotEmpty'
+        -
+          type: 'Text'
+    'order':
+      label: 'Order'
+      validation:
+        -
+          type: 'NotEmpty'
+        -
+          type: 'Integer'
+    'creationDate':
+      default: 'now'
+      label: 'creation date'
+      type: 'dateTime'
+      validation:
+        -
+          type: 'NotEmpty'
+        -
+          type: 'RegularExpression'
+          options:
+            regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
+    'createdBy':
+      default: 'currentUser'
+      label: 'Created by'
+      type: 'Beech\Party\Domain\Model\Person'
+      validation:
+        -
+          type: 'NotEmpty'
+    'modification':
+      items:
+        'modificationDate':
           default: 'now'
-          label: 'creation date'
+          label: 'Modification date'
           type: 'dateTime'
           validation:
-            -
-              type: 'NotEmpty'
             -
               type: 'RegularExpression'
               options:
                 regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
-        'createdBy':
+        'modifiedBy':
           default: 'currentUser'
-          label: 'Created by'
+          label: 'Modified by'
           type: 'Beech\Party\Domain\Model\Person'
-          validation:
-            -
-              type: 'NotEmpty'
-        'modification':
-          items:
-            'modificationDate':
-              default: 'now'
-              label: 'Modification date'
-              type: 'dateTime'
-              validation:
-                -
-                  type: 'RegularExpression'
-                  options:
-                    regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
-            'modifiedBy':
-              default: 'currentUser'
-              label: 'Modified by'
-              type: 'Beech\Party\Domain\Model\Person'
-              validation: ''
-          label: 'Modification log'
-          type: 'array'
+          validation: ''
+      label: 'Modification log'
+      type: 'array'

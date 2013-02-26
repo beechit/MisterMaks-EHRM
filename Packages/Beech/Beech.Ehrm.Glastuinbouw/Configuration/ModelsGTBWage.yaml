@@ -2,62 +2,60 @@
 # This is the Wagemodel for GTB wages
 #
 ##################################################
----
-Beech:
-  Party:
-    'modelGTBWage':
-      properties:
-        'wageGroup':
-          -
-            'step':
-              label: 'Step'
-              validation:
-                -
-                  type: 'StringLength'
-                  options:
-                    maximum: 15
-                -
-                  type: 'NotEmpty'
-            'value':
-              label: 'value'
-              default: '0,0'
-              validation:
-                -
-                  type: 'RegularExpression'
-                  options:
-                    regularExpression: '/^[0-9]{1,2}([\.][0-9]{0,2}){0,1}$/'
-                -
-                  type: 'NotEmpty'
-            'age':
-              label: 'Age'
-              validation:
-                -
-                  type: 'Integer'
-                -
-                  type: 'Count'
-                  options:
-                    minimum: 10
-                    maximum: 21
-        'label':
-          label: 'label'
-          validation:
-            -
-              type: 'Label'
-            -
-              type: 'StringLength'
-              options:
-                maximum: 20
-        'orbaPointsStart':
-          label: 'Orba Points start'
+
+'Beech.Party.Domain.Model.ModelGTBWage':
+  properties:
+    'wageGroup':
+      -
+        'step':
+          label: 'Step'
           validation:
             -
               type: 'StringLength'
               options:
-                maximum: 10
-        'orbaPointsEnd':
-          label: 'Orba Points end'
+                maximum: 15
+            -
+              type: 'NotEmpty'
+        'value':
+          label: 'value'
+          default: '0,0'
           validation:
             -
-              type: 'StringLength'
+              type: 'RegularExpression'
               options:
-                maximum: 10
+                regularExpression: '/^[0-9]{1,2}([\.][0-9]{0,2}){0,1}$/'
+            -
+              type: 'NotEmpty'
+        'age':
+          label: 'Age'
+          validation:
+            -
+              type: 'Integer'
+            -
+              type: 'Count'
+              options:
+                minimum: 10
+                maximum: 21
+    'label':
+      label: 'label'
+      validation:
+        -
+          type: 'Label'
+        -
+          type: 'StringLength'
+          options:
+            maximum: 20
+    'orbaPointsStart':
+      label: 'Orba Points start'
+      validation:
+        -
+          type: 'StringLength'
+          options:
+            maximum: 10
+    'orbaPointsEnd':
+      label: 'Orba Points end'
+      validation:
+        -
+          type: 'StringLength'
+          options:
+            maximum: 10

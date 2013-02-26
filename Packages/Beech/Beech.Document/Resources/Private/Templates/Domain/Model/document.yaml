@@ -19,7 +19,7 @@ model:
       id: createdBy
       label: 'creation by'
       required: TRUE
-      type: \Beech\Party\Domain\Model\Person
+      type: Beech\Party\Domain\Model\Person
       validation: ''
       visible: FALSE
     -
@@ -38,7 +38,7 @@ model:
           id: modifiedBy
           label: Modifiedby
           required: TRUE
-          type: \Beech\Party\Domain\Model\Person
+          type: Beech\Party\Domain\Model\Person
           validation: ''
           visible: FALSE
       label: ModificationLog

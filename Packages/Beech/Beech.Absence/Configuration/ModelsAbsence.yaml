@@ -2,133 +2,131 @@
 # validated yaml for the absence model
 # this is the absence model.
 #############################################################
-Beech:
-  Absence:
-    'Absence':
-      properties:
-        'absenceType':
-          label: 'Absence type'
+'Beech.Absence.Domain.Model.Absence':
+  properties:
+    'absenceType':
+      label: 'Absence type'
+      options:
+        values:
+          - 'accidentDuckLiftStandConcentration'
+          - 'focus'
+          - 'pressure'
+          - 'unknown'
+          - 'shorttermabsenteeism'
+          - 'labordispute'
+          - 'other'
+      validation:
+        -
+          type: 'NotEmpty'
+        -
+          type: 'StringLength'
+          option:
+            maximum: 30
+    'subjectId':
+      label: 'Subject id'
+      type: 'Beech\Party\Domain\Model\Person'
+      validation:
+        -
+          type: 'NotEmpty'
+    'departmentId':
+      label: 'Department id'
+      type: 'Beech\Party\Domain\Model\Company'
+      validation: ''
+    'firstSickDay':
+      label: 'First sick Day'
+      type: 'dateTime'
+      validation:
+        -
+          type: 'NotEmpty'
+        -
+          type: 'RegularExpression'
           options:
-            values:
-              - 'accidentDuckLiftStandConcentration'
-              - 'focus'
-              - 'pressure'
-              - 'unknown'
-              - 'shorttermabsenteeism'
-              - 'labordispute'
-              - 'other'
-          validation:
-            -
-              type: 'NotEmpty'
-            -
-              type: 'StringLength'
-              option:
-                maximum: 30
-        'subjectId':
-          label: 'Subject id'
-          type: 'Beech\Party\Domain\Model\Person'
-          validation:
-            -
-              type: 'NotEmpty'
-        'departmentId':
-          label: 'Department id'
-          type: 'Beech\Party\Domain\Model\Company'
-          validation: ''
-        'firstSickDay':
-          label: 'First sick Day'
-          type: 'dateTime'
-          validation:
-            -
-              type: 'NotEmpty'
-            -
-              type: 'RegularExpression'
-              options:
-                regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
-        'disabilityPercentage':
-          label: 'Disability percentage'
-          default: '0.0'
-          validation:
-            -
-              type: 'RegularExpression'
-              options:
-                regularExpression: '^([1-9]\d*(\.|\,)\d*|0?(\.|\,)\d*[1-9]\d*|[1-9]\d*)$'
-        'disabilityBackup':
-          label: 'Disability backup'
+            regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
+    'disabilityPercentage':
+      label: 'Disability percentage'
+      default: '0.0'
+      validation:
+        -
+          type: 'RegularExpression'
           options:
-            values:
-              - 'none'
-              - 'maternity'
-              - 'exWAOer'
-              - 'absentDueToOrganDonation'
-              - 'endOfContractWithin13Weeks'
-              - 'temporaryCallWorker'
-              - 'absentDueToPregnancy'
-              - 'disabilityBackup'
-              - 'adoptionLeaveFosterCare'
-              - 'workDisability'
-              - 'sickOnEndOfEmployment'
-          validation:
-            -
-              type: 'NotEmpty'
-            -
-              type: 'StringLength'
-              options:
-                maximum: 30
-        'recoveryDate':
-          label: 'Recovery date'
-          type: 'dateTime'
-          validation:
-            -
-              type: 'RegularExpression'
-              options:
-                regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
-        'arboActionType':
-          label: 'Arbo action type'
+            regularExpression: '^([1-9]\d*(\.|\,)\d*|0?(\.|\,)\d*[1-9]\d*|[1-9]\d*)$'
+    'disabilityBackup':
+      label: 'Disability backup'
+      options:
+        values:
+          - 'none'
+          - 'maternity'
+          - 'exWAOer'
+          - 'absentDueToOrganDonation'
+          - 'endOfContractWithin13Weeks'
+          - 'temporaryCallWorker'
+          - 'absentDueToPregnancy'
+          - 'disabilityBackup'
+          - 'adoptionLeaveFosterCare'
+          - 'workDisability'
+          - 'sickOnEndOfEmployment'
+      validation:
+        -
+          type: 'NotEmpty'
+        -
+          type: 'StringLength'
           options:
-            values:
-              - 'none'
-              - 'accordingToContract'
-              - 'urgentinspection'
-              - 'contactEmployer'
-          validation:
-            -
-              type: 'NotEmpty'
-            -
-              type: 'StringLength'
-              options:
-                maximum: 20
-        'creationDate':
+            maximum: 30
+    'recoveryDate':
+      label: 'Recovery date'
+      type: 'dateTime'
+      validation:
+        -
+          type: 'RegularExpression'
+          options:
+            regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
+    'arboActionType':
+      label: 'Arbo action type'
+      options:
+        values:
+          - 'none'
+          - 'accordingToContract'
+          - 'urgentinspection'
+          - 'contactEmployer'
+      validation:
+        -
+          type: 'NotEmpty'
+        -
+          type: 'StringLength'
+          options:
+            maximum: 20
+    'creationDate':
+      default: 'now'
+      label: 'creation date'
+      type: 'dateTime'
+      validation:
+        -
+          type: 'NotEmpty'
+        -
+          type: 'RegularExpression'
+          options:
+            regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
+    'createdBy':
+      default: 'currentUser'
+      label: 'Created by'
+      type: 'Beech\Party\Domain\Model\Person'
+      validation:
+        -
+          type: 'NotEmpty'
+    'modification':
+      items:
+        'modificationDate':
           default: 'now'
-          label: 'creation date'
+          label: 'Modification date'
           type: 'dateTime'
           validation:
-            -
-              type: 'NotEmpty'
             -
               type: 'RegularExpression'
               options:
                 regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
-        'createdBy':
+        'modifiedBy':
           default: 'currentUser'
-          label: 'Created by'
+          label: 'Modified by'
           type: 'Beech\Party\Domain\Model\Person'
-          validation:
-            -
-              type: 'NotEmpty'
-        'modification':
-          items:
-            'modificationDate':
-              default: 'now'
-              label: 'Modification date'
-              type: 'dateTime'
-              validation:
-                -
-                  type: 'RegularExpression'
-                  options:
-                    regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
-            'modifiedBy':
-              default: 'currentUser'
-              label: 'Modified by'
-              type: 'Beech\Party\Domain\Model\Person'
-          label: 'Modification log'
-          type: 'array'
+      label: 'Modification log'
+      type: 'array'

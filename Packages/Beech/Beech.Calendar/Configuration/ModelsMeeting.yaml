@@ -3,168 +3,166 @@
 # this is the meeting model.
 # todo: recheck calendar api's on internet
 #############################################################
-Beech:
-  Calendar:
-    'Meeting':
-      properties:
-        'meetingId':
-          label: 'Meeting ID'
-          validation:
-            -
-              type: 'StringLength'
-              options:
-                maximum: 20
-        'status':
-          label: 'Status'
-          default: 'tentative'
+'Beech.Calendar.Domain.Model.Meeting':
+  properties:
+    'meetingId':
+      label: 'Meeting ID'
+      validation:
+        -
+          type: 'StringLength'
+          options:
+            maximum: 20
+    'status':
+      label: 'Status'
+      default: 'tentative'
+      options:
+        values:
+          - 'confirmed'
+          - 'tentative'
+          - 'cancelled'
+      validation: ''
+    'summary':
+      label: 'Summary'
+      validation:
+        -
+          type: 'Text'
+    'description':
+      label: 'Description'
+      validation:
+        -
+          type: 'StringLength'
+          options:
+            maximum: 20
+    'location':
+      label: 'Meeting location'
+      validation:
+        -
+          type: 'StringLength'
+          options:
+            maximum: 30
+    'organiserId':
+      label: 'Organiser id'
+      type: 'Beech\Party\Domain\Model\Person'
+      validation:
+        -
+          type: 'NotEmpty'
+    'start':
+      label: 'Start'
+      type: 'dateTime'
+      validation:
+        -
+          type: 'RegularExpression'
+          options:
+            regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
+    'end':
+      label: 'End'
+      type: 'dateTime'
+      validation:
+        -
+          type: 'RegularExpression'
+          options:
+            regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
+    'attendees':
+      items:
+        'personId':
+          label: 'Person id'
+          type: 'Beech\Party\Domain\Model\Person'
+        'optional':
+          label: 'Optional'
+          type: 'boolean'
+        'responseStatus':
+          label: 'Response status'
           options:
             values:
-              - 'confirmed'
+              - 'declined'
               - 'tentative'
-              - 'cancelled'
-          validation: ''
-        'summary':
-          label: 'Summary'
+              - 'accepted'
           validation:
             -
-              type: 'Text'
-        'description':
-          label: 'Description'
+              type: 'NotEmpty'
+            -
+              type: 'StringLength'
+              options:
+                maximum: 20
+        'comment':
+          label: 'comment'
+          validation:
+            type: 'Text'
+      label: 'Attendees'
+      type: 'array'
+    'relations':
+      items:
+        'minutesId':
+          label: 'Minutes id'
           validation:
             -
               type: 'StringLength'
               options:
                 maximum: 20
-        'location':
-          label: 'Meeting location'
+        'documentId':
+          label: 'Document id'
           validation:
             -
               type: 'StringLength'
               options:
-                maximum: 30
-        'organiserId':
-          label: 'Organiser id'
-          type: 'Beech\Party\Domain\Model\Person'
-          validation:
-            -
-              type: 'NotEmpty'
-        'start':
-          label: 'Start'
-          type: 'dateTime'
-          validation:
-            -
-              type: 'RegularExpression'
-              options:
-                regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
-        'end':
-          label: 'End'
-          type: 'dateTime'
-          validation:
-            -
-              type: 'RegularExpression'
-              options:
-                regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
-        'attendees':
-          items:
-            'personId':
-              label: 'Person id'
-              type: 'Beech\Party\Domain\Model\Person'
-            'optional':
-              label: 'Optional'
-              type: 'boolean'
-            'responseStatus':
-              label: 'Response status'
-              options:
-                values:
-                  - 'declined'
-                  - 'tentative'
-                  - 'accepted'
-              validation:
-                -
-                  type: 'NotEmpty'
-                -
-                  type: 'StringLength'
-                  options:
-                    maximum: 20
-            'comment':
-              label: 'comment'
-              validation:
-                type: 'Text'
-          label: 'Attendees'
-          type: 'array'
-        'relations':
-          items:
-            'minutesId':
-              label: 'Minutes id'
-              validation:
-                -
-                  type: 'StringLength'
-                  options:
-                    maximum: 20
-            'documentId':
-              label: 'Document id'
-              validation:
-                -
-                  type: 'StringLength'
-                  options:
-                    maximum: 20
-            'documentType':
-              label: 'Document type'
-              options:
-                values: []
-              validation:
-                -
-                  type: 'StringLength'
-                  options:
-                    maximum: 20
-          label: 'Relations'
-          type: 'array'
-          validation: ''
-        'planNextMeeting':
-          label: 'Plan next meeting'
-          type: 'boolean'
-        'notification':
-          label: 'Notification'
-          type: 'boolean'
-        'notificationMethod':
-          label: 'Notification method'
+                maximum: 20
+        'documentType':
+          label: 'Document type'
           options:
-            values:
-              - 'e-mail'
-              - 'sms'
-              - 'notification'
+            values: []
           validation:
             -
-              type: 'NotEmpty'
-        'creationDate':
+              type: 'StringLength'
+              options:
+                maximum: 20
+      label: 'Relations'
+      type: 'array'
+      validation: ''
+    'planNextMeeting':
+      label: 'Plan next meeting'
+      type: 'boolean'
+    'notification':
+      label: 'Notification'
+      type: 'boolean'
+    'notificationMethod':
+      label: 'Notification method'
+      options:
+        values:
+          - 'e-mail'
+          - 'sms'
+          - 'notification'
+      validation:
+        -
+          type: 'NotEmpty'
+    'creationDate':
+      default: 'now'
+      label: 'creation date'
+      type: 'dateTime'
+      validation:
+        -
+          type: 'RegularExpression'
+          options:
+            regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
+    'createdBy':
+      default: 'currentUser'
+      label: 'Created by'
+      type: 'Beech\Party\Domain\Model\Person'
+      validation:
+        type: 'NotEmpty'
+    'modification':
+      items:
+        'modificationDate':
           default: 'now'
-          label: 'creation date'
+          label: 'Modification date'
           type: 'dateTime'
           validation:
-            -
-              type: 'RegularExpression'
-              options:
-                regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
-        'createdBy':
+            type: 'RegularExpression'
+            options:
+              regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
+        'modifiedBy':
           default: 'currentUser'
-          label: 'Created by'
+          label: 'Modified by'
           type: 'Beech\Party\Domain\Model\Person'
-          validation:
-            type: 'NotEmpty'
-        'modification':
-          items:
-            'modificationDate':
-              default: 'now'
-              label: 'Modification date'
-              type: 'dateTime'
-              validation:
-                type: 'RegularExpression'
-                options:
-                  regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
-            'modifiedBy':
-              default: 'currentUser'
-              label: 'Modified by'
-              type: 'Beech\Party\Domain\Model\Person'
-              validation: ''
-          label: 'Modification log'
-          type: 'array'
+          validation: ''
+      label: 'Modification log'
+      type: 'array'

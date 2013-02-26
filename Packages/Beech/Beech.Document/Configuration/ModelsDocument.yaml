@@ -3,38 +3,35 @@
 # this is the document model.
 # todo define this model.
 #############################################################
----
-Beech:
-  Document:
-    'Document':
-      properties:
-        creationDate:
-          label: 'creation date'
+'Beech.Document.Domain.Model.Document':
+  properties:
+    creationDate:
+      label: 'creation date'
+      type: 'dateTime'
+      validation:
+        type: 'RegularExpression'
+        options:
+          regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
+    'createdBy':
+      default: 'currentUser'
+      label: 'Created by'
+      type: 'Beech\Party\Domain\Model\Person'
+      validation:
+        type: 'NotEmpty'
+    'modification':
+      items:
+        'modificationDate':
+          default: 'now'
+          label: 'Modification date'
           type: 'dateTime'
           validation:
             type: 'RegularExpression'
             options:
               regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
-        'createdBy':
+        'modifiedBy':
           default: 'currentUser'
-          label: 'Created by'
+          label: 'Modified by'
           type: 'Beech\Party\Domain\Model\Person'
-          validation:
-            type: 'NotEmpty'
-        'modification':
-          items:
-            'modificationDate':
-              default: 'now'
-              label: 'Modification date'
-              type: 'dateTime'
-              validation:
-                type: 'RegularExpression'
-                options:
-                  regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
-            'modifiedBy':
-              default: 'currentUser'
-              label: 'Modified by'
-              type: 'Beech\Party\Domain\Model\Person'
-              validation: ''
-          label: 'Modification log'
-          type: 'array'
+          validation: ''
+      label: 'Modification log'
+      type: 'array'

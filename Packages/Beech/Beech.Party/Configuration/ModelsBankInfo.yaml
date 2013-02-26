@@ -2,112 +2,109 @@
 # validated yaml for the BankInfoModel
 # here are the bank data for companys departmens, persons
 #############################################################
----
-Beech:
-  Party:
-    'ModelsBankInfo':
-      properties:
-        'connectionType':
-          label: 'ConnectionType'
+'Beech.Party.Domain.Model.BankInfo':
+  properties:
+    'connectionType':
+      label: 'ConnectionType'
+      options:
+        values:
+          - 'company'
+          - 'person'
+          - 'department'
+      validation:
+        -
+          type: 'NotEmpty'
+        -
+          Type: 'StringLength'
+          options:
+            maximum: 10
+    'personid':
+      label: 'Person ID'
+      type: 'Beech\Party\Domain\Model\Person'
+    'departmentId':
+      label: 'Department ID'
+      type: 'Beech\Party\Domain\Model\Company'
+    'bankInformation':
+      items:
+        'accountType':
+          label: 'account type'
           options:
             values:
-              - 'company'
-              - 'person'
-              - 'department'
+              - 'giroAccount'
+              - 'bankaccount'
+              - 'bankAccountAbroad'
           validation:
             -
               type: 'NotEmpty'
             -
-              Type: 'StringLength'
+              type: 'StringLength'
               options:
-                maximum: 10
-        'personid':
-          label: 'Person ID'
-          type: 'Beech\Party\Domain\Model\Person'
-        'departmentId':
-          label: 'Department ID'
-          type: 'Beech\Party\Domain\Model\Company'
-        'bankInformation':
-          items:
-            'accountType':
-              label: 'account type'
+                maximum: 20
+        'bankName':
+          label: 'Bank name'
+          validation:
+            -
+              type: 'StringLength'
               options:
-                values:
-                  - 'giroAccount'
-                  - 'bankaccount'
-                  - 'bankAccountAbroad'
-              validation:
-                -
-                  type: 'NotEmpty'
-                -
-                  type: 'StringLength'
-                  options:
-                    maximum: 20
-            'bankName':
-              label: 'Bank name'
-              validation:
-                -
-                  type: 'StringLength'
-                  options:
-                    maximum: 30
-                -
-                  type: 'RegularExpression'
-                  options:
-                    regularExpression: '[a-zA-Z\\-\\s\\’]{2,20}'
-            'primaryBankAccount':
-              label: 'Primary Bankaccount'
-              type: 'boolean'
-            'giro':
-              label: 'Giro'
-              validation:
-               -
-                 type: 'RegularExpression'
-                 options:
-                   regularExpression: '\\d{1,7}'
-               -
-                 type: 'StringLength'
-                 options:
-                  maximum: 7
-            'bic':
-              label: 'Bic code'
-              validation:
-                -
-                  type: 'StringLength'
-                  options:
-                    maximum: 11
-                -
-                  type: 'RegularExpression'
-                  options:
-                    regularExpression: '[1-9]{8}|[1-9]{11}'
-            'ibanNumber':
-              label: 'IBAN number'
-              validation:
-                -
-                  type: 'RegularExpression'
-                  options:
-                    regularExpression: '/[a-zA-Z]{2}[0-9]{2}[a-zA-Z0-9]{4}[0-9]{7}([a-zA-Z0-9]?){0,16}/g'
-                -
-                  type: 'StringLength'
-                  options:
-                    maximum: 34
-            'countryOfBank':
-              default: 'NL'
-              label: 'Country bank'
-              validation:
-                -
-                  type: 'StringLength'
-                  options:
-                    maximum: 40
-            'bankResidence':
-              label: 'bank residence'
-              validation:
-                -
-                  type: 'StringLength'
-                  options:
-                    maximum: 30
-                -
-                  type: 'RegularExpression'
-                  options:
-                    regularExpression: '[a-zA-Z0-9\\-\\’]{2,30}'
-          label: 'Bank information'
-          type: 'array'
+                maximum: 30
+            -
+              type: 'RegularExpression'
+              options:
+                regularExpression: '[a-zA-Z\\-\\s\\’]{2,20}'
+        'primaryBankAccount':
+          label: 'Primary Bankaccount'
+          type: 'boolean'
+        'giro':
+          label: 'Giro'
+          validation:
+           -
+             type: 'RegularExpression'
+             options:
+               regularExpression: '\\d{1,7}'
+           -
+             type: 'StringLength'
+             options:
+              maximum: 7
+        'bic':
+          label: 'Bic code'
+          validation:
+            -
+              type: 'StringLength'
+              options:
+                maximum: 11
+            -
+              type: 'RegularExpression'
+              options:
+                regularExpression: '[1-9]{8}|[1-9]{11}'
+        'ibanNumber':
+          label: 'IBAN number'
+          validation:
+            -
+              type: 'RegularExpression'
+              options:
+                regularExpression: '/[a-zA-Z]{2}[0-9]{2}[a-zA-Z0-9]{4}[0-9]{7}([a-zA-Z0-9]?){0,16}/g'
+            -
+              type: 'StringLength'
+              options:
+                maximum: 34
+        'countryOfBank':
+          default: 'NL'
+          label: 'Country bank'
+          validation:
+            -
+              type: 'StringLength'
+              options:
+                maximum: 40
+        'bankResidence':
+          label: 'bank residence'
+          validation:
+            -
+              type: 'StringLength'
+              options:
+                maximum: 30
+            -
+              type: 'RegularExpression'
+              options:
+                regularExpression: '[a-zA-Z0-9\\-\\’]{2,30}'
+      label: 'Bank information'
+      type: 'array'
