@@ -13,14 +13,18 @@
 			// Administration mappings
 		this.route('administration');
 		this.route('userManagementModule', { path: '/administration/usermanagement' });
-		this.resource('personAdministration', { path: '/administration/persons/' }, function() {
-			this.resource('model', { path: '/:id' }, function() {
-				this.route('edit');
-			});
-			this.route('new');
-		});
 
 			// Beech.Party
+		this.resource('personsAdministration', {path: '/administration/persons/'});
+		this.resource('personAdministration', {path: '/administration/persons/:id'});
+		this.route('personAdministrationEdit', {path: '/administration/persons/:id/edit'});
+		this.route('personAdministrationNew', {path: '/administration/persons/new'});
+
+		this.resource('persons', {path: '/persons/'});
+		this.resource('person', {path: '/persons/:id'});
+		this.route('personEdit', {path: '/persons/:id/edit'});
+		this.route('personNew', {path: '/persons/new'});
+
 		this.resource('companies',{path: '/administration/companies'});
 		this.resource('company', {path: '/administration/companies/:company_id'});
 		this.route('edit_company', {path: '/administration/companies/:company_id/edit'});

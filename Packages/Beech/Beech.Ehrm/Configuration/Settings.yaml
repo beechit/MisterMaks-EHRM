@@ -33,12 +33,14 @@ Beech:
           - 'Beech.Ehrm/JavaScript/Mixins/ModelRoute.js'
           - 'Beech.Ehrm/JavaScript/Mixins/Model.js'
           - 'Beech.Party/JavaScript/Model/Company.js'
+          - 'Beech.Party/JavaScript/Model/Person.js'
           - 'Beech.Task/JavaScript/Model/Priority.js'
           - 'Beech.Task/JavaScript/Model/Task.js'
           - 'Beech.Ehrm/JavaScript/Router.js'
           - 'Beech.Task/JavaScript/Route/Task.js'
           - 'Beech.Ehrm/JavaScript/Router.js'
           - 'Beech.Party/JavaScript/Route/Company.js'
+          - 'Beech.Party/JavaScript/Route/Person.js'
           - 'Beech.Ehrm/JavaScript/ModuleHandler.js'
           - 'Beech.Ehrm/JavaScript/Application.js'
           - 'Beech.Ehrm/JavaScript/Component/UserInterface/BreadcrumbMenu.js'
@@ -46,6 +48,7 @@ Beech:
           - 'Beech.Task/JavaScript/Controller/Task.js'
           - 'Beech.Task/JavaScript/Controller/TaskWidget.js'
           - 'Beech.Party/JavaScript/Controller/Company.js'
+          - 'Beech.Party/JavaScript/Controller/Person.js'
 
     viewHelpers:
       partialRootPath: 'resource://Beech.Ehrm/Private/Templates/ViewHelpers/Partials/'
