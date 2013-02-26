@@ -9,10 +9,10 @@
 		this.route('contractArticleModule', { path: '/administration/contractarticles' });
 		this.route('contractModule', { path: '/administration/contracts' });
 		this.route('documentModule', { path: '/documents' });
+		this.route('userManagementModule', { path: '/administration/usermanagement' });
 
 			// Administration mappings
 		this.route('administration');
-		this.route('userManagementModule', { path: '/administration/usermanagement' });
 
 			// Beech.Party
 		this.resource('personsAdministration', {path: '/administration/persons/'});

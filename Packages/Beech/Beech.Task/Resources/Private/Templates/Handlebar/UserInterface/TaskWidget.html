@@ -1,0 +1,23 @@
+{namespace mm=Beech\Ehrm\ViewHelpers}
+<h3>Tasks {{#linkTo "taskModule" class="pull-right" rel="tooltip" data-placement="left" title="Go to all tasks"}}<i class="icon-tasks"></i>{{/linkTo}}</h3>
+<div class="accordion" id="tasklist">
+	{{#each content}}
+		<div class="accordion-group">
+			<div class="accordion-heading">
+				<a class="accordion-toggle" data-toggle="collapse" data-parent="#tasklist" href="#taskwidget-priority{{unbound id}}">
+					{{label}}
+				</a>
+				<span class="badge badge-important">{{tasks.length}}</span>
+			</div>
+			<div id="taskwidget-priority{{unbound id}}" class="accordion-body collapse">
+				<div class="accordion-inner">
+					<ul class="unstyled">
+						{{#each tasks}}
+						<li>{{description}}</li>
+						{{/each}}
+					</ul>
+				</div>
+			</div>
+		</div>
+	{{/each}}
+</div>
