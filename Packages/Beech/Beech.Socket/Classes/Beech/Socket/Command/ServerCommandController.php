@@ -38,6 +38,12 @@ class ServerCommandController extends \TYPO3\Flow\Cli\CommandController {
 	protected $notificationRepository;
 
 	/**
+	 * @Flow\Inject
+	 * @var \TYPO3\Flow\Session\SessionManagerInterface
+	 */
+	protected $sessionManager;
+
+	/**
 	 * Starts the socket server
 	 *
 	 * @param integer $port The port number to bind to
@@ -48,18 +54,20 @@ class ServerCommandController extends \TYPO3\Flow\Cli\CommandController {
 		$loop = new Loop();
 		$socketServer = new WebSocketServer($loop);
 		$connections = new \SplObjectStorage();
-		$sessions = array();
+		$accountConnections = array();
 
 		$socketServer->on('connection', function($connection) use ($connections, $socketServer) {
 			$connections->attach($connection);
 		});
 
-		$socketServer->on('handshake', function($connection) use ($connections, &$sessions) {
+		$socketServer->on('handshake', function($connection) use ($connections, &$accountConnections) {
 
-			$connection->once('data', function($data) use ($connection, &$sessions) {
+			$connection->once('data', function($data) use ($connection, &$accountConnections) {
 				$sessionIdentifier = WebSocketServer::unmask($data);
-				$sessions[$sessionIdentifier] = $connection;
-				$this->logger->log(sprintf('Registered connection for session %s (%s)', $sessionIdentifier, $connection->getRemoteAddress()));
+				$session = $this->sessionManager->getSession($sessionIdentifier);
+				$accountIdentifier = $session->getData('accountIdentifier');
+				$accountConnections[$accountIdentifier] = $connection;
+				$this->logger->log(sprintf('Registered connection for account "%s" (session %s via %s)', $accountIdentifier, $sessionIdentifier, $connection->getRemoteAddress()));
 			});
 
 			$connection->on('end', function($connection) use ($connections, &$sessions) {
@@ -72,22 +80,23 @@ class ServerCommandController extends \TYPO3\Flow\Cli\CommandController {
 			});
 		});
 
-		$loop->addPeriodicTimer(5, function() use ($connections) {
+		$loop->addPeriodicTimer(5, function() use ($connections, &$accountConnections) {
 			$notifications = $this->notificationRepository->findAll();
-			if (count($notifications) > 0) {
-				$this->logger->log(sprintf('Found %s notifications', count($notifications)), LOG_DEBUG);
-				$notificationsArray['notifications'] = array();
+			foreach ($accountConnections as $accountIdentifier => $connection) {
+				$accountNotifications = array();
 				foreach ($notifications as $notification) {
-					$accountIdentifier = $notification->getAccountIdentifier();
-						// TODO: Make use of account identifier
-
-					$notificationsArray['notifications'][] = array('message' => $notification->getLabel());
-
-						// TODO: do not delete if sticky / not closeable by user
-					$this->notificationRepository->remove($notification);
+					if ($notification->getAccountIdentifier() === $accountIdentifier) {
+						$accountNotifications[] = $notification;
+					}
 				}
-				$this->notificationRepository->flushDocumentManager();
-				foreach ($connections as $connection) {
+				if (count($accountNotifications) > 0) {
+					$this->logger->log(sprintf('Found %s notifications for account %s', count($notifications), $accountIdentifier), LOG_DEBUG);
+					$notificationsArray['notifications'] = array();
+					foreach ($accountNotifications as $notification) {
+						$notificationsArray['notifications'][] = array('message' => $notification->getLabel());
+						$this->notificationRepository->remove($notification);
+					}
+					$this->notificationRepository->flushDocumentManager();
 					$connection->write(WebSocketServer::encode(json_encode($notificationsArray)));
 				}
 			}

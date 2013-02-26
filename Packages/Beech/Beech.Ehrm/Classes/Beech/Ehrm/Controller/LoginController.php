@@ -30,9 +30,15 @@ class LoginController extends \TYPO3\Flow\Security\Authentication\Controller\Abs
 
 	/**
 	 * @var \TYPO3\Flow\Security\Authentication\AuthenticationManagerInterface
-	 * @FLOW\Inject
+	 * @Flow\Inject
 	 */
 	protected $authenticationManager;
+
+	/**
+	 * @Flow\Inject
+	 * @var \TYPO3\Flow\Session\SessionInterface
+	 */
+	protected $session;
 
 	/**
 	 * @param string $username
@@ -51,6 +57,7 @@ class LoginController extends \TYPO3\Flow\Security\Authentication\Controller\Abs
 	 * @return void
 	 */
 	public function onAuthenticationSuccess(\TYPO3\Flow\Mvc\ActionRequest $originalRequest = NULL) {
+		$this->session->putData('accountIdentifier', $this->securityContext->getAccount()->getAccountIdentifier());
 		if ($originalRequest !== NULL) {
 			$this->redirectToRequest($originalRequest);
 		}
