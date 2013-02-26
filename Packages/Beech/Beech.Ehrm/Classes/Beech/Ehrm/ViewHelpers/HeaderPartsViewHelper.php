@@ -118,7 +118,7 @@ class HeaderPartsViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHel
 					->setLinkProtectionEnabled(FALSE)
 					->uriFor(
 						$file['uri']['action'],
-						$file['uri']['arguments'],
+						isset($file['uri']['arguments']) ? $file['uri']['arguments'] : array(),
 						$file['uri']['controller'],
 						$file['uri']['package']
 					);

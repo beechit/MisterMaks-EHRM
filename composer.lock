@@ -486,7 +486,7 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/radmiraal/Radmiraal.CouchDB.git",
-                "reference": "8163597eed0e8f50724d7be3fea992a75f07bfa2"
+                "reference": "3d3b2b7da4c9d0ae3088c58e4021a7d79281fb4c"
             },
             "require": {
                 "doctrine/couchdb-odm": "dev-master",
@@ -494,7 +494,7 @@
                 "doctrine/orm": "2.3.1",
                 "typo3/flow": "*"
             },
-            "time": "2013-02-26 10:57:07",
+            "time": "2013-02-26 14:51:45",
             "type": "typo3-flow-package",
             "autoload": {
                 "psr-0": {
@@ -511,18 +511,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/radmiraal/Radmiraal.Emberjs.git",
-                "reference": "ccecad8dde277af2a31171214b738ab6204ccd00"
+                "reference": "085ad005ea5a58013a496ce06e592a82fadd6e6a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/radmiraal/Radmiraal.Emberjs/zipball/ccecad8dde277af2a31171214b738ab6204ccd00",
-                "reference": "ccecad8dde277af2a31171214b738ab6204ccd00",
+                "url": "https://api.github.com/repos/radmiraal/Radmiraal.Emberjs/zipball/085ad005ea5a58013a496ce06e592a82fadd6e6a",
+                "reference": "085ad005ea5a58013a496ce06e592a82fadd6e6a",
                 "shasum": ""
             },
             "require": {
                 "typo3/flow": "*"
             },
-            "time": "2013-02-25 20:51:06",
+            "time": "2013-02-26 14:51:10",
             "type": "typo3-flow-package",
             "autoload": {
                 "psr-0": {

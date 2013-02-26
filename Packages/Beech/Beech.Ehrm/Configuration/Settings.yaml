@@ -32,6 +32,13 @@ Beech:
           - 'Beech.Ehrm/JavaScript/Mixins/AjaxModule.js'
           - 'Beech.Ehrm/JavaScript/Mixins/ModelRoute.js'
           - 'Beech.Ehrm/JavaScript/Mixins/Model.js'
+          -
+            uri:
+              package: 'Radmiraal.Emberjs'
+              controller: 'Configuration'
+              action: 'model'
+              arguments:
+                application: 'MisterMaks'
           - 'Beech.Party/JavaScript/Model/Company.js'
           - 'Beech.Party/JavaScript/Model/Person.js'
           - 'Beech.Task/JavaScript/Model/Priority.js'
@@ -133,9 +140,19 @@ TYPO3:
 
 Radmiraal:
   Emberjs:
+    applications:
+      MisterMaks:
+        model:
+          packageFolderPatterns:
+            - 'Beech/**'
+
     properties:
       _exclude:
         - 'configurationManager'
         - 'reflectionService'
         - 'gettablePropertyNames'
-        - 'data'
+        - 'documentManager'
+        - 'documentObject'
+        - 'documentManagementFactory'
+        - 'gettableProperties'
+
