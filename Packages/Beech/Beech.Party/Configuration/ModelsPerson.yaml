@@ -13,13 +13,9 @@
     'departmentId':
       label: 'Department id'
       type: 'Beech\Party\Domain\Model\Company'
-    'name.title':
-      label: 'title'
-      validation:
-        -
-          type: 'StringLength'
-          options:
-            maximum: 10
+    'name':
+      label: 'name'
+      type: 'TYPO3\Party\Domain\Model\PersonName'
     'personType':
       label: 'Person type'
       validation:
@@ -35,35 +31,6 @@
           - 'companyContact'
           - 'employee'
           - 'partnerCompanyContact'
-    'name.firstName':
-      label: 'First name'
-      validation:
-        -
-          type: 'NotEmpty'
-        -
-          type: 'StringLength'
-          options:
-            maximum: 20
-    'name.middleName':
-      label: 'Middle name'
-      validation:
-        -
-          type: 'StringLength'
-          options:
-            maximum: 20
-    'name.lastName':
-      label: 'Last name'
-      validation:
-        -
-          type: 'NotEmpty'
-        -
-          type: 'RegularExpression'
-          options:
-            regularexpression: '[\\w\\-]{2,30}]'
-        -
-          type: 'StringLength'
-          options:
-            maximum: 20
     'otherName':
       label: Birthname
       validation:
