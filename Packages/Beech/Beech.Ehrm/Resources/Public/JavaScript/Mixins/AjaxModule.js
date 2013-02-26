@@ -16,15 +16,7 @@
 			}
 
 			setTimeout(function() {
-				$.ajax({
-					format: 'jsonp',
-					dataType: 'jsonp',
-					context: this,
-					url: that.get('url'),
-					success: function(result) {
-						$('.ehrm-module').html(result.html);
-					}
-				});
+				App.ModuleHandler.loadUrl(that.get('url'));
 			}, 10);
 		}
 	});
