@@ -3,65 +3,69 @@
 
 	App.Router.map(function() {
 		this.route('userSettings', { path: '/user/settings' });
-		this.route('applicationSettings', { path: '/administration/settings' });
+		this.route('documentModule', { path: '/documents' });
 
+			// Administration
+		this.route('administration');
+		this.route('applicationSettings', { path: '/administration/settings' });
 		this.route('jobDescriptionModule', { path: '/administration/jobdescriptions' });
 		this.route('contractArticleModule', { path: '/administration/contractarticles' });
-		this.route('contractModule', { path: '/administration/contracts' });
-		this.route('documentModule', { path: '/documents' });
 		this.route('userManagementModule', { path: '/administration/usermanagement' });
-
-			// Administration mappings
-		this.route('administration');
+		this.route('contractModule', { path: '/administration/contracts' });
 
 			// Beech.Party
-		this.resource('personsAdministration', {path: '/administration/persons/'});
-		this.resource('personAdministration', {path: '/administration/persons/:id'});
-		this.route('personAdministrationEdit', {path: '/administration/persons/:id/edit'});
-		this.route('personAdministrationNew', {path: '/administration/persons/new'});
-
-		this.resource('persons', {path: '/persons/'});
-		this.resource('person', {path: '/persons/:id'});
-		this.route('personEdit', {path: '/persons/:id/edit'});
-		this.route('personNew', {path: '/persons/new'});
-
-		this.resource('companies',{path: '/administration/companies'});
-		this.resource('company', {path: '/administration/companies/:company_id'});
-		this.route('edit_company', {path: '/administration/companies/:company_id/edit'});
-		this.route('new_company', {path: '/administration/companies/new'});
-
-			// Model mappings
-		this.resource('person', { path: 'persons/' }, function() {
-			this.resource('model', { path: '/:id' }, function() {
+		this.resource('BeechPartyPersonModule', { path: '/persons' }, function() {
+			this.resource('person', { path: '/:beech_party_domain_model_person_id' }, function() {
+				this.route('edit');
+			});
+		});
+		this.resource('BeechPartyPersonAdministrationModule', { path: '/administration/persons' }, function() {
+			this.route('new');
+			this.resource('personAdministration', { path: '/:beech_party_domain_model_person_id' }, function() {
+				this.route('edit');
+			});
+		});
+		this.resource('BeechPartyCompanyModule', { path: '/companies' }, function() {
+			this.resource('company', { path: '/:beech_party_domain_model_company_id' }, function() {
+				this.route('edit');
+			});
+		});
+		this.resource('BeechPartyCompanyAdministrationModule', { path: '/administration/companies' }, function() {
+			this.route('new');
+			this.resource('companyAdministration', { path: '/:beech_party_domain_model_company_id' }, function() {
 				this.route('edit');
 			});
 		});
 
 			// Beech.Task
-		this.resource('taskModule', {path: '/tasks'});
-		this.resource('task', {path: '/tasks/:task_id'});
-		this.route('edit_task', {path: '/tasks/:task_id/edit'});
-		this.route('new_task', {path: '/tasks/new'});
+		this.resource('BeechTaskTaskModule', { path: '/tasks' }, function() {
+			this.route('new');
+			this.resource('BeechTaskTaskModuleTask', { path: '/:beech_task_domain_model_task_id' }, function() {
+				this.route('edit');
+			});
+		});
 	});
 
 	App.IndexRoute = Ember.Route.extend({
 		renderTemplate: function() {
 			this.render('user_interface_breadcrumb_menu', { outlet: 'breadcrumbMenu', controller: 'breadcrumbMenu' });
 			this.render('user_interface_user_menu', { outlet: 'userMenu' });
-			this.render('user_interface_task_widget', { outlet: 'sidebar', controller: 'taskWidget' });
+			this.render('beech_task_user_interface_task_widget', { outlet: 'sidebar', controller: 'taskWidget' });
 			this.render('user_interface_dashboard');
 		}
 	});
-	App.PersonRoute = App.IndexRoute.extend();
 
 		// TODO: Replace AJAX module loading by full ember / ember-data modules
 	App.DocumentModuleRoute = App.IndexRoute.extend(App.AjaxModuleControllerMixin, { url: MM.url.module.documents });
-	App.ApplicationSettingsRoute = App.IndexRoute.extend(App.AjaxModuleControllerMixin, { url: MM.url.module.applicationSettings });
 	App.UserSettingsRoute = App.IndexRoute.extend(App.AjaxModuleControllerMixin, { url: MM.url.module.userSettings });
 	App.JobDescriptionModuleRoute = App.IndexRoute.extend(App.AjaxModuleControllerMixin, { url: MM.url.module.jobDescription });
 	App.ContractArticleModuleRoute = App.IndexRoute.extend(App.AjaxModuleControllerMixin, { url: MM.url.module.contractArticle });
 	App.ContractModuleRoute = App.IndexRoute.extend(App.AjaxModuleControllerMixin, { url: MM.url.module.contract });
 	App.UserManagementModuleRoute = App.IndexRoute.extend(App.AjaxModuleControllerMixin, { url: MM.url.module.userManagementModule });
+
+		// Frontend routes
+	App.BeechPartyPersonModuleRoute = App.IndexRoute.extend();
+	App.BeechPartyCompanyModuleRoute = App.IndexRoute.extend();
 
 		// Administration routes
 	App.AdministrationRoute = Ember.Route.extend(App.ModelRouteMixin, {
@@ -74,5 +78,9 @@
 			this.render(this.get('templateName'));
 		}
 	});
+
+	App.ApplicationSettingsRoute = App.AdministrationRoute.extend(App.AjaxModuleControllerMixin, { url: MM.url.module.applicationSettings });
+	App.BeechPartyPersonAdministrationModuleRoute = App.AdministrationRoute.extend();
+	App.BeechPartyCompanyAdministrationModuleRoute = App.AdministrationRoute.extend();
 
 }).call(this);

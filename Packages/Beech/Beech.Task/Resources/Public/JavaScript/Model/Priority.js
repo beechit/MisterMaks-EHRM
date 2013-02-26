@@ -1,9 +1,8 @@
 (function() {
 	'use strict';
 
-	App.Priority = DS.Model.extend({
-		label: DS.attr('string'),
-		tasks: DS.hasMany('App.Task')
+	App.BeechTaskDomainModelPriority.reopen({
+		tasks: DS.hasMany('App.BeechTaskDomainModelTask')
 	});
 
 }).call(this);

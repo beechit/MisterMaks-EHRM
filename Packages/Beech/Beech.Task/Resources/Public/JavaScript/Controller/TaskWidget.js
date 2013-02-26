@@ -4,7 +4,7 @@
 	App.TaskWidgetController = Ember.ArrayController.extend({
 		content: [],
 		init: function() {
-			this.set('content', App.Priority.find());
+			this.set('content', App.BeechTaskDomainModelPriority.find());
 		}
 	});
 

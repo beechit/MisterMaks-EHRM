@@ -14,10 +14,10 @@ Radmiraal:
   Emberjs:
     restInterfaces:
       person:
-        routePath: 'persons'
+        routePath: 'beech_party_domain_model_persons'
         model: 'Beech\Party\Domain\Model\Person'
         repository: 'Beech\Party\Domain\Repository\PersonRepository'
       company:
-        routePath: 'companies'
+        routePath: 'beech_party_domain_model_companies'
         model: 'Beech\Party\Domain\Model\Company'
         repository: 'Beech\Party\Domain\Repository\CompanyRepository'

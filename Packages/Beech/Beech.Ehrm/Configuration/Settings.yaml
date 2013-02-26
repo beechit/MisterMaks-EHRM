@@ -143,6 +143,17 @@ Radmiraal:
     applications:
       MisterMaks:
         model:
+          ignoredModels:
+            - 'Beech\Ehrm\Domain\Model\Preference'
+            - 'Beech\WorkFlow\Domain\Model\Action'
+            - 'Beech\Ehrm\Domain\Model\Notification'
+            - 'Beech\Ehrm\Domain\Model\Log'
+          typeMapping:
+            TYPO3PartyDomainModelAbstractParty: 'BeechPartyDomainModelPerson'
+            DateTime: 'date'
+            integer: 'number'
+          ignoredProperties:
+            - 'data'
           packageFolderPatterns:
             - 'Beech/**'
 
@@ -155,4 +166,6 @@ Radmiraal:
         - 'documentObject'
         - 'documentManagementFactory'
         - 'gettableProperties'
+        - 'persistenceManager'
+        - 'securityContext'
 

@@ -1,4 +1,4 @@
-{{#linkTo "new_task" class="btn pull-right btn-success"}}Add task{{/linkTo}}
+{{#linkTo "BeechTaskTaskModule.new" class="btn pull-right btn-success"}}Add task{{/linkTo}}
 
 <h1>Tasks</h1>
 
@@ -9,12 +9,12 @@
 			<td>
 				<div class="pull-right">
 					<div class="btn-group">
-						{{#linkTo "task" task class="btn"}}view{{/linkTo}}
+						{{#linkTo "BeechTaskTaskModuleTask" task class="btn"}}view{{/linkTo}}
 						<button class="btn dropdown-toggle" data-toggle="dropdown">
 							<span class="caret"></span>
 						</button>
 						<ul class="dropdown-menu">
-							<li>{{#linkTo "edit_task" task}}edit{{/linkTo}}</li>
+							<li>{{#linkTo "BeechTaskTaskModuleTask.edit" task}}edit{{/linkTo}}</li>
 						</ul>
 					</div>
 				</div>

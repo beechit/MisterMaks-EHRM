@@ -35,6 +35,9 @@ class ApplicationController extends AbstractController {
 	 * @return void
 	 */
 	public function introAction() {
+		if ($this->authenticationManager->isAuthenticated() === TRUE) {
+			$this->redirect('index');
+		}
 	}
 
 }

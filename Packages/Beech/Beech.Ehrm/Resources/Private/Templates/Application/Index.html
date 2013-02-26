@@ -1,6 +1,6 @@
 <f:layout />{namespace emberjs=Radmiraal\Emberjs\ViewHelpers}
 <f:section name="Body">
-	<emberjs:handlebars paths="{0: 'resource://Beech.Ehrm/Private/Templates/Handlebar',
-		1: 'resource://Beech.Task/Private/Templates/Handlebar',
-		2: 'resource://Beech.Party/Private/Templates/Handlebar'}" />
+	<emberjs:handlebars paths="{0: 'resource://Beech.Ehrm/Private/Templates/Handlebar'}" />
+	<emberjs:handlebars paths="{0: 'resource://Beech.Task/Private/Templates/Handlebar'}" templateNamePrefix="beech_task" />
+	<emberjs:handlebars paths="{0: 'resource://Beech.Party/Private/Templates/Handlebar'}" templateNamePrefix="beech_party" />
 </f:section>
