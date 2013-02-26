@@ -486,7 +486,7 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/radmiraal/Radmiraal.CouchDB.git",
-                "reference": "b87661ace46aa657b56d7b2638daa4cbae0ee5b9"
+                "reference": "7a88a88aa52ee8d0aacbee79ba53c496f04d4c57"
             },
             "require": {
                 "doctrine/couchdb-odm": "dev-master",
@@ -494,7 +494,7 @@
                 "doctrine/orm": "2.3.1",
                 "typo3/flow": "*"
             },
-            "time": "2013-02-25 14:37:17",
+            "time": "2013-02-26 09:54:12",
             "type": "typo3-flow-package",
             "autoload": {
                 "psr-0": {
@@ -730,7 +730,7 @@
             "source": {
                 "type": "git",
                 "url": "git://git.typo3.org/FLOW3/Packages/TYPO3.FLOW3.git",
-                "reference": "5d68589e8244eba5e6e7ca2e9c040673770f55b2"
+                "reference": "fce54c81f659c2f71e17e562058c19bd003a48c4"
             },
             "require": {
                 "doctrine/data-fixtures": "*",
@@ -747,7 +747,7 @@
                 "typo3/fluid": "*",
                 "typo3/party": "*"
             },
-            "time": "2013-02-20 12:50:03",
+            "time": "2013-02-25 21:02:56",
             "type": "typo3-flow-framework",
             "autoload": {
                 "psr-0": {
