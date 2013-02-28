@@ -8,8 +8,8 @@ Beech:
   Ehrm.Glastuinbouw:
     Wage:
       properties:
-        wageGroup:
-          b:
+        'wageGroup':
+          'b':
             -
               step: '15 year'
               wage: '* 0,40'

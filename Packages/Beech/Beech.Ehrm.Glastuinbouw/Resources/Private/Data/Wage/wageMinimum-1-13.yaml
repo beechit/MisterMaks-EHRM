@@ -5,34 +5,119 @@ This Yaml holds the minum wage of the
 Beech:
   Ehrm.Glastuinbouw:
     Wage:
-      Properties:
-        'age':
-          - 15
-          - 16
-          - 17
-          - 18
-          - 19
-          - 20
-          - 21
-          - 22
-          - 23
-          'BareHourwage:
-           - 2,68
-           - 3,08
-           - 3,53
-           - 4,06
-           - 4,69
-           - 5,49
-           - 6,47
-           - 7,59
-           - 8,92
-          'hourWage':
-            - 2,89
-            - 3,33
-            - 3,81
-            - 4,38
-            - 5,07
-            - 5,93
-            - 6,99
-            - 8,20
-            - 9,63
+      properties:
+        wageGroup:
+          'month':
+            -
+              step: 15
+              value: '440,80'
+              age: 15
+            -
+              step: 16
+              value: '506,95'
+              age: 16
+            -
+              step: 17
+              value: '580,40'
+              age: 17
+            -
+              step: 18
+              value: '668,60'
+              age: 18
+            -
+              step: 19
+              value: '771,45'
+              age: 19
+            -
+              step: 20
+              value: '903,70'
+              age: 20
+            -
+              step: 21
+              value: '1065,30'
+              age: 21
+            -
+              step: 22
+              value: '1249,00'
+              age: 22
+            -
+              step: 23
+              value: '1469,40'
+              age: 23
+            label: 'Month'
+          'week':
+            -
+              step: 15
+              value: '101,75'
+              age: 15
+            -
+              step: 16
+              value: '117'
+              age: 16
+            -
+              step: 17
+              value: '133,95'
+              age: 17
+            -
+              step: 18
+              value: '154,30'
+              age: 18
+            -
+              step: 19
+              value: '178,05'
+              age: 19
+            -
+              step: 20
+              value: '208,55'
+              age: 20
+            -
+              step: 21
+              value: '245,85'
+              age: 21
+            -
+              step: 22
+              value: '288,25'
+              age: 22
+            -
+              step: 23
+              value: '339,10'
+              age: 23
+            label: 'Week'
+          'day':
+            -
+              step: 15
+              value: '20,35'
+              age: 15
+            -
+              step: 16
+              value: '23,40'
+              age: 16
+            -
+              step: 17
+              value: '26,79'
+              age: 17
+            -
+              step: 18
+              value: '30,86'
+              age: 18
+            -
+              step: 19
+              value: '35,61'
+              age: 19
+            -
+              step: 20
+              value: '41,71'
+              age: 20
+            -
+              step: 21
+              value: '49,17'
+              age: 21
+            -
+              step: 22
+              value: '57,65'
+              age: 22
+            -
+              step: 23
+              value: '67,82'
+              age: 23
+            label: 'Day'

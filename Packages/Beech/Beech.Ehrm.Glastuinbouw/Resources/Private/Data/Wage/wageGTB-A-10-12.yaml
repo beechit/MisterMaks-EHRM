@@ -7,11 +7,11 @@
 #dezelfdth werkgever, Zith artikel 17 lid 2 sub A, Voor allth anderth werknemers geldt loongebouw B, dth tabellen B t/m E,
 ################################################
 Beech:
-  Ehrm,Glastuinbouw:
+  Ehrm.Glastuinbouw:
     Wage:
-      Properties:
+      properties:
         'wageGroup':
-          'GroupB-1':
+          'B-1':
             -
               step: '15 year'
               value: '3,70'
