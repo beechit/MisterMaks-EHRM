@@ -52,7 +52,6 @@ Beech:
           - 'Beech.Ehrm/JavaScript/Application.js'
           - 'Beech.Ehrm/JavaScript/Component/UserInterface/BreadcrumbMenu.js'
           - 'Beech.Ehrm/JavaScript/Service/Notification.js'
-          - 'Beech.Task/JavaScript/Controller/Task.js'
           - 'Beech.Task/JavaScript/Controller/TaskWidget.js'
           - 'Beech.Party/JavaScript/Controller/Company.js'
           - 'Beech.Party/JavaScript/Controller/Person.js'

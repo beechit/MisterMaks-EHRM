@@ -1,0 +1,22 @@
+<h1>Tasks</h1>
+{{#linkTo "BeechTaskTaskModule.new" class="btn pull-right btn-success"}}Add task{{/linkTo}}
+<table class="table table-striped">
+	{{#each task in controller}}
+	<tr>
+		<td>{{#linkTo "BeechTaskDomainModelTask" task }} {{task.description}} {{/linkTo}}</td>
+		<td>
+			<div class="pull-right">
+				<div class="btn-group">
+					{{#linkTo "BeechTaskDomainModelTask" task class="btn"}}view{{/linkTo}}
+					<button class="btn dropdown-toggle" data-toggle="dropdown">
+						<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu pull-right">
+						<li>{{#linkTo "BeechTaskDomainModelTask.edit" task}}edit{{/linkTo}}</li>
+					</ul>
+				</div>
+			</div>
+		</td>
+	</tr>
+	{{/each}}
+</table>

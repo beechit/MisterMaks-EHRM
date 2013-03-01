@@ -40,7 +40,7 @@
 			// Beech.Task
 		this.resource('BeechTaskTaskModule', { path: '/tasks' }, function() {
 			this.route('new');
-			this.resource('BeechTaskTaskModuleTask', { path: '/:beech_task_domain_model_task_id' }, function() {
+			this.resource('BeechTaskDomainModelTask', { path: '/:beech_task_domain_model_task_id' }, function() {
 				this.route('edit');
 			});
 		});
@@ -48,8 +48,6 @@
 
 	App.IndexRoute = Ember.Route.extend({
 		renderTemplate: function() {
-			this.render('user_interface_breadcrumb_menu', { outlet: 'breadcrumbMenu', controller: 'breadcrumbMenu' });
-			this.render('user_interface_user_menu', { outlet: 'userMenu' });
 			this.render('beech_task_user_interface_task_widget', { outlet: 'sidebar', controller: 'taskWidget' });
 			this.render('user_interface_dashboard');
 		}
@@ -72,8 +70,6 @@
 		templatePrefix: 'administration_',
 
 		renderTemplate: function() {
-			this.render('user_interface_breadcrumb_menu', { outlet: 'breadcrumbMenu', controller: 'breadcrumbMenu' });
-			this.render('user_interface_user_menu', { outlet: 'userMenu' });
 			this.render('administration_menu', { outlet: 'sidebar' });
 			this.render(this.get('templateName'));
 		}
