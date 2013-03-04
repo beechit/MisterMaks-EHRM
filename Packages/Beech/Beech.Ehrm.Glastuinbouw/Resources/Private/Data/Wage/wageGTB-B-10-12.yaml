@@ -8,6 +8,9 @@ Beech:
   Ehrm.Glastuinbouw:
     Wage:
       properties:
+        wageName: 'glastuinbouwWageB'
+        wageStartDate: '01-09-2013'
+        wageEndDate: '01-07-2013'
         'wageGroup':
           'b':
             -
@@ -118,7 +121,7 @@ Beech:
           label: 'C'
           orbaPointsStart: 36
           orbaPointsEnd: 50
-         -
+        -
           d:
             -
               step: '15 year'

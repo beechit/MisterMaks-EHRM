@@ -6,6 +6,9 @@ Beech:
   Ehrm.Glastuinbouw:
     Wage:
       properties:
+        wageName: 'minimumWage'
+        wageStartDate: '01-01-2013'
+        wageEndDate: '30-06-2013'
         wageGroup:
           'month':
             -
