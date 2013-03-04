@@ -6,117 +6,65 @@
   properties:
     'subjectId':
       label: 'Subject id'
-      onlist: TRUE
-      required: TRUE
       type: Beech\Party\Domain\Model\Person
-      validation: ''
-      visible: FALSE
     'departmentId':
       label: 'Department id'
-      required: TRUE
       type: Beech\Party\Domain\Model\Company
-      validation: ''
-      visible: FALSE
     'minuteType':
-      label: minuteType
+      label: 'minuteType'
       options:
         values:
-          - periodicConversation
-          - callReporting
-          - assessment
-          - performanceReveiw
-          - compensationConversation
-          - other
-          - sickReportUpdate
-      required: TRUE
-      type: string
-      validation: ''
-      visible: TRUE
+          - 'periodicConversation'
+          - 'callReporting'
+          - 'assessment'
+          - 'performanceReview'
+          - 'other'
+          - 'sickReportUpdate'
+      validation:
+        -
+          type: 'StringLength'
+          options:
+           maximum: 20
     'minuteContent':
-      label: minuteContent
-      required: TRUE
-      type: text
+      label: 'Minute content'
+      type: 'text'
       validation:
-        type: 'Text'
-      visible: TRUE
+        -
+          type: 'Text'
     'minuteTemplate':
-      label: minuteTemplate
-      required: TRUE
-      type: string
+      label: 'Minute template'
       validation:
         type: 'StringLength'
         options:
           maximum: 20
-      visible: TRUE
-    'followUpActionRequired':
-      label: followUpActionRequired
-      required: TRUE
-      type: 'boolean'
-      visible: TRUE
-    'needSigning':
-      label: needsSigning
-      required: TRUE
-      type: 'boolean'
-      validation: ''
-      visible: TRUE
-    'action':
-      label: action
-      required: TRUE
-      type: string
-      validation:
-        type: 'StringLength'
-        options:
-          maximum: 20
-      visible: TRUE
-    'documentRequired':
-      label: documentRequired
-      required: TRUE
-      type: 'boolean'
-      visible: TRUE
-    'visability':
-      label: visibility
-      options:
-        values:
-          - public
-          - subjects
-          - managers
-          - creator
-      required: TRUE
-      type: string
-      validation:
-        type: 'Stringlength'
-        options:
-          maximum: 20
-      visible: TRUE
     'creationDate':
       default: 'now'
       label: 'creation date'
-      required: TRUE
       type: 'dateTime'
-      validation: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
-      visible: FALSE
+      validation:
+        -
+          type: 'NotEmpty'
+        -
+          type: 'RegularExpression'
+          options:
+            regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
     'createdBy':
       default: 'currentUser'
       label: 'Created by'
-      required: TRUE
-      type: Beech\Party\Domain\Model\Person
-      validation: ''
-      visible: FALSE
+      type: 'Beech\Party\Domain\Model\Person'
     'modification':
       items:
         'modificationDate':
           default: 'now'
           label: 'Modification date'
-          required: TRUE
           type: 'dateTime'
-          validation: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
-          visible: FALSE
+          validation:
+            type: 'RegularExpression'
+            options:
+              regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
         'modifiedBy':
           default: 'currentUser'
           label: 'Modified by'
-          required: TRUE
-          type: Beech\Party\Domain\Model\Person
-          validation: ''
-          visible: FALSE
+          type: 'Beech\Party\Domain\Model\Person'
       label: 'Modification log'
-      type: array
+      type: 'array'
