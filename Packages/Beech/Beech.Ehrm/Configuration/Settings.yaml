@@ -168,4 +168,5 @@ Radmiraal:
         - 'gettableProperties'
         - 'persistenceManager'
         - 'securityContext'
-
+        - 'accounts'
+        - 'deleted'

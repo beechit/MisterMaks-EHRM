@@ -15,24 +15,25 @@
 
 			// Beech.Party
 		this.resource('BeechPartyPersonModule', { path: '/persons' }, function() {
-			this.resource('person', { path: '/:beech_party_domain_model_person_id' }, function() {
+			this.resource('BeechPartyDomainModelPerson', { path: '/:beech_party_domain_model_person_id' }, function() {
 				this.route('edit');
 			});
 		});
 		this.resource('BeechPartyPersonAdministrationModule', { path: '/administration/persons' }, function() {
 			this.route('new');
-			this.resource('personAdministration', { path: '/:beech_party_domain_model_person_id' }, function() {
+			this.resource('BeechPartyDomainModelPersonAdministration', { path: '/:beech_party_domain_model_person_id' }, function() {
 				this.route('edit');
 			});
 		});
+
 		this.resource('BeechPartyCompanyModule', { path: '/companies' }, function() {
-			this.resource('company', { path: '/:beech_party_domain_model_company_id' }, function() {
+			this.resource('BeechPartyDomainModelCompany', { path: '/:beech_party_domain_model_company_id' }, function() {
 				this.route('edit');
 			});
 		});
 		this.resource('BeechPartyCompanyAdministrationModule', { path: '/administration/companies' }, function() {
 			this.route('new');
-			this.resource('companyAdministration', { path: '/:beech_party_domain_model_company_id' }, function() {
+			this.resource('BeechPartyDomainModelCompanyAdministration', { path: '/:beech_party_domain_model_company_id' }, function() {
 				this.route('edit');
 			});
 		});
@@ -74,12 +75,8 @@
 	App.ContractModuleRoute = App.IndexRoute.extend(App.AjaxModuleControllerMixin, { url: MM.url.module.contract });
 	App.UserManagementModuleRoute = App.IndexRoute.extend(App.AjaxModuleControllerMixin, { url: MM.url.module.userManagementModule });
 
-		// Frontend routes
-	App.BeechPartyPersonModuleRoute = App.IndexRoute.extend();
-	App.BeechPartyCompanyModuleRoute = App.IndexRoute.extend();
-
 		// Administration routes
-	App.AdministrationRoute = Ember.Route.extend(App.ModelRouteMixin, {
+	App.AdministrationRoute = Ember.Route.extend({
 		templatePrefix: 'administration_',
 
 		renderTemplate: function() {
@@ -89,7 +86,5 @@
 	});
 
 	App.ApplicationSettingsRoute = App.AdministrationRoute.extend(App.AjaxModuleControllerMixin, { url: MM.url.module.applicationSettings });
-	App.BeechPartyPersonAdministrationModuleRoute = App.AdministrationRoute.extend();
-	App.BeechPartyCompanyAdministrationModuleRoute = App.AdministrationRoute.extend();
 
 }).call(this);

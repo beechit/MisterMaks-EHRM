@@ -1,23 +1,11 @@
-Beech:
-  Ehrm:
-    menu:
-      administration:
-        groups:
-          persons:
-            priority: 10
-            label: 'Persons'
-          companies:
-            priority: 20
-            label: 'Companies'
-
 Radmiraal:
   Emberjs:
     restInterfaces:
-      person:
+      beech_party_domain_model_person:
         routePath: 'beech_party_domain_model_persons'
         model: 'Beech\Party\Domain\Model\Person'
         repository: 'Beech\Party\Domain\Repository\PersonRepository'
-      company:
+      beech_party_domain_model_company:
         routePath: 'beech_party_domain_model_companies'
         model: 'Beech\Party\Domain\Model\Company'
         repository: 'Beech\Party\Domain\Repository\CompanyRepository'

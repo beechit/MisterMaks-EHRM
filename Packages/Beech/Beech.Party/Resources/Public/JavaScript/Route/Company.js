@@ -1,48 +1,47 @@
 (function() {
 	'use strict';
 
-	App.CompaniesRoute = Ember.Route.extend({
-		renderTemplate: function() {
-			this.render('user_interface_breadcrumb_menu', { outlet: 'breadcrumbMenu', controller: 'breadcrumbMenu' });
-			this.render('user_interface_user_menu', { outlet: 'userMenu' });
-			this.render('administration_menu', { outlet: 'sidebar' });
-			this.render('companies', {outlet: 'main'});
-		},
+	App.BeechPartyCompanyModuleIndexController = Ember.ArrayController.extend();
+	App.BeechPartyCompanyModuleIndexRoute = App.ModuleRoute.extend({
 		model: function() {
-			return App.Company.find();
-		}
-
-	});
-
-	App.CompanyRoute = Ember.Route.extend({
-		renderTemplate: function() {
-			this.render('user_interface_breadcrumb_menu', { outlet: 'breadcrumbMenu', controller: 'breadcrumbMenu' });
-			this.render('user_interface_user_menu', { outlet: 'userMenu' });
-			this.render('administration_menu', { outlet: 'sidebar' });
-			this.render('company', {outlet: 'main'});
-		},
-		model: function(params) {
-			return App.Company.find(params.company_id);
+			return App.BeechPartyDomainModelCompany.find();
 		}
 	});
 
-	App.NewCompanyRoute = Ember.Route.extend({
+	App.BeechPartyDomainModelCompanyEditRoute = Ember.Route.extend(App.ModelFormableMixin, {
+		redirectToRouteName: 'BeechPartyCompanyModule.index',
+		formTemplateName: 'BeechPartyDomainModelCompany/form',
+		model: function() {
+			return this.modelFor('BeechPartyDomainModelCompany');
+		}
+	});
+
+		// Administration
+	App.BeechPartyCompanyAdministrationModuleIndexController = Ember.ArrayController.extend();
+	App.BeechPartyCompanyAdministrationModuleIndexRoute = App.ModuleRoute.extend({
 		renderTemplate: function() {
-			this.render('user_interface_breadcrumb_menu', { outlet: 'breadcrumbMenu', controller: 'breadcrumbMenu' });
-			this.render('user_interface_user_menu', { outlet: 'userMenu' });
 			this.render('administration_menu', { outlet: 'sidebar' });
-			this.render('edit_company', {controller: 'new_company'});
+			this._super.apply(this, arguments);
 		},
 		model: function() {
-			return App.Company.createRecord();
-		},
-		exit: function() {
-			var model = this.get('controller.model');
-			if (!model.get('isSaving')) {
-				model.deleteRecord();
-			}
+			return App.BeechPartyDomainModelCompany.find();
 		}
+	});
 
+	App.BeechPartyCompanyAdministrationModuleNewRoute = Ember.Route.extend(App.ModelFormableMixin, {
+		redirectToRouteName: 'BeechPartyCompanyAdministrationModule.index',
+		formTemplateName: 'BeechPartyDomainModelCompanyAdministration/form',
+		model: function() {
+			return App.BeechPartyDomainModelCompany.createRecord();
+		}
+	});
+
+	App.BeechPartyDomainModelCompanyAdministrationEditRoute = Ember.Route.extend(App.ModelFormableMixin, {
+		redirectToRouteName: 'BeechPartyCompanyAdministrationModule.index',
+		formTemplateName: 'BeechPartyDomainModelCompanyAdministration/form',
+		model: function() {
+			return this.modelFor('BeechPartyDomainModelCompany');
+		}
 	});
 
 }).call(this);

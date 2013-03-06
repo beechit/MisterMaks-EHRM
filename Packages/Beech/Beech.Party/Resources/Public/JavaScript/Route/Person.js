@@ -1,40 +1,47 @@
 (function() {
 	'use strict';
 
-	App.PersonsAdministrationRoute = App.AdministrationRoute.extend({
-		templateName: 'administration_person_index',
-
+	App.BeechPartyPersonModuleIndexController = Ember.ArrayController.extend();
+	App.BeechPartyPersonModuleIndexRoute = App.ModuleRoute.extend({
 		model: function() {
-			return App.Person.find();
+			return App.BeechPartyDomainModelPerson.find();
 		}
-
 	});
 
-	App.PersonAdministrationRoute = App.AdministrationRoute.extend({
-		templateName: 'administration_person_show',
-
+	App.BeechPartyDomainModelPersonEditRoute = Ember.Route.extend(App.ModelFormableMixin, {
+		redirectToRouteName: 'BeechPartyPersonModule.index',
+		formTemplateName: 'BeechPartyDomainModelPerson/form',
 		model: function() {
-			return App.Person.find();
+			return this.modelFor('BeechPartyDomainModelPerson');
 		}
-
 	});
 
-	App.PersonAdministrationEditRoute = App.AdministrationRoute.extend({
-		templateName: 'administration_person_edit',
-
+		// Administration
+	App.BeechPartyPersonAdministrationModuleIndexController = Ember.ArrayController.extend();
+	App.BeechPartyPersonAdministrationModuleIndexRoute = App.ModuleRoute.extend({
+		renderTemplate: function() {
+			this.render('administration_menu', { outlet: 'sidebar' });
+			this._super.apply(this, arguments);
+		},
 		model: function() {
-			return App.Person.find();
+			return App.BeechPartyDomainModelPerson.find();
 		}
-
 	});
 
-	App.PersonAdministrationNewRoute = App.AdministrationRoute.extend({
-		templateName: 'administration_person_new',
-
+	App.BeechPartyPersonAdministrationModuleNewRoute = Ember.Route.extend(App.ModelFormableMixin, {
+		redirectToRouteName: 'BeechPartyPersonAdministrationModule.index',
+		formTemplateName: 'BeechPartyDomainModelPersonAdministration/form',
 		model: function() {
-			return App.Person.find();
+			return App.BeechPartyDomainModelPerson.createRecord();
 		}
+	});
 
+	App.BeechPartyDomainModelPersonAdministrationEditRoute = Ember.Route.extend(App.ModelFormableMixin, {
+		redirectToRouteName: 'BeechPartyPersonAdministrationModule.index',
+		formTemplateName: 'BeechPartyDomainModelPersonAdministration/form',
+		model: function() {
+			return this.modelFor('BeechPartyDomainModelPerson');
+		}
 	});
 
 }).call(this);
