@@ -27,7 +27,6 @@ use TYPO3\Flow\Annotations as Flow;
  * (depending on routing setup)
  * </output>
  *
- * @api
  */
 class ActionViewHelper extends \TYPO3\Fluid\ViewHelpers\Link\ActionViewHelper {
 
@@ -44,10 +43,11 @@ class ActionViewHelper extends \TYPO3\Fluid\ViewHelpers\Link\ActionViewHelper {
 	 * @param array $additionalParams additional query parameters that won't be prefixed like $arguments (overrule $arguments)
 	 * @param boolean $addQueryString If set, the current query parameters will be kept in the URI
 	 * @param array $argumentsToBeExcludedFromQueryString arguments to be removed from the URI. Only active if $addQueryString = TRUE
+	 * @param boolean $useParentRequest If set, the parent Request will be used instead of the current one
 	 * @return string The rendered link
-	 * @api
+	 * @throws \TYPO3\Fluid\Core\ViewHelper\Exception
 	 */
-	public function render($action = NULL, $arguments = array(), $controller = NULL, $package = NULL, $subpackage = NULL, $section = '', $format = '', array $additionalParams = array(), $addQueryString = FALSE, array $argumentsToBeExcludedFromQueryString = array()) {
+	public function render($action, $arguments = array(), $controller = NULL, $package = NULL, $subpackage = NULL, $section = '', $format = '',  array $additionalParams = array(), $addQueryString = FALSE, array $argumentsToBeExcludedFromQueryString = array(), $useParentRequest = FALSE) {
 		try {
 			$output = parent::render($action, $arguments, $controller, $package, $subpackage, $section, $format, $additionalParams, $addQueryString, $argumentsToBeExcludedFromQueryString);
 			return $output;
