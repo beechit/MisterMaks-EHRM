@@ -46,9 +46,22 @@
 		});
 	});
 
-	App.IndexRoute = Ember.Route.extend({
+	App.BaseRouteMixin = Ember.Mixin.create({
 		renderTemplate: function() {
 			this.render('beech_task_user_interface_task_widget', { outlet: 'sidebar', controller: 'taskWidget' });
+		}
+	});
+
+	App.ModuleRoute = Ember.Route.extend(App.BaseRouteMixin, {
+		renderTemplate: function() {
+			this._super.apply(this, arguments);
+			this.render(this.get('routeName').replace('.', '/'));
+		}
+	});
+
+	App.IndexRoute = Ember.Route.extend(App.BaseRouteMixin, {
+		renderTemplate: function() {
+			this._super.apply(this, arguments);
 			this.render('user_interface_dashboard');
 		}
 	});

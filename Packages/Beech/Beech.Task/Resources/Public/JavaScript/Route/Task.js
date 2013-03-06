@@ -2,39 +2,23 @@
 	'use strict';
 
 	App.BeechTaskTaskModuleIndexController = Ember.ArrayController.extend();
-	App.BeechTaskTaskModuleIndexRoute = Ember.Route.extend({
-		renderTemplate: function() {
-			this.render('beech_task_user_interface_task_widget', { outlet: 'sidebar', controller: 'taskWidget' });
-			this._super.apply(this, arguments);
-		},
+	App.BeechTaskTaskModuleIndexRoute = App.ModuleRoute.extend({
 		model: function() {
 			return App.BeechTaskDomainModelTask.find();
 		}
 	});
 
-	App.TasksFormable = Ember.Mixin.create({
-		renderTemplate: function() {
-			return this.render('BeechTaskDomainModelTask/form', { outlet: 'main' });
-		},
-		events: {
-			cancel: function(BeechTaskDomainModelTask) {
-				BeechTaskDomainModelTask.transaction.rollback();
-				return this.transitionTo('BeechTaskTaskModule.index');
-			},
-			submit: function(content) {
-				content.get('store').commit();
-				return this.transitionTo('BeechTaskTaskModule.index');
-			}
-		}
-	});
-
-	App.BeechTaskTaskModuleNewRoute = Ember.Route.extend(App.TasksFormable, {
+	App.BeechTaskTaskModuleNewRoute = Ember.Route.extend(App.ModelFormableMixin, {
+		redirectToRouteName: 'BeechTaskTaskModule.index',
+		formTemplateName: 'BeechTaskDomainModelTask/form',
 		model: function() {
 			return App.BeechTaskDomainModelTask.createRecord();
 		}
 	});
 
-	App.BeechTaskDomainModelTaskEditRoute = Ember.Route.extend(App.TasksFormable, {
+	App.BeechTaskDomainModelTaskEditRoute = Ember.Route.extend(App.ModelFormableMixin, {
+		redirectToRouteName: 'BeechTaskTaskModule.index',
+		formTemplateName: 'BeechTaskDomainModelTask/form',
 		model: function() {
 			return this.modelFor('BeechTaskDomainModelTask');
 		}

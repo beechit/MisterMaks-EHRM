@@ -29,8 +29,8 @@ Beech:
           - 'Beech.Ehrm/JavaScript/Init.js'
           - 'Beech.Ehrm/JavaScript/Store.js'
           - 'Beech.Ehrm/JavaScript/Mixins/Module.js'
+          - 'Beech.Ehrm/JavaScript/Mixins/ModelFormable.js'
           - 'Beech.Ehrm/JavaScript/Mixins/AjaxModule.js'
-          - 'Beech.Ehrm/JavaScript/Mixins/ModelRoute.js'
           - 'Beech.Ehrm/JavaScript/Mixins/Model.js'
           -
             uri:
@@ -39,6 +39,7 @@ Beech:
               action: 'model'
               arguments:
                 application: 'MisterMaks'
+          - 'Beech.Ehrm/JavaScript/Model.js'
           - 'Beech.Party/JavaScript/Model/Company.js'
           - 'Beech.Party/JavaScript/Model/Person.js'
           - 'Beech.Task/JavaScript/Model/Priority.js'
