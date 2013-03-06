@@ -36,12 +36,28 @@ class DocumentValidator extends GenericObjectValidator implements \TYPO3\Flow\Va
 	protected $validatorResolver;
 
 	/**
+	 * @var array
+	 */
+	protected $modelConfigurations;
+
+	/**
+	 * @throws \InvalidArgumentException
+	 * @return void
+	 */
+	public function initializeObject() {
+		$this->modelConfigurations = $this->configurationManager->getConfiguration('Models');
+	}
+
+	/**
 	 * Checks the given target can be validated by the validator implementation.
 	 *
-	 * @param mixed $target
+	 * @param string $target
 	 * @return boolean
 	 */
 	public function canValidate($target) {
+		if (!isset($this->modelConfigurations[str_replace('\\', '.', $target)])) {
+			return FALSE;
+		}
 		return ($target instanceof \Radmiraal\CouchDB\Persistence\AbstractDocument || is_subclass_of($target, 'Radmiraal\CouchDB\Persistence\AbstractDocument'));
 	}
 
@@ -71,9 +87,7 @@ class DocumentValidator extends GenericObjectValidator implements \TYPO3\Flow\Va
 	 */
 	protected function isValid($object) {
 		$className = get_class($object);
-		$modelConfigurations = $this->configurationManager->getConfiguration('Models');
-		$propertiesConfiguration = $modelConfigurations[str_replace('\\', '.', $className)]['properties'];
-
+		$propertiesConfiguration = $this->modelConfigurations[str_replace('\\', '.', $className)]['properties'];
 		$validator = new GenericObjectValidator();
 
 			// Skip additional validation if no model configuration is found
