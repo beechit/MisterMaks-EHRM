@@ -1,0 +1,8 @@
+type: 'TYPO3.Form:Form'
+identifier: 'blankWizard'
+label: '[Blank Wizard]'
+renderables:
+    -
+        type: 'TYPO3.Form:Page'
+        identifier: page1
+        label: 'Page 1'

@@ -16,7 +16,7 @@ use TYPO3\Flow\Annotations as Flow;
  *
  * @Flow\Aspect
  */
-class YamlPersistenceManagerAspect {
+class FormBuilderYamlPersistenceAspect {
 
 	/**
 	 * @var string

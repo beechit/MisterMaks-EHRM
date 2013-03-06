@@ -17,23 +17,28 @@ use TYPO3\Flow\Annotations as Flow;
 class WizardController extends AbstractController {
 
 	/**
-	 * @param \TYPO3\Flow\Mvc\View\ViewInterface $view
+	 * @Flow\Inject
+	 * @var \TYPO3\Form\Persistence\FormPersistenceManagerInterface
+	 */
+	protected $formPersistenceManager;
+
+	/**
 	 * @return void
 	 */
-	public function initializeView(\TYPO3\Flow\Mvc\View\ViewInterface $view) {
+	public function indexAction() {
+		$this->view->assign('forms', $this->formPersistenceManager->listForms());
 	}
 
 	/**
-	 * Get modal for entity
-	 *
-	 * @param string $entity
-	 * @param integer $id
 	 * @return void
 	 */
-	public function indexAction($entity = NULL, $id = NULL) {
-		$this->view->assign('modalId', $entity . '_' . $id);
-		$this->view->assign('title', ucwords($entity) . ' of ID ' . $id);
-		$this->view->assign('content', 'Content for ' . $entity);
+	public function createAction() {
+		$form = \Symfony\Component\Yaml\Yaml::parse(file_get_contents('resource://Beech.Ehrm/Private/Templates/Form/Blank.yaml'));
+		$form['label'] = 'Wizard' . time();
+		$formIdentifier = $form['label'];
+		$formPersistenceIdentifier = $formIdentifier;
+		$this->formPersistenceManager->save($formPersistenceIdentifier, $form);
+		$this->redirect('index', 'Editor', 'TYPO3.FormBuilder', array('formPersistenceIdentifier' => $formPersistenceIdentifier, 'presetName' => 'wizard'));
 	}
 
 	/**

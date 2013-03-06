@@ -26,6 +26,11 @@ class Package extends BasePackage {
 				$configurationManager->registerConfigurationType('Models', \TYPO3\Flow\Configuration\ConfigurationManager::CONFIGURATION_PROCESSING_TYPE_DEFAULT, TRUE);
 			}
 		);
+		$dispatcher->connect('TYPO3\Flow\Configuration\ConfigurationManager', 'configurationManagerReady',
+			function ($configurationManager) {
+				$configurationManager->registerConfigurationType('Wizards', \TYPO3\Flow\Configuration\ConfigurationManager::CONFIGURATION_PROCESSING_TYPE_DEFAULT, TRUE);
+			}
+		);
 	}
 }
 

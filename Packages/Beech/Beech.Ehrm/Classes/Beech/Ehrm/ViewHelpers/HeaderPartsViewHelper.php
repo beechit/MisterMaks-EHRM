@@ -219,7 +219,12 @@ class HeaderPartsViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHel
 						->reset()
 						->setFormat('jsonp')
 						->setCreateAbsoluteUri(TRUE)
-						->uriFor('index', array(), 'Account', 'TYPO3.UserManagement')
+						->uriFor('index', array(), 'Account', 'TYPO3.UserManagement'),
+					'wizardManagementModule' => $this->controllerContext->getUriBuilder()
+						->reset()
+						->setFormat('jsonp')
+						->setCreateAbsoluteUri(TRUE)
+						->uriFor('index', array(), 'Wizard', 'Beech.Ehrm')
 				)
 			),
 			'locale' => $this->preferenceUtility->getApplicationPreference('locale')

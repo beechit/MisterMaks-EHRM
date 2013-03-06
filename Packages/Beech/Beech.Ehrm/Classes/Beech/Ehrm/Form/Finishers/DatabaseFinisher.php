@@ -1,5 +1,5 @@
 <?php
-namespace Beech\Ehrm\Finishers;
+namespace Beech\Ehrm\Form\Finishers;
 
 /*
  * This source file is proprietary property of Beech Applications B.V.

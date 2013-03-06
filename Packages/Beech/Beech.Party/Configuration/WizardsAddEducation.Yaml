@@ -1,0 +1,86 @@
+#############################################################
+# validated yaml for the add education wizard
+# this can be used to add education profiles persons
+# Based on TYPO3.Form
+#############################################################
+addEducation:
+  type: 'TYPO3.Form:Form'
+  identifier: addEducation
+  label: 'Wizard Add Education'
+  renderables:
+    -
+      type: 'TYPO3.Form:Page'
+      identifier: 'page1'
+      label: 'Page 1'
+      renderables:
+        -
+          type: 'TYPO3.Form:Section'
+          identifier: 'addEducation'
+          label: 'Add education'
+          renderables:
+            -
+  # todo: implement this as an array.
+              type: 'TYPO3.Form:SingleSelectDropdown'
+              identifier: 'educationType'
+              label: 'Education type'
+              properties:
+                options:
+                  -
+                    _value: primaryEducation
+                    _key: 'Bussiness adress'
+                  -
+                    _value: preVocationalEducation
+                    _key: 'Pre-vocational education'
+                  -
+                    _value: vocationalSecondaryEducation
+                    _key: 'Vocational secondary education'
+                  -
+                    _value: higherVocationalEducation
+                    _key: 'Higer vocational education'
+                  -
+                    _value: academicEducation
+                    _key: 'Academic education'
+              validators:
+                -
+                  type: 'NotEmpty'
+                -
+                  type: 'StringLength'
+                  options:
+                    maximum: 30
+          -
+            type: 'TYPO3.Form:SingleLineText'
+            identifier: 'nameEducationInstitute'
+            label: 'Name of the education institute'
+            validators:
+                  -
+                    type: 'StringLength'
+                    options:
+                      maximum: 35
+          -
+            type: 'TYPO3.Form:DatePicker'
+            options:
+              dateFormat: 'm-Y'
+            identifier: 'educationStart'
+            label: 'Education start date'
+            validators:
+              -
+                type: 'RegularExpression'
+                options:
+                  regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
+          -
+            type: 'TYPO3.Form:DatePicker'
+            options:
+              dateFormat: 'm-Y'
+            identifier: 'educationEndDate'
+            label: 'Education end date'
+            validators:
+             -
+               type: 'RegularExpression'
+               options:
+                 regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
+          -
+            type: 'TYPO3.Form:Checkbox'
+            identifier: 'diploma'
+            label: 'Diploma'
+  renderingOptions:
+    submitButtonLabel: 'Save'

@@ -12,6 +12,7 @@
 		this.route('contractArticleModule', { path: '/administration/contractarticles' });
 		this.route('userManagementModule', { path: '/administration/usermanagement' });
 		this.route('contractModule', { path: '/administration/contracts' });
+		this.route('wizardManagementModule', { path: '/administration/wizards' });
 
 			// Beech.Party
 		this.resource('BeechPartyPersonModule', { path: '/persons' }, function() {
@@ -74,6 +75,7 @@
 	App.ContractArticleModuleRoute = App.IndexRoute.extend(App.AjaxModuleControllerMixin, { url: MM.url.module.contractArticle });
 	App.ContractModuleRoute = App.IndexRoute.extend(App.AjaxModuleControllerMixin, { url: MM.url.module.contract });
 	App.UserManagementModuleRoute = App.IndexRoute.extend(App.AjaxModuleControllerMixin, { url: MM.url.module.userManagementModule });
+	App.WizardManagementModuleRoute = App.IndexRoute.extend(App.AjaxModuleControllerMixin, { url: MM.url.module.wizardManagementModule });
 
 		// Administration routes
 	App.AdministrationRoute = Ember.Route.extend({

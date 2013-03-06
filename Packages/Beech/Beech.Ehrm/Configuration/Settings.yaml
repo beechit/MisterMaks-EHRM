@@ -70,7 +70,7 @@ TYPO3:
         parentPreset: 'default'
         finisherPresets:
           'Beech.Ehrm:Database':
-            implementationClassName: 'Beech\Ehrm\Finishers\DatabaseFinisher'
+            implementationClassName: 'Beech\Ehrm\Form\Finishers\DatabaseFinisher'
         formElementTypes:
           'TYPO3.Form:Base':
             renderingOptions:
