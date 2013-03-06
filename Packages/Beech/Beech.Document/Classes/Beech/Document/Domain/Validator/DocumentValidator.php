@@ -30,7 +30,7 @@ class DocumentValidator extends \TYPO3\Flow\Validation\Validator\AbstractValidat
 	 */
 	public function isValid($value) {
 		if (!$value instanceof \Beech\Document\Domain\Model\Document) {
-			$this->addError(sprintf('The ResourceValidator only validates objects of type \Beech\Document\Domain\Model\Document, %s given', get_class($value)), 1356875835);
+			$this->addError(sprintf('The DocumentValidator only validates objects of type \Beech\Document\Domain\Model\Document, %s given', get_class($value)), 1356875835);
 			return FALSE;
 		}
 
