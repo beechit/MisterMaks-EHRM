@@ -1,14 +1,34 @@
 jobDescriptionNumber: '10.09'
 jobTitle: Teeltchef
-jobContext: 'De functie komt m.n. in (middel)grote glastuinbouwbedrijven (groenten en bloemen/planten) voor. De aansturing vindt plaats o.b.v. goedgekeurde teeltplannen en werkschema\''s. Inzake de uitvoering wordt teruggerapporteerd en achteraf verantwoording afgelegd aan bedrijfsleider of directie. De functie initieert ook aanpassingen/verbeteringen in de processen, mede via proefproducties/experimenten. De functie maakt deel uit van in niveau opklimmende functiereeks van leidinggevende functies (zie bijbehorende NOK). Deze reeks is een vervolg op de uitvoerende functies van teeltmedewerker (zie functienummers 10.03 t/m 10.05).'
+jobContext: 'De functie komt m.n. in (middel)grote glastuinbouwbedrijven (groenten en bloemen\/planten) voor. De aansturing vindt plaats o.b.v. goedgekeurde teeltplannen en werkschema\\''s. Inzake de uitvoering wordt teruggerapporteerd en achteraf verantwoording afgelegd aan bedrijfsleider of directie. De functie initieert ook aanpassingen\/verbeteringen in de processen, mede via proefproducties\/experimenten. De functie maakt deel uit van in niveau opklimmende functiereeks van leidinggevende functies (zie bijbehorende NOK). Deze reeks is een vervolg op de uitvoerende functies van teeltmedewerker (zie functienummers 10.03 t\/m 10.05).'
 reportsTo: 'operationeel leidinggevende, zoals bijv. ondernemer of productieleider'
 manages: '5-10 medewerkers'
 jobGoal: 'Leiden van de werkzaamheden t.a.v. het telen en oogsten van tuinbouwgewassen zodanig dat deze worden geproduceerd resp. afgeleverd volgens specificaties van het bedrijf resp. de klant.'
 department: Productie
 expectations:
-  mainActivities: ['toezien op juist gebruik en onderhoud van hulpmiddelen', 'toezien op het naleven van de bedrijfsinstructies inzake veiligheid van werken, inzake gebruik en toepassing beschermingsmiddelen e.d.', 'verzorgen van periodieke overzichten ', 'controleren van de uitvoeringskwaliteit, herstellen van afwijkingen', 'oplossen van zich voordoende problemen', 'uitvoeren van het personeelsbeheer w.o. mede selecteren en aannemen van nieuwe medewerkers, opleiden/', 'bijhouden van diverse aan/afwezigheidsgegevens', 'verrichten van overige werkzaamheden w.o. het opstellen van werkinstructies/instructiemateriaal voor medewerkers ', 'uitzetten en verplaatsen van opgepot uitgangsmateriaal in kas- of groeipositie (mechanisch of handmatig) ']
-  resultCriteria: ['mate waarin voorschriften worden nageleefd']
+  -
+    resultArea: 'Presterende medewerkers'
+    mainActivities: ['leiden van de werkzaamheden t.a.v. teeltvoorbereiding, teelt en oogst gericht op het bereiken van de geraamde kwantiteit en bedoelde kwaliteit product', 'uitwerken van teeltplannen en werkschema\\''s naar een werkplanning', 'toewijzen van taken aan en indelen van de medewerkers, geven van aanwijzingen\/instructies', 'controleren van de uitvoeringskwaliteit, herstellen van afwijkingen', 'oplossen van zich voordoende problemen', 'uitvoeren van het personeelsbeheer w.o. mede selecteren en aannemen van nieuwe medewerkers, opleiden\/', 'bijhouden van diverse aan\/afwezigheidsgegevens', 'verrichten van overige werkzaamheden w.o. het opstellen van werkinstructies\/instructiemateriaal voor medewerkers ']
+    resultCriteria: ['kennis van medewerkers', 'efficiency en juistheid van uitgevoerde werkzaamheden', 'doelmatigheid van communicatie', 'tijdigheid en juistheid oplossingen van afwijkingen en problemen ']
+  -
+    resultArea: 'Bijdrage aan kwaliteitverbetering'
+    mainActivities: ['beoordelen van groeibodemkwaliteit, evt. initieren van verbeteringsmaatregelen', 'beoordelen\/controleren van de groeiontwikkeling; initieren van maatregelen t.b.v. gewasbescherming of ziektebestrijding of t.b.v. groeiverbetering door klimaat-, licht- etc. beheersing', 'beoordelen van gewas op oogstrijpheid en bepalen van de oogstmomenten ']
+    resultCriteria: ['bruikbaarheid en doelmatigheid van verbeteringsmaatregelen', 'mate van bijdrage aan de kwaliteit van het gewas']
+  -
+    resultArea: Verbetervoorstellen
+    mainActivities: ['ontwikkelen (vanuit de dagelijkse praktijk) en uitbrengen van voorstellen over verbeteringen\/aanpassingen in de processen', 'inplannen en doen uitvoeren van bijzondere processen als bijv. proefproducties of bepaalde experimenten. Rapporteren over het verloop; doen van aanbevelingen  ']
+    resultCriteria: ['kwaliteit en bruikbaarheid van verbetervoorstellen', 'kwaliteit\/efficiency van geplande en uitgevoerde processen', 'bruikbaarheid van de aanbevelingen']
+  -
+    resultArea: 'Bijgehouden teelt en oogstgegevens'
+    mainActivities: ['verzorgen van diverse registraties i.h.k.v. teelt- en oogstprocessen w.o. het (laten) bijhouden van gegevens (over voorbereiding teelt en oogst) inzake toegepaste groeibeheersingsmaatregelen, voedingstoediening, groeiontwikkeling', 'bijhouden van gegevens over productieaantallen e.d', 'verzorgen van periodieke overzichten ']
+    resultCriteria: ['volledigheid en actualiteit van gegevens', 'juistheid en duidelijkheid van overzichten']
+  -
+    resultArea: 'Gehandhaafde voorschriften'
+    mainActivities: ['toezien op juist gebruik en onderhoud van hulpmiddelen', 'toezien op het naleven van de bedrijfsinstructies inzake veiligheid van werken, inzake gebruik en toepassing beschermingsmiddelen e.d.']
+    resultCriteria: ['mate waarin voorschriften worden nageleefd']
 burdeningCircumstances:
-  circumstance: ['Soms werken/verblijven in ruimten met hinder van relatief hoge luchtvochtigheid (ca. 80%) en/of hoge temperatuur (tot ca. 25 C).', 'Het functieniveau volgens ORBA is gebaseerd op de rubrieken: Functiecontext, Positie in de organisatie, Functiedoel, Resultaatverwachting / Functionele activiteiten en Werkgerelateerde bezwaren. ', 'Soms werken aan/met vochtige materialen bij plantwerkzaamheden. Voortdurend werken in ruimten met relatief hoge luchtvochtigheid (ca. 80%) en relatief hoge temperaturen (tot ca. 25 C). Hinder van dragen van voorgeschreven persoonlijke beschermingsmidd', 'Kans op hand- en vingerletsel a.g.v. hanteren van messen etc. bij gewasverzorging.', 'Het functieniveau volgens ORBA is gebaseerd op de rubrieken: Functiecontext, Positie in de organisatie, Functiedoel, Resultaatverwachting / Functionele activiteiten en Werkgerelateerde bezwaren. ']
+  circumstance:
+    - 'Soms werken\/verblijven in ruimten met hinder van relatief hoge luchtvochtigheid (ca. 80%) en\/of hoge temperatuur (tot ca. 25 C).'
+    - 'Het functieniveau volgens ORBA is gebaseerd op de rubrieken: Functiecontext, Positie in de organisatie, Functiedoel, Resultaatverwachting \/ Functionele activiteiten en Werkgerelateerde bezwaren. '
 orbaScore: '140'
 wageScaleGroup: H

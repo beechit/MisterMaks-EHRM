@@ -1,14 +1,38 @@
 jobDescriptionNumber: '10.13'
-jobTitle: Productieleider/bedrijfsleider
-jobContext: 'Het betreft de functie die vooral voorkomt in de (middel)grote glastuinbouwbedrijven (groenten en bloemen/planten) waarin de uitvoerende werkzaamheden zelfstandig worden verricht. De uitvoering wordt op hoofdlijnen aangegeven. De functiehouder geeft leiding en houdt toezicht op de uitvoering door medewerkers. Tijdens bedrijfspieken zijn soms relatief grote aantallen werknemers aanwezig.'
+jobTitle: Productieleider\/bedrijfsleider
+jobContext: 'Het betreft de functie die vooral voorkomt in de (middel)grote glastuinbouwbedrijven (groenten en bloemen\/planten) waarin de uitvoerende werkzaamheden zelfstandig worden verricht. De uitvoering wordt op hoofdlijnen aangegeven. De functiehouder geeft leiding en houdt toezicht op de uitvoering door medewerkers. Tijdens bedrijfspieken zijn soms relatief grote aantallen werknemers aanwezig.'
 reportsTo: directie
-manages: 'ca. 5-10 afdelingshoofden, groepsleiders en/of meewerkend voormannen, indirect ca 60-70 medewerkers (tijdens bedrijfspieken)'
-jobGoal: 'Zorgen voor efficiënte en effectieve werkuitvoering, zodanig dat voldaan wordt aan de normen t.a.v. kosten, kwaliteit en beschikbare capaciteit optimaal benut wordt. '
+manages: 'ca. 5-10 afdelingshoofden, groepsleiders en\/of meewerkend voormannen, indirect ca 60-70 medewerkers (tijdens bedrijfspieken)'
+jobGoal: 'Zorgen voor effici\u00ebnte en effectieve werkuitvoering, zodanig dat voldaan wordt aan de normen t.a.v. kosten, kwaliteit en beschikbare capaciteit optimaal benut wordt. '
 department: Productie
 expectations:
-  mainActivities: ['zorgen voor het beheer van en veiligheid op het bedrijfsterrein', 'toezien op de naleving van deze procedures en werkinstructies', 'beoordelen van de handelingsprocessen en zo nodig doen van voorstellen tot optimalisatie', 'voorbereiden van investering- en onderhoudsplannen, opstellen van budgetten', 'beheren van de toegewezen budgetten en verzorgen van rapportages ', 'controleren van de kwaliteit van het product', 'signaleren van verstorende invloeden en deze bespreken met bedrijfsleider', 'deelnemen aan maandelijks overleg met alle vaste medewerkers en wekelijks overleg met het management ', 'uitzetten en verplaatsen van opgepot uitgangsmateriaal in kas- of groeipositie (mechanisch of handmatig) ']
-  resultCriteria: ['mate van naleving van bedrijfsregels- en procedures', 'mate van naleving van veiligheidsvoorschriften en procedures', 'mate van naleving van voorschriften en procedures ']
+  -
+    resultArea: 'Presterende medewerkers'
+    mainActivities: ['organiseren, co\u00f6rdineren en leiden van de dagelijkse operatie', 'instrueren en informeren van direct ondergeschikten, delegeren van verantwoordelijkheden en stellen van prioriteiten', 'bewaken van uitvoering in kwalitatieve en kwantitatieve zin, toezien op de voortgang en ingrijpen bij organisatorische of andere onvolkomenheden', '(laten) opstellen en bewaken van een doelmatige personeelsplanning', 'uitvoeren van het personeelsbeheer w.o. selecteren en aannemen van nieuwe medewerkers, opleiden\/begeleiden van nieuwe medewerkers, voeren van beoordelingsgesprekken, regelen van verlof. Bijhouden van diverse aan-\/afwezigheidsgegevens ']
+    resultCriteria: ['beschikbaarheid van medewerkers', 'inzetbaarheid van medewerkers', 'doelrealisatie door medewerkers', 'motivatie van medewerkers']
+  -
+    resultArea: '(Gerealiseerde) bedrijfsuitvoering'
+    mainActivities: ['plannen van de uitvoering van werkzaamheden', 'beoordelen van resultaten, signaleren van knelpunten en ingrijpen bij afwijkingen', 'beoordelen van de handelingsprocessen en zo nodig doen van voorstellen tot optimalisatie', 'voorbereiden van investering- en onderhoudsplannen, opstellen van budgetten', 'beheren van de toegewezen budgetten en verzorgen van rapportages ']
+    resultCriteria: ['efficiency en effectiviteit van werkprocessen', 'bruikbaarheid van voorstellen', 'helderheid van plannen', 'inzicht in efficiency en kosten van de bedrijfsuitvoering ']
+  -
+    resultArea: 'Geoptimaliseerde productie'
+    mainActivities: ['optimaliseren van bestaande productie processen m.b.t. de voorkomende gewassen', 'initi\u00ebren van acties die leiden tot kwaliteitsverbetering']
+    resultCriteria: ['doelmatigheid van optimalisatie(voorstellen)', 'kwaliteit van de voorgestelde acties']
+  -
+    resultArea: 'Beheerde administratie '
+    mainActivities: ['zorgdragen voor de uitvoering van de (financi\u00eble) administratie, zoals facturering en archivering (intern en\/of uitbesteedt aan derden)', 'controleren van uitgevoerde administraties o.b.v. overzichten en rapportages. Inschakelen van leidinggevende en\/of deskundige bij problemen of twijfel ']
+    resultCriteria: ['accuraatheid van administratie', 'conformiteit aan wet- en regelgeving']
+  -
+    resultArea: 'Gewaarborgde kwaliteit'
+    mainActivities: ['mede) vormgeven aan het kwaliteits-, Arbo-, milieu- en veiligheidsbeleid, i.o.m. leidinggevende, rekeninghoudend met de geldende wet- en regelgeving', 'opstellen en\/of aanpassen van procedures, instructies  ']
+    resultCriteria: ['\\tmate waarin (beleids-)voorstellen zijn onderbouwd', 'duidelijkheid en doelmatigheid van procedures en instructies']
+  -
+    resultArea: 'Gehandhaafde regels en voorschriften'
+    mainActivities: ['zorgen voor het beheer van en veiligheid op het bedrijfsterrein', 'toezien op de naleving van deze procedures en werkinstructies']
+    resultCriteria: ['mate van naleving van bedrijfsregels- en procedures', 'mate van naleving van veiligheidsvoorschriften en procedures', 'mate van naleving van voorschriften en procedures ']
 burdeningCircumstances:
-  circumstance: ['Niet van toepassing.', 'Het functieniveau volgens ORBA is gebaseerd op de rubrieken: Functiecontext, Positie in de organisatie, Functiedoel, Resultaatverwachting / Functionele activiteiten en Werkgerelateerde bezwaren. ', 'Hinder van dragen van voorgeschreven persoonlijke beschermingsmiddelen bij samenstellen of aanbrengen van voedings-/meststoffen of bestrijdingsmiddelen.', 'Het functieniveau volgens ORBA is gebaseerd op de rubrieken: Functiecontext, Positie in de organisatie, Functiedoel, Resultaatverwachting / Functionele activiteiten en Werkgerelateerde bezwaren. ', 'Het functieniveau volgens ORBA is gebaseerd op de rubrieken: Functiecontext, Positie in de organisatie, Functiedoel, Resultaatverwachting / Functionele activiteiten en Werkgerelateerde bezwaren. ']
+  circumstance:
+    - 'Niet van toepassing.'
+    - 'Het functieniveau volgens ORBA is gebaseerd op de rubrieken: Functiecontext, Positie in de organisatie, Functiedoel, Resultaatverwachting \/ Functionele activiteiten en Werkgerelateerde bezwaren. '
 orbaScore: '197'
 wageScaleGroup: 'Boven CAO'

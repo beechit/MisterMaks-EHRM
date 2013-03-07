@@ -1,14 +1,26 @@
 jobDescriptionNumber: '60.03'
-jobTitle: Boekhouder/administrateur
-jobContext: 'De functie komt voor in de grotere agrarische bedrijven (veelal meer dan 50 medewerkers). Veelal is er sprake van een “1 persoonspost” en daarmee van een zekere professionele zelfstandigheid. Ook kan er sprake zijn van een functionele en vakinhoudelijke samenwerking met externe administratie- of accountantsorganisaties. De boekhoudkundige complexiteit is meestal beperkt. In de functie worden ook andere werkzaamheden verricht t.b.v. personeels-, salaris- en productieadministratie.'
+jobTitle: Boekhouder\/administrateur
+jobContext: 'De functie komt voor in de grotere agrarische bedrijven (veelal meer dan 50 medewerkers). Veelal is er sprake van een \u201c1 persoonspost\u201d en daarmee van een zekere professionele zelfstandigheid. Ook kan er sprake zijn van een functionele en vakinhoudelijke samenwerking met externe administratie- of accountantsorganisaties. De boekhoudkundige complexiteit is meestal beperkt. In de functie worden ook andere werkzaamheden verricht t.b.v. personeels-, salaris- en productieadministratie.'
 reportsTo: 'operationeel leidinggevende, zoals bijv. ondernemer of bedrijfsleider '
 manages: 'niet van toepassing'
-jobGoal: 'Het verzorgen van financiële administraties, zodanig dat deze bijgewerkt zijn, de juiste gegevens bevatten en met de gegevens tijdig de juiste informatie gegenereerd kan worden.'
+jobGoal: 'Het verzorgen van financi\u00eble administraties, zodanig dat deze bijgewerkt zijn, de juiste gegevens bevatten en met de gegevens tijdig de juiste informatie gegenereerd kan worden.'
 department: 'Administratie & ICT'
 expectations:
-  mainActivities: ['samenstellen van overzichten saldilijsten per boekingsperiode', 'vaststellen van voorraadsituaties', 'opmaken en afstemmen van aangifte BTW', 'voorleggen en bespreken met bedrijfsleiding van concepten en bijzonderheden ', 'controleren van de output (foutmeldingen) en aanbrengen van correcties evt. na ruggespraak met de boekhouder ', 'zo nodig toelichten van de offerte bij een klant', 'opstellen van een jaarcontract (afroep) en bespreken met leidinggevende ', 'mengen en storten van (kleine hoeveelheden) beton m.b.v. betonmolen', 'aanbrengen van pleisterlagen op muren en plafonds', 'zetten van vloer- en wandtegels', 'leggen en ontstoppen van rioleringen', 'uitvoeren van voorbereidende en bijkomende werkzaamheden als hak- en breekwerk, graafwerk, bestratingwerkzaamheden ']
-  resultCriteria: ['compleetheid en juistheid overzichten', 'juistheid vastgestelde voorraadsituatie', 'tijdigheid en juistheid van BTW aangifte']
+  -
+    resultArea: 'Verzorgde financi\u00eble administratie'
+    mainActivities: ['bijhouden van dagboeken en grootboekrekeningen a.d.h.v. financi\u00eble bescheiden volgens wettelijke en ondernemingsvoorschriften en afspraken', 'bijhouden van noodzakelijke subgrootboeken zoals debiteuren, crediteuren, voorraden en vaste activa', 'afsluiten per periode van grootboekrekeningen en opstellen van balans en resultatenrekening ']
+    resultCriteria: ['actualiteit en juistheid van bijgehouden administraties en geleverde informatie', 'juistheid van gegevens t.b.v. balans en resultatenrekening', 'tijdigheid van afsluitingen en geleverde informatie ']
+  -
+    resultArea: 'Bijdrage aan totstandkoming van de jaarstukken'
+    mainActivities: ['afstemmen van grootboek- en subadministraties en het voorbereiden van correcties en overboekingen', 'opmaken van de kolommenbalans', 'samenstellen van de kolommenbalansspecificaties', 'voorleggen en bespreken met bedrijfsleiding van concepten en bijzonderheden ']
+    resultCriteria: ['juistheid en tijdigheid van in de jaarstukken te verwerken financi\u00eble gegevens']
+  -
+    resultArea: 'Overige bijdrage'
+    mainActivities: ['samenstellen van overzichten saldilijsten per boekingsperiode', 'vaststellen van voorraadsituaties', 'opmaken en afstemmen van aangifte BTW']
+    resultCriteria: ['compleetheid en juistheid overzichten', 'juistheid vastgestelde voorraadsituatie', 'tijdigheid en juistheid van BTW aangifte']
 burdeningCircumstances:
-  circumstance: ['Eenzijdige houding en belasting van oog- en rugspieren bij het werken met beeldscherm (max.  2 uur p.d.).', 'Het functieniveau volgens ORBA is gebaseerd op de rubrieken: Functiecontext, Positie in de organisatie, Functiedoel, Resultaatverwachting / Functionele activiteiten en Werkgerelateerde bezwaren. ', 'Het functieniveau volgens ORBA is gebaseerd op de rubrieken: Functiecontext, Positie in de organisatie, Functiedoel, Resultaatverwachting / Functionele activiteiten en Werkgerelateerde bezwaren. ', 'Kans op letsel door contact met onder spanning staande delen, door aanraking met scherpe machineonderdelen.', 'Het functieniveau volgens ORBA is gebaseerd op de rubrieken: Functiecontext, Positie in de organisatie, Functiedoel, Resultaatverwachting / Functionele activiteiten en Werkgerelateerde bezwaren. ']
+  circumstance:
+    - 'Eenzijdige houding en belasting van oog- en rugspieren bij het werken met beeldscherm (max.  2 uur p.d.).'
+    - 'Het functieniveau volgens ORBA is gebaseerd op de rubrieken: Functiecontext, Positie in de organisatie, Functiedoel, Resultaatverwachting \/ Functionele activiteiten en Werkgerelateerde bezwaren. '
 orbaScore: '136'
 wageScaleGroup: H

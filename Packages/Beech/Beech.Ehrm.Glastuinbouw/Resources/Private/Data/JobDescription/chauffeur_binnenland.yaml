@@ -1,14 +1,32 @@
 jobDescriptionNumber: '20.04'
 jobTitle: 'Chauffeur binnenland'
-jobContext: 'De functie komt als volledige functie voor in de grotere glastuinbouw bedrijven met eigen vrachtauto. Het betreft vrijwel uitsluitend het uitvoeren van (dag)ritten in Nederland, naar vnl. bekende adressen/locaties met vnl. bekende contactpersonen.\r\nDe rittenplanning wordt centraal geregeld, door bijv. een transportplanner of hoofd logistiek. De chauffeur dient in geval van (dreigende) vertraging of calamiteiten ruggespraak te houden met de (transport)planning. De chauffeur is belast met in- en uitladen. Er wordt van uitgegaan dat de chauffeur een eigen handpallet/hefapparaat bij zich heeft en gebruikt. Laden en lossen gebeurt soms in een expeditieloods maar veelal in de openlucht.\r\nEr wordt gereden met een vrachtwagencombinatie of truck met oplegger. Er wordt gebruikgemaakt van navigatie- en communicatiesystemen. \r\n'
+jobContext: 'De functie komt als volledige functie voor in de grotere glastuinbouw bedrijven met eigen vrachtauto. Het betreft vrijwel uitsluitend het uitvoeren van (dag)ritten in Nederland, naar vnl. bekende adressen\/locaties met vnl. bekende contactpersonen.\De rittenplanning wordt centraal geregeld, door bijv. een transportplanner of hoofd logistiek. De chauffeur dient in geval van (dreigende) vertraging of calamiteiten ruggespraak te houden met de (transport)planning. De chauffeur is belast met in- en uitladen. Er wordt van uitgegaan dat de chauffeur een eigen handpallet\/hefapparaat bij zich heeft en gebruikt. Laden en lossen gebeurt soms in een expeditieloods maar veelal in de openlucht.\Er wordt gereden met een vrachtwagencombinatie of truck met oplegger. Er wordt gebruikgemaakt van navigatie- en communicatiesystemen. \'
 reportsTo: 'operationeel leidinggevende, zoals bijv. ondernemer of hoofd expeditie'
 manages: 'niet van toepassing'
-jobGoal: 'Afleveren van goederen/producten van productielocatie naar afnemerlocaties in Nederland overeenkomstig de gegevens op de bijbehorende vrachtdocumenten.'
+jobGoal: 'Afleveren van goederen\/producten van productielocatie naar afnemerlocaties in Nederland overeenkomstig de gegevens op de bijbehorende vrachtdocumenten.'
 department: Logistiek
 expectations:
-  mainActivities: ['Naleven van wettelijke en bedrijfsvoorschriften en -procedures.', '­\tinvullen en verwisselen van tachograafschijf volgens voorschrift', '­\tordelijk en schoonhouden van de cabine', '­\ttoezien op het lossen van goederen, resp. zelf lossen van goederen m.b.v. handpallettruck', '­\taftekenen van vrachtdocumenten en laten tekenen voor ontvangst', '­\tmeenemen van retourartikelen (emballage) en uitschrijven van ontvangstbonnen', '­\tafleveren van retourartikelen bij productielocatie', '­\thouden van ruggespraak bij (dreigende) vertraging of calamiteiten met de transportplanner', 'ontwikkelen en vastleggen van backup procedures, draaiboek m.b.t. de in noodsituaties te ondernemen acties', 'opstellen van procedures voor systeemontwikkelaars, applicatiebeheerders en eindgebruikers ', 'leggen en ontstoppen van rioleringen', 'uitvoeren van voorbereidende en bijkomende werkzaamheden als hak- en breekwerk, graafwerk, bestratingwerkzaamheden ']
-  resultCriteria: ['­\tnaleving van verkeersregels en bedrijfsvoorschriften', '­schadevrij rijden']
+  -
+    resultArea: 'Afgeleverde goederen'
+    mainActivities: ['\u00ad\\ttransporteren van goederen naar afnemers in het binnenland (incl. stedelijke gebieden) o.b.v. daartoe verkregen schriftelijke en\/of mondelinge opdrachten', '\u00ad\\tpositioneren van de wagen op aangegeven locatie', '\u00ad\\tin ontvangst nemen van vrachtdocumenten en laadinstructies', '\u00ad\\ttoezien op het lossen van goederen, resp. zelf lossen van goederen m.b.v. handpallettruck', '\u00ad\\taftekenen van vrachtdocumenten en laten tekenen voor ontvangst', '\u00ad\\tmeenemen van retourartikelen (emballage) en uitschrijven van ontvangstbonnen', '\u00ad\\tafleveren van retourartikelen bij productielocatie', '\u00ad\\thouden van ruggespraak bij (dreigende) vertraging of calamiteiten met de transportplanner']
+    resultCriteria: ['\u00ad\\tjuistheid van laden en lossen van goederen', '\u00ad\\ttijdige en juiste afleveringen', '\u00ad\\tvolledigheid van controles van ladingen en vrachtdocumenten', '\u00ad\\tjuistheid van afhandeling ']
+  -
+    resultArea: 'Overige bijdragen'
+    mainActivities: ['\u00ad\\tuitvoeren van dagelijkse controles, (klein) onderhoud en brandstofinname', '\u00ad\\tverhelpen van kleine mankementen en melden van grotere storingen', '\u00ad\\tordelijk en schoonhouden van de cabine']
+    resultCriteria: ['\u00ad\\ttijdig gebruikersonderhoud en brandstofinname']
+  -
+    resultArea: 'Verstrekte informatie'
+    mainActivities: ['\u00ad\\tregistreren van kilometerstanden, kosten, brandstofverbruik', '\u00ad\\tinvullen en verwisselen van tachograafschijf volgens voorschrift']
+    resultCriteria: ['\u00ad\\tjuistheid en volledigheid van gegevens']
+  -
+    resultArea: 'Nageleefde voorschriften '
+    mainActivities: ['Naleven van wettelijke en bedrijfsvoorschriften en -procedures.']
+    resultCriteria: ['\u00ad\\tnaleving van verkeersregels en bedrijfsvoorschriften', '\u00adschadevrij rijden']
 burdeningCircumstances:
-  circumstance: ['­\tKrachtsuitoefening bij laad- en loswerkzaamheden (incidenteel).', '­\tEenzijdige houding en oogspierbelasting bij autorijden.', '­\tHinder van weersomstandigheden bij laden en lossen. Enerverend bij deelname aan verkeer.', '­\tKans op letsel bij verkeersongevallen en bij laden en lossen.', 'Het functieniveau volgens ORBA is gebaseerd op de rubrieken: Functiecontext, Positie in de organisatie, Functiedoel, Resultaatverwachting / Functionele activiteiten en Werkgerelateerde bezwaren. ']
+  circumstance:
+    - '\u00ad\\tKrachtsuitoefening bij laad- en loswerkzaamheden (incidenteel).'
+    - '\u00ad\\tEenzijdige houding en oogspierbelasting bij autorijden.'
+    - '\u00ad\\tHinder van weersomstandigheden bij laden en lossen. Enerverend bij deelname aan verkeer.'
+    - '\u00ad\\tKans op letsel bij verkeersongevallen en bij laden en lossen.'
 orbaScore: '84'
 wageScaleGroup: E

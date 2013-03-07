@@ -1,14 +1,45 @@
 jobDescriptionNumber: '20.03'
 jobTitle: 'Logistiek medewerker'
-jobContext: 'De functie komt voor in grotere bedrijven met eigen opslagruimte voor uitgangsmateriaal en/of eindproducten.'
+jobContext: 'De functie komt voor in grotere bedrijven met eigen opslagruimte voor uitgangsmateriaal en\/of eindproducten.'
 reportsTo: 'operationeel leidinggevende, zoals bijv. hoofd logistiek of halchef'
 manages: 'niet van toepassing'
 jobGoal: 'Ontvangen, opslaan en uitgeven van producten.'
 department: Logistiek
 expectations:
-  mainActivities: ['Naleven van de bedrijfsinstructies inzake veiligheid van werken e.d.', 'schoonhouden van de magazijnen', 'verwerken van uitgiften in voorraadsysteem', 'overleggen met de leidinggevende bij problemen of nietcorrecte aanlevering', 'overleggen met leidinggevende en interne afnemers over wijze en moment van uitleveren', 'overleggen met externe chauffeurs over loswerkzaamheden, manco’s e.d. ', 'signaleren van verstorende invloeden en deze bespreken met bedrijfsleider', 'deelnemen aan maandelijks overleg met alle vaste medewerkers en wekelijks overleg met het management ', 'uitzetten en verplaatsen van opgepot uitgangsmateriaal in kas- of groeipositie (mechanisch of handmatig) ']
-  resultCriteria: ['mate waarin bedrijfsinstructies worden nageleefd']
+  -
+    resultArea: 'Ontvangen goederen'
+    mainActivities: ['controleren van de in- en extern aangevoerde producten en\/of goederen en materialen a.d.h.v. vrachtbrieven en pakbonnen, alsmede op uiterlijk, afwijkingen worden gemeld aan direct leidinggevende', 'aftekenen van vrachtbrieven en noteren van ontvangsten en eventuele extra leveringen', 'controleren of wijze van verpakken en\/of palletiseren is geschied volgens de voorschriften', 'overleggen met de leidinggevende bij problemen of nietcorrecte aanlevering', 'overleggen met leidinggevende en interne afnemers over wijze en moment van uitleveren', 'overleggen met externe chauffeurs over loswerkzaamheden, manco\u2019s e.d. ']
+    resultCriteria: ['juistheid van specificaties', 'juistheid van registratie van ontvangsten', 'adequaatheid van uitgevoerde controles ']
+  -
+    resultArea: 'Opgeslagen goederen'
+    mainActivities: ['opslaan van goederen in magazijnruimten of koelcellen, soms m.b.v. vorkheftruck, volgens interne voorschriften en i.o.m. afdelingschef', 'registreren van verrichte werkzaamheden, zodat goederen\/producten terugvindbaar zijn']
+    resultCriteria: ['correctheid van opgeslagen goederen', 'traceerbaarheid van goederen', 'juistheid van registratie']
+  -
+    resultArea: 'Aangeleverde goederen'
+    mainActivities: ['aanleveren van de goederen en\/of producten (m.b.v. vorkheftuck of karren)', 'verzendgereed maken van foutgeleverde goederen\/producten', 'verwerken van uitgiften in voorraadsysteem']
+    resultCriteria: ['juistheid van aanlevering van goederen', 'tijdigheid van aanlevering van goederen', 'juistheid van registraties']
+  -
+    resultArea: 'Bewaakte voorraad'
+    mainActivities: ['signaleren van het bereiken van ondergrenzen of bovengrenzen in voorraden, veranderingen t.o.v. de administratieve voorraad of veranderingen in kwaliteit van opgeslagen goederen\/producten', 'overleggen met direct leidinggevende over eventuele correctieve maatregelen']
+    resultCriteria: ['tijdigheid van signalering tekort\/', 'correctheid van uitgevoerde controles', 'alertheid op gesignaleerde kwaliteitsafwijkingen']
+  -
+    resultArea: 'Gearchiveerde orders'
+    mainActivities: ['Archiveren van opgeslagen en uitgeleverde orders.']
+    resultCriteria: ['accuraatheid van archivering', 'traceerbaarheid van orders']
+  -
+    resultArea: 'Werkende apparatuur'
+    mainActivities: ['uitvoeren van klein onderhoud en reparaties aan de te gebruiken transport- en hefmiddelen', 'schoonhouden van de magazijnen']
+    resultCriteria: ['juistheid en efficiency van uitgevoerd dagelijks onderhoud', 'orde en netheid van magazijnen']
+  -
+    resultArea: 'Nageleefde voorschriften'
+    mainActivities: ['Naleven van de bedrijfsinstructies inzake veiligheid van werken e.d.']
+    resultCriteria: ['mate waarin bedrijfsinstructies worden nageleefd']
 burdeningCircumstances:
-  circumstance: ['Uitoefenen van kracht bij het (ver)plaatsen van kratten, dozen, pallets, etc. van uiteenlopend gewicht.', 'Inspannende houding bij lossen en in/uit stellingen halen/rijden van goederen/producten.', 'Hinder van tocht en kou in magazijnen en/of koelcellen.', 'Kans op letsel door vertillen en door ongeval met hef- en transportmiddelen.', 'Het functieniveau volgens ORBA is gebaseerd op de rubrieken: Functiecontext, Positie in de organisatie, Functiedoel, Resultaatverwachting / Functionele activiteiten en Werkgerelateerde bezwaren. ']
+  circumstance:
+    - 'Uitoefenen van kracht bij het (ver)plaatsen van kratten, dozen, pallets, etc. van uiteenlopend gewicht.'
+    - 'Inspannende houding bij lossen en in\/uit stellingen halen\/rijden van goederen\/producten.'
+    - 'Hinder van tocht en kou in magazijnen en\/of koelcellen.'
+    - 'Kans op letsel door vertillen en door ongeval met hef- en transportmiddelen.'
+    - 'Het functieniveau volgens ORBA is gebaseerd op de rubrieken: Functiecontext, Positie in de organisatie, Functiedoel, Resultaatverwachting \/ Functionele activiteiten en Werkgerelateerde bezwaren. '
 orbaScore: '64'
 wageScaleGroup: D
