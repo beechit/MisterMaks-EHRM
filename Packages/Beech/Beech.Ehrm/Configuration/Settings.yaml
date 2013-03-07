@@ -128,7 +128,7 @@ TYPO3:
   FormBuilder:
     handlebarsTemplates:
       # include the handlebars template
-      Finisher-DatabaseFinisher: resource://Beech.Ehrm/Private/Templates/FormBuilder/DatabaseFinisher.html
+      Finisher-DatabaseFinisher: resource://Beech.Ehrm/Private/Templates/Form/Builder/DatabaseFinisher.html
 
   Flow:
     security:
