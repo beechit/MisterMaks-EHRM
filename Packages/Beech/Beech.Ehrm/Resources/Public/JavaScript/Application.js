@@ -18,19 +18,22 @@
 					.focus();
 			});
 
-			$('#modal-body-only').on('DOMSubtreeModified', function() {
-				var $that = $(this);
+				// Add modal-jsonp toggle for rendering wizards in modal boxes
+			$(document).on('click.modal.data-api', '[data-toggle="modal-jsonp"]', function (e) {
+				var $this = $(this),
+					href = $this.attr('href'),
+					$target = $($this.attr('data-target') || (href && href.replace(/.*(?=#[^\s]+$)/, '')));
+				e.preventDefault();
 
-				$(this).find('form').each(function() {
-					$(this).attr('action', App.ModuleHandler.jsonpifyUrl($(this).attr('action')));
-				});
+				$target.find('.modal-body').html('<p><i class="icon-spin icon-spinner icon-4x muted"></i></p>');
 
-				$(this).find('form').ajaxForm({
-					dataType: 'jsonp',
-					success: function(result) {
-						App.ModuleHandler.loadContent(result.html, $that.find('.modal-body'));
-					}
-				});
+				App.ModuleHandler.loadUrl(href, '#modal-body-only .modal-body');
+
+				$target
+					.modal()
+					.one('hide', function () {
+						$this.focus()
+					});
 			});
 		},
 

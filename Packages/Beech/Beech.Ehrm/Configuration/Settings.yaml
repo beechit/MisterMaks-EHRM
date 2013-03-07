@@ -69,6 +69,8 @@ TYPO3:
         finisherPresets:
           'Beech.Ehrm:Database':
             implementationClassName: 'Beech\Ehrm\Form\Finishers\DatabaseFinisher'
+          'Beech.Ehrm:ModalCloseConfirmation':
+            implementationClassName: 'Beech\Ehrm\Form\Finishers\ModalCloseConfirmationFinisher'
         formElementTypes:
           'TYPO3.Form:Base':
             renderingOptions:
@@ -83,6 +85,9 @@ TYPO3:
                     'Beech.Ehrm:Database':
                       label: 'Database Persistence Finisher'
                       templateName: 'Finisher-DatabaseFinisher'
+                    'Beech.Ehrm:ModalCloseConfirmation':
+                      label: 'Modal Close Confirmation'
+                      templateName: 'Finisher-ModalCloseConfirmationFinisher'
           'Beech.Ehrm:DatePicker':
             superTypes: ['TYPO3.Form:FormElement']
             implementationClassName: 'Beech\Ehrm\FormElements\DatePicker'
@@ -129,6 +134,7 @@ TYPO3:
     handlebarsTemplates:
       # include the handlebars template
       Finisher-DatabaseFinisher: resource://Beech.Ehrm/Private/Templates/Form/Builder/DatabaseFinisher.html
+      Finisher-ModalCloseConfirmationFinisher: resource://Beech.Ehrm/Private/Templates/Form/Builder/ModalCloseConfirmationFinisher.html
 
   Flow:
     security:

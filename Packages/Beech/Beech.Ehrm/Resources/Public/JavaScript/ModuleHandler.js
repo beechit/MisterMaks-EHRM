@@ -40,7 +40,7 @@
 			$moduleContainer.find('form').ajaxForm({
 				dataType: 'jsonp',
 				success: function(result) {
-					that.loadContent(result.html, '.ehrm-module');
+					that.loadContent(result.html, target);
 				}
 			});
 		},

@@ -6,3 +6,11 @@ renderables:
         type: 'TYPO3.Form:Page'
         identifier: page1
         label: 'Page 1'
+finishers:
+  -
+    identifier: 'Beech.Ehrm:ModalCloseConfirmation'
+    options:
+      message: 'wizard.completed'
+      buttons: 'close'
+renderingOptions:
+  submitButtonLabel: ''
