@@ -834,13 +834,13 @@
             "source": {
                 "type": "git",
                 "url": "git://git.typo3.org/FLOW3/Packages/TYPO3.Fluid.git",
-                "reference": "d7644f5719d7b8ec6cc76fcce89efdf6d02e6292"
+                "reference": "8266014f25749d3e09ce11d000f554066093bde3"
             },
             "require": {
                 "typo3/flow": "*",
                 "typo3/flow-composer-installers": "*"
             },
-            "time": "2013-03-05 14:01:40",
+            "time": "2013-03-07 10:19:32",
             "type": "typo3-flow-framework",
             "autoload": {
                 "psr-0": {
