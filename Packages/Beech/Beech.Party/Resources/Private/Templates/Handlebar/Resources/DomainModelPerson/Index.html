@@ -1,1 +1,42 @@
-domain model person
+<div class="row-fluid">
+	<div class="btn-group span3">
+		<a class="btn dropdown-toggle btn-large btn-warning" data-toggle="dropdown" href="#">
+			Afwezigheid
+			<span class="caret"></span>
+		</a>
+		<ul class="dropdown-menu">
+			<li><a href="{f:uri.action(package:'Beech.Ehrm', controller:'wizard', action:'show', arguments:'{formPersistenceIdentifier:\'newCompany\'}')}" data-toggle="modal-jsonp" data-target="#modal-body-only">New company</a></li>
+		</ul>
+	</div>
+	<div class="btn-group span3">
+		<a class="btn dropdown-toggle btn-large btn-success" data-toggle="dropdown" href="#">
+			Documenten
+			<span class="caret"></span>
+		</a>
+		<ul class="dropdown-menu">
+			<li><a href="{f:uri.action(package:'Beech.Ehrm', controller:'wizard', action:'show', arguments:'{formPersistenceIdentifier:\'fullNewCompany\'}')}" data-toggle="modal-jsonp" data-target="#modal-body-only">Full new company</a></li>
+		</ul>
+	</div>
+	<div class="btn-group span3">
+		<a class="btn dropdown-toggle btn-large btn-success" data-toggle="dropdown" href="#">
+			Gesprekken
+			<span class="caret"></span>
+		</a>
+		<ul class="dropdown-menu">
+			<li><a href="{f:uri.action(package:'Beech.Ehrm', controller:'wizard', action:'show', arguments:'{formPersistenceIdentifier:\'wizardAddBankData\'}')}" data-toggle="modal-jsonp" data-target="#modal-body-only">Add bank data</a></li>
+		</ul>
+	</div>
+	<div class="btn-group span3">
+		<a class="btn dropdown-toggle btn-large btn-danger" data-toggle="dropdown" href="#">
+			Contract
+			<span class="caret"></span>
+		</a>
+		<ul class="dropdown-menu">
+			<li><a href="{f:uri.action(package:'Beech.Ehrm', controller:'wizard', action:'show', arguments:'{formPersistenceIdentifier:\'quickCompanyWizard\'}')}" data-toggle="modal-jsonp" data-target="#modal-body-only">Quick company wizard</a></li>
+		</ul>
+	</div>
+</div>
+<h2>Person</h2>
+<p><b>Id:</b> {{test}}</p>
+
+{{#linkTo "BeechPartyPersonModule.index" class="btn"}}Back{{/linkTo}}

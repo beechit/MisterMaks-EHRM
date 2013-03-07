@@ -1,1 +1,8 @@
-person module
+<h1>Persons</h1>
+<table class="table table-striped">
+	{{#each person in controller}}
+		<tr>
+			<td>Persoon: {{#linkTo "BeechPartyDomainModelPerson" person }} {{person.id}} {{/linkTo}}</td>
+		</tr>
+	{{/each}}
+</table>

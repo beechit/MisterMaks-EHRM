@@ -1,1 +1,22 @@
-person administration module
+<h1>Persons</h1>
+{{#linkTo "BeechPartyPersonAdministrationModule.new" class="btn pull-right btn-success"}}Add person{{/linkTo}}
+<table class="table table-striped">
+	{{#each person in controller}}
+		<tr>
+			<td>{{#linkTo "BeechPartyDomainModelPersonAdministration" person }} {{person.id}} {{/linkTo}}</td>
+			<td>
+				<div class="pull-right">
+					<div class="btn-group">
+						{{#linkTo "BeechPartyDomainModelPersonAdministration" person class="btn"}}view{{/linkTo}}
+						<button class="btn dropdown-toggle" data-toggle="dropdown">
+							<span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu pull-right">
+							<li>{{#linkTo "BeechPartyDomainModelPersonAdministration.edit" person}}edit{{/linkTo}}</li>
+						</ul>
+					</div>
+				</div>
+			</td>
+		</tr>
+	{{/each}}
+</table>
