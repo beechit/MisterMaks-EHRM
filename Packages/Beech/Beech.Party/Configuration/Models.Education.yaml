@@ -31,6 +31,13 @@
               type: 'StringLength'
               options:
                 maximum: 35
+        'educationName':
+          label: 'Name of the education'
+          validation:
+            -
+              type: 'StringLength'
+              options:
+                maximum: 35
         'educationStart':
           label: 'Education start date'
           type: 'DateTime'

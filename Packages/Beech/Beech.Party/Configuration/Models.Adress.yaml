@@ -106,6 +106,64 @@
               type: 'StringLength'
               options:
                 maximum: 6
+        'streetNameAbroad':
+          label: 'Street name Abroad'
+          validation:
+            -
+              type: 'NotEmpty'
+            -
+              type: 'RegularExpression'
+              options:
+                regularExpression: '[a-zA-Z\\-\\s\\’]{2,30}'
+            -
+              type: 'StringLength'
+              options:
+                maximum: 35
+        'houseNumberAbroad':
+          label: 'House number'
+          validation:
+            -
+              type: 'NotEmpty'
+            -
+              type: 'RegularExpression'
+              options:
+                regularExpression: '[0-9]{1,5}'
+            -
+              type: 'Integer'
+        'houseNumberAdditionAbroad':
+          label: 'House number addition'
+          validation:
+            -
+              type: 'RegularExpression'
+              options:
+                regularExpression: '[a-zA-Z0-9\\-]{0,10}'
+            -
+              type: 'StringLength'
+              options:
+                maximum: 10
+
+        'houseNumberAbroad':
+          label: 'House number'
+          validation:
+            -
+              type: 'NotEmpty'
+            -
+              type: 'RegularExpression'
+              options:
+                regularExpression: '[0-9]{1,5}'
+            -
+              type: 'Integer'
+        'houseNumberAdditionAbroad':
+          label: 'House number addition'
+          validation:
+            -
+              type: 'RegularExpression'
+              options:
+                regularExpression: '[a-zA-Z0-9\\-]{0,10}'
+            -
+              type: 'StringLength'
+              options:
+                maximum: 10
         'postalCodeAbroad':
           label: 'Postal code'
           validation:
@@ -118,6 +176,19 @@
               options:
                 maximum: 10
         'residence':
+          label: 'Residence'
+          validation:
+            -
+              type: 'NotEmpty'
+            -
+              type: 'RegularExpression'
+              options:
+                regularExpression: '[a-zA-Z\\-\\s\\’]{2,30}'
+            -
+              type: 'StringLength'
+              options:
+                maximum: 35
+        'residenceAbroad':
           label: 'Residence'
           validation:
             -

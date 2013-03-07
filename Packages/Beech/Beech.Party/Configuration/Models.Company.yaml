@@ -32,7 +32,7 @@
     'departments':
       label: 'Departments'
       type: 'Beech\Party\Domain\Model\Company'
-    'chamberOfCommerceNumber':
+    '':
       label: 'Chamber of Commerce Number'
       validation:
         -
