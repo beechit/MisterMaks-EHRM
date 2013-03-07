@@ -34,8 +34,9 @@ class WizardController extends AbstractController {
 	 */
 	public function createAction() {
 		$form = \Symfony\Component\Yaml\Yaml::parse(file_get_contents('resource://Beech.Ehrm/Private/Templates/Form/Blank.yaml'));
-		$form['label'] = 'Wizard' . time();
-		$formIdentifier = $form['label'];
+		$formIdentifier = 'Wizard' . time();
+		$form['label'] = $formIdentifier;
+		$form['identifier'] = $formIdentifier;
 		$formPersistenceIdentifier = $formIdentifier;
 		$this->formPersistenceManager->save($formPersistenceIdentifier, $form);
 		$this->redirect('index', 'Editor', 'TYPO3.FormBuilder', array('formPersistenceIdentifier' => $formPersistenceIdentifier, 'presetName' => 'wizard'));
