@@ -46,7 +46,7 @@ class ContractFormFactory extends \TYPO3\Form\Factory\AbstractFormFactory {
 			// Articles section
 		$articlesStep->createElement('articles', 'Beech.CLA:ContractArticlesSection');
 
-		$databaseFinisher = new \Beech\Ehrm\Finishers\DatabaseFinisher();
+		$databaseFinisher = new \Beech\Ehrm\Form\Finishers\DatabaseFinisher();
 		$databaseFinisher->setOptions(
 			array('model' => 'Contract', 'package' => 'Beech.CLA')
 		);
