@@ -77,13 +77,14 @@ class Priority extends \Beech\Ehrm\Domain\Model\Document {
 	public function removeTask(\Beech\Task\Domain\Model\Task $task) {
 		unset($this->tasks['tasks'][array_search($task->getId(), $this->tasks['tasks'])]);
 	}
+
 	/**
 	 * Gets the tasks
 	 *
 	 * @return array
 	 */
 	public function getTasks() {
-		if (is_array($this->tasks['tasks'])) {
+		if (isset($this->tasks['tasks']) && is_array($this->tasks['tasks'])) {
 			return $this->tasks['tasks'];
 		}
 		return array();
