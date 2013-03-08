@@ -1,163 +1,166 @@
 #############################################################
 # validated yaml for the jobDescriptions model Glastuinbouw
 # this is the jobDescriptions model.
+# todo: This file does not belong here its not a general
+# model but specific for the glastuinbouw, but validation wants
+# here, create a generic model for this that is overruled by the
+# customerpackage.
 #############################################################
-'Beech.Ehrm.Domain.Model.Glastuinbouw':
-  'jobdescription':
-    properties:
-      'jobDescriptionNumber':
-        label: 'Job description number'
+'Beech.CLA.Domain.Model.JobDescription':
+  properties:
+    'jobDescriptionNumber':
+      label: 'Job description number'
+      validation:
+        -
+          type: 'StringLength'
+          options:
+            maximum: 10
+    'jobTitle':
+      label: 'Job Title'
+      validation:
+        -
+          type: 'NotEmpty'
+        -
+          type: 'StringLength'
+          options:
+            maximum: 50
+    'jobContext':
+      label: 'Job context'
+      validation:
+        -
+          type: 'Label'
+        -
+          type: 'NotEmpty'
+        -
+          type: 'Text'
+      default: 'Functiecontext'
+    'jobGoal':
+      label: 'Job goal'
+      validation:
+        -
+          type: 'Text'
+    'positionLabel':
+      type: 'string'
+      validation:
+        -
+          type: 'NotEmpty'
+        -
+          type: 'Label'
+        -
+          type: 'StringLength'
+          options:
+            maximum: 30
+      default: 'Positie in de organisatie'
+    'reportsTo':
+      label: 'Reports to'
+      validation:
+        -
+          type: 'Text'
+    'manages':
+      label: 'Manages'
+      validation:
+        -
+          type: 'Text'
+    'department':
+      label: 'Department'
+      validation:
+        -
+          type: 'StringLength'
+          options:
+            maximum: 20
+    'expectationLabel':
+      validation:
+        -
+          type: 'Label'
+        -
+          type: 'NotEmpty'
+        -
+          type: 'StringLength'
+          options:
+            maximum: 30
+      default: 'Resultaatgebieden'
+    'expectations':
+      label: 'Expectations'
+      type: 'array'
+      validation:
+        -
+          type: 'NotEmpty'
+      values:
+        - 'Uitgevoerde Handelingen'
+        - 'Verstrekte informatie'
+        - 'Nageleefde voorschiften'
+    'mainActivities':
+      label: 'Main activities'
+      validation:
+        -
+          type: 'NotEmpty'
+        -
+          type: 'Text'
+    'resultCriteria':
+      label: 'Result criteria'
+      validation:
+        -
+          type: 'NotEmpty'
+        -
+          type: 'Text'
+    'burdeningCircumstances':
+      label: 'Burdening circumstances'
+      type: 'array'
+      values:
+        'circumstance':
+        label: 'Circumstance'
         validation:
-          -
-            type: 'StringLength'
-            options:
-              maximum: 10
-      'jobTitle':
-        label: 'Job Title'
-        validation:
-          -
-            type: 'NotEmpty'
-          -
-            type: 'StringLength'
-            options:
-              maximum: 50
-      'jobContext':
-        label: 'Job context'
-        validation:
-          -
-            type: 'Label'
           -
             type: 'NotEmpty'
           -
             type: 'Text'
-        default: 'Functiecontext'
-      'jobGoal':
-        label: 'Job goal'
-        validation:
-          -
-            type: 'Text'
-      'positionLabel':
-        type: 'string'
-        validation:
-          -
-            type: 'NotEmpty'
-          -
-            type: 'Label'
-          -
-            type: 'StringLength'
-            options:
-              maximum: 30
-        value: 'Positie in de organisatie'
-      'reportsTo':
-        label: 'Reports to'
-        validation:
-          -
-            type: 'Text'
-      'manages':
-        label: 'Manages'
-        validation:
-          -
-            type: 'Text'
-      'department':
-        label: 'Department'
-        validation:
-          -
-            type: 'StringLength'
-            options:
-              maximum: 20
-      'expectationLabel':
-        validation:
-          -
-            type: 'Label'
-          -
-            type: 'NotEmpty'
-          -
-            type: 'Stringlength'
-            options:
-              maximum: 30
-        value: 'Resultaatgebieden'
-      'expectations':
-        label: 'Expectations'
-        type: 'array'
-        validation:
-          -
-            type: 'NotEmpty'
-        values:
-          - 'Uitgevoerde Handelingen'
-          - 'Verstrekte informatie'
-          - 'Nageleefde voorschiften'
-      'mainActivities':
-        label: 'Main activities'
-        validation:
-          -
-            type: 'NotEmpty'
-          -
-            type: 'Text'
-      'resultCriteria':
-        label: 'Result criteria'
-        validation:
-          -
-            type: 'NotEmpty'
-          -
-            type: 'Text'
-      'burdeningCircumstances':
-        label: 'Burdening circumstances'
-        type: 'array'
-        values:
-          'circumstance':
-          label: 'Circumstance'
+    'orbaScore':
+      label: 'ORBA score'
+      validation:
+        -
+          type: 'StringLength'
+          options:
+            maximum: 10
+    'wageScaleGroup':
+      label: 'Wage scale'
+      validation:
+        -
+          type: 'StringLength'
+          options:
+            maximum: 2
+    'creationDate':
+      default: 'now'
+      label: 'creation date'
+      type: 'DateTime'
+      validation:
+        -
+          type: 'NotEmpty'
+        -
+          type: 'RegularExpression'
+          options:
+            regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
+    'createdBy':
+      default: 'currentUser'
+      label: 'Created by'
+      type: 'Beech\Party\Domain\Model\Person'
+      validation:
+        -
+          type: 'NotEmpty'
+    'modification':
+      items:
+        'modificationDate':
+          default: 'now'
+          label: 'Modification date'
+          type: 'DateTime'
           validation:
             -
-              type: 'NotEmpty'
-            -
-              type: 'Text'
-      'orbaScore':
-        label: 'ORBA score'
-        validation:
-          -
-            type: 'StringLength'
-            options:
-              maximum: 10
-      'wageScaleGroup':
-        label: 'Wage scale'
-        validation:
-          -
-            type: 'StringLength'
-            options:
-              maximum: 2
-      'creationDate':
-        default: 'now'
-        label: 'creation date'
-        type: 'dateTime'
-        validation:
-          -
-            type: 'NotEmpty'
-          -
-            type: 'RegularExpression'
-            options:
-              regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
-      'createdBy':
-        default: 'currentUser'
-        label: 'Created by'
-        type: 'Beech\Party\Domain\Model\Person'
-        validation:
-          -
-            type: 'NotEmpty'
-      'modification':
-        items:
-          'modificationDate':
-            default: 'now'
-            label: 'Modification date'
-            type: 'dateTime'
-            validation:
-              -
-                type: 'RegularExpression'
-                options:
-                  regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
-          'modifiedBy':
-            default: 'currentUser'
-            label: 'Modified by'
-            type: 'Beech\Party\Domain\Model\Person'
-            validation: ''
-        label: 'Modification log'
-        type: 'array'
+              type: 'RegularExpression'
+              options:
+                regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
+        'modifiedBy':
+          default: 'currentUser'
+          label: 'Modified by'
+          type: 'Beech\Party\Domain\Model\Person'
+          validation: ''
+      label: 'Modification log'
+      type: 'array'
