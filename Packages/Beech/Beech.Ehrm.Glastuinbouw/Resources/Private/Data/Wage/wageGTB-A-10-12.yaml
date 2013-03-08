@@ -6,440 +6,438 @@
 #dienstverband is aangevangen voor 1 juli 2005 en dth werknemer dith in 2003 en 2004 telkens ten minstth 1200 uur in dienst is geweest bij
 #dezelfde werkgever, artikel 17 lid 2 sub A, Voor allth anderth werknemers geldt loongebouw B, dth tabellen B t/m E,
 ################################################
-Beech:
-  Ehrm.Glastuinbouw:
-    Wage:
-      properties:
-        wageName: 'GlastuinbouwWageA'
-        wageStartDate: '01-09-2012'
-        wageEndDate: '30-06-2013'
-        'wageGroup':
-          'B-1':
-            -
-              step: '15 year'
-              value: '3,70'
-              age: 15
-            -
-              step: '16 year'
-              value: '4,63'
-              age: 16
-            -
-              step: '17 year'
-              value: '5,56'
-              age: 17
-            -
-              step: '18 year'
-              value: '6,48'
-              age: 18
-            -
-              step: '19 year'
-              value: '7,41'
-              age: 19
-            -
-              step: '20 year'
-              value: '8,33'
-              age: 20
-            -
-              step: '1th job year'
-              value: '9,26'
-            -
-              step: '2th job year'
-              value: '9,56'
-            -
-              step: '3th job year'
-              value: '9,84'
-            -
-              step: '4th job year'
-              value: '10,12'
-            -
-              step: '5th job year'
-              value: '10,44'
-            -
-              step: '6th job year'
-              value: '10,70'
-            -
-              step: '7th job year'
-              value: '11,00'
-            -
-              step: '8th job year'
-              value: '11,30'
-          label: 'Group B-1'
-          orbaPointsStart: ''
-          orbaPointsEnd: ''
-        -
-          'GroupB-2':
-            -
-              step: '15 year'
-              value: '3,94'
-              age: 15
-            -
-              step: '16 year'
-              value: '4,92'
-              age: 16
-            -
-              step: '17 year'
-              value: '5,90'
-              age: 17
-            -
-              step: '18 year'
-              value: '6,89'
-              age: 18
-            -
-              step: '19 year'
-              value: '7,87'
-              age: 19
-            -
-              step: '20 year'
-              value: '8,86'
-              age: 20
-            -
-              step: '1th job year'
-              value: ''
-            -
-              step: '2th job year'
-              value: ''
-            -
-              step: '3th job year'
-              value: '9,84'
-            -
-              step: '4th job year'
-              value: '10,12'
-            -
-              step: '5th job year'
-              value: '10,44'
-            -
-              step: '6th job year'
-              value: '10,70'
-            -
-              step: '7th job year'
-              value: '11,00'
-            -
-              step: '8th job year'
-              value: '11,30'
-            -
-              step: '9th job year'
-              value: '11,57'
-            -
-              step: '10th job year'
-              value: '11,86'
-          label: 'Group B-2'
-          orbaPointsStart: ''
-          orbaPointsEnd: ''
-        -
-          'GroupC':
-            -
-              step: '15 year'
-              value: '4,58'
-              age: 15
-            -
-              step: '16 year'
-              value: '5,72'
-              age: 16
-            -
-              step: '17 year'
-              value: '6,86'
-              age: 17
-            -
-              step: '18 year'
-              value: '8,01'
-              age: 18
-            -
-              step: '19 year'
-              value: '9,15'
-              age: 19
-            -
-              step: '20 year'
-              value: '10,30'
-              age: 20
-            -
-              step: '1th job year'
-              value: '11,44'
-            -
-              step: '2th job year'
-              value: '11,65'
-            -
-              step: '3th job year'
-              value: '11,81'
-            -
-              step: '4th job year'
-              value: '11,98'
-            -
-              step: '5th job year'
-              value: '12,18'
-            -
-              step: '6th job year'
-              value: '12,35'
-            -
-              step: '7th job year'
-              value: '12,52'
-            -
-              step: '8th job year'
-              value: '12,70'
-          label: 'Group C'
-          orbaPointsStart: ''
-          orbaPointsEnd: ''
-        -
-          'GroupD':
-            -
-              step: '15 year'
-              value: '4,87'
-              age: 15
-            -
-              step: '16 year'
-              value: '6,09'
-              age: 16
-            -
-              step: '17 year'
-              value: '7,31'
-              age: 17
-            -
-              step: '18 year'
-              value: '8,53'
-              age: 18
-            -
-              step: '19 year'
-              value: '9,74'
-              age: 19
-            -
-              step: '20 year'
-              value: '10,96'
-              age: 20
-            -
-              step: '1th job year'
-              value: '12,18'
-            -
-              step: '2th job year'
-              value: '12,35'
-            -
-              step: '3th job year'
-              value: '12,52'
-            -
-              step: '4th job year'
-              value: '12,70'
-            -
-              step: '5th job year'
-              value: '12,86'
-            -
-              step: '6th job year'
-              value: '13,07'
-            -
-              step: '7th job year'
-              value: '13,26'
-            -
-              step: '8th job year'
-              value: '13,42'
-          label: 'Group D'
-          orbaPointsStart: ''
-          orbaPointsEnd: ''
-        -
-          'GroupE':
-            -
-              step: '15 year'
-              value: '5,11'
-              age: 15
-            -
-              step: '16 year'
-              value: '6,39'
-              age: 16
-            -
-              step: '17 year'
-              value: '7,67'
-              age: 17
-            -
-              step: '18 year'
-              value: '8,95'
-              age: 18
-            -
-              step: '19 year'
-              value: '10,22'
-              age: 19
-            -
-              step: '20 year'
-              value: '11,50'
-              age: 20
-            -
-              step: '1th job year'
-              value: '12,78'
-            -
-              step: '2th job year'
-              value: '12,99'
-            -
-              step: '3th job year'
-              value: '13,17'
-            -
-              step: '4th job year'
-              value: '13,34'
-            -
-              step: '5th job year'
-              value: '13,50'
-            -
-              step: '6th job year'
-              value: '13,69'
-            -
-              step: '7th job year'
-              value: '13,87'
-            -
-              step: '8th job year'
-              value: '14,05'
-          label: 'Group E'
-          orbaPointsStart: ''
-          orbaPointsEnd: ''
-        -
-          'GroupF':
-            -
-              step: '15 year'
-              value: '5,37'
-              age: 15
-            -
-              step: '16 year'
-              value: '6,71'
-              age: 16
-            -
-              step: '17 year'
-              value: '8,05'
-              age: 17
-            -
-              step: '18 year'
-              value: '9,39'
-              age: 18
-            -
-              step: '19 year'
-              value: '10,74'
-              age: 19
-            -
-              step: '20 year'
-              value: '12,08'
-              age: 20
-            -
-              step: '1th job year'
-              value: '13,42'
-            -
-              step: '2th job year'
-              value: '13,58'
-            -
-              step: '3th job year'
-              value: '13,77'
-            -
-              step: '4th job year'
-              value: '13,96'
-            -
-              step: '5th job year'
-              value: '14,13'
-            -
-              step: '6th job year'
-              value: '14,34'
-            -
-              step: '7th job year'
-              value: '14,49'
-            -
-              step: '8th job year'
-              value: '14,66'
-          orbaPointsStart: ''
-          orbaPointsEnd: ''
-          label: 'Group F'
-        -
-          'GroupG':
-            -
-              step: '15 year'
-              value: '5,58'
-              age: 15
-            -
-              step: '16 year'
-              value: '6,98'
-              age: 16
-            -
-              step: '17 year'
-              value: '8,38'
-              age: 17
-            -
-              step: '18 year'
-              value: '9,77'
-              age: 18
-            -
-              step: '19 year'
-              value: '11,17'
-              age: 19
-            -
-              step: '20 year'
-              value: '12,56'
-              age: 20
-            -
-              step: '1th job year'
-              value: '13,96'
-            -
-              step: '2th job year'
-              value: '14,13'
-            -
-              step: '3th job year'
-              value: '14,34'
-            -
-              step: '4th job year'
-              value: '14,49'
-            -
-              step: '5th job year'
-              value: '14,66'
-            -
-              step: '6th job year'
-              value: '14,85'
-            -
-              step: '7th job year'
-              value: '15,04'
-            -
-              step: '8th job year'
-              value: '15,21'
-          label: 'Group G'
-          orbaPointsStart: ''
-          orbaPointsEnd: ''
-        -
-          'groupH':
-            -
-              step: '15 year'
-              value: '5,80'
-              age: 15
-            -
-              step: '16 year'
-              value: '7,25'
-              age: 16
-            -
-              step: '17 year'
-              value: '8,69'
-              age: 17
-            -
-              step: '18 year'
-              value: '10,14'
-              age: 18
-            -
-              step: '19 year'
-              value: '11,59'
-              age: 19
-            -
-              step: '20 year'
-              value: '13,04'
-              age: 20
-            -
-              step: '1th job year'
-              value: '14,49'
-            -
-              step: '2th job year'
-              value: '14,66'
-            -
-              step: '3th job year'
-              value: '14,85'
-            -
-              step: '4th job year'
-              value: '15,04'
-            -
-              step: '5th job year'
-              value: '15,21'
-            -
-              step: '6th job year'
-              value: '15,39'
-            -
-              step: '7th job year'
-              value: '15,56'
-            -
-              step: '8th job year'
-              value: '15,75'
-          label: 'Group H'
-          orbaPointsStart: ''
-          orbaPointsEnd: ''
+Beech.Ehrm.Glastuinbouw.Wage:
+  properties:
+	wageName: 'GlastuinbouwWageA'
+	wageStartDate: '01-09-2012'
+	wageEndDate: '30-06-2013'
+	'wageGroup':
+	  'B-1':
+		-
+		  step: '15 year'
+		  value: '3,70'
+		  age: 15
+		-
+		  step: '16 year'
+		  value: '4,63'
+		  age: 16
+		-
+		  step: '17 year'
+		  value: '5,56'
+		  age: 17
+		-
+		  step: '18 year'
+		  value: '6,48'
+		  age: 18
+		-
+		  step: '19 year'
+		  value: '7,41'
+		  age: 19
+		-
+		  step: '20 year'
+		  value: '8,33'
+		  age: 20
+		-
+		  step: '1th job year'
+		  value: '9,26'
+		-
+		  step: '2th job year'
+		  value: '9,56'
+		-
+		  step: '3th job year'
+		  value: '9,84'
+		-
+		  step: '4th job year'
+		  value: '10,12'
+		-
+		  step: '5th job year'
+		  value: '10,44'
+		-
+		  step: '6th job year'
+		  value: '10,70'
+		-
+		  step: '7th job year'
+		  value: '11,00'
+		-
+		  step: '8th job year'
+		  value: '11,30'
+	  label: 'Group B-1'
+	  orbaPointsStart: ''
+	  orbaPointsEnd: ''
+	-
+	  'GroupB-2':
+		-
+		  step: '15 year'
+		  value: '3,94'
+		  age: 15
+		-
+		  step: '16 year'
+		  value: '4,92'
+		  age: 16
+		-
+		  step: '17 year'
+		  value: '5,90'
+		  age: 17
+		-
+		  step: '18 year'
+		  value: '6,89'
+		  age: 18
+		-
+		  step: '19 year'
+		  value: '7,87'
+		  age: 19
+		-
+		  step: '20 year'
+		  value: '8,86'
+		  age: 20
+		-
+		  step: '1th job year'
+		  value: ''
+		-
+		  step: '2th job year'
+		  value: ''
+		-
+		  step: '3th job year'
+		  value: '9,84'
+		-
+		  step: '4th job year'
+		  value: '10,12'
+		-
+		  step: '5th job year'
+		  value: '10,44'
+		-
+		  step: '6th job year'
+		  value: '10,70'
+		-
+		  step: '7th job year'
+		  value: '11,00'
+		-
+		  step: '8th job year'
+		  value: '11,30'
+		-
+		  step: '9th job year'
+		  value: '11,57'
+		-
+		  step: '10th job year'
+		  value: '11,86'
+	  label: 'Group B-2'
+	  orbaPointsStart: ''
+	  orbaPointsEnd: ''
+	-
+	  'GroupC':
+		-
+		  step: '15 year'
+		  value: '4,58'
+		  age: 15
+		-
+		  step: '16 year'
+		  value: '5,72'
+		  age: 16
+		-
+		  step: '17 year'
+		  value: '6,86'
+		  age: 17
+		-
+		  step: '18 year'
+		  value: '8,01'
+		  age: 18
+		-
+		  step: '19 year'
+		  value: '9,15'
+		  age: 19
+		-
+		  step: '20 year'
+		  value: '10,30'
+		  age: 20
+		-
+		  step: '1th job year'
+		  value: '11,44'
+		-
+		  step: '2th job year'
+		  value: '11,65'
+		-
+		  step: '3th job year'
+		  value: '11,81'
+		-
+		  step: '4th job year'
+		  value: '11,98'
+		-
+		  step: '5th job year'
+		  value: '12,18'
+		-
+		  step: '6th job year'
+		  value: '12,35'
+		-
+		  step: '7th job year'
+		  value: '12,52'
+		-
+		  step: '8th job year'
+		  value: '12,70'
+	  label: 'Group C'
+	  orbaPointsStart: ''
+	  orbaPointsEnd: ''
+	-
+	  'GroupD':
+		-
+		  step: '15 year'
+		  value: '4,87'
+		  age: 15
+		-
+		  step: '16 year'
+		  value: '6,09'
+		  age: 16
+		-
+		  step: '17 year'
+		  value: '7,31'
+		  age: 17
+		-
+		  step: '18 year'
+		  value: '8,53'
+		  age: 18
+		-
+		  step: '19 year'
+		  value: '9,74'
+		  age: 19
+		-
+		  step: '20 year'
+		  value: '10,96'
+		  age: 20
+		-
+		  step: '1th job year'
+		  value: '12,18'
+		-
+		  step: '2th job year'
+		  value: '12,35'
+		-
+		  step: '3th job year'
+		  value: '12,52'
+		-
+		  step: '4th job year'
+		  value: '12,70'
+		-
+		  step: '5th job year'
+		  value: '12,86'
+		-
+		  step: '6th job year'
+		  value: '13,07'
+		-
+		  step: '7th job year'
+		  value: '13,26'
+		-
+		  step: '8th job year'
+		  value: '13,42'
+	  label: 'Group D'
+	  orbaPointsStart: ''
+	  orbaPointsEnd: ''
+	-
+	  'GroupE':
+		-
+		  step: '15 year'
+		  value: '5,11'
+		  age: 15
+		-
+		  step: '16 year'
+		  value: '6,39'
+		  age: 16
+		-
+		  step: '17 year'
+		  value: '7,67'
+		  age: 17
+		-
+		  step: '18 year'
+		  value: '8,95'
+		  age: 18
+		-
+		  step: '19 year'
+		  value: '10,22'
+		  age: 19
+		-
+		  step: '20 year'
+		  value: '11,50'
+		  age: 20
+		-
+		  step: '1th job year'
+		  value: '12,78'
+		-
+		  step: '2th job year'
+		  value: '12,99'
+		-
+		  step: '3th job year'
+		  value: '13,17'
+		-
+		  step: '4th job year'
+		  value: '13,34'
+		-
+		  step: '5th job year'
+		  value: '13,50'
+		-
+		  step: '6th job year'
+		  value: '13,69'
+		-
+		  step: '7th job year'
+		  value: '13,87'
+		-
+		  step: '8th job year'
+		  value: '14,05'
+	  label: 'Group E'
+	  orbaPointsStart: ''
+	  orbaPointsEnd: ''
+	-
+	  'GroupF':
+		-
+		  step: '15 year'
+		  value: '5,37'
+		  age: 15
+		-
+		  step: '16 year'
+		  value: '6,71'
+		  age: 16
+		-
+		  step: '17 year'
+		  value: '8,05'
+		  age: 17
+		-
+		  step: '18 year'
+		  value: '9,39'
+		  age: 18
+		-
+		  step: '19 year'
+		  value: '10,74'
+		  age: 19
+		-
+		  step: '20 year'
+		  value: '12,08'
+		  age: 20
+		-
+		  step: '1th job year'
+		  value: '13,42'
+		-
+		  step: '2th job year'
+		  value: '13,58'
+		-
+		  step: '3th job year'
+		  value: '13,77'
+		-
+		  step: '4th job year'
+		  value: '13,96'
+		-
+		  step: '5th job year'
+		  value: '14,13'
+		-
+		  step: '6th job year'
+		  value: '14,34'
+		-
+		  step: '7th job year'
+		  value: '14,49'
+		-
+		  step: '8th job year'
+		  value: '14,66'
+	  orbaPointsStart: ''
+	  orbaPointsEnd: ''
+	  label: 'Group F'
+	-
+	  'GroupG':
+		-
+		  step: '15 year'
+		  value: '5,58'
+		  age: 15
+		-
+		  step: '16 year'
+		  value: '6,98'
+		  age: 16
+		-
+		  step: '17 year'
+		  value: '8,38'
+		  age: 17
+		-
+		  step: '18 year'
+		  value: '9,77'
+		  age: 18
+		-
+		  step: '19 year'
+		  value: '11,17'
+		  age: 19
+		-
+		  step: '20 year'
+		  value: '12,56'
+		  age: 20
+		-
+		  step: '1th job year'
+		  value: '13,96'
+		-
+		  step: '2th job year'
+		  value: '14,13'
+		-
+		  step: '3th job year'
+		  value: '14,34'
+		-
+		  step: '4th job year'
+		  value: '14,49'
+		-
+		  step: '5th job year'
+		  value: '14,66'
+		-
+		  step: '6th job year'
+		  value: '14,85'
+		-
+		  step: '7th job year'
+		  value: '15,04'
+		-
+		  step: '8th job year'
+		  value: '15,21'
+	  label: 'Group G'
+	  orbaPointsStart: ''
+	  orbaPointsEnd: ''
+	-
+	  'groupH':
+		-
+		  step: '15 year'
+		  value: '5,80'
+		  age: 15
+		-
+		  step: '16 year'
+		  value: '7,25'
+		  age: 16
+		-
+		  step: '17 year'
+		  value: '8,69'
+		  age: 17
+		-
+		  step: '18 year'
+		  value: '10,14'
+		  age: 18
+		-
+		  step: '19 year'
+		  value: '11,59'
+		  age: 19
+		-
+		  step: '20 year'
+		  value: '13,04'
+		  age: 20
+		-
+		  step: '1th job year'
+		  value: '14,49'
+		-
+		  step: '2th job year'
+		  value: '14,66'
+		-
+		  step: '3th job year'
+		  value: '14,85'
+		-
+		  step: '4th job year'
+		  value: '15,04'
+		-
+		  step: '5th job year'
+		  value: '15,21'
+		-
+		  step: '6th job year'
+		  value: '15,39'
+		-
+		  step: '7th job year'
+		  value: '15,56'
+		-
+		  step: '8th job year'
+		  value: '15,75'
+	  label: 'Group H'
+	  orbaPointsStart: ''
+	  orbaPointsEnd: ''
