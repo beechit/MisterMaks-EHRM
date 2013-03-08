@@ -1,14 +1,41 @@
 jobDescriptionNumber: '10.08'
 jobTitle: 'Meewerkend voorman teelt'
-jobContext: 'Het betreft de functie die vooral voorkomt in de (middel)grote glastuinbouwbedrijven (groenten en bloemen/planten) waarin de uitvoerende werkzaamheden zelfstandig worden verricht en waarin verantwoordelijkheid is neergelegd voor een afgebakend onderdeel van het teeltproces of het bedrijf (bijv. kasgedeelte). De uitvoering wordt op hoofdlijnen aangegeven. De functie coordineert en houdt toezicht op de uitvoering door anderen, veelal tijdelijke werknemers. Tijdens bedrijfspieken (m.n. planten en oogsten) zijn soms relatief grote aantallen werknemers aanwezig. De functie maakt deel uit van in niveau opklimmende functiereeks van leidinggevende functies (zie bijbehorende NOK). Deze reeks is een vervolg op de uitvoerende functies van teeltmedewerker (zie functienummers 10.03 t/m 10.05).'
+jobContext: 'Het betreft de functie die vooral voorkomt in de (middel)grote glastuinbouwbedrijven (groenten en bloemen\/planten) waarin de uitvoerende werkzaamheden zelfstandig worden verricht en waarin verantwoordelijkheid is neergelegd voor een afgebakend onderdeel van het teeltproces of het bedrijf (bijv. kasgedeelte). De uitvoering wordt op hoofdlijnen aangegeven. De functie coordineert en houdt toezicht op de uitvoering door anderen, veelal tijdelijke werknemers. Tijdens bedrijfspieken (m.n. planten en oogsten) zijn soms relatief grote aantallen werknemers aanwezig. De functie maakt deel uit van in niveau opklimmende functiereeks van leidinggevende functies (zie bijbehorende NOK). Deze reeks is een vervolg op de uitvoerende functies van teeltmedewerker (zie functienummers 10.03 t\/m 10.05).'
 reportsTo: 'operationeel leidinggevende, zoals bijv. bedrijfsleider of teeltchef'
 manages: 'toegevoegde medewerkers (vaktechnisch) '
-jobGoal: 'Teeltvoorbereiden, telen, oogsten en verzendgereed maken van tuinbouwgewassen door het coordineren/regelen en mede zelf uitvoeren van de werkzaamheden. '
+jobGoal: 'Teeltvoorbereiden, telen, oogsten en verzendgereed maken van tuinbouwgewassen door het coordineren\/regelen en mede zelf uitvoeren van de werkzaamheden. '
 department: Productie
 expectations:
-  mainActivities: ['Naleven van de bedrijfsinstructies inzake veiligheid van werken e.d.', 'het verzendgereed maken van geoogste gewassen, w.o. sorteren, verpakken e.d. conform klantspecifieke gegevens ', 'bewaken van de groeicondities (licht, klimaat) en bijregelen daarvan m.b.v. de regelsystemen', 'controleren van het gewas op groei, signaleren van afwijkingen of groeiverstoringen a.g.v. ziekten of plagen', 'uitvoeren van (biologische en chemische) maatregelen t.b.v. bescherming en ziektebestrijding (o.a. spuiten), i.o.v. de directe chef ', 'instellen, in bedrijf stellen en bedienen van de machine/installatie, a.d.h.v. mondelinge of schriftelijke werkopdrachten en instel- en bedieningsinstructies', 'controleren van de werking van de machines en het verloop van het productieproces', 'zonodig bijstellen van de machines binnen aangegeven marges', 'uitzetten en verplaatsen van opgepot uitgangsmateriaal in kas- of groeipositie (mechanisch of handmatig) ']
-  resultCriteria: ['mate waarin bedrijfsinstructies worden nageleefd']
+  -
+    resultArea: 'Vaktechnische aansturing'
+    mainActivities: ['coordineren van de werkuitvoering door de toegevoegde medewerkers in de voorkomende processen', 'toewijzen van taken, begeleiden en instrueren van medewerkers, controleren van de werkuitvoering', 'overleggen en afstemmen met de directe chef over werkplanning, uitvoering, maatregelen, bijzonderheden ']
+    resultCriteria: ['doelmatigheid van communicatie', 'efficiency van uitgevoerde werkzaamheden']
+  -
+    resultArea: 'Verbeterde teeltvoorbereiding en gewasbescherming'
+    mainActivities: ['beoordelen van grondmonsters en verbeteren van de groeibodem door het, volgens receptuur, samenstellen van bodemverbeteraars', 'voorbereiden van bodem en groeiondergrond, aanbrengen van bodemverbeteraars, stekken, steksteken, machinaal planten, uitzetten van potten c.q. uitgangsmateriaal', 'bewaken van de groeicondities (licht, klimaat) en bijregelen daarvan m.b.v. de regelsystemen', 'controleren van het gewas op groei, signaleren van afwijkingen of groeiverstoringen a.g.v. ziekten of plagen', 'uitvoeren van (biologische en chemische) maatregelen t.b.v. bescherming en ziektebestrijding (o.a. spuiten), i.o.v. de directe chef ']
+    resultCriteria: ['mate van bijdrage aan verbetering teeltvoorbereiding', 'kwaliteit van groeibodem', 'tijdigheid en juistheid gesignaleerde afwijkingen', 'doelmatigheid uitgevoerde maatregelen ']
+  -
+    resultArea: 'Geoogst product'
+    mainActivities: ['oogsten van gewassen, w.o. plukken, snijden, rapen e.d. van oogstrijp gewas', 'het verzendgereed maken van geoogste gewassen, w.o. sorteren, verpakken e.d. conform klantspecifieke gegevens ']
+    resultCriteria: ['efficiency en juistheid van uitgevoerde werkzaamheden', 'tijdige beschikbaarheid van verpakt product voor verzending ']
+  -
+    resultArea: 'Geregistreerde gegevens '
+    mainActivities: ['registreren van gegevens (productie, uitgevoerde maatregelen e.d.)']
+    resultCriteria: ['actualiteit en volledigheid van geregistreerde gegevens']
+  -
+    resultArea: 'Onderhouden apparatuur en hulpmiddelen'
+    mainActivities: ['verzorgen van dagelijks onderhoud aan transport- en hefmiddelen, teeltapparatuur, gereedschappen dan wel regelen daarvan en toezien op de uitvoering']
+    resultCriteria: ['juistheid en efficiency van uitgevoerd dagelijks onderhoud']
+  -
+    resultArea: 'Nageleefde voorschriften'
+    mainActivities: ['Naleven van de bedrijfsinstructies inzake veiligheid van werken e.d.']
+    resultCriteria: ['mate waarin bedrijfsinstructies worden nageleefd']
 burdeningCircumstances:
-  circumstance: ['Krachtsuitoefening bij het incidenteel tillen en verplaatsen van materialen, kisten, dozen of gewas etc. (tot ca. 15 kg); bij het hanteren van gereedschappen en hulpmiddelen t.b.v. grondbewerking (schoffelen, scheppen, harken); bij het hanteren van ger', 'Eenzijdige spierbelasting en gebukt en gebogen werken bij gewasverzorging.', 'Soms werken aan/met vochtige materialen bij plantwerkzaamheden. Voortdurend werken in ruimten met relatief hoge luchtvochtigheid (ca. 80%) en relatief hoge temperaturen (tot ca. 25 C). Hinder van dragen van voorgeschreven persoonlijke beschermingsmidd', 'Kans op hand- en vingerletsel a.g.v. hanteren van messen etc. bij gewasverzorging.', 'Het functieniveau volgens ORBA is gebaseerd op de rubrieken: Functiecontext, Positie in de organisatie, Functiedoel, Resultaatverwachting / Functionele activiteiten en Werkgerelateerde bezwaren. ']
+  circumstance:
+    - 'Krachtsuitoefening bij het incidenteel tillen en verplaatsen van materialen, kisten, dozen of gewas etc. (tot ca. 15 kg); bij het hanteren van gereedschappen en hulpmiddelen t.b.v. grondbewerking (schoffelen, scheppen, harken); bij het hanteren van ger'
+    - 'Eenzijdige spierbelasting en gebukt en gebogen werken bij gewasverzorging.'
+    - 'Soms werken aan\/met vochtige materialen bij plantwerkzaamheden. Voortdurend werken in ruimten met relatief hoge luchtvochtigheid (ca. 80%) en relatief hoge temperaturen (tot ca. 25 C). Hinder van dragen van voorgeschreven persoonlijke beschermingsmidd'
+    - 'Kans op hand- en vingerletsel a.g.v. hanteren van messen etc. bij gewasverzorging.'
+    - 'Het functieniveau volgens ORBA is gebaseerd op de rubrieken: Functiecontext, Positie in de organisatie, Functiedoel, Resultaatverwachting \/ Functionele activiteiten en Werkgerelateerde bezwaren. '
 orbaScore: '114'
 wageScaleGroup: G

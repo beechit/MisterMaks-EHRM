@@ -1,14 +1,33 @@
 jobDescriptionNumber: '10.10'
 jobTitle: Teeltspecialist
-jobContext: 'De functie komt voor in grote glastuinbouwbedrijven (groenten en bloemen/planten). Bij kleinere bedrijven worden de werkzaamheden meestal uitgevoerd door de ondernemer zelf of wordt de verlangde deskundigheid extern ingehuurd.\r\nEisen hebben betrekking op o.a. rasspecificaties, kwaliteit, kwantiteit, te gebruiken bestrijdingsmiddelen, efficiency, rendement en milieu.\r\nTeeltvoorstellen worden vooraf doorgesproken met de betrokken leidinggevende aan wie tevens wordt teruggerapporteerd over de effecten. Er zijn kaders afgesproken waarbinnen zelfstandig maatregelen ter bevordering van de teeltkwaliteit kunnen worden genomen.\r\n'
+jobContext: 'De functie komt voor in grote glastuinbouwbedrijven (groenten en bloemen\/planten). Bij kleinere bedrijven worden de werkzaamheden meestal uitgevoerd door de ondernemer zelf of wordt de verlangde deskundigheid extern ingehuurd.\Eisen hebben betrekking op o.a. rasspecificaties, kwaliteit, kwantiteit, te gebruiken bestrijdingsmiddelen, efficiency, rendement en milieu.\Teeltvoorstellen worden vooraf doorgesproken met de betrokken leidinggevende aan wie tevens wordt teruggerapporteerd over de effecten. Er zijn kaders afgesproken waarbinnen zelfstandig maatregelen ter bevordering van de teeltkwaliteit kunnen worden genomen.\'
 reportsTo: 'operationeel leidinggevende, zoals bijv. ondernemer of productieleider'
 manages: 'niet van toepassing'
 jobGoal: 'Inbrengen van expertise op het gebied van telen van tuinbouwgewassen, zodanig dat deze gewassen kunnen worden geproduceerd volgens de eisen van de onderneming en naar de laatste kennis en inzichten in de (teelt-)techniek.'
 department: Productie
 expectations:
-  mainActivities: ['instrueren en begeleiden van medewerkers t.a.v. het (handmatig) plukken, snijden, rapen etc. van oogstrijp gewas', 'overdragen van kennis per specifiek gewas over het juiste moment en de juiste wijze van oogsten e.d.', 'mede uitvoeren van oogstwerkzaamheden t.b.v. instructie, begeleiding e.d.', 'uitvoeren van alle werkzaamheden gericht op de teelt t.b.v. realiseren van de productiedoelstellingen t.b.v. instructie en begeleiding', 'signaleren van gewasspecifieke kenmerken en afwijkingen', 'bijhouden van de registraties m.b.t. gewasontwikkeling ', 'adviseren van betrokken lijnmanagers en ondernemingsleiding t.a.v. nieuwe methoden en technieken ', 'verrichten van overige werkzaamheden w.o. het opstellen van werkinstructies/instructiemateriaal voor medewerkers ', 'uitzetten en verplaatsen van opgepot uitgangsmateriaal in kas- of groeipositie (mechanisch of handmatig) ']
-  resultCriteria: ['helderheid en doelmatigheid van instructies en begeleiding', 'volledigheid van overgedragen kennis/kennis van de medewerkers over het gewas', 'bruikbaarheid van adviezen', 'efficiency van uitgevoerde werkzaamheden ']
+  -
+    resultArea: 'Opgestelde teeltadviezen'
+    mainActivities: ['aangeven, per teelt, van vereiste bodemconditie en ', 'analyseren van de grondmonsters, beoordelen van de bodemconditie d.m.v. het interpreteren van de uitkomsten', 'formuleren van de voorstellen voor aanpassingen van teeltmethoden a.g.v. analyseuitkomsten, praktijkervaringen of nieuwe inzichten', 'opstellen van en adviseren over verzorgings-, teelt- en kweekschema\\''s', 'opstellen van recepturen voor bodemverbeteraars', 'melden van gesignaleerde groei- en klimaatafwijkingen en uitbrengen van voorstellen ter verbetering', 'adviseren van betrokken lijnmanagers en ondernemingsleiding t.a.v. nieuwe methoden en technieken ']
+    resultCriteria: ['bruikbaarheid van adviezen en voorstellen', 'mate waarin de teelt wordt geoptimaliseerd', 'juistheid en volledigheid van analyses en beoordeling', 'doelmatigheid van opgestelde schema''s en recepturen ']
+  -
+    resultArea: Teeltvoorbereiding
+    mainActivities: ['instrueren en begeleiden t.a.v. zaai- en planttechnieken en vermeerderingsmethoden en -technieken', 'aangeven\/instrueren t.a.v. de wijze van aanbrengen van bodemverbeteraars']
+    resultCriteria: ['helderheid van instructies en begeleiding']
+  -
+    resultArea: 'Uitgevoerde teeltverzorging en gewasondersteuning'
+    mainActivities: ['instrueren en begeleiden van werknemers t.a.v. technieken van gewasondersteuning, gewasverzorging (voeding, water, klimaat, lucht, licht; uitdunnen, verwijderen van ongewenst blad, snoeien e.d.), onkruidverwijdering. Signaleren van groeiverstoringen', 'samenstellen en aanmaken van de voedings- en bestrijdingsmiddelen', 'registreren en controleren van klimaatbeheersingshandelingen (temperatuur, ventilatie, vochtgehalte, licht), en van de effecten van bijstellingen m.b.v. pc', 'uitvoeren van alle werkzaamheden gericht op de teelt t.b.v. realiseren van de productiedoelstellingen t.b.v. instructie en begeleiding', 'signaleren van gewasspecifieke kenmerken en afwijkingen', 'bijhouden van de registraties m.b.t. gewasontwikkeling ']
+    resultCriteria: ['helderheid van instructies', 'doelmatigheid van begeleiden', 'juistheid en doelmatigheid van aangemaakte middelen', 'tijdigheid van signaleren van afwijkingen en verstoringen', 'bruikbaarheid en doeltreffendheid van oplossingen', 'actualiteit van gegevens']
+  -
+    resultArea: 'Ondersteunde en uitgevoerde oogstwerkzaamheden'
+    mainActivities: ['instrueren en begeleiden van medewerkers t.a.v. het (handmatig) plukken, snijden, rapen etc. van oogstrijp gewas', 'overdragen van kennis per specifiek gewas over het juiste moment en de juiste wijze van oogsten e.d.', 'mede uitvoeren van oogstwerkzaamheden t.b.v. instructie, begeleiding e.d.']
+    resultCriteria: ['helderheid en doelmatigheid van instructies en begeleiding', 'volledigheid van overgedragen kennis\/kennis van de medewerkers over het gewas', 'bruikbaarheid van adviezen', 'efficiency van uitgevoerde werkzaamheden ']
 burdeningCircumstances:
-  circumstance: ['Incidenteel werken of verblijven in ruimten met relatief hoge luchtvochtigheid (ca. 80%) en relatief hoge temperaturen (tot ca. 25 C).', 'Regelmatig hinder van temperatuurswisselingen bij ingaan en verlaten van ruimten.', 'Hinder van dragen van voorgeschreven persoonlijke beschermingsmiddelen bij samenstellen of aanbrengen van voedings-/meststoffen of bestrijdingsmiddelen.', 'Kans op hand- en vingerletsel a.g.v. stoten of beknellen bij tillen, duwen, etc.', 'Het functieniveau volgens ORBA is gebaseerd op de rubrieken: Functiecontext, Positie in de organisatie, Functiedoel, Resultaatverwachting / Functionele activiteiten en Werkgerelateerde bezwaren. ']
+  circumstance:
+    - 'Incidenteel werken of verblijven in ruimten met relatief hoge luchtvochtigheid (ca. 80%) en relatief hoge temperaturen (tot ca. 25 C).'
+    - 'Regelmatig hinder van temperatuurswisselingen bij ingaan en verlaten van ruimten.'
+    - 'Hinder van dragen van voorgeschreven persoonlijke beschermingsmiddelen bij samenstellen of aanbrengen van voedings-\/meststoffen of bestrijdingsmiddelen.'
+    - 'Kans op hand- en vingerletsel a.g.v. stoten of beknellen bij tillen, duwen, etc.'
+    - 'Het functieniveau volgens ORBA is gebaseerd op de rubrieken: Functiecontext, Positie in de organisatie, Functiedoel, Resultaatverwachting \/ Functionele activiteiten en Werkgerelateerde bezwaren. '
 orbaScore: '132'
 wageScaleGroup: H

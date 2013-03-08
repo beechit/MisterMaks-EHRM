@@ -1,14 +1,24 @@
 jobDescriptionNumber: '30.01'
-jobTitle: Laboratoriummedewerker/laborant
+jobTitle: Laboratoriummedewerker\/laborant
 jobContext: 'De functie komt voor in middelgrote en grote bedrijven. Het laboratorium voert standaard fysische kwaliteitstesten en bepalingen uit op producten tijdens diverse stadia van het proces. De kwaliteitscontroles worden verricht o.b.v. nauwkeurige richtlijnen, regels en procedures. Resultaten worden direct aan de productieleiding doorgegeven.'
 reportsTo: 'operationeel leidinggevende, zoals bijv. hoofd productie of bedrijfsleider'
 manages: 'niet van toepassing'
 jobGoal: 'Uitvoeren van standaardtesten en -bepalingen ter vaststelling van de kwaliteit van producten.'
 department: 'Kwaliteit & technologie'
 expectations:
-  mainActivities: ['Mede onderhouden en met standaarden ijken van analyseapparatuur, schoonhouden van het laboratorium en op peil houden van de voorraad verbruiksmaterialen (afroepen bij leveranciers).', 'voorbereiden van de monsters door prepareren, afwegen, mengen etc.', 'instellen van apparatuur en doseren van monsters', 'meten, wegen, aflezen van analysegegevens', 'omzetten van gegevens in voor afnemers bruikbare informatie en doorgeven volgens afspraak (bijv. alleen buiten de specificaties vallende resultaten)', 'invoeren van meetgegevens in computer ', 'toezicht houden op de uitvoering en op naleving procedures en voorschriften (o.a. veiligheid) ', 'deelnemen aan maandelijks overleg met alle vaste medewerkers en wekelijks overleg met het management ', 'uitzetten en verplaatsen van opgepot uitgangsmateriaal in kas- of groeipositie (mechanisch of handmatig) ']
-  resultCriteria: ['correctheid van onderhouden apparatuur', 'reinheid van laboratorium', 'tijdigheid van beschikbaar zijn van de verbruiksmaterialen ']
+  -
+    resultArea: 'Uitgevoerde testen'
+    mainActivities: ['verrichten van fysische standaardbepalingen op aangeleverde standaard productmonsters, volgens voorschriften en rekening houdend met de aangegeven urgentie, beschikbaarheid van analyseapparatuur en doorlooptijd van bepalingen', 'voorbereiden van de monsters door prepareren, afwegen, mengen etc.', 'instellen van apparatuur en doseren van monsters', 'meten, wegen, aflezen van analysegegevens', 'omzetten van gegevens in voor afnemers bruikbare informatie en doorgeven volgens afspraak (bijv. alleen buiten de specificaties vallende resultaten)', 'invoeren van meetgegevens in computer ']
+    resultCriteria: ['tijdigheid van uitvoering van testen', 'correctheid van monstervoorbereiding', 'juistheid van apparatuurinstelling en monsterdosering', 'betrouwbaarheid van resultaten', 'correctheid van gegevensinvoer ']
+  -
+    resultArea: 'Beschikbaarheid van apparatuur, werkomgeving en hulpmaterialen'
+    mainActivities: ['Mede onderhouden en met standaarden ijken van analyseapparatuur, schoonhouden van het laboratorium en op peil houden van de voorraad verbruiksmaterialen (afroepen bij leveranciers).']
+    resultCriteria: ['correctheid van onderhouden apparatuur', 'reinheid van laboratorium', 'tijdigheid van beschikbaar zijn van de verbruiksmaterialen ']
 burdeningCircumstances:
-  circumstance: ['Werken in veelal staande en licht gebogen houding.', 'Hinder van stank (onwelriekende stoffen).', 'Enige kans op letsel door glasbreuk en door contact met chemicalien.', 'Het functieniveau volgens ORBA is gebaseerd op de rubrieken: Functiecontext, Positie in de organisatie, Functiedoel, Resultaatverwachting / Functionele activiteiten en Werkgerelateerde bezwaren. Het functieniveau volgens ORBA ® is gebaseerd op de rubri', 'Het functieniveau volgens ORBA is gebaseerd op de rubrieken: Functiecontext, Positie in de organisatie, Functiedoel, Resultaatverwachting / Functionele activiteiten en Werkgerelateerde bezwaren. ']
+  circumstance:
+    - 'Werken in veelal staande en licht gebogen houding.'
+    - 'Hinder van stank (onwelriekende stoffen).'
+    - 'Enige kans op letsel door glasbreuk en door contact met chemicalien.'
+    - 'Het functieniveau volgens ORBA is gebaseerd op de rubrieken: Functiecontext, Positie in de organisatie, Functiedoel, Resultaatverwachting \/ Functionele activiteiten en Werkgerelateerde bezwaren. Het functieniveau volgens ORBA \u00ae is gebaseerd op de rubri'
 orbaScore: '70'
 wageScaleGroup: E

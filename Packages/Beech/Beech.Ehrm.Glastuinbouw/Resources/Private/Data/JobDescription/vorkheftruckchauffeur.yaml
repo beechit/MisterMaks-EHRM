@@ -1,14 +1,33 @@
 jobDescriptionNumber: '20.02'
 jobTitle: Vorkheftruckchauffeur
-jobContext: 'De functie komt voor in de grotere bedrijven met een eigen opslag voor uitgangsmateriaal en/of (eind-)producten.\r\nVoert de werkzaamheden uit in opdracht en volgens geldende voorschriften.\r\n'
+jobContext: 'De functie komt voor in de grotere bedrijven met een eigen opslag voor uitgangsmateriaal en\/of (eind-)producten.\Voert de werkzaamheden uit in opdracht en volgens geldende voorschriften.\'
 reportsTo: 'operationeel leidinggevende, zoals bijv. ondernemer of hoofd magazijn'
 manages: 'niet van toepassing'
 jobGoal: 'Transporteren van goederen m.b.v. een (vork-)heftruck.'
 department: Logistiek
 expectations:
-  mainActivities: ['Naleven van de bedrijfsinstructies inzake veiligheid van werken e.d.', 'schoonhouden van apparatuur', 'dagelijks (preventief) onderhoud d.m.v. controleren van peil- en meterstanden etc.', 'signaleren van dreigende (ver)storingen aan direct leidinggevende', 'alle voorkomende algemene ondersteuningswerkzaamheden ', 'controleren van de kwaliteit van het product', 'signaleren van verstorende invloeden en deze bespreken met bedrijfsleider', 'deelnemen aan maandelijks overleg met alle vaste medewerkers en wekelijks overleg met het management ', 'uitzetten en verplaatsen van opgepot uitgangsmateriaal in kas- of groeipositie (mechanisch of handmatig) ']
-  resultCriteria: ['mate waarin bedrijfsinstructies worden nageleefd']
+  -
+    resultArea: 'Ontvangen en afgevoerde goederen'
+    mainActivities: ['lossen en laden van pallets, kratten etc. uit\/in vrachtauto\\''s', 'controleren van de te lossen\/laden goederen a.d.h.v. vrachtdocumenten (kwantiteiten) en signaleren van afwijkingen aan direct leidinggevende', 'nemen van (bepaalde) monsters volgens voorschrift t.b.v. kwaliteitscontrole ']
+    resultCriteria: ['tijdigheid van afgevoerde goederen', 'zorgvuldigheid van handelen bij het controleren van ontvangsten en bij het lossen, laden en verplaatsen van goederen', 'snelheid van lossen', 'juistheid van monstername ']
+  -
+    resultArea: 'Getransporteerde goederen'
+    mainActivities: ['Transporten van goederen m.b.v. een (vork-)heftruck naar\/van aangegeven plaatsen binnen de onderneming (productieafdeling of magazijn).']
+    resultCriteria: ['tijdigheid en juistheid van getransporteerde goederen', 'juiste opslaglocatie']
+  -
+    resultArea: 'Verzorgde hefmiddelen'
+    mainActivities: ['verzorgen van het gebruikersonderhoud aan hefmiddelen volgens opdracht en voorschriften', 'schoonhouden van apparatuur', 'dagelijks (preventief) onderhoud d.m.v. controleren van peil- en meterstanden etc.', 'signaleren van dreigende (ver)storingen aan direct leidinggevende']
+    resultCriteria: ['kwaliteit van gebruikersonderhoud', 'tijdigheid van signalering dreigende storingen']
+  -
+    resultArea: 'Nageleefde voorschriften.'
+    mainActivities: ['Naleven van de bedrijfsinstructies inzake veiligheid van werken e.d.']
+    resultCriteria: ['mate waarin bedrijfsinstructies worden nageleefd']
 burdeningCircumstances:
-  circumstance: ['Uitoefenen van kracht (incidenteel) bij het handmatig verplaatsen van goederen.', 'Inspannende houding bij het besturen van de heftruck.', 'Hinder van temperatuurverschillen (binnen/buiten) en tocht bij overgang tussen ruimten, lawaai.', 'Kans op letsel bij transportwerkzaamheden.', 'Het functieniveau volgens ORBA is gebaseerd op de rubrieken: Functiecontext, Positie in de organisatie, Functiedoel, Resultaatverwachting / Functionele activiteiten en Werkgerelateerde bezwaren. ']
+  circumstance:
+    - 'Uitoefenen van kracht (incidenteel) bij het handmatig verplaatsen van goederen.'
+    - 'Inspannende houding bij het besturen van de heftruck.'
+    - 'Hinder van temperatuurverschillen (binnen\/buiten) en tocht bij overgang tussen ruimten, lawaai.'
+    - 'Kans op letsel bij transportwerkzaamheden.'
+    - 'Het functieniveau volgens ORBA is gebaseerd op de rubrieken: Functiecontext, Positie in de organisatie, Functiedoel, Resultaatverwachting \/ Functionele activiteiten en Werkgerelateerde bezwaren. '
 orbaScore: '60'
 wageScaleGroup: D
