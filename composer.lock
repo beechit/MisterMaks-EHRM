@@ -511,17 +511,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/radmiraal/Radmiraal.Emberjs.git",
-                "reference": "e9a209ec4f04b67912614f6cef05d0c264ad5490"
+                "reference": "28b60ce99b45813f135d56da3cae352253333830"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/radmiraal/Radmiraal.Emberjs/zipball/e9a209ec4f04b67912614f6cef05d0c264ad5490",
-                "reference": "e9a209ec4f04b67912614f6cef05d0c264ad5490",
+                "url": "https://api.github.com/repos/radmiraal/Radmiraal.Emberjs/zipball/28b60ce99b45813f135d56da3cae352253333830",
+                "reference": "28b60ce99b45813f135d56da3cae352253333830",
                 "shasum": ""
             },
             "require": {
                 "typo3/flow": "*"
             },
+            "time": "2013-03-08 17:07:10",
             "type": "typo3-flow-package",
             "autoload": {
                 "psr-0": {
@@ -536,8 +537,7 @@
                 {
                     "name": "Rens Admiraal"
                 }
-            ],
-            "time": "2013-03-08 08:53:22"
+            ]
         },
         {
             "name": "react/event-loop",
