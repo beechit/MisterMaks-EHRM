@@ -33,7 +33,7 @@
     'creationDate':
       default: 'now'
       label: 'creation date'
-      type: 'dateTime'
+      type: 'DateTime'
       validation:
         -
           type: 'NotEmpty'
@@ -53,7 +53,7 @@
         'modificationDate':
           default: 'now'
           label: 'Modification date'
-          type: 'dateTime'
+          type: 'DateTime'
           validation:
             -
               type: 'RegularExpression'

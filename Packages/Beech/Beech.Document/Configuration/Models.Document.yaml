@@ -7,7 +7,7 @@
   properties:
     creationDate:
       label: 'creation date'
-      type: 'dateTime'
+      type: 'DateTime'
       validation:
         type: 'RegularExpression'
         options:
@@ -23,7 +23,7 @@
         'modificationDate':
           default: 'now'
           label: 'Modification date'
-          type: 'dateTime'
+          type: 'DateTime'
           validation:
             type: 'RegularExpression'
             options:

@@ -19,7 +19,7 @@
           type: 'NotEmpty'
     'leaveDateTimeStart':
       label: 'leaveDateTimeStart'
-      type: 'dateTime'
+      type: 'DateTime'
       validation:
         -
           type: 'NotEmpty'
@@ -29,7 +29,7 @@
             regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
     'leaveDateEnd':
       label: 'leaveDateEnd'
-      type: 'dateTime'
+      type: 'DateTime'
       validation:
         -
           type: 'NotEmpty'
@@ -90,7 +90,7 @@
               type: 'Text'
         'remarkDate':
           label: 'Remark date'
-          type: 'dateTime'
+          type: 'DateTime'
           validation:
             -
               type: 'RegularExpression'
@@ -114,7 +114,7 @@
           type: 'NotEmpty'
     'approveDeclineDate':
       label: 'approved Declined Date'
-      type: 'dateTime'
+      type: 'DateTime'
       validation:
         -
           type: 'RegularExpression'
@@ -125,7 +125,7 @@
     'creationDate':
       default: 'now'
       label: 'creation date'
-      type: 'dateTime'
+      type: 'DateTime'
       validation:
         -
           type: 'NotEmpty'
@@ -145,7 +145,7 @@
         'modificationDate':
           default: 'now'
           label: 'Modification date'
-          type: 'dateTime'
+          type: 'DateTime'
           validation:
             -
               type: 'RegularExpression'

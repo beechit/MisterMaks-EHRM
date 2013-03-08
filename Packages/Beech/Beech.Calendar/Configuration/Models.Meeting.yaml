@@ -48,7 +48,7 @@
           type: 'NotEmpty'
     'start':
       label: 'Start'
-      type: 'dateTime'
+      type: 'DateTime'
       validation:
         -
           type: 'RegularExpression'
@@ -56,7 +56,7 @@
             regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
     'end':
       label: 'End'
-      type: 'dateTime'
+      type: 'DateTime'
       validation:
         -
           type: 'RegularExpression'
@@ -137,7 +137,7 @@
     'creationDate':
       default: 'now'
       label: 'creation date'
-      type: 'dateTime'
+      type: 'DateTime'
       validation:
         -
           type: 'RegularExpression'
@@ -154,7 +154,7 @@
         'modificationDate':
           default: 'now'
           label: 'Modification date'
-          type: 'dateTime'
+          type: 'DateTime'
           validation:
             type: 'RegularExpression'
             options:

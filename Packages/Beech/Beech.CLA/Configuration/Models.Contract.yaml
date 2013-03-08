@@ -52,7 +52,7 @@
       type: 'boolean'
     'contractGenerationDate':
       label: 'The date the contract was created'
-      type: 'dateTime'
+      type: 'DateTime'
       validation:
         -
           type: 'NotEmpty'
@@ -62,7 +62,7 @@
             regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
     'contractAcceptanceDate':
       label: 'Date contract was accepted'
-      type: 'dateTime'
+      type: 'DateTime'
       validation:
         -
           type: 'RegularExpression'
@@ -73,7 +73,7 @@
       type: 'boolean'
     'contractSignDate':
       label: 'Date of signing contract'
-      type: 'dateTime'
+      type: 'DateTime'
       validation:
         -
           type: 'RegularExpression'
@@ -81,7 +81,7 @@
             regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
     'contractExpireDate':
       label: 'Expiration date'
-      type: 'dateTime'
+      type: 'DateTime'
       validation:
         -
           type: 'RegularExpression'
@@ -89,7 +89,7 @@
             regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
     'contactStopDate':
       label: 'Date contract is stopped'
-      type: 'dateTime'
+      type: 'DateTime'
       validation:
         -
           type: 'RegularExpression'
@@ -130,7 +130,7 @@
       type: 'Beech\CLA\Domain\Model\jobDescription'
     'contractEnddate':
       label: 'Expiration date'
-      type: 'dateTime'
+      type: 'DateTime'
       validation:
         -
           type: 'RegularExpression'
@@ -138,7 +138,7 @@
             regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
     'contractStartDate':
       label: 'Startdate of the contract'
-      type: 'dateTime'
+      type: 'DateTime'
       validation:
         -
           type: 'NotEmpty'
@@ -258,7 +258,7 @@
               - 'sunday'
         'startTime':
           label: 'Starttime'
-          type: 'dateTime'
+          type: 'DateTime'
           validation:
             -
               type: 'RegularExpression'
@@ -266,7 +266,7 @@
                 regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
         'endTime':
           label: 'EndTime'
-          type: 'dateTime'
+          type: 'DateTime'
           validation:
             -
               type: 'RegularExpression'
@@ -342,7 +342,7 @@
 # todo: add time validator
     'sickReportTime':
       label: 'Sickreport time'
-      type: 'dateTime'
+      type: 'DateTime'
       validation: []
     'noticePeriod':
       label: 'Notice period'
@@ -381,7 +381,7 @@
     'creationDate':
       default: 'now'
       label: 'creation date'
-      type: 'dateTime'
+      type: 'DateTime'
       validation:
         -
           type: 'NotEmpty'

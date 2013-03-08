@@ -33,15 +33,15 @@ contactArticles:
         standard: TRUE
         values:
           -
-            type: 'dateTime'
+            type: 'DateTime'
             value: ''
             valueId: contractTime
           -
-            type: 'dateTime'
+            type: 'DateTime'
             value: ''
             valueId: startDate
           -
-            type: 'dateTime'
+            type: 'DateTime'
             value: ''
             valueId: endDate
     -

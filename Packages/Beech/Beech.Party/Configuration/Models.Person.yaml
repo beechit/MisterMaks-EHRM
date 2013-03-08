@@ -70,7 +70,7 @@
 
   'dateofBirth':
     label: 'Date of Birth'
-    type: 'dateTime'
+    type: 'DateTime'
     validation:
       -
         type: 'RegularExpression'
@@ -85,7 +85,7 @@
           regularExpression: '[a-zA-Z\\-\\s\\’]{2,30}'
   'dateofDeath':
     label: 'Date of death'
-    type: 'dateTime'
+    type: 'DateTime'
     validation:
       -
         type: 'RegularExpression'
@@ -168,7 +168,7 @@
   'creationDate':
     default: 'now'
     label: 'creation date'
-    type: 'dateTime'
+    type: 'DateTime'
     validation:
       -
         type: 'NotEmpty'
@@ -188,7 +188,7 @@
       'modificationDate':
         default: 'now'
         label: 'Modification date'
-        type: 'dateTime'
+        type: 'DateTime'
         validation:
           -
             type: 'RegularExpression'
