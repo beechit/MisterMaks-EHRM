@@ -89,7 +89,9 @@ class YamlImportUtility {
 		$modelName = ucfirst($modelName);
 		$repositoryClassName = str_replace('.', '\\', $packageKey) . '\\Domain\\Repository\\' . $modelName . 'Repository';
 		$this->modelClassName = str_replace('.', '\\', $packageKey) . '\\Domain\\Model\\' . $modelName;
-
+		if ($yamlModel === NULL) {
+			$yamlModel = $this->modelInterpreterUtility->getModelProperties($packageKey, $modelName);
+		}
 		$this->yamlModel = $this->modelInterpreterUtility->getModelProperties($packageKey, $modelName, $yamlModel);
 		$this->repository = $this->objectManager->get($repositoryClassName);
 	}
@@ -205,7 +207,7 @@ class YamlImportUtility {
 		$document = new $this->modelClassName();
 		foreach ($this->yamlModel as $key => $value) {
 			if (isset($value['default'])) {
-				if ($value['type'] === 'dateTime' && $value['default'] === 'now') {
+				if (isset($value['type']) && $value['type'] === 'dateTime' && $value['default'] === 'now') {
 					$defaultValue = date('Y-m-d');
 				} elseif ($value['default'] === 'currentUser') {
 						// TODO: Get default user or other solution, maybe from config file?
