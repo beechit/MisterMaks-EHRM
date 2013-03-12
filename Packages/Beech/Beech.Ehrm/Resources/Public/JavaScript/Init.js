@@ -12,16 +12,16 @@ var App;
 
 		initializeWebSocket: function() {
 			this.Socket = $.gracefulWebSocket('ws://127.0.0.1:8000/', { autoReconnect: true });
-			this.Socket.onopen = function(msg) {
+			this.Socket.onopen = function() {
 				this.send($.cookie('TYPO3_Flow_Session'));
 				console.log('Connection successfully opened (readyState ' + this.readyState + ')');
 			};
-			this.Socket.onclose = function(msg) {
-				if(this.readyState == 2) {
+			this.Socket.onclose = function() {
+				if(this.readyState === 2) {
 					console.log(
 						'Closing... The connection is going through the closing handshake (readyState ' + this.readyState + ')'
 					);
-				} else if(this.readyState == 3) {
+				} else if(this.readyState === 3) {
 					App.Service.Notification.showError('Connection to the server has been lost or could not be opened.');
 				} else {
 					console.log('Connection closed... (unhandled readyState ' + this.readyState + ')');

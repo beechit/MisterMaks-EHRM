@@ -65,8 +65,6 @@ class HeaderPartsViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHel
 	 * @return string
 	 */
 	public function render($loadJavaScriptLibraries = TRUE, $loadJavaScriptSources = TRUE) {
-		$this->addJavaScriptConfiguration();
-
 		if ($loadJavaScriptLibraries === TRUE || $loadJavaScriptSources === TRUE) {
 			$libraries = array();
 			$sources = array();
@@ -92,7 +90,7 @@ class HeaderPartsViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHel
 		$this->addStyleSheetIncludes();
 		$this->addThemeStyleSheet();
 
-		return $this->output;
+		return $this->javaScriptConfiguration() . $this->output;
 	}
 
 	/**
@@ -174,9 +172,9 @@ class HeaderPartsViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHel
 	/**
 	 * Add JavaScript configuration object to the document header
 	 *
-	 * @return void
+	 * @return string
 	 */
-	protected function addJavaScriptConfiguration() {
+	protected function javaScriptConfiguration() {
 		$settings = array(
 			'init' => (object)array(
 				'onLoad' => array(),
@@ -230,7 +228,7 @@ class HeaderPartsViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHel
 			'locale' => $this->preferenceUtility->getApplicationPreference('locale')
 		);
 
-		$this->output .= sprintf('<script>var MM = %s;</script>', json_encode((object)$settings));
+		return sprintf('<script>var MM = %s;</script>', json_encode((object)$settings));
 	}
 
 }

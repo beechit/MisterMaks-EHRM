@@ -13,7 +13,7 @@
 			$('.datepicker').live('click', function() {
 				$(this).datepicker({showOn:'focus'})
 					.on('changeDate', function() {
-						$(this).datepicker('hide')
+						$(this).datepicker('hide');
 					})
 					.focus();
 			});
@@ -22,7 +22,7 @@
 			$(document).on('click.modal.data-api', '[data-toggle="modal-jsonp"]', function (e) {
 				var $this = $(this),
 					href = $this.attr('href'),
-					$target = $($this.attr('data-target') || (href && href.replace(/.*(?=#[^\s]+$)/, '')));
+					$target = $($this.attr('data-target') || (href && href.replace(/\.*(?=#[^\s]+$)/, '')));
 				e.preventDefault();
 
 				$target.find('.modal-body').html('<p><i class="icon-spin icon-spinner icon-4x muted"></i></p>');
@@ -32,7 +32,7 @@
 				$target
 					.modal()
 					.one('hide', function () {
-						$this.focus()
+						$this.focus();
 					});
 			});
 		},

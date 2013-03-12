@@ -26,7 +26,7 @@ class FormBuilderYamlPersistenceAspect {
 	/**
 	 * Load alternative wizard file if one is found
 	 *
-	 * @param  \TYPO3\Flow\Aop\JoinPointInterface $joinPoint
+	 * @param \TYPO3\Flow\Aop\JoinPointInterface $joinPoint
 	 * @Flow\Around("method(TYPO3\Form\Persistence\YamlPersistenceManager->getFormPathAndFilename())")
 	 * @return string the absolute path and filename of the form with the specified $persistenceIdentifier
 	 */

@@ -1,4 +1,6 @@
 (function() {
+	'use strict';
+
 	$(document).ready(function() {
 			// Modal
 		$('.login').on('click', function(event) {
@@ -23,7 +25,7 @@
 	});
 
 	(function($) {
-		$.fn.updateModal = function(event) {
+		$.fn.updateModal = function() {
 			$(this).on('submit', function(event) {
 				$('<i class="icon-spin icon-spinner icon-large muted"></i>').insertAfter('button');
 				var form = $(this);
@@ -33,7 +35,7 @@
 					type: form.attr('method'),
 					url: form.attr('action'),
 					data: form.serialize(),
-					success: function(data, status) {
+					success: function(data) {
 						var result = $('#content', data).html();
 
 							// Redirect upon successful login

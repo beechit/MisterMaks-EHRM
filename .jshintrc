@@ -4,7 +4,10 @@
 		"jQuery",
 		"$",
 		"Ember",
-		"module"
+		"module",
+		"MM",
+		"App",
+		"DS"
 	],
 
 	"node": true,
