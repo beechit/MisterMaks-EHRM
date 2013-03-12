@@ -119,6 +119,7 @@ class PersistenceTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFuncti
 		$this->entityRepository->add($entity);
 
 		$this->persistenceManager->persistAll();
+		$this->persistenceManager->clearState();
 		$this->assertEquals(1, $this->entityRepository->countAll());
 
 		$action = new Action();
