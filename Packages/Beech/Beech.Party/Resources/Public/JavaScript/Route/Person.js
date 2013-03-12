@@ -1,7 +1,6 @@
 (function() {
 	'use strict';
 
-	App.BeechPartyPersonModuleIndexController = Ember.ArrayController.extend();
 	App.BeechPartyPersonModuleIndexRoute = App.ModuleRoute.extend({
 		model: function() {
 			return App.BeechPartyDomainModelPerson.find();
@@ -23,14 +22,19 @@
 	});
 
 		// Administration
-	App.BeechPartyPersonAdministrationModuleIndexController = Ember.ArrayController.extend();
 	App.BeechPartyPersonAdministrationModuleIndexRoute = App.ModuleRoute.extend({
 		renderTemplate: function() {
-			this.render('administration_menu', { outlet: 'sidebar' });
 			this._super.apply(this, arguments);
+			this.render('administration_menu', { outlet: 'sidebar' });
 		},
 		model: function() {
 			return App.BeechPartyDomainModelPerson.find();
+		}
+	});
+
+	App.BeechPartyDomainModelPersonAdministrationIndexRoute = Ember.Route.extend(App.ModelFormableMixin, {
+		model: function() {
+			return this.modelFor('BeechPartyDomainModelPersonAdministration');
 		}
 	});
 
@@ -46,7 +50,7 @@
 		redirectToRouteName: 'BeechPartyPersonAdministrationModule.index',
 		formTemplateName: 'BeechPartyDomainModelPersonAdministration/form',
 		model: function() {
-			return this.modelFor('BeechPartyDomainModelPerson');
+			return this.modelFor('BeechPartyDomainModelPersonAdministration');
 		}
 	});
 

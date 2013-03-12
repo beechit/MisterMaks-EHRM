@@ -1,7 +1,6 @@
 (function() {
 	'use strict';
 
-	App.BeechPartyCompanyModuleIndexController = Ember.ArrayController.extend();
 	App.BeechPartyCompanyModuleIndexRoute = App.ModuleRoute.extend({
 		model: function() {
 			return App.BeechPartyDomainModelCompany.find();
@@ -23,14 +22,19 @@
 	});
 
 		// Administration
-	App.BeechPartyCompanyAdministrationModuleIndexController = Ember.ArrayController.extend();
 	App.BeechPartyCompanyAdministrationModuleIndexRoute = App.ModuleRoute.extend({
 		renderTemplate: function() {
-			this.render('administration_menu', { outlet: 'sidebar' });
 			this._super.apply(this, arguments);
+			this.render('administration_menu', { outlet: 'sidebar' });
 		},
 		model: function() {
 			return App.BeechPartyDomainModelCompany.find();
+		}
+	});
+
+	App.BeechPartyDomainModelCompanyAdministrationIndexRoute = Ember.Route.extend(App.ModelFormableMixin, {
+		model: function() {
+			return this.modelFor('BeechPartyDomainModelCompanyAdministration');
 		}
 	});
 
@@ -46,7 +50,7 @@
 		redirectToRouteName: 'BeechPartyCompanyAdministrationModule.index',
 		formTemplateName: 'BeechPartyDomainModelCompanyAdministration/form',
 		model: function() {
-			return this.modelFor('BeechPartyDomainModelCompany');
+			return this.modelFor('BeechPartyDomainModelCompanyAdministration');
 		}
 	});
 
