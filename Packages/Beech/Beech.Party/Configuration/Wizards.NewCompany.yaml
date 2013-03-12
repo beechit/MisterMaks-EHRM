@@ -13,12 +13,10 @@ newCompany:
         package: Beech.Party
         model: Company
     -
-      identifier: 'TYPO3.Form:Redirect'
+      identifier: 'Beech.Ehrm:ModalCloseConfirmation'
       options:
-        package: Beech.Party
-        controller: Company
-        subpackage: Management
-        action: list
+        message: 'wizard.completed'
+        buttons: 'close'
   renderables:
     -
       type: 'TYPO3.Form:Page'
