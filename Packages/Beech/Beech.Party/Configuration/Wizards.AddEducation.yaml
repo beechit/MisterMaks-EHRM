@@ -1,0 +1,116 @@
+WizardAddEducation:
+  type: 'TYPO3.Form:Form'
+  identifier: wizardAddEducation
+  label: 'Wizard add Education'
+  finishers:
+    -
+      identifier: 'Beech.Ehrm:ModalCloseConfirmation'
+      options:
+        message: wizard.completed
+        buttons: Close
+    -
+      identifier: 'Beech.Ehrm:Database'
+      options:
+        package: Beech.Party
+        model: Education
+  renderingOptions:
+    submitButtonLabel: Add
+  renderables:
+    -
+      type: 'TYPO3.Form:Page'
+      identifier: addEducationWizard
+      label: 'Register education'
+      renderables:
+        -
+          type: 'TYPO3.Form:Section'
+          identifier: setTypeEducation
+          label: 'Set education type'
+          renderables:
+            -
+              type: 'TYPO3.Form:SingleSelectDropdown'
+              identifier: educationType
+              label: 'Type of Education'
+              validators:
+                -
+                  identifier: 'TYPO3.Flow:NotEmpty'
+              properties:
+                options:
+                  -
+                    _value: 'Primary education'
+                    _key: primaryEducation
+                  -
+                    _value: 'Pre vocational education'
+                    _key: preVocationalEducation
+                  -
+                    _value: 'Vocational Secondary education'
+                    _key: vocationalSecondaryEducation
+                  -
+                    _value: 'Higher vocational education'
+                    _key: higherVocationalEducation
+                  -
+                    _value: 'Academic education'
+                    _key: academicEducation
+            -
+              type: 'TYPO3.Form:Section'
+              identifier: detailsEducation
+              label: 'Education details'
+              renderables:
+                -
+                  type: 'TYPO3.Form:SingleLineText'
+                  identifier: nameEducationInstitute
+                  label: 'Name of the education institute'
+                  validators:
+                    -
+                      identifier: 'TYPO3.Flow:NotEmpty'
+                    -
+                      identifier: 'TYPO3.Flow:StringLength'
+                      options:
+                        maximum: '35'
+                  properties:
+                    placeholder: 'School name'
+                  defaultValue: ''
+                -
+                  type: 'TYPO3.Form:SingleLineText'
+                  identifier: educationName
+                  label: 'Name of the education'
+                  validators:
+                    -
+                      identifier: 'TYPO3.Flow:NotEmpty'
+                    -
+                      identifier: 'TYPO3.Flow:StringLength'
+                      options:
+                        maximum: '35'
+                  properties:
+                    placeholder: Name
+                  defaultValue: ''
+                -
+                  type: 'TYPO3.Form:DatePicker'
+                  identifier: educationStart
+                  label: Start
+                  validators:
+                    -
+                      identifier: 'TYPO3.Flow:DateTimeRange'
+                      options:
+                        earliestDate: '19000101'
+                        latestDate: '20200101'
+                    -
+                      identifier: 'TYPO3.Flow:NotEmpty'
+                -
+                  type: 'TYPO3.Form:Checkbox'
+                  identifier: diploma
+                  label: Diploma
+                -
+                  type: 'TYPO3.Form:Section'
+                  identifier: setEndDate
+                  label: 'Set EndDate'
+                  renderables:
+                    -
+                      type: 'TYPO3.Form:DatePicker'
+                      identifier: educationEndDate
+                      label: Until
+                      validators:
+                        -
+                          identifier: 'TYPO3.Flow:DateTimeRange'
+                          options:
+                            earliestDate: '19000101'
+                            latestDate: '20200101'

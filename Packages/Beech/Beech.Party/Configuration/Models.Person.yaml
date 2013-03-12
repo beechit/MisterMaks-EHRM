@@ -42,6 +42,13 @@
           type: 'StringLength'
           options:
             maximum: 30
+    'nameUsage':
+      label: 'Name usage'
+      options:
+        values:
+          - 'birthName'
+          - 'marriedName'
+          - 'marriedNameBirthname'
     'alias':
       label: Alias
       validation:

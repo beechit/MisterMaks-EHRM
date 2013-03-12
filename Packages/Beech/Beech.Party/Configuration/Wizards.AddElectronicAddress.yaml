@@ -1,0 +1,178 @@
+wizardAddElectronicAddress:
+  type: 'TYPO3.Form:Form'
+  identifier: addElectronicAddress
+  label: 'Wizard add electronic address'
+  renderingOptions:
+    submitButtonLabel: Save
+  renderables:
+    -
+      type: 'TYPO3.Form:Page'
+      identifier: page1
+      label: 'Add an electronic address'
+      renderables:
+        -
+          type: 'TYPO3.Form:Section'
+          identifier: electronicAddresses
+          label: 'Electronic Addresses'
+          renderables:
+            -
+              type: 'TYPO3.Form:SingleSelectDropdown'
+              identifier: electronicAddressType
+              label: 'Electronic address type'
+              validators:
+                -
+                  identifier: 'TYPO3.Flow:NotEmpty'
+              properties:
+                options:
+                  -
+                    _value: E-mail
+                    _key: emailAddress
+                  -
+                    _value: Skype
+                    _key: skype
+                  -
+                    _value: WebsiteUrl
+                    _key: websiteUrl
+                  -
+                    _value: Twitter
+                    _key: twitter
+                  -
+                    _value: Facebook
+                    _key: facebook
+                  -
+                    _value: LinkedIn
+                    _key: linkedin
+                  -
+                    _value: Hyves
+                    _key: hyves
+            -
+              type: 'TYPO3.Form:Section'
+              identifier: caseEmail
+              label: 'Case e-mail'
+              renderables:
+                -
+                  type: 'TYPO3.Form:SingleLineText'
+                  identifier: email
+                  label: email
+                  validators:
+                    -
+                      identifier: 'TYPO3.Flow:NotEmpty'
+                    -
+                      identifier: 'TYPO3.Flow:EmailAddress'
+                  properties:
+                    placeholder: E-mail
+                  defaultValue: ''
+            -
+              type: 'TYPO3.Form:Section'
+              identifier: caseSkype
+              label: 'Case Skype'
+              renderables:
+                -
+                  type: 'TYPO3.Form:SingleLineText'
+                  identifier: skype
+                  label: Skype
+                  validators:
+                    -
+                      identifier: 'TYPO3.Flow:RegularExpression'
+                      options:
+                        regularExpression: '[a-zA-Z][a-zA-Z0-9]{5,31}]'
+                  properties:
+                    placeholder: Skype
+                  defaultValue: ''
+            -
+              type: 'TYPO3.Form:Section'
+              identifier: caseUrl
+              label: 'Case url'
+              renderables:
+                -
+                  type: 'TYPO3.Form:SingleLineText'
+                  identifier: websiteUrl
+                  label: Website
+                  validators:
+                    -
+                      identifier: 'TYPO3.Flow:RegularExpression'
+                      options:
+                        regularExpression: '/(https?://)?(www\\.)?([a-zA-Z0-9_%]*)\\b\\.[a-z]{2,4}(\\.[a-z]{2})?((/[a-zA-Z0-9_%]*)+)?(\\.[a-z]*)?/g]'
+                  properties:
+                    placeholder: Website
+                  defaultValue: ''
+            -
+              type: 'TYPO3.Form:Section'
+              identifier: caseTwitter
+              label: 'Case Twitter'
+              renderables:
+                -
+                  type: 'TYPO3.Form:SingleLineText'
+                  identifier: twitter
+                  label: Twitter
+                  validators:
+                    -
+                      identifier: 'TYPO3.Flow:StringLength'
+                      options:
+                        maximum: '20'
+                  properties:
+                    placeholder: Twitter
+                  defaultValue: ''
+            -
+              type: 'TYPO3.Form:Section'
+              identifier: caseFacebook
+              label: 'Case Facebook'
+              renderables:
+                -
+                  type: 'TYPO3.Form:SingleLineText'
+                  identifier: facebook
+                  label: Facebook
+                  validators:
+                    -
+                      identifier: 'TYPO3.Flow:StringLength'
+                      options:
+                        maximum: '20'
+                  properties:
+                    placeholder: Facebook
+                  defaultValue: ''
+            -
+              type: 'TYPO3.Form:Section'
+              identifier: caseLinkedIn
+              label: 'Case LinkedIn'
+              renderables:
+                -
+                  type: 'TYPO3.Form:SingleLineText'
+                  identifier: linkedIn
+                  label: LinkedIn
+                  validators:
+                    -
+                      identifier: 'TYPO3.Flow:StringLength'
+                      options:
+                        maximum: '20'
+                  properties:
+                    placeholder: LinkedIn
+                  defaultValue: ''
+            -
+              type: 'TYPO3.Form:Section'
+              identifier: caseHyves
+              label: 'Case Hyves'
+              renderables:
+                -
+                  type: 'TYPO3.Form:SingleLineText'
+                  identifier: hyves
+                  label: Hyves
+                  validators:
+                    -
+                      identifier: 'TYPO3.Flow:StringLength'
+                      options:
+                        minimum: ''
+                        maximum: '30'
+                  properties:
+                    placeholder: Hyves
+                  defaultValue: ''
+  finishers:
+    -
+      identifier: 'Beech.Ehrm:ModalCloseConfirmation'
+      options:
+        message: 'Electronic Address Added'
+        buttons: Close
+    -
+      identifier: 'Beech.Ehrm:Database'
+      options:
+        package: Beech.Party
+        model: ElectronicAddress

@@ -34,13 +34,13 @@
             values:
               - 'workLocationNumber'
               - 'faxNumber'
-              - 'homePhoneNumber'
-              - 'privateMobilePhone'
-              - 'businessMobilePhone'
-              - 'bussinessPhone'
+              - 'homeNumber'
+              - 'privateMobile'
+              - 'businessMobile'
+              - 'bussinessNumber'
               - 'emergencyCallnumber'
               - 'other'
-              - 'foreignPhoneNumber'
+              - 'foreignNumber'
           validation:
             -
               type: 'NotEmpty'
@@ -73,8 +73,17 @@
               type: 'StringLength'
               options:
                 maximum: 15
+        'setPrimaryPhone':
+          label: 'Primary phone'
+          type: 'boolean'
+          validation: ''
       label: 'Phone numbers'
       type: 'array'
+    'phoneDescription':
+      label: 'Description'
+      validation:
+        -
+          type: 'Text'
     'creationDate':
       default: 'now'
       label: 'creation date'
