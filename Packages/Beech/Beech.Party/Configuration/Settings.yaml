@@ -9,3 +9,7 @@ Radmiraal:
         routePath: 'beech_party_domain_model_companies'
         model: 'Beech\Party\Domain\Model\Company'
         repository: 'Beech\Party\Domain\Repository\CompanyRepository'
+      typo3_party_domain_model_person_name:
+        routePath: 'typo3_party_domain_model_person_names'
+        model: 'TYPO3\Party\Domain\Model\PersonName'
+        repository: 'Beech\Party\Domain\Repository\PersonNameRepository'

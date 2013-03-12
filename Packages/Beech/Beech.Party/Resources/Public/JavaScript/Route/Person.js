@@ -8,6 +8,12 @@
 		}
 	});
 
+	App.BeechPartyDomainModelPersonIndexRoute = Ember.Route.extend(App.ModelFormableMixin, {
+		model: function() {
+			return this.modelFor('BeechPartyDomainModelPerson');
+		}
+	});
+
 	App.BeechPartyDomainModelPersonEditRoute = Ember.Route.extend(App.ModelFormableMixin, {
 		redirectToRouteName: 'BeechPartyPersonModule.index',
 		formTemplateName: 'BeechPartyDomainModelPerson/form',

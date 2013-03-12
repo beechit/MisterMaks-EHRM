@@ -26,35 +26,62 @@ class ModelFinderUtility implements \Radmiraal\Emberjs\Utility\ModelFinderUtilit
 	protected $configurationManager;
 
 	/**
+	 * @var array
+	 */
+	protected $modelConfigurations;
+
+	/**
+	 * @var array
+	 */
+	protected $ignoredProperties;
+
+	/**
 	 * @param string $packageKey
 	 * @param array $classNames
 	 * @return void
 	 */
 	public function findModelImplementations($packageKey, array &$classNames) {
 			// TODO: OPTIMIZE and CLEANUP!
-		$ignoredProperties = $this->configurationManager->getConfiguration('Settings', 'Radmiraal.Emberjs.properties._exclude');
+		$this->ignoredProperties = $this->configurationManager->getConfiguration('Settings', 'Radmiraal.Emberjs.properties._exclude');
 
-		$modelConfigurations = $this->configurationManager->getConfiguration('Models');
-		foreach ($modelConfigurations as $modelName => $modelConfiguration) {
+		$this->modelConfigurations = $this->configurationManager->getConfiguration('Models');
+		foreach ($this->modelConfigurations as $modelName => $modelConfiguration) {
 			$modelName = str_replace('.', '\\', $modelName);
 			if (isset($classNames[$modelName])) {
 				continue;
 			}
 
-			$classNames[$modelName] = array();
+			$classNames[$modelName] = $this->findModelProperties($modelName);
+		}
+	}
 
-			if (isset($modelConfiguration['properties']) && is_array($modelConfiguration['properties'])) {
-				foreach ($modelConfiguration['properties'] as $propertyName => $propertyConfiguration) {
-					if (is_array($ignoredProperties) && in_array($propertyName, $ignoredProperties)) {
-						continue;
-					}
-						// TODO: Add lookup for relations and add them to the modelImplementations
-					$classNames[$modelName][$propertyName] = array(
-						'type' => isset($propertyConfiguration['type']) ? $propertyConfiguration['type'] : 'string'
-					);
+	/**
+	 * @param string $modelName
+	 * @return array
+	 */
+	public function findModelProperties($modelName) {
+		$result = array();
+		if (isset($this->modelConfigurations[$modelName]['properties']) && is_array($this->modelConfigurations[$modelName]['properties'])) {
+			foreach ($this->modelConfigurations[$modelName]['properties'] as $propertyName => $propertyConfiguration) {
+				if (is_array($this->ignoredProperties) && in_array($propertyName, $this->ignoredProperties)) {
+					continue;
 				}
+
+				// TODO: Add lookup for relations and add them to the modelImplementations
+				$result[$propertyName] = array(
+					'type' => isset($propertyConfiguration['type']) ? $propertyConfiguration['type'] : 'string'
+				);
 			}
 		}
+		return $result;
+	}
+
+	/**
+	 * @param string $modelName
+	 * @return boolean
+	 */
+	public function canRead($modelName) {
+		return isset($this->modelConfigurations[$modelName]);
 	}
 }
 

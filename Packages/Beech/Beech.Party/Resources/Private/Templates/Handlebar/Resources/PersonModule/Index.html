@@ -2,7 +2,22 @@
 <table class="table table-striped">
 	{{#each person in controller}}
 		<tr>
-			<td>Persoon: {{#linkTo "BeechPartyDomainModelPerson" person }} {{person.id}} {{/linkTo}}</td>
+			<td>Persoon: {{#linkTo "BeechPartyDomainModelPerson" person }} {{person.fullName}} {{/linkTo}}</td>
+			<td>
+				<div class="pull-right">
+					<div class="btn-group">
+						{{#linkTo "BeechPartyDomainModelPerson" person class="btn"}}view{{/linkTo}}
+						<button class="btn dropdown-toggle" data-toggle="dropdown">
+							<span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu pull-right">
+							<li>{{#linkTo "BeechPartyDomainModelPerson.edit" person}}edit{{/linkTo}}</li>
+						</ul>
+					</div>
+				</div>
+
+			</td>
 		</tr>
+
 	{{/each}}
 </table>
