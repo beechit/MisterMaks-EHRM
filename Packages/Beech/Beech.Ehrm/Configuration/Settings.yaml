@@ -74,6 +74,10 @@ TYPO3:
             implementationClassName: 'Beech\Ehrm\Form\Finishers\DatabaseFinisher'
           'Beech.Ehrm:ModalCloseConfirmation':
             implementationClassName: 'Beech\Ehrm\Form\Finishers\ModalCloseConfirmationFinisher'
+        formElementGroups:
+          contract:
+            sorting: 250
+            label: 'Contract Form Elements'
         formElementTypes:
           'TYPO3.Form:Base':
             renderingOptions:
@@ -101,31 +105,50 @@ TYPO3:
               enableDatePicker: TRUE
               displayDateSelector: TRUE
               displayTimeSelector: FALSE
+            formBuilder:
+              label: 'Beech Date Picker'
+              group: custom
+              sorting: 99
           'Beech.Ehrm:NationalitySelect':
             superTypes: ['TYPO3.Form:FormElement', 'TYPO3.Form:SingleSelectDropdown']
             implementationClassName: 'Beech\Ehrm\FormElements\NationalitySelect'
             renderingOptions:
               templatePathPattern: 'resource://Beech.Ehrm/Private/Templates/FormElements/NationalitySelect.html'
+            formBuilder:
+              label: 'Nationality Select'
+              group: custom
           'Beech.Ehrm:CountrySelect':
             superTypes: ['TYPO3.Form:FormElement', 'TYPO3.Form:SingleSelectDropdown']
             implementationClassName: 'Beech\Ehrm\FormElements\CountrySelect'
             renderingOptions:
               templatePathPattern: 'resource://Beech.Ehrm/Private/Templates/FormElements/CountrySelect.html'
+            formBuilder:
+              label: 'Country Select'
+              group: custom
           'Beech.Party:EmployeeSelect':
             superTypes: ['TYPO3.Form:FormElement', 'TYPO3.Form:SingleSelectDropdown']
             implementationClassName: 'Beech\Party\FormElements\EmployeeSelect'
             renderingOptions:
               templatePathPattern: 'resource://Beech.Ehrm/Private/Templates/FormElements/SingleSelectDropdown.html'
+            formBuilder:
+              label: 'Employee Select'
+              group: custom
           'Beech.CLA:ContractTemplateSelect':
             superTypes: ['TYPO3.Form:FormElement', 'TYPO3.Form:SingleSelectDropdown']
             implementationClassName: 'Beech\CLA\FormElements\ContractTemplateSelect'
             renderingOptions:
               templatePathPattern: 'resource://Beech.Ehrm/Private/Templates/FormElements/SingleSelectDropdown.html'
+            formBuilder:
+              label: 'Contract Template Select'
+              group: custom
           'Beech.CLA:JobDescriptionSelect':
             superTypes: ['TYPO3.Form:FormElement', 'TYPO3.Form:SingleSelectDropdown']
             implementationClassName: 'Beech\CLA\FormElements\JobDescriptionSelect'
             renderingOptions:
               templatePathPattern: 'resource://Beech.Ehrm/Private/Templates/FormElements/SingleSelectDropdown.html'
+            formBuilder:
+              label: 'JobDescription Select'
+              group: contract
           'Beech.CLA:ContractArticlesSection':
             superTypes: ['TYPO3.Form:Section']
             implementationClassName: 'Beech\CLA\FormElements\ContractArticlesSection'
@@ -138,6 +161,9 @@ TYPO3:
             renderingOptions:
               templatePathPattern: 'resource://Beech.CLA/Private/Templates/FormElements/ContractArticle.html'
               partialPathPattern: 'resource://Beech.CLA/Private/Templates/FormElements/Partials/{@type}.html'
+            formBuilder:
+              label: 'ContractArticle Element'
+              group: contract
   FormBuilder:
     handlebarsTemplates:
       # include the handlebars template
