@@ -4,6 +4,14 @@
 	"repositories": [
 		{
 			"type": "git",
+			"url": "https://github.com/kdambekalns/Plumber.git"
+		},
+		{
+			"type": "git",
+			"url": "https://github.com/kdambekalns/PhpProfiler.git"
+		},
+		{
+			"type": "git",
 			"url": "git://github.com/radmiraal/TYPO3.Queue.git"
 		},
 		{
@@ -56,7 +64,9 @@
 		"typo3/formbuilder": "dev-master",
 		"typo3/queue-redis": "*",
 		"react/event-loop": "*",
-		"typo3/usermanagement": "dev-master"
+		"typo3/usermanagement": "dev-master",
+		"sandstorm/plumber": "dev-fixes-t3home13",
+		"sandstorm/phpprofiler": "dev-fixes-t3home13 as 1.0.3-dev"
 	},
 	"require-dev": {
 		"typo3/buildessentials": "dev-master",

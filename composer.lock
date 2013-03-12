@@ -1,5 +1,5 @@
 {
-    "hash": "c05d427bb0ab7297837599b35cdca4cc",
+    "hash": "7a8754c4ff5ffd5fc576b8c5299d323d",
     "packages": [
         {
             "name": "beech/essentials",
@@ -13,14 +13,14 @@
                 "php": ">=5.3.2",
                 "typo3/flow": "*"
             },
-            "time": "2013-02-13 14:31:43",
             "type": "typo3-flow-build",
             "autoload": {
                 "psr-0": {
                     "Beech\\Essentials": "Classes"
                 }
             },
-            "description": "Beech Flow Build Toolchain Essentials"
+            "description": "Beech Flow Build Toolchain Essentials",
+            "time": "2013-02-13 14:31:43"
         },
         {
             "name": "doctrine/common",
@@ -39,7 +39,6 @@
             "require": {
                 "php": ">=5.3.2"
             },
-            "time": "2012-09-20 05:55:18",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -89,7 +88,8 @@
                 "eventmanager",
                 "persistence",
                 "spl"
-            ]
+            ],
+            "time": "2012-09-20 05:55:18"
         },
         {
             "name": "doctrine/couchdb",
@@ -109,7 +109,6 @@
                 "doctrine/common": "*",
                 "php": ">=5.3.2"
             },
-            "time": "2012-11-13 12:14:29",
             "type": "library",
             "autoload": {
                 "psr-0": {
@@ -135,7 +134,8 @@
             "keywords": [
                 "couchdb",
                 "persistence"
-            ]
+            ],
+            "time": "2012-11-13 12:14:29"
         },
         {
             "name": "doctrine/couchdb-odm",
@@ -163,7 +163,6 @@
             "suggest": {
                 "symfony/yaml": ">=2.0.0,<2.2.0-dev"
             },
-            "time": "2013-02-24 22:17:29",
             "type": "library",
             "autoload": {
                 "psr-0": {
@@ -189,7 +188,8 @@
             "keywords": [
                 "couchdb",
                 "persistence"
-            ]
+            ],
+            "time": "2013-02-24 22:17:29"
         },
         {
             "name": "doctrine/data-fixtures",
@@ -197,12 +197,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/data-fixtures.git",
-                "reference": "689bc2ae2a41dff1107d9d50e2daa4c349222869"
+                "reference": "eef10f6b92706bdae2841a8fdeb45ad8999b15b3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/data-fixtures/zipball/689bc2ae2a41dff1107d9d50e2daa4c349222869",
-                "reference": "689bc2ae2a41dff1107d9d50e2daa4c349222869",
+                "url": "https://api.github.com/repos/doctrine/data-fixtures/zipball/eef10f6b92706bdae2841a8fdeb45ad8999b15b3",
+                "reference": "eef10f6b92706bdae2841a8fdeb45ad8999b15b3",
                 "shasum": ""
             },
             "require": {
@@ -217,7 +217,6 @@
                 "doctrine/orm": "For loading ORM fixtures",
                 "doctrine/phpcr-odm": "For loading PHPCR ODM fixtures"
             },
-            "time": "2013-02-12 02:52:36",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -235,7 +234,7 @@
             ],
             "authors": [
                 {
-                    "name": "Jonathan Wage",
+                    "name": "Jonathan H. Wage",
                     "email": "jonwage@gmail.com",
                     "homepage": "http://www.jwage.com/"
                 }
@@ -244,7 +243,8 @@
             "homepage": "http://www.doctrine-project.org",
             "keywords": [
                 "database"
-            ]
+            ],
+            "time": "2013-03-11 00:25:48"
         },
         {
             "name": "doctrine/dbal",
@@ -264,7 +264,6 @@
                 "doctrine/common": "2.3.*",
                 "php": ">=5.3.2"
             },
-            "time": "2012-12-04 21:06:56",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -307,7 +306,8 @@
                 "dbal",
                 "persistence",
                 "queryobject"
-            ]
+            ],
+            "time": "2012-12-04 21:06:56"
         },
         {
             "name": "doctrine/migrations",
@@ -334,7 +334,6 @@
             "suggest": {
                 "symfony/console": "to run the migration from the console"
             },
-            "time": "2012-12-27 16:39:29",
             "type": "library",
             "autoload": {
                 "psr-0": {
@@ -361,7 +360,8 @@
             "keywords": [
                 "database",
                 "migrations"
-            ]
+            ],
+            "time": "2012-12-27 16:39:29"
         },
         {
             "name": "doctrine/orm",
@@ -386,7 +386,6 @@
             "suggest": {
                 "symfony/yaml": "If you want to use YAML Metadata Mapping Driver"
             },
-            "time": "2012-12-04 22:04:25",
             "bin": [
                 "bin/doctrine",
                 "bin/doctrine.php"
@@ -431,7 +430,8 @@
             "keywords": [
                 "database",
                 "orm"
-            ]
+            ],
+            "time": "2012-12-04 22:04:25"
         },
         {
             "name": "predis/predis",
@@ -454,7 +454,6 @@
                 "ext-curl": "Allows access to Webdis when paired with phpiredis",
                 "ext-phpiredis": "Allows faster serialization and deserialization of the Redis protocol"
             },
-            "time": "2013-02-18 14:03:45",
             "type": "library",
             "autoload": {
                 "psr-0": {
@@ -478,7 +477,8 @@
                 "nosql",
                 "predis",
                 "redis"
-            ]
+            ],
+            "time": "2013-02-18 14:03:45"
         },
         {
             "name": "radmiraal/couchdb",
@@ -494,7 +494,6 @@
                 "doctrine/orm": "2.3.1",
                 "typo3/flow": "*"
             },
-            "time": "2013-03-06 21:55:43",
             "type": "typo3-flow-package",
             "autoload": {
                 "psr-0": {
@@ -503,7 +502,8 @@
             },
             "license": [
                 "LGPL-3.0+"
-            ]
+            ],
+            "time": "2013-03-06 21:55:43"
         },
         {
             "name": "radmiraal/emberjs",
@@ -522,7 +522,6 @@
             "require": {
                 "typo3/flow": "*"
             },
-            "time": "2013-03-08 17:07:10",
             "type": "typo3-flow-package",
             "autoload": {
                 "psr-0": {
@@ -537,7 +536,8 @@
                 {
                     "name": "Rens Admiraal"
                 }
-            ]
+            ],
+            "time": "2013-03-08 17:07:10"
         },
         {
             "name": "react/event-loop",
@@ -561,7 +561,6 @@
                 "ext-libev": "*",
                 "ext-libevent": ">=0.0.5"
             },
-            "time": "2013-01-05 11:41:26",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -580,7 +579,87 @@
             "description": "Event loop abstraction layer that libraries can use for evented I/O.",
             "keywords": [
                 "event-loop"
-            ]
+            ],
+            "time": "2013-01-05 11:41:26"
+        },
+        {
+            "name": "sandstorm/phpprofiler",
+            "version": "dev-fixes-t3home13",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kdambekalns/PhpProfiler.git",
+                "reference": "9e16528dac9652b71629c332994bcd6b10418e48"
+            },
+            "type": "typo3-flow-package",
+            "autoload": {
+                "psr-0": {
+                    "Sandstorm\\PhpProfiler": "Classes"
+                }
+            },
+            "license": [
+                "GPL-3.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Kurfürst",
+                    "homepage": "http://sandstorm-media.de",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Base package for collecting timers and xhprof traces. To be used with sandstorm/plumber for visualization.",
+            "support": {
+                "issues": "https://github.com/sandstorm/Plumber/issues",
+                "irc": "irc://irc.freenode.net/typo3-flow",
+                "source": "https://github.com/sandstorm/Plumber"
+            },
+            "time": "2013-02-19 21:21:38"
+        },
+        {
+            "name": "sandstorm/plumber",
+            "version": "dev-fixes-t3home13",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kdambekalns/Plumber.git",
+                "reference": "6b53ae84828099fd381b52dbc47aed635a2aff1f"
+            },
+            "require": {
+                "sandstorm/phpprofiler": "1.0.*",
+                "typo3/flow": "*"
+            },
+            "type": "typo3-flow-package",
+            "autoload": {
+                "psr-0": {
+                    "Sandstorm\\Plumber": "Classes"
+                }
+            },
+            "license": [
+                "GPL-3.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Kurfürst",
+                    "homepage": "http://sandstorm-media.de",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Profiling Toolkit for TYPO3 Flow and Neos",
+            "keywords": [
+                "Flow",
+                "Neos",
+                "TYPO3 Flow",
+                "TYPO3 Neos",
+                "benchmark",
+                "debugging",
+                "profiler",
+                "profiling",
+                "xhprof"
+            ],
+            "support": {
+                "issues": "https://github.com/sandstorm/Plumber/issues",
+                "irc": "irc://irc.freenode.net/typo3-flow",
+                "source": "https://github.com/sandstorm/Plumber"
+            },
+            "time": "2013-02-19 21:20:20"
         },
         {
             "name": "symfony/console",
@@ -600,7 +679,6 @@
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "2013-03-06 17:50:21",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -627,7 +705,8 @@
                 }
             ],
             "description": "Symfony Console Component",
-            "homepage": "http://symfony.com"
+            "homepage": "http://symfony.com",
+            "time": "2013-03-06 17:50:21"
         },
         {
             "name": "symfony/dom-crawler",
@@ -636,12 +715,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/DomCrawler.git",
-                "reference": "v2.2.0"
+                "reference": "25d54f03464bb38a0b419b95f2cac56b391fb60b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/DomCrawler/zipball/v2.2.0",
-                "reference": "v2.2.0",
+                "url": "https://api.github.com/repos/symfony/DomCrawler/zipball/25d54f03464bb38a0b419b95f2cac56b391fb60b",
+                "reference": "25d54f03464bb38a0b419b95f2cac56b391fb60b",
                 "shasum": ""
             },
             "require": {
@@ -653,7 +732,6 @@
             "suggest": {
                 "symfony/css-selector": "2.2.*"
             },
-            "time": "2013-03-01 06:43:14",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -680,7 +758,8 @@
                 }
             ],
             "description": "Symfony DomCrawler Component",
-            "homepage": "http://symfony.com"
+            "homepage": "http://symfony.com",
+            "time": "2013-03-11 17:18:44"
         },
         {
             "name": "symfony/yaml",
@@ -700,7 +779,6 @@
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "2013-03-06 17:01:03",
             "type": "library",
             "autoload": {
                 "psr-0": {
@@ -722,7 +800,8 @@
                 }
             ],
             "description": "Symfony Yaml Component",
-            "homepage": "http://symfony.com"
+            "homepage": "http://symfony.com",
+            "time": "2013-03-06 17:01:03"
         },
         {
             "name": "typo3/flow",
@@ -747,7 +826,6 @@
                 "typo3/fluid": "*",
                 "typo3/party": "*"
             },
-            "time": "2013-03-06 14:37:48",
             "type": "typo3-flow-framework",
             "autoload": {
                 "psr-0": {
@@ -759,7 +837,8 @@
                 "LGPL-3.0+"
             ],
             "description": "TYPO3 Flow Application Framework",
-            "homepage": "http://flow.typo3.org"
+            "homepage": "http://flow.typo3.org",
+            "time": "2013-03-06 14:37:48"
         },
         {
             "name": "typo3/flow-composer-installers",
@@ -781,7 +860,6 @@
             "require-dev": {
                 "composer/composer": "1.0.*@dev"
             },
-            "time": "2012-12-19 10:08:40",
             "type": "composer-installer",
             "extra": {
                 "class": "Composer\\Installers\\Installer"
@@ -826,7 +904,8 @@
                 "symfony",
                 "wordpress",
                 "zend"
-            ]
+            ],
+            "time": "2012-12-19 10:08:40"
         },
         {
             "name": "typo3/fluid",
@@ -840,7 +919,6 @@
                 "typo3/flow": "*",
                 "typo3/flow-composer-installers": "*"
             },
-            "time": "2013-03-07 10:19:32",
             "type": "typo3-flow-framework",
             "autoload": {
                 "psr-0": {
@@ -851,7 +929,8 @@
             "license": [
                 "LGPL-3.0+"
             ],
-            "description": "Next-Generation Templating Framework for TYPO3 Flow and TYPO3 Neos, also backported to TYPO3 CMS"
+            "description": "Next-Generation Templating Framework for TYPO3 Flow and TYPO3 Neos, also backported to TYPO3 CMS",
+            "time": "2013-03-07 10:19:32"
         },
         {
             "name": "typo3/form",
@@ -864,7 +943,6 @@
             "require": {
                 "typo3/flow": "*"
             },
-            "time": "2013-01-24 19:05:44",
             "type": "typo3-flow-package",
             "autoload": {
                 "psr-0": {
@@ -872,7 +950,8 @@
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
-            "description": "Extensible and flexible API for building web forms"
+            "description": "Extensible and flexible API for building web forms",
+            "time": "2013-01-24 19:05:44"
         },
         {
             "name": "typo3/formbuilder",
@@ -886,14 +965,14 @@
                 "typo3/flow": "*",
                 "typo3/form": "*"
             },
-            "time": "2012-12-13 14:07:05",
             "type": "typo3-flow-package",
             "autoload": {
                 "psr-0": {
                     "TYPO3\\FormBuilder": "Classes"
                 }
             },
-            "description": "Graphical User Interface for creating and editing Forms based on the TYPO3 Flow Form Framework"
+            "description": "Graphical User Interface for creating and editing Forms based on the TYPO3 Flow Form Framework",
+            "time": "2012-12-13 14:07:05"
         },
         {
             "name": "typo3/ldap",
@@ -906,7 +985,6 @@
             "require": {
                 "typo3/flow": "*"
             },
-            "time": "2012-10-08 15:21:08",
             "type": "typo3-flow-package",
             "autoload": {
                 "psr-0": {
@@ -914,7 +992,8 @@
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
-            "description": "LDAP Authentication for Flow"
+            "description": "LDAP Authentication for Flow",
+            "time": "2012-10-08 15:21:08"
         },
         {
             "name": "typo3/party",
@@ -928,7 +1007,6 @@
                 "typo3/flow": "*",
                 "typo3/flow-composer-installers": "*"
             },
-            "time": "2013-02-26 18:03:13",
             "type": "typo3-flow-framework",
             "autoload": {
                 "psr-0": {
@@ -939,7 +1017,8 @@
             "license": [
                 "LGPL-3.0+"
             ],
-            "description": "A PHP implementation of the OASIS Customer Information Quality (CIQ) XML Standard."
+            "description": "A PHP implementation of the OASIS Customer Information Quality (CIQ) XML Standard.",
+            "time": "2013-02-26 18:03:13"
         },
         {
             "name": "typo3/queue",
@@ -952,13 +1031,13 @@
             "require": {
                 "typo3/flow": "*"
             },
-            "time": "2012-10-10 08:24:49",
             "type": "typo3-flow-package",
             "autoload": {
                 "psr-0": {
                     "TYPO3\\Queue": "Classes"
                 }
-            }
+            },
+            "time": "2012-10-10 08:24:49"
         },
         {
             "name": "typo3/queue-redis",
@@ -973,13 +1052,13 @@
                 "typo3/flow": "*",
                 "typo3/queue": "*"
             },
-            "time": "2012-10-10 06:49:39",
             "type": "typo3-flow-package",
             "autoload": {
                 "psr-0": {
                     "TYPO3\\Queue\\Redis": "Classes"
                 }
-            }
+            },
+            "time": "2012-10-10 06:49:39"
         },
         {
             "name": "typo3/surf",
@@ -992,7 +1071,6 @@
             "require": {
                 "typo3/flow": "*"
             },
-            "time": "2013-03-06 08:23:31",
             "type": "typo3-flow-package",
             "autoload": {
                 "psr-0": {
@@ -1003,7 +1081,8 @@
             "license": [
                 "GPL-3.0+"
             ],
-            "description": "TYPO3 Surf is a deployment tool based on Flow and suited for a wide variety of applications"
+            "description": "TYPO3 Surf is a deployment tool based on Flow and suited for a wide variety of applications",
+            "time": "2013-03-06 08:23:31"
         },
         {
             "name": "typo3/usermanagement",
@@ -1016,13 +1095,13 @@
             "require": {
                 "typo3/flow": "*"
             },
-            "time": "2013-02-07 23:23:15",
             "type": "typo3-flow-package",
             "autoload": {
                 "psr-0": {
                     "TYPO3\\UserManagement": "Classes"
                 }
-            }
+            },
+            "time": "2013-02-07 23:23:15"
         }
     ],
     "packages-dev": [
@@ -1037,13 +1116,13 @@
             "require": {
                 "typo3/flow": "*"
             },
-            "time": "2013-02-26 17:49:52",
             "type": "typo3-flow-beech",
             "autoload": {
                 "psr-0": {
                     "Beech\\DevTools": "Classes"
                 }
-            }
+            },
+            "time": "2013-02-26 17:49:52"
         },
         {
             "name": "beech/style",
@@ -1056,13 +1135,13 @@
             "require": {
                 "typo3/flow": "*"
             },
-            "time": "2013-01-18 11:10:53",
             "type": "typo3-flow-beech",
             "autoload": {
                 "psr-0": {
                     "Beech\\Style": "Classes"
                 }
-            }
+            },
+            "time": "2013-01-18 11:10:53"
         },
         {
             "name": "mikey179/vfsStream",
@@ -1081,7 +1160,6 @@
             "require": {
                 "php": ">=5.3.0"
             },
-            "time": "2012-08-25 05:49:29",
             "type": "library",
             "autoload": {
                 "psr-0": {
@@ -1092,7 +1170,8 @@
             "license": [
                 "BSD"
             ],
-            "homepage": "http://vfs.bovigo.org/"
+            "homepage": "http://vfs.bovigo.org/",
+            "time": "2012-08-25 05:49:29"
         },
         {
             "name": "pdepend/pdepend",
@@ -1111,13 +1190,13 @@
             "require": {
                 "php": ">=5.2.3"
             },
-            "time": "2013-01-25 15:09:33",
             "bin": [
                 "src/bin/pdepend"
             ],
             "type": "library",
             "notification-url": "https://packagist.org/downloads/",
-            "description": "Official version of pdepend to be handled with Composer"
+            "description": "Official version of pdepend to be handled with Composer",
+            "time": "2013-01-25 15:09:33"
         },
         {
             "name": "phpcd/phpcd",
@@ -1139,7 +1218,6 @@
             "require-dev": {
                 "pear-pear/pear": "1.9.4"
             },
-            "time": "2013-02-20 16:33:44",
             "bin": [
                 "composer/bin/phpcpd"
             ],
@@ -1170,7 +1248,8 @@
             ],
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpcpd/issues"
-            }
+            },
+            "time": "2013-02-20 16:33:44"
         },
         {
             "name": "phpmd/phpmd",
@@ -1190,7 +1269,6 @@
                 "pdepend/pdepend": "*",
                 "php": ">=5.3.0"
             },
-            "time": "2012-12-14 12:25:09",
             "bin": [
                 "src/bin/phpmd"
             ],
@@ -1200,7 +1278,8 @@
                 "../../pdepend/pdepend/src/main/php",
                 "src/main/php"
             ],
-            "description": "Official version of PHPMD handled with Composer."
+            "description": "Official version of PHPMD handled with Composer.",
+            "time": "2012-12-14 12:25:09"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -1226,7 +1305,6 @@
                 "ext-dom": "*",
                 "ext-xdebug": ">=2.0.5"
             },
-            "time": "2013-02-26 18:55:56",
             "type": "library",
             "autoload": {
                 "classmap": [
@@ -1253,7 +1331,8 @@
                 "coverage",
                 "testing",
                 "xunit"
-            ]
+            ],
+            "time": "2013-02-26 18:55:56"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -1272,7 +1351,6 @@
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "2013-01-07 10:47:05",
             "type": "library",
             "autoload": {
                 "classmap": [
@@ -1298,7 +1376,8 @@
             "keywords": [
                 "filesystem",
                 "iterator"
-            ]
+            ],
+            "time": "2013-01-07 10:47:05"
         },
         {
             "name": "phpunit/php-text-template",
@@ -1317,7 +1396,6 @@
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "2013-01-07 10:56:17",
             "type": "library",
             "autoload": {
                 "classmap": [
@@ -1342,7 +1420,8 @@
             "homepage": "https://github.com/sebastianbergmann/php-text-template/",
             "keywords": [
                 "template"
-            ]
+            ],
+            "time": "2013-01-07 10:56:17"
         },
         {
             "name": "phpunit/php-timer",
@@ -1361,7 +1440,6 @@
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "2013-01-30 06:08:51",
             "type": "library",
             "autoload": {
                 "classmap": [
@@ -1386,7 +1464,8 @@
             "homepage": "https://github.com/sebastianbergmann/php-timer/",
             "keywords": [
                 "timer"
-            ]
+            ],
+            "time": "2013-01-30 06:08:51"
         },
         {
             "name": "phpunit/php-token-stream",
@@ -1406,7 +1485,6 @@
                 "ext-tokenizer": "*",
                 "php": ">=5.3.3"
             },
-            "time": "2013-01-07 10:56:35",
             "type": "library",
             "autoload": {
                 "classmap": [
@@ -1431,7 +1509,8 @@
             "homepage": "https://github.com/sebastianbergmann/php-token-stream/",
             "keywords": [
                 "tokenizer"
-            ]
+            ],
+            "time": "2013-01-07 10:56:35"
         },
         {
             "name": "phpunit/phpunit",
@@ -1466,7 +1545,6 @@
                 "ext-tokenizer": "*",
                 "phpunit/php-invoker": ">=1.1.0,<1.2.0"
             },
-            "time": "2013-02-14 08:07:17",
             "bin": [
                 "composer/bin/phpunit"
             ],
@@ -1502,14 +1580,15 @@
                 "phpunit",
                 "testing",
                 "xunit"
-            ]
+            ],
+            "time": "2013-02-14 08:07:17"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
             "version": "1.2.x-dev",
             "source": {
                 "type": "git",
-                "url": "git://github.com/sebastianbergmann/phpunit-mock-objects.git",
+                "url": "https://github.com/sebastianbergmann/phpunit-mock-objects.git",
                 "reference": "d49b5683200b5db9b1c64cb06f52f50d147891c4"
             },
             "dist": {
@@ -1525,7 +1604,6 @@
             "suggest": {
                 "ext-soap": "*"
             },
-            "time": "2013-02-05 07:46:41",
             "type": "library",
             "autoload": {
                 "classmap": [
@@ -1551,7 +1629,8 @@
             "keywords": [
                 "mock",
                 "xunit"
-            ]
+            ],
+            "time": "2013-02-05 07:46:41"
         },
         {
             "name": "sebastian/finder-facade",
@@ -1571,7 +1650,6 @@
                 "symfony/finder": ">=2.2.0",
                 "theseer/fdomdocument": ">=1.3.1"
             },
-            "time": "2013-03-01 11:49:09",
             "type": "library",
             "autoload": {
                 "classmap": [
@@ -1590,7 +1668,8 @@
                 }
             ],
             "description": "FinderFacade is a convenience wrapper for Symfony's Finder component.",
-            "homepage": "https://github.com/sebastianbergmann/finder-facade"
+            "homepage": "https://github.com/sebastianbergmann/finder-facade",
+            "time": "2013-03-01 11:49:09"
         },
         {
             "name": "squizlabs/php_codesniffer",
@@ -1609,7 +1688,6 @@
             "require": {
                 "php": ">=5.1.2"
             },
-            "time": "2013-03-04 04:07:33",
             "bin": [
                 "scripts/phpcs"
             ],
@@ -1657,7 +1735,8 @@
             "keywords": [
                 "phpcs",
                 "standards"
-            ]
+            ],
+            "time": "2013-03-04 04:07:33"
         },
         {
             "name": "symfony/finder",
@@ -1677,7 +1756,6 @@
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "2013-03-01 06:43:27",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1704,7 +1782,8 @@
                 }
             ],
             "description": "Symfony Finder Component",
-            "homepage": "http://symfony.com"
+            "homepage": "http://symfony.com",
+            "time": "2013-03-01 06:43:27"
         },
         {
             "name": "theseer/fdomdocument",
@@ -1725,7 +1804,6 @@
                 "lib-libxml": "*",
                 "php": ">=5.3.3"
             },
-            "time": "2012-12-01 00:12:40",
             "type": "library",
             "autoload": {
                 "classmap": [
@@ -1744,7 +1822,8 @@
                 }
             ],
             "description": "The classes contained within this repository extend the standard DOM to use exceptions at all occasions of errors instead of PHP warnings or notices. They also add various custom methods and shortcuts for convinience and to simplify the usage of DOM.",
-            "homepage": "https://github.com/theseer/fDOMDocument"
+            "homepage": "https://github.com/theseer/fDOMDocument",
+            "time": "2012-12-01 00:12:40"
         },
         {
             "name": "typo3-qa/typo3flow",
@@ -1758,7 +1837,6 @@
                 "php": ">=5.2.1",
                 "typo3-qa/typo3pool": "*"
             },
-            "time": "2013-02-18 21:41:53",
             "type": "phpcodesniffer-standard",
             "license": [
                 "GPL-2.0"
@@ -1787,7 +1865,8 @@
                 "issues": "http://forge.typo3.org/projects/team-php_codesniffer/issues",
                 "wiki": "http://forge.typo3.org/projects/team-php_codesniffer/wiki",
                 "source": "https://github.com/typo3-ci/PHPCS_TYPO3Flow_Standard.git"
-            }
+            },
+            "time": "2013-02-18 21:41:53"
         },
         {
             "name": "typo3-qa/typo3pool",
@@ -1801,7 +1880,6 @@
                 "php": ">=5.2.1",
                 "squizlabs/php_codesniffer": "*"
             },
-            "time": "2013-02-18 21:42:16",
             "type": "phpcodesniffer-standard",
             "license": [
                 "GPL-2.0"
@@ -1830,7 +1908,8 @@
                 "issues": "http://forge.typo3.org/projects/team-php_codesniffer/issues",
                 "wiki": "http://forge.typo3.org/projects/team-php_codesniffer/wiki",
                 "source": "https://github.com/typo3-ci/PHPCS_TYPO3_SniffPool.git"
-            }
+            },
+            "time": "2013-02-18 21:42:16"
         },
         {
             "name": "typo3/buildessentials",
@@ -1844,7 +1923,6 @@
                 "php": ">=5.3.2",
                 "typo3/flow-composer-installers": "*"
             },
-            "time": "2013-02-26 17:13:50",
             "type": "typo3-flow-build",
             "extra": {
                 "installer-name": "BuildEssentials"
@@ -1853,7 +1931,8 @@
             "license": [
                 "LGPL-3.0+"
             ],
-            "description": "TYPO3 Flow Build Toolchain Essentials"
+            "description": "TYPO3 Flow Build Toolchain Essentials",
+            "time": "2013-02-26 17:13:50"
         },
         {
             "name": "typo3/kickstart",
@@ -1866,7 +1945,6 @@
             "require": {
                 "typo3/flow": "*"
             },
-            "time": "2013-01-15 09:53:01",
             "type": "typo3-flow-framework",
             "autoload": {
                 "psr-0": {
@@ -1877,7 +1955,8 @@
             "license": [
                 "LGPL-3.0+"
             ],
-            "description": "A simple generator for controller and views."
+            "description": "A simple generator for controller and views.",
+            "time": "2013-01-15 09:53:01"
         },
         {
             "name": "zetacomponents/base",
@@ -1896,7 +1975,6 @@
             "require-dev": {
                 "zetacomponents/unit-test": "*"
             },
-            "time": "2012-05-21 11:21:36",
             "type": "library",
             "autoload": {
                 "classmap": [
@@ -1940,7 +2018,8 @@
                 }
             ],
             "description": "The Base package provides the basic infrastructure that all packages rely on. Therefore every component relies on this package.",
-            "homepage": "https://github.com/zetacomponents"
+            "homepage": "https://github.com/zetacomponents",
+            "time": "2012-05-21 11:21:36"
         },
         {
             "name": "zetacomponents/console-tools",
@@ -1962,7 +2041,6 @@
             "require-dev": {
                 "zetacomponents/unit-test": "*"
             },
-            "time": "2012-05-21 09:55:34",
             "type": "library",
             "autoload": {
                 "classmap": [
@@ -2006,11 +2084,17 @@
                 }
             ],
             "description": "A set of classes to do different actions with the console (also called shell). It can render a progress bar, tables and a status bar and contains a class for parsing command line options.",
-            "homepage": "https://github.com/zetacomponents"
+            "homepage": "https://github.com/zetacomponents",
+            "time": "2012-05-21 09:55:34"
         }
     ],
     "aliases": [
-
+        {
+            "alias": "1.0.3-dev",
+            "alias_normalized": "1.0.3.0-dev",
+            "version": "dev-fixes-t3home13",
+            "package": "sandstorm/phpprofiler"
+        }
     ],
     "minimum-stability": "dev",
     "stability-flags": {
@@ -2022,6 +2106,8 @@
         "radmiraal/couchdb": 20,
         "typo3/formbuilder": 20,
         "typo3/usermanagement": 20,
+        "sandstorm/plumber": 20,
+        "sandstorm/phpprofiler": 20,
         "typo3/buildessentials": 20,
         "typo3/kickstart": 20,
         "typo3-qa/typo3flow": 20,
@@ -2029,5 +2115,11 @@
         "phpcd/phpcd": 20,
         "pdepend/pdepend": 20,
         "beech/dev-tools": 20
-    }
+    },
+    "platform": {
+        "php": ">=5.4.0"
+    },
+    "platform-dev": [
+
+    ]
 }
