@@ -1,8 +1,8 @@
 #############################################################
-# validated yaml for the Adresses
-# here are the adressesfor companys departments and persons
+# validated yaml for the Addresses
+# here are the addressesfor companys departments and persons
 #############################################################
-'Beech.Party.Domain.Model.Adress':
+'Beech.Party.Domain.Model.Address':
   properties:
     'connectionType':
       label: 'Connection type'

@@ -21,7 +21,7 @@ fullNewCompany:
               label: 'Name of company'
               validators:
                 -
-                  type: NotEmpty
+                  identifier: 'TYPO3.Flow:NotEmpty'
                 -
                   identifier: 'TYPO3.Flow:StringLength'
                   options:
@@ -33,44 +33,41 @@ fullNewCompany:
               type: 'TYPO3.Form:SingleSelectDropdown'
               identifier: legalForm
               label: Legalform
-              options:
-                values:
-                  - soleProprietorship
-                  - partnership
-                  - vof
-                  - bv
+              properties:
+                options:
+                  -
+                    _value: soleProprietorship
+                    _key: 'SoleProprietorship'
+                  -
+                    _value: partnership
+                    _key: 'partnership'
+                  -
+                    _value: vof
+                    _key: 'VOF'
+                  -
+                    _value: bv
+                    _key: 'BV'
               validators:
                 -
-                  type: NotEmpty
+                  identifier: 'TYPO3.Flow:NotEmpty'
             -
               type: 'TYPO3.Form:SingleLineText'
-              identifier: chamberOfCommerceNumber
+              identifier: 'chamberOfCommerceNumber'
               label: 'Chamber of Commerce Number'
               validators:
                 -
-                  type: NotEmpty
-                -
-                  type: StringLength
-                  options:
-                    maximum: '15'
+                  identifier: 'TYPO3.Flow:NotEmpty'
                 -
                   identifier: 'TYPO3.Flow:StringLength'
                   options:
-                    maximum: '20'
-                -
-                  identifier: 'TYPO3.Flow:NotEmpty'
+                    maximum: '15'
               properties:
                 placeholder: 'Chamber of commerce number'
               defaultValue: ''
             -
               type: 'TYPO3.Form:SingleLineText'
-              identifier: vatNumber
+              identifier: 'vatNumber'
               label: 'Vat number'
-              validation:
-                -
-                  type: StringLength
-                  options:
-                    maximum: '14'
               validators:
                 -
                   identifier: 'TYPO3.Flow:StringLength'
@@ -83,12 +80,12 @@ fullNewCompany:
               defaultValue: ''
         -
           type: 'TYPO3.Form:Section'
-          identifier: Description
+          identifier: 'Description'
           label: 'Legal Form'
           renderables:
             -
               type: 'TYPO3.Form:SingleSelectDropdown'
-              identifier: companyType
+              identifier: 'companyType'
               label: 'Company type'
               validators:
                 -
@@ -100,11 +97,8 @@ fullNewCompany:
                     _key: primairy
             -
               type: 'TYPO3.Form:MultiLineText'
-              identifier: companyDescription
+              identifier: 'companyDescription'
               label: 'Company description'
-              validation:
-                -
-                  type: Text
               validators:
                 -
                   identifier: 'TYPO3.Flow:Text'
@@ -113,12 +107,12 @@ fullNewCompany:
               defaultValue: ''
         -
           type: 'TYPO3.Form:Section'
-          identifier: addBankAccount
+          identifier: 'bankInfo.addBankAccount'
           label: 'Add Bank Account'
           renderables:
             -
               type: 'TYPO3.Form:SingleSelectDropdown'
-              identifier: selectAccountType
+              identifier: 'bankInfo.selectAccountType'
               label: 'Select account Type'
               properties:
                 options:
@@ -135,7 +129,7 @@ fullNewCompany:
           renderables:
             -
               type: 'TYPO3.Form:SingleLineText'
-              identifier: ibanNumber
+              identifier: 'bankInfo.ibanNumber'
               label: 'IBAN account number'
               validators:
                 -
@@ -149,12 +143,12 @@ fullNewCompany:
               defaultValue: ''
         -
           type: 'TYPO3.Form:Section'
-          identifier: ModelsBankInfo.caseGiroAccount
+          identifier: 'bankInfo.caseGiroAccount'
           label: 'Case GiroAccount'
           renderables:
             -
               type: 'TYPO3.Form:SingleLineText'
-              identifier: giroAccount
+              identifier: 'bankInfo.giroAccount'
               label: 'Giro Account Number'
               validators:
                 -
@@ -173,12 +167,12 @@ fullNewCompany:
       renderables:
         -
           type: 'TYPO3.Form:Section'
-          identifier: addAdmin
+          identifier: 'person.addAdmin'
           label: 'Add Admin'
           renderables:
             -
               type: 'TYPO3.Form:SingleSelectDropdown'
-              identifier: gender
+              identifier: 'person.gender'
               label: Gender
               properties:
                 options:
@@ -190,16 +184,10 @@ fullNewCompany:
                     _key: Female
               validators:
                 -
-                  type: NotEmpty
-                -
-                  type: StringLength
-                  options:
-                    maximum: '6'
-                -
                   identifier: 'TYPO3.Flow:NotEmpty'
             -
               type: 'TYPO3.Form:SingleSelectDropdown'
-              identifier: civilStatus
+              identifier: 'person.civilStatus'
               label: 'Civil status'
               properties:
                 options:
@@ -211,27 +199,27 @@ fullNewCompany:
                     _key: Married
               validators:
                 -
-                  type: StringLength
+                  identifier: 'TYPO3.Flow:StringLength'
                   options:
                     maximum: '25'
                 -
                   identifier: 'TYPO3.Flow:NotEmpty'
             -
               type: 'TYPO3.Form:Section'
-              identifier: personName
+              identifier: 'person.personName'
               label: 'Person name'
               renderables:
                 -
                   type: 'TYPO3.Form:SingleLineText'
-                  identifier: initials
+                  identifier: 'person.initials'
                   label: Initials
                   validators:
                     -
-                      type: RegularExpression
+                      identifier: 'TYPO3.Flow:RegularExpression'
                       options:
                         regularExpression: '[a-zA-Z\\.\\s]{0,10}'
                     -
-                      type: StringLength
+                      identifier: 'TYPO3.Flow:StringLength'
                       options:
                         maximum: '10'
                     -
@@ -245,13 +233,13 @@ fullNewCompany:
                   defaultValue: ''
                 -
                   type: 'TYPO3.Form:SingleLineText'
-                  identifier: firstName
+                  identifier: 'person.firstName'
                   label: 'First name'
                   validators:
                     -
-                      type: NotEmpty
+                      identifier: 'TYPO3.Flow:NotEmpty'
                     -
-                      type: StringLength
+                      identifier: 'TYPO3.Flow:StringLength'
                       options:
                         maximum: '20'
                     -
@@ -263,11 +251,11 @@ fullNewCompany:
                   defaultValue: ''
                 -
                   type: 'TYPO3.Form:SingleLineText'
-                  identifier: middleName
+                  identifier: 'person.middleName'
                   label: 'Middle name'
                   validators:
                     -
-                      type: StringLength
+                      identifier: 'TYPO3.Flow:StringLength'
                       options:
                         maximum: '20'
                     -
@@ -283,16 +271,16 @@ fullNewCompany:
                   defaultValue: ''
                 -
                   type: 'TYPO3.Form:SingleLineText'
-                  identifier: lastName
+                  identifier: 'person.lastName'
                   validators:
                     -
-                      type: NotEmpty
+                      identifier: 'TYPO3.Flow:NotEmpty'
                     -
-                      type: RegularExpression
+                      identifier: 'TYPO3.Flow:RegularExpression'
                       options:
                         regularexpression: '[\\w\\-]{2,30}]'
                     -
-                      type: StringLength
+                      identifier: 'TYPO3.Flow:StringLength'
                       options:
                         maximum: '20'
                     -
@@ -310,15 +298,15 @@ fullNewCompany:
               renderables:
                 -
                   type: 'TYPO3.Form:SingleLineText'
-                  identifier: otherName
+                  identifier: person.otherName
                   label: Birthname
                   validators:
                     -
-                      type: RegularExpression
+                      type: 'TYPO3.Flow:RegularExpression'
                       options:
                         regularExpression: '[\\w\\-]{2,30}]'
                     -
-                      type: StringLength
+                      identifier: 'TYPO3.Flow:StringLength'
                       options:
                         maximum: '30'
                   properties:
@@ -326,32 +314,25 @@ fullNewCompany:
                   defaultValue: ''
             -
               type: 'TYPO3.Form:SingleSelectDropdown'
-              identifier: person.personType
+              identifier: 'person.personType'
               label: 'Person Type'
               options:
                 - companyContact
                 - employee
-              validation:
-                -
-                  type: NotEmpty
-                -
-                  type: StringLength
-                  options:
-                    maximum: '20'
             -
               type: 'TYPO3.Form:Section'
-              identifier: setGroup
+              identifier: 'setGroup'
               label: setGroup
               renderables:
                 -
                   type: 'TYPO3.Form:SingleSelectDropdown'
-                  identifier: group.name
-                  label: Group
-                  validation:
+                  identifier: 'group.name'
+                  label: group.Group
+                  validators:
                     -
-                      type: NotEmpty
+                      identifier: 'TYPO3.Flow:NotEmpty'
                     -
-                      type: StringLength
+                      identifier: 'TYPO3.Flow:StringLength'
                       options:
                         maximum: '20'
     -
@@ -362,17 +343,17 @@ fullNewCompany:
         -
           type: 'TYPO3.Form:Section'
           identifier: companyAddress
-          label: companyAdress
+          label: companyAddress
           renderables:
             -
               type: 'TYPO3.Form:SingleSelectDropdown'
-              identifier: addressType
+              identifier: 'address.addressType'
               label: 'Address type'
               properties:
                 options:
                   -
                     _value: businessAddress
-                    _key: 'Bussiness adress'
+                    _key: 'Bussiness address'
                   -
                     _value: postbox
                     _key: Postbox
@@ -390,24 +371,24 @@ fullNewCompany:
                     _key: Other
               validators:
                 -
-                  type: NotEmpty
+                  identifier: 'TYPO3.Flow:NotEmpty'
                 -
-                  type: StringLength
+                  identifier: 'TYPO3.Flow:StringLength'
                   options:
                     maximum: '35'
             -
               type: 'TYPO3.Form:SingleLineText'
-              identifier: streetName
+              identifier: 'address.streetName'
               label: 'Street name'
               validators:
                 -
-                  type: NotEmpty
+                  identifier: 'TYPO3.Flow:NotEmpty'
                 -
-                  type: RegularExpression
+                  type: 'TYPO3.Flow:RegularExpression'
                   options:
                     regularExpression: '[a-zA-Z\\-\\s\\’]{2,30}'
                 -
-                  type: StringLength
+                  identifier: 'TYPO3.Flow:StringLength'
                   options:
                     maximum: '35'
               properties:
@@ -415,11 +396,11 @@ fullNewCompany:
               defaultValue: ''
             -
               type: 'TYPO3.Form:Checkbox'
-              identifier: primaryPostAddress
+              identifier: 'address.primaryPostAddress'
               label: 'Primary postaddress'
             -
               type: 'TYPO3.Form:Checkbox'
-              identifier: primaryLocation
+              identifier: 'address.primaryLocation'
               label: 'Primary Location'
         -
           type: 'TYPO3.Form:Section'
@@ -428,11 +409,11 @@ fullNewCompany:
           renderables:
             -
               type: 'TYPO3.Form:SingleLineText'
-              identifier: postBoxNumber
+              identifier: 'address.postBoxNumber'
               label: 'Postbox number'
               validators:
                 -
-                  type: RegularExpression
+                  type: 'TYPO3.Flow:RegularExpression'
                   options:
                     regularExpression: '[0-9]{1,5}'
                 -
@@ -446,17 +427,15 @@ fullNewCompany:
               defaultValue: ''
             -
               type: 'TYPO3.Form:SingleLineText'
-              identifier: houseNumber
+              identifier: 'address.houseNumber'
               label: 'House number'
               validators:
                 -
-                  type: NotEmpty
+                  identifier: 'TYPO3.Flow:NotEmpty'
                 -
-                  type: RegularExpression
+                  identifier: 'TYPO3.Flow:RegularExpression'
                   options:
                     regularExpression: '[0-9]{1,5}'
-                -
-                  type: Integer
                 -
                   identifier: 'TYPO3.Flow:RegularExpression'
                   options:
@@ -468,15 +447,15 @@ fullNewCompany:
               defaultValue: ''
             -
               type: 'TYPO3.Form:SingleLineText'
-              identifier: houseNumberAddition
+              identifier: 'address.houseNumberAddition'
               label: 'House number addition'
               validators:
                 -
-                  type: RegularExpression
+                  type: 'TYPO3.Flow:RegularExpression'
                   options:
                     regularExpression: '[a-zA-Z0-9\\-]{0,10}'
                 -
-                  type: StringLength
+                  identifier: 'TYPO3.Flow:StringLength'
                   options:
                     maximum: '10'
                 -
@@ -488,17 +467,17 @@ fullNewCompany:
               defaultValue: ''
             -
               type: 'TYPO3.Form:SingleLineText'
-              identifier: postalCodeNL
+              identifier: 'address.postalCodeNL'
               label: 'Postal code'
               validators:
                 -
-                  type: NotEmpty
+                  identifier: 'TYPO3.Flow:NotEmpty'
                 -
-                  type: RegularExpression
+                  type: 'TYPO3.Flow:RegularExpression'
                   options:
                     regularExpression: '\\d{4}\\s?[a-z]{2}'
                 -
-                  type: StringLength
+                  identifier: 'TYPO3.Flow:StringLength'
                   options:
                     maximum: '6'
                 -
@@ -510,15 +489,15 @@ fullNewCompany:
               defaultValue: ''
             -
               type: 'TYPO3.Form:SingleLineText'
-              identifier: postalCodeAbroad
+              identifier: 'address.postalCodeAbroad'
               label: 'Postal code'
               validators:
                 -
-                  type: RegularExpression
+                  type: 'TYPO3.Flow:RegularExpression'
                   options:
                     regularExpression: '\\d{4}\\s?[a-z]{2}'
                 -
-                  type: StringLength
+                  identifier: 'TYPO3.Flow:StringLength'
                   options:
                     maximum: '10'
                 -
@@ -530,17 +509,17 @@ fullNewCompany:
               defaultValue: ''
             -
               type: 'TYPO3.Form:SingleLineText'
-              identifier: residence
+              identifier: 'address.residence'
               label: Residence
               validators:
                 -
-                  type: NotEmpty
+                  identifier: 'TYPO3.Flow:NotEmpty'
                 -
-                  type: RegularExpression
+                  type: 'TYPO3.Flow:RegularExpression'
                   options:
                     regularExpression: '[a-zA-Z\\-\\s\\’]{2,30}'
                 -
-                  type: StringLength
+                  identifier: 'TYPO3.Flow:StringLength'
                   options:
                     maximum: '35'
               properties:
@@ -548,20 +527,15 @@ fullNewCompany:
               defaultValue: ''
             -
               type: 'Beech.Ehrm:CountrySelect'
-              identifier: country
+              identifier: 'address.country'
               label: country
               validators:
                 -
                   identifier: 'TYPO3.Flow:NotEmpty'
             -
               type: 'TYPO3.Form:MultiLineText'
-              identifier: addressDescription
+              identifier: 'address.addressDescription'
               label: 'Address description'
-              validators:
-                -
-                  type: Text
-                -
-                  identifier: 'TYPO3.Flow:Text'
               properties:
                 placeholder: Description
               defaultValue: ''
@@ -572,12 +546,12 @@ fullNewCompany:
       renderables:
         -
           type: 'TYPO3.Form:Section'
-          identifier: electronicAddresses
+          identifier: 'electronicAddresses'
           label: electronicAddresses
           renderables:
             -
               type: 'TYPO3.Form:SingleSelectDropdown'
-              identifier: electronicAddressType
+              identifier: 'electronicAddress.electronicAddressType'
               label: 'electronic address type'
               properties:
                 options:
@@ -597,27 +571,25 @@ fullNewCompany:
                     _value: facebook
                     _key: Facebook
                   -
-                    _value: linkedin
+                    _value: linkedIn
                     _key: LinkedIn
                   -
                     _value: hyves
                     _key: Hyves
               validators:
                 -
-                  type: NotEmpty
-                -
                   identifier: 'TYPO3.Flow:NotEmpty'
             -
               type: 'TYPO3.Form:SingleLineText'
-              identifier: skype
+              identifier: 'electronicAddress.skype'
               label: Skype
               validators:
                 -
-                  type: RegularExpression
+                  type: 'TYPO3.Flow:RegularExpression'
                   options:
                     regularExpression: '[a-zA-Z][a-zA-Z0-9]{5,31}]'
                 -
-                  type: StringLength
+                  identifier: 'TYPO3.Flow:StringLength'
                   options:
                     maximum: '35'
                 -
@@ -629,15 +601,15 @@ fullNewCompany:
               defaultValue: ''
             -
               type: 'TYPO3.Form:SingleLineText'
-              identifier: websiteUrl
+              identifier: 'electronicAddress.websiteUrl'
               label: 'Website Url'
               validators:
                 -
-                  type: RegularExpression
+                  identifier: 'TYPO3.Flow:RegularExpression'
                   options:
                     regularExpression: '/(https?://)?(www\\.)?([a-zA-Z0-9_%]*)\\b\\.[a-z]{2,4}(\\.[a-z]{2})?((/[a-zA-Z0-9_%]*)+)?(\\.[a-z]*)?/g]'
                 -
-                  type: StringLength
+                  identifier: 'TYPO3.Flow:StringLength'
                   options:
                     maximum: '50'
                 -
@@ -649,11 +621,11 @@ fullNewCompany:
               defaultValue: ''
             -
               type: 'TYPO3.Form:SingleLineText'
-              identifier: twitter
+              identifier: 'electronicAddress.twitter'
               label: Twitter
               validators:
                 -
-                  type: StringLength
+                  identifier: 'TYPO3.Flow:StringLength'
                   options:
                     maximum: '20'
               properties:
@@ -661,11 +633,11 @@ fullNewCompany:
               defaultValue: ''
             -
               type: 'TYPO3.Form:SingleLineText'
-              identifier: facebook
+              identifier: 'electronicAddress.facebook'
               label: Facebook
               validators:
                 -
-                  type: StringLength
+                  identifier: 'TYPO3.Flow:StringLength'
                   options:
                     maximum: '20'
                 -
@@ -677,11 +649,11 @@ fullNewCompany:
               defaultValue: ''
             -
               type: 'TYPO3.Form:SingleLineText'
-              identifier: linkedin
+              identifier: 'electronicAddress.linkedIn'
               label: LinkedIn
               validators:
                 -
-                  type: StringLength
+                  identifier: 'TYPO3.Flow:StringLength'
                   options:
                     maximum: '20'
                 -
@@ -693,11 +665,11 @@ fullNewCompany:
               defaultValue: ''
             -
               type: 'TYPO3.Form:SingleLineText'
-              identifier: hyves
+              identifier: electronicAddress.hyves
               label: Hyves
               validators:
                 -
-                  type: StringLength
+                  identifier: 'TYPO3.Flow:StringLength'
                   options:
                     maximum: '20'
                 -
@@ -714,7 +686,7 @@ fullNewCompany:
           renderables:
             -
               type: 'TYPO3.Form:SingleSelectDropdown'
-              identifier: phoneType
+              identifier: phoneNumber.phoneType
               label: 'Phone Type'
               properties:
                 options:
@@ -747,27 +719,27 @@ fullNewCompany:
                     _key: Other
               validators:
                 -
-                  type: NotEmpty
+                  identifier: 'TYPO3.Flow:NotEmpty'
                 -
                   identifier: 'TYPO3.Flow:NotEmpty'
         -
           type: 'TYPO3.Form:Section'
-          identifier: caseNLphoneNumber
+          identifier: phoneNumber.caseNLphoneNumber
           label: PhoneNumber
           renderables:
             -
               type: 'TYPO3.Form:SingleLineText'
-              identifier: phoneNumber
+              identifier: phoneNumber.phoneNumber
               label: 'Phone number'
               validators:
                 -
-                  type: NotEmpty
+                  identifier: 'TYPO3.Flow:NotEmpty'
                 -
-                  type: RegularExpression
+                  identifier: 'TYPO3.Flow:RegularExpression'
                   options:
                     regularExpression: '/(^\\+[0-9]{2}|^\\+[0-9]{2}\\(0\\)|^\\(\\+[0-9]{2}\\)\\(0\\)|^00[0-9]{2}|^0)([0-9]{9}$|[0-9\\-\\s]{10}$)/gm]'
                 -
-                  type: StringLength
+                  identifier: 'TYPO3.Flow:StringLength'
                   options:
                     maximum: '13'
                 -
@@ -784,15 +756,15 @@ fullNewCompany:
           renderables:
             -
               type: 'TYPO3.Form:SingleLineText'
-              identifier: foreignPhoneNumber
+              identifier: phoneNumber.foreignPhoneNumber
               label: 'Foreign phone number'
               validators:
                 -
-                  type: RegularExpression
+                  identifier: 'TYPO3.Flow:RegularExpression'
                   options:
                     RegularExpression: '/(^\\+[0-9]{2}|^\\+[0-9]{2}\\(0\\)|^\\(\\+[0-9]{2}\\)\\(0\\)|^00[0-9]{2}|^0)([0-9]{9}$|[0-9\\-\\s]{10}$)/gm]'
                 -
-                  type: StringLength
+                  identifier: 'TYPO3.Flow:StringLength'
                   options:
                     maximum: '15'
                 -

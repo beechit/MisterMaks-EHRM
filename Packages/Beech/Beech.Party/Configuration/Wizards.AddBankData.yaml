@@ -17,7 +17,7 @@ wizardAddBankData:
           renderables:
             -
               type: 'TYPO3.Form:SingleSelectDropdown'
-              identifier: accountType
+              identifier: 'accountType'
               label: 'Account Type'
               properties:
                 options:
@@ -32,50 +32,40 @@ wizardAddBankData:
                     _key: 'bankAccount abroad'
               validators:
                 -
-                  type: NotEmpty
                   identifier: 'TYPO3.Flow:NotEmpty'
-                -
-                  type: StringLength
                   options:
                     maximum: '20'
         -
           type: 'TYPO3.Form:Section'
-          identifier: caseBankAccount
+          identifier: 'caseBankAccount'
           label: 'Case Bank Account'
           renderables:
             -
               type: 'TYPO3.Form:SingleLineText'
-              identifier: ibanNumber
+              identifier: 'ibanNumber'
               label: IbanNumber
               validators:
                 -
-                  type: NotEmpty
                   identifier: 'TYPO3.Flow:NotEmpty'
                 -
-                  type: RegularExpression
+                  identifier: 'TYPO3.Flow:RegularExpression'
                   options:
                     regularExpression: '/[a-zA-Z]{2}[0-9]{2}[a-zA-Z0-9]{4}[0-9]{7}([a-zA-Z0-9]?){0,16}/g'
-                  identifier: 'TYPO3.Flow:RegularExpression'
               properties:
                 placeholder: IBAN
               defaultValue: ''
         -
           type: 'TYPO3.Form:Section'
-          identifier: caseGiroAccount
+          identifier: 'caseGiroAccount'
           label: 'Case giro account'
           renderables:
             -
               type: 'TYPO3.Form:SingleLineText'
-              identifier: giro
+              identifier: 'giro'
               label: 'Giro account'
               validators:
                 -
-                  type: NotEmpty
                   identifier: 'TYPO3.Flow:RegularExpression'
-                  options:
-                    regularExpression: '\\d{1,7}'
-                -
-                  type: RegularExpression
                   options:
                     regularExpression: '\\d{1,7}'
               properties:
@@ -83,18 +73,18 @@ wizardAddBankData:
               defaultValue: ''
         -
           type: 'TYPO3.Form:Section'
-          identifier: caseBankAccountAbroad
+          identifier: 'caseBankAccountAbroad'
           label: 'Case bank account abroad'
           renderables:
             -
               type: 'TYPO3.Form:SingleLineText'
-              identifier: foreignBankAccountNumber
+              identifier: 'foreignBankAccountNumber'
               label: 'Foreign bank account number'
               validators:
                 -
-                  type: NotEmpty
+                  identifier: 'TYPO3.Flow:NotEmpty'
                 -
-                  type: RegularExpression
+                  identifier: 'TYPO3.Flow:RegularExpression'
                   options:
                     regularExpression: '/[a-zA-Z]{2}[0-9]{2}[a-zA-Z0-9]{4}[0-9]{7}([a-zA-Z0-9]?){0,16}/g'
               properties:
@@ -102,16 +92,16 @@ wizardAddBankData:
               defaultValue: ''
         -
           type: 'TYPO3.Form:Section'
-          identifier: setPrimary
+          identifier: 'setPrimary'
           label: 'Set primary account'
           renderables:
             -
               type: 'TYPO3.Form:Checkbox'
-              identifier: primaryBankAccount
+              identifier: 'primaryBankAccount'
               label: 'Primary account'
             -
               type: 'TYPO3.Form:MultiLineText'
-              identifier: bankAccountDescription
+              identifier: 'bankAccountDescription'
               label: Description
               validators:
                 -
@@ -126,57 +116,54 @@ wizardAddBankData:
       renderables:
         -
           type: 'TYPO3.Form:Section'
-          identifier: extraBankData
+          identifier: 'extraBankData'
           label: 'Extra bank data'
           renderables:
             -
               type: 'TYPO3.Form:SingleLineText'
-              identifier: bic
+              identifier: 'bic'
               label: bic
               validators:
                 -
-                  type: RegularExpression
+                  identifier: 'TYPO3.Flow:RegularExpression'
                   options:
                     regularExpression: '[1-9]{8}|[1-9]{11}'
-                  identifier: 'TYPO3.Flow:RegularExpression'
                 -
-                  type: NotEmpty
+                  identifier: 'TYPO3.Flow:NotEmpty'
               properties:
                 placeholder: 'bic code'
               defaultValue: ''
             -
               type: 'TYPO3.Form:SingleLineText'
-              identifier: bankName
+              identifier: 'bankName'
               label: 'Bank name'
               validators:
                 -
-                  type: RegularExpression
+                  identifier: 'TYPO3.Flow:RegularExpression'
                   options:
                     regularExpression: '[a-zA-Z\\-\\s\\’]{2,20}'
-                  identifier: 'TYPO3.Flow:RegularExpression'
                 -
-                  type: NotEmpty
+                  identifier: 'TYPO3.Flow:NotEmpty'
               properties:
                 placeholder: Bankname
               defaultValue: ''
             -
               type: 'TYPO3.Form:SingleLineText'
-              identifier: bankResidence
+              identifier: 'bankResidence'
               label: 'Bank residence'
               validators:
                 -
-                  type: RegularExpression
+                  identifier: 'TYPO3.Flow:RegularExpression'
                   options:
                     regularExpression: '[a-zA-Z0-9\\-\\’]{2,30}'
-                  identifier: 'TYPO3.Flow:RegularExpression'
                 -
-                  type: NotEmpty
+                  identifier: 'TYPO3.Flow:NotEmpty'
               properties:
                 placeholder: 'Bank residence'
               defaultValue: ''
             -
               type: 'Beech.Ehrm:CountrySelect'
-              identifier: country
+              identifier: 'countrySelect'
               label: Country
   finishers:
     -

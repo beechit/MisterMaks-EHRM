@@ -41,7 +41,7 @@ wizardAddElectronicAddress:
                     _key: facebook
                   -
                     _value: LinkedIn
-                    _key: linkedin
+                    _key: linkedIn
                   -
                     _value: Hyves
                     _key: hyves

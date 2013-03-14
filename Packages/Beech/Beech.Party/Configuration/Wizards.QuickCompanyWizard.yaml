@@ -1,9 +1,3 @@
-#############################################################
-# this is a wizard to do a quick initial registration of the
-# company and an admin.
-# after usage of this wizard a couple of tasks have to be created
-# to get all data for company and admin.
-#############################################################
 quickCompanyWizard:
   type: 'TYPO3.Form:Form'
   identifier: 'quickCompanyWizard'
@@ -21,43 +15,50 @@ quickCompanyWizard:
           renderables:
             -
               type: 'TYPO3.Form:SingleLineText'
-              identifier: 'company.name'
+              identifier: 'name'
               label: 'Name of company'
               validators:
                   -
-                      type: 'NotEmpty'
+                      identifier: 'TYPO3.Flow:NotEmpty'
             -
               type: 'TYPO3.Form:SingleSelectDropdown'
-              identifier: 'company.legalForm'
+              identifier: 'legalForm'
               label: 'Legalform'
-              options:
-                values:
-                  - 'department'
-                  - 'soleProprietorship'
-                  - 'partnership'
-                  - 'vof'
-                  - 'bv'
+              properties:
+                options:
+                  -
+                    _value: soleProprietorship
+                    _key: 'SoleProprietorship'
+                  -
+                    _value: partnership
+                    _key: 'partnership'
+                  -
+                    _value: vof
+                    _key: 'VOF'
+                  -
+                    _value: bv
+                    _key: 'BV'
               validators:
                 -
-                  type: 'NotEmpty'
+                  identifier: 'TYPO3.Flow:NotEmpty'
             -
               type: 'TYPO3.Form:SingleLineText'
-              identifier: 'company.chamberOfCommerceNumber'
+              identifier: 'chamberOfCommerceNumber'
               label: 'Chamber of Commerce Number'
               validators:
                 -
-                  type: 'NotEmpty'
+                  identifier: 'TYPO3.Flow:NotEmpty'
                 -
-                  type: 'StringLength'
+                  identifier: 'TYPO3.Flow:StringLength'
                   options:
                     maximum: 15
             -
                type: 'TYPO3.Form:SingleLineText'
                identifier: 'company.vatNumber'
                label: 'Vat Number'
-               validation:
+               validators:
                  -
-                   type: 'StringLength'
+                   identifier: 'TYPO3.Flow:StringLength'
                    options:
                      maximum: 14
     -
@@ -84,9 +85,9 @@ quickCompanyWizard:
                      _key: 'Female'
               validators:
                 -
-                  type: 'NotEmpty'
+                  identifier: 'TYPO3.Flow:NotEmpty'
                 -
-                  type: 'StringLength'
+                  identifier: 'TYPO3.Flow:StringLength'
                   options:
                     maximum: 6
             -
@@ -100,9 +101,9 @@ quickCompanyWizard:
                   label: 'First name'
                   validators:
                     -
-                      type: 'NotEmpty'
+                      identifier: 'TYPO3.Flow:NotEmpty'
                     -
-                      type: 'StringLength'
+                      identifier: 'TYPO3.Flow:StringLength'
                       options:
                         maximum: 20
                 -
@@ -111,7 +112,7 @@ quickCompanyWizard:
                   label: 'Middle name'
                   validators:
                    -
-                     type: 'StringLength'
+                     identifier: 'TYPO3.Flow:StringLength'
                      options:
                        maximum: 20
                 -
@@ -119,29 +120,31 @@ quickCompanyWizard:
                   identifier: 'person.name.lastName'
                   validators:
                     -
-                      type: 'NotEmpty'
+                      identifier: 'TYPO3.Flow:NotEmpty'
                     -
-                      type: 'RegularExpression'
+                      identifier: 'TYPO3.Flow:RegularExpression'
                       options:
                         regularexpression: '[\\w\\-]{2,30}]'
                     -
-                      type: 'StringLength'
+                      identifier: 'TYPO3.Flow:StringLength'
                       options:
                         maximum: 20
             -
               type: 'TYPO3.Form:SingleSelectDropdown'
               identifier: 'person.personType'
               label: 'Person Type'
-              options:
-                - 'companyContact'
-                - 'employee'
-              validation:
+              properties:
+                options:
+                  -
+                    _value: employee
+                    _key: 'Employee'
+                  -
+                    _value: contact
+                    _key: 'Contact'
+
+              validators:
                 -
-                  type: 'NotEmpty'
-                -
-                  type: 'StringLength'
-                  options:
-                    maximum: 20
+                  identifier: 'TYPO3.Flow:NotEmpty'
             -
               type: 'TYPO3.Form:Section'
               identifier: 'setGroup'
@@ -151,11 +154,11 @@ quickCompanyWizard:
                   type: 'TYPO3.Form:SingleSelectDropdown'
                   identifier: 'group.name'
                   label: 'Group'
-                  validation:
+                  validators:
                     -
-                      type: 'NotEmpty'
+                      identifier: 'TYPO3.Flow:NotEmpty'
                     -
-                      type: 'StringLength'
+                      identifier: 'TYPO3.Flow:StringLength'
                       options:
                         maximum: 20
   # todo: implement username password change in this wizard.
@@ -166,24 +169,20 @@ quickCompanyWizard:
           renderables:
             -
               type: 'TYPO3.Form:HiddenField'
-              identifier: 'electronicAdresses.electronicAddressType'
-              default: 'email'
+              identifier: 'electronicAddress.electronicAddressType'
+              defaultValue: 'email'
               validators:
                 -
-                  type: 'NotEmpty'
+                  identifier: 'TYPO3.Flow:NotEmpty'
             -
               type: 'TYPO3.Form:SingleLineText'
-              identifier: 'electronicAdresses.email'
+              identifier: 'electronicAddress.email'
               label: 'E-mailAddress'
               validators:
                 -
-                  type: 'NotEmpty'
+                  identifier: 'TYPO3.Flow:NotEmpty'
                 -
-                  type: 'EmailAddress'
-                -
-                  type: 'StringLength'
-                  options:
-                    maximum: 35
+                  identifier: 'TYPO3.Flow:EmailAddress'
   # todo: Implement username password change here
   renderingOptions:
     submitButtonLabel: 'Save'

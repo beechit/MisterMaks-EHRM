@@ -4,6 +4,17 @@ wizardAddAddress:
   label: 'Wizard add address'
   renderingOptions:
     submitButtonLabel: Add
+  finishers:
+    -
+      identifier: 'Beech.Ehrm:ModalCloseConfirmation'
+      options:
+        message: 'addresses.added'
+        buttons: Close
+    -
+      identifier: 'Beech.Ehrm:Database'
+      options:
+        package: Beech.Party
+        model: Address
   renderables:
     -
       type: 'TYPO3.Form:Page'
@@ -29,7 +40,7 @@ wizardAddAddress:
                 options:
                   -
                     _value: 'Bussiness address'
-                    _key: businessAdress
+                    _key: businessAddress
                   -
                     _value: PostBox
                     _key: postbox
@@ -124,8 +135,8 @@ wizardAddAddress:
               defaultValue: ''
             -
               type: 'TYPO3.Form:SingleLineText'
-              identifier: residence
-              label: Residence
+              identifier: 'residence'
+              label: 'Residence'
               validators:
                 -
                   identifier: 'TYPO3.Flow:RegularExpression'
@@ -138,12 +149,12 @@ wizardAddAddress:
               defaultValue: ''
             -
               type: 'TYPO3.Form:Section'
-              identifier: caseAddressAbroad
+              identifier: 'caseAddressAbroad'
               label: 'case address abroad'
               renderables:
                 -
                   type: 'TYPO3.Form:SingleLineText'
-                  identifier: houseNumberAbroad
+                  identifier: 'houseNumberAbroad'
                   label: 'House number'
                   validators:
                     -
@@ -155,14 +166,14 @@ wizardAddAddress:
                   defaultValue: ''
                 -
                   type: 'TYPO3.Form:SingleLineText'
-                  identifier: houseNumberAdditionAbroad
+                  identifier: 'houseNumberAdditionAbroad'
                   label: 'House number addition'
                   properties:
                     placeholder: addition
                   defaultValue: ''
                 -
                   type: 'TYPO3.Form:SingleLineText'
-                  identifier: postalCodeAbroad
+                  identifier: 'postalCodeAbroad'
                   label: 'Postal code'
                   validators:
                     -
@@ -175,7 +186,7 @@ wizardAddAddress:
                   defaultValue: ''
                 -
                   type: 'TYPO3.Form:SingleLineText'
-                  identifier: residenceAbroad
+                  identifier: 'residenceAbroad'
                   label: 'Residence abroad'
                   validators:
                     -
@@ -187,26 +198,15 @@ wizardAddAddress:
                   defaultValue: ''
                 -
                   type: 'Beech.Ehrm:CountrySelect'
-                  identifier: countryselect1
+                  identifier: countryselect
                   label: Country
             -
               type: 'TYPO3.Form:MultiLineText'
-              identifier: addressDescription
+              identifier: 'addressDescription'
               label: 'Address description'
               validators:
                 -
                   identifier: 'TYPO3.Flow:Text'
               properties:
-                placeholder: 'Address description'
+                placeholder: Description
               defaultValue: ''
-  finishers:
-    -
-      identifier: 'Beech.Ehrm:ModalCloseConfirmation'
-      options:
-        message: 'Adresses Added'
-        buttons: Close
-    -
-      identifier: 'Beech.Ehrm:Database'
-      options:
-        package: Beech.Party
-        model: Adress

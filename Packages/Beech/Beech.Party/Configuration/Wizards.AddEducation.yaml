@@ -6,7 +6,7 @@ WizardAddEducation:
     -
       identifier: 'Beech.Ehrm:ModalCloseConfirmation'
       options:
-        message: wizard.completed
+        message: 'wizard.completed'
         buttons: Close
     -
       identifier: 'Beech.Ehrm:Database'
@@ -18,17 +18,17 @@ WizardAddEducation:
   renderables:
     -
       type: 'TYPO3.Form:Page'
-      identifier: addEducationWizard
+      identifier: 'addEducationWizard'
       label: 'Register education'
       renderables:
         -
           type: 'TYPO3.Form:Section'
-          identifier: setTypeEducation
+          identifier: 'setTypeEducation'
           label: 'Set education type'
           renderables:
             -
               type: 'TYPO3.Form:SingleSelectDropdown'
-              identifier: educationType
+              identifier: 'educationType'
               label: 'Type of Education'
               validators:
                 -
@@ -57,7 +57,7 @@ WizardAddEducation:
               renderables:
                 -
                   type: 'TYPO3.Form:SingleLineText'
-                  identifier: nameEducationInstitute
+                  identifier: 'nameEducationInstitute'
                   label: 'Name of the education institute'
                   validators:
                     -
@@ -71,7 +71,7 @@ WizardAddEducation:
                   defaultValue: ''
                 -
                   type: 'TYPO3.Form:SingleLineText'
-                  identifier: educationName
+                  identifier: 'educationName'
                   label: 'Name of the education'
                   validators:
                     -
@@ -85,7 +85,7 @@ WizardAddEducation:
                   defaultValue: ''
                 -
                   type: 'TYPO3.Form:DatePicker'
-                  identifier: educationStart
+                  identifier: 'educationStart'
                   label: Start
                   validators:
                     -
@@ -97,16 +97,16 @@ WizardAddEducation:
                       identifier: 'TYPO3.Flow:NotEmpty'
                 -
                   type: 'TYPO3.Form:Checkbox'
-                  identifier: diploma
+                  identifier: 'diploma'
                   label: Diploma
                 -
                   type: 'TYPO3.Form:Section'
-                  identifier: setEndDate
+                  identifier: 'setEndDate'
                   label: 'Set EndDate'
                   renderables:
                     -
                       type: 'TYPO3.Form:DatePicker'
-                      identifier: educationEndDate
+                      identifier: 'educationEndDate'
                       label: Until
                       validators:
                         -

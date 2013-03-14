@@ -1,9 +1,9 @@
 #############################################################
-# validated yaml for the Electronic Adresses
-# here are the electronic adressesfor companys departmens, persons
+# validated yaml for the Electronic Addresses
+# here are the electronic addressesfor companys departmens, persons
 #############################################################
 ---
-'Beech.Party.Domain.Model.ElectronicAdress':
+'Beech.Party.Domain.Model.ElectronicAddress':
   properties:
     'connectionType':
       label: 'Connection type'
@@ -25,7 +25,7 @@
     'departmentId':
       label: 'Department ID'
       type: 'Beech\Party\Domain\Model\Company'
-# todo: implement this that validation works on type adress selected.
+# todo: implement this that validation works on type address selected.
     'electronicAddresses':
       items:
         'email':
@@ -75,8 +75,8 @@
               type: 'StringLength'
               options:
                 maximum: 20
-        'linkedin':
-          label: 'Linkedin'
+        'linkedIn':
+          label: 'LinkedIn'
           validation:
             -
               type: 'StringLength'

@@ -1,647 +1,647 @@
-# new person wizard.
-type: 'TYPO3.Form:Form'
-identifier: wizardsNewPerson
-label: WizardsNewPerson
-renderables:
-  -
-    type: 'TYPO3.Form:Page'
-    identifier: page1
-    label: 'Page 1'
-    renderables:
-      -
-        type: 'TYPO3.Form:Section'
-        identifier: setTypePerson
-        label: 'Set person type'
-        renderables:
-          -
-            type: 'TYPO3.Form:SingleSelectDropdown'
-            identifier: personType
-            label: PersonType
-            validators:
-              -
-                identifier: 'TYPO3.Flow:NotEmpty'
-            properties:
-              options:
+wizardNewPerson:
+  type: 'TYPO3.Form:Form'
+  identifier: wizardsNewPerson
+  label: WizardsNewPerson
+  renderables:
+    -
+      type: 'TYPO3.Form:Page'
+      identifier: page1
+      label: 'Page 1'
+      renderables:
+        -
+          type: 'TYPO3.Form:Section'
+          identifier: 'setTypePerson'
+          label: 'Set person type'
+          renderables:
+            -
+              type: 'TYPO3.Form:SingleSelectDropdown'
+              identifier: 'personType'
+              label: PersonType
+              validators:
                 -
-                  _value: Employee
-                  _key: employee
-      -
-        type: 'TYPO3.Form:Section'
-        identifier: uploadPersonImage
-        label: 'Upload Person Image'
-      -
-        type: 'TYPO3.Form:Section'
-        identifier: personDetails
-        label: 'Person Details'
-        renderables:
-          -
-            type: 'TYPO3.Form:SingleSelectDropdown'
-            identifier: gender
-            label: Gender
-            validators:
-              -
-                identifier: 'TYPO3.Flow:NotEmpty'
-            properties:
-              options:
-                -
-                  _value: Male
-                  _key: male
-                -
-                  _value: Female
-                  _key: female
-          -
-            type: 'TYPO3.Form:SingleSelectDropdown'
-            identifier: civilStatus
-            label: 'Civil Status'
-            properties:
-              options:
-                -
-                  _value: Married
-                  _key: ''
-                -
-                  _value: 'Un married'
-                  _key: ''
-      -
-        type: 'TYPO3.Form:Section'
-        identifier: personName
-        label: 'person Name'
-        renderables:
-          -
-            type: 'TYPO3.Form:SingleLineText'
-            identifier: initials
-            label: Initials
-            validators:
-              -
-                identifier: 'TYPO3.Flow:NotEmpty'
-            properties:
-              placeholder: Initials
-            defaultValue: ''
-          -
-            type: 'TYPO3.Form:SingleLineText'
-            identifier: firstName
-            label: 'First name'
-            validators:
-              -
-                identifier: 'TYPO3.Flow:NotEmpty'
-              -
-                identifier: 'TYPO3.Flow:RegularExpression'
+                  identifier: 'TYPO3.Flow:NotEmpty'
+              properties:
                 options:
-                  regularExpression: '[\w''\-]{2,30}'
-            properties:
-              placeholder: 'First name'
-            defaultValue: ''
-          -
-            type: 'TYPO3.Form:SingleLineText'
-            identifier: middleName
-            label: 'Middle name'
-            validators:
-              -
-                identifier: 'TYPO3.Flow:RegularExpression'
+                  -
+                    _value: Employee
+                    _key: employee
+        -
+          type: 'TYPO3.Form:Section'
+          identifier: 'uploadPersonImage'
+          label: 'Upload Person Image'
+        -
+          type: 'TYPO3.Form:Section'
+          identifier: personDetails
+          label: 'Person Details'
+          renderables:
+            -
+              type: 'TYPO3.Form:SingleSelectDropdown'
+              identifier: gender
+              label: Gender
+              validators:
+                -
+                  identifier: 'TYPO3.Flow:NotEmpty'
+              properties:
                 options:
-                  regularExpression: '[\w''\-]{2,15}'
-            properties:
-              placeholder: 'Middle name'
-            defaultValue: ''
-          -
-            type: 'TYPO3.Form:SingleLineText'
-            identifier: lastName
-            label: 'Last name'
-            validators:
-              -
-                identifier: 'TYPO3.Flow:NotEmpty'
-            properties:
-              placeholder: 'Last name'
-            defaultValue: ''
-      -
-        type: 'TYPO3.Form:Section'
-        identifier: caseFemaleAndMarried
-        label: 'Case Female and married'
-        renderables:
-          -
-            type: 'TYPO3.Form:SingleLineText'
-            identifier: otherName
-            label: 'Birth name'
-            validators:
-              -
-                identifier: 'TYPO3.Flow:RegularExpression'
+                  -
+                    _value: Male
+                    _key: male
+                  -
+                    _value: Female
+                    _key: female
+            -
+              type: 'TYPO3.Form:SingleSelectDropdown'
+              identifier: civilStatus
+              label: 'Civil Status'
+              properties:
                 options:
-                  regularExpression: '[\w''\-]{2,30}'
-            properties:
-              placeholder: 'Birth name'
-            defaultValue: ''
-          -
-            type: 'TYPO3.Form:SingleSelectDropdown'
-            identifier: nameUsage
-            label: 'Name usage'
-            properties:
-              options:
+                  -
+                    _value: Married
+                    _key: 'married'
+                  -
+                    _value: 'Un married'
+                    _key: 'unmarried'
+        -
+          type: 'TYPO3.Form:Section'
+          identifier: 'personName'
+          label: 'person Name'
+          renderables:
+            -
+              type: 'TYPO3.Form:SingleLineText'
+              identifier: 'initials'
+              label: Initials
+              validators:
                 -
-                  _value: Birthname
-                  _key: birthName
+                  identifier: 'TYPO3.Flow:NotEmpty'
+              properties:
+                placeholder: Initials
+              defaultValue: ''
+            -
+              type: 'TYPO3.Form:SingleLineText'
+              identifier: 'firstName'
+              label: 'First name'
+              validators:
                 -
-                  _value: 'Married name'
-                  _key: marriedName
+                  identifier: 'TYPO3.Flow:NotEmpty'
                 -
-                  _value: 'Married Name + birthname'
-                  _key: marriedNameBirthName
-          -
-            type: 'TYPO3.Form:Section'
-            identifier: personInfo
-            label: 'Person info'
-            renderables:
-              -
-                type: 'TYPO3.Form:DatePicker'
-                identifier: dateofBirth
-                label: 'Date of birth'
-                validators:
-                  -
-                    identifier: 'TYPO3.Flow:NotEmpty'
-                  -
-                    identifier: 'TYPO3.Flow:DateTimeRange'
-                    options:
-                      earliestDate: '19000101'
-                      latestDate: '20500101'
-              -
-                type: 'TYPO3.Form:SingleLineText'
-                identifier: placeOfBirth
-                label: 'Place of birth'
-                validators:
-                  -
-                    identifier: 'TYPO3.Flow:NotEmpty'
-                  -
-                    identifier: 'TYPO3.Flow:RegularExpression'
-                    options:
-                      regularExpression: '[\w''\-]{2,30}'
-                properties:
-                  placeholder: 'Place of birth'
-                defaultValue: ''
-              -
-                type: 'TYPO3.Form:SingleSelectDropdown'
-                identifier: nationality
-                label: Nationality
-                properties:
+                  identifier: 'TYPO3.Flow:RegularExpression'
                   options:
-                    -
-                      _value: Nederlandse
-                      _key: NL
-                defaultValue: NL
-              -
-                type: 'TYPO3.Form:SingleLineText'
-                identifier: bsn
-                label: BSN
-                validators:
-                  -
-                    identifier: 'TYPO3.Flow:NotEmpty'
-                properties:
-                  placeholder: 'BSN Number'
-                defaultValue: ''
-  -
-    type: 'TYPO3.Form:Page'
-    identifier: page2
-    label: page2
-    renderables:
-      -
-        type: 'TYPO3.Form:Section'
-        identifier: addresses
-        label: Addresses
-        renderables:
-          -
-            type: 'TYPO3.Form:SingleSelectDropdown'
-            identifier: addresstype
-            label: 'Address type'
-            validators:
-              -
-                identifier: 'TYPO3.Flow:NotEmpty'
-            properties:
-              options:
+                    regularExpression: '[\w''\-]{2,30}'
+              properties:
+                placeholder: 'First name'
+              defaultValue: ''
+            -
+              type: 'TYPO3.Form:SingleLineText'
+              identifier: 'middleName'
+              label: 'Middle name'
+              validators:
                 -
-                  _value: 'Bussiness address'
-                  _key: businessAdress
-                -
-                  _value: PostBox
-                  _key: postbox
-                -
-                  _value: 'Mailing address'
-                  _key: mailingAddress
-                -
-                  _value: Worklocation
-                  _key: workLocation
-                -
-                  _value: 'Address abroad'
-                  _key: addressabroad
-                -
-                  _value: Other
-                  _key: other
-          -
-            type: 'TYPO3.Form:Section'
-            identifier: caseNl
-            label: 'Case Nl address'
-            renderables:
-              -
-                type: 'TYPO3.Form:Section'
-                identifier: caseAddress
-                label: 'Case Address'
-                renderables:
-                  -
-                    type: 'TYPO3.Form:SingleLineText'
-                    identifier: streetName
-                    label: 'Street name'
-                    validators:
-                      -
-                        identifier: 'TYPO3.Flow:NotEmpty'
-                    properties:
-                      placeholder: 'Street name'
-                    defaultValue: ''
-                  -
-                    type: 'TYPO3.Form:SingleLineText'
-                    identifier: houseNumber
-                    label: 'House number'
-                    validators:
-                      -
-                        identifier: 'TYPO3.Flow:NotEmpty'
-                      -
-                        identifier: 'TYPO3.Flow:RegularExpression'
-                        options:
-                          regularExpression: '[0-9]{1,5}'
-                    properties:
-                      placeholder: 'House number'
-                    defaultValue: ''
-                  -
-                    type: 'TYPO3.Form:SingleLineText'
-                    identifier: houseNumberAddition
-                    label: 'House number additon'
-                    validators:
-                      -
-                        identifier: 'TYPO3.Flow:RegularExpression'
-                        options:
-                          regularExpression: '[a-zA-Z0-9\\-]{0,10}'
-                    properties:
-                      placeholder: addition
-                    defaultValue: ''
-              -
-                type: 'TYPO3.Form:Section'
-                identifier: casePostBox
-                label: 'Case postbox'
-                renderables:
-                  -
-                    type: 'TYPO3.Form:SingleLineText'
-                    identifier: postBoxNumber
-                    label: 'Postbox number'
-                    validators:
-                      -
-                        identifier: 'TYPO3.Flow:RegularExpression'
-                        options:
-                          regularExpression: '[0-9]{1,5}'
-                    properties:
-                      placeholder: 'Postbox number'
-                    defaultValue: ''
-          -
-            type: 'TYPO3.Form:SingleLineText'
-            identifier: postalCodeNL
-            label: Postalcode
-            validators:
-              -
-                identifier: 'TYPO3.Flow:RegularExpression'
-                options:
-                  regularExpression: '\\d{4}\\s?[a-z]{2}'
-              -
-                identifier: 'TYPO3.Flow:NotEmpty'
-            properties:
-              placeholder: Postalcode
-            defaultValue: ''
-          -
-            type: 'TYPO3.Form:SingleLineText'
-            identifier: residence
-            label: Residence
-            validators:
-              -
-                identifier: 'TYPO3.Flow:RegularExpression'
-                options:
-                  regularExpression: '[a-zA-Z\\-\\s\\’]{2,30}'
-              -
-                identifier: 'TYPO3.Flow:NotEmpty'
-            properties:
-              placeholder: Residence
-            defaultValue: ''
-          -
-            type: 'TYPO3.Form:Section'
-            identifier: caseAddressAbroad
-            label: 'case address abroad'
-            renderables:
-              -
-                type: 'TYPO3.Form:SingleLineText'
-                identifier: houseNumberAbroad
-                label: 'House number'
-                validators:
-                  -
-                    identifier: 'TYPO3.Flow:RegularExpression'
-                    options:
-                      regularExpression: '[0-9]{1,5}'
-                properties:
-                  placeholder: 'House number'
-                defaultValue: ''
-              -
-                type: 'TYPO3.Form:SingleLineText'
-                identifier: houseNumberAdditionAbroad
-                label: 'House number addition'
-                properties:
-                  placeholder: addition
-                defaultValue: ''
-              -
-                type: 'TYPO3.Form:SingleLineText'
-                identifier: postalCodeAbroad
-                label: 'Postalcode '
-                validators:
-                  -
-                    identifier: 'TYPO3.Flow:StringLength'
-                    options:
-                      minimum: '0'
-                      maximum: '10'
-                properties:
-                  placeholder: Postalcode
-                defaultValue: ''
-              -
-                type: 'TYPO3.Form:SingleLineText'
-                identifier: residenceAbroad
-                label: 'Residence abroad'
-                validators:
-                  -
-                    identifier: 'TYPO3.Flow:RegularExpression'
-                    options:
-                      regularExpression: '[a-zA-Z\\-\\s\\’]{2,30}'
-                properties:
-                  placeholder: Residence
-                defaultValue: ''
-              -
-                type: 'TYPO3.Form:SingleSelectDropdown'
-                identifier: country
-                label: Country
-          -
-            type: 'TYPO3.Form:MultiLineText'
-            identifier: addressDescription
-            label: 'Address description'
-            validators:
-              -
-                identifier: 'TYPO3.Flow:Text'
-            properties:
-              placeholder: 'Address description'
-            defaultValue: ''
-        validators:
-          -
-            identifier: 'TYPO3.Flow:NotEmpty'
-  -
-    type: 'TYPO3.Form:Page'
-    identifier: page3
-    label: page3
-    renderables:
-      -
-        type: 'TYPO3.Form:Section'
-        identifier: electronicAddresses
-        label: 'Electronic Addresses'
-        renderables:
-          -
-            type: 'TYPO3.Form:SingleSelectDropdown'
-            identifier: electronicAddressType
-            label: 'Electronic address type'
-            validators:
-              -
-                identifier: 'TYPO3.Flow:NotEmpty'
-            properties:
-              options:
-                -
-                  _value: E-mail
-                  _key: emailAddress
-                -
-                  _value: Skype
-                  _key: skype
-                -
-                  _value: WebsiteUrl
-                  _key: websiteUrl
-                -
-                  _value: Twitter
-                  _key: twitter
-                -
-                  _value: Facebook
-                  _key: facebook
-                -
-                  _value: LinkedIn
-                  _key: linkedin
-                -
-                  _value: Hyves
-                  _key: hyves
-          -
-            type: 'TYPO3.Form:Section'
-            identifier: caseEmail
-            label: 'Case e-mail'
-            renderables:
-              -
-                type: 'TYPO3.Form:SingleLineText'
-                identifier: email
-                label: email
-                validators:
-                  -
-                    identifier: 'TYPO3.Flow:NotEmpty'
-                properties:
-                  placeholder: E-mail
-                defaultValue: ''
-          -
-            type: 'TYPO3.Form:Section'
-            identifier: caseSkype
-            label: 'Case Skype'
-            renderables:
-              -
-                type: 'TYPO3.Form:SingleLineText'
-                identifier: skype
-                label: Skype
-                validators:
-                  -
-                    identifier: 'TYPO3.Flow:RegularExpression'
-                    options:
-                      regularExpression: '[a-zA-Z][a-zA-Z0-9]{5,31}]'
-                properties:
-                  placeholder: Skype
-                defaultValue: ''
-          -
-            type: 'TYPO3.Form:Section'
-            identifier: caseUrl
-            label: 'Case url'
-            renderables:
-              -
-                type: 'TYPO3.Form:SingleLineText'
-                identifier: websiteUrl
-                label: WebsiteUrl
-                validators:
-                  -
-                    identifier: 'TYPO3.Flow:RegularExpression'
-                    options:
-                      regularExpression: '/(https?://)?(www\\.)?([a-zA-Z0-9_%]*)\\b\\.[a-z]{2,4}(\\.[a-z]{2})?((/[a-zA-Z0-9_%]*)+)?(\\.[a-z]*)?/g]'
-                properties:
-                  placeholder: WebsiteUrl
-                defaultValue: ''
-          -
-            type: 'TYPO3.Form:Section'
-            identifier: caseTwitter
-            label: 'Case Twitter'
-            renderables:
-              -
-                type: 'TYPO3.Form:SingleLineText'
-                identifier: twitter
-                label: Twitter
-                validators:
-                  -
-                    identifier: 'TYPO3.Flow:StringLength'
-                    options:
-                      maximum: '20'
-                properties:
-                  placeholder: Twitter
-                defaultValue: ''
-          -
-            type: 'TYPO3.Form:Section'
-            identifier: caseFacebook
-            label: 'Case Facebook'
-            renderables:
-              -
-                type: 'TYPO3.Form:SingleLineText'
-                identifier: facebook
-                label: Facebook
-                validators:
-                  -
-                    identifier: 'TYPO3.Flow:StringLength'
-                    options:
-                      maximum: '20'
-                properties:
-                  placeholder: Facebook
-                defaultValue: ''
-          -
-            type: 'TYPO3.Form:Section'
-            identifier: caseLinkedIn
-            label: 'Case LinkedIn'
-            renderables:
-              -
-                type: 'TYPO3.Form:SingleLineText'
-                identifier: linkedIn
-                label: LinkedIn
-                validators:
-                  -
-                    identifier: 'TYPO3.Flow:StringLength'
-                    options:
-                      maximum: '20'
-                properties:
-                  placeholder: LinkedIn
-                defaultValue: ''
-          -
-            type: 'TYPO3.Form:Section'
-            identifier: caseHyves
-            label: 'Case Hyves'
-            renderables:
-              -
-                type: 'TYPO3.Form:SingleLineText'
-                identifier: hyves
-                label: Hyves
-                validators:
-                  -
-                    identifier: 'TYPO3.Flow:StringLength'
-                    options:
-                      minimum: ''
-                      maximum: ''
-                properties:
-                  placeholder: Hyves
-                defaultValue: ''
-          -
-            type: 'TYPO3.Form:Section'
-            identifier: phoneNumbers
-            label: 'Phone numbers'
-            renderables:
-              -
-                type: 'TYPO3.Form:SingleSelectDropdown'
-                identifier: phoneType
-                label: 'Phone type'
-                validators:
-                  -
-                    identifier: 'TYPO3.Flow:NotEmpty'
-                properties:
+                  identifier: 'TYPO3.Flow:RegularExpression'
                   options:
-                    -
-                      _value: Work
-                      _key: work
-                    -
-                      _value: 'Company mobile'
-                      _key: companyNumber
-                    -
-                      _value: 'Business phone'
-                      _key: businessNumber
-                    -
-                      _value: 'Business mobile'
-                      _key: bussinesMobile
-                    -
-                      _value: Fax
-                      _key: faxNumber
-                    -
-                      _value: Home
-                      _key: homeNumber
-                    -
-                      _value: 'Private mobile'
-                      _key: privateMobile
-                    -
-                      _value: 'Emergency call number'
-                      _key: emergencyCallNumber
-                    -
-                      _value: 'Foreign number'
-                      _key: foreignNumber
-                    -
-                      _value: Other
-                      _key: other
-              -
-                type: 'TYPO3.Form:Section'
-                identifier: phones
-                label: Phones
-                renderables:
+                    regularExpression: '[\w''\-]{2,15}'
+              properties:
+                placeholder: 'Middle name'
+              defaultValue: ''
+            -
+              type: 'TYPO3.Form:SingleLineText'
+              identifier: 'lastName'
+              label: 'Last name'
+              validators:
+                -
+                  identifier: 'TYPO3.Flow:NotEmpty'
+              properties:
+                placeholder: 'Last name'
+              defaultValue: ''
+        -
+          type: 'TYPO3.Form:Section'
+          identifier: 'caseFemaleAndMarried'
+          label: 'Case Female and married'
+          renderables:
+            -
+              type: 'TYPO3.Form:SingleLineText'
+              identifier: 'otherName'
+              label: 'Birth name'
+              validators:
+                -
+                  identifier: 'TYPO3.Flow:RegularExpression'
+                  options:
+                    regularExpression: '[\w''\-]{2,30}'
+              properties:
+                placeholder: 'Birth name'
+              defaultValue: ''
+            -
+              type: 'TYPO3.Form:SingleSelectDropdown'
+              identifier: 'nameUsage'
+              label: 'Name usage'
+              properties:
+                options:
                   -
-                    type: 'TYPO3.Form:Section'
-                    identifier: caseForeignNumber
-                    label: 'Case foreign number'
-                    renderables:
+                    _value: Birthname
+                    _key: birthName
+                  -
+                    _value: 'Married name'
+                    _key: marriedName
+                  -
+                    _value: 'Married Name + birthname'
+                    _key: marriedNameBirthName
+            -
+              type: 'TYPO3.Form:Section'
+              identifier: 'personInfo'
+              label: 'Person info'
+              renderables:
+                -
+                  type: 'TYPO3.Form:DatePicker'
+                  identifier: 'dateofBirth'
+                  label: 'Date of birth'
+                  validators:
+                    -
+                      identifier: 'TYPO3.Flow:NotEmpty'
+                    -
+                      identifier: 'TYPO3.Flow:DateTimeRange'
+                      options:
+                        earliestDate: '19000101'
+                        latestDate: '20500101'
+                -
+                  type: 'TYPO3.Form:SingleLineText'
+                  identifier: 'placeOfBirth'
+                  label: 'Place of birth'
+                  validators:
+                    -
+                      identifier: 'TYPO3.Flow:NotEmpty'
+                    -
+                      identifier: 'TYPO3.Flow:RegularExpression'
+                      options:
+                        regularExpression: '[\w''\-]{2,30}'
+                  properties:
+                    placeholder: 'Place of birth'
+                  defaultValue: ''
+                -
+                  type: 'TYPO3.Form:SingleSelectDropdown'
+                  identifier: 'nationality'
+                  label: Nationality
+                  properties:
+                    options:
                       -
-                        type: 'TYPO3.Form:SingleLineText'
-                        identifier: foreignNumber
-                        label: 'Foreign number'
-                        validators:
-                          -
-                            identifier: 'TYPO3.Flow:RegularExpression'
-                            options:
-                              regularExpression: '/(^\\+[0-9]{2}|^\\+[0-9]{2}\\(0\\)|^\\(\\+[0-9]{2}\\)\\(0\\)|^00[0-9]{2}|^0)([0-9]{9}$|[0-9\\-\\s]{10}$)/gm]'
-                        properties:
-                          placeholder: Number
-                        defaultValue: ''
+                        _value: Nederlandse
+                        _key: NL
+                  defaultValue: NL
+                -
+                  type: 'TYPO3.Form:SingleLineText'
+                  identifier: bsn
+                  label: BSN
+                  validators:
+                    -
+                      identifier: 'TYPO3.Flow:NotEmpty'
+                  properties:
+                    placeholder: 'BSN Number'
+                  defaultValue: ''
+    -
+      type: 'TYPO3.Form:Page'
+      identifier: page2
+      label: page2
+      renderables:
+        -
+          type: 'TYPO3.Form:Section'
+          identifier: 'addresses'
+          label: Addresses
+          renderables:
+            -
+              type: 'TYPO3.Form:SingleSelectDropdown'
+              identifier: 'address.addresstype'
+              label: 'Address type'
+              validators:
+                -
+                  identifier: 'TYPO3.Flow:NotEmpty'
+              properties:
+                options:
                   -
-                    type: 'TYPO3.Form:Section'
-                    identifier: caseNlNumber
-                    label: 'Case NL number'
-                    renderables:
+                    _value: 'Bussiness address'
+                    _key: businessAddress
+                  -
+                    _value: PostBox
+                    _key: postbox
+                  -
+                    _value: 'Mailing address'
+                    _key: mailingAddress
+                  -
+                    _value: Worklocation
+                    _key: workLocation
+                  -
+                    _value: 'Address abroad'
+                    _key: addressabroad
+                  -
+                    _value: Other
+                    _key: other
+            -
+              type: 'TYPO3.Form:Section'
+              identifier: caseNl
+              label: 'Case Nl address'
+              renderables:
+                -
+                  type: 'TYPO3.Form:Section'
+                  identifier: caseAddress
+                  label: 'Case Address'
+                  renderables:
+                    -
+                      type: 'TYPO3.Form:SingleLineText'
+                      identifier: 'address.streetName'
+                      label: 'Street name'
+                      validators:
+                        -
+                          identifier: 'TYPO3.Flow:NotEmpty'
+                      properties:
+                        placeholder: 'Street name'
+                      defaultValue: ''
+                    -
+                      type: 'TYPO3.Form:SingleLineText'
+                      identifier: 'address.houseNumber'
+                      label: 'House number'
+                      validators:
+                        -
+                          identifier: 'TYPO3.Flow:NotEmpty'
+                        -
+                          identifier: 'TYPO3.Flow:RegularExpression'
+                          options:
+                            regularExpression: '[0-9]{1,5}'
+                      properties:
+                        placeholder: 'House number'
+                      defaultValue: ''
+                    -
+                      type: 'TYPO3.Form:SingleLineText'
+                      identifier: 'address.houseNumberAddition'
+                      label: 'House number additon'
+                      validators:
+                        -
+                          identifier: 'TYPO3.Flow:RegularExpression'
+                          options:
+                            regularExpression: '[a-zA-Z0-9\\-]{0,10}'
+                      properties:
+                        placeholder: addition
+                      defaultValue: ''
+                -
+                  type: 'TYPO3.Form:Section'
+                  identifier: casePostBox
+                  label: 'Case postbox'
+                  renderables:
+                    -
+                      type: 'TYPO3.Form:SingleLineText'
+                      identifier: 'address.postBoxNumber'
+                      label: 'Postbox number'
+                      validators:
+                        -
+                          identifier: 'TYPO3.Flow:RegularExpression'
+                          options:
+                            regularExpression: '[0-9]{1,5}'
+                      properties:
+                        placeholder: 'Postbox number'
+                      defaultValue: ''
+            -
+              type: 'TYPO3.Form:SingleLineText'
+              identifier: 'address.postalCodeNL'
+              label: Postalcode
+              validators:
+                -
+                  identifier: 'TYPO3.Flow:RegularExpression'
+                  options:
+                    regularExpression: '\\d{4}\\s?[a-z]{2}'
+                -
+                  identifier: 'TYPO3.Flow:NotEmpty'
+              properties:
+                placeholder: Postalcode
+              defaultValue: ''
+            -
+              type: 'TYPO3.Form:SingleLineText'
+              identifier: 'address.residence'
+              label: Residence
+              validators:
+                -
+                  identifier: 'TYPO3.Flow:RegularExpression'
+                  options:
+                    regularExpression: '[a-zA-Z\\-\\s\\’]{2,30}'
+                -
+                  identifier: 'TYPO3.Flow:NotEmpty'
+              properties:
+                placeholder: Residence
+              defaultValue: ''
+            -
+              type: 'TYPO3.Form:Section'
+              identifier: caseAddressAbroad
+              label: 'case address abroad'
+              renderables:
+                -
+                  type: 'TYPO3.Form:SingleLineText'
+                  identifier: 'address.houseNumberAbroad'
+                  label: 'House number'
+                  validators:
+                    -
+                      identifier: 'TYPO3.Flow:RegularExpression'
+                      options:
+                        regularExpression: '[0-9]{1,5}'
+                  properties:
+                    placeholder: 'House number'
+                  defaultValue: ''
+                -
+                  type: 'TYPO3.Form:SingleLineText'
+                  identifier: 'address.houseNumberAdditionAbroad'
+                  label: 'House number addition'
+                  properties:
+                    placeholder: addition
+                  defaultValue: ''
+                -
+                  type: 'TYPO3.Form:SingleLineText'
+                  identifier: 'address.postalCodeAbroad'
+                  label: 'Postalcode '
+                  validators:
+                    -
+                      identifier: 'TYPO3.Flow:StringLength'
+                      options:
+                        minimum: '0'
+                        maximum: '10'
+                  properties:
+                    placeholder: Postalcode
+                  defaultValue: ''
+                -
+                  type: 'TYPO3.Form:SingleLineText'
+                  identifier: 'address.residenceAbroad'
+                  label: 'Residence abroad'
+                  validators:
+                    -
+                      identifier: 'TYPO3.Flow:RegularExpression'
+                      options:
+                        regularExpression: '[a-zA-Z\\-\\s\\’]{2,30}'
+                  properties:
+                    placeholder: Residence
+                  defaultValue: ''
+                -
+                  type: 'TYPO3.Form:SingleSelectDropdown'
+                  identifier: 'address.country'
+                  label: Country
+            -
+              type: 'TYPO3.Form:MultiLineText'
+              identifier: 'address.addressDescription'
+              label: 'Address description'
+              validators:
+                -
+                  identifier: 'TYPO3.Flow:Text'
+              properties:
+                placeholder: 'Address description'
+              defaultValue: ''
+          validators:
+            -
+              identifier: 'TYPO3.Flow:NotEmpty'
+    -
+      type: 'TYPO3.Form:Page'
+      identifier: page3
+      label: page3
+      renderables:
+        -
+          type: 'TYPO3.Form:Section'
+          identifier: electronicAddresses
+          label: 'Electronic Addresses'
+          renderables:
+            -
+              type: 'TYPO3.Form:SingleSelectDropdown'
+              identifier: 'electronicAddress.electronicAddressType'
+              label: 'Electronic address type'
+              validators:
+                -
+                  identifier: 'TYPO3.Flow:NotEmpty'
+              properties:
+                options:
+                  -
+                    _value: E-mail
+                    _key: emailAddress
+                  -
+                    _value: Skype
+                    _key: skype
+                  -
+                    _value: WebsiteUrl
+                    _key: websiteUrl
+                  -
+                    _value: Twitter
+                    _key: twitter
+                  -
+                    _value: Facebook
+                    _key: facebook
+                  -
+                    _value: LinkedIn
+                    _key: linkedIn
+                  -
+                    _value: Hyves
+                    _key: hyves
+            -
+              type: 'TYPO3.Form:Section'
+              identifier: caseEmail
+              label: 'Case e-mail'
+              renderables:
+                -
+                  type: 'TYPO3.Form:SingleLineText'
+                  identifier: 'electronicAddress.email'
+                  label: email
+                  validators:
+                    -
+                      identifier: 'TYPO3.Flow:NotEmpty'
+                  properties:
+                    placeholder: E-mail
+                  defaultValue: ''
+            -
+              type: 'TYPO3.Form:Section'
+              identifier: caseSkype
+              label: 'Case Skype'
+              renderables:
+                -
+                  type: 'TYPO3.Form:SingleLineText'
+                  identifier: 'electronicAddress.skype'
+                  label: Skype
+                  validators:
+                    -
+                      identifier: 'TYPO3.Flow:RegularExpression'
+                      options:
+                        regularExpression: '[a-zA-Z][a-zA-Z0-9]{5,31}]'
+                  properties:
+                    placeholder: Skype
+                  defaultValue: ''
+            -
+              type: 'TYPO3.Form:Section'
+              identifier: caseUrl
+              label: 'Case url'
+              renderables:
+                -
+                  type: 'TYPO3.Form:SingleLineText'
+                  identifier: 'electronicAddress.websiteUrl'
+                  label: WebsiteUrl
+                  validators:
+                    -
+                      identifier: 'TYPO3.Flow:RegularExpression'
+                      options:
+                        regularExpression: '/(https?://)?(www\\.)?([a-zA-Z0-9_%]*)\\b\\.[a-z]{2,4}(\\.[a-z]{2})?((/[a-zA-Z0-9_%]*)+)?(\\.[a-z]*)?/g]'
+                  properties:
+                    placeholder: WebsiteUrl
+                  defaultValue: ''
+            -
+              type: 'TYPO3.Form:Section'
+              identifier: caseTwitter
+              label: 'Case Twitter'
+              renderables:
+                -
+                  type: 'TYPO3.Form:SingleLineText'
+                  identifier: 'electronicAddress.twitter'
+                  label: Twitter
+                  validators:
+                    -
+                      identifier: 'TYPO3.Flow:StringLength'
+                      options:
+                        maximum: '20'
+                  properties:
+                    placeholder: Twitter
+                  defaultValue: ''
+            -
+              type: 'TYPO3.Form:Section'
+              identifier: caseFacebook
+              label: 'Case Facebook'
+              renderables:
+                -
+                  type: 'TYPO3.Form:SingleLineText'
+                  identifier: 'electronicAddress.facebook'
+                  label: Facebook
+                  validators:
+                    -
+                      identifier: 'TYPO3.Flow:StringLength'
+                      options:
+                        maximum: '20'
+                  properties:
+                    placeholder: Facebook
+                  defaultValue: ''
+            -
+              type: 'TYPO3.Form:Section'
+              identifier: caseLinkedIn
+              label: 'Case LinkedIn'
+              renderables:
+                -
+                  type: 'TYPO3.Form:SingleLineText'
+                  identifier: 'electronicAddress.linkedIn'
+                  label: LinkedIn
+                  validators:
+                    -
+                      identifier: 'TYPO3.Flow:StringLength'
+                      options:
+                        maximum: '20'
+                  properties:
+                    placeholder: LinkedIn
+                  defaultValue: ''
+            -
+              type: 'TYPO3.Form:Section'
+              identifier: caseHyves
+              label: 'Case Hyves'
+              renderables:
+                -
+                  type: 'TYPO3.Form:SingleLineText'
+                  identifier: 'electronicAddress.hyves'
+                  label: Hyves
+                  validators:
+                    -
+                      identifier: 'TYPO3.Flow:StringLength'
+                      options:
+                        minimum: ''
+                        maximum: ''
+                  properties:
+                    placeholder: Hyves
+                  defaultValue: ''
+            -
+              type: 'TYPO3.Form:Section'
+              identifier: 'phoneNumbers'
+              label: 'Phone numbers'
+              renderables:
+                -
+                  type: 'TYPO3.Form:SingleSelectDropdown'
+                  identifier: 'phoneNumber.phoneType'
+                  label: 'Phone type'
+                  validators:
+                    -
+                      identifier: 'TYPO3.Flow:NotEmpty'
+                  properties:
+                    options:
                       -
-                        type: 'TYPO3.Form:SingleLineText'
-                        identifier: phoneNumber
-                        label: 'Phone number'
-                        validators:
-                          -
-                            identifier: 'TYPO3.Flow:RegularExpression'
-                            options:
-                              regularExpression: '/(^\\+[0-9]{2}|^\\+[0-9]{2}\\(0\\)|^\\(\\+[0-9]{2}\\)\\(0\\)|^00[0-9]{2}|^0)([0-9]{9}$|[0-9\\-\\s]{10}$)/gm]'
-                          -
-                            identifier: 'TYPO3.Flow:NotEmpty'
-                        properties:
-                          placeholder: Number
-                        defaultValue: ''
-                  -
-                    type: 'TYPO3.Form:Checkbox'
-                    identifier: setPrimaryPhone
-                    label: 'Primary Phone'
-              -
-                type: 'TYPO3.Form:MultiLineText'
-                identifier: phoneDescripion
-                label: 'Phone description'
-                properties:
-                  placeholder: Description
-                defaultValue: ''
-renderingOptions:
-  submitButtonLabel: Save
+                        _value: Work
+                        _key: work
+                      -
+                        _value: 'Company mobile'
+                        _key: companyNumber
+                      -
+                        _value: 'Business phone'
+                        _key: businessNumber
+                      -
+                        _value: 'Business mobile'
+                        _key: bussinesMobile
+                      -
+                        _value: Fax
+                        _key: faxNumber
+                      -
+                        _value: Home
+                        _key: homeNumber
+                      -
+                        _value: 'Private mobile'
+                        _key: privateMobile
+                      -
+                        _value: 'Emergency call number'
+                        _key: emergencyCallNumber
+                      -
+                        _value: 'Foreign number'
+                        _key: foreignNumber
+                      -
+                        _value: Other
+                        _key: other
+                -
+                  type: 'TYPO3.Form:Section'
+                  identifier: phones
+                  label: Phones
+                  renderables:
+                    -
+                      type: 'TYPO3.Form:Section'
+                      identifier: caseForeignNumber
+                      label: 'Case foreign number'
+                      renderables:
+                        -
+                          type: 'TYPO3.Form:SingleLineText'
+                          identifier: 'phoneNumber.foreignNumber'
+                          label: 'Foreign number'
+                          validators:
+                            -
+                              identifier: 'TYPO3.Flow:RegularExpression'
+                              options:
+                                regularExpression: '/(^\\+[0-9]{2}|^\\+[0-9]{2}\\(0\\)|^\\(\\+[0-9]{2}\\)\\(0\\)|^00[0-9]{2}|^0)([0-9]{9}$|[0-9\\-\\s]{10}$)/gm]'
+                          properties:
+                            placeholder: Number
+                          defaultValue: ''
+                    -
+                      type: 'TYPO3.Form:Section'
+                      identifier: caseNlNumber
+                      label: 'Case NL number'
+                      renderables:
+                        -
+                          type: 'TYPO3.Form:SingleLineText'
+                          identifier: 'phoneNumber.phoneNumber'
+                          label: 'Phone number'
+                          validators:
+                            -
+                              identifier: 'TYPO3.Flow:RegularExpression'
+                              options:
+                                regularExpression: '/(^\\+[0-9]{2}|^\\+[0-9]{2}\\(0\\)|^\\(\\+[0-9]{2}\\)\\(0\\)|^00[0-9]{2}|^0)([0-9]{9}$|[0-9\\-\\s]{10}$)/gm]'
+                            -
+                              identifier: 'TYPO3.Flow:NotEmpty'
+                          properties:
+                            placeholder: Number
+                          defaultValue: ''
+                    -
+                      type: 'TYPO3.Form:Checkbox'
+                      identifier: 'phoneNumber.setPrimaryPhone'
+                      label: 'Primary Phone'
+                -
+                  type: 'TYPO3.Form:MultiLineText'
+                  identifier: 'phoneNumber.phoneDescripion'
+                  label: 'Phone description'
+                  properties:
+                    placeholder: Description
+                  defaultValue: ''
+  renderingOptions:
+    submitButtonLabel: Save
