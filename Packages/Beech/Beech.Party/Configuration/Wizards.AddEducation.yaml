@@ -1,4 +1,4 @@
-WizardAddEducation:
+wizardAddEducation:
   type: 'TYPO3.Form:Form'
   identifier: wizardAddEducation
   label: 'Wizard add Education'

@@ -219,15 +219,7 @@ fullNewCompany:
                       options:
                         regularExpression: '[a-zA-Z\\.\\s]{0,10}'
                     -
-                      identifier: 'TYPO3.Flow:StringLength'
-                      options:
-                        maximum: '10'
-                    -
                       identifier: 'TYPO3.Flow:NotEmpty'
-                    -
-                      identifier: 'TYPO3.Flow:RegularExpression'
-                      options:
-                        regularExpression: '[a-zA-Z\\.\\s]{0,10}'
                   properties:
                     placeholder: Initials
                   defaultValue: ''
@@ -238,10 +230,6 @@ fullNewCompany:
                   validators:
                     -
                       identifier: 'TYPO3.Flow:NotEmpty'
-                    -
-                      identifier: 'TYPO3.Flow:StringLength'
-                      options:
-                        maximum: '20'
                     -
                       identifier: 'TYPO3.Flow:RegularExpression'
                       options:
@@ -259,10 +247,6 @@ fullNewCompany:
                       options:
                         maximum: '20'
                     -
-                      identifier: 'TYPO3.Flow:StringLength'
-                      options:
-                        maximum: '15'
-                    -
                       identifier: 'TYPO3.Flow:RegularExpression'
                       options:
                         regularExpression: '[\w''''\-]{2,15}'
@@ -278,14 +262,6 @@ fullNewCompany:
                     -
                       identifier: 'TYPO3.Flow:RegularExpression'
                       options:
-                        regularexpression: '[\\w\\-]{2,30}]'
-                    -
-                      identifier: 'TYPO3.Flow:StringLength'
-                      options:
-                        maximum: '20'
-                    -
-                      identifier: 'TYPO3.Flow:RegularExpression'
-                      options:
                         regularExpression: '[\w''''\-]{2,25}'
                   label: Lastname
                   properties:
@@ -293,7 +269,7 @@ fullNewCompany:
                   defaultValue: ''
             -
               type: 'TYPO3.Form:Section'
-              identifier: CaseFemaleAndMarried
+              identifier: 'caseFemaleAndMarried'
               label: PersonBirthname
               renderables:
                 -
@@ -305,10 +281,6 @@ fullNewCompany:
                       type: 'TYPO3.Flow:RegularExpression'
                       options:
                         regularExpression: '[\\w\\-]{2,30}]'
-                    -
-                      identifier: 'TYPO3.Flow:StringLength'
-                      options:
-                        maximum: '30'
                   properties:
                     placeholder: Birthname
                   defaultValue: ''
@@ -316,9 +288,17 @@ fullNewCompany:
               type: 'TYPO3.Form:SingleSelectDropdown'
               identifier: 'person.personType'
               label: 'Person Type'
-              options:
-                - companyContact
-                - employee
+              properties:
+                options:
+                  -
+                    _value: employee
+                    _key: 'Employee'
+                  -
+                    _value: contact
+                    _key: 'Contact'
+              validators:
+                -
+                  identifier: 'TYPO3.Flow:NotEmpty'
             -
               type: 'TYPO3.Form:Section'
               identifier: 'setGroup'
@@ -416,12 +396,6 @@ fullNewCompany:
                   type: 'TYPO3.Flow:RegularExpression'
                   options:
                     regularExpression: '[0-9]{1,5}'
-                -
-                  type: Integer
-                -
-                  identifier: 'TYPO3.Flow:RegularExpression'
-                  options:
-                    regularExpression: '[0-9]{1,5}'
               properties:
                 placeholder: 'Postbox number'
               defaultValue: ''
@@ -436,12 +410,6 @@ fullNewCompany:
                   identifier: 'TYPO3.Flow:RegularExpression'
                   options:
                     regularExpression: '[0-9]{1,5}'
-                -
-                  identifier: 'TYPO3.Flow:RegularExpression'
-                  options:
-                    regularExpression: '[0-9]{1,5}'
-                -
-                  identifier: 'TYPO3.Flow:NotEmpty'
               properties:
                 placeholder: 'House number'
               defaultValue: ''
@@ -452,14 +420,6 @@ fullNewCompany:
               validators:
                 -
                   type: 'TYPO3.Flow:RegularExpression'
-                  options:
-                    regularExpression: '[a-zA-Z0-9\\-]{0,10}'
-                -
-                  identifier: 'TYPO3.Flow:StringLength'
-                  options:
-                    maximum: '10'
-                -
-                  identifier: 'TYPO3.Flow:RegularExpression'
                   options:
                     regularExpression: '[a-zA-Z0-9\\-]{0,10}'
               properties:
@@ -476,14 +436,6 @@ fullNewCompany:
                   type: 'TYPO3.Flow:RegularExpression'
                   options:
                     regularExpression: '\\d{4}\\s?[a-z]{2}'
-                -
-                  identifier: 'TYPO3.Flow:StringLength'
-                  options:
-                    maximum: '6'
-                -
-                  identifier: 'TYPO3.Flow:RegularExpression'
-                  options:
-                    regularExpression: '\\d{4}\\s?[a-z]{2}'
               properties:
                 placeholder: 'Postal code'
               defaultValue: ''
@@ -496,14 +448,6 @@ fullNewCompany:
                   type: 'TYPO3.Flow:RegularExpression'
                   options:
                     regularExpression: '\\d{4}\\s?[a-z]{2}'
-                -
-                  identifier: 'TYPO3.Flow:StringLength'
-                  options:
-                    maximum: '10'
-                -
-                  identifier: 'TYPO3.Flow:RegularExpression'
-                  options:
-                    regularExpression: '[0-9]{1,5}'
               properties:
                 placeholder: 'Postal code'
               defaultValue: ''
@@ -518,10 +462,6 @@ fullNewCompany:
                   type: 'TYPO3.Flow:RegularExpression'
                   options:
                     regularExpression: '[a-zA-Z\\-\\s\\’]{2,30}'
-                -
-                  identifier: 'TYPO3.Flow:StringLength'
-                  options:
-                    maximum: '35'
               properties:
                 placeholder: Residence
               defaultValue: ''
@@ -547,7 +487,7 @@ fullNewCompany:
         -
           type: 'TYPO3.Form:Section'
           identifier: 'electronicAddresses'
-          label: electronicAddresses
+          label: 'electronicAddresses'
           renderables:
             -
               type: 'TYPO3.Form:SingleSelectDropdown'
@@ -557,7 +497,7 @@ fullNewCompany:
                 options:
                   -
                     _value: emailAddress
-                    _key: E-Mail
+                    _key: 'E-Mail'
                   -
                     _value: skype
                     _key: Skype
@@ -581,6 +521,13 @@ fullNewCompany:
                   identifier: 'TYPO3.Flow:NotEmpty'
             -
               type: 'TYPO3.Form:SingleLineText'
+              identifier: 'electronicAddress.email'
+              label: email
+              validators:
+                -
+                  identifier: 'TYPO3.Flow:Emailaddress'
+            -
+              type: 'TYPO3.Form:SingleLineText'
               identifier: 'electronicAddress.skype'
               label: Skype
               validators:
@@ -592,10 +539,6 @@ fullNewCompany:
                   identifier: 'TYPO3.Flow:StringLength'
                   options:
                     maximum: '35'
-                -
-                  identifier: 'TYPO3.Flow:StringLength'
-                  options:
-                    maximum: '20'
               properties:
                 placeholder: Skype
               defaultValue: ''
@@ -608,16 +551,8 @@ fullNewCompany:
                   identifier: 'TYPO3.Flow:RegularExpression'
                   options:
                     regularExpression: '/(https?://)?(www\\.)?([a-zA-Z0-9_%]*)\\b\\.[a-z]{2,4}(\\.[a-z]{2})?((/[a-zA-Z0-9_%]*)+)?(\\.[a-z]*)?/g]'
-                -
-                  identifier: 'TYPO3.Flow:StringLength'
-                  options:
-                    maximum: '50'
-                -
-                  identifier: 'TYPO3.Flow:RegularExpression'
-                  options:
-                    regularExpression: '/(https?://)?(www\\.)?([a-zA-Z0-9_%]*)\\b\\.[a-z]{2,4}(\\.[a-z]{2})?((/[a-zA-Z0-9_%]*)+)?(\\.[a-z]*)?/g]'
               properties:
-                placeholder: 'Website '
+                placeholder: 'Website'
               defaultValue: ''
             -
               type: 'TYPO3.Form:SingleLineText'
@@ -640,10 +575,6 @@ fullNewCompany:
                   identifier: 'TYPO3.Flow:StringLength'
                   options:
                     maximum: '20'
-                -
-                  identifier: 'TYPO3.Flow:StringLength'
-                  options:
-                    maximum: '20'
               properties:
                 placeholder: Facebook
               defaultValue: ''
@@ -656,22 +587,14 @@ fullNewCompany:
                   identifier: 'TYPO3.Flow:StringLength'
                   options:
                     maximum: '20'
-                -
-                  identifier: 'TYPO3.Flow:StringLength'
-                  options:
-                    maximum: '20'
               properties:
                 placeholder: LinkedIn
               defaultValue: ''
             -
               type: 'TYPO3.Form:SingleLineText'
-              identifier: electronicAddress.hyves
+              identifier: 'electronicAddress.hyves'
               label: Hyves
               validators:
-                -
-                  identifier: 'TYPO3.Flow:StringLength'
-                  options:
-                    maximum: '20'
                 -
                   identifier: 'TYPO3.Flow:StringLength'
                   options:
@@ -681,12 +604,12 @@ fullNewCompany:
               defaultValue: ''
         -
           type: 'TYPO3.Form:Section'
-          identifier: phoneNumbers
+          identifier: 'phoneNumbers'
           label: PhoneNumbers
           renderables:
             -
               type: 'TYPO3.Form:SingleSelectDropdown'
-              identifier: phoneNumber.phoneType
+              identifier: 'phoneNumber.phoneType'
               label: 'Phone Type'
               properties:
                 options:
@@ -720,28 +643,18 @@ fullNewCompany:
               validators:
                 -
                   identifier: 'TYPO3.Flow:NotEmpty'
-                -
-                  identifier: 'TYPO3.Flow:NotEmpty'
         -
           type: 'TYPO3.Form:Section'
-          identifier: phoneNumber.caseNLphoneNumber
+          identifier: 'phoneNumber.caseNLphoneNumber'
           label: PhoneNumber
           renderables:
             -
               type: 'TYPO3.Form:SingleLineText'
-              identifier: phoneNumber.phoneNumber
+              identifier: 'phoneNumber.phoneNumber'
               label: 'Phone number'
               validators:
                 -
                   identifier: 'TYPO3.Flow:NotEmpty'
-                -
-                  identifier: 'TYPO3.Flow:RegularExpression'
-                  options:
-                    regularExpression: '/(^\\+[0-9]{2}|^\\+[0-9]{2}\\(0\\)|^\\(\\+[0-9]{2}\\)\\(0\\)|^00[0-9]{2}|^0)([0-9]{9}$|[0-9\\-\\s]{10}$)/gm]'
-                -
-                  identifier: 'TYPO3.Flow:StringLength'
-                  options:
-                    maximum: '13'
                 -
                   identifier: 'TYPO3.Flow:RegularExpression'
                   options:
@@ -751,26 +664,18 @@ fullNewCompany:
               defaultValue: ''
         -
           type: 'TYPO3.Form:Section'
-          identifier: caseForeignNumber
+          identifier: 'caseForeignNumber'
           label: 'Foreign number'
           renderables:
             -
               type: 'TYPO3.Form:SingleLineText'
-              identifier: phoneNumber.foreignPhoneNumber
+              identifier: 'phoneNumber.foreignPhoneNumber'
               label: 'Foreign phone number'
               validators:
                 -
                   identifier: 'TYPO3.Flow:RegularExpression'
                   options:
                     RegularExpression: '/(^\\+[0-9]{2}|^\\+[0-9]{2}\\(0\\)|^\\(\\+[0-9]{2}\\)\\(0\\)|^00[0-9]{2}|^0)([0-9]{9}$|[0-9\\-\\s]{10}$)/gm]'
-                -
-                  identifier: 'TYPO3.Flow:StringLength'
-                  options:
-                    maximum: '15'
-                -
-                  identifier: 'TYPO3.Flow:RegularExpression'
-                  options:
-                    regularExpression: '/(^\\+[0-9]{2}|^\\+[0-9]{2}\\(0\\)|^\\(\\+[0-9]{2}\\)\\(0\\)|^00[0-9]{2}|^0)([0-9]{9}$|[0-9\\-\\s]{10}$)/gm]'
               properties:
                 placeholder: 'Phone number'
               defaultValue: ''

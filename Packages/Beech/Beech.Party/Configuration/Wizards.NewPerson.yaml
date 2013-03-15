@@ -1,7 +1,10 @@
+#todo implement arrays and conditions
 wizardNewPerson:
   type: 'TYPO3.Form:Form'
   identifier: wizardsNewPerson
   label: WizardsNewPerson
+  renderingOptions:
+    submitButtonLabel: Save
   renderables:
     -
       type: 'TYPO3.Form:Page'
@@ -10,12 +13,12 @@ wizardNewPerson:
       renderables:
         -
           type: 'TYPO3.Form:Section'
-          identifier: 'setTypePerson'
+          identifier: setTypePerson
           label: 'Set person type'
           renderables:
             -
               type: 'TYPO3.Form:SingleSelectDropdown'
-              identifier: 'personType'
+              identifier: personType
               label: PersonType
               validators:
                 -
@@ -27,7 +30,7 @@ wizardNewPerson:
                     _key: employee
         -
           type: 'TYPO3.Form:Section'
-          identifier: 'uploadPersonImage'
+          identifier: uploadPersonImage
           label: 'Upload Person Image'
         -
           type: 'TYPO3.Form:Section'
@@ -57,18 +60,18 @@ wizardNewPerson:
                 options:
                   -
                     _value: Married
-                    _key: 'married'
+                    _key: married
                   -
                     _value: 'Un married'
-                    _key: 'unmarried'
+                    _key: unmarried
         -
           type: 'TYPO3.Form:Section'
-          identifier: 'personName'
+          identifier: personName
           label: 'person Name'
           renderables:
             -
               type: 'TYPO3.Form:SingleLineText'
-              identifier: 'initials'
+              identifier: initials
               label: Initials
               validators:
                 -
@@ -78,7 +81,7 @@ wizardNewPerson:
               defaultValue: ''
             -
               type: 'TYPO3.Form:SingleLineText'
-              identifier: 'firstName'
+              identifier: firstName
               label: 'First name'
               validators:
                 -
@@ -92,7 +95,7 @@ wizardNewPerson:
               defaultValue: ''
             -
               type: 'TYPO3.Form:SingleLineText'
-              identifier: 'middleName'
+              identifier: middleName
               label: 'Middle name'
               validators:
                 -
@@ -104,7 +107,7 @@ wizardNewPerson:
               defaultValue: ''
             -
               type: 'TYPO3.Form:SingleLineText'
-              identifier: 'lastName'
+              identifier: lastName
               label: 'Last name'
               validators:
                 -
@@ -114,12 +117,12 @@ wizardNewPerson:
               defaultValue: ''
         -
           type: 'TYPO3.Form:Section'
-          identifier: 'caseFemaleAndMarried'
+          identifier: caseFemaleAndMarried
           label: 'Case Female and married'
           renderables:
             -
               type: 'TYPO3.Form:SingleLineText'
-              identifier: 'otherName'
+              identifier: otherName
               label: 'Birth name'
               validators:
                 -
@@ -131,7 +134,7 @@ wizardNewPerson:
               defaultValue: ''
             -
               type: 'TYPO3.Form:SingleSelectDropdown'
-              identifier: 'nameUsage'
+              identifier: nameUsage
               label: 'Name usage'
               properties:
                 options:
@@ -146,12 +149,12 @@ wizardNewPerson:
                     _key: marriedNameBirthName
             -
               type: 'TYPO3.Form:Section'
-              identifier: 'personInfo'
+              identifier: personInfo
               label: 'Person info'
               renderables:
                 -
                   type: 'TYPO3.Form:DatePicker'
-                  identifier: 'dateofBirth'
+                  identifier: dateofBirth
                   label: 'Date of birth'
                   validators:
                     -
@@ -163,7 +166,7 @@ wizardNewPerson:
                         latestDate: '20500101'
                 -
                   type: 'TYPO3.Form:SingleLineText'
-                  identifier: 'placeOfBirth'
+                  identifier: placeOfBirth
                   label: 'Place of birth'
                   validators:
                     -
@@ -176,15 +179,12 @@ wizardNewPerson:
                     placeholder: 'Place of birth'
                   defaultValue: ''
                 -
-                  type: 'TYPO3.Form:SingleSelectDropdown'
-                  identifier: 'nationality'
-                  label: Nationality
-                  properties:
-                    options:
-                      -
-                        _value: Nederlandse
-                        _key: NL
-                  defaultValue: NL
+                  type: 'Beech.Ehrm:NationalitySelect'
+                  identifier: nationality
+                  label: nationality
+                  validators:
+                    -
+                      identifier: 'TYPO3.Flow:NotEmpty'
                 -
                   type: 'TYPO3.Form:SingleLineText'
                   identifier: bsn
@@ -202,12 +202,15 @@ wizardNewPerson:
       renderables:
         -
           type: 'TYPO3.Form:Section'
-          identifier: 'addresses'
+          identifier: addresses
           label: Addresses
+          validators:
+            -
+              identifier: 'TYPO3.Flow:NotEmpty'
           renderables:
             -
               type: 'TYPO3.Form:SingleSelectDropdown'
-              identifier: 'address.addresstype'
+              identifier: address.addresstype
               label: 'Address type'
               validators:
                 -
@@ -244,7 +247,7 @@ wizardNewPerson:
                   renderables:
                     -
                       type: 'TYPO3.Form:SingleLineText'
-                      identifier: 'address.streetName'
+                      identifier: address.streetName
                       label: 'Street name'
                       validators:
                         -
@@ -254,7 +257,7 @@ wizardNewPerson:
                       defaultValue: ''
                     -
                       type: 'TYPO3.Form:SingleLineText'
-                      identifier: 'address.houseNumber'
+                      identifier: address.houseNumber
                       label: 'House number'
                       validators:
                         -
@@ -268,7 +271,7 @@ wizardNewPerson:
                       defaultValue: ''
                     -
                       type: 'TYPO3.Form:SingleLineText'
-                      identifier: 'address.houseNumberAddition'
+                      identifier: address.houseNumberAddition
                       label: 'House number additon'
                       validators:
                         -
@@ -285,7 +288,7 @@ wizardNewPerson:
                   renderables:
                     -
                       type: 'TYPO3.Form:SingleLineText'
-                      identifier: 'address.postBoxNumber'
+                      identifier: address.postBoxNumber
                       label: 'Postbox number'
                       validators:
                         -
@@ -297,7 +300,7 @@ wizardNewPerson:
                       defaultValue: ''
             -
               type: 'TYPO3.Form:SingleLineText'
-              identifier: 'address.postalCodeNL'
+              identifier: address.postalCodeNL
               label: Postalcode
               validators:
                 -
@@ -311,7 +314,7 @@ wizardNewPerson:
               defaultValue: ''
             -
               type: 'TYPO3.Form:SingleLineText'
-              identifier: 'address.residence'
+              identifier: address.residence
               label: Residence
               validators:
                 -
@@ -330,7 +333,7 @@ wizardNewPerson:
               renderables:
                 -
                   type: 'TYPO3.Form:SingleLineText'
-                  identifier: 'address.houseNumberAbroad'
+                  identifier: address.houseNumberAbroad
                   label: 'House number'
                   validators:
                     -
@@ -342,14 +345,14 @@ wizardNewPerson:
                   defaultValue: ''
                 -
                   type: 'TYPO3.Form:SingleLineText'
-                  identifier: 'address.houseNumberAdditionAbroad'
+                  identifier: address.houseNumberAdditionAbroad
                   label: 'House number addition'
                   properties:
                     placeholder: addition
                   defaultValue: ''
                 -
                   type: 'TYPO3.Form:SingleLineText'
-                  identifier: 'address.postalCodeAbroad'
+                  identifier: address.postalCodeAbroad
                   label: 'Postalcode '
                   validators:
                     -
@@ -362,7 +365,7 @@ wizardNewPerson:
                   defaultValue: ''
                 -
                   type: 'TYPO3.Form:SingleLineText'
-                  identifier: 'address.residenceAbroad'
+                  identifier: address.residenceAbroad
                   label: 'Residence abroad'
                   validators:
                     -
@@ -373,12 +376,12 @@ wizardNewPerson:
                     placeholder: Residence
                   defaultValue: ''
                 -
-                  type: 'TYPO3.Form:SingleSelectDropdown'
-                  identifier: 'address.country'
-                  label: Country
+                  type: 'Beech.Ehrm:CountrySelect'
+                  identifier: countryselect1
+                  label: country
             -
               type: 'TYPO3.Form:MultiLineText'
-              identifier: 'address.addressDescription'
+              identifier: address.addressDescription
               label: 'Address description'
               validators:
                 -
@@ -386,9 +389,6 @@ wizardNewPerson:
               properties:
                 placeholder: 'Address description'
               defaultValue: ''
-          validators:
-            -
-              identifier: 'TYPO3.Flow:NotEmpty'
     -
       type: 'TYPO3.Form:Page'
       identifier: page3
@@ -401,7 +401,7 @@ wizardNewPerson:
           renderables:
             -
               type: 'TYPO3.Form:SingleSelectDropdown'
-              identifier: 'electronicAddress.electronicAddressType'
+              identifier: electronicAddress.electronicAddressType
               label: 'Electronic address type'
               validators:
                 -
@@ -436,7 +436,7 @@ wizardNewPerson:
               renderables:
                 -
                   type: 'TYPO3.Form:SingleLineText'
-                  identifier: 'electronicAddress.email'
+                  identifier: electronicAddress.email
                   label: email
                   validators:
                     -
@@ -451,7 +451,7 @@ wizardNewPerson:
               renderables:
                 -
                   type: 'TYPO3.Form:SingleLineText'
-                  identifier: 'electronicAddress.skype'
+                  identifier: electronicAddress.skype
                   label: Skype
                   validators:
                     -
@@ -468,7 +468,7 @@ wizardNewPerson:
               renderables:
                 -
                   type: 'TYPO3.Form:SingleLineText'
-                  identifier: 'electronicAddress.websiteUrl'
+                  identifier: electronicAddress.websiteUrl
                   label: WebsiteUrl
                   validators:
                     -
@@ -485,7 +485,7 @@ wizardNewPerson:
               renderables:
                 -
                   type: 'TYPO3.Form:SingleLineText'
-                  identifier: 'electronicAddress.twitter'
+                  identifier: electronicAddress.twitter
                   label: Twitter
                   validators:
                     -
@@ -502,7 +502,7 @@ wizardNewPerson:
               renderables:
                 -
                   type: 'TYPO3.Form:SingleLineText'
-                  identifier: 'electronicAddress.facebook'
+                  identifier: electronicAddress.facebook
                   label: Facebook
                   validators:
                     -
@@ -519,7 +519,7 @@ wizardNewPerson:
               renderables:
                 -
                   type: 'TYPO3.Form:SingleLineText'
-                  identifier: 'electronicAddress.linkedIn'
+                  identifier: electronicAddress.linkedIn
                   label: LinkedIn
                   validators:
                     -
@@ -536,7 +536,7 @@ wizardNewPerson:
               renderables:
                 -
                   type: 'TYPO3.Form:SingleLineText'
-                  identifier: 'electronicAddress.hyves'
+                  identifier: electronicAddress.hyves
                   label: Hyves
                   validators:
                     -
@@ -549,12 +549,12 @@ wizardNewPerson:
                   defaultValue: ''
             -
               type: 'TYPO3.Form:Section'
-              identifier: 'phoneNumbers'
+              identifier: phoneNumbers
               label: 'Phone numbers'
               renderables:
                 -
                   type: 'TYPO3.Form:SingleSelectDropdown'
-                  identifier: 'phoneNumber.phoneType'
+                  identifier: phoneNumber.phoneType
                   label: 'Phone type'
                   validators:
                     -
@@ -603,7 +603,7 @@ wizardNewPerson:
                       renderables:
                         -
                           type: 'TYPO3.Form:SingleLineText'
-                          identifier: 'phoneNumber.foreignNumber'
+                          identifier: phoneNumber.foreignNumber
                           label: 'Foreign number'
                           validators:
                             -
@@ -620,7 +620,7 @@ wizardNewPerson:
                       renderables:
                         -
                           type: 'TYPO3.Form:SingleLineText'
-                          identifier: 'phoneNumber.phoneNumber'
+                          identifier: phoneNumber.phoneNumber
                           label: 'Phone number'
                           validators:
                             -
@@ -634,14 +634,12 @@ wizardNewPerson:
                           defaultValue: ''
                     -
                       type: 'TYPO3.Form:Checkbox'
-                      identifier: 'phoneNumber.setPrimaryPhone'
+                      identifier: phoneNumber.setPrimaryPhone
                       label: 'Primary Phone'
                 -
                   type: 'TYPO3.Form:MultiLineText'
-                  identifier: 'phoneNumber.phoneDescripion'
+                  identifier: phoneNumber.phoneDescripion
                   label: 'Phone description'
                   properties:
                     placeholder: Description
                   defaultValue: ''
-  renderingOptions:
-    submitButtonLabel: Save
