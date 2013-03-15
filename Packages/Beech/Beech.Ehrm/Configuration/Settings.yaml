@@ -197,7 +197,7 @@ Radmiraal:
             - 'Beech\Ehrm\Domain\Model\Log'
           typeMapping:
             TYPO3PartyDomainModelAbstractParty: 'BeechPartyDomainModelPerson'
-            TYPO3PartyDomainModelElectronicAddress: 'BeechPartyDomainModelElectronicAdress'
+            TYPO3PartyDomainModelElectronicAddress: 'BeechPartyDomainModelElectronicAddress'
             DateTime: 'date'
             integer: 'number'
           ignoredProperties:

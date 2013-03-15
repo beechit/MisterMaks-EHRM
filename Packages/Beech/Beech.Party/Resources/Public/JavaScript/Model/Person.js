@@ -12,14 +12,14 @@
 		}.property('firstName', 'middleName', 'lastName')
 	});
 
-	App.BeechPartyDomainModelElectronicAdress.reopen({
+	App.BeechPartyDomainModelElectronicAddress.reopen({
 		person: DS.belongsTo('App.BeechPartyDomainModelPerson')
 	});
 
 	App.BeechPartyDomainModelPerson.reopen({
 		name: DS.belongsTo('App.Typo3PartyDomainModelPersonName'),
-		electronicAddresses: DS.hasMany('App.BeechPartyDomainModelElectronicAdress'),
-		primaryElectronicAddresses: DS.belongsTo('App.BeechPartyDomainModelElectronicAdress'),
+		electronicAddresses: DS.hasMany('App.BeechPartyDomainModelElectronicAddress'),
+		primaryElectronicAddresses: DS.belongsTo('App.BeechPartyDomainModelElectronicAddress'),
 		primaryElectronicAddress: DS.attr('string'),
 		fullName: function() {
 			return this.get('name').get('fullName');
