@@ -1,7 +1,3 @@
-#############################################################
-# validated yaml for the person
-# this is the person model.
-#############################################################
 'Beech.Party.Domain.Model.Person':
   properties:
     'companyId':
@@ -37,7 +33,7 @@
         -
           type: 'RegularExpression'
           options:
-            regularExpression: '[\\w\\-]{2,30}]'
+            regularExpression: '/[\\w\\-]{2,30}]/'
         -
           type: 'StringLength'
           options:
@@ -69,7 +65,7 @@
         -
           type: 'RegularExpression'
           options:
-            regularExpression: '[a-zA-Z\\.\\s]{0,10}'
+            regularExpression: '/[a-zA-Z\\.\\s]{0,10}/'
         -
           type: 'StringLength'
           options:
@@ -82,14 +78,14 @@
       -
         type: 'RegularExpression'
         options:
-          regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
+          regularExpression: '/^(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d$/'
   'placeOfBirth':
     label: 'Place of birth'
     validation:
       -
         type: 'RegularExpresssion'
         options:
-          regularExpression: '[a-zA-Z\\-\\s\\’]{2,30}'
+          regularExpression: '/[a-zA-Z\\-\\s\\’]{2,30}/'
   'dateofDeath':
     label: 'Date of death'
     type: 'DateTime'
@@ -97,7 +93,7 @@
       -
         type: 'RegularExpression'
         options:
-          regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
+          regularExpression: '/^(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d$/'
   'gender':
     label: 'Gender'
     options:
@@ -179,10 +175,6 @@
     validation:
       -
         type: 'NotEmpty'
-      -
-        type: 'RegularExpression'
-        options:
-          regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
   'createdBy':
     default: 'currentUser'
     label: 'Created by'
@@ -196,11 +188,6 @@
         default: 'now'
         label: 'Modification date'
         type: 'DateTime'
-        validation:
-          -
-            type: 'RegularExpression'
-            options:
-              regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
       'modifiedBy':
         default: 'currentUser'
         label: 'Modified by'

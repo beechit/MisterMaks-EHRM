@@ -86,7 +86,7 @@ wizardAddAddress:
                         -
                           identifier: 'TYPO3.Flow:RegularExpression'
                           options:
-                            regularExpression: '[0-9]{1,5}'
+                            regularExpression: '/[0-9]{1,5}/'
                       properties:
                         placeholder: 'House number'
                       defaultValue: ''
@@ -98,7 +98,7 @@ wizardAddAddress:
                         -
                           identifier: 'TYPO3.Flow:RegularExpression'
                           options:
-                            regularExpression: '[a-zA-Z0-9\\-]{0,10}'
+                            regularExpression: '/[a-zA-Z0-9\\-]{0,10}/'
                       properties:
                         placeholder: Addition
                       defaultValue: ''
@@ -115,7 +115,7 @@ wizardAddAddress:
                         -
                           identifier: 'TYPO3.Flow:RegularExpression'
                           options:
-                            regularExpression: '[0-9]{1,5}'
+                            regularExpression: '/[0-9]{1,5}/'
                       properties:
                         placeholder: 'Postbox number'
                       defaultValue: ''
@@ -127,7 +127,7 @@ wizardAddAddress:
                 -
                   identifier: 'TYPO3.Flow:RegularExpression'
                   options:
-                    regularExpression: '\\d{4}\\s?[a-z]{2}'
+                    regularExpression: '/[0-9]{4}\s{0,1}[a-z]{2}/'
                 -
                   identifier: 'TYPO3.Flow:NotEmpty'
               properties:
@@ -141,7 +141,7 @@ wizardAddAddress:
                 -
                   identifier: 'TYPO3.Flow:RegularExpression'
                   options:
-                    regularExpression: '[a-zA-Z\\-\\s\\’]{2,30}'
+                    regularExpression: '/[a-zA-Z\\-\\s\\’]{2,30}/'
                 -
                   identifier: 'TYPO3.Flow:NotEmpty'
               properties:
@@ -160,7 +160,7 @@ wizardAddAddress:
                     -
                       identifier: 'TYPO3.Flow:RegularExpression'
                       options:
-                        regularExpression: '[0-9]{1,5}'
+                        regularExpression: '/[0-9]{1,5}/'
                   properties:
                     placeholder: 'House number'
                   defaultValue: ''
@@ -192,7 +192,7 @@ wizardAddAddress:
                     -
                       identifier: 'TYPO3.Flow:RegularExpression'
                       options:
-                        regularExpression: '[a-zA-Z\\-\\s\\’]{2,30}'
+                        regularExpression: '/[a-zA-Z\\-\\s\\’]{2,30}/'
                   properties:
                     placeholder: Residence
                   defaultValue: ''
