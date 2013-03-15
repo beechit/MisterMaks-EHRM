@@ -33,8 +33,6 @@ wizardAddBankData:
               validators:
                 -
                   identifier: 'TYPO3.Flow:NotEmpty'
-                  options:
-                    maximum: '20'
         -
           type: 'TYPO3.Form:Section'
           identifier: 'caseBankAccount'

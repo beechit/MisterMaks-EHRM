@@ -124,7 +124,7 @@ quickCompanyWizard:
                     -
                       identifier: 'TYPO3.Flow:RegularExpression'
                       options:
-                        regularexpression: '[\\w\\-]{2,30}]'
+                        regularExpression: '[\\w\\-]{2,30}]'
                     -
                       identifier: 'TYPO3.Flow:StringLength'
                       options:

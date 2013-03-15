@@ -19,11 +19,15 @@
 	</div>
 	<div class="btn-group span3">
 		<a class="btn dropdown-toggle btn-large btn-success" data-toggle="dropdown" href="#">
-			Gesprekken
+			Wizards
 			<span class="caret"></span>
 		</a>
 		<ul class="dropdown-menu">
 			<li><a href="{f:uri.action(package:'Beech.Ehrm', controller:'wizard', action:'show', arguments:'{formPersistenceIdentifier:\'wizardAddBankData\'}')}" data-toggle="modal-jsonp" data-target="#modal-body-only">Add bank data</a></li>
+			<li><a href="{f:uri.action(package:'Beech.Ehrm', controller:'wizard', action:'show', arguments:'{formPersistenceIdentifier:\'wizardAddAddress\'}')}" data-toggle="modal-jsonp" data-target="#modal-body-only">Add address</a></li>
+			<li><a href="{f:uri.action(package:'Beech.Ehrm', controller:'wizard', action:'show', arguments:'{formPersistenceIdentifier:\'wizardAddPhoneNumber\'}')}" data-toggle="modal-jsonp" data-target="#modal-body-only">Add phone number</a></li>
+			<li><a href="{f:uri.action(package:'Beech.Ehrm', controller:'wizard', action:'show', arguments:'{formPersistenceIdentifier:\'wizardAddElectronicAddress\'}')}" data-toggle="modal-jsonp" data-target="#modal-body-only">Add electronic address</a></li>
+			<li><a href="{f:uri.action(package:'Beech.Ehrm', controller:'wizard', action:'show', arguments:'{formPersistenceIdentifier:\'wizardAddEducation\'}')}" data-toggle="modal-jsonp" data-target="#modal-body-only">Add education</a></li>
 		</ul>
 	</div>
 	<div class="btn-group span3">
@@ -35,6 +39,7 @@
 			<li><a href="{f:uri.action(package:'Beech.Ehrm', controller:'wizard', action:'show', arguments:'{formPersistenceIdentifier:\'quickCompanyWizard\'}')}" data-toggle="modal-jsonp" data-target="#modal-body-only">Quick company wizard</a></li>
 		</ul>
 	</div>
+
 </div>
 
 <h2>Person</h2>
