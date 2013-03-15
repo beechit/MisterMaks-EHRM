@@ -11,8 +11,11 @@
 		this.route('jobDescriptionModule', { path: '/administration/jobdescriptions' });
 		this.route('contractArticleModule', { path: '/administration/contractarticles' });
 		this.route('userManagementModule', { path: '/administration/usermanagement' });
-		this.route('contractModule', { path: '/administration/contracts' });
 		this.route('wizardManagementModule', { path: '/administration/wizards' });
+
+			// Contracts
+		this.route('contractModule', { path: '/administration/contracts' });
+		this.route('contractModule.new', { path: '/administration/contracts/new' });
 
 			// Beech.Party
 		this.resource('BeechPartyPersonModule', { path: '/persons' }, function() {
@@ -73,7 +76,8 @@
 	App.UserSettingsRoute = App.IndexRoute.extend(App.AjaxModuleControllerMixin, { url: MM.url.module.userSettings });
 	App.JobDescriptionModuleRoute = App.IndexRoute.extend(App.AjaxModuleControllerMixin, { url: MM.url.module.jobDescription });
 	App.ContractArticleModuleRoute = App.IndexRoute.extend(App.AjaxModuleControllerMixin, { url: MM.url.module.contractArticle });
-	App.ContractModuleRoute = App.IndexRoute.extend(App.AjaxModuleControllerMixin, { url: MM.url.module.contract });
+	App.ContractModuleRoute = App.IndexRoute.extend(App.AjaxModuleControllerMixin, { url: MM.url.module.contractModule});
+	App.ContractModuleNewRoute = App.IndexRoute.extend(App.AjaxModuleControllerMixin, { url: MM.url.module.contractModuleNew });
 	App.UserManagementModuleRoute = App.IndexRoute.extend(App.AjaxModuleControllerMixin, { url: MM.url.module.userManagementModule });
 	App.WizardManagementModuleRoute = App.IndexRoute.extend(App.AjaxModuleControllerMixin, { url: MM.url.module.wizardManagementModule });
 

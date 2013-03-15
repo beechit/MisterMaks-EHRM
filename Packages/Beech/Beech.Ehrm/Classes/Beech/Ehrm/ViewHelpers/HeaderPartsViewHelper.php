@@ -208,7 +208,12 @@ class HeaderPartsViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHel
 						->setFormat('jsonp')
 						->setCreateAbsoluteUri(TRUE)
 						->uriFor('list', array(), 'ContractArticle', 'Beech.CLA', 'Administration'),
-					'contract' => $this->controllerContext->getUriBuilder()
+					'contractModuleNew' => $this->controllerContext->getUriBuilder()
+						->reset()
+						->setFormat('jsonp')
+						->setCreateAbsoluteUri(TRUE)
+						->uriFor('new', array(), 'Contract', 'Beech.CLA', 'Administration'),
+					'contractModule' => $this->controllerContext->getUriBuilder()
 						->reset()
 						->setFormat('jsonp')
 						->setCreateAbsoluteUri(TRUE)

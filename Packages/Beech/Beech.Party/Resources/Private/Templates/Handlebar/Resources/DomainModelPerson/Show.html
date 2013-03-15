@@ -36,7 +36,8 @@
 			<span class="caret"></span>
 		</a>
 		<ul class="dropdown-menu">
-			<li><a href="{f:uri.action(package:'Beech.Ehrm', controller:'wizard', action:'show', arguments:'{formPersistenceIdentifier:\'quickCompanyWizard\'}')}" data-toggle="modal-jsonp" data-target="#modal-body-only">Quick company wizard</a></li>
+			<li>{{#linkTo "contractModule"}}List contracts{{/linkTo}}</li>
+			<li>{{#linkTo "contractModule.new"}}New contract{{/linkTo}}</li>
 		</ul>
 	</div>
 
