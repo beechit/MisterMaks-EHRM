@@ -38,6 +38,7 @@ class ApplicationController extends AbstractController {
 		if ($this->authenticationManager->isAuthenticated() === TRUE) {
 			$this->redirect('index');
 		}
+		$this->flashMessageContainer->flush();
 	}
 
 }
