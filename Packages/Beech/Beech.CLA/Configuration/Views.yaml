@@ -1,10 +1,5 @@
-Beech:
-  CLA:
-    viewClassName: 'Beech\Ehrm\View\TemplateView'
-    options:
-      layoutRootPathPattern: 'resource://Beech.Ehrm/Private/Layouts'
-    Administration:
-      viewClassName: 'Beech\Ehrm\View\TemplateView'
-      options:
-        layoutRootPathPattern: 'resource://Beech.Ehrm/Private/Layouts'
-
+'Beech.CLA':
+  requestFilter: 'isPackage("Beech.CLA")'
+  viewClassName: 'Beech\Ehrm\View\TemplateView'
+  options:
+    layoutRootPath: 'resource://Beech.Ehrm/Private/Layouts'

@@ -1,5 +1,5 @@
-Beech:
-  Document:
-    viewClassName: 'Beech\Ehrm\View\TemplateView'
-    options:
-      layoutRootPathPattern: 'resource://Beech.Ehrm/Private/Layouts'
+'Beech.Document':
+  requestFilter: 'isPackage("Beech.Document")'
+  viewClassName: 'Beech\Ehrm\View\TemplateView'
+  options:
+    layoutRootPath: 'resource://Beech.Ehrm/Private/Layouts'

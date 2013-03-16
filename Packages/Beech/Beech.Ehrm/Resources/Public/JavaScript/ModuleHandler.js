@@ -15,12 +15,12 @@
 
 		loadUrl: function(url, target) {
 			$.ajax({
-				format: 'jsonp',
-				dataType: 'jsonp',
+				format: 'html',
+				dataType: 'html',
 				context: this,
-				url: this.jsonpifyUrl(url),
+				url: url,
 				success: function(result) {
-					this.loadContent(result.html, target);
+					this.loadContent(result, target);
 				}
 			});
 		},
@@ -34,23 +34,15 @@
 			$moduleContainer.html(html);
 
 			$moduleContainer.find('form').each(function() {
-				$(this).attr('action', that.jsonpifyUrl($(this).attr('action')));
+				$(this).attr('action', $(this).attr('action'));
 			});
 
 			$moduleContainer.find('form').ajaxForm({
-				dataType: 'jsonp',
+				dataType: 'html',
 				success: function(result) {
-					that.loadContent(result.html, target);
+					that.loadContent(result, target);
 				}
 			});
-		},
-
-		jsonpifyUrl: function(url) {
-			url = url.replace('.html', '.jsonp');
-			if (!url.match(/\.jsonp/)) {
-				url = url.replace('?', '.jsonp?');
-			}
-			return url;
 		}
 	});
 

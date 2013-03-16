@@ -18,8 +18,8 @@
 					.focus();
 			});
 
-				// Add modal-jsonp toggle for rendering wizards in modal boxes
-			$(document).on('click.modal.data-api', '[data-toggle="modal-jsonp"]', function (e) {
+				// Add modal-ajax toggle for rendering wizards in modal boxes
+			$(document).on('click.modal.data-api', '[data-toggle="modal-ajax"]', function (e) {
 				var $this = $(this),
 					href = $this.attr('href'),
 					$target = $($this.attr('data-target') || (href && href.replace(/\.*(?=#[^\s]+$)/, '')));

@@ -1,9 +1,0 @@
-Beech:
-  Ehrm:
-    viewClassName: 'Beech\Ehrm\View\TemplateView'
-    options:
-      layoutRootPathPattern: 'resource://Beech.Ehrm/Private/Layouts'
-    Administration:
-      viewClassName: 'Beech\Ehrm\View\TemplateView'
-      options:
-        layoutRootPathPattern: 'resource://Beech.Ehrm/Private/Layouts'

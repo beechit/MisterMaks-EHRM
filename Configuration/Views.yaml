@@ -1,3 +1,5 @@
-TYPO3:
-  UserManagement:
-    viewClassName: 'Beech\Ehrm\View\TemplateView'
+'TYPO3.UserManagement':
+  requestFilter: 'isPackage("TYPO3.UserManagement")'
+  viewClassName: 'Beech\Ehrm\View\TemplateView'
+  options:
+    layoutRootPath: 'resource://Beech.Ehrm/Private/Layouts'

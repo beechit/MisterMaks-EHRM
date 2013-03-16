@@ -7,6 +7,7 @@
 		<emberjs:include loadJQuery="TRUE" loadEmberData="TRUE" version="1.0.0-pre.4" minified="FALSE" />
 		<!--[if lt IE 9]><script src="resource://Beech.Ehrm/Public/Library/html5shim/html5.js"></script><![endif]-->
 		<ehrm:headerParts loadJavaScriptSources="TRUE" />
+		<f:security.ifAuthenticated><f:else><script src="resource://Beech.Ehrm/Public/JavaScript/Login.js"></script></f:else></f:security.ifAuthenticated>
 	</head>
 	<body>
 		<f:render section="Body" />
