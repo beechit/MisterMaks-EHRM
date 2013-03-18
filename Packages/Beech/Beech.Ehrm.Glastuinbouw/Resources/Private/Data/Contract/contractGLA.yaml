@@ -25,7 +25,7 @@ contractTemplate:
     - 10013
   availableLanguages:
     - nl_NL
-  contractTemplateName: 'Temporary contract with GLA Arrangement'
+  templateName: 'Temporary contract with GLA Arrangement'
   contractTitle:
     en: ''
     nl: 'Arbeidsovereenkomst voor bepaalde tijd voor de regeling gelegenheidsarbeid '

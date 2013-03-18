@@ -1,0 +1,13 @@
+#############################################################
+# validated yaml for the contract article
+# this is the contract article model.
+#############################################################
+'Beech.CLA.Domain.Model.ContractTemplate':
+  properties:
+    'templateName':
+      label: 'Template name'
+      validation:
+        -
+          type: 'NotEmpty'
+    'articles':
+      label: 'Articles'

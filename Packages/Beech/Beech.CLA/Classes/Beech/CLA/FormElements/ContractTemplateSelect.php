@@ -15,43 +15,26 @@ use TYPO3\Flow\Annotations as Flow;
 class ContractTemplateSelect extends \TYPO3\Form\Core\Model\AbstractFormElement {
 
 	/**
-	 * TODO: make this value configurable
-	 * @var string
+	 * @var \Beech\CLA\Domain\Repository\ContractTemplateRepository
+	 * @Flow\Inject
 	 */
-	protected $templateFolder = 'resource://Beech.Ehrm.Glastuinbouw/Private/Data/Contract/';
-
-	/**
-	 * Load template files based on templatesLocation
-	 * @return array
-	 */
-	private function loadTemplates() {
-		return \TYPO3\Flow\Utility\Files::readDirectoryRecursively($this->templateFolder, 'yaml');
-	}
-
-	/**
-	 * Get name of template
-	 * @param $template
-	 * @return string
-	 */
-	private function getTemplateName($template) {
-		$templateConfiguration = \Symfony\Component\Yaml\Yaml::parse($template);
-		return (string)\TYPO3\Flow\Utility\Arrays::getValueByPath($templateConfiguration, 'contractTemplate.contractTemplateName');
-	}
+	protected $contractTemplateRepository;
 
 	/**
 	 * Initialize form element
 	 * @return void
 	 */
 	public function initializeFormElement() {
-		$contractTemplatesArray = $this->loadTemplates();
+		$contractTemplates = $this->contractTemplateRepository->findAll();
 		$this->setLabel('Contract template');
-		foreach ($contractTemplatesArray as $key => $contractTemplate) {
-			$templateName = $this->getTemplateName($contractTemplate);
+		$options = array();
+		foreach ($contractTemplates as $contractTemplate) {
+			$templateName = $contractTemplate->getTemplateName();
 			if (!empty($templateName)) {
-				$contractTemplatesArray[$key] = $templateName;
+				$options[$contractTemplate->getTemplateName()] = $templateName;
 			}
 		}
-		$this->setProperty('options', $contractTemplatesArray);
+		$this->setProperty('options', $options);
 	}
 
 }

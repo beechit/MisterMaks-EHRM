@@ -25,7 +25,7 @@ contractTemplate:
 
   availableLanguages:
     - nl_NL
-  contractTemplateName: 'Permanent Contract'
+  templateName: 'Permanent Contract'
   contractTitle:
     en: ''
     nl: 'Arbeidsovereenkomst voor onbepaalde tijd'

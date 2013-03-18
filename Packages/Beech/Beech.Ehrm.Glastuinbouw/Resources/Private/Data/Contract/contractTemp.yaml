@@ -26,7 +26,7 @@ contractTemplate:
     - 10016
   availableLanguages:
     - nl_NL
-  contractTemplateName: 'Temporary contract'
+  templateName: 'Temporary contract'
   contractTitle:
     en: ''
     nl: 'Arbeidsovereenkomst voor bepaalde tijd voor de regeling gelegenheidsarbeid '
