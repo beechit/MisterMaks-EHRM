@@ -1,24 +1,22 @@
 'Beech.CLA.Domain.Model.Contract':
   properties:
-    'personId':
-      label: 'Person ID'
+    'employee':
+      label: 'Employee'
       type: 'Beech\Party\Domain\Model\Person'
       validation:
         -
           type: 'NotEmpty'
-    'departmentId':
-      label: 'Department ID'
+    'employer':
+      label: 'Employer'
       type: 'Beech\Party\Domain\Model\Company'
     'contractVersion':
       label: 'contractversion'
       validation:
         -
-          type: 'NotEmpty'
-        -
           type: 'StringLength'
           options:
             maximum: 10
-    'contractStatus':
+    'status':
       label: 'Status of the contract'
       validation:
         -
@@ -33,7 +31,7 @@
           - 'pending'
           - 'rejected'
           - 'draft'
-    'contractType':
+    'contractTemplate':
       label: 'Contract type'
       validation:
         -
@@ -41,20 +39,10 @@
         -
           type: 'StringLength'
           options:
-            maximum: 20
+            maximum: 200
     'firstContract':
       label: 'First contract'
       type: 'boolean'
-    'contractGenerationDate':
-      label: 'The date the contract was created'
-      type: 'DateTime'
-      validation:
-        -
-          type: 'NotEmpty'
-        -
-          type: 'RegularExpression'
-          options:
-            regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
     'contractAcceptanceDate':
       label: 'Date contract was accepted'
       type: 'DateTime'
@@ -98,9 +86,8 @@
           - 'stoppedByEmployee'
           - 'Sickness'
           - 'Other'
+      default: 'Other'
       validation:
-        -
-          type: 'NotEmpty'
         -
           type: 'StringLength'
           options:
@@ -112,18 +99,15 @@
       label: 'Jobtitle'
       validation:
         -
-          type: 'NotEmpty'
-        -
           type: 'StringLength'
           options:
             maximum: 30
     'jobDescription':
-      label: 'Jobdescription'
-      type: 'Beech\CLA\Domain\Model\jobDescription'
+      label: 'Job description'
+      type: 'Beech\CLA\Domain\Model\JobDescription'
     'defaultSalaryScale':
       label: 'defaultSalaryScale'
-      type: 'Beech\CLA\Domain\Model\jobDescription'
-    'contractEnddate':
+    'contractEndDate':
       label: 'Expiration date'
       type: 'DateTime'
       validation:
@@ -137,8 +121,6 @@
       type: 'DateTime'
       validation:
         -
-          type: 'NotEmpty'
-        -
           type: 'DateTimeRange'
           options:
             earliestDate: 20130101
@@ -146,8 +128,6 @@
     'streetName':
       label: 'Work address streetname'
       validation:
-        -
-          type: 'NotEmpty'
         -
           type: 'RegularExpression'
           options:
@@ -220,7 +200,7 @@
             maximum: 62
       totalHours':
       label: 'Total hours of this contract'
-      type: 'decimal(4.2)'
+      type: 'Decimal'
       validation:
         -
           type: 'RegularExpression'
@@ -228,7 +208,7 @@
             regularExpression: '^([1-9]\d*(\.|\,)\d*|0?(\.|\,)\d*[1-9]\d*|[1-9]\d*)$'
     'hoursAWeek':
       label: 'Hours a week'
-      type: 'decimal(2.2)'
+      type: 'Decimal'
       validation:
         -
           type: 'RegularExpression'
@@ -262,7 +242,7 @@
 # we need a custom validator here for time
     'hourWage':
       label: 'Hour Wage'
-      type: 'decimal(3.2)'
+      type: 'Decimal'
       validation:
         -
           type: 'RegularExpression'
@@ -313,7 +293,7 @@
       type: 'Beech\CLA\Domain\Model\LaborAgreement'
     'vacationAllowanceGLA':
       label: 'Vacation allowance in the GLA arrangment'
-      type: 'decimal(2.2)'
+      type: 'Decimal'
       validation:
         -
           type: 'RegularExpression'
@@ -321,7 +301,7 @@
             regularExpression: '^([1-9]\d*(\.|\,)\d*|0?(\.|\,)\d*[1-9]\d*|[1-9]\d*)$'
     'vacationAllowancePercentage':
       label: 'Vacation allowance Percentage'
-      type: 'decimal(2.2)'
+      type: 'Decimal'
       validation:
         -
           type: 'RegularExpression'
@@ -350,7 +330,7 @@
       type: 'boolean'
     'accomodationRentWeek':
       label: 'Accomodation rent for a week'
-      type: 'decimal(3.2)'
+      type: 'Decimal'
       validation:
         -
           type: 'RegularExpression'
@@ -358,7 +338,7 @@
             regularExpression: '^([1-9]\d*(\.|\,)\d*|0?(\.|\,)\d*[1-9]\d*|[1-9]\d*)$'
     'accomodationRentMonth':
       label: 'Acomodation rent a month'
-      type: 'decimal(3.2)'
+      type: 'Decimal'
       validation:
         -
           type: 'RegularExpression'

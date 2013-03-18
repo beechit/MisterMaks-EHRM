@@ -35,7 +35,6 @@ class Contract extends \Beech\Ehrm\Domain\Model\Document {
 	/**
 	 * @var \Doctrine\Common\Collections\Collection<\Beech\CLA\Domain\Model\Wage>
 	 * @ODM\ReferenceMany(targetDocument="\Beech\CLA\Domain\Model\Wage")
-	 * @Flow\Validate(type="NotEmpty")
 	 */
 	protected $wages;
 
@@ -125,28 +124,28 @@ class Contract extends \Beech\Ehrm\Domain\Model\Document {
 	 * @param \Beech\Party\Domain\Model\Person $employee
 	 */
 	public function setEmployee($employee) {
-		$this->employee = $this->persistenceManager->getIdentifierByObject($employee);
+		$this->employee = $this->persistenceManager->getIdentifierByObject($employee, '\Beech\Party\Domain\Model\Person');
 	}
 
 	/**
 	 * @return \Beech\Party\Domain\Model\Person
 	 */
 	public function getEmployee() {
-		return $this->persistenceManager->getObjectByIdentifier($this->employee, '\Beech\Party\Domain\Model\Person', TRUE);
+		return ($this->employee !== NULL) ? $this->persistenceManager->getObjectByIdentifier($this->employee, '\Beech\Party\Domain\Model\Person', TRUE) : NULL;
 	}
 
 	/**
 	 * @param \Beech\Party\Domain\Model\Company $employer
 	 */
 	public function setEmployer(\Beech\Party\Domain\Model\Company $employer) {
-		$this->employer = $this->persistenceManager->getIdentifierByObject($employer);
+		$this->employer = $this->persistenceManager->getIdentifierByObject($employer, '\Beech\Party\Domain\Model\Company');
 	}
 
 	/**
 	 * @return \Beech\Party\Domain\Model\Company
 	 */
 	public function getEmployer() {
-		return $this->persistenceManager->getObjectByIdentifier($this->employer, '\Beech\Party\Domain\Model\Person', TRUE);
+		return ($this->employer !== NULL) ? $this->persistenceManager->getObjectByIdentifier($this->employer, '\Beech\Party\Domain\Model\Company', TRUE) : NULL;
 	}
 
 	/**

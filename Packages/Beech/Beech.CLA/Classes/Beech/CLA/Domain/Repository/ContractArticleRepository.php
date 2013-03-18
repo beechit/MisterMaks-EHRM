@@ -23,7 +23,7 @@ class ContractArticleRepository extends \Radmiraal\CouchDB\Persistence\AbstractR
 	 * @param string $sortBy Sorted by property name
 	 * @return array
 	 */
-	public function findByArticles(array $articleIds, $offset = 0, $length = 0, $sortBy = 'order') {
+	public function findByArticles(array $articleIds, $offset = 0, $length = NULL, $sortBy = 'order') {
 		$articles = array();
 		foreach ($articleIds as $articleId) {
 			$article = $this->findByArticleId(($articleId));

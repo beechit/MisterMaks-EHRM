@@ -31,7 +31,7 @@ class ContractTemplateSelect extends \TYPO3\Form\Core\Model\AbstractFormElement 
 		foreach ($contractTemplates as $contractTemplate) {
 			$templateName = $contractTemplate->getTemplateName();
 			if (!empty($templateName)) {
-				$options[$contractTemplate->getTemplateName()] = $templateName;
+				$options[$contractTemplate->getId()] = $templateName;
 			}
 		}
 		$this->setProperty('options', $options);

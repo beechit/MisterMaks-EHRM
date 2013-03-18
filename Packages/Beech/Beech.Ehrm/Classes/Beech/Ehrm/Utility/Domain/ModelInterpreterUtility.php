@@ -88,11 +88,12 @@ class ModelInterpreterUtility {
 	 *
 	 * @param string $packageKey
 	 * @param string $modelName
+
 	 * @return array
 	 */
 	public function getModelProperties($packageKey, $modelName) {
 		$modelConfiguration = $this->configurationManager->getConfiguration('Models');
-		if ($modelConfiguration !== NULL && isset($modelConfiguration[$packageKey . '.Domain.Model.' . $modelName])) {
+		if ($modelConfiguration !== NULL) {
 			$modelProperties = \TYPO3\Flow\Utility\Arrays::getValueByPath($modelConfiguration[$packageKey . '.Domain.Model.' . $modelName], 'properties');
 			return is_array($modelProperties) ? $modelProperties : array();
 		}

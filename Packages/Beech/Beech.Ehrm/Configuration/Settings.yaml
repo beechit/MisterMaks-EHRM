@@ -58,9 +58,13 @@ Beech:
           - 'Beech.Ehrm/JavaScript/Component/UserInterface/BreadcrumbMenu.js'
           - 'Beech.Ehrm/JavaScript/Component/UserInterface/DatePicker.js'
           - 'Beech.Ehrm/JavaScript/Component/UserInterface/Country.js'
+          - 'Beech.Ehrm/JavaScript/Component/UserInterface/Form.js'
           - 'Beech.Ehrm/JavaScript/Service/Notification.js'
           - 'Beech.Task/JavaScript/Controller/TaskWidget.js'
           - 'Beech.Task/JavaScript/View/Task.js'
+          - 'Beech.CLA/JavaScript/Route/Contract.js'
+          - 'Beech.CLA/JavaScript/Controller/Contract.js'
+          - 'Beech.CLA/JavaScript/View/Contract.js'
 
 
     viewHelpers:
@@ -160,6 +164,11 @@ TYPO3:
             renderingOptions:
               templatePathPattern: 'resource://Beech.CLA/Private/Templates/FormElements/ContractArticles.html'
               partialPathPattern: 'resource://Beech.CLA/Private/Templates/FormElements/Partials/{@type}.html'
+          'Beech.CLA:ContractArticleContainer':
+            superTypes: ['TYPO3.Form:Section']
+            renderingOptions:
+              templatePathPattern: 'resource://Beech.CLA/Private/Templates/FormElements/ContractArticleContainer.html'
+              partialPathPattern: 'resource://Beech.CLA/Private/Templates/FormElements/Partials/{@type}.html'
           'Beech.CLA:ContractArticleFormElement':
             superTypes: ['TYPO3.Form:FormElement']
             implementationClassName: 'Beech\CLA\FormElements\ContractArticleFormElement'
@@ -169,6 +178,11 @@ TYPO3:
             formBuilder:
               label: 'ContractArticle Element'
               group: contract
+          'Beech.CLA:ContractPreviewPage':
+            superTypes: ['TYPO3.Form:Page']
+            renderingOptions:
+              templatePathPattern: 'resource://Beech.CLA/Private/Templates/FormElements/ContractPreviewPage.html'
+              partialPathPattern: 'resource://Beech.CLA/Private/Templates/FormElements/Partials/{@type}.html'
   FormBuilder:
     handlebarsTemplates:
       # include the handlebars template

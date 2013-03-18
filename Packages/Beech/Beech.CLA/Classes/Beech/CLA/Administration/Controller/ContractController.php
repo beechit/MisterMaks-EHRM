@@ -30,7 +30,7 @@ class ContractController extends \Beech\Ehrm\Controller\AbstractManagementContro
 	/**
 	 * Select contract template
 	 */
-	public function selectAction() {
+	public function newAction() {
 	}
 
 	/**
@@ -66,6 +66,9 @@ class ContractController extends \Beech\Ehrm\Controller\AbstractManagementContro
 	 * @return void
 	 */
 	public function showAction(Contract $contract) {
+		$this->view->assign('overrideConfiguration', array(
+			'contract' => $contract
+		));
 		$this->view->assign('contract', $contract);
 	}
 

@@ -203,6 +203,18 @@ class HeaderPartsViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHel
 						->reset()
 						->setCreateAbsoluteUri(TRUE)
 						->uriFor('list', array(), 'ContractArticle', 'Beech.CLA', 'Administration'),
+					'contractModuleNew' => $this->controllerContext->getUriBuilder()
+						->reset()
+						->setCreateAbsoluteUri(TRUE)
+						->uriFor('new', array(), 'Contract', 'Beech.CLA', 'Administration'),
+					'contractModuleStart' => $this->controllerContext->getUriBuilder()
+						->reset()
+						->setCreateAbsoluteUri(TRUE)
+						->uriFor('start', array(), 'Contract', 'Beech.CLA', 'Administration'),
+					'contractModuleShow' => $this->controllerContext->getUriBuilder()
+						->reset()
+						->setCreateAbsoluteUri(TRUE)
+						->uriFor('show', array(), 'Contract', 'Beech.CLA', 'Administration'),
 					'contractModule' => $this->controllerContext->getUriBuilder()
 						->reset()
 						->setCreateAbsoluteUri(TRUE)

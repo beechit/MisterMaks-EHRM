@@ -43,6 +43,16 @@
 					that.loadContent(result, target);
 				}
 			});
+		},
+
+		prepareUrl: function (object) {
+			var urlParams = "";
+			if (object != '') {
+				for (var key in object) {
+					urlParams += "&" +key + "=" + object[key];
+				}
+			}
+			return urlParams;
 		}
 	});
 

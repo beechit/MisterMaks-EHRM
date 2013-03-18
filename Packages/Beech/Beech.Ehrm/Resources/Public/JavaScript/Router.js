@@ -13,6 +13,9 @@
 
 				// Contracts
 			this.route('contractModule', { path: 'contracts' });
+			this.route('contractModule.new', { path: 'contract/new' });
+			this.route('contractModule.start', { path: 'contract/start/:contractTemplate/:employee/:jobDescription' });
+			this.route('contractModule.show', { path: 'contract/show/:contract'});
 
 				// Beech.Party
 			this.resource('BeechPartyPersonAdministrationModule', { path: 'persons' }, function() {
@@ -103,9 +106,6 @@
 	});
 	App.AdministrationContractArticleModuleView = Ember.View.extend(App.AjaxModuleViewMixin, {
 		url: MM.url.module.contractArticle
-	});
-	App.AdministrationContractModuleView = Ember.View.extend(App.AjaxModuleViewMixin, {
-		url: MM.url.module.contractModule
 	});
 
 }).call(this);

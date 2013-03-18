@@ -19,7 +19,13 @@ class ContractFormFactory extends \TYPO3\Form\Factory\AbstractFormFactory {
 	 * @var \Beech\Ehrm\Utility\Domain\ModelInterpreterUtility
 	 * @Flow\Inject
 	 */
-	protected $modelInterpreter;
+	protected $modelInterpreterUtility;
+
+	/**
+	 * @var \Beech\Ehrm\Form\Helper\FieldDefaultValueHelper
+	 * @Flow\Inject
+	 */
+	protected $fieldDefaultValueHelper;
 
 	/**
 	 * @var \TYPO3\Form\Core\Model\FormDefinition
@@ -45,7 +51,7 @@ class ContractFormFactory extends \TYPO3\Form\Factory\AbstractFormFactory {
 	 *
 	 * @var integer
 	 */
-	protected $fieldsPerPage = 3;
+	protected $fieldsPerPage = 30;
 
 	/**
 	 * @param array $factorySpecificConfiguration
@@ -67,6 +73,7 @@ class ContractFormFactory extends \TYPO3\Form\Factory\AbstractFormFactory {
 		$this->init($factorySpecificConfiguration, $presetName);
 		if (!isset($this->factorySpecificConfiguration['contractTemplate'])) {
 			$selectTemplateStep = $this->form->createPage('initialStep');
+
 			$selectTemplateStep->createElement('contractTemplate', 'Beech.CLA:ContractTemplateSelect');
 				// Employee field
 			$selectTemplateStep->createElement('employee', 'Beech.Party:EmployeeSelect');
@@ -80,20 +87,26 @@ class ContractFormFactory extends \TYPO3\Form\Factory\AbstractFormFactory {
 					'package' => 'Beech.CLA\\Administration'
 				)
 			);
-
 			$this->form->addFinisher($redirectFinisher);
 		} else {
-			while ($this->nextArticlesPage()) {
-				$this->pageIndex++;
+			$page = $this->form->createPage('page0');
+			$contractProperties = $this->modelInterpreterUtility->getModelProperties('Beech.CLA', 'Contract');
+			foreach ($contractProperties as $propertyName => $property) {
+				$contractField = $page->createElement($propertyName, 'TYPO3.Form:HiddenField');
+				$contractField->setLabel(isset($property['label']) ? $property['label'] : $propertyName );
+				if (isset($this->factorySpecificConfiguration[$propertyName])) {
+					$defaultValue = $this->factorySpecificConfiguration[$propertyName];
+				} else {
+					$defaultValue = $this->fieldDefaultValueHelper->getDefault($property);
+				}
+				$contractField->setDefaultValue($defaultValue);
 			}
-			$lastPage = $this->form->getPageByIndex(0);
-			$contractTemplateField = $lastPage->createElement('contractTemplate', 'TYPO3.Form:HiddenField');
-			$contractTemplateField->setDefaultValue($this->factorySpecificConfiguration['contractTemplate']);
-			$employeeField = $lastPage->createElement('employee', 'TYPO3.Form:HiddenField');
-			$employeeField->setDefaultValue($this->factorySpecificConfiguration['employee']);
-			$jobDescriptionField = $lastPage->createElement('jobDescription', 'TYPO3.Form:HiddenField');
-			$jobDescriptionField->setDefaultValue($this->factorySpecificConfiguration['jobDescription']);
+			while ($this->nextArticlesPage($page)) {
+				$this->pageIndex++;
+				$page = NULL;
+			}
 
+			$this->form->createPage('previewPage', 'Beech.CLA:ContractPreviewPage');
 			$databaseFinisher = new \Beech\Ehrm\Form\Finishers\DatabaseFinisher();
 			$databaseFinisher->setOptions(
 				array(
@@ -107,6 +120,7 @@ class ContractFormFactory extends \TYPO3\Form\Factory\AbstractFormFactory {
 			$redirectFinisher->setOptions(
 				array(
 					'action' => 'list',
+					'controller' => 'Contract',
 					'package' => 'Beech.CLA\\Administration'
 				)
 			);
@@ -121,9 +135,10 @@ class ContractFormFactory extends \TYPO3\Form\Factory\AbstractFormFactory {
 	 *
 	 * @return boolean
 	 */
-	protected function nextArticlesPage() {
-		$articlesPage = $this->form->createPage('articlesStep' . $this->pageIndex);
-
+	protected function nextArticlesPage($articlesPage = NULL) {
+		if ($articlesPage === NULL) {
+			$articlesPage = $this->form->createPage('page' . $this->pageIndex);
+		}
 		$articlesSection = $articlesPage->createElement('articles' . $this->pageIndex, 'Beech.CLA:ContractArticlesSection');
 		$articlesSection->setContractTemplate($this->factorySpecificConfiguration['contractTemplate']);
 		$contractArticles = $articlesSection->getContractArticles(($this->pageIndex - 1) * $this->fieldsPerPage, $this->fieldsPerPage);

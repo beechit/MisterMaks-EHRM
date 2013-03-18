@@ -8,6 +8,7 @@ namespace Beech\CLA\FormElements;
  */
 
 use TYPO3\Flow\Annotations as Flow;
+use TYPO3\Flow\Utility\TypeHandling;
 
 /**
  * Contract articles list section
@@ -21,7 +22,13 @@ class ContractArticlesSection extends \TYPO3\Form\FormElements\Section {
 	protected $contractArticleRepository;
 
 	/**
-	 * @var string
+	 * @var \Beech\CLA\Domain\Repository\ContractTemplateRepository
+	 * @Flow\Inject
+	 */
+	protected $contractTemplateRepository;
+
+	/**
+	 * @var \Beech\CLA\Domain\Model\ContractTemplate
 	 */
 	protected $contractTemplate = NULL;
 
@@ -32,20 +39,41 @@ class ContractArticlesSection extends \TYPO3\Form\FormElements\Section {
 	protected $contractArticles = array();
 
 	/**
+	 * @var \Beech\CLA\Domain\Model\Contract
+	 */
+	protected $contract = NULL;
+
+	/**
+	 * @var \Beech\Ehrm\Form\Helper\FieldDefaultValueHelper
+	 * @Flow\Inject
+	 */
+	protected $fieldDefaultValueHelper;
+
+	/**
 	 * Initialize form element
 	 *
 	 * @return void
 	 */
 	public function initializeFormElement() {
 		$this->setLabel('Parameters');
+
 		if ($this->contractTemplate !== NULL) {
+			if ($this->contract !== NULL) {
+				$filledContractValues = $this->contract->getArticles();
+			}
 			foreach ($this->contractArticles as $contractArticle) {
+				$contractArticleSection = $this->createElement('article-section-' . $contractArticle->getArticleId() . '-identifier', 'Beech.CLA:ContractArticleContainer');
+				$contractArticleSection->setLabel($contractArticle->getArticleHeader());
+				$contractArticleSection->setProperty('help', $contractArticle->getHelp());
 				$contractArticleValues = $contractArticle->getValues();
+
 				if (is_array($contractArticleValues)) {
+
 					foreach ($contractArticleValues as $value) {
-						$contractArticleValueIdentifier = 'article-' . $contractArticle->getArticleId() . '-values.' . $value['valueId'];
+
+						$contractArticleValueIdentifier = $this->fieldDefaultValueHelper->generateIdentifierForArticle('', $contractArticle->getArticleId(), $value['valueId']);
 						if (isset($value['type']) && preg_match('/(\w+)\.(\w+):(\w+)/', $value['type'])) {
-							$contractArticleValue = $this->createElement($contractArticleValueIdentifier, $value['type']);
+							$contractArticleValue = $contractArticleSection->createElement($contractArticleValueIdentifier, $value['type']);
 							if (isset($value['properties'])) {
 								foreach ($value['properties'] as $propertyName => $property) {
 									$contractArticleValue->setProperty($propertyName, $property);
@@ -56,20 +84,30 @@ class ContractArticlesSection extends \TYPO3\Form\FormElements\Section {
 									$contractArticleValue->setProperty('options', $value['options']);
 								}
 							}
-							if (isset($value['default'])) {
-								$contractArticleValue->setDefaultValue($value['default']);
-							}
+
 						} else {
-							$contractArticleValue = $this->createElement($contractArticleValueIdentifier, 'TYPO3.Form:SingleLineText');
+							$contractArticleValue = $contractArticleSection->createElement($contractArticleValueIdentifier, 'TYPO3.Form:SingleLineText');
 						}
-						if (isset($value['valueId'])) {
+						if (isset($value['label'])) {
+							$contractArticleValue->setLabel($value['label']);
+						} else if (isset($value['valueId'])) {
 							$contractArticleValue->setLabel($value['valueId']);
+						}
+						if (isset($value['validation'])) {
+							$validator = $contractArticleValue->createValidator($value['validation']['type'], $value['validation']['options']);
+							$contractArticleValue->addValidator($validator);
+						}
+
+						if (isset($value['default'])) {
+							$contractArticleValue->setDefaultValue($value['default']);
 						}
 					}
 				}
-				$contractArticleElement = $this->createElement('article-' . $contractArticle->getArticleId() . '-identifier', 'Beech.CLA:ContractArticleFormElement');
+				$contractArticleElement = $contractArticleSection->createElement('article-' . $contractArticle->getArticleId() . '-identifier', 'Beech.CLA:ContractArticleFormElement');
+				if (!empty($filledContractValues) && isset($filledContractValues[$contractArticle->getArticleId()])) {
+					$contractArticleElement->articleValues = $filledContractValues[$contractArticle->getArticleId()];
+				}
 				$contractArticleElement->setDefaultValue($contractArticle->getArticleId());
-				$contractArticleElement->setLabel($contractArticle->getArticleHeader());
 				$contractArticleElement->setProperty('contractArticle', $contractArticle);
 				$contractArticleElement->setProperty('preparedArticleText', $contractArticleElement->prepareArticleText($contractArticle));
 			}
@@ -77,9 +115,20 @@ class ContractArticlesSection extends \TYPO3\Form\FormElements\Section {
 	}
 
 	/**
-	 * @param string $contractTemplate
+	 * @param mixed $contractTemplate
+	 */
+	public function setContract($contract) {
+		$this->contract = $contract;
+		$this->setContractTemplate($contract->getContractTemplate());
+	}
+
+	/**
+	 * @param mixed $contractTemplate
 	 */
 	public function setContractTemplate($contractTemplate) {
+		if (is_string($contractTemplate)) {
+			$contractTemplate = $this->contractTemplateRepository->findByIdentifier($contractTemplate);
+		}
 		$this->contractTemplate = $contractTemplate;
 	}
 
@@ -91,13 +140,23 @@ class ContractArticlesSection extends \TYPO3\Form\FormElements\Section {
 	}
 
 	/**
+	 * @param integer $offset
+	 * @param integer $length
+	 */
+	public function initContractArticles($offset = 0, $length = NULL) {
+		$this->contractArticles = $this->contractArticleRepository->findByArticles($this->getArticleIds(), $offset, $length);
+	}
+
+	/**
 	 * Get paginated array of ContractArticles
 	 * @param integer $offset
 	 * @param integer $length
 	 * @return array
 	 */
-	public function getContractArticles($offset, $length) {
-		$this->contractArticles = $this->contractArticleRepository->findByArticles($this->getArticleIds(), $offset, $length);
+	public function getContractArticles($offset = 0, $length = NULL) {
+		if (empty($this->contractArticles)) {
+			$this->initContractArticles($offset, $length);
+		}
 		return $this->contractArticles;
 	}
 
@@ -105,8 +164,7 @@ class ContractArticlesSection extends \TYPO3\Form\FormElements\Section {
 	 * @return mixed
 	 */
 	public function getArticleIds() {
-		$parsedYaml = \Symfony\Component\Yaml\Yaml::parse($this->getContractTemplate());
-		return \TYPO3\Flow\Utility\Arrays::getValueByPath($parsedYaml, 'contractTemplate.articles');
+		return  $this->getContractTemplate()->getArticles();
 	}
 
 

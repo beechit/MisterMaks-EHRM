@@ -22,4 +22,4 @@ Beech\Ehrm\View\TemplateView:
 TYPO3\Flow\Mvc\Routing\UriBuilder:
   properties:
     linkProtectionEnabled:
-      value: FALSE
+      value: 'FALSE'

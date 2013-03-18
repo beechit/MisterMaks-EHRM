@@ -28,8 +28,6 @@
       label: 'Job context'
       validation:
         -
-          type: 'Label'
-        -
           type: 'NotEmpty'
         -
           type: 'Text'
@@ -93,14 +91,10 @@
       label: 'Main activities'
       validation:
         -
-          type: 'NotEmpty'
-        -
           type: 'Text'
     'resultCriteria':
       label: 'Result criteria'
       validation:
-        -
-          type: 'NotEmpty'
         -
           type: 'Text'
     'burdeningCircumstances':
@@ -127,21 +121,24 @@
         -
           type: 'StringLength'
           options:
-            maximum: 2
+            maximum: 20
     'creationDate':
       default: 'now'
       label: 'creation date'
       type: 'DateTime'
-      validation:
-        -
-          type: 'DateTimeRange'
-          options:
-            earliestDate: 20130101
-            latestDate: 20200101
+#      validation:
+#        -
+#          type: 'DateTimeRange'
+#          options:
+#            earliestDate: 20130101
+#            latestDate: 20200101
     'createdBy':
       default: 'currentUser'
       label: 'Created by'
-      type: 'Beech\Party\Domain\Model\Person'
+      type: 'string'
+      validation:
+        -
+          type: 'NotEmpty'
     'modification':
       items:
         'modificationDate':

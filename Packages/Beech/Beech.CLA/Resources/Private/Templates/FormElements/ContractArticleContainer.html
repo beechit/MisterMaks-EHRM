@@ -1,0 +1,16 @@
+{namespace form=TYPO3\Form\ViewHelpers}
+<div class="well">
+	<fieldset id="{section.uniqueIdentifier}">
+		<f:if condition="{section.label}">
+			<legend>
+				<div class="row-fluid">
+					<div class="span11"><f:translate id="{section.label}" source="Wizard" package="Beech.Ehrm">{section.label}</f:translate></div>
+					<div class="span1"><a href="#" data-toggle="tooltip" title="{section.properties.help}" class="help"><i class="icon-question-sign icon"></i></a></div>
+				</div>
+			</legend>
+		</f:if>
+		<f:for each="{section.elements}" as="element">
+			<form:renderRenderable renderable="{element}" />
+		</f:for>
+	</fieldset>
+</div>

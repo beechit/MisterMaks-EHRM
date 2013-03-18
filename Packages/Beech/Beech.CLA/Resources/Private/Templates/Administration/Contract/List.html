@@ -1,4 +1,4 @@
-<f:layout name="Ajax"/>
+<f:layout name="Ajax"/>{namespace ehrm=Beech\Ehrm\ViewHelpers}
 <f:section name="Body">
 	<h1>
 		<f:translate id="contract">contract</f:translate>
@@ -23,7 +23,8 @@
 							<td>{contract.status}</td>
 							<td>{contract.creationDate -> f:format.date(format: 'Y-m-d H:i')}</td>
 							<td>
-								<f:link.action action="show" controller="Contract" package="Beech.CLA" subpackage="Administration" arguments="{contract: contract}"><i class="icon-camera"></i></f:link.action>
+								<f:link.action action="show" controller="Contract" package="Beech.CLA" subpackage="Administration" arguments="{contract: contract}"></f:link.action>
+								<a href="#/administration/contract/show/{contract.id}"><i class="icon-camera"></i></a>
 							</td>
 						</tr>
 					</f:for>
@@ -35,7 +36,7 @@
 		</f:else>
 	</f:if>
 	<div class="form-actions">
-		<a class="btn btn-primary" href="/{f:uri.action(package: 'Beech.CLA', subpackage: 'Administration', controller: 'contract', action: 'select')}">
+		<a class="btn btn-primary" href="#/administration/contract/new">
 			<i class="icon-plus icon-white"></i> <f:translate id="action.create">Create</f:translate>
 		</a>
 		<a class="btn btn-primary" href="/#/persons">

@@ -58,6 +58,7 @@ class UserCommandController extends \TYPO3\Flow\Cli\CommandController {
 		}
 
 		$person = new \Beech\Party\Domain\Model\Person();
+
 		$person->setName(new \TYPO3\Party\Domain\Model\PersonName('', $firstName, '', $lastName));
 		$this->personRepository->add($person);
 
