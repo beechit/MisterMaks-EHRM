@@ -56,11 +56,11 @@ class YamlImportUtility {
 	/**
 	 * @var string
 	 */
-	protected $collectionPath = '';
+	protected $path = '';
 
 	/**
 	 * Number of collection elements
-	 * @var int
+	 * @var integer
 	 */
 	protected $numberOfImportedElements = 0;
 
@@ -141,30 +141,36 @@ class YamlImportUtility {
 
 	/**
 	 * Return number of elements of collection, imported as objects
-	 * @return int
+	 *
+	 * @return integer
 	 */
 	public function getNumberOfImportedElements() {
 		return $this->numberOfImportedElements;
 	}
 
 	/**
-	 * If yaml file contains collection of object, collectionPath
-	 * is used to localize a position
+	 * Set if yaml file contains collection of object,
+	 * If it is set up to TRUE, that means that there is collection of objects in yaml file
+	 * and each of element indicated by path contains object to import
 	 *
-	 * Example: Index contractArticles:articles
+	 * @param boolean $isCollection
+	 */
+	public function setCollection($isCollection) {
+		$this->isCollection = $isCollection;
+	}
+
+	/**
+	 * Set path inside yaml
+	 *
+	 * Example: path equals contractArticles.articles indicates
 	 * -> array('contractArticles'
 	 * 		=> array('articles'
 	 * 			=> array(...))
 	 *
-	 * @param $collectionIndex
+	 * @param string $path
 	 */
-	public function setCollectionPath($collectionIndex) {
-		if (!empty($collectionIndex)) {
-			$this->collectionIndex = $collectionIndex;
-			$this->isCollection = TRUE;
-		} else {
-			$this->isCollection = FALSE;
-		}
+	public function setPath($path) {
+		$this->path = $path;
 	}
 
 	/**
@@ -174,9 +180,11 @@ class YamlImportUtility {
 	 * @return void
 	 */
 	protected function store(array $parsedYaml) {
+		if (!empty($this->path)) {
+			$parsedYaml = \TYPO3\Flow\Utility\Arrays::getValueByPath($parsedYaml, $this->path);
+		}
 		if ($this->isCollection) {
-			$collection = \TYPO3\Flow\Utility\Arrays::getValueByPath($parsedYaml, $this->collectionIndex);
-			foreach ($collection as $collectionElement) {
+			foreach ($parsedYaml as $collectionElement) {
 				$this->numberOfImportedElements++;
 				$document = $this->prepareDocument($collectionElement);
 				$this->repository->add($document);
