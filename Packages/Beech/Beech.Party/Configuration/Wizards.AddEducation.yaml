@@ -84,8 +84,12 @@ wizardAddEducation:
                     placeholder: Name
                   defaultValue: ''
                 -
-                  type: 'TYPO3.Form:DatePicker'
+                  type: 'Beech.Ehrm:DatePicker'
                   identifier: 'educationStart'
+                  properties:
+                    dateFormat: 'd-m-Y'
+                    enableDatePicker: TRUE
+                    displayTimeSelector: FALSE
                   label: Start
                   validators:
                     -
@@ -105,8 +109,12 @@ wizardAddEducation:
                   label: 'Set EndDate'
                   renderables:
                     -
-                      type: 'TYPO3.Form:DatePicker'
+                      type: 'Beech.Ehrm:DatePicker'
                       identifier: 'educationEndDate'
+                      properties:
+                        dateFormat: 'd-m-Y'
+                        enableDatePicker: TRUE
+                        displayTimeSelector: FALSE
                       label: Until
                       validators:
                         -

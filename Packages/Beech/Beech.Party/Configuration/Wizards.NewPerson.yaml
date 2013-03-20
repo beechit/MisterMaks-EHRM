@@ -1,5 +1,4 @@
-#todo implement arrays and conditions
-wizardNewPerson:
+WizardNewPerson:
   type: 'TYPO3.Form:Form'
   identifier: wizardsNewPerson
   label: WizardsNewPerson
@@ -153,8 +152,12 @@ wizardNewPerson:
               label: 'Person info'
               renderables:
                 -
-                  type: 'TYPO3.Form:DatePicker'
+                  type: 'Beech.Ehrm:DatePicker'
                   identifier: dateofBirth
+                  properties:
+                    dateFormat: 'd-m-Y'
+                    enableDatePicker: TRUE
+                    displayTimeSelector: FALSE
                   label: 'Date of birth'
                   validators:
                     -
@@ -543,7 +546,7 @@ wizardNewPerson:
                       identifier: 'TYPO3.Flow:StringLength'
                       options:
                         minimum: ''
-                        maximum: ''
+                        maximum: '35'
                   properties:
                     placeholder: Hyves
                   defaultValue: ''

@@ -1,0 +1,68 @@
+WizardAddNewAbsenceArrangment:
+  type: 'TYPO3.Form:Form'
+  identifier: wizardAddNewAbsenceArrangment
+  label: WizardAddNewAbsenceArrangment
+  finishers:
+    -
+      identifier: 'Beech.Ehrm:ModalCloseConfirmation'
+      options:
+        message: wizard.completed
+        buttons: close
+    -
+      identifier: 'Beech.Ehrm:Database'
+      options:
+        package: Beech.Absence
+        model: AbsenceArrangement
+  renderingOptions:
+    submitButtonLabel: ''
+  renderables:
+    -
+      type: 'TYPO3.Form:Page'
+      identifier: page1
+      label: 'Page 1'
+      renderables:
+        -
+          type: 'TYPO3.Form:Section'
+          identifier: setArrangement
+          label: 'Set arrangement'
+          renderables:
+            -
+              type: 'TYPO3.Form:SingleLineText'
+              identifier: nameArrangement
+              label: 'Arrangement name'
+              validators:
+                -
+                  identifier: 'TYPO3.Flow:StringLength'
+                  options:
+                    minimum: ''
+                    maximum: '25'
+              properties:
+                placeholder: Name
+              defaultValue: ''
+            -
+              type: 'TYPO3.Form:Section'
+              identifier: addTypes
+              label: 'Add Types'
+              renderables:
+                -
+                  type: 'TYPO3.Form:SingleLineText'
+                  identifier: absenceType
+                  label: 'Absence type'
+                  validators:
+                    -
+                      identifier: 'TYPO3.Flow:StringLength'
+                      options:
+                        maximum: '35'
+                  properties:
+                    placeholder: type
+                  defaultValue: ''
+                -
+                  type: 'TYPO3.Form:MultiLineText'
+                  identifier: absenceTypeDescription
+                  label: 'Absence description'
+                  validators:
+                    -
+                      identifier: 'TYPO3.Flow:Text'
+                  properties:
+                    placeholder: Description
+                  defaultValue: ''

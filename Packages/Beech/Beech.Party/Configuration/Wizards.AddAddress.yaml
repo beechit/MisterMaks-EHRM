@@ -1,6 +1,6 @@
-wizardAddAddress:
+WizardaddAddress:
   type: 'TYPO3.Form:Form'
-  identifier: addAddress
+  identifier: wizardaddAddress
   label: 'Wizard add address'
   renderingOptions:
     submitButtonLabel: Add

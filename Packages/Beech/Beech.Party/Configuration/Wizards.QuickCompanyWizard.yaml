@@ -1,4 +1,4 @@
-quickCompanyWizard:
+wizardQuickCompany:
   type: 'TYPO3.Form:Form'
   identifier: 'quickCompanyWizard'
   label: 'Add a new Company'

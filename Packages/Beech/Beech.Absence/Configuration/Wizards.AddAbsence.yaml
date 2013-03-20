@@ -1,0 +1,103 @@
+wizardAddAbsenceManager:
+  type: 'TYPO3.Form:Form'
+  identifier: wizardAddAbsenceManager
+  label: wizardAddAbsenceManager
+  finishers:
+    -
+      identifier: 'Beech.Ehrm:ModalCloseConfirmation'
+      options:
+        message: wizard.completed
+        buttons: close
+    -
+      identifier: 'Beech.Ehrm:Database'
+      options:
+        package: Beech.Absence
+        model: Absence
+  renderingOptions:
+    submitButtonLabel: Add
+  renderables:
+    -
+      type: 'TYPO3.Form:Page'
+      identifier: page1
+      label: 'Add absense report manager'
+      renderables:
+        -
+          type: 'TYPO3.Form:Section'
+          identifier: addAbsence
+          label: 'Add absence'
+          renderables:
+            -
+              type: 'TYPO3.Form:SingleSelectDropdown'
+              identifier: absenceArrangement
+              label: Arrangement
+              validators:
+                -
+                  identifier: 'TYPO3.Flow:NotEmpty'
+              properties:
+                options:
+                  -
+                    _value: 'is connection to absence arrangement'
+                    _key: ''
+# todo: create form element for the connection to absence arrangement
+            -
+              type: 'TYPO3.Form:SingleSelectDropdown'
+              identifier: absenseArrangementabsenceType
+              label: 'Absense type'
+              validators:
+                -
+                  identifier: 'TYPO3.Flow:NotEmpty'
+              properties:
+                options:
+                  -
+                    _value: 'absence type in absence arrangement'
+                    _key: ''
+# todo: create form element for the connection to absence type
+            -
+              type: 'Beech.Ehrm:DatePicker'
+              identifier: startDate
+              label: 'Start date'
+              validators:
+                -
+                  identifier: 'TYPO3.Flow:NotEmpty'
+            -
+              type: 'TYPO3.Form:Section'
+              identifier: optionalEndDate
+              label: 'Optional end date'
+              renderables:
+                -
+                  type: 'Beech.Ehrm:DatePicker'
+                  identifier: endDate
+                  label: 'End date'
+            -
+              type: 'TYPO3.Form:Section'
+              identifier: optionalInfo
+              label: 'Optional info'
+              renderables:
+                -
+                  type: 'TYPO3.Form:SingleSelectDropdown'
+                  identifier: reportMethod
+                  label: ReportMethod
+                  properties:
+                    options:
+                      -
+                        _value: Phone
+                        _key: phone
+                      -
+                        _value: E-mail
+                        _key: email
+                      -
+                        _value: Letter
+                        _key: letter
+                      -
+                        _value: Other
+                        _key: other
+            -
+              type: 'TYPO3.Form:MultiLineText'
+              identifier: remarks
+              label: Remarks
+              validators:
+                -
+                  identifier: 'TYPO3.Flow:Text'
+              properties:
+                placeholder: Remarks
+              defaultValue: ''

@@ -1,8 +1,3 @@
-#############################################################
-# validated yaml for the add sick Report wizard
-# this can be used to register a sick report
-# Based on TYPO3.Form
-#############################################################
 wizardAddSickReport:
   type: 'TYPO3.Form:Form'
   identifier: 'wizardAddSickReport'
@@ -57,17 +52,18 @@ wizardAddSickReport:
           label: 'registration'
           renderables:
             -
-              type: 'TYPO3.Form:DatePicker'
+              type: 'Beech.Ehrm:DatePicker'
               identifier: 'firstSickDay'
               label: 'First Sick Day'
               properties:
                 dateFormat: 'd-m-Y'
                 enableDatePicker: TRUE
-                displayTimeSelector: TRUE
+                displayTimeSelector: FALSE
               validators:
                 -
-                  identifier: 'RegularExpression'
+                  type: 'DateTimeRange'
                   options:
-                    regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
+                    earliestDate: 20130101
+                    latestDate: 20200101
   renderingOptions:
     submitButtonLabel: 'Save'
