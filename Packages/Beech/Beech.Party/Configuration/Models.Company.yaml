@@ -17,7 +17,7 @@
           - 'department'
           - 'subsidiary'
           - 'partnerCompany'
-      default: 'department'
+      defaultValue: 'department'
       validation:
         -
           type: 'NotEmpty'
@@ -28,7 +28,6 @@
     'departments':
       label: 'Departments'
       type: 'Beech\Party\Domain\Model\Company'
-    '':
       label: 'Chamber of Commerce Number'
       validation:
         -
@@ -67,11 +66,9 @@
         - 'vof'
         - 'cv'
         - 'bv'
-        - 'nv'
-        - 'association'
         - 'foundation'
         - 'cooperative'
-      default: none
+      defaultValue: none
       validation:
         -
           type: 'NotEmpty'
@@ -103,24 +100,32 @@
         -
           type: 'Text'
     'creationDate':
-      default: 'now'
+      defaultValue: 'now'
       label: 'creation date'
       type: 'DateTime'
       validation:
         -
-          type: 'NotEmpty'
+          type: 'DateTimeRange'
+          options:
+            earliestDate: 20130101
+            latestDate: 20200101
     'createdBy':
-      default: 'currentUser'
+      defaultValue: 'currentUser'
       label: 'Created by'
       type: 'Beech\Party\Domain\Model\Person'
     'modification':
       items:
         'modificationDate':
-          default: 'now'
+          defaultValue: 'now'
           label: 'Modification date'
-          type: 'DateTime'
+          validation:
+            -
+              type: 'DateTimeRange'
+              options:
+                earliestDate: 20130101
+                latestDate: 20200101
         'modifiedBy':
-          default: 'currentUser'
+          defaultValue: 'currentUser'
           label: 'Modified by'
           type: 'Beech\Party\Domain\Model\Person'
       label: 'Modification log'

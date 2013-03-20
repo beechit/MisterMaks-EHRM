@@ -51,17 +51,19 @@
       type: 'DateTime'
       validation:
         -
-          type: 'RegularExpression'
+          type: 'DateTimeRange'
           options:
-            regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
+            earliestDate: 20130101
+            latestDate: 20200101
     'end':
       label: 'End'
       type: 'DateTime'
       validation:
         -
-          type: 'RegularExpression'
+          type: 'DateTimeRange'
           options:
-            regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
+            earliestDate: 20130101
+            latestDate: 20200101
     'attendees':
       items:
         'personId':
@@ -69,7 +71,10 @@
           type: 'Beech\Party\Domain\Model\Person'
         'optional':
           label: 'Optional'
-          type: 'boolean'
+          options:
+            values:
+              - TRUE
+              - FALSE
         'responseStatus':
           label: 'Response status'
           options:
@@ -120,10 +125,18 @@
       validation: ''
     'planNextMeeting':
       label: 'Plan next meeting'
-      type: 'boolean'
+      options:
+        values:
+          - TRUE
+          - FALSE
+      default: ''
     'notification':
       label: 'Notification'
-      type: 'boolean'
+      options:
+        values:
+          - TRUE
+          - FALSE
+      default: TRUE
     'notificationMethod':
       label: 'Notification method'
       options:
@@ -140,29 +153,28 @@
       type: 'DateTime'
       validation:
         -
-          type: 'RegularExpression'
+          type: 'DateTimeRange'
           options:
-            regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
+            earliestDate: 20130101
+            latestDate: 20200101
     'createdBy':
       default: 'currentUser'
       label: 'Created by'
       type: 'Beech\Party\Domain\Model\Person'
-      validation:
-        type: 'NotEmpty'
     'modification':
       items:
         'modificationDate':
           default: 'now'
           label: 'Modification date'
-          type: 'DateTime'
           validation:
-            type: 'RegularExpression'
-            options:
-              regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
+            -
+              type: 'DateTimeRange'
+              options:
+                earliestDate: 20130101
+                latestDate: 20200101
         'modifiedBy':
           default: 'currentUser'
           label: 'Modified by'
           type: 'Beech\Party\Domain\Model\Person'
-          validation: ''
       label: 'Modification log'
       type: 'array'

@@ -1,7 +1,3 @@
-#############################################################
-# validated yaml for the absence model New Improved Version
-# here we record the actual abence.
-#############################################################
 'Beech.Absence.Domain.Model.Absence':
   properties:
     'absenceArrangement':
@@ -14,53 +10,88 @@
       -
         type: 'NotEmpty'
       -
-        type: 'RegularExpression'
+        type: 'DateTimeRange'
         options:
-          regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
+          earliestDate: 20130101
+          latestDate: 20200101
     'endDate':
      label: 'Enddate'
      validation:
-      -
-        type: 'RegularExpression'
-        options:
-            regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
+       -
+         type: 'DateTimeRange'
+         options:
+           earliestDate: 20130101
+           latestDate: 20200101
     'remarks':
       label: 'Remarks'
       type: 'text'
       validation:
         -
          type: 'Text'
+    'reportMethod':
+      label: 'Report Method'
+      options:
+        values:
+          - phone
+          - email
+          - letter
+          - other
+# case Leaverequest
+    'needsGrant':
+      label: 'Needs grant'
+      options:
+        values:
+          - TRUE
+          - FALSE
+    'requestStatus':
+      label: 'Status'
+      options:
+        values:
+          - pending
+          - accepted
+          - declined
+  'notificationMethod':
+    label: 'Notify'
+    options:
+      values:
+        - 'noNotification'
+        - 'sendEmail'
+        - 'sendSms'
+        - 'print'
+        - 'taskNotification'
+#for later implementation
+# case Sickness
+#  Case labordispute
+#  Case accident
+#  case pregnancy
+#  case alert for arbodienst
     'creationDate':
-      default: 'now'
+      defaultValue: 'now'
       label: 'creation date'
       type: 'DateTime'
       validation:
         -
-          type: 'NotEmpty'
-        -
-          type: 'RegularExpression'
+          type: 'DateTimeRange'
           options:
-            regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
+            earliestDate: 20130101
+            latestDate: 20200101
     'createdBy':
-      default: 'currentUser'
+      defaultValue: 'currentUser'
       label: 'Created by'
       type: 'Beech\Party\Domain\Model\Person'
-      validation:
-        -
-          type: 'NotEmpty'
     'modification':
       items:
         'modificationDate':
-          default: 'now'
+          defaultValue: 'now'
           label: 'Modification date'
-          type: 'DateTime'
           validation:
             -
-              type: 'RegularExpression'
+              type: 'DateTimeRange'
               options:
-                regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
+                earliestDate: 20130101
+                latestDate: 20200101
         'modifiedBy':
-          default: 'currentUser'
+          defaultValue: 'currentUser'
           label: 'Modified by'
           type: 'Beech\Party\Domain\Model\Person'
       label: 'Modification log'

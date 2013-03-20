@@ -1,37 +1,81 @@
-#############################################################
-# validated yaml for the document model
-# this is the document model.
-# todo define this model.
-#############################################################
 'Beech.Document.Domain.Model.Document':
   properties:
-    creationDate:
+    'personId':
+      label: 'Person ID'
+      type: 'Beech\Party\Domain\Person'
+    'companyId':
+      label: 'Company ID'
+      type: 'Beech\Party\Domain\Company'
+    'departmentId':
+      label: 'Department ID'
+      type: 'Beech\party\Domain\Company'
+    'documentCategory':
+      label: 'Category'
+      type: 'Beech\Document\Domain\Model\DocumentCategory'
+      validation:
+        -
+          type: 'NotEmpty'
+# name and resource are in the php model
+    'documentType':
+      label: 'DocumentType'
+      type: 'Beech\Document\Domain\Model\DocumentCategory'
+      validation:
+        -
+          type: 'NotEmpty'
+    'Document':
+      label: 'Document'
+      validation:
+        -
+          type: 'NotEmpty'
+    'uploadDate':
+      label: 'UploadDate'
+      validation:
+        -
+          type: 'NotEmpty'
+        -
+          type: 'DateTimeRange'
+          options:
+            earliestDate: 19600101
+            latestDate: 20200101
+    'AccessGroup':
+      label: 'AccesGroup'
+      type: 'Beech\Person\Domain\Model\Group'
+      validation:
+       -
+         type: 'NotEmpty'
+    'documentDescription':
+      label: 'Description'
+      validation:
+        -
+          type: 'Text'
+    'creationDate':
+      defaultValue: 'now'
       label: 'creation date'
       type: 'DateTime'
       validation:
-        type: 'RegularExpression'
-        options:
-          regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
+        -
+          type: 'DateTimeRange'
+          options:
+            earliestDate: 20130101
+            latestDate: 20200101
     'createdBy':
-      default: 'currentUser'
+      defaultValue: 'currentUser'
       label: 'Created by'
       type: 'Beech\Party\Domain\Model\Person'
-      validation:
-        type: 'NotEmpty'
     'modification':
       items:
         'modificationDate':
-          default: 'now'
+          defaultValue: 'now'
           label: 'Modification date'
-          type: 'DateTime'
           validation:
-            type: 'RegularExpression'
-            options:
-              regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
+            -
+              type: 'DateTimeRange'
+              options:
+                earliestDate: 20130101
+                latestDate: 20200101
         'modifiedBy':
-          default: 'currentUser'
+          defaultValue: 'currentUser'
           label: 'Modified by'
           type: 'Beech\Party\Domain\Model\Person'
-          validation: ''
       label: 'Modification log'
       type: 'array'

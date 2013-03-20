@@ -1,15 +1,11 @@
-#############################################################
-# validated yaml for the minute model
-# this is the minute model.
-#############################################################
 'Beech.Minutes.Domain.Model.Minute':
   properties:
-    'subjectId':
-      label: 'Subject id'
-      type: Beech\Party\Domain\Model\Person
+    'personId':
+      label: 'Person ID'
+      type: 'Beech\Party\Domain\Model\Person'
     'departmentId':
       label: 'Department id'
-      type: Beech\Party\Domain\Model\Company
+      type: 'Beech\Party\Domain\Model\Company'
     'minuteType':
       label: 'minuteType'
       options:
@@ -38,32 +34,32 @@
         options:
           maximum: 20
     'creationDate':
-      default: 'now'
+      defaultValue: 'now'
       label: 'creation date'
       type: 'DateTime'
       validation:
         -
-          type: 'NotEmpty'
-        -
-          type: 'RegularExpression'
+          type: 'DateTimeRange'
           options:
-            regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
+            earliestDate: 20130101
+            latestDate: 20200101
     'createdBy':
-      default: 'currentUser'
+      defaultValue: 'currentUser'
       label: 'Created by'
       type: 'Beech\Party\Domain\Model\Person'
     'modification':
       items:
         'modificationDate':
-          default: 'now'
+          defaultValue: 'now'
           label: 'Modification date'
-          type: 'DateTime'
           validation:
-            type: 'RegularExpression'
-            options:
-              regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
+            -
+              type: 'DateTimeRange'
+              options:
+                earliestDate: 20130101
+                latestDate: 20200101
         'modifiedBy':
-          default: 'currentUser'
+          defaultValue: 'currentUser'
           label: 'Modified by'
           type: 'Beech\Party\Domain\Model\Person'
       label: 'Modification log'

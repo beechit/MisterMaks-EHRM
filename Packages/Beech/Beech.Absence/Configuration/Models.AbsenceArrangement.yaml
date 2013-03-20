@@ -1,7 +1,3 @@
-#############################################################
-# validated yaml for the absence arrangement model
-# Here we store absence arrangemets with there settings.
-#############################################################
 'Beech.AbsenceArrangment.Domain.Model.AbsenceArrangement':
   properties:
    'nameArrangement':
@@ -50,7 +46,7 @@
   'startCount':
     label: 'Start count of balance'
     type: 'DateTime'
-    default: '1-1'
+    defaultValue: '1-1'
     validation:
       -
         type: 'NotEmpty'
@@ -61,7 +57,7 @@
   'endCount':
     label: 'End count of balance'
     type: 'DateTime'
-    default: '31-12'
+    defaultValue: '31-12'
     validation:
       -
         type: 'NotEmpty'
@@ -71,19 +67,27 @@
           maximum: 5
   'autoGrandBalance':
     label: 'Grant balance after end Countdate'
-    type: 'boolean'
-    default: FALSE
+    options:
+      values:
+        - TRUE
+        - FALSE
+    defaultValue: FALSE
   'moveUnusedBalance':
     label: 'Move unused balance hours to new balance period'
-    type: 'boolean'
-    default: FALSE
+    options:
+      values:
+        - TRUE
+        - FALSE
+    defaultValue: FALSE
   'calculateBalanceonFTE':
     label: 'Calculate balance according to FTE factor'
-    type: 'boolean'
-    default: FALSE
+    options:
+      values:
+        - TRUE
+        - FALSE
+    defaultValue: FALSE
   'leaveBalanceSource':
     label: 'Set balance source'
-    type: 'String'
     options:
       values:
         - 'CLA'
@@ -107,45 +111,34 @@
        options:
          minimum: 1
          maximum: 300
-  'absenceUnit':
-    label: 'Absence unit'
-    options:
-      values:
-        - 'hour'
-        - 'half a day'
-        - 'day'
-  'creationDate':
-    default: 'now'
-    label: 'creation date'
-    type: 'DateTime'
-    validation:
-      -
-        type: 'NotEmpty'
-      -
-        type: 'RegularExpression'
-        options:
-          regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
-  'createdBy':
-    default: 'currentUser'
-    label: 'Created by'
-    type: 'Beech\Party\Domain\Model\Person'
-    validation:
-      -
-        type: 'NotEmpty'
-  'modification':
-    items:
-      'modificationDate':
-        default: 'now'
-        label: 'Modification date'
-        type: 'DateTime'
-        validation:
-          -
-            type: 'RegularExpression'
-            options:
-              regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
-      'modifiedBy':
-        default: 'currentUser'
-        label: 'Modified by'
-        type: 'Beech\Party\Domain\Model\Person'
-    label: 'Modification log'
-    type: 'array'
+    'creationDate':
+      defaultValue: 'now'
+      label: 'creation date'
+      type: 'DateTime'
+      validation:
+        -
+          type: 'DateTimeRange'
+          options:
+            earliestDate: 20130101
+            latestDate: 20200101
+    'createdBy':
+      defaultValue: 'currentUser'
+      label: 'Created by'
+      type: 'Beech\Party\Domain\Model\Person'
+    'modification':
+      items:
+        'modificationDate':
+          defaultValue: 'now'
+          label: 'Modification date'
+          validation:
+            -
+              type: 'DateTimeRange'
+              options:
+                earliestDate: 20130101
+                latestDate: 20200101
+        'modifiedBy':
+          defaultValue: 'currentUser'
+          label: 'Modified by'
+          type: 'Beech\Party\Domain\Model\Person'
+      label: 'Modification log'
+      type: 'array'

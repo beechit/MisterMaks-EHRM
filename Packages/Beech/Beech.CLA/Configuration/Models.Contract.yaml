@@ -1,18 +1,13 @@
-##################################################################
-# This is a yaml representation of the contractmodel GTB
-# Please notice this model is quite complex and has to have
-# all properties that are needed so probable modifications are underway.
-##################################################################
 'Beech.CLA.Domain.Model.Contract':
   properties:
-    'subjectId':
-      label: 'Subject id'
+    'personId':
+      label: 'Person ID'
       type: 'Beech\Party\Domain\Model\Person'
       validation:
         -
           type: 'NotEmpty'
     'departmentId':
-      label: 'Department id'
+      label: 'Department ID'
       type: 'Beech\Party\Domain\Model\Company'
     'contractVersion':
       label: 'contractversion'
@@ -133,9 +128,10 @@
       type: 'DateTime'
       validation:
         -
-          type: 'RegularExpression'
+          type: 'DateTimeRange'
           options:
-            regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
+            earliestDate: 20130101
+            latestDate: 20500101
     'contractStartDate':
       label: 'Startdate of the contract'
       type: 'DateTime'
@@ -143,9 +139,10 @@
         -
           type: 'NotEmpty'
         -
-          type: 'RegularExpression'
+          type: 'DateTimeRange'
           options:
-            RegularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
+            earliestDate: 20130101
+            latestDate: 20200101
     'streetName':
       label: 'Work address streetname'
       validation:
@@ -259,19 +256,10 @@
         'startTime':
           label: 'Starttime'
           type: 'DateTime'
-          validation:
-            -
-              type: 'RegularExpression'
-              options:
-                regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
         'endTime':
           label: 'EndTime'
           type: 'DateTime'
-          validation:
-            -
-              type: 'RegularExpression'
-              options:
-                regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
+# we need a custom validator here for time
     'hourWage':
       label: 'Hour Wage'
       type: 'decimal(3.2)'
@@ -342,8 +330,12 @@
 # todo: add time validator
     'sickReportTime':
       label: 'Sickreport time'
-      type: 'DateTime'
-      validation: []
+      validation:
+        -
+          type: 'DateTimeRange'
+          options:
+            earliestDate: 20130101
+            latestDate: 20200101
     'noticePeriod':
       label: 'Notice period'
       type: 'boolean'
@@ -381,18 +373,30 @@
     'creationDate':
       default: 'now'
       label: 'creation date'
-      type: 'DateTime'
       validation:
         -
-          type: 'NotEmpty'
-        -
-          type: 'RegularExpression'
+          type: 'DateTimeRange'
           options:
-            regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
+            earliestDate: 20130101
+            latestDate: 20200101
     'createdBy':
       default: 'currentUser'
       label: 'Created by'
       type: 'Beech\Party\Domain\Model\Person'
-      validation:
-        -
-          type: 'NotEmpty'
+    'modification':
+      items:
+        'modificationDate':
+          default: 'now'
+          label: 'Modification date'
+          validation:
+            -
+              type: 'DateTimeRange'
+              options:
+                earliestDate: 20130101
+                latestDate: 20200101
+        'modifiedBy':
+          default: 'currentUser'
+          label: 'Modified by'
+          type: 'Beech\Party\Domain\Model\Person'
+      label: 'Modification log'
+      type: 'array'

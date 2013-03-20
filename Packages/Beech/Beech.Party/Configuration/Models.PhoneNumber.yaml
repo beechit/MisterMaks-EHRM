@@ -14,12 +14,14 @@
           Type: 'StringLength'
           options:
             maximum: 10
-    'personid':
-      label: 'Person ID'
+    'person':
+      label: 'PersonId'
       type: 'Beech\Party\Domain\Model\Person'
-      validation: ''
-    'departmentId':
-      label: 'Department ID'
+    'department':
+      label: 'DepartmentId'
+      type: 'Beech\Party\Domain\Model\Company'
+    'company':
+      label: 'CompanyId'
       type: 'Beech\Party\Domain\Model\Company'
     'phone':
       items:
@@ -43,7 +45,7 @@
               type: 'StringLength'
               options:
                 maximum: 25
-          default: 'businessPhone'
+          defaultValue: 'businessPhone'
         'phoneNumber':
           label: 'Phone Number'
           validation:
@@ -70,7 +72,10 @@
                 maximum: 15
         'setPrimaryPhone':
           label: 'Primary phone'
-          type: 'boolean'
+          options:
+            values:
+              - TRUE
+              - FALSE
           validation: ''
       label: 'Phone numbers'
       type: 'array'
@@ -80,29 +85,33 @@
         -
           type: 'Text'
     'creationDate':
-      default: 'now'
+      defaultValue: 'now'
       label: 'creation date'
       type: 'DateTime'
       validation:
         -
-          type: 'NotEmpty'
+          type: 'DateTimeRange'
+          options:
+            earliestDate: 20130101
+            latestDate: 20200101
     'createdBy':
-      default: 'currentUser'
+      defaultValue: 'currentUser'
       label: 'Created by'
       type: 'Beech\Party\Domain\Model\Person'
-      validation:
-        -
-          type: 'NotEmpty'
     'modification':
       items:
         'modificationDate':
-          default: 'now'
+          defaultValue: 'now'
           label: 'Modification date'
-          type: 'DateTime'
+          validation:
+            -
+              type: 'DateTimeRange'
+              options:
+                earliestDate: 20130101
+                latestDate: 20200101
         'modifiedBy':
-          default: 'currentUser'
+          defaultValue: 'currentUser'
           label: 'Modified by'
-
           type: 'Beech\Party\Domain\Model\Person'
       label: 'Modification log'
       type: 'array'

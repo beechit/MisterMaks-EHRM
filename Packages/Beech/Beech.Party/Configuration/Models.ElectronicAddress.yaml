@@ -14,9 +14,12 @@
           Type: 'StringLength'
           options:
             maximum: 10
-    'personid':
+    'personId':
       label: 'Person ID'
       type: 'Beech\Party\Domain\Model\Person'
+    'companyId':
+      label: 'Company ID'
+      type: 'Beech\Party\Domain\Model\Company'
     'departmentId':
       label: 'Department ID'
       type: 'Beech\Party\Domain\Model\Company'
@@ -85,4 +88,35 @@
               options:
                 maximum: 20
       label: 'Electronic addresses'
+      type: 'array'
+    'creationDate':
+      defaultValue: 'now'
+      label: 'creation date'
+      type: 'DateTime'
+      validation:
+        -
+          type: 'DateTimeRange'
+          options:
+            earliestDate: 20130101
+            latestDate: 20200101
+    'createdBy':
+      defaultValue: 'currentUser'
+      label: 'Created by'
+      type: 'Beech\Party\Domain\Model\Person'
+    'modification':
+      items:
+        'modificationDate':
+          defaultValue: 'now'
+          label: 'Modification date'
+          validation:
+            -
+              type: 'DateTimeRange'
+              options:
+                earliestDate: 20130101
+                latestDate: 20200101
+        'modifiedBy':
+          defaultValue: 'currentUser'
+          label: 'Modified by'
+          type: 'Beech\Party\Domain\Model\Person'
+      label: 'Modification log'
       type: 'array'

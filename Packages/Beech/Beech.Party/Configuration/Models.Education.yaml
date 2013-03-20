@@ -1,6 +1,6 @@
 'Beech.Party.Domain.Model.Education':
   properties:
-    'personid':
+    'personId':
       label: 'Person ID'
       type: 'Beech\Party\Domain\Model\Person'
     'educations':
@@ -36,32 +36,41 @@
                 maximum: 35
         'educationStart':
           label: 'Education start date'
-          type: 'DateTime'
           validation:
             -
-              type: 'RegularExpression'
+              type: 'NotEmpty'
+            -
+              type: 'DateTimeRange'
               options:
-                regularExpression: '/^(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d$/'
+                earliestDate: 19500101
+                latestDate: 20200101
         'educationEndDate':
           label: 'Education end date'
-          type: 'DateTime'
           validation:
             -
-              type: 'RegularExpression'
+              type: 'DateTimeRange'
               options:
-                regularExpression: '/^(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d$/'
+                earliestDate: 19500101
+                latestDate: 20200101
         'diploma':
           label: 'Diploma'
-          type: 'boolean'
+          options:
+            values:
+              - TRUE
+              - FALSE
     'creationDate':
-      default: 'now'
+      defaultValue: 'now'
       label: 'creation date'
-      type: 'DateTime'
       validation:
         -
           type: 'NotEmpty'
+        -
+          type: 'DateTimeRange'
+          options:
+            earliestDate: 20130101
+            latestDate: 20200101
     'createdBy':
-      default: 'currentUser'
+      defaultValue: 'currentUser'
       label: 'Created by'
       type: 'Beech\Party\Domain\Model\Person'
       validation:
@@ -70,11 +79,16 @@
     'modification':
       items:
         'modificationDate':
-          default: 'now'
+          defaultValue: 'now'
           label: 'Modification date'
-          type: 'DateTime'
+          validation:
+            -
+              type: 'DateTimeRange'
+              options:
+                earliestDate: 20130101
+                latestDate: 20200101
         'modifiedBy':
-          default: 'currentUser'
+          defaultValue: 'currentUser'
           label: 'Modified by'
           type: 'Beech\Party\Domain\Model\Person'
       label: 'Modification log'

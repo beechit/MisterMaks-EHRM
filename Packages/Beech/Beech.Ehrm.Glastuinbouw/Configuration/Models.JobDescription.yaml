@@ -134,33 +134,28 @@
       type: 'DateTime'
       validation:
         -
-          type: 'NotEmpty'
-        -
-          type: 'RegularExpression'
+          type: 'DateTimeRange'
           options:
-            regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
+            earliestDate: 20130101
+            latestDate: 20200101
     'createdBy':
       default: 'currentUser'
       label: 'Created by'
       type: 'Beech\Party\Domain\Model\Person'
-      validation:
-        -
-          type: 'NotEmpty'
     'modification':
       items:
         'modificationDate':
           default: 'now'
           label: 'Modification date'
-          type: 'DateTime'
           validation:
             -
-              type: 'RegularExpression'
+              type: 'DateTimeRange'
               options:
-                regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
+                earliestDate: 20130101
+                latestDate: 20200101
         'modifiedBy':
           default: 'currentUser'
           label: 'Modified by'
           type: 'Beech\Party\Domain\Model\Person'
-          validation: ''
       label: 'Modification log'
       type: 'array'

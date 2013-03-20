@@ -1,7 +1,3 @@
-#############################################################
-# validated yaml for the leaveBalanceModel
-# here are the balances stored for employees.
-#############################################################
 'Beech.Absence.Domain.Model.LeaveBalance':
   properties:
     'subjectId':

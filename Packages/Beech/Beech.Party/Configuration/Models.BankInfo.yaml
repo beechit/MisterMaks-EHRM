@@ -1,11 +1,14 @@
 'Beech.Party.Domain.Model.BankInfo':
   properties:
-    'personid':
-      label: 'Person ID'
+    'personId':
+      label: 'Person Id'
       type: 'Beech\Party\Domain\Model\Person'
     'departmentId':
-      label: 'Department ID'
+      label: 'Department Id'
       type: 'Beech\Party\Domain\Model\Company'
+    'companyId':
+      label: 'Company Id'
+      type: 'Beech\Part\Domain\Model\Company'
     'bankInformation':
       items:
         'accountType':
@@ -36,7 +39,10 @@
 #todo check regular expression
         'primaryBankAccount':
           label: 'Primary Bankaccount'
-          type: 'boolean'
+          options:
+            values:
+              - TRUE
+              - FALSE
         'giro':
           label: 'Giro'
           validation:
@@ -82,7 +88,7 @@
               options:
                 regularExpression: '/[1-9]{8}|[1-9]{11}/'
         'countryOfBank':
-          default: 'NL'
+          defaultValue: 'NL'
           label: 'Country bank'
           validation:
             -
@@ -106,4 +112,35 @@
             -
               type: 'Text'
       label: 'Bank information'
+      type: 'array'
+    'creationDate':
+      defaultValue: 'now'
+      label: 'creation date'
+      type: 'DateTime'
+      validation:
+        -
+          type: 'DateTimeRange'
+          options:
+            earliestDate: 20130101
+            latestDate: 20200101
+    'createdBy':
+      defaultValue: 'currentUser'
+      label: 'Created by'
+      type: 'Beech\Party\Domain\Model\Person'
+    'modification':
+      items:
+        'modificationDate':
+          defaultValue: 'now'
+          label: 'Modification date'
+          validation:
+            -
+              type: 'DateTimeRange'
+              options:
+                earliestDate: 20130101
+                latestDate: 20200101
+        'modifiedBy':
+          defaultValue: 'currentUser'
+          label: 'Modified by'
+          type: 'Beech\Party\Domain\Model\Person'
+      label: 'Modification log'
       type: 'array'

@@ -14,11 +14,14 @@
           Type: 'StringLength'
           options:
             maximum: 10
-    'personid':
+    'personId':
       label: 'Person ID'
       type: 'Beech\Party\Domain\Model\Person'
     'departmentId':
       label: 'Department ID'
+      type: 'Beech\Party\Domain\Model\Company'
+    'companyID':
+      label: 'Company ID'
       type: 'Beech\Party\Domain\Model\Company'
     'addresses':
       items:
@@ -54,10 +57,16 @@
                 maximum: 35
         'primaryPostAddress':
           label: 'Primary postaddress'
-          type: 'boolean'
+          options:
+            values:
+              - TRUE
+              - FALSE
         'primaryLocation':
           label: 'Primary Location'
-          type: 'boolean'
+          options:
+            values:
+              - TRUE
+              - FALSE
         'postBoxNumber':
           label: 'Postbox number'
           validation:
@@ -204,7 +213,7 @@
               type: 'StringLength'
               options:
                 maximum: 30
-          default: 'NL'
+          defaultValue: 'NL'
         'addressDescription':
           label: 'Address description'
           type: text
@@ -213,3 +222,34 @@
               type: 'Text'
           label: 'Addresses'
           type: 'array'
+    'creationDate':
+      defaultValue: 'now'
+      label: 'creation date'
+      type: 'DateTime'
+      validation:
+        -
+          type: 'DateTimeRange'
+          options:
+            earliestDate: 20130101
+            latestDate: 20200101
+    'createdBy':
+      defaultValue: 'currentUser'
+      label: 'Created by'
+      type: 'Beech\Party\Domain\Model\Person'
+    'modification':
+      items:
+        'modificationDate':
+          defaultValue: 'now'
+          label: 'Modification date'
+          validation:
+            -
+              type: 'DateTimeRange'
+              options:
+                earliestDate: 20130101
+                latestDate: 20200101
+        'modifiedBy':
+          defaultValue: 'currentUser'
+          label: 'Modified by'
+          type: 'Beech\Party\Domain\Model\Person'
+      label: 'Modification log'
+      type: 'array'
