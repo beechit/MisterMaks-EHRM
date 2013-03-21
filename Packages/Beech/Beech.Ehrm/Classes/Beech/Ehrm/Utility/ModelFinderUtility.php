@@ -67,7 +67,7 @@ class ModelFinderUtility implements \Radmiraal\Emberjs\Utility\ModelFinderUtilit
 					continue;
 				}
 
-				// TODO: Add lookup for relations and add them to the modelImplementations
+					// TODO: Add lookup for relations and add them to the modelImplementations
 				$result[$propertyName] = array(
 					'type' => isset($propertyConfiguration['type']) ? $propertyConfiguration['type'] : 'string'
 				);
