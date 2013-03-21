@@ -1,5 +1,5 @@
 {
-    "hash": "7a8754c4ff5ffd5fc576b8c5299d323d",
+    "hash": "3d6816d45382e2fb1e479a687c14bb60",
     "packages": [
         {
             "name": "beech/essentials",
@@ -439,12 +439,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nrk/predis.git",
-                "reference": "v0.8.3"
+                "reference": "94c4e2ffeee8d3fe8455add844ad8806f5956b58"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nrk/predis/zipball/v0.8.3",
-                "reference": "v0.8.3",
+                "url": "https://api.github.com/repos/nrk/predis/zipball/94c4e2ffeee8d3fe8455add844ad8806f5956b58",
+                "reference": "94c4e2ffeee8d3fe8455add844ad8806f5956b58",
                 "shasum": ""
             },
             "require": {
@@ -478,7 +478,7 @@
                 "predis",
                 "redis"
             ],
-            "time": "2013-02-18 14:03:45"
+            "time": "2013-03-16 15:24:59"
         },
         {
             "name": "radmiraal/couchdb",
@@ -583,97 +583,18 @@
             "time": "2013-01-05 11:41:26"
         },
         {
-            "name": "sandstorm/phpprofiler",
-            "version": "dev-fixes-t3home13",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/kdambekalns/PhpProfiler.git",
-                "reference": "9e16528dac9652b71629c332994bcd6b10418e48"
-            },
-            "type": "typo3-flow-package",
-            "autoload": {
-                "psr-0": {
-                    "Sandstorm\\PhpProfiler": "Classes"
-                }
-            },
-            "license": [
-                "GPL-3.0+"
-            ],
-            "authors": [
-                {
-                    "name": "Sebastian Kurfürst",
-                    "homepage": "http://sandstorm-media.de",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Base package for collecting timers and xhprof traces. To be used with sandstorm/plumber for visualization.",
-            "support": {
-                "issues": "https://github.com/sandstorm/Plumber/issues",
-                "irc": "irc://irc.freenode.net/typo3-flow",
-                "source": "https://github.com/sandstorm/Plumber"
-            },
-            "time": "2013-02-19 21:21:38"
-        },
-        {
-            "name": "sandstorm/plumber",
-            "version": "dev-fixes-t3home13",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/kdambekalns/Plumber.git",
-                "reference": "6b53ae84828099fd381b52dbc47aed635a2aff1f"
-            },
-            "require": {
-                "sandstorm/phpprofiler": "1.0.*",
-                "typo3/flow": "*"
-            },
-            "type": "typo3-flow-package",
-            "autoload": {
-                "psr-0": {
-                    "Sandstorm\\Plumber": "Classes"
-                }
-            },
-            "license": [
-                "GPL-3.0+"
-            ],
-            "authors": [
-                {
-                    "name": "Sebastian Kurfürst",
-                    "homepage": "http://sandstorm-media.de",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Profiling Toolkit for TYPO3 Flow and Neos",
-            "keywords": [
-                "Flow",
-                "Neos",
-                "TYPO3 Flow",
-                "TYPO3 Neos",
-                "benchmark",
-                "debugging",
-                "profiler",
-                "profiling",
-                "xhprof"
-            ],
-            "support": {
-                "issues": "https://github.com/sandstorm/Plumber/issues",
-                "irc": "irc://irc.freenode.net/typo3-flow",
-                "source": "https://github.com/sandstorm/Plumber"
-            },
-            "time": "2013-02-19 21:20:20"
-        },
-        {
             "name": "symfony/console",
             "version": "dev-master",
             "target-dir": "Symfony/Component/Console",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Console.git",
-                "reference": "aa28bbe2c3c4210f9e9f44df16d71d63c53adf9b"
+                "reference": "4285104166a0741f85ba9aa176a12a9f2e4df7c3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Console/zipball/aa28bbe2c3c4210f9e9f44df16d71d63c53adf9b",
-                "reference": "aa28bbe2c3c4210f9e9f44df16d71d63c53adf9b",
+                "url": "https://api.github.com/repos/symfony/Console/zipball/4285104166a0741f85ba9aa176a12a9f2e4df7c3",
+                "reference": "4285104166a0741f85ba9aa176a12a9f2e4df7c3",
                 "shasum": ""
             },
             "require": {
@@ -706,7 +627,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "http://symfony.com",
-            "time": "2013-03-06 17:50:21"
+            "time": "2013-03-20 14:03:03"
         },
         {
             "name": "symfony/dom-crawler",
@@ -715,12 +636,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/DomCrawler.git",
-                "reference": "25d54f03464bb38a0b419b95f2cac56b391fb60b"
+                "reference": "09f1c2512873cea65045db48076cf363920fb819"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/DomCrawler/zipball/25d54f03464bb38a0b419b95f2cac56b391fb60b",
-                "reference": "25d54f03464bb38a0b419b95f2cac56b391fb60b",
+                "url": "https://api.github.com/repos/symfony/DomCrawler/zipball/09f1c2512873cea65045db48076cf363920fb819",
+                "reference": "09f1c2512873cea65045db48076cf363920fb819",
                 "shasum": ""
             },
             "require": {
@@ -759,7 +680,7 @@
             ],
             "description": "Symfony DomCrawler Component",
             "homepage": "http://symfony.com",
-            "time": "2013-03-11 17:18:44"
+            "time": "2013-03-20 13:55:39"
         },
         {
             "name": "symfony/yaml",
@@ -768,12 +689,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Yaml.git",
-                "reference": "783c78dcee45111f529582470b31fd682baa63c1"
+                "reference": "befe12a920f8229535854bf11c5917f4e23f0e90"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Yaml/zipball/783c78dcee45111f529582470b31fd682baa63c1",
-                "reference": "783c78dcee45111f529582470b31fd682baa63c1",
+                "url": "https://api.github.com/repos/symfony/Yaml/zipball/befe12a920f8229535854bf11c5917f4e23f0e90",
+                "reference": "befe12a920f8229535854bf11c5917f4e23f0e90",
                 "shasum": ""
             },
             "require": {
@@ -801,7 +722,27 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "http://symfony.com",
-            "time": "2013-03-06 17:01:03"
+            "time": "2013-03-20 16:54:45"
+        },
+        {
+            "name": "typo3/eel",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git://git.typo3.org/FLOW3/Packages/TYPO3.Eel.git",
+                "reference": "ac4b36c3856c5c88d9ab6150aec27cd17a618c2f"
+            },
+            "require": {
+                "typo3/flow": "*"
+            },
+            "type": "typo3-flow-package",
+            "autoload": {
+                "psr-0": {
+                    "TYPO3\\Eel": "Classes"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "time": "2013-01-09 15:35:56"
         },
         {
             "name": "typo3/flow",
@@ -809,7 +750,7 @@
             "source": {
                 "type": "git",
                 "url": "git://git.typo3.org/FLOW3/Packages/TYPO3.FLOW3.git",
-                "reference": "9117c213c56e6effdcfab498f1bc85363fb6c253"
+                "reference": "71d69772e1e8002e308479ca69c43dcf93d118ab"
             },
             "require": {
                 "doctrine/data-fixtures": "*",
@@ -838,7 +779,7 @@
             ],
             "description": "TYPO3 Flow Application Framework",
             "homepage": "http://flow.typo3.org",
-            "time": "2013-03-06 14:37:48"
+            "time": "2013-03-20 09:07:06"
         },
         {
             "name": "typo3/flow-composer-installers",
@@ -913,7 +854,7 @@
             "source": {
                 "type": "git",
                 "url": "git://git.typo3.org/FLOW3/Packages/TYPO3.Fluid.git",
-                "reference": "8266014f25749d3e09ce11d000f554066093bde3"
+                "reference": "60843dffbbcfe7a90f6aba739f41ac0c627c4044"
             },
             "require": {
                 "typo3/flow": "*",
@@ -930,7 +871,7 @@
                 "LGPL-3.0+"
             ],
             "description": "Next-Generation Templating Framework for TYPO3 Flow and TYPO3 Neos, also backported to TYPO3 CMS",
-            "time": "2013-03-07 10:19:32"
+            "time": "2013-03-15 08:36:08"
         },
         {
             "name": "typo3/form",
@@ -1514,16 +1455,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "3.7.14",
+            "version": "3.7.x-dev",
             "source": {
                 "type": "git",
-                "url": "git://github.com/sebastianbergmann/phpunit.git",
-                "reference": "3.7.14"
+                "url": "https://github.com/sebastianbergmann/phpunit.git",
+                "reference": "a09a260b6b1a3fa31f24b59c03da8d137f4fbfb2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/3.7.14",
-                "reference": "3.7.14",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/a09a260b6b1a3fa31f24b59c03da8d137f4fbfb2",
+                "reference": "a09a260b6b1a3fa31f24b59c03da8d137f4fbfb2",
                 "shasum": ""
             },
             "require": {
@@ -1537,7 +1478,10 @@
                 "phpunit/php-text-template": ">=1.1.1",
                 "phpunit/php-timer": ">=1.0.2,<1.1.0",
                 "phpunit/phpunit-mock-objects": ">=1.2.0,<1.3.0",
-                "symfony/yaml": ">=2.1.0,<2.2.0"
+                "symfony/yaml": ">=2.0.0,<2.3.0"
+            },
+            "require-dev": {
+                "pear-pear/pear": "1.9.4"
             },
             "suggest": {
                 "ext-json": "*",
@@ -1581,7 +1525,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2013-02-14 08:07:17"
+            "time": "2013-03-19 10:54:27"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -1633,6 +1577,85 @@
             "time": "2013-02-05 07:46:41"
         },
         {
+            "name": "sandstorm/phpprofiler",
+            "version": "dev-fixes-t3home13",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kdambekalns/PhpProfiler.git",
+                "reference": "9e16528dac9652b71629c332994bcd6b10418e48"
+            },
+            "type": "typo3-flow-package",
+            "autoload": {
+                "psr-0": {
+                    "Sandstorm\\PhpProfiler": "Classes"
+                }
+            },
+            "license": [
+                "GPL-3.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Kurfürst",
+                    "homepage": "http://sandstorm-media.de",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Base package for collecting timers and xhprof traces. To be used with sandstorm/plumber for visualization.",
+            "support": {
+                "issues": "https://github.com/sandstorm/Plumber/issues",
+                "irc": "irc://irc.freenode.net/typo3-flow",
+                "source": "https://github.com/sandstorm/Plumber"
+            },
+            "time": "2013-02-19 21:21:38"
+        },
+        {
+            "name": "sandstorm/plumber",
+            "version": "dev-fixes-t3home13",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kdambekalns/Plumber.git",
+                "reference": "6b53ae84828099fd381b52dbc47aed635a2aff1f"
+            },
+            "require": {
+                "sandstorm/phpprofiler": "1.0.*",
+                "typo3/flow": "*"
+            },
+            "type": "typo3-flow-package",
+            "autoload": {
+                "psr-0": {
+                    "Sandstorm\\Plumber": "Classes"
+                }
+            },
+            "license": [
+                "GPL-3.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Kurfürst",
+                    "homepage": "http://sandstorm-media.de",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Profiling Toolkit for TYPO3 Flow and Neos",
+            "keywords": [
+                "Flow",
+                "Neos",
+                "TYPO3 Flow",
+                "TYPO3 Neos",
+                "benchmark",
+                "debugging",
+                "profiler",
+                "profiling",
+                "xhprof"
+            ],
+            "support": {
+                "issues": "https://github.com/sandstorm/Plumber/issues",
+                "irc": "irc://irc.freenode.net/typo3-flow",
+                "source": "https://github.com/sandstorm/Plumber"
+            },
+            "time": "2013-02-19 21:20:20"
+        },
+        {
             "name": "sebastian/finder-facade",
             "version": "dev-master",
             "source": {
@@ -1677,12 +1700,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "b2559e383f1c80986f85f03e644577d14ba21955"
+                "reference": "a7e559728184560daa93462220d9bba1a66b97f0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/b2559e383f1c80986f85f03e644577d14ba21955",
-                "reference": "b2559e383f1c80986f85f03e644577d14ba21955",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/a7e559728184560daa93462220d9bba1a66b97f0",
+                "reference": "a7e559728184560daa93462220d9bba1a66b97f0",
                 "shasum": ""
             },
             "require": {
@@ -1736,7 +1759,7 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2013-03-04 04:07:33"
+            "time": "2013-03-21 00:49:50"
         },
         {
             "name": "symfony/finder",
@@ -2099,6 +2122,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "typo3/flow": 20,
+        "typo3/eel": 20,
         "beech/essentials": 20,
         "typo3/surf": 20,
         "typo3/ldap": 20,
@@ -2106,15 +2130,15 @@
         "radmiraal/couchdb": 20,
         "typo3/formbuilder": 20,
         "typo3/usermanagement": 20,
-        "sandstorm/plumber": 20,
-        "sandstorm/phpprofiler": 20,
         "typo3/buildessentials": 20,
         "typo3/kickstart": 20,
         "typo3-qa/typo3flow": 20,
         "beech/style": 20,
         "phpcd/phpcd": 20,
         "pdepend/pdepend": 20,
-        "beech/dev-tools": 20
+        "beech/dev-tools": 20,
+        "sandstorm/plumber": 20,
+        "sandstorm/phpprofiler": 20
     },
     "platform": {
         "php": ">=5.4.0"

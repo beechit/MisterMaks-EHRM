@@ -54,6 +54,7 @@
 	"require": {
 		"php": ">=5.4.0",
 		"typo3/flow": "dev-master",
+		"typo3/eel": "dev-master",
 		"beech/essentials": "dev-master",
 		"typo3/surf": "dev-master",
 		"typo3/ldap": "dev-master",
@@ -62,11 +63,10 @@
 		"doctrine/dbal": "2.3.1",
 		"doctrine/orm": "2.3.1",
 		"typo3/formbuilder": "dev-master",
+		"typo3/eel": "dev-master",
 		"typo3/queue-redis": "*",
 		"react/event-loop": "*",
-		"typo3/usermanagement": "dev-master",
-		"sandstorm/plumber": "dev-fixes-t3home13",
-		"sandstorm/phpprofiler": "dev-fixes-t3home13 as 1.0.3-dev"
+		"typo3/usermanagement": "dev-master"
 	},
 	"require-dev": {
 		"typo3/buildessentials": "dev-master",
@@ -78,7 +78,9 @@
 		"phpmd/phpmd": "1.4.*",
 		"phpcd/phpcd": "dev-master",
 		"pdepend/pdepend": "dev-master",
-		"beech/dev-tools": "dev-development"
+		"beech/dev-tools": "dev-development",
+		"sandstorm/plumber": "dev-fixes-t3home13",
+		"sandstorm/phpprofiler": "dev-fixes-t3home13 as 1.0.3-dev"
 	},
 	"minimum-stability": "dev",
 	"scripts": {

@@ -14,4 +14,12 @@ TYPO3:
                 '@action': 'intro'
     object:
       excludeClasses:
-       'symfony.finder' : ['.*']
+       'composer*': ['.*']
+       'pdepend*': ['.*']
+       'php*': ['.*']
+       'predis*': ['.*']
+       'react*': ['.*']
+       'sebastian*': ['.*']
+       'squiz*': ['.*']
+       'typo3*': ['.*']
+       'zeta*': ['.*']
