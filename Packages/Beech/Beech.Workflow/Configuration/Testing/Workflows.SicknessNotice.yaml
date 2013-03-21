@@ -1,0 +1,24 @@
+SicknessNotice:
+  action:
+    validators:
+      -
+        className: NotEmptyValidator
+        properties:
+          targetEntity: 'ENTITY:TARGET'
+          propertyName: 'naamProperty'
+      -
+        className: 'Beech\Workflow\Validators\DateValidator'
+        properties:
+          value: '2012-12-28'
+          matchCondition: 'CONSTANT:MATCH_CONDITION_GREATER_THEN'
+    preConditions:
+      -
+        className: 'Beech\Workflow\PreConditions\DatePreCondition'
+        properties:
+          value: '2012-04-15'
+          matchCondition: 'CONST:MATCH_CONDITION_EQUAL'
+    outputHandlers:
+      -
+        className: 'Beech\Workflow\OutputHandlers\EntityOutputHandler'
+        properties:
+          entity: 'ENTITY:TODO'

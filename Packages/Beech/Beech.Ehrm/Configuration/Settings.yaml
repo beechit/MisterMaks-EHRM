@@ -192,7 +192,7 @@ Radmiraal:
         model:
           ignoredModels:
             - 'Beech\Ehrm\Domain\Model\Preference'
-            - 'Beech\WorkFlow\Domain\Model\Action'
+            - 'Beech\Workflow\Domain\Model\Action'
             - 'Beech\Ehrm\Domain\Model\Notification'
             - 'Beech\Ehrm\Domain\Model\Log'
           typeMapping:

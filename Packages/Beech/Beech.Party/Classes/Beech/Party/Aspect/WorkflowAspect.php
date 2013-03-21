@@ -21,7 +21,7 @@ class WorkflowAspect {
 	protected $notificationRepository;
 
 	/**
-	 * @var \Beech\WorkFlow\Domain\Repository\ActionRepository
+	 * @var \Beech\Workflow\Domain\Repository\ActionRepository
 	 * @Flow\Inject
 	 */
 	protected $actionRepository;
@@ -57,15 +57,15 @@ class WorkflowAspect {
 			$task->setDescription('Set the chamber of commerce number for this company');
 			$this->taskRepository->add($task);
 
-			$action = new \Beech\WorkFlow\Domain\Model\Action();
+			$action = new \Beech\Workflow\Domain\Model\Action();
 			$action->setTarget($company);
 
-			$documentOutputHandler = new \Beech\WorkFlow\OutputHandlers\DocumentOutputHandler();
+			$documentOutputHandler = new \Beech\Workflow\OutputHandlers\DocumentOutputHandler();
 			$task = new \Beech\Ehrm\Domain\Model\Notification();
 			$task->setLabel('Chamber of commerce number for this company is set');
 			$action->addOutputHandler($documentOutputHandler);
 
-			$cocNotEmptyValidator = new \Beech\WorkFlow\Validators\Property\NotEmptyValidator();
+			$cocNotEmptyValidator = new \Beech\Workflow\Validators\Property\NotEmptyValidator();
 			$cocNotEmptyValidator->setPropertyName('chamberOfCommerceNumber');
 			$cocNotEmptyValidator->setTargetEntity($company);
 			$action->addValidator($cocNotEmptyValidator);
