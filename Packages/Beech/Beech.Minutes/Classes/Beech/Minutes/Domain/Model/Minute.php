@@ -105,7 +105,7 @@ class Minute extends \Beech\Ehrm\Domain\Model\Document {
 	 */
 	public function getPersonSubject() {
 		if (isset($this->personSubject)) {
-			return $this->persistenceManager->getObjectByIdentifier($this->personSubject, '\Beech\Party\Domain\Model\Person');
+			return $this->persistenceManager->getObjectByIdentifier($this->personSubject, '\Beech\Party\Domain\Model\Person', TRUE);
 		}
 		return NULL;
 	}
@@ -134,7 +134,7 @@ class Minute extends \Beech\Ehrm\Domain\Model\Document {
 	 */
 	public function getPersonInitiator() {
 		if (isset($this->personInitiator)) {
-			return $this->persistenceManager->getObjectByIdentifier($this->personInitiator, '\Beech\Party\Domain\Model\Person');
+			return $this->persistenceManager->getObjectByIdentifier($this->personInitiator, '\Beech\Party\Domain\Model\Person', TRUE);
 		}
 		return NULL;
 	}

@@ -42,7 +42,7 @@ class JobRating extends \Beech\Ehrm\Domain\Model\Document {
 	 */
 	public function getLaborAgreement() {
 		if (isset($this->laborAgreement)) {
-			return $this->persistenceManager->getObjectByIdentifier($this->laborAgreement, '\Beech\CLA\Domain\Model\LaborAgreement');
+			return $this->persistenceManager->getObjectByIdentifier($this->laborAgreement, '\Beech\CLA\Domain\Model\LaborAgreement', TRUE);
 		}
 		return NULL;
 	}

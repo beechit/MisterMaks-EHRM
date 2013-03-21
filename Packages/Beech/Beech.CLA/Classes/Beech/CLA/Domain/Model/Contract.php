@@ -13,7 +13,6 @@ use TYPO3\Flow\Annotations as Flow,
 /**
  * A Contract
  *
- * @Flow\Scope("prototype")
  * @ODM\Document(indexed="true")
  */
 class Contract extends \Beech\Ehrm\Domain\Model\Document {
@@ -133,7 +132,7 @@ class Contract extends \Beech\Ehrm\Domain\Model\Document {
 	 * @return \Beech\Party\Domain\Model\Person
 	 */
 	public function getEmployee() {
-		return $this->persistenceManager->getObjectByIdentifier($this->employee);
+		return $this->persistenceManager->getObjectByIdentifier($this->employee, '\Beech\Party\Domain\Model\Person', TRUE);
 	}
 
 	/**
@@ -147,7 +146,7 @@ class Contract extends \Beech\Ehrm\Domain\Model\Document {
 	 * @return \Beech\Party\Domain\Model\Company
 	 */
 	public function getEmployer() {
-		return $this->persistenceManager->getObjectByIdentifier($this->employer);
+		return $this->persistenceManager->getObjectByIdentifier($this->employer, '\Beech\Party\Domain\Model\Person', TRUE);
 	}
 
 	/**
