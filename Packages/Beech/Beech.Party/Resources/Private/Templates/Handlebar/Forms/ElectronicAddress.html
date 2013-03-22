@@ -1,0 +1,20 @@
+<h4>Electronic Address</h4>
+
+{{#each electronicAddress in electronicAddresses}}
+	<fieldset>
+		<a href="#" class="pull-right btn" {{action "removeElectronicAddress" electronicAddress}}><i class="icon-minus"></i> </a>
+
+		<div class="control-group">
+			<div class="controls controls-row">
+				{{view Ember.TextField valueBinding="electronicAddress.type" class="span2" placeholder="Type..."}}
+				{{view Ember.TextField valueBinding="electronicAddress.address" class="span6" placeholder="Address..."}}
+				<label class="control-label" for="primary">Primary</label>
+				{{view Ember.Checkbox checkedBinding="electronicAddress.primary" id="primary"}}
+			</div>
+		</div>
+	</fieldset>
+{{/each}}
+<div class="clearfix">
+	<a href="#" class="pull-right btn" {{action "addElectronicAddress"}}><i class="icon-plus"></i> </a>
+</div>
+<hr />

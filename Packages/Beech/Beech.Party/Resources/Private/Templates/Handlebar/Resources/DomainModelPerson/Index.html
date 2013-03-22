@@ -1,21 +1,23 @@
 <h1>Persons</h1>
 <table class="table table-striped">
 	{{#each person in controller}}
-		<tr>
-			<td>{{#linkTo "BeechPartyDomainModelPerson" person }}{{person.name.firstName}} {{person.name.lastName}}{{/linkTo}}</td>
-			<td>
-				<div class="pull-right">
-					<div class="btn-group">
-						{{#linkTo "BeechPartyDomainModelPerson" person class="btn"}}view{{/linkTo}}
-						<button class="btn dropdown-toggle" data-toggle="dropdown">
-							<span class="caret"></span>
-						</button>
-						<ul class="dropdown-menu pull-right">
-							<li>{{#linkTo "BeechPartyDomainModelPerson.edit" person}}edit{{/linkTo}}</li>
-						</ul>
-					</div>
+	<tr>
+		<td>{{#linkTo "BeechPartyDomainModelPerson" person }}{{person.name.firstName}}
+			{{person.name.lastName}}{{/linkTo}}
+		</td>
+		<td>
+			<div class="pull-right">
+				<div class="btn-group">
+					{{#linkTo "BeechPartyDomainModelPerson" person class="btn"}}view{{/linkTo}}
+					<button class="btn dropdown-toggle" data-toggle="dropdown">
+						<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu pull-right">
+						<li>{{#linkTo "BeechPartyDomainModelPerson.edit" person}}edit{{/linkTo}}</li>
+					</ul>
 				</div>
-			</td>
-		</tr>
+			</div>
+		</td>
+	</tr>
 	{{/each}}
 </table>

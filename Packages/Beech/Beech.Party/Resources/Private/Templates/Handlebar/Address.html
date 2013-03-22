@@ -1,0 +1,27 @@
+<h4>Address</h4>
+
+{{#each address in model.addresses}}
+	<div class="control-group">
+		<label class="control-label">Street</label>
+
+		<div class="controls controls-row">
+			{{address.streetName}}
+			{{address.houseNumber}}
+			{{address.houseNumberAddition}}
+		</div>
+	</div>
+	<div class="control-group">
+		<div class="controls controls-row">
+			{{address.postalNL}}
+			{{address.residence}}
+			<label class="control-label">Primary</label>
+			{{address.primary}}
+		</div>
+	</div>
+	<div class="control-group">
+		<div class="controls">
+			{{address.country}}
+		</div>
+	</div>
+{{/each}}
+<hr class="clearfix" />

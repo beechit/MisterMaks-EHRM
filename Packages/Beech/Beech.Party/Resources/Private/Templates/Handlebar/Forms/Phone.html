@@ -1,0 +1,19 @@
+<h4>Phone Number</h4>
+
+{{#each phoneNumber in model.phoneNumbers}}
+	<fieldset>
+		<a href="#" class="pull-right btn" {{action "removePhoneNumber" phoneNumber}}><i class="icon-minus"></i> </a>
+		<div class="control-group">
+			<div class="controls-row">
+				{{view Ember.TextField valueBinding="phoneNumber.type" class="span3" placeholder="Type..."}}
+				{{view Ember.TextField valueBinding="phoneNumber.number" id="phoneNumber" class="span5" placeholder="Phone Number..."}}
+				<label class="control-label" for="primary">Primary</label>
+				{{view Ember.Checkbox checkedBinding="phoneNumber.primary" id="primary"}}
+			</div>
+		</div>
+	</fieldset>
+{{/each}}
+<div class="clearfix">
+	<div class="pull-right"><a href="#" class="btn" {{action "addPhoneNumber"}}><i class="icon-plus"></i> </a></div>
+</div>
+<hr />

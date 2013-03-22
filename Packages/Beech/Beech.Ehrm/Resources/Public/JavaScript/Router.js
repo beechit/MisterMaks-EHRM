@@ -38,10 +38,9 @@
 			this.route('documentModule', { path: 'documents' });
 
 			// Beech.Party
-			this.resource('BeechPartyPersonModule', { path: 'persons' }, function() {
-				this.resource('BeechPartyDomainModelPerson', { path: '/:beech_party_domain_model_person_id' }, function() {
-					this.route('edit');
-				});
+			this.resource('BeechPartyPersonModule', { path: 'persons' });
+			this.resource('BeechPartyDomainModelPerson', { path: 'persons/:beech_party_domain_model_person_id' }, function() {
+				this.route('edit');
 			});
 
 			this.resource('BeechPartyCompanyModule', { path: 'companies' }, function() {

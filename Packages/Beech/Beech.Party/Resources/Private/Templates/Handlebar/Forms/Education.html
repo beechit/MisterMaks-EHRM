@@ -1,0 +1,30 @@
+<h4>Education</h4>
+
+{{#each education in model.educations}}
+	<fieldset>
+		<a href="#" class="pull-right btn" {{action "removeEducation" education}}><i class="icon-minus"></i> </a>
+
+		<div class="control-group">
+			<div class="controls">
+				{{view Ember.TextField valueBinding="education.nameInstitute" class="span6" placeholder="Name of institute..."}}
+			</div>
+		</div>
+		<div class="control-group">
+			<div class="controls">
+				{{view Ember.TextField valueBinding="education.direction" class="span6" placeholder="Education Direction..."}}
+			</div>
+		</div>
+		<div class="control-group">
+			<div class="controls controls-row">
+				{{view Ember.TextField valueBinding="education.startDate" class="span3" placeholder="Start Date..."}}
+				{{view Ember.TextField valueBinding="education.endDate" class="span3" placeholder="End Date..."}}
+				<label class="control-label" for="graduated">Graduated</label>
+				{{view Ember.Checkbox checkedBinding="education.graduated" id="graduated"}}
+			</div>
+		</div>
+	</fieldset>
+{{/each}}
+<div class="clearfix">
+	<div class="pull-right"><a href="#" class="btn" {{action "addEducation"}}><i class="icon-plus"></i> </a></div>
+</div>
+<hr />

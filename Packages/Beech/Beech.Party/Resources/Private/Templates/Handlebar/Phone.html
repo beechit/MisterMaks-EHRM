@@ -1,0 +1,12 @@
+<h4 class="pull-left">Phone Number</h4>
+
+{{#each phoneNumber in model.phoneNumbers}}
+	<div class="control-group">
+		<div class="controls-row">
+			{{phoneNumber.type}}
+			{{phoneNumber.number}}
+			<label class="control-label">Primary</label>
+			{{phoneNumber.primary}}
+		</div>
+	</div>
+{{/each}}

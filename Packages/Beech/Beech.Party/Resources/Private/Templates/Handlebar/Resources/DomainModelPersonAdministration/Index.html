@@ -3,7 +3,9 @@
 <table class="table table-striped">
 	{{#each person in controller}}
 	<tr>
-		<td>{{#linkTo "BeechPartyDomainModelPersonAdministration" person }}{{person.name.firstName}} {{person.name.lastName}}{{/linkTo}}</td>
+		<td>{{#linkTo "BeechPartyDomainModelPersonAdministration" person }}{{person.name.firstName}}
+			{{person.name.lastName}}{{/linkTo}}
+		</td>
 		<td>
 			<div class="pull-right">
 				<div class="btn-group">
