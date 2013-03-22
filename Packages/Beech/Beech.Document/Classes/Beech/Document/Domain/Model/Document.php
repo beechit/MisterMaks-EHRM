@@ -17,32 +17,13 @@ use TYPO3\Flow\Annotations as Flow,
  */
 class Document extends \Beech\Ehrm\Domain\Model\Document {
 
-	const TYPE_IDENTIFICATION = 'Identification';
-	const TYPE_RESUME = 'Resume';
-	const TYPE_REPORT = 'Report';
-	const TYPE_PERMIT = 'Permit';
-	const TYPE_DIPLOMA = 'Diploma';
-	const TYPE_CERTIFICATE = 'Certificate';
-	const TYPE_DRIVERS_LICENSE = 'Drivers licence';
-	const TYPE_OTHER = 'Other';
-
 	/**
 	 * The Document name
 	 *
 	 * @var string
-	 * @ODM\Field(type="string")
 	 * @ODM\Index
 	 */
 	protected $name;
-
-	/**
-	 * The Document type
-	 *
-	 * @var string
-	 * @ODM\Field(type="string")
-	 * @ODM\Index
-	 */
-	protected $documentType;
 
 	/**
 	 * @var array<\Doctrine\CouchDB\Attachment>
@@ -67,25 +48,6 @@ class Document extends \Beech\Ehrm\Domain\Model\Document {
 	 */
 	public function setName($name) {
 		$this->name = $name;
-	}
-
-	/**
-	 * Get the Document's type
-	 *
-	 * @return string The Document's type
-	 */
-	public function getDocumentType() {
-		return $this->documentType;
-	}
-
-	/**
-	 * Sets this Document's type
-	 *
-	 * @param string $documentType If possible, use one of the TYPE_ constants
-	 * @return void
-	 */
-	public function setDocumentType($documentType) {
-		$this->documentType = $documentType;
 	}
 
 	/**
