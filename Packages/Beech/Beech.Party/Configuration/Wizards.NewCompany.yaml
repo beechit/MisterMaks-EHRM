@@ -1,8 +1,8 @@
 # todo: delete  ?
 # a new wizard for this was added tot /beech/beech.party/resources/private/wizards
-newCompany:
+wizardNewCompany:
   type: 'TYPO3.Form:Form'
-  identifier: newCompany
+  identifier: wizardNewCompany
   label: Company
   renderingOptions:
     submitButtonLabel: Create
@@ -10,7 +10,7 @@ newCompany:
     -
       identifier: 'Beech.Ehrm:Database'
       options:
-        package: Beech.Party
+        package: 'Beech.Party'
         model: Company
     -
       identifier: 'Beech.Ehrm:ModalCloseConfirmation'
@@ -25,8 +25,8 @@ newCompany:
       renderables:
         -
           type: 'TYPO3.Form:SingleLineText'
-          identifier: name
-          label: label.companyName
+          identifier: 'name'
+          label: 'label.companyName'
           properties:
             placeholder: ''
           defaultValue: ''
@@ -35,8 +35,8 @@ newCompany:
               identifier: 'TYPO3.Flow:NotEmpty'
         -
           type: 'TYPO3.Form:SingleLineText'
-          identifier: chamberOfCommerceNumber
-          label: label.chamberOfCommerceNumber
+          identifier: 'chamberOfCommerceNumber'
+          label: 'label.chamberOfCommerceNumber'
           properties:
             placeholder: ''
           defaultValue: ''
@@ -50,8 +50,8 @@ newCompany:
       renderables:
         -
           type: 'TYPO3.Form:SingleLineText'
-          identifier: address.street
-          label: label.street
+          identifier: 'address.street'
+          label: 'label.street'
           properties:
             placeholder: ''
           defaultValue: ''
@@ -60,8 +60,8 @@ newCompany:
               identifier: 'TYPO3.Flow:Text'
         -
           type: 'TYPO3.Form:SingleLineText'
-          identifier: address.houseNumber
-          label: label.house
+          identifier: 'address.houseNumber'
+          label: 'label.house'
           properties:
             placeholder: ''
           defaultValue: ''
@@ -70,8 +70,8 @@ newCompany:
               identifier: 'TYPO3.Flow:Integer'
         -
           type: 'TYPO3.Form:SingleLineText'
-          identifier: address.residence
-          label: label.residence
+          identifier: 'address.residence'
+          label: 'label.residence'
           properties:
             placeholder: ''
           defaultValue: ''

@@ -1,4 +1,4 @@
-fullNewCompany:
+WizardFullNewCompany:
   type: 'TYPO3.Form:Form'
   identifier: 'fullNewCompanyWizard'
   label: 'Add a new Company'
@@ -178,7 +178,7 @@ fullNewCompany:
       renderables:
         -
           type: 'TYPO3.Form:Section'
-          identifier: 'person.addAdmin'
+          identifier: 'addAdmin'
           label: 'Add Admin'
           renderables:
             -
@@ -285,11 +285,11 @@ fullNewCompany:
               renderables:
                 -
                   type: 'TYPO3.Form:SingleLineText'
-                  identifier: person.otherName
+                  identifier: 'person.otherName'
                   label: Birthname
                   validators:
                     -
-                      type: 'TYPO3.Flow:RegularExpression'
+                      identifier: 'TYPO3.Flow:RegularExpression'
                       options:
                         regularExpression: '/[\\w\\-]{2,30}]/'
                   properties:
@@ -318,7 +318,7 @@ fullNewCompany:
                 -
                   type: 'TYPO3.Form:SingleSelectDropdown'
                   identifier: 'group.name'
-                  label: group.Group
+                  label: Group
                   validators:
                     -
                       identifier: 'TYPO3.Flow:NotEmpty'
@@ -402,7 +402,7 @@ fullNewCompany:
                 -
                   identifier: 'TYPO3.Flow:NotEmpty'
                 -
-                  type: 'TYPO3.Flow:RegularExpression'
+                  identifier: 'TYPO3.Flow:RegularExpression'
                   options:
                     regularExpression: '/[a-zA-Z\\-\\s\\’]{2,30}/'
                 -
@@ -422,7 +422,7 @@ fullNewCompany:
               label: 'Primary Location'
         -
           type: 'TYPO3.Form:Section'
-          identifier: casePostbox
+          identifier: 'casePostbox'
           label: Postbox
           renderables:
             -
@@ -431,7 +431,7 @@ fullNewCompany:
               label: 'Postbox number'
               validators:
                 -
-                  type: 'TYPO3.Flow:RegularExpression'
+                  identifier: 'TYPO3.Flow:RegularExpression'
                   options:
                     regularExpression: '/[0-9]{1,5}/'
               properties:
@@ -457,7 +457,7 @@ fullNewCompany:
               label: 'House number addition'
               validators:
                 -
-                  type: 'TYPO3.Flow:RegularExpression'
+                  identifier: 'TYPO3.Flow:RegularExpression'
                   options:
                     regularExpression: '/[a-zA-Z0-9\\-]{0,10}/'
               properties:
@@ -471,7 +471,7 @@ fullNewCompany:
                 -
                   identifier: 'TYPO3.Flow:NotEmpty'
                 -
-                  type: 'TYPO3.Flow:RegularExpression'
+                  identifier: 'TYPO3.Flow:RegularExpression'
                   options:
                     regularExpression: '/[0-9]{4}\s{0,1}[a-z]{2}/'
               properties:
@@ -483,7 +483,7 @@ fullNewCompany:
               label: 'Postal code'
               validators:
                 -
-                  type: 'TYPO3.Flow:RegularExpression'
+                  identifier: 'TYPO3.Flow:RegularExpression'
                   options:
                     regularExpression: '/[0-9]{4}\s{0,1}[a-z]{2}/'
               properties:
@@ -497,7 +497,7 @@ fullNewCompany:
                 -
                   identifier: 'TYPO3.Flow:NotEmpty'
                 -
-                  type: 'TYPO3.Flow:RegularExpression'
+                  identifier: 'TYPO3.Flow:RegularExpression'
                   options:
                     regularExpression: '/[a-zA-Z\\-\\s\\’]{2,30}/'
               properties:
@@ -563,14 +563,14 @@ fullNewCompany:
               label: email
               validators:
                 -
-                  identifier: 'TYPO3.Flow:Emailaddress'
+                  identifier: 'TYPO3.Flow:EmailAddress'
             -
               type: 'TYPO3.Form:SingleLineText'
               identifier: 'electronicAddress.skype'
               label: Skype
               validators:
                 -
-                  type: 'TYPO3.Flow:RegularExpression'
+                  identifier: 'TYPO3.Flow:RegularExpression'
                   options:
                     regularExpression: '/[a-zA-Z][a-zA-Z0-9]{5,31}]/'
                 -

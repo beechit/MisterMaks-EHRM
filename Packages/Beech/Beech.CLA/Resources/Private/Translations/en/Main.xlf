@@ -9,7 +9,7 @@
 				<source>Probation</source>
 			</trans-unit>
 			<trans-unit id="job.Title">
-				<source>Job Titlee</source>
+				<source>Job Title</source>
 			</trans-unit>
 			<trans-unit id="hours.a.week">
 				<source>Hours a week</source>
