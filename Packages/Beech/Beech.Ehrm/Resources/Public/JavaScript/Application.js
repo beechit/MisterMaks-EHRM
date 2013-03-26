@@ -25,6 +25,10 @@
 					$target = $($this.attr('data-target') || (href && href.replace(/\.*(?=#[^\s]+$)/, '')));
 				e.preventDefault();
 
+				if ($this.attr('modal-size') != '') {
+					$target.addClass('modal-' + $this.attr('modal-size'));
+				}
+
 				$target.find('.modal-body').html('<p><i class="icon-spin icon-spinner icon-4x muted"></i></p>');
 
 				App.ModuleHandler.loadUrl(href, '#modal-body-only .modal-body');
