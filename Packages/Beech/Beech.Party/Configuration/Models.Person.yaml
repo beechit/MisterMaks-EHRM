@@ -9,6 +9,9 @@
     'departmentId':
       label: 'Department ID'
       type: 'Beech\Party\Domain\Model\Company'
+    'personId':
+      label: 'Person ID'
+      type: 'Beech\Party\Domain\Model\Person'
     'name':
       label: 'name'
       type: 'TYPO3\Party\Domain\Model\PersonName'
@@ -36,6 +39,16 @@
             - 'child'
             - 'family'
             - 'other'
+    'middleOtherName':
+      validation:
+        -
+          type: 'RegularExpression'
+          options:
+            regularExpression: '/[\\w\\-]{2,10}]/'
+        -
+          type: 'StringLength'
+          options:
+            maximum: 10
     'otherName':
       label: Birthname
       validation:

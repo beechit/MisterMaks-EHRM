@@ -37,7 +37,7 @@
         -
           type: 'Integer'
     'creationDate':
-      default: 'now'
+      defaultValue: 'now'
       label: 'creation date'
       type: 'DateTime'
       validation:
@@ -47,13 +47,13 @@
             earliestDate: 20130101
             latestDate: 20200101
     'createdBy':
-      default: 'currentUser'
+      defaultValue: 'currentUser'
       label: 'Created by'
       type: 'Beech\Party\Domain\Model\Person'
     'modification':
       items:
         'modificationDate':
-          default: 'now'
+          defaultValue: 'now'
           label: 'Modification date'
           validation:
             -
@@ -62,7 +62,7 @@
                 earliestDate: 20130101
                 latestDate: 20200101
         'modifiedBy':
-          default: 'currentUser'
+          defaultValue: 'currentUser'
           label: 'Modified by'
           type: 'Beech\Party\Domain\Model\Person'
       label: 'Modification log'

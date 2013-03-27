@@ -6,17 +6,19 @@
       validation:
         -
           type: 'NotEmpty'
-    'employer':
-      label: 'Employer'
+    'departmentId':
+      label: 'Department ID'
       type: 'Beech\Party\Domain\Model\Company'
     'contractVersion':
       label: 'contractversion'
       validation:
         -
+          type: 'NotEmpty'
+        -
           type: 'StringLength'
           options:
             maximum: 10
-    'status':
+    'contractStatus':
       label: 'Status of the contract'
       validation:
         -
@@ -31,7 +33,7 @@
           - 'pending'
           - 'rejected'
           - 'draft'
-    'contractTemplate':
+    'contractType':
       label: 'Contract type'
       validation:
         -
@@ -39,23 +41,22 @@
         -
           type: 'StringLength'
           options:
-            maximum: 200
+            maximum: 20
     'firstContract':
       label: 'First contract'
       type: 'boolean'
-    'contractAcceptanceDate':
-      label: 'Date contract was accepted'
+    'contractGenerationDate':
+      label: 'The date the contract was created'
       type: 'DateTime'
       validation:
+        -
+          type: 'NotEmpty'
         -
           type: 'RegularExpression'
           options:
             regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
-    'contractSigned':
-      label: 'Contract signed'
-      type: 'boolean'
-    'contractSignDate':
-      label: 'Date of signing contract'
+    'contractAcceptanceDate':
+      label: 'Date contract was accepted'
       type: 'DateTime'
       validation:
         -
@@ -86,8 +87,9 @@
           - 'stoppedByEmployee'
           - 'Sickness'
           - 'Other'
-      default: 'Other'
       validation:
+        -
+          type: 'NotEmpty'
         -
           type: 'StringLength'
           options:
@@ -351,7 +353,7 @@
       type: 'array'
       validation: ''
     'creationDate':
-      default: 'now'
+      defaultValue: 'now'
       label: 'creation date'
       validation:
         -
@@ -360,13 +362,13 @@
             earliestDate: 20130101
             latestDate: 20200101
     'createdBy':
-      default: 'currentUser'
+      defaultValue: 'currentUser'
       label: 'Created by'
       type: 'Beech\Party\Domain\Model\Person'
     'modification':
       items:
         'modificationDate':
-          default: 'now'
+          defaultValue: 'now'
           label: 'Modification date'
           validation:
             -
@@ -375,7 +377,7 @@
                 earliestDate: 20130101
                 latestDate: 20200101
         'modifiedBy':
-          default: 'currentUser'
+          defaultValue: 'currentUser'
           label: 'Modified by'
           type: 'Beech\Party\Domain\Model\Person'
       label: 'Modification log'

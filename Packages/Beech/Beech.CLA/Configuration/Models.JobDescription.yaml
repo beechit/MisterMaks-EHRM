@@ -27,7 +27,7 @@
           type: 'NotEmpty'
         -
           type: 'Text'
-      default: 'Functiecontext'
+      defaultValue: 'Functiecontext'
     'jobGoal':
       label: 'Job goal'
       validation:
@@ -118,10 +118,10 @@
           options:
             maximum: 20
     'creationDate':
-      default: 'now'
+      defaultValue: 'now'
       label: 'creation date'
     'createdBy':
-      default: 'currentUser'
+      defaultValue: 'currentUser'
       label: 'Created by'
       type: 'string'
       validation:
@@ -130,7 +130,7 @@
     'modification':
       items:
         'modificationDate':
-          default: 'now'
+          defaultValue: 'now'
           label: 'Modification date'
           validation:
             -
@@ -139,7 +139,7 @@
                 earliestDate: 20130101
                 latestDate: 20200101
         'modifiedBy':
-          default: 'currentUser'
+          defaultValue: 'currentUser'
           label: 'Modified by'
           type: 'Beech\Party\Domain\Model\Person'
       label: 'Modification log'
