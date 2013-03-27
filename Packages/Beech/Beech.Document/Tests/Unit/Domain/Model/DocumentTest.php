@@ -20,9 +20,7 @@ class DocumentTest extends \TYPO3\Flow\Tests\UnitTestCase {
 	public function nameGetterAndSetterReturnTheSame() {
 		$document = new \Beech\Document\Domain\Model\Document;
 		$document->setName('Polski');
-		$document->setDocumentType($document::TYPE_RESUME);
 		$this->assertSame($document->getName(), 'Polski');
-		$this->assertSame($document->getDocumentType(), 'Resume');
 	}
 }
 ?>
