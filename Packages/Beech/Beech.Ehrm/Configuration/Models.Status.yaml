@@ -1,0 +1,87 @@
+'Beech.ehrm.Domain.Model.Status':
+  properties:
+    'statusName':
+      label: 'StatusName'
+      options:
+        values:
+          - 'draft'
+          - 'pending'
+          - 'inProgress'
+          - 'completed'
+          - 'rejected'
+          - 'ended'          - 'stopped'
+# draft a draft version
+# pending awaiting decision
+# in progress this is in progress awaiting a status change
+# completed is endstate but and can only be changed by ended or stopped.
+# rejected is an end state, stopped before completed.
+# ended means the status is closed by the system due to an expire date
+# stopped means that an active user has set this state on the entity
+      validation:
+        -
+          type: 'NotEmpty'
+    'stopReason':
+      options:
+        values:
+          - 'stoppedByEmployer'
+          - 'stoppedByEmployee'
+          - 'sickness'
+          - 'other'
+          - 'doesNotApply'
+      validation:
+        -
+          type: 'NotEmpty'
+      defaultValue: 'doesNotApply'
+    'remark':
+      label: 'remark'
+      validation:
+        -
+          type: 'Text'
+    'personid':
+      label: 'Person ID'
+      type: 'Beech\Party\Domain\Model\Person'
+    'departmentId':
+      label: 'Department ID'
+      type: 'Beech\Party\Domain\Model\Company'
+    'documentId':
+      label: 'Document ID'
+      type: 'Beech\Document\Domain\Document'
+    'meetingId':
+      label: 'Meeting ID'
+      type: 'Beech\Calendar\Domain\Model\Meeting'
+    'contractId':
+      label: 'Contract ID'
+      type: 'Beech\CLA\Domain\Model\Contract'
+# todo: implement taskstatus ??
+# todo: implement workflow status ??
+    'creationDate':
+      defaultValue: 'now'
+      label: 'creation date'
+      type: 'DateTime'
+      validation:
+        -
+          type: 'DateTimeRange'
+          options:
+            earliestDate: 20130101
+            latestDate: 20200101
+    'createdBy':
+      defaultValue: 'currentUser'
+      label: 'Created by'
+      type: 'Beech\Party\Domain\Model\Person'
+    'modification':
+      items:
+        'modificationDate':
+          defaultValue: 'now'
+          label: 'Modification date'
+          validation:
+            -
+              type: 'DateTimeRange'
+              options:
+                earliestDate: 20130101
+                latestDate: 20200101
+        'modifiedBy':
+          defaultValue: 'currentUser'
+          label: 'Modified by'
+          type: 'Beech\Party\Domain\Model\Person'
+      label: 'Modification log'
+      type: 'array'
