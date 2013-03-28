@@ -5,6 +5,11 @@
 	App.ApplicationView.reopen({
 		classNames: ['full']
 	});
+
+	App.AdministrationMenuView = Ember.View.extend({
+		templateName: 'administration_menu'
+	});
+
 	App.ApplicationController = Ember.Controller.extend();
 	App.ApplicationController = App.ApplicationController.reopen({
 		title: 'Mister Maks',

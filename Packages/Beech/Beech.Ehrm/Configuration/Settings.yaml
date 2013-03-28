@@ -60,6 +60,7 @@ Beech:
           - 'Beech.Ehrm/JavaScript/Component/UserInterface/Country.js'
           - 'Beech.Ehrm/JavaScript/Service/Notification.js'
           - 'Beech.Task/JavaScript/Controller/TaskWidget.js'
+          - 'Beech.Task/JavaScript/View/Task.js'
 
 
     viewHelpers:

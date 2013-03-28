@@ -511,12 +511,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/radmiraal/Radmiraal.Emberjs.git",
-                "reference": "48c73db0689e34feb6dadc8faf4b15a463c56650"
+                "reference": "0a2a1d9f1192c9590811bac92df7419154cf7e2c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/radmiraal/Radmiraal.Emberjs/zipball/48c73db0689e34feb6dadc8faf4b15a463c56650",
-                "reference": "48c73db0689e34feb6dadc8faf4b15a463c56650",
+                "url": "https://api.github.com/repos/radmiraal/Radmiraal.Emberjs/zipball/0a2a1d9f1192c9590811bac92df7419154cf7e2c",
+                "reference": "0a2a1d9f1192c9590811bac92df7419154cf7e2c",
                 "shasum": ""
             },
             "require": {
@@ -537,7 +537,7 @@
                     "name": "Rens Admiraal"
                 }
             ],
-            "time": "2013-03-12 19:37:28"
+            "time": "2013-03-22 13:07:22"
         },
         {
             "name": "react/event-loop",
@@ -589,16 +589,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Console.git",
-                "reference": "4285104166a0741f85ba9aa176a12a9f2e4df7c3"
+                "reference": "adbc260c08000aaa75c5f0db8347a29c21d16692"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Console/zipball/4285104166a0741f85ba9aa176a12a9f2e4df7c3",
-                "reference": "4285104166a0741f85ba9aa176a12a9f2e4df7c3",
+                "url": "https://api.github.com/repos/symfony/Console/zipball/adbc260c08000aaa75c5f0db8347a29c21d16692",
+                "reference": "adbc260c08000aaa75c5f0db8347a29c21d16692",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "symfony/event-dispatcher": ">=2.1,<3.0"
             },
             "type": "library",
             "extra": {
@@ -627,7 +630,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "http://symfony.com",
-            "time": "2013-03-20 14:03:03"
+            "time": "2013-03-25 20:03:44"
         },
         {
             "name": "symfony/dom-crawler",
@@ -689,12 +692,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Yaml.git",
-                "reference": "befe12a920f8229535854bf11c5917f4e23f0e90"
+                "reference": "v2.1.9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Yaml/zipball/befe12a920f8229535854bf11c5917f4e23f0e90",
-                "reference": "befe12a920f8229535854bf11c5917f4e23f0e90",
+                "url": "https://api.github.com/repos/symfony/Yaml/zipball/v2.1.9",
+                "reference": "v2.1.9",
                 "shasum": ""
             },
             "require": {
@@ -722,7 +725,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "http://symfony.com",
-            "time": "2013-03-20 16:54:45"
+            "time": "2013-03-23 01:54:33"
         },
         {
             "name": "typo3/eel",
@@ -750,7 +753,7 @@
             "source": {
                 "type": "git",
                 "url": "git://git.typo3.org/FLOW3/Packages/TYPO3.FLOW3.git",
-                "reference": "71d69772e1e8002e308479ca69c43dcf93d118ab"
+                "reference": "8d8da5be1bd42d1c8fb73f93b2b35b584ca88a21"
             },
             "require": {
                 "doctrine/data-fixtures": "*",
@@ -779,7 +782,7 @@
             ],
             "description": "TYPO3 Flow Application Framework",
             "homepage": "http://flow.typo3.org",
-            "time": "2013-03-20 09:07:06"
+            "time": "2013-03-27 12:07:27"
         },
         {
             "name": "typo3/flow-composer-installers",
@@ -854,7 +857,7 @@
             "source": {
                 "type": "git",
                 "url": "git://git.typo3.org/FLOW3/Packages/TYPO3.Fluid.git",
-                "reference": "60843dffbbcfe7a90f6aba739f41ac0c627c4044"
+                "reference": "97f26dbf38e8527729929025e7923f85608f818f"
             },
             "require": {
                 "typo3/flow": "*",
@@ -871,7 +874,7 @@
                 "LGPL-3.0+"
             ],
             "description": "Next-Generation Templating Framework for TYPO3 Flow and TYPO3 Neos, also backported to TYPO3 CMS",
-            "time": "2013-03-15 08:36:08"
+            "time": "2013-03-26 16:25:50"
         },
         {
             "name": "typo3/form",
@@ -942,7 +945,7 @@
             "source": {
                 "type": "git",
                 "url": "git://git.typo3.org/FLOW3/Packages/TYPO3.Party.git",
-                "reference": "b145b95d8671afe8e2f976899f6f413384df96f7"
+                "reference": "4ac813ef2f011280ccd67854df05a6baa3e457b0"
             },
             "require": {
                 "typo3/flow": "*",
@@ -959,7 +962,7 @@
                 "LGPL-3.0+"
             ],
             "description": "A PHP implementation of the OASIS Customer Information Quality (CIQ) XML Standard.",
-            "time": "2013-02-26 18:03:13"
+            "time": "2013-03-26 13:35:39"
         },
         {
             "name": "typo3/queue",
@@ -1459,12 +1462,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "a09a260b6b1a3fa31f24b59c03da8d137f4fbfb2"
+                "reference": "3.7.19"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/a09a260b6b1a3fa31f24b59c03da8d137f4fbfb2",
-                "reference": "a09a260b6b1a3fa31f24b59c03da8d137f4fbfb2",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/3.7.19",
+                "reference": "3.7.19",
                 "shasum": ""
             },
             "require": {
@@ -1525,7 +1528,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2013-03-19 10:54:27"
+            "time": "2013-03-25 11:45:06"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -1700,12 +1703,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "a7e559728184560daa93462220d9bba1a66b97f0"
+                "reference": "638d340025818ae888243a86156a7047e191f78b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/a7e559728184560daa93462220d9bba1a66b97f0",
-                "reference": "a7e559728184560daa93462220d9bba1a66b97f0",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/638d340025818ae888243a86156a7047e191f78b",
+                "reference": "638d340025818ae888243a86156a7047e191f78b",
                 "shasum": ""
             },
             "require": {
@@ -1759,7 +1762,7 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2013-03-21 00:49:50"
+            "time": "2013-03-27 03:38:30"
         },
         {
             "name": "symfony/finder",
@@ -1768,12 +1771,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Finder.git",
-                "reference": "0b33214ce24e33b6d11fd7de8784ff34ba16711f"
+                "reference": "a066c83f57c82ce49b5abc6343a43c132f771c24"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Finder/zipball/0b33214ce24e33b6d11fd7de8784ff34ba16711f",
-                "reference": "0b33214ce24e33b6d11fd7de8784ff34ba16711f",
+                "url": "https://api.github.com/repos/symfony/Finder/zipball/a066c83f57c82ce49b5abc6343a43c132f771c24",
+                "reference": "a066c83f57c82ce49b5abc6343a43c132f771c24",
                 "shasum": ""
             },
             "require": {
@@ -1806,7 +1809,7 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "http://symfony.com",
-            "time": "2013-03-01 06:43:27"
+            "time": "2013-03-23 07:42:25"
         },
         {
             "name": "theseer/fdomdocument",

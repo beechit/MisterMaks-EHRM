@@ -1,6 +1,15 @@
 (function() {
 	'use strict';
 
+
+	App.AjaxModuleViewMixin = Ember.Mixin.create({
+		templateName: 'jsonp_module',
+		url: '',
+		didInsertElement: function() {
+			App.ModuleHandler.loadUrl(this.get('url'));
+		}
+	});
+
 	App.AjaxModuleControllerMixin = Ember.Mixin.create({
 
 		url: '',

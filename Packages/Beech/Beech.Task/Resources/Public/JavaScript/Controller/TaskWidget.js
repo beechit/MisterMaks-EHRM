@@ -1,10 +1,10 @@
 (function() {
 	'use strict';
 
-	App.TaskWidgetController = Ember.ArrayController.extend({
+	App.BeechTaskDomainModelTaskController = Ember.ArrayController.extend({
 		content: [],
+
 		init: function() {
-			this.set('content', App.BeechTaskDomainModelPriority.find());
 		}
 	});
 

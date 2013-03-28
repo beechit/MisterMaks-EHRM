@@ -2,95 +2,114 @@
 	'use strict';
 
 	App.Router.map(function() {
-		this.route('userSettings', { path: '/user/settings' });
-		this.route('documentModule', { path: '/documents' });
 
 			// Administration
-		this.route('administration');
-		this.route('applicationSettings', { path: '/administration/settings' });
-		this.route('jobDescriptionModule', { path: '/administration/jobdescriptions' });
-		this.route('contractArticleModule', { path: '/administration/contractarticles' });
-		this.route('userManagementModule', { path: '/administration/usermanagement' });
-		this.route('wizardManagementModule', { path: '/administration/wizards' });
+		this.resource('administration', function() {
+			this.route('applicationSettings', { path: 'settings' });
+			this.route('jobDescriptionModule', { path: 'jobdescriptions' });
+			this.route('contractArticleModule', { path: 'contractarticles' });
+			this.route('userManagementModule', { path: 'usermanagement' });
+			this.route('wizardManagementModule', { path: 'wizards' });
 
-			// Contracts
-		this.route('contractModule', { path: '/administration/contracts' });
-		this.route('contractModule.new', { path: '/administration/contracts/new' });
+				// Contracts
+			this.route('contractModule', { path: 'contracts' });
+			this.route('contractModule.new', { path: 'contracts/new' });
+
+				// Beech.Party
+			this.resource('BeechPartyPersonAdministrationModule', { path: 'persons' }, function() {
+				this.route('new');
+				this.resource('BeechPartyDomainModelPersonAdministration', { path: '/:beech_party_domain_model_person_id' }, function() {
+					this.route('edit');
+				});
+			});
+			this.resource('BeechPartyCompanyAdministrationModule', { path: 'companies' }, function() {
+				this.route('new');
+				this.resource('BeechPartyDomainModelCompanyAdministration', { path: '/:beech_party_domain_model_company_id' }, function() {
+					this.route('edit');
+				});
+			});
+		});
+
+		this.resource('index', { path: '/' }, function() {
+			this.route('dashboard', { path: 'dashboard' });
+			this.route('userSettings', { path: 'user/settings' });
+			this.route('documentModule', { path: 'documents' });
 
 			// Beech.Party
-		this.resource('BeechPartyPersonModule', { path: '/persons' }, function() {
-			this.resource('BeechPartyDomainModelPerson', { path: '/:beech_party_domain_model_person_id' }, function() {
-				this.route('edit');
+			this.resource('BeechPartyPersonModule', { path: 'persons' }, function() {
+				this.resource('BeechPartyDomainModelPerson', { path: '/:beech_party_domain_model_person_id' }, function() {
+					this.route('edit');
+				});
 			});
-		});
-		this.resource('BeechPartyPersonAdministrationModule', { path: '/administration/persons' }, function() {
-			this.route('new');
-			this.resource('BeechPartyDomainModelPersonAdministration', { path: '/:beech_party_domain_model_person_id' }, function() {
-				this.route('edit');
-			});
-		});
 
-		this.resource('BeechPartyCompanyModule', { path: '/companies' }, function() {
-			this.resource('BeechPartyDomainModelCompany', { path: '/:beech_party_domain_model_company_id' }, function() {
-				this.route('edit');
+			this.resource('BeechPartyCompanyModule', { path: 'companies' }, function() {
+				this.resource('BeechPartyDomainModelCompany', { path: '/:beech_party_domain_model_company_id' }, function() {
+					this.route('edit');
+				});
 			});
-		});
-		this.resource('BeechPartyCompanyAdministrationModule', { path: '/administration/companies' }, function() {
-			this.route('new');
-			this.resource('BeechPartyDomainModelCompanyAdministration', { path: '/:beech_party_domain_model_company_id' }, function() {
-				this.route('edit');
-			});
-		});
 
-			// Beech.Task
-		this.resource('BeechTaskTaskModule', { path: '/tasks' }, function() {
-			this.route('new');
-			this.resource('BeechTaskDomainModelTask', { path: '/:beech_task_domain_model_task_id' }, function() {
-				this.route('edit');
+				// Beech.Task
+			this.resource('BeechTaskTaskModule', { path: 'tasks' }, function() {
+				this.route('new');
+				this.resource('BeechTaskDomainModelTask', { path: '/:beech_task_domain_model_task_id' }, function() {
+					this.route('edit');
+				});
 			});
 		});
 	});
 
-	App.BaseRouteMixin = Ember.Mixin.create({
-		renderTemplate: function() {
-			this.render('beech_task_user_interface_task_widget', { outlet: 'sidebar', controller: 'taskWidget' });
-		}
-	});
-
-	App.ModuleRoute = Ember.Route.extend(App.BaseRouteMixin, {
+	App.ModuleRoute = Ember.Route.extend({
 		renderTemplate: function() {
 			this._super.apply(this, arguments);
 			this.render(this.get('routeName').replace('.', '/'));
 		}
 	});
 
-	App.IndexRoute = Ember.Route.extend(App.BaseRouteMixin, {
-		renderTemplate: function() {
-			this._super.apply(this, arguments);
-			this.render('user_interface_dashboard');
+		// Frontend routes
+	App.IndexRoute = Ember.Route.extend({
+		setupController: function() {
+			this.controllerFor('BeechTaskDomainModelTask').set('content', App.BeechTaskDomainModelPriority.find());
 		}
 	});
 
-		// TODO: Replace AJAX module loading by full ember / ember-data modules
-	App.DocumentModuleRoute = App.IndexRoute.extend(App.AjaxModuleControllerMixin, { url: MM.url.module.documents });
-	App.UserSettingsRoute = App.IndexRoute.extend(App.AjaxModuleControllerMixin, { url: MM.url.module.userSettings });
-	App.JobDescriptionModuleRoute = App.IndexRoute.extend(App.AjaxModuleControllerMixin, { url: MM.url.module.jobDescription });
-	App.ContractArticleModuleRoute = App.IndexRoute.extend(App.AjaxModuleControllerMixin, { url: MM.url.module.contractArticle });
-	App.ContractModuleRoute = App.IndexRoute.extend(App.AjaxModuleControllerMixin, { url: MM.url.module.contractModule});
-	App.ContractModuleNewRoute = App.IndexRoute.extend(App.AjaxModuleControllerMixin, { url: MM.url.module.contractModuleNew });
-	App.UserManagementModuleRoute = App.IndexRoute.extend(App.AjaxModuleControllerMixin, { url: MM.url.module.userManagementModule });
-	App.WizardManagementModuleRoute = App.IndexRoute.extend(App.AjaxModuleControllerMixin, { url: MM.url.module.wizardManagementModule });
+	App.IndexIndexView = Ember.View.extend({
+		templateName: 'user_interface_dashboard'
+	});
 
-		// Administration routes
-	App.AdministrationRoute = Ember.Route.extend({
-		templatePrefix: 'administration_',
+	App.IndexUserSettingsView = Ember.View.extend(App.AjaxModuleViewMixin, {
+		url: MM.url.module.userSettings
+	});
+	App.IndexDocumentModuleView = Ember.View.extend(App.AjaxModuleViewMixin, {
+		url: MM.url.module.documents
+	});
 
-		renderTemplate: function() {
-			this.render('administration_menu', { outlet: 'sidebar' });
-			this.render(this.get('templateName'));
+	// Administration routes
+	App.AdministrationIndexRoute = Ember.Route.extend({
+		redirect: function() {
+			this.transitionTo('administration.applicationSettings');
 		}
 	});
 
-	App.ApplicationSettingsRoute = App.AdministrationRoute.extend(App.AjaxModuleControllerMixin, { url: MM.url.module.applicationSettings });
+	App.AdministrationApplicationSettingsView = Ember.View.extend(App.AjaxModuleViewMixin, {
+		url: MM.url.module.applicationSettings
+	});
+	App.AdministrationWizardManagementModuleView = Ember.View.extend(App.AjaxModuleViewMixin, {
+		url: MM.url.module.wizardManagementModule
+	});
+	App.AdministrationUserManagementModuleView = Ember.View.extend(App.AjaxModuleViewMixin, {
+		url: MM.url.module.userManagementModule
+	});
+	App.AdministrationJobDescriptionModuleView = Ember.View.extend(App.AjaxModuleViewMixin, {
+		url: MM.url.module.jobDescription
+	});
+	App.AdministrationContractArticleModuleView = Ember.View.extend(App.AjaxModuleViewMixin, {
+		url: MM.url.module.contractArticle
+	});
+	App.AdministrationContractModuleView = Ember.View.extend(App.AjaxModuleViewMixin, {
+		url: MM.url.module.contractModule
+	});
+	App.AdministrationContractModuleNewView = Ember.View.extend(App.AjaxModuleViewMixin, {
+		url: MM.url.module.contractModuleNew
+	});
 
 }).call(this);

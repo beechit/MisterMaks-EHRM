@@ -3,11 +3,10 @@
 		{mm:security.account()} <span class="caret"></span>
 	</a>
 	<ul class="dropdown-menu">
-		<li>{{#linkTo "userSettings"}}<i class="icon-wrench"></i> Settings{{/linkTo}}</li>
+		<li>{{#linkTo "index.userSettings"}}<i class="icon-wrench"></i> Settings{{/linkTo}}</li>
 		<li>{{#linkTo "BeechTaskTaskModule"}}<i class="icon-tasks"></i> Todo <span class="badge badge-info">3</span>{{/linkTo}}</li>
-		<li>{{#linkTo "documentModule"}}<i class="icon-folder-open"></i> Documents{{/linkTo}}</li>
+		<li>{{#linkTo "index.documentModule"}}<i class="icon-folder-open"></i> Documents{{/linkTo}}</li>
 		<li>{{#linkTo "administration"}}<i class="icon-warning-sign"></i> Administration{{/linkTo}}</li>
-		<li>{{#linkTo "wizardManagementModule"}}<i class="icon-list"></i> Wizards{{/linkTo}}</li>
 		<li><f:link.action action="logout" controller="Login" package="Beech.Ehrm"><i class="icon-off"></i> Logout</f:link.action></li>
 	</ul>
 </div>

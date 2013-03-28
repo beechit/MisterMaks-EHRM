@@ -7,19 +7,11 @@
 	</header>
 
 	<div class="row-fluid">
-		<div class="row-fluid">
-
-			<div class="span3 left">
-				{{render user_interface_user_menu}}
-				{{outlet sidebar}}
-			</div>
-
-			<div class="span8 offset1">
-				{{outlet main}}
-			</div>
-
-		</div>
+		{{render user_interface_user_menu}}
 	</div>
+
+	{{outlet}}
+
 	<div class="push"></div>
 </div>
 
