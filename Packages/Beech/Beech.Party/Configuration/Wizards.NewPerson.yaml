@@ -17,7 +17,7 @@ WizardNewPerson:
           renderables:
             -
               type: 'TYPO3.Form:SingleSelectDropdown'
-              identifier: personType
+              identifier: type
               label: PersonType
               validators:
                 -
@@ -65,7 +65,7 @@ WizardNewPerson:
                     _key: unmarried
         -
           type: 'TYPO3.Form:Section'
-          identifier: personName
+          identifier: personname
           label: 'person Name'
           renderables:
             -
@@ -133,7 +133,7 @@ WizardNewPerson:
               defaultValue: ''
             -
               type: 'TYPO3.Form:SingleSelectDropdown'
-              identifier: nameUsage
+              identifier: Usage
               label: 'Name usage'
               properties:
                 options:
@@ -155,9 +155,9 @@ WizardNewPerson:
                   type: 'Beech.Ehrm:DatePicker'
                   identifier: dateofBirth
                   properties:
-                    dateFormat: 'd-m-Y'
-                    enableDatePicker: TRUE
-                    displayTimeSelector: FALSE
+                    dateFormat: d-m-Y
+                    enableDatePicker: 'true'
+                    displayTimeSelector: 'false'
                   label: 'Date of birth'
                   validators:
                     -
@@ -184,7 +184,7 @@ WizardNewPerson:
                 -
                   type: 'Beech.Ehrm:NationalitySelect'
                   identifier: nationality
-                  label: nationality
+                  label: Nationality
                   validators:
                     -
                       identifier: 'TYPO3.Flow:NotEmpty'
@@ -207,13 +207,10 @@ WizardNewPerson:
           type: 'TYPO3.Form:Section'
           identifier: addresses
           label: Addresses
-          validators:
-            -
-              identifier: 'TYPO3.Flow:NotEmpty'
           renderables:
             -
               type: 'TYPO3.Form:SingleSelectDropdown'
-              identifier: address.addresstype
+              identifier: address.type
               label: 'Address type'
               validators:
                 -
@@ -291,7 +288,7 @@ WizardNewPerson:
                   renderables:
                     -
                       type: 'TYPO3.Form:SingleLineText'
-                      identifier: address.postBoxNumber
+                      identifier: address.postBox
                       label: 'Postbox number'
                       validators:
                         -
@@ -303,7 +300,7 @@ WizardNewPerson:
                       defaultValue: ''
             -
               type: 'TYPO3.Form:SingleLineText'
-              identifier: address.postalCodeNL
+              identifier: address.postalNL
               label: Postalcode
               validators:
                 -
@@ -355,7 +352,7 @@ WizardNewPerson:
                   defaultValue: ''
                 -
                   type: 'TYPO3.Form:SingleLineText'
-                  identifier: address.postalCodeAbroad
+                  identifier: address.postalAbroad
                   label: 'Postalcode '
                   validators:
                     -
@@ -384,7 +381,7 @@ WizardNewPerson:
                   label: country
             -
               type: 'TYPO3.Form:MultiLineText'
-              identifier: address.addressDescription
+              identifier: address.description
               label: 'Address description'
               validators:
                 -
@@ -404,7 +401,7 @@ WizardNewPerson:
           renderables:
             -
               type: 'TYPO3.Form:SingleSelectDropdown'
-              identifier: electronicAddress.electronicAddressType
+              identifier: electronicAddress.type
               label: 'Electronic address type'
               validators:
                 -
@@ -434,121 +431,18 @@ WizardNewPerson:
                     _key: hyves
             -
               type: 'TYPO3.Form:Section'
-              identifier: caseEmail
-              label: 'Case e-mail'
+              identifier: electronicAddress
+              label: 'electronic addresses'
               renderables:
                 -
                   type: 'TYPO3.Form:SingleLineText'
-                  identifier: electronicAddress.email
+                  identifier: electronicAddress.address
                   label: email
                   validators:
                     -
                       identifier: 'TYPO3.Flow:NotEmpty'
                   properties:
-                    placeholder: E-mail
-                  defaultValue: ''
-            -
-              type: 'TYPO3.Form:Section'
-              identifier: caseSkype
-              label: 'Case Skype'
-              renderables:
-                -
-                  type: 'TYPO3.Form:SingleLineText'
-                  identifier: electronicAddress.skype
-                  label: Skype
-                  validators:
-                    -
-                      identifier: 'TYPO3.Flow:RegularExpression'
-                      options:
-                        regularExpression: '/[a-zA-Z][a-zA-Z0-9]{5,31}]/'
-                  properties:
-                    placeholder: Skype
-                  defaultValue: ''
-            -
-              type: 'TYPO3.Form:Section'
-              identifier: caseUrl
-              label: 'Case url'
-              renderables:
-                -
-                  type: 'TYPO3.Form:SingleLineText'
-                  identifier: electronicAddress.websiteUrl
-                  label: WebsiteUrl
-                  validators:
-                    -
-                      identifier: 'TYPO3.Flow:RegularExpression'
-                      options:
-                        regularExpression: '/[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/'
-                  properties:
-                    placeholder: WebsiteUrl
-                  defaultValue: ''
-            -
-              type: 'TYPO3.Form:Section'
-              identifier: caseTwitter
-              label: 'Case Twitter'
-              renderables:
-                -
-                  type: 'TYPO3.Form:SingleLineText'
-                  identifier: electronicAddress.twitter
-                  label: Twitter
-                  validators:
-                    -
-                      identifier: 'TYPO3.Flow:StringLength'
-                      options:
-                        maximum: '20'
-                  properties:
-                    placeholder: Twitter
-                  defaultValue: ''
-            -
-              type: 'TYPO3.Form:Section'
-              identifier: caseFacebook
-              label: 'Case Facebook'
-              renderables:
-                -
-                  type: 'TYPO3.Form:SingleLineText'
-                  identifier: electronicAddress.facebook
-                  label: Facebook
-                  validators:
-                    -
-                      identifier: 'TYPO3.Flow:StringLength'
-                      options:
-                        maximum: '20'
-                  properties:
-                    placeholder: Facebook
-                  defaultValue: ''
-            -
-              type: 'TYPO3.Form:Section'
-              identifier: caseLinkedIn
-              label: 'Case LinkedIn'
-              renderables:
-                -
-                  type: 'TYPO3.Form:SingleLineText'
-                  identifier: electronicAddress.linkedIn
-                  label: LinkedIn
-                  validators:
-                    -
-                      identifier: 'TYPO3.Flow:StringLength'
-                      options:
-                        maximum: '20'
-                  properties:
-                    placeholder: LinkedIn
-                  defaultValue: ''
-            -
-              type: 'TYPO3.Form:Section'
-              identifier: caseHyves
-              label: 'Case Hyves'
-              renderables:
-                -
-                  type: 'TYPO3.Form:SingleLineText'
-                  identifier: electronicAddress.hyves
-                  label: Hyves
-                  validators:
-                    -
-                      identifier: 'TYPO3.Flow:StringLength'
-                      options:
-                        minimum: ''
-                        maximum: '35'
-                  properties:
-                    placeholder: Hyves
+                    placeholder: 'electronic address'
                   defaultValue: ''
             -
               type: 'TYPO3.Form:Section'
@@ -557,7 +451,7 @@ WizardNewPerson:
               renderables:
                 -
                   type: 'TYPO3.Form:SingleSelectDropdown'
-                  identifier: phoneNumber.phoneType
+                  identifier: phoneNumber.type
                   label: 'Phone type'
                   validators:
                     -
@@ -596,52 +490,28 @@ WizardNewPerson:
                         _key: other
                 -
                   type: 'TYPO3.Form:Section'
-                  identifier: phones
+                  identifier: phoneNumber
                   label: Phones
                   renderables:
                     -
-                      type: 'TYPO3.Form:Section'
-                      identifier: caseForeignNumber
-                      label: 'Case foreign number'
-                      renderables:
+                      type: 'TYPO3.Form:SingleLineText'
+                      identifier: phoneNumber.number
+                      label: 'Foreign number'
+                      validators:
                         -
-                          type: 'TYPO3.Form:SingleLineText'
-                          identifier: phoneNumber.foreignNumber
-                          label: 'Foreign number'
-                          validators:
-                            -
-                              identifier: 'TYPO3.Flow:RegularExpression'
-                              options:
-                                regularExpression: '/^\(?(0)[1-9]{2}\)?(\-|\s)?[0-9]{7}$|^\(?(0)[1-9]{3}\)?(\-|\s)?[0-9]{6}$/'
-                          properties:
-                            placeholder: Number
-                          defaultValue: ''
-                    -
-                      type: 'TYPO3.Form:Section'
-                      identifier: caseNlNumber
-                      label: 'Case NL number'
-                      renderables:
-                        -
-                          type: 'TYPO3.Form:SingleLineText'
-                          identifier: phoneNumber.phoneNumber
-                          label: 'Phone number'
-                          validators:
-                            -
-                              identifier: 'TYPO3.Flow:RegularExpression'
-                              options:
-                                regularExpression: '/^\(?(0)[1-9]{2}\)?(\-|\s)?[0-9]{7}$|^\(?(0)[1-9]{3}\)?(\-|\s)?[0-9]{6}$/'
-                            -
-                              identifier: 'TYPO3.Flow:NotEmpty'
-                          properties:
-                            placeholder: Number
-                          defaultValue: ''
-                    -
-                      type: 'TYPO3.Form:Checkbox'
-                      identifier: phoneNumber.setPrimaryPhone
-                      label: 'Primary Phone'
+                          identifier: 'TYPO3.Flow:RegularExpression'
+                          options:
+                            regularExpression: '/^\(?(0)[1-9]{2}\)?(\-|\s)?[0-9]{7}$|^\(?(0)[1-9]{3}\)?(\-|\s)?[0-9]{6}$/'
+                      properties:
+                        placeholder: Number
+                      defaultValue: ''
+                -
+                  type: 'TYPO3.Form:Checkbox'
+                  identifier: phoneNumber.primary
+                  label: 'Primary Phone'
                 -
                   type: 'TYPO3.Form:MultiLineText'
-                  identifier: phoneNumber.phoneDescripion
+                  identifier: phoneNumber.descripion
                   label: 'Phone description'
                   properties:
                     placeholder: Description

@@ -38,7 +38,7 @@
           type: 'StringLength'
           options:
             maximum: 30
-    'nameUsage':
+    'usage':
       label: 'Name usage'
       options:
         values:
@@ -70,7 +70,7 @@
           type: 'StringLength'
           options:
             maximum: 10
-    'dateofBirth':
+    'dateOfBirth':
       label: 'Date of Birth'
       validation:
         -
@@ -108,7 +108,7 @@
           type: 'StringLength'
           options:
             maximum: 6
-  #todo: add bsn validation
+#todo: add bsn validation
     'bsn':
       label: 'bsn'
 
@@ -123,7 +123,7 @@
           type: 'StringLength'
           options:
             maximum: 20
-  # todo: use the country and nationality table
+# todo: use the country and nationality table
     'nationality':
       label: 'Nationality'
       validation:

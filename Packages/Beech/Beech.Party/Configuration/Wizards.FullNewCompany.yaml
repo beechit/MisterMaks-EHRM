@@ -1,6 +1,6 @@
 WizardFullNewCompany:
   type: 'TYPO3.Form:Form'
-  identifier: 'fullNewCompanyWizard'
+  identifier: fullNewCompanyWizard
   label: 'Add a new Company'
   renderingOptions:
     submitButtonLabel: Create
@@ -13,7 +13,7 @@ WizardFullNewCompany:
     -
       identifier: 'Beech.Ehrm:ModalCloseConfirmation'
       options:
-        message: 'main.Company.Added'
+        message: 'Main company registered'
         buttons: Close
   renderables:
     -
@@ -23,7 +23,7 @@ WizardFullNewCompany:
       renderables:
         -
           type: 'TYPO3.Form:Section'
-          identifier: 'intialCompanySetting'
+          identifier: intialCompanySetting
           label: 'Initial company settings'
           renderables:
             -
@@ -42,7 +42,7 @@ WizardFullNewCompany:
               defaultValue: ''
             -
               type: 'TYPO3.Form:SingleSelectDropdown'
-              identifier: 'legalForm'
+              identifier: legalForm
               label: Legalform
               properties:
                 options:
@@ -63,7 +63,7 @@ WizardFullNewCompany:
                   identifier: 'TYPO3.Flow:NotEmpty'
             -
               type: 'TYPO3.Form:SingleLineText'
-              identifier: 'chamberOfCommerceNumber'
+              identifier: chamberOfCommerceNumber
               label: 'Chamber of Commerce Number'
               validators:
                 -
@@ -77,7 +77,7 @@ WizardFullNewCompany:
               defaultValue: ''
             -
               type: 'TYPO3.Form:SingleLineText'
-              identifier: 'vatNumber'
+              identifier: vatNumber
               label: 'Vat number'
               validators:
                 -
@@ -91,12 +91,12 @@ WizardFullNewCompany:
               defaultValue: ''
         -
           type: 'TYPO3.Form:Section'
-          identifier: 'Description'
+          identifier: Description
           label: 'Legal Form'
           renderables:
             -
               type: 'TYPO3.Form:SingleSelectDropdown'
-              identifier: 'companyType'
+              identifier: type
               label: 'Company type'
               validators:
                 -
@@ -108,7 +108,7 @@ WizardFullNewCompany:
                     _key: primairy
             -
               type: 'TYPO3.Form:MultiLineText'
-              identifier: 'companyDescription'
+              identifier: description
               label: 'Company description'
               validators:
                 -
@@ -118,12 +118,12 @@ WizardFullNewCompany:
               defaultValue: ''
         -
           type: 'TYPO3.Form:Section'
-          identifier: 'bankInfo.addBankAccount'
+          identifier: bankInfo.addBankAccount
           label: 'Add Bank Account'
           renderables:
             -
               type: 'TYPO3.Form:SingleSelectDropdown'
-              identifier: 'bankInfo.selectAccountType'
+              identifier: bankInfo.accountType
               label: 'Select account Type'
               properties:
                 options:
@@ -135,12 +135,12 @@ WizardFullNewCompany:
                     _key: 'Bank Account'
         -
           type: 'TYPO3.Form:Section'
-          identifier: 'caseBankAccount'
+          identifier: caseBankAccount
           label: 'Case BankAccount'
           renderables:
             -
               type: 'TYPO3.Form:SingleLineText'
-              identifier: 'bankInfo.ibanNumber'
+              identifier: bankInfo.ibanNumber
               label: 'IBAN account number'
               validators:
                 -
@@ -154,12 +154,12 @@ WizardFullNewCompany:
               defaultValue: ''
         -
           type: 'TYPO3.Form:Section'
-          identifier: 'bankInfo.caseGiroAccount'
+          identifier: bankInfo.caseGiroAccount
           label: 'Case GiroAccount'
           renderables:
             -
               type: 'TYPO3.Form:SingleLineText'
-              identifier: 'bankInfo.giroAccount'
+              identifier: bankInfo.giro
               label: 'Giro Account Number'
               validators:
                 -
@@ -169,7 +169,7 @@ WizardFullNewCompany:
                   options:
                     regularExpression: '/\\d{1,7}/'
               properties:
-                placeholder: 'Giro'
+                placeholder: Giro
               defaultValue: ''
     -
       type: 'TYPO3.Form:Page'
@@ -178,12 +178,12 @@ WizardFullNewCompany:
       renderables:
         -
           type: 'TYPO3.Form:Section'
-          identifier: 'addAdmin'
+          identifier: addAdmin
           label: 'Add Admin'
           renderables:
             -
               type: 'TYPO3.Form:SingleSelectDropdown'
-              identifier: 'person.gender'
+              identifier: person.gender
               label: Gender
               properties:
                 options:
@@ -198,7 +198,7 @@ WizardFullNewCompany:
                   identifier: 'TYPO3.Flow:NotEmpty'
             -
               type: 'TYPO3.Form:SingleSelectDropdown'
-              identifier: 'person.civilStatus'
+              identifier: person.civilStatus
               label: 'Civil status'
               properties:
                 options:
@@ -217,12 +217,12 @@ WizardFullNewCompany:
                   identifier: 'TYPO3.Flow:NotEmpty'
             -
               type: 'TYPO3.Form:Section'
-              identifier: 'person.personName'
+              identifier: person.name
               label: 'Person name'
               renderables:
                 -
                   type: 'TYPO3.Form:SingleLineText'
-                  identifier: 'person.initials'
+                  identifier: person.initials
                   label: Initials
                   validators:
                     -
@@ -236,7 +236,7 @@ WizardFullNewCompany:
                   defaultValue: ''
                 -
                   type: 'TYPO3.Form:SingleLineText'
-                  identifier: 'person.firstName'
+                  identifier: person.firstName
                   label: 'First name'
                   validators:
                     -
@@ -250,7 +250,7 @@ WizardFullNewCompany:
                   defaultValue: ''
                 -
                   type: 'TYPO3.Form:SingleLineText'
-                  identifier: 'person.middleName'
+                  identifier: person.middleName
                   label: 'Middle name'
                   validators:
                     -
@@ -266,7 +266,7 @@ WizardFullNewCompany:
                   defaultValue: ''
                 -
                   type: 'TYPO3.Form:SingleLineText'
-                  identifier: 'person.lastName'
+                  identifier: person.lastName
                   validators:
                     -
                       identifier: 'TYPO3.Flow:NotEmpty'
@@ -280,12 +280,12 @@ WizardFullNewCompany:
                   defaultValue: ''
             -
               type: 'TYPO3.Form:Section'
-              identifier: 'caseFemaleAndMarried'
+              identifier: caseFemaleAndMarried
               label: PersonBirthname
               renderables:
                 -
                   type: 'TYPO3.Form:SingleLineText'
-                  identifier: 'person.otherName'
+                  identifier: person.otherName
                   label: Birthname
                   validators:
                     -
@@ -297,27 +297,27 @@ WizardFullNewCompany:
                   defaultValue: ''
             -
               type: 'TYPO3.Form:SingleSelectDropdown'
-              identifier: 'person.personType'
+              identifier: person.type
               label: 'Person Type'
               properties:
                 options:
                   -
                     _value: employee
-                    _key: 'Employee'
+                    _key: Employee
                   -
                     _value: contact
-                    _key: 'Contact'
+                    _key: Contact
               validators:
                 -
                   identifier: 'TYPO3.Flow:NotEmpty'
             -
               type: 'TYPO3.Form:Section'
-              identifier: 'setGroup'
+              identifier: setGroup
               label: setGroup
               renderables:
                 -
                   type: 'TYPO3.Form:SingleSelectDropdown'
-                  identifier: 'group.name'
+                  identifier: group.name
                   label: Group
                   validators:
                     -
@@ -328,13 +328,12 @@ WizardFullNewCompany:
                         maximum: '20'
             -
               type: 'TYPO3.Form:Section'
-              identifier: 'setUserPassword'
+              identifier: setUserPassword
               label: 'Set User'
               renderables:
                 -
-#todo this probably needs to be fixed to be used in the proper way.
                   type: 'TYPO3.Form:SingleLineText'
-                  identifier: 'account.accountIdentifier'
+                  identifier: account.accountIdentifier
                   label: Username
                   validators:
                     -
@@ -344,7 +343,7 @@ WizardFullNewCompany:
                   defaultValue: ''
                 -
                   type: 'TYPO3.Form:PasswordWithConfirmation'
-                  identifier: 'account.credentialssource'
+                  identifier: account.credentialssource
                   label: Password
                   validators:
                     -
@@ -360,12 +359,12 @@ WizardFullNewCompany:
       renderables:
         -
           type: 'TYPO3.Form:Section'
-          identifier: 'setCompanyAddress'
+          identifier: setCompanyAddress
           label: companyAddress
           renderables:
             -
               type: 'TYPO3.Form:SingleSelectDropdown'
-              identifier: 'address.addressType'
+              identifier: address.type
               label: 'Address type'
               properties:
                 options:
@@ -396,7 +395,7 @@ WizardFullNewCompany:
                     maximum: '35'
             -
               type: 'TYPO3.Form:SingleLineText'
-              identifier: 'address.streetName'
+              identifier: address.streetName
               label: 'Street name'
               validators:
                 -
@@ -414,20 +413,20 @@ WizardFullNewCompany:
               defaultValue: ''
             -
               type: 'TYPO3.Form:Checkbox'
-              identifier: 'address.primaryPostAddress'
+              identifier: address.primaryPost
               label: 'Primary postaddress'
             -
               type: 'TYPO3.Form:Checkbox'
-              identifier: 'address.primaryLocation'
+              identifier: address.primary
               label: 'Primary Location'
         -
           type: 'TYPO3.Form:Section'
-          identifier: 'casePostbox'
+          identifier: casePostbox
           label: Postbox
           renderables:
             -
               type: 'TYPO3.Form:SingleLineText'
-              identifier: 'address.postBoxNumber'
+              identifier: address.postBox
               label: 'Postbox number'
               validators:
                 -
@@ -439,7 +438,7 @@ WizardFullNewCompany:
               defaultValue: ''
             -
               type: 'TYPO3.Form:SingleLineText'
-              identifier: 'address.houseNumber'
+              identifier: address.houseNumber
               label: 'House number'
               validators:
                 -
@@ -453,7 +452,7 @@ WizardFullNewCompany:
               defaultValue: ''
             -
               type: 'TYPO3.Form:SingleLineText'
-              identifier: 'address.houseNumberAddition'
+              identifier: address.houseNumberAddition
               label: 'House number addition'
               validators:
                 -
@@ -465,7 +464,7 @@ WizardFullNewCompany:
               defaultValue: ''
             -
               type: 'TYPO3.Form:SingleLineText'
-              identifier: 'address.postalCodeNL'
+              identifier: address.postalNL
               label: 'Postal code'
               validators:
                 -
@@ -479,19 +478,7 @@ WizardFullNewCompany:
               defaultValue: ''
             -
               type: 'TYPO3.Form:SingleLineText'
-              identifier: 'address.postalCodeAbroad'
-              label: 'Postal code'
-              validators:
-                -
-                  identifier: 'TYPO3.Flow:RegularExpression'
-                  options:
-                    regularExpression: '/[0-9]{4}\s{0,1}[a-z]{2}/'
-              properties:
-                placeholder: 'Postal code'
-              defaultValue: ''
-            -
-              type: 'TYPO3.Form:SingleLineText'
-              identifier: 'address.residence'
+              identifier: address.residence
               label: Residence
               validators:
                 -
@@ -505,18 +492,21 @@ WizardFullNewCompany:
               defaultValue: ''
             -
               type: 'Beech.Ehrm:CountrySelect'
-              identifier: 'address.country'
+              identifier: address.country
               label: country
               validators:
                 -
                   identifier: 'TYPO3.Flow:NotEmpty'
             -
               type: 'TYPO3.Form:MultiLineText'
-              identifier: 'address.addressDescription'
+              identifier: address.description
               label: 'Address description'
               properties:
                 placeholder: Description
               defaultValue: ''
+              validators:
+                -
+                  identifier: 'TYPO3.Flow:Text'
     -
       type: 'TYPO3.Form:Page'
       identifier: page4
@@ -524,18 +514,18 @@ WizardFullNewCompany:
       renderables:
         -
           type: 'TYPO3.Form:Section'
-          identifier: 'electronicAddresses'
-          label: 'electronicAddresses'
+          identifier: electronicAddresses
+          label: electronicAddresses
           renderables:
             -
               type: 'TYPO3.Form:SingleSelectDropdown'
-              identifier: 'electronicAddress.electronicAddressType'
+              identifier: electronicAddress.type
               label: 'electronic address type'
               properties:
                 options:
                   -
                     _value: emailAddress
-                    _key: 'E-Mail'
+                    _key: E-Mail
                   -
                     _value: skype
                     _key: Skype
@@ -559,95 +549,26 @@ WizardFullNewCompany:
                   identifier: 'TYPO3.Flow:NotEmpty'
             -
               type: 'TYPO3.Form:SingleLineText'
-              identifier: 'electronicAddress.email'
-              label: email
+              identifier: electronicAddress.address
+              label: 'Electronic address'
               validators:
                 -
-                  identifier: 'TYPO3.Flow:EmailAddress'
-            -
-              type: 'TYPO3.Form:SingleLineText'
-              identifier: 'electronicAddress.skype'
-              label: Skype
-              validators:
-                -
-                  identifier: 'TYPO3.Flow:RegularExpression'
-                  options:
-                    regularExpression: '/[a-zA-Z][a-zA-Z0-9]{5,31}]/'
+                  identifier: 'TYPO3.Flow:NotEmpty'
                 -
                   identifier: 'TYPO3.Flow:StringLength'
                   options:
                     maximum: '35'
               properties:
-                placeholder: Skype
-              defaultValue: ''
-            -
-              type: 'TYPO3.Form:SingleLineText'
-              identifier: 'electronicAddress.websiteUrl'
-              label: 'Website Url'
-              validators:
-                -
-                  identifier: 'TYPO3.Flow:RegularExpression'
-                  options:
-                    regularExpression: '/[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/'
-              properties:
-                placeholder: 'Website'
-              defaultValue: ''
-            -
-              type: 'TYPO3.Form:SingleLineText'
-              identifier: 'electronicAddress.twitter'
-              label: Twitter
-              validators:
-                -
-                  identifier: 'TYPO3.Flow:StringLength'
-                  options:
-                    maximum: '20'
-              properties:
-                placeholder: Twitter
-              defaultValue: ''
-            -
-              type: 'TYPO3.Form:SingleLineText'
-              identifier: 'electronicAddress.facebook'
-              label: Facebook
-              validators:
-                -
-                  identifier: 'TYPO3.Flow:StringLength'
-                  options:
-                    maximum: '20'
-              properties:
-                placeholder: Facebook
-              defaultValue: ''
-            -
-              type: 'TYPO3.Form:SingleLineText'
-              identifier: 'electronicAddress.linkedIn'
-              label: LinkedIn
-              validators:
-                -
-                  identifier: 'TYPO3.Flow:StringLength'
-                  options:
-                    maximum: '20'
-              properties:
-                placeholder: LinkedIn
-              defaultValue: ''
-            -
-              type: 'TYPO3.Form:SingleLineText'
-              identifier: 'electronicAddress.hyves'
-              label: Hyves
-              validators:
-                -
-                  identifier: 'TYPO3.Flow:StringLength'
-                  options:
-                    maximum: '20'
-              properties:
-                placeholder: Hyves
+                placeholder: Address
               defaultValue: ''
         -
           type: 'TYPO3.Form:Section'
-          identifier: 'phoneNumbers'
+          identifier: phoneNumbers
           label: PhoneNumbers
           renderables:
             -
               type: 'TYPO3.Form:SingleSelectDropdown'
-              identifier: 'phoneNumber.phoneType'
+              identifier: phoneNumber.type
               label: 'Phone Type'
               properties:
                 options:
@@ -683,12 +604,12 @@ WizardFullNewCompany:
                   identifier: 'TYPO3.Flow:NotEmpty'
         -
           type: 'TYPO3.Form:Section'
-          identifier: 'phoneNumber.caseNLphoneNumber'
+          identifier: phoneNumber
           label: PhoneNumber
           renderables:
             -
               type: 'TYPO3.Form:SingleLineText'
-              identifier: 'phoneNumber.phoneNumber'
+              identifier: phoneNumber.number
               label: 'Phone number'
               validators:
                 -
@@ -700,31 +621,3 @@ WizardFullNewCompany:
               properties:
                 placeholder: 'Phone number'
               defaultValue: ''
-        -
-          type: 'TYPO3.Form:Section'
-          identifier: 'caseForeignNumber'
-          label: 'Foreign number'
-          renderables:
-            -
-              type: 'TYPO3.Form:SingleLineText'
-              identifier: 'phoneNumber.foreignPhoneNumber'
-              label: 'Foreign phone number'
-              validators:
-                -
-                  identifier: 'TYPO3.Flow:RegularExpression'
-                  options:
-                    RegularExpression: '/^\(?(0)[1-9]{2}\)?(\-|\s)?[0-9]{7}$|^\(?(0)[1-9]{3}\)?(\-|\s)?[0-9]{6}$/'
-              properties:
-                placeholder: 'Phone number'
-              defaultValue: ''
-  finishers:
-    -
-      identifier: 'Beech.Ehrm:Database'
-      options:
-        package: Beech.Party
-        model: Company
-    -
-      identifier: 'Beech.Ehrm:ModalCloseConfirmation'
-      options:
-        message: 'Main company registered'
-        buttons: Close

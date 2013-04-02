@@ -9,7 +9,7 @@
           type: 'StringLength'
           options:
             maximum: 35
-    'companyType':
+    'type':
       label: 'Company type'
       options:
         values:
@@ -34,7 +34,7 @@
           type: 'StringLengh'
           options:
             maximum: 20
-    'companyIdNumber':
+    'idNumber':
       label: 'Company Id Number'
       validation:
         -
@@ -94,7 +94,7 @@
           type: 'Stringlength'
           options:
             maximum: 9
-    'companyDescription':
+    'description':
       label: 'Company description'
       validation:
         -

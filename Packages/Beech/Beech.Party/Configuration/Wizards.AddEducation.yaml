@@ -1,4 +1,4 @@
-wizardAddEducation:
+WizardAddEducation:
   type: 'TYPO3.Form:Form'
   identifier: wizardAddEducation
   label: 'Wizard add Education'
@@ -6,7 +6,7 @@ wizardAddEducation:
     -
       identifier: 'Beech.Ehrm:ModalCloseConfirmation'
       options:
-        message: 'wizard.completed'
+        message: wizard.completed
         buttons: Close
     -
       identifier: 'Beech.Ehrm:Database'
@@ -18,17 +18,17 @@ wizardAddEducation:
   renderables:
     -
       type: 'TYPO3.Form:Page'
-      identifier: 'addEducationWizard'
+      identifier: addEducationWizard
       label: 'Register education'
       renderables:
         -
           type: 'TYPO3.Form:Section'
-          identifier: 'setTypeEducation'
+          identifier: setTypeEducation
           label: 'Set education type'
           renderables:
             -
               type: 'TYPO3.Form:SingleSelectDropdown'
-              identifier: 'educationType'
+              identifier: type
               label: 'Type of Education'
               validators:
                 -
@@ -57,7 +57,7 @@ wizardAddEducation:
               renderables:
                 -
                   type: 'TYPO3.Form:SingleLineText'
-                  identifier: 'nameEducationInstitute'
+                  identifier: nameInstitute
                   label: 'Name of the education institute'
                   validators:
                     -
@@ -71,8 +71,8 @@ wizardAddEducation:
                   defaultValue: ''
                 -
                   type: 'TYPO3.Form:SingleLineText'
-                  identifier: 'educationName'
-                  label: 'Name of the education'
+                  identifier: direction
+                  label: 'Education direction'
                   validators:
                     -
                       identifier: 'TYPO3.Flow:NotEmpty'
@@ -81,15 +81,15 @@ wizardAddEducation:
                       options:
                         maximum: '35'
                   properties:
-                    placeholder: Name
+                    placeholder: Direction
                   defaultValue: ''
                 -
                   type: 'Beech.Ehrm:DatePicker'
-                  identifier: 'educationStart'
+                  identifier: startDate
                   properties:
-                    dateFormat: 'd-m-Y'
-                    enableDatePicker: TRUE
-                    displayTimeSelector: FALSE
+                    dateFormat: d-m-Y
+                    enableDatePicker: 'true'
+                    displayTimeSelector: 'false'
                   label: Start
                   validators:
                     -
@@ -101,21 +101,21 @@ wizardAddEducation:
                       identifier: 'TYPO3.Flow:NotEmpty'
                 -
                   type: 'TYPO3.Form:Checkbox'
-                  identifier: 'diploma'
-                  label: Diploma
+                  identifier: graduated
+                  label: Graduated
                 -
                   type: 'TYPO3.Form:Section'
-                  identifier: 'setEndDate'
+                  identifier: setEndDate
                   label: 'Set EndDate'
                   renderables:
                     -
                       type: 'Beech.Ehrm:DatePicker'
-                      identifier: 'educationEndDate'
+                      identifier: endDate
                       properties:
-                        dateFormat: 'd-m-Y'
-                        enableDatePicker: TRUE
-                        displayTimeSelector: FALSE
-                      label: Until
+                        dateFormat: d-m-Y
+                        enableDatePicker: 'true'
+                        displayTimeSelector: 'false'
+                      label: 'End date'
                       validators:
                         -
                           identifier: 'TYPO3.Flow:DateTimeRange'

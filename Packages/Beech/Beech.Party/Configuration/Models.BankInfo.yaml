@@ -25,7 +25,7 @@
               type: 'StringLength'
               options:
                 maximum: 20
-        'bankName':
+        'name':
           label: 'Bank name'
           validation:
             -
@@ -37,7 +37,7 @@
               options:
                 regularExpression: '/[a-zA-Z\\-\\s\\’]{2,20}/'
 #todo check regular expression
-        'primaryBankAccount':
+        'primary':
           label: 'Primary Bankaccount'
           options:
             values:
@@ -65,7 +65,7 @@
               type: 'StringLength'
               options:
                 maximum: 34
-        'foreignBankAccountNumber':
+        'foreignAccountNumber':
           label: 'Foreign bank account number'
           validation:
             -
@@ -87,7 +87,7 @@
               type: 'RegularExpression'
               options:
                 regularExpression: '/[1-9]{8}|[1-9]{11}/'
-        'countryOfBank':
+        'country':
           defaultValue: 'NL'
           label: 'Country bank'
           validation:
@@ -95,7 +95,7 @@
               type: 'StringLength'
               options:
                 maximum: 40
-        'bankResidence':
+        'residence':
           label: 'bank residence'
           validation:
             -
@@ -106,7 +106,7 @@
               type: 'RegularExpression'
               options:
                 regularExpression: '/[a-zA-Z0-9\-\’]{2,30}/'
-        'bankDescription':
+        'description':
           label: 'BankDescription'
           validation:
             -
