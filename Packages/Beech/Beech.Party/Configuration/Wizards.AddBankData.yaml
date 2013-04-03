@@ -1,4 +1,4 @@
-wizardAddBankData:
+WizardAddBankData:
   type: 'TYPO3.Form:Form'
   identifier: wizardsAddbankData
   label: 'Wizards Add bank Data'
@@ -76,7 +76,7 @@ wizardAddBankData:
           renderables:
             -
               type: 'TYPO3.Form:SingleLineText'
-              identifier: 'foreignBankAccountNumber'
+              identifier: 'foreignAccountNumber'
               label: 'Foreign bank account number'
               validators:
                 -
@@ -95,11 +95,11 @@ wizardAddBankData:
           renderables:
             -
               type: 'TYPO3.Form:Checkbox'
-              identifier: 'primaryBankAccount'
+              identifier: 'primary'
               label: 'Primary account'
             -
               type: 'TYPO3.Form:MultiLineText'
-              identifier: 'bankAccountDescription'
+              identifier: 'description'
               label: Description
               validators:
                 -
@@ -133,7 +133,7 @@ wizardAddBankData:
               defaultValue: ''
             -
               type: 'TYPO3.Form:SingleLineText'
-              identifier: 'bankName'
+              identifier: 'name'
               label: 'Bank name'
               validators:
                 -
@@ -147,7 +147,7 @@ wizardAddBankData:
               defaultValue: ''
             -
               type: 'TYPO3.Form:SingleLineText'
-              identifier: 'bankResidence'
+              identifier: 'residence'
               label: 'Bank residence'
               validators:
                 -

@@ -1,19 +1,5 @@
 'Beech.Party.Domain.Model.PhoneNumber':
   properties:
-    'connectionType':
-      label: 'Connection type'
-      options:
-        values:
-          - 'company'
-          - 'person'
-          - 'department'
-      validation:
-        -
-          type: 'NotEmpty'
-        -
-          Type: 'StringLength'
-          options:
-            maximum: 10
     'person':
       label: 'PersonId'
       type: 'Beech\Party\Domain\Model\Person'
@@ -25,7 +11,7 @@
       type: 'Beech\Party\Domain\Model\Company'
     'phone':
       items:
-        'phoneType':
+        'Type':
           label: 'phone type'
           options:
             values:
@@ -46,7 +32,7 @@
               options:
                 maximum: 25
           defaultValue: 'businessPhone'
-        'phoneNumber':
+        'number':
           label: 'Phone Number'
           validation:
             -
@@ -59,18 +45,7 @@
               type: 'StringLength'
               options:
                 maximum: 15
-        'foreignPhoneNumber':
-          label: 'Foreign phone number'
-          validation:
-            -
-              type: 'RegularExpression'
-              options:
-                RegularExpression: '/^\(?(0)[1-9]{2}\)?(\-|\s)?[0-9]{7}$|^\(?(0)[1-9]{3}\)?(\-|\s)?[0-9]{6}$/'
-            -
-              type: 'StringLength'
-              options:
-                maximum: 15
-        'setPrimaryPhone':
+        'primary':
           label: 'Primary phone'
           options:
             values:
@@ -79,7 +54,7 @@
           validation: ''
       label: 'Phone numbers'
       type: 'array'
-    'phoneDescription':
+    'Description':
       label: 'Description'
       validation:
         -

@@ -1,19 +1,5 @@
 'Beech.Party.Domain.Model.ElectronicAddress':
   properties:
-    'connectionType':
-      label: 'Connection type'
-      options:
-        values:
-          - 'company'
-          - 'person'
-          - 'department'
-      validation:
-        -
-          type: 'NotEmpty'
-        -
-          Type: 'StringLength'
-          options:
-            maximum: 10
     'personId':
       label: 'Person ID'
       type: 'Beech\Party\Domain\Model\Person'
@@ -26,69 +12,34 @@
 # todo: implement this that validation works on type address selected.
     'electronicAddresses':
       items:
-        'email':
-          label: 'E-mailAddress'
+        'type':
+          label: 'electronicAdressType'
+          options:
+            values:
+             - 'skype'
+             - 'websiteUrl'
+             - 'twitter'
+             - 'facebook'
+             - 'linkedIn'
+             - 'hyves'
+        'address':
+          label: 'electronicAddress'
           validation:
             -
               type: 'NotEmpty'
             -
-              type: 'EmailAddress'
-            -
               type: 'StringLength'
               options:
                 maximum: 35
-        'skype':
-          label: 'Skype'
-          validation:
-            -
-              type: 'RegularExpression'
-              options:
-                regularExpression: '/[a-zA-Z][a-zA-Z0-9]{5,31}]/'
-            -
-              type: 'StringLength'
-              options:
-                maximum: 35
-        'websiteUrl':
-          label: 'Website Url'
-          validation:
-            -
-              type: 'RegularExpression'
-              options:
-                regularExpression: '/[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/'
-            -
-              type: 'StringLength'
-              options:
-                maximum: 50
-        'twitter':
-          label: 'Twitter'
-          validation:
-            -
-              type: 'StringLength'
-              options:
-                maximum: 20
-        'facebook':
-          label: 'Facebook'
-          validation:
-            -
-              type: 'StringLength'
-              options:
-                maximum: 20
-        'linkedIn':
-          label: 'LinkedIn'
-          validation:
-            -
-              type: 'StringLength'
-              options:
-                maximum: 20
-        'hyves':
-          label: 'Hyves'
-          validation:
-            -
-              type: 'StringLength'
-              options:
-                maximum: 20
-      label: 'Electronic addresses'
-      type: 'array'
+        'primary':
+          label: 'primary electronic address'
+          options:
+            values:
+              - TRUE
+              - FALSE
+          defaultValue: FALSE
+      type: array
+      label: 'electronicAddresses'
     'creationDate':
       defaultValue: 'now'
       label: 'creation date'

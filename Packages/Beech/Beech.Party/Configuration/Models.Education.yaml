@@ -5,7 +5,7 @@
       type: 'Beech\Party\Domain\Model\Person'
     'educations':
       items:
-        'education':
+        'type':
           label: 'Education'
           type: 'array'
           options:
@@ -20,21 +20,21 @@
               type: 'stringLength'
               options:
                 maximum: 20
-        'nameEducationInstitute':
+        'nameInstitute':
           label: 'Name of the education institute'
           validation:
             -
               type: 'StringLength'
               options:
                 maximum: 35
-        'educationName':
-          label: 'Name of the education'
+        'direction':
+          label: 'Education direction'
           validation:
             -
               type: 'StringLength'
               options:
                 maximum: 35
-        'educationStart':
+        'startDate':
           label: 'Education start date'
           validation:
             -
@@ -44,7 +44,7 @@
               options:
                 earliestDate: 19500101
                 latestDate: 20200101
-        'educationEndDate':
+        'endDate':
           label: 'Education end date'
           validation:
             -
@@ -52,8 +52,8 @@
               options:
                 earliestDate: 19500101
                 latestDate: 20200101
-        'diploma':
-          label: 'Diploma'
+        'graduated':
+          label: 'Graduated'
           options:
             values:
               - TRUE

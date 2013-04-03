@@ -1,4 +1,4 @@
-wizardAddPhoneNumber:
+WizardAddPhoneNumber:
   type: 'TYPO3.Form:Form'
   identifier: addPhoneNumber
   label: 'Wizard add phoneNumber'
@@ -17,7 +17,7 @@ wizardAddPhoneNumber:
           renderables:
             -
               type: 'TYPO3.Form:SingleSelectDropdown'
-              identifier: phoneType
+              identifier: type
               label: 'Phone type'
               validators:
                 -
@@ -83,7 +83,7 @@ wizardAddPhoneNumber:
                   renderables:
                     -
                       type: 'TYPO3.Form:SingleLineText'
-                      identifier: phoneNumber
+                      identifier: number
                       label: 'Phone number'
                       validators:
                         -
@@ -97,11 +97,11 @@ wizardAddPhoneNumber:
                       defaultValue: ''
                 -
                   type: 'TYPO3.Form:Checkbox'
-                  identifier: setPrimaryPhone
+                  identifier: primary
                   label: 'Primary Phone'
             -
               type: 'TYPO3.Form:MultiLineText'
-              identifier: phoneDescripion
+              identifier: descripion
               label: 'Phone description'
               properties:
                 placeholder: Description

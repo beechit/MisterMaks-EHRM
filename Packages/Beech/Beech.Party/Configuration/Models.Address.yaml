@@ -1,19 +1,5 @@
 'Beech.Party.Domain.Model.Address':
   properties:
-    'connectionType':
-      label: 'Connection type'
-      options:
-        values:
-          - 'company'
-          - 'person'
-          - 'department'
-      validation:
-        -
-          type: 'NotEmpty'
-        -
-          Type: 'StringLength'
-          options:
-            maximum: 10
     'personId':
       label: 'Person ID'
       type: 'Beech\Party\Domain\Model\Person'
@@ -25,7 +11,7 @@
       type: 'Beech\Party\Domain\Model\Company'
     'addresses':
       items:
-        'addressType':
+        'type':
           label: 'Address type'
           options:
             values:
@@ -55,19 +41,19 @@
               type: 'StringLength'
               options:
                 maximum: 35
-        'primaryPostAddress':
+        'primaryPost':
           label: 'Primary postaddress'
           options:
             values:
               - TRUE
               - FALSE
-        'primaryLocation':
-          label: 'Primary Location'
+        'primary':
+          label: 'Primary address'
           options:
             values:
               - TRUE
               - FALSE
-        'postBoxNumber':
+        'postBox':
           label: 'Postbox number'
           validation:
             -
@@ -98,7 +84,7 @@
               type: 'StringLength'
               options:
                 maximum: 10
-        'postalCodeNL':
+        'postalNL':
           label: 'Postal code'
           validation:
             -
@@ -111,7 +97,7 @@
               type: 'StringLength'
               options:
                 maximum: 6
-        'streetNameAbroad':
+        'streetAbroad':
           label: 'Street name Abroad'
           validation:
             -
@@ -124,29 +110,6 @@
               type: 'StringLength'
               options:
                 maximum: 35
-        'houseNumberAbroad':
-          label: 'House number'
-          validation:
-            -
-              type: 'NotEmpty'
-            -
-              type: 'RegularExpression'
-              options:
-                regularExpression: '/[0-9]{1,5}/'
-            -
-              type: 'Integer'
-        'houseNumberAdditionAbroad':
-          label: 'House number addition'
-          validation:
-            -
-              type: 'RegularExpression'
-              options:
-                regularExpression: '/[a-zA-Z0-9\\-]{0,10}/'
-            -
-              type: 'StringLength'
-              options:
-                maximum: 10
-
         'houseNumberAbroad':
           label: 'House number'
           validation:
@@ -214,7 +177,7 @@
               options:
                 maximum: 30
           defaultValue: 'NL'
-        'addressDescription':
+        'description':
           label: 'Address description'
           type: text
           validation:

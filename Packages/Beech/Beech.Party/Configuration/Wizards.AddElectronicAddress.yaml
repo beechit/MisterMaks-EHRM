@@ -1,9 +1,20 @@
-wizardAddElectronicAddress:
+WizardAddElectronicAddress:
   type: 'TYPO3.Form:Form'
   identifier: addElectronicAddress
   label: 'Wizard add electronic address'
   renderingOptions:
-    submitButtonLabel: Save
+    submitButtonLabel: Add
+  finishers:
+    -
+      identifier: 'Beech.Ehrm:ModalCloseConfirmation'
+      options:
+        message: 'Electronic Address Added'
+        buttons: Close
+    -
+      identifier: 'Beech.Ehrm:Database'
+      options:
+        package: Beech.Party
+        model: ElectronicAddress
   renderables:
     -
       type: 'TYPO3.Form:Page'
@@ -17,7 +28,7 @@ wizardAddElectronicAddress:
           renderables:
             -
               type: 'TYPO3.Form:SingleSelectDropdown'
-              identifier: electronicAddressType
+              identifier: type
               label: 'Electronic address type'
               validators:
                 -
@@ -47,132 +58,20 @@ wizardAddElectronicAddress:
                     _key: hyves
             -
               type: 'TYPO3.Form:Section'
-              identifier: caseEmail
-              label: 'Case e-mail'
+              identifier: addresses
+              label: Addresses
               renderables:
                 -
                   type: 'TYPO3.Form:SingleLineText'
-                  identifier: email
-                  label: email
+                  identifier: address
+                  label: address
                   validators:
                     -
                       identifier: 'TYPO3.Flow:NotEmpty'
                     -
-                      identifier: 'TYPO3.Flow:EmailAddress'
-                  properties:
-                    placeholder: E-mail
-                  defaultValue: ''
-            -
-              type: 'TYPO3.Form:Section'
-              identifier: caseSkype
-              label: 'Case Skype'
-              renderables:
-                -
-                  type: 'TYPO3.Form:SingleLineText'
-                  identifier: skype
-                  label: Skype
-                  validators:
-                    -
-                      identifier: 'TYPO3.Flow:RegularExpression'
-                      options:
-                        regularExpression: '/[a-zA-Z][a-zA-Z0-9]{5,31}]/'
-                  properties:
-                    placeholder: Skype
-                  defaultValue: ''
-            -
-              type: 'TYPO3.Form:Section'
-              identifier: caseUrl
-              label: 'Case url'
-              renderables:
-                -
-                  type: 'TYPO3.Form:SingleLineText'
-                  identifier: websiteUrl
-                  label: Website
-                  validators:
-                    -
-                      identifier: 'TYPO3.Flow:RegularExpression'
-                      options:
-                        regularExpression: '/[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/'
-                  properties:
-                    placeholder: Website
-                  defaultValue: ''
-            -
-              type: 'TYPO3.Form:Section'
-              identifier: caseTwitter
-              label: 'Case Twitter'
-              renderables:
-                -
-                  type: 'TYPO3.Form:SingleLineText'
-                  identifier: twitter
-                  label: Twitter
-                  validators:
-                    -
                       identifier: 'TYPO3.Flow:StringLength'
                       options:
-                        maximum: '20'
+                        maximum: '35'
                   properties:
-                    placeholder: Twitter
+                    placeholder: address
                   defaultValue: ''
-            -
-              type: 'TYPO3.Form:Section'
-              identifier: caseFacebook
-              label: 'Case Facebook'
-              renderables:
-                -
-                  type: 'TYPO3.Form:SingleLineText'
-                  identifier: facebook
-                  label: Facebook
-                  validators:
-                    -
-                      identifier: 'TYPO3.Flow:StringLength'
-                      options:
-                        maximum: '20'
-                  properties:
-                    placeholder: Facebook
-                  defaultValue: ''
-            -
-              type: 'TYPO3.Form:Section'
-              identifier: caseLinkedIn
-              label: 'Case LinkedIn'
-              renderables:
-                -
-                  type: 'TYPO3.Form:SingleLineText'
-                  identifier: linkedIn
-                  label: LinkedIn
-                  validators:
-                    -
-                      identifier: 'TYPO3.Flow:StringLength'
-                      options:
-                        maximum: '20'
-                  properties:
-                    placeholder: LinkedIn
-                  defaultValue: ''
-            -
-              type: 'TYPO3.Form:Section'
-              identifier: caseHyves
-              label: 'Case Hyves'
-              renderables:
-                -
-                  type: 'TYPO3.Form:SingleLineText'
-                  identifier: hyves
-                  label: Hyves
-                  validators:
-                    -
-                      identifier: 'TYPO3.Flow:StringLength'
-                      options:
-                        minimum: ''
-                        maximum: '30'
-                  properties:
-                    placeholder: Hyves
-                  defaultValue: ''
-  finishers:
-    -
-      identifier: 'Beech.Ehrm:ModalCloseConfirmation'
-      options:
-        message: 'Electronic Address Added'
-        buttons: Close
-    -
-      identifier: 'Beech.Ehrm:Database'
-      options:
-        package: Beech.Party
-        model: ElectronicAddress
