@@ -15,6 +15,7 @@
               type: 'NotEmpty'
             -
               type: 'StringLength'
+              options:
                 maximum: 35
         'type':
           label: 'Asset Type'
