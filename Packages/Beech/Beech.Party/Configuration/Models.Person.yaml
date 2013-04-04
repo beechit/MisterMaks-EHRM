@@ -104,14 +104,20 @@
       validation:
         -
           type: 'NotEmpty'
+    'salutation':
+      label: 'Salutation'
+      options:
+        values:
+          - 'Dear Mr.'
+          - 'Dear Ms.'
+          - 'Dear Miss.'
+          - 'Dear Mrs.'
+      validation:
         -
-          type: 'StringLength'
-          options:
-            maximum: 6
+          type: 'NotEmpty'
 #todo: add bsn validation
     'bsn':
       label: 'bsn'
-
       validation:
         -
           type: 'NotEmpty'
