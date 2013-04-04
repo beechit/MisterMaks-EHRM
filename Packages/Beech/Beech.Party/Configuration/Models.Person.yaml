@@ -27,6 +27,15 @@
           - 'companyContact'
           - 'employee'
           - 'partnerCompanyContact'
+# only for usage with persontype = contact this employee relation is about registering relatives tot the employee
+      'employeeRelations':
+        label: 'Relation'
+        options:
+          values:
+            - 'partner'
+            - 'child'
+            - 'family'
+            - 'other'
     'otherName':
       label: Birthname
       validation:
@@ -145,11 +154,10 @@
       options:
         values:
           - 'unknown'
-          - 'umarried'
           - 'married'
+          - 'single'
           - 'livingTogether'
           - 'widowWidower'
-          - 'sustainableSeparated'
           - 'divorced'
       validation:
         -
@@ -170,9 +178,15 @@
           - 'phone'
       validation:
         -
-          type: 'StringLength'
-          options:
-            maximum: 20
+          type: 'NotEmpty'
+# status is used to set the status of companycontacts, contacts and partnercompanycontacts
+    'status':
+      label: 'Status'
+      options:
+        values:
+          - 'active'
+          - 'Archived'
+      validation:
         -
           type: 'NotEmpty'
     'creationDate':

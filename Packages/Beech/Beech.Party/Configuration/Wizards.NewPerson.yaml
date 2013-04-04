@@ -53,16 +53,46 @@ WizardNewPerson:
                     _key: female
             -
               type: 'TYPO3.Form:SingleSelectDropdown'
+              identifier: salutation
+              label: Salutation
+              validators:
+                -
+                  identifier: 'TYPO3.Flow:NotEmpty'
+              properties:
+                options:
+                  -
+                    _value: 'Mr.'
+                    _key: mr
+                  -
+                    _value: 'Mrs'
+                    _key: mrs
+                  -
+                    _value: 'Ms'
+                    _key: ms
+                  -
+                    _value: 'Miss.'
+                    _key: miss
+            -
+              type: 'TYPO3.Form:SingleSelectDropdown'
               identifier: civilStatus
               label: 'Civil Status'
               properties:
                 options:
                   -
-                    _value: Married
-                    _key: married
+                    _value: 'Married'
+                    _key: 'married'
                   -
-                    _value: 'Un married'
-                    _key: unmarried
+                    _value: 'Single'
+                    _key: 'single'
+                  -
+                    _value: 'living together'
+                    _key: 'livingTogether'
+                  -
+                    _value: 'widow / widower'
+                    _key: 'widowwidower'
+                  -
+                    _value: 'Divorced'
+                    _key: 'divorced'
         -
           type: 'TYPO3.Form:Section'
           identifier: personname
@@ -80,7 +110,7 @@ WizardNewPerson:
               defaultValue: ''
             -
               type: 'TYPO3.Form:SingleLineText'
-              identifier: firstName
+              identifier: 'firstName'
               label: 'First name'
               validators:
                 -
