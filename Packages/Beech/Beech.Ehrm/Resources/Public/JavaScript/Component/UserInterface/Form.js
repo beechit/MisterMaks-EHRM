@@ -8,9 +8,12 @@
 		});
 
 		$(document).on('hover', '.help', function() {
-			$(this).tooltip('show');
+			$(this).tooltip({placement: 'top', trigger: 'hover', delay: { show: 100, hide: 500 }}).tooltip('show')
 		});
-
+			// block help tooltip clicking
+		$(document).on('click', '.help', function() {
+			return false;
+		});
 	});
 
 }).call(this);
