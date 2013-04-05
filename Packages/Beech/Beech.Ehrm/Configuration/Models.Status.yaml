@@ -9,7 +9,8 @@
           - 'inProgress'
           - 'completed'
           - 'rejected'
-          - 'ended'          - 'stopped'
+          - 'ended'
+          - 'stopped'
 # draft a draft version
 # pending awaiting decision
 # in progress this is in progress awaiting a status change
