@@ -43,11 +43,11 @@ contractArticles:
               enableDatePicker: TRUE
               displayTimeSelector: FALSE
           -
-            type: 'TYPO3.Form:SingleLineText'
+            type: 'Beech.CLA:SingleLineText'
             value: ''
             valueId: jobTitle
           -
-            type: 'TYPO3.Form:SingleLineText'
+            type: 'Beech.CLA:SingleLineText'
             value: 'Beech\Party\Domain\Model\Company'
             valueId: 'workLocation'
     -
@@ -68,12 +68,12 @@ contractArticles:
         pl: ''
       values:
           -
-            type: 'TYPO3.Form:SingleLineText'
+            type: 'Beech.CLA:SingleLineText'
             value: ''
             valueId: probationPeriod
             default: 4
           -
-            type: 'TYPO3.Form:SingleSelectDropdown'
+            type: 'Beech.CLA:SingleSelectDropdown'
             options:
               - day
               - days
@@ -98,21 +98,21 @@ contractArticles:
         pl: ''
       values:
         -
-          type: 'TYPO3.Form:SingleLineText'
+          type: 'Beech.CLA:SingleLineText'
           value: ''
           valueId: totalHours
           default: '0'
         -
-          type: 'TYPO3.Form:SingleLineText'
+          type: 'Beech.CLA:SingleLineText'
           value: ''
           valueId: hoursAWeek
           default: '38'
         -
-          type: 'TYPO3.Form:SingleLineText'
+          type: 'Beech.CLA:SingleLineText'
           value: ''
           valueId: jobTitle
         -
-          type: 'TYPO3.Form:MultipleSelectCheckboxes'
+          type: 'Beech.CLA:MultipleSelectCheckboxes'
           options: [ maandag, dinsdag, woensdag, donderdag, vrijdag, zaterdag, zondag ]
           translated:
             nl: [ maandag, dinsdag, woensdag, donderdag, vrijdag, zaterdag, zondag ]
@@ -155,7 +155,7 @@ contractArticles:
         pl: ''
       values:
         -
-          type: 'TYPO3.Form:SingleLineText'
+          type: 'Beech.CLA:SingleLineText'
           value: ''
           valueId: 'minimumWage'
           default: ''
@@ -177,7 +177,7 @@ contractArticles:
         pl: ''
       values:
         -
-          type: 'TYPO3.Form:SingleLineText'
+          type: 'Beech.CLA:SingleLineText'
           default: 'Glastuinbouw'
           valueId: 'CLA'
     -
@@ -198,7 +198,7 @@ contractArticles:
         pl: ''
       values:
         -
-          type: 'TYPO3.Form:SingleLineText'
+          type: 'Beech.CLA:SingleLineText'
           default: '20'
           valueId: 'vacationAllowanceGLA'
     -
@@ -292,14 +292,14 @@ contractArticles:
         pl: ''
       values:
         -
-          type: 'TYPO3.Form:SingleLineText'
+          type: 'Beech.CLA:SingleLineText'
           validation:
             type: 'TYPO3.Flow:RegularExpression'
             options:
               regularExpression: '/^[0-9]{1,4}([\.][0-9]{0,2}){0,1}$/'
           valueId: 'accomodationRent'
         -
-          type: 'TYPO3.Form:SingleLineText'
+          type: 'Beech.CLA:SingleLineText'
           options: [ week , maand ]
           valueId: weekMaand
           default: 'week'
@@ -354,17 +354,17 @@ contractArticles:
       values:
 # selectable values from the wagemodel.
         -
-          type: 'TYPO3.Form:SingleLineText'
+          type: 'Beech.CLA:SingleLineText'
           value: ''
           valueId: 'wageScaleGroup'
           default: ''
         -
-          type: 'TYPO3.Form:SingleLineText'
+          type: 'Beech.CLA:SingleLineText'
           value: ''
           valueId: 'wageStep'
           default: ''
         -
-          type: 'TYPO3.Form:SingleLineText'
+          type: 'Beech.CLA:SingleLineText'
           value: ''
           valueId: 'hourWage'
           validation:
@@ -390,7 +390,7 @@ contractArticles:
         pl: ''
       values:
         -
-          type: 'TYPO3.Form:SingleLineText'
+          type: 'Beech.CLA:SingleLineText'
           default: '8.33'
           valueId: vacationAllowancePercentage
           validation:
@@ -415,7 +415,7 @@ contractArticles:
         pl: ''
       values:
         -
-          type: 'TYPO3.Form:SingleLineText'
+          type: 'Beech.CLA:SingleLineText'
           value: ''
           validation:
             type: 'TYPO3.Flow:RegularExpression'
@@ -423,15 +423,15 @@ contractArticles:
               regularExpression: /^[0-9]{1,2}([\.][0-9]{0,2}){0,1}$/
           valueId: hoursAWeek
         -
-          type: 'TYPO3.Form:SingleLineText'
+          type: 'Beech.CLA:SingleLineText'
           value: ''
           valueId: jobTitle
         -
-          type: 'TYPO3.Form:SingleSelectDropdown'
+          type: 'Beech.CLA:SingleSelectDropdown'
           value: 'Beech/Party/Domain/Model/Company'
           valueId: 'workLocation'
         -
-          type: 'TYPO3.Form:MultipleSelectCheckboxes'
+          type: 'Beech.CLA:MultipleSelectCheckboxes'
           options: [ maandag, dinsdag, woensdag, donderdag, vrijdag, zaterdag, zondag ]
           translated:
             nl: [ maandag, dinsdag, woensdag, donderdag, vrijdag, zaterdag, zondag ]
@@ -484,11 +484,11 @@ contractArticles:
           valueId: startDate
           default: today
         -
-          type: 'TYPO3.Form:SingleLineText'
+          type: 'Beech.CLA:SingleLineText'
           value: ''
           valueId: jobTitle
         -
-          type: 'TYPO3.Form:SingleSelectDropdown'
+          type: 'Beech.CLA:SingleSelectDropdown'
           value: '/Beech/Party/Domain/Models/Company'
           valueId: 'workLocation'
     -
@@ -509,7 +509,7 @@ contractArticles:
         pl: ''
       values:
         -
-          type: 'TYPO3.Form:SingleLineText'
+          type: 'Beech.CLA:SingleLineText'
           value: ''
           valueId: probationPeriod
           validation: 'TYPO3.Flow:RegularExpression'
@@ -517,7 +517,7 @@ contractArticles:
             regularExpression: '[0-9]{1,2}'
           default: 0
         -
-          type: 'TYPO3.Form:SingleSelectDropdown'
+          type: 'Beech.CLA:SingleSelectDropdown'
           options:
             - day
             - days

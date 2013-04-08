@@ -9,8 +9,12 @@
 				</div>
 			</legend>
 		</f:if>
+		<div class="control-group form-inline article-values">
 		<f:for each="{section.elements}" as="element">
-			<form:renderRenderable renderable="{element}" />
+			<span>
+				<form:renderRenderable renderable="{element}" />
+			</span>
 		</f:for>
+		</div>
 	</fieldset>
 </div>
