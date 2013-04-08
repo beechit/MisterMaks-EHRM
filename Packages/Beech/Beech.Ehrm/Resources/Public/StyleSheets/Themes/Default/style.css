@@ -85,7 +85,7 @@ iframe { border: none; }
 #modal-body-only .modal-body { padding: 30px 0 0 0; }
 #modal-body-only .modal-body .icon-spin { margin: 0 30px 30px; }
 #modal-body-only form { margin: 0; }
-#modal-body-only form fieldset { padding: 20px 0 20px 60px; }
+#modal-body-only form fieldset { padding: 20px 0 20px 60px; margin-right: 20px; }
 #modal-body-only form fieldset legend { margin-bottom: 0; border: none; }
 #modal-body-only form fieldset legend + .control-group { margin-top: 0; }
 #modal-body-only form .form-actions { margin-bottom: 0; padding-left: 60px; }

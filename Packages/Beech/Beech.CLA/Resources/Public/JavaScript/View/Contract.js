@@ -8,5 +8,14 @@
 	});
 	App.AdministrationContractModuleNewView = App.ContractModuleViewMixin.extend();
 	App.AdministrationContractModuleShowView = App.ContractModuleViewMixin.extend();
-	App.AdministrationContractModuleStartView = App.ContractModuleViewMixin.extend();
+	App.AdministrationContractModuleStartView = App.ContractModuleViewMixin.extend({
+		didInsertElement: function() {
+			$('#modal-body-only')
+				.find('.modal-body').html('');
+			this.$().prependTo('.modal-body')
+			$('#modal-body-only')
+				.addClass('modal-large')
+				.modal('show');
+		}
+	});
 }).call(this);

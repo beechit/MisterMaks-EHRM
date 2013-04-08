@@ -6,7 +6,7 @@
 		</a>
 		<ul class="dropdown-menu">
 			<li>
-				<a href="{f:uri.action(package:'Beech.Ehrm', controller:'wizard', action:'show', arguments:'{formPersistenceIdentifier:\'wizardNewCompany\'}')}" data-toggle="modal-jsonp" data-target="#modal-body-only">New company</a>
+				<a href="{f:uri.action(package:'Beech.Ehrm', controller:'wizard', action:'show', arguments:'{formPersistenceIdentifier:\'wizardNewCompany\'}')}" data-toggle="modal-ajax" data-target="#modal-body-only">New company</a>
 			</li>
 		</ul>
 	</div>
@@ -17,7 +17,7 @@
 		</a>
 		<ul class="dropdown-menu">
 			<li>
-				<a href="{f:uri.action(package:'Beech.Ehrm', controller:'wizard', action:'show', arguments:'{formPersistenceIdentifier:\'wizardFullNewCompany\'}')}" data-toggle="modal-jsonp" data-target="#modal-body-only">Full new company</a>
+				<a href="{f:uri.action(package:'Beech.Ehrm', controller:'wizard', action:'show', arguments:'{formPersistenceIdentifier:\'wizardFullNewCompany\'}')}" data-toggle="modal-ajax" data-target="#modal-body-only">Full new company</a>
 			</li>
 		</ul>
 	</div>
@@ -50,8 +50,8 @@
 			<span class="caret"></span>
 		</a>
 		<ul class="dropdown-menu">
-			<li>
-				<a href="{f:uri.action(package:'Beech.Ehrm', controller:'wizard', action:'show', arguments:'{formPersistenceIdentifier:\'wizardQuickCompany'}')}" data-toggle="modal-jsonp" data-target="#modal-body-only">Quick company wizard</a></li>
+			<li><a href="{f:uri.action(package:'Beech.Ehrm', controller:'wizard', action:'show', arguments:'{formPersistenceIdentifier:\'wizardQuickCompany\'}')}" data-toggle="modal-ajax" data-target="#modal-body-only">Quick company wizard</a></li>
+			<li><a href="{f:uri.action(package:'Beech.CLA', subpackage:'Administration', controller:'contract', action:'new')}" data-toggle="modal-ajax" data-target="#modal-body-only" modal-size="large">Contract</a></li>
 			<li>{{#linkTo "administration.contractModule"}}List contracts{{/linkTo}}</li>
 		</ul>
 	</div>
@@ -60,7 +60,6 @@
 
 <h2>Person {{name.fullName}} {{#linkTo "BeechPartyDomainModelPerson.edit" model}}<i class="icon-edit"></i>{{/linkTo}}</h2>
 <p><b>Name:</b> {{name.firstName}} {{name.lastName}}</p>
-<p><b>Type:</b> {{name.firstName}} {{name.lastName}}</p>
 
 {{render "beech_party_phone" model}}
 {{render "beech_party_address" model}}

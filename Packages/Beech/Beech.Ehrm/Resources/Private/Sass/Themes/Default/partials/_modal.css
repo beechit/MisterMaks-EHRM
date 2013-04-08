@@ -13,7 +13,8 @@ iframe {
 #modal-body-only form {
   margin: 0; }
   #modal-body-only form fieldset {
-    padding: 20px 0 20px 60px; }
+    padding: 20px 0 20px 60px;
+    margin-right: 20px; }
     #modal-body-only form fieldset legend {
       margin-bottom: 0;
       border: none; }
