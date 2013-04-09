@@ -54,20 +54,6 @@
           - 'birthName'
           - 'marriedName'
           - 'marriedNameBirthname'
-    'alias':
-      label: Alias
-      validation:
-        -
-          type: 'StringLength'
-          options:
-            maximum: 15
-    'fullName':
-      label: FullName
-      validation:
-        -
-          type: 'StringLength'
-          options:
-            maximum: 40
     'initials':
       label: 'Initials'
       validation:
