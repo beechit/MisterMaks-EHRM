@@ -35,9 +35,9 @@ class ContractArticleFormElement extends \TYPO3\Form\Core\Model\AbstractFormElem
 		if (!is_null($contractArticle->getValues())) {
 			foreach ($contractArticle->getValues() as $value) {
 				if (isset($value['valueId'])) {
-					$identifier = $this->fieldDefaultValueHelper->generateIdentifierForArticle('contractCreator', $contractArticle->getArticleId(), $value['valueId'].'_text');
+					$identifier = $this->fieldDefaultValueHelper->generateIdentifierForArticle('contractCreator', $contractArticle->getArticleId(), $value['valueId'] . '_text');
 					$pattern[] = sprintf('/<(%s)>/', $value['valueId']);
-					if (isset($this->articleValues[$value['valueId']]) && is_string($this->articleValues[$value['valueId']]))  {
+					if (isset($this->articleValues[$value['valueId']]) && is_string($this->articleValues[$value['valueId']])) {
 						$replacement[] = sprintf('<strong>%s</strong>', $this->articleValues[$value['valueId']]);;
 					} else {
 						$replacement[] = sprintf('<strong id="%s">%s</strong>', $identifier, $this->fieldDefaultValueHelper->getDefault($value));

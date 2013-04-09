@@ -90,7 +90,7 @@ class ContractArticlesSection extends \TYPO3\Form\FormElements\Section {
 						}
 						if (isset($value['label'])) {
 							$contractArticleValue->setLabel($value['label']);
-						} else if (isset($value['valueId'])) {
+						} elseif (isset($value['valueId'])) {
 							$contractArticleValue->setLabel($value['valueId']);
 						}
 						if (isset($value['validation'])) {

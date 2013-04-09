@@ -19,7 +19,7 @@ class ContractArticleRepository extends \Radmiraal\CouchDB\Persistence\AbstractR
 	 *
 	 * @param array $articleIds Array of articleIds
 	 * @param integer $offset Offset used to pagination
-	 * @param integer $limit Limit on page used to pagination
+	 * @param integer $length Limit on page used to pagination
 	 * @param string $sortBy Sorted by property name
 	 * @return array
 	 */
@@ -50,7 +50,10 @@ class ContractArticleRepository extends \Radmiraal\CouchDB\Persistence\AbstractR
 		if ($contractArticleOne->getOrder() === $contractArticleTwo->getOrder()) {
 			return 0;
 		}
-		return ($contractArticleOne->getOrder() > $contractArticleTwo->getOrder()) ? 1 : -1;
+		if ($contractArticleOne->getOrder() > $contractArticleTwo->getOrder()) {
+			return 1;
+		}
+		return -1;
 	}
 
 }
