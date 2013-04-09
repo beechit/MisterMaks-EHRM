@@ -108,6 +108,7 @@ class ContractArticlesSection extends \TYPO3\Form\FormElements\Section {
 				$contractArticleElement->setDefaultValue($contractArticle->getArticleId());
 				$contractArticleElement->setProperty('contractArticle', $contractArticle);
 				$contractArticleElement->setProperty('preparedArticleText', $contractArticleElement->prepareArticleText($contractArticle));
+				$contractArticleElement->setProperty('subArticles', $contractArticle->getSubArticles());
 			}
 		}
 	}

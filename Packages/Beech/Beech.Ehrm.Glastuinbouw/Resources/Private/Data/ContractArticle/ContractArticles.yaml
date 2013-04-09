@@ -311,7 +311,7 @@ contractArticles:
       articleLabel: otherStipulations
       articleId: 10011
       order: 1100
-      subArticle:
+      subArticles:
         -
           articleId: 10012
           order: 1200
@@ -589,7 +589,7 @@ contractArticles:
         en: ''
         nl: ''
         pl: ''
-      subarticle:
+      subArticles:
         -
           articleId: 10022
           order: 353

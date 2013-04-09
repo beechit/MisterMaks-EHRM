@@ -30,3 +30,6 @@
       default: 'currentUser'
       label: 'Created by'
       type: 'Beech\Party\Domain\Model\Person'
+    'subArticles':
+      type: 'array'
+

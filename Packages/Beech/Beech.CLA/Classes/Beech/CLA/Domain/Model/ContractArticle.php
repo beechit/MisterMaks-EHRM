@@ -26,6 +26,19 @@ class ContractArticle extends \Beech\Ehrm\Domain\Model\Document {
 	 */
 	protected $articleId;
 
+	/**
+	 * @return array
+	 */
+	public function getSubArticles() {
+		$subArticles = array();
+		if (parent::getSubArticles() !== NULL) {
+			foreach(parent::getSubArticles() as $subArticle) {
+					//TODO: multi language support
+				$subArticles[] = $subArticle['articleText']['nl'];
+			}
+		}
+		return $subArticles;
+	}
 }
 
 ?>

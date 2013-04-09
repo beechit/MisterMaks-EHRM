@@ -1,6 +1,17 @@
 <f:layout name="Beech.Ehrm:FullWidthField" />
 <f:section name="field">
 	<div class="inputs-list" id="{element.uniqueIdentifier}">
-		{element.properties.preparedArticleText -> f:format.htmlentitiesDecode()}
+		<fieldset>
+			<legend>{element.label}</legend>
+			<div>
+				{element.properties.preparedArticleText -> f:format.htmlentitiesDecode()}
+				<ul>
+				<f:for each="{element.properties.subArticles}" as="subArticle">
+					<li>{subArticle}</li>
+				</f:for>
+				</ul>
+			</div>
+		</fieldset>
 	</div>
+	<hr/>
 </f:section>
