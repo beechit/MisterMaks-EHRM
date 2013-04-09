@@ -1,6 +1,6 @@
 {
 	"name": "beech/ehrm-glastuinbouw",
-	"type": "typo3-flow-beech",
+	"type": "typo3-flow-package",
 	"require": {
 		"typo3/flow": "*"
 	},

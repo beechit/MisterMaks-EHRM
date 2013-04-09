@@ -1,6 +1,6 @@
 {
 	"name": "beech/document",
-	"type": "typo3-flow-beech",
+	"type": "typo3-flow-package",
 	"description": "",
 	"version": "",
 	"require": {

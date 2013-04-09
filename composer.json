@@ -51,28 +51,33 @@
 		"vendor-dir":"Packages/Libraries",
 		"bin-dir": "bin"
 	},
+	"extra": {
+		"installer-paths": {
+			"Packages/Beech/{$name}/": [
+				"beech/dev-tools",
+				"beech/style"
+			]
+		}
+	},
 	"require": {
 		"php": ">=5.4.0",
 		"typo3/flow": "dev-master",
-		"typo3/eel": "dev-master",
+		"typo3/eel": "*",
 		"beech/essentials": "dev-master",
-		"typo3/surf": "dev-master",
-		"typo3/ldap": "dev-master",
+		"typo3/surf": "*",
+		"typo3/ldap": "*",
 		"radmiraal/emberjs": "dev-master",
 		"radmiraal/couchdb": "dev-doctrine",
-		"doctrine/dbal": "2.3.1",
-		"doctrine/orm": "2.3.1",
-		"typo3/formbuilder": "dev-master",
-		"typo3/eel": "dev-master",
+		"typo3/formbuilder": "*",
 		"typo3/queue-redis": "*",
 		"react/event-loop": "*",
-		"typo3/usermanagement": "dev-master"
+		"typo3/usermanagement": "*"
 	},
 	"require-dev": {
-		"typo3/buildessentials": "dev-master",
-		"typo3/kickstart": "dev-master",
+		"typo3/buildessentials": "*",
+		"typo3/kickstart": "*",
 		"phpunit/phpunit": "3.7.*",
-		"typo3-qa/typo3flow": "dev-master",
+		"typo3-qa/typo3flow": "*",
 		"mikey179/vfsstream": "1.1.*",
 		"beech/style": "dev-development",
 		"phpmd/phpmd": "1.4.*",
