@@ -119,7 +119,7 @@ class ContractFormFactory extends \TYPO3\Form\Factory\AbstractFormFactory {
 			}
 
 			while ($this->nextArticlesPage($page)) {
-				$this->pageIndex++;
+				++$this->pageIndex;
 				$page = NULL;
 			}
 

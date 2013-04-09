@@ -44,11 +44,37 @@ class ContractArticlesSection extends \TYPO3\Form\FormElements\Section {
 	protected $contract = NULL;
 
 	/**
+	 * @var integer
+	 */
+	protected $articleIndex = 0;
+
+	/**
 	 * @var \Beech\Ehrm\Form\Helper\FieldDefaultValueHelper
 	 * @Flow\Inject
 	 */
 	protected $fieldDefaultValueHelper;
 
+	/**
+	 * @var array
+	 */
+	protected $settings;
+
+	/**
+	 * @param array $settings
+	 */
+	public function injectSettings(array $settings) {
+		$this->settings = $settings;
+	}
+
+	/**
+	 * Article index is dynamic value which depends on page index and
+	 * It must be recalculated for each ArticleSection
+	 *
+	 * @return void
+	 */
+	public function initArticleIndex() {
+		$this->articleIndex = ($this->getParentRenderable()->getIndex()) * $this->settings['contractArticlesPerPage'];
+	}
 	/**
 	 * Initialize form element
 	 *
@@ -59,6 +85,7 @@ class ContractArticlesSection extends \TYPO3\Form\FormElements\Section {
 			if ($this->contract !== NULL) {
 				$filledContractValues = $this->contract->getArticles();
 			}
+			$this->initArticleIndex();
 			foreach ($this->contractArticles as $contractArticle) {
 
 				/** @var $contractArticleSection \TYPO3\Form\Core\Model\FormElementInterface */
@@ -109,6 +136,7 @@ class ContractArticlesSection extends \TYPO3\Form\FormElements\Section {
 				}
 				$contractArticleElement->setDefaultValue($contractArticle->getArticleId());
 				$contractArticleElement->setContractArticle($contractArticle);
+				$contractArticleElement->setProperty('articleIndex', ++$this->articleIndex);
 			}
 		}
 	}
@@ -165,8 +193,6 @@ class ContractArticlesSection extends \TYPO3\Form\FormElements\Section {
 	public function getArticleIds() {
 		return  $this->getContractTemplate()->getArticles();
 	}
-
-
 }
 
 ?>
