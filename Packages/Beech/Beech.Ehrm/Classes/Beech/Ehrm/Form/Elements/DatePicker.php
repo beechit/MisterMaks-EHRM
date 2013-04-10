@@ -1,5 +1,5 @@
 <?php
-namespace Beech\Ehrm\FormElements;
+namespace Beech\Ehrm\Form\Elements;
 
 /*
  * This source file is proprietary property of Beech Applications B.V.

@@ -90,9 +90,9 @@ TYPO3:
         formElementTypes:
           'TYPO3.Form:Base':
             renderingOptions:
-              templatePathPattern: 'resource://Beech.Ehrm/Private/Templates/FormElements/{@type}.html'
-              partialPathPattern: 'resource://Beech.Ehrm/Private/Templates/FormElements/Partials/{@type}.html'
-              layoutPathPattern: 'resource://Beech.Ehrm/Private/Templates/FormElements/Layouts/{@type}.html'
+              templatePathPattern: 'resource://Beech.Ehrm/Private/Templates/Form/Elements/{@type}.html'
+              partialPathPattern: 'resource://Beech.Ehrm/Private/Templates/Form/Elements/Partials/{@type}.html'
+              layoutPathPattern: 'resource://Beech.Ehrm/Private/Templates/Form/Elements/Layouts/{@type}.html'
           'TYPO3.Form:Form':
             formBuilder:
               editors:
@@ -106,7 +106,7 @@ TYPO3:
                       templateName: 'Finisher-ModalCloseConfirmationFinisher'
           'Beech.Ehrm:DatePicker':
             superTypes: ['TYPO3.Form:FormElement']
-            implementationClassName: 'Beech\Ehrm\FormElements\DatePicker'
+            implementationClassName: 'Beech\Ehrm\Form\Elements\DatePicker'
             properties:
               elementClassAttribute: 'input-small'
               timeSelectorClassAttribute: 'input-mini'
@@ -120,17 +120,17 @@ TYPO3:
               sorting: 99
           'Beech.Ehrm:NationalitySelect':
             superTypes: ['TYPO3.Form:FormElement', 'TYPO3.Form:SingleSelectDropdown']
-            implementationClassName: 'Beech\Ehrm\FormElements\NationalitySelect'
+            implementationClassName: 'Beech\Ehrm\Form\Elements\NationalitySelect'
             renderingOptions:
-              templatePathPattern: 'resource://Beech.Ehrm/Private/Templates/FormElements/NationalitySelect.html'
+              templatePathPattern: 'resource://Beech.Ehrm/Private/Templates/Form/Elements/NationalitySelect.html'
             formBuilder:
               label: 'Nationality Select'
               group: custom
           'Beech.Ehrm:CountrySelect':
             superTypes: ['TYPO3.Form:FormElement', 'TYPO3.Form:SingleSelectDropdown']
-            implementationClassName: 'Beech\Ehrm\FormElements\CountrySelect'
+            implementationClassName: 'Beech\Ehrm\Form\Elements\CountrySelect'
             renderingOptions:
-              templatePathPattern: 'resource://Beech.Ehrm/Private/Templates/FormElements/CountrySelect.html'
+              templatePathPattern: 'resource://Beech.Ehrm/Private/Templates/Form/Elements/CountrySelect.html'
             formBuilder:
               label: 'Country Select'
               group: custom
@@ -138,7 +138,7 @@ TYPO3:
             superTypes: ['TYPO3.Form:FormElement', 'TYPO3.Form:SingleSelectDropdown']
             implementationClassName: 'Beech\Party\FormElements\EmployeeSelect'
             renderingOptions:
-              templatePathPattern: 'resource://Beech.Ehrm/Private/Templates/FormElements/SingleSelectDropdown.html'
+              templatePathPattern: 'resource://Beech.Ehrm/Private/Templates/Form/Elements/SingleSelectDropdown.html'
             formBuilder:
               label: 'Employee Select'
               group: custom
@@ -146,7 +146,7 @@ TYPO3:
             superTypes: ['TYPO3.Form:FormElement', 'TYPO3.Form:SingleSelectDropdown']
             implementationClassName: 'Beech\CLA\FormElements\ContractTemplateSelect'
             renderingOptions:
-              templatePathPattern: 'resource://Beech.Ehrm/Private/Templates/FormElements/SingleSelectDropdown.html'
+              templatePathPattern: 'resource://Beech.Ehrm/Private/Templates/Form/Elements/SingleSelectDropdown.html'
             formBuilder:
               label: 'Contract Template Select'
               group: custom
@@ -154,7 +154,7 @@ TYPO3:
             superTypes: ['TYPO3.Form:FormElement', 'TYPO3.Form:SingleSelectDropdown']
             implementationClassName: 'Beech\CLA\FormElements\JobDescriptionSelect'
             renderingOptions:
-              templatePathPattern: 'resource://Beech.Ehrm/Private/Templates/FormElements/SingleSelectDropdown.html'
+              templatePathPattern: 'resource://Beech.Ehrm/Private/Templates/Form/Elements/SingleSelectDropdown.html'
             formBuilder:
               label: 'JobDescription Select'
               group: contract
@@ -217,6 +217,7 @@ Radmiraal:
             integer: 'number'
           ignoredProperties:
             - 'data'
+            - 'alias'
           packageFolderPatterns:
             - 'Beech/**'
 
