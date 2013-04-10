@@ -16,8 +16,6 @@ contractArticles:
       articleLabel: employmentJobTitleLocation
       articleId: 10000
       order: 100
-      required: TRUE
-      standard: TRUE
       articleText:
         en: ''
         nl: 'Werknemer treedt per <startDate> bij werkgever in dienst. De arbeidsovereenkomst wordt aangegaan voor bepaalde tijd en eindigt van rechtswege op <endDate>. De werknemer is aangenomen voor de functie van <jobTitle>. De werkzaamheden worden hoofdzakelijk verricht op adres <workLocation>.'
@@ -60,8 +58,6 @@ contractArticles:
       articleLabel: employmentJobTitleLocation
       articleId: 10001
       order: 150
-      required: TRUE
-      standard: TRUE
       articleText:
         en: ''
         nl: 'Op deze arbeidsovereenkomst is een proeftijd van <probationPeriod> <dayWeek> van toepassing. Gedurende deze proeftijd kunnen beide partijen de arbeidsovereenkomst dagelijks beëindigen.'
@@ -92,8 +88,6 @@ contractArticles:
       articleLabel: hoursAndWorkingHours
       articleId: 10002
       order: 200
-      required: TRUE
-      standard: TRUE
       articleText:
         en: ''
         nl: 'De arbeidsduur bedraagt voor de totale looptijd van deze arbeidsovereenkomst <totalHours> uur. De gemiddelde arbeidsduur bedraagt <hoursAWeek> per week. De werknemer werkt op de dagen <workDays> van <startTime> tot <endTime> De werknemer stemt ermee in dat door de seizoensmatige aard van het werk de arbeidsduur kan fluctueren, waardoor dagelijks en/of wekelijks meer/minder uren worden gewerkt dan de overeengekomen gemiddelde arbeidsduur. Werkgever en werknemer maken hierover in onderling overleg werkafspraken.'
@@ -151,8 +145,6 @@ contractArticles:
       articleLabel: Wage
       articleId: 10003
       order: 300
-      required: TRUE
-      standard: TRUE
       articleText:
         en: ''
         nl: 'Werknemer wordt beloond conform het wettelijk minimumloon. Bij indiensttreding bedraagt het salaris € <minimumWage> bruto per uur.'
@@ -175,8 +167,6 @@ contractArticles:
       articleLabel: CLA
       articleId: 10004
       order: 400
-      required: TRUE
-      standard: TRUE
       articleText:
         en: ''
         nl: 'Op deze arbeidsovereenkomst zijn van toepassing de huidige en toekomstige bepalingen van de cao <CLA>.'
@@ -198,8 +188,6 @@ contractArticles:
       articleLabel: vacation
       articleId: 10005
       order: 500
-      required: TRUE
-      standard: TRUE
       articleText:
         en: ''
         nl: 'Ter compensatie van de opgebouwde vakantiedagen en vakantietoeslag wordt over het brutoloon een toeslag betaald van <vacationAllowanceGLA> % bij het einde van de dienstbetrekking. Hierop wordt de vergoeding in mindering gebracht die de werknemer heeft ontvangen voor de op zijn verzoek opgenomen vakantiedagen.'
@@ -221,8 +209,6 @@ contractArticles:
       articleLabel: Sickness
       articleId: 10006
       order: 600
-      required: TRUE
-      standard: TRUE
       articleText:
         en: ''
         nl: 'Ingeval van ziekte is de werknemer verplicht de werkgever zo spoedig mogelijk voor aanvang van de dienst op de hoogte te stellen, doch uiterlijk voor <sickReportTime> ’s morgens op dezelfde dag. De werkneme heeft recht op loondoorbetaling bij ziekte op basis van de geldende cao.'
@@ -248,8 +234,6 @@ contractArticles:
       articleLabel: noticePeriod
       articleId: 10007
       order: 700
-      required: TRUE
-      standard: TRUE
       articleText:
         en: ''
         nl: 'Een eventuele tussentijdse opzegging van deze arbeidsovereenkomst is mogelijk, op basis van de afspraken in de wet en de geldende cao.'
@@ -266,8 +250,6 @@ contractArticles:
       articleLabel: generalCompanyRules
       articleId: 10008
       order: 800
-      required: TRUE
-      standard: TRUE
       articleText:
         en: ''
         nl: 'De werknemer verklaart op de hoogte te zijn van en in te stemmen met de bij de werkgever geldende arbeids- en bedrijfsregels. Deze regels maken integraal onderdeel uit van de arbeidsovereenkomst tussen partijen. Werknemer heeft een exemplaar van het bedrijfsreglement ontvangen.'
@@ -284,8 +266,6 @@ contractArticles:
       articleLabel: Identification
       articleId: 10009
       order: 900
-      required: TRUE
-      standard: TRUE
       articleText:
         en: ''
         nl: 'Werknemer stelt werkgever voor aanvang van het dienstverband in het bezit van een kopie van een geldig identiteitsbewijs in de zin van de Wet op de Identificatieplicht, onder gelijke vertoning van het originele document. Werknemer verplicht zich te allen tijden een geldig identiteitsbewijs op het werk te kunnen tonen.'
@@ -302,8 +282,6 @@ contractArticles:
       articleLabel: accomodationRent
       articleId: 10010
       order: 1000
-      required: FALSE
-      standard: FALSE
       articleText:
         en: ''
         nl: 'De werkgever draagt zorg voor huisvesting van de werknemer. Deze huisvesting voldoet minimaal aan alle wettelijke en gemeentelijke regels. De werknemer betaalt de werkgever een vergoeding van € <accomodationRent> per <weekMaand> voor het gebruik van deze voorziening.'
@@ -333,14 +311,10 @@ contractArticles:
       articleLabel: otherStipulations
       articleId: 10011
       order: 1100
-      required: TRUE
-      standard: TRUE
       subArticle:
         -
           articleId: 10012
           order: 1200
-          required: FALSE
-          standard: TRUE
           articleText:
             en: ''
             nl: 'De werknemer is verplicht tot geheimhouding van al hetgeen hij bij de uitoefening van zijn functie met betrekking tot de zaken en de belangen van de werkgever te weten komt.'
@@ -352,8 +326,6 @@ contractArticles:
         -
           articleId: 10013
           order: 1300
-          required: FALSE
-          standard: TRUE
           articleText:
             en: ''
             nl: 'De werkgever is verplicht om aan de werknemer bedrijfskleding en of veiligheidsschoeisel te verstrekken overeenkomstig veiligheidsvoorschriften of ten behoeve van het verrichten van vuil werk. Werknemer is gehouden deze bedrijfsmiddelen te gebruiken volgens de geldende voorschriften. De bedrijfsmiddelen blijven in eigendom van de werkgever en dienen bij het einde van het dienstverband door de werknemer te worden ingeleverd.'
@@ -371,8 +343,6 @@ contractArticles:
       articleLabel: Wage
       articleId: 10014
       order: 305
-      required: TRUE
-      standard: TRUE
       articleText:
         en: ''
         nl: 'Werknemer is ingedeeld in functiegroep <wageScaleGroup> in functiejaar <wageStep>. Bij indiensttreding bedraagt het salaris € <hourWage> bruto per uur.'
@@ -410,8 +380,6 @@ contractArticles:
       articleLabel: Wage
       articleId: 10015
       order: 1500
-      required: TRUE
-      standard: TRUE
       articleText:
         en: ''
         nl: 'Afhandeling van vakantierechten vindt plaats door uitbetaling van vakantiegeld (bruto <vacationAllowancePercentage>%) en opbouw van betaalde vakantiedagen en feestdagen conform cao.'
@@ -437,8 +405,6 @@ contractArticles:
       articleLabel: hoursAndWorkingHours
       articleId: 10016
       order: 550
-      required: TRUE
-      standard: TRUE
       articleText:
         en: ''
         nl: 'De gemiddelde arbeidsduur bedraagt <hoursAWeek> per week. De werknemer werkt op de dagen <workDays> van <startTime> tot <endTime> De werknemer stemt ermee in dat door de seizoensmatige aard van het werk de arbeidsduur kan fluctueren, waardoor dagelijks en/of wekelijks meer/minder uren worden gewerkt dan de overeengekomen gemiddelde arbeidsduur. Werkgever en werknemer maken hierover in onderling overleg werkafspraken.'
@@ -499,8 +465,6 @@ contractArticles:
       articleLabel: employmentJobTitleLocation
       articleId: 10017
       order: 1700
-      required: TRUE
-      standard: TRUE
       articleText:
         en: ''
         nl: 'Werknemer treedt per <startDate> bij werkgever in dienst. De arbeidsovereenkomst wordt aangegaan voor onbepaalde tijd. De werknemer is aangenomen voor de functie van <jobTitle>. De werkzaamheden worden hoofdzakelijk verricht op adres <workLocation>.'
@@ -535,8 +499,6 @@ contractArticles:
       articleLabel: probation
       articleId: 10018
       order: 151
-      required: FALSE
-      standard: FALSE
       articleText:
         en: ''
         nl: 'Op deze arbeidsovereenkomst is een proeftijd van <probationPeriod> <dayWeek> van toepassing. Gedurende deze proeftijd kunnen beide partijen de arbeidsovereenkomst dagelijks beëindigen.'
@@ -570,8 +532,6 @@ contractArticles:
       articleLabel: Probation
       articleId: 10019
       order: 152
-      required: TRUE
-      standard: TRUE
       articleText:
         en: ''
         nl: 'Op deze arbeidsovereenkomst is geen proeftijd van toepassing.'
@@ -588,8 +548,6 @@ contractArticles:
       articleLabel: noticePeriod
       articleId: 10019
       order: 152
-      required: TRUE
-      standard: TRUE
       articleText:
         en: ''
         nl: 'Deze arbeidsovereenkomst kan opgezegd worden met inachtneming van de wettelijke opzegtermijnen.'
@@ -598,12 +556,8 @@ contractArticles:
         en: ''
         nl: ''
         pl: ''
-
 # possibly add article about notice period.
-
-
 # articles belonging to the cafeteria arrangement that was made by LTO Nederland.
-
       articleHeader:
         en: ''
         nl: 'Lidmaatschap LTO Nederland'
@@ -611,8 +565,6 @@ contractArticles:
       articleLabel: MemberLTO
       articleId: 10020
       order: 350
-      required: FALSE
-      standard: TRUE
       articleText:
         en: ''
         nl: 'Werkgever verklaart lid te zijn van LTO Noord, ZLTO, LLTB, NFO, KAVB, NOP of LTO Noord Glaskracht'
@@ -629,8 +581,6 @@ contractArticles:
       articleLabel: cafetariaModel
       articleId: 10021
       order: 352
-      required: FALSE
-      standard: TRUE
       articleText:
         en: ''
         nl: 'Werkgever en werknemer spreken af gebruik te maken van de door LTO Nederland met de Belastingdienst afgesproken cafetariaregeling voor extraterritoriale kosten. De regeling en de werking ervan staat omschreven in een door LTO Nederland uitgebrachte brochure over extraterritoriale werknemers. De regeling wordt als volgt toegepast:'
@@ -641,11 +591,8 @@ contractArticles:
         pl: ''
       subarticle:
         -
-          articleLabel: cafetariaModelA
           articleId: 10022
           order: 353
-          required: FALSE
-          standard: TRUE
           articleText:
             en: ''
             nl: 'Uitruil van uren tegen gemaakte kosten is slechts mogelijk voor de gewerkte uren boven de 38 uur per week, hierbij rekening houdend met de Wet minimumloon en minimumvakantiebijslag. Het maximum aantal uit te ruilen uren is beperkt tot de in de betreffende cao omschreven maximale arbeidstijd conform de Arbeidstijdenwet (boven 38 uur per week).'
@@ -655,11 +602,8 @@ contractArticles:
             nl: ''
             pl: ''
         -
-          articleLabel: cafetariaModelB
           articleId: 10023
           order: 354
-          required: FALSE
-          standard: TRUE
           articleText:
             en: ''
             nl: 'De werknemer stemt toe dat de werkgever deze uren gebruikt voor uitruil conform onderstaande voorwaarden. De werknemer is zich ervan bewust dat het toepassen van deze regeling tot gevolg heeft dat er minder sociale rechten in Nederland worden opgebouwd.'
@@ -669,11 +613,8 @@ contractArticles:
             nl: ''
             pl: ''
         -
-          articleLabel: cafetariaModelC
           articleId: 10024
           order: 355
-          required: FALSE
-          standard: TRUE
           articleText:
             en: ''
             nl: 'Indien de werkgever huisvesting aan de werknemer aanbiedt dient deze te voldoen aan de eisen die de LTO organisatie aan dergelijke huisvesting stelt (zie nationale intentieverklaring huisvesting arbeidsmigranten). Voor de huisvestingskosten wordt uitgegaan van de werkelijk in rekening gebrachte huisvestingskosten met een maximum van 20% van het bij de betreffende loonperiode behorende wettelijk minimumloon. De werknemer verklaart daarbij dat hij beschikt over zelfstandige woonruimte (dus niet inwonend) in zijn land van herkomst. '
@@ -683,11 +624,8 @@ contractArticles:
             nl: ''
             pl: ''
         -
-          articleLabel: cafetariaModelD
           articleId: 10025
           order: 356
-          required: FALSE
-          standard: TRUE
           articleText:
             en: ''
             nl: ' Voor de reiskosten woonplaats in land van herkomst / plaats waar de werkzaamheden plaatsvinden kunnen op declaratiebasis (bonnetjes / facturen) de werkelijk gemaakte reiskosten uitgeruild worden.'
@@ -697,11 +635,8 @@ contractArticles:
             nl: ''
             pl: ''
         -
-          articleLabel: cafetariaModelE
           articleId: 10026
           order: 357
-          required: FALSE
-          standard: TRUE
           articleText:
             en: ''
             nl: 'Indien met eigen auto gereisd wordt, geldt voor de eigenaar van de auto een fiscale norm van  0,19 per kilometer per auto. Er moeten een aantal gegevens worden vastgelegd, zie hiervoor de door LTO Nederland uitgebrachte brochure.'
@@ -711,11 +646,8 @@ contractArticles:
             nl: ''
             pl: ''
         -
-          articleLabel: cafetariaModelF
           articleId: 10027
           order: 358
-          required: FALSE
-          standard: TRUE
           articleText:
             en: ''
             nl: 'Voor de extra kosten voor levensonderhoud kan een bedrag uitgeruild worden, afhankelijk van het land van herkomst  van de werknemer. Zie hiervoor de door LTO Nederland uitgebrachte brochure'

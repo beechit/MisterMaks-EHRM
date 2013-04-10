@@ -10,4 +10,11 @@
         -
           type: 'NotEmpty'
     'articles':
+      type: 'array'
       label: 'Articles'
+        items:
+          'required':
+             options:
+              values:
+                - TRUE
+                - FALSE

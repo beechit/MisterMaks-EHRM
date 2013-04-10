@@ -1,0 +1,56 @@
+###################################################################
+# This file is the template for a contract under CLA GTB
+# and is the base for the following contracts
+# Permanent contract
+####################################################################
+contractTemplate:
+  cla: Glastuinbouw
+  claVersion: '1 juli 2012 tot en met 30 juni 2014'
+  claversiondate: 01-07-2012
+  availableLanguages:
+    - 'nl_NL'
+  templateName: 'Permanent Contract'
+  contractTitle:
+    en: ''
+    nl: 'Arbeidsovereenkomst voor onbepaalde tijd'
+    pl: ''
+  articles:
+    -
+      '10004':
+        required: TRUE
+    -
+      '10006':
+        required: TRUE
+    -
+      '10008':
+        required: FALSE
+    -
+      '10009':
+        required: TRUE
+    -
+      '10010':
+        required: FALSE
+    -
+      '10011':
+         required: FALSE
+    -
+      '10012':
+         required: FALSE
+    -
+      '10013':
+         required: FALSE
+    -
+      '10016':
+         required: TRUE
+    -
+      '10017':
+         required: TRUE
+    -
+      '10018':
+         required: FALSE
+    -
+      '10019':
+         required: FALSE
+    -
+      '10014':
+        required: TRUE

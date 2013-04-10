@@ -1,0 +1,59 @@
+###################################################################
+# This file is the template for a contract under CLA GTB
+# and is the base for the following contracts
+# Temporary contract with GLA and Cafetaria Arrangement
+####################################################################
+contractTemplate:
+  CLA: 'Glastuinbouw'
+  CLAversion: '1 juli 2012 tot en met 30 juni 2014'
+  CLAversiondate: '01-07-2012'
+  availableLanguages:
+    - 'nl_NL'
+  templateName: 'Temporary contract with GLA and Cafetaria Arrangement'
+  contractTitle:
+    en: ''
+    nl: 'Arbeidsovereenkomst voor bepaalde tijd voor de regeling gelegenheidsarbeid '
+    pl: ''
+  articles:
+    -
+      '10000':
+        required: TRUE
+    -
+      '10001':
+        required: TRUE
+    -
+      '10002':
+        required: TRUE
+    -
+      '10003':
+        required: TRUE
+    -
+      '10004':
+        required: TRUE
+    -
+      '10005':
+        required: TRUE
+    -
+      '10006':
+        required: TRUE
+    -
+      '10007':
+        required: TRUE
+    -
+      '10008':
+        required: FALSE
+    -
+      '10009':
+        required: TRUE
+    -
+      '10010':
+        required: FALSE
+    -
+      '10011':
+        required: FALSE
+    -
+      '10012':
+        required: FALSE
+    -
+      '10013':
+        required: FALSE
