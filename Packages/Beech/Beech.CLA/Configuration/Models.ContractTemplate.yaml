@@ -12,9 +12,9 @@
     'articles':
       type: 'array'
       label: 'Articles'
-        items:
-          'required':
-             options:
-              values:
-                - TRUE
-                - FALSE
+      items:
+        'required':
+           options:
+             values:
+               - TRUE
+               - FALSE
