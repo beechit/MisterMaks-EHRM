@@ -9,15 +9,6 @@
     'departmentId':
       label: 'Department ID'
       type: 'Beech\Party\Domain\Model\Company'
-    'contractVersion':
-      label: 'contractversion'
-      validation:
-        -
-          type: 'NotEmpty'
-        -
-          type: 'StringLength'
-          options:
-            maximum: 10
     'contractStatus':
       label: 'Status of the contract'
       validation:
@@ -33,7 +24,7 @@
           - 'pending'
           - 'rejected'
           - 'draft'
-    'contractType':
+    'contractTemplate':
       label: 'Contract type'
       validation:
         -

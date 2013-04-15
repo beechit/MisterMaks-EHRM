@@ -29,9 +29,6 @@
           - 'sickness'
           - 'other'
           - 'doesNotApply'
-      validation:
-        -
-          type: 'NotEmpty'
       defaultValue: 'doesNotApply'
     'remark':
       label: 'remark'
