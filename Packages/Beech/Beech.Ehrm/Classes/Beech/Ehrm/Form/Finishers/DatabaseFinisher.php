@@ -121,12 +121,18 @@ class DatabaseFinisher extends \TYPO3\Form\Core\Model\AbstractFinisher {
 			$contract->setJobDescription($jobDescription);
 			$contract->setJobDescriptionName($jobDescription->getJobTitle());
 		}
-		$contract->setStatus(\Beech\CLA\Domain\Model\Contract::STATUS_DRAFT);
+
+		$status = new \Beech\Ehrm\Domain\Model\Status(\Beech\Ehrm\Domain\Model\Status::STATUS_DRAFT);
+		$contract->setStatus($status);
+
 		if (isset($formValues['createdBy'])) {
 			$contract->setCreatedBy($formValues['createdBy']);
 		}
+
 		if (isset($formValues['contractTemplate'])) {
-			$contract->setContractTemplate($formValues['contractTemplate']);
+			$contractTemplateRepository = new \Beech\CLA\Domain\Repository\ContractTemplateRepository();
+			$contractTemplate = $contractTemplateRepository->findByIdentifier($formValues['contractTemplate']);
+			$contract->setContractTemplate($contractTemplate);
 		}
 			// TODO: Store company identifier (employer)
 		$articles = array();
@@ -139,10 +145,10 @@ class DatabaseFinisher extends \TYPO3\Form\Core\Model\AbstractFinisher {
 			}
 		}
 		$contract->setArticles($articles);
-
-
 		$repository->add($contract);
 		$repository->flushDocumentManager();
+		$contract->getStatus()->setDocumentId($contract->getId());
+		$repository->update($contract);
 	}
 }
 

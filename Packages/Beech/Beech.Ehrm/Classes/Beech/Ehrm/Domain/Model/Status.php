@@ -103,3 +103,5 @@ class Status extends \Beech\Ehrm\Domain\Model\Document {
 	}
 
 }
+
+?>
