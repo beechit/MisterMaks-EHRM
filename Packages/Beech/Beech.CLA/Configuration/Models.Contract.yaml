@@ -1,6 +1,3 @@
-# contract model.
-# todo: make this more generic in future
-# and extend this model in customer package if needed.
 'Beech.CLA.Domain.Model.Contract':
   properties:
     'employee':
@@ -10,14 +7,20 @@
         -
           type: 'NotEmpty'
     'departmentId':
-      label: 'Department'
+      label: 'Department ID'
       type: 'Beech\Party\Domain\Model\Company'
     'status':
       label: 'Status of the contract'
       type: 'Beech\Ehrm\Domain\Model\Status'
+      validation:
+        -
+          type: 'NotEmpty'
     'contractTemplate':
       label: 'Contract type'
-      type: 'Beech\CLA\Domai\Model\ContractTemplate'
+      type: 'Beech\CLA\Domain\Model\ContractTemplate'
+      validation:
+        -
+          type: 'NotEmpty'
     'firstContract':
       label: 'First contract'
       type: 'boolean'
@@ -25,8 +28,6 @@
       label: 'The date the contract was created'
       type: 'DateTime'
       validation:
-        -
-          type: 'NotEmpty'
         -
           type: 'RegularExpression'
           options:
@@ -65,8 +66,6 @@
           - 'Other'
       validation:
         -
-          type: 'NotEmpty'
-        -
           type: 'StringLength'
           options:
             maximum: 20
@@ -85,7 +84,6 @@
       type: 'Beech\CLA\Domain\Model\JobDescription'
     'defaultSalaryScale':
       label: 'defaultSalaryScale'
-      type: 'Beech\CLA\'
     'contractEndDate':
       label: 'Expiration date'
       type: 'DateTime'
