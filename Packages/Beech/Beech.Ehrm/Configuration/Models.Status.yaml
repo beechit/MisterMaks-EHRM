@@ -41,16 +41,9 @@
     'departmentId':
       label: 'Department ID'
       type: 'Beech\Party\Domain\Model\Company'
-    'documentId':
-      label: 'Document ID'
-      type: 'Beech\Document\Domain\Document'
-    'meetingId':
-      label: 'Meeting ID'
-      type: 'Beech\Calendar\Domain\Model\Meeting'
-    'contractId':
-      label: 'Contract ID'
-      type: 'Beech\CLA\Domain\Model\Contract'
-# todo: implement taskstatus ??
+# in entity document we store document id's of entities that are stored, in way we only have to use one status connections to multiple entities.
+    'entityDocumentId':
+      label: 'entityDocument ID'
 # todo: implement workflow status ??
     'creationDate':
       defaultValue: 'now'
