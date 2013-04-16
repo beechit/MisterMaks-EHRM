@@ -10,7 +10,7 @@ These are the importcommands cli for importing the following entities:
 
 contractarticles::
 
-	./flow import:collection Beech.CLA ContractArticle Packages/Beech/Beech.Ehrm.Glastuinbouw/Resources/Private/Data/ContractArticle/contractArticles.yaml contractArticles.articles --language nl
+	./flow import:collection Beech.CLA ContractArticle Packages/Beech/Beech.Ehrm.Glastuinbouw/Resources/Private/Data/ContractArticle/ContractArticles.yaml contractArticles.articles --language nl
 
 jobdescriptions::
 
@@ -18,4 +18,4 @@ jobdescriptions::
 
 ContractTemplates::
 
-	./flow import:yaml Beech.CLA ContractTemplate --sourcePath Packages/Beech/Beech.Ehrm.Glastuinbouw/Resources/Private/Data/Contract/ --pathInYaml contractTemplate
+	./flow import:yaml Beech.CLA ContractTemplate --sourcePath Packages/Beech/Beech.Ehrm.Glastuinbouw/Resources/Private/Data/ContractTemplates/ --pathInYaml contractTemplate
