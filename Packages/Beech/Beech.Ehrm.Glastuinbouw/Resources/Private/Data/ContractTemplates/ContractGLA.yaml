@@ -23,7 +23,7 @@ contractTemplate:
         required: TRUE
     -
       '10002':
-        required:  TRUE
+        required: TRUE
     -
       '10003':
         required: TRUE

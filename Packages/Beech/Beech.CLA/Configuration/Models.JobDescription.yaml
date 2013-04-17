@@ -1,6 +1,7 @@
 #############################################################
 # validated yaml for the jobDescriptions model Glastuinbouw
 # this is the jobDescriptions model.
+# todo: create a base model that is extended in GTB package
 #############################################################
 'Beech.CLA.Domain.Model.JobDescription':
   properties:

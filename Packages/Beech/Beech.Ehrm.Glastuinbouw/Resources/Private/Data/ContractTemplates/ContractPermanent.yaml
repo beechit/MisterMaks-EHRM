@@ -32,25 +32,25 @@ contractTemplate:
         required: FALSE
     -
       '10011':
-         required: FALSE
+        required: FALSE
     -
       '10012':
-         required: FALSE
+        required: FALSE
     -
       '10013':
-         required: FALSE
+        required: FALSE
     -
       '10016':
-         required: TRUE
+        required: TRUE
     -
       '10017':
-         required: TRUE
+        required: TRUE
     -
       '10018':
-         required: FALSE
+        required: FALSE
     -
       '10019':
-         required: FALSE
+        required: FALSE
     -
       '10014':
         required: TRUE
