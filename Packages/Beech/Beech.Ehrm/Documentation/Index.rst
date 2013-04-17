@@ -8,3 +8,4 @@ Mister Maks
 
 	Features/Wizard
 	Features/Notifications
+	SetupMisterMaks

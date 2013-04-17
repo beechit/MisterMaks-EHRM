@@ -11,8 +11,6 @@ what you have allready done::
 	PHP 5.4 or higher is installed
 	CouchDB and Mysql or postgress is installed
 
-
-
 configuration database
 ----------------------
 
@@ -32,15 +30,28 @@ after that run the following commands on cli
 
 	./flow doctrine:migrate
 
-to setup couchDB::
+*to setup couchDB*::
 
 	./flow migrate:designs
 
-to create initial company
+*to create initial company*::
 
 	./flow setup:initialize <CompanyName>
 
+*to create initial user::
 
+	./flow usermanagement:user:create [<options>] <username> <password> <first name> <last name> <roles>
 
+*import resource files*
 
+contractarticles::
 
+	./flow import:collection Beech.CLA ContractArticle Packages/Beech/Beech.Ehrm.Glastuinbouw/Resources/Private/Data/ContractArticle/ContractArticles.yaml contractArticles.articles --language nl
+
+jobdescriptions::
+
+	 ./flow import:yaml Beech.CLA JobDescription --sourcePath Packages/Beech/Beech.Ehrm.Glastuinbouw/Resources/Private/Data/JobDescription/
+
+ContractTemplates::
+
+	./flow import:yaml Beech.CLA ContractTemplate --sourcePath Packages/Beech/Beech.Ehrm.Glastuinbouw/Resources/Private/Data/ContractTemplates/ --pathInYaml contractTemplate
