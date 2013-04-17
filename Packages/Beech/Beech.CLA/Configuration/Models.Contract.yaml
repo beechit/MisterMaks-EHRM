@@ -1,3 +1,6 @@
+# contract model.
+# todo: make this more generic in future
+# and extend this model in customer package if needed.
 'Beech.CLA.Domain.Model.Contract':
   properties:
     'employee':

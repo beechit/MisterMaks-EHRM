@@ -1,10 +1,8 @@
 #############################################################
 # validated yaml for the jobDescriptions model Glastuinbouw
 # this is the jobDescriptions model.
-# todo: This file does not belong here its not a general
-# model but specific for the glastuinbouw, but validation wants
-# here, create a generic model for this that is overruled by the
-# customerpackage.
+# todo: make this as an extend on the CLA.Jobdescriptions model.
+# it should be an extend of the jobdescriptions model that is in cla.
 #############################################################
 'Beech.CLA.Domain.Model.JobDescription':
   properties:

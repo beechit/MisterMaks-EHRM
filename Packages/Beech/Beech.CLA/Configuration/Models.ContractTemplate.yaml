@@ -1,6 +1,7 @@
 #############################################################
 # validated yaml for the contract article
 # this is the contract article model.
+# todo: Make this more generic.
 #############################################################
 'Beech.CLA.Domain.Model.ContractTemplate':
   properties:
