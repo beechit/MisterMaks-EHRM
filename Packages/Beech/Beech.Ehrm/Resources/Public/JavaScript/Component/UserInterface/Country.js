@@ -19,7 +19,7 @@
 
 	$(function () {
 		// on load:
-		$('.countrySelect').live('change', function() {
+		$('.countrySelect').on('change', function() {
 			$(this).parent().find('.country i').setFlagPosition($(this).val());
 		});
 			// set default value to NL

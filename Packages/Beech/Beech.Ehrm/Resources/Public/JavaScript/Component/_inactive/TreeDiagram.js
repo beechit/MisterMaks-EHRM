@@ -60,7 +60,7 @@ define(
 							'</div>');
 						$label.append($picture).append($content);
 						$label.attr('id', node.id)
-						$label.live('click', function () {
+						$label.on('click', function () {
 							that._tree.onClick(node.id, {
 								Move: {
 									enable: false

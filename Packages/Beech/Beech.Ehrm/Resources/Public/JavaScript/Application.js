@@ -15,7 +15,7 @@
 		title: 'Mister Maks',
 
 		init: function() {
-			$('.datepicker').live('click', function() {
+			$('.datepicker').on('click', function() {
 				$(this).datepicker({showOn:'focus'})
 					.on('changeDate', function() {
 						$(this).datepicker('hide');

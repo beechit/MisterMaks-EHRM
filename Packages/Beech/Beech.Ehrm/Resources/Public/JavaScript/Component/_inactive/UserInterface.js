@@ -15,7 +15,7 @@ define(['jquery', 'emberjs', 'form'], function ($, Ember) {
 				initialize: function () {
 					var that = this;
 					that.createModalBox();
-					$('a[data-toggle=modal]').live('click', function () {
+					$('a[data-toggle=modal]').on('click', function () {
 						var target = $(this).attr('data-target');
 						var url = $(this).attr('href');
 						var modal = that.createModalBox(target);

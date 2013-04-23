@@ -55,7 +55,7 @@
 		},
 
 		createListener: function(element, event, action) {
-			$(element).live(event, action);
+			$(element).on(event, action);
 		},
 
 		_show: function(title, bodyMessage, type, actions, timeout, removable, callBack) {

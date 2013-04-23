@@ -5,7 +5,7 @@
 		init: function() {
 			var that = this;
 
-			$('.ehrm-module a, .ehrm-module-menu a').live('click', function() {
+			$('.ehrm-module a, .ehrm-module-menu a').on('click', function() {
 				if ($(this).attr('href').match(/#/) === null && $(this).hasClass('escape-ajax-module') === false) {
 					that.loadUrl($(this).attr('href'), '.ehrm-module');
 					return false;
