@@ -25,7 +25,8 @@ class ContractArticleRepository extends \Radmiraal\CouchDB\Persistence\AbstractR
 	 */
 	public function findByArticles(array $articleIds, $offset = 0, $length = NULL, $sortBy = 'order') {
 		$articles = array();
-		foreach ($articleIds as $articleId) {
+		foreach ($articleIds as $articleData) {
+			$articleId = key($articleData);
 			$article = $this->findByArticleId(($articleId));
 			if (!empty($article)) {
 				$articles[] = $article[0];
