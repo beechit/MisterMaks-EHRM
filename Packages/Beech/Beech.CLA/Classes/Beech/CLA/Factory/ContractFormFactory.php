@@ -124,7 +124,6 @@ class ContractFormFactory extends \TYPO3\Form\Factory\AbstractFormFactory {
 			);
 			$this->form->addFinisher($redirectFinisher);
 		} else {
-
 			$page = $this->form->createPage('page0');
 
 			$contractTemplate = $this->contractTemplateRepository->findByIdentifier($this->factorySpecificConfiguration['contractTemplate']);

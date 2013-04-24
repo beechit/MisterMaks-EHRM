@@ -20,23 +20,7 @@
 				<form:renderValues renderable="{page.rootForm}">
 					<f:if condition="{0: formValue.element.type} == {0: 'Beech.CLA:ContractArticleFormElement'}">
 						<f:then>
-							<tr class="article">
-								<td colspan="2">
-									<b>Artikel {formValue.element.properties.articleIndex}: {formValue.element.properties.contractArticle.articleHeader}</b>
-								</td>
-							</tr>
-							<tr class="articleContent">
-								<td colspan="2">
-									<cla:renderContractArticleText element="{formValue.element}"></cla:renderContractArticleText>
-									<f:if condition="{formValue.element.contractArticle.subArticles}">
-										<ul>
-											<f:for each="{formValue.element.contractArticle.subArticles}" as="subArticle">
-												<li>{subArticle.articleText}</li>
-											</f:for>
-										</ul>
-									</f:if>
-								</td>
-							</tr>
+							<cla:renderContractArticle element="{formValue.element}"></cla:renderContractArticle>
 						</f:then>
 					</f:if>
 				</form:renderValues>

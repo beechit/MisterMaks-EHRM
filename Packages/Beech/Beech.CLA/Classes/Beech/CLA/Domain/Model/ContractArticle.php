@@ -37,8 +37,8 @@ class ContractArticle extends \Beech\Ehrm\Domain\Model\Document {
 	public function getSubArticles() {
 		$subArticles = array();
 		$articleIndex = 0;
-		if (parent::getSubArticle() !== NULL) {
-			foreach (parent::getSubArticle() as $subArticle) {
+		if (parent::getSubArticles() !== NULL) {
+			foreach (parent::getSubArticles() as $subArticle) {
 				//TODO: transform to ContractArticle Object
 				$subArticle['articleIndex'] = ++$articleIndex;
 				$subArticle['articleText'] = $subArticle['articleText'][$this->getCurrentLanguage()];
@@ -50,33 +50,20 @@ class ContractArticle extends \Beech\Ehrm\Domain\Model\Document {
 	}
 
 	/**
-	 * Override parent method to display articleText in correct translation
+	 * Override parent method to display text in correct translation
 	 *
-	 * @return string
+	 * @param string $name
+	 * @return mixed
 	 */
-	public function getArticleText() {
-		$articleText = parent::getArticleText();
-		return $articleText[$this->getCurrentLanguage()];
-	}
-
-	/**
-	 * Override parent method to display articleHeader in correct translation
-	 *
-	 * @return string
-	 */
-	public function getArticleHeader() {
-		$articleHeader = parent::getArticleHeader();
-		return $articleHeader[$this->getCurrentLanguage()];
-	}
-
-	/**
-	 * Override parent method to display help in correct translation
-	 *
-	 * @return string
-	 */
-	public function getHelp() {
-		$help = parent::getHelp();
-		return $help[$this->getCurrentLanguage()];
+	public function __get($name) {
+		if (property_exists($this, $name)) {
+			return $this->$name;
+		} elseif (isset($this->data[$name]) && isset($this->data[$name][$this->getCurrentLanguage()])) {
+			return $this->data[$name][$this->getCurrentLanguage()];
+		} elseif (isset($this->data[$name])) {
+			return $this->data[$name];
+		}
+		return NULL;
 	}
 
 	/**

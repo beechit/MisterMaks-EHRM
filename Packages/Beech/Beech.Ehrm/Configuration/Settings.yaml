@@ -218,6 +218,11 @@ TYPO3:
             formBuilder:
               label: 'Employee Select'
               group: custom
+          'Beech.CLA:HiddenField':
+            superTypes: ['TYPO3.Form:HiddenField']
+            renderingOptions:
+              layoutPathPattern: 'resource://Beech.CLA/Private/Templates/FormElements/Layouts/{@type}.html'
+              templatePathPattern: 'resource://Beech.CLA/Private/Templates/FormElements/HiddenField.html'
           'Beech.CLA:SingleLineText':
             superTypes: ['TYPO3.Form:FormElement', 'TYPO3.Form:TextMixin']
             renderingOptions:

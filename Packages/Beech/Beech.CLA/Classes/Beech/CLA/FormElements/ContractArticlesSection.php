@@ -30,7 +30,7 @@ class ContractArticlesSection extends \TYPO3\Form\FormElements\Section {
 	/**
 	 * @var \Beech\CLA\Domain\Model\ContractTemplate
 	 */
-	protected $contractTemplate;
+	protected $contractTemplate = NULL;
 
 	/**
 	 * Array of ContractArticles
@@ -42,7 +42,7 @@ class ContractArticlesSection extends \TYPO3\Form\FormElements\Section {
 	/**
 	 * @var \Beech\CLA\Domain\Model\Contract
 	 */
-	protected $contract;
+	protected $contract = NULL;
 
 	/**
 	 * @var integer
@@ -95,6 +95,8 @@ class ContractArticlesSection extends \TYPO3\Form\FormElements\Section {
 				$contractArticleSection = $this->createElement('article-section-' . $contractArticle->getArticleId() . '-identifier', 'Beech.CLA:ContractArticleContainer');
 				$contractArticleSection->setLabel($contractArticle->getArticleHeader());
 				$contractArticleSection->setProperty('help', $contractArticle->getHelp());
+				$contractArticleSection->setProperty('required', $contractArticle->getRequired());
+				$contractArticleValues = $contractArticle->getValues();
 
 				$contractArticleValueIdentifier = $this->fieldDefaultValueHelper->generateIdentifierForArticle('', $contractArticle->getArticleId(), 'textOnly');
 				$contractArticleValue = $contractArticleSection->createElement($contractArticleValueIdentifier, 'TYPO3.Form:HiddenField');
@@ -132,7 +134,6 @@ class ContractArticlesSection extends \TYPO3\Form\FormElements\Section {
 							$validator = $contractArticleValue->createValidator($value['validation']['type'], $value['validation']['options']);
 							$contractArticleValue->addValidator($validator);
 						}
-
 							// check if value exists is contract and use as default value
 						$getterName = 'get'.ucfirst($value['valueId']);
 						if(!is_null($this->contract->$getterName())) {
@@ -145,6 +146,8 @@ class ContractArticlesSection extends \TYPO3\Form\FormElements\Section {
 					$contractArticleValue->setDefaultValue(TRUE);
 				}
 
+				$contractArticleIsSelectedValue =  $this->createElement('article-section-' . $contractArticle->getArticleId() . '-isSelected', 'Beech.CLA:HiddenField');
+				$contractArticleIsSelectedValue->setDefaultValue($contractArticle->getRequired() ? 'TRUE' : 'FALSE');
 				/** @var $contractArticleElement \Beech\CLA\FormElements\ContractArticleFormElement */
 				$contractArticleElement = $contractArticleSection->createElement('article-' . $contractArticle->getArticleId() . '-identifier', 'Beech.CLA:ContractArticleFormElement');
 				if (isset($filledContractValues[$contractArticle->getArticleId()])) {

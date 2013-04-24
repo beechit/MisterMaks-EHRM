@@ -29,10 +29,11 @@ class ContractArticleRepository extends \Radmiraal\CouchDB\Persistence\AbstractR
 			$articleId = key($articleData);
 			$article = $this->findByArticleId(($articleId));
 			if (!empty($article)) {
+				$article[0]->setRequired($articleData[$articleId]['required']);
 				$articles[] = $article[0];
 			}
 		}
-		usort($articles, array('\Beech\CLA\Domain\Repository\ContractArticleRepository', sprintf('compareBy%s', strtoupper($sortBy))));
+		@usort($articles, array('\Beech\CLA\Domain\Repository\ContractArticleRepository', sprintf('compareBy%s', ucfirst($sortBy))));
 		if ($length > 0) {
 			$articles = array_slice($articles, $offset, $length);
 		}

@@ -16,6 +16,12 @@
       validation:
         -
           type: 'Integer'
+    'required':
+      label: 'Required'
+      options:
+       values:
+         - TRUE
+         - FALSE
     'creationDate':
       label: 'creation date'
       type: 'DateTime'
