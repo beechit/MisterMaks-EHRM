@@ -1,6 +1,9 @@
 <h4>Education</h4>
 
 {{#each education in model.educations}}
+<div class="control-group">
+	<label class="control-label">Education</label>
+
 	<fieldset>
 		<a href="#" class="pull-right btn" {{action "removeEducation" education}}><i class="icon-minus"></i> </a>
 
@@ -14,17 +17,18 @@
 				{{view Ember.TextField valueBinding="education.direction" class="span6" placeholder="Education Direction..."}}
 			</div>
 		</div>
-		<div class="control-group">
+		<div class="control-group form-inline">
 			<div class="controls controls-row">
 				{{view Ember.TextField valueBinding="education.startDate" class="span3" placeholder="Start Date..."}}
 				{{view Ember.TextField valueBinding="education.endDate" class="span3" placeholder="End Date..."}}
-				<label class="control-label" for="graduated">Graduated</label>
-				{{view Ember.Checkbox checkedBinding="education.graduated" id="graduated"}}
+				<label class="control-label" for="graduated">
+					Graduated {{view Ember.Checkbox checkedBinding="education.graduated" id="graduated"}}
+				</label>
 			</div>
 		</div>
 	</fieldset>
 {{/each}}
 <div class="clearfix">
-	<div class="pull-right"><a href="#" class="btn" {{action "addEducation"}}><i class="icon-plus"></i> </a></div>
+	<a href="#" class="pull-right btn" {{action "addEducation"}}><i class="icon-plus"></i> </a></div>
 </div>
 <hr />

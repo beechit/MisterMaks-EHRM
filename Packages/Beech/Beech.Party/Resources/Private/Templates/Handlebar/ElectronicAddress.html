@@ -1,13 +1,16 @@
 <h4>Electronic Address</h4>
 
 {{#each electronicAddress in electronicAddresses}}
-<div class="control-group">
-	<div class="controls controls-row">
-		{{electronicAddress.type}}
-		{{electronicAddress.address}}
+<label class="control-label">Electronic address</label>
+<fieldset>
+	<div class="control-group">
+		<div class="controls controls-row">
+			{{electronicAddress.type}}
+			{{electronicAddress.address}}
 		<label class="control-label">Primary</label>
-		{{electronicAddress.primary}}
+			{{electronicAddress.primary}}
+		</div>
 	</div>
-</div>
-{{/each}}
+</fieldset>
+	{{/each}}
 <hr class="clearfix" />

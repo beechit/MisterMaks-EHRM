@@ -118,12 +118,12 @@ WizardFullNewCompany:
               defaultValue: ''
         -
           type: 'TYPO3.Form:Section'
-          identifier: bankInfo.addBankAccount
+          identifier: bankAccount.addBankAccount
           label: 'Add Bank Account'
           renderables:
             -
               type: 'TYPO3.Form:SingleSelectDropdown'
-              identifier: bankInfo.accountType
+              identifier: bankAccount.accountType
               label: 'Select account Type'
               properties:
                 options:
@@ -140,7 +140,7 @@ WizardFullNewCompany:
           renderables:
             -
               type: 'TYPO3.Form:SingleLineText'
-              identifier: bankInfo.ibanNumber
+              identifier: bankAccount.ibanNumber
               label: 'IBAN account number'
               validators:
                 -
@@ -154,12 +154,12 @@ WizardFullNewCompany:
               defaultValue: ''
         -
           type: 'TYPO3.Form:Section'
-          identifier: bankInfo.caseGiroAccount
+          identifier: bankAccount.caseGiroAccount
           label: 'Case GiroAccount'
           renderables:
             -
               type: 'TYPO3.Form:SingleLineText'
-              identifier: bankInfo.giro
+              identifier: bankAccount.giro
               label: 'Giro Account Number'
               validators:
                 -

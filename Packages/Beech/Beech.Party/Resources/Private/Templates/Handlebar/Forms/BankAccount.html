@@ -1,0 +1,50 @@
+<h4>BankAccount</h4>
+
+{{#each bankAccount in model.bankAccounts}}
+<div class="control-group">
+	<label class="control-label">Account</label>
+
+	<fieldset>
+		<a href="#" class="pull-right btn" {{action "removeBankAccount" bankAccount}}><i class="icon-minus"></i> </a>
+
+		<div class="control-group">
+			<div class="controls">
+				{{view Ember.TextField valueBinding="bankAccount.accountType" class="span6" placeholder="Accounttype..."}}
+			</div>
+		</div>
+		<div class="control-group form-inline">
+			<div class="controls controls-row">
+				{{view Ember.TextField valueBinding="bankAccount.ibanNumber" class="span6" placeholder="Iban number..."}}
+				<label class="control-label" for="primary-iban">
+					Primary {{view Ember.Checkbox checkedBinding="bankAccount.primary" id="primary-iban"}}
+				</label>
+			</div>
+			<div class="controls controls-row">
+				{{view Ember.TextField valueBinding="bankAccount.giro" class="span6" placeholder="Giro..."}}
+				<label class="control-label" for="primary-giro">
+					Primary {{view Ember.Checkbox checkedBinding="bankAccount.primary" id="primary-giro"}}
+				</label>
+			</div>
+		</div>
+		<h4>Bank</h4>
+
+		<div class="control-group">
+			<div class="controls">
+				{{view Ember.TextField valueBinding="bankAccount.bankName" id="bankName" class="span6" placeholder="Bankname..."}}
+			</div>
+			<div class="controls">
+				{{view Ember.TextField valueBinding="bankAccount.residence" class="span6" placeholder="residence..."}}
+			</div>
+			<div class="controls">
+				{{view Ember.TextField valueBinding="bankAccount.country" class="span6" placeholder="country..."}}
+			</div>
+			<div class="controls">
+				{{view Ember.TextArea valueBinding="bankAccount.description" class="span6" placeholder="Description..."}}
+			</div>
+		</div>
+	</fieldset>
+{{/each}}
+<div class="clearfix">
+	<a href="#" class="pull-right btn" {{action "addBankAccount"}}><i class="icon-plus"></i> </a>
+</div>
+<hr />

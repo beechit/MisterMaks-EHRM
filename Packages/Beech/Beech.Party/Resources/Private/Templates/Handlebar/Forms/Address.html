@@ -1,11 +1,12 @@
 <h4>Address</h4>
 
 {{#each address in model.addresses}}
+<div class="control-group">
+	<label class="control-label">Address</label>
+
 	<fieldset>
 		<a href="#" class="pull-right btn" {{action "removeAddress" address}}><i class="icon-minus"></i> </a>
 		<div class="control-group">
-			<label class="control-label" for="streetAddress">Street</label>
-
 			<div class="controls controls-row">
 				{{view Ember.TextField valueBinding="address.streetName" id="streetAddress" class="span6" placeholder="Street name..."}}
 				{{view Ember.TextField valueBinding="address.houseNumber" id="title" class="span1" placeholder="Home Number..."}}
@@ -17,8 +18,9 @@
 				{{view Ember.TextField valueBinding="address.postalNL" id="postalNL" class="span3" placeholder="Postal..."}}
 				{{view Ember.TextField valueBinding="address.residence" id="residence" class="span5"
 				placeholder="Residence..."}}
-				<label class="control-label" for="primary">Primary</label>
-				{{view Ember.Checkbox checkedBinding="address.primary" id="primary"}}
+				<label class="control-label" for="primary-address">
+					Primary {{view Ember.Checkbox checkedBinding="address.primary" id="primary-address"}}
+				</label>
 			</div>
 		</div>
 		<div class="control-group">

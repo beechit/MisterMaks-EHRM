@@ -1,0 +1,44 @@
+<h4>BankAccount</h4>
+
+{{#each bankAccount in model.bankAccounts}}
+<div class="control-group">
+	<label class="control-label">Account</label>
+
+	<fieldset>
+		<div class="control-group">
+			<div class="controls">
+				{{bankAccount.accountType}}
+			</div>
+		</div>
+		<div class="control-group">
+			<div class="controls controls-row">
+				{{bankAccount.ibanNumber}}
+			<label class="control-label" for="primary">Primary</label>
+				{{bankAccount.primary}}
+			</div>
+			<div class="controls controls-row">
+				{{bankAccount.giro}}
+			<label class="control-label" for="primary">Primary</label>
+				{{bankAccount.primary}}
+			</div>
+		</div>
+		<h4>Bank</h4>
+
+		<div class="control-group">
+			<div class="controls">
+				{{bankAccount.bankName}}
+			</div>
+			<div class="controls">
+				{{bankAccount.residence}}
+			</div>
+			<div class="controls">
+				{{bankAccount.country}}
+			</div>
+			<div class="controls">
+				{{bankAccount.description}}
+			</div>
+		</div>
+	</fieldset>
+	</div>
+	{{/each}}
+	<hr class="clearfix"/>

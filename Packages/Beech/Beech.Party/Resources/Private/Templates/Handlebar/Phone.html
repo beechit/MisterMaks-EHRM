@@ -1,12 +1,18 @@
-<h4 class="pull-left">Phone Number</h4>
+<h4>Phone Number</h4>
 
 {{#each phoneNumber in model.phoneNumbers}}
-	<div class="control-group">
+<label class="control-label">Number</label>
+
+<fieldset>
+	<div class="control-group form-inline">
 		<div class="controls-row">
 			{{phoneNumber.type}}
 			{{phoneNumber.number}}
-			<label class="control-label">Primary</label>
-			{{phoneNumber.primary}}
+		<label class="checkbox">
+			{{phoneNumber.primary}} Primary
+		</label>
 		</div>
 	</div>
+</fieldset>
 {{/each}}
+<hr class="clearfix">

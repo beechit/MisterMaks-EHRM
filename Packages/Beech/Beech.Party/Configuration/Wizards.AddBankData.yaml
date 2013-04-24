@@ -1,6 +1,6 @@
-WizardAddBankData:
+wizardAddBankData:
   type: 'TYPO3.Form:Form'
-  identifier: wizardsAddbankData
+  identifier: wizardAddBankData
   label: 'Wizards Add bank Data'
   renderingOptions:
     submitButtonLabel: Save

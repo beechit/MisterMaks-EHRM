@@ -13,7 +13,7 @@
 		}
 	});
 
-	App.BeechPartyDomainModelPersonEditRoute = Ember.Route.extend({
+	App.BeechPartyDomainModelPersonEditRoute = Ember.Route.extend(App.ModelFormableMixin, {
 		redirectToRouteName: 'BeechPartyPersonModule',
 		formTemplateName: 'BeechPartyDomainModelPerson/form',
 		model: function() {
@@ -52,11 +52,11 @@
 			removeEducation: function(obj) {
 				this.model().get('educations').removeObject(obj);
 			},
-			addBankInfo: function() {
-				this.model().get('bankInfo').pushObject(App.BeechPartyDomainModelBankInfo.createRecord());
+			addBankAccount: function() {
+				this.model().get('bankAccounts').pushObject(App.BeechPartyDomainModelBankAccount.createRecord());
 			},
-			removeBankInfo: function(obj) {
-				this.model().get('bankInfo').removeObject(obj);
+			removeBankAccount: function(obj) {
+				this.model().get('bankAccounts').removeObject(obj);
 			}
 		}
 	});

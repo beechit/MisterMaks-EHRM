@@ -28,10 +28,11 @@
 		graduated: DS.attr('boolean')
 	});
 
-	App.BeechPartyDomainModelBankInfo.reopen({
+	App.BeechPartyDomainModelBankAccount.reopen({
 		person: DS.belongsTo('App.BeechPartyDomainModelPerson'),
-		name: DS.attr('string'),
-		account: DS.attr('string'),
+		accountType: DS.attr('string'),
+		ibanNumber: DS.attr('string'),
+		bankName: DS.attr('string'),
 		residence: DS.attr('string'),
 		giro: DS.attr('string'),
 		primary: DS.attr('boolean')
@@ -45,7 +46,7 @@
 		phoneNumbers: DS.hasMany('App.BeechPartyDomainModelPhoneNumber'),
 		addresses: DS.hasMany('App.BeechPartyDomainModelAddress'),
 		educations: DS.hasMany('App.BeechPartyDomainModelEducation'),
-		bankInfo: DS.hasMany('app.BeechPartyDomainModelBankInfo'),
+		bankAccounts: DS.hasMany('App.BeechPartyDomainModelBankAccount'),
 		fullName: function () {
 			return this.get('name').get('fullName');
 		}.property('name.firstName', 'name.middleName', 'name.lastName')

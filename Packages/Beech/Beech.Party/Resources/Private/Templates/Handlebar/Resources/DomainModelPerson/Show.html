@@ -6,7 +6,7 @@
 		</a>
 		<ul class="dropdown-menu">
 			<li>
-				<a href="{f:uri.action(package:'Beech.Ehrm', controller:'wizard', action:'show', arguments:'{formPersistenceIdentifier:\'wizardNewCompany\'}')}" data-toggle="modal-jsonp" data-target="#modal-body-only">Newcompany</a>
+				<a href="{f:uri.action(package:'Beech.Ehrm', controller:'wizard', action:'show', arguments:'{formPersistenceIdentifier:\'wizardNewCompany\'}')}" data-toggle="modal-jsonp" data-target="#modal-body-only">New company</a>
 			</li>
 		</ul>
 	</div>
@@ -17,7 +17,7 @@
 		</a>
 		<ul class="dropdown-menu">
 			<li>
-				<a href="{f:uri.action(package:'Beech.Ehrm', controller:'wizard', action:'show', arguments:'{formPersistenceIdentifier:\'wizardFullNewCompany\'}')}" data-toggle="modal-jsonp" data-target="#modal-body-only">Fullnew company</a>
+				<a href="{f:uri.action(package:'Beech.Ehrm', controller:'wizard', action:'show', arguments:'{formPersistenceIdentifier:\'wizardFullNewCompany\'}')}" data-toggle="modal-jsonp" data-target="#modal-body-only">Full new company</a>
 			</li>
 		</ul>
 	</div>
@@ -31,7 +31,7 @@
 				<a href="{f:uri.action(package:'Beech.Ehrm', controller:'wizard', action:'show', arguments:'{formPersistenceIdentifier:\'wizardAddBankData\'}')}" data-toggle="modal-ajax" data-target="#modal-body-only">Add bank data</a>
 			</li>
 			<li>
-				<a href="{f:uri.action(package:'Beech.Ehrm', controller:'wizard', action:'show', arguments:'{formPersistenceIdentifier:\'wizardAddAddress\'}')}" data-toggle="modal-ajax" data-target="#modal-body-only">Add address</a>
+				<a href="{f:uri.action(package:'Beech.Ehrm', controller:'wizard', action:'show', arguments:'{formPersistenceIdentifier:\'wizardAddAddress'}')}" data-toggle="modal-ajax" data-target="#modal-body-only">Add address</a>
 			</li>
 			<li>
 				<a href="{f:uri.action(package:'Beech.Ehrm', controller:'wizard', action:'show', arguments:'{formPersistenceIdentifier:\'wizardAddPhoneNumber\'}')}" data-toggle="modal-ajax" data-target="#modal-body-only">Add phone number</a>
@@ -51,7 +51,7 @@
 		</a>
 		<ul class="dropdown-menu">
 			<li>
-				<a href="{f:uri.action(package:'Beech.Ehrm', controller:'wizard', action:'show', arguments:'{formPersistenceIdentifier:\'wizardQuickCompany\'}')}" data-toggle="modal-jsonp" data-target="#modal-body-only">Quick company wizard</a></li>
+				<a href="{f:uri.action(package:'Beech.Ehrm', controller:'wizard', action:'show', arguments:'{formPersistenceIdentifier:\'wizardQuickCompany'}')}" data-toggle="modal-jsonp" data-target="#modal-body-only">Quick company wizard</a></li>
 			<li>{{#linkTo "administration.contractModule"}}List contracts{{/linkTo}}</li>
 		</ul>
 	</div>
@@ -60,6 +60,7 @@
 
 <h2>Person {{name.fullName}} {{#linkTo "BeechPartyDomainModelPerson.edit" model}}<i class="icon-edit"></i>{{/linkTo}}</h2>
 <p><b>Name:</b> {{name.firstName}} {{name.lastName}}</p>
+<p><b>Type:</b> {{name.firstName}} {{name.lastName}}</p>
 
 {{render "beech_party_phone" model}}
 {{render "beech_party_address" model}}
@@ -68,6 +69,6 @@
 
 {{render "beech_party_education" model}}
 
-{{render "beech_party_bankInfo" model}}
+{{render "beech_party_bank_account" model}}
 
 {{#linkTo "BeechPartyPersonModule" class="btn"}}Back{{/linkTo}}

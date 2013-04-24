@@ -1,4 +1,4 @@
-'Beech.Party.Domain.Model.BankInfo':
+'Beech.Party.Domain.Model.BankAccount':
   properties:
     'personId':
       label: 'Person Id'
