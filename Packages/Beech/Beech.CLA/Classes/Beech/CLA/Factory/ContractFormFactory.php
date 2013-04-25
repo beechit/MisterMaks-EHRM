@@ -51,7 +51,19 @@ class ContractFormFactory extends \TYPO3\Form\Factory\AbstractFormFactory {
 	 *
 	 * @var integer
 	 */
-	protected $fieldsPerPage = 30;
+	protected $fieldsPerPage;
+
+	/**
+	 * @var array
+	 */
+	protected $settings;
+
+	/**
+	 * @param array $settings
+	 */
+	public function injectSettings(array $settings) {
+		$this->settings = $settings;
+	}
 
 	/**
 	 * @param array $factorySpecificConfiguration
@@ -62,6 +74,7 @@ class ContractFormFactory extends \TYPO3\Form\Factory\AbstractFormFactory {
 		$this->factorySpecificConfiguration = $factorySpecificConfiguration;
 		$formConfiguration = $this->getPresetConfiguration($presetName);
 		$this->form = new FormDefinition('contractCreator', $formConfiguration);
+		$this->fieldsPerPage = $this->settings['contractArticlesPerPage'];
 	}
 
 	/**
