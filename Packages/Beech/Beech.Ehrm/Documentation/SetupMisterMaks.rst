@@ -4,12 +4,13 @@ This are the setup commands to create a working mister maks.
 
 Start
 -----
-what you have allready done::
+what you have allready have done::
 
 	get a clone of the repository and setup everything by using composer.
 	And point the virtual host to the right location
 	PHP 5.4 or higher is installed
 	CouchDB and Mysql or postgress is installed
+	You have created a database in mysql or postgress
 
 configuration database
 ----------------------
@@ -40,7 +41,7 @@ after that run the following commands on cli
 
 *to create initial user::
 
-	./flow usermanagement:user:create [<options>] <username> <password> <first name> <last name> <roles>
+	./flow usermanagement:user:create [<options>] <username> <password> <first name> <last name> <roles> (does currently not work!!!)
 
 *import resource files*
 
