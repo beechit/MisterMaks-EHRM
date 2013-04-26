@@ -10,32 +10,14 @@
         -
           type: 'NotEmpty'
     'departmentId':
-      label: 'Department ID'
+      label: 'Department'
       type: 'Beech\Party\Domain\Model\Company'
-    'contractStatus':
+    'status':
       label: 'Status of the contract'
-      validation:
-        -
-          type: 'NotEmpty'
-        -
-          type: 'StringLength'
-          options:
-            maximum: 20
-      options:
-        values:
-          - 'signed'
-          - 'pending'
-          - 'rejected'
-          - 'draft'
+      type: 'Beech\Ehrm\Domain\Model\Status'
     'contractTemplate':
       label: 'Contract type'
-      validation:
-        -
-          type: 'NotEmpty'
-        -
-          type: 'StringLength'
-          options:
-            maximum: 20
+      type: 'Beech\CLA\Domai\Model\ContractTemplate'
     'firstContract':
       label: 'First contract'
       type: 'boolean'
@@ -103,6 +85,7 @@
       type: 'Beech\CLA\Domain\Model\JobDescription'
     'defaultSalaryScale':
       label: 'defaultSalaryScale'
+      type: 'Beech\CLA\
     'contractEndDate':
       label: 'Expiration date'
       type: 'DateTime'
@@ -112,7 +95,7 @@
           options:
             earliestDate: 20130101
             latestDate: 20500101
-    'contractStartDate':
+    'startDate':
       label: 'Startdate of the contract'
       type: 'DateTime'
       validation:

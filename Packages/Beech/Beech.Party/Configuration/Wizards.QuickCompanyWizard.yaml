@@ -1,6 +1,6 @@
 wizardQuickCompany:
   type: 'TYPO3.Form:Form'
-  identifier: 'quickCompanyWizard'
+  identifier: 'wizardQuickCompany'
   label: 'Add a new Company'
   renderables:
     -
