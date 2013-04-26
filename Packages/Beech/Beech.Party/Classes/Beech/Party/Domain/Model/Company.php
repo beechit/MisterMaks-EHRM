@@ -39,14 +39,6 @@ class Company extends \TYPO3\Party\Domain\Model\AbstractParty implements \TYPO3\
 	protected $departments;
 
 	/**
-	 * The chamber of commerce number (KvK)
-	 *
-	 * @var string
-	 * @ORM\Column(nullable=TRUE,length=20)
-	 */
-	protected $chamberOfCommerceNumber;
-
-	/**
 	 * @var boolean
 	 */
 	protected $deleted = FALSE;
@@ -71,14 +63,6 @@ class Company extends \TYPO3\Party\Domain\Model\AbstractParty implements \TYPO3\
 	 */
 	public function getName() {
 		return $this->name;
-	}
-
-	/**
-	 * @param string $chamberOfCommerceNumber
-	 * @return void
-	 */
-	public function setChamberOfCommerceNumber($chamberOfCommerceNumber) {
-		$this->chamberOfCommerceNumber = $chamberOfCommerceNumber;
 	}
 
 	/**

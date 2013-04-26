@@ -28,12 +28,6 @@
     'departments':
       label: 'Departments'
       type: 'Beech\Party\Domain\Model\Company'
-      label: 'Chamber of Commerce Number'
-      validation:
-        -
-          type: 'StringLengh'
-          options:
-            maximum: 20
     'idNumber':
       label: 'Company Id Number'
       validation:
@@ -69,6 +63,15 @@
         - 'foundation'
         - 'cooperative'
       defaultValue: none
+      validation:
+        -
+          type: 'NotEmpty'
+        -
+          type: 'StringLength'
+          options:
+            maximum: 20
+    'chamberOfCommerce':
+      label: 'Chamber of Commerce Number'
       validation:
         -
           type: 'NotEmpty'
