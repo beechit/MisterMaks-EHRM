@@ -1,4 +1,4 @@
-'Beech.ehrm.Domain.Model.Status':
+'Beech.Ehrm.Domain.Model.Status':
   properties:
     'statusName':
       label: 'StatusName'
@@ -20,7 +20,7 @@
 # stopped means that an active user has set this state on the entity
       validation:
         -
-          type: 'NotEmpty'
+          type: 'NotEmpty
     'stopReason':
       options:
         values:
@@ -36,14 +36,18 @@
         -
           type: 'Text'
     'personid':
-      label: 'Person ID'
+      label: 'Person'
       type: 'Beech\Party\Domain\Model\Person'
     'departmentId':
       label: 'Department ID'
       type: 'Beech\Party\Domain\Model\Company'
 # in entity document we store document id's of entities that are stored, in way we only have to use one status connections to multiple entities.
-    'entityDocumentId':
+    'entityDocument':
       label: 'entityDocument ID'
+# todo remove link to contract and implement this in entity document
+    'contract':
+      label: : 'contractId'
+      type: 'Beech\CLA\Domain\Model\Contract'
 # todo: implement workflow status ??
     'creationDate':
       defaultValue: 'now'
