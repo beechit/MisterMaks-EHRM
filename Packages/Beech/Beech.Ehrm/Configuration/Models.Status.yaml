@@ -20,7 +20,7 @@
 # stopped means that an active user has set this state on the entity
       validation:
         -
-          type: 'NotEmpty
+          type: 'NotEmpty'
     'stopReason':
       options:
         values:
