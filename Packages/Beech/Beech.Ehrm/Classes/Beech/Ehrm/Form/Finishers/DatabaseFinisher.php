@@ -25,6 +25,12 @@ class DatabaseFinisher extends \TYPO3\Form\Core\Model\AbstractFinisher {
 	protected $objectManager;
 
 	/**
+	 * @var \Beech\Ehrm\Utility\PreferenceUtility
+	 * @Flow\Inject
+	 */
+	protected $preferenceUtility;
+
+	/**
 	 * @var array
 	 */
 	protected $defaultOptions = array(
@@ -99,6 +105,16 @@ class DatabaseFinisher extends \TYPO3\Form\Core\Model\AbstractFinisher {
 			$contract->setEmployee($employee);
 			$contract->setEmployeeFullName($employee->getName()->getFullName());
 		}
+
+		$employerRepository = new \Beech\Party\Domain\Repository\CompanyRepository();
+		if (!isset($formValues['employer'])) {
+			$employerIdentifier = $this->preferenceUtility->getApplicationPreference('company');
+		} else {
+			$employerIdentifier = $formValues['employer'];
+		}
+		$employer = $employerRepository->findByIdentifier($employerIdentifier);
+		$contract->setEmployer($employer);
+
 		if (isset($formValues['jobDescription'])) {
 			$jobDescriptionRepository = new \Beech\CLA\Domain\Repository\JobDescriptionRepository();
 			$jobDescription = $jobDescriptionRepository->findByIdentifier($formValues['jobDescription']);
@@ -106,7 +122,9 @@ class DatabaseFinisher extends \TYPO3\Form\Core\Model\AbstractFinisher {
 			$contract->setJobDescriptionName($jobDescription->getJobTitle());
 		}
 		$contract->setStatus(\Beech\CLA\Domain\Model\Contract::STATUS_DRAFT);
-
+		if (isset($formValues['createdBy'])) {
+			$contract->setCreatedBy($formValues['createdBy']);
+		}
 		if (isset($formValues['contractTemplate'])) {
 			$contract->setContractTemplate($formValues['contractTemplate']);
 		}
@@ -121,6 +139,8 @@ class DatabaseFinisher extends \TYPO3\Form\Core\Model\AbstractFinisher {
 			}
 		}
 		$contract->setArticles($articles);
+
+
 		$repository->add($contract);
 		$repository->flushDocumentManager();
 	}
