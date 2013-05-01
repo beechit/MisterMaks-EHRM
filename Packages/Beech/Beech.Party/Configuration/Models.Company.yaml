@@ -40,6 +40,11 @@
             maximum: 99999999
         -
           type: 'NotEmpty'
+    'IsReponsibility':
+      label: 'Is responsibility of'
+      type: 'Beech\Party\Domain\Model\Company'
+      default: 'primary'
+# todo: check how primary company is flagged for default value.
     'policyNumberAbsenceInsurer':
       label: 'Policy Number Absence Insurer'
       validation:
