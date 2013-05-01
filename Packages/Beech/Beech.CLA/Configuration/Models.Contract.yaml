@@ -85,7 +85,7 @@
       type: 'Beech\CLA\Domain\Model\JobDescription'
     'defaultSalaryScale':
       label: 'defaultSalaryScale'
-      type: 'Beech\CLA\
+      type: 'Beech\CLA\'
     'contractEndDate':
       label: 'Expiration date'
       type: 'DateTime'
