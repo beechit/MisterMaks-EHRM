@@ -113,7 +113,6 @@ class HeaderPartsViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHel
 					->reset()
 					->setFormat('js')
 					->setCreateAbsoluteUri(TRUE)
-					->setLinkProtectionEnabled(FALSE)
 					->uriFor(
 						$file['uri']['action'],
 						isset($file['uri']['arguments']) ? $file['uri']['arguments'] : array(),

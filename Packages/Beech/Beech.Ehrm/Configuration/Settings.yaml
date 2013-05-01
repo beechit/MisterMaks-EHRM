@@ -190,9 +190,6 @@ TYPO3:
       Finisher-ModalCloseConfirmationFinisher: resource://Beech.Ehrm/Private/Templates/Form/Builder/ModalCloseConfirmationFinisher.html
 
   Flow:
-    security:
-      firewall:
-        filters: []
     session:
       cookie:
 
