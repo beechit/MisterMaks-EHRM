@@ -21,8 +21,9 @@ class ModalCloseConfirmationFinisher extends \TYPO3\Form\Core\Model\AbstractFini
 	 * @var array
 	 */
 	protected $defaultOptions = array(
-		'message' => '',
-		'buttons' => array('ok'),
+		'templatePathAndFilename' => 'resource://Beech.Ehrm/Private/Templates/Wizard/ModalCloseConfirmation.html',
+		'layoutRootPath' => 'resource://Beech.Ehrm/Private/Layouts',
+		'buttons' => array('Ok'),
 	);
 
 	/**
@@ -47,10 +48,38 @@ class ModalCloseConfirmationFinisher extends \TYPO3\Form\Core\Model\AbstractFini
 		$buttons = $this->parseOption('buttons');
 
 			// TODO: use a Fluid template for rendering this snippet
+		$standaloneView = $this->initializeStandaloneView();
+		$standaloneView->assign('message', $message);
+		$standaloneView->assign('buttons', $buttons);
+
 		$response = $formRuntime->getResponse();
-		$response->setContent('<p>' . $message . '</p><div class="actions"><nav class="form-actions"><button class="btn btn-primary" data-dismiss="modal">Close</button></nav></div>');
+		$response->setContent($standaloneView->render());
 	}
 
+	/**
+	 * @return \TYPO3\Fluid\View\StandaloneView
+	 * @throws \TYPO3\Form\Exception\FinisherException
+	 */
+	protected function initializeStandaloneView() {
+		$standaloneView = new \TYPO3\Fluid\View\StandaloneView($this->finisherContext->getFormRuntime()->getRequest());
+
+		$standaloneView->setFormat('html');
+
+		$standaloneView->setTemplatePathAndFilename($this->parseOption('templatePathAndFilename'));
+
+		if ($this->parseOption('partialRootPath') != NULL) {
+			$standaloneView->setPartialRootPath($this->parseOption('partialRootPath'));
+		}
+
+		if ($this->parseOption('layoutRootPath') != NULL) {
+			$standaloneView->setLayoutRootPath($this->parseOption('layoutRootPath'));
+		}
+
+		if ($this->parseOption('variables') != NULL) {
+			$standaloneView->assignMultiple($this->parseOption('variables'));
+		}
+		return $standaloneView;
+	}
 }
 
 ?>
