@@ -6,7 +6,7 @@
 	App.AdministrationContractModuleView = Ember.View.extend(App.AjaxModuleViewMixin, {
 		url: MM.url.module.contractModule
 	});
-	App.AdministrationContractModuleNewView = App.ContractModuleViewMixin.extend();
+
 	App.AdministrationContractModuleShowView = App.ContractModuleViewMixin.extend();
 	App.AdministrationContractModuleStartView = App.ContractModuleViewMixin.extend({
 		didInsertElement: function() {
@@ -18,4 +18,6 @@
 				.modal('show');
 		}
 	});
+	App.AdministrationContractModuleNewView = App.AdministrationContractModuleStartView;
+
 }).call(this);
