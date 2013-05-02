@@ -55,8 +55,6 @@ class ContractArticlesSection extends \TYPO3\Form\FormElements\Section {
 	 * @return void
 	 */
 	public function initializeFormElement() {
-		$this->setLabel('Parameters');
-
 		if ($this->contractTemplate !== NULL) {
 			if ($this->contract !== NULL) {
 				$filledContractValues = $this->contract->getArticles();
