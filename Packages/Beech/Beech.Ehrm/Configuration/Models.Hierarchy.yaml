@@ -1,0 +1,32 @@
+'Beech.Ehrm.Domain.Model.Hierarchy':
+    properties:
+# group and hierarchy should be connected to a unique jobdescription
+      'jobdescription':
+        label: 'Jobdescription'
+        type: 'Beech\CLA\Domain\Model\JobDescription'
+# sets the head of the company if TRUE
+      'headOfCompany':
+        label: 'Head of company'
+        options:
+          values:
+            - TRUE
+            - FALSE
+# sets the head of the department if TRUE
+      'departmentHead':
+        label: 'Head of department'
+        options:
+          values:
+            - TRUE
+            - FALSE
+# Sets group" rights and roles that is connected to function.
+      'group':
+        label: 'Member of'
+        type: 'Beech\Party\Domain\Model\Group'
+# Sets the department that jobdescription/employee is connected to.
+      'department':
+        label: 'Department'
+        type: 'Beech\Party\Domain\Model\Company'
+# sets the hierarchy in functions
+      'managedby':
+        label: 'Is managed by'
+        type: 'Beech\CLA\Domain\Model\JobDescription'
