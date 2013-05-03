@@ -61,12 +61,8 @@
         - 'subsidiary'
         - 'department'
         - 'soleProprietorship'
-        - 'partnership'
         - 'vof'
-        - 'cv'
         - 'bv'
-        - 'foundation'
-        - 'cooperative'
       defaultValue: none
       validation:
         -
