@@ -11,180 +11,179 @@
       type: 'Beech\Party\Domain\Model\Company'
     'addresses':
       items:
-        'type':
-          label: 'Address type'
-          options:
-            values:
-              - 'businessAddress'
-              - 'postbox'
-              - 'mailingAddress'
-              - 'workLocation'
-              - 'addressAbroad'
-              - 'other'
-          validation:
-            -
-              type: 'NotEmpty'
-            -
-              type: 'StringLength'
-              options:
-                maximum: 35
-        'streetName':
-          label: 'Street name'
-          validation:
-            -
-              type: 'NotEmpty'
-            -
-              type: 'RegularExpression'
-              options:
-                regularExpression: '/[a-zA-Z\\-\\s\\’]{2,30}/'
-            -
-              type: 'StringLength'
-              options:
-                maximum: 35
-        'primaryPost':
-          label: 'Primary postaddress'
-          options:
-            values:
-              - TRUE
-              - FALSE
-        'primary':
-          label: 'Primary address'
-          options:
-            values:
-              - TRUE
-              - FALSE
-        'postBox':
-          label: 'Postbox number'
-          validation:
-            -
-              type: 'RegularExpression'
-              options:
-                regularExpression: '/[0-9]{1,5}/'
-            -
-              type: 'Integer'
-        'houseNumber':
-          label: 'House number'
-          validation:
-            -
-              type: 'NotEmpty'
-            -
-              type: 'RegularExpression'
-              options:
-                regularExpression: '/[0-9]{1,5}/'
-            -
-              type: 'Integer'
-        'houseNumberAddition':
-          label: 'House number addition'
-          validation:
-            -
-              type: 'RegularExpression'
-              options:
-                regularExpression: '/[a-zA-Z0-9\\-]{0,10}/'
-            -
-              type: 'StringLength'
-              options:
-                maximum: 10
-        'postalNL':
-          label: 'Postal code'
-          validation:
-            -
-              type: 'NotEmpty'
-            -
-              type: 'RegularExpression'
-              options:
-                regularExpression: '/[0-9]{4}\s{0,1}[a-z]{2}/'
-            -
-              type: 'StringLength'
-              options:
-                maximum: 6
-        'streetAbroad':
-          label: 'Street name Abroad'
-          validation:
-            -
-              type: 'NotEmpty'
-            -
-              type: 'RegularExpression'
-              options:
-                regularExpression: '/[a-zA-Z\\-\\s\\’]{2,30}/'
-            -
-              type: 'StringLength'
-              options:
-                maximum: 35
-        'houseNumberAbroad':
-          label: 'House number'
-          validation:
-            -
-              type: 'NotEmpty'
-            -
-              type: 'RegularExpression'
-              options:
-                regularExpression: '/[0-9]{1,5}/'
-            -
-              type: 'Integer'
-        'houseNumberAdditionAbroad':
-          label: 'House number addition'
-          validation:
-            -
-              type: 'RegularExpression'
-              options:
-                regularExpression: '/[a-zA-Z0-9\\-]{0,10}/'
-            -
-              type: 'StringLength'
-              options:
-                maximum: 10
-        'postalCodeAbroad':
-          label: 'Postal code'
-          validation:
-            -
-              type: 'RegularExpression'
-              options:
-                regularExpression: '/[0-9]{4}\s{0,1}[a-z]{2}/'
-            -
-              type: 'StringLength'
-              options:
-                maximum: 10
-        'residence':
-          label: 'Residence'
-          validation:
-            -
-              type: 'NotEmpty'
-            -
-              type: 'RegularExpression'
-              options:
-                regularExpression: '/[a-zA-Z\\-\\s\\’]{2,30}/'
-            -
-              type: 'StringLength'
-              options:
-                maximum: 35
-        'residenceAbroad':
-          label: 'Residence'
-          validation:
-            -
-              type: 'NotEmpty'
-            -
-              type: 'RegularExpression'
-              options:
-                regularExpression: '/[a-zA-Z\\-\\s\\’]{2,30}/'
-            -
-              type: 'StringLength'
-              options:
-                maximum: 35
-        'country':
-          label: 'Country'
-          validation:
-            -
-              type: 'StringLength'
-              options:
-                maximum: 30
-          defaultValue: 'NL'
-        'description':
-          label: 'Address description'
-          type: text
-          validation:
-            -
-              type: 'Text'
-          label: 'Addresses'
-          type: 'array'
+        label: 'Address type'
+        options:
+          values:
+            - 'businessAddress'
+            - 'postbox'
+            - 'mailingAddress'
+            - 'workLocation'
+            - 'addressAbroad'
+            - 'other'
+        validation:
+          -
+            type: 'NotEmpty'
+          -
+            type: 'StringLength'
+            options:
+              maximum: 35
+      'streetName':
+        label: 'Street name'
+        validation:
+          -
+            type: 'NotEmpty'
+          -
+            type: 'RegularExpression'
+            options:
+              regularExpression: '/[a-zA-Z\\-\\s\\’]{2,30}/'
+          -
+            type: 'StringLength'
+            options:
+              maximum: 35
+      'primaryPost':
+        label: 'Primary postaddress'
+        options:
+          values:
+            - TRUE
+            - FALSE
+      'primary':
+        label: 'Primary address'
+        options:
+          values:
+            - TRUE
+            - FALSE
+      'postBox':
+        label: 'Postbox number'
+        validation:
+          -
+            type: 'RegularExpression'
+            options:
+              regularExpression: '/[0-9]{1,5}/'
+          -
+            type: 'Integer'
+      'houseNumber':
+        label: 'House number'
+        validation:
+          -
+            type: 'NotEmpty'
+          -
+            type: 'RegularExpression'
+            options:
+              regularExpression: '/[0-9]{1,5}/'
+          -
+            type: 'Integer'
+      'houseNumberAddition':
+        label: 'House number addition'
+        validation:
+          -
+            type: 'RegularExpression'
+            options:
+              regularExpression: '/[a-zA-Z0-9\\-]{0,10}/'
+          -
+            type: 'StringLength'
+            options:
+              maximum: 10
+      'postalNL':
+        label: 'Postal code'
+        validation:
+          -
+            type: 'NotEmpty'
+          -
+            type: 'RegularExpression'
+            options:
+              regularExpression: '/[0-9]{4}\s{0,1}[a-z]{2}/'
+          -
+            type: 'StringLength'
+            options:
+              maximum: 6
+      'streetAbroad':
+        label: 'Street name Abroad'
+        validation:
+          -
+            type: 'NotEmpty'
+          -
+            type: 'RegularExpression'
+            options:
+              regularExpression: '/[a-zA-Z\\-\\s\\’]{2,30}/'
+          -
+            type: 'StringLength'
+            options:
+              maximum: 35
+      'houseNumberAbroad':
+        label: 'House number'
+        validation:
+          -
+            type: 'NotEmpty'
+          -
+            type: 'RegularExpression'
+            options:
+              regularExpression: '/[0-9]{1,5}/'
+          -
+            type: 'Integer'
+      'houseNumberAdditionAbroad':
+        label: 'House number addition'
+        validation:
+          -
+            type: 'RegularExpression'
+            options:
+              regularExpression: '/[a-zA-Z0-9\\-]{0,10}/'
+          -
+            type: 'StringLength'
+            options:
+              maximum: 10
+      'postalCodeAbroad':
+        label: 'Postal code'
+        validation:
+          -
+            type: 'RegularExpression'
+            options:
+              regularExpression: '/[0-9]{4}\s{0,1}[a-z]{2}/'
+          -
+            type: 'StringLength'
+            options:
+              maximum: 10
+      'residence':
+        label: 'Residence'
+        validation:
+          -
+            type: 'NotEmpty'
+          -
+            type: 'RegularExpression'
+            options:
+              regularExpression: '/[a-zA-Z\\-\\s\\’]{2,30}/'
+          -
+            type: 'StringLength'
+            options:
+              maximum: 35
+      'residenceAbroad':
+        label: 'Residence'
+        validation:
+          -
+            type: 'NotEmpty'
+          -
+            type: 'RegularExpression'
+            options:
+              regularExpression: '/[a-zA-Z\\-\\s\\’]{2,30}/'
+          -
+            type: 'StringLength'
+            options:
+              maximum: 35
+      'country':
+        label: 'Country'
+        validation:
+          -
+            type: 'StringLength'
+            options:
+              maximum: 30
+        defaultValue: 'NL'
+      'description':
+        label: 'Address description'
+        type: text
+        validation:
+          -
+            type: 'Text'
+        label: 'Addresses'
+        type: 'array'
     'creationDate':
       defaultValue: 'now'
       label: 'creation date'
