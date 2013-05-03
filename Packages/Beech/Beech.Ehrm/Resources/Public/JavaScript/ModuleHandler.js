@@ -43,6 +43,14 @@
 					that.loadContent(result, target);
 				}
 			});
+				// When content of module is loaded, apply datepicker plugin if its necessary
+			$moduleContainer.find('.datepicker').on('click', function() {
+				$(this).datepicker({showOn:'focus', format: 'dd-mm-yyyy' })
+					.on('changeDate', function() {
+						$(this).datepicker('hide');
+					})
+					.focus();
+			});
 		},
 
 		prepareUrl: function (object) {
