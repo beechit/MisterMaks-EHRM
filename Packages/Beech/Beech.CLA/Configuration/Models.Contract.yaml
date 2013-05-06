@@ -6,9 +6,6 @@
     'employee':
       label: 'Employee'
       type: 'Beech\Party\Domain\Model\Person'
-      validation:
-        -
-          type: 'NotEmpty'
     'departmentId':
       label: 'Department'
       type: 'Beech\Party\Domain\Model\Company'

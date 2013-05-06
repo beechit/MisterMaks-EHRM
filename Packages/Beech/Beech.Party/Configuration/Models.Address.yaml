@@ -22,16 +22,12 @@
             - 'other'
         validation:
           -
-            type: 'NotEmpty'
-          -
             type: 'StringLength'
             options:
               maximum: 35
       'streetName':
         label: 'Street name'
         validation:
-          -
-            type: 'NotEmpty'
           -
             type: 'RegularExpression'
             options:
@@ -64,9 +60,7 @@
       'houseNumber':
         label: 'House number'
         validation:
-          -
-            type: 'NotEmpty'
-          -
+           -
             type: 'RegularExpression'
             options:
               regularExpression: '/[0-9]{1,5}/'
@@ -87,8 +81,6 @@
         label: 'Postal code'
         validation:
           -
-            type: 'NotEmpty'
-          -
             type: 'RegularExpression'
             options:
               regularExpression: '/[0-9]{4}\s{0,1}[a-z]{2}/'
@@ -100,8 +92,6 @@
         label: 'Street name Abroad'
         validation:
           -
-            type: 'NotEmpty'
-          -
             type: 'RegularExpression'
             options:
               regularExpression: '/[a-zA-Z\\-\\s\\’]{2,30}/'
@@ -112,8 +102,6 @@
       'houseNumberAbroad':
         label: 'House number'
         validation:
-          -
-            type: 'NotEmpty'
           -
             type: 'RegularExpression'
             options:
@@ -146,8 +134,6 @@
         label: 'Residence'
         validation:
           -
-            type: 'NotEmpty'
-          -
             type: 'RegularExpression'
             options:
               regularExpression: '/[a-zA-Z\\-\\s\\’]{2,30}/'
@@ -158,8 +144,6 @@
       'residenceAbroad':
         label: 'Residence'
         validation:
-          -
-            type: 'NotEmpty'
           -
             type: 'RegularExpression'
             options:

@@ -1,40 +1,25 @@
-#############################################################
-# validated yaml for the contract article
-# this is the contract article model.
-# todo: Make this more generic
-#############################################################
 'Beech.CLA.Domain.Model.ContractArticle':
   properties:
     'articleId':
       label: 'Article Id'
       validation:
         -
-          type: 'NotEmpty'
-        -
           type: 'StringLength'
     'articleLabel':
       label: 'Label'
-      validation:
-        type: 'NotEmpty'
     'articleHeader':
       label: 'Header'
       validation:
-        -
-          type: 'NotEmpty'
         -
           type: 'Text'
     'articleText':
       label: 'Text'
       validation:
         -
-          type: 'NotEmpty'
-        -
           type: 'Text'
     'order':
       label: 'Order'
       validation:
-        -
-          type: 'NotEmpty'
         -
           type: 'Integer'
     'creationDate':

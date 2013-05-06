@@ -8,8 +8,6 @@
     label: 'Startdate'
     validation:
       -
-        type: 'NotEmpty'
-      -
         type: 'DateTimeRange'
         options:
           earliestDate: 20130101

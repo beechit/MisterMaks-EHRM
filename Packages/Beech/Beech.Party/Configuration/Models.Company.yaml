@@ -4,8 +4,6 @@
       label: 'Name of company'
       validation:
         -
-          type: 'NotEmpty'
-        -
           type: 'StringLength'
           options:
             maximum: 35
@@ -19,8 +17,6 @@
           - 'partnerCompany'
       defaultValue: 'department'
       validation:
-        -
-          type: 'NotEmpty'
         -
           type: 'StringLength'
           options:
@@ -38,8 +34,6 @@
           options:
             minimum: 1
             maximum: 99999999
-        -
-          type: 'NotEmpty'
     'policyNumberAbsenceInsurer':
       label: 'Policy Number Absence Insurer'
       validation:
@@ -61,16 +55,12 @@
       defaultValue: none
       validation:
         -
-          type: 'NotEmpty'
-        -
           type: 'StringLength'
           options:
             maximum: 20
     'chamberOfCommerce':
       label: 'Chamber of Commerce Number'
       validation:
-        -
-          type: 'NotEmpty'
         -
           type: 'StringLength'
           options:

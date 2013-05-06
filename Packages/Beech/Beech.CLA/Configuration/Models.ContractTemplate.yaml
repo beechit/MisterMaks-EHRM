@@ -7,9 +7,6 @@
   properties:
     'templateName':
       label: 'Template name'
-      validation:
-        -
-          type: 'NotEmpty'
     'articles':
       type: 'array'
       label: 'Articles'

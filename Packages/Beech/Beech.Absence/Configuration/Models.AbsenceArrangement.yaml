@@ -4,8 +4,6 @@
      label: 'Absence Arrangement'
      validation:
        -
-         type: 'NotEmpty'
-       -
          type: 'Stringlength'
          options:
            maximum: 25
@@ -16,10 +14,8 @@
          'absenceTypeName':
            label: 'Absence type'
            validation:
-            -
-              type: 'NotEmpty'
-            -
-              type: 'StringLength'
+           -
+             type: 'StringLength'
               options:
                 maximum: 35
        -
@@ -38,8 +34,6 @@
         - 'day'
     validation:
       -
-        type: 'NotEmpty'
-      -
         type: 'StringLength'
         options:
           maximum: 20
@@ -49,8 +43,6 @@
     defaultValue: '1-1'
     validation:
       -
-        type: 'NotEmpty'
-      -
         type: 'StringLength'
         options:
           maximum: 5
@@ -59,8 +51,6 @@
     type: 'DateTime'
     defaultValue: '31-12'
     validation:
-      -
-        type: 'NotEmpty'
       -
         type: 'StringLength'
         options:
@@ -95,8 +85,6 @@
         - 'Custom'
         - 'not applicable'
     validation:
-      -
-        type: 'NotEmpty'
       -
         type: 'StringLength'
         options:

@@ -43,9 +43,6 @@
     'organiserId':
       label: 'Organiser id'
       type: 'Beech\Party\Domain\Model\Person'
-      validation:
-        -
-          type: 'NotEmpty'
     'start':
       label: 'Start'
       type: 'DateTime'
@@ -82,17 +79,11 @@
               - 'declined'
               - 'tentative'
               - 'accepted'
-          validation:
-            -
-              type: 'NotEmpty'
-            -
-              type: 'StringLength'
-              options:
-                maximum: 20
         'comment':
           label: 'comment'
           validation:
-            type: 'Text'
+            -
+              type: 'Text'
       label: 'Attendees'
       type: 'array'
     'relations':
@@ -144,9 +135,6 @@
           - 'e-mail'
           - 'sms'
           - 'notification'
-      validation:
-        -
-          type: 'NotEmpty'
     'creationDate':
       default: 'now'
       label: 'creation date'

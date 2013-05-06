@@ -17,16 +17,12 @@
       label: 'Job Title'
       validation:
         -
-          type: 'NotEmpty'
-        -
           type: 'StringLength'
           options:
             maximum: 50
     'jobContext':
       label: 'Job context'
       validation:
-        -
-          type: 'NotEmpty'
         -
           type: 'Text'
       default: 'Functiecontext'
@@ -38,8 +34,6 @@
     'positionLabel':
       type: 'string'
       validation:
-        -
-          type: 'NotEmpty'
         -
           type: 'Label'
         -
@@ -69,8 +63,6 @@
         -
           type: 'Label'
         -
-          type: 'NotEmpty'
-        -
           type: 'StringLength'
           options:
             maximum: 30
@@ -78,9 +70,6 @@
     'expectations':
       label: 'Expectations'
       type: 'array'
-      validation:
-        -
-          type: 'NotEmpty'
       values:
         - 'Uitgevoerde Handelingen'
         - 'Verstrekte informatie'
@@ -102,8 +91,6 @@
         'circumstance':
         label: 'Circumstance'
         validation:
-          -
-            type: 'NotEmpty'
           -
             type: 'Text'
     'orbaScore':
@@ -134,9 +121,6 @@
       default: 'currentUser'
       label: 'Created by'
       type: 'string'
-      validation:
-        -
-          type: 'NotEmpty'
     'modification':
       items:
         'modificationDate':

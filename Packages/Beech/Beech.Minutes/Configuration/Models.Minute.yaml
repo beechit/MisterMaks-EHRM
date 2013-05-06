@@ -30,9 +30,10 @@
     'minuteTemplate':
       label: 'Minute template'
       validation:
-        type: 'StringLength'
-        options:
-          maximum: 20
+        -
+          type: 'StringLength'
+          options:
+           maximum: 20
     'creationDate':
       defaultValue: 'now'
       label: 'creation date'

@@ -12,26 +12,15 @@
     'documentCategory':
       label: 'Category'
       type: 'Beech\Document\Domain\Model\DocumentCategory'
-      validation:
-        -
-          type: 'NotEmpty'
 # name and resource are in the php model
     'documentType':
       label: 'DocumentType'
       type: 'Beech\Document\Domain\Model\DocumentCategory'
-      validation:
-        -
-          type: 'NotEmpty'
     'Document':
       label: 'Document'
-      validation:
-        -
-          type: 'NotEmpty'
     'uploadDate':
       label: 'UploadDate'
       validation:
-        -
-          type: 'NotEmpty'
         -
           type: 'DateTimeRange'
           options:
@@ -40,9 +29,6 @@
     'AccessGroup':
       label: 'AccesGroup'
       type: 'Beech\Person\Domain\Model\Group'
-      validation:
-       -
-         type: 'NotEmpty'
     'documentDescription':
       label: 'Description'
       validation:

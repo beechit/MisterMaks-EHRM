@@ -3,9 +3,6 @@
     'companyId':
       label: 'Company ID'
       type: 'Beech\Party\Domain\Model\Company'
-      validation:
-        -
-          type: 'NotEmpty'
     'departmentId':
       label: 'Department ID'
       type: 'Beech\Party\Domain\Model\Company'
@@ -15,8 +12,6 @@
     'personType':
       label: 'Person type'
       validation:
-        -
-          type: 'NotEmpty'
         -
           type: 'StringLength'
           options:
@@ -79,8 +74,6 @@
       label: 'Date of Birth'
       validation:
         -
-          type: 'NotEmpty'
-        -
           type: 'DateTimeRange'
           options:
             earliestDate: 19200101
@@ -106,9 +99,6 @@
         values:
           - 'Male'
           - 'Female'
-      validation:
-        -
-          type: 'NotEmpty'
     'salutation':
       label: 'Salutation'
       options:
@@ -117,15 +107,10 @@
           - 'Dear Ms.'
           - 'Dear Miss.'
           - 'Dear Mrs.'
-      validation:
-        -
-          type: 'NotEmpty'
 #todo: add bsn validation
     'bsn':
       label: 'bsn'
       validation:
-        -
-          type: 'NotEmpty'
         -
           type: 'RegularExpression'
           options:
@@ -138,8 +123,6 @@
     'nationality':
       label: 'Nationality'
       validation:
-        -
-          type: 'NotEmpty'
         -
           type: 'StringLength'
           options:
@@ -172,9 +155,6 @@
           - 'sms'
           - 'paper'
           - 'phone'
-      validation:
-        -
-          type: 'NotEmpty'
 # status is used to set the status of companycontacts, contacts and partnercompanycontacts
     'status':
       label: 'Status'
@@ -182,9 +162,6 @@
         values:
           - 'active'
           - 'Archived'
-      validation:
-        -
-          type: 'NotEmpty'
     'creationDate':
       defaultValue: 'now'
       label: 'creation date'

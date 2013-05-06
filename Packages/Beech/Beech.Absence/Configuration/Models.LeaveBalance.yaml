@@ -4,14 +4,9 @@
       label: 'Subject id'
       type: 'Beech\Party\Domain\Model\Person'
       validation:
-        -
-          type: 'NotEmpty'
     'departmentId':
       label: 'departmentId'
       type: 'Beech\Party\Domain\Model\Company'
-      validation:
-        -
-          type: 'NotEmpty'
     'leaveBalance':
       items:
         'leaveBalanceYear':
@@ -35,8 +30,6 @@
               - '2019'
               - '2020'
           validation:
-            -
-              type: 'NotEmpty'
             -
               type: 'Integer'
           'leaveBalance':

@@ -14,9 +14,6 @@
              - 'emergencyResponse'
              - 'cropProtection'
              - 'other'
-          validation:
-            -
-              type: 'NotEmpty'
         'name':
           label: 'Licence name'
           validation:
@@ -34,8 +31,6 @@
         'startDate':
           label: 'licenceStart'
           validation:
-            -
-              type: 'NotEmpty'
             -
               type: 'DateTimeRange'
               options:

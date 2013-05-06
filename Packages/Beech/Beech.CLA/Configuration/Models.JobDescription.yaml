@@ -16,16 +16,12 @@
       label: 'Job Title'
       validation:
         -
-          type: 'NotEmpty'
-        -
           type: 'StringLength'
           options:
             maximum: 50
     'jobContext':
       label: 'Job context'
       validation:
-        -
-          type: 'NotEmpty'
         -
           type: 'Text'
       defaultValue: 'Functiecontext'
@@ -37,8 +33,6 @@
     'positionLabel':
       type: 'string'
       validation:
-        -
-          type: 'NotEmpty'
         -
           type: 'Label'
         -
@@ -68,8 +62,6 @@
         -
           type: 'Label'
         -
-          type: 'NotEmpty'
-        -
           type: 'StringLength'
           options:
             maximum: 30
@@ -82,15 +74,11 @@
             label: 'Main activities'
             validation:
               -
-                type: 'NotEmpty'
-              -
                 type: 'Text'
         -
           'resultCriteria':
             label: 'Result criteria'
             validation:
-              -
-                type: 'NotEmpty'
               -
                 type: 'Text'
     'burdeningCircumstances':
@@ -100,8 +88,6 @@
         'circumstance':
         label: 'Circumstance'
         validation:
-          -
-            type: 'NotEmpty'
           -
             type: 'Text'
     'orbaScore':
@@ -125,10 +111,8 @@
       defaultValue: 'currentUser'
       label: 'Created by'
       type: 'string'
-      validation:
-        -
-          type: 'NotEmpty'
-    'modification':
+      validation: ''
+      'modification':
       items:
         'modificationDate':
           defaultValue: 'now'

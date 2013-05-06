@@ -12,8 +12,6 @@
           label: 'Assent name'
           validation:
             -
-              type: 'NotEmpty'
-            -
               type: 'StringLength'
               options:
                 maximum: 35
@@ -27,9 +25,6 @@
              - 'tools'
              - 'companyCar'
              - 'other'
-          validation:
-                -
-                  type: 'NotEmpty'
         'name':
           label: 'Licence name'
           validation:
@@ -44,8 +39,6 @@
               type: 'StringLength'
               options:
                 maximum: 35
-            -
-              type: 'NotEmpty'
         'iDNumber':
           label: 'Identification number'
           validation:
@@ -56,8 +49,6 @@
         'startDate':
           label: 'Start'
           validation:
-            -
-              type: 'NotEmpty'
             -
               type: 'DateTimeRange'
               options:
@@ -81,9 +72,6 @@
           label: 'Returned to'
           type: 'Beech\Party\Domain\Model\Person'
           defaultValue: 'currentUser'
-          validation:
-            -
-              type: 'NotEmpty'
         'document':
           label: 'Document'
           type: 'Beech\Party\Domain\Model\Document'

@@ -20,8 +20,6 @@
               - 'bankAccountAbroad'
           validation:
             -
-              type: 'NotEmpty'
-            -
               type: 'StringLength'
               options:
                 maximum: 20

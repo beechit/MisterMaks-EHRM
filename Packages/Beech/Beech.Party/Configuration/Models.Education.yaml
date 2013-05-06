@@ -38,8 +38,6 @@
           label: 'Education start date'
           validation:
             -
-              type: 'NotEmpty'
-            -
               type: 'DateTimeRange'
               options:
                 earliestDate: 19500101
@@ -63,8 +61,6 @@
       label: 'creation date'
       validation:
         -
-          type: 'NotEmpty'
-        -
           type: 'DateTimeRange'
           options:
             earliestDate: 20130101
@@ -73,9 +69,6 @@
       defaultValue: 'currentUser'
       label: 'Created by'
       type: 'Beech\Party\Domain\Model\Person'
-      validation:
-        -
-          type: 'NotEmpty'
     'modification':
       items:
         'modificationDate':

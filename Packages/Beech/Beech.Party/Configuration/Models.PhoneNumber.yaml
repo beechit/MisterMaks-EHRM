@@ -26,8 +26,6 @@
               - 'foreignNumber'
           validation:
             -
-              type: 'NotEmpty'
-            -
               type: 'StringLength'
               options:
                 maximum: 25
@@ -35,8 +33,6 @@
         'number':
           label: 'Phone Number'
           validation:
-            -
-              type: 'NotEmpty'
             -
               type: 'RegularExpression'
               options:
