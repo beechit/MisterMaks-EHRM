@@ -9,9 +9,6 @@
     'departmentId':
       label: 'Department ID'
       type: 'Beech\Party\Domain\Model\Company'
-    'personId':
-      label: 'Person ID'
-      type: 'Beech\Party\Domain\Model\Person'
     'name':
       label: 'name'
       type: 'TYPO3\Party\Domain\Model\PersonName'
