@@ -1,132 +1,133 @@
-'Beech.AbsenceArrangment.Domain.Model.AbsenceArrangement':
-  properties:
-   'nameArrangement':
-     label: 'Absence Arrangement'
-     validation:
-       -
-         type: 'Stringlength'
-         options:
-           maximum: 25
-   'arrangementTypes':
-     type: 'array'
-     items:
-       -
-         'absenceTypeName':
-           label: 'Absence type'
-           validation:
-           -
-             type: 'StringLength'
-              options:
-                maximum: 35
-       -
-         'absenceTypeDescription':
-           label: 'AbsenceDesription'
-           validation:
-            -
-              type: 'Text'
-# Static Settings:
-  'SetAbsenceUnit':
-    label: 'The unit in what absence is stored'
+---
+Beech.AbsenceArrangment.Domain.Model.AbsenceArrangement:
+  SetAbsenceUnit:
+    label: "The unit in what absence is stored"
     options:
       values:
-        - 'hour'
-        - 'half a day'
-        - 'day'
+        - hour
+        - "half a day"
+        - day
     validation:
       -
-        type: 'StringLength'
         options:
           maximum: 20
-  'startCount':
-    label: 'Start count of balance'
-    type: 'DateTime'
-    defaultValue: '1-1'
-    validation:
-      -
-        type: 'StringLength'
-        options:
-          maximum: 5
-  'endCount':
-    label: 'End count of balance'
-    type: 'DateTime'
-    defaultValue: '31-12'
-    validation:
-      -
-        type: 'StringLength'
-        options:
-          maximum: 5
-  'autoGrandBalance':
-    label: 'Grant balance after end Countdate'
+        type: StringLength
+  autoGrandBalance:
+    defaultValue: false
+    label: "Grant balance after end Countdate"
     options:
       values:
-        - TRUE
-        - FALSE
-    defaultValue: FALSE
-  'moveUnusedBalance':
-    label: 'Move unused balance hours to new balance period'
+        - true
+        - false
+  calculateBalanceonFTE:
+    defaultValue: false
+    label: "Calculate balance according to FTE factor"
     options:
       values:
-        - TRUE
-        - FALSE
-    defaultValue: FALSE
-  'calculateBalanceonFTE':
-    label: 'Calculate balance according to FTE factor'
-    options:
-      values:
-        - TRUE
-        - FALSE
-    defaultValue: FALSE
-  'leaveBalanceSource':
-    label: 'Set balance source'
-    options:
-      values:
-        - 'CLA'
-        - 'BW'
-        - 'Custom'
-        - 'not applicable'
-    validation:
-      -
-        type: 'StringLength'
-        options:
-          maximum: 20
-  'customBalance':
-    label: 'Custom  balance for full time'
-    validation:
-     -
-       type: 'Integer'
-     -
-       type: 'Count'
-       options:
-         minimum: 1
-         maximum: 300
-    'creationDate':
-      defaultValue: 'now'
-      label: 'creation date'
-      type: 'DateTime'
+        - true
+        - false
+  customBalance:
+    createdBy:
+      defaultValue: currentUser
+      label: "Created by"
+      type: Beech\Party\Domain\Model\Person
+    creationDate:
+      defaultValue: now
+      label: "creation date"
+      type: DateTime
       validation:
         -
-          type: 'DateTimeRange'
           options:
             earliestDate: 20130101
             latestDate: 20200101
-    'createdBy':
-      defaultValue: 'currentUser'
-      label: 'Created by'
-      type: 'Beech\Party\Domain\Model\Person'
-    'modification':
+          type: DateTimeRange
+    label: "Custom  balance for full time"
+    modification:
       items:
-        'modificationDate':
-          defaultValue: 'now'
-          label: 'Modification date'
+        modificationDate:
+          defaultValue: now
+          label: "Modification date"
           validation:
             -
-              type: 'DateTimeRange'
               options:
                 earliestDate: 20130101
                 latestDate: 20200101
-        'modifiedBy':
-          defaultValue: 'currentUser'
-          label: 'Modified by'
-          type: 'Beech\Party\Domain\Model\Person'
-      label: 'Modification log'
-      type: 'array'
+              type: DateTimeRange
+        modifiedBy:
+          defaultValue: currentUser
+          label: "Modified by"
+          type: Beech\Party\Domain\Model\Person
+      label: "Modification log"
+      type: array
+    validation:
+      -
+        type: Integer
+      -
+        options:
+          maximum: 300
+          minimum: 1
+        type: Count
+  endCount:
+    defaultValue: 31-12
+    label: "End count of balance"
+    type: DateTime
+    validation:
+      -
+        options:
+          maximum: 5
+        type: StringLength
+  leaveBalanceSource:
+    label: "Set balance source"
+    options:
+      values:
+        - CLA
+        - BW
+        - Custom
+        - "not applicable"
+    validation:
+      -
+        options:
+          maximum: 20
+        type: StringLength
+  moveUnusedBalance:
+    defaultValue: false
+    label: "Move unused balance hours to new balance period"
+    options:
+      values:
+        - true
+        - false
+  properties:
+    arrangementTypes:
+      items:
+        -
+          absenceTypeName:
+            label: "Absence type"
+            validation:
+              -
+                options:
+                  maximum: 35
+                type: StringLength
+        -
+          absenceTypeDescription:
+            label: AbsenceDesription
+            validation:
+              -
+                type: Text
+      type: array
+    nameArrangement:
+      label: "Absence Arrangement"
+      validation:
+        -
+          options:
+            maximum: 25
+          type: Stringlength
+  startCount:
+    defaultValue: 1-1
+    label: "Start count of balance"
+    type: DateTime
+    validation:
+      -
+        options:
+          maximum: 5
+        type: StringLength
+

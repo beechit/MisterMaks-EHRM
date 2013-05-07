@@ -64,7 +64,7 @@
             type: 'RegularExpression'
             options:
               regularExpression: '/[0-9]{1,5}/'
-          -
+           -
             type: 'Integer'
       'houseNumberAddition':
         label: 'House number addition'
