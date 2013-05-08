@@ -54,7 +54,7 @@
 		},
 
 		prepareUrl: function (object) {
-			var urlParams = "";
+			var urlParams = "?";
 			if (object != '') {
 				for (var key in object) {
 					urlParams += "&" +key + "=" + object[key];

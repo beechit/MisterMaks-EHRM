@@ -24,7 +24,7 @@ class Person extends \TYPO3\Party\Domain\Model\Person implements \TYPO3\Flow\Obj
 
 	/**
 	 * @var \TYPO3\Party\Domain\Model\PersonName
-	 * @ORM\OneToOne
+	 * @ORM\OneToOne(cascade={"persist"})
 	 * @Flow\Validate(type="NotEmpty", validationGroups={"Controller"})
 	 */
 	protected $name;

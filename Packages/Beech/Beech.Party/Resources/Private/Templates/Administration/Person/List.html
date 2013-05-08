@@ -1,0 +1,37 @@
+<f:layout name="Ajax" />
+
+<f:section name="Body">
+	<h1><f:translate id="persons">Persons</f:translate></h1>
+	<f:flashMessages class="flashmessages"/>
+	<f:if condition="{persons}">
+		<f:then>
+			<table class="table">
+				<thead>
+				<tr>
+					<th><f:translate>Full name</f:translate></th>
+					<th></th>
+				</tr>
+				</thead>
+				<tbody>
+				<f:for each="{persons}" as="person" iteration="iterator">
+					<tr>
+						<td>{person.name.fullName}</td>
+						<td>
+							<a href="#/administration/person/edit/{person.id}"><i class="icon-pencil"></i></a>
+							<a href="#/administration/person/delete/{person.id}"><i class="icon-trash"></i></a>
+						</td>
+					</tr>
+				</f:for>
+				</tbody>
+			</table>
+		</f:then>
+		<f:else>
+			<p></p>
+		</f:else>
+	</f:if>
+	<div class="form-actions">
+		<a class="btn btn-primary" href="/#/administration/person/new">
+			<f:translate id="action.new">New</f:translate>
+		</a>
+	</div>
+</f:section>

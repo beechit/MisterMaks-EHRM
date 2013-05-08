@@ -40,19 +40,11 @@ Beech:
               arguments:
                 application: 'MisterMaks'
           - 'Beech.Ehrm/JavaScript/Model.js'
-          - 'Beech.Party/JavaScript/Model/Company.js'
-          - 'Beech.Party/JavaScript/Model/Person.js'
           - 'Beech.Task/JavaScript/Model/Priority.js'
           - 'Beech.Task/JavaScript/Model/Task.js'
           - 'Beech.Ehrm/JavaScript/Router.js'
           - 'Beech.Task/JavaScript/Route/Task.js'
           - 'Beech.Ehrm/JavaScript/Router.js'
-          - 'Beech.Party/JavaScript/Route/Company.js'
-          - 'Beech.Party/JavaScript/Route/Person.js'
-          - 'Beech.Party/JavaScript/Controller/Company.js'
-          - 'Beech.Party/JavaScript/Controller/Person.js'
-          - 'Beech.Party/JavaScript/View/Company.js'
-          - 'Beech.Party/JavaScript/View/Person.js'
           - 'Beech.Ehrm/JavaScript/ModuleHandler.js'
           - 'Beech.Ehrm/JavaScript/Application.js'
           - 'Beech.Ehrm/JavaScript/Component/UserInterface/BreadcrumbMenu.js'
@@ -65,6 +57,12 @@ Beech:
           - 'Beech.CLA/JavaScript/Route/Contract.js'
           - 'Beech.CLA/JavaScript/Controller/Contract.js'
           - 'Beech.CLA/JavaScript/View/Contract.js'
+          - 'Beech.Party/JavaScript/Route/Company.js'
+          - 'Beech.Party/JavaScript/Route/Person.js'
+          - 'Beech.Party/JavaScript/Controller/Company.js'
+          - 'Beech.Party/JavaScript/Controller/Person.js'
+          - 'Beech.Party/JavaScript/View/Company.js'
+          - 'Beech.Party/JavaScript/View/Person.js'
 
 
     viewHelpers:
@@ -223,8 +221,6 @@ Radmiraal:
             - 'Beech\Ehrm\Domain\Model\Notification'
             - 'Beech\Ehrm\Domain\Model\Log'
           typeMapping:
-            TYPO3PartyDomainModelAbstractParty: 'BeechPartyDomainModelPerson'
-            TYPO3PartyDomainModelElectronicAddress: 'BeechPartyDomainModelElectronicAddress'
             DateTime: 'date'
             integer: 'number'
           ignoredProperties:

@@ -1,0 +1,40 @@
+<f:layout name="Ajax" />
+
+<f:section name="Body">
+	<h1><f:translate id="action.edit">Edit</f:translate></h1>
+	<f:form.validationResults for="person">
+		<f:if condition="{validationResults.flattenedErrors}">
+			<div class="error">
+				<f:for each="{validationResults.flattenedErrors}" key="propertyPath" as="errors">{propertyPath}: <f:for each="{errors}" as="error">{error}</f:for></f:for>
+			</div>
+		</f:if>
+	</f:form.validationResults>
+	<f:form.validationResults for="address">
+		<f:if condition="{validationResults.flattenedErrors}">
+			<div class="error">
+				<f:for each="{validationResults.flattenedErrors}" key="propertyPath" as="errors">{propertyPath}: <f:for each="{errors}" as="error">{error}</f:for></f:for>
+			</div>
+		</f:if>
+	</f:form.validationResults>
+	<div class="tab-content">
+		<h3>Person information</h3>
+
+		<f:form action="update" object="{person}" name="person" class="form-horizontal well">
+			<f:render partial="Forms/Person" />
+			<div class="form-actions">
+				<f:form.submit value="{f:translate(id: 'action.save')}" />
+			</div>
+		</f:form>
+
+		<f:form action="addAddress" object="{address}" name="address" class="form-horizontal well">
+			<f:for each="{addresses}" as="address">
+				<f:render partial="Views/Address" arguments="{address: address}" />
+			</f:for>
+			<f:render partial="Forms/Address" arguments="{person: person}"/>
+			<div class="form-actions">
+				<f:form.submit value="{f:translate(id: 'action.create')}" />
+			</div>
+		</f:form>
+
+	</div>
+</f:section>

@@ -1,16 +1,15 @@
 (function() {
 	'use strict';
-	App.BeechPartyPersonModuleIndexView = Ember.View.extend({
-		templateName: 'beech_party_domain_model_person/index'
+	App.PersonModuleViewMixin = Ember.View.extend(App.AjaxModuleViewMixin, {
+		didInsertElement: function() {/* override default */}
 	});
-	App.BeechPartyDomainModelPersonIndexView = Ember.View.extend({
-		templateName: 'beech_party_domain_model_person/show'
+	App.AdministrationPersonModuleView = Ember.View.extend(App.AjaxModuleViewMixin, {
+		url: MM.url.module.personModule
 	});
 
-	App.BeechPartyPersonAdministrationModuleIndexView = Ember.View.extend({
-		templateName: 'beech_party_domain_model_person_administration/index'
-	});
-	App.BeechPartyDomainModelPersonAdministrationIndexView = Ember.View.extend({
-		templateName: 'beech_party_domain_model_person_administration/show'
-	});
+	App.AdministrationPersonModuleShowView = App.PersonModuleViewMixin.extend();
+	App.AdministrationPersonModuleNewView = App.PersonModuleViewMixin.extend();
+	App.AdministrationPersonModuleEditView = App.PersonModuleViewMixin.extend();
+	App.AdministrationPersonModuleDeleteView = App.PersonModuleViewMixin.extend();
+
 }).call(this);

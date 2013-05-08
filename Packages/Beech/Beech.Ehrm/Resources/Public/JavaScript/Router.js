@@ -6,7 +6,11 @@
 			// Administration
 		this.resource('administration', function() {
 			this.route('applicationSettings', { path: 'settings' });
+
+			this.route('companyModule', { path: 'companies' });
+
 			this.route('jobDescriptionModule', { path: 'jobdescriptions' });
+			this.route('jobDescriptionModule.new', { path: 'jobdescription/new' });
 			this.route('contractArticleModule', { path: 'contractarticles' });
 			this.route('userManagementModule', { path: 'usermanagement' });
 			this.route('wizardManagementModule', { path: 'wizards' });
@@ -18,18 +22,11 @@
 			this.route('contractModule.show', { path: 'contract/show/:contract'});
 
 				// Beech.Party
-			this.resource('BeechPartyPersonAdministrationModule', { path: 'persons' }, function() {
-				this.route('new');
-				this.resource('BeechPartyDomainModelPersonAdministration', { path: '/:beech_party_domain_model_person_id' }, function() {
-					this.route('edit');
-				});
-			});
-			this.resource('BeechPartyCompanyAdministrationModule', { path: 'companies' }, function() {
-				this.route('new');
-				this.resource('BeechPartyDomainModelCompanyAdministration', { path: '/:beech_party_domain_model_company_id' }, function() {
-					this.route('edit');
-				});
-			});
+			this.route('personModule', { path: 'persons' });
+			this.route('personModule.new', { path: 'person/new' });
+			this.route('personModule.show', { path: 'person/show/:person' });
+			this.route('personModule.edit', { path: 'person/edit/:person' });
+			this.route('personModule.delete', { path: 'person/delete/:person' });
 		});
 
 		this.resource('index', { path: '/' }, function() {
@@ -37,17 +34,7 @@
 			this.route('userSettings', { path: 'user/settings' });
 			this.route('documentModule', { path: 'documents' });
 
-			// Beech.Party
-			this.resource('BeechPartyPersonModule', { path: 'persons' });
-			this.resource('BeechPartyDomainModelPerson', { path: 'persons/:beech_party_domain_model_person_id' }, function() {
-				this.route('edit');
-			});
-
-			this.resource('BeechPartyCompanyModule', { path: 'companies' }, function() {
-				this.resource('BeechPartyDomainModelCompany', { path: '/:beech_party_domain_model_company_id' }, function() {
-					this.route('edit');
-				});
-			});
+				// Beech.Party
 
 				// Beech.Task
 			this.resource('BeechTaskTaskModule', { path: 'tasks' }, function() {
@@ -100,8 +87,12 @@
 	App.AdministrationUserManagementModuleView = Ember.View.extend(App.AjaxModuleViewMixin, {
 		url: MM.url.module.userManagementModule
 	});
+
 	App.AdministrationJobDescriptionModuleView = Ember.View.extend(App.AjaxModuleViewMixin, {
 		url: MM.url.module.jobDescription
+	});
+	App.AdministrationJobDescriptionModuleNewView = Ember.View.extend(App.AjaxModuleViewMixin, {
+		url: MM.url.module.jobDescriptionNew
 	});
 	App.AdministrationContractArticleModuleView = Ember.View.extend(App.AjaxModuleViewMixin, {
 		url: MM.url.module.contractArticle

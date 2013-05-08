@@ -1,14 +1,7 @@
 'Beech.Party.Domain.Model.Address':
   properties:
-    'personId':
-      label: 'Person ID'
-      type: 'Beech\Party\Domain\Model\Person'
-    'departmentId':
-      label: 'Department ID'
-      type: 'Beech\Party\Domain\Model\Company'
-    'companyID':
-      label: 'Company ID'
-      type: 'Beech\Party\Domain\Model\Company'
+    'party':
+      type: 'TYPO3\Party\Domain\Model\AbstractParty'
     'addresses':
       items:
         label: 'Address type'

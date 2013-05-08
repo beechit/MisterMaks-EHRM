@@ -15,6 +15,13 @@ use TYPO3\Flow\Annotations as Flow,
  */
 class Address extends \Beech\Ehrm\Domain\Model\Document {
 
+	/**
+	 * @var \TYPO3\Party\Domain\Model\AbstractParty
+	 * @ODM\Field(type="string")
+	 * @ODM\Index
+	 */
+	protected $party;
+
 }
 
 ?>
