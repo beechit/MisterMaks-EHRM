@@ -15,6 +15,7 @@ use TYPO3\Flow\Annotations as Flow;
 class PreferenceUtility {
 
 	const CATEGORY_APPLICATION = 'application';
+
 	const CATEGORY_USER = 'user';
 
 	/**
@@ -63,7 +64,7 @@ class PreferenceUtility {
 	 */
 	public function getApplicationPreference($key, $userCategoryHasPreference = TRUE) {
 		if ($userCategoryHasPreference && $this->securityContext->isInitialized()) {
-				// User preference will override the application setting
+			// User preference will override the application setting
 			$userPreference = $this->getUserPreference($key);
 			if ($userPreference !== NULL) {
 				return $userPreference;
@@ -88,8 +89,9 @@ class PreferenceUtility {
 	 */
 	public function getUserPreferenceDocument() {
 		if (!$this->securityContext->isInitialized()
-				|| !$this->securityContext->getAccount() instanceof \TYPO3\Flow\Security\Account
-				|| !$this->securityContext->getAccount()->getParty() instanceof \Beech\Party\Domain\Model\Person) {
+			|| !$this->securityContext->getAccount() instanceof \TYPO3\Flow\Security\Account
+			|| !$this->securityContext->getAccount()->getParty() instanceof \Beech\Party\Domain\Model\Person
+		) {
 			return new \Beech\Ehrm\Domain\Model\Preference('user');
 		}
 
@@ -157,15 +159,15 @@ class PreferenceUtility {
 	 */
 	protected function getPreferenceDocument($category, $model = NULL) {
 		if ($model !== NULL) {
-			$result = $this->preferenceRepository->findByModelAndCategory($model, $category);
-			if (count($result) > 0) {
-				return $result[0];
-			}
-
 			if (is_object($model) && method_exists($model, 'getId')) {
 				$modelIdentifier = $model->getId();
 			} else {
 				$modelIdentifier = $this->persistenceManager->getIdentifierByObject($model);
+			}
+
+			$result = $this->preferenceRepository->findByModelAndCategory($modelIdentifier, $category);
+			if (count($result) > 0) {
+				return $result[0];
 			}
 
 			$preferenceDocument = new \Beech\Ehrm\Domain\Model\Preference($category);

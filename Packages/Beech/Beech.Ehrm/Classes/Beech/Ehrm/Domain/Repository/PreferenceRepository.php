@@ -58,7 +58,7 @@ class PreferenceRepository extends \Radmiraal\CouchDB\Persistence\AbstractReposi
 		$identifier = $object->getIdentifier() !== NULL ? $object->getIdentifier() : '';
 
 		if ($this->countByModelAndCategory($identifier, $object->getCategory()) > 0) {
-			throw new \Beech\Ehrm\Exception\DuplicateApplicationPreferenceException('Adding multiple preference documents with "application" category is not allowed');
+			throw new \Beech\Ehrm\Exception\DuplicateApplicationPreferenceException('Adding multiple preference documents with "'.$object->getCategory().'" category and same identifier is not allowed');
 		}
 		parent::add($object);
 	}
@@ -74,7 +74,7 @@ class PreferenceRepository extends \Radmiraal\CouchDB\Persistence\AbstractReposi
 		$availableApplicationPreferenceDocuments = $this->findByModelAndCategory($identifier, $object->getCategory());
 		if (count($availableApplicationPreferenceDocuments) > 0
 				&& $availableApplicationPreferenceDocuments[0]->getId() !== $object->getId()) {
-			throw new \Beech\Ehrm\Exception\DuplicateApplicationPreferenceException('Adding multiple preference documents with "application" category is not allowed');
+			throw new \Beech\Ehrm\Exception\DuplicateApplicationPreferenceException('Adding multiple preference documents with "'.$object->getCategory().'" category and same identifier is not allowed');
 		}
 
 		parent::update($object);
