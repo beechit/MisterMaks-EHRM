@@ -2,3 +2,4 @@ WizardRecoveryReport:
   type: 'TYPO3.Form:Form'
   identifier: wizardRecoveryReport
   label: wizardRecoveryReport
+# todo: create this wizard.
