@@ -50,6 +50,35 @@ class AbstractController extends \TYPO3\Flow\Mvc\Controller\ActionController {
 		parent::redirect($actionName, $controllerName, $packageKey, $arguments, $delay, $statusCode, $format);
 	}
 
+	/**
+	 * A temporary solution to create a Ember proof redirect
+	 *
+	 * Because there is currently no way to translate a FLOW call/uri to a Ember route
+	 * you have to do this manualy for now.
+	 * @todo find a way to setup al routes in YAML and generate all Ember routes from that
+	 * and create a utility to convert a FLOW uri to a Ember route
+	 *
+	 * @param $emberRoute
+	 * @throws \TYPO3\Flow\Mvc\Exception\StopActionException
+	 */
+	protected function emberRedirect($emberRoute) {
+		$escapedUri = htmlentities($emberRoute, ENT_QUOTES, 'utf-8');
+		$this->response->setContent('redirect:' . $escapedUri . '');
+
+		throw new \TYPO3\Flow\Mvc\Exception\StopActionException();
+	}
+
+	/**
+	 * A template method for displaying custom error flash messages, or to
+	 * display no flash message at all on errors. Override this to customize
+	 * the flash message in your action controller.
+	 *
+	 * @return \TYPO3\Flow\Error\Message The flash message or FALSE if no flash message should be set
+	 * @todo implement translations
+	 */
+	protected function getErrorFlashMessage() {
+		return new \TYPO3\Flow\Error\Error('Validation error', NULL, array(get_class($this), $this->actionMethodName));
+	}
 }
 
 ?>
