@@ -15,6 +15,7 @@
 	});
 
 	App.ModuleHandler = Ember.Object.create({
+		loadingFlag: false,
 		init: function() {
 			var that = this;
 
