@@ -65,6 +65,13 @@ The current status of the action. Could be:
 * Terminated
 	The process is killed by the system / a user
 
+StatusModel
+-----------
+
+A status model was introduced, this is the general place where to check and store states.
+The states model is to be used to register states of the entities in mister maks.
+The workflow package needs to be refactored to work with the status model.
+
 Owner
 -----
 
