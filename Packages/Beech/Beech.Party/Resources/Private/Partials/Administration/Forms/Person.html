@@ -1,61 +1,107 @@
 <div class="tab-pane active">
 	<div class="control-group">
-		<label class="control-label" for="initials">Person name</label>
-		<div class="controls controls-row">
-			<f:form.textfield property="initials" id="initials" class="span2" placeholder="Initials..."/>
-			<f:form.textfield property="name.firstName" id="firstName" class="span6" placeholder="First Name..."/>
-		</div>
-	</div>
-	<div class="control-group">
-		<div class="controls controls-row">
-			<f:form.textfield property="name.middleName" id="middleName" class="span2" placeholder="Middle Name..."/>
-			<f:form.textfield property="name.lastName" id="lastName" class="span6" placeholder="Last Name..."/>
-		</div>
-	</div>
-	<div class="control-group">
-		<label class="control-label" for="gender">Gender</label>
-		<div class="controls controls-row">
-			<f:form.textfield property="gender" id="gender" class="span2" placeholder="gender..."/>
-			<f:form.textfield property="name.title" id="name.title" class="span2" placeholder="Title..."/>
-			<f:form.textfield property="salutation" id="salutation" class="span2" placeholder="Salutation..."/>
-		</div>
-	</div>
-	<div class="control-group">
-		<label class="control-label" for="civilStatus">Civil status</label>
-		<div class="controls controls-row">
-			<f:form.textfield property="civilStatus" id="civilStatus" class="span4" placeholder="CivilStatus..."/>
-		</div>
-	</div>
-	<div class="control-group">
-		<div class="controls controls-row">
-			<f:form.textfield property="middleOtherName" id="middleOtherName" class="span2" placeholder="Middle Name.."/>
-			<f:form.textfield property="otherName" id="otherName" class="span4" placeholder="Birth name.."/>
-		</div>
-	</div>
-	<div class="control-group">
-		<label class="control-label" for="nameUsage">Name usage</label>
-		<div class="controls controls-row">
-			<f:form.textfield property="nameUsage" id="nameUsage" class="span6" placeholder="Name usage.."/>
-		</div>
-	</div>
+		<label class="control-label" for="initials">
+			<f:translate id="Person name">Person name</f:translate>
+		</label>
 
-	<div class="control-group">
-		<label class="control-label" for="birthDate">Birth date</label>
 		<div class="controls controls-row">
-			<f:form.textfield property="birthDate" id="birthDate" class="span4" placeholder="Birth Date.."/>
-			<f:form.textfield property="placeOfBirth" id="placeOfBirth" class="span4" placeholder="Place of birth.."/>
+			<f:form.textfield property="initials" id="initials" class="span2"
+			                  placeholder="{f:translate(id:'Initials')}"/>
+			<f:form.textfield property="name.firstName" id="firstName" class="span6"
+			                  placeholder="{f:translate(id:'First name')}"/>
 		</div>
 	</div>
 	<div class="control-group">
 		<div class="controls controls-row">
-			<f:form.textfield property="countryOfBirth" id="countryOfBirth" class="span4" placeholder="Country of birth.."/>
-			<f:form.textfield property="nationality" id="nationality" class="span4" placeholder="Nationality.."/>
+			<f:form.textfield property="name.middleName" id="middleName" class="span2"
+			                  placeholder="{f:translate(id:'Middle name')}"/>
+			<f:form.textfield property="name.lastName" id="lastName" class="span6"
+			                  placeholder="{f:translate(id:'Last name')}"/>
 		</div>
 	</div>
 	<div class="control-group">
-		<div class="controls controls-row">
-			<f:form.textfield property="bsn" id="bsn" class="span4" placeholder="BSN number.."/>
-		</div>
-	</div>
-</div>
+		<label class="control-label" for="gender">
+			<f:translate id="gender">Gender</f:translate>
+		</label>
 
+		<div class="controls controls">
+			<f:form.select name="gender" class="span6" options="{female: 'Female', male: 'Male'}"
+			               translate="{by: 'label'}"/>
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="salutation">
+			<f:translate id="salutation">Salutation</f:translate>
+		</label>
+
+		<div class="controls controls">
+			<f:form.select name="salutation" class="span6"
+			               options="{dear_mr: 'Dear Mr.', dear_ms: 'Dear Ms.', dear_miss: 'Dear Miss.', dear_mrs: 'Dear Mrs.'}"
+			               translate="{by: 'label'}"/>
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="civilStatus">
+			<f:translate id="civil status">Civil status</f:translate>
+		</label>
+
+		<div class="control-group">
+			<div class="controls controls-row">
+				<f:form.textfield property="civilStatus" id="civilStatus" class="span5"
+				                  placeholder="{f:translate(id:'Civil status')}"/>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="birthName">
+				<f:translate id="birthName">Birth name</f:translate>
+			</label>
+
+			<div class="controls controls-row">
+				<f:form.textfield property="middleOtherName" id="middleOtherName" class="span2"
+				                  placeholder="{f:translate(id:'Middle name')}"/>
+				<f:form.textfield property="otherName" id="otherName" class="span6"
+				                  placeholder="{f:translate(id:'Birth name')}"/>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="nameUsage">
+				<f:translate id="nameUsage">Name usage</f:translate>
+			</label>
+
+			<div class="controls controls-row">
+				<f:form.textfield property="nameUsage" id="nameUsage" class="span6"
+				                  placeholder="{f:translate(id:'Name usage')}"/>
+			</div>
+		</div>
+
+		<div class="control-group">
+			<label class="control-label" for="birthDate">
+				<f:translate id="birthDate">Birth date</f:translate>
+			</label>
+
+			<div class="controls controls-row">
+				<f:form.textfield property="birthDate" id="birthDate" class="span4"
+				                  placeholder="{f:translate(id:'Date of birth')}"/>
+
+			</div>
+		</div>
+		<div class="control-group">
+			<div class="controls controls">
+				<f:form.textfield property="placeOfBirth" id="placeOfBirth" class="span4"
+				                  placeholder="{f:translate(id:'Place of Birth')}"/>
+				<f:form.textfield property="countryOfBirth" id="countryOfBirth" class="span4"
+				                  placeholder="{f:translate(id:'Country')}"/>
+			</div>
+		</div>
+		<div class="control-group">
+			<div class="controls controls">
+				<f:form.textfield property="nationality" id="nationality" class="span4"
+				                  placeholder="{f:translate(id:'Nationality')}"/>
+			</div>
+		</div>
+		<div class="control-group">
+			<div class="controls controls-row">
+				<f:form.textfield property="bsn" id="bsn" class="span4" placeholder="{f:translate(id:'BSN Number')}"/>
+			</div>
+		</div>
+	</div>
