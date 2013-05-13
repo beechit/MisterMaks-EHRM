@@ -1,14 +1,7 @@
 'Beech.Party.Domain.Model.PhoneNumber':
   properties:
-    'person':
-      label: 'PersonId'
-      type: 'Beech\Party\Domain\Model\Person'
-    'department':
-      label: 'DepartmentId'
-      type: 'Beech\Party\Domain\Model\Company'
-    'company':
-      label: 'CompanyId'
-      type: 'Beech\Party\Domain\Model\Company'
+    'party':
+      type: 'TYPO3\Party\Domain\Model\AbstractParty'
     'phone':
       items:
         'Type':

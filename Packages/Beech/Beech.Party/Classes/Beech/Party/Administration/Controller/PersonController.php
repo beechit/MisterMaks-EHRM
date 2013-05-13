@@ -35,6 +35,12 @@ class PersonController extends \Beech\Ehrm\Controller\AbstractManagementControll
 	protected $addressRepository;
 
 	/**
+	 * @var \Beech\Party\Domain\Repository\PhoneNumberRepository
+	 * @Flow\Inject
+	 */
+	protected $phoneNumberRepository;
+
+	/**
 	 * Shows a list of persons
 	 *
 	 * @return void
@@ -70,6 +76,8 @@ class PersonController extends \Beech\Ehrm\Controller\AbstractManagementControll
 		$this->view->assign('person', $person);
 		$addresses = $this->addressRepository->findByParty($identifier);
 		$this->view->assign('addresses', $addresses);
+		$phoneNumbers = $this->phoneNumberRepository->findByParty($identifier);
+		$this->view->assign('phoneNumbers', $phoneNumbers);
 	}
 
 	/**
@@ -88,7 +96,7 @@ class PersonController extends \Beech\Ehrm\Controller\AbstractManagementControll
 	 */
 	public function createAction(Person $person) {
 		$this->repository->add($person);
-		$this->addFlashMessage('Add a person.');
+		$this->addFlashMessage('Person is added');
 		$this->redirect('list');
 	}
 
@@ -99,7 +107,7 @@ class PersonController extends \Beech\Ehrm\Controller\AbstractManagementControll
 	 */
 	public function updateAction(Person $person) {
 		$this->repository->update($person);
-		$this->addFlashMessage('Update a person.');
+		$this->addFlashMessage('Person is updated.');
 		$this->redirect('list');
 	}
 
@@ -110,7 +118,7 @@ class PersonController extends \Beech\Ehrm\Controller\AbstractManagementControll
 	 */
 	public function deleteAction(Person $person) {
 		$this->repository->remove($person);
-		$this->addFlashMessage('Remove a person.');
+		$this->addFlashMessage('Person is removed .');
 		$this->redirect('list');
 	}
 
@@ -122,8 +130,58 @@ class PersonController extends \Beech\Ehrm\Controller\AbstractManagementControll
 	public function addAddressAction(\Beech\Party\Domain\Model\Address $address) {
 		$address->setParty($this->persistenceManager->getIdentifierByObject($address->getParty()));
 		$this->addressRepository->add($address);
-		$this->addFlashMessage('Add.');
+		$this->addFlashMessage('Added.');
 		$this->redirect('edit', NULL, NULL, array('person' => $address->getParty()));
+	}
+
+	/**
+	 * @param \Beech\Party\Domain\Model\Address $address A new address to add
+	 *
+	 * @return void
+	 */
+	public function updateAddressAction(\Beech\Party\Domain\Model\Address $address) {
+		$address->setParty($this->persistenceManager->getIdentifierByObject($address->getParty()));
+		$this->addressRepository->update($address);
+		$this->addFlashMessage('Update address.');
+		$this->redirect('edit', NULL, NULL, array('person' => $address->getParty()));
+	}
+
+	/**
+	 * @param \Beech\Party\Domain\Model\PhoneNumber $phoneNumber A new phoneNumber to add
+	 *
+	 * @return void
+	 */
+	public function addPhoneNumberAction(\Beech\Party\Domain\Model\PhoneNumber $phoneNumber) {
+		$phoneNumber->setParty($this->persistenceManager->getIdentifierByObject($phoneNumber->getParty()));
+		$this->phoneNumberRepository->add($phoneNumber);
+		$this->addFlashMessage('Added.');
+		$this->redirect('edit', NULL, NULL, array('person' => $phoneNumber->getParty()));
+	}
+
+	/**
+	 * @param \Beech\Party\Domain\Model\PhoneNumber $phoneNumber A  phoneNumber to add
+	 *
+	 * @return void
+	 */
+	public function updatePhoneNumberAction(\Beech\Party\Domain\Model\PhoneNumber $phoneNumber) {
+		$phoneNumber->setParty($this->persistenceManager->getIdentifierByObject($phoneNumber->getParty()));
+		$this->phoneNumberRepository->update($phoneNumber);
+		$this->addFlashMessage('Updated.');
+		$this->redirect('edit', NULL, NULL, array('person' => $phoneNumber->getParty()));
+	}
+
+
+	/**
+	 * @param \Beech\Party\Domain\Model\PhoneNumber $phoneNumber A new phoneNumber to remove
+	 *
+	 * @return void
+	 */
+	public function removePhoneNumberAction(\Beech\Party\Domain\Model\PhoneNumber $phoneNumber) {
+		$person = $phoneNumber->getParty();
+		$phoneNumber->setParty(NULL);
+		$this->phoneNumberRepository->update($phoneNumber);
+		$this->addFlashMessage('Removed.');
+		$this->redirect('edit', NULL, NULL, array('person' => $person));
 	}
 }
 

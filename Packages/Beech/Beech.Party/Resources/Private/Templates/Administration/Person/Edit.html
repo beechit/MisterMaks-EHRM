@@ -2,6 +2,7 @@
 
 <f:section name="Body">
 	<h1><f:translate id="action.edit">Edit</f:translate></h1>
+	<f:flashMessages class="flashmessages"/>
 	<f:form.validationResults for="person">
 		<f:if condition="{validationResults.flattenedErrors}">
 			<div class="error">
@@ -10,6 +11,13 @@
 		</f:if>
 	</f:form.validationResults>
 	<f:form.validationResults for="address">
+		<f:if condition="{validationResults.flattenedErrors}">
+			<div class="error">
+				<f:for each="{validationResults.flattenedErrors}" key="propertyPath" as="errors">{propertyPath}: <f:for each="{errors}" as="error">{error}</f:for></f:for>
+			</div>
+		</f:if>
+	</f:form.validationResults>
+	<f:form.validationResults for="phoneNumber">
 		<f:if condition="{validationResults.flattenedErrors}">
 			<div class="error">
 				<f:for each="{validationResults.flattenedErrors}" key="propertyPath" as="errors">{propertyPath}: <f:for each="{errors}" as="error">{error}</f:for></f:for>
@@ -26,11 +34,40 @@
 			</div>
 		</f:form>
 
+		<f:for each="{addresses}" as="address">
+			<f:form action="updateAddress" object="{address}" name="address" class="form-horizontal well">
+				Update:
+				<f:form.hidden property="id"/>
+				<f:render partial="Forms/Address" arguments="{address: address}"/>
+				<f:form.submit value="{f:translate(id: 'action.update')}" />
+
+			</f:form>
+		</f:for>
+
 		<f:form action="addAddress" object="{address}" name="address" class="form-horizontal well">
-			<f:for each="{addresses}" as="address">
-				<f:render partial="Views/Address" arguments="{address: address}" />
-			</f:for>
 			<f:render partial="Forms/Address" arguments="{person: person}"/>
+			<div class="form-actions">
+				<f:form.submit value="{f:translate(id: 'action.create')}" />
+			</div>
+		</f:form>
+
+		<f:for each="{phoneNumbers}" as="phoneNumber">
+			<f:form action="updatePhoneNumber" object="{phoneNumber}" name="phoneNumber" class="form-horizontal well">
+				Update:
+				<f:form.hidden property="id"/>
+				<f:render partial="Forms/PhoneNumber" arguments="{person: person}"/>
+				<f:form.submit value="{f:translate(id: 'action.update')}" />
+			</f:form>
+			<f:form action="removePhoneNumber" object="{phoneNumber}" name="phoneNumber" class="form-horizontal well">
+				Delete:
+				<f:form.hidden property="id"/>
+				<f:form.hidden property="party" value="{person}"/>
+				<f:form.submit value="{f:translate(id: 'action.remove')}" />
+			</f:form>
+		</f:for>
+
+		<f:form action="addPhoneNumber" object="{phoneNumber}" name="phoneNumber" class="form-horizontal well">
+			<f:render partial="Forms/PhoneNumber" arguments="{person: person}"/>
 			<div class="form-actions">
 				<f:form.submit value="{f:translate(id: 'action.create')}" />
 			</div>
