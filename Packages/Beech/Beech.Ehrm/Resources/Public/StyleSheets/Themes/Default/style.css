@@ -108,3 +108,6 @@ iframe { border: none; }
 
 .tooltip { text-transform: lowercase; letter-spacing: normal; }
 .tooltip .tooltip-inner { line-height: 1.8em; padding: 5px 20px; }
+
+/* ajax-loading */
+body.ajax-loading { cursor: progress; }

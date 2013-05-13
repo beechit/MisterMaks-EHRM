@@ -2,6 +2,7 @@
 	'use strict';
 
 	App.ModuleHandler = Ember.Object.create({
+		loadingFlag: false,
 		init: function() {
 			var that = this;
 
@@ -14,18 +15,29 @@
 		},
 
 		loadUrl: function(url, target) {
-			$.ajax({
-				format: 'html',
-				dataType: 'html',
-				context: this,
-				url: url,
-				success: function(result) {
-					this.loadContent(result, target);
-				}
-			});
+			// only load url when set
+			if(url) {
+				$.ajax({
+					format: 'html',
+					dataType: 'html',
+					context: this,
+					beforeSend: this.startAjaxRequest,
+					complete: this.finishedAjaxRequest,
+					url: url,
+					success: function(result) {
+						this.loadContent(result, target);
+					}
+				});
+			}
 		},
 
 		loadContent: function(html, target) {
+
+			if(html.substr(0,9) == 'redirect:') {
+				document.location = '/'+html.substr(9);
+				return;
+			}
+
 			if (!target) {
 				target = '.ehrm-module';
 			}
@@ -39,6 +51,8 @@
 
 			$moduleContainer.find('form').ajaxForm({
 				dataType: 'html',
+				beforeSend: that.startAjaxRequest,
+				complete: that.finishedAjaxRequest,
 				success: function(result) {
 					that.loadContent(result, target);
 				}
@@ -61,7 +75,16 @@
 				}
 			}
 			return urlParams;
+		},
+
+		startAjaxRequest: function() {
+			$('body').addClass('ajax-loading');
+		},
+
+		finishedAjaxRequest: function() {
+			$('body').removeClass('ajax-loading');
 		}
+
 	});
 
 }).call(this);
