@@ -68,10 +68,12 @@
 		},
 
 		prepareUrl: function (object) {
-			var urlParams = "?";
+			var urlParams = "";
 			if (object != '') {
+				var first = true;
 				for (var key in object) {
-					urlParams += "&" +key + "=" + object[key];
+
+					urlParams += (first ? '?' : '&') + key + "=" + object[key];
 				}
 			}
 			return urlParams;

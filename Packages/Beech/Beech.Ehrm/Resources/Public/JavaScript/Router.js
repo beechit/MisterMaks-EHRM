@@ -22,11 +22,16 @@
 			this.route('contractModule.show', { path: 'contract/show/:contract'});
 
 				// Beech.Party
-			this.route('personModule', { path: 'persons' });
-			this.route('personModule.new', { path: 'person/new' });
-			this.route('personModule.show', { path: 'person/show/:person' });
-			this.route('personModule.edit', { path: 'person/edit/:person' });
-			this.route('personModule.delete', { path: 'person/delete/:person' });
+			this.resource('BeechPartyAdministrationPerson', { path: 'persons' }, function() {
+				this.route('index', { path: '/list' });
+			});
+			this.resource('BeechPartyAdministrationPerson', { path: 'person' }, function() {
+				this.route('new', { path: '/new' });
+				this.route('show', { path: '/show/:person' });
+				this.route('edit', { path: '/edit/:person' });
+				this.route('delete', { path: '/delete/:person' });
+			});
+
 		});
 
 		this.resource('index', { path: '/' }, function() {
@@ -94,7 +99,7 @@
 	App.AdministrationJobDescriptionModuleNewView = Ember.View.extend(App.AjaxModuleViewMixin, {
 		url: MM.url.module.jobDescriptionNew
 	});
-	App.AdministrationContractArticleModuleView = Ember.View.extend(App.AjaxModuleViewMixin, {
+	App.AdministrationDomainContractArticleModuleView = Ember.View.extend(App.AjaxModuleViewMixin, {
 		url: MM.url.module.contractArticle
 	});
 

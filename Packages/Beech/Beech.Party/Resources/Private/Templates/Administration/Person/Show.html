@@ -2,5 +2,5 @@
 
 <f:section name="Body">
 	<h1><f:translate id="action.show">Show</f:translate></h1>
-	{person.personType}
+	<f:render partial="Views/Person" arguments="{person: person}"/>
 </f:section>

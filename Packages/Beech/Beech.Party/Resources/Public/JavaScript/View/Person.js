@@ -1,15 +1,15 @@
 (function() {
 	'use strict';
-	App.PersonModuleViewMixin = Ember.View.extend(App.AjaxModuleViewMixin, {
+	App.BeechPartyAdministrationPersonViewMixin = Ember.View.extend(App.AjaxModuleViewMixin, {
 		didInsertElement: function() {/* override default */}
 	});
-	App.AdministrationPersonModuleView = Ember.View.extend(App.AjaxModuleViewMixin, {
-		url: MM.url.module.personModule
-	});
 
-	App.AdministrationPersonModuleShowView = App.PersonModuleViewMixin.extend();
-	App.AdministrationPersonModuleNewView = App.PersonModuleViewMixin.extend();
-	App.AdministrationPersonModuleEditView = App.PersonModuleViewMixin.extend();
-	App.AdministrationPersonModuleDeleteView = App.PersonModuleViewMixin.extend();
+	App.BeechPartyAdministrationPersonIndexView = Ember.View.extend(App.AjaxModuleViewMixin, {
+		url: MM.url.module.BeechPartyAdministrationPersonIndex
+	});
+	App.BeechPartyAdministrationPersonShowView = App.BeechPartyAdministrationPersonViewMixin.extend();
+	App.BeechPartyAdministrationPersonNewView = App.BeechPartyAdministrationPersonViewMixin.extend();
+	App.BeechPartyAdministrationPersonEditView = App.BeechPartyAdministrationPersonViewMixin.extend();
+	App.BeechPartyAdministrationPersonDeleteView = App.BeechPartyAdministrationPersonViewMixin.extend();
 
 }).call(this);
