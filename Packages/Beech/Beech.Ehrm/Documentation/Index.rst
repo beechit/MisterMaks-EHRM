@@ -14,3 +14,4 @@ Mister Maks
 	Features/MessageQueue
 	SetupMisterMaks
 	Hierarchy
+	Libraries
