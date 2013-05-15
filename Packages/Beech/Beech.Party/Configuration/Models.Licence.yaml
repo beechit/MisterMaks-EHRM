@@ -1,8 +1,7 @@
 'Beech.Party.Domain.Model.Licence':
   properties:
-    'personId':
-      label: 'Person ID'
-      type: 'Beech\Party\Domain\Model\Person'
+    'party':
+      type: 'TYPO3\Party\Domain\Model\AbstractParty'
     'licence':
       items:
         'type':
