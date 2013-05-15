@@ -1,33 +1,52 @@
-<f:layout name="Ajax" />{namespace ehrm=Beech\Ehrm\ViewHelpers}
+<f:layout name="Ajax"/>{namespace ehrm=Beech\Ehrm\ViewHelpers}
 
 <f:section name="Body">
-	<h1><f:translate id="action.edit">Edit</f:translate></h1>
+	<h1>
+		<f:translate id="action.edit">Edit</f:translate>
+	</h1>
 	<f:flashMessages class="flashmessages"/>
 	<f:form.validationResults for="person">
 		<f:if condition="{validationResults.flattenedErrors}">
 			<div class="error">
-				<f:for each="{validationResults.flattenedErrors}" key="propertyPath" as="errors">{propertyPath}: <f:for each="{errors}" as="error">{error}</f:for></f:for>
+				<f:for each="{validationResults.flattenedErrors}" key="propertyPath" as="errors">{propertyPath}:
+					<f:for each="{errors}" as="error">{error}</f:for>
+				</f:for>
 			</div>
 		</f:if>
 	</f:form.validationResults>
 	<f:form.validationResults for="address">
 		<f:if condition="{validationResults.flattenedErrors}">
 			<div class="error">
-				<f:for each="{validationResults.flattenedErrors}" key="propertyPath" as="errors">{propertyPath}: <f:for each="{errors}" as="error">{error}</f:for></f:for>
+				<f:for each="{validationResults.flattenedErrors}" key="propertyPath" as="errors">{propertyPath}:
+					<f:for each="{errors}" as="error">{error}</f:for>
+				</f:for>
 			</div>
 		</f:if>
 	</f:form.validationResults>
 	<f:form.validationResults for="phoneNumber">
 		<f:if condition="{validationResults.flattenedErrors}">
 			<div class="error">
-				<f:for each="{validationResults.flattenedErrors}" key="propertyPath" as="errors">{propertyPath}: <f:for each="{errors}" as="error">{error}</f:for></f:for>
+				<f:for each="{validationResults.flattenedErrors}" key="propertyPath" as="errors">{propertyPath}:
+					<f:for each="{errors}" as="error">{error}</f:for>
+				</f:for>
 			</div>
 		</f:if>
 	</f:form.validationResults>
 	<f:form.validationResults for="electronicAddress">
 		<f:if condition="{validationResults.flattenedErrors}">
 			<div class="error">
-				<f:for each="{validationResults.flattenedErrors}" key="propertyPath" as="errors">{propertyPath}: <f:for each="{errors}" as="error">{error}</f:for></f:for>
+				<f:for each="{validationResults.flattenedErrors}" key="propertyPath" as="errors">{propertyPath}:
+					<f:for each="{errors}" as="error">{error}</f:for>
+				</f:for>
+			</div>
+		</f:if>
+	</f:form.validationResults>
+	<f:form.validationResults for="bankAccount">
+		<f:if condition="{validationResults.flattenedErrors}">
+			<div class="error">
+				<f:for each="{validationResults.flattenedErrors}" key="propertyPath" as="errors">{propertyPath}:
+					<f:for each="{errors}" as="error">{error}</f:for>
+				</f:for>
 			</div>
 		</f:if>
 	</f:form.validationResults>
@@ -35,9 +54,9 @@
 		<h3>Person information</h3>
 
 		<f:form action="update" object="{person}" name="person" class="form-horizontal well">
-			<f:render partial="Forms/Person" />
+			<f:render partial="Forms/Person"/>
 			<div class="form-actions">
-				<f:form.submit value="{f:translate(id: 'action.save')}" />
+				<f:form.submit value="{f:translate(id: 'action.save')}"/>
 			</div>
 		</f:form>
 
@@ -46,7 +65,7 @@
 				Update:
 				<f:form.hidden property="id"/>
 				<f:render partial="Forms/Address" arguments="{address: address}"/>
-				<f:form.submit value="{f:translate(id: 'action.update')}" />
+				<f:form.submit value="{f:translate(id: 'action.update')}"/>
 
 			</f:form>
 		</f:for>
@@ -55,7 +74,7 @@
 			Create:
 			<f:render partial="Forms/Address" arguments="{person: person}"/>
 			<div class="form-actions">
-				<f:form.submit value="{f:translate(id: 'action.create')}" />
+				<f:form.submit value="{f:translate(id: 'action.create')}"/>
 			</div>
 		</f:form>
 
@@ -64,43 +83,72 @@
 				Update:
 				<f:form.hidden property="id"/>
 				<f:render partial="Forms/PhoneNumber" arguments="{person: person}"/>
-				<f:form.submit value="{f:translate(id: 'action.update')}" />
+				<f:form.submit value="{f:translate(id: 'action.update')}"/>
 			</f:form>
 			<f:form action="removePhoneNumber" object="{phoneNumber}" name="phoneNumber" class="form-horizontal well">
 				Delete:
 				<f:form.hidden property="id"/>
 				<f:form.hidden property="party" value="{person}"/>
-				<f:form.submit value="{f:translate(id: 'action.remove')}" />
+				<f:form.submit value="{f:translate(id: 'action.remove')}"/>
 			</f:form>
 		</f:for>
 
 		<f:form action="addPhoneNumber" object="{phoneNumber}" name="phoneNumber" class="form-horizontal well">
 			<f:render partial="Forms/PhoneNumber" arguments="{person: person}"/>
 			<div class="form-actions">
-				<f:form.submit value="{f:translate(id: 'action.create')}" />
+				<f:form.submit value="{f:translate(id: 'action.create')}"/>
 			</div>
 		</f:form>
 
 		<f:for each="{electronicAddresses}" as="electronicAddress">
-			<f:form action="updateElectronicAddress" object="{electronicAddress}" name="electronicAddress" class="form-horizontal well">
+			<f:form action="updateElectronicAddress" object="{electronicAddress}" name="electronicAddress"
+					class="form-horizontal well">
 				Update:
 				<f:form.hidden property="id"/>
 				<f:render partial="Forms/ElectronicAddress" arguments="{person: person}"/>
-				<f:form.submit value="{f:translate(id: 'action.update')}" />
+				<f:form.submit value="{f:translate(id: 'action.update')}"/>
 			</f:form>
-			<f:form action="removeElectronicAddress" object="{electronicAddress}" name="electronicAddress" class="form-horizontal well">
+			<f:form action="removeElectronicAddress" object="{electronicAddress}" name="electronicAddress"
+					class="form-horizontal well">
 				Delete:
 				<f:form.hidden property="id"/>
 				<f:form.hidden property="party" value="{person}"/>
-				<f:form.submit value="{f:translate(id: 'action.remove')}" />
+				<f:form.submit value="{f:translate(id: 'action.remove')}"/>
 			</f:form>
 		</f:for>
 
-		<f:form action="addElectronicAddress" object="{electronicAddress}" name="electronicAddress" class="form-horizontal well">
+		<f:form action="addElectronicAddress" object="{electronicAddress}" name="electronicAddress"
+				class="form-horizontal well">
 			<f:render partial="Forms/ElectronicAddress" arguments="{person: person}"/>
 			<div class="form-actions">
-				<f:form.submit value="{f:translate(id: 'action.create')}" />
+				<f:form.submit value="{f:translate(id: 'action.create')}"/>
 			</div>
 		</f:form>
+
+		<f:for each="{bankAccounts}" as="bankAccount">
+			<f:form action="updateBankAccount" object="{bankAccount}" name="bankAccount"
+					class="form-horizontal well">
+				Update:
+				<f:form.hidden property="id"/>
+				<f:render partial="Forms/BankAccount" arguments="{person: person}"/>
+				<f:form.submit value="{f:translate(id: 'action.update')}"/>
+			</f:form>
+			<f:form action="removeBankAccount" object="{bankAccount}" name="bankAccount"
+					class="form-horizontal well">
+				Delete:
+				<f:form.hidden property="id"/>
+				<f:form.hidden property="party" value="{person}"/>
+				<f:form.submit value="{f:translate(id: 'action.remove')}"/>
+			</f:form>
+		</f:for>
+
+		<f:form action="addBankAccount" object="{bankAccount}" name="bankAccount"
+				class="form-horizontal well">
+			<f:render partial="Forms/BankAccount" arguments="{person: person}"/>
+			<div class="form-actions">
+				<f:form.submit value="{f:translate(id: 'action.create')}"/>
+			</div>
+		</f:form>
+
 	</div>
 </f:section>

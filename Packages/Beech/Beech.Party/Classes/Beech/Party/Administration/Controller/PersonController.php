@@ -47,6 +47,12 @@ class PersonController extends \Beech\Ehrm\Controller\AbstractManagementControll
 	protected $electronicAddressRepository;
 
 	/**
+	 * @var \Beech\Party\Domain\Repository\BankAccountRepository
+	 * @Flow\Inject
+	 */
+	protected $bankAccountRepository;
+
+	/**
 	 * Shows a list of persons
 	 *
 	 * @return void
@@ -86,6 +92,8 @@ class PersonController extends \Beech\Ehrm\Controller\AbstractManagementControll
 		$this->view->assign('phoneNumbers', $phoneNumbers);
 		$electronicAddresses = $this->electronicAddressRepository->findByParty($identifier);
         $this->view->assign('electronicAddresses', $electronicAddresses);
+		$bankAccounts = $this->bankAccountRepository->findByParty($identifier);
+		$this->view->assign('bankAccount', $bankAccounts);
 	}
 
 	/**
@@ -143,7 +151,7 @@ class PersonController extends \Beech\Ehrm\Controller\AbstractManagementControll
 	}
 
 	/**
-	 * @param \Beech\Party\Domain\Model\Address $address A new address to add
+	 * @param \Beech\Party\Domain\Model\Address $address A new address to update
 	 *
 	 * @return void
 	 */
@@ -167,7 +175,7 @@ class PersonController extends \Beech\Ehrm\Controller\AbstractManagementControll
 	}
 
 	/**
-	 * @param \Beech\Party\Domain\Model\PhoneNumber $phoneNumber A  phoneNumber to add
+	 * @param \Beech\Party\Domain\Model\PhoneNumber $phoneNumber A  phoneNumber to update
 	 *
 	 * @return void
 	 */
@@ -205,7 +213,7 @@ class PersonController extends \Beech\Ehrm\Controller\AbstractManagementControll
 	}
 
 	/**
-	* @param \Beech\Party\Domain\Model\ElectronicAddress $electronicAddress A  electronicAddress to add
+	* @param \Beech\Party\Domain\Model\ElectronicAddress $electronicAddress A  electronicAddress to update
 	*
 	* @return void
 	*/
@@ -227,8 +235,44 @@ class PersonController extends \Beech\Ehrm\Controller\AbstractManagementControll
 		$this->electronicAddressRepository->update($electronicAddress);
 		$this->addFlashMessage('Removed.');
 		$this->redirect('edit', NULL, NULL, array('person' => $person));
-}
+	}
 
+	/**
+	 * @param \Beech\Party\Domain\Model\BankAccount $bankAccount A new bankAccount to add
+	 *
+	 * @return void
+	 */
+	public function addBankAccountAction(\Beech\Party\Domain\Model\BankAccount $bankAccount) {
+		$bankAccount->setParty($this->persistenceManager->getIdentifierByObject($bankAccount->getParty()));
+		$this->bankAccountRepository->add($bankAccount);
+		$this->addFlashMessage('Added.');
+		$this->redirect('edit', NULL, NULL, array('person' => $bankAccount->getParty()));
+	}
+
+	/**
+	 * @param \Beech\Party\Domain\Model\BankAccount $bankAccount A  bankAccount to update
+	 *
+	 * @return void
+	 */
+	public function updateBankAccountAction(\Beech\Party\Domain\Model\BankAccount $bankAccount) {
+		$bankAccount->setParty($this->persistenceManager->getIdentifierByObject($bankAccount->getParty()));
+		$this->bankAccountRepository->update($bankAccount);
+		$this->addFlashMessage('Updated.');
+		$this->redirect('edit', NULL, NULL, array('person' => $bankAccount->getParty()));
+	}
+
+	/**
+	 * @param \Beech\Party\Domain\Model\BankAccount $bankAccount A new bankAccount to remove
+	 *
+	 * @return void
+	 */
+	public function removeBankAccountAction(\Beech\Party\Domain\Model\BankAccount $bankAccount) {
+		$person = $bankAccount->getParty();
+		$bankAccount->setParty(NULL);
+		$this->bankAccountRepository->update($bankAccount);
+		$this->addFlashMessage('Removed.');
+		$this->redirect('edit', NULL, NULL, array('person' => $person));
+	}
 }
 
 ?>
