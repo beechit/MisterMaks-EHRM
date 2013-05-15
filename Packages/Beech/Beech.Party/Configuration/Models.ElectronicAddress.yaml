@@ -1,14 +1,7 @@
 'Beech.Party.Domain.Model.ElectronicAddress':
   properties:
-    'personId':
-      label: 'Person ID'
-      type: 'Beech\Party\Domain\Model\Person'
-    'companyId':
-      label: 'Company ID'
-      type: 'Beech\Party\Domain\Model\Company'
-    'departmentId':
-      label: 'Department ID'
-      type: 'Beech\Party\Domain\Model\Company'
+    'party':
+      type: 'TYPO3\Party\Domain\Model\AbstractParty'
 # todo: implement this that validation works on type address selected.
     'electronicAddresses':
       items:

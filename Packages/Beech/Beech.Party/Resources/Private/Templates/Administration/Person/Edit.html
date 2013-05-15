@@ -24,6 +24,13 @@
 			</div>
 		</f:if>
 	</f:form.validationResults>
+	<f:form.validationResults for="electronicAddress">
+		<f:if condition="{validationResults.flattenedErrors}">
+			<div class="error">
+				<f:for each="{validationResults.flattenedErrors}" key="propertyPath" as="errors">{propertyPath}: <f:for each="{errors}" as="error">{error}</f:for></f:for>
+			</div>
+		</f:if>
+	</f:form.validationResults>
 	<div class="tab-content">
 		<h3>Person information</h3>
 
@@ -45,6 +52,7 @@
 		</f:for>
 
 		<f:form action="addAddress" object="{address}" name="address" class="form-horizontal well">
+			Create:
 			<f:render partial="Forms/Address" arguments="{person: person}"/>
 			<div class="form-actions">
 				<f:form.submit value="{f:translate(id: 'action.create')}" />
@@ -73,5 +81,26 @@
 			</div>
 		</f:form>
 
+		<f:for each="{electronicAddresses}" as="electronicAddress">
+			<f:form action="updateElectronicAddress" object="{electronicAddress}" name="electronicAddress" class="form-horizontal well">
+				Update:
+				<f:form.hidden property="id"/>
+				<f:render partial="Forms/ElectronicAddress" arguments="{person: person}"/>
+				<f:form.submit value="{f:translate(id: 'action.update')}" />
+			</f:form>
+			<f:form action="removeElectronicAddress" object="{electronicAddress}" name="electronicAddress" class="form-horizontal well">
+				Delete:
+				<f:form.hidden property="id"/>
+				<f:form.hidden property="party" value="{person}"/>
+				<f:form.submit value="{f:translate(id: 'action.remove')}" />
+			</f:form>
+		</f:for>
+
+		<f:form action="addElectronicAddress" object="{electronicAddress}" name="electronicAddress" class="form-horizontal well">
+			<f:render partial="Forms/ElectronicAddress" arguments="{person: person}"/>
+			<div class="form-actions">
+				<f:form.submit value="{f:translate(id: 'action.create')}" />
+			</div>
+		</f:form>
 	</div>
 </f:section>

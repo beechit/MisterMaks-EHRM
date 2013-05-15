@@ -41,6 +41,12 @@ class PersonController extends \Beech\Ehrm\Controller\AbstractManagementControll
 	protected $phoneNumberRepository;
 
 	/**
+	 * @var \Beech\Party\Domain\Repository\ElectronicAddressRepository
+	 * @Flow\Inject
+	 */
+	protected $electronicAddressRepository;
+
+	/**
 	 * Shows a list of persons
 	 *
 	 * @return void
@@ -78,6 +84,8 @@ class PersonController extends \Beech\Ehrm\Controller\AbstractManagementControll
 		$this->view->assign('addresses', $addresses);
 		$phoneNumbers = $this->phoneNumberRepository->findByParty($identifier);
 		$this->view->assign('phoneNumbers', $phoneNumbers);
+		$electronicAddresses = $this->electronicAddressRepository->findByParty($identifier);
+        $this->view->assign('electronicAddresses', $electronicAddresses);
 	}
 
 	/**
@@ -183,6 +191,44 @@ class PersonController extends \Beech\Ehrm\Controller\AbstractManagementControll
 		$this->addFlashMessage('Removed.');
 		$this->redirect('edit', NULL, NULL, array('person' => $person));
 	}
+
+	/**
+	* @param \Beech\Party\Domain\Model\ElectronicAddress $electronicAddress A new electronicAddress to add
+	*
+	* @return void
+	*/
+	public function addElectronicAddressAction(\Beech\Party\Domain\Model\ElectronicAddress $electronicAddress) {
+		$electronicAddress->setParty($this->persistenceManager->getIdentifierByObject($electronicAddress->getParty()));
+		$this->electronicAddressRepository->add($electronicAddress);
+		$this->addFlashMessage('Added.');
+		$this->redirect('edit', NULL, NULL, array('person' => $electronicAddress->getParty()));
+	}
+
+	/**
+	* @param \Beech\Party\Domain\Model\ElectronicAddress $electronicAddress A  electronicAddress to add
+	*
+	* @return void
+	*/
+	public function updateElectronicAddressAction(\Beech\Party\Domain\Model\ElectronicAddress $electronicAddress) {
+		$electronicAddress->setParty($this->persistenceManager->getIdentifierByObject($electronicAddress->getParty()));
+		$this->electronicAddressRepository->update($electronicAddress);
+		$this->addFlashMessage('Updated.');
+		$this->redirect('edit', NULL, NULL, array('person' => $electronicAddress->getParty()));
+	}
+
+	/**
+	* @param \Beech\Party\Domain\Model\ElectronicAddress $electronicAddress A new electronicAddress to remove
+	*
+	* @return void
+	*/
+	public function removeElectronicAddressAction(\Beech\Party\Domain\Model\ElectronicAddress $electronicAddress) {
+		$person = $electronicAddress->getParty();
+		$electronicAddress->setParty(NULL);
+		$this->electronicAddressRepository->update($electronicAddress);
+		$this->addFlashMessage('Removed.');
+		$this->redirect('edit', NULL, NULL, array('person' => $person));
+}
+
 }
 
 ?>
