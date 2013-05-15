@@ -10,6 +10,8 @@ namespace Beech\Party\Domain\Repository;
 use TYPO3\Flow\Annotations as Flow;
 
 /**
+ * A repository for Addresses
+ *
  * @Flow\Scope("singleton")
  */
 class AddressRepository extends \Radmiraal\CouchDB\Persistence\AbstractRepository {
