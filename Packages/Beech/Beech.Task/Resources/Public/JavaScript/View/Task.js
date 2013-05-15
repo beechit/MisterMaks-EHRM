@@ -7,7 +7,7 @@
 		url: ''
 	});
 
-//	App.BeechTaskTaskModuleIndexView = Ember.View.extend({
+//	App.BeechTaskTaskIndexView = Ember.View.extend({
 //		templateName: 'beech_task_domain_model_task/index'
 //	});
 //	App.BeechTaskDomainModelTaskIndexView = Ember.View.extend({
