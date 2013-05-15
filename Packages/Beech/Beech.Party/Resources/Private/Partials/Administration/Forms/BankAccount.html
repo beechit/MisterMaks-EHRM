@@ -1,0 +1,36 @@
+<h4>BankAccount</h4>
+<div class="control-group">
+	<div class="controls controls">
+		<f:form.textfield property="accountType" id="accountType" class="span6"
+                          placeholder="{f:translate(id:'Account Type')}"/>
+		<f:form.textfield property="accountNumber" id="title" class="span5"
+		                  placeholder="{f:translate(id:'Account number')}"/>
+    </div>
+    <div class="controls controls">
+        <label class="control-label" for="primary-address">
+        Primary
+        <f:form.checkbox property="primary" id="primary-address" value="1"/>
+	</div>
+</div>
+    <div class="control-group">
+	    <div class="controls controls-row">
+		    <f:form.textfield property="bankName" id="bankName" class="span3"
+		                      placeholder="{f:translate(id:'Bank name')}"/>
+		    <f:form.textfield property="residence" id="residence" class="span5"
+		                      placeholder="{f:translate(id:'Residence')}"/>
+        </div>
+    </div>
+<div class="control-group">
+	<div class="controls">
+		<f:form.textfield property="country" id="country" class="span6"
+		                  placeholder="{f:translate(id:'Country')}"/>
+	</div>
+<div class="control-group">
+    <div class="controls">
+        <f:form.textarea property="description" id="description" class="span6"
+                         placeholder="{f:translate(id:'Description')}"/>
+    </div>
+</div>
+</div>
+
+<f:form.hidden property="party" value="{person}"/>
