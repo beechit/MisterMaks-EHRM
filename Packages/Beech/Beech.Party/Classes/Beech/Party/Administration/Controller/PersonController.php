@@ -52,6 +52,12 @@ class PersonController extends \Beech\Ehrm\Controller\AbstractManagementControll
 	protected $bankAccountRepository;
 
 	/**
+	 * @var \Beech\Party\Domain\Repository\EducationRepository
+	 * @Flow\Inject
+	 */
+	protected $educationRepository;
+
+	/**
 	 * Shows a list of persons
 	 *
 	 * @return void
