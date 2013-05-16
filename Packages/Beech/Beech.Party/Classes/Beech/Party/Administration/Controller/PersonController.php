@@ -93,7 +93,7 @@ class PersonController extends \Beech\Ehrm\Controller\AbstractManagementControll
 		$electronicAddresses = $this->electronicAddressRepository->findByParty($identifier);
         $this->view->assign('electronicAddresses', $electronicAddresses);
 		$bankAccounts = $this->bankAccountRepository->findByParty($identifier);
-		$this->view->assign('bankAccount', $bankAccounts);
+		$this->view->assign('bankAccounts', $bankAccounts);
 	}
 
 	/**

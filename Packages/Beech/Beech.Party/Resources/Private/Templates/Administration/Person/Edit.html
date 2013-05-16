@@ -1,4 +1,4 @@
-<f:layout name="Ajax"/>{namespace ehrm=Beech\Ehrm\ViewHelpers}
+<f:layout name="Ajax" />{namespace ehrm=Beech\Ehrm\ViewHelpers}{namespace form=TYPO3\Form\ViewHelpers}
 
 <f:section name="Body">
 	<h1>
@@ -54,7 +54,7 @@
 		<h3>Person information</h3>
 
 		<f:form action="update" object="{person}" name="person" class="form-horizontal well">
-			<f:render partial="Forms/Person"/>
+			<f:render partial="Forms/Person" />
 			<div class="form-actions">
 				<f:form.submit value="{f:translate(id: 'action.save')}"/>
 			</div>
