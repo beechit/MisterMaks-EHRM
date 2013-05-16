@@ -1,80 +1,108 @@
-'Beech.Party.Domain.Model.Asset':
+'Beech.Party.Domain.Model.CompanyAsset':
   properties:
-    'party':
-      type: 'TYPO3\Party\Domain\Model\AbstractParty'
-    'name':
-      label: 'Assent name'
-      validation:
-        -
-          type: 'StringLength'
+    'personId':
+      label: 'Person ID'
+      type: 'Beech\Party\Domain\Model\Person'
+    'departmentId':
+      label: 'Department ID'
+      type: 'Beech\Party\Domain\Model\Company'
+    'Asset':
+      items:
+        'name':
+          label: 'Assent name'
+          validation:
+            -
+              type: 'StringLength'
+              options:
+                maximum: 35
+        'type':
+          label: 'Asset Type'
+          type: 'array'
           options:
-            maximum: 35
-    'assetType':
-      label: 'Asset Type'
-      options:
-        values:
-         - 'Laptop'
-         - 'Phone'
-         - 'Tools'
-         - 'Car'
-         - 'Other'
-    'model':
-      label: 'Model'
-      validation:
-        -
-          type: 'StringLength'
+            values:
+             - 'laptop'
+             - 'phone'
+             - 'tools'
+             - 'companyCar'
+             - 'other'
+        'name':
+          label: 'Licence name'
+          validation:
+            -
+              type: 'StringLength'
+              options:
+                maximum: 35
+        'model':
+          label: 'Model'
+          validation:
+            -
+              type: 'StringLength'
+              options:
+                maximum: 35
+        'iDNumber':
+          label: 'Identification number'
+          validation:
+            -
+              type: 'StringLength'
+              options:
+                maximum: 35
+        'startDate':
+       bankAccountRepository   label: 'Start'
+          validation:
+            -
+              type: 'DateTimeRange'
+              options:
+                earliestDate: 19500101
+                latestDate: 20200101
+        'return':
+          label: 'Returned'
           options:
-            maximum: 35
-    'iDNumber':
-      label: 'Identification number'
-      validation:
-        -
-          type: 'StringLength'
-          options:
-            maximum: 35
-    'startDate':
-      label: 'Provision date'
-#      validation:
-#        -
-#          type: 'DateTimeRange'
-#          options:
-#            earliestDate: 19500101
-#            latestDate: 20200101
-    'provisionedBy':
-      label: 'ProvisionedBy'
-      type: 'TYPO3\Party\Domain\Model\AbstractParty'
-    'returned':
-      label: 'Returned'
-      options:
-        values:
-          - TRUE
-          - FALSE
-    'returnDate':
-      label: 'Return Date'
-#      validation:
-#        -
-#          type: 'DateTimeRange'
-#          options:
-#            earliestDate: 19500101
-#            latestDate: 20200101
-    'returnParty':
-      label: 'Returned to'
-      type: 'TYPO3\Party\Domain\Model\AbstractParty'
-      defaultValue: 'currentUser'
-    'document':
-      label: 'Document'
-      type: 'Beech\Party\Domain\Model\Document'
-    'creationDate':
-      defaultValue: 'now'
-      label: 'creation date'
-      type: 'DateTime'
-#      validation:
-#        -
-#          type: 'DateTimeRange'
-#          options:
-#            earliestDate: 20130101
-#            latestDate: 20200101
+            values:
+              - TRUE
+              - FALSE
+        'returnDate':
+          label: 'Return Date'
+          validation:
+            -
+              type: 'DateTimeRange'
+              options:
+                earliestDate: 19500101
+                latestDate: 20200101
+        'returnPerson':
+          label: 'Returned to'
+          type: 'Beech\Party\Domain\Model\Person'
+          defaultValue: 'currentUser'
+        'document':
+          label: 'Document'
+          type: 'Beech\Party\Domain\Model\Document'
+        'creationDate':
+          defaultValue: 'now'
+          label: 'creation date'
+          type: 'DateTime'
+          validation:
+            -
+              type: 'DateTimeRange'
+              options:
+                earliestDate: 20130101
+                latestDate: 20200101
     'createdBy':
       defaultValue: 'currentUser'
       label: 'Created by'
       type: 'Beech\Party\Domain\Model\Person'
+    'modification':
+      items:
+        'modificationDate':
+          defaultValue: 'now'
+          label: 'Modification date'
+          validation:
+            -
+              type: 'DateTimeRange'
+              options:
+                earliestDate: 20130101
+                latestDate: 20200101
+        'modifiedBy':
+          defaultValue: 'currentUser'
+          label: 'Modified by'
+          type: 'Beech\Party\Domain\Model\Person'
+      label: 'Modification log'
+      type: 'array'
