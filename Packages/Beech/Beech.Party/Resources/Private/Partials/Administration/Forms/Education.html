@@ -1,4 +1,4 @@
-<h4>Education</h4>
+<h4>Education</h4>{namespace ehrm=Beech\Ehrm\ViewHelpers}
 	<fieldset>
 		<div class="control-group">
 			<div class="controls controls">
@@ -15,13 +15,14 @@
 			</div>
 			<div class="controls controls-row">
 				<label class="control-label">Start Date</label>
-					<ehrm:form.datePicker id="startDate" property="startDate"  dateFormat="DD-mm-YY" displayDateSelector="TRUE" enableDatePicker="FALSE" />
+					<ehrm:form.datePicker id="startDate" property="startDate" class="datepicker" dateFormat="d-m-Y"/>
 				<label class="control-label">End date</label>
-					<ehrm:form.datePicker id="EndDate" property="endDate"  dateFormat="DD-mm-YY" displayDateSelector="TRUE" enableDatePicker="FALSE" />
+					<ehrm:form.datePicker id="endDate" property="endDate" class="datepicker" dateFormat="d-m-Y"/>
 			</div>
 			<div class="controls controls-row">
 				.<label class="control-label" for="graduated">Graduated</label>
 					<f:form.checkbox property="graduated" id="graduated" value="1"/>
 			</div>
 		<div>
+		<f:form.hidden property="party" value="{person}"/>
 	</fieldset>
