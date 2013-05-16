@@ -330,7 +330,7 @@ class PersonController extends \Beech\Ehrm\Controller\AbstractManagementControll
 	 *
 	 * @return void
 	 */
-	public function addAsset(\Beech\Party\Domain\Model\Asset $asset) {
+	public function addAssetAction(\Beech\Party\Domain\Model\Asset $asset) {
 		$asset->setParty($this->persistenceManager->getIdentifierByObject($asset->getParty()));
 		$this->assetRepository->add($asset);
 		$this->addFlashMessage('Added.');
