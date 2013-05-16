@@ -2,15 +2,16 @@
 <h3>Tasks {{#linkTo "BeechTaskTask" class="pull-right" rel="tooltip" data-placement="left" title="Go to all tasks"}}<i class="icon-tasks"></i>{{/linkTo}}</h3>
 <div class="accordion" id="tasklist">
 
+{{#if content.length}}
 	{{#each content}}
 		<div class="accordion-group">
+			{{#if tasks.length}}
 			<div class="accordion-heading">
 				<a class="accordion-toggle" data-toggle="collapse" data-parent="#tasklist" href="#taskwidget-priority{{unbound id}}">
 					{{label}}
 				</a>
 				<span class="badge badge-important">{{tasks.length}}</span>
 			</div>
-			{{#if tasks}}
 			<div id="taskwidget-priority{{unbound id}}" class="accordion-body collapse">
 				<div class="accordion-inner">
 					<ul class="unstyled">
@@ -23,4 +24,7 @@
 			{{/if}}
 		</div>
 	{{/each}}
+{{else}}
+	<p><i class="icon-spin icon-spinner muted"></i></p>
+{{/if}}
 </div>

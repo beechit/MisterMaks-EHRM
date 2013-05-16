@@ -58,13 +58,6 @@
 		}
 	});
 
-		// Frontend routes
-	App.IndexRoute = Ember.Route.extend({
-		setupController: function() {
-			this.controllerFor('BeechTaskTaskWidget').set('content', App.BeechTaskDomainModelPriority.find());
-		}
-	});
-
 	App.IndexIndexView = Ember.View.extend({
 		templateName: 'user_interface_dashboard'
 	});

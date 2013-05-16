@@ -24,6 +24,31 @@ class TaskRepository extends \Radmiraal\CouchDB\Persistence\AbstractRepository {
 		return count($this->findOpenTasksByPerson($person));
 	}
 
+
+	/**
+	 * @param array $filter
+	 * @return array
+	 */
+	public function emberFindAll($filter = NULL) {
+
+		$tasks = array();
+
+		if(is_array($filter) && array_key_exists('ids', $filter)) {
+
+			foreach($filter['ids'] as $id) {
+				$tasks[] = $this->findByIdentifier($id);
+			}
+
+		} elseif(count($filter)) {
+
+			$tasks = $this->backend->findBy($filter);
+		} else {
+			$tasks = $this->backend->findAll();
+		}
+
+		return $tasks;
+	}
+
 	/**
 	 * @param \TYPO3\Party\Domain\Model\AbstractParty $person
 	 * @return array
