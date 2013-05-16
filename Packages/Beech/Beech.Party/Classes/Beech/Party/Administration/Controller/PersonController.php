@@ -107,7 +107,7 @@ class PersonController extends \Beech\Ehrm\Controller\AbstractManagementControll
 		$this->view->assign('bankAccounts', $bankAccounts);
 		$educations = $this->educationRepository->findByParty($identifier);
 		$this->view->assign('educations', $educations);
-		$educations = $this->assetRepository->findByParty($identifier);
+		$assets = $this->assetRepository->findByParty($identifier);
 		$this->view->assign('assets', $assets);
 	}
 

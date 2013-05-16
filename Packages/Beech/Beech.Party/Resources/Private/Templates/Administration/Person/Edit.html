@@ -59,6 +59,15 @@
 			</div>
 		</f:if>
 	</f:form.validationResults>
+	<f:form.validationResults for="asset">
+		<f:if condition="{validationResults.flattenedErrors}">
+			<div class="error">
+				<f:for each="{validationResults.flattenedErrors}" key="propertyPath" as="errors">{propertyPath}:
+					<f:for each="{errors}" as="error">{error}</f:for>
+				</f:for>
+			</div>
+		</f:if>
+	</f:form.validationResults>
 	<div class="tab-content">
 		<h3>Person information</h3>
 
@@ -180,6 +189,32 @@
 				class="form-horizontal well">
 			 Create:
 			<f:render partial="Forms/Education" arguments="{person: person}"/>
+			<div class="form-actions">
+				<f:form.submit value="{f:translate(id: 'action.create')}"/>
+			</div>
+		</f:form>
+
+		<f:for each="{assets}" as="asset">
+			<f:form action="updateAsset" object="{asset}" name="asset"
+					class="form-horizontal well">
+				Update:
+				<f:form.hidden property="id"/>
+				<f:render partial="Forms/Asset" arguments="{person: person}"/>
+				<f:form.submit value="{f:translate(id: 'action.update')}"/>
+			</f:form>
+			<f:form action="removeAsset" object="{asset}" name="asset"
+					class="form-horizontal well">
+				Delete:
+				<f:form.hidden property="id"/>
+				<f:form.hidden property="party" value="{person}"/>
+				<f:form.submit value="{f:translate(id: 'action.remove')}"/>
+			</f:form>
+		</f:for>
+
+		<f:form action="addAsset" object="{asset}" name="asset"
+				class="form-horizontal well">
+			Create:
+			<f:render partial="Forms/Asset" arguments="{person: person}"/>
 			<div class="form-actions">
 				<f:form.submit value="{f:translate(id: 'action.create')}"/>
 			</div>
