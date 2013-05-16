@@ -21,7 +21,10 @@
 					format: 'html',
 					dataType: 'html',
 					context: this,
-					beforeSend: this.startAjaxRequest,
+					beforeSend: function(){
+						this.loadContent('<p><i class="icon-spin icon-spinner icon-3x muted"></i></p>', target);
+						this.startAjaxRequest();
+					},
 					complete: this.finishedAjaxRequest,
 					url: url,
 					success: function(result) {

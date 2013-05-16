@@ -17,7 +17,7 @@
 
 			// Reset the stage so on reloads we don't get old data
 		$('#modal-body-only').on('hidden', function () {
-			$('.modal-body').html('<p><i class="icon-spin icon-spinner icon-4x muted"></i></p>');
+			$('.modal-body').html('<p><i class="icon-spin icon-spinner icon-3x muted"></i></p>');
 		});
 
 			// Make sure clicks stays in the modal
