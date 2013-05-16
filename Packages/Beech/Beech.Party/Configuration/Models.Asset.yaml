@@ -1,11 +1,7 @@
-'Beech.Party.Domain.Model.CompanyAsset':
+'Beech.Party.Domain.Model.Asset':
   properties:
-    'personId':
-      label: 'Person ID'
-      type: 'Beech\Party\Domain\Model\Person'
-    'departmentId':
-      label: 'Department ID'
-      type: 'Beech\Party\Domain\Model\Company'
+    'party':
+      type: 'TYPO3\Party\Domain\Model\AbstractParty'
     'Asset':
       items:
         'name':
@@ -25,8 +21,8 @@
              - 'tools'
              - 'companyCar'
              - 'other'
-        'name':
-          label: 'Licence name'
+        'licence':
+          label: 'Licence'
           validation:
             -
               type: 'StringLength'
@@ -47,14 +43,17 @@
               options:
                 maximum: 35
         'startDate':
-       bankAccountRepository   label: 'Start'
+          label: 'Provision date'
           validation:
             -
               type: 'DateTimeRange'
               options:
                 earliestDate: 19500101
                 latestDate: 20200101
-        'return':
+        'ProvisionedBy':
+          label: 'ProvisionedBy'
+          type: 'TYPO3\Party\Domain\Model\AbstractParty'
+        'returned':
           label: 'Returned'
           options:
             values:
@@ -68,9 +67,9 @@
               options:
                 earliestDate: 19500101
                 latestDate: 20200101
-        'returnPerson':
+        'returnParty':
           label: 'Returned to'
-          type: 'Beech\Party\Domain\Model\Person'
+          type: 'TYPO3\Party\Domain\Model\AbstractParty'
           defaultValue: 'currentUser'
         'document':
           label: 'Document'
