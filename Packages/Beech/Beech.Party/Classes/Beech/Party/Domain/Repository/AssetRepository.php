@@ -10,7 +10,7 @@ namespace Beech\Party\Domain\Repository;
 use TYPO3\Flow\Annotations as Flow;
 
 /**
- * A repository for asset
+ * A repository for Assets
  *
  * @Flow\Scope("singleton")
  */

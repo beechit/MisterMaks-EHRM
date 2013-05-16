@@ -58,6 +58,12 @@ class PersonController extends \Beech\Ehrm\Controller\AbstractManagementControll
 	protected $educationRepository;
 
 	/**
+	 * @var \Beech\Party\Domain\Repository\AssetRepository
+	 * @Flow\Inject
+	 */
+	protected $assetRepository;
+
+	/**
 	 * Shows a list of persons
 	 *
 	 * @return void
@@ -101,6 +107,8 @@ class PersonController extends \Beech\Ehrm\Controller\AbstractManagementControll
 		$this->view->assign('bankAccounts', $bankAccounts);
 		$educations = $this->educationRepository->findByParty($identifier);
 		$this->view->assign('educations', $educations);
+		$educations = $this->assetRepository->findByParty($identifier);
+		$this->view->assign('assets', $assets);
 	}
 
 	/**
@@ -244,7 +252,7 @@ class PersonController extends \Beech\Ehrm\Controller\AbstractManagementControll
 	}
 
 	/**
-	 * @param \Beech\Party\Domain\Model\BankAccount $bankAccount A new bankAccount to add
+	 * @param \Beech\Party\Domain\Model\BankAccount $bankAccount A  bankAccount to add
 	 *
 	 * @return void
 	 */
@@ -268,7 +276,7 @@ class PersonController extends \Beech\Ehrm\Controller\AbstractManagementControll
 	}
 
 	/**
-	 * @param \Beech\Party\Domain\Model\BankAccount $bankAccount A new bankAccount to remove
+	 * @param \Beech\Party\Domain\Model\BankAccount $bankAccount A bankAccount to remove
 	 *
 	 * @return void
 	 */
@@ -293,7 +301,7 @@ class PersonController extends \Beech\Ehrm\Controller\AbstractManagementControll
 	}
 
 	/**
-	 * @param \Beech\Party\Domain\Model\Education $education A  education to update
+	 * @param \Beech\Party\Domain\Model\Education $education A education to update
 	 *
 	 * @return void
 	 */
@@ -305,7 +313,7 @@ class PersonController extends \Beech\Ehrm\Controller\AbstractManagementControll
 	}
 
 	/**
-	 * @param \Beech\Party\Domain\Model\Education $education A new education to remove
+	 * @param \Beech\Party\Domain\Model\Education $education A education to remove
 	 *
 	 * @return void
 	 */
@@ -313,6 +321,43 @@ class PersonController extends \Beech\Ehrm\Controller\AbstractManagementControll
 		$person = $education->getParty();
 		$education->setParty(NULL);
 		$this->educationRepository->update($education);
+		$this->addFlashMessage('Removed.');
+		$this->redirect('edit', NULL, NULL, array('person' => $person));
+	}
+
+	/**
+	 * @param \Beech\Party\Domain\Model\Asset $Asset A new asset to add
+	 *
+	 * @return void
+	 */
+	public function addAsset(\Beech\Party\Domain\Model\Asset $asset) {
+		$asset->setParty($this->persistenceManager->getIdentifierByObject($asset->getParty()));
+		$this->assetRepository->add($asset);
+		$this->addFlashMessage('Added.');
+		$this->redirect('edit', NULL, NULL, array('person' => $asset->getParty()));
+	}
+
+	/**
+	 * @param \Beech\Party\Domain\Model\Asset $asset A asset to update
+	 *
+	 * @return void
+	 */
+	public function updateAssetAction(\Beech\Party\Domain\Model\Asset $asset) {
+		$asset->setParty($this->persistenceManager->getIdentifierByObject($asset->getParty()));
+		$this->educationRepository->update($asset);
+		$this->addFlashMessage('Updated.');
+		$this->redirect('edit', NULL, NULL, array('person' => $asset->getParty()));
+	}
+
+	/**
+	 * @param \Beech\Party\Domain\Model\Asset $asset A asset to remove
+	 *
+	 * @return void
+	 */
+	public function removeAssetAction(\Beech\Party\Domain\Model\Asset $asset) {
+		$person = $asset->getParty();
+		$asset->setParty(NULL);
+		$this->educationRepository->update($asset);
 		$this->addFlashMessage('Removed.');
 		$this->redirect('edit', NULL, NULL, array('person' => $person));
 	}

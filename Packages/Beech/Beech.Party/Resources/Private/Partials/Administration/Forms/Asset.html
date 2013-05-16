@@ -1,0 +1,51 @@
+<h4>Asset</h4>
+	<div class="control-group">
+		<div class="controls controls">
+			<f:form.textfield property="type" id="type" class="type"
+							  placeholder="{f:translate(id:'Asset type')}"/>
+			<f:form.textfield property="name" id="name" class="span6"
+							  placeholder="{f:translate(id:'Asset name')}"/>
+		</div>
+	</div>
+		<div class="control-group">
+			<div class="controls controls">
+				<f:form.textfield property="model" id="modelname" class="span6"
+									placeholder="{f:translate(id:'Model')}"/>
+			</div>
+			<div class="controls controls">
+				<f:form.textfield property="licence" id="licence" class="span6"
+								  placeholder="{f:translate(id:'Licence')}"/>
+			</div>
+			<div class="controls controls">
+				<f:form.textfield property="iDNumber" id="iDNumber" class="span6"
+								  placeholder="{f:translate(id:'ID Number')}"/>
+			</div>
+			<div class="controls controls">
+				<label class="control-label"> <f:translate id="Provision date">Provision date</f:translate></label>
+					<ehrm:form.datePicker id="startDate" property="startDate"  dateFormat="DD-mm-YY" displayDateSelector="TRUE" enableDatePicker="FALSE" />
+			</div>
+
+
+	</div>
+	<div class="control-group">
+		<div class="controls controls-row">
+			<f:form.textfield property="bankName" id="bankName" class="span3"
+							  placeholder="{f:translate(id:'Bank name')}"/>
+			<f:form.textfield property="residence" id="residence" class="span5"
+							  placeholder="{f:translate(id:'Residence')}"/>
+		</div>
+	</div>
+	<div class="control-group">
+		<div class="controls">
+			<f:form.textfield property="country" id="country" class="span6"
+							  placeholder="{f:translate(id:'Country')}"/>
+		</div>
+		<div class="control-group">
+			<div class="controls">
+				<f:form.textarea property="description" id="description" class="span6"
+								 placeholder="{f:translate(id:'Description')}"/>
+			</div>
+		</div>
+	</div>
+
+<f:form.hidden property="party" value="{person}"/>

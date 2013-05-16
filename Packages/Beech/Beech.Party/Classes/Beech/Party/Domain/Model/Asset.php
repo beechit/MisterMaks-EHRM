@@ -15,7 +15,7 @@ use TYPO3\Flow\Annotations as Flow,
  *
  * @ODM\Document(indexed=true)
  */
-class CompanyAsset extends \Beech\Ehrm\Domain\Model\Document {
+class Asset extends \Beech\Ehrm\Domain\Model\Document {
 
 	/**
 	 * @var \TYPO3\Party\Domain\Model\AbstractParty
