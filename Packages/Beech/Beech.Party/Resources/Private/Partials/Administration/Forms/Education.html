@@ -1,0 +1,27 @@
+<h4>Education</h4>
+	<fieldset>
+		<div class="control-group">
+			<div class="controls controls">
+				<f:form.textfield property="type" id="type" class="span6"
+				                  placeholder="{f:translate(id:'Education type')}" />
+				<f:form.textfield property="nameInstitute" id="nameInstitute" class="span5"
+				                  placeholder="{f:translate(id:'Name of institute')}" />
+			</div>
+		</div>
+		<div class="control-group">
+			<div class="controls controls">
+				<f:form.textfield property="direction" id="direction" class="span3"
+				                  placeholder="{f:translate(id:'direction')} "/>
+			</div>
+			<div class="controls controls-row">
+				<label class="control-label">Start Date</label>
+					<ehrm:form.datePicker id="startDate" property="startDate"  dateFormat="DD-mm-YY" displayDateSelector="TRUE" enableDatePicker="FALSE" />
+				<label class="control-label">End date</label>
+					<ehrm:form.datePicker id="EndDate" property="endDate"  dateFormat="DD-mm-YY" displayDateSelector="TRUE" enableDatePicker="FALSE" />
+			</div>
+			<div class="controls controls-row">
+				.<label class="control-label" for="graduated">Graduated</label>
+					<f:form.checkbox property="graduated" id="graduated" value="1"/>
+			</div>
+		<div>
+	</fieldset>

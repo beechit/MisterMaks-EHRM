@@ -6,7 +6,6 @@
       items:
         'type':
           label: 'Education'
-          type: 'array'
           options:
             values:
              - 'primaryEducation'

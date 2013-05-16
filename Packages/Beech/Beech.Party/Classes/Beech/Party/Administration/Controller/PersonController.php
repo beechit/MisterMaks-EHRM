@@ -27,7 +27,6 @@ class PersonController extends \Beech\Ehrm\Controller\AbstractManagementControll
 	 */
 	protected $repositoryClassName = 'Beech\Party\Domain\Repository\PersonRepository';
 
-
 	/**
 	 * @var \Beech\Party\Domain\Repository\AddressRepository
 	 * @Flow\Inject
@@ -94,6 +93,8 @@ class PersonController extends \Beech\Ehrm\Controller\AbstractManagementControll
         $this->view->assign('electronicAddresses', $electronicAddresses);
 		$bankAccounts = $this->bankAccountRepository->findByParty($identifier);
 		$this->view->assign('bankAccounts', $bankAccounts);
+		$educations = $this->educationRepository->findByParty($identifier);
+		$this->view->assign('educations', $educations);
 	}
 
 	/**
@@ -103,7 +104,6 @@ class PersonController extends \Beech\Ehrm\Controller\AbstractManagementControll
 	 */
 	public function newAction() {
 	}
-
 
 	/**
 	 * @param \Beech\Party\Domain\Model\Person $person A new person to add
@@ -273,6 +273,44 @@ class PersonController extends \Beech\Ehrm\Controller\AbstractManagementControll
 		$this->addFlashMessage('Removed.');
 		$this->redirect('edit', NULL, NULL, array('person' => $person));
 	}
+
+	/**
+	 * @param \Beech\Party\Domain\Model\Education $Education A new education to add
+	 *
+	 * @return void
+	 */
+	public function addEducationAction(\Beech\Party\Domain\Model\Education $education) {
+		$education->setParty($this->persistenceManager->getIdentifierByObject($education->getParty()));
+		$this->educationRepository->add($education);
+		$this->addFlashMessage('Added.');
+		$this->redirect('edit', NULL, NULL, array('person' => $education->getParty()));
+	}
+
+	/**
+	 * @param \Beech\Party\Domain\Model\Education $education A  education to update
+	 *
+	 * @return void
+	 */
+	public function updateEducationAction(\Beech\Party\Domain\Model\Education $education) {
+		$education->setParty($this->persistenceManager->getIdentifierByObject($education->getParty()));
+		$this->educationRepository->update($education);
+		$this->addFlashMessage('Updated.');
+		$this->redirect('edit', NULL, NULL, array('person' => $education->getParty()));
+	}
+
+	/**
+	 * @param \Beech\Party\Domain\Model\Education $education A new education to remove
+	 *
+	 * @return void
+	 */
+	public function removeEducationAction(\Beech\Party\Domain\Model\Education $education) {
+		$person = $education->getParty();
+		$education->setParty(NULL);
+		$this->educationRepository->update($education);
+		$this->addFlashMessage('Removed.');
+		$this->redirect('edit', NULL, NULL, array('person' => $person));
+	}
+
 }
 
 ?>
