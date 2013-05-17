@@ -11,13 +11,14 @@
 				//Use AJAX get function to fetch the html
 			$.get(url, function(html) {
 				var content = $('#content', html).html();
-				$('.modal-body').html(content);
+				$('#modal-body-only .modal-body').html(content);
+				$('#modal-body-only #username').focus();
 			});
 		});
 
 			// Reset the stage so on reloads we don't get old data
 		$('#modal-body-only').on('hidden', function () {
-			$('.modal-body').html('<p><i class="icon-spin icon-spinner icon-3x muted"></i></p>');
+			$('#modal-body-only .modal-body').html('<p><i class="icon-spin icon-spinner icon-3x muted"></i></p>');
 		});
 
 			// Make sure clicks stays in the modal
