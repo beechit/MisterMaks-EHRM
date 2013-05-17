@@ -530,13 +530,13 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/beechit/Radmiraal.Emberjs.git",
-                "reference": "8228b70e03193632d662a16b3098e87f5e022e94"
+                "url": "https://github.com/radmiraal/Radmiraal.Emberjs.git",
+                "reference": "72664ad3b900d58912ea45cc45f121aa08599f74"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beechit/Radmiraal.Emberjs/zipball/8228b70e03193632d662a16b3098e87f5e022e94",
-                "reference": "8228b70e03193632d662a16b3098e87f5e022e94",
+                "url": "https://api.github.com/repos/radmiraal/Radmiraal.Emberjs/zipball/72664ad3b900d58912ea45cc45f121aa08599f74",
+                "reference": "72664ad3b900d58912ea45cc45f121aa08599f74",
                 "shasum": ""
             },
             "require": {
@@ -609,12 +609,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Console.git",
-                "reference": "a4154baa8c938143fa9257331fe64f8f21598dec"
+                "reference": "c53f2a94430f1958c115cfa29c2da9867a5a6946"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Console/zipball/a4154baa8c938143fa9257331fe64f8f21598dec",
-                "reference": "a4154baa8c938143fa9257331fe64f8f21598dec",
+                "url": "https://api.github.com/repos/symfony/Console/zipball/c53f2a94430f1958c115cfa29c2da9867a5a6946",
+                "reference": "c53f2a94430f1958c115cfa29c2da9867a5a6946",
                 "shasum": ""
             },
             "require": {
@@ -629,7 +629,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.3-dev"
+                    "dev-master": "2.4-dev"
                 }
             },
             "autoload": {
@@ -653,7 +653,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "http://symfony.com",
-            "time": "2013-05-15 15:12:03"
+            "time": "2013-05-16 07:54:39"
         },
         {
             "name": "symfony/dom-crawler",
@@ -756,7 +756,7 @@
             "source": {
                 "type": "git",
                 "url": "git://git.typo3.org/FLOW3/Packages/TYPO3.Eel.git",
-                "reference": "7c2ac55bd8a84af414dc21d548686b5f2a8f78a5"
+                "reference": "e00d2b8e8932d72f42cf684934a2e105f027cb98"
             },
             "require": {
                 "typo3/flow": "*"
@@ -768,7 +768,7 @@
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
-            "time": "2013-03-28 09:44:34"
+            "time": "2013-05-15 13:59:51"
         },
         {
             "name": "typo3/flow",
@@ -776,7 +776,7 @@
             "source": {
                 "type": "git",
                 "url": "git://git.typo3.org/FLOW3/Packages/TYPO3.FLOW3.git",
-                "reference": "59f544398bd93c1c5c5d945e0be971e0bd7185f0"
+                "reference": "04b484a78d574e8c9558709844eeb2f78a638224"
             },
             "require": {
                 "composer/installers": ">=1.0.2,<1.1",
@@ -807,7 +807,7 @@
             ],
             "description": "TYPO3 Flow Application Framework",
             "homepage": "http://flow.typo3.org",
-            "time": "2013-05-15 10:14:10"
+            "time": "2013-05-15 22:18:45"
         },
         {
             "name": "typo3/fluid",
@@ -1187,12 +1187,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "d1113ca09a060fac85414b4d03982c34de803cd7"
+                "reference": "251c20ee1a92da0d3111157de4e6ada9523ed19b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/d1113ca09a060fac85414b4d03982c34de803cd7",
-                "reference": "d1113ca09a060fac85414b4d03982c34de803cd7",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/251c20ee1a92da0d3111157de4e6ada9523ed19b",
+                "reference": "251c20ee1a92da0d3111157de4e6ada9523ed19b",
                 "shasum": ""
             },
             "require": {
@@ -1200,6 +1200,9 @@
                 "phpunit/php-file-iterator": ">=1.3.0@stable",
                 "phpunit/php-text-template": ">=1.1.1@stable",
                 "phpunit/php-token-stream": ">=1.1.3@stable"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*"
             },
             "suggest": {
                 "ext-dom": "*",
@@ -1232,7 +1235,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2013-05-11 06:28:55"
+            "time": "2013-05-17 06:31:50"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -1418,12 +1421,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "a00cdfb2551b45d2cd9b1d076b6a385fb29b22e0"
+                "reference": "1f5bee4ffa4c36654ac305dece9d86343c716444"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/a00cdfb2551b45d2cd9b1d076b6a385fb29b22e0",
-                "reference": "a00cdfb2551b45d2cd9b1d076b6a385fb29b22e0",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/1f5bee4ffa4c36654ac305dece9d86343c716444",
+                "reference": "1f5bee4ffa4c36654ac305dece9d86343c716444",
                 "shasum": ""
             },
             "require": {
@@ -1432,7 +1435,7 @@
                 "ext-reflection": "*",
                 "ext-spl": "*",
                 "php": ">=5.3.3",
-                "phpunit/php-code-coverage": ">=1.2.1,<1.3.0",
+                "phpunit/php-code-coverage": ">=1.2.10,<1.3.0",
                 "phpunit/php-file-iterator": ">=1.3.1",
                 "phpunit/php-text-template": ">=1.1.1",
                 "phpunit/php-timer": ">=1.0.2,<1.1.0",
@@ -1484,7 +1487,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2013-05-15 01:40:01"
+            "time": "2013-05-17 03:35:58"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -1731,12 +1734,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Finder.git",
-                "reference": "v2.3.0-BETA2"
+                "reference": "0002d0d77e2292387e966d50cf17f1a290052452"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Finder/zipball/v2.3.0-BETA2",
-                "reference": "v2.3.0-BETA2",
+                "url": "https://api.github.com/repos/symfony/Finder/zipball/0002d0d77e2292387e966d50cf17f1a290052452",
+                "reference": "0002d0d77e2292387e966d50cf17f1a290052452",
                 "shasum": ""
             },
             "require": {
@@ -1745,7 +1748,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.3-dev"
+                    "dev-master": "2.4-dev"
                 }
             },
             "autoload": {
@@ -1769,7 +1772,7 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "http://symfony.com",
-            "time": "2013-04-25 12:12:10"
+            "time": "2013-05-16 07:54:39"
         },
         {
             "name": "theseer/fdomdocument",
