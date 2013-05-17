@@ -31,6 +31,9 @@ class Package extends BasePackage {
 				$configurationManager->registerConfigurationType('Wizards', \TYPO3\Flow\Configuration\ConfigurationManager::CONFIGURATION_PROCESSING_TYPE_DEFAULT, TRUE);
 			}
 		);
+
+		$dispatcher->connect('Beech\Task\Domain\Repository\TaskRepository', 'taskCreated', 'Beech\Ehrm\Service\Notification', 'taskCreated');
+		$dispatcher->connect('Beech\Task\Domain\Repository\TaskRepository', 'taskChanged', 'Beech\Ehrm\Service\Notification', 'taskChanged');
 	}
 }
 

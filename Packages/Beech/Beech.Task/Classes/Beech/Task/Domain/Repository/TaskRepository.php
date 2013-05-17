@@ -85,6 +85,42 @@ class TaskRepository extends \Radmiraal\CouchDB\Persistence\AbstractRepository {
 			'closed' => FALSE
 		));
 	}
+
+	/**
+	 * @param \Beech\Task\Domain\Model\Task $task
+	 * @return void
+	 * @Flow\Signal
+	 */
+	protected function emitTaskCreated(\Beech\Task\Domain\Model\Task $task) {}
+
+	/**
+	 * @param \Beech\Task\Domain\Model\Task $task
+	 * @return void
+	 * @Flow\Signal
+	 */
+	protected function emitTaskChanged(\Beech\Task\Domain\Model\Task $task) {}
+
+	/**
+	 * @param \Beech\Task\Domain\Model\Task $task
+	 * @throws \TYPO3\Flow\Persistence\Exception\IllegalObjectTypeException
+	 * @return void
+	 */
+	public function add($task) {
+		parent::add($task);
+
+		$this->emitTaskCreated($task);
+	}
+
+	/**
+	 * @param \Beech\Task\Domain\Model\Task $task
+	 * @throws \TYPO3\Flow\Persistence\Exception\IllegalObjectTypeException
+	 * @return void
+	 */
+	public function update($task) {
+		parent::update($task);
+
+		$this->emitTaskChanged($task);
+	}
 }
 
 ?>

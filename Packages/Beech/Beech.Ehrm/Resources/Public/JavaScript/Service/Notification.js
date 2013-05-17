@@ -6,18 +6,45 @@
 			var data = $.parseJSON(event.data);
 			if (data.notifications) {
 				data.notifications.forEach(function(notification) {
-					App.Service.Notification.showInfo(notification.message, 5000);
+					App.Service.Notification.show(notification.message ? notification.label : notification.message, notification.message ? notification.message : notification.label, notification.type, notification.sticky ? 0 : undefined, notification.closeable ? true : false);
+				});
+			}
+			if (data.signals) {
+				data.signals.forEach(function(signal) {
+					var type, id;
+					if(typeof signal == "string") {
+						var tmp = signal.split(':');
+						type = tmp[0];
+						id = tmp.length > 1 ? tmp[1] : false;
+					} else {
+						type = (signal.type !== "undefined" ? signal.type : "");
+						id = (signal.id !== "undefined" ? signal.id : "");
+					}
+					switch(type) {
+						case 'Task':
+							if(id) {
+								var _task = App.BeechTaskDomainModelTask.find(id);
+								if(_task.isLoaded && !_task.isLoading) _task.reload();
+							}
+							App.BeechTaskDomainModelPriority.find();
+							break;
+						break;
+
+						default:
+							// unknow signal
+							console.log('Unknow signal from server', signal);
+					}
+
 				});
 			}
 		});
 	});
 
 	App.Service.Notification = Ember.Object.create({
-		INFO: "Info",
-		LOW: "Low action",
-		MODERATE: "Moderate action",
-		HIGH: "High action",
-		WARNING: "Warning",
+		INFO: "info",
+		SUCCESS: "success",
+		WARNING: "warning",
+		ERROR: "error",
 
 		_placeholder: null,
 		_timeout: 5000, //1 second = 1000
@@ -33,51 +60,63 @@
 			this.set('_timeout', timeout);
 		},
 
-		showInfo: function(bodyMessage, timeout) {
-			this._show('Info', bodyMessage, 'info', [], timeout);
+		showInfo: function(bodyMessage, title, timeout, removable) {
+			this.show(title, bodyMessage, this.INFO, timeout, removable);
 		},
 
-		showSuccess: function(bodyMessage, timeout) {
-			this._show('Success', bodyMessage, 'success', [], timeout);
+		showSuccess: function(bodyMessage, title, timeout, removable) {
+			this.show(title, bodyMessage, this.SUCCESS, timeout, removable);
 		},
 
-		showError: function(bodyMessage, timeout, removable) {
-			this._show('Error', bodyMessage, 'danger', [], timeout, removable);
+		showWarning: function(bodyMessage, title, timeout, removable) {
+			this.show(title, bodyMessage, this.WARNING, timeout, removable);
 		},
 
-		showDialog: function(bodyMessage, actions, timeout, title, priority, removable, callBack) {
+		showError: function(bodyMessage, title, timeout, removable) {
+			this.show(title, bodyMessage, this.ERROR, timeout == undefined ? 0 : timeout, removable == undefined ? false : removable);
+		},
+
+		showDialog: function(bodyMessage, title, actions, timeout, priority, removable, callBack) {
 			var className;
 			if (title === undefined) {
 				title = 'Dialog';
 			}
 
-			this._show(title, bodyMessage, priority == 'veryHigh' ? 'error' : 'alert', actions, timeout, removable, callBack);
+			this.show(title, bodyMessage, priority == 'veryHigh' ? 'error' : 'alert', timeout, removable, callBack, actions);
 		},
 
 		createListener: function(element, event, action) {
 			$(element).on(event, action);
 		},
 
-		_show: function(title, bodyMessage, type, actions, timeout, removable, callBack) {
+		show: function(title, bodyMessage, type, timeout, removable, callBack, actions) {
 			var notification,
-				fadeOut = null,
+				fadeOut = { enabled: false},
 				body = bodyMessage;
+
+			if (type == undefined) {
+				type = this.INFO;
+			}
 
 			if (title) {
 				bodyMessage = '<header>' + title + '</header>' + bodyMessage;
 			}
 
-			if (!timeout) {
+			if (timeout === undefined) {
 				timeout = this.get('_timeout');
 			}
 			if (timeout > 0) {
 				fadeOut = { enabled: true, delay: timeout };
 			}
 
+			if(!fadeOut.enabled) {
+				removable = true;
+			}
+
 			notification = this.get('_placeholder').notify({
 				message: bodyMessage,
 				type: type,
-				closeable: removable,
+				closable: removable,
 				transition: 'fade',
 				fadeOut: fadeOut,
 				onClosed: callBack

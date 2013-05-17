@@ -9,6 +9,7 @@ namespace Beech\Ehrm\Domain\Model;
 
 use TYPO3\Flow\Annotations as Flow,
 	Doctrine\ODM\CouchDB\Mapping\Annotations as ODM;
+use TYPO3\Fluid\Core\Widget\Exception;
 
 /**
  * A Notification
@@ -16,6 +17,11 @@ use TYPO3\Flow\Annotations as Flow,
  * @ODM\Document(indexed=true)
  */
 class Notification extends \Beech\Ehrm\Domain\Model\Document {
+
+	const INFO = 'info';
+	const SUCCESS = 'success';
+	const WARNING = 'warning';
+	const ERROR = 'error';
 
 	/**
 	 * @var \TYPO3\Flow\Persistence\PersistenceManagerInterface
@@ -25,11 +31,25 @@ class Notification extends \Beech\Ehrm\Domain\Model\Document {
 	protected $persistenceManager;
 
 	/**
+	 * The level
+	 * @var string
+	 * @ODM\Field(type="string")
+	 */
+	protected $level = self::INFO;
+
+	/**
 	 * The label
 	 * @var string
 	 * @ODM\Field(type="string")
 	 */
 	protected $label;
+
+	/**
+	 * The message
+	 * @var string
+	 * @ODM\Field(type="string")
+	 */
+	protected $message;
 
 	/**
 	 * The account identifier
@@ -53,6 +73,31 @@ class Notification extends \Beech\Ehrm\Domain\Model\Document {
 	protected $sticky;
 
 	/**
+	 * Get the Notification's level
+	 *
+	 * @return string The Notification's level
+	 */
+	public function getLevel() {
+		return $this->level;
+	}
+
+	/**
+	 * Sets this Notification's level
+	 *
+	 * @param string $level The Notification's level
+	 * @return void
+	 * @throws \Exception
+	 */
+	public function setLevel($level) {
+
+		if(!in_array($level, array(self::INFO, self::SUCCESS, self::WARNING, self::ERROR))) {
+			throw new \Exception('Unknow Notification::level');
+		}
+
+		$this->level = $level;
+	}
+
+	/**
 	 * Get the Notification's label
 	 *
 	 * @return string The Notification's label
@@ -69,6 +114,25 @@ class Notification extends \Beech\Ehrm\Domain\Model\Document {
 	 */
 	public function setLabel($label) {
 		$this->label = $label;
+	}
+
+	/**
+	 * Get the Notification's message
+	 *
+	 * @return string The Notification's message
+	 */
+	public function getMessage() {
+		return $this->message;
+	}
+
+	/**
+	 * Sets this Notification's message
+	 *
+	 * @param string $message The Notification's message
+	 * @return void
+	 */
+	public function setMessage($message) {
+		$this->message = $message;
 	}
 
 	/**
