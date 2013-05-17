@@ -70,11 +70,11 @@ class ServerCommandController extends \TYPO3\Flow\Cli\CommandController {
 				$this->logger->log(sprintf('Registered connection for account "%s" (session %s via %s)', $accountIdentifier, $sessionIdentifier, $connection->getRemoteAddress()));
 			});
 
-			$connection->on('end', function($connection) use ($connections, &$sessions) {
+			$connection->on('end', function($connection) use ($connections, &$accountConnections) {
 				$connections->detach($connection);
-				$sessionIdentifier = array_search($connection, $sessions);
+				$sessionIdentifier = array_search($connection, $accountConnections);
 				if ($sessionIdentifier !== FALSE) {
-					unset ($sessions[$sessionIdentifier]);
+					unset ($accountConnections[$sessionIdentifier]);
 				}
 				$this->logger->log(sprintf('%s closed the connection', $connection->getRemoteAddress()), LOG_DEBUG);
 			});
@@ -82,6 +82,9 @@ class ServerCommandController extends \TYPO3\Flow\Cli\CommandController {
 
 		$loop->addPeriodicTimer(5, function() use ($connections, &$accountConnections) {
 			$notifications = $this->notificationRepository->findAll();
+			if(count($notifications) == 0) {
+				return;
+			}
 			foreach ($accountConnections as $accountIdentifier => $connection) {
 				$accountNotifications = array();
 				foreach ($notifications as $notification) {
