@@ -5,7 +5,7 @@
 		<f:translate id="task">Task</f:translate>
 	</h1>
 
-	<f:flashMessages class="flashmessages alert-success"/>
+	<f:flashMessages class="flashmessages"/>
 
 	<div class="well">
 		<div class="control-group">
@@ -70,6 +70,9 @@
 		<div class="control-group">
 			<a class="btn btn-primary" href="/#/tasks">
 				<f:translate id="action.back">Back</f:translate>
+			</a>
+			<a class="btn" href="/#/tasks/edit/{task.id}">
+				<f:translate id="task.edit">Edit</f:translate>
 			</a>
 			<a class="btn btn-warning" href="/#/tasks/close/{task.id}">
 				<f:translate id="action.setTaskDone">Close</f:translate>
