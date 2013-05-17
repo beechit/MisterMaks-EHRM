@@ -11,7 +11,7 @@ use TYPO3\Flow\Annotations as Flow,
 	Doctrine\ODM\CouchDB\Mapping\Annotations as ODM;
 
 /**
- * A CompanyAsset
+ * A Asset
  *
  * @ODM\Document(indexed=true)
  */
