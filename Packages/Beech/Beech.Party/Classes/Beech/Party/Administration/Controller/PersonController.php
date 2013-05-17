@@ -46,7 +46,7 @@ class PersonController extends \Beech\Party\Controller\PersonController {
 	 */
 	public function updateAssetAction(\Beech\Party\Domain\Model\Asset $asset) {
 		$asset->setParty($this->persistenceManager->getIdentifierByObject($asset->getParty()));
-		$this->educationRepository->update($asset);
+		$this->assetRepository->update($asset);
 		$this->addFlashMessage('Updated.');
 		$this->redirect('edit', NULL, NULL, array('person' => $asset->getParty()));
 	}
@@ -59,7 +59,44 @@ class PersonController extends \Beech\Party\Controller\PersonController {
 	public function removeAssetAction(\Beech\Party\Domain\Model\Asset $asset) {
 		$person = $asset->getParty();
 		$asset->setParty(NULL);
-		$this->educationRepository->update($asset);
+		$this->assetRepository->update($asset);
+		$this->addFlashMessage('Removed.');
+		$this->redirect('edit', NULL, NULL, array('person' => $person));
+	}
+
+	/**
+	 * @param \Beech\Party\Domain\Model\Licence $licence A new licence to add
+	 *
+	 * @return void
+	 */
+	public function addLicenceAction(\Beech\Party\Domain\Model\Licence $licence) {
+		$licence->setParty($this->persistenceManager->getIdentifierByObject($licence->getParty()));
+		$this->licenceRepository->add($licence);
+		$this->addFlashMessage('Added.');
+		$this->redirect('edit', NULL, NULL, array('person' => $licence->getParty()));
+	}
+
+	/**
+	 * @param \Beech\Party\Domain\Model\Licence $licence A licence to update
+	 *
+	 * @return void
+	 */
+	public function updateLicenceAction(\Beech\Party\Domain\Model\Licence $licence) {
+		$licence->setParty($this->persistenceManager->getIdentifierByObject($licence->getParty()));
+		$this->licenceRepository->update($licence);
+		$this->addFlashMessage('Updated.');
+		$this->redirect('edit', NULL, NULL, array('person' => $licence->getParty()));
+	}
+
+	/**
+	 * @param \Beech\Party\Domain\Model\Licence $licence A licence to remove
+	 *
+	 * @return void
+	 */
+	public function removeLicenceAction(\Beech\Party\Domain\Model\Licence $licence) {
+		$person = $licence->getParty();
+		$licence->setParty(NULL);
+		$this->licenceRepository->update($licence);
 		$this->addFlashMessage('Removed.');
 		$this->redirect('edit', NULL, NULL, array('person' => $person));
 	}
