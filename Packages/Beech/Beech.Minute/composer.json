@@ -10,7 +10,7 @@
 	},
 	"autoload": {
 		"psr-0": {
-			"Beech\\Minutes": "Classes"
+			"Beech\\Minute": "Classes"
 		}
 	}
 }

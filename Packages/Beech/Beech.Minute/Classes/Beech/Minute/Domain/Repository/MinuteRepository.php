@@ -1,5 +1,5 @@
 <?php
-namespace Beech\Minutes\Domain\Repository;
+namespace Beech\Minute\Domain\Repository;
 
 /*
  * This source file is proprietary property of Beech Applications B.V.

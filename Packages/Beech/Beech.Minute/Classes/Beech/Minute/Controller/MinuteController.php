@@ -1,5 +1,5 @@
 <?php
-namespace Beech\Minutes\Controller;
+namespace Beech\Minute\Controller;
 
 /*
  * This source file is proprietary property of Beech Applications B.V.
@@ -8,17 +8,17 @@ namespace Beech\Minutes\Controller;
  */
 
 use TYPO3\Flow\Annotations as Flow;
-use Beech\Minutes\Domain\Model\Minute;
+use Beech\Minute\Domain\Model\Minute;
 
 /**
- * Minute controller for the Beech.Minutes package
+ * Minute controller for the Beech.Minute package
  *
  * @Flow\Scope("singleton")
  */
 class MinuteController extends \Beech\Ehrm\Controller\AbstractController {
 
 	/**
-	 * @var \Beech\Minutes\Domain\Repository\MinuteRepository
+	 * @var \Beech\Minute\Domain\Repository\MinuteRepository
 	 * @Flow\Inject
 	 */
 	protected $minuteRepository;
@@ -41,7 +41,7 @@ class MinuteController extends \Beech\Ehrm\Controller\AbstractController {
 	/**
 	 * Shows a single minute object
 	 *
-	 * @param \Beech\Minutes\Domain\Model\Minute $minute The minute to show
+	 * @param \Beech\Minute\Domain\Model\Minute $minute The minute to show
 	 * @return void
 	 */
 	public function showAction(Minute $minute) {
@@ -59,19 +59,19 @@ class MinuteController extends \Beech\Ehrm\Controller\AbstractController {
 	/**
 	 * Adds the given new Minute object to the Minute repository
 	 *
-	 * @param \Beech\Minutes\Domain\Model\Minute $newMinute A new minute to add
+	 * @param \Beech\Minute\Domain\Model\Minute $newMinute A new minute to add
 	 * @return void
 	 */
-	public function createAction(\Beech\Minutes\Domain\Model\Minute $newMinute) {
+	public function createAction(\Beech\Minute\Domain\Model\Minute $newMinute) {
 		$this->minuteRepository->add($newMinute);
-		$this->addFlashMessage($this->translator->translateById('flashMessage.createdMinute', array(), NULL, NULL, 'Main', 'Beech.Minutes'));
+		$this->addFlashMessage($this->translator->translateById('flashMessage.createdMinute', array(), NULL, NULL, 'Main', 'Beech.Minute'));
 		$this->redirect('list');
 	}
 
 	/**
 	 * Shows a form for editing an existing Minute object
 	 *
-	 * @param \Beech\Minutes\Domain\Model\Minute $minute The Minute to edit
+	 * @param \Beech\Minute\Domain\Model\Minute $minute The Minute to edit
 	 * @Flow\IgnoreValidation("$minute")
 	 * @return void
 	 */
@@ -82,24 +82,24 @@ class MinuteController extends \Beech\Ehrm\Controller\AbstractController {
 	/**
 	 * Updates the given Minute object
 	 *
-	 * @param \Beech\Minutes\Domain\Model\Minute $minute The Minute to update
+	 * @param \Beech\Minute\Domain\Model\Minute $minute The Minute to update
 	 * @return void
 	 */
-	public function updateAction(\Beech\Minutes\Domain\Model\Minute $minute) {
+	public function updateAction(\Beech\Minute\Domain\Model\Minute $minute) {
 		$this->minuteRepository->update($minute);
-		$this->addFlashMessage($this->translator->translateById('flashMessage.updatedMinute', array(), NULL, NULL, 'Main', 'Beech.Minutes'));
+		$this->addFlashMessage($this->translator->translateById('flashMessage.updatedMinute', array(), NULL, NULL, 'Main', 'Beech.Minute'));
 		$this->redirect('list');
 	}
 
 	/**
 	 * Removes the given Minute object from the Minute repository
 	 *
-	 * @param \Beech\Minutes\Domain\Model\Minute $minute The Minute to delete
+	 * @param \Beech\Minute\Domain\Model\Minute $minute The Minute to delete
 	 * @return void
 	 */
-	public function deleteAction(\Beech\Minutes\Domain\Model\Minute $minute) {
+	public function deleteAction(\Beech\Minute\Domain\Model\Minute $minute) {
 		$this->minuteRepository->remove($minute);
-		$this->addFlashMessage($this->translator->translateById('flashMessage.deletedMinute', array(), NULL, NULL, 'Main', 'Beech.Minutes'));
+		$this->addFlashMessage($this->translator->translateById('flashMessage.deletedMinute', array(), NULL, NULL, 'Main', 'Beech.Minute'));
 		$this->redirect('list');
 	}
 

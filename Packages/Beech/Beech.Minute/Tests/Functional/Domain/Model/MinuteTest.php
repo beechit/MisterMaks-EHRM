@@ -1,5 +1,5 @@
 <?php
-namespace Beech\Minutes\Tests\Functional\Domain\Model;
+namespace Beech\Minute\Tests\Functional\Domain\Model;
 
 /*
  * This source file is proprietary property of Beech Applications B.V.
@@ -8,7 +8,7 @@ namespace Beech\Minutes\Tests\Functional\Domain\Model;
  */
 
 use TYPO3\Flow\Annotations as Flow,
-	Beech\Minutes\Domain\Model\Minute;
+	Beech\Minute\Domain\Model\Minute;
 
 /**
  * Persistence test for Minute entity
@@ -21,7 +21,7 @@ class MinuteTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFunctionalT
 	static protected $testablePersistenceEnabled = TRUE;
 
 	/**
-	 * @var \Beech\Minutes\Domain\Repository\MinuteRepository
+	 * @var \Beech\Minute\Domain\Repository\MinuteRepository
 	 */
 	protected $minuteRepository;
 
@@ -34,7 +34,7 @@ class MinuteTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFunctionalT
 	 */
 	public function setUp() {
 		parent::setUp();
-		$this->minuteRepository = $this->objectManager->get('Beech\Minutes\Domain\Repository\MinuteRepository');
+		$this->minuteRepository = $this->objectManager->get('Beech\Minute\Domain\Repository\MinuteRepository');
 		$this->minuteRepository->injectDocumentManager($this->documentManager);
 		$this->personRepository = $this->objectManager->get('Beech\Party\Domain\Repository\PersonRepository');
 	}
@@ -63,8 +63,8 @@ class MinuteTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFunctionalT
 
 		$this->documentManager->flush();
 
-		$persistedMinutes = $this->minuteRepository->findAll();
-		$this->assertEquals($minute, $persistedMinutes[0]);
+		$persistedMinute = $this->minuteRepository->findAll();
+		$this->assertEquals($minute, $persistedMinute[0]);
 
 			// Add another minute to ensure the ManyToOne relation is correct
 		$anotherMinute = new Minute();

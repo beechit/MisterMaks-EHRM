@@ -2,9 +2,9 @@ Famelo:
   Scaff:
     modules:
       minutes:
-        label: 'Minutes'
+        label: 'Minute'
         arguments:
-          @package: 'Beech.Minutes'
+          @package: 'Beech.Minute'
           @controller: 'Management\Minute'
           @action: 'list'
 

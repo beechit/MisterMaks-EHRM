@@ -1,5 +1,5 @@
 <?php
-namespace Beech\Minutes\Domain\Model;
+namespace Beech\Minute\Domain\Model;
 
 /*
  * This source file is proprietary property of Beech Applications B.V.
@@ -33,6 +33,15 @@ class Minute extends \Beech\Ehrm\Domain\Model\Document {
 	 * @Flow\Transient
 	 */
 	protected $securityContext;
+
+	/**
+	 * The Abstractparty
+	 *
+	 * @var \TYPO3\Party\Domain\Model\AbstractParty
+	 * @ODM\Field(type="mixed")
+	 * @ODM\Index
+	 */
+	protected $party;
 
 	/**
 	 * The person who is subject of this Minute

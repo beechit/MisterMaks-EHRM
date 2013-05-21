@@ -1,11 +1,8 @@
-'Beech.Minutes.Domain.Model.Minute':
+'Beech.Minute.Domain.Model.Minute':
   properties:
-    'personId':
-      label: 'Person ID'
-      type: 'Beech\Party\Domain\Model\Person'
-    'departmentId':
-      label: 'Department id'
-      type: 'Beech\Party\Domain\Model\Company'
+    'party':
+      items:
+        type: 'TYPO3\Party\Domain\Model\AbstractParty'
     'minuteType':
       label: 'minuteType'
       options:
