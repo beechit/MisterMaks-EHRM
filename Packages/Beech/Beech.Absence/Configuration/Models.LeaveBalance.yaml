@@ -1,12 +1,7 @@
 'Beech.Absence.Domain.Model.LeaveBalance':
   properties:
-    'subjectId':
-      label: 'Subject id'
-      type: 'Beech\Party\Domain\Model\Person'
-      validation:
-    'departmentId':
-      label: 'departmentId'
-      type: 'Beech\Party\Domain\Model\Company'
+    'party':
+      type: 'TYPO3\Party\Domain\Model\AbstractParty'
     'leaveBalance':
       items:
         'leaveBalanceYear':

@@ -1,5 +1,7 @@
 'Beech.Absence.Domain.Model.Absence':
   properties:
+    'party':
+      type: 'TYPO3\Party\Domain\Model\AbstractParty'
     'absenceArrangement':
       type: 'Beech\Absence\Domain\Model\AbsenseArrangement'
     'absenceType':
