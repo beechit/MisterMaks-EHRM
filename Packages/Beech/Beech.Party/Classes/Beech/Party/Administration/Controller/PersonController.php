@@ -70,6 +70,13 @@ class PersonController extends \Beech\Ehrm\Controller\AbstractManagementControll
 	protected $licenceRepository;
 
 	/**
+	 * @var \Beech\Absence\Domain\Repository\AbsenceRepository
+	 * @Flow\Inject
+	 */
+	protected $absenceRepository;
+
+
+	/**
 	 * Shows a list of persons
 	 *
 	 * @return void
@@ -117,6 +124,8 @@ class PersonController extends \Beech\Ehrm\Controller\AbstractManagementControll
 		$this->view->assign('assets', $assets);
 		$licences = $this->licenceRepository->findByParty($identifier);
 		$this->view->assign('licences', $licences);
+		$absences = $this->absenceRepository->findByParty($identifier);
+		$this->view->assign('absences', $absences);
 	}
 
 	/**
@@ -371,38 +380,38 @@ class PersonController extends \Beech\Ehrm\Controller\AbstractManagementControll
 	}
 
 	/**
-	 * @param \Beech\Party\Domain\Model\Licence $licence A new licence to add
+	 * @param \Beech\Absence\Domain\Model\Absence $absence A absence to add
 	 *
 	 * @return void
 	 */
-	public function addLicenceAction(\Beech\Party\Domain\Model\Licence $licence) {
-		$licence->setParty($this->persistenceManager->getIdentifierByObject($licence->getParty()));
-		$this->licenceRepository->add($licence);
+	public function addAbsenceAction(\Beech\Absence\Domain\Model\Absence $absence) {
+		$absence->setParty($this->persistenceManager->getIdentifierByObject($absence->getParty()));
+		$this->absenceRepository->add($absence);
 		$this->addFlashMessage('Added.');
-		$this->redirect('edit', NULL, NULL, array('person' => $licence->getParty()));
+		$this->redirect('edit', NULL, NULL, array('person' => $absence->getParty()));
 	}
 
 	/**
-	 * @param \Beech\Party\Domain\Model\Licence $licence A licence to update
+	 * @param \Beech\Absence\Domain\Model\Absence $absence A absence to update
 	 *
 	 * @return void
 	 */
-	public function updateLicenceAction(\Beech\Party\Domain\Model\Licence $licence) {
-		$licence->setParty($this->persistenceManager->getIdentifierByObject($licence->getParty()));
-		$this->licenceRepository->update($licence);
+	public function updateAbsenceAction(\Beech\Absence\Domain\Model\Absence $absence) {
+		$absence->setParty($this->persistenceManager->getIdentifierByObject($absence->getParty()));
+		$this->licenceRepository->update($absence);
 		$this->addFlashMessage('Updated.');
-		$this->redirect('edit', NULL, NULL, array('person' => $licence->getParty()));
+		$this->redirect('edit', NULL, NULL, array('person' => $absence->getParty()));
 	}
 
 	/**
-	 * @param \Beech\Party\Domain\Model\Licence $licence A licence to remove
+	 * @param \Beech\Absence\Domain\Model\Absence $absence A absence to remove
 	 *
 	 * @return void
 	 */
-	public function removeLicenceAction(\Beech\Party\Domain\Model\Licence $licence) {
-		$person = $licence->getParty();
-		$licence->setParty(NULL);
-		$this->licenceRepository->update($licence);
+	public function removeAbsenceAction(\Beech\Absence\Domain\Model\Absence $absence) {
+		$person = $absence->getParty();
+		$absence->setParty(NULL);
+		$this->absenceRepository->update($absence);
 		$this->addFlashMessage('Removed.');
 		$this->redirect('edit', NULL, NULL, array('person' => $person));
 	}

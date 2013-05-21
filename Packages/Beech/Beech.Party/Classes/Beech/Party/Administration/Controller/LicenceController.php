@@ -8,7 +8,7 @@ namespace Beech\Party\Administration\Controller;
  */
 
 use TYPO3\Flow\Annotations as Flow;
-use Beech\Party\Domain\Model\ElectronicAddress as ElectronicAddress;
+use Beech\Party\Domain\Model\Licence as Licence;
 
 /**
  * Licence controller for the Beech.Party package
