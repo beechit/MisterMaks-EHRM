@@ -24,6 +24,15 @@ class Wage extends \Beech\Ehrm\Domain\Model\Document {
 	const TYPE_DAILY = 'daily';
 
 	/**
+	 * The SalaryScale
+	 *
+	 * @var \Beech\CLA\Domain\Model\SalaryScale
+	 * @ODM\Field(type="mixed")
+	 * @ODM\Index
+	 */
+	protected $salaryScale;
+
+	/**
 	 * The amount
 	 *
 	 * @var integer
