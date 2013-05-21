@@ -52,7 +52,7 @@
               - 'other'
         -
           'categoryName': 'minutes'
-          label: 'Minutes'
+          label: 'Minute'
           entity:
           options:
             values:

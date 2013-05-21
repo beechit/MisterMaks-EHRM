@@ -1,14 +1,7 @@
 'Beech.Document.Domain.Model.Document':
   properties:
-    'personId':
-      label: 'Person ID'
-      type: 'Beech\Party\Domain\Person'
-    'companyId':
-      label: 'Company ID'
-      type: 'Beech\Party\Domain\Company'
-    'departmentId':
-      label: 'Department ID'
-      type: 'Beech\party\Domain\Company'
+    'party':
+      type: 'TYPO3\Party\Domain\Model\AbstractParty'
     'documentCategory':
       label: 'Category'
       type: 'Beech\Document\Domain\Model\DocumentCategory'
