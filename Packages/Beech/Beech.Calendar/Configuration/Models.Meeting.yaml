@@ -89,7 +89,7 @@
     'relations':
       items:
         'minutesId':
-          label: 'Minutes id'
+          label: 'Minute id'
           validation:
             -
               type: 'StringLength'
