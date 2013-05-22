@@ -97,13 +97,13 @@
 		</f:form>
 
 		<f:for each="{phoneNumbers}" as="phoneNumber">
-			<f:form action="updatePhoneNumber" object="{phoneNumber}" name="phoneNumber" class="form-horizontal well">
+			<f:form action="update" controller="PhoneNumber" object="{phoneNumber}" name="phoneNumber" class="form-horizontal well">
 				Update:
 				<f:form.hidden property="id"/>
 				<f:render partial="Forms/PhoneNumber" arguments="{person: person}"/>
 				<f:form.submit value="{f:translate(id: 'action.update')}"/>
 			</f:form>
-			<f:form action="removePhoneNumber" object="{phoneNumber}" name="phoneNumber" class="form-horizontal well">
+			<f:form action="remove" controller="PhoneNumber" object="{phoneNumber}" name="phoneNumber" class="form-horizontal well">
 				Delete:
 				<f:form.hidden property="id"/>
 				<f:form.hidden property="party" value="{person}"/>
@@ -111,7 +111,7 @@
 			</f:form>
 		</f:for>
 
-		<f:form action="addPhoneNumber" object="{phoneNumber}" name="phoneNumber" class="form-horizontal well">
+		<f:form action="add" controller="PhoneNumber" object="{phoneNumber}" name="phoneNumber" class="form-horizontal well">
 			<f:render partial="Forms/PhoneNumber" arguments="{person: person}"/>
 			<div class="form-actions">
 				<f:form.submit value="{f:translate(id: 'action.create')}"/>

@@ -194,44 +194,6 @@ class PersonController extends \Beech\Ehrm\Controller\AbstractManagementControll
 	}
 
 	/**
-	 * @param \Beech\Party\Domain\Model\PhoneNumber $phoneNumber A new phoneNumber to add
-	 *
-	 * @return void
-	 */
-	public function addPhoneNumberAction(\Beech\Party\Domain\Model\PhoneNumber $phoneNumber) {
-		$phoneNumber->setParty($this->persistenceManager->getIdentifierByObject($phoneNumber->getParty()));
-		$this->phoneNumberRepository->add($phoneNumber);
-		$this->addFlashMessage('Added.');
-		$this->redirect('edit', NULL, NULL, array('person' => $phoneNumber->getParty()));
-	}
-
-	/**
-	 * @param \Beech\Party\Domain\Model\PhoneNumber $phoneNumber A  phoneNumber to update
-	 *
-	 * @return void
-	 */
-	public function updatePhoneNumberAction(\Beech\Party\Domain\Model\PhoneNumber $phoneNumber) {
-		$phoneNumber->setParty($this->persistenceManager->getIdentifierByObject($phoneNumber->getParty()));
-		$this->phoneNumberRepository->update($phoneNumber);
-		$this->addFlashMessage('Updated.');
-		$this->redirect('edit', NULL, NULL, array('person' => $phoneNumber->getParty()));
-	}
-
-
-	/**
-	 * @param \Beech\Party\Domain\Model\PhoneNumber $phoneNumber A new phoneNumber to remove
-	 *
-	 * @return void
-	 */
-	public function removePhoneNumberAction(\Beech\Party\Domain\Model\PhoneNumber $phoneNumber) {
-		$person = $phoneNumber->getParty();
-		$phoneNumber->setParty(NULL);
-		$this->phoneNumberRepository->update($phoneNumber);
-		$this->addFlashMessage('Removed.');
-		$this->redirect('edit', NULL, NULL, array('person' => $person));
-	}
-
-	/**
 	* @param \Beech\Party\Domain\Model\ElectronicAddress $electronicAddress A new electronicAddress to add
 	*
 	* @return void
