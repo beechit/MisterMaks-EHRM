@@ -21,10 +21,11 @@
 						id = (signal.id !== "undefined" ? signal.id : "");
 					}
 					switch(type) {
-						case 'Task':
+						case 'BeechTaskDomainModelTask':
+							console.log('task ',id)
 							if(id) {
 								var _task = App.BeechTaskDomainModelTask.find(id);
-								if(_task.isLoaded && !_task.isLoading) _task.reload();
+								if(_task._data) _task.reload();
 							}
 							App.BeechTaskDomainModelPriority.find();
 							break;

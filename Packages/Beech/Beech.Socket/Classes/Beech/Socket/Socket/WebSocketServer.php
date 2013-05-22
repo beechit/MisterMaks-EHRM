@@ -1,16 +1,17 @@
 <?php
 namespace Beech\Socket\Socket;
 
-/*                                                                        *
- * Copyright (c) 2013 Robert Lemke and Beech Applications B.V.            *
- *                                                                        *
- * This is free software; you can redistribute it and/or modify it under  *
- * the terms of the MIT license.                                          *
- *                                                                        */
+	/*                                                                        *
+	 * Copyright (c) 2013 Robert Lemke and Beech Applications B.V.            *
+	 *                                                                        *
+	 * This is free software; you can redistribute it and/or modify it under  *
+	 * the terms of the MIT license.                                          *
+	 *                                                                        */
 
 /**
  * A web socket server which supports features defined in RFC 6455
  */
+use Symfony\Component\Finder\Tests\FakeAdapter\FailingAdapter;
 use TYPO3\Flow\Http\Headers;
 use TYPO3\Flow\Http\Request;
 use TYPO3\Flow\Http\Response;
@@ -41,7 +42,7 @@ class WebSocketServer extends Server {
 	public function handleConnection($socketStream) {
 		stream_set_blocking($socketStream, 0);
 		$connection = new Connection($socketStream, $this->loop);
-		$connection->once('data', function($data) use($connection) {
+		$connection->once('data', function ($data) use ($connection) {
 			$request = self::createRequestFromRaw($data);
 			$this->handshake($connection, $request);
 		});
@@ -56,18 +57,45 @@ class WebSocketServer extends Server {
 	 * @return boolean
 	 */
 	protected function handshake(Connection $connection, Request $request) {
+
+		// serverside request is handled differently
+		if ($request->hasHeader('Server-Side-Command')) {
+
+			if ($connection->getRemoteAddress() != '127.0.0.1') {
+				$this->logger->log('WebSocket handshake failed: Server-Side-Command is only availeble for localhost', LOG_INFO);
+
+				// end connection
+				$this->emit('endconnection', $connection);
+				return FALSE;
+
+			} else {
+
+				$this->logger->log('Server WebSocket handshake was successful', LOG_DEBUG);
+
+				$this->emit('connected', $connection);
+
+				// if content available treat this as normal send data
+				if ($request->getContent()) {
+					$connection->emit('data', $request->getContent(), $connection);
+				}
+				return TRUE;
+			}
+		}
+
 		if (!$request->hasHeader('Sec-WebSocket-Version')) {
 			$this->logger->log('WebSocket handshake failed: the client does not support WebSocket', LOG_INFO);
+			$this->emit('endconnection', $connection);
+			return FALSE;
 		}
 
 		$version = (integer)$request->getHeader('Sec-WebSocket-Version');
 		if ($version !== 13) {
 			$this->logger->log(sprintf('WebSocket hanshake failed: version %s is not supported by this library', $version), LOG_DEBUG);
+			$this->emit('endconnection', $connection);
+			return FALSE;
 		}
 
 		$acceptKey = base64_encode(sha1($request->getHeader('Sec-WebSocket-Key') . self::HANDSHAKE_GUID, TRUE));
-
-		$content = json_encode(array('notifications' => array(array('message' => 'Welcome!'))));
 
 		$response = new Response();
 		$response->setStatus(101);
@@ -75,12 +103,11 @@ class WebSocketServer extends Server {
 		$response->setHeader('Upgrade', 'websocket');
 		$response->setHeader('Connection', 'Upgrade');
 		$response->setHeader('Sec-WebSocket-Accept', $acceptKey);
-		$response->setContent(self::encode($content));
 
 		$connection->write($this->getAsRaw($response));
 
 		$this->logger->log(sprintf('WebSocket handshake with "%s" was successful', $request->getHeader('Origin')), LOG_DEBUG);
-		$this->emit('handshake', $connection);
+		$this->emit('connected', $connection);
 		return TRUE;
 	}
 
@@ -115,23 +142,68 @@ class WebSocketServer extends Server {
 	public static function unmask($payload) {
 		$length = ord($payload[1]) & 127;
 
-		if ($length == 126) {
-			$masks = substr($payload, 4, 4);
-			$data = substr($payload, 8);
-		} elseif ($length == 127) {
-			$masks = substr($payload, 10, 4);
-			$data = substr($payload, 14);
-		} else {
-			$masks = substr($payload, 2, 4);
-			$data = substr($payload, 6);
-		}
+		$secondByteBinary = sprintf('%08b', ord($payload[1]));
+		$isMasked = ($secondByteBinary[0] == '1') ? TRUE : FALSE;
 
-		$text = '';
-		$dataLength = strlen($data);
-		for ($i = 0; $i < $dataLength; ++$i) {
-			$text .= $data[$i] ^ $masks[$i % 4];
+		// only unmask if data is masked
+		if ($isMasked) {
+
+			if ($length == 126) {
+				$masks = substr($payload, 4, 4);
+				$data = substr($payload, 8);
+			} elseif ($length == 127) {
+				$masks = substr($payload, 10, 4);
+				$data = substr($payload, 14);
+			} else {
+				$masks = substr($payload, 2, 4);
+				$data = substr($payload, 6);
+			}
+
+			$text = '';
+			$dataLength = strlen($data);
+			for ($i = 0; $i < $dataLength; ++$i) {
+				$text .= $data[$i] ^ $masks[$i % 4];
+			}
+		} else {
+			$text = $payload;
 		}
 		return $text;
+	}
+
+	/**
+	 * Decode received command
+	 *
+	 * @param string $data
+	 * @return array(command,params)
+	 */
+	public static function decodeCommand($data) {
+
+		$data = self::unmask($data);
+		$tmp = explode(':', $data, 2);
+
+		$command = $tmp[0];
+		$params = isset($tmp[1]) ? $tmp[1] : NULL;
+
+		if ($params) {
+			if (in_array($params, array('true', 'false', 'null'))) {
+				$params = json_decode($params);
+			} elseif (in_array(substr($params, 0, 1), array('[', '{'))) {
+				$params = json_decode($params);
+			}
+		}
+
+		return array($command, $params);
+	}
+
+	/**
+	 * Encode command + params
+	 *
+	 * @param $command
+	 * @param array/string $params
+	 * @return string
+	 */
+	public static function encodeServersideCommand($command, $params = NULL) {
+		return $command . ':' . json_encode($params);
 	}
 
 	/**
@@ -172,9 +244,9 @@ class WebSocketServer extends Server {
 		}
 		$content = implode(chr(10), $contentLines);
 
-			// FIXME: Flow\Http\Request should support setHeaders(), so move that to Message
-			// $request->setHeaders($headers);
-			// Workaround:
+		// FIXME: Flow\Http\Request should support setHeaders(), so move that to Message
+		// $request->setHeaders($headers);
+		// Workaround:
 		foreach ($headers->getAll() as $name => $value) {
 			$request->setHeader($name, $value);
 		}

@@ -41,6 +41,18 @@ class ApplicationController extends AbstractController {
 		$this->flashMessageContainer->flush();
 	}
 
+	/**
+	 * Try to startup the websocket server when this isn't running
+	 *
+	 * @return void
+	 */
+	public function pingWebSocketServerAction() {
+
+		\Beech\Socket\Service\SendCommands::startServer();
+
+		throw new \TYPO3\Flow\Mvc\Exception\StopActionException();
+	}
+
 }
 
 ?>

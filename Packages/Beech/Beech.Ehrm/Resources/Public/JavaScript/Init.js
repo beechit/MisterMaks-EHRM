@@ -9,12 +9,17 @@ var App;
 		Service: {},
 		Socket: null,
 		SocketMessageListeners: [],
-
+		SocketConnectAttempts: 0,
+		SocketMaxConnectAttempts: 100,
+		SocketFirstConnectAttempt: true,
 		initializeWebSocket: function() {
-			this.Socket = $.gracefulWebSocket('ws://127.0.0.1:8000/', { autoReconnect: true });
+			this.SocketConnectAttempts++;
+			this.Socket = $.gracefulWebSocket('ws://'+document.domain+':8000/');
 			this.Socket.onopen = function() {
-				this.send($.cookie('TYPO3_Flow_Session'));
-				console.log('Connection successfully opened (readyState ' + this.readyState + ')');
+				this.send('auth:'+$.cookie('TYPO3_Flow_Session'));
+				console.log('Connection successfully opened (readyState ' + this.readyState + ') attempts: '+App.SocketConnectAttempts);
+				App.SocketConnectAttempts = 0;
+				App.SocketFirstConnectAttempt = false;
 			};
 			this.Socket.onclose = function() {
 				if(this.readyState === 2) {
@@ -22,7 +27,19 @@ var App;
 						'Closing... The connection is going through the closing handshake (readyState ' + this.readyState + ')'
 					);
 				} else if(this.readyState === 3) {
-					App.Service.Notification.showError('Connection to the server has been lost or could not be opened.');
+					if(App.SocketFirstConnectAttempt) {
+						// ping websocketserver when we dont get a response at first attempt
+						$.get('/Beech.ehrm/application/pingWebSocketServer');
+						App.SocketFirstConnectAttempt = false;
+					}
+					if(App.SocketConnectAttempts == 0) {
+						App.Service.Notification.showWarning('Connection to the server has been lost trying to reconnect');
+					}
+					if(App.SocketConnectAttempts < App.SocketMaxConnectAttempts) {
+						setTimeout('App.initializeWebSocket()', 1000);
+					} else {
+						App.Service.Notification.showError('Connection to the server has been lost or could not be opened');
+					}
 				} else {
 					console.log('Connection closed... (unhandled readyState ' + this.readyState + ')');
 				}

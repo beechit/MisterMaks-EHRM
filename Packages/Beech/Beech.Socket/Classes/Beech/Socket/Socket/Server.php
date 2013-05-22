@@ -28,12 +28,12 @@ class Server {
 	/**
 	 * @var string
 	 */
-	protected $host;
+	protected $host = '127.0.0.1';
 
 	/**
 	 * @var integer
 	 */
-	protected $port;
+	protected $port = 8000;
 
 	/**
 	 * @var resource
@@ -55,8 +55,16 @@ class Server {
 	 * @throws \Beech\Socket\Exception
 	 * @return void
 	 */
-	public function listen($port, $host = '127.0.0.1') {
-		$socketUri = sprintf('tcp://%s:%s', $host, $port);
+	public function listen($port = NULL, $host = NULL) {
+
+		if($port !== NULL) {
+			$this->port = $port;
+		}
+		if($host !== NULL) {
+			$this->host = $host;
+		}
+
+		$socketUri = sprintf('tcp://%s:%s', $this->host, $this->port);
 		$this->serverSocketStream = @stream_socket_server($socketUri, $errorNumber, $errorMessage);
 		if ($this->serverSocketStream === FALSE) {
 			throw new \Beech\Socket\Exception(sprintf('Could not bind to socket at %s', $socketUri), 1359994007);
@@ -90,6 +98,41 @@ class Server {
 		$this->emit('connection', $connection);
 	}
 
+	/**
+	 * Set host
+	 *
+	 * @param string $host
+	 */
+	public function setHost($host) {
+		$this->host = $host;
+	}
+
+	/**
+	 * Get host
+	 *
+	 * @return string
+	 */
+	public function getHost() {
+		return $this->host;
+	}
+
+	/**
+	 * Set port
+	 *
+	 * @param int $port
+	 */
+	public function setPort($port) {
+		$this->port = $port;
+	}
+
+	/**
+	 * Get port
+	 *
+	 * @return int
+	 */
+	public function getPort() {
+		return $this->port;
+	}
 }
 
 ?>

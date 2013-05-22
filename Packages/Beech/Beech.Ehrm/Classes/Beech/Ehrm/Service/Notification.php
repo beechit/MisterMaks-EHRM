@@ -7,6 +7,8 @@ namespace Beech\Ehrm\Service;
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
+use Beech\Socket\Service\SendCommands;
+
 /**
  * Class Notification Service
  *
@@ -28,6 +30,7 @@ class Notification {
 		if($task->getAssignedTo() instanceof \Beech\Party\Domain\Model\Person) {
 
 			$notificationRepository = new \Beech\Ehrm\Domain\Repository\NotificationRepository();
+			$accountIntentifiers = array();
 
 			/** @var $account \TYPO3\Flow\Security\Account */
 			foreach($task->getAssignedTo()->getAccounts() as $account) {
@@ -44,6 +47,13 @@ class Notification {
 
 				$notificationRepository->add($notification);
 				$notificationRepository->flushDocumentManager();
+
+				$accountIntentifiers[] = $account->getAccountIdentifier();
+			}
+
+			// send signals to connected users
+			if(count($accountIntentifiers)) {
+				SendCommands::sendSignal('BeechTaskDomainModelTask:'.$task->getId(), $accountIntentifiers);
 			}
 		}
 	}
@@ -62,6 +72,7 @@ class Notification {
 		if($task->getAssignedTo() instanceof \Beech\Party\Domain\Model\Person) {
 
 			$notificationRepository = new \Beech\Ehrm\Domain\Repository\NotificationRepository();
+			$accountIntentifiers = array();
 
 			/** @var $account \TYPO3\Flow\Security\Account */
 			foreach($task->getAssignedTo()->getAccounts() as $account) {
@@ -78,6 +89,13 @@ class Notification {
 
 				$notificationRepository->add($notification);
 				$notificationRepository->flushDocumentManager();
+
+				$accountIntentifiers[] = $account->getAccountIdentifier();
+			}
+
+			// send signals to connected users
+			if(count($accountIntentifiers)) {
+				SendCommands::sendSignal('BeechTaskDomainModelTask:'.$task->getId(), $accountIntentifiers);
 			}
 		}
 	}
