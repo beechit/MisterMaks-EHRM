@@ -7,7 +7,8 @@
 	};
 
 	function calcPos(letter, size) {
-		return -(letter.toLowerCase().charCodeAt(0) - 97) * size;
+		if (letter !== undefined)
+			return -(letter.toLowerCase().charCodeAt(0) - 97) * size;
 	}
 
 	$.fn.setFlagPosition = function (iso, size) {
@@ -17,13 +18,19 @@
 			[calcPos(iso[1], size.w), 'px ', calcPos(iso[0], size.h), 'px'].join(''));
 	};
 
-	$(function () {
-		// on load:
-		$('.countrySelect').on('change', function() {
-			$(this).parent().find('.country i').setFlagPosition($(this).val());
-		});
-			// set default value to NL
-		$('.countrySelect').val('NL').change();
+	$.fn.extend({
+		countrySelect: function() {
+			return this.each(function(input_field) {
+				var $this;
+				$this = $(this);
+				// on load:
+				$this.on('change', function() {
+					$(this).parent().find('.country i').setFlagPosition($(this).val());
+				});
+				// set default value to NL
+				$this.val('NL').change();
+			});
+		}
 	});
-
+	$('.countrySelect').countrySelect();
 }).call(this);

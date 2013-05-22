@@ -68,6 +68,9 @@
 					})
 					.focus();
 			});
+			$moduleContainer.find('.countrySelect').chosen();
+			$moduleContainer.find('.countrySelect').countrySelect();
+			//applyCountrySelect();
 		},
 
 		prepareUrl: function (object) {

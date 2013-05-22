@@ -1,4 +1,4 @@
-<div class="tab-pane active">
+<div class="tab-pane active">{namespace ehrm=Beech\Ehrm\ViewHelpers}
 	<div class="control-group">
 		<label class="control-label" for="initials">
 			<f:translate id="Person name">Person name</f:translate>
@@ -96,8 +96,12 @@
 		</div>
 		<div class="control-group">
 			<div class="controls controls">
-				<f:form.textfield property="nationality" id="nationality" class="span4"
-				                  placeholder="{f:translate(id:'Nationality')}"/>
+				<ehrm:form.countrySelect property="country" id="country" class="countrySelect span6"/>
+			</div>
+		</div>
+		<div class="control-group">
+			<div class="controls controls">
+				<ehrm:form.nationalitySelect property="nationality" id="nationality" class="countrySelect span6"/>
 			</div>
 		</div>
 		<div class="control-group">
