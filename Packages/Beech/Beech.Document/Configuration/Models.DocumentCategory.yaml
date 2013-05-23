@@ -1,108 +1,108 @@
 #todo make this generic and move the values to a resource document.
 'Beech.Document.Domain.Model.DocumentCategory':
-  properties:
-    'documentCategory':
-      items:
-        -
-          'categoryName': 'identification'
-            label: 'identification'
-            entity: 'person'
-          documentType:
-            values:
-              - 'passport'
-              - 'idcard'
-              - 'validationReport'
-        -
-          'categoryName': 'permits'
-            label: 'Permit'
-            entity: 'person'
-          documentType:
-            values:
-             - 'workpermit'
-             - 'residencePermit'
-        -
-          'categoryName': 'educationalDocuments'
-           label: 'Certificates'
-            entity: 'person'
-          documentType:
-            values:
-              - 'renewableCertificates'
-              - 'permanentCertificates'
-              - 'diploma'
-              - 'certificateOfRegistration'
-              - 'other'
-        -
-          'categoryName': 'jobApplication'
-            label: 'Job application'
-            entity: 'person'
-          documentType:
-            values:
-             - 'resume'
-             - 'letter'
-             - 'interviewNotes'
-             - 'other'
-        -
-          'categoryName': 'documents'
-            label: 'Absence documents'
-            entity: 'person'
-          documentType:
-            values:
-              - 'uwv'
-              - 'arbo'
-              - 'letter'
-              - 'other'
-        -
-          'categoryName': 'minutes'
-            label: 'Minute'
-            entity:
-            options:
-              values:
-                - person
-                - department
-                - company
-          documentType:
-            values:
-              - 'performanceReview'
-              - 'teamMeetings'
-              - 'progressReport'
-              - 'other'
-        -
-          'categoryName': 'contract'
-            label: 'Contract'
-            entity:
-            options: 'person'
-          documentType:
-              values:
-                - 'contract'
-                - 'endOfContract'
-                - 'referenceNote'
-                - 'other'
-        -
-          'categoryName': 'salary'
-            label: 'Salary'
-            entity:
-            options:
-              values:
-                - company
-                - department
-                - person
-          documentType:
-            values:
-              - 'wageDocument'
-              - 'yearReport'
-              - 'wageTaxDeclaration'
-        -
-          'categoryName': 'general'
-            label: 'General'
-            entity:
-            options:
-              values:
-                - company
-                - department
-                - person
-          documentType:
-            values:
-              - 'letters'
-              - 'pictures'
-              - 'report'
-              - 'other'
+#  properties:
+#    'documentCategory':
+#      items:
+#        -
+#          'categoryName': 'identification'
+#            label: 'identification'
+#            entity: 'person'
+#          documentType:
+#            values:
+#              - 'passport'
+#              - 'idcard'
+#              - 'validationReport'
+#        -
+#          'categoryName': 'permits'
+#            label: 'Permit'
+#            entity: 'person'
+#          documentType:
+#            values:
+#             - 'workpermit'
+#             - 'residencePermit'
+#        -
+#          'categoryName': 'educationalDocuments'
+#           label: 'Certificates'
+#            entity: 'person'
+#          documentType:
+#            values:
+#              - 'renewableCertificates'
+#              - 'permanentCertificates'
+#              - 'diploma'
+#              - 'certificateOfRegistration'
+#              - 'other'
+#        -
+#          'categoryName': 'jobApplication'
+#            label: 'Job application'
+#            entity: 'person'
+#          documentType:
+#            values:
+#             - 'resume'
+#             - 'letter'
+#             - 'interviewNotes'
+#             - 'other'
+#        -
+#          'categoryName': 'documents'
+#            label: 'Absence documents'
+#            entity: 'person'
+#          documentType:
+#            values:
+#              - 'uwv'
+#              - 'arbo'
+#              - 'letter'
+#              - 'other'
+#        -
+#          'categoryName': 'minutes'
+#            label: 'Minute'
+#            entity:
+#            options:
+#              values:
+#                - person
+#                - department
+#                - company
+#          documentType:
+#            values:
+#              - 'performanceReview'
+#              - 'teamMeetings'
+#              - 'progressReport'
+#              - 'other'
+#        -
+#          'categoryName': 'contract'
+#            label: 'Contract'
+#            entity:
+#            options: 'person'
+#          documentType:
+#              values:
+#                - 'contract'
+#                - 'endOfContract'
+#                - 'referenceNote'
+#                - 'other'
+#        -
+#          'categoryName': 'salary'
+#            label: 'Salary'
+#            entity:
+#            options:
+#              values:
+#                - company
+#                - department
+#                - person
+#          documentType:
+#            values:
+#              - 'wageDocument'
+#              - 'yearReport'
+#              - 'wageTaxDeclaration'
+#        -
+#          'categoryName': 'general'
+#            label: 'General'
+#            entity:
+#            options:
+#              values:
+#                - company
+#                - department
+#                - person
+#          documentType:
+#            values:
+#              - 'letters'
+#              - 'pictures'
+#              - 'report'
+#              - 'other'
