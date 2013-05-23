@@ -27,8 +27,7 @@
 				$this.on('change', function() {
 					$(this).parent().find('.country i').setFlagPosition($(this).val());
 				});
-				// set default value to NL
-				$this.val('NL').change();
+				$this.change();
 			});
 		}
 	});
