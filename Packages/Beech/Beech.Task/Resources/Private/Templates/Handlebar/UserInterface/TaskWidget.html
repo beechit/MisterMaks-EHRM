@@ -1,28 +1,28 @@
 {namespace mm=Beech\Ehrm\ViewHelpers}
 <h3>Tasks {{#linkTo "BeechTaskTask" class="pull-right" rel="tooltip" data-placement="left" title="Go to all tasks"}}<i class="icon-tasks"></i>{{/linkTo}}</h3>
-<div class="accordion" id="tasklist">
+<div class="accordion boxes" id="tasklist">
 
 {{#if content.length}}
 	{{#each content}}
+	{{#if tasks.length}}
 		<div class="accordion-group">
-			{{#if tasks.length}}
 			<div class="accordion-heading">
 				<a class="accordion-toggle" data-toggle="collapse" data-parent="#tasklist" href="#taskwidget-priority{{unbound id}}">
-					{{label}}
+					{{unbound label}}
 				</a>
 				<span class="badge badge-important">{{tasks.length}}</span>
 			</div>
 			<div id="taskwidget-priority{{unbound id}}" class="accordion-body collapse">
 				<div class="accordion-inner">
 					<ul class="unstyled">
-						{{#each tasks}}
-							<li><a href="/#/tasks/show/{{unbound id}}">{{description}}</a></li>
+						{{#each task in tasks}}
+							<li>{{#linkTo "BeechTaskTask.show" task}}{{task.description}}{{/linkTo}}</li>
 						{{/each}}
 					</ul>
 				</div>
 			</div>
-			{{/if}}
 		</div>
+	{{/if}}
 	{{/each}}
 {{else}}
 	<p><i class="icon-spin icon-spinner muted"></i></p>

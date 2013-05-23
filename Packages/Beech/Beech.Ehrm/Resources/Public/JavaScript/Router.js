@@ -43,10 +43,10 @@
 
 			// Beech.Task
 			this.resource('BeechTaskTask', { path: 'tasks' }, function() {
-				this.route('new', {path: 'new'});
-				this.route('show', {path: 'show/:task%5B__identity%5D'});
-				this.route('edit', {path: 'edit/:task%5B__identity%5D'});
-				this.route('close', {path: 'close/:task%5B__identity%5D'});
+				this.route('new', {path: '/new'});
+				this.route('show', {path: '/show/:task'});
+				this.route('edit', {path: '/edit/:task'});
+				this.route('close', {path: '/close/:task'});
 			});
 		});
 	});

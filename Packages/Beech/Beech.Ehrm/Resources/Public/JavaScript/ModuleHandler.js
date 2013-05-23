@@ -1,6 +1,19 @@
 (function() {
 	'use strict';
 
+	App.ModuleHandlerAjaxController = Ember.Controller.extend({
+		url: '',
+		loadUrl: function(params) {
+			App.ModuleHandler.loadUrl(this.get('url')+params);
+		}
+	});
+
+	App.ModuleHandlerAjaxRoute = App.ModuleRoute.extend({
+		deserialize: function(params){
+			return {params: App.ModuleHandler.prepareUrl(params)}
+		}
+	});
+
 	App.ModuleHandler = Ember.Object.create({
 		loadingFlag: false,
 		init: function() {
@@ -78,8 +91,8 @@
 			if (object != '') {
 				var first = true;
 				for (var key in object) {
-
 					urlParams += (first ? '?' : '&') + key + "=" + object[key];
+					first = false;
 				}
 			}
 			return urlParams;

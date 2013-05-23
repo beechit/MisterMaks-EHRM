@@ -1,12 +1,13 @@
 (function() {
 	'use strict';
 
-	App.TaskModuleRoute = App.ModuleRoute.extend({
-		deserialize: function(params){
-			return {params: App.ModuleHandler.prepareUrl(params)}
-		},
+	App.TaskModuleRoute = App.ModuleHandlerAjaxRoute.extend({
 		setupController: function(controller, model) {
-			controller.loadUrl(model.params);
+			var params = model.params;
+			if(!params && model.id) {
+				params = '?task='+model.id;
+			}
+			controller.loadUrl(params);
 		}
 	});
 	App.BeechTaskTaskIndexRoute = App.TaskModuleRoute.extend();
