@@ -2,8 +2,8 @@
 	<fieldset>
 		<div class="control-group">
 			<div class="controls controls">
-				<f:form.textfield property="type" id="type" class="span6"
-				                  placeholder="{f:translate(id:'Education type')}" />
+
+				<ehrm:optionSelect property="type" id="type" model="Beech.Party:Education" placeholder="{f:translate(value: 'Address description', locale: 'nl_NL')}..." class="span6"/>
 				<f:form.textfield property="nameInstitute" id="nameInstitute" class="span5"
 				                  placeholder="{f:translate(id:'Name of institute')}" />
 			</div>

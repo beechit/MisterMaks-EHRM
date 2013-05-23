@@ -1,4 +1,4 @@
-<h4>Address</h4>
+<h4>Address</h4>{namespace ehrm=Beech\Ehrm\ViewHelpers}
 <div class="control-group">
 	<div class="controls controls-row">
 		<f:form.textfield property="streetName" id="streetAddress" class="span6"
@@ -7,7 +7,6 @@
 		                  placeholder="{f:translate(id:'Nr')}"/>
 		<f:form.textfield property="houseNumberAddition" id="addition" class="span1"
 		                  placeholder="{f:translate(id:'Add')}"/>
-
 	</div>
 </div>
 <div class="control-group">
@@ -24,8 +23,7 @@
 </div>
 <div class="control-group">
 	<div class="controls">
-		<f:form.textfield property="country" id="country" class="span6"
-		                  placeholder="{f:translate(id:'Country')}"/>
+		<ehrm:form.countrySelect property="country" id="country" class="countrySelect span6"/>
 	</div>
 </div>
 
