@@ -81,7 +81,7 @@
 					})
 					.focus();
 			});
-			$moduleContainer.find('.countrySelect').chosen();
+			$moduleContainer.find('select').chosen();
 			$moduleContainer.find('.countrySelect').countrySelect();
 			//applyCountrySelect();
 		},

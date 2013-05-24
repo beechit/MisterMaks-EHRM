@@ -99,8 +99,11 @@ class DatePickerViewHelper extends \TYPO3\Fluid\ViewHelpers\Form\AbstractFormFie
 		if ($date instanceof \DateTime) {
 			return $date;
 		}
+
 		if ($date !== NULL) {
+			$date = array('date' => $date, 'dateFormat' => 'Y-m-d H:i:s');
 			$date = $this->propertyMapper->convert($date, 'DateTime');
+
 			if (!$date instanceof \DateTime) {
 				return NULL;
 			}
