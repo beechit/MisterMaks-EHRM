@@ -28,13 +28,8 @@
           - 'doesNotApply'
       defaultValue: 'doesNotApply'
 # in entity document we store document id's of entities that are stored, in way we only have to use one status connections to multiple entities.
-    'entityDocument':
-      label: 'entityDocument ID'
-# todo remove link to contract and implement this in entity document
-    'contract':
-      label: : 'contractId'
-      type: 'Beech\CLA\Domain\Model\Contract'
-# todo: implement workflow status ??
+    'entityIdentifier':
+      label: 'entityID'
     'creationDate':
       defaultValue: 'now'
       label: 'creation date'
