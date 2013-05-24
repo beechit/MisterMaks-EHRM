@@ -149,7 +149,7 @@ to upload a valid id or passport in the system.
 this task should have priority high and has a open window of 2 days and is not closable
 after this the priority gets raised.
 
-After not forfilling this task for 2 more days then a new task is created for the manager of the manager.
+After not fulfilling this task for 2 more days then a new task is created for the manager of the manager.
 saying that person got hired without valid passport!!!
 
 
@@ -163,8 +163,8 @@ after 2 days a task is created for the manager of this person.
 (first we should use contract creator, because hierarchy is not implemented yet).
 this task is not closable. and should say something Set status of (persons) contract.
 
-when status is set to accepted wordflow IV starts
-when status is set to rejected or other statusses the task will be automaticly closed.
+when status is set to accepted workflow IV starts
+when status is set to rejected or other states the task will be automatically closed.
 
 
 New contract workflow IV
@@ -182,7 +182,7 @@ to upload the signed version in the system en s
 this task should have priority high and has a open window of 2 days and is not closable
 after this the priority gets raised.
 
-After not forfilling this task for 2 more days then a new task is created for the manager of the manager.
+After not fulfilling this task for 2 more days then a new task is created for the manager of the manager.
 saying that person got hired without valid passport!!!
 
 
@@ -191,24 +191,24 @@ New contract workflow IV
 
 Preconditions:
 a new contract was created
-No or invalid workpermit was added and uploaded
+No or invalid work permit was added and uploaded
 
-startdate of contract is a week before start or >
-the nationality of the person is one that needs a workpermit. (in nationality resource workpermit=TRUE)
-meta info of workpermit matches contract.
+start date of contract is a week before start or >
+the nationality of the person is one that needs a work permit. (in nationality resource work permit=TRUE)
+meta info of work permit matches contract.
 
 
-create a non closable task to upload the workpermit in the system. (high priority)
+create a non closable task to upload the work permit in the system. (high priority)
 
-if startdate has passed already then highest priority and task for manager of manager.....
+if start date has passed already then highest priority and task for manager of manager.....
 
 
 
 future features
 ---------------
 
-assign task to other people in organisation to do workflows
+assign task to other people in organisation todo a workflow (delegate)
 
-create workflows on entities.
+create workflow on entities.
 like if a new person is registered in the system en create a task (with workflow for a person to create the contract for this
 new person.
