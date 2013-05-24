@@ -27,14 +27,6 @@
           - 'other'
           - 'doesNotApply'
       defaultValue: 'doesNotApply'
-    'remark':
-      label: 'remark'
-      validation:
-        -
-          type: 'Text'
-    'party':
-      items:
-        type: 'TYPO3\Party\Domain\Model\AbstractParty'
 # in entity document we store document id's of entities that are stored, in way we only have to use one status connections to multiple entities.
     'entityDocument':
       label: 'entityDocument ID'
