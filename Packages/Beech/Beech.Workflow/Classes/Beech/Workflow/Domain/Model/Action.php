@@ -35,6 +35,21 @@ class Action extends \Beech\Ehrm\Domain\Model\Document implements \Beech\Workflo
 	protected $expirationDateTime;
 
 	/**
+	 * Description of Action
+	 * @var string
+	 */
+	protected $description;
+
+	/**
+	 * Workflow name
+	 *
+	 * @var string
+	 * @ODM\Field(type="string")
+	 * @ODM\Index
+	 */
+	protected $workflow;
+
+	/**
 	 * @var integer
 	 * @ODM\Field(type="integer")
 	 * @ODM\Index
