@@ -1,0 +1,33 @@
+'Beech.Communication.Domain.Model.Email':
+  properties:
+    'to':
+      label: 'send to'
+      type: 'Beech\Party\Domain\Model\Person'
+    'from':
+      label: 'recieved from'
+      validation:
+        -
+          type: 'NotEmpty'
+        -
+          type: 'StringLength'
+          options:
+            maximum: 35
+    'subject':
+      label: 'Subject of email'
+    'template':
+      label: 'Used template'
+      type: 'Beech\Communication\Domain\Model\EmailTemplate'
+    'creationDate':
+      defaultValue: 'now'
+      label: 'creation date'
+      type: 'DateTime'
+      validation:
+        -
+          type: 'DateTimeRange'
+          options:
+            earliestDate: 20130101
+            latestDate: 20200101
+    'createdBy':
+      defaultValue: 'currentUser'
+      label: 'Created by'
+      type: 'Beech\Party\Domain\Model\Person'
