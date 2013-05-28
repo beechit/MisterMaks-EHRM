@@ -11,7 +11,7 @@ use TYPO3\Flow\Annotations as Flow,
 	Doctrine\ODM\CouchDB\Mapping\Annotations as ODM;
 
 /**
- * A Hierarchy
+ * A JobPostition
  *
  * @ODM\Document(indexed=true)
  */
@@ -30,6 +30,20 @@ class Hierarchy extends \Beech\Ehrm\Domain\Model\Document {
 	 * @ODM\Index
 	 */
 	protected $department;
+
+	/**
+	 * @var \Beech\Party\Domain\Model\Group
+	 * @ODM\Field(type="mixed")
+	 * @ODM\Index
+	 */
+	protected $group;
+
+	/**
+	 * @var \Beech\Ehrm\Domain\Model\JobPosition
+	 * @ODM\Field(type="mixed")
+	 * @ODM\Index
+	 */
+	protected $JobPosition;
 
 }
 
