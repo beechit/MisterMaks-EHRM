@@ -3,6 +3,9 @@
 	<div class="controls controls">
 		<f:form.textfield property="accountType" id="accountType" class="span6"
                           placeholder="{f:translate(id:'Account Type')}"/>
+
+		<ehrm:optionSelect property="type" id="type" model="Beech.Party:BankAccount" placeholder="{f:translate(value: 'Account type, locale: 'nl_NL')}..." class="span6"/>
+
 		<f:form.textfield property="accountNumber" id="title" class="span5"
 		                  placeholder="{f:translate(id:'Account number')}"/>
     </div>

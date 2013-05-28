@@ -1,0 +1,28 @@
+<h4>Licence</h4>{namespace ehrm=Beech\Ehrm\ViewHelpers}
+	<fieldset>
+		<div class="control-group">
+			<div class="controls controls">
+
+				<ehrm:optionSelect property="type" id="type" model="Beech.Party:Licence" placeholder="{f:translate(value: 'Licence description', locale: 'nl_NL')}..." class="span6"/>
+				<f:form.textfield property="name" id="name" class="span5"
+				                  placeholder="{f:translate(id:'Licence name')}" />
+			</div>
+		</div>
+		<div class="control-group">
+			<div class="controls controls">
+				<f:form.textfield property="grantedBy" id="grantedBy" class="span3"
+				                  placeholder="{f:translate(id:'Granted By')} "/>
+			</div>
+			<div class="controls controls-row">
+				<label class="control-label">Start Date</label>
+					<ehrm:form.datePicker id="startDate" property="startDate" class="datepicker" dateFormat="d-m-Y"/>
+				<label class="control-label">Expiration date</label>
+					<ehrm:form.datePicker id="expirationDate" property="expirationDate" class="datepicker" dateFormat="d-m-Y"/>
+			</div>
+			<div class="controls controls-row">
+				.<label class="control-label" for="notify">Notify at expiration ?</label>
+					<f:form.checkbox property="notify" id="notifygraduated" value="1"/>
+			</div>
+		<div>
+		<f:form.hidden property="party" value="{person}"/>
+	</fieldset>

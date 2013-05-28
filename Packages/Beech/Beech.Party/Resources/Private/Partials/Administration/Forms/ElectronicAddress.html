@@ -3,7 +3,7 @@
 	<fieldset>
 		<div class="control-group form-inline">
 			<div class="controls-row">
-				<f:form.textfield property="type" class="span3" placeholder="Type..."/>
+				<ehrm:optionSelect property="type" id="type" model="Beech.Party:ElectronicAddress" placeholder="{f:translate(value: 'Type', locale: 'nl_NL')}..." class="span6"/>
 				<f:form.textfield property="address" class="span5" placeholder="Electronic address..."/>
 				<label class="control-label" for="primary-electronic-address">
 					Primary <f:form.checkbox property="primary" id="primary-electronic-address" value="TRUE"/>
