@@ -44,18 +44,11 @@
     'document':
       label: 'licenceDocument'
       type: 'Beech\Party\Domain\Model\Document'
-    'notification':
+    'notify':
        label: 'notify for expirationdate'
        options:
          - TRUE
          - FALSE
-    'notificationUnit':
-      label: 'Unit of time'
-      options:
-        - day
-        - week
-        - month
-        - year
     'creationDate':
       defaultValue: 'now'
       label: 'creation date'

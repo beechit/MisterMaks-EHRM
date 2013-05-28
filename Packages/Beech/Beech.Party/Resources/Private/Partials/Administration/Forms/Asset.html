@@ -1,8 +1,7 @@
 <h4>Asset</h4>{namespace ehrm=Beech\Ehrm\ViewHelpers}
 	<div class="control-group">
 		<div class="controls controls">
-			<f:form.textfield property="type" id="type" class="type"
-							  placeholder="{f:translate(id:'Asset type')}"/>
+			<ehrm:optionSelect property="type" id="type" model="Beech.Party:Asset" placeholder="{f:translate(value: 'Asset', locale: 'nl_NL')}..." class="span6"/>
 			<f:form.textfield property="name" id="name" class="span6"
 							  placeholder="{f:translate(id:'Asset name')}"/>
 		</div>

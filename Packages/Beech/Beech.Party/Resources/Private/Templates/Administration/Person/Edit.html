@@ -79,38 +79,37 @@
 		</f:form>
 
 		<f:for each="{addresses}" as="address">
-			<f:form action="updateAddress" object="{address}" name="address" class="form-horizontal well">
-				Update:
+			<f:form action="update" controller="Address" object="{address}" name="address" class="form-horizontal well">
 				<f:form.hidden property="id"/>
 				<f:render partial="Forms/Address" arguments="{address: address}"/>
 				<f:form.submit value="{f:translate(id: 'action.update')}"/>
-
 			</f:form>
-		</f:for>
-
-		<f:form action="addAddress" object="{address}" name="address" class="form-horizontal well">
-			Create:
-			<f:render partial="Forms/Address" arguments="{person: person}"/>
-			<div class="form-actions">
-				<f:form.submit value="{f:translate(id: 'action.create')}"/>
-			</div>
+		<f:form action="remove" controller="Address" object="{address}" name="address" class="form-horizontal well">
+			<f:form.hidden property="id"/>
+			<f:form.hidden property="party" value="{person}"/>
+			<f:form.submit value="{f:translate(id: 'action.remove')}"/>
 		</f:form>
+		</f:for>
+			<f:form action="add" controller="Address" object="{address}" name="address" class="form-horizontal well">
+				<f:render partial="Forms/Address" arguments="{person: person}"/>
+				<div class="form-actions">
+					<f:form.submit value="{f:translate(id: 'action.create')}"/>
+				</div>
+			</f:form>
+
 
 		<f:for each="{phoneNumbers}" as="phoneNumber">
 			<f:form action="update" controller="PhoneNumber" object="{phoneNumber}" name="phoneNumber" class="form-horizontal well">
-				Update:
 				<f:form.hidden property="id"/>
 				<f:render partial="Forms/PhoneNumber" arguments="{person: person}"/>
 				<f:form.submit value="{f:translate(id: 'action.update')}"/>
 			</f:form>
 			<f:form action="remove" controller="PhoneNumber" object="{phoneNumber}" name="phoneNumber" class="form-horizontal well">
-				Delete:
 				<f:form.hidden property="id"/>
 				<f:form.hidden property="party" value="{person}"/>
 				<f:form.submit value="{f:translate(id: 'action.remove')}"/>
 			</f:form>
 		</f:for>
-
 		<f:form action="add" controller="PhoneNumber" object="{phoneNumber}" name="phoneNumber" class="form-horizontal well">
 			<f:render partial="Forms/PhoneNumber" arguments="{person: person}"/>
 			<div class="form-actions">
@@ -119,23 +118,21 @@
 		</f:form>
 
 		<f:for each="{electronicAddresses}" as="electronicAddress">
-			<f:form action="updateElectronicAddress" object="{electronicAddress}" name="electronicAddress"
+			<f:form action="update" controller="ElectronicAddress" object="{electronicAddress}" name="electronicAddress"
 					class="form-horizontal well">
-				Update:
 				<f:form.hidden property="id"/>
 				<f:render partial="Forms/ElectronicAddress" arguments="{person: person}"/>
 				<f:form.submit value="{f:translate(id: 'action.update')}"/>
 			</f:form>
-			<f:form action="removeElectronicAddress" object="{electronicAddress}" name="electronicAddress"
+			<f:form action="remove" controller="ElectronicAddress" object="{electronicAddress}" name="electronicAddress"
 					class="form-horizontal well">
-				Delete:
 				<f:form.hidden property="id"/>
 				<f:form.hidden property="party" value="{person}"/>
 				<f:form.submit value="{f:translate(id: 'action.remove')}"/>
 			</f:form>
 		</f:for>
 
-		<f:form action="addElectronicAddress" object="{electronicAddress}" name="electronicAddress"
+		<f:form action="add" controller="ElectronicAddress" object="{electronicAddress}" name="electronicAddress"
 				class="form-horizontal well">
 			<f:render partial="Forms/ElectronicAddress" arguments="{person: person}"/>
 			<div class="form-actions">
@@ -144,14 +141,14 @@
 		</f:form>
 
 		<f:for each="{bankAccounts}" as="bankAccount">
-			<f:form action="updateBankAccount" object="{bankAccount}" name="bankAccount"
+			<f:form action="update" controller="BankAccount" object="{bankAccount}" name="bankAccount"
 					class="form-horizontal well">
 				Update:
 				<f:form.hidden property="id"/>
 				<f:render partial="Forms/BankAccount" arguments="{person: person}"/>
 				<f:form.submit value="{f:translate(id: 'action.update')}"/>
 			</f:form>
-			<f:form action="removeBankAccount" object="{bankAccount}" name="bankAccount"
+			<f:form action="remove" controller="BankAccount" object="{bankAccount}" name="bankAccount"
 					class="form-horizontal well">
 				Delete:
 				<f:form.hidden property="id"/>
@@ -160,7 +157,7 @@
 			</f:form>
 		</f:for>
 
-		<f:form action="addBankAccount" object="{bankAccount}" name="bankAccount"
+		<f:form action="add" controller="BankAccount" object="{bankAccount}" name="bankAccount"
 				class="form-horizontal well">
 			<f:render partial="Forms/BankAccount" arguments="{person: person}"/>
 			<div class="form-actions">
@@ -169,14 +166,14 @@
 		</f:form>
 
 		<f:for each="{educations}" as="education">
-			<f:form action="updateEducation" object="{education}" name="education"
+			<f:form action="update" controller="Education" object="{education}" name="education"
 					class="form-horizontal well">
 				Update:
 				<f:form.hidden property="id"/>
 				<f:render partial="Forms/Education" arguments="{person: person}"/>
 				<f:form.submit value="{f:translate(id: 'action.update')}"/>
 			</f:form>
-			<f:form action="removeEducation" object="{education}" name="education"
+			<f:form action="remove" controller="Education" object="{education}" name="education"
 					class="form-horizontal well">
 				Delete:
 				<f:form.hidden property="id"/>
@@ -185,7 +182,7 @@
 			</f:form>
 		</f:for>
 
-		<f:form action="addEducation" object="{education}" name="education"
+		<f:form action="add" controller="Education" object="{education}" name="education"
 				class="form-horizontal well">
 			 Create:
 			<f:render partial="Forms/Education" arguments="{person: person}"/>
@@ -195,14 +192,14 @@
 		</f:form>
 
 		<f:for each="{assets}" as="asset">
-			<f:form action="updateAsset" object="{asset}" name="asset"
+			<f:form action="update" controller="Asset" object="{asset}" name="asset"
 					class="form-horizontal well">
 				Update:
 				<f:form.hidden property="id"/>
 				<f:render partial="Forms/Asset" arguments="{person: person}"/>
 				<f:form.submit value="{f:translate(id: 'action.update')}"/>
 			</f:form>
-			<f:form action="removeAsset" object="{asset}" name="asset"
+			<f:form action="remove" controller="Asset" object="{asset}" name="asset"
 					class="form-horizontal well">
 				Delete:
 				<f:form.hidden property="id"/>
@@ -211,9 +208,32 @@
 			</f:form>
 		</f:for>
 
-		<f:form action="addAsset" object="{asset}" name="asset"
+		<f:form action="add" controller="Asset" object="{asset}" name="asset"
 				class="form-horizontal well">
 			<f:render partial="Forms/Asset" arguments="{person: person}"/>
+			<div class="form-actions">
+				<f:form.submit value="{f:translate(id: 'action.create')}"/>
+			</div>
+		</f:form>
+
+		<f:for each="{licence}" as="licence">
+			<f:form action="update" controller="Licence" object="{licence}" name="licence"
+					class="form-horizontal well">
+				<f:form.hidden property="id"/>
+				<f:render partial="Forms/Licence" arguments="{person: person}"/>
+				<f:form.submit value="{f:translate(id: 'action.update')}"/>
+			</f:form>
+			<f:form action="remove" controller="Licence" object="{licence}" name="licence"
+					class="form-horizontal well">
+				<f:form.hidden property="id"/>
+				<f:form.hidden property="party" value="{person}"/>
+				<f:form.submit value="{f:translate(id: 'action.remove')}"/>
+			</f:form>
+		</f:for>
+
+		<f:form action="add" controller="Licence" object="{licence}" name="licence"
+				class="form-horizontal well">
+			<f:render partial="Forms/Licence" arguments="{person: person}"/>
 			<div class="form-actions">
 				<f:form.submit value="{f:translate(id: 'action.create')}"/>
 			</div>
