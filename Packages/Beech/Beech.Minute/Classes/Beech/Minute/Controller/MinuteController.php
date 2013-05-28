@@ -64,7 +64,7 @@ class MinuteController extends \Beech\Ehrm\Controller\AbstractController {
 	 */
 	public function createAction(\Beech\Minute\Domain\Model\Minute $newMinute) {
 		$this->minuteRepository->add($newMinute);
-		$this->addFlashMessage($this->translator->translateById('flashMessage.createdMinute', array(), NULL, NULL, 'Main', 'Beech.Minute'));
+		$this->addFlashMessage($this->translator->translateById('Added.', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
 		$this->redirect('list');
 	}
 
@@ -87,7 +87,7 @@ class MinuteController extends \Beech\Ehrm\Controller\AbstractController {
 	 */
 	public function updateAction(\Beech\Minute\Domain\Model\Minute $minute) {
 		$this->minuteRepository->update($minute);
-		$this->addFlashMessage($this->translator->translateById('flashMessage.updatedMinute', array(), NULL, NULL, 'Main', 'Beech.Minute'));
+		$this->addFlashMessage($this->translator->translateById('Updated', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
 		$this->redirect('list');
 	}
 
@@ -99,7 +99,7 @@ class MinuteController extends \Beech\Ehrm\Controller\AbstractController {
 	 */
 	public function deleteAction(\Beech\Minute\Domain\Model\Minute $minute) {
 		$this->minuteRepository->remove($minute);
-		$this->addFlashMessage($this->translator->translateById('flashMessage.deletedMinute', array(), NULL, NULL, 'Main', 'Beech.Minute'));
+		$this->addFlashMessage($this->translator->translateById('Removed', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
 		$this->redirect('list');
 	}
 

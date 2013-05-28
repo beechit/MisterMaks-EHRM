@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-strict.xsd">
+	<file original="" source-language="en" target-language="pl" datatype="plaintext">
+		<body>
+			<trans-unit id="Close.">
+				<source>Close</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="Save">
+				<source>Save</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="Added.">
+				<source>Added</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="Update.">
+				<source>Update</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="Remove.">
+				<source>Remove</source>
+				<target></target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

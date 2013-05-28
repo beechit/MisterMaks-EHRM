@@ -28,16 +28,10 @@ class PhoneNumberController extends \Beech\Ehrm\Controller\AbstractManagementCon
 	protected $repositoryClassName = 'Beech\Party\Domain\Repository\PhoneNumberRepository';
 
 	/**
-	 * @param \Beech\Party\Domain\Model\PhoneNumber $phoneNumber A new phoneNumber to delete
-	 * @Flow\IgnoreValidation("$phoneNumber")
-	 * @return void
+	 * @var \TYPO3\Flow\I18n\Translator
+	 * @Flow\Inject
 	 */
-	public function deleteAction(PhoneNumber $phoneNumber) {
-		$this->repository->remove($phoneNumber);
-		$this->addFlashMessage('Remove a phone number.');
-		$this->redirect('list', 'Person');
-		//$this->redirect('edit', 'Person', NULL, array('person' => $phoneNumber->getParty()));
-	}
+	protected $translator;
 
 	/**
 	 * @param \Beech\Party\Domain\Model\PhoneNumber $phoneNumber A new phoneNumber to add
@@ -47,8 +41,7 @@ class PhoneNumberController extends \Beech\Ehrm\Controller\AbstractManagementCon
 	public function addAction(\Beech\Party\Domain\Model\PhoneNumber $phoneNumber) {
 		$phoneNumber->setParty($this->persistenceManager->getIdentifierByObject($phoneNumber->getParty()));
 		$this->repository->add($phoneNumber);
-		$this->addFlashMessage('Added.');
-		$this->redirect('edit', 'Person', NULL, array('person' => $phoneNumber->getParty()));
+		$this->addFlashMessage($this->translator->translateById('Added.', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
 	}
 
 	/**
@@ -59,8 +52,7 @@ class PhoneNumberController extends \Beech\Ehrm\Controller\AbstractManagementCon
 	public function updateAction(\Beech\Party\Domain\Model\PhoneNumber $phoneNumber) {
 		$phoneNumber->setParty($this->persistenceManager->getIdentifierByObject($phoneNumber->getParty()));
 		$this->repository->update($phoneNumber);
-		$this->addFlashMessage('Updated.');
-		$this->redirect('edit', 'Person', NULL, array('person' => $phoneNumber->getParty()));
+		$this->addFlashMessage($this->translator->translateById('Updated.', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
 	}
 
 	/**
@@ -69,11 +61,9 @@ class PhoneNumberController extends \Beech\Ehrm\Controller\AbstractManagementCon
 	 * @return void
 	 */
 	public function removeAction(\Beech\Party\Domain\Model\PhoneNumber $phoneNumber) {
-		$person = $phoneNumber->getParty();
 		$phoneNumber->setParty(NULL);
 		$this->repository->update($phoneNumber);
-		$this->addFlashMessage('Removed.');
-		$this->redirect('edit', 'Person', NULL, array('person' => $person));
+		$this->addFlashMessage($this->translator->translateById('Removed.', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
 	}
 }
 

@@ -36,6 +36,12 @@ class GroupController extends \Beech\Ehrm\Controller\AbstractController {
 	protected $groupTypeRepository;
 
 	/**
+	 * @var \TYPO3\Flow\I18n\Translator
+	 * @Flow\Inject
+	 */
+	protected $translator;
+
+	/**
 	 * Shows a list of groups
 	 *
 	 * @return void

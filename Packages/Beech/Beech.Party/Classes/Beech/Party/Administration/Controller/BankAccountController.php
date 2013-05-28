@@ -28,15 +28,42 @@ class BankAccountController extends \Beech\Ehrm\Controller\AbstractManagementCon
 	protected $repositoryClassName = 'Beech\Party\Domain\Repository\BankAccountRepository';
 
 	/**
-	 * @param \Beech\Party\Domain\Model\BankAccount $bankAccount A new bankAccount to delete
-	 * @Flow\IgnoreValidation("$bankAccount")
+	 * @var \TYPO3\Flow\I18n\Translator
+	 * @Flow\Inject
+	 */
+	protected $translator;
+
+	/**
+	 * @param \Beech\Party\Domain\Model\BankAccount $bankAccount A bankAccount to add
+	 *
 	 * @return void
 	 */
-	public function deleteAction(BankAccount $bankAccount) {
-		$this->repository->remove($bankAccount);
-		$this->addFlashMessage('Removed the bank account.');
-		$this->redirect('list', 'Person');
-		//$this->redirect('edit', 'Person', NULL, array('person' => $bankAccount->getParty()));
+	public function addAction(\Beech\Party\Domain\Model\BankAccount $bankAccount) {
+		$bankAccount->setParty($this->persistenceManager->getIdentifierByObject($bankAccount->getParty()));
+		$this->repository->add($bankAccount);
+		$this->addFlashMessage($this->translator->translateById('Added.', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
+	}
+
+	/**
+	 * @param \Beech\Party\Domain\Model\BankAccount $bankAccount A bankAccount to update
+	 *
+	 * @return void
+	 */
+	public function updateAction(\Beech\Party\Domain\Model\BankAccount $bankAccount) {
+		$bankAccount->setParty($this->persistenceManager->getIdentifierByObject($bankAccount->getParty()));
+		$this->repository->update($bankAccount);
+		$this->addFlashMessage($this->translator->translateById('Updated.', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
+	}
+
+	/**
+	 * @param \Beech\Party\Domain\Model\BankAccount $bankAccount A bankAccount to remove
+	 *
+	 * @return void
+	 */
+	public function removeAction(\Beech\Party\Domain\Model\BankAccount $bankAccount) {
+		$bankAccount->setParty(NULL);
+		$this->repository->update($bankAccount);
+		$this->addFlashMessage($this->translator->translateById('Removed.', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
 	}
 }
 

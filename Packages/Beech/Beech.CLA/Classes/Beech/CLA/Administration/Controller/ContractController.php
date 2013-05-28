@@ -28,6 +28,12 @@ class ContractController extends \Beech\Ehrm\Controller\AbstractManagementContro
 	protected $repositoryClassName = 'Beech\CLA\Domain\Repository\ContractRepository';
 
 	/**
+	 * @var \TYPO3\Flow\I18n\Translator
+	 * @Flow\Inject
+	 */
+	protected $translator;
+
+	/**
 	 * Select contract template
 	 */
 	public function newAction() {
@@ -55,7 +61,7 @@ class ContractController extends \Beech\Ehrm\Controller\AbstractManagementContro
 	public function createAction(Contract $contract) {
 		$this->repository->add($contract);
 		$this->documentManager->merge($contract->getDocument());
-		$this->addFlashMessage('Created a new contract');
+		$this->addFlashMessage($this->translator->translateById('Created a new contract', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
 		$this->redirect('list');
 	}
 
@@ -80,7 +86,7 @@ class ContractController extends \Beech\Ehrm\Controller\AbstractManagementContro
 	 */
 	public function updateAction(Contract $contract) {
 		$this->repository->update($contract);
-		$this->addFlashMessage('Updated the contract.');
+		$this->addFlashMessage($this->translator->translateById('Updated the contract', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
 		$this->redirect('list');
 	}
 

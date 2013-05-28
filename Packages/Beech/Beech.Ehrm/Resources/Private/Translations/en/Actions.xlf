@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-strict.xsd">
+	<file original="" source-language="en" target-language="en" datatype="plaintext">
+		<body>
+			<trans-unit id="Close.">
+				<source>Close</source>
+			</trans-unit>
+			<trans-unit id="Save">
+				<source>Save</source>
+			</trans-unit>
+			<trans-unit id="Add.">
+				<source>Add</source>
+			</trans-unit>
+			<trans-unit id="Update.">
+				<source>Update</source>
+			</trans-unit>
+			<trans-unit id="Remove.task">
+				<source>Remove</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

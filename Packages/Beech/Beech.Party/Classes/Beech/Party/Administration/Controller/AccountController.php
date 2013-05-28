@@ -36,6 +36,12 @@ class AccountController extends \Beech\Ehrm\Controller\AbstractController {
 	protected $personRepository;
 
 	/**
+	 * @var \TYPO3\Flow\I18n\Translator
+	 * @Flow\Inject
+	 */
+	protected $translator;
+
+	/**
 	 * Shows a list of accounts
 	 *
 	 * @return void
@@ -103,7 +109,7 @@ class AccountController extends \Beech\Ehrm\Controller\AbstractController {
 	 */
 	public function updateAction(Account $account) {
 		$this->accountRepository->update($account);
-		$this->addFlashMessage('Updated the account.');
+		$this->addFlashMessage($this->translator->translateById('Updated', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
 		$this->redirect('list');
 	}
 
@@ -115,7 +121,7 @@ class AccountController extends \Beech\Ehrm\Controller\AbstractController {
 	 */
 	public function deleteAction(Account $account) {
 		$this->accountRepository->remove($account);
-		$this->addFlashMessage('Deleted a account.');
+		$this->addFlashMessage($this->translator->translateById('Removed.', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
 		$this->redirect('list');
 	}
 

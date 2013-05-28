@@ -27,6 +27,12 @@ class JobDescriptionController extends \Beech\Ehrm\Controller\AbstractManagement
 	protected $repositoryClassName = 'Beech\CLA\Domain\Repository\JobDescriptionRepository';
 
 	/**
+	 * @var \TYPO3\Flow\I18n\Translator
+	 * @Flow\Inject
+	 */
+	protected $translator;
+
+	/**
 	 * Adds the given new job description object to the job description repository
 	 *
 	 * @param \Beech\CLA\Domain\Model\JobDescription $jobDescription A new job description to add
@@ -35,7 +41,7 @@ class JobDescriptionController extends \Beech\Ehrm\Controller\AbstractManagement
 	public function createAction(JobDescription $jobDescription) {
 		$this->repository->add($jobDescription);
 		$this->documentManager->merge($jobDescription->getDocument());
-		$this->addFlashMessage('Created a new job description');
+		$this->addFlashMessage($this->translator->translateById('Created a new job description', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
 		$this->redirect('list');
 	}
 
@@ -57,7 +63,7 @@ class JobDescriptionController extends \Beech\Ehrm\Controller\AbstractManagement
 	*/
 	public function updateAction(JobDescription $jobDescription) {
 		$this->repository->update($jobDescription);
-		$this->addFlashMessage('Updated the job description.');
+		$this->addFlashMessage($this->translator->translateById('Updated the job description.', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
 		$this->redirect('list');
 	}
 

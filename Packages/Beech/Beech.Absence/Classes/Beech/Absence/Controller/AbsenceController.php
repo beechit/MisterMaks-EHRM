@@ -26,6 +26,45 @@ class AbsenceController extends \Beech\Ehrm\Controller\AbstractManagementControl
 	 * @var string
 	 */
 	protected $repositoryClassName = 'Beech\Absence\Domain\Repository\AbsenceRepository';
+
+	/**
+	 * @var \TYPO3\Flow\I18n\Translator
+	 * @Flow\Inject
+	 */
+	protected $translator;
+
+	/**
+	 * @param \Beech\Absence\Domain\Model\Absence $absence A absence to add
+	 *
+	 * @return void
+	 */
+	public function addAction(\Beech\Absence\Domain\Model\Absence $absence) {
+		$absence->setParty($this->persistenceManager->getIdentifierByObject($absence->getParty()));
+		$this->repository->add($absence);
+		$this->addFlashMessage($this->translator->translateById('Added', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
+	}
+
+	/**
+	 * @param \Beech\Absence\Domain\Model\Absence $absence A absence to update
+	 *
+	 * @return void
+	 */
+	public function updateAction(\Beech\Absence\Domain\Model\Absence $absence) {
+		$absence->setParty($this->persistenceManager->getIdentifierByObject($absence->getParty()));
+		$this->repository->update($absence);
+		$this->addFlashMessage($this->translator->translateById('Updated', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
+	}
+
+	/**
+	 * @param \Beech\Absence\Domain\Model\Absence $absence A absence to remove
+	 *
+	 * @return void
+	 */
+	public function removeAction(\Beech\Absence\Domain\Model\Absence $absence) {
+		$absence->setParty(NULL);
+		$this->repository->update($absence);
+		$this->addFlashMessage($this->translator->translateById('Removed', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
+	}
 }
 
 ?>

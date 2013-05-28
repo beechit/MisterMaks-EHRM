@@ -26,6 +26,45 @@ class EmailTemplateController extends \Beech\Ehrm\Controller\AbstractManagementC
 	 * @var string
 	 */
 	protected $repositoryClassName = 'Beech\CLA\Domain\Repository\EmailTemplateRepository';
-}
 
+	/**
+	 * @var \TYPO3\Flow\I18n\Translator
+	 * @Flow\Inject
+	 */
+	protected $translator;
+
+	/**
+	 * @param \Beech\Communication\Domain\Model\EmailTemplate $emailTemplate A emailTemplate to add
+	 *
+	 * @return void
+	 */
+	public function addAction(\Beech\Communication\Domain\Model\EmailTemplate $emailTemplate) {
+		$emailTemplate->setParty($this->persistenceManager->getIdentifierByObject($emailTemplate->getParty()));
+		$this->repository->add($emailTemplate);
+		$this->addFlashMessage($this->translator->translateById('Added.', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
+	}
+
+	/**
+	 * @param \Beech\Communication\Domain\Model\EmailTemplate $emailTemplate A emailTemplate to update
+	 *
+	 * @return void
+	 */
+	public function updateAction(\Beech\Communication\Domain\Model\EmailTemplate $emailTemplate) {
+		$emailTemplate->setParty($this->persistenceManager->getIdentifierByObject($emailTemplate->getParty()));
+		$this->repository->update($emailTemplate);
+		$this->addFlashMessage($this->translator->translateById('Updated.', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
+	}
+
+	/**
+	 * @param \Beech\Communication\Domain\Model\EmailTemplate $emailTemplate A emailTemplate to remove
+	 *
+	 * @return void
+	 */
+	public function removeAction(\Beech\Communication\Domain\Model\EmailTemplate $emailTemplate) {
+		$emailTemplate->setParty(NULL);
+		$this->repository->update($emailTemplate);
+		$this->addFlashMessage($this->translator->translateById('Removed.', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
+	}
+
+}
 ?>

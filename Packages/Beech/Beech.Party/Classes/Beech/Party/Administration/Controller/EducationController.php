@@ -27,6 +27,45 @@ class EducationController extends \Beech\Ehrm\Controller\AbstractManagementContr
 	 */
 	protected $repositoryClassName = 'Beech\Party\Domain\Repository\EducationRepository';
 
+	/**
+	 * @var \TYPO3\Flow\I18n\Translator
+	 * @Flow\Inject
+	 */
+	protected $translator;
+
+	/**
+	 * @param \Beech\Party\Domain\Model\Education $Education A education to add
+	 *
+	 * @return void
+	 */
+	public function addAction(\Beech\Party\Domain\Model\Education $education) {
+		$education->setParty($this->persistenceManager->getIdentifierByObject($education->getParty()));
+		$this->repository->add($education);
+		$this->addFlashMessage($this->translator->translateById('Added.', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
+	}
+
+	/**
+	 * @param \Beech\Party\Domain\Model\Education $education A education to update
+	 *
+	 * @return void
+	 */
+	public function updateAction(\Beech\Party\Domain\Model\Education $education) {
+		$education->setParty($this->persistenceManager->getIdentifierByObject($education->getParty()));
+		$this->repository->update($education);
+		$this->addFlashMessage($this->translator->translateById('Updated.', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
+	}
+
+	/**
+	 * @param \Beech\Party\Domain\Model\Education $education A education to remove
+	 *
+	 * @return void
+	 */
+	public function removeAction(\Beech\Party\Domain\Model\Education $education) {
+		$education->setParty(NULL);
+		$this->repository->update($education);
+		$this->addFlashMessage($this->translator->translateById('Removed.', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
+	}
+
 }
 
 ?>

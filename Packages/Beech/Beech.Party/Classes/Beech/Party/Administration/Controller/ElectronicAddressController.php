@@ -28,15 +28,42 @@ class ElectronicAddressController extends \Beech\Ehrm\Controller\AbstractManagem
 	protected $repositoryClassName = 'Beech\Party\Domain\Repository\ElectronicAddressRepository';
 
 	/**
-	 * @param \Beech\Party\Domain\Model\ElectronicAddress $electronicAddress A new electronicAddress to delete
-	 * @Flow\IgnoreValidation("$electronicAddress")
+	 * @var \TYPO3\Flow\I18n\Translator
+	 * @Flow\Inject
+	 */
+	protected $translator;
+
+	/**
+	 * @param \Beech\Party\Domain\Model\ElectronicAddress $electronicAddress A electronicAddress to add
+	 *
 	 * @return void
 	 */
-	public function deleteAction(ElectronicAddress $electronicAddress) {
-		$this->repository->remove($electronicAddress);
-		$this->addFlashMessage('Removed the electronic address.');
-		$this->redirect('list', 'Person');
-		//$this->redirect('edit', 'Person', NULL, array('person' => $electronicAddress->getParty()));
+	public function addAction(\Beech\Party\Domain\Model\ElectronicAddress $electronicAddress) {
+		$electronicAddress->setParty($this->persistenceManager->getIdentifierByObject($electronicAddress->getParty()));
+		$this->repository->add($electronicAddress);
+		$this->addFlashMessage($this->translator->translateById('Added.', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
+	}
+
+	/**
+	 * @param \Beech\Party\Domain\Model\ElectronicAddress $electronicAddress A electronicAddress to update
+	 *
+	 * @return void
+	 */
+	public function updateAction(\Beech\Party\Domain\Model\ElectronicAddress $electronicAddress) {
+		$electronicAddress->setParty($this->persistenceManager->getIdentifierByObject($electronicAddress->getParty()));
+		$this->repository->update($electronicAddress);
+		$this->addFlashMessage($this->translator->translateById('Updated.', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
+	}
+
+	/**
+	 * @param \Beech\Party\Domain\Model\ElectronicAddress $electronicAddress A electronicAddress to remove
+	 *
+	 * @return void
+	 */
+	public function removeAction(\Beech\Party\Domain\Model\ElectronicAddress $electronicAddress) {
+		$electronicAddress->setParty(NULL);
+		$this->repository->update($electronicAddress);
+		$this->addFlashMessage($this->translator->translateById('Removed.', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
 	}
 }
 

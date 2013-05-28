@@ -28,6 +28,12 @@ class ContractArticleController extends \Beech\Ehrm\Controller\AbstractManagemen
 	protected $repositoryClassName = 'Beech\CLA\Domain\Repository\ContractArticleRepository';
 
 	/**
+	 * @var \TYPO3\Flow\I18n\Translator
+	 * @Flow\Inject
+	 */
+	protected $translator;
+
+	/**
 	 * Adds the given new article object to the article repository
 	 *
 	 * @param \Beech\CLA\Domain\Model\ContractArticle $contractArticle A new article to add
@@ -36,7 +42,7 @@ class ContractArticleController extends \Beech\Ehrm\Controller\AbstractManagemen
 	public function createAction(ContractArticle $contractArticle) {
 		$this->repository->add($contractArticle);
 		$this->documentManager->merge($contractArticle->getDocument());
-		$this->addFlashMessage('Created a new contract article');
+		$this->addFlashMessage($this->translator->translateById('Created a new contract article', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
 		$this->redirect('list');
 	}
 
@@ -58,7 +64,7 @@ class ContractArticleController extends \Beech\Ehrm\Controller\AbstractManagemen
 	 */
 	public function updateAction(ContractArticle $contractArticle) {
 		$this->repository->update($contractArticle);
-		$this->addFlashMessage('Updated the article.');
+		$this->addFlashMessage($this->translator->translateById('Updated the article.', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
 		$this->redirect('list');
 	}
 

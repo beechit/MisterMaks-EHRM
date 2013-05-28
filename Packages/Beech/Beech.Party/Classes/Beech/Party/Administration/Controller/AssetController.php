@@ -27,6 +27,44 @@ class AssetController extends \Beech\Ehrm\Controller\AbstractManagementControlle
 	 */
 	protected $repositoryClassName = 'Beech\Party\Domain\Repository\AssetRepository';
 
+	/**
+	 * @var \TYPO3\Flow\I18n\Translator
+	 * @Flow\Inject
+	 */
+	protected $translator;
+
+	/**
+	 * @param \Beech\Party\Domain\Model\Asset $Asset A asset to add
+	 *
+	 * @return void
+	 */
+	public function addAction(\Beech\Party\Domain\Model\Asset $asset) {
+		$asset->setParty($this->persistenceManager->getIdentifierByObject($asset->getParty()));
+		$this->repository->add($asset);
+		$this->addFlashMessage($this->translator->translateById('Added.', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
+	}
+
+	/**
+	 * @param \Beech\Party\Domain\Model\Asset $asset A asset to update
+	 *
+	 * @return void
+	 */
+	public function updateAction(\Beech\Party\Domain\Model\Asset $asset) {
+		$asset->setParty($this->persistenceManager->getIdentifierByObject($asset->getParty()));
+		$this->repository->update($asset);
+		$this->addFlashMessage($this->translator->translateById('Updated.', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
+	}
+
+	/**
+	 * @param \Beech\Party\Domain\Model\Asset $asset A asset to remove
+	 *
+	 * @return void
+	 */
+	public function removeAction(\Beech\Party\Domain\Model\Asset $asset) {
+		$asset->setParty(NULL);
+		$this->repository->update($asset);
+		$this->addFlashMessage($this->translator->translateById('Removed.', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
+	}
 }
 
 ?>

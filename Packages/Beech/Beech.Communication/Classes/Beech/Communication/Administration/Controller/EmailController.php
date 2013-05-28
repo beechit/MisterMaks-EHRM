@@ -26,6 +26,45 @@ class EmailController extends \Beech\Ehrm\Controller\AbstractManagementControlle
 	 * @var string
 	 */
 	protected $repositoryClassName = 'Beech\Communication\Domain\Repository\EmailRepository';
-}
 
+	/**
+	 * @var \TYPO3\Flow\I18n\Translator
+	 * @Flow\Inject
+	 */
+	protected $translator;
+
+	/**
+	 * @param \Beech\Communication\Domain\Model\Email $email A email to add
+	 *
+	 * @return void
+	 */
+	public function addAction(\Beech\Communication\Domain\Model\Email $email) {
+		$email->setParty($this->persistenceManager->getIdentifierByObject($email->getParty()));
+		$this->repository->add($email);
+		$this->addFlashMessage($this->translator->translateById('Added.', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
+	}
+
+	/**
+	 * @param \Beech\Communication\Domain\Model\Email $email A email to update
+	 *
+	 * @return void
+	 */
+	public function updateAction(\Beech\Communication\Domain\Model\Email $email) {
+		$email->setParty($this->persistenceManager->getIdentifierByObject($email->getParty()));
+		$this->repository->update($email);
+		$this->addFlashMessage($this->translator->translateById('Updated.', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
+	}
+
+	/**
+	 * @param \Beech\Communication\Domain\Model\Email $email A email to remove
+	 *
+	 * @return void
+	 */
+	public function removeAction(\Beech\Communication\Domain\Model\Email $email) {
+		$email->setParty(NULL);
+		$this->repository->update($email);
+		$this->addFlashMessage($this->translator->translateById('Removed.', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));;
+	}
+
+}
 ?>
