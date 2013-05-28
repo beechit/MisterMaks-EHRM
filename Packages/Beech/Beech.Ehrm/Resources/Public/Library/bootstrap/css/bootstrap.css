@@ -2307,7 +2307,8 @@ table th[class*="span"],
   -o-transition: height 0.35s ease;
   transition: height 0.35s ease; }
   .collapse.in {
-    height: auto; }
+    height: auto;
+    overflow: visible!important; }
 
 .close {
   float: right;

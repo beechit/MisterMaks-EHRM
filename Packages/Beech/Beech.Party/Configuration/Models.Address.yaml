@@ -154,7 +154,6 @@
       defaultValue: 'NL'
     'description':
       label: 'Address description'
-      type: text
       validation:
         -
           type: 'Text'

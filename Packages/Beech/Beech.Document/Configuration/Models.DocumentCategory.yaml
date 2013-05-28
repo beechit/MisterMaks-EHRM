@@ -4,15 +4,15 @@
       label: 'Document category name'
       validation:
         -
-          type: 'Stringlength'
+          type: 'StringLength'
           options:
             maximum: 35
     'documenttypes':
       items:
-        documenttype:
-        label: 'Documenttype'
+        documentType:
+        label: 'Document type'
         validation:
           -
-            type: 'Stringlength'
+            type: 'StringLength'
             options:
               maximum: 35

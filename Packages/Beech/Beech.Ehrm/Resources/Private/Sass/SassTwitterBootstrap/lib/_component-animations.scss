@@ -18,5 +18,6 @@
   @include transition(height .35s ease);
   &.in {
     height: auto;
+    overflow: visible!important;
   }
 }

@@ -1,0 +1,14 @@
+<f:if condition="{phoneNumber}">
+	<f:then>
+		<div id="phoneNumber-{phoneNumber.id}" class="clearfix">
+			<f:render partial="Forms/PhoneNumber" arguments="{party: party, phoneNumber: phoneNumber, controller: 'PhoneNumber', action: 'update'}"/>
+			<f:render partial="Forms/PhoneNumber" arguments="{party: party, phoneNumber: phoneNumber, controller: 'PhoneNumber', action: 'remove'}"/>
+		</div>
+		<div id="phoneNumber-add" class="clearfix">
+			<f:render partial="Forms/PhoneNumber" arguments="{party: party, controller: 'PhoneNumber', action: 'add'}"/>
+		</div>
+	</f:then>
+</f:if>
+
+
+

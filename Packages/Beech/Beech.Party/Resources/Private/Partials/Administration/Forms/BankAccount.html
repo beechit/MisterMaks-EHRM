@@ -1,13 +1,9 @@
-<h4>BankAccount</h4>
+<h4>BankAccount</h4>{namespace ehrm=Beech\Ehrm\ViewHelpers}
 <div class="control-group">
 	<div class="controls controls">
-		<f:form.textfield property="accountType" id="accountType" class="span6"
-                          placeholder="{f:translate(id:'Account Type')}"/>
-
-		<ehrm:optionSelect property="type" id="type" model="Beech.Party:BankAccount" placeholder="{f:translate(value: 'Account type, locale: 'nl_NL')}..." class="span6"/>
-
-		<f:form.textfield property="accountNumber" id="title" class="span5"
+		<f:form.textfield property="accountNumber" id="title" class="span6"
 		                  placeholder="{f:translate(id:'Account number')}"/>
+		<ehrm:optionSelect property="accountType" id="accountType" model="Beech.Party:BankAccount" placeholder="{f:translate(value: 'Account type')}..." class="span4"/>
     </div>
     <div class="controls controls">
         <label class="control-label" for="primary-address">
@@ -25,8 +21,7 @@
     </div>
 <div class="control-group">
 	<div class="controls">
-		<f:form.textfield property="country" id="country" class="span6"
-		                  placeholder="{f:translate(id:'Country')}"/>
+		<ehrm:form.countrySelect property="country" id="country" class="countrySelect span6"/>
 	</div>
 <div class="control-group">
     <div class="controls">
@@ -35,5 +30,4 @@
     </div>
 </div>
 </div>
-
 <f:form.hidden property="party" value="{person}"/>

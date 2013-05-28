@@ -47,8 +47,8 @@
 			}
 		},
 
-		loadContent: function(html, target) {
-
+		loadContent: function(html, target, replaceWith) {
+			console.log('loadContent', target, replaceWith);
 			if(html.substr(0,9) == 'redirect:') {
 				document.location = '/'+html.substr(9);
 				return;
@@ -59,19 +59,43 @@
 			}
 			var that = this, $moduleContainer = $(target);
 
-			$moduleContainer.html(html);
+			if (replaceWith) {
+				var $moduleParent = $($moduleContainer.parent());
+				$moduleContainer.replaceWith(html);
+				console.log($moduleContainer);
+				$moduleContainer = $moduleParent;
+			} else {
+				$moduleContainer.html(html);
+			}
 
 			$moduleContainer.find('form').each(function() {
 				$(this).attr('action', $(this).attr('action'));
 			});
 
-			$moduleContainer.find('form').ajaxForm({
-				dataType: 'html',
-				beforeSend: that.startAjaxRequest,
-				complete: that.finishedAjaxRequest,
-				success: function(result) {
-					that.loadContent(result, target);
-				}
+			$moduleContainer.find('form').each(function(index, form) {
+				console.log(form);
+				$(form).ajaxForm({
+					dataType: 'html',
+					beforeSend: that.startAjaxRequest,
+					complete: that.finishedAjaxRequest,
+					success: function(result) {
+						if ($(form).parent().parent().attr('id') != '') {
+							if ($(form).hasClass('remove')) {
+								that.loadContent(result, '#'+$(form).parent().parent().attr('id'));
+							} else if ($(form).hasClass('add')) {
+								that.loadContent(result, '#'+$(form).parent().parent().attr('id'), true);
+							} else {
+								that.loadContent(result, '#'+$(form).parent().attr('id'), true);
+							}
+						} else {
+							that.loadContent(result, target);
+						}
+					},
+					error: function(result) {
+						console.log(result);
+						$(form).parent().parent().prepend(result.responseText);
+					}
+				});
 			});
 				// When content of module is loaded, apply datepicker plugin if its necessary
 			$moduleContainer.find('.datepicker').on('click', function() {
@@ -83,7 +107,6 @@
 			});
 			$moduleContainer.find('select').chosen();
 			$moduleContainer.find('.countrySelect').countrySelect();
-			//applyCountrySelect();
 		},
 
 		prepareUrl: function (object) {

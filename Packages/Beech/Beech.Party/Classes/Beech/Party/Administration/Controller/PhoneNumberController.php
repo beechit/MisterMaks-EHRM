@@ -39,8 +39,12 @@ class PhoneNumberController extends \Beech\Ehrm\Controller\AbstractManagementCon
 	 * @return void
 	 */
 	public function addAction(\Beech\Party\Domain\Model\PhoneNumber $phoneNumber) {
+
 		$phoneNumber->setParty($this->persistenceManager->getIdentifierByObject($phoneNumber->getParty()));
 		$this->repository->add($phoneNumber);
+		$this->view->assign('phoneNumber', $phoneNumber);
+		$this->view->assign('party', $phoneNumber->getParty());
+		$this->view->assign('action', 'add');
 		$this->addFlashMessage($this->translator->translateById('Added.', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
 	}
 
@@ -53,6 +57,9 @@ class PhoneNumberController extends \Beech\Ehrm\Controller\AbstractManagementCon
 		$phoneNumber->setParty($this->persistenceManager->getIdentifierByObject($phoneNumber->getParty()));
 		$this->repository->update($phoneNumber);
 		$this->addFlashMessage($this->translator->translateById('Updated.', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
+		$this->view->assign('phoneNumber', $phoneNumber);
+		$this->view->assign('party', $phoneNumber->getParty());
+		$this->view->assign('action', 'update');
 	}
 
 	/**
@@ -64,6 +71,21 @@ class PhoneNumberController extends \Beech\Ehrm\Controller\AbstractManagementCon
 		$phoneNumber->setParty(NULL);
 		$this->repository->update($phoneNumber);
 		$this->addFlashMessage($this->translator->translateById('Removed.', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
+		$this->addFlashMessage('Removed.');
+	}
+
+	/**
+	 * A special action which is called if the originally intended action could
+	 * not be called, for example if the arguments were not valid.
+	 *
+	 * The default implementation sets a flash message, request errors and forwards back
+	 * to the originating action. This is suitable for most actions dealing with form input.
+	 *
+	 * @return string
+	 */
+	protected function errorAction() {
+		$this->getControllerContext()->getResponse()->setStatus(500);
+		return '<div class="alert alert-error"><button type="button" class="close" data-dismiss="alert">&times;</button>'.parent::errorAction().'</div>';
 	}
 }
 

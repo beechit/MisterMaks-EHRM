@@ -23,15 +23,7 @@
 			</div>
 		</f:if>
 	</f:form.validationResults>
-	<f:form.validationResults for="phoneNumber">
-		<f:if condition="{validationResults.flattenedErrors}">
-			<div class="error">
-				<f:for each="{validationResults.flattenedErrors}" key="propertyPath" as="errors">{propertyPath}:
-					<f:for each="{errors}" as="error">{error}</f:for>
-				</f:for>
-			</div>
-		</f:if>
-	</f:form.validationResults>
+
 	<f:form.validationResults for="electronicAddress">
 		<f:if condition="{validationResults.flattenedErrors}">
 			<div class="error">
@@ -68,54 +60,65 @@
 			</div>
 		</f:if>
 	</f:form.validationResults>
-	<div class="tab-content">
+	<div class="tab-content well">
 		<h3>Person information</h3>
 
-		<f:form action="update" object="{person}" name="person" class="form-horizontal well">
+		<f:form action="update" object="{person}" name="person" class="form-horizontal">
 			<f:render partial="Forms/Person" />
 			<div class="form-actions">
 				<f:form.submit value="{f:translate(id: 'action.save')}"/>
 			</div>
 		</f:form>
-
+		<hr/>
 		<f:for each="{addresses}" as="address">
-			<f:form action="update" controller="Address" object="{address}" name="address" class="form-horizontal well">
+			<f:form action="update" controller="Address" object="{address}" name="address" class="form-horizontal">
 				<f:form.hidden property="id"/>
 				<f:render partial="Forms/Address" arguments="{address: address}"/>
 				<f:form.submit value="{f:translate(id: 'action.update')}"/>
 			</f:form>
-		<f:form action="remove" controller="Address" object="{address}" name="address" class="form-horizontal well">
-			<f:form.hidden property="id"/>
-			<f:form.hidden property="party" value="{person}"/>
-			<f:form.submit value="{f:translate(id: 'action.remove')}"/>
-		</f:form>
-		</f:for>
-			<f:form action="add" controller="Address" object="{address}" name="address" class="form-horizontal well">
-				<f:render partial="Forms/Address" arguments="{person: person}"/>
-				<div class="form-actions">
-					<f:form.submit value="{f:translate(id: 'action.create')}"/>
-				</div>
-			</f:form>
-
-
-		<f:for each="{phoneNumbers}" as="phoneNumber">
-			<f:form action="update" controller="PhoneNumber" object="{phoneNumber}" name="phoneNumber" class="form-horizontal well">
-				<f:form.hidden property="id"/>
-				<f:render partial="Forms/PhoneNumber" arguments="{person: person}"/>
-				<f:form.submit value="{f:translate(id: 'action.update')}"/>
-			</f:form>
-			<f:form action="remove" controller="PhoneNumber" object="{phoneNumber}" name="phoneNumber" class="form-horizontal well">
+			<f:form action="remove" controller="Address" object="{address}" name="address" class="form-horizontal">
 				<f:form.hidden property="id"/>
 				<f:form.hidden property="party" value="{person}"/>
 				<f:form.submit value="{f:translate(id: 'action.remove')}"/>
 			</f:form>
 		</f:for>
-		<f:form action="add" controller="PhoneNumber" object="{phoneNumber}" name="phoneNumber" class="form-horizontal well">
-			<f:render partial="Forms/PhoneNumber" arguments="{person: person}"/>
+		<f:form action="add" controller="Address" object="{address}" name="address" class="form-horizontal">
+			<f:render partial="Forms/Address" arguments="{person: person}"/>
 			<div class="form-actions">
 				<f:form.submit value="{f:translate(id: 'action.create')}"/>
 			</div>
 		</f:form>
+
+		<f:form.validationResults for="phoneNumber">
+			<f:if condition="{validationResults.flattenedErrors}">
+				<div class="error">
+					<f:for each="{validationResults.flattenedErrors}" key="propertyPath" as="errors">{propertyPath}:
+						<f:for each="{errors}" as="error">{error}</f:for>
+					</f:for>
+				</div>
+			</f:if>
+		</f:form.validationResults>
+
+		<f:flashMessages as="flashMessages">
+			<f:for each="{flashMessages}" as="flashMessage">
+				<div class="alert clearfix">
+					<button type="button" class="close" data-dismiss="alert">&times;</button>
+					{flashMessage}
+				</div>
+			</f:for>
+		</f:flashMessages>
+		<h3>Phone numbers</h3>
+		<f:for each="{phoneNumbers}" as="phoneNumber" iteration="phoneNumberIterator">
+			<div id="phoneNumber-{phoneNumber.id}" class="clearfix">
+				<f:render partial="Forms/PhoneNumber" arguments="{party: person, phoneNumber: phoneNumber, controller: 'PhoneNumber', action: 'update'}"/>
+				<f:render partial="Forms/PhoneNumber" arguments="{party: person, phoneNumber: phoneNumber, controller: 'PhoneNumber', action: 'remove'}"/>
+			</div>
+			<f:if condition="{phoneNumberIterator.isLast}">
+				<div id="phoneNumber-add" class="clearfix">
+					<f:render partial="Forms/PhoneNumber" arguments="{party: person, controller: 'PhoneNumber', action: 'add'}"/>
+				</div>
+			</f:if>
+		</f:for>
 
 		<f:for each="{electronicAddresses}" as="electronicAddress">
 			<f:form action="update" controller="ElectronicAddress" object="{electronicAddress}" name="electronicAddress"
