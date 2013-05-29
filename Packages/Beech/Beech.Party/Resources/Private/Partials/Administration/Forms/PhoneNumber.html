@@ -1,54 +1,52 @@
 {namespace ehrm=Beech\Ehrm\ViewHelpers}
-
-<f:if condition="{0: action} == {0: 'remove'}">
-	<f:then>
-		<div id="{action}{phoneNumber.id}" class="span1 control-group">
-	</f:then>
-	<f:else>
-		<f:if condition="{0: action} != {0: 'add'}">
-			<f:then>
-				<div id="{action}{phoneNumber.id}" class="span11 control-group">
-			</f:then>
-			<f:else>
-				<div id="{action}PhoneNumber" class="span11 control-group">
-			</f:else>
-		</f:if>
-	</f:else>
-</f:if>
+<f:render partial="FlashMessages" arguments="{modelName: 'phoneNumber'}"/>
+<div id="{action}{phoneNumber.id}{suffix}" class="{size} control-group">
 	<ehrm:form action="{action}" controller="{controller}" object="{phoneNumber}" name="phoneNumber" class="form-horizontal {action}">
 		<f:if condition="{0: action} != {0: 'remove'}">
-			<f:if condition="{0: action} == {0: 'update'}">
-			<h4>{phoneNumber.number} <a data-toggle="collapse" data-target="#toggle{phoneNumber.id}">edit</a></h4>
-			</f:if>
-			<f:if condition="{0: action} == {0: 'update'}">
+			<f:if condition="{0: action} == {0: 'update'}"><f:then>
+				<h4>{phoneNumber.type} {phoneNumber.number}
+					<a class="btn" data-toggle="collapse" data-target="#toggle{phoneNumber.id}"><i class="icon-pencil"></i></a>
+					<f:if condition="{0: action} != {0: 'add'}">
+						<f:then>
+							<button type="submit" name="action" class="btn btn-danger" value="remove">
+								<i class="icon-trash"></i>
+							</button>
+						</f:then>
+					</f:if>
+				</h4>
 				<div id="toggle{phoneNumber.id}" class="collapse">
-			</f:if>
-			<f:if condition="{0: action} != {0: 'update'}">
+			</f:then><f:else>
 				<div class="control-group">
-			</f:if>
+			</f:else></f:if>
 				<fieldset>
 					<div class="control-group form-inline" >
 						<div class="controls-row">
-							<ehrm:optionSelect property="type" id="type" model="Beech.Party:PhoneNumber" placeholder="Type..." class="span4"/>
-							<f:form.textfield property="number" class="span5" placeholder="Phone Number..."/>
-							<label class="control-label" for="primary-phone-number">
-								Primary <f:form.checkbox property="primary" id="primary-phone-number" value="TRUE"/>
-							</label>
+							<ehrm:optionSelect property="type" id="phoneType{phoneNumber.id}" model="Beech.Party:PhoneNumber" placeholder="Type..." class="span4"/>
+							<div class="input-append input-prepend">
+								<f:form.textfield property="number" class="span7" placeholder="Phone Number..."/>
+								<span class="add-on"><i class="icon-phone"/></span>
+								<span class="add-on">Primary <f:form.checkbox property="primary" id="primary-phone-number" value="TRUE"/></span>
+							</div>
 						</div>
 					</div>
-					<f:if condition="{0: action} != {0: 'remove'}">
-						<f:form.submit value="{action}" class="btn"/>
-					</f:if>
+					<f:form.submit value="{action}" class="btn" name="action"/>
 				</fieldset>
-			</div>
+				</div>
+		</f:if>
+
+		<f:if condition="{0: action} == {0: 'remove'}">
+			<button type="submit" name="submit" class="btn btn-danger">
+				<i class="icon-trash"></i>
+			</button>
 		</f:if>
 		<f:form.hidden property="id"/>
 		<f:form.hidden property="party" value="{party}"/>
-		<f:if condition="{0: action} == {0: 'remove'}">
-			<button type="submit" name="submit" class="btn btn-danger">
-				<i class="icon-remove-sign"></i>
-			</button>
-		</f:if>
 	</ehrm:form>
 </div>
-
+<f:comment>
+<f:if condition="{0: action} == {0: 'update'}">
+	<f:then>
+		<f:render partial="Forms/PhoneNumber" arguments="{party: person, phoneNumber: phoneNumber, controller: 'PhoneNumber', action: 'remove', size: 'span1'}"/>
+	</f:then>
+</f:if>
+</f:comment>
