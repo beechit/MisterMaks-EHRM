@@ -41,7 +41,9 @@ class ElectronicAddressController extends \Beech\Ehrm\Controller\AbstractManagem
 	public function addAction(\Beech\Party\Domain\Model\ElectronicAddress $electronicAddress) {
 		$electronicAddress->setParty($this->persistenceManager->getIdentifierByObject($electronicAddress->getParty()));
 		$this->repository->add($electronicAddress);
-		$this->addFlashMessage($this->translator->translateById('Added.', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
+		$this->view->assign('electronicAddress', $electronicAddress);
+		$this->view->assign('party', $electronicAddress->getParty());
+		$this->view->assign('action', 'add');
 	}
 
 	/**
@@ -50,14 +52,21 @@ class ElectronicAddressController extends \Beech\Ehrm\Controller\AbstractManagem
 	 * @return void
 	 */
 	public function updateAction(\Beech\Party\Domain\Model\ElectronicAddress $electronicAddress) {
-		$electronicAddress->setParty($this->persistenceManager->getIdentifierByObject($electronicAddress->getParty()));
-		$this->repository->update($electronicAddress);
-		$this->addFlashMessage($this->translator->translateById('Updated.', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
+		if ($this->getControllerContext()->getRequest()->getArgument('action') === 'remove') {
+			$this->redirect('remove', 'ElectronicAddress', NULL, array('electronicAddress' => $electronicAddress, 'party' => $electronicAddress->getParty()));
+		} else {
+			$electronicAddress->setParty($this->persistenceManager->getIdentifierByObject($electronicAddress->getParty()));
+			$this->repository->update($electronicAddress);
+			$this->addFlashMessage($this->translator->translateById('Updated.', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
+			$this->view->assign('electronicAddress', $electronicAddress);
+			$this->view->assign('party', $electronicAddress->getParty());
+			$this->view->assign('action', 'update');
+		}
 	}
 
 	/**
 	 * @param \Beech\Party\Domain\Model\ElectronicAddress $electronicAddress A electronicAddress to remove
-	 *
+	 * @Flow\IgnoreValidation("$electronicAddress")
 	 * @return void
 	 */
 	public function removeAction(\Beech\Party\Domain\Model\ElectronicAddress $electronicAddress) {
