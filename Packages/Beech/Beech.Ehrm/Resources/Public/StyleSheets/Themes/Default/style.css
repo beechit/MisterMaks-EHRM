@@ -68,6 +68,10 @@ ul.flashmessages { list-style-type: none; margin-left: 0px; }
 
 /* End datepicker */
 /* Start Contract Wizard / Form */
+.collapse .row-fluid { margin: 20px 0px 20px 0px; }
+
+.compact-form { margin: 0px; }
+
 .country { float: left; }
 
 .country i { background: url("../../../Form/Images/flags.png") no-repeat; display: inline-block; width: 16px; height: 11px; }
