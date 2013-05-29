@@ -161,7 +161,7 @@ class PersonController extends \Beech\Ehrm\Controller\AbstractManagementControll
 	public function updateAction(Person $person) {
 		$this->repository->update($person);
 		$this->addFlashMessage('Person is updated.');
-		$this->redirect('list');
+		$this->emberRedirect('#/administration/person');
 	}
 
 	/**

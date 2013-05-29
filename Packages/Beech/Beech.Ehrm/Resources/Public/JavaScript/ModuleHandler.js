@@ -62,7 +62,6 @@
 			if (replaceWith) {
 				var $moduleParent = $($moduleContainer.parent());
 				$moduleContainer.replaceWith(html);
-				console.log($moduleContainer);
 				$moduleContainer = $moduleParent;
 			} else {
 				$moduleContainer.html(html);
@@ -73,7 +72,6 @@
 			});
 
 			$moduleContainer.find('form').each(function(index, form) {
-				console.log(form);
 				$(form).ajaxForm({
 					dataType: 'html',
 					beforeSend: that.startAjaxRequest,
@@ -92,7 +90,6 @@
 						}
 					},
 					error: function(result) {
-						console.log(result);
 						$(form).parent().parent().prepend(result.responseText);
 					}
 				});
@@ -106,7 +103,7 @@
 					.focus();
 			});
 			$moduleContainer.find('select').chosen();
-			$moduleContainer.find('.countrySelect').countrySelect();
+			//$moduleContainer.find('.countrySelect').countrySelect();
 		},
 
 		prepareUrl: function (object) {

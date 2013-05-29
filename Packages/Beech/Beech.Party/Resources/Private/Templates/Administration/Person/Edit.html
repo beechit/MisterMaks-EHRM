@@ -113,12 +113,10 @@
 				<f:render partial="Forms/PhoneNumber" arguments="{party: person, phoneNumber: phoneNumber, controller: 'PhoneNumber', action: 'update'}"/>
 				<f:render partial="Forms/PhoneNumber" arguments="{party: person, phoneNumber: phoneNumber, controller: 'PhoneNumber', action: 'remove'}"/>
 			</div>
-			<f:if condition="{phoneNumberIterator.isLast}">
-				<div id="phoneNumber-add" class="clearfix">
-					<f:render partial="Forms/PhoneNumber" arguments="{party: person, controller: 'PhoneNumber', action: 'add'}"/>
-				</div>
-			</f:if>
 		</f:for>
+		<div id="phoneNumber-add" class="clearfix">
+			<f:render partial="Forms/PhoneNumber" arguments="{party: person, controller: 'PhoneNumber', action: 'add'}"/>
+		</div>
 
 		<f:for each="{electronicAddresses}" as="electronicAddress">
 			<f:form action="update" controller="ElectronicAddress" object="{electronicAddress}" name="electronicAddress"
