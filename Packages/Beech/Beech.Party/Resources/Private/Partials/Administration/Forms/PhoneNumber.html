@@ -1,7 +1,7 @@
 {namespace ehrm=Beech\Ehrm\ViewHelpers}
 <f:render partial="FlashMessages" arguments="{modelName: 'phoneNumber'}"/>
 <div id="{action}{phoneNumber.id}{suffix}">
-	<ehrm:form action="{action}" controller="{controller}" object="{phoneNumber}" name="phoneNumber" class="compact-form form-horizontal {action}">
+	<ehrm:form action="{action}" controller="PhoneNumber" object="{phoneNumber}" name="phoneNumber" class="compact-form form-horizontal {action}">
 		<f:if condition="{0: action} != {0: 'remove'}">
 			<f:if condition="{0: action} == {0: 'update'}"><f:then>
 				<div class="row-fluid">
@@ -56,10 +56,3 @@
 		<f:form.hidden property="party" value="{party}"/>
 	</ehrm:form>
 </div>
-<f:comment>
-<f:if condition="{0: action} == {0: 'update'}">
-	<f:then>
-		<f:render partial="Forms/PhoneNumber" arguments="{party: person, phoneNumber: phoneNumber, controller: 'PhoneNumber', action: 'remove', size: 'span1'}"/>
-	</f:then>
-</f:if>
-</f:comment>
