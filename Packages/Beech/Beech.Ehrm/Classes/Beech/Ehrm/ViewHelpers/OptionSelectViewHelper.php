@@ -40,7 +40,7 @@ class OptionSelectViewHelper extends \TYPO3\Fluid\ViewHelpers\Form\SelectViewHel
 	 */
 	public function render() {
 		if (isset($this->arguments['placeholder'])) {
-			$this->arguments['options'] = array($this->arguments['placeholder']);
+			$this->tag->addAttribute('data-placeholder', $this->arguments['placeholder']);
 		}
 		list($packageKey, $model) = explode(':', $this->arguments['model']);
 		$property = $this->arguments['property'];
@@ -48,14 +48,13 @@ class OptionSelectViewHelper extends \TYPO3\Fluid\ViewHelpers\Form\SelectViewHel
 		if (isset($modelsConfigurations[$packageKey.'.Domain.Model.'.$model])) {
 			$modelConfiguration = $modelsConfigurations[$packageKey.'.Domain.Model.'.$model];
 			$propertyOptions = \TYPO3\Flow\Utility\Arrays::getValueByPath($modelConfiguration, 'properties.'.$property.'.options.values');
-
-
 			if ($propertyOptions !== NULL) {
 				$propertyOptionsValues = array();
 				foreach($propertyOptions as $value) {
 					$propertyOptionsValues[$value] = $value;
 				}
-				$this->arguments['options'] = array_merge($this->arguments['options'], $propertyOptionsValues);
+					//Add empty value to support placeholder in chosen select plugin
+				$this->arguments['options'] = array_merge(array('' => ''), $propertyOptionsValues);
 				return parent::render();
 			}
 		}

@@ -44,7 +44,6 @@ class PhoneNumberController extends \Beech\Ehrm\Controller\AbstractManagementCon
 		$this->view->assign('phoneNumber', $phoneNumber);
 		$this->view->assign('party', $phoneNumber->getParty());
 		$this->view->assign('action', 'add');
-		$this->addFlashMessage($this->translator->translateById('Added.', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
 	}
 
 	/**
@@ -54,7 +53,7 @@ class PhoneNumberController extends \Beech\Ehrm\Controller\AbstractManagementCon
 	 */
 	public function updateAction(\Beech\Party\Domain\Model\PhoneNumber $phoneNumber) {
 		if ($this->getControllerContext()->getRequest()->getArgument('action') === 'remove') {
-			$this->redirect('remove', 'PhoneNumber', NULL, array('phoneNumber' => $phoneNumber, 'person' => $phoneNumber->getParty()));
+			$this->redirect('remove', 'PhoneNumber', NULL, array('phoneNumber' => $phoneNumber, 'party' => $phoneNumber->getParty()));
 		} else {
 			$phoneNumber->setParty($this->persistenceManager->getIdentifierByObject($phoneNumber->getParty()));
 			$this->repository->update($phoneNumber);

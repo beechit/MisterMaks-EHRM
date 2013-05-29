@@ -31,6 +31,7 @@ class CountrySelect extends \TYPO3\Form\Core\Model\AbstractFormElement {
 	 */
 	public function initializeFormElement() {
 		$parsedYaml = \Symfony\Component\Yaml\Yaml::parse($this->dataFile);
+			//TODO: Read this file only one time and store somewhere
 		foreach ($parsedYaml['country']['values'] as $index => $country) {
 			$countriesArray[$country] = $parsedYaml['country']['translation'][$this->language][$index];
 		}
