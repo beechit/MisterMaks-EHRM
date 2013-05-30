@@ -6,6 +6,7 @@
   vertical-align: middle;
   float: left;
   zoom: 1;
+  margin-right: 10px;
   *display: inline;
 }
 .chzn-container .chzn-drop {

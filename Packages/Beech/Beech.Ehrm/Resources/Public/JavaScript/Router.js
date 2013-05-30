@@ -7,8 +7,6 @@
 		this.resource('administration', function() {
 			this.route('applicationSettings', { path: 'settings' });
 
-			this.route('companyModule', { path: 'companies' });
-
 			this.route('jobDescriptionModule', { path: 'jobdescriptions' });
 			this.route('jobDescriptionModule.new', { path: 'jobdescription/new' });
 			this.route('contractArticleModule', { path: 'contractarticles' });
@@ -21,7 +19,7 @@
 			this.route('contractModule.start', { path: 'contract/start/:contractTemplate/:employee/:jobDescription' });
 			this.route('contractModule.show', { path: 'contract/show/:contract'});
 
-				// Beech.Party
+				// Beech.Party/Person
 			this.resource('BeechPartyAdministrationPerson', { path: 'persons' }, function() {
 				this.route('index', { path: '/list' });
 			});
@@ -31,7 +29,16 @@
 				this.route('edit', { path: '/edit/:person' });
 				this.route('delete', { path: '/delete/:person' });
 			});
-
+				// Beech.Party/Company
+			this.resource('BeechPartyAdministrationCompany', { path: 'companies' }, function() {
+				this.route('index', { path: '/list' });
+			});
+			this.resource('BeechPartyAdministrationCompany', { path: 'company' }, function() {
+				this.route('new', { path: '/new' });
+				this.route('show', { path: '/show/:company' });
+				this.route('edit', { path: '/edit/:company' });
+				this.route('delete', { path: '/delete/:company' });
+			});
 		});
 
 		this.resource('index', { path: '/' }, function() {
