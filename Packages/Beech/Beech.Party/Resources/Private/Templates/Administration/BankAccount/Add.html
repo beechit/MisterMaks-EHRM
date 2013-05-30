@@ -1,0 +1,13 @@
+<f:if condition="{bankAccount}">
+	<f:then>
+		<div id="bankAccount-{bankAccount.id}" class="clearfix">
+			<f:render partial="Forms/BankAccount" arguments="{party: party, bankAccount: bankAccount, controller: 'BankAccount', action: 'update'}"/>
+		</div>
+		<div id="bankAccount-add" class="clearfix">
+			<f:render partial="Forms/BankAccount" arguments="{party: party, controller: 'BankAccount', action: 'add'}"/>
+		</div>
+	</f:then>
+</f:if>
+
+
+
