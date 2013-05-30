@@ -29,6 +29,7 @@ class CountrySelectViewHelper extends \TYPO3\Fluid\ViewHelpers\Form\SelectViewHe
 	public function initializeArguments() {
 		parent::initializeArguments();
 		$this->overrideArgument('options', 'array', 'Associative array with internal IDs as key, and the values are displayed in the select box');
+		$this->registerArgument('placeholder', 'string', 'The placeholder of the select field');
 	}
 
 	/**
@@ -37,6 +38,9 @@ class CountrySelectViewHelper extends \TYPO3\Fluid\ViewHelpers\Form\SelectViewHe
 	 * @return string
 	 */
 	public function render() {
+		if (isset($this->arguments['placeholder'])) {
+			$this->tag->addAttribute('data-placeholder', $this->arguments['placeholder']);
+		}
 		$type = "Beech.Ehrm:CountrySelect";
 		$presetConfiguration = $this->formFactory->getPresetConfiguration('wizard');
 
@@ -47,7 +51,7 @@ class CountrySelectViewHelper extends \TYPO3\Fluid\ViewHelpers\Form\SelectViewHe
 			$element = new $formElementClass($this->arguments['property'], $type);
 			$element->initializeFormElement();
 			$properties = $element->getProperties();
-			$this->arguments['options'] = $properties['options'];
+			$this->arguments['options'] = array_merge(array('' => ''), $properties['options']);
 		}
 		$content = '';
 		$content .= '<div class="input-prepend">';

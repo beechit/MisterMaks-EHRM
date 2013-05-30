@@ -31,7 +31,7 @@ class NationalitySelect extends \TYPO3\Form\Core\Model\AbstractFormElement {
 	 */
 	public function initializeFormElement() {
 		$parsedYaml = \Symfony\Component\Yaml\Yaml::parse($this->dataFile);
-		$nationalitiesArray = array('-' => 'Nationality...');
+		$nationalitiesArray = array();
 		foreach ($parsedYaml['nationality'] as $nationality) {
 			$nationalitiesArray[$nationality['identifier']] = $nationality['translation'][$this->language];
 		}
