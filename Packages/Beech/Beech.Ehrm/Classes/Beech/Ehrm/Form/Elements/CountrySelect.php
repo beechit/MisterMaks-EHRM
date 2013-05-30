@@ -11,29 +11,25 @@ use TYPO3\Flow\Annotations as Flow;
 
 /**
  * A selection field for country
+ *
+ * @Flow\Scope("singleton")
  */
 class CountrySelect extends \TYPO3\Form\Core\Model\AbstractFormElement {
 
 	/**
-	 * Location of yaml file with countries
-	 * @var string
+	 * @Flow\Inject
+	 * @var \TYPO3\Flow\Object\ObjectManagerInterface
 	 */
-	protected $dataFile = 'resource://Beech.Ehrm/Private/Generator/Yaml/country.yaml';
-
-	/**
-	 * Language selected for translations
-	 * @var string
-	 */
-	protected $language = 'nl';
+	protected $objectManager;
 
 	/**
 	 * @return void
 	 */
 	public function initializeFormElement() {
-		$parsedYaml = \Symfony\Component\Yaml\Yaml::parse($this->dataFile);
-			//TODO: Read this file only one time and store somewhere
-		foreach ($parsedYaml['country']['values'] as $index => $country) {
-			$countriesArray[$country] = $parsedYaml['country']['translation'][$this->language][$index];
+		if ($this->objectManager->isRegistered('Beech\Ehrm\Form\Elements\CountriesArray')) {
+			$countriesArray = $this->objectManager->get('Beech\Ehrm\Form\Elements\CountriesArray')->getCountries();
+		} else {
+			throw new \Exception('Array of countries cannot be loaded');
 		}
 		$this->setLabel('Country');
 		$this->setProperty('options', $countriesArray);
