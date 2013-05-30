@@ -14,21 +14,21 @@
 			</div>
 		</f:if>
 	</f:form.validationResults>
-	<div class="tab-content well">
+	<div class="well clearfix">
 		<h3>Person information</h3>
 
 		<f:form action="update" object="{person}" name="person" class="form-horizontal">
 			<f:render partial="Forms/Person" />
 			<div class="form-actions">
-				<f:form.submit value="{f:translate(id: 'action.save')}"/>
+				<f:form.submit value="{f:translate(id: 'action.save')}" class="btn"/>
 			</div>
 		</f:form>
 		<hr/>
-		<!-- addresses -->
+		<!-- Addresses -->
 		<h3>Addresses</h3>
 		<f:for each="{addresses}" as="address">
 			<div id="address-{address.id}">
-				<f:render partial="Forms/address" arguments="{party: person, address: address, action: 'update'}"/>
+				<f:render partial="Forms/Address" arguments="{party: person, address: address, action: 'update'}"/>
 			</div>
 		</f:for>
 		<div id="address-add" class="clearfix">
@@ -101,6 +101,5 @@
 			<f:render partial="Forms/Licence" arguments="{party: person, action: 'add', suffix: 'licence'}"/>
 		</div>
 		<hr/>
-
 	</div>
 </f:section>

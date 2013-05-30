@@ -6,11 +6,8 @@
 			<f:if condition="{0: action} == {0: 'update'}"><f:then>
 				<div class="row-fluid">
 					<div class="span1"><i class="icon-home"></i></div>
-					<div class="span3"><strong>{bankAccount.type} {bankAccount.accountNumber}</strong></div>
-				</div>
-				<div class="row-fluid">
-					<div class="span4"> {bankAccount.residence} {bankAccount.country}</div>
-				</div>
+					<div class="span3"><strong>{bankAccount.type}</strong></div>
+					<div class="span4"> {bankAccount.accountNumber}</div>
 					<div class="span2 offset2">
 						<div class="btn-group">
 							<a class="btn btn-small" data-toggle="collapse" data-target="#toggle{bankAccount.id}"><i class="icon-pencil"></i></a>
