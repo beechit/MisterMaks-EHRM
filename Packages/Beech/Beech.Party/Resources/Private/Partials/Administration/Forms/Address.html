@@ -1,7 +1,7 @@
 {namespace ehrm=Beech\Ehrm\ViewHelpers}
 <f:render partial="FlashMessages" arguments="{modelName: 'address'}"/>
 <div id="{action}{address.id}{suffix}">
-	<ehrm:form action="{action}" controller="{controller}" object="{address}" name="address" class="compact-form form-horizontal {action}">
+	<ehrm:form action="{action}" controller="Address" object="{address}" name="address" class="compact-form form-horizontal {action}">
 		<f:if condition="{0: action} != {0: 'remove'}">
 			<f:if condition="{0: action} == {0: 'update'}"><f:then>
 				<div class="row-fluid">
@@ -27,7 +27,6 @@
 					</div>
 				</div>
 				<div id="toggle{address.id}" class="collapse">
-			</div>
 			</f:then><f:else>
 				<div>
 			</f:else></f:if>
@@ -64,12 +63,12 @@
 </div>
 </f:if>
 
-<f:if condition="{0: action} == {0: 'remove'}">
-	<button type="submit" name="submit" class="btn btn-danger btn-mini">
-		<i class="icon-trash"></i>
-	</button>
-</f:if>
-<f:form.hidden property="id"/>
-<f:form.hidden property="party" value="{party}"/>
+	<f:if condition="{0: action} == {0: 'remove'}">
+		<button type="submit" name="submit" class="btn btn-danger btn-mini">
+			<i class="icon-trash"></i>
+		</button>
+	</f:if>
+	<f:form.hidden property="id"/>
+	<f:form.hidden property="party" value="{party}"/>
 </ehrm:form>
 </div>

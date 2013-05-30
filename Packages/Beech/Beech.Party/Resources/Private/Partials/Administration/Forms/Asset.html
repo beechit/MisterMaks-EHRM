@@ -11,17 +11,16 @@
 				<div class="row-fluid">
 					<div class="span4">{asset.provisionDate}</div>
 				</div>
-					<div class="span2 offset2">
-						<div class="btn-group">
-							<a class="btn btn-small" data-toggle="collapse" data-target="#toggle{asset.id}"><i class="icon-pencil"></i></a>
-							<f:if condition="{0: action} != {0: 'add'}">
-								<f:then>
-									<button type="submit" name="action" class="btn btn-danger btn-small" value="remove">
-										<i class="icon-trash"></i>
-									</button>
-								</f:then>
-							</f:if>
-						</div>
+				<div class="span2 offset2">
+					<div class="btn-group">
+						<a class="btn btn-small" data-toggle="collapse" data-target="#toggle{asset.id}"><i class="icon-pencil"></i></a>
+						<f:if condition="{0: action} != {0: 'add'}">
+							<f:then>
+								<button type="submit" name="action" class="btn btn-danger btn-small" value="remove">
+									<i class="icon-trash"></i>
+								</button>
+							</f:then>
+						</f:if>
 					</div>
 				</div>
 				<div id="toggle{asset.id}" class="collapse">
