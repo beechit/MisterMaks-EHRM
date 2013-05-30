@@ -1,22 +1,19 @@
-<div class="tab-pane active">{namespace ehrm=Beech\Ehrm\ViewHelpers}
+{namespace ehrm=Beech\Ehrm\ViewHelpers}
+<div class="tab-pane active">
 	<div class="control-group">
 		<label class="control-label" for="initials">
 			<f:translate id="Person name">Person name</f:translate>
 		</label>
 
 		<div class="controls controls-row">
-			<f:form.textfield property="initials" id="initials" class="span2"
-			                  placeholder="{f:translate(id:'Initials')}"/>
-			<f:form.textfield property="name.firstName" id="firstName" class="span6"
-			                  placeholder="{f:translate(id:'First name')}"/>
+			<f:form.textfield property="initials" id="initials" class="span2" placeholder="{f:translate(id:'Initials')}"/>
+			<f:form.textfield property="name.firstName" id="firstName" class="span8" placeholder="{f:translate(id:'First name')}"/>
 		</div>
 	</div>
 	<div class="control-group">
 		<div class="controls controls-row">
-			<f:form.textfield property="name.middleName" id="middleName" class="span2"
-			                  placeholder="{f:translate(id:'Middle name')}"/>
-			<f:form.textfield property="name.lastName" id="lastName" class="span6"
-			                  placeholder="{f:translate(id:'Last name')}"/>
+			<f:form.textfield property="name.middleName" id="middleName" class="span2" placeholder="{f:translate(id:'Middle name')}"/>
+			<f:form.textfield property="name.lastName" id="lastName" class="span8" placeholder="{f:translate(id:'Last name')}"/>
 		</div>
 	</div>
 
@@ -26,8 +23,7 @@
 		</label>
 
 		<div class="controls controls">
-			<f:form.select property="gender" class="span6" options="{female: 'Female', male: 'Male'}"
-			               translate="{by: 'label'}"/>
+			<ehrm:optionSelect property="gender" id="gender" model="Beech.Party:Person" placeholder="{f:translate(value: 'Gender')}..." class="span8"/>
 		</div>
 	</div>
 	<div class="control-group">
@@ -36,9 +32,7 @@
 		</label>
 
 		<div class="controls controls">
-			<f:form.select property="salutation" class="span6"
-			               options="{dear_mr: 'Dear Mr.', dear_ms: 'Dear Ms.', dear_miss: 'Dear Miss.', dear_mrs: 'Dear Mrs.'}"
-			               translate="{by: 'label'}"/>
+			<ehrm:optionSelect property="salutation" id="salutation" model="Beech.Party:Person" placeholder="{f:translate(value: 'Salutation')}..." class="span8"/>
 		</div>
 	</div>
 	<div class="control-group">
@@ -48,8 +42,7 @@
 
 		<div class="control-group">
 			<div class="controls controls-row">
-				<f:form.textfield property="civilStatus" id="civilStatus" class="span5"
-				                  placeholder="{f:translate(id:'Civil status')}"/>
+				<ehrm:optionSelect property="civilStatus" id="civilStatus" model="Beech.Party:Person" placeholder="{f:translate(value: 'Civil status')}..." class="span8"/>
 			</div>
 		</div>
 		<div class="control-group">
@@ -58,48 +51,40 @@
 			</label>
 
 			<div class="controls controls-row">
-				<f:form.textfield property="middleOtherName" id="middleOtherName" class="span2"
-				                  placeholder="{f:translate(id:'Middle name')}"/>
-				<f:form.textfield property="otherName" id="otherName" class="span6"
-				                  placeholder="{f:translate(id:'Birth name')}"/>
+				<f:form.textfield property="middleOtherName" id="middleOtherName" class="span2" placeholder="{f:translate(id:'Middle name')}"/>
+				<f:form.textfield property="otherName" id="otherName" class="span6" placeholder="{f:translate(id:'Birth name')}"/>
 			</div>
 		</div>
 		<div class="control-group">
 			<label class="control-label" for="nameUsage">
-				<f:translate id="nameUsage">Name usage</f:translate>
+				<f:translate id="name Usage">Name usage</f:translate>
+				<ehrm:optionSelect property="nameUsage" id="nameUsage" model="Beech.Party:Person" placeholder="{f:translate(value: 'Name Usage')}..." class="span8"/>
 			</label>
 
 			<div class="controls controls-row">
-				<f:form.textfield property="nameUsage" id="nameUsage" class="span6"
-				                  placeholder="{f:translate(id:'Name usage')}"/>
+				<f:form.textfield property="nameUsage" id="nameUsage" class="span6" placeholder="{f:translate(id:'Name usage')}"/>
 			</div>
 		</div>
 
 		<div class="control-group">
-			<label class="control-label" for="birthDate">
-				<f:translate id="birthDate">Birth date</f:translate>
+			<label class="control-label" for="birthDate"> <f:translate id="birthDate">Birth date</f:translate>
 			</label>
-
 			<div class="controls controls-row">
 				<ehrm:form.datePicker id="birthDate" property="birthDate" class="datepicker span6" dateFormat="d-m-Y"/>
 			</div>
 		</div>
 		<div class="control-group">
 			<div class="controls controls">
-				<f:form.textfield property="placeOfBirth" id="placeOfBirth" class="span4"
-				                  placeholder="{f:translate(id:'Place of Birth')}"/>
-				<f:form.textfield property="countryOfBirth" id="countryOfBirth" class="span4"
-				                  placeholder="{f:translate(id:'Country')}"/>
+				<f:form.textfield property="placeOfBirth" id="placeOfBirth" class="span6" placeholder="{f:translate(id:'Place of Birth')}"/>
+				</div>
+			<div class="controls controls">
+				<ehrm:form.countrySelect property="countryOfBirth" id="countryOfBirth" class="countrySelect span8" placeholder="{f:translate(id:'Choose country of birth')}"/>
 			</div>
 		</div>
-		<div class="control-group">
-			<div class="controls controls">
-				<ehrm:form.countrySelect property="country" id="country" class="countrySelect span6"/>
 			</div>
-		</div>
 		<div class="control-group">
 			<div class="controls controls">
-				<ehrm:form.nationalitySelect property="nationality" id="nationality" class="countrySelect span6"/>
+				<ehrm:form.nationalitySelect property="nationality" id="nationality" class="countrySelect span6" placeholder="{f:translate(id:'Choose your nationality')}"/>
 			</div>
 		</div>
 		<div class="control-group">

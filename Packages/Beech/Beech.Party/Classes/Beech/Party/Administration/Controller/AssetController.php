@@ -41,7 +41,9 @@ class AssetController extends \Beech\Ehrm\Controller\AbstractManagementControlle
 	public function addAction(\Beech\Party\Domain\Model\Asset $asset) {
 		$asset->setParty($this->persistenceManager->getIdentifierByObject($asset->getParty()));
 		$this->repository->add($asset);
-		$this->addFlashMessage($this->translator->translateById('Added.', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
+		$this->view->assign('asset', $asset);
+		$this->view->assign('party', $asset->getParty());
+		$this->view->assign('action', 'add');
 	}
 
 	/**
@@ -50,14 +52,21 @@ class AssetController extends \Beech\Ehrm\Controller\AbstractManagementControlle
 	 * @return void
 	 */
 	public function updateAction(\Beech\Party\Domain\Model\Asset $asset) {
-		$asset->setParty($this->persistenceManager->getIdentifierByObject($asset->getParty()));
-		$this->repository->update($asset);
-		$this->addFlashMessage($this->translator->translateById('Updated.', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
+		if ($this->getControllerContext()->getRequest()->getArgument('action') === 'remove') {
+			$this->redirect('remove', 'Asset', NULL, array('asset' => $asset, 'person' => $asset->getParty()));
+		} else {
+			$asset->setParty($this->persistenceManager->getIdentifierByObject($asset->getParty()));
+			$this->repository->update($asset);
+			$this->addFlashMessage($this->translator->translateById('Updated.', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
+			$this->view->assign('asset', $asset);
+			$this->view->assign('party', $asset->getParty());
+			$this->view->assign('action', 'update');
+		}
 	}
 
 	/**
 	 * @param \Beech\Party\Domain\Model\Asset $asset A asset to remove
-	 *
+	 * @Flow\IgnoreValidation("$asset")
 	 * @return void
 	 */
 	public function removeAction(\Beech\Party\Domain\Model\Asset $asset) {
@@ -65,6 +74,7 @@ class AssetController extends \Beech\Ehrm\Controller\AbstractManagementControlle
 		$this->repository->update($asset);
 		$this->addFlashMessage($this->translator->translateById('Removed.', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
 	}
+
 }
 
 ?>

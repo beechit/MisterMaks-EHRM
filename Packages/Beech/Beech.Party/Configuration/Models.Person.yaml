@@ -52,7 +52,7 @@
           type: 'StringLength'
           options:
             maximum: 30
-    'usage':
+    'Nameusage':
       label: 'Name usage'
       options:
         values:

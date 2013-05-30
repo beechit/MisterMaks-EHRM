@@ -41,7 +41,9 @@ class BankAccountController extends \Beech\Ehrm\Controller\AbstractManagementCon
 	public function addAction(\Beech\Party\Domain\Model\BankAccount $bankAccount) {
 		$bankAccount->setParty($this->persistenceManager->getIdentifierByObject($bankAccount->getParty()));
 		$this->repository->add($bankAccount);
-		$this->addFlashMessage($this->translator->translateById('Added.', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
+		$this->view->assign('bankAccount', $bankAccount);
+		$this->view->assign('party', $bankAccount->getParty());
+		$this->view->assign('action', 'add');
 	}
 
 	/**
@@ -50,14 +52,21 @@ class BankAccountController extends \Beech\Ehrm\Controller\AbstractManagementCon
 	 * @return void
 	 */
 	public function updateAction(\Beech\Party\Domain\Model\BankAccount $bankAccount) {
-		$bankAccount->setParty($this->persistenceManager->getIdentifierByObject($bankAccount->getParty()));
-		$this->repository->update($bankAccount);
-		$this->addFlashMessage($this->translator->translateById('Updated.', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
+		If	($this->getControllerContext()->getRequest()->getArgument('action') === 'remove') {
+			$this->redirect('remove', 'BankAccount', NULL, array('bankAccount' => $bankAccount, 'party' => $address->getParty()));
+		} else {
+			$bankAccount->setParty($this->persistenceManager->getIdentifierByObject($bankAccount->getParty()));
+			$this->repository->update($bankAccount);
+			$this->addFlashMessage($this->translator->translateById('Updated.', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
+			$this->view->assign('bankAccount', $bankAccount);
+			$this->view->assign('party', $bankAccount->getParty());
+			$this->view->assign('action', 'update');
+		}
 	}
 
 	/**
 	 * @param \Beech\Party\Domain\Model\BankAccount $bankAccount A bankAccount to remove
-	 *
+	 * @Flow\IgnoreValidation("bankAccount")
 	 * @return void
 	 */
 	public function removeAction(\Beech\Party\Domain\Model\BankAccount $bankAccount) {
@@ -65,6 +74,7 @@ class BankAccountController extends \Beech\Ehrm\Controller\AbstractManagementCon
 		$this->repository->update($bankAccount);
 		$this->addFlashMessage($this->translator->translateById('Removed.', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
 	}
+
 }
 
 ?>

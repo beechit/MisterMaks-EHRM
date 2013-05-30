@@ -14,42 +14,6 @@
 			</div>
 		</f:if>
 	</f:form.validationResults>
-	<f:form.validationResults for="address">
-		<f:if condition="{validationResults.flattenedErrors}">
-			<div class="error">
-				<f:for each="{validationResults.flattenedErrors}" key="propertyPath" as="errors">{propertyPath}:
-					<f:for each="{errors}" as="error">{error}</f:for>
-				</f:for>
-			</div>
-		</f:if>
-	</f:form.validationResults>
-	<f:form.validationResults for="bankAccount">
-		<f:if condition="{validationResults.flattenedErrors}">
-			<div class="error">
-				<f:for each="{validationResults.flattenedErrors}" key="propertyPath" as="errors">{propertyPath}:
-					<f:for each="{errors}" as="error">{error}</f:for>
-				</f:for>
-			</div>
-		</f:if>
-	</f:form.validationResults>
-	<f:form.validationResults for="education">
-		<f:if condition="{validationResults.flattenedErrors}">
-			<div class="error">
-				<f:for each="{validationResults.flattenedErrors}" key="propertyPath" as="errors">{propertyPath}:
-					<f:for each="{errors}" as="error">{error}</f:for>
-				</f:for>
-			</div>
-		</f:if>
-	</f:form.validationResults>
-	<f:form.validationResults for="asset">
-		<f:if condition="{validationResults.flattenedErrors}">
-			<div class="error">
-				<f:for each="{validationResults.flattenedErrors}" key="propertyPath" as="errors">{propertyPath}:
-					<f:for each="{errors}" as="error">{error}</f:for>
-				</f:for>
-			</div>
-		</f:if>
-	</f:form.validationResults>
 	<div class="tab-content well">
 		<h3>Person information</h3>
 
@@ -60,24 +24,17 @@
 			</div>
 		</f:form>
 		<hr/>
+		<!-- addresses -->
+		<h3>Addresses</h3>
 		<f:for each="{addresses}" as="address">
-			<f:form action="update" controller="Address" object="{address}" name="address" class="form-horizontal">
-				<f:form.hidden property="id"/>
-				<f:render partial="Forms/Address" arguments="{address: address}"/>
-				<f:form.submit value="{f:translate(id: 'action.update')}"/>
-			</f:form>
-			<f:form action="remove" controller="Address" object="{address}" name="address" class="form-horizontal">
-				<f:form.hidden property="id"/>
-				<f:form.hidden property="party" value="{person}"/>
-				<f:form.submit value="{f:translate(id: 'action.remove')}"/>
-			</f:form>
-		</f:for>
-		<f:form action="add" controller="Address" object="{address}" name="address" class="form-horizontal">
-			<f:render partial="Forms/Address" arguments="{person: person}"/>
-			<div class="form-actions">
-				<f:form.submit value="{f:translate(id: 'action.create')}"/>
+			<div id="address-{address.id}">
+				<f:render partial="Forms/address" arguments="{party: person, address: address, action: 'update'}"/>
 			</div>
-		</f:form>
+		</f:for>
+		<div id="address-add" class="clearfix">
+			<f:render partial="Forms/Address" arguments="{party: person, action: 'add', suffix: 'address'}"/>
+		</div>
+		<hr/>
 		<!-- Phone numbers -->
 		<h3>Phone numbers</h3>
 		<f:for each="{phoneNumbers}" as="phoneNumber">
@@ -101,104 +58,49 @@
 		</div>
 		<hr/>
 		<!-- Bank accounts -->
+		<h3>Bank accounts</h3>
 		<f:for each="{bankAccounts}" as="bankAccount">
-			<f:form action="update" controller="BankAccount" object="{bankAccount}" name="bankAccount"
-					class="form-horizontal well">
-				Update:
-				<f:form.hidden property="id"/>
-				<f:render partial="Forms/BankAccount" arguments="{person: person}"/>
-				<f:form.submit value="{f:translate(id: 'action.update')}"/>
-			</f:form>
-			<f:form action="remove" controller="BankAccount" object="{bankAccount}" name="bankAccount"
-					class="form-horizontal well">
-				Delete:
-				<f:form.hidden property="id"/>
-				<f:form.hidden property="party" value="{person}"/>
-				<f:form.submit value="{f:translate(id: 'action.remove')}"/>
-			</f:form>
-		</f:for>
-
-		<f:form action="add" controller="BankAccount" object="{bankAccount}" name="bankAccount"
-				class="form-horizontal well">
-			<f:render partial="Forms/BankAccount" arguments="{person: person}"/>
-			<div class="form-actions">
-				<f:form.submit value="{f:translate(id: 'action.create')}"/>
+			<div id="bankAccount-{bankAccount.id}">
+				<f:render partial="Forms/BankAccount" arguments="{party: person, bankAccount: bankAccount, action: 'update'}"/>
 			</div>
-		</f:form>
-
+		</f:for>
+		<div id="bankAccount-add" class="clearfix">
+			<f:render partial="Forms/BankAccount" arguments="{party: person, action: 'add', suffix: 'bankAccount'}"/>
+		</div>
+		<hr/>
+		<!-- Education -->
+		<h3>Education</h3>
 		<f:for each="{educations}" as="education">
-			<f:form action="update" controller="Education" object="{education}" name="education"
-					class="form-horizontal well">
-				Update:
-				<f:form.hidden property="id"/>
-				<f:render partial="Forms/Education" arguments="{person: person}"/>
-				<f:form.submit value="{f:translate(id: 'action.update')}"/>
-			</f:form>
-			<f:form action="remove" controller="Education" object="{education}" name="education"
-					class="form-horizontal well">
-				Delete:
-				<f:form.hidden property="id"/>
-				<f:form.hidden property="party" value="{person}"/>
-				<f:form.submit value="{f:translate(id: 'action.remove')}"/>
-			</f:form>
-		</f:for>
-
-		<f:form action="add" controller="Education" object="{education}" name="education"
-				class="form-horizontal well">
-			 Create:
-			<f:render partial="Forms/Education" arguments="{person: person}"/>
-			<div class="form-actions">
-				<f:form.submit value="{f:translate(id: 'action.create')}"/>
+			<div id="education-{education.id}">
+				<f:render partial="Forms/Education" arguments="{party: person, education: education, action: 'update'}"/>
 			</div>
-		</f:form>
-
+		</f:for>
+		<div id="education-add" class="clearfix">
+			<f:render partial="Forms/Education" arguments="{party: person, action: 'add', suffix: 'education'}"/>
+		</div>
+		<hr/>
+		<!-- Asset -->
+		<h3>Asset</h3>
 		<f:for each="{assets}" as="asset">
-			<f:form action="update" controller="Asset" object="{asset}" name="asset"
-					class="form-horizontal well">
-				Update:
-				<f:form.hidden property="id"/>
-				<f:render partial="Forms/Asset" arguments="{person: person}"/>
-				<f:form.submit value="{f:translate(id: 'action.update')}"/>
-			</f:form>
-			<f:form action="remove" controller="Asset" object="{asset}" name="asset"
-					class="form-horizontal well">
-				Delete:
-				<f:form.hidden property="id"/>
-				<f:form.hidden property="party" value="{person}"/>
-				<f:form.submit value="{f:translate(id: 'action.remove')}"/>
-			</f:form>
-		</f:for>
-
-		<f:form action="add" controller="Asset" object="{asset}" name="asset"
-				class="form-horizontal well">
-			<f:render partial="Forms/Asset" arguments="{person: person}"/>
-			<div class="form-actions">
-				<f:form.submit value="{f:translate(id: 'action.create')}"/>
+			<div id="asset-{asset.id}">
+				<f:render partial="Forms/Asset" arguments="{party: person, asset: asset, action: 'update'}"/>
 			</div>
-		</f:form>
-
-		<f:for each="{licence}" as="licence">
-			<f:form action="update" controller="Licence" object="{licence}" name="licence"
-					class="form-horizontal well">
-				<f:form.hidden property="id"/>
-				<f:render partial="Forms/Licence" arguments="{person: person}"/>
-				<f:form.submit value="{f:translate(id: 'action.update')}"/>
-			</f:form>
-			<f:form action="remove" controller="Licence" object="{licence}" name="licence"
-					class="form-horizontal well">
-				<f:form.hidden property="id"/>
-				<f:form.hidden property="party" value="{person}"/>
-				<f:form.submit value="{f:translate(id: 'action.remove')}"/>
-			</f:form>
 		</f:for>
-
-		<f:form action="add" controller="Licence" object="{licence}" name="licence"
-				class="form-horizontal well">
-			<f:render partial="Forms/Licence" arguments="{person: person}"/>
-			<div class="form-actions">
-				<f:form.submit value="{f:translate(id: 'action.create')}"/>
+		<div id="asset-add" class="clearfix">
+			<f:render partial="Forms/Asset" arguments="{party: person, action: 'add', suffix: 'asset'}"/>
+		</div>
+		<hr/>
+		<!-- Licence -->
+		<h3>Licence</h3>
+		<f:for each="{licences}" as="licence">
+			<div id="licence-{licence.id}">
+				<f:render partial="Forms/Licence" arguments="{party: person, licence: licence, action: 'update'}"/>
 			</div>
-		</f:form>
+		</f:for>
+		<div id="licence-add" class="clearfix">
+			<f:render partial="Forms/Licence" arguments="{party: person, action: 'add', suffix: 'licence'}"/>
+		</div>
+		<hr/>
 
 	</div>
 </f:section>

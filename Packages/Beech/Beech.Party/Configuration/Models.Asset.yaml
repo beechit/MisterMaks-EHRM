@@ -19,13 +19,6 @@
          - 'tools'
          - 'companyCar'
          - 'other'
-    'licence':
-      label: 'Licence'
-      validation:
-        -
-          type: 'StringLength'
-          options:
-            maximum: 35
     'model':
       label: 'Model'
       validation:

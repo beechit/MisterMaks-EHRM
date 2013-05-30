@@ -41,7 +41,9 @@ class LicenceController extends \Beech\Ehrm\Controller\AbstractManagementControl
 	public function addAction(\Beech\Party\Domain\Model\licence $licence) {
 		$licence->setParty($this->persistenceManager->getIdentifierByObject($licence->getParty()));
 		$this->repository->add($licence);
-		$this->addFlashMessage($this->translator->translateById('Added.', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
+		$this->view->assign('licence', $licence);
+		$this->view->assign('party', $licence->getParty());
+		$this->view->assign('action', 'add');
 	}
 
 	/**
@@ -50,9 +52,16 @@ class LicenceController extends \Beech\Ehrm\Controller\AbstractManagementControl
 	 * @return void
 	 */
 	public function updateAction(\Beech\Party\Domain\Model\licence $licence) {
-		$licence->setParty($this->persistenceManager->getIdentifierByObject($licence->getParty()));
-		$this->repository->update($licence);
-		$this->addFlashMessage($this->translator->translateById('Updated.', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
+		if ($this->getControllerContext()->getRequest()->getArgument('action') === 'remove') {
+			$this->redirect('remove', 'Licence', NULL, array('licence' => $licence, 'party' => $licence->getParty()));
+		} else {
+			$licence->setParty($this->persistenceManager->getIdentifierByObject($licence->getParty()));
+			$this->repository->update($licence);
+			$this->addFlashMessage($this->translator->translateById('Updated.', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
+			$this->view->assign('licence', $licence);
+			$this->view->assign('party', $licence->getParty());
+			$this->view->assign('action', 'update');
+		}
 	}
 
 	/**

@@ -44,7 +44,7 @@ class PhoneNumberController extends \Beech\Ehrm\Controller\AbstractManagementCon
 		$this->view->assign('phoneNumber', $phoneNumber);
 		$this->view->assign('party', $phoneNumber->getParty());
 		$this->view->assign('action', 'add');
-	}
+		}
 
 	/**
 	 * @param \Beech\Party\Domain\Model\PhoneNumber $phoneNumber A  phoneNumber to update

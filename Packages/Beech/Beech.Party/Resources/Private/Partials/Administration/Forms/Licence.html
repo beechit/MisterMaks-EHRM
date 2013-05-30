@@ -1,28 +1,59 @@
-<h4>Licence</h4>{namespace ehrm=Beech\Ehrm\ViewHelpers}
-	<fieldset>
-		<div class="control-group">
-			<div class="controls controls">
+{namespace ehrm=Beech\Ehrm\ViewHelpers}
+<f:render partial="FlashMessages" arguments="{modelName: 'licence'}"/>
+<div id="{action}{licence.id}{suffix}">
+	<ehrm:form action="{action}" controller="Licence" object="{licence}" name="licence" class="compact-form form-horizontal {action}">
+		<f:if condition="{0: action} != {0: 'remove'}">
+			<f:if condition="{0: action} == {0: 'update'}"><f:then>
+				<div class="row-fluid">
+					<div class="span1"><i class="icon-envelope"></i></div>
+					<div class="span3"><strong>{licence.name} {licence.startDate} {licence.expirationDate}</strong></div>
+					<div class="span2 offset2">
+						<div class="btn-group">
+							<a class="btn btn-small" data-toggle="collapse" data-target="#toggle{licence.id}"><i class="icon-pencil"></i></a>
+							<f:if condition="{0: action} != {0: 'add'}">
+								<f:then>
+									<button type="submit" name="action" class="btn btn-danger btn-small" value="remove">
+										<i class="icon-trash"></i>
+									</button>
+								</f:then>
+							</f:if>
+						</div>
+					</div>
+				</div>
+				<div id="toggle{licence.id}" class="collapse">
+			</f:then><f:else>
+				<div>
+			</f:else></f:if>
 
-				<ehrm:optionSelect property="type" id="type" model="Beech.Party:Licence" placeholder="{f:translate(value: 'Licence description', locale: 'nl_NL')}..." class="span6"/>
-				<f:form.textfield property="name" id="name" class="span5"
-				                  placeholder="{f:translate(id:'Licence name')}" />
+			<div class="row-fluid" >
+				<div class="span1"><i class="icon-plus"/></div>
+				<div class="span3">
+					<ehrm:optionSelect property="type" id="licenceType{licence.id}" model="Beech.Party:Licence" placeholder="{f:translate(value: 'Type')}..." class="span10"/>
+				</div>
+				<div class="span6">
+					<f:form.textfield property="name" class="span7" placeholder="licenceName..."/>
+					<div class="row-fluid" >
+						<f:form.textfield property="grantedBy" class="span7" placeholder="Granted By..."/>
+						<ehrm:form.datePicker id="startDate{licence.id}" property="startDate" class="datepicker span6" dateFormat="d-m-Y"/>
+						<label class="control-label">Expiration date</label>
+						<ehrm:form.datePicker id="expirationDate{licence.id}" property="expirationDate" class="datepicker span6" dateFormat="d-m-Y"/>
+					</div>
+				</div>
+				<div class="span2">
+					<button type="submit" name="action" class="btn btn-small" value="{action}">
+						<i class="icon-save"></i>
+					</button>
+				</div>
 			</div>
-		</div>
-		<div class="control-group">
-			<div class="controls controls">
-				<f:form.textfield property="grantedBy" id="grantedBy" class="span3"
-				                  placeholder="{f:translate(id:'Granted By')} "/>
-			</div>
-			<div class="controls controls-row">
-				<label class="control-label">Start Date</label>
-					<ehrm:form.datePicker id="startDate" property="startDate" class="datepicker" dateFormat="d-m-Y"/>
-				<label class="control-label">Expiration date</label>
-					<ehrm:form.datePicker id="expirationDate" property="expirationDate" class="datepicker" dateFormat="d-m-Y"/>
-			</div>
-			<div class="controls controls-row">
-				.<label class="control-label" for="notify">Notify at expiration ?</label>
-					<f:form.checkbox property="notify" id="notifygraduated" value="1"/>
-			</div>
-		<div>
-		<f:form.hidden property="party" value="{person}"/>
-	</fieldset>
+</div>
+</f:if>
+
+<f:if condition="{0: action} == {0: 'remove'}">
+	<button type="submit" name="submit" class="btn btn-danger btn-mini">
+		<i class="icon-trash"></i>
+	</button>
+</f:if>
+<f:form.hidden property="id"/>
+<f:form.hidden property="party" value="{party}"/>
+</ehrm:form>
+</div>

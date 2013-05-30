@@ -1,28 +1,64 @@
-<h4>Asset</h4>{namespace ehrm=Beech\Ehrm\ViewHelpers}
-	<div class="control-group">
-		<div class="controls controls">
-			<ehrm:optionSelect property="type" id="type" model="Beech.Party:Asset" placeholder="{f:translate(value: 'Asset', locale: 'nl_NL')}..." class="span6"/>
-			<f:form.textfield property="name" id="name" class="span6"
-							  placeholder="{f:translate(id:'Asset name')}"/>
-		</div>
-	</div>
-		<div class="control-group">
-			<div class="controls controls">
-				<f:form.textfield property="model" id="modelname" class="span6"
-									placeholder="{f:translate(id:'Model')}"/>
+{namespace ehrm=Beech\Ehrm\ViewHelpers}
+<f:render partial="FlashMessages" arguments="{modelName: 'asset'}"/>
+<div id="{action}{asset.id}{suffix}">
+	<ehrm:form action="{action}" controller="{controller}" object="{asset}" name="asset" class="compact-form form-horizontal {action}">
+		<f:if condition="{0: action} != {0: 'remove'}">
+			<f:if condition="{0: action} == {0: 'update'}"><f:then>
+				<div class="row-fluid">
+					<div class="span1"><i class="icon-home"></i></div>
+					<div class="span3"><strong>{asset.type} {asset.name} {asset.model} {asset.iDNumber}</strong></div>
+				</div>
+				<div class="row-fluid">
+					<div class="span4">{asset.provisionDate}</div>
+				</div>
+					<div class="span2 offset2">
+						<div class="btn-group">
+							<a class="btn btn-small" data-toggle="collapse" data-target="#toggle{asset.id}"><i class="icon-pencil"></i></a>
+							<f:if condition="{0: action} != {0: 'add'}">
+								<f:then>
+									<button type="submit" name="action" class="btn btn-danger btn-small" value="remove">
+										<i class="icon-trash"></i>
+									</button>
+								</f:then>
+							</f:if>
+						</div>
+					</div>
+				</div>
+				<div id="toggle{asset.id}" class="collapse">
+			</f:then><f:else>
+				<div>
+			</f:else></f:if>
+
+			<div class="row-fluid" >
+				<div class="span1"><i class="icon-plus"/></div>
+				<div class="span3">
+					<ehrm:optionSelect property="type" id="assetType{asset.id}" model="Beech.Party:Asset" placeholder="Type..." class="span10"/>
+				</div>
+				<div class="span6">
+				<div class="row-fluid" >
+					<f:form.textfield property="name" class="span6" placeholder="Asset name..."/>
+					<f:form.textfield property="name" class="span6" placeholder="Asset model..."/>
+				</div>
+					<div class="row-fluid" >
+						<f:form.textfield property="idNumber" class="span6" placeholder=" idnumber.."/>
+						<ehrm:form.datePicker id="provisionDate{provision.id}" property="provisionDate" class="datepicker span6" dateFormat="d-m-Y"/>
+					</div>
+				</div>
+				<div class="span2">
+					<button type="submit" name="action" class="btn btn-small" value="{action}">
+						<i class="icon-save"></i>
+					</button>
+				</div>
 			</div>
-			<div class="controls controls">
-				<f:form.textfield property="licence" id="licence" class="span6"
-								  placeholder="{f:translate(id:'Licence')}"/>
-			</div>
-			<div class="controls controls">
-				<f:form.textfield property="iDNumber" id="iDNumber" class="span6"
-								  placeholder="{f:translate(id:'ID Number')}"/>
-			</div>
-			<div class="controls controls">
-				<label class="control-label"> <f:translate id="Provision date">Provision date</f:translate></label>
-					<ehrm:form.datePicker id="startDate" class="datepicker" property="startDate"  dateFormat="DD-mm-YY" displayDateSelector="TRUE" enableDatePicker="FALSE"/>
-			</div>
-		</div>
-	</div>
-<f:form.hidden property="party" value="{person}"/>
+</div>
+</f:if>
+
+<f:if condition="{0: action} == {0: 'remove'}">
+	<button type="submit" name="submit" class="btn btn-danger btn-mini">
+		<i class="icon-trash"></i>
+	</button>
+</f:if>
+<f:form.hidden property="id"/>
+<f:form.hidden property="party" value="{party}"/>
+</ehrm:form>
+</div>

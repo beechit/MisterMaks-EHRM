@@ -41,7 +41,9 @@ class AddressController extends \Beech\Ehrm\Controller\AbstractManagementControl
 	public function addAction(\Beech\Party\Domain\Model\Address $address) {
 		$address->setParty($this->persistenceManager->getIdentifierByObject($address->getParty()));
 		$this->repository->add($address);
-		$this->addFlashMessage($this->translator->translateById('Added.', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
+		$this->view->assign('address', $address);
+		$this->view->assign('party', $address->getParty());
+		$this->view->assign('action', 'add');
 	}
 
 	/**
@@ -50,21 +52,29 @@ class AddressController extends \Beech\Ehrm\Controller\AbstractManagementControl
 	 * @return void
 	 */
 	public function updateAction(\Beech\Party\Domain\Model\Address $address) {
-		$address->setParty($this->persistenceManager->getIdentifierByObject($address->getParty()));
-		$this->repository->update($address);
-		$this->addFlashMessage($this->translator->translateById('Updated.', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
+		If	($this->getControllerContext()->getRequest()->getArgument('action') === 'remove') {
+			$this->redirect('remove', 'Address', NULL, array('address' => $address, 'party' => $address->getParty()));
+		} else {
+			$address->setParty($this->persistenceManager->getIdentifierByObject($address->getParty()));
+			$this->repository->update($address);
+			$this->addFlashMessage($this->translator->translateById('Updated.', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
+			$this->view->assign('address', $address);
+			$this->view->assign('party', $address->getParty());
+			$this->view->assign('action', 'update');
+		}
 	}
 
 	/**
 	 * @param \Beech\Party\Domain\Model\Address $address A address to remove
-	 *
+	 * @Flow\IgnoreValidation("address")
 	 * @return void
 	 */
 	public function removeAction(\Beech\Party\Domain\Model\Address $address) {
 		$address->setParty(NULL);
 		$this->repository->update($address);
-		$this->addFlashMessage($this->translator->translateById('Updated.', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
+		$this->addFlashMessage($this->translator->translateById('Removed.', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
 	}
+
 }
 
 ?>
