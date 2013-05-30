@@ -21,6 +21,11 @@ class NationalitySelectViewHelper extends \TYPO3\Fluid\ViewHelpers\Form\SelectVi
 	protected $formFactory;
 
 	/**
+	 * @var integer
+	 */
+	protected $value;
+
+	/**
 	 * Initialize arguments.
 	 *
 	 * @return void
@@ -56,5 +61,19 @@ class NationalitySelectViewHelper extends \TYPO3\Fluid\ViewHelpers\Form\SelectVi
 		return parent::render();
 	}
 
-
+	/**
+	 * Check if a value is the selected one
+	 *
+	 * @param string $value Value to check for
+	 * @return boolean TRUE if the value should be marked as selected; FALSE otherwise
+	 */
+	protected function isSelected($value) {
+		if($this->value === NULL) {
+			$this->value = (int)$this->getValue();
+			if($this->value === NULL) {
+				$this->value = 0;
+			}
+		}
+		return $this->value === $value;
+	}
 }

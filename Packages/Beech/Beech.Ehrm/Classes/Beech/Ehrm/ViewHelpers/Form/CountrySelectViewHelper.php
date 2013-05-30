@@ -21,6 +21,11 @@ class CountrySelectViewHelper extends \TYPO3\Fluid\ViewHelpers\Form\SelectViewHe
 	protected $formFactory;
 
 	/**
+	 * @var string
+	 */
+	protected $value;
+
+	/**
 	 * Initialize arguments.
 	 *
 	 * @return void
@@ -61,5 +66,19 @@ class CountrySelectViewHelper extends \TYPO3\Fluid\ViewHelpers\Form\SelectViewHe
 		return $content;
 	}
 
-
+	/**
+	 * Check if a value is the selected one
+	 *
+	 * @param string $value Value to check for
+	 * @return boolean TRUE if the value should be marked as selected; FALSE otherwise
+	 */
+	protected function isSelected($value) {
+		if($this->value === NULL) {
+			$this->value = $this->getValue();
+			if($this->value === NULL) {
+				$this->value = '';
+			}
+		}
+		return $this->value === $value;
+	}
 }
