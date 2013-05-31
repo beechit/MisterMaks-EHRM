@@ -110,6 +110,7 @@ class PersonController extends \Beech\Ehrm\Controller\AbstractManagementControll
 	 * Edit a single person object
 	 *
 	 * @param \Beech\Party\Domain\Model\Person $person
+	 * @Flow\IgnoreValidation("$person")
 	 * @return void
 	 */
 	public function editAction(Person $person) {
@@ -121,7 +122,7 @@ class PersonController extends \Beech\Ehrm\Controller\AbstractManagementControll
 		$phoneNumbers = $this->phoneNumberRepository->findByParty($identifier);
 		$this->view->assign('phoneNumbers', $phoneNumbers);
 		$electronicAddresses = $this->electronicAddressRepository->findByParty($identifier);
-        $this->view->assign('electronicAddresses', $electronicAddresses);
+		$this->view->assign('electronicAddresses', $electronicAddresses);
 		$bankAccounts = $this->bankAccountRepository->findByParty($identifier);
 		$this->view->assign('bankAccounts', $bankAccounts);
 		$educations = $this->educationRepository->findByParty($identifier);
@@ -144,7 +145,6 @@ class PersonController extends \Beech\Ehrm\Controller\AbstractManagementControll
 
 	/**
 	 * @param \Beech\Party\Domain\Model\Person $person A new person to add
-	 *
 	 * @return void
 	 */
 	public function createAction(Person $person) {
@@ -155,7 +155,6 @@ class PersonController extends \Beech\Ehrm\Controller\AbstractManagementControll
 
 	/**
 	 * @param \Beech\Party\Domain\Model\Person $person A new person to update
-	 *
 	 * @return void
 	 */
 	public function updateAction(Person $person) {
@@ -166,7 +165,7 @@ class PersonController extends \Beech\Ehrm\Controller\AbstractManagementControll
 
 	/**
 	 * @param \Beech\Party\Domain\Model\Person $person A new person to delete
-	 *
+	 * @Flow\IgnoreValidation("$person")
 	 * @return void
 	 */
 	public function deleteAction(Person $person) {
