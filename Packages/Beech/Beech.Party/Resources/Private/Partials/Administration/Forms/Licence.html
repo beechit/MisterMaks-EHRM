@@ -31,11 +31,14 @@
 					<ehrm:optionSelect property="type" id="licenceType{licence.id}" model="Beech.Party:Licence" placeholder="{f:translate(value: 'Type')}..." class="span10"/>
 				</div>
 				<div class="span6">
-					<f:form.textfield property="name" class="span7" placeholder="licenceName..."/>
+					<f:form.textfield property="name" class="span7" placeholder="{f:translate(value: 'Licence')}..."/>
 					<div class="row-fluid" >
-						<f:form.textfield property="grantedBy" class="span7" placeholder="Granted By..."/>
+						<f:form.textfield property="grantedBy" class="span7" placeholder="{f:translate(value: 'GrantedBy')}..."/>
+						<label class="control-label" for="startDate{licence.id}">
+							<f:translate id="Startdate">StartDate</f:translate></label>
 						<ehrm:form.datePicker id="startDate{licence.id}" property="startDate" class="datepicker span6" dateFormat="d-m-Y"/>
-						<label class="control-label">Expiration date</label>
+						<label class="control-label" for="ExpirationDate">
+						<f:translate id="ExpirationDate">Expiration date</f:translate></label>
 						<ehrm:form.datePicker id="expirationDate{licence.id}" property="expirationDate" class="datepicker span6" dateFormat="d-m-Y"/>
 					</div>
 				</div>
