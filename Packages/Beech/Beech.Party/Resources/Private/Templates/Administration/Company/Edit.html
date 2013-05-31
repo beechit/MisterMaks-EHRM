@@ -13,6 +13,17 @@
 				<f:form.submit value="{f:translate(id: 'action.save')}" class="btn"/>
 			</div>
 		</f:form>
+		<!-- addresses -->
+		<h3>Address</h3>
+		<f:for each="{addresses}" as="address">
+			<div id="address-{address.id}">
+				<f:render partial="Forms/Address" arguments="{party: company, address: address, action: 'update'}"/>
+			</div>
+		</f:for>
+		<div id="address-add" class="clearfix">
+			<f:render partial="Forms/Address" arguments="{party: company, action: 'add', suffix: 'address'}"/>
+		</div>
+		<hr/>
 		<!-- Phone numbers -->
 		<h3>Phone numbers</h3>
 		<f:for each="{phoneNumbers}" as="phoneNumber">
