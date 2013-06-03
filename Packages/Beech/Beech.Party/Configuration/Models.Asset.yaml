@@ -9,7 +9,7 @@
           type: 'StringLength'
           options:
             maximum: 35
-    'type':
+    'assetType':
       label: 'Asset Type'
       type: 'array'
       options:
@@ -36,11 +36,11 @@
     'startDate':
       label: 'Provision date'
       validation:
-        -
-          type: 'DateTimeRange'
-          options:
-            earliestDate: 19500101
-            latestDate: 20200101
+#        -
+#          type: 'DateTimeRange'
+#          options:
+#            earliestDate: 19500101
+#            latestDate: 20200101
     'provisionedBy':
       label: 'ProvisionedBy'
       type: 'TYPO3\Party\Domain\Model\AbstractParty'
