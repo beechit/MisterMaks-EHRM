@@ -25,7 +25,7 @@ class AddressController extends \Beech\Ehrm\Controller\AbstractManagementControl
 	/**
 	 * @var string
 	 */
-	protected $repositoryClassName = 'Beech\Party\Domain\Repository/AddressRepository';
+	protected $repositoryClassName = 'Beech\Party\Domain\Repository\AddressRepository';
 
 	/**
 	 * @var \TYPO3\Flow\I18n\Translator

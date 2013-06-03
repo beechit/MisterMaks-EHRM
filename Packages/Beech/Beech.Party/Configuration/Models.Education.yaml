@@ -2,7 +2,7 @@
   properties:
     'party':
       type: 'TYPO3\Party\Domain\Model\AbstractParty'
-    'type':
+    'educationLevel':
       label: 'Education'
       options:
         values:
@@ -32,20 +32,20 @@
             maximum: 35
     'startDate':
       label: 'Education start date'
-      validation:
-        -
-          type: 'DateTimeRange'
-          options:
-            earliestDate: 19500101
-            latestDate: 20200101
+#      validation:
+#        -
+#          type: 'DateTimeRange'
+#          options:
+#            earliestDate: 19500101
+#            latestDate: 20200101
     'endDate':
       label: 'Education end date'
-      validation:
-        -
-          type: 'DateTimeRange'
-          options:
-            earliestDate: 19500101
-            latestDate: 20200101
+#      validation:
+#        -
+#          type: 'DateTimeRange'
+#          options:
+#            earliestDate: 19500101
+#            latestDate: 20200101
     'graduated':
       label: 'Graduated'
       options:

@@ -74,6 +74,7 @@ class ElectronicAddressController extends \Beech\Ehrm\Controller\AbstractManagem
 		$this->repository->update($electronicAddress);
 		$this->addFlashMessage($this->translator->translateById('Removed.', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
 	}
+
 }
 
 ?>

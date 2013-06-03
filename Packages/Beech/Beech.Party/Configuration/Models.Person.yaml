@@ -52,13 +52,13 @@
           type: 'StringLength'
           options:
             maximum: 30
-    'Nameusage':
+    'nameUsage':
       label: 'Name usage'
       options:
         values:
           - 'Birth name'
           - 'Married name'
-          - 'Married name + birthname'
+          - 'Married name & birthname'
     'initials':
       label: 'Initials'
       validation:
