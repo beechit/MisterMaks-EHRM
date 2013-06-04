@@ -75,7 +75,7 @@
         -
           type: 'RegularExpression'
           options:
-            regularExpression: '/[0-9]{4}\s{0,1}[a-z]{2}/'
+            regularExpression: '/[0-9]{4}[a-zA-Z]{2}/'
         -
           type: 'StringLength'
           options:

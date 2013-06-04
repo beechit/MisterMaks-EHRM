@@ -4,7 +4,6 @@
       type: 'TYPO3\Party\Domain\Model\AbstractParty'
     'type':
       label: 'Licence type'
-      type: 'array'
       options:
         values:
          - 'Drivers licence'
@@ -27,20 +26,20 @@
             maximum: 35
     'startDate':
       label: 'licenceStart'
-      validation:
-        -
-          type: 'DateTimeRange'
-          options:
-            earliestDate: 19500101
-            latestDate: 20200101
+#      validation:
+#        -
+#          type: 'DateTimeRange'
+#          options:
+#            earliestDate: 19500101
+#            latestDate: 20200101
     'expirationDate':
       label: 'Licence expiration date'
-      validation:
-        -
-          type: 'DateTimeRange'
-          options:
-            earliestDate: 19500101
-            latestDate: 20200101
+#      validation:
+#        -
+#          type: 'DateTimeRange'
+#          options:
+#            earliestDate: 19500101
+#            latestDate: 20200101
     'document':
       label: 'licenceDocument'
       type: 'Beech\Party\Domain\Model\Document'
@@ -53,12 +52,12 @@
       defaultValue: 'now'
       label: 'creation date'
       type: 'DateTime'
-      validation:
-        -
-          type: 'DateTimeRange'
-          options:
-            earliestDate: 20130101
-            latestDate: 20200101
+#      validation:
+#        -
+#          type: 'DateTimeRange'
+#          options:
+#            earliestDate: 20130101
+#            latestDate: 20200101
     'createdBy':
       defaultValue: 'currentUser'
       label: 'Created by'
