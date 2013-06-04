@@ -11,7 +11,6 @@
             maximum: 35
     'assetType':
       label: 'Asset Type'
-      type: 'array'
       options:
         values:
          - 'Laptop'
@@ -35,7 +34,7 @@
             maximum: 35
     'startDate':
       label: 'Provision date'
-      validation:
+#      validation:
 #        -
 #          type: 'DateTimeRange'
 #          options:
@@ -52,12 +51,12 @@
           - FALSE
     'returnDate':
       label: 'Return Date'
-      validation:
-        -
-          type: 'DateTimeRange'
-          options:
-            earliestDate: 19500101
-            latestDate: 20200101
+#      validation:
+#        -
+#          type: 'DateTimeRange'
+#          options:
+#            earliestDate: 19500101
+#            latestDate: 20200101
     'returnParty':
       label: 'Returned to'
       type: 'TYPO3\Party\Domain\Model\AbstractParty'
@@ -69,12 +68,12 @@
       defaultValue: 'now'
       label: 'creation date'
       type: 'DateTime'
-      validation:
-        -
-          type: 'DateTimeRange'
-          options:
-            earliestDate: 20130101
-            latestDate: 20200101
+#      validation:
+#        -
+#          type: 'DateTimeRange'
+#          options:
+#            earliestDate: 20130101
+#            latestDate: 20200101
     'createdBy':
       defaultValue: 'currentUser'
       label: 'Created by'
