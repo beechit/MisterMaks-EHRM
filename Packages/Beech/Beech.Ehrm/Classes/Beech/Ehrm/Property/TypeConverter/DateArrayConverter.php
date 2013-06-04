@@ -44,7 +44,7 @@ class DateArrayConverter extends \TYPO3\Flow\Property\TypeConverter\AbstractType
 	 */
 	public function convertFrom($source, $targetType, array $convertedChildProperties = array(), \TYPO3\Flow\Property\PropertyMappingConfigurationInterface $configuration = NULL) {
 		$dateFormatted = \DateTime::createFromFormat($source['dateFormat'], $source['date']);
-		return $dateFormatted->format('Y-m-d H:i:s');
+		return ($dateFormatted) ? $dateFormatted->format('Y-m-d H:i:s') : NULL;
 	}
 }
 ?>
