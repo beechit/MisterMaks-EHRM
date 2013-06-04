@@ -1,7 +1,7 @@
 (function() {
 	'use strict';
 
-	App.BeechPartyAdministrationPersonRoute = App.ModuleRoute.extend({
+	App.BeechPartyPersonRoute = App.ModuleRoute.extend({
 		deserialize: function(params){
 			return {params: App.ModuleHandler.prepareUrl(params)}
 		},
@@ -10,13 +10,23 @@
 		}
 	});
 
-	App.BeechPartyAdministrationPersonNewRoute = App.BeechPartyAdministrationPersonRoute.extend();
+	// Front
+	App.BeechPartyPersonNewRoute = App.BeechPartyPersonRoute.extend();
 
-	App.BeechPartyAdministrationPersonEditRoute = App.BeechPartyAdministrationPersonRoute.extend();
+	App.BeechPartyPersonEditRoute = App.BeechPartyPersonRoute.extend();
 
-	App.BeechPartyAdministrationPersonShowRoute = App.BeechPartyAdministrationPersonRoute.extend();
+	App.BeechPartyPersonShowRoute = App.BeechPartyPersonRoute.extend();
 
-	App.BeechPartyAdministrationPersonDeleteRoute = App.BeechPartyAdministrationPersonRoute.extend();
+	App.BeechPartyPersonDeleteRoute = App.BeechPartyPersonRoute.extend();
+
+	// Administration
+	App.BeechPartyAdministrationPersonNewRoute = App.BeechPartyPersonRoute.extend();
+
+	App.BeechPartyAdministrationPersonEditRoute = App.BeechPartyPersonRoute.extend();
+
+	App.BeechPartyAdministrationPersonShowRoute = App.BeechPartyPersonRoute.extend();
+
+	App.BeechPartyAdministrationPersonDeleteRoute = App.BeechPartyPersonRoute.extend();
 
 
 }).call(this);

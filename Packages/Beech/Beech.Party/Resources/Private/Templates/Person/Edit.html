@@ -1,0 +1,105 @@
+<f:layout name="Ajax" />{namespace form=TYPO3\Form\ViewHelpers}
+
+<f:section name="Body">
+	<h1>
+		<f:translate id="action.edit">Edit</f:translate>
+	</h1>
+	<f:flashMessages class="flashmessages"/>
+	<f:form.validationResults for="person">
+		<f:if condition="{validationResults.flattenedErrors}">
+			<div class="error">
+				<f:for each="{validationResults.flattenedErrors}" key="propertyPath" as="errors">{propertyPath}:
+					<f:for each="{errors}" as="error">{error}</f:for>
+				</f:for>
+			</div>
+		</f:if>
+	</f:form.validationResults>
+	<div class="well clearfix">
+		<h3>Person information</h3>
+
+		<f:form action="update" object="{person}" name="person" class="form-horizontal">
+			<f:render partial="Forms/Person" />
+			<div class="form-actions">
+				<f:form.submit value="{f:translate(id: 'action.save')}" class="btn"/>
+			</div>
+		</f:form>
+		<hr/>
+		<!-- Addresses -->
+		<h3>Addresses</h3>
+		<f:for each="{addresses}" as="address">
+			<div id="address-{address.id}">
+				<f:render partial="Forms/Address" arguments="{party: person, address: address, action: 'update'}"/>
+			</div>
+		</f:for>
+		<div id="address-add" class="clearfix">
+			<f:render partial="Forms/Address" arguments="{party: person, action: 'add', suffix: 'address'}"/>
+		</div>
+		<hr/>
+		<!-- Phone numbers -->
+		<h3>Phone numbers</h3>
+		<f:for each="{phoneNumbers}" as="phoneNumber">
+			<div id="phoneNumber-{phoneNumber.id}">
+				<f:render partial="Forms/PhoneNumber" arguments="{party: person, phoneNumber: phoneNumber, action: 'update'}"/>
+			</div>
+		</f:for>
+		<div id="phoneNumber-add" class="clearfix">
+			<f:render partial="Forms/PhoneNumber" arguments="{party: person, action: 'add', suffix: 'phonenumber'}"/>
+		</div>
+		<hr/>
+		<!-- Electronic addresses -->
+		<h3>Electronic addresses</h3>
+		<f:for each="{electronicAddresses}" as="electronicAddress">
+			<div id="electronicAddress-{electronicAddress.id}">
+				<f:render partial="Forms/ElectronicAddress" arguments="{party: person, electronicAddress: electronicAddress, action: 'update'}"/>
+			</div>
+		</f:for>
+		<div id="electronicAddress-add" class="clearfix">
+			<f:render partial="Forms/ElectronicAddress" arguments="{party: person, action: 'add', suffix: 'electronicAddress'}"/>
+		</div>
+		<hr/>
+		<!-- Bank accounts -->
+		<h3>Bank accounts</h3>
+		<f:for each="{bankAccounts}" as="bankAccount">
+			<div id="bankAccount-{bankAccount.id}">
+				<f:render partial="Forms/BankAccount" arguments="{party: person, bankAccount: bankAccount, action: 'update'}"/>
+			</div>
+		</f:for>
+		<div id="bankAccount-add" class="clearfix">
+			<f:render partial="Forms/BankAccount" arguments="{party: person, action: 'add', suffix: 'bankAccount'}"/>
+		</div>
+		<hr/>
+		<!-- Education -->
+		<h3>Education</h3>
+		<f:for each="{educations}" as="education">
+			<div id="education-{education.id}">
+				<f:render partial="Forms/Education" arguments="{party: person, education: education, action: 'update'}"/>
+			</div>
+		</f:for>
+		<div id="education-add" class="clearfix">
+			<f:render partial="Forms/Education" arguments="{party: person, action: 'add', suffix: 'education'}"/>
+		</div>
+		<hr/>
+		<!-- Asset -->
+		<h3>Asset</h3>
+		<f:for each="{assets}" as="asset">
+			<div id="asset-{asset.id}">
+				<f:render partial="Forms/Asset" arguments="{party: person, asset: asset, action: 'update'}"/>
+			</div>
+		</f:for>
+		<div id="asset-add" class="clearfix">
+			<f:render partial="Forms/Asset" arguments="{party: person, action: 'add', suffix: 'asset'}"/>
+		</div>
+		<hr/>
+		<!-- Licence -->
+		<h3>Licence</h3>
+		<f:for each="{licences}" as="licence">
+			<div id="licence-{licence.id}">
+				<f:render partial="Forms/Licence" arguments="{party: person, licence: licence, action: 'update'}"/>
+			</div>
+		</f:for>
+		<div id="licence-add" class="clearfix">
+			<f:render partial="Forms/Licence" arguments="{party: person, action: 'add', suffix: 'licence'}"/>
+		</div>
+		<hr/>
+	</div>
+</f:section>

@@ -46,8 +46,16 @@
 			this.route('userSettings', { path: 'user/settings' });
 			this.route('documentModule', { path: 'documents' });
 
-				// Beech.Party
-
+			// Beech.Party/Person
+			this.resource('BeechPartyPerson', { path: 'persons' }, function() {
+				this.route('index', { path: '/list' });
+			});
+			this.resource('BeechPartyPerson', { path: 'person' }, function() {
+				this.route('new', { path: '/new' });
+				this.route('show', { path: '/show/:person' });
+				this.route('edit', { path: '/edit/:person' });
+				this.route('delete', { path: '/delete/:person' });
+			});
 			// Beech.Task
 			this.resource('BeechTaskTask', { path: 'tasks' }, function() {
 				this.route('new', {path: '/new'});

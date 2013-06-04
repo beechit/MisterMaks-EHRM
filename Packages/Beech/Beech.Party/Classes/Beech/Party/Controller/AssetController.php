@@ -1,5 +1,5 @@
 <?php
-namespace Beech\Party\Administration\Controller;
+namespace Beech\Party\Controller;
 
 /*
  * This source file is proprietary property of Beech Applications B.V.
@@ -11,7 +11,7 @@ use TYPO3\Flow\Annotations as Flow;
 use Beech\Party\Domain\Model\Asset as Asset;
 
 /**
- * asset controller for the Beech.Party package
+ * Education controller for the Beech.Party package
  *
  * @Flow\Scope("singleton")
  */

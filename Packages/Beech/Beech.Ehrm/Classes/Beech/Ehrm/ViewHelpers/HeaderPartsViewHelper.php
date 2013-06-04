@@ -194,6 +194,26 @@ class HeaderPartsViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHel
 						->reset()
 						->setCreateAbsoluteUri(TRUE)
 						->uriFor('index', array(), 'Document', 'Beech.Document'),
+					'BeechPartyPersonIndex' => $this->controllerContext->getUriBuilder()
+						->reset()
+						->setCreateAbsoluteUri(TRUE)
+						->uriFor('list', array(), 'Person', 'Beech.Party'),
+					'BeechPartyPersonNew' => $this->controllerContext->getUriBuilder()
+						->reset()
+						->setCreateAbsoluteUri(TRUE)
+						->uriFor('new', array(), 'Person', 'Beech.Party'),
+					'BeechPartyPersonShow' => $this->controllerContext->getUriBuilder()
+						->reset()
+						->setCreateAbsoluteUri(TRUE)
+						->uriFor('show', array(), 'Person', 'Beech.Party'),
+					'BeechPartyPersonEdit' => $this->controllerContext->getUriBuilder()
+						->reset()
+						->setCreateAbsoluteUri(TRUE)
+						->uriFor('edit', array(), 'Person', 'Beech.Party'),
+					'BeechPartyPersonDelete' => $this->controllerContext->getUriBuilder()
+						->reset()
+						->setCreateAbsoluteUri(TRUE)
+						->uriFor('delete', array(), 'Person', 'Beech.Party'),
 					'BeechPartyAdministrationPersonIndex' => $this->controllerContext->getUriBuilder()
 						->reset()
 						->setCreateAbsoluteUri(TRUE)

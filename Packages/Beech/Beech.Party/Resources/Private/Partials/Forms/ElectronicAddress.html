@@ -2,30 +2,12 @@
 <f:render partial="FlashMessages" arguments="{modelName: 'electronicAddress'}"/>
 <div id="{action}{electronicAddress.id}{suffix}">
 	<ehrm:form action="{action}" controller="ElectronicAddress" object="{electronicAddress}" name="electronicAddress" class="compact-form form-horizontal {action}">
-		<f:if condition="{0: action} != {0: 'remove'}">
-			<f:if condition="{0: action} == {0: 'update'}"><f:then>
-				<div class="row-fluid">
-					<div class="span1"><i class="icon-envelope"></i></div>
-					<div class="span3"><strong>{electronicAddress.type}</strong></div>
-					<div class="span4">{electronicAddress.address}</div>
-					<div class="span2 offset2">
-						<div class="btn-group">
-							<a class="btn btn-small" data-toggle="collapse" data-target="#toggle{electronicAddress.id}"><i class="icon-pencil"></i></a>
-							<f:if condition="{0: action} != {0: 'add'}">
-								<f:then>
-									<button type="submit" name="action" class="btn btn-danger btn-small" value="remove">
-										<i class="icon-trash"></i>
-									</button>
-								</f:then>
-							</f:if>
-						</div>
-					</div>
-				</div>
-				<div id="toggle{electronicAddress.id}" class="collapse">
-			</f:then><f:else>
-				<div>
-			</f:else></f:if>
-
+		<f:if condition="{0: action} == {0: 'update'}">
+			<f:then>
+				<f:render partial="Views/ElectronicAddress" arguments="{_all}"/>
+			</f:then>
+		</f:if>
+		<div id="toggle{electronicAddress.id}{suffix}" class="collapse">
 			<div class="row-fluid" >
 				<div class="span1"><i class="icon-plus"/></div>
 				<div class="span3">
@@ -45,14 +27,12 @@
 				</div>
 			</div>
 		</div>
-		</f:if>
-
-		<f:if condition="{0: action} == {0: 'remove'}">
-			<button type="submit" name="submit" class="btn btn-danger btn-mini">
-				<i class="icon-trash"></i>
-			</button>
-		</f:if>
 		<f:form.hidden property="id"/>
 		<f:form.hidden property="party" value="{party}"/>
 	</ehrm:form>
 </div>
+<f:if condition="{0: action} == {0: 'add'}">
+	<f:then>
+		<f:render partial="Forms/Buttons/Add" arguments="{identifier: suffix}"/>
+	</f:then>
+</f:if>

@@ -1,0 +1,11 @@
+<f:if condition="{custom}">
+	<f:then><i class="{custom}"/></f:then>
+	<f:else>
+		<f:if condition="{0: action} == {0: 'update'}">
+			<f:then><i class="icon-pencil"/></f:then>
+		</f:if>
+		<f:if condition="{0: action} == {0: 'add'}">
+			<f:then><i class="icon-plus"/></f:then>
+		</f:if>
+	</f:else>
+</f:if>
