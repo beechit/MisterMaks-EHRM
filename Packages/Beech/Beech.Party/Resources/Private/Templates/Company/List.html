@@ -1,8 +1,8 @@
-<f:layout name="Ajax" />{namespace ehrm=Beech\Ehrm\ViewHelpers}
+<f:layout name="Ajax" />
 
 <f:section name="Body">
-	<h1><f:translate id="companies">Company</f:translate></h1>
-	<ehrm:flashMessages/>
+	<h1><f:translate id="companies">Companies</f:translate></h1>
+	<f:flashMessages class="flashmessages"/>
 	<f:if condition="{companies}">
 		<f:then>
 			<table class="table">
@@ -17,9 +17,9 @@
 					<tr>
 						<td>{company.name}</td>
 						<td>
-							<a href="#/company/show/{company.id}"><i class="icon-eye-open"></i></a>
-							<a href="#/company/edit/{company.id}"><i class="icon-pencil"></i></a>
-							<a href="#/company/delete/{company.id}"><i class="icon-trash"></i></a>
+							<a href="#/administration/company/show/{company.id}"><i class="icon-eye-open"></i></a>
+							<a href="#/administration/company/edit/{company.id}"><i class="icon-pencil"></i></a>
+							<a href="#/administration/company/delete/{company.id}"><i class="icon-trash"></i></a>
 						</td>
 					</tr>
 				</f:for>
@@ -31,7 +31,7 @@
 		</f:else>
 	</f:if>
 	<div class="form-actions">
-		<a class="btn btn-primary" href="/#/company/new">
+		<a class="btn btn-primary" href="/#/administration/company/new">
 			<f:translate id="action.new">New</f:translate>
 		</a>
 	</div>

@@ -1,0 +1,17 @@
+<div class="row-fluid">
+	<div class="span1"><i class="icon-home"></i></div>
+	<div class="span3"><strong>{address.type} {address.streetName} {address.houseNumber} {address.houseNumberAddition}</strong></div>
+	<div class="span2 offset6">
+		<div class="btn-group">
+			<f:render partial="Forms/Buttons/Toggle" arguments="{identifier: address.id, icon: 'icon-pencil'}"/>
+			<f:render partial="Forms/Buttons/Remove" arguments="{_all}"/>
+		</div>
+	</div>
+</div>
+<div class="row-fluid">
+	<div class="span1"></div><div class="span3"><strong>{address.postalNL} {address.residence}</strong></div>
+</div>
+<div class="row-fluid">
+	<div class="span1"></div>
+	<div class="span3"><strong>{address.country}</strong></div>
+</div>

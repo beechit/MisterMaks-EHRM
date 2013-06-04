@@ -1,10 +1,10 @@
 {namespace ehrm=Beech\Ehrm\ViewHelpers}
-<ehrm:flashMessages/>
+<f:render partial="FlashMessages" arguments="{modelName: 'bankAccount'}"/>
 <div id="{action}{bankAccount.id}{suffix}">
 	<ehrm:form action="{action}" controller="BankAccount" object="{bankAccount}" name="bankAccount" class="compact-form form-horizontal {action}">
 		<f:if condition="{0: action} == {0: 'update'}">
 			<f:then>
-				<f:render partial="Views/List/BankAccount" arguments="{_all}"/>
+				<f:render partial="Views/BankAccount" arguments="{_all}"/>
 			</f:then>
 		</f:if>
 		<div id="toggle{bankAccount.id}{suffix}" class="collapse">
@@ -26,7 +26,7 @@
 
 						</div>
 						<div class="row-fluid" >
-						<f:form.textarea property="description" class="span8" placeholder="{f:translate(value: 'Description')}..."/>
+						<f:form.textarea property="description" class="span7" placeholder="{f:translate(value: 'Description')}..."/>
 						</div>
 
 					</div>

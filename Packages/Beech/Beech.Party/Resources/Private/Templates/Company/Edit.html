@@ -1,10 +1,10 @@
-<f:layout name="Ajax" />{namespace ehrm=Beech\Ehrm\ViewHelpers}
+<f:layout name="Ajax" />{namespace form=TYPO3\Form\ViewHelpers}
 
 <f:section name="Body">
 	<h1>
 		<f:translate id="action.edit">Edit</f:translate>
 	</h1>
-	<ehrm:flashMessages/>
+	<f:render partial="FlashMessages" arguments="{modelName: 'company'}"/>
 	<div class="well">
 		<h3>Company information</h3>
 		<f:form action="update" object="{company}" name="company" class="form-horizontal">
@@ -44,17 +44,6 @@
 		</f:for>
 		<div id="electronicAddress-add" class="clearfix">
 			<f:render partial="Forms/ElectronicAddress" arguments="{party: company, action: 'add', suffix: 'electronicAddress'}"/>
-		</div>
-		<hr/>
-		<!-- bankAccounts -->
-		<h3>bankAccounts</h3>
-		<f:for each="{bankAccounts}" as="bankAccount">
-			<div id="bankAccount-{bankAccount.id}">
-				<f:render partial="Forms/BankAccount" arguments="{party: company, bankAccount: bankAccount, action: 'update'}"/>
-			</div>
-		</f:for>
-		<div id="bankAccount-add" class="clearfix">
-			<f:render partial="Forms/BankAccount" arguments="{party: company, action: 'add', suffix: 'bankAccount'}"/>
 		</div>
 		<hr/>
 	</div>
