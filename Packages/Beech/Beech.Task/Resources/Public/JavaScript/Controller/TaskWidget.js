@@ -4,7 +4,7 @@
 	App.BeechTaskTaskWidgetController = Ember.ArrayController.extend({
 		content: [],
 		init: function() {
-			this.set('content', App.BeechTaskDomainModelTask.find({'closed':false,'ownTasks':true}));
+			this.set('content', App.BeechTaskDomainModelTask.find());
 		},
 		openTasksLow: function() {
 			var tasks = this.get('content');

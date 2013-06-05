@@ -39,7 +39,20 @@ class TaskRepository extends \Radmiraal\CouchDB\Persistence\AbstractRepository {
 
 		$tasks = array();
 
-		if(is_array($filter) && array_key_exists('ids', $filter)) {
+		if(!is_array($filter)) {
+			$filter = array();
+		}
+		// @todo: find a better alternative for this
+		//        only show own not closed tasks
+		//        EmberData doesn't recognise new elements when you don't call find() without parameters
+		if(!array_key_exists('ids', $filter)) {
+			$filter['ownTasks'] = TRUE;
+			if(!array_key_exists('closed', $filter)) {
+				$filter['closed'] = FALSE;
+			}
+		}
+
+		if(array_key_exists('ids', $filter)) {
 			foreach($filter['ids'] as $id) {
 				$tasks[] = $this->findByIdentifier($id);
 			}
