@@ -239,7 +239,7 @@ class WebSocketServer extends Daemonize {
 				}
 			}
 
-			$this->logger->log(sprintf('Found %s notifications for account %s', count($notifications), $accountIdentifier), LOG_DEBUG);
+			$this->logger->log(sprintf('Found %s notifications for account %s', count($accountNotifications), $accountIdentifier), LOG_DEBUG);
 
 			if (count($accountNotifications) > 0) {
 
