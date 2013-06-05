@@ -15,6 +15,13 @@ use TYPO3\Flow\Annotations as Flow;
 class WorkflowAspect {
 
 	/**
+	 * @var \TYPO3\Flow\Security\Context
+	 * @Flow\Inject
+	 * @Flow\Transient
+	 */
+	protected $securityContext;
+
+	/**
 	 * @Flow\After("method(Beech\Party\Domain\Repository\.*Repository->(add|update|remove)())")
 	 * @param \TYPO3\Flow\Aop\JoinPointInterface $joinPoint The current join point
 	 * @return void
@@ -29,7 +36,7 @@ class WorkflowAspect {
 		// object found than delegate info to workflow dispatcher
 		if($object) {
 			$workflowDispatcher = new \Beech\Workflow\Workflow\WorkflowDispatcher();
-			$workflowDispatcher->startWorkflow($action, $object);
+			$workflowDispatcher->startWorkflow($action, $object, $this->securityContext->getAccount()->getParty());
 		}
 	}
 }

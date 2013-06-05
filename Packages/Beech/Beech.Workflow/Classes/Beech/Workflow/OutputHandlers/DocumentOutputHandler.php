@@ -7,15 +7,12 @@ namespace Beech\Workflow\OutputHandlers;
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
-use TYPO3\Flow\Annotations as Flow,
-	Doctrine\ODM\CouchDB\Mapping\Annotations as ODM;;
+use TYPO3\Flow\Annotations as Flow;
 
 /**
  * DocumentOutputHandler persists an entity
- * @ODM\EmbeddedDocument
- * @ODM\Document
  */
-class DocumentOutputHandler implements \Beech\Workflow\Core\OutputHandlerInterface {
+class DocumentOutputHandler extends \Beech\Workflow\Core\OutputHandlerAbstract implements \Beech\Workflow\Core\OutputHandlerInterface {
 
 	/**
 	 * @var \Doctrine\ODM\CouchDB\DocumentManager

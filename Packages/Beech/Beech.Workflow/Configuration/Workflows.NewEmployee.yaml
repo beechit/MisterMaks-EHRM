@@ -1,41 +1,43 @@
 NewEmployee:
   triggers:
     -
-      action: 'update'
+      action: 'add'
       className: 'Beech\Party\Domain\Model\Person'
-    -
-      action: 'update'
-      className: 'Beech\Party\Domain\Model\Person'
+#    -
+#      action: 'update'
+#      className: 'Beech\Party\Domain\Model\Person'
   actions:
-    -
+    1:
       description: 'Check 1'
-      validators:
-        -
-          className: NotEmptyValidator
-          properties:
-            targetEntity: 'ENTITY:TARGET'
-            propertyName: 'naamProperty'
-        -
-          className: 'Beech\Workflow\Validators\DateValidator'
-          properties:
-            value: '2012-12-28'
-            matchCondition: 'CONSTANT:MATCH_CONDITION_GREATER_THEN'
-      preConditions:
-        -
-          className: 'Beech\Workflow\PreConditions\DatePreCondition'
-          properties:
-            value: '2012-04-15'
-            matchCondition: 'CONST:MATCH_CONDITION_EQUAL'
+#      validators:
+#        -
+#          className: '\Beech\Workflow\Validators\Property\NotEmptyValidator'
+#          properties:
+#            targetEntity: 'ENTITY:TARGET'
+#            propertyName: 'name'
+#        -
+#          className: 'Beech\Workflow\Validators\CurrentDateValidator'
+#          properties:
+#            value: 'DATETIME:2012-12-28'
+#            matchCondition: 'CONSTANT:SMALLER_THEN'
+#      preConditions:
+#        -
+#          className: 'Beech\Workflow\Validators\CurrentDateValidator'
+#          properties:
+#            value: 'DATETIME:2012-04-15'
+#            matchCondition: 'CONSTANT:SMALLER_THEN'
       outputHandlers:
         -
-          className: 'Beech\Workflow\OutputHandlers\EntityOutputHandler'
+          className: 'Beech\Workflow\OutputHandlers\TaskOutputHandler'
           properties:
-            entity: 'ENTITY:TODO'
-    -
-      description: "Check 2"
-      validators:
-        -
-          className: NotEmptyValidator
-          properties:
-            targetEntity: 'ENTITY:TARGET'
-            propertyName: 'naamProperty'
+            assignedTo: 'ACTION:createdBy'
+            priority: 0
+            description: 'Send employe a card'
+#    2:
+#      description: "Check 2"
+#      validators:
+#        -
+#          className: '\Beech\Workflow\Validators\Property\NotEmptyValidator'
+#          properties:
+#            targetEntity: 'ENTITY:TARGET'
+#            propertyName: 'name'

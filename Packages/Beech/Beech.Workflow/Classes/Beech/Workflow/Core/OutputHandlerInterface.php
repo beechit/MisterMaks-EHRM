@@ -21,6 +21,18 @@ interface OutputHandlerInterface {
 	 */
 	public function invoke();
 
-}
+	/**
+	 * Set the Action that initiates this OutputHandler
+	 * @param \Beech\Workflow\Domain\Model\Action $action
+	 */
+	public function setActionEntity(\Beech\Workflow\Domain\Model\Action $action);
 
-?>
+	/**
+	 * Set the action's target entity
+	 *
+	 * @param object $target
+	 * @return void
+	 */
+	public function setTargetEntity($targetEntity);
+
+}
