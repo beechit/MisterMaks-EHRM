@@ -130,6 +130,7 @@ class Action extends \Beech\Workflow\Core\AbstractAction implements \Beech\Workf
 		if ($this->getStatus() === self::STATUS_STARTED) {
 			foreach ($this->getValidators() as $validator) {
 				if (!$validator->isValid()) {
+					echo 'not valid' ;
 					return;
 				}
 			}
