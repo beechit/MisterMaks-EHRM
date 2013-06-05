@@ -102,7 +102,8 @@
 					.focus();
 			});
 			$moduleContainer.find('select').chosen();
-			//$moduleContainer.find('.countrySelect').countrySelect();
+			$moduleContainer.find('input').applyInputMasks();
+			$moduleContainer.find('.countrySelect').countrySelect();
 		},
 
 		prepareUrl: function (object) {

@@ -26,6 +26,8 @@ Beech:
           - 'Beech.Ehrm/Library/jquery.cookie.js'
           - 'Beech.Ehrm/Library/datepicker/js/bootstrap-datepicker.js'
           - 'Beech.Ehrm/Library/chosen/chosen.jquery.min.js'
+          - 'Beech.Ehrm/Library/inputmask/jquery.inputmask.js'
+          - 'Beech.Ehrm/Library/inputmask/jquery.inputmask.extensions.js'
 
         sources:
           - 'Beech.Ehrm/JavaScript/Init.js'
@@ -61,6 +63,7 @@ Beech:
           - 'Beech.Ehrm/JavaScript/Component/UserInterface/BreadcrumbMenu.js'
           - 'Beech.Ehrm/JavaScript/Component/UserInterface/DatePicker.js'
           - 'Beech.Ehrm/JavaScript/Component/UserInterface/Country.js'
+          - 'Beech.Ehrm/JavaScript/Component/UserInterface/InputMask.js'
           - 'Beech.Ehrm/JavaScript/Component/UserInterface/Form.js'
           - 'Beech.Ehrm/JavaScript/Service/WebSocketClient.js'
           - 'Beech.Ehrm/JavaScript/Service/Notification.js'

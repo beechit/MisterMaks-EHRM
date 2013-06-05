@@ -19,13 +19,13 @@
           options:
             maximum: 25
       defaultValue: 'businessPhone'
-    'number':
+    'phoneNumber':
       label: 'Phone Number'
       validation:
         -
           type: 'RegularExpression'
           options:
-            regularExpression: '/^\(?(0)[1-9]{2}\)?(\-|\s)?[0-9]{7}$|^\(?(0)[1-9]{3}\)?(\-|\s)?[0-9]{6}$/'
+            regularExpression: '/^(((\\+31|0|0031)6){1}-[1-9]{1}[0-9]{7})$/i'
         -
           type: 'StringLength'
           options:
