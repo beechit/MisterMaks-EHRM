@@ -29,6 +29,8 @@ class Package extends BasePackage {
 			}
 		);
 
+//		$dispatcher->connect('Beech\Task\Domain\Repository\TaskRepository', 'taskChanged', 'Beech\Workflow\Workflow\WorkflowDispatcher', 'taskUpdated');
+
 		if (!isset($_SERVER['SHELL'])) {
 				// TODO Move this to another place later on.
 				// 1) this could be a performance killer
