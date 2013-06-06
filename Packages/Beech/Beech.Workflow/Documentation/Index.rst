@@ -19,7 +19,7 @@ Pre-condition
 -------------
 
 Every action can have multiple pre-conditions. Only if all pre-conditions
-are met the action will be executed.
+are met the action will be executed. Otherwise the action will be terminated.
 
 Validations
 -----------

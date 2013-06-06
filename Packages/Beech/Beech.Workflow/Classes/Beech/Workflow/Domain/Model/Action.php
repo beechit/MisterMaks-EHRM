@@ -107,7 +107,9 @@ class Action extends \Beech\Workflow\Core\ActionAbstract implements \Beech\Workf
 		if ($this->getStatus() === self::STATUS_NEW) {
 			foreach ($this->getPreConditions() as $preCondition) {
 				if($preCondition instanceof \Beech\Workflow\Core\ValidatorInterface) {
+					// when a precondition fails terminate task
 					if (!$preCondition->isValid()) {
+						$this->setStatus(self::STATUS_TERMINATED);
 						return;
 					}
 				} elseif (!$preCondition->isMet()) {
