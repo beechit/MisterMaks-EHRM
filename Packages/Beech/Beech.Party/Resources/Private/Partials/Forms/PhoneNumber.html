@@ -1,5 +1,5 @@
 {namespace ehrm=Beech\Ehrm\ViewHelpers}
-<f:render partial="FlashMessages" arguments="{modelName: 'phoneNumber'}"/>
+<ehrm:flashMessages/>
 <div id="{action}{phoneNumber.id}{suffix}">
 	<ehrm:form action="{action}" controller="PhoneNumber" object="{phoneNumber}" name="phoneNumber" class="compact-form form-horizontal {action}">
 		<f:if condition="{0: action} == {0: 'update'}">

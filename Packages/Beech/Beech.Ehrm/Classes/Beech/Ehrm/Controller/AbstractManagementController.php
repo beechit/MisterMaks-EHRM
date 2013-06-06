@@ -8,6 +8,7 @@ namespace Beech\Ehrm\Controller;
  */
 
 use TYPO3\Flow\Annotations as Flow;
+use TYPO3\Flow\Error\Message as Message;
 
 /**
  * @Flow\Scope("singleton")
@@ -98,16 +99,15 @@ class AbstractManagementController extends \Beech\Ehrm\Controller\AbstractContro
 	 */
 	protected function errorAction() {
 		$this->getControllerContext()->getResponse()->setStatus(500);
-		//Format error message
-		$template = '<div class="alert alert-error"><button type="button" class="close" data-dismiss="alert">&times;</button>%s</div>';
-		$formattedErrorMessage = sprintf($template, parent::errorAction());
-		//Flush and format notices
-		$flashMessages = $this->controllerContext->getFlashMessageContainer()->getMessagesAndFlush();
-		$formattedNoticeMessage = '';
-		foreach ($flashMessages as $flashMessage) {
-			$formattedNoticeMessage .= sprintf($template, $flashMessage->getMessage());
-		}
-		return $formattedNoticeMessage.$formattedErrorMessage;
+		$helper = new \Beech\Ehrm\Helper\SettingsHelper();
+			// Load template using default flash messages template
+		$view = new \TYPO3\Fluid\View\StandaloneView($this->getControllerContext()->getRequest());
+		$view->setFormat('html');
+		$view->setPartialRootPath($helper->getFlashMessagesPartialRootPath());
+		$view->setTemplatePathAndFilename($helper->getFlashMessagesTemplate());
+			// Add validation error as flash message
+		$this->addFlashMessage(parent::errorAction(), 'Validation error', Message::SEVERITY_ERROR);
+		return $view->render();
 	}
 }
 

@@ -10,7 +10,7 @@ namespace Beech\Ehrm\Helper;
 use TYPO3\Flow\Annotations as Flow;
 
 /**
- * @Flow\Scope("prototype")
+ * @Flow\Scope("singleton")
  */
 class SettingsHelper {
 
@@ -314,6 +314,22 @@ class SettingsHelper {
 		}
 	}
 
+	public function getFlashMessagesTemplate() {
+		if (isset($this->settings['viewHelpers']['templates']['Beech\Ehrm\ViewHelpers\FlashMessagesViewHelper'])) {
+			$template = $this->settings['viewHelpers']['templates']['Beech\Ehrm\ViewHelpers\FlashMessagesViewHelper'];
+			if (is_file($template)) {
+				return $template;
+			}
+		}
+		return '';
+	}
+
+	public function getFlashMessagesPartialRootPath() {
+		if (isset($this->settings['viewHelpers']['partialRootPath'])) {
+			return $this->settings['viewHelpers']['partialRootPath'];
+		}
+		return '';
+	}
 }
 
 ?>

@@ -1,11 +1,11 @@
-<f:layout name="Ajax"/>
+<f:layout name="Ajax"/>{namespace ehrm=Beech\Ehrm\ViewHelpers}
 <f:section name="Body">
 
 	<h1>
 		<f:translate id="task">Task</f:translate>
 	</h1>
 
-	<f:flashMessages class="flashmessages" />
+	<ehrm:flashMessages/>
 
 	<f:form.validationResults for="task">
 		<f:if condition="{validationResults.flattenedErrors}">
