@@ -29,6 +29,7 @@
 						//case '..':
 						//	break;
 						default:
+							console.log(type,id)
 							// check if type is known as object
 							if(App[type] && id) {
 								var _object = App[type].find(id);

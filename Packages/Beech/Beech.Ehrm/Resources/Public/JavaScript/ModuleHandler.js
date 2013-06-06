@@ -81,8 +81,10 @@
 								that.loadContent(result, '#'+$(form).parent().parent().attr('id'));
 							} else if ($(form).hasClass('add')) {
 								that.loadContent(result, '#'+$(form).parent().parent().attr('id'), true);
-							} else {
+							} else if($('#'+$(form).parent().attr('id')).length) {
 								that.loadContent(result, '#'+$(form).parent().attr('id'), true);
+							} else {
+								that.loadContent(result, target);
 							}
 						} else {
 							that.loadContent(result, target);

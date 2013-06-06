@@ -3,9 +3,20 @@
 
 	App.BeechTaskTaskWidgetController = Ember.ArrayController.extend({
 		content: [],
+		loaded: false,
 		init: function() {
 			this.set('content', App.BeechTaskDomainModelTask.find());
 		},
+		isLoaded: function() {
+			if(this.get('content').get('isLoaded') && !this.get('content').get('isUpdating')) {
+				return true;
+			} else {
+				return false;
+			}
+		}.property('content.isLoaded').property('content.isUpdating'),
+		countOpenTasks: function() {
+			return this.get('content').filterProperty('closed', false).length;
+		}.property('content.@each.closed'),
 		openTasksLow: function() {
 			var tasks = this.get('content');
 			tasks = tasks.filterProperty('closed', false).filter(function(e,i,em){
@@ -20,7 +31,6 @@
 				}
 				return 0 //default return value (no sorting)
 			});
-			console.log('getTasks 0',tasks.length, this.get('content').get('length'));
 			return tasks;
 		}.property('content.@each.closed').property('content.@each.priority'),
 		openTasksNormal: function() {
@@ -35,7 +45,6 @@
 				}
 				return 0 //default return value (no sorting)
 			});
-			console.log('getTasks 1',tasks.length, this.get('content').get('length'));
 			return tasks;
 		}.property('content.@each.closed').property('content.@each.priority'),
 		openTasksHigh: function() {
@@ -50,7 +59,6 @@
 				}
 				return 0 //default return value (no sorting)
 			});
-			console.log('getTasks 2',tasks.length, this.get('content').get('length'));
 			return tasks;
 		}.property('content.@each.closed').property('content.@each.priority'),
 		openTasksImmediate: function() {
@@ -65,7 +73,6 @@
 				}
 				return 0 //default return value (no sorting)
 			});
-			console.log('getTasks 3',tasks.length, this.get('content').get('length'));
 			return tasks;
 		}.property('content.@each.closed').property('content.@each.priority')
 	});

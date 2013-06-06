@@ -2,82 +2,86 @@
 <h3>Tasks {{#linkTo "BeechTaskTask" class="pull-right" rel="tooltip" data-placement="left" title="Go to all tasks"}}<i class="icon-tasks"></i>{{/linkTo}}</h3>
 
 <div class="accordion boxes" id="tasklist">
-{{#if content.length}}
-	{{#if openTasksImmediate.length}}
+{{#if isLoaded}}
+	{{#if countOpenTasks}}
+		{{#if openTasksImmediate.length}}
+			<div class="accordion-group">
+				<div class="accordion-heading">
+					<a class="accordion-toggle" data-toggle="collapse" data-parent="#tasklist" href="#taskwidget-priority-3">
+						Immediate
+					</a>
+					<span class="badge badge-important">{{openTasksImmediate.length}}</span>
+				</div>
+				<div id="taskwidget-priority-3" class="accordion-body collapse">
+					<div class="accordion-inner">
+						<ul class="unstyled">
+							{{#each task in openTasksImmediate}}
+								<li>{{#linkTo "BeechTaskTask.show" task}}{{task.description}}{{/linkTo}}</li>
+							{{/each}}
+						</ul>
+					</div>
+				</div>
+			</div>
+		{{/if}}
+		{{#if openTasksHigh.length}}
 		<div class="accordion-group">
 			<div class="accordion-heading">
-				<a class="accordion-toggle" data-toggle="collapse" data-parent="#tasklist" href="#taskwidget-priority-3">
-					Immediate
+				<a class="accordion-toggle" data-toggle="collapse" data-parent="#tasklist" href="#taskwidget-priority-2">
+					High
 				</a>
-				<span class="badge badge-important">{{openTasksImmediate.length}}</span>
+				<span class="badge badge-important">{{openTasksHigh.length}}</span>
 			</div>
-			<div id="taskwidget-priority-3" class="accordion-body collapse">
+			<div id="taskwidget-priority-2" class="accordion-body collapse">
 				<div class="accordion-inner">
 					<ul class="unstyled">
-						{{#each task in openTasksImmediate}}
-							<li>{{#linkTo "BeechTaskTask.show" task}}{{task.description}} {{task.priority.label}}{{/linkTo}}</li>
+						{{#each task in openTasksHigh}}
+						<li>{{#linkTo "BeechTaskTask.show" task}}{{task.description}}{{/linkTo}}</li>
 						{{/each}}
 					</ul>
 				</div>
 			</div>
 		</div>
-	{{/if}}
-	{{#if openTasksHigh.length}}
-	<div class="accordion-group">
-		<div class="accordion-heading">
-			<a class="accordion-toggle" data-toggle="collapse" data-parent="#tasklist" href="#taskwidget-priority-2">
-				High
-			</a>
-			<span class="badge badge-important">{{openTasksHigh.length}}</span>
-		</div>
-		<div id="taskwidget-priority-2" class="accordion-body collapse">
-			<div class="accordion-inner">
-				<ul class="unstyled">
-					{{#each task in openTasksHigh}}
-					<li>{{#linkTo "BeechTaskTask.show" task}}{{task.description}} {{task.priority.label}}{{/linkTo}}</li>
-					{{/each}}
-				</ul>
+		{{/if}}
+		{{#if openTasksNormal.length}}
+		<div class="accordion-group">
+			<div class="accordion-heading">
+				<a class="accordion-toggle" data-toggle="collapse" data-parent="#tasklist" href="#taskwidget-priority-1">
+					Normal
+				</a>
+				<span class="badge badge-important">{{openTasksNormal.length}}</span>
+			</div>
+			<div id="taskwidget-priority-1" class="accordion-body collapse">
+				<div class="accordion-inner">
+					<ul class="unstyled">
+						{{#each task in openTasksNormal}}
+						<li>{{#linkTo "BeechTaskTask.show" task}}{{task.description}}{{/linkTo}}</li>
+						{{/each}}
+					</ul>
+				</div>
 			</div>
 		</div>
-	</div>
-	{{/if}}
-	{{#if openTasksNormal.length}}
-	<div class="accordion-group">
-		<div class="accordion-heading">
-			<a class="accordion-toggle" data-toggle="collapse" data-parent="#tasklist" href="#taskwidget-priority-1">
-				Normal
-			</a>
-			<span class="badge badge-important">{{openTasksNormal.length}}</span>
-		</div>
-		<div id="taskwidget-priority-1" class="accordion-body collapse">
-			<div class="accordion-inner">
-				<ul class="unstyled">
-					{{#each task in openTasksNormal}}
-					<li>{{#linkTo "BeechTaskTask.show" task}}{{task.description}} {{task.priority.label}}{{/linkTo}}</li>
-					{{/each}}
-				</ul>
+		{{/if}}
+		{{#if openTasksLow.length}}
+		<div class="accordion-group">
+			<div class="accordion-heading">
+				<a class="accordion-toggle" data-toggle="collapse" data-parent="#tasklist" href="#taskwidget-priority-0">
+					Low
+				</a>
+				<span class="badge badge-important">{{openTasksLow.length}}</span>
+			</div>
+			<div id="taskwidget-priority-0" class="accordion-body collapse">
+				<div class="accordion-inner">
+					<ul class="unstyled">
+						{{#each task in openTasksLow}}
+						<li>{{#linkTo "BeechTaskTask.show" task}}{{task.description}}{{/linkTo}}</li>
+						{{/each}}
+					</ul>
+				</div>
 			</div>
 		</div>
-	</div>
-	{{/if}}
-	{{#if openTasksLow.length}}
-	<div class="accordion-group">
-		<div class="accordion-heading">
-			<a class="accordion-toggle" data-toggle="collapse" data-parent="#tasklist" href="#taskwidget-priority-0">
-				Low
-			</a>
-			<span class="badge badge-important">{{openTasksLow.length}}</span>
-		</div>
-		<div id="taskwidget-priority-0" class="accordion-body collapse">
-			<div class="accordion-inner">
-				<ul class="unstyled">
-					{{#each task in openTasksLow}}
-					<li>{{#linkTo "BeechTaskTask.show" task}}{{task.description}} {{task.priority.label}}{{/linkTo}}</li>
-					{{/each}}
-				</ul>
-			</div>
-		</div>
-	</div>
+		{{/if}}
+	{{else}}
+		<p class="no-open-tasks"><em>No tasks</em></p>
 	{{/if}}
 {{else}}
 	<p><i class="icon-spin icon-spinner muted"></i></p>
