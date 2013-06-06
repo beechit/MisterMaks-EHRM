@@ -106,7 +106,12 @@ class AbstractManagementController extends \Beech\Ehrm\Controller\AbstractContro
 		$view->setPartialRootPath($helper->getFlashMessagesPartialRootPath());
 		$view->setTemplatePathAndFilename($helper->getFlashMessagesTemplate());
 			// Add validation error as flash message
-		$this->addFlashMessage(parent::errorAction(), 'Validation error', Message::SEVERITY_ERROR);
+		foreach ($this->arguments->getValidationResults()->getFlattenedErrors() as $propertyPath => $errors) {
+			foreach ($errors as $error) {
+				$message = ' <b>' . $propertyPath . '</b>:  ' . $error->render() . PHP_EOL;
+				$this->addFlashMessage($message, 'Validation error', Message::SEVERITY_ERROR);
+			}
+		}
 		return $view->render();
 	}
 }
