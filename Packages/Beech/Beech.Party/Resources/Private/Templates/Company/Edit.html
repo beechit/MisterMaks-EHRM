@@ -46,6 +46,17 @@
 			<f:render partial="Forms/ElectronicAddress" arguments="{party: company, action: 'add', suffix: 'electronicAddress'}"/>
 		</div>
 		<hr/>
+		<!-- bankAccounts -->
+		<h3>bankAccounts</h3>
+		<f:for each="{bankAccounts}" as="bankAccount">
+			<div id="bankAccount-{bankAccount.id}">
+				<f:render partial="Forms/BankAccount" arguments="{party: company, bankAccount: bankAccount, action: 'update'}"/>
+			</div>
+		</f:for>
+		<div id="bankAccount-add" class="clearfix">
+			<f:render partial="Forms/BankAccount" arguments="{party: company, action: 'add', suffix: 'bankAccount'}"/>
+		</div>
+		<hr/>
 	</div>
 
 </f:section>
