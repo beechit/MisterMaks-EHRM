@@ -1,7 +1,7 @@
 (function() {
 	'use strict';
 
-	App.BeechPartyAdministrationCompanyRoute = App.ModuleRoute.extend({
+	App.BeechPartyCompanyRoute = App.ModuleRoute.extend({
 		deserialize: function(params){
 			return {params: App.ModuleHandler.prepareUrl(params)}
 		},
@@ -10,13 +10,23 @@
 		}
 	});
 
-	App.BeechPartyAdministrationCompanyNewRoute = App.BeechPartyAdministrationCompanyRoute.extend();
+	// Front
+	App.BeechPartyCompanyNewRoute = App.BeechPartyCompanyRoute.extend();
 
-	App.BeechPartyAdministrationCompanyEditRoute = App.BeechPartyAdministrationCompanyRoute.extend();
+	App.BeechPartyCompanyEditRoute = App.BeechPartyCompanyRoute.extend();
 
-	App.BeechPartyAdministrationCompanyShowRoute = App.BeechPartyAdministrationCompanyRoute.extend();
+	App.BeechPartyCompanyShowRoute = App.BeechPartyCompanyRoute.extend();
 
-	App.BeechPartyAdministrationCompanyDeleteRoute = App.BeechPartyAdministrationCompanyRoute.extend();
+	App.BeechPartyCompanyDeleteRoute = App.BeechPartyCompanyRoute.extend();
+
+	// Administration
+	App.BeechPartyAdministrationCompanyNewRoute = App.BeechPartyCompanyRoute.extend();
+
+	App.BeechPartyAdministrationCompanyEditRoute = App.BeechPartyCompanyRoute.extend();
+
+	App.BeechPartyAdministrationCompanyShowRoute = App.BeechPartyCompanyRoute.extend();
+
+	App.BeechPartyAdministrationCompanyDeleteRoute = App.BeechPartyCompanyRoute.extend();
 
 
 }).call(this);

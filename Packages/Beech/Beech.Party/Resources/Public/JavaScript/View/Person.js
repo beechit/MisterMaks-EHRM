@@ -8,7 +8,7 @@
 	App.BeechPartyPersonIndexView = Ember.View.extend(App.AjaxModuleViewMixin, {
 		url: MM.url.module.BeechPartyPersonIndex
 	});
-	App.BeechPartyAdministrationPersonShowView = App.BeechPartyPersonViewMixin.extend();
+	App.BeechPartyPersonShowView = App.BeechPartyPersonViewMixin.extend();
 	App.BeechPartyPersonNewView = App.BeechPartyPersonViewMixin.extend();
 	App.BeechPartyPersonEditView = App.BeechPartyPersonViewMixin.extend();
 	App.BeechPartyPersonDeleteView = App.BeechPartyPersonViewMixin.extend();

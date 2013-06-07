@@ -56,6 +56,16 @@
 				this.route('edit', { path: '/edit/:person' });
 				this.route('delete', { path: '/delete/:person' });
 			});
+			// Beech.Party/Company
+			this.resource('BeechPartyCompany', { path: 'companies' }, function() {
+				this.route('index', { path: '/list' });
+			});
+			this.resource('BeechPartyCompany', { path: 'company' }, function() {
+				this.route('new', { path: '/new' });
+				this.route('show', { path: '/show/:company' });
+				this.route('edit', { path: '/edit/:company' });
+				this.route('delete', { path: '/delete/:company' });
+			});
 			// Beech.Task
 			this.resource('BeechTaskTask', { path: 'tasks' }, function() {
 				this.route('new', {path: '/new'});

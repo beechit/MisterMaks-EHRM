@@ -1,24 +1,43 @@
 (function() {
 	'use strict';
-	App.BeechPartyAdministrationCompanyController = Ember.Controller.extend({
+	App.BeechPartyCompanyController = Ember.Controller.extend({
 		url: '',
 		loadUrl: function(params) {
 			App.ModuleHandler.loadUrl(this.get('url') + params);
 		}
 	});
-	App.BeechPartyAdministrationCompanyIndexController = App.BeechPartyAdministrationCompanyController.extend({
+	// Front
+	App.BeechPartyCompanyIndexController = App.BeechPartyCompanyController.extend({
 		url: MM.url.module.BeechPartyAdministrationCompanyIndex
 	});
-	App.BeechPartyAdministrationCompanyNewController = App.BeechPartyAdministrationCompanyController.extend({
+	App.BeechPartyCompanyNewController = App.BeechPartyCompanyController.extend({
 		url: MM.url.module.BeechPartyAdministrationCompanyNew
 	});
-	App.BeechPartyAdministrationCompanyShowController = App.BeechPartyAdministrationCompanyController.extend({
+	App.BeechPartyCompanyShowController = App.BeechPartyCompanyController.extend({
 		url: MM.url.module.BeechPartyAdministrationCompanyShow
 	});
-	App.BeechPartyAdministrationCompanyEditController = App.BeechPartyAdministrationCompanyController.extend({
+	App.BeechPartyCompanyEditController = App.BeechPartyCompanyController.extend({
 		url: MM.url.module.BeechPartyAdministrationCompanyEdit
 	});
-	App.BeechPartyAdministrationCompanyDeleteController = App.BeechPartyAdministrationCompanyController.extend({
+	App.BeechPartyCompanyDeleteController = App.BeechPartyCompanyController.extend({
 		url: MM.url.module.BeechPartyAdministrationCompanyDelete
 	});
+
+	// Administration
+	App.BeechPartyAdministrationCompanyIndexController = App.BeechPartyCompanyController.extend({
+		url: MM.url.module.BeechPartyAdministrationCompanyIndex
+	});
+	App.BeechPartyAdministrationCompanyNewController = App.BeechPartyCompanyController.extend({
+		url: MM.url.module.BeechPartyAdministrationCompanyNew
+	});
+	App.BeechPartyAdministrationCompanyShowController = App.BeechPartyCompanyController.extend({
+		url: MM.url.module.BeechPartyAdministrationCompanyShow
+	});
+	App.BeechPartyAdministrationCompanyEditController = App.BeechPartyCompanyController.extend({
+		url: MM.url.module.BeechPartyAdministrationCompanyEdit
+	});
+	App.BeechPartyAdministrationCompanyDeleteController = App.BeechPartyCompanyController.extend({
+		url: MM.url.module.BeechPartyAdministrationCompanyDelete
+	});
+
 }).call(this);
