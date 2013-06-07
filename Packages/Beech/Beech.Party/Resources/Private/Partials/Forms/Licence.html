@@ -4,7 +4,7 @@
 	<ehrm:form action="{action}" controller="Licence" object="{licence}" name="licence" class="compact-form form-horizontal {action}">
 		<f:if condition="{0: action} == {0: 'update'}">
 			<f:then>
-				<f:render partial="Views/Licence" arguments="{_all}"/>
+				<f:render partial="Views/List/Licence" arguments="{_all}"/>
 			</f:then>
 		</f:if>
 		<div id="toggle{licence.id}{suffix}" class="collapse">

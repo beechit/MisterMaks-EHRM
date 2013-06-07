@@ -2,8 +2,8 @@
 
 <f:section name="Body">
 
-	<h1>Person information</h1>
-	<f:render partial="Views/Show/Person" arguments="{person: person}"/>
+	<h1>Company information</h1>
+	<f:render partial="Views/Show/Company" arguments="{company: company}"/>
 	<!-- Addresses -->
 	<h3>Addresses</h3>
 	<f:for each="{addresses}" as="address">
@@ -30,27 +30,6 @@
 	<f:for each="{bankAccounts}" as="bankAccount">
 		<div id="bankAccount-{bankAccount.id}">
 			<f:render partial="Views/Show/BankAccount" arguments="{bankAccount: bankAccount}"/>
-		</div>
-	</f:for>
-	<!-- Education -->
-	<h3>Education</h3>
-	<f:for each="{educations}" as="education">
-		<div id="education-{education.id}">
-			<f:render partial="Views/Show/Education" arguments="{education: education}"/>
-		</div>
-	</f:for>
-	<!-- Asset -->
-	<h3>Asset</h3>
-	<f:for each="{assets}" as="asset">
-		<div id="asset-{asset.id}">
-			<f:render partial="Views/Show/Asset" arguments="{asset: asset}"/>
-		</div>
-	</f:for>
-	<!-- Licence -->
-	<h3>Licence</h3>
-	<f:for each="{licences}" as="licence">
-		<div id="licence-{licence.id}">
-			<f:render partial="Views/Show/Licence" arguments="{licence: licence}"/>
 		</div>
 	</f:for>
 </f:section>

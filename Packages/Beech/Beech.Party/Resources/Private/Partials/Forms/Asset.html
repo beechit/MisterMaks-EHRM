@@ -4,7 +4,7 @@
 	<ehrm:form action="{action}" controller="Asset" object="{asset}" name="asset" class="compact-form form-horizontal {action}">
 		<f:if condition="{0: action} == {0: 'update'}">
 			<f:then>
-				<f:render partial="Views/Asset" arguments="{_all}"/>
+				<f:render partial="Views/List/Asset" arguments="{_all}"/>
 			</f:then>
 		</f:if>
 		<div id="toggle{asset.id}{suffix}" class="collapse">

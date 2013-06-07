@@ -52,6 +52,12 @@ class CompanyController extends \Beech\Ehrm\Controller\AbstractManagementControl
 	protected $electronicAddressRepository;
 
 	/**
+	 * @var \Beech\Party\Domain\Repository\BankAccountRepository
+	 * @Flow\Inject
+	 */
+	protected $bankAccountRepository;
+
+	/**
 	 * Shows a list of companies
 	 *
 	 * @return void
@@ -72,7 +78,17 @@ class CompanyController extends \Beech\Ehrm\Controller\AbstractManagementControl
 	 * @return void
 	 */
 	public function showAction(Company $company) {
+		$identifier = $this->persistenceManager->getIdentifierByObject($company);
+		$company->id = $identifier;
 		$this->view->assign('company', $company);
+		$addresses = $this->addressRepository->findByParty($identifier);
+		$this->view->assign('addresses', $addresses);
+		$phoneNumbers = $this->phoneNumberRepository->findByParty($identifier);
+		$this->view->assign('phoneNumbers', $phoneNumbers);
+		$electronicAddresses = $this->electronicAddressRepository->findByParty($identifier);
+		$this->view->assign('electronicAddresses', $electronicAddresses);
+		$bankAccounts = $this->bankAccountRepository->findByParty($identifier);
+		$this->view->assign('bankAccounts', $bankAccounts);
 	}
 
 	/**

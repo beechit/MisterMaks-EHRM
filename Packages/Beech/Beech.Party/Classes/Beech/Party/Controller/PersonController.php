@@ -103,7 +103,25 @@ class PersonController extends \Beech\Ehrm\Controller\AbstractManagementControll
 	 * @return void
 	 */
 	public function showAction(Person $person) {
+		$identifier = $this->persistenceManager->getIdentifierByObject($person);
+		$person->id = $identifier;
 		$this->view->assign('person', $person);
+		$addresses = $this->addressRepository->findByParty($identifier);
+		$this->view->assign('addresses', $addresses);
+		$phoneNumbers = $this->phoneNumberRepository->findByParty($identifier);
+		$this->view->assign('phoneNumbers', $phoneNumbers);
+		$electronicAddresses = $this->electronicAddressRepository->findByParty($identifier);
+		$this->view->assign('electronicAddresses', $electronicAddresses);
+		$bankAccounts = $this->bankAccountRepository->findByParty($identifier);
+		$this->view->assign('bankAccounts', $bankAccounts);
+		$educations = $this->educationRepository->findByParty($identifier);
+		$this->view->assign('educations', $educations);
+		$assets = $this->assetRepository->findByParty($identifier);
+		$this->view->assign('assets', $assets);
+		$licences = $this->licenceRepository->findByParty($identifier);
+		$this->view->assign('licences', $licences);
+		$absences = $this->absenceRepository->findByParty($identifier);
+		$this->view->assign('absences', $absences);
 	}
 
 	/**
