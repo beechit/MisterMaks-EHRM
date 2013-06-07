@@ -1,22 +1,45 @@
-<div class="tab-pane active">{namespace ehrm=Beech\Ehrm\ViewHelpers}
+{namespace ehrm=Beech\Ehrm\ViewHelpers}
+<div class="tab-pane active">
 	<div class="control-group">
-		<label class="control-label" for="name">
-			<f:translate id="Company name">Company name</f:translate>
-		</label>
-
-		<div class="controls controls-row">
-			<ehrm:optionSelect property="type" id="companyType" model="Beech.Party:Company"
-							   placeholder="{f:translate(id:'Company type')}" class="span4"/>
+			<label class="control-label" for="companyType"> <f:translate id="companyType">Company type </f:translate></label>
+		<div class="controls controls">
+			<ehrm:optionSelect property="type" id="companyType" class="span6" model="Beech.Party:Company" placeholder="{f:translate(id:'Company type')}"/>
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="name"> <f:translate id="Company name">Company name</f:translate></label>
+		<div class="controls controls">
 			<f:form.textfield property="name" id="companyName" class="span6" placeholder="{f:translate(id:'Company name')}"/>
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="legalForm"> <f:translate id="legalForm">Legal form</f:translate></label>
+		<div class="controls controls">
+			<ehrm:optionSelect property="legalForm" id="legalForm" class="span6" model="Beech.Party:Company" placeholder="{f:translate(id:'Legal form')}"/>
 		</div>
 	</div>
 
 	<div class="control-group">
-		<div class="controls controls-row">
-			<f:form.textfield property="chamberOfCommerce" id="chamberOfCommerce" class="span5"
-							  placeholder="{f:translate(id:'Chamber of commerce')}"/>
-			<f:form.textfield property="vatNumber" id="vatNumber" class="span5"
-							  placeholder="{f:translate(id:'Vat number')}"/>
+		<label class="control-label" for="chamberOfCommerce">
+			<f:translate id="chamberOfCommerce">Chamber of commerce</f:translate>
+		</label>
+		<div class="controls controls">
+			<f:form.textfield property="chamberOfCommerce" id="chamberOfCommerce" class="span6" placeholder="{f:translate(id:'Chamber of commerce')}"/>
+		</div>
+	</div>
+
+	<div class="control-group">
+		<label class="control-label" for="vatNumber">
+			<f:translate id="vatNumber">VAT number</f:translate>
+		</label>
+		<div class="controls controls">
+			<f:form.textfield property="vatNumber" id="vatNumber" class="span6" placeholder="{f:translate(id:'Vat number')}"/>
+		</div>
+	</div>
+
+	<div class="control-group">
+		<div class="controls controls" >
+			<f:form.textarea property="description" class="span11" placeholder="{f:translate(value: 'Description')}..."/>
 		</div>
 	</div>
 </div>
