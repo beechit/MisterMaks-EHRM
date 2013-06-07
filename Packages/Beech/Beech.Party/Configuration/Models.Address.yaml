@@ -11,7 +11,7 @@
           - 'Mailing'
           - 'work'
           - 'Abroad'
-          - 'other'
+          - 'Other'
       validation:
         -
           type: 'StringLength'

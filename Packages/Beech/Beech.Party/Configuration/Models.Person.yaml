@@ -161,6 +161,12 @@
         values:
           - 'Active'
           - 'Archived'
+    'majorShareholder':
+      label: 'Major shareholder'
+      options:
+        values:
+          - 'TRUE'
+          - 'FALSE'
     'creationDate':
       defaultValue: 'now'
       label: 'creation date'
