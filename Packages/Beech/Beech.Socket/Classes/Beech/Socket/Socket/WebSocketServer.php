@@ -43,8 +43,13 @@ class WebSocketServer extends Server {
 		stream_set_blocking($socketStream, 0);
 		$connection = new Connection($socketStream, $this->loop);
 		$connection->once('data', function ($data) use ($connection) {
-			$request = self::createRequestFromRaw($data);
-			$this->handshake($connection, $request);
+			try {
+				$request = self::createRequestFromRaw($data);
+				$this->handshake($connection, $request);
+			} catch(\Exception $exception) {
+				$this->logger->log(sprintf('Failed to connect %s. Exception: %s',$connection->getRemoteAddress(),$exception->getMessage()), LOG_ERR);
+				$this->emit('endconnection', $connection);
+			}
 		});
 		$this->emit('connection', $connection);
 	}
@@ -218,7 +223,12 @@ class WebSocketServer extends Server {
 		$lines = explode(chr(10), $rawRequest);
 		$firstLine = trim(array_shift($lines));
 
-		list($requestMethod, $requestPath, $httpVersion) = explode(' ', $firstLine, 3);
+		$firstLine = explode(' ', $firstLine, 3);
+		if(count($firstLine) !== 3) {
+			throw new \InvalidArgumentException(sprintf('Unknown request header'), 1360068535);
+		}
+
+		list($requestMethod, $requestPath, $httpVersion) = $firstLine;
 		if ($httpVersion !== 'HTTP/1.1') {
 			throw new \InvalidArgumentException(sprintf('Only supports HTTP/1.1 - request header contained "%s"', $httpVersion), 1360068531);
 		}

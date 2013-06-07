@@ -114,7 +114,11 @@ class WebSocketServer extends Daemonize {
 
 		$this->logger->log(sprintf('Starting socket server %s:%s', $this->host, $this->port));
 		$this->debug('Start socket server');
-		$this->socketServer->listen($this->port, $this->host);
+		try {
+			$this->socketServer->listen($this->port, $this->host);
+		} catch(\Exception $exception) {
+			$this->logger->log(sprintf('Error socket server %s:%s %s', $this->host, $this->port, $exception->getMessage()), LOG_DEBUG);
+		}
 		$this->loop->run();
 		exit;
 	}
