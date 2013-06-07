@@ -30,7 +30,7 @@ class TaskTest extends \TYPO3\Flow\Tests\UnitTestCase {
 		$person = new \Beech\Party\Domain\Model\Person();
 		$time = new \DateTime();
 
-		$priority = \Beech\Task\Domain\Factory\PriorityFactory::createPriority('Medium');
+		$priority = \Beech\Task\Domain\Model\Task::PRIORITY_NORMAL;
 
 		$mockPersistenceManager = $this->getMock('TYPO3\Flow\Persistence\Doctrine\PersistenceManager', array(), array(), '', FALSE);
 		$mockPersistenceManager->expects($this->any())->method('getIdentifierByObject')->will($this->returnValue('abc123'));
