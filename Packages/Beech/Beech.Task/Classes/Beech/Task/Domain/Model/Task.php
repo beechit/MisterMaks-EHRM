@@ -69,7 +69,7 @@ class Task extends \Beech\Ehrm\Domain\Model\Document {
 	/**
 	 * Priority of this task 0-3
 	 *
-	 * @var integer
+	 * @var \Beech\Task\Domain\Model\Priority
 	 * @ODM\ReferenceOne(targetDocument="\Beech\Task\Domain\Model\Priority")
 	 * @ODM\Index
 	 */
