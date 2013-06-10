@@ -3,46 +3,6 @@
 	"description": "Mister Maks Base Distribution",
 	"repositories": [
 		{
-			"type": "git",
-			"url": "https://github.com/kdambekalns/Plumber.git"
-		},
-		{
-			"type": "git",
-			"url": "https://github.com/kdambekalns/PhpProfiler.git"
-		},
-		{
-			"type": "git",
-			"url": "git://github.com/radmiraal/TYPO3.Queue.git"
-		},
-		{
-			"type": "git",
-			"url": "git://git.typo3.org/FLOW3/Packages/TYPO3.FormBuilder.git"
-		},
-		{
-			"type": "git",
-			"url": "git://git.typo3.org/FLOW3/Packages/TYPO3.Queue.Redis.git"
-		},
-		{
-			"type": "git",
-			"url": "git://github.com/radmiraal/phpcpd.git"
-		},
-		{
-			"type": "git",
-			"url": "git://github.com/radmiraal/TYPO3Flow.git"
-		},
-		{
-			"type": "git",
-			"url": "git://github.com/radmiraal/TYPO3SniffPool.git"
-		},
-		{
-			"type": "git",
-			"url": "git://github.com/radmiraal/Radmiraal.CouchDB.git"
-		},
-		{
-			"type": "git",
-			"url": "git://github.com/radmiraal/TYPO3.UserManagement.git"
-		},
-		{
 			"type": "composer",
 			"url": "http://ci.beech.local:8080/job/composer-packages/ws/mistermaks/"
 		}

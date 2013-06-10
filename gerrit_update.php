@@ -121,7 +121,7 @@ class Gerrit {
 	 * @return mixed
 	 */
 	static protected function fetchChangeInformation($changeId) {
-		$output = file_get_contents('https://review.typo3.org/changes/?format=JSON_COMPACT&q=' . intval($changeId) . '&o=CURRENT_REVISION');
+		$output = file_get_contents('https://review.typo3.org/changes/?q=' . intval($changeId) . '&o=CURRENT_REVISION');
 
 		// Remove first line
 		$output = substr($output, strpos($output, "\n") + 1);
