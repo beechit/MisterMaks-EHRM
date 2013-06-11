@@ -17,6 +17,21 @@
     '@format': 'html'
 
 -
+  name: 'Download document'
+  uriPattern: 'download/{document}'
+  defaults:
+    '@package': 'Beech.Document'
+    '@controller': 'Document'
+    '@action': 'download'
+
+-
+  name: 'Download document with name'
+  uriPattern: 'download/{document}(/{name})'
+  defaults:
+    '@package': 'Beech.Document'
+    '@controller': 'Document'
+    '@action': 'download'
+-
   name: 'Management'
   uriPattern: '{@package}/management/{@controller}/{@action}.{@format}'
   defaults:

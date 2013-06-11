@@ -18,37 +18,17 @@ use TYPO3\Flow\Annotations as Flow,
 class Document extends \Beech\Ehrm\Domain\Model\Document {
 
 	/**
-	 * The Document name
-	 *
-	 * @var string
+	 * @var \TYPO3\Party\Domain\Model\AbstractParty
+	 * @ODM\Field(type="mixed")
 	 * @ODM\Index
 	 */
-	protected $name;
+	protected $party;
 
 	/**
 	 * @var array<\Doctrine\CouchDB\Attachment>
 	 * @ODM\Attachments
 	 */
 	protected $resources;
-
-	/**
-	 * Get the Document's name
-	 *
-	 * @return string The Document's name
-	 */
-	public function getName() {
-		return $this->name;
-	}
-
-	/**
-	 * Sets this Document's name
-	 *
-	 * @param string $name The Document's name
-	 * @return void
-	 */
-	public function setName($name) {
-		$this->name = $name;
-	}
 
 	/**
 	 * @param \Doctrine\CouchDB\Attachment $resource

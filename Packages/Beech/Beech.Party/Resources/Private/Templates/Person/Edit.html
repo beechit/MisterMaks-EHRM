@@ -24,6 +24,12 @@
 			</div>
 		</f:form>
 		<hr/>
+		<!-- Profile picture -->
+		<h3> Profile picture</h3>
+		<div id="profilePhoto">
+			<f:render partial="Forms/ProfilePhoto" arguments="{party: person}"/>
+		</div>
+		<f:comment>
 		<!-- Addresses -->
 		<h3>Addresses</h3>
 		<f:for each="{addresses}" as="address">
@@ -101,5 +107,6 @@
 			<f:render partial="Forms/Licence" arguments="{party: person, action: 'add', suffix: 'licence'}"/>
 		</div>
 		<hr/>
+		</f:comment>
 	</div>
 </f:section>

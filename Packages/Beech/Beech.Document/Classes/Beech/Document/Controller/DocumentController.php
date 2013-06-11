@@ -48,12 +48,13 @@ class DocumentController extends \Beech\Ehrm\Controller\AbstractController {
 	 * Adds the given new document object to the document repository
 	 *
 	 * @param \Beech\Document\Domain\Model\Document $document
+	 * @param array $redirectArguments
 	 * @return void
 	 */
-	public function createAction(\Beech\Document\Domain\Model\Document $document) {
+	public function createAction(\Beech\Document\Domain\Model\Document $document, $redirectArguments = array('index')) {
 		$this->documentRepository->add($document);
 		$this->addFlashMessage($this->translator->translateById('document.documentUploaded', array(), NULL, NULL, 'Main', 'Beech.Document'));
-		$this->redirect('index');
+		call_user_func_array(array($this, 'redirect'), $redirectArguments);
 	}
 
 	/**
@@ -74,20 +75,26 @@ class DocumentController extends \Beech\Ehrm\Controller\AbstractController {
 
 	/**
 	 * @param \Beech\Document\Domain\Model\Document $document
-	 * @param integer $version
+	 * @param string $name
 	 * @throws \Exception
 	 * @return string
 	 */
-	public function showDocumentAction(\Beech\Document\Domain\Model\Document $document, $version) {
-		$attachments = $document->getAttachments();
-		if (!isset($attachments[$version])) {
-			throw new \Exception('Document version %s not found', $version);
+	public function downloadAction(\Beech\Document\Domain\Model\Document $document, $name = NULL) {
+
+		$attachments = $document->getResources();
+
+		if ($name !== NULL && !isset($attachments[$name])) {
+			throw new \Exception('Document with name %s not found', $name);
+		}
+		$attachment = reset($attachments);
+		if ($name === NULL) {
+			$name = key($attachments);
 		}
 
 			// TODO: Use the mimetype
-		$this->response->setHeader('Content-Type', $attachments[$version]->getContentType());
-		$this->response->setHeader('Content-Disposition', 'attachment; filename="' . $document->getName() . '"');
-		$this->response->setContent($attachments[$version]->getRawData());
+		$this->response->setHeader('Content-Type', $attachment->getContentType());
+		$this->response->setHeader('Content-Disposition', 'attachment; filename="' . $name . '"');
+		$this->response->setContent($attachment->getRawData());
 
 		return '';
 	}
@@ -107,6 +114,7 @@ class DocumentController extends \Beech\Ehrm\Controller\AbstractController {
 	 * Removes the given document object
 	 *
 	 * @param \Beech\Document\Domain\Model\Document $document The document to delete
+	 * @Flow\IgnoreValidation("$document")
 	 * @return void
 	 */
 	public function deleteAction(\Beech\Document\Domain\Model\Document $document) {

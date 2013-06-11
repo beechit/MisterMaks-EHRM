@@ -17,13 +17,6 @@ use TYPO3\Flow\Annotations as Flow,
  */
 class DocumentCategory extends \Beech\Ehrm\Domain\Model\Document {
 
-	/**
-	 * @var \Beech\Document\Domain\Model\Document
-	 * @ODM\Field(type="mixed")
-	 * @ODM\Index
-	 */
-	protected $document;
-
 }
 
 ?>

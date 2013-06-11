@@ -1,6 +1,11 @@
 <div class="control-group">
-
-	{person.name.firstName} {person.name.middleName} {person.name.lastName}
-	...
+	<div class="row-fluid" >
+		<div class="span3">
+			<f:render partial="Views/Show/ProfilePhoto" arguments="{photo: person.profilePhoto}"/>
+		</div>
+		<div class="span9">
+			{person.name.firstName} {person.name.middleName} {person.name.lastName}
+		</div>
+	</div>
 </div>
 <hr />

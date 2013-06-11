@@ -1,0 +1,22 @@
+{namespace ehrm=Beech\Ehrm\ViewHelpers}
+<div id="save{party.profilePhoto}">
+	<ehrm:form action="save" controller="ProfilePhoto" name="document" object="{party.profilePhoto}" class="compact-form form-horizontal save" enctype="multipart/form-data">
+		<div class="row-fluid" >
+			<div class="span3">
+				<f:render partial="Views/Show/ProfilePhoto" arguments="{photo: party.profilePhoto}"/>
+			</div>
+			<div class="span9">
+				<div class="control-group">
+					<f:form.hidden property="name" value="Profile photo"/>
+				</div>
+				<div class="control-group">
+					<f:form.upload property="resources.0" />
+				</div>
+				<f:form.hidden name="party" value="{party.id}"/>
+				<div class="control-group">
+					<f:form.submit value="{f:translate(id:'document.upload')}" class="btn btn-primary"/>
+				</div>
+			</div>
+		</div>
+	</ehrm:form>
+</div>

@@ -143,9 +143,9 @@
           type: 'StringLength'
           options:
             maximum: 25
-    'image':
+    'profilePhoto':
       label: 'Image'
-      type: ''
+      type: 'Beech\Document\Domain\Model\Document'
     'preferedCommunicationMethod':
       label: 'Prefered communication Method'
       options:
