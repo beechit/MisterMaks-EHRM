@@ -84,6 +84,8 @@ iframe { border: none; }
 
 #modal-body-only .modal-body { padding: 0; max-height: 100%; }
 #modal-body-only .modal-body .icon-spin { margin: 0 30px 30px; }
+#modal-body-only .modal-body .row { margin-left: 0; }
+#modal-body-only .modal-body ul.flashmessages { margin-top: -30px; }
 #modal-body-only form { margin: 0; }
 #modal-body-only form fieldset { padding: 20px 0 20px 60px; margin-right: 20px; }
 #modal-body-only form fieldset legend { margin-bottom: 0; border: none; }
@@ -101,8 +103,13 @@ iframe { border: none; }
 .stack i { display: block; clear: both; height: 6px; line-height: 10px; }
 
 .left { /* Tasks */ }
+.left #task-widget { margin-bottom: 40px; }
 .left .accordion .accordion-heading { position: relative; }
 .left .accordion .accordion-heading .badge { position: absolute; right: 10px; top: 10px; }
+.left .accordion .accordion-inner ul li a { display: block; }
+
+.task.show .control-group .control-label:after { content: ":"; }
+.task.show .control-group .controls { margin-bottom: 5px; padding-top: 5px; line-height: 20px; }
 
 .tooltip { text-transform: lowercase; letter-spacing: normal; }
 .tooltip .tooltip-inner { line-height: 1.8em; padding: 5px 20px; }

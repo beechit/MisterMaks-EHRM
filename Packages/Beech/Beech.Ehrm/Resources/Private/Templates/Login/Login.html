@@ -1,14 +1,15 @@
-<f:layout name="Login" />
+<f:layout name="ajax" />
 
 <f:section name="Body">
-	<section class="container">
+
 		<div class="row" id="content">
 
 			<f:flashMessages class="flashmessages alert" />
 
 			<f:if condition="{applicationConfigured}">
 				<f:then>
-					<f:form action="authenticate" class="form" additionalAttributes="{data-target:'#modal-body-only'}">
+					<f:form action="authenticate" class="form" additionalAttributes="{data-target:'#modal-body-only .modal-body'}">
+						<f:form.hidden name="modal" value="1" />
 						<fieldset>
 							<legend><f:translate id="panel.login.legend">Login panel</f:translate></legend>
 							<div class="control-group">
@@ -44,5 +45,5 @@
 			</f:if>
 		</div>
 
-	</section>
+
 </f:section>

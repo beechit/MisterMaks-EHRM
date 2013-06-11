@@ -8,21 +8,20 @@
 
 			var url = $(this).attr('href');
 
-				//Use AJAX get function to fetch the html
-			$.get(url, function(html) {
-				var content = $('#content', html).html();
-				$('#modal-body-only .modal-body').html(content);
+				// Use AJAX get function to fetch the html
+			$('#modal-body-only').modal();
+			$('#modal-body-only .modal-body').load(url, function() {
+				// Make sure clicks stays in the modal
+				$('#modal-body-only form').updateModal();
 				$('#modal-body-only #username').focus();
 			});
 		});
 
 			// Reset the stage so on reloads we don't get old data
 		$('#modal-body-only').on('hidden', function () {
-			$('#modal-body-only .modal-body').html('<p><i class="icon-spin icon-spinner icon-3x muted"></i></p>');
+			$('#modal-body-only .modal-body').html('<p><i class="icon-spin icon-spinner icon-4x muted"></i></p>');
 		});
 
-			// Make sure clicks stays in the modal
-		$('#modal-body-only form').updateModal();
 	});
 
 	(function($) {
@@ -36,16 +35,14 @@
 					type: form.attr('method'),
 					url: form.attr('action'),
 					data: form.serialize(),
-					success: function(data) {
-						var result = $('#content', data).html();
-
+					success: function(result) {
 							// Redirect upon successful login
-						if (typeof(result) === 'undefined') {
+						if (!result || result == 'ok') {
 							window.location = $('base').text();
+						} else {
+							target.html(result);
+							$('#modal-body-only form').updateModal();
 						}
-
-						target.html(result);
-						$('#modal-body-only form').updateModal();
 					}
 				});
 
