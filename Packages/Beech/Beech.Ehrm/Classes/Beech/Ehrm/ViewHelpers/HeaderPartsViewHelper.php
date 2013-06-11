@@ -169,19 +169,52 @@ class HeaderPartsViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHel
 	}
 
 	/**
+	 * Read modules list from settings and generate array with urls mapping
+	 *
+	 * @return array
+	 */
+	protected function linkEmberRoutesToModules() {
+		if (isset($this->settings['defaultActionsMapping']) && is_array($this->settings['defaultActionsMapping'])) {
+			$defaultActionsMapping = $this->settings['defaultActionsMapping'];
+		}
+		if (isset($this->settings['moduleRoutes']) && is_array($this->settings['moduleRoutes'])) {
+			$moduleRoutes = $this->settings['moduleRoutes'];
+		}
+
+		$modules = array();
+		if (isset($defaultActionsMapping) && isset($moduleRoutes)) {
+			foreach ($moduleRoutes as $params) {
+				list($packageKey, $subpackage, $controller) = $params;
+				$package = str_replace('.', '', $packageKey);
+				foreach ($defaultActionsMapping as $action => $suffix) {
+					$modules[$package.$subpackage.$controller.$suffix] = $this->controllerContext->getUriBuilder()
+						->reset()
+						->setCreateAbsoluteUri(TRUE)
+						->uriFor($action, array(), $controller, $packageKey, $subpackage);
+				}
+			}
+		}
+		return $modules;
+	}
+
+	/**
 	 * Add JavaScript configuration object to the document header
 	 *
 	 * @return string
 	 */
 	protected function javaScriptConfiguration() {
+
 		$settings = array(
 			'init' => (object)array(
 				'onLoad' => array(),
 				'afterInitialize' => array()
 			),
+			'locale' => $this->preferenceUtility->getApplicationPreference('locale'),
+			'url' => array()
+		);
+		$predefinedModules = $this->linkEmberRoutesToModules();
 				// TODO: those url's are just for loading modules by AJAX, should be replaced by ember-data
-			'url' => (object)array(
-				'module' => (object)array(
+		$customModules = array(
 					'userSettings' => $this->controllerContext->getUriBuilder()
 						->reset()
 						->setCreateAbsoluteUri(TRUE)
@@ -194,86 +227,6 @@ class HeaderPartsViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHel
 						->reset()
 						->setCreateAbsoluteUri(TRUE)
 						->uriFor('index', array(), 'Document', 'Beech.Document'),
-					'BeechPartyPersonIndex' => $this->controllerContext->getUriBuilder()
-						->reset()
-						->setCreateAbsoluteUri(TRUE)
-						->uriFor('list', array(), 'Person', 'Beech.Party'),
-					'BeechPartyPersonNew' => $this->controllerContext->getUriBuilder()
-						->reset()
-						->setCreateAbsoluteUri(TRUE)
-						->uriFor('new', array(), 'Person', 'Beech.Party'),
-					'BeechPartyPersonShow' => $this->controllerContext->getUriBuilder()
-						->reset()
-						->setCreateAbsoluteUri(TRUE)
-						->uriFor('show', array(), 'Person', 'Beech.Party'),
-					'BeechPartyPersonEdit' => $this->controllerContext->getUriBuilder()
-						->reset()
-						->setCreateAbsoluteUri(TRUE)
-						->uriFor('edit', array(), 'Person', 'Beech.Party'),
-					'BeechPartyPersonDelete' => $this->controllerContext->getUriBuilder()
-						->reset()
-						->setCreateAbsoluteUri(TRUE)
-						->uriFor('delete', array(), 'Person', 'Beech.Party'),
-					'BeechPartyAdministrationPersonIndex' => $this->controllerContext->getUriBuilder()
-						->reset()
-						->setCreateAbsoluteUri(TRUE)
-						->uriFor('list', array(), 'Person', 'Beech.Party', 'Administration'),
-					'BeechPartyAdministrationPersonNew' => $this->controllerContext->getUriBuilder()
-						->reset()
-						->setCreateAbsoluteUri(TRUE)
-						->uriFor('new', array(), 'Person', 'Beech.Party', 'Administration'),
-					'BeechPartyAdministrationPersonShow' => $this->controllerContext->getUriBuilder()
-						->reset()
-						->setCreateAbsoluteUri(TRUE)
-						->uriFor('show', array(), 'Person', 'Beech.Party', 'Administration'),
-					'BeechPartyAdministrationPersonEdit' => $this->controllerContext->getUriBuilder()
-						->reset()
-						->setCreateAbsoluteUri(TRUE)
-						->uriFor('edit', array(), 'Person', 'Beech.Party', 'Administration'),
-					'BeechPartyAdministrationPersonDelete' => $this->controllerContext->getUriBuilder()
-						->reset()
-						->setCreateAbsoluteUri(TRUE)
-						->uriFor('delete', array(), 'Person', 'Beech.Party', 'Administration'),
-					'BeechPartyCompanyIndex' => $this->controllerContext->getUriBuilder()
-						->reset()
-						->setCreateAbsoluteUri(TRUE)
-						->uriFor('list', array(), 'Company', 'Beech.Party'),
-					'BeechPartyCompanyNew' => $this->controllerContext->getUriBuilder()
-						->reset()
-						->setCreateAbsoluteUri(TRUE)
-						->uriFor('new', array(), 'Company', 'Beech.Party'),
-					'BeechPartyCompanyShow' => $this->controllerContext->getUriBuilder()
-						->reset()
-						->setCreateAbsoluteUri(TRUE)
-						->uriFor('show', array(), 'Company', 'Beech.Party'),
-					'BeechPartyCompanyEdit' => $this->controllerContext->getUriBuilder()
-						->reset()
-						->setCreateAbsoluteUri(TRUE)
-						->uriFor('edit', array(), 'Company', 'Beech.Party'),
-					'BeechPartyCompanyDelete' => $this->controllerContext->getUriBuilder()
-						->reset()
-						->setCreateAbsoluteUri(TRUE)
-						->uriFor('delete', array(), 'Company', 'Beech.Party'),
-					'BeechPartyAdministrationCompanyIndex' => $this->controllerContext->getUriBuilder()
-						->reset()
-						->setCreateAbsoluteUri(TRUE)
-						->uriFor('list', array(), 'Company', 'Beech.Party', 'Administration'),
-					'BeechPartyAdministrationCompanyNew' => $this->controllerContext->getUriBuilder()
-						->reset()
-						->setCreateAbsoluteUri(TRUE)
-						->uriFor('new', array(), 'Company', 'Beech.Party', 'Administration'),
-					'BeechPartyAdministrationCompanyShow' => $this->controllerContext->getUriBuilder()
-						->reset()
-						->setCreateAbsoluteUri(TRUE)
-						->uriFor('show', array(), 'Company', 'Beech.Party', 'Administration'),
-					'BeechPartyAdministrationCompanyEdit' => $this->controllerContext->getUriBuilder()
-						->reset()
-						->setCreateAbsoluteUri(TRUE)
-						->uriFor('edit', array(), 'Company', 'Beech.Party', 'Administration'),
-					'BeechPartyAdministrationCompanyDelete' => $this->controllerContext->getUriBuilder()
-						->reset()
-						->setCreateAbsoluteUri(TRUE)
-						->uriFor('delete', array(), 'Company', 'Beech.Party', 'Administration'),
 					'jobDescription' => $this->controllerContext->getUriBuilder()
 						->reset()
 						->setCreateAbsoluteUri(TRUE)
@@ -330,10 +283,8 @@ class HeaderPartsViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHel
 						->reset()
 						->setCreateAbsoluteUri(TRUE)
 						->uriFor('close', array(), 'Task', 'Beech.Task')
-				)
-			),
-			'locale' => $this->preferenceUtility->getApplicationPreference('locale')
-		);
+				);
+		$settings['url']['module'] = (object) array_merge($predefinedModules, $customModules);
 
 		return sprintf('<script>var MM = %s;</script>', json_encode((object)$settings));
 	}

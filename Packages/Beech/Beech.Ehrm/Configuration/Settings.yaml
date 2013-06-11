@@ -83,6 +83,20 @@ Beech:
         'Beech\Ehrm\ViewHelpers\Navigation\MenuViewHelper': 'resource://Beech.Ehrm/Private/Templates/ViewHelpers/Navigation/Menu.html'
         'Beech\Ehrm\ViewHelpers\FlashMessagesViewHelper': 'resource://Beech.Ehrm/Private/Templates/ViewHelpers/FlashMessages.html'
 
+    moduleRoutes:
+      - ['Beech.Party', NULL, 'Person']
+      - ['Beech.Party', 'Administration', 'Person']
+      - ['Beech.Party', NULL, 'Company']
+      - ['Beech.Party', 'Administration', 'Company']
+      - ['Beech.Document', NULL, 'Document']
+
+    defaultActionsMapping:
+      'list': 'Index'
+      'new': 'New'
+      'edit': 'Edit'
+      'show': 'Show'
+      'delete': 'Delete'
+
 TYPO3:
   Form:
     presets:
