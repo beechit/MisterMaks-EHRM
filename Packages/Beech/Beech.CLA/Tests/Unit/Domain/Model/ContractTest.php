@@ -8,6 +8,7 @@ namespace Beech\CLA\Tests\Unit\Domain\Model;
  */
 
 use Beech\CLA\Domain\Model\Contract;
+use Beech\Ehrm\Domain\Model\Status;
 
 /**
  * Test case for Contract
@@ -23,6 +24,8 @@ class ContractTest extends \TYPO3\Flow\Tests\UnitTestCase {
 		$createDate = new \DateTime();
 		$startDate = new \DateTime();
 		$expireDate = clone $startDate;
+		$status = new Status();
+		$status->setStatusName(Status::STATUS_DRAFT);
 		$expireDate->add(new \DateInterval('P1Y'));
 		$contract->setCreationDate($createDate);
 		$this->assertNotNull($contract->getCreationDate());
@@ -30,8 +33,8 @@ class ContractTest extends \TYPO3\Flow\Tests\UnitTestCase {
 		$this->assertNotNull($contract->getStartDate());
 		$contract->setExpirationDate($expireDate);
 		$this->assertNotNull($contract->getExpirationDate());
-		$contract->setStatus(Contract::STATUS_DRAFT);
-		$this->assertEquals(Contract::STATUS_DRAFT, $contract->getStatus());
+		$contract->setStatus($status);
+		$this->assertEquals(Status::STATUS_DRAFT, $contract->getStatus()->getStatusName());
 	}
 
 	/**

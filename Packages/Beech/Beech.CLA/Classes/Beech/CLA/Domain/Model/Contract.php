@@ -17,15 +17,6 @@ use TYPO3\Flow\Annotations as Flow,
  */
 class Contract extends \Beech\Ehrm\Domain\Model\Document {
 
-	const STATUS_DRAFT = 'Draft';
-	const STATUS_PENDING_APPROVAL = 'Pending approval';
-	const STATUS_APPROVED = 'Approved';
-	const STATUS_ACTIVE = 'Active';
-	const STATUS_REJECTED = 'Rejected';
-	const STATUS_CANCELED = 'Canceled';
-	const STATUS_CLOSED = 'Closed';
-	const STATUS_SUSPENDED = 'Suspended';
-
 	/**
 	 * @var \Beech\CLA\Domain\Model\JobDescription
 	 * @ODM\ReferenceOne(targetDocument="\Beech\CLA\Domain\Model\JobDescription")
@@ -53,9 +44,14 @@ class Contract extends \Beech\Ehrm\Domain\Model\Document {
 	protected $employee;
 
 	/**
-	 * @var string
-	 * @ODM\Field(type="string")
-	 * @ODM\Index
+	 * @var \Beech\CLA\Domain\Model\ContractTemplate
+	 * @ODM\ReferenceOne(targetDocument="\Beech\CLA\Domain\Model\ContractTemplate")
+	 */
+	protected $contractTemplate;
+
+	/**
+	 * @var \Beech\Ehrm\Domain\Model\Status
+	 * @ODM\ReferenceOne(targetDocument="\Beech\Ehrm\Domain\Model\Status", cascade={"persist"})
 	 */
 	protected $status;
 
@@ -149,6 +145,20 @@ class Contract extends \Beech\Ehrm\Domain\Model\Document {
 	}
 
 	/**
+	 * @param \Beech\CLA\Domain\Model\ContractTemplate $contractTemplate
+	 */
+	public function setContractTemplate($contractTemplate) {
+		$this->contractTemplate = $contractTemplate;
+	}
+
+	/**
+	 * @return \Beech\CLA\Domain\Model\ContractTemplate
+	 */
+	public function getContractTemplate() {
+		return $this->contractTemplate;
+	}
+
+	/**
 	 * @param \DateTime $expirationDate
 	 */
 	public function setExpirationDate($expirationDate) {
@@ -191,14 +201,15 @@ class Contract extends \Beech\Ehrm\Domain\Model\Document {
 	}
 
 	/**
-	 * @param string $status
+	 * @param \Beech\Ehrm\Domain\Model\Status $status
 	 */
 	public function setStatus($status) {
+		$status->setDocumentId($this->getId());
 		$this->status = $status;
 	}
 
 	/**
-	 * @return string
+	 * @return \Beech\Ehrm\Domain\Model\Status
 	 */
 	public function getStatus() {
 		return $this->status;
