@@ -10,7 +10,7 @@ namespace Beech\Task\Controller;
 use TYPO3\Flow\Annotations as Flow;
 use Beech\Task\Domain\Model\Task as Task;
 use TYPO3\Flow\Http\Message;
-use TYPO3\Flow\Security\Exception;
+use TYPO3\Flow\Security\Exception\AccessDeniedException;
 
 class TaskController extends \Beech\Ehrm\Controller\AbstractController {
 
@@ -129,13 +129,13 @@ class TaskController extends \Beech\Ehrm\Controller\AbstractController {
 	 * Get current loggedin user
 	 *
 	 * @return \TYPO3\Party\Domain\Model\AbstractParty
-	 * @throws \TYPO3\Flow\Security\Exception
+	 * @throws \TYPO3\Flow\Security\Exception\AccessDeniedException
 	 */
 	protected function getPerson() {
 
 			// @todo make this nice
 		if(!$this->securityContext->getAccount()) {
-			throw new Exception('Not logged in');
+			throw new AccessDeniedException();
 		}
 
 		return $this->securityContext->getAccount()->getParty();

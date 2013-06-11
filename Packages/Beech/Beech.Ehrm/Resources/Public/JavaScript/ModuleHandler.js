@@ -42,6 +42,21 @@
 					url: url,
 					success: function(result) {
 						this.loadContent(result, target);
+					},
+					statusCode: {
+						404: function(xhr,status,message) {
+							App.Service.Notification.showError(message);
+						},
+						401: function(xhr,status,message) {
+							App.Service.Notification.showWarning(message);
+							window.location = $('base').text();
+						},
+						403: function(xhr,status,message) {
+							App.Service.Notification.showError(message);
+						},
+						500: function(xhr,status,message) {
+							App.Service.Notification.showError(message);
+						}
 					}
 				});
 			}
