@@ -1,0 +1,13 @@
+documentTypes:
+  -
+    'categoryName': 'image'
+    'documentType': 'Resume'
+  -
+    'categoryName': 'image'
+    'documentType': 'Letter'
+  -
+    'categoryName': 'image'
+    'documentType': 'Interview notes'
+  -
+    'categoryName': 'image'
+    'documentType': 'Other'

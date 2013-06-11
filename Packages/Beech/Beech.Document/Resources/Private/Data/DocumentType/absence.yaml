@@ -1,0 +1,13 @@
+documentTypes:
+  -
+    'categoryName': 'absence'
+    'documentTypes': 'Uwv'
+  -
+    'categoryName': 'absence'
+    'documentTypes': 'Arbo'
+  -
+    'categoryName': 'absence'
+    'documentTypes': 'Letter'
+  -
+    'categoryName': 'absence'
+    'documentTypes': 'Other'

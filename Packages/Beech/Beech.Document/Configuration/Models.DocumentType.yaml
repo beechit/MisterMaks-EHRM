@@ -1,0 +1,16 @@
+'Beech.Document.Domain.Model.DocumentType':
+  properties:
+    'categoryName':
+      label: 'Document category name'
+      validation:
+        -
+          type: 'StringLength'
+          options:
+            maximum: 35
+    'typeName':
+      label: 'Document type'
+      validation:
+        -
+          type: 'StringLength'
+          options:
+            maximum: 35

@@ -1,0 +1,7 @@
+documentTypes:
+  -
+    'categoryName': 'image'
+    'documentType': 'Profile picture'
+  -
+    'categoryName': 'image'
+    'documentType': 'Other'

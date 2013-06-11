@@ -10,11 +10,11 @@ namespace Beech\Document\Domain\Repository;
 use TYPO3\Flow\Annotations as Flow;
 
 /**
- * A repository for DocumentCategories
+ * A repository for DocumentTypes
  *
  * @Flow\Scope("singleton")
  */
-class DocumentCategoryRepository extends \Radmiraal\CouchDB\Persistence\AbstractRepository {
+class DocumentTypeRepository extends \Radmiraal\CouchDB\Persistence\AbstractRepository {
 
 }
 

@@ -1,0 +1,13 @@
+documentTypes:
+  -
+    'categoryName': 'contract'
+    'documentTypes': 'Contract'
+  -
+    'categoryName': 'contract'
+    'documentTypes': 'End of contract'
+  -
+    'categoryName': 'contract'
+    'documentTypes': 'Reference note'
+  -
+    'categoryName': 'contract'
+    'documentTypes': 'Other'

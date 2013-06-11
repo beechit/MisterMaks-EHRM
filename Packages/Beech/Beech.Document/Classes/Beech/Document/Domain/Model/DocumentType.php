@@ -11,11 +11,11 @@ use TYPO3\Flow\Annotations as Flow,
 	Doctrine\ODM\CouchDB\Mapping\Annotations as ODM;
 
 /**
- * A DocumentCategory
+ * A DocumentType
  *
  * @ODM\Document(indexed=true)
  */
-class DocumentCategory extends \Beech\Ehrm\Domain\Model\Document {
+class DocumentType extends \Beech\Ehrm\Domain\Model\Document {
 
 }
 
