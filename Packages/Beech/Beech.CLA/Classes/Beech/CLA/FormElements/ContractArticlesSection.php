@@ -84,7 +84,7 @@ class ContractArticlesSection extends \TYPO3\Form\FormElements\Section {
 							}
 
 						} else {
-							$contractArticleValue = $contractArticleSection->createElement($contractArticleValueIdentifier, 'TYPO3.Form:SingleLineText');
+							$contractArticleValue = $contractArticleSection->createElement($contractArticleValueIdentifier, 'Beech.CLA:SingleLineText');
 						}
 						if (isset($value['label'])) {
 							$contractArticleValue->setLabel($value['label']);

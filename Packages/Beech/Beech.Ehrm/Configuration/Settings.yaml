@@ -142,6 +142,21 @@ TYPO3:
             formBuilder:
               label: 'Employee Select'
               group: custom
+          'Beech.CLA:SingleLineText':
+            superTypes: ['TYPO3.Form:FormElement', 'TYPO3.Form:TextMixin']
+            renderingOptions:
+              layoutPathPattern: 'resource://Beech.CLA/Private/Templates/FormElements/Layouts/{@type}.html'
+              templatePathPattern: 'resource://Beech.CLA/Private/Templates/FormElements/SingleLineText.html'
+          'Beech.CLA:SingleSelectDropdown':
+            superTypes: ['TYPO3.Form:SingleSelectDropdown']
+            renderingOptions:
+              layoutPathPattern: 'resource://Beech.CLA/Private/Templates/FormElements/Layouts/{@type}.html'
+              templatePathPattern: 'resource://Beech.CLA/Private/Templates/FormElements/SingleSelectDropdown.html'
+          'Beech.CLA:MultipleSelectCheckboxes':
+            superTypes: ['TYPO3.Form:MultipleSelectCheckboxes']
+            renderingOptions:
+              layoutPathPattern: 'resource://Beech.CLA/Private/Templates/FormElements/Layouts/{@type}.html'
+              templatePathPattern: 'resource://Beech.CLA/Private/Templates/FormElements/MultipleSelectCheckboxes.html'
           'Beech.CLA:ContractTemplateSelect':
             superTypes: ['TYPO3.Form:FormElement', 'TYPO3.Form:SingleSelectDropdown']
             implementationClassName: 'Beech\CLA\FormElements\ContractTemplateSelect'
