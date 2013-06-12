@@ -91,12 +91,12 @@
 		<!-- Phone numbers -->
 		<h3>Phone numbers</h3>
 		<f:for each="{phoneNumbers}" as="phoneNumber" iteration="phoneNumberIterator">
-			<div id="phoneNumber-{phoneNumber.id}" class="clearfix">
-				<f:render partial="Forms/PhoneNumber" arguments="{party: person, phoneNumber: phoneNumber, controller: 'PhoneNumber', action: 'update', size: 'span11'}"/>
+			<div id="phoneNumber-{phoneNumber.id}">
+				<f:render partial="Forms/PhoneNumber" arguments="{party: person, phoneNumber: phoneNumber, controller: 'PhoneNumber', action: 'update'}"/>
 			</div>
 		</f:for>
 		<div id="phoneNumber-add" class="clearfix">
-			<f:render partial="Forms/PhoneNumber" arguments="{party: person, controller: 'PhoneNumber', action: 'add', size: 'span11', suffix: 'phonenumber'}"/>
+			<f:render partial="Forms/PhoneNumber" arguments="{party: person, controller: 'PhoneNumber', action: 'add', suffix: 'phonenumber'}"/>
 		</div>
 
 		<!-- Electronic addresses -->

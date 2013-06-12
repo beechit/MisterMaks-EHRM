@@ -1,10 +1,10 @@
 <f:if condition="{phoneNumber}">
 	<f:then>
 		<div id="phoneNumber-{phoneNumber.id}" class="clearfix">
-			<f:render partial="Forms/PhoneNumber" arguments="{party: party, phoneNumber: phoneNumber, controller: 'PhoneNumber', action: 'update', size: 'span11'}"/>
+			<f:render partial="Forms/PhoneNumber" arguments="{party: party, phoneNumber: phoneNumber, controller: 'PhoneNumber', action: 'update'}"/>
 		</div>
 		<div id="phoneNumber-add" class="clearfix">
-			<f:render partial="Forms/PhoneNumber" arguments="{party: party, controller: 'PhoneNumber', action: 'add', size: 'span11'}"/>
+			<f:render partial="Forms/PhoneNumber" arguments="{party: party, controller: 'PhoneNumber', action: 'add'}"/>
 		</div>
 	</f:then>
 </f:if>

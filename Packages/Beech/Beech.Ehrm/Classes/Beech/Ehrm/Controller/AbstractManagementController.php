@@ -87,6 +87,28 @@ class AbstractManagementController extends \Beech\Ehrm\Controller\AbstractContro
 	public function newAction() {
 	}
 
+	/**
+	 * A special action which is called if the originally intended action could
+	 * not be called, for example if the arguments were not valid.
+	 *
+	 * The default implementation sets a flash message, request errors and forwards back
+	 * to the originating action. This is suitable for most actions dealing with form input.
+	 *
+	 * @return string
+	 */
+	protected function errorAction() {
+		$this->getControllerContext()->getResponse()->setStatus(500);
+		//Format error message
+		$template = '<div class="alert alert-error"><button type="button" class="close" data-dismiss="alert">&times;</button>%s</div>';
+		$formattedErrorMessage = sprintf($template, parent::errorAction());
+		//Flush and format notices
+		$flashMessages = $this->controllerContext->getFlashMessageContainer()->getMessagesAndFlush();
+		$formattedNoticeMessage = '';
+		foreach ($flashMessages as $flashMessage) {
+			$formattedNoticeMessage .= sprintf($template, $flashMessage->getMessage());
+		}
+		return $formattedNoticeMessage.$formattedErrorMessage;
+	}
 }
 
 ?>
