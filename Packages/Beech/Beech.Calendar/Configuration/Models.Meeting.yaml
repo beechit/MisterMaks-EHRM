@@ -17,9 +17,9 @@
       default: 'tentative'
       options:
         values:
-          - 'confirmed'
-          - 'tentative'
-          - 'cancelled'
+          - 'Confirmed'
+          - 'Tentative'
+          - 'Cancelled'
       validation: ''
     'summary':
       label: 'Summary'
@@ -74,9 +74,9 @@
       label: 'Response status'
       options:
         values:
-          - 'declined'
-          - 'tentative'
-          - 'accepted'
+          - 'Declined'
+          - 'Tentative'
+          - 'Accepted'
     'comment':
       label: 'comment'
       validation:

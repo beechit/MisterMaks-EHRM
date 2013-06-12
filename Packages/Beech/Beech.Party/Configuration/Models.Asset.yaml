@@ -14,11 +14,11 @@
       type: 'array'
       options:
         values:
-         - 'laptop'
-         - 'phone'
-         - 'tools'
-         - 'companyCar'
-         - 'other'
+         - 'Laptop'
+         - 'Phone'
+         - 'Tools'
+         - 'Car'
+         - 'Other'
     'model':
       label: 'Model'
       validation:

@@ -7,10 +7,10 @@
       type: 'array'
       options:
         values:
-         - 'driverslicence'
-         - 'emergencyResponse'
-         - 'cropProtection'
-         - 'other'
+         - 'Drivers licence'
+         - 'Emergency response'
+         - 'Crop protection'
+         - 'Other'
     'name':
       label: 'Licence name'
       validation:

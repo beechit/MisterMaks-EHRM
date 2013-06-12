@@ -6,11 +6,11 @@
       label: 'Address type'
       options:
         values:
-          - 'businessAddress'
-          - 'postbox'
-          - 'mailingAddress'
-          - 'workLocation'
-          - 'addressAbroad'
+          - 'Business'
+          - 'Postbox'
+          - 'Mailing'
+          - 'work'
+          - 'Abroad'
           - 'other'
       validation:
         -

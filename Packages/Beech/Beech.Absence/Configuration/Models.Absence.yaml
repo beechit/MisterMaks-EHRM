@@ -54,11 +54,10 @@
       label: 'Notify'
       options:
         values:
-          - 'noNotification'
-          - 'sendEmail'
-          - 'sendSms'
-          - 'print'
-          - 'taskNotification'
+          - 'None'
+          - 'E-mail'
+          - 'Sms'
+          - 'Create task'
 #for later implementation
 # case Sickness
 #  Case labordispute

@@ -57,8 +57,8 @@
       label: 'Reason that contract was stopped'
       options:
         values:
-          - 'stoppedByEmployer'
-          - 'stoppedByEmployee'
+          - 'By employer'
+          - 'By employee'
           - 'Sickness'
           - 'Other'
       validation:
@@ -197,13 +197,13 @@
             maximum: 15
       options:
         values:
-          - 'monday'
-          - 'tuesday'
+          - 'Monday'
+          - 'Tuesday'
           - 'wednessday'
-          - 'thursday'
-          - 'friday'
-          - 'saturday'
-          - 'sunday'
+          - 'Thursday'
+          - 'Friday'
+          - 'Saturday'
+          - 'Sunday'
     'startTime':
       label: 'Starttime'
       type: 'DateTime'

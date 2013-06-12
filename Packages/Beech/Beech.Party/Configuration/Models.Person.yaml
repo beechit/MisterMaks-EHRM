@@ -27,10 +27,10 @@
       label: 'Relation'
       options:
         values:
-          - 'partner'
-          - 'child'
-          - 'family'
-          - 'other'
+          - 'Partner'
+          - 'Child'
+          - 'Family'
+          - 'Other'
     'middleOtherName':
       validation:
         -
@@ -56,9 +56,9 @@
       label: 'Name usage'
       options:
         values:
-          - 'birthName'
-          - 'marriedName'
-          - 'marriedNameBirthname'
+          - 'Birth name'
+          - 'Married name'
+          - 'Married name + birthname'
     'initials':
       label: 'Initials'
       validation:
@@ -132,12 +132,12 @@
       label: 'Civil status'
       options:
         values:
-          - 'unknown'
-          - 'married'
-          - 'single'
-          - 'livingTogether'
-          - 'widowWidower'
-          - 'divorced'
+          - 'Uknown'
+          - 'Married'
+          - 'Single'
+          - 'Living together'
+          - 'Widow / widower'
+          - 'Divorced'
       validation:
         -
           type: 'StringLength'
@@ -150,17 +150,16 @@
       label: 'Prefered communication Method'
       options:
         values:
-          - 'none'
-          - 'email'
-          - 'sms'
-          - 'paper'
-          - 'phone'
+          - 'None'
+          - 'e-mail'
+          - 'SMS'
+          - 'Phone'
 # status is used to set the status of companycontacts, contacts and partnercompanycontacts
     'status':
       label: 'Status'
       options:
         values:
-          - 'active'
+          - 'Active'
           - 'Archived'
     'creationDate':
       defaultValue: 'now'
