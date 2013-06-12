@@ -62,6 +62,7 @@ Beech:
           - 'Beech.Ehrm/JavaScript/Component/UserInterface/DatePicker.js'
           - 'Beech.Ehrm/JavaScript/Component/UserInterface/Country.js'
           - 'Beech.Ehrm/JavaScript/Component/UserInterface/Form.js'
+          - 'Beech.Ehrm/JavaScript/Service/WebSocketClient.js'
           - 'Beech.Ehrm/JavaScript/Service/Notification.js'
           - 'Beech.CLA/JavaScript/Route/Contract.js'
           - 'Beech.CLA/JavaScript/Controller/Contract.js'
