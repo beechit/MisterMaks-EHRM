@@ -1,4 +1,4 @@
-'Beech.Party.Domain.Model.CompanyAssets':
+'Beech.Party.Domain.Model.CompanyAsset':
   properties:
     'personId':
       label: 'Person ID'
