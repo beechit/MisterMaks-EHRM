@@ -43,7 +43,7 @@ class ContractTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFunctiona
 	 */
 	public function testBasicContractPersistence() {
 		$contract = new \Beech\CLA\Domain\Model\Contract();
-		$contract->setStatus(new \Beech\Ehrm\Domain\Model\Status());
+		$contract->setStatus(\Beech\CLA\Domain\Model\Contract::STATUS_ACTIVE);
 		$contract->setCreationDate(new \DateTime);
 
 		$wage = new \Beech\CLA\Domain\Model\Wage();
@@ -66,7 +66,7 @@ class ContractTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFunctiona
 	public function testContractWithoutWageDoesNotValidate() {
 		$this->markTestSkipped('Skip till the object validation is fixed');
 		$contract = new \Beech\CLA\Domain\Model\Contract();
-		$contract->setStatus(new \Beech\Ehrm\Domain\Model\Status());
+		$contract->setStatus(\Beech\CLA\Domain\Model\Contract::STATUS_ACTIVE);
 		$contract->setCreationDate(new \DateTime);
 		$this->contractRepository->add($contract);
 

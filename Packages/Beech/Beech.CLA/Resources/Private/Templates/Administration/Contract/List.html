@@ -20,7 +20,7 @@
 						<tr>
 							<td>{contract.employeeFullName}</td>
 							<td>{contract.jobDescriptionName}</td>
-							<td>{contract.status.statusName}</td>
+							<td>{contract.status}</td>
 							<td>{contract.creationDate -> f:format.date(format: 'Y-m-d H:i')}</td>
 							<td>
 								<f:link.action action="show" controller="Contract" package="Beech.CLA" subpackage="Administration" arguments="{contract: contract}"></f:link.action>
