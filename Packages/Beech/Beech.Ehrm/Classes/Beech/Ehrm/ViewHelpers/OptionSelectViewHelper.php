@@ -48,8 +48,14 @@ class OptionSelectViewHelper extends \TYPO3\Fluid\ViewHelpers\Form\SelectViewHel
 		if (isset($modelsConfigurations[$packageKey.'.Domain.Model.'.$model])) {
 			$modelConfiguration = $modelsConfigurations[$packageKey.'.Domain.Model.'.$model];
 			$propertyOptions = \TYPO3\Flow\Utility\Arrays::getValueByPath($modelConfiguration, 'properties.'.$property.'.options.values');
+
+
 			if ($propertyOptions !== NULL) {
-				$this->arguments['options'] = array_merge($this->arguments['options'], $propertyOptions);
+				$propertyOptionsValues = array();
+				foreach($propertyOptions as $value) {
+					$propertyOptionsValues[$value] = $value;
+				}
+				$this->arguments['options'] = array_merge($this->arguments['options'], $propertyOptionsValues);
 				return parent::render();
 			}
 		}

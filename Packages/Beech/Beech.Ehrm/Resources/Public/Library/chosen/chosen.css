@@ -4,6 +4,7 @@
   position: relative;
   display: inline-block;
   vertical-align: middle;
+  float: left;
   zoom: 1;
   *display: inline;
 }
@@ -41,9 +42,9 @@
   background-image: -moz-linear-gradient(top, #ffffff 20%, #f6f6f6 50%, #eeeeee 52%, #f4f4f4 100%);
   background-image: -o-linear-gradient(top, #ffffff 20%, #f6f6f6 50%, #eeeeee 52%, #f4f4f4 100%);
   background-image: linear-gradient(#ffffff 20%, #f6f6f6 50%, #eeeeee 52%, #f4f4f4 100%);
-  -webkit-border-radius: 0px 5px 5px 0px;
-  -moz-border-radius   : 0px 5px 5px 0px;
-  border-radius        : 0px 5px 5px 0px;
+  -webkit-border-radius: 0px 0px 0px 0px;
+  -moz-border-radius   : 0px 0px 0px 0px;
+  border-radius        : 0px 0px 0px 0px;
   -moz-background-clip   : padding;
   -webkit-background-clip: padding-box;
   background-clip        : padding-box;

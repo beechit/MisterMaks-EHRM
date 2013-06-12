@@ -54,24 +54,29 @@ class PhoneNumberController extends \Beech\Ehrm\Controller\AbstractManagementCon
 	 * @return void
 	 */
 	public function updateAction(\Beech\Party\Domain\Model\PhoneNumber $phoneNumber) {
-		$phoneNumber->setParty($this->persistenceManager->getIdentifierByObject($phoneNumber->getParty()));
-		$this->repository->update($phoneNumber);
-		$this->addFlashMessage($this->translator->translateById('Updated.', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
-		$this->view->assign('phoneNumber', $phoneNumber);
-		$this->view->assign('party', $phoneNumber->getParty());
-		$this->view->assign('action', 'update');
+		if ($this->getControllerContext()->getRequest()->getArgument('action') === 'remove') {
+			//\TYPO3\Flow\var_dump($phoneNumber->getParty());
+			$this->redirect('remove', 'PhoneNumber', NULL, array('phoneNumber' => $phoneNumber, 'person' => $phoneNumber->getParty()));
+		} else {
+			$phoneNumber->setParty($this->persistenceManager->getIdentifierByObject($phoneNumber->getParty()));
+			$this->repository->update($phoneNumber);
+			$this->addFlashMessage($this->translator->translateById('Updated.', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
+			$this->view->assign('phoneNumber', $phoneNumber);
+			$this->view->assign('party', $phoneNumber->getParty());
+			$this->view->assign('action', 'update');
+		}
 	}
 
 	/**
 	 * @param \Beech\Party\Domain\Model\PhoneNumber $phoneNumber A new phoneNumber to remove
-	 *
+	 * @Flow\IgnoreValidation("$phoneNumber")
 	 * @return void
 	 */
 	public function removeAction(\Beech\Party\Domain\Model\PhoneNumber $phoneNumber) {
 		$phoneNumber->setParty(NULL);
 		$this->repository->update($phoneNumber);
+		//$this->repository->remove($phoneNumber);
 		$this->addFlashMessage($this->translator->translateById('Removed.', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
-		$this->addFlashMessage('Removed.');
 	}
 
 	/**

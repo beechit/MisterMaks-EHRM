@@ -48,7 +48,6 @@
 		},
 
 		loadContent: function(html, target, replaceWith) {
-			console.log('loadContent', target, replaceWith);
 			if(html.substr(0,9) == 'redirect:') {
 				document.location = '/'+html.substr(9);
 				return;
