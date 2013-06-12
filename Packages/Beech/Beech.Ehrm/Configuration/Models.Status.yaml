@@ -18,6 +18,9 @@
 # rejected is an end state, stopped before completed.
 # ended means the status is closed by the system due to an expire date
 # stopped means that an active user has set this state on the entity
+      validation:
+        -
+          type: 'NotEmpty'
     'stopReason':
       options:
         values:
