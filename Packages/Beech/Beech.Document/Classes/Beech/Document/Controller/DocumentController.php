@@ -40,7 +40,7 @@ class DocumentController extends \Beech\Ehrm\Controller\AbstractController {
 	 *
 	 * @return void
 	 */
-	public function indexAction() {
+	public function listAction() {
 		$this->view->assign('documents', $this->documentRepository->findAll());
 	}
 
@@ -51,7 +51,7 @@ class DocumentController extends \Beech\Ehrm\Controller\AbstractController {
 	 * @param array $redirectArguments
 	 * @return void
 	 */
-	public function createAction(\Beech\Document\Domain\Model\Document $document, $redirectArguments = array('index')) {
+	public function createAction(\Beech\Document\Domain\Model\Document $document, $redirectArguments = array('list')) {
 		$this->documentRepository->add($document);
 		$this->addFlashMessage($this->translator->translateById('document.documentUploaded', array(), NULL, NULL, 'Main', 'Beech.Document'));
 		call_user_func_array(array($this, 'redirect'), $redirectArguments);
@@ -107,7 +107,7 @@ class DocumentController extends \Beech\Ehrm\Controller\AbstractController {
 	 */
 	public function updateAction(\Beech\Document\Domain\Model\Document $document) {
 		$this->documentRepository->update($document);
-		$this->redirect('index');
+		$this->redirect('list');
 	}
 
 	/**
@@ -120,7 +120,7 @@ class DocumentController extends \Beech\Ehrm\Controller\AbstractController {
 	public function deleteAction(\Beech\Document\Domain\Model\Document $document) {
 		$this->documentRepository->remove($document);
 		$this->addFlashMessage($this->translator->translateById('document.documentDeleted', array(), NULL, NULL, 'Main', 'Beech.Document'));
-		$this->redirect('index');
+		$this->redirect('list');
 	}
 
 }

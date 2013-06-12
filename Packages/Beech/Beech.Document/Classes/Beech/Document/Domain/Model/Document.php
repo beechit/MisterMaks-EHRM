@@ -67,6 +67,14 @@ class Document extends \Beech\Ehrm\Domain\Model\Document {
 		return $this->resources;
 	}
 
+	/**
+	 * Get first resource from list
+	 *
+	 * @return \Doctrine\CouchDB\Attachment
+	 */
+	public function getResource() {
+		return reset($this->resources);
+	}
 }
 
 ?>

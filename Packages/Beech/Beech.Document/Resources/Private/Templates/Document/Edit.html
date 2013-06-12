@@ -11,11 +11,19 @@
 		</f:if>
 	</f:form.validationResults>
 
-	<f:form action="update" object="{document}" name="document" class="form-horizontal well">
+	<f:form action="update" object="{document}" name="document" class="form-horizontal well" enctype="multipart/form-data">
+		<f:form.hidden property="id" />
 		<div class="control-group">
 			<label class="control-label" for="name"><f:translate id="document.name">Document name</f:translate></label>
 			<div class="controls">
-				<f:form.textfield property="name" id="name" class="input-xxlarge"/>
+				<f:form.textfield property="name" id="name" class="input-large"/>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="name">Resources</label>
+			<div class="controls">
+				<f:render partial="Document/Preview" arguments="{document: document, width: 100}"/><br/>
+				<f:form.upload property="resources.0" />
 			</div>
 		</div>
 		<div class="form-actions">

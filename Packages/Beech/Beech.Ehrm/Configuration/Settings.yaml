@@ -69,12 +69,9 @@ Beech:
           - 'Beech.CLA/JavaScript/Route/Contract.js'
           - 'Beech.CLA/JavaScript/Controller/Contract.js'
           - 'Beech.CLA/JavaScript/View/Contract.js'
-          - 'Beech.Party/JavaScript/Route/Company.js'
-          - 'Beech.Party/JavaScript/Route/Person.js'
-          - 'Beech.Party/JavaScript/Controller/Company.js'
-          - 'Beech.Party/JavaScript/Controller/Person.js'
-          - 'Beech.Party/JavaScript/View/Company.js'
-          - 'Beech.Party/JavaScript/View/Person.js'
+          - 'Beech.Document/JavaScript/Route/Document.js'
+          - 'Beech.Document/JavaScript/Controller/Document.js'
+          - 'Beech.Document/JavaScript/View/Document.js'
 
 
     viewHelpers:

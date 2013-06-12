@@ -12,7 +12,6 @@
 						<thead>
 							<tr>
 								<th><f:translate id="name">Name</f:translate></th>
-								<th><f:translate id="versions">Version</f:translate></th>
 								<th><f:translate id="preview">Preview</f:translate></th>
 								<th>&nbsp;</th>
 							</tr>
@@ -20,12 +19,12 @@
 						<f:for each="{documents}" as="document" iteration="documentIterator">
 							<tr>
 								<td><f:link.action action="show" arguments="{document: document}">{document.name}</f:link.action></td>
-								<td>{document.resources -> f:count()}</td>
-								<td><img src="download/{document.id}" width="100"/></td>
+								<td><f:render partial="Document/Preview" arguments="{document: document, width: 100}"/></td>
 								<td>
-									<f:link.action action="download" arguments="{document: document}"> <i class="icon icon-eye-open"></i></f:link.action>
-									<f:link.action action="edit" arguments="{document: document}"> <i class="icon icon-edit"></i></f:link.action>
-									<f:link.action action="delete" arguments="{document: document}"> <i class="icon icon-trash"></i></f:link.action>
+									<a href="/download/{document.id}"><i class="icon-download-alt"></i></a>
+									<a href="#/document/show/{document.id}"><i class="icon-eye-open"></i></a>
+									<a href="#/document/edit/{document.id}"><i class="icon-pencil"></i></a>
+									<a href="#/document/delete/{document.id}"><i class="icon-trash"></i></a>
 								</td>
 							</tr>
 						</f:for>
