@@ -9,10 +9,10 @@
 			controller.loadUrl(model.params);
 		}
 	});
-	App.BeechTaskTaskModuleIndexRoute = App.TaskModuleRoute.extend();
-	App.BeechTaskTaskModuleNewRoute = App.TaskModuleRoute.extend();
-	App.BeechTaskTaskModuleShowRoute = App.TaskModuleRoute.extend();
-	App.BeechTaskTaskModuleEditRoute = App.TaskModuleRoute.extend();
-	App.BeechTaskTaskModuleCloseRoute = App.TaskModuleRoute.extend();
+	App.BeechTaskTaskIndexRoute = App.TaskModuleRoute.extend();
+	App.BeechTaskTaskNewRoute = App.TaskModuleRoute.extend();
+	App.BeechTaskTaskShowRoute = App.TaskModuleRoute.extend();
+	App.BeechTaskTaskEditRoute = App.TaskModuleRoute.extend();
+	App.BeechTaskTaskCloseRoute = App.TaskModuleRoute.extend();
 
 }).call(this);

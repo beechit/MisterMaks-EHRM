@@ -55,6 +55,7 @@ class Task extends \Beech\Ehrm\Domain\Model\Document {
 	 *
 	 * @var \TYPO3\Party\Domain\Model\AbstractParty
 	 * @ODM\Field(type="string")
+	 * @ODM\Index
 	 */
 	protected $createdBy;
 

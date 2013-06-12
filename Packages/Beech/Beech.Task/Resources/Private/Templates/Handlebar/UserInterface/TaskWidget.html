@@ -1,6 +1,7 @@
 {namespace mm=Beech\Ehrm\ViewHelpers}
-<h3>Tasks {{#linkTo "BeechTaskTaskModule" class="pull-right" rel="tooltip" data-placement="left" title="Go to all tasks"}}<i class="icon-tasks"></i>{{/linkTo}}</h3>
+<h3>Tasks {{#linkTo "BeechTaskTask" class="pull-right" rel="tooltip" data-placement="left" title="Go to all tasks"}}<i class="icon-tasks"></i>{{/linkTo}}</h3>
 <div class="accordion" id="tasklist">
+
 	{{#each content}}
 		<div class="accordion-group">
 			<div class="accordion-heading">
@@ -9,15 +10,17 @@
 				</a>
 				<span class="badge badge-important">{{tasks.length}}</span>
 			</div>
+			{{#if tasks}}
 			<div id="taskwidget-priority{{unbound id}}" class="accordion-body collapse">
 				<div class="accordion-inner">
 					<ul class="unstyled">
 						{{#each tasks}}
-						<li>{{description}}</li>
+							<li><a href="/#/tasks/show/{{unbound id}}">{{description}}</a></li>
 						{{/each}}
 					</ul>
 				</div>
 			</div>
+			{{/if}}
 		</div>
 	{{/each}}
 </div>

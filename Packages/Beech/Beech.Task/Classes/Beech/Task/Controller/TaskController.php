@@ -9,6 +9,7 @@ namespace Beech\Task\Controller;
 
 use TYPO3\Flow\Annotations as Flow;
 use Beech\Task\Domain\Model\Task as Task;
+use TYPO3\Flow\Security\Exception;
 
 class TaskController extends \Beech\Ehrm\Controller\AbstractController {
 
@@ -47,9 +48,7 @@ class TaskController extends \Beech\Ehrm\Controller\AbstractController {
 	 * @return void
 	 */
 	public function listAction() {
-		if ($this->securityContext->getAccount()) {
-			$this->view->assign('tasks', $this->taskRepository->findOpenTasksByPerson($this->securityContext->getAccount()->getParty()));
-		}
+		$this->view->assign('tasks', $this->taskRepository->findOpenTasksByPerson($this->getPerson()));
 	}
 
 	/**
@@ -59,7 +58,7 @@ class TaskController extends \Beech\Ehrm\Controller\AbstractController {
 
 			// by default assign to loggedin user
 		$task = new \Beech\Task\Domain\Model\Task();
-		$task->setAssignedTo($this->securityContext->getAccount()->getParty());
+		$task->setAssignedTo($this->getPerson());
 
 		$this->view->assign('task', $task);
 		$this->view->assign('priorities', $this->priorityRepository->findAll());
@@ -125,5 +124,21 @@ class TaskController extends \Beech\Ehrm\Controller\AbstractController {
 		$this->addFlashMessage('Closed the task');
 		$this->taskRepository->update($task);
 		$this->emberRedirect('#/tasks');
+	}
+
+	/**
+	 * Get current loggedin user
+	 *
+	 * @return \TYPO3\Party\Domain\Model\AbstractParty
+	 * @throws \TYPO3\Flow\Security\Exception
+	 */
+	protected function getPerson() {
+
+			// @todo make this nice
+		if(!$this->securityContext->getAccount()) {
+			throw new Exception('Not logged in');
+		}
+
+		return $this->securityContext->getAccount()->getParty();
 	}
 }

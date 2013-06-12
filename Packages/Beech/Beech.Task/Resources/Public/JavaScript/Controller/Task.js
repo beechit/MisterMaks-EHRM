@@ -1,25 +1,25 @@
 (function() {
 	'use strict';
-	App.TaskModuleController = Ember.Controller.extend({
+	App._TaskModuleController = Ember.Controller.extend({
 		url: '',
 		loadUrl: function(params) {
 			App.ModuleHandler.loadUrl(this.get('url') + '?'+ params.substr(1));
 		}
 	});
 
-	App.BeechTaskTaskModuleIndexController = App.TaskModuleController.extend({
+	App.BeechTaskTaskIndexController = App._TaskModuleController.extend({
 		url: MM.url.module.taskModule
 	});
-	App.BeechTaskTaskModuleNewController = App.TaskModuleController.extend({
+	App.BeechTaskTaskNewController = App._TaskModuleController.extend({
 		url: MM.url.module.taskModuleNew
 	});
-	App.BeechTaskTaskModuleEditController = App.TaskModuleController.extend({
+	App.BeechTaskTaskEditController = App._TaskModuleController.extend({
 		url: MM.url.module.taskModuleEdit
 	});
-	App.BeechTaskTaskModuleShowController = App.TaskModuleController.extend({
+	App.BeechTaskTaskShowController = App._TaskModuleController.extend({
 		url: MM.url.module.taskModuleShow
 	});
-	App.BeechTaskTaskModuleCloseController = App.TaskModuleController.extend({
+	App.BeechTaskTaskCloseController = App._TaskModuleController.extend({
 		url: MM.url.module.taskModuleClose
 	});
 

@@ -42,7 +42,7 @@
 				// Beech.Party
 
 			// Beech.Task
-			this.resource('BeechTaskTaskModule', { path: 'tasks' }, function() {
+			this.resource('BeechTaskTask', { path: 'tasks' }, function() {
 				this.route('new', {path: 'new'});
 				this.route('show', {path: 'show/:task%5B__identity%5D'});
 				this.route('edit', {path: 'edit/:task%5B__identity%5D'});
@@ -61,7 +61,7 @@
 		// Frontend routes
 	App.IndexRoute = Ember.Route.extend({
 		setupController: function() {
-			this.controllerFor('BeechTaskDomainModelTask').set('content', App.BeechTaskDomainModelPriority.find());
+			this.controllerFor('BeechTaskTaskWidget').set('content', App.BeechTaskDomainModelPriority.find());
 		}
 	});
 
@@ -101,9 +101,6 @@
 	});
 	App.AdministrationDomainContractArticleModuleView = Ember.View.extend(App.AjaxModuleViewMixin, {
 		url: MM.url.module.contractArticle
-	});
-	App.BeechTaskTaskModuleView = Ember.View.extend(App.AjaxModuleViewMixin, {
-		url: MM.url.module.taskModule
 	});
 
 }).call(this);

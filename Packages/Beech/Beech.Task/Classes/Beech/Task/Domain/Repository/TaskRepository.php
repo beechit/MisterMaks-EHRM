@@ -28,11 +28,27 @@ class TaskRepository extends \Radmiraal\CouchDB\Persistence\AbstractRepository {
 	 * @param \TYPO3\Party\Domain\Model\AbstractParty $person
 	 * @return array
 	 */
-	public function findOpenTasksByPerson(\TYPO3\Party\Domain\Model\AbstractParty $person) {
-		return $this->backend->findBy(array(
+	public function findOpenTasksByPerson(\TYPO3\Party\Domain\Model\AbstractParty $person, \Beech\Task\Domain\Model\Priority $priority = null) {
+
+		$filter = array(
 			'assignedTo' => $this->getQueryMatchValue($person),
 			'closed' => FALSE
-		));
+		);
+
+		$_tasks = $this->backend->findBy($filter);
+		$tasks = array();
+
+		if($priority !== null) {
+			foreach($_tasks as $task) {
+				if($task->getPriority() && $task->getPriority()->getId() === $priority->getId()) {
+					$tasks[] = $task;
+				}
+			}
+		} else {
+			$tasks = $_tasks;
+		}
+
+		return $tasks;
 	}
 
 	/**

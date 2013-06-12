@@ -2,9 +2,10 @@
 	'use strict';
 
 	App.BeechTaskDomainModelTask.reopen({
-		assignedTo: DS.attr('string'),
-		createdBy: DS.attr('string'),
-		closedBy: DS.attr('string')
+		assignedTo: DS.belongsTo("App.BeechPartyDomainModelPerson"),
+		createdBy: DS.belongsTo("App.BeechPartyDomainModelPerson"),
+		closedBy: DS.belongsTo("App.BeechPartyDomainModelPerson"),
+		priority: DS.belongsTo("App.BeechTaskDomainModelPriority")
 	});
 
 }).call(this);

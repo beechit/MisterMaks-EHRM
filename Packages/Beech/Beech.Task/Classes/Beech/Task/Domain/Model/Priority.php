@@ -25,6 +25,13 @@ class Priority extends \Beech\Ehrm\Domain\Model\Document {
 	protected $persistenceManager;
 
 	/**
+	 * @var \TYPO3\Flow\Security\Context
+	 * @Flow\Inject
+	 * @Flow\Transient
+	 */
+	protected $securityContext;
+
+	/**
 	 * The priority label
 	 *
 	 * @var string
@@ -37,9 +44,8 @@ class Priority extends \Beech\Ehrm\Domain\Model\Document {
 	 * The tasks
 	 *
 	 * @var array
-	 * @ODM\Field(type="mixed")
 	 */
-	protected $tasks = array();
+	protected $tasks = null;
 
 	/**
 	 * Sets the priority label
@@ -66,7 +72,7 @@ class Priority extends \Beech\Ehrm\Domain\Model\Document {
 	 * @param Task $task
 	 */
 	public function addTask(\Beech\Task\Domain\Model\Task $task) {
-		$this->tasks['tasks'][] = $task->getId();
+		$this->tasks[] = $task->getId();
 	}
 
 	/**
@@ -75,7 +81,7 @@ class Priority extends \Beech\Ehrm\Domain\Model\Document {
 	 * @param Task $task
 	 */
 	public function removeTask(\Beech\Task\Domain\Model\Task $task) {
-		unset($this->tasks['tasks'][array_search($task->getId(), $this->tasks['tasks'])]);
+		unset($this->tasks[array_search($task->getId(), $this->tasks)]);
 	}
 
 	/**
@@ -84,8 +90,22 @@ class Priority extends \Beech\Ehrm\Domain\Model\Document {
 	 * @return array
 	 */
 	public function getTasks() {
-		if (isset($this->tasks['tasks']) && is_array($this->tasks['tasks'])) {
-			return $this->tasks['tasks'];
+
+		if($this->tasks === NULL) {
+
+			$this->tasks = array();
+			$taskRepository = new \Beech\Task\Domain\Repository\TaskRepository();
+
+			/* @var $task \Beech\Task\Domain\Model\Task */
+			$tasks = $taskRepository->findOpenTasksByPerson($this->securityContext->getAccount()->getParty(), $this);
+
+			foreach($tasks as $task) {
+				$this->tasks[] = $task->getId();
+			}
+		}
+
+		if (is_array($this->tasks)) {
+			return $this->tasks;
 		}
 		return array();
 	}
@@ -96,7 +116,7 @@ class Priority extends \Beech\Ehrm\Domain\Model\Document {
 	 * @param array $tasks
 	 */
 	public function setTasks(array $tasks) {
-		$this->tasks['tasks'] = $tasks;
+		$this->tasks = $tasks;
 	}
 
 }
