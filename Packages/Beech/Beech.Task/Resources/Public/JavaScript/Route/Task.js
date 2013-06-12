@@ -1,27 +1,18 @@
 (function() {
 	'use strict';
 
-	App.BeechTaskTaskModuleIndexController = Ember.ArrayController.extend();
-	App.BeechTaskTaskModuleIndexRoute = App.ModuleRoute.extend({
-		model: function() {
-			return App.BeechTaskDomainModelTask.find();
+	App.TaskModuleRoute = App.ModuleRoute.extend({
+		deserialize: function(params){
+			return {params: App.ModuleHandler.prepareUrl(params)}
+		},
+		setupController: function(controller, model) {
+			controller.loadUrl(model.params);
 		}
 	});
-
-	App.BeechTaskTaskModuleNewRoute = Ember.Route.extend(App.ModelFormableMixin, {
-		redirectToRouteName: 'BeechTaskTaskModule.index',
-		formTemplateName: 'BeechTaskDomainModelTask/form',
-		model: function() {
-			return App.BeechTaskDomainModelTask.createRecord();
-		}
-	});
-
-	App.BeechTaskDomainModelTaskEditRoute = Ember.Route.extend(App.ModelFormableMixin, {
-		redirectToRouteName: 'BeechTaskTaskModule.index',
-		formTemplateName: 'BeechTaskDomainModelTask/form',
-		model: function() {
-			return this.modelFor('BeechTaskDomainModelTask');
-		}
-	});
+	App.BeechTaskTaskModuleIndexRoute = App.TaskModuleRoute.extend();
+	App.BeechTaskTaskModuleNewRoute = App.TaskModuleRoute.extend();
+	App.BeechTaskTaskModuleShowRoute = App.TaskModuleRoute.extend();
+	App.BeechTaskTaskModuleEditRoute = App.TaskModuleRoute.extend();
+	App.BeechTaskTaskModuleCloseRoute = App.TaskModuleRoute.extend();
 
 }).call(this);

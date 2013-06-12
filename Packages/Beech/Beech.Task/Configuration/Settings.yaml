@@ -1,5 +1,5 @@
 Radmiraal:
-  Emberjs:
+  _Emberjs:
     restInterfaces:
       beech_task_domain_model_task:
         routePath: 'beech_task_domain_model_tasks'

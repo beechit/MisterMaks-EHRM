@@ -249,7 +249,27 @@ class HeaderPartsViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHel
 					'wizardManagementModule' => $this->controllerContext->getUriBuilder()
 						->reset()
 						->setCreateAbsoluteUri(TRUE)
-						->uriFor('index', array(), 'Wizard', 'Beech.Ehrm')
+						->uriFor('index', array(), 'Wizard', 'Beech.Ehrm'),
+					'taskModule' => $this->controllerContext->getUriBuilder()
+						->reset()
+						->setCreateAbsoluteUri(TRUE)
+						->uriFor('list', array(), 'Task', 'Beech.Task'),
+					'taskModuleNew' => $this->controllerContext->getUriBuilder()
+						->reset()
+						->setCreateAbsoluteUri(TRUE)
+						->uriFor('new', array(), 'Task', 'Beech.Task'),
+					'taskModuleEdit' => $this->controllerContext->getUriBuilder()
+						->reset()
+						->setCreateAbsoluteUri(TRUE)
+						->uriFor('edit', array(), 'Task', 'Beech.Task'),
+					'taskModuleShow' => $this->controllerContext->getUriBuilder()
+						->reset()
+						->setCreateAbsoluteUri(TRUE)
+						->uriFor('show', array(), 'Task', 'Beech.Task'),
+					'taskModuleClose' => $this->controllerContext->getUriBuilder()
+						->reset()
+						->setCreateAbsoluteUri(TRUE)
+						->uriFor('close', array(), 'Task', 'Beech.Task')
 				)
 			),
 			'locale' => $this->preferenceUtility->getApplicationPreference('locale')

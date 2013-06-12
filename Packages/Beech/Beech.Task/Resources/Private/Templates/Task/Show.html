@@ -1,0 +1,79 @@
+<f:layout name="Ajax"/>
+<f:section name="Body">
+
+	<h1>
+		<f:translate id="task">Task</f:translate>
+	</h1>
+
+	<f:flashMessages class="flashmessages alert-success"/>
+
+	<div class="well">
+		<div class="control-group">
+			<label class="control-label" for="created_by">
+				<f:translate id="task.createdBy">Created by</f:translate>
+			</label>
+
+			<div class="controls">
+				{task.createdBy.name.fullName}
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="assigned_to">
+				<f:translate id="task.assignedTo">Assigned to</f:translate>
+			</label>
+
+			<div class="controls">
+				{task.assignedTo.name.fullName}
+			</div>
+		</div>
+		<f:if condition="{task.closed}">
+			<div class="control-group">
+				<label class="control-label" for="closed_by">
+					<f:translate id="task.closedBy">Closed by</f:translate>
+				</label>
+
+				<div class="controls">
+					{task.closedBy.name.fullName}
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="close_dateTime">
+					<f:translate id="task.closeDateTime">Closed on</f:translate>
+				</label>
+
+				<div class="controls">
+					<f:format.date format="d-m-Y H:i">{task.closeDateTime}</f:format.date>
+				</div>
+			</div>
+		</f:if>
+
+		<div class="control-group">
+			<label class="control-label" for="description">
+				<f:translate id="task.description">Description</f:translate>
+			</label>
+
+			<div class="controls">
+				{task.description}
+			</div>
+		</div>
+
+		<div class="control-group">
+			<label class="control-label" for="priority">
+				<f:translate id="task.priority">Priority</f:translate>
+			</label>
+
+			<div class="controls">
+				{task.priority.label}
+			</div>
+		</div>
+
+		<div class="control-group">
+			<a class="btn btn-primary" href="/#/tasks">
+				<f:translate id="action.back">Back</f:translate>
+			</a>
+			<a class="btn btn-warning" href="/#/tasks/close/{task.id}">
+				<f:translate id="action.setTaskDone">Close</f:translate>
+			</a>
+		</div>
+	</div>
+</f:section>

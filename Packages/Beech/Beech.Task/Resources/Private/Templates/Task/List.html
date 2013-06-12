@@ -1,0 +1,54 @@
+<f:layout name="Ajax"/>{namespace ehrm=Beech\Ehrm\ViewHelpers}
+<f:section name="Body">
+
+	<h1>
+		<f:translate id="tasks">Tasks</f:translate>
+	</h1>
+
+	<f:flashMessages class="flashmessages" />
+
+	<div>
+		<a class="btn pull-right btn-success" href="#/tasks/new/">
+			<i class="icon-plus icon-white"></i> <f:translate>Add task</f:translate>
+		</a>
+	</div>
+
+	<f:if condition="{tasks}">
+		<f:then>
+			<table class="table table-striped">
+				<thead>
+				<tr>
+					<td><f:translate>Description</f:translate></td>
+					<td><f:translate>Creation date</f:translate></td>
+					<td><f:translate>Priority</f:translate></td>
+				</tr>
+				</thead>
+				<f:for each="{tasks}" as="task" iteration="iterator">
+					<tr>
+						<td><a href="#/tasks/show/{task.id}">{task.description}</a></td>
+						<td>{task.creationDateTime -> f:format.date(format: 'Y-m-d H:i')}</td>
+						<td>{task.priority.label}</td>
+						<td>
+							<div class="pull-right">
+								<div class="btn-group">
+									<a href="#/tasks/show/{task.id}" class="btn"><f:translate>view</f:translate></a>
+									<button class="btn dropdown-toggle" data-toggle="dropdown">
+										<span class="caret"></span>
+									</button>
+									<ul class="dropdown-menu pull-right">
+										<li><a href="#/tasks/edit/{task.id}"><i class="icon-pencil"></i> <f:translate id="task.edit">edit</f:translate></a></li>
+										<li><a href="#/tasks/close/{task.id}"><i class="icon-ok"></i> <f:translate id="task.setTaskDone">close</f:translate></a></li>
+									</ul>
+								</div>
+							</div>
+						</td>
+					</tr>
+				</f:for>
+				</tbody>
+			</table>
+		</f:then>
+		<f:else>
+			<p><f:translate>No tasks at this moment</f:translate></p>
+		</f:else>
+	</f:if>
+</f:section>

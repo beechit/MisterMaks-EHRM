@@ -41,12 +41,12 @@
 
 				// Beech.Party
 
-				// Beech.Task
+			// Beech.Task
 			this.resource('BeechTaskTaskModule', { path: 'tasks' }, function() {
-				this.route('new');
-				this.resource('BeechTaskDomainModelTask', { path: '/:beech_task_domain_model_task_id' }, function() {
-					this.route('edit');
-				});
+				this.route('new', {path: 'new'});
+				this.route('show', {path: 'show/:task%5B__identity%5D'});
+				this.route('edit', {path: 'edit/:task%5B__identity%5D'});
+				this.route('close', {path: 'close/:task%5B__identity%5D'});
 			});
 		});
 	});
@@ -101,6 +101,9 @@
 	});
 	App.AdministrationDomainContractArticleModuleView = Ember.View.extend(App.AjaxModuleViewMixin, {
 		url: MM.url.module.contractArticle
+	});
+	App.BeechTaskTaskModuleView = Ember.View.extend(App.AjaxModuleViewMixin, {
+		url: MM.url.module.taskModule
 	});
 
 }).call(this);

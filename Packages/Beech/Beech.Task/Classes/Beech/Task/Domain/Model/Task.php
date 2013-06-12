@@ -36,6 +36,7 @@ class Task extends \Beech\Ehrm\Domain\Model\Document {
 	 *
 	 * @var string
 	 * @ODM\Field(type="string")
+	 * @Flow\Validate(type="NotEmpty")
 	 */
 	protected $description;
 
@@ -67,7 +68,7 @@ class Task extends \Beech\Ehrm\Domain\Model\Document {
 	protected $closedBy;
 
 	/**
-	 * Priority of this task 0-3
+	 * Priority of this task
 	 *
 	 * @var \Beech\Task\Domain\Model\Priority
 	 * @ODM\ReferenceOne(targetDocument="\Beech\Task\Domain\Model\Priority")
@@ -262,6 +263,9 @@ class Task extends \Beech\Ehrm\Domain\Model\Document {
 	 * @return \DateTime
 	 */
 	public function getCreationDateTime() {
+		if ($this->creationDateTime === NULL) {
+			$this->creationDateTime = new \DateTime();
+		}
 		return $this->creationDateTime;
 	}
 
