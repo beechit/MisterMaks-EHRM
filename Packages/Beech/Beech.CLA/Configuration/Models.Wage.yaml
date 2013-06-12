@@ -74,5 +74,3 @@
           type: 'StringLength'
           options:
             maximum: 10
-    'modificationIdentier':
-      type: 'Beech\Ehrm\Domain\Model\Modify'

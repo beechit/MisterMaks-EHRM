@@ -16,5 +16,3 @@
              values:
                - TRUE
                - FALSE
-    'modificationIdentier':
-      type: 'Beech\Ehrm\Domain\Model\Modify'

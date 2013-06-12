@@ -35,5 +35,3 @@
           options:
             minimum: 0
             maximum: 500
-    'modificationIdentier':
-      type: 'Beech\Ehrm\Domain\Model\Modify'

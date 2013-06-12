@@ -41,5 +41,3 @@
       defaultValue: 'currentUser'
       label: 'Created by'
       type: 'Beech\Party\Domain\Model\Person'
-    'modificationIdentier':
-      type: 'Beech\Ehrm\Domain\Model\Modify'

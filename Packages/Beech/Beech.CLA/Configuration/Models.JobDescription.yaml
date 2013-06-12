@@ -112,5 +112,3 @@
       label: 'Created by'
       type: 'string'
       validation: ''
-    'modificationIdentier':
-      type: 'Beech\Ehrm\Domain\Model\Modify'

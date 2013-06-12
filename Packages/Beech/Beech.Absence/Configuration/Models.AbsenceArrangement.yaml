@@ -99,5 +99,3 @@ Beech.AbsenceArrangment.Domain.Model.AbsenceArrangement:
           options:
             earliestDate: 20130101
             latestDate: 20200101
-    'modificationIdentier':
-      type: 'Beech\Ehrm\Domain\Model\Modify'
