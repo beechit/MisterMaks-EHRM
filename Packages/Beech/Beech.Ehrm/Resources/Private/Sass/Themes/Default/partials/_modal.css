@@ -11,6 +11,10 @@ iframe {
   max-height: 100%; }
   #modal-body-only .modal-body .icon-spin {
     margin: 0 30px 30px; }
+  #modal-body-only .modal-body .row {
+    margin-left: 0; }
+  #modal-body-only .modal-body ul.flashmessages {
+    margin-top: -30px; }
 #modal-body-only form {
   margin: 0; }
   #modal-body-only form fieldset {
