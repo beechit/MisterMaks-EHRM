@@ -1,4 +1,8 @@
 {
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
+    ],
     "hash": "267e886e7217e744e73cf58cbfa46b04",
     "packages": [
         {
@@ -28,12 +32,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "d6d091410adecb7385733809a9d9237ed642c81c"
+                "reference": "48a6227dfac4e51233a2fae5d5085db9655209f0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/d6d091410adecb7385733809a9d9237ed642c81c",
-                "reference": "d6d091410adecb7385733809a9d9237ed642c81c",
+                "url": "https://api.github.com/repos/composer/installers/zipball/48a6227dfac4e51233a2fae5d5085db9655209f0",
+                "reference": "48a6227dfac4e51233a2fae5d5085db9655209f0",
                 "shasum": ""
             },
             "replace": {
@@ -89,10 +93,9 @@
                 "silverstripe",
                 "symfony",
                 "wordpress",
-                "yii",
                 "zend"
             ],
-            "time": "2013-04-07 20:02:43"
+            "time": "2013-05-07 19:50:30"
         },
         {
             "name": "doctrine/common",
@@ -215,12 +218,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/couchdb-odm.git",
-                "reference": "23f95b729edffe62430802c03da14131c2e483e6"
+                "reference": "facfac0e70a375b2c08bbd41fdbcb292d8cb5dec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/couchdb-odm/zipball/23f95b729edffe62430802c03da14131c2e483e6",
-                "reference": "23f95b729edffe62430802c03da14131c2e483e6",
+                "url": "https://api.github.com/repos/doctrine/couchdb-odm/zipball/facfac0e70a375b2c08bbd41fdbcb292d8cb5dec",
+                "reference": "facfac0e70a375b2c08bbd41fdbcb292d8cb5dec",
                 "shasum": ""
             },
             "require": {
@@ -261,62 +264,7 @@
                 "couchdb",
                 "persistence"
             ],
-            "time": "2013-02-24 22:17:29"
-        },
-        {
-            "name": "doctrine/data-fixtures",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/doctrine/data-fixtures.git",
-                "reference": "6924952026b77ff492da559b04ad166d25c611cb"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/data-fixtures/zipball/6924952026b77ff492da559b04ad166d25c611cb",
-                "reference": "6924952026b77ff492da559b04ad166d25c611cb",
-                "shasum": ""
-            },
-            "require": {
-                "doctrine/common": ">=2.2,<2.5-dev",
-                "php": ">=5.3.2"
-            },
-            "require-dev": {
-                "doctrine/orm": ">=2.2,<2.5-dev"
-            },
-            "suggest": {
-                "doctrine/mongodb-odm": "For loading MongoDB ODM fixtures",
-                "doctrine/orm": "For loading ORM fixtures",
-                "doctrine/phpcr-odm": "For loading PHPCR ODM fixtures"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Doctrine\\Common\\DataFixtures": "lib/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Jonathan H. Wage",
-                    "email": "jonwage@gmail.com",
-                    "homepage": "http://www.jwage.com/"
-                }
-            ],
-            "description": "Data Fixtures for all Doctrine Object Managers",
-            "homepage": "http://www.doctrine-project.org",
-            "keywords": [
-                "database"
-            ],
-            "time": "2013-04-11 23:14:04"
+            "time": "2013-05-10 15:32:42"
         },
         {
             "name": "doctrine/dbal",
@@ -583,12 +531,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/radmiraal/Radmiraal.Emberjs.git",
-                "reference": "77939e8f92b29028da627bd807c999a6ab8348a2"
+                "reference": "72664ad3b900d58912ea45cc45f121aa08599f74"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/radmiraal/Radmiraal.Emberjs/zipball/77939e8f92b29028da627bd807c999a6ab8348a2",
-                "reference": "77939e8f92b29028da627bd807c999a6ab8348a2",
+                "url": "https://api.github.com/repos/radmiraal/Radmiraal.Emberjs/zipball/72664ad3b900d58912ea45cc45f121aa08599f74",
+                "reference": "72664ad3b900d58912ea45cc45f121aa08599f74",
                 "shasum": ""
             },
             "require": {
@@ -609,7 +557,7 @@
                     "name": "Rens Admiraal"
                 }
             ],
-            "time": "2013-04-09 12:40:12"
+            "time": "2013-05-01 06:22:09"
         },
         {
             "name": "react/event-loop",
@@ -618,12 +566,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/reactphp/event-loop.git",
-                "reference": "v0.3.0"
+                "reference": "v0.3.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/reactphp/event-loop/zipball/v0.3.0",
-                "reference": "v0.3.0",
+                "url": "https://api.github.com/repos/reactphp/event-loop/zipball/v0.3.2",
+                "reference": "v0.3.2",
                 "shasum": ""
             },
             "require": {
@@ -661,12 +609,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Console.git",
-                "reference": "74049e36e2e73ca2ec069c9be86d01ba422d44ea"
+                "reference": "a4154baa8c938143fa9257331fe64f8f21598dec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Console/zipball/74049e36e2e73ca2ec069c9be86d01ba422d44ea",
-                "reference": "74049e36e2e73ca2ec069c9be86d01ba422d44ea",
+                "url": "https://api.github.com/repos/symfony/Console/zipball/a4154baa8c938143fa9257331fe64f8f21598dec",
+                "reference": "a4154baa8c938143fa9257331fe64f8f21598dec",
                 "shasum": ""
             },
             "require": {
@@ -674,6 +622,9 @@
             },
             "require-dev": {
                 "symfony/event-dispatcher": ">=2.1,<3.0"
+            },
+            "suggest": {
+                "symfony/event-dispatcher": ""
             },
             "type": "library",
             "extra": {
@@ -702,7 +653,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "http://symfony.com",
-            "time": "2013-04-13 14:06:01"
+            "time": "2013-05-15 15:12:03"
         },
         {
             "name": "symfony/dom-crawler",
@@ -764,12 +715,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Yaml.git",
-                "reference": "4ef80f5c5081ad9a7e08184fc9f25c62d87e408c"
+                "reference": "347a7a02204433c6926ecc3f13e805bdc30e8f9f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Yaml/zipball/4ef80f5c5081ad9a7e08184fc9f25c62d87e408c",
-                "reference": "4ef80f5c5081ad9a7e08184fc9f25c62d87e408c",
+                "url": "https://api.github.com/repos/symfony/Yaml/zipball/347a7a02204433c6926ecc3f13e805bdc30e8f9f",
+                "reference": "347a7a02204433c6926ecc3f13e805bdc30e8f9f",
                 "shasum": ""
             },
             "require": {
@@ -797,7 +748,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "http://symfony.com",
-            "time": "2013-04-12 10:27:36"
+            "time": "2013-05-10 00:09:46"
         },
         {
             "name": "typo3/eel",
@@ -825,12 +776,11 @@
             "source": {
                 "type": "git",
                 "url": "git://git.typo3.org/FLOW3/Packages/TYPO3.FLOW3.git",
-                "reference": "e1c3dfc867bca3e371f544ffada4667c43d03d49"
+                "reference": "59f544398bd93c1c5c5d945e0be971e0bd7185f0"
             },
             "require": {
                 "composer/installers": ">=1.0.2,<1.1",
-                "doctrine/data-fixtures": "*",
-                "doctrine/migrations": "*",
+                "doctrine/migrations": "dev-master",
                 "doctrine/orm": "2.3.*",
                 "ext-json": ">=1.2.0",
                 "ext-session": "*",
@@ -841,6 +791,9 @@
                 "symfony/yaml": "2.1.*",
                 "typo3/fluid": "*",
                 "typo3/party": "*"
+            },
+            "suggest": {
+                "doctrine/data-fixtures": "To manage and execute the loading of data fixtures for the Doctrine ORM or ODM"
             },
             "type": "typo3-flow-framework",
             "autoload": {
@@ -854,7 +807,7 @@
             ],
             "description": "TYPO3 Flow Application Framework",
             "homepage": "http://flow.typo3.org",
-            "time": "2013-04-15 16:12:19"
+            "time": "2013-05-15 10:14:10"
         },
         {
             "name": "typo3/fluid",
@@ -862,7 +815,7 @@
             "source": {
                 "type": "git",
                 "url": "git://git.typo3.org/FLOW3/Packages/TYPO3.Fluid.git",
-                "reference": "3a7966ba7a0b49aa53292719c873c82c68edbe99"
+                "reference": "1779aeb9d2cdfa58ce322b724ef82fe6dfacc04a"
             },
             "require": {
                 "typo3/flow": "*"
@@ -878,7 +831,7 @@
                 "LGPL-3.0+"
             ],
             "description": "Next-Generation Templating Framework for TYPO3 Flow and TYPO3 Neos, also backported to TYPO3 CMS",
-            "time": "2013-04-09 15:37:46"
+            "time": "2013-05-06 07:06:29"
         },
         {
             "name": "typo3/form",
@@ -949,7 +902,7 @@
             "source": {
                 "type": "git",
                 "url": "git://git.typo3.org/FLOW3/Packages/TYPO3.Party.git",
-                "reference": "9a182f598ca63b7ca6a04eb3fe4051775de54d79"
+                "reference": "04436acd30553dd44175c342d2aefc7e50078a6e"
             },
             "require": {
                 "typo3/flow": "*"
@@ -965,7 +918,7 @@
                 "LGPL-3.0+"
             ],
             "description": "A PHP implementation of the OASIS Customer Information Quality (CIQ) XML Standard.",
-            "time": "2013-04-02 18:12:58"
+            "time": "2013-04-30 16:32:48"
         },
         {
             "name": "typo3/queue",
@@ -1013,7 +966,7 @@
             "source": {
                 "type": "git",
                 "url": "git://git.typo3.org/FLOW3/Packages/TYPO3.Surf.git",
-                "reference": "ea8e844edd673eb0ec488a8d4d3e0629f45b4d5c"
+                "reference": "6f499c84f06c929643a65737aa80855a727737ac"
             },
             "require": {
                 "typo3/flow": "*"
@@ -1029,7 +982,7 @@
                 "GPL-3.0+"
             ],
             "description": "TYPO3 Surf is a deployment tool based on Flow and suited for a wide variety of applications",
-            "time": "2013-03-06 08:23:31"
+            "time": "2013-05-07 09:19:33"
         },
         {
             "name": "typo3/usermanagement",
@@ -1234,12 +1187,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "1.2.9"
+                "reference": "d1113ca09a060fac85414b4d03982c34de803cd7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/1.2.9",
-                "reference": "1.2.9",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/d1113ca09a060fac85414b4d03982c34de803cd7",
+                "reference": "d1113ca09a060fac85414b4d03982c34de803cd7",
                 "shasum": ""
             },
             "require": {
@@ -1279,7 +1232,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2013-02-26 18:55:56"
+            "time": "2013-05-11 06:28:55"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -1465,12 +1418,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "69763a1876d58301c245bac0d7568398340e89d7"
+                "reference": "a00cdfb2551b45d2cd9b1d076b6a385fb29b22e0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/69763a1876d58301c245bac0d7568398340e89d7",
-                "reference": "69763a1876d58301c245bac0d7568398340e89d7",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/a00cdfb2551b45d2cd9b1d076b6a385fb29b22e0",
+                "reference": "a00cdfb2551b45d2cd9b1d076b6a385fb29b22e0",
                 "shasum": ""
             },
             "require": {
@@ -1484,7 +1437,7 @@
                 "phpunit/php-text-template": ">=1.1.1",
                 "phpunit/php-timer": ">=1.0.2,<1.1.0",
                 "phpunit/phpunit-mock-objects": ">=1.2.0,<1.3.0",
-                "symfony/yaml": ">=2.0.0,<2.3.0"
+                "symfony/yaml": ">=2.0,<3.0"
             },
             "require-dev": {
                 "pear-pear/pear": "1.9.4"
@@ -1531,7 +1484,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2013-04-15 15:47:15"
+            "time": "2013-05-15 01:40:01"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -1539,12 +1492,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit-mock-objects.git",
-                "reference": "d49b5683200b5db9b1c64cb06f52f50d147891c4"
+                "reference": "8e9d897b39ca6310ccc2d81b8f29cabd5ce12786"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/d49b5683200b5db9b1c64cb06f52f50d147891c4",
-                "reference": "d49b5683200b5db9b1c64cb06f52f50d147891c4",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/8e9d897b39ca6310ccc2d81b8f29cabd5ce12786",
+                "reference": "8e9d897b39ca6310ccc2d81b8f29cabd5ce12786",
                 "shasum": ""
             },
             "require": {
@@ -1580,7 +1533,7 @@
                 "mock",
                 "xunit"
             ],
-            "time": "2013-02-05 07:46:41"
+            "time": "2013-05-07 12:11:45"
         },
         {
             "name": "sandstorm/phpprofiler",
@@ -1706,12 +1659,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "2d558dc0b4ec065ece8b744d755db502c61a678b"
+                "reference": "9378592e2a67690908e185927177d74165fe5711"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/2d558dc0b4ec065ece8b744d755db502c61a678b",
-                "reference": "2d558dc0b4ec065ece8b744d755db502c61a678b",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/9378592e2a67690908e185927177d74165fe5711",
+                "reference": "9378592e2a67690908e185927177d74165fe5711",
                 "shasum": ""
             },
             "require": {
@@ -1769,7 +1722,7 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2013-04-15 04:39:50"
+            "time": "2013-05-06 23:57:08"
         },
         {
             "name": "symfony/finder",
@@ -1778,12 +1731,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Finder.git",
-                "reference": "04b4a4a823cb6f269efc91a2c6659173a7c9f864"
+                "reference": "v2.3.0-BETA2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Finder/zipball/04b4a4a823cb6f269efc91a2c6659173a7c9f864",
-                "reference": "04b4a4a823cb6f269efc91a2c6659173a7c9f864",
+                "url": "https://api.github.com/repos/symfony/Finder/zipball/v2.3.0-BETA2",
+                "reference": "v2.3.0-BETA2",
                 "shasum": ""
             },
             "require": {
@@ -1816,7 +1769,7 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "http://symfony.com",
-            "time": "2013-04-11 06:50:46"
+            "time": "2013-04-25 12:12:10"
         },
         {
             "name": "theseer/fdomdocument",
@@ -1824,12 +1777,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/theseer/fDOMDocument.git",
-                "reference": "a7882cf2121f30c57e9fc8ded2cf0a58001e96cc"
+                "reference": "Release-1.4.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/theseer/fDOMDocument/zipball/a7882cf2121f30c57e9fc8ded2cf0a58001e96cc",
-                "reference": "a7882cf2121f30c57e9fc8ded2cf0a58001e96cc",
+                "url": "https://api.github.com/repos/theseer/fDOMDocument/zipball/Release-1.4.1",
+                "reference": "Release-1.4.1",
                 "shasum": ""
             },
             "require": {
@@ -1856,7 +1809,7 @@
             ],
             "description": "The classes contained within this repository extend the standard DOM to use exceptions at all occasions of errors instead of PHP warnings or notices. They also add various custom methods and shortcuts for convinience and to simplify the usage of DOM.",
             "homepage": "https://github.com/theseer/fDOMDocument",
-            "time": "2012-12-01 00:12:40"
+            "time": "2013-04-27 20:28:00"
         },
         {
             "name": "typo3-qa/typo3flow",
@@ -1950,11 +1903,10 @@
             "source": {
                 "type": "git",
                 "url": "git://git.typo3.org/FLOW3/BuildEssentials.git",
-                "reference": "1f04fc75c918aaf844686528a7b89f60132d4f44"
+                "reference": "ab108264ba4d4da8d6dac685104f94b3a0a84939"
             },
             "require": {
-                "composer/installers": ">=1.0.2,<1.1",
-                "php": ">=5.3.2"
+                "composer/installers": ">=1.0.2,<1.1"
             },
             "type": "typo3-flow-build",
             "extra": {
@@ -1965,7 +1917,7 @@
                 "LGPL-3.0+"
             ],
             "description": "TYPO3 Flow Build Toolchain Essentials",
-            "time": "2013-04-05 13:13:23"
+            "time": "2013-05-02 14:15:28"
         },
         {
             "name": "typo3/kickstart",
@@ -1973,7 +1925,7 @@
             "source": {
                 "type": "git",
                 "url": "git://git.typo3.org/FLOW3/Packages/TYPO3.Kickstart.git",
-                "reference": "568c98f34472e453559ead436eb5842ed31ddffd"
+                "reference": "4de1a56d356203540a0c8a1ef1f20b58fbee3dc8"
             },
             "require": {
                 "typo3/flow": "*"
@@ -1989,7 +1941,7 @@
                 "LGPL-3.0+"
             ],
             "description": "A simple generator for controller and views.",
-            "time": "2013-01-15 09:53:01"
+            "time": "2013-05-08 09:43:00"
         },
         {
             "name": "zetacomponents/base",
