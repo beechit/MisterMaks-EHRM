@@ -93,6 +93,7 @@ Beech:
       - ['Beech.Party', NULL, 'Company']
       - ['Beech.Party', 'Administration', 'Company']
       - ['Beech.Document', NULL, 'Document']
+      - ['Beech.Task', NULL, 'Task']
 
     defaultActionsMapping:
       'list': 'Index'

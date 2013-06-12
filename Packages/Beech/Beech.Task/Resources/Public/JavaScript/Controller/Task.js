@@ -2,19 +2,19 @@
 	'use strict';
 
 	App.BeechTaskTaskIndexController = App.ModuleHandlerAjaxController.extend({
-		url: MM.url.module.taskModule
+		url: MM.url.module.BeechTaskTaskIndex
 	});
 	App.BeechTaskTaskNewController = App.ModuleHandlerAjaxController.extend({
-		url: MM.url.module.taskModuleNew
+		url: MM.url.module.BeechTaskTaskNew
 	});
 	App.BeechTaskTaskEditController = App.ModuleHandlerAjaxController.extend({
-		url: MM.url.module.taskModuleEdit
+		url: MM.url.module.BeechTaskTaskEdit
 	});
 	App.BeechTaskTaskShowController = App.ModuleHandlerAjaxController.extend({
-		url: MM.url.module.taskModuleShow
+		url: MM.url.module.BeechTaskTaskShow
 	});
 	App.BeechTaskTaskCloseController = App.ModuleHandlerAjaxController.extend({
-		url: MM.url.module.taskModuleClose
+		url: MM.url.module.BeechTaskTaskClose
 	});
 
 }).call(this);
