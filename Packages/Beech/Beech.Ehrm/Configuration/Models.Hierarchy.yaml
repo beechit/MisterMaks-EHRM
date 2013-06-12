@@ -4,6 +4,10 @@
       'jobdescription':
         label: 'Jobdescription'
         type: 'Beech\CLA\Domain\Model\JobDescription'
+# sets the abstract party its attached to.
+      'party':
+        items:
+          type: 'TYPO3\Party\Domain\Model\AbstractParty'
 # sets the head of the company if TRUE
       'headOfCompany':
         label: 'Head of company'
