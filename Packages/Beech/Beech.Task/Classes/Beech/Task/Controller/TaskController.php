@@ -9,6 +9,7 @@ namespace Beech\Task\Controller;
 
 use TYPO3\Flow\Annotations as Flow;
 use Beech\Task\Domain\Model\Task as Task;
+use TYPO3\Flow\Http\Message;
 use TYPO3\Flow\Security\Exception;
 
 class TaskController extends \Beech\Ehrm\Controller\AbstractController {
@@ -18,12 +19,6 @@ class TaskController extends \Beech\Ehrm\Controller\AbstractController {
 	 * @Flow\Inject
 	 */
 	protected $taskRepository;
-
-	/**
-	 * @var \Beech\Task\Domain\Repository\PriorityRepository
-	 * @Flow\Inject
-	 */
-	protected $priorityRepository;
 
 	/**
 	 * @var \Beech\Party\Domain\Repository\PersonRepository
@@ -61,7 +56,7 @@ class TaskController extends \Beech\Ehrm\Controller\AbstractController {
 		$task->setAssignedTo($this->getPerson());
 
 		$this->view->assign('task', $task);
-		$this->view->assign('priorities', $this->priorityRepository->findAll());
+		$this->view->assign('priorities', $this->getPriorityOptions());
 		$this->view->assign('persons', $this->personRepository->findAll());
 	}
 
@@ -81,6 +76,7 @@ class TaskController extends \Beech\Ehrm\Controller\AbstractController {
 	 * Shows a single task object
 	 *
 	 * @param \Beech\Task\Domain\Model\Task $task The task to show
+	 * @Flow\IgnoreValidation("$task")
 	 * @return void
 	 */
 	public function showAction(Task $task) {
@@ -107,7 +103,7 @@ class TaskController extends \Beech\Ehrm\Controller\AbstractController {
 	 * @return void
 	 */
 	public function editAction(Task $task) {
-		$this->view->assign('priorities', $this->priorityRepository->findAll());
+		$this->view->assign('priorities', $this->getPriorityOptions());
 		$this->view->assign('persons', $this->personRepository->findAll());
 		$this->view->assign('task', $task);
 	}
@@ -119,10 +115,13 @@ class TaskController extends \Beech\Ehrm\Controller\AbstractController {
 	 * @return void
 	 */
 	public function closeAction(Task $task) {
-
-		$task->close();
-		$this->addFlashMessage('Closed the task');
-		$this->taskRepository->update($task);
+		try{
+			$task->close();
+			$this->addFlashMessage('Closed the task');
+			$this->taskRepository->update($task);
+		} catch(\Beech\Task\Exception $exception) {
+			$this->addFlashMessage($exception->getMessage(), '', \TYPO3\Flow\Error\Message::SEVERITY_ERROR);
+		}
 		$this->emberRedirect('#/tasks');
 	}
 
@@ -140,5 +139,19 @@ class TaskController extends \Beech\Ehrm\Controller\AbstractController {
 		}
 
 		return $this->securityContext->getAccount()->getParty();
+	}
+
+	/**
+	 * Get priority options
+	 *
+	 * @return array
+	 */
+	protected function getPriorityOptions() {
+		return array(
+			0 => 'task.priority.0',
+			1 => 'task.priority.1',
+			2 => 'task.priority.2',
+			3 => 'task.priority.3',
+		);
 	}
 }

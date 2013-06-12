@@ -2,6 +2,14 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-strict.xsd">
 	<file original="" source-language="en" target-language="nl" datatype="plaintext">
 		<body>
+			<trans-unit id="tasks">
+				<source>Tasks</source>
+				<source>Taken</source>
+			</trans-unit>
+			<trans-unit id="task">
+				<source>Task</source>
+				<source>Taak</source>
+			</trans-unit>
 			<trans-unit id="task.status">
 				<source>Status</source>
 				<target>Status</target>
@@ -17,6 +25,10 @@
 			<trans-unit id="task.doTask">
 				<source>Do task</source>
 				<target>Taak uitvoeren</target>
+			</trans-unit>
+			<trans-unit id="task.edit">
+				<source>Edit</source>
+				<target>Bewerken</target>
 			</trans-unit>
 			<trans-unit id="task.setTaskDone">
 				<source>Close</source>

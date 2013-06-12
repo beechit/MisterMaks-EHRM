@@ -5,7 +5,9 @@
 		assignedTo: DS.belongsTo("App.BeechPartyDomainModelPerson"),
 		createdBy: DS.belongsTo("App.BeechPartyDomainModelPerson"),
 		closedBy: DS.belongsTo("App.BeechPartyDomainModelPerson"),
-		priority: DS.belongsTo("App.BeechTaskDomainModelPriority")
+		watchChildrenUpdate: function() {
+			console.log('update')
+		}.observes('prioriry')
 	});
 
 }).call(this);

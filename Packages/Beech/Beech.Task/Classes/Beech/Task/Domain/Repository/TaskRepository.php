@@ -17,6 +17,12 @@ use TYPO3\Flow\Annotations as Flow;
 class TaskRepository extends \Radmiraal\CouchDB\Persistence\AbstractRepository {
 
 	/**
+	 * @var \TYPO3\Flow\Security\Context
+	 * @Flow\Inject
+	 */
+	protected $securityContext;
+
+	/**
 	 * @param \TYPO3\Party\Domain\Model\AbstractParty $person
 	 * @return integer
 	 */
@@ -34,14 +40,11 @@ class TaskRepository extends \Radmiraal\CouchDB\Persistence\AbstractRepository {
 		$tasks = array();
 
 		if(is_array($filter) && array_key_exists('ids', $filter)) {
-
 			foreach($filter['ids'] as $id) {
 				$tasks[] = $this->findByIdentifier($id);
 			}
-
 		} elseif(count($filter)) {
-
-			$tasks = $this->backend->findBy($filter);
+			$tasks = $this->findBy($filter);
 		} else {
 			$tasks = $this->backend->findAll();
 		}
@@ -50,22 +53,47 @@ class TaskRepository extends \Radmiraal\CouchDB\Persistence\AbstractRepository {
 	}
 
 	/**
-	 * @param \TYPO3\Party\Domain\Model\AbstractParty $person
+	 * @param $filter
 	 * @return array
 	 */
-	public function findOpenTasksByPerson(\TYPO3\Party\Domain\Model\AbstractParty $person, \Beech\Task\Domain\Model\Priority $priority = null) {
+	protected function findBy($filter) {
+
+		// map some custom filters
+		foreach($filter as $key => $value) {
+			switch($key) {
+				case 'ownTasks':
+					unset($filter['ownTasks']);
+					$filter['assignedTo'] = $this->getCurrentPartyIdentifier();
+					break;
+				default:
+					if(in_array($value, array('true','false'))) {
+						$filter[$key] = $value == 'true' ? TRUE : FALSE;
+					}
+			}
+		}
+
+		return $this->backend->findBy($filter);
+	}
+
+
+	/**
+	 * @param \TYPO3\Party\Domain\Model\AbstractParty $person
+	 * @param integer $priority
+	 * @return array
+	 */
+	public function findOpenTasksByPerson(\TYPO3\Party\Domain\Model\AbstractParty $person, $priority = NULL) {
 
 		$filter = array(
 			'assignedTo' => $this->getQueryMatchValue($person),
 			'closed' => FALSE
 		);
 
-		$_tasks = $this->backend->findBy($filter);
+		$_tasks = $this->findBy($filter);
 		$tasks = array();
 
-		if($priority !== null) {
+		if($priority !== NULL) {
 			foreach($_tasks as $task) {
-				if($task->getPriority() && $task->getPriority()->getId() === $priority->getId()) {
+				if((int)$task->getPriority() === (int)$priority) {
 					$tasks[] = $task;
 				}
 			}
@@ -120,6 +148,30 @@ class TaskRepository extends \Radmiraal\CouchDB\Persistence\AbstractRepository {
 		parent::update($task);
 
 		$this->emitTaskChanged($task);
+	}
+
+	/**
+	 * @return \TYPO3\Party\Domain\Model\AbstractParty
+	 */
+	protected function getCurrentParty() {
+		if (isset($this->securityContext)
+			&& $this->securityContext->getAccount() instanceof \TYPO3\Flow\Security\Account
+			&& $this->securityContext->getAccount()->getParty() instanceof \Beech\Party\Domain\Model\Person) {
+			return $this->securityContext->getAccount()->getParty();
+		}
+		return NULL;
+	}
+
+	/**
+	 * @return string
+	 */
+	protected function getCurrentPartyIdentifier() {
+		$currentParty = $this->getCurrentParty();
+
+		if ($currentParty !== NULL) {
+			return $this->persistenceManager->getIdentifierByObject($currentParty);
+		}
+		return NULL;
 	}
 }
 

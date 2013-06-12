@@ -5,7 +5,6 @@ App.RESTAdapter.configure('plurals', {
 	'beech_party_domain_model_company': 'beech_party_domain_model_companies',
 	'beech_party_domain_model_electronic_address': 'beech_party_domain_model_electronic_addresses',
 	'beech_party_domain_model_address': 'beech_party_domain_model_addresses',
-	'beech_task_domain_model_priority': 'beech_task_domain_model_priorities'
 });
 
 App.store = DS.Store.create({

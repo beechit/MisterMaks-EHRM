@@ -25,16 +25,9 @@
 						id = (signal.id !== "undefined" ? signal.id : "");
 					}
 					switch(type) {
-						case 'BeechTaskDomainModelTask':
-							if(id) {
-								var _task = App.BeechTaskDomainModelTask.find(id);
-								if(_task._data) _task.reload();
-							}
-							// refetch+reload TaskWidget data
-							// todo: render widget based on tasks and not priority
-							App.BeechTaskDomainModelPriority.find();
-							break;
-
+						// special types
+						//case '..':
+						//	break;
 						default:
 							// check if type is known as object
 							if(App[type] && id) {

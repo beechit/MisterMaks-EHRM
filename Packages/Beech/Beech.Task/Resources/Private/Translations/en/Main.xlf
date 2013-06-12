@@ -2,6 +2,12 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-strict.xsd">
 	<file original="" source-language="en" target-language="en" datatype="plaintext">
 		<body>
+			<trans-unit id="tasks">
+				<source>Tasks</source>
+			</trans-unit>
+			<trans-unit id="task">
+				<source>Task</source>
+			</trans-unit>
 			<trans-unit id="task.status">
 				<source>Status</source>
 			</trans-unit>
@@ -9,9 +15,6 @@
 				<source>Priority</source>
 			</trans-unit>
 			<trans-unit id="task.description">
-				<source>Task</source>
-			</trans-unit>
-			<trans-unit id="description">
 				<source>Task</source>
 			</trans-unit>
 			<trans-unit id="task.doTask">
@@ -31,6 +34,18 @@
 			</trans-unit>
 			<trans-unit id="action.cancel">
 				<source>Cancel</source>
+			</trans-unit>
+			<trans-unit id="task.priority.0">
+				<source>Low</source>
+			</trans-unit>
+			<trans-unit id="task.priority.1">
+				<source>Normal</source>
+			</trans-unit>
+			<trans-unit id="task.priority.2">
+				<source>High</source>
+			</trans-unit>
+			<trans-unit id="task.priority.3">
+				<source>Immediate</source>
 			</trans-unit>
 		</body>
 	</file>

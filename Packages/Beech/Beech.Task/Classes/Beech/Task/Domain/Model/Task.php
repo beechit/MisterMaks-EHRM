@@ -17,6 +17,11 @@ use TYPO3\Flow\Annotations as Flow,
  */
 class Task extends \Beech\Ehrm\Domain\Model\Document {
 
+	const PRIORITY_LOW = 0;
+	const PRIORITY_NORMAL = 1;
+	const PRIORITY_HIGH = 2;
+	const PRIORITY_IMMEDIATE = 3;
+
 	/**
 	 * @var \TYPO3\Flow\Persistence\PersistenceManagerInterface
 	 * @Flow\Inject
@@ -69,13 +74,14 @@ class Task extends \Beech\Ehrm\Domain\Model\Document {
 	protected $closedBy;
 
 	/**
-	 * Priority of this task
+	 * Priority of this task 0-3
 	 *
-	 * @var \Beech\Task\Domain\Model\Priority
-	 * @ODM\ReferenceOne(targetDocument="\Beech\Task\Domain\Model\Priority")
+	 * @var integer
+	 * @Flow\Validate(type="NumberRange", options={ "minimum"=0, "maximum"=3 })
+	 * @ODM\Field(type="integer")
 	 * @ODM\Index
 	 */
-	protected $priority;
+	protected $priority = 1;
 
 	/**
 	 * The dateTime this task was created
@@ -117,7 +123,7 @@ class Task extends \Beech\Ehrm\Domain\Model\Document {
 	 * @return \TYPO3\Party\Domain\Model\AbstractParty
 	 */
 	protected function getCurrentParty() {
-		if (isset($this->securityContext) && $this->securityContext->isInitialized()
+		if (isset($this->securityContext)
 				&& $this->securityContext->getAccount() instanceof \TYPO3\Flow\Security\Account
 				&& $this->securityContext->getAccount()->getParty() instanceof \Beech\Party\Domain\Model\Person) {
 			return $this->securityContext->getAccount()->getParty();
@@ -229,19 +235,19 @@ class Task extends \Beech\Ehrm\Domain\Model\Document {
 	}
 
 	/**
-	 * Sets the priority, accepts one of the self::PRIORITY_* constants
+	 * Sets the priority, accepts 0-3
 	 *
-	 * @param \Beech\Task\Domain\Model\Priority $priority
+	 * @param integer $priority
 	 * @return void
 	 */
-	public function setPriority(\Beech\Task\Domain\Model\Priority $priority) {
+	public function setPriority($priority) {
 		$this->priority = $priority;
 	}
 
 	/**
 	 * Returns the priority
 	 *
-	 * @return \Beech\Task\Domain\Model\Priority
+	 * @return integer
 	 */
 	public function getPriority() {
 		return $this->priority;

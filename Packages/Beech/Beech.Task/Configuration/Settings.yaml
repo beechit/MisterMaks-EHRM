@@ -5,7 +5,3 @@ Radmiraal:
         routePath: 'beech_task_domain_model_tasks'
         model: 'Beech\Task\Domain\Model\Task'
         repository: 'Beech\Task\Domain\Repository\TaskRepository'
-      beech_task_domain_model_priority:
-        routePath: 'beech_task_domain_model_priorities'
-        model: 'Beech\Task\Domain\Model\Priority'
-        repository: 'Beech\Task\Domain\Repository\PriorityRepository'

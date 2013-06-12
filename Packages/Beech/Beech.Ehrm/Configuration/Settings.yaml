@@ -47,7 +47,6 @@ Beech:
           - 'Beech.Ehrm/JavaScript/Router.js'
           - 'Beech.Ehrm/JavaScript/ModuleHandler.js'
           - 'Beech.Ehrm/JavaScript/Application.js'
-          - 'Beech.Task/JavaScript/Model/Priority.js'
           - 'Beech.Task/JavaScript/Model/Task.js'
           - 'Beech.Task/JavaScript/Controller/Task.js'
           - 'Beech.Task/JavaScript/Route/Task.js'
