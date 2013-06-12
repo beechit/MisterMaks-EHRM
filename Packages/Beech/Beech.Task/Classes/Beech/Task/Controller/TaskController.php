@@ -75,7 +75,7 @@ class TaskController extends \Beech\Ehrm\Controller\AbstractController {
 	public function createAction(Task $task) {
 		$this->taskRepository->add($task);
 		$this->addFlashMessage('Created a new task for "' . $task->getAssignedTo()->getName()->getFullname() . '"');
-		$this->redirect('list');
+		$this->emberRedirect('#/tasks');
 	}
 
 	/**
@@ -97,7 +97,7 @@ class TaskController extends \Beech\Ehrm\Controller\AbstractController {
 	public function updateAction(Task $task) {
 		$this->taskRepository->update($task);
 		$this->addFlashMessage('Updated the task');
-		$this->redirect('list');
+		$this->emberRedirect('#/tasks');
 	}
 
 	/**
@@ -124,6 +124,6 @@ class TaskController extends \Beech\Ehrm\Controller\AbstractController {
 		$task->close();
 		$this->addFlashMessage('Closed the task');
 		$this->taskRepository->update($task);
-		$this->redirect('list');
+		$this->emberRedirect('#/tasks');
 	}
 }
