@@ -2,58 +2,56 @@
   properties:
     'party':
       type: 'TYPO3\Party\Domain\Model\AbstractParty'
-    'educations':
-      items:
-        'type':
-          label: 'Education'
+    'type':
+      label: 'Education'
+      options:
+        values:
+         - 'primaryEducation'
+         - 'preVocationalEducation'
+         - 'vocationalSecondaryEducation'
+         - 'higherVocationalEducation'
+         - 'academicEducation'
+      validation:
+        -
+          type: 'stringLength'
           options:
-            values:
-             - 'primaryEducation'
-             - 'preVocationalEducation'
-             - 'vocationalSecondaryEducation'
-             - 'higherVocationalEducation'
-             - 'academicEducation'
-          validation:
-            -
-              type: 'stringLength'
-              options:
-                maximum: 20
-        'nameInstitute':
-          label: 'Name of the education institute'
-          validation:
-            -
-              type: 'StringLength'
-              options:
-                maximum: 35
-        'direction':
-          label: 'Education direction'
-          validation:
-            -
-              type: 'StringLength'
-              options:
-                maximum: 35
-        'startDate':
-          label: 'Education start date'
-          validation:
-            -
-              type: 'DateTimeRange'
-              options:
-                earliestDate: 19500101
-                latestDate: 20200101
-        'endDate':
-          label: 'Education end date'
-          validation:
-            -
-              type: 'DateTimeRange'
-              options:
-                earliestDate: 19500101
-                latestDate: 20200101
-        'graduated':
-          label: 'Graduated'
+            maximum: 20
+    'nameInstitute':
+      label: 'Name of the education institute'
+      validation:
+        -
+          type: 'StringLength'
           options:
-            values:
-              - TRUE
-              - FALSE
+            maximum: 35
+    'direction':
+      label: 'Education direction'
+      validation:
+        -
+          type: 'StringLength'
+          options:
+            maximum: 35
+    'startDate':
+      label: 'Education start date'
+      validation:
+        -
+          type: 'DateTimeRange'
+          options:
+            earliestDate: 19500101
+            latestDate: 20200101
+    'endDate':
+      label: 'Education end date'
+      validation:
+        -
+          type: 'DateTimeRange'
+          options:
+            earliestDate: 19500101
+            latestDate: 20200101
+    'graduated':
+      label: 'Graduated'
+      options:
+        values:
+          - TRUE
+          - FALSE
     'creationDate':
       defaultValue: 'now'
       label: 'creation date'
@@ -67,20 +65,5 @@
       defaultValue: 'currentUser'
       label: 'Created by'
       type: 'Beech\Party\Domain\Model\Person'
-    'modification':
-      items:
-        'modificationDate':
-          defaultValue: 'now'
-          label: 'Modification date'
-          validation:
-            -
-              type: 'DateTimeRange'
-              options:
-                earliestDate: 20130101
-                latestDate: 20200101
-        'modifiedBy':
-          defaultValue: 'currentUser'
-          label: 'Modified by'
-          type: 'Beech\Party\Domain\Model\Person'
-      label: 'Modification log'
-      type: 'array'
+    'modificationIdentier':
+      type: 'Beech\Ehrm\Domain\Model\Modify'

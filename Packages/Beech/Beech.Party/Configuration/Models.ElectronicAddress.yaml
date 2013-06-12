@@ -3,34 +3,30 @@
     'party':
       type: 'TYPO3\Party\Domain\Model\AbstractParty'
 # todo: implement this that validation works on type address selected.
-    'electronicAddresses':
-      items:
-        'type':
-          label: 'electronicAdressType'
+    'type':
+      label: 'electronicAdressType'
+      options:
+        values:
+         - 'skype'
+         - 'websiteUrl'
+         - 'twitter'
+         - 'facebook'
+         - 'linkedIn'
+         - 'hyves'
+    'address':
+      label: 'electronicAddress'
+      validation:
+        -
+          type: 'StringLength'
           options:
-            values:
-             - 'skype'
-             - 'websiteUrl'
-             - 'twitter'
-             - 'facebook'
-             - 'linkedIn'
-             - 'hyves'
-        'address':
-          label: 'electronicAddress'
-          validation:
-            -
-              type: 'StringLength'
-              options:
-                maximum: 35
-        'primary':
-          label: 'primary electronic address'
-          options:
-            values:
-              - TRUE
-              - FALSE
-          defaultValue: FALSE
-      type: array
-      label: 'electronicAddresses'
+            maximum: 35
+    'primary':
+      label: 'primary electronic address'
+      options:
+        values:
+          - TRUE
+          - FALSE
+      defaultValue: FALSE
     'creationDate':
       defaultValue: 'now'
       label: 'creation date'
@@ -45,20 +41,5 @@
       defaultValue: 'currentUser'
       label: 'Created by'
       type: 'Beech\Party\Domain\Model\Person'
-    'modification':
-      items:
-        'modificationDate':
-          defaultValue: 'now'
-          label: 'Modification date'
-          validation:
-            -
-              type: 'DateTimeRange'
-              options:
-                earliestDate: 20130101
-                latestDate: 20200101
-        'modifiedBy':
-          defaultValue: 'currentUser'
-          label: 'Modified by'
-          type: 'Beech\Party\Domain\Model\Person'
-      label: 'Modification log'
-      type: 'array'
+    'modificationIdentier':
+      type: 'Beech\Ehrm\Domain\Model\Modify'

@@ -2,48 +2,44 @@
   properties:
     'party':
       type: 'TYPO3\Party\Domain\Model\AbstractParty'
-    'phone':
-      items:
-        'Type':
-          label: 'phone type'
+    'type':
+      label: 'phone type'
+      options:
+        values:
+          - 'workLocationNumber'
+          - 'faxNumber'
+          - 'homeNumber'
+          - 'privateMobile'
+          - 'businessMobile'
+          - 'bussinessNumber'
+          - 'emergencyCallnumber'
+          - 'other'
+          - 'foreignNumber'
+      validation:
+        -
+          type: 'StringLength'
           options:
-            values:
-              - 'workLocationNumber'
-              - 'faxNumber'
-              - 'homeNumber'
-              - 'privateMobile'
-              - 'businessMobile'
-              - 'bussinessNumber'
-              - 'emergencyCallnumber'
-              - 'other'
-              - 'foreignNumber'
-          validation:
-            -
-              type: 'StringLength'
-              options:
-                maximum: 25
-          defaultValue: 'businessPhone'
-        'number':
-          label: 'Phone Number'
-          validation:
-            -
-              type: 'RegularExpression'
-              options:
-                regularExpression: '/^\(?(0)[1-9]{2}\)?(\-|\s)?[0-9]{7}$|^\(?(0)[1-9]{3}\)?(\-|\s)?[0-9]{6}$/'
-            -
-              type: 'StringLength'
-              options:
-                maximum: 15
-        'primary':
-          label: 'Primary phone'
+            maximum: 25
+      defaultValue: 'businessPhone'
+    'number':
+      label: 'Phone Number'
+      validation:
+        -
+          type: 'RegularExpression'
           options:
-            values:
-              - TRUE
-              - FALSE
-          validation: ''
-      label: 'Phone numbers'
-      type: 'array'
-    'Description':
+            regularExpression: '/^\(?(0)[1-9]{2}\)?(\-|\s)?[0-9]{7}$|^\(?(0)[1-9]{3}\)?(\-|\s)?[0-9]{6}$/'
+        -
+          type: 'StringLength'
+          options:
+            maximum: 15
+    'primary':
+      label: 'Primary phone'
+      options:
+        values:
+          - TRUE
+          - FALSE
+      validation: ''
+    'description':
       label: 'Description'
       validation:
         -
@@ -62,20 +58,5 @@
       defaultValue: 'currentUser'
       label: 'Created by'
       type: 'Beech\Party\Domain\Model\Person'
-    'modification':
-      items:
-        'modificationDate':
-          defaultValue: 'now'
-          label: 'Modification date'
-          validation:
-            -
-              type: 'DateTimeRange'
-              options:
-                earliestDate: 20130101
-                latestDate: 20200101
-        'modifiedBy':
-          defaultValue: 'currentUser'
-          label: 'Modified by'
-          type: 'Beech\Party\Domain\Model\Person'
-      label: 'Modification log'
-      type: 'array'
+    'modificationIdentier':
+      type: 'Beech\Ehrm\Domain\Model\Modify'

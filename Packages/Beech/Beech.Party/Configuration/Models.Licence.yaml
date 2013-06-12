@@ -2,62 +2,60 @@
   properties:
     'party':
       type: 'TYPO3\Party\Domain\Model\AbstractParty'
-    'licence':
-      items:
-        'type':
-          label: 'Licence type'
-          type: 'array'
+    'type':
+      label: 'Licence type'
+      type: 'array'
+      options:
+        values:
+         - 'driverslicence'
+         - 'emergencyResponse'
+         - 'cropProtection'
+         - 'other'
+    'name':
+      label: 'Licence name'
+      validation:
+        -
+          type: 'StringLength'
           options:
-            values:
-             - 'driverslicence'
-             - 'emergencyResponse'
-             - 'cropProtection'
-             - 'other'
-        'name':
-          label: 'Licence name'
-          validation:
-            -
-              type: 'StringLength'
-              options:
-                maximum: 35
-        'grantedBy':
-          label: 'Granted by institute'
-          validation:
-            -
-              type: 'StringLength'
-              options:
-                maximum: 35
-        'startDate':
-          label: 'licenceStart'
-          validation:
-            -
-              type: 'DateTimeRange'
-              options:
-                earliestDate: 19500101
-                latestDate: 20200101
-        'expirationDate':
-          label: 'Licence expiration date'
-          validation:
-            -
-              type: 'DateTimeRange'
-              options:
-                earliestDate: 19500101
-                latestDate: 20200101
-        'document':
-          label: 'licenceDocument'
-          type: 'Beech\Party\Domain\Model\Document'
-        'notification':
-           label: 'notify for expirationdate'
-           options:
-             - TRUE
-             - FALSE
-        'notificationUnit':
-          label: 'Unit of time'
+            maximum: 35
+    'grantedBy':
+      label: 'Granted by institute'
+      validation:
+        -
+          type: 'StringLength'
           options:
-            - day
-            - week
-            - month
-            - year
+            maximum: 35
+    'startDate':
+      label: 'licenceStart'
+      validation:
+        -
+          type: 'DateTimeRange'
+          options:
+            earliestDate: 19500101
+            latestDate: 20200101
+    'expirationDate':
+      label: 'Licence expiration date'
+      validation:
+        -
+          type: 'DateTimeRange'
+          options:
+            earliestDate: 19500101
+            latestDate: 20200101
+    'document':
+      label: 'licenceDocument'
+      type: 'Beech\Party\Domain\Model\Document'
+    'notification':
+       label: 'notify for expirationdate'
+       options:
+         - TRUE
+         - FALSE
+    'notificationUnit':
+      label: 'Unit of time'
+      options:
+        - day
+        - week
+        - month
+        - year
     'creationDate':
       defaultValue: 'now'
       label: 'creation date'
@@ -72,20 +70,5 @@
       defaultValue: 'currentUser'
       label: 'Created by'
       type: 'Beech\Party\Domain\Model\Person'
-    'modification':
-      items:
-        'modificationDate':
-          defaultValue: 'now'
-          label: 'Modification date'
-          validation:
-            -
-              type: 'DateTimeRange'
-              options:
-                earliestDate: 20130101
-                latestDate: 20200101
-        'modifiedBy':
-          defaultValue: 'currentUser'
-          label: 'Modified by'
-          type: 'Beech\Party\Domain\Model\Person'
-      label: 'Modification log'
-      type: 'array'
+    'modificationIdentier':
+      type: 'Beech\Ehrm\Domain\Model\Modify'

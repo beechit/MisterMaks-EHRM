@@ -1,20 +1,23 @@
-# contract model.
-# todo: make this more generic in future
-# and extend this model in customer package if needed.
 'Beech.CLA.Domain.Model.Contract':
   properties:
     'employee':
       label: 'Employee'
       type: 'Beech\Party\Domain\Model\Person'
     'departmentId':
-      label: 'Department'
+      label: 'Department ID'
       type: 'Beech\Party\Domain\Model\Company'
     'status':
       label: 'Status of the contract'
       type: 'Beech\Ehrm\Domain\Model\Status'
+      validation:
+        -
+          type: 'NotEmpty'
     'contractTemplate':
       label: 'Contract type'
-      type: 'Beech\CLA\Domai\Model\ContractTemplate'
+      type: 'Beech\CLA\Domain\Model\ContractTemplate'
+      validation:
+        -
+          type: 'NotEmpty'
     'firstContract':
       label: 'First contract'
       type: 'boolean'
@@ -22,8 +25,6 @@
       label: 'The date the contract was created'
       type: 'DateTime'
       validation:
-        -
-          type: 'NotEmpty'
         -
           type: 'RegularExpression'
           options:
@@ -62,8 +63,6 @@
           - 'Other'
       validation:
         -
-          type: 'NotEmpty'
-        -
           type: 'StringLength'
           options:
             maximum: 20
@@ -82,7 +81,6 @@
       type: 'Beech\CLA\Domain\Model\JobDescription'
     'defaultSalaryScale':
       label: 'defaultSalaryScale'
-      type: 'Beech\CLA\'
     'contractEndDate':
       label: 'Expiration date'
       type: 'DateTime'
@@ -131,7 +129,7 @@
         -
           type: 'StringLength'
           options:
-          maximum: 10
+            maximum: 10
     'postalCodeNL':
       label: 'Postal code'
       validation:
@@ -174,7 +172,7 @@
           options:
             minimum: 0
             maximum: 62
-      totalHours':
+    'totalHours':
       label: 'Total hours of this contract'
       type: 'Decimal'
       validation:
@@ -190,31 +188,28 @@
           type: 'RegularExpression'
           options:
             regularExpression: '^([1-9]\d*(\.|\,)\d*|0?(\.|\,)\d*[1-9]\d*|[1-9]\d*)$'
-    'workRoster':
-      type: 'array'
-      values:
-        'workDays':
-          label: 'Workdays'
-          validation:
-            -
-              type: 'StringLength'
-              options:
-                maximum: 15
+    'workDays':
+      label: 'Workdays'
+      validation:
+        -
+          type: 'StringLength'
           options:
-            values:
-              - 'monday'
-              - 'tuesday'
-              - 'wednessday'
-              - 'thursday'
-              - 'friday'
-              - 'saturday'
-              - 'sunday'
-        'startTime':
-          label: 'Starttime'
-          type: 'DateTime'
-        'endTime':
-          label: 'EndTime'
-          type: 'DateTime'
+            maximum: 15
+      options:
+        values:
+          - 'monday'
+          - 'tuesday'
+          - 'wednessday'
+          - 'thursday'
+          - 'friday'
+          - 'saturday'
+          - 'sunday'
+    'startTime':
+      label: 'Starttime'
+      type: 'DateTime'
+    'endTime':
+      label: 'EndTime'
+      type: 'DateTime'
 # we need a custom validator here for time
     'hourWage':
       label: 'Hour Wage'
@@ -339,20 +334,5 @@
       defaultValue: 'currentUser'
       label: 'Created by'
       type: 'Beech\Party\Domain\Model\Person'
-    'modification':
-      items:
-        'modificationDate':
-          defaultValue: 'now'
-          label: 'Modification date'
-          validation:
-            -
-              type: 'DateTimeRange'
-              options:
-                earliestDate: 20130101
-                latestDate: 20200101
-        'modifiedBy':
-          defaultValue: 'currentUser'
-          label: 'Modified by'
-          type: 'Beech\Party\Domain\Model\Person'
-      label: 'Modification log'
-      type: 'array'
+    'modificationIdentier':
+      type: 'Beech\Ehrm\Domain\Model\Modify'

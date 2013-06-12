@@ -62,55 +62,49 @@
             earliestDate: 20130101
             latestDate: 20200101
     'attendees':
-      items:
-        'personId':
-          label: 'Person id'
-          type: 'Beech\Party\Domain\Model\Person'
-        'optional':
-          label: 'Optional'
+      label: 'attendees'
+      type: 'Beech\Party\Domain\Model\Person'
+    'optional':
+      label: 'Optional'
+      options:
+        values:
+          - TRUE
+          - FALSE
+    'responseStatus':
+      label: 'Response status'
+      options:
+        values:
+          - 'declined'
+          - 'tentative'
+          - 'accepted'
+    'comment':
+      label: 'comment'
+      validation:
+        -
+          type: 'Text'
+    'minutesId':
+      label: 'Minute id'
+      validation:
+        -
+          type: 'StringLength'
           options:
-            values:
-              - TRUE
-              - FALSE
-        'responseStatus':
-          label: 'Response status'
+            maximum: 20
+    'documentId':
+      label: 'Document id'
+      validation:
+        -
+          type: 'StringLength'
           options:
-            values:
-              - 'declined'
-              - 'tentative'
-              - 'accepted'
-        'comment':
-          label: 'comment'
-          validation:
-            -
-              type: 'Text'
-      label: 'Attendees'
-      type: 'array'
-    'relations':
-      items:
-        'minutesId':
-          label: 'Minute id'
-          validation:
-            -
-              type: 'StringLength'
-              options:
-                maximum: 20
-        'documentId':
-          label: 'Document id'
-          validation:
-            -
-              type: 'StringLength'
-              options:
-                maximum: 20
-        'documentType':
-          label: 'Document type'
+            maximum: 20
+    'documentType':
+      label: 'Document type'
+      options:
+        values: []
+      validation:
+        -
+          type: 'StringLength'
           options:
-            values: []
-          validation:
-            -
-              type: 'StringLength'
-              options:
-                maximum: 20
+            maximum: 20
       label: 'Relations'
       type: 'array'
       validation: ''
@@ -149,20 +143,5 @@
       default: 'currentUser'
       label: 'Created by'
       type: 'Beech\Party\Domain\Model\Person'
-    'modification':
-      items:
-        'modificationDate':
-          default: 'now'
-          label: 'Modification date'
-          validation:
-            -
-              type: 'DateTimeRange'
-              options:
-                earliestDate: 20130101
-                latestDate: 20200101
-        'modifiedBy':
-          default: 'currentUser'
-          label: 'Modified by'
-          type: 'Beech\Party\Domain\Model\Person'
-      label: 'Modification log'
-      type: 'array'
+    'modificationIdentier':
+      type: 'Beech\Ehrm\Domain\Model\Modify'

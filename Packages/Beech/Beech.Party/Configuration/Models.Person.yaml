@@ -23,14 +23,14 @@
           - 'employee'
           - 'partnerCompanyContact'
 # only for usage with persontype = contact this employee relation is about registering relatives tot the employee
-      'employeeRelations':
-        label: 'Relation'
-        options:
-          values:
-            - 'partner'
-            - 'child'
-            - 'family'
-            - 'other'
+    'employeeRelations':
+      label: 'Relation'
+      options:
+        values:
+          - 'partner'
+          - 'child'
+          - 'family'
+          - 'other'
     'middleOtherName':
       validation:
         -
@@ -176,20 +176,5 @@
       defaultValue: 'currentUser'
       label: 'Created by'
       type: 'Beech\Party\Domain\Model\Person'
-    'modification':
-      items:
-        'modificationDate':
-          defaultValue: 'now'
-          label: 'Modification date'
-          validation:
-            -
-              type: 'DateTimeRange'
-              options:
-                earliestDate: 20130101
-                latestDate: 20200101
-        'modifiedBy':
-          defaultValue: 'currentUser'
-          label: 'Modified by'
-          type: 'Beech\Party\Domain\Model\Person'
-      label: 'Modification log'
-      type: 'array'
+    'modificationIdentier':
+      type: 'Beech\Ehrm\Domain\Model\Modify'

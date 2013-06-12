@@ -1,11 +1,12 @@
+#todo make this generic and move the values to a resource document.
 'Beech.Document.Domain.Model.DocumentCategory':
   properties:
     'documentCategory':
       items:
         -
           'categoryName': 'identification'
-          label: 'identification'
-          entity: 'person'
+            label: 'identification'
+            entity: 'person'
           documentType:
             values:
               - 'passport'
@@ -13,16 +14,16 @@
               - 'validationReport'
         -
           'categoryName': 'permits'
-          label: 'Permit'
-          entity: 'person'
+            label: 'Permit'
+            entity: 'person'
           documentType:
             values:
-              - 'workpermit'
-              - 'residencePermit'
+             - 'workpermit'
+             - 'residencePermit'
         -
           'categoryName': 'educationalDocuments'
-          label: 'Certificates'
-          entity: 'person'
+           label: 'Certificates'
+            entity: 'person'
           documentType:
             values:
               - 'renewableCertificates'
@@ -32,18 +33,18 @@
               - 'other'
         -
           'categoryName': 'jobApplication'
-          label: 'Job application'
-          entity: 'person'
+            label: 'Job application'
+            entity: 'person'
           documentType:
             values:
-              - 'resume'
-              - 'letter'
-              - 'interviewNotes'
-              - 'other'
+             - 'resume'
+             - 'letter'
+             - 'interviewNotes'
+             - 'other'
         -
           'categoryName': 'documents'
-          label: 'Absence documents'
-          entity: 'person'
+            label: 'Absence documents'
+            entity: 'person'
           documentType:
             values:
               - 'uwv'
@@ -52,13 +53,13 @@
               - 'other'
         -
           'categoryName': 'minutes'
-          label: 'Minute'
-          entity:
-          options:
-            values:
-              - person
-              - department
-              - company
+            label: 'Minute'
+            entity:
+            options:
+              values:
+                - person
+                - department
+                - company
           documentType:
             values:
               - 'performanceReview'
@@ -67,24 +68,24 @@
               - 'other'
         -
           'categoryName': 'contract'
-          label: 'Contract'
-          entity:
-          options: 'person'
+            label: 'Contract'
+            entity:
+            options: 'person'
           documentType:
-            values:
-              - 'contract'
-              - 'endOfContract'
-              - 'referenceNote'
-              - 'other'
+              values:
+                - 'contract'
+                - 'endOfContract'
+                - 'referenceNote'
+                - 'other'
         -
           'categoryName': 'salary'
-          label: 'Salary'
-          entity:
-          options:
-            values:
-              - company
-              - department
-              - person
+            label: 'Salary'
+            entity:
+            options:
+              values:
+                - company
+                - department
+                - person
           documentType:
             values:
               - 'wageDocument'
@@ -92,13 +93,13 @@
               - 'wageTaxDeclaration'
         -
           'categoryName': 'general'
-          label: 'General'
-          entity:
-          options:
-            values:
-              - company
-              - department
-              - person
+            label: 'General'
+            entity:
+            options:
+              values:
+                - company
+                - department
+                - person
           documentType:
             values:
               - 'letters'
