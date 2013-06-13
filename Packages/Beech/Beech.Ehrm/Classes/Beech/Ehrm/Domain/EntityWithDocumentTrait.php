@@ -75,8 +75,12 @@ trait EntityWithDocumentTrait {
 		}
 
 		$document = new \Beech\Ehrm\Domain\Model\Document();
-		$this->documentManager->persist($document);
-		$this->documentManager->flush();
+		// check if documentManager exists otherwise UnitTests on/with Person break
+		// @todo: find out if it is ok to persist the document at this point. see MM-258
+		if($this->documentManager) {
+			$this->documentManager->persist($document);
+			$this->documentManager->flush();
+		}
 		$this->document = $document->getId();
 		$this->documentObject = $document;
 		return $this->documentObject;

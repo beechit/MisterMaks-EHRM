@@ -7,7 +7,7 @@
 
 	<ehrm:flashMessages/>
 
-	<div class="well">
+	<div class="well task show form-horizontal">
 		<div class="control-group">
 			<label class="control-label" for="created_by">
 				<f:translate id="task.createdBy">Created by</f:translate>
@@ -63,9 +63,31 @@
 			</label>
 
 			<div class="controls">
-				{task.priority.label}
+				{task.priority}
 			</div>
 		</div>
+		<f:if condition="{task.endDate}">
+			<div class="control-group">
+				<label class="control-label" for="priority">
+					<f:translate id="task.endDate">End date</f:translate>
+				</label>
+
+				<div class="controls">
+					<f:format.date format="d-m-Y">{task.endDate}</f:format.date>
+				</div>
+			</div>
+		</f:if>
+		<f:if condition="{task.action}">
+			<div class="control-group">
+				<label class="control-label" for="priority">
+					<f:translate id="task.workflow">Workflow</f:translate>
+				</label>
+
+				<div class="controls">
+					{task.action.workflowName} {task.action.description}
+				</div>
+			</div>
+		</f:if>
 
 		<div class="control-group">
 			<a class="btn btn-primary" href="/#/tasks">

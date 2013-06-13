@@ -25,9 +25,12 @@ class TaskFactory {
 	 * @param \TYPO3\Party\Domain\Model\AbstractParty $createdBy
 	 * @return \Beech\Task\Domain\Model\Task
 	 */
-	public static function createTask($priority, $description, \TYPO3\Party\Domain\Model\AbstractParty $assignedTo = NULL, $closeableByAssignee = FALSE, \TYPO3\Party\Domain\Model\AbstractParty $createdBy = NULL) {
+	public static function createTask($priority = NULL, $description = NULL, \TYPO3\Party\Domain\Model\AbstractParty $assignedTo = NULL, $closeableByAssignee = FALSE, \TYPO3\Party\Domain\Model\AbstractParty $createdBy = NULL) {
 		$task = new Task();
-		$task->setPriority($priority);
+
+		if ($priority !== NULL) {
+			$task->setPriority($priority);
+		}
 		$task->setCloseableByAssignee($closeableByAssignee);
 		if ($assignedTo !== NULL) {
 			$task->setAssignedTo($assignedTo);
@@ -36,7 +39,9 @@ class TaskFactory {
 			$task->setCreatedBy($createdBy);
 		}
 		$task->setCreationDateTime(new \DateTime());
-		$task->setDescription($description);
+		if ($description !== NULL) {
+			$task->setDescription($description);
+		}
 		return $task;
 	}
 
