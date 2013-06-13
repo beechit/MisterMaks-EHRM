@@ -1,21 +1,21 @@
 <?php
-namespace Beech\Workflow\Validators\Property;
+namespace Beech\Workflow\PreConditions\Property;
 
 /*
  * This source file is proprietary property of Beech Applications B.V.
- * Date: 27-08-12
+ * Date: 21-09-12
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
 use TYPO3\Flow\Annotations as Flow,
-	Doctrine\ODM\CouchDB\Mapping\Annotations as ODM;
+	Doctrine\ODM\CouchDB\Mapping\Annotations as ODM;;
 
 /**
- * The NotEmptyValidator checks if a property of an entity is not empty
+ * The NotEmptyPreCondition checks if a property of an entity is empty
  * @ODM\EmbeddedDocument
  * @ODM\Document
  */
-class NotEmptyValidator implements \Beech\Workflow\Core\ValidatorInterface {
+class NotEmptyPreCondition implements \Beech\Workflow\Core\PreConditionInterface {
 
 	/**
 	 * @var string
@@ -32,7 +32,7 @@ class NotEmptyValidator implements \Beech\Workflow\Core\ValidatorInterface {
 	 *
 	 * @return boolean
 	 */
-	public function isValid() {
+	public function isMet() {
 		$propertyValue = $this->getPropertyValue();
 
 		if ($propertyValue) {
@@ -43,8 +43,8 @@ class NotEmptyValidator implements \Beech\Workflow\Core\ValidatorInterface {
 					return count($propertyValue) > 0;
 				case 'string':
 					return trim($propertyValue) !== '';
-					// default includes integer, boolean, double (yes, not float but double), resource, NULL, 'unknown type'
 				default:
+						// default includes integer, boolean, double (yes, not float but double), resource, NULL, 'unknown type'
 					return !empty($propertyValue);
 			}
 		}

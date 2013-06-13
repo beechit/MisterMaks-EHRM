@@ -7,8 +7,6 @@ namespace Beech\Workflow\Domain\Model;
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
-use Beech\Workflow\Core\OutputHandlerInterface;
-use Beech\Workflow\Core\PreConditionInterface;
 use TYPO3\Flow\Annotations as Flow,
 	Doctrine\ODM\CouchDB\Mapping\Annotations as ODM;
 
@@ -16,7 +14,7 @@ use TYPO3\Flow\Annotations as Flow,
  * An Action
  * @ODM\Document(indexed=true)
  */
-class Action extends \Beech\Workflow\Core\ActionAbstract implements \Beech\Workflow\Core\ActionInterface {
+class Action extends \Beech\Ehrm\Domain\Model\Document implements \Beech\Workflow\Core\ActionInterface {
 
 	/**
 	 * @var \DateTime
@@ -37,24 +35,11 @@ class Action extends \Beech\Workflow\Core\ActionAbstract implements \Beech\Workf
 	protected $expirationDateTime;
 
 	/**
-	 * Description of Action
-	 * @var string
-	 * @ODM\Field(type="string")
-	 */
-	protected $description;
-
-	/**
 	 * @var integer
 	 * @ODM\Field(type="integer")
 	 * @ODM\Index
 	 */
 	protected $status;
-
-	/**
-	 * @var \TYPO3\Party\Domain\Model\AbstractParty
-	 * @ODM\Field(type="string")
-	 */
-	protected $createdBy;
 
 	/**
 	 * @var \TYPO3\Party\Domain\Model\AbstractParty
@@ -69,16 +54,63 @@ class Action extends \Beech\Workflow\Core\ActionAbstract implements \Beech\Workf
 	protected $closedBy;
 
 	/**
+	 * @var string
+	 * @ODM\Field(type="string")
+	 */
+	protected $targetClassName;
+
+	/**
+	 * @var string
+	 * @ODM\Field(type="string")
+	 */
+	protected $targetIdentifier;
+
+	/**
+	 * The validators
+	 * @var \Doctrine\Common\Collections\ArrayCollection<\Beech\Workflow\Core\ValidatorInterface>
+	 * @ODM\EmbedMany(targetDocument="Beech\Workflow\Core\ValidatorInterface")
+	 */
+	protected $validators;
+
+	/**
+	 * The preconditions
+	 * @var \Doctrine\Common\Collections\ArrayCollection<\Beech\Workflow\Core\PreConditionInterface>
+	 * @ODM\EmbedMany(targetDocument="Beech\Workflow\Core\PreConditionInterface")
+	 */
+	protected $preConditions;
+
+	/**
+	 * The outputHandlers
+	 * @var \Doctrine\Common\Collections\ArrayCollection<\Beech\Workflow\Core\OutputHandlerInterface>
+	 * @ODM\EmbedMany(targetDocument="Beech\Workflow\Core\OutputHandlerInterface")
+	 */
+	protected $outputHandlers;
+
+	/**
+	 * @var \TYPO3\Flow\Persistence\PersistenceManagerInterface
+	 * @Flow\Transient
+	 */
+	protected $persistenceManager;
+
+	/**
 	 * Constructs the Action
 	 */
 	public function __construct() {
 		$this->setCreationDateTime();
 		$this->setStatus(self::STATUS_NEW);
-		if($this->getCurrentParty() !== NULL) {
-			$this->setCreatedBy($this->getCurrentParty());
-		}
 		$this->validators = new \Doctrine\Common\Collections\ArrayCollection();
+		$this->preConditions = new \Doctrine\Common\Collections\ArrayCollection();
 		$this->outputHandlers = new \Doctrine\Common\Collections\ArrayCollection();
+	}
+
+	/**
+	 * Injects the Flow Persistence Manager
+	 *
+	 * @param \TYPO3\Flow\Persistence\PersistenceManagerInterface $persistenceManager
+	 * @return void
+	 */
+	public function injectPersistenceManager(\TYPO3\Flow\Persistence\PersistenceManagerInterface $persistenceManager) {
+		$this->persistenceManager = $persistenceManager;
 	}
 
 	/**
@@ -105,22 +137,16 @@ class Action extends \Beech\Workflow\Core\ActionAbstract implements \Beech\Workf
 	 */
 	protected function start() {
 		if ($this->getStatus() === self::STATUS_NEW) {
-			foreach ($this->getPreConditions() as $preCondition) {
-				if($preCondition instanceof \Beech\Workflow\Core\ValidatorInterface) {
-					if (!$preCondition->isValid()) {
-						return;
-					}
-				} elseif (!$preCondition->isMet()) {
+			foreach ($this->preConditions as $preCondition) {
+				if (!$preCondition->isMet()) {
 					return;
 				}
 			}
 
 			$this->setStatus(self::STATUS_STARTED);
-			$this->setStartDateTime();
-			if($this->getCurrentParty() !== NULL) {
-				$this->setStartedBy($this->getCurrentParty());
-			}
 		}
+
+		// todo: throw exception(?)
 	}
 
 	/**
@@ -129,18 +155,16 @@ class Action extends \Beech\Workflow\Core\ActionAbstract implements \Beech\Workf
 	 */
 	protected function finish() {
 		if ($this->getStatus() === self::STATUS_STARTED) {
-			foreach ($this->getValidators() as $validator) {
+			foreach ($this->validators as $validator) {
 				if (!$validator->isValid()) {
-					echo 'not valid' ;
 					return;
 				}
 			}
 
 			$this->setStatus(self::STATUS_FINISHED);
-			if($this->getCurrentParty() !== NULL) {
-				$this->setClosedBy($this->getCurrentParty());
-			}
 		}
+
+		// todo: throw exception(?)
 	}
 
 	/**
@@ -149,31 +173,10 @@ class Action extends \Beech\Workflow\Core\ActionAbstract implements \Beech\Workf
 	 */
 	protected function runOutputHandlers() {
 		if ($this->getStatus() === self::STATUS_FINISHED) {
-			/** @var $outputHandler OutputHandlerInterface */
-			foreach ($this->getOutputHandlers() as $outputHandler) {
-				$outputHandler->setActionEntity($this);
-				$outputHandler->setTargetEntity($this->getTarget());
+			foreach ($this->outputHandlers as $outputHandler) {
 				$outputHandler->invoke();
 			}
 		}
-	}
-
-	/**
-	 * Get description
-	 *
-	 * @return string
-	 */
-	public function getDescription() {
-		return $this->description;
-	}
-
-	/**
-	 * Set description
-	 *
-	 * @param string $description
-	 */
-	public function setDescription($description) {
-		$this->description = $description;
 	}
 
 	/**
@@ -196,7 +199,6 @@ class Action extends \Beech\Workflow\Core\ActionAbstract implements \Beech\Workf
 	 * @return \Doctrine\Common\Collections\ArrayCollection<\Beech\Workflow\Core\PreConditionInterface>
 	 */
 	public function getPreConditions() {
-		$this->loadPreConditions();
 		return $this->preConditions;
 	}
 
@@ -205,7 +207,6 @@ class Action extends \Beech\Workflow\Core\ActionAbstract implements \Beech\Workf
 	 * @return void
 	 */
 	public function addValidator(\Beech\Workflow\Core\ValidatorInterface $validator) {
-		$this->initValidatorsArray();
 		$this->validators[] = $validator;
 	}
 
@@ -214,7 +215,6 @@ class Action extends \Beech\Workflow\Core\ActionAbstract implements \Beech\Workf
 	 * @return void
 	 */
 	public function removeValidator(\Beech\Workflow\Core\ValidatorInterface $validator) {
-		$this->initValidatorsArray();
 		$this->validators->removeElement($validator);
 	}
 
@@ -222,7 +222,6 @@ class Action extends \Beech\Workflow\Core\ActionAbstract implements \Beech\Workf
 	 * @return \Doctrine\Common\Collections\ArrayCollection<\Beech\Workflow\Core\ValidatorInterface>
 	 */
 	public function getValidators() {
-		$this->loadValidators();
 		return $this->validators;
 	}
 
@@ -231,7 +230,6 @@ class Action extends \Beech\Workflow\Core\ActionAbstract implements \Beech\Workf
 	 * @return void
 	 */
 	public function addOutputHandler(\Beech\Workflow\Core\OutputHandlerInterface $outputHandler) {
-		$this->initOutputHandlersArray();
 		$this->outputHandlers[] = $outputHandler;
 	}
 
@@ -240,7 +238,6 @@ class Action extends \Beech\Workflow\Core\ActionAbstract implements \Beech\Workf
 	 * @return void
 	 */
 	public function removeOutputHandler(\Beech\Workflow\Core\OutputHandlerInterface $outputHandler) {
-		$this->initOutputHandlersArray();
 		$this->outputHandlers->removeElement($outputHandler);
 	}
 
@@ -248,8 +245,21 @@ class Action extends \Beech\Workflow\Core\ActionAbstract implements \Beech\Workf
 	 * @return \Doctrine\Common\Collections\ArrayCollection<\Beech\Workflow\Core\OutputHandlerInterface>
 	 */
 	public function getOutputHandlers() {
-		$this->loadOutputHandlers();
 		return $this->outputHandlers;
+	}
+
+	/**
+	 * @param object $targetEntity
+	 * @throws \Beech\Workflow\Exception\InvalidArgumentException
+	 * @return void
+	 */
+	public function setTarget($targetEntity) {
+		if (!is_object($targetEntity) || !$this->persistenceManager->getIdentifierByObject($targetEntity)) {
+			throw new \Beech\Workflow\Exception\InvalidArgumentException(sprintf('Target is not an existing entity'), 1343866565);
+		}
+
+		$this->targetClassName = get_class($targetEntity);
+		$this->targetIdentifier = $this->persistenceManager->getIdentifierByObject($targetEntity);
 	}
 
 	/**
@@ -302,17 +312,14 @@ class Action extends \Beech\Workflow\Core\ActionAbstract implements \Beech\Workf
 	 * @param \TYPO3\Party\Domain\Model\AbstractParty $closedBy
 	 */
 	public function setClosedBy(\TYPO3\Party\Domain\Model\AbstractParty $closedBy) {
-		$this->closedBy = $this->persistenceManager->getIdentifierByObject($closedBy, 'Beech\Party\Domain\Model\Person');
+		$this->closedBy = $closedBy;
 	}
 
 	/**
 	 * @return \TYPO3\Party\Domain\Model\AbstractParty
 	 */
 	public function getClosedBy() {
-		if (isset($this->closedBy)) {
-			return $this->persistenceManager->getObjectByIdentifier($this->closedBy, 'Beech\Party\Domain\Model\Person', TRUE);
-		}
-		return NULL;
+		return $this->closedBy;
 	}
 
 	/**
@@ -332,10 +339,7 @@ class Action extends \Beech\Workflow\Core\ActionAbstract implements \Beech\Workf
 	/**
 	 * @param \DateTime $startDateTime
 	 */
-	public function setStartDateTime(\DateTime $startDateTime = NULL) {
-		if ($startDateTime === NULL) {
-			$startDateTime = new \DateTime();
-		}
+	public function setStartDateTime(\DateTime $startDateTime) {
 		$this->startDateTime = $startDateTime;
 	}
 
@@ -347,57 +351,19 @@ class Action extends \Beech\Workflow\Core\ActionAbstract implements \Beech\Workf
 	}
 
 	/**
-	 * Set createdBy
-	 *
-	 * @param \TYPO3\Party\Domain\Model\AbstractParty $createdBy
-	 */
-	public function setCreatedBy(\TYPO3\Party\Domain\Model\AbstractParty $createdBy) {
-		$this->createdBy = $this->persistenceManager->getIdentifierByObject($createdBy, 'Beech\Party\Domain\Model\Person');
-	}
-
-	/**
-	 * Get createdBy
-	 *
-	 * @return \TYPO3\Party\Domain\Model\AbstractParty
-	 */
-	public function getCreatedBy() {
-		if (isset($this->createdBy)) {
-			return $this->persistenceManager->getObjectByIdentifier($this->createdBy, 'Beech\Party\Domain\Model\Person', TRUE);
-		}
-		return NULL;
-	}
-
-
-	/**
 	 * @param \TYPO3\Party\Domain\Model\AbstractParty $startedBy
 	 */
 	public function setStartedBy(\TYPO3\Party\Domain\Model\AbstractParty $startedBy) {
-		$this->startedBy = $this->persistenceManager->getIdentifierByObject($startedBy, 'Beech\Party\Domain\Model\Person');
+		$this->startedBy = $startedBy;
 	}
 
 	/**
 	 * @return \TYPO3\Party\Domain\Model\AbstractParty
 	 */
 	public function getStartedBy() {
-		if (isset($this->startedBy)) {
-			return $this->persistenceManager->getObjectByIdentifier($this->startedBy, 'Beech\Party\Domain\Model\Person', TRUE);
-		}
-		return NULL;
+		return $this->startedBy;
 	}
 
-
-	/**
-	 * @return \TYPO3\Party\Domain\Model\AbstractParty
-	 */
-	protected function getCurrentParty() {
-
-		if ($this->securityContext !== NULL && $this->securityContext->isInitialized()
-			&& $this->securityContext->getAccount() instanceof \TYPO3\Flow\Security\Account
-			&& $this->securityContext->getAccount()->getParty() instanceof \Beech\Party\Domain\Model\Person) {
-			return $this->securityContext->getAccount()->getParty();
-		}
-		return NULL;
-	}
 }
 
 ?>

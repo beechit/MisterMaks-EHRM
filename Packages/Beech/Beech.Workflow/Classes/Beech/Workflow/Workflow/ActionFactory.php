@@ -9,19 +9,11 @@ namespace Beech\Workflow\Workflow;
 
 use TYPO3\Flow\Annotations as Flow;
 use Beech\Workflow\Domain\Model\Action as Action;
-use TYPO3\Flow\Package\Exception;
 
 /**
  * Parse the Workflow action .yaml files and store these as actual action entities
  */
 class ActionFactory {
-
-	/**
-	 * Workflow name
-	 *
-	 * @var string
-	 */
-	protected $workflowName;
 
 	/**
 	 * The settings to parse
@@ -40,7 +32,6 @@ class ActionFactory {
 	 * @return void
 	 */
 	public function setWorkflowName($workflowName) {
-		$this->workflowName = $workflowName;
 		$this->settings = $this->configurationManager->getConfiguration('Workflows', $workflowName);
 	}
 
@@ -56,23 +47,98 @@ class ActionFactory {
 		}
 		$actionObjects = array();
 
-		if (array_key_exists('actions', $this->settings)) {
-			$actionCount = 0;
-			foreach ($this->settings['actions'] as $action_id => $actionSettings) {
+		if (array_key_exists('action', $this->settings)) {
+			foreach ($this->settings['action'] as $actionSettings) {
 				$action = new Action();
-				$action->setWorkflowName($this->workflowName);
-				$action->setActionId($action_id);
 
-				if(!empty($actionSettings['description'])) {
-					$action->setDescription($actionSettings['description']);
+				$handlerTypes = array(
+					'validators' => 'addValidator',
+					'preConditions' => 'addPreCondition',
+					'outputHandlers' => 'addOutputHandler'
+				);
+
+				foreach ($handlerTypes as $type => $addMethod) {
+					if (isset($actionSettings[$type]) && is_array($actionSettings[$type])) {
+						foreach ($actionSettings[$type] as $configuration) {
+							$action->$addMethod($this->createHandlerInstance($configuration));
+						}
+					}
 				}
 
 				$actionObjects[] = $action;
-				$actionCount++;
 			}
 		}
 
 		return $actionObjects;
+	}
+
+	/**
+	 * @param array $configuration
+	 * @return mixed
+	 * @throws \Beech\Workflow\Exception
+	 */
+	protected function createHandlerInstance(array $configuration) {
+		if (!isset($configuration['className'])
+				|| !isset($configuration['properties'])
+				|| !is_array($configuration['properties'])) {
+			throw new \Beech\Workflow\Exception('Invalid handler configuration');
+		}
+
+		if (!class_exists($configuration['className'])) {
+			throw new \Beech\Workflow\Exception('Handler class is undefined');
+		}
+
+		$handler = new $configuration['className']();
+		foreach ($configuration['properties'] as $propertyName => $propertyDefinition) {
+			$setMethod = 'set' . ucfirst($propertyName);
+
+			if (method_exists($handler, $setMethod)) {
+				$property = $this->getPropertyFromDefinition($propertyDefinition, $configuration['className']);
+
+				if ($property !== FALSE) {
+					$handler->$setMethod($property);
+				}
+			}
+		}
+		return $handler;
+	}
+
+	/**
+	 * Determine which property was intended in the configuration yaml
+	 * A $propertyDefinition with a colon (:) holds a special value which should handle individually
+	 *
+	 * @param string $propertyDefinition
+	 * @param string $targetClassName
+	 * @throws \Beech\Workflow\Exception
+	 * @return mixed, false on failure
+	 */
+	protected function getPropertyFromDefinition($propertyDefinition, $targetClassName = '') {
+		$propertyParts = explode(':', $propertyDefinition);
+
+		if (count($propertyParts) == 1) {
+			return $propertyParts[0];
+		}
+
+		$property = FALSE;
+		switch ($propertyParts[0]) {
+			case 'DATETIME';
+				$property = new \DateTime($propertyParts[1]);
+			break;
+			case 'CONSTANT':
+				if (defined($targetClassName . '::' . $propertyParts[1])) {
+					$property = constant($targetClassName . '::' . $propertyParts[1]);
+				}
+			break;
+			case 'ENTITY':
+				if (class_exists($propertyParts[1])) {
+					$property = new $propertyParts[1]();
+				} else {
+					throw new \Beech\Workflow\Exception(sprintf('Unknown entity type "%s"', $propertyParts[1]));
+				}
+			break;
+		}
+
+		return $property;
 	}
 
 }
