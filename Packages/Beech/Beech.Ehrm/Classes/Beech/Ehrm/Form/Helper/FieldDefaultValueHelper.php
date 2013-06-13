@@ -28,19 +28,19 @@ class FieldDefaultValueHelper {
 	 */
 	public function getDefault($property) {
 		$defaultValue = '';
-		if (isset($property['default'])) {
-			if ($property['default'] === 'now' || $property['default'] === 'today') {
+		if (isset($property['defaultValue'])) {
+			if ($property['defaultValue'] === 'now' || $property['defaultValue'] === 'today') {
 				$defaultValue = date('Y-m-d');
-			} elseif ($property['default'] === 'currentUser') {
+			} elseif ($property['defaultValue'] === 'currentUser') {
 				$tokens = $this->securityContext->getAuthenticationTokens();
 
 				foreach ($tokens as $token) {
 					if ($token->isAuthenticated()) {
-						$defaultValue = (string)\TYPO3\Flow\Reflection\ObjectAccess::getPropertyPath($token->getAccount(), 'party.name');
+						$defaultValue = $token->getAccount()->getParty();
 					}
 				}
 			} else {
-				$defaultValue = $property['default'];
+				$defaultValue = $property['defaultValue'];
 			}
 		}
 		return $defaultValue;
