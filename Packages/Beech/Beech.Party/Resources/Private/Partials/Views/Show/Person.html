@@ -1,11 +1,37 @@
-<div class="control-group">
-	<div class="row-fluid" >
-		<div class="span3">
-			<f:render partial="Views/Show/ProfilePhoto" arguments="{photo: person.profilePhoto}"/>
-		</div>
-		<div class="span9">
-			{person.name.firstName} {person.name.middleName} {person.name.lastName}
-		</div>
-	</div>
+<div class="span12">
+	<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered">
+		<tbody>
+		<tr class="odd">
+			<td rowspan="4"><f:render partial="Views/Show/ProfilePhoto" arguments="{photo: person.profilePhoto}"/></td>
+			<td class="span3">Naam</td>
+			<td class="span6">{person.name.firstName} {person.name.middleName} {person.name.lastName}</td>
+		</tr>
+		<tr class="even">
+			<td>Email</td>
+			<td>
+				<f:for each="{electronicAddresses}" as="electronicAddress">
+					<div id="electronicAddress-{electronicAddress.id}">
+						<f:render partial="Views/Show/ElectronicAddress" arguments="{electronicAddress: electronicAddress}"/>
+					</div>
+				</f:for>
+			</td>
+		</tr>
+		<tr class="odd">
+			<td>Telefoonnummer</td>
+			<td>
+				<f:for each="{phoneNumbers}" as="phoneNumber">
+					<div id="phoneNumber-{phoneNumber.id}">
+						<f:render partial="Views/Show/PhoneNumber" arguments="{phoneNumber: phoneNumber}"/>
+					</div>
+				</f:for>
+			</td>
+		</tr>
+		<tr class="even">
+			<td>Geboortedatum</td>
+			<td>{person.birthDate} (00)</td>
+		</tr>
+		</tbody>
+	</table>
 </div>
-<hr />
+
+

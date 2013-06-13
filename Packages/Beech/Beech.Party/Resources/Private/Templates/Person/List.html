@@ -1,28 +1,40 @@
 <f:layout name="Ajax" />{namespace ehrm=Beech\Ehrm\ViewHelpers}
 
 <f:section name="Body">
-	<h1><f:translate id="persons">Persons</f:translate></h1>
 	<ehrm:flashMessages/>
+	<div>
+		<p><a href="#" target="_top" title="Nieuwe verlofaanvraag" class="btn btn-warning btn-gspm-4 pull-left"><i class="icon-briefcase"></i> Verlofaanvraag</a></p>
+		<p><a href="#" target="_top" title="Nieuwe ziekmelding" class="btn btn-danger btn-gspm-4 pull-left"><i class="icon-ambulance"></i> Ziekmelding</a></p>
+		<p><a href="#" target="_top" title="Nieuw contract" class="btn btn-warning btn-gspm-4 pull-left"><i class="icon-briefcase"></i> Nieuw contract</a></p>
+		<p><a href="/#/person/new" target="_top" title="Nieuwe medewerker" class="btn btn-success btn-gspm-4 pull-left"><i class="icon-user"></i>Nieuw medewerker</a></p>
+	</div>
 	<f:if condition="{persons}">
 		<f:then>
-			<table class="table">
+
+			<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example">
 				<thead>
 				<tr>
-					<th><f:translate>Full name</f:translate></th>
-					<th></th>
+					<th>Selecteer   <i class="icon-resize-vertical"></i></th>
+					<th>Naam   <i class="icon-resize-vertical"></i></th>
+					<th>Leeftijd   <i class="icon-resize-vertical"></i></th>
+					<th>Functie   <i class="icon-resize-vertical"></i></th>
+					<th>Actie   <i class="icon-resize-vertical"></i></th>
 				</tr>
 				</thead>
 				<tbody>
-				<f:for each="{persons}" as="person" iteration="iterator">
-					<tr>
-						<td>{person.name.fullName}</td>
-						<td>
-							<a href="#/person/show/{person.id}"><i class="icon-eye-open"></i></a>
-							<a href="#/person/edit/{person.id}"><i class="icon-pencil"></i></a>
-							<a href="#/person/delete/{person.id}"><i class="icon-trash"></i></a>
-						</td>
-					</tr>
-				</f:for>
+					<f:for each="{persons}" as="person" iteration="iterator">
+						<tr>
+							<td><input type="checkbox" /></td>
+							<td>{person.name.fullName}</td>
+							<td>0</td>
+							<td></td>
+							<td>
+								<a href="#/person/show/{person.id}"><i class="icon-eye-open"></i></a>
+								<a href="#/person/edit/{person.id}"><i class="icon-pencil"></i></a>
+								<a href="#/person/delete/{person.id}"><i class="icon-trash"></i></a>
+							</td>
+						</tr>
+					</f:for>
 				</tbody>
 			</table>
 		</f:then>
@@ -30,9 +42,4 @@
 			<p></p>
 		</f:else>
 	</f:if>
-	<div class="form-actions">
-		<a class="btn btn-primary" href="/#/person/new">
-			<f:translate id="action.new">New</f:translate>
-		</a>
-	</div>
 </f:section>

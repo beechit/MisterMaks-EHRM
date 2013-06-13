@@ -1,0 +1,11 @@
+/* Start Buttons */
+.btn-gspm-4 {
+  height: 35px;
+  margin: 0 20px 20px 0;
+  padding-top: 15px;
+  width: 133px; }
+
+p:nth-child(4n+4) .btn-gspm-4, p:nth-child(3n+3) .btn-gspm {
+  margin: 0 0 20px !important; }
+
+/* End DataTables */

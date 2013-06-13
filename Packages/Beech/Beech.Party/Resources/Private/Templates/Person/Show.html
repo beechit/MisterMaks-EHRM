@@ -3,54 +3,95 @@
 <f:section name="Body">
 
 	<h1>Person information</h1>
-	<f:render partial="Views/Show/Person" arguments="{person: person}"/>
-	<!-- Addresses -->
-	<h3>Addresses</h3>
-	<f:for each="{addresses}" as="address">
-		<div id="address-{address.id}">
-			<f:render partial="Views/Show/Address" arguments="{address: address}"/>
+	<div id="c261" class="csc-default">
+		<ul id="personTabs" class="nav nav-tabs">
+			<li class="active">
+				<a data-toggle="tab" href="#personal">Personalia</a>
+			</li>
+			<li>
+				<a data-toggle="tab" href="#contract">Contract</a>
+			</li>
+			<li>
+				<a data-toggle="tab" href="#sickness">Verzuim</a>
+			</li>
+			<li>
+				<a data-toggle="tab" href="#holidays">Verlof</a>
+			</li>
+			<li>
+				<a data-toggle="tab" href="#education">Education</a>
+			</li>
+			<li>
+				<a data-toggle="tab" href="#assets">Assets</a>
+			</li>
+			<li>
+				<a data-toggle="tab" href="#documents">Documenten</a>
+			</li>
+		</ul>
+		<div id="personTabsContent" class="tab-content">
+			<div id="personal" class="tab-pane fade active in">
+				<f:render partial="Views/Show/Person" arguments="{_all}"/>
+				<table id="addresses-{person.id}" class="table table-striped table-bordered">
+					<thead>
+						<td>Adres</td>
+						<td></td>
+					</thead>
+					<tbody>
+					<f:for each="{addresses}" as="address">
+						<tr>
+							<td></td>
+							<td><f:render partial="Views/Show/Address" arguments="{address: address}"/></td>
+						</tr>
+					</f:for>
+					</tbody>
+				</table>
+				<table id="bank-{person.id}" class="table table-striped table-bordered">
+					<thead>
+					<td>Bank</td>
+					<td></td>
+					</thead>
+					<tbody>
+					<f:for each="{bankAccounts}" as="bankAccount">
+						<tr>
+							<td></td>
+							<td><f:render partial="Views/Show/BankAccount" arguments="{bankAccount: bankAccount}"/></td>
+						</tr>
+					</f:for>
+					</tbody>
+				</table>
+			</div>
+			<div id="contract" class="tab-pane fade">
+				Contract...
+			</div>
+			<div id="sickness" class="tab-pane fade">
+				Verzuim...
+			</div>
+			<div id="holidays" class="tab-pane fade">
+				Verlof...
+			</div>
+			<div id="education" class="tab-pane fade">
+				<f:for each="{educations}" as="education">
+					<div id="education-{education.id}">
+						<f:render partial="Views/Show/Education" arguments="{education: education}"/>
+					</div>
+				</f:for>
+			</div>
+			<div id="assets" class="tab-pane fade">
+				<h3>Asset</h3>
+				<f:for each="{assets}" as="asset">
+					<div id="asset-{asset.id}">
+						<f:render partial="Views/Show/Asset" arguments="{asset: asset}"/>
+					</div>
+				</f:for>
+				<h3>Licence</h3>
+				<f:for each="{licences}" as="licence">
+					<div id="licence-{licence.id}">
+						<f:render partial="Views/Show/Licence" arguments="{licence: licence}"/>
+					</div>
+				</f:for>
+			</div>
+			<div id="documents" class="tab-pane fade">
+				Documents...
+			</div>
 		</div>
-	</f:for>
-	<!-- Phone numbers -->
-	<h3>Phone numbers</h3>
-	<f:for each="{phoneNumbers}" as="phoneNumber">
-		<div id="phoneNumber-{phoneNumber.id}">
-			<f:render partial="Views/Show/PhoneNumber" arguments="{phoneNumber: phoneNumber}"/>
-		</div>
-	</f:for>
-	<!-- Electronic addresses -->
-	<h3>Electronic addresses</h3>
-	<f:for each="{electronicAddresses}" as="electronicAddress">
-		<div id="electronicAddress-{electronicAddress.id}">
-			<f:render partial="Views/Show/ElectronicAddress" arguments="{electronicAddress: electronicAddress}"/>
-		</div>
-	</f:for>
-	<!-- Bank accounts -->
-	<h3>Bank accounts</h3>
-	<f:for each="{bankAccounts}" as="bankAccount">
-		<div id="bankAccount-{bankAccount.id}">
-			<f:render partial="Views/Show/BankAccount" arguments="{bankAccount: bankAccount}"/>
-		</div>
-	</f:for>
-	<!-- Education -->
-	<h3>Education</h3>
-	<f:for each="{educations}" as="education">
-		<div id="education-{education.id}">
-			<f:render partial="Views/Show/Education" arguments="{education: education}"/>
-		</div>
-	</f:for>
-	<!-- Asset -->
-	<h3>Asset</h3>
-	<f:for each="{assets}" as="asset">
-		<div id="asset-{asset.id}">
-			<f:render partial="Views/Show/Asset" arguments="{asset: asset}"/>
-		</div>
-	</f:for>
-	<!-- Licence -->
-	<h3>Licence</h3>
-	<f:for each="{licences}" as="licence">
-		<div id="licence-{licence.id}">
-			<f:render partial="Views/Show/Licence" arguments="{licence: licence}"/>
-		</div>
-	</f:for>
+	</div>
 </f:section>

@@ -1,28 +1,38 @@
-<f:layout name="Ajax" />
+<f:layout name="Ajax"/>
 
 <f:section name="Body">
-	<h1><f:translate id="action.new">New</f:translate></h1>
-	<f:form.validationResults for="person">
-		<f:if condition="{validationResults.flattenedErrors}">
-			<div class="error">
-				<f:for each="{validationResults.flattenedErrors}" key="propertyPath" as="errors">{propertyPath}: <f:for each="{errors}" as="error">{error}</f:for></f:for>
+	<div id="c261" class="csc-default">
+		<ul id="personTabs" class="nav nav-tabs">
+			<li class="">
+				<a href="#personal" data-toggle="tab">Persoonlijk</a>
+			</li>
+			<li class="">
+				<a href="#bank" data-toggle="tab">Bankgegevens</a>
+			</li>
+		</ul>
+		<div id="personTabsContent" class="tab-content">
+			<div id="general" class="tab-pane fade active in" >
+				<f:form action="create" object="{person}" name="person" class="form-horizontal">
+					<f:render partial="Forms/Person"/>
+					<div class="form-actions">
+						<f:form.submit value="{f:translate(id: 'action.create')}"/>
+					</div>
+				</f:form>
 			</div>
-		</f:if>
-	</f:form.validationResults>
-
-	<div class="tab-content">
-		<h3>Person information</h3>
-
-		<f:form action="create" object="{person}" name="person" class="form-horizontal well">
-			<f:render partial="Forms/Person" />
-			<div class="form-actions">
-				<f:form.submit value="{f:translate(id: 'action.create')}" />
+			<div id="personal" class="tab-pane fade">
+				<f:form action="create" object="{person}" name="person" class="form-horizontal">
+					<f:render partial="Forms/Person"/>
+					<div class="form-actions">
+						<f:form.submit value="{f:translate(id: 'action.create')}"/>
+					</div>
+				</f:form>
 			</div>
-		</f:form>
-
-		<a class="btn btn-primary" href="/#/persons">
-			<f:translate id="action.back">Back</f:translate>
-		</a>
+			<div id="bank" class="tab-pane fade">
+				<div id="bankAccount-add" class="clearfix">
+					<f:render partial="Forms/BankAccount"
+							  arguments="{party: person, action: 'add', suffix: 'bankAccount'}"/>
+				</div>
+			</div>
+		</div>
 	</div>
-
 </f:section>
