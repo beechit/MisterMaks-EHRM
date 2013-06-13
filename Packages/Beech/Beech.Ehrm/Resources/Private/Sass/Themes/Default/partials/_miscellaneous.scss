@@ -9,3 +9,8 @@ a:hover {
 .muted {
 	opacity: 0.6;
 }
+
+/* ajax-loading */
+body.ajax-loading {
+	cursor: progress;
+}

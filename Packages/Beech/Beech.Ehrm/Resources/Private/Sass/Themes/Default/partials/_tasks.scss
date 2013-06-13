@@ -1,4 +1,7 @@
 .left {
+	#task-widget {
+		margin-bottom: 40px;
+	}
 	/* Tasks */
 	.accordion {
 		.accordion-heading {
@@ -9,5 +12,20 @@
 				top: 10px;
 			}
 		}
+		.accordion-inner {
+			ul li a {
+				display: block;
+			}
+		}
 	}
+}
+.task.show {
+	.control-group .control-label:after {
+		content:":"
+	}
+	.control-group .controls {
+		margin-bottom: 5px;
+		padding-top: 5px;
+		line-height: 20px;
+  }
 }

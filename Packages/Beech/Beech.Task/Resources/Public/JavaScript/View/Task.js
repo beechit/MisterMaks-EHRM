@@ -1,15 +1,10 @@
 (function() {
 	'use strict';
 
-	App.BeechTaskTaskModuleIndexView = Ember.View.extend({
-		templateName: 'beech_task_domain_model_task/index',
-		remove: function(task) {
-			task.deleteRecord();
-			App.store.commit();
-		}
-	});
-	App.BeechTaskDomainModelTaskIndexView = Ember.View.extend({
-		templateName: 'beech_task_domain_model_task/show'
+	// default resource view needs to be empty Index is loaded direct after this one
+	// http://emberjs.com/guides/routing/defining-your-routes/#toc_resources
+	App.BeechTaskTaskView = Ember.View.extend(App.AjaxModuleViewMixin, {
+		url: ''
 	});
 
 }).call(this);

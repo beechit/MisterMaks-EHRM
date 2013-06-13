@@ -29,6 +29,20 @@ class Person extends \TYPO3\Party\Domain\Model\Person implements \TYPO3\Flow\Obj
 	 */
 	protected $name;
 
+	/**
+	 * Get his manager
+	 *
+	 * @todo implement hierarchy until then use the creator
+	 *
+	 * @return \Beech\Party\Domain\Model\Person
+	 */
+	protected function getManager() {
+		if($this->getCreatedBy() !== NULL && $this->getCreatedBy() !== $this) {
+			return $this->getCreatedBy();
+		} else {
+			return NULL;
+		}
+	}
 }
 
 ?>

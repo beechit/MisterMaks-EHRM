@@ -7,6 +7,7 @@ namespace Beech\Task\Domain\Model;
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
+use Beech\Task\Domain\Factory\TaskFactory;
 use TYPO3\Flow\Annotations as Flow,
 	Doctrine\ODM\CouchDB\Mapping\Annotations as ODM;
 
@@ -81,7 +82,15 @@ class Task extends \Beech\Ehrm\Domain\Model\Document {
 	 * @ODM\Field(type="integer")
 	 * @ODM\Index
 	 */
-	protected $priority = 1;
+	protected $priority = self::PRIORITY_NORMAL;
+
+	/**
+	 * Priotiry at first save
+	 *
+	 * @var integer
+	 * @ODM\Field(type="integer")
+	 */
+	protected $initialPriority;
 
 	/**
 	 * The dateTime this task was created
@@ -90,6 +99,14 @@ class Task extends \Beech\Ehrm\Domain\Model\Document {
 	 * @ODM\Field(type="datetime")
 	 */
 	protected $creationDateTime;
+
+	/**
+	 * The datetime this task has to be done
+	 *
+	 * @var \DateTime
+	 * @ODM\Field(type="datetime")
+	 */
+	protected $endDateTime;
 
 	/**
 	 * The datetime this task was closed
@@ -112,7 +129,44 @@ class Task extends \Beech\Ehrm\Domain\Model\Document {
 	protected $closeableByAssignee = FALSE;
 
 	/**
+	 * Interval in days to increase priority of task to next level
+	 * Interval is calculate so that on the given interval before
+	 * end date task has highest priority
+	 * see \DateInterval::createFromDateString()
+	 *
+	 * @var string
+	 * @ODM\Field(type="string")
+	 */
+	protected $increasePriorityInterval;
+
+	/**
+	 * Interval in days to escalation priority of task to next level
+	 * Interval is calculate so that on the given interval before
+	 * end date task has highest priority
+	 * see \DateInterval::createFromDateString()
+	 *
+	 * @var string
+	 * @ODM\Field(type="string")
+	 */
+	protected $escalationInterval;
+
+	/**
+	 * @var \Beech\Task\Domain\Model\Task
+	 * @ODM\ReferenceOne(targetDocument="\Beech\Task\Domain\Model\Task", cascade={"persist"})
+	 */
+	protected $escalatedTask;
+
+	/**
+	 * Workflow Action that initiated this task
+	 *
+	 * @var \Beech\Workflow\Domain\Model\Action
+	 * @ODM\ReferenceOne(targetDocument="\Beech\Workflow\Domain\Model\Action")
+	 */
+	protected $action;
+
+	/**
 	 * Initialize object
+	 *
 	 * @return void
 	 */
 	public function initializeObject() {
@@ -123,9 +177,10 @@ class Task extends \Beech\Ehrm\Domain\Model\Document {
 	 * @return \TYPO3\Party\Domain\Model\AbstractParty
 	 */
 	protected function getCurrentParty() {
-		if (isset($this->securityContext)
-				&& $this->securityContext->getAccount() instanceof \TYPO3\Flow\Security\Account
-				&& $this->securityContext->getAccount()->getParty() instanceof \Beech\Party\Domain\Model\Person) {
+		if ($this->securityContext->canBeInitialized()
+			&& $this->securityContext->getAccount() instanceof \TYPO3\Flow\Security\Account
+			&& $this->securityContext->getAccount()->getParty() instanceof \Beech\Party\Domain\Model\Person
+		) {
 			return $this->securityContext->getAccount()->getParty();
 		}
 		return NULL;
@@ -193,7 +248,7 @@ class Task extends \Beech\Ehrm\Domain\Model\Document {
 	 * @return void
 	 */
 	public function setCreatedBy(\TYPO3\Party\Domain\Model\AbstractParty $creator = NULL) {
-		if ($creator === NULL ) {
+		if ($creator === NULL) {
 			$this->createdBy = $this->getCurrentPartyIdentifier();
 		} else {
 			$this->createdBy = $this->persistenceManager->getIdentifierByObject($creator, 'Beech\Party\Domain\Model\Person');
@@ -217,7 +272,7 @@ class Task extends \Beech\Ehrm\Domain\Model\Document {
 	 * @return void
 	 */
 	public function setClosedBy(\TYPO3\Party\Domain\Model\AbstractParty $person = NULL) {
-		if ($person === NULL ) {
+		if ($person === NULL) {
 			$this->closedBy = $this->getCurrentPartyIdentifier();
 		} else {
 			$this->closedBy = $this->persistenceManager->getIdentifierByObject($person, 'Beech\Party\Domain\Model\Person');
@@ -241,6 +296,12 @@ class Task extends \Beech\Ehrm\Domain\Model\Document {
 	 * @return void
 	 */
 	public function setPriority($priority) {
+		// set initial priority
+		if ($this->getId() && $this->initialPriority === NULL) {
+			$this->initialPriority = $this->priority;
+		} elseif (!$this->getId()) {
+			$this->initialPriority = $priority;
+		}
 		$this->priority = $priority;
 	}
 
@@ -254,6 +315,36 @@ class Task extends \Beech\Ehrm\Domain\Model\Document {
 	}
 
 	/**
+	 * Get initialPriority
+	 *
+	 * @return int
+	 */
+	public function getInitialPriority() {
+		if ($this->initialPriority === NULL) {
+			return self::PRIORITY_NORMAL;
+		}
+		return $this->initialPriority;
+	}
+
+	/**
+	 * Set endDateTime
+	 *
+	 * @param \DateTime $endDateTime
+	 */
+	public function setEndDateTime($endDateTime) {
+		$this->endDateTime = $endDateTime;
+	}
+
+	/**
+	 * Get endDateTime
+	 *
+	 * @return \DateTime
+	 */
+	public function getEndDateTime() {
+		return $this->endDateTime;
+	}
+
+	/**
 	 * Set the dateTime of creation
 	 *
 	 * @param \DateTime $creationDateTime
@@ -261,7 +352,7 @@ class Task extends \Beech\Ehrm\Domain\Model\Document {
 	 */
 	public function setCreationDateTime(\DateTime $creationDateTime = NULL) {
 		if ($creationDateTime === NULL) {
-			$creationDateTime = new \DateTime();
+			$creationDateTime = new \TYPO3\Flow\Utility\Now();
 		}
 		$this->creationDateTime = $creationDateTime;
 	}
@@ -271,7 +362,7 @@ class Task extends \Beech\Ehrm\Domain\Model\Document {
 	 */
 	public function getCreationDateTime() {
 		if ($this->creationDateTime === NULL) {
-			$this->creationDateTime = new \DateTime();
+			$this->creationDateTime = new \TYPO3\Flow\Utility\Now();
 		}
 		return $this->creationDateTime;
 	}
@@ -329,8 +420,14 @@ class Task extends \Beech\Ehrm\Domain\Model\Document {
 		}
 
 		$this->closedBy = $this->getCurrentPartyIdentifier();
-		$this->setCloseDateTime(new \DateTime());
+		$this->setCloseDateTime(new \TYPO3\Flow\Utility\Now());
 		$this->closed = TRUE;
+
+		if ($this->escalatedTask && !$this->escalatedTask->isClosed()) {
+			$this->escalatedTask->closedBy = $this->closedBy;
+			$this->setCloseDateTime($this->getCloseDateTime());
+			$this->escalatedTask->closed = TRUE;
+		}
 	}
 
 	/**
@@ -345,6 +442,204 @@ class Task extends \Beech\Ehrm\Domain\Model\Document {
 	 */
 	public function getCloseableByAssignee() {
 		return $this->closeableByAssignee;
+	}
+
+	/**
+	 * Set action
+	 *
+	 * @param \Beech\Workflow\Domain\Model\Action $action
+	 */
+	public function setAction(\Beech\Workflow\Core\ActionInterface $action) {
+		$this->action = $action;
+	}
+
+	/**
+	 * Get action
+	 *
+	 * @return \Beech\Workflow\Domain\Model\Action
+	 */
+	public function getAction() {
+		return $this->action;
+	}
+
+	/**
+	 * Set increasePriorityInterval
+	 * see \DateInterval::createFromDateString() for format
+	 *
+	 * @param string $increasePriorityInterval
+	 */
+	public function setIncreasePriorityInterval($increasePriorityInterval) {
+		$this->increasePriorityInterval = $increasePriorityInterval;
+	}
+
+	/**
+	 * Get increasePriorityInterval
+	 *
+	 * @return string
+	 */
+	public function getIncreasePriorityInterval() {
+		return $this->increasePriorityInterval;
+	}
+
+	/**
+	 * Get DateTime of next moment that the priority will be increased
+	 *
+	 * @return null|\DateTime
+	 */
+	public function getNextPriorityIncreaseDateTime() {
+		$info = $this->nextPriorityIncreaseInfo();
+		return $info['date'];
+	}
+
+	/**
+	 * Determin date of next PriorityIncrease and new priority
+	 *
+	 * @return array
+	 */
+	protected function nextPriorityIncreaseInfo() {
+
+		$info = array('priority' => $this->priority, 'date' => NULL);
+
+		if ($this->priority === self::PRIORITY_IMMEDIATE) {
+			return $info;
+		}
+
+		if (!$this->increasePriorityInterval) {
+			$info['priority']++;
+			return $info;
+		}
+
+		$interval = \DateInterval::createFromDateString($this->increasePriorityInterval);
+		$now = new \TYPO3\Flow\Utility\Now();
+
+		if ($this->endDateTime) {
+			$priority = self::PRIORITY_IMMEDIATE;
+			$date = clone $this->endDateTime;
+			do {
+				$date->sub(\DateInterval::createFromDateString($this->increasePriorityInterval));
+				$priority--;
+			} while ($date > $now && ($this->priority + 1) < $priority);
+
+			$info['date'] = $date;
+			$info['prioriry'] = $priority;
+		} else {
+			$steps = self::PRIORITY_IMMEDIATE - $this->priority;
+			$date = clone $this->creationDateTime;
+			$priority = $this->initialPriority();
+
+			do {
+				$date->add($interval);
+				$priority++;
+			} while($date < $now && $priority < self::PRIORITY_IMMEDIATE);
+
+			$info['date'] = $date;
+			$info['prioriry'] = $priority;
+		}
+
+		return $info;
+	}
+
+	/**
+	 * Increase priority of Task
+	 *
+	 * When no priority is passed then the next priority will
+	 * be calculated and used
+	 *
+	 * @param integer $newPriority
+	 */
+	public function increasePriority($newPriority = NULL) {
+		if($newPriority !== NULL) {
+			$this->priority = $newPriority;
+		} else {
+			$info = $this->nextPriorityIncreaseInfo();
+				// only update when new priority is higher than current
+				// to prevent decreasing priority when increaded manualy
+			if($this->priority < $info['priority']) {
+				$this->priority = $info['priority'];
+			}
+		}
+	}
+
+	/**
+	 * Set EscalationInterval
+	 * see \DateInterval::createFromDateString() for format
+	 *
+	 * @param string $escalationInterval
+	 */
+	public function setEscalationInterval($escalationInterval) {
+		$this->escalationInterval = $escalationInterval;
+	}
+
+	/**
+	 * Get EscalationInterval
+	 *
+	 * @return string
+	 */
+	public function getEscalationInterval() {
+		return $this->escalationInterval;
+	}
+
+	/**
+	 * Escalate task to manager of Assigned Party
+	 */
+	public function escalate() {
+		if ($this->getAssignedTo() && $this->getAssignedTo()->getManager() !== NULL) {
+			$this->escalatedTask = TaskFactory::createTask(self::PRIORITY_IMMEDIATE, 'ESCALATION', $this->getAssignedTo(), FALSE);
+			$this->escalatedTask->setEndDateTime($this->getEndDateTime());
+			return TRUE;
+		} else {
+			return FALSE;
+		}
+	}
+
+	/**
+	 * Get DateTime that the task wil be escalated
+	 *
+	 * When endDate is set then the interval is decreaced from this
+	 * When no endDate is set the interval is added to the creationDateTime
+	 * No escalationInterval or task is already escalated NULL is returned
+	 *
+	 * @return \DateTime|null
+	 */
+	public function getEscalationDateTime() {
+		if ($this->isEscalated() || !$this->escalationInterval) {
+			return NULL;
+		} elseif ($this->escalationInterval && $this->endDateTime) {
+			$endDateTime = clone $this->endDateTime;
+			$endDateTime->sub(\DateInterval::createFromDateString($this->escalationInterval));
+			return $endDateTime;
+		} else {
+			$creationDateTime = clone $this->creationDateTime;
+			$creationDateTime->add(\DateInterval::createFromDateString($this->escalationInterval));
+			return $creationDateTime;
+		}
+	}
+
+	/**
+	 * Set escalatedTask
+	 *
+	 * @param \Beech\Task\Domain\Model\Task $escalatedTask
+	 */
+	public function setEscalatedTask($escalatedTask) {
+		$this->escalatedTask = $escalatedTask;
+	}
+
+	/**
+	 * Get escalatedTask
+	 *
+	 * @return \Beech\Task\Domain\Model\Task
+	 */
+	public function getEscalatedTask() {
+		return $this->escalatedTask;
+	}
+
+	/**
+	 * Check if task is escalated
+	 *
+	 * @return bool
+	 */
+	public function isEscalated() {
+		return $this->escalatedTask !== NULL;
 	}
 }
 
