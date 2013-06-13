@@ -243,6 +243,29 @@ class Contract extends \Beech\Ehrm\Domain\Model\Document {
 		}
 		return NULL;
 	}
+
+	/**
+	 * Get endDate of probation
+	 * returns FALSE when there is no probation
+	 *
+	 * @return bool|\DateTime
+	 */
+	public function getProbationEndDate() {
+		$endDate = FALSE;
+		if($this->getProbation()) {
+
+			/** @var $startDate \DateTime */
+			$startDate = clone $this->getStartDate();
+
+			/** @var $probationInDays integer */
+			$probationInDays = $this->getProbationInDays();
+
+			if($startDate && $probationInDays) {
+				$endDate = $startDate->add(\DateInterval::createFromDateString($probationInDays.' days'));
+			}
+		}
+		return $endDate;
+	}
 }
 
 ?>

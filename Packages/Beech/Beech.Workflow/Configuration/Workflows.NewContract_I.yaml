@@ -1,0 +1,53 @@
+NewContract_I:
+  triggers:
+    -
+      action: add
+      className: 'Beech\CLA\Domain\Model\Contract'
+      conditions:
+        -
+          className: '\Beech\Workflow\Validators\Property\NotEmptyValidator'
+          properties:
+            property: 'TARGET:status.statusChanged'
+        -
+          className: '\Beech\Workflow\Validators\Property\EqualsValidator'
+          properties:
+            property: 'TARGET:status.status'
+            value: 'Approved'
+    -
+      action: update
+      className: 'Beech\CLA\Domain\Model\Contract'
+      conditions:
+        -
+          className: '\Beech\Workflow\Validators\Property\EqualsValidator'
+          properties:
+            property: 'TARGET:status.status'
+            value: 'Approved'
+  actions:
+    1:
+      description: 'Plan probation meeting'
+      preConditions:
+        -
+          className: '\Beech\Workflow\Validators\Property\NotEmptyValidator'
+          properties:
+            property: 'probation'
+      validators:
+        -
+          className: 'Beech\Workflow\Validators\CurrentDateValidator'
+          properties:
+            date: 'TARGET:probationEndDate'
+            dateInterval: '-2weeks'
+            matchCondition: 'CONSTANT:SMALLER_OR_EQUAL_THEN'
+      outputHandlers:
+        -
+          className: 'Beech\Workflow\OutputHandlers\TaskOutputHandler'
+          properties:
+            assignedTo: 'ACTION:createdBy'
+            priority: 1
+            endDate: 'TARGET:probationEndDate'
+            increasePriorityInterval: '4days'
+            escalationInterval: '1day'
+            description: 'Plan contract meeting with %s before %s'
+            descriptionReplacements:
+              1: 'TARGET:employee.name.fullName'
+              2: 'TARGET:probationEndDate'
+
