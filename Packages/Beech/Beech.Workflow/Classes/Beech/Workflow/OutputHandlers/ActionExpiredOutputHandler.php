@@ -8,13 +8,15 @@ namespace Beech\Workflow\OutputHandlers;
  */
 
 use TYPO3\Flow\Annotations as Flow,
-	Beech\Workflow\Domain\Model\Action as Action,
-	Beech\Workflow\Core\ActionInterface;
+	Doctrine\ODM\CouchDB\Mapping\Annotations as ODM,
+	Beech\Workflow\Domain\Model\Action as Action;
 
 /**
  * ActionExpiredOutputHandler sets the status of an action to expired
+ * @ODM\EmbeddedDocument
+ * @ODM\Document
  */
-class ActionExpiredOutputHandler extends \Beech\Workflow\Core\OutputHandlerAbstract implements \Beech\Workflow\Core\OutputHandlerInterface {
+class ActionExpiredOutputHandler implements \Beech\Workflow\Core\OutputHandlerInterface {
 
 	/**
 	 * @var \Beech\Workflow\Domain\Repository\ActionRepository
@@ -23,14 +25,26 @@ class ActionExpiredOutputHandler extends \Beech\Workflow\Core\OutputHandlerAbstr
 	protected $actionRepository;
 
 	/**
-	 * Execute this output handler class, set the status of the targetEntiry(action) to expired
+	 * The entitiy to persist
+	 * @var \Beech\Workflow\Domain\Model\Action
+	 */
+	protected $actionEntity;
+
+	/**
+	 * Set the entity to persist
+	 * @param \Beech\Workflow\Domain\Model\Action $action
+	 */
+	public function setActionEntity(\Beech\Workflow\Domain\Model\Action $action) {
+		$this->actionEntity = $action;
+	}
+
+	/**
+	 * Execute this output handler class, set the status of the action to expired
 	 * @return void
 	 */
 	public function invoke() {
-		if($this->targetEntity instanceof ActionInterface && in_array($this->targetEntity->getStatus(), array(Action::STATUS_NEW, Action::STATUS_STARTED))) {
-			$this->targetEntity->setStatus(Action::STATUS_EXPIRED);
-			$this->actionRepository->update($this->actionEntity);
-		}
+		$this->actionEntity->setStatus(Action::STATUS_EXPIRED);
+		$this->actionRepository->update($this->actionEntity);
 	}
 }
 ?>

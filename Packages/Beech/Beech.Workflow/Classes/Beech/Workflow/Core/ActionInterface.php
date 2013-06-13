@@ -31,9 +31,5 @@ interface ActionInterface {
 	 */
 	public function setTarget($targetEntity);
 
-	/**
-	 * @return string
-	 */
-	public function getActionId();
 }
 ?>

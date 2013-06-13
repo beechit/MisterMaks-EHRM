@@ -7,10 +7,13 @@ namespace Beech\Workflow\Validators\Property;
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
-use TYPO3\Flow\Annotations as Flow;
+use TYPO3\Flow\Annotations as Flow,
+	Doctrine\ODM\CouchDB\Mapping\Annotations as ODM;;
 
 /**
  * The NotEmptyValidator checks if a property of an entity is not empty
+ * @ODM\EmbeddedDocument
+ * @ODM\Document
  */
 class EmptyValidator implements \Beech\Workflow\Core\ValidatorInterface {
 
@@ -91,9 +94,9 @@ class EmptyValidator implements \Beech\Workflow\Core\ValidatorInterface {
 			$methodName = 'get' . ucfirst($this->propertyName);
 			$propertyValue = $this->targetEntity->$methodName();
 			return $propertyValue;
-		} else {
-			throw new \Beech\Workflow\Exception\InvalidConfigurationException(sprintf('Unknow Entity Property "%s"->"%s"', get_class($this->targetEntity), $this->propertyName));
 		}
 		return FALSE;
 	}
 }
+
+?>
