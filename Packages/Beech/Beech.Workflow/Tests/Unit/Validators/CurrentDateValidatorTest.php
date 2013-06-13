@@ -12,16 +12,16 @@ use TYPO3\Flow\Annotations as Flow;
 /**
  * Unittests for DateValidator
  */
-class DateValidatorTest extends \TYPO3\Flow\Tests\UnitTestCase {
+class CurrentDateValidatorTest extends \TYPO3\Flow\Tests\UnitTestCase {
 
 	/**
 	 * @return array
 	 */
 	public function dataProvider() {
 		return array(
-			array(new \DateTime('yesterday'), \Beech\Workflow\Validators\DateValidator::MATCH_CONDITION_SMALLER_THEN, TRUE),
-			array(new \DateTime('yesterday'), \Beech\Workflow\Validators\DateValidator::MATCH_CONDITION_EQUAL, FALSE),
-			array(new \DateTime('yesterday'), \Beech\Workflow\Validators\DateValidator::MATCH_CONDITION_GREATER_THEN, FALSE),
+			array(new \DateTime('yesterday'), \Beech\Workflow\Validators\CurrentDateValidator::SMALLER_THEN, TRUE),
+			array(new \DateTime('yesterday'), \Beech\Workflow\Validators\CurrentDateValidator::EQUAL, FALSE),
+			array(new \DateTime('yesterday'), \Beech\Workflow\Validators\CurrentDateValidator::GREATER_THEN, FALSE),
 		);
 	}
 
@@ -30,8 +30,8 @@ class DateValidatorTest extends \TYPO3\Flow\Tests\UnitTestCase {
 	 * @test
 	 */
 	public function dateValidatorValidatesCorrectly(\DateTime $matchValue, $matchCondition, $expectedValue) {
-		$validator = new \Beech\Workflow\Validators\DateValidator();
-		$validator->setValue($matchValue);
+		$validator = new \Beech\Workflow\Validators\CurrentDateValidator();
+		$validator->setDate($matchValue);
 		$validator->setMatchCondition($matchCondition);
 
 		$this->assertEquals($expectedValue, $validator->isValid());

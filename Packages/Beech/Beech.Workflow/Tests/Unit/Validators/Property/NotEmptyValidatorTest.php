@@ -19,16 +19,17 @@ class NotEmptyValidatorTest extends \TYPO3\Flow\Tests\UnitTestCase {
 	 */
 	public function dataProvider() {
 		return array(
-			array('name', $this->createCompany('Foo'), TRUE),
-			array('entity', $this->createCompany('Foo', TRUE), TRUE),
-			array('entity', $this->createCompany('Foo', FALSE), FALSE),
-			array('name', $this->createCompany(array('1', '2')), TRUE),
-			array('name', $this->createCompany(array()), FALSE),
-			array('name', $this->createCompany(''), FALSE),
-			array('name', $this->createCompany(' '), FALSE),
-			array('name', $this->createCompany(NULL), FALSE),
-			array('name', 'notAClassInstance', FALSE),
-			array('noneExistingProperty', $this->createCompany('Foo'), FALSE),
+			array($this->createCompany('Foo')->getName(), TRUE),
+			array($this->createCompany('Foo', TRUE)->getEntity(), TRUE),
+			array($this->createCompany('Foo', FALSE)->getEntity(), FALSE),
+			array($this->createCompany(array('1', '2'))->getName(), TRUE),
+			array($this->createCompany(array())->getName(), FALSE),
+			array($this->createCompany('')->getName(), FALSE),
+			array($this->createCompany(' ')->getName(), FALSE),
+			array($this->createCompany(NULL)->getName(), FALSE),
+			array(TRUE, TRUE),
+			array(FALSE, FALSE),
+			array(NULL, FALSE),
 		);
 	}
 
@@ -36,10 +37,9 @@ class NotEmptyValidatorTest extends \TYPO3\Flow\Tests\UnitTestCase {
 	 * @dataProvider dataProvider
 	 * @test
 	 */
-	public function notEmptyValidatorIsValid($propertyName, $targetEntity, $expectedValue) {
+	public function notEmptyValidatorIsValid($property, $expectedValue) {
 		$notEmptyValidator = new \Beech\Workflow\Validators\Property\NotEmptyValidator();
-		$notEmptyValidator->setPropertyName($propertyName);
-		$notEmptyValidator->setTargetEntity($targetEntity);
+		$notEmptyValidator->setProperty($property);
 
 		$this->assertEquals($expectedValue, $notEmptyValidator->isValid());
 	}

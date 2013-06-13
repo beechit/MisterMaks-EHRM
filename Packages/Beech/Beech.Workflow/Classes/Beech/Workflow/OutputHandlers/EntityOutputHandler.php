@@ -12,7 +12,7 @@ use TYPO3\Flow\Annotations as Flow;
 /**
  * EntityOutputHandler persists an entity
  */
-class EntityOutputHandler extends \Beech\Workflow\Core\OutputHandlerAbstract implements \Beech\Workflow\Core\OutputHandlerInterface {
+class EntityOutputHandler extends \Beech\Workflow\Core\AbstractOutputHandler implements \Beech\Workflow\Core\OutputHandlerInterface {
 
 	/**
 	 * @var \TYPO3\Flow\Persistence\PersistenceManagerInterface

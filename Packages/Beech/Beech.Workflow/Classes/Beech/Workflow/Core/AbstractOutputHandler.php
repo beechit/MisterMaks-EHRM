@@ -10,7 +10,7 @@ namespace Beech\Workflow\Core;
 
 use TYPO3\Flow\Annotations as Flow;
 
-abstract class OutputHandlerAbstract implements \Beech\Workflow\Core\OutputHandlerInterface {
+abstract class AbstractOutputHandler implements \Beech\Workflow\Core\OutputHandlerInterface {
 
 	/**
 	 * The Action

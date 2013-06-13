@@ -7,14 +7,14 @@ namespace Beech\Workflow\Core;
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
-
 use TYPO3\Flow\Annotations as Flow,
 	Doctrine\ODM\CouchDB\Mapping\Annotations as ODM;
 
-abstract class ActionAbstract extends \Beech\Ehrm\Domain\Model\Document implements \Beech\Workflow\Core\ActionInterface {
+abstract class AbstractAction extends \Beech\Ehrm\Domain\Model\Document implements \Beech\Workflow\Core\ActionInterface {
 
 	/**
 	 * ActionId position in the workflow
+	 *
 	 * @var string
 	 * @ODM\Field(type="string")
 	 */
@@ -28,6 +28,12 @@ abstract class ActionAbstract extends \Beech\Ehrm\Domain\Model\Document implemen
 	 * @ODM\Index
 	 */
 	protected $workflowName;
+
+	/**
+	 * @var \Beech\Workflow\Domain\Model\Action
+	 * @ODM\Field(type="string")
+	 */
+	protected $parentAction;
 
 	/**
 	 * @var string
@@ -48,18 +54,21 @@ abstract class ActionAbstract extends \Beech\Ehrm\Domain\Model\Document implemen
 
 	/**
 	 * The validators
+	 *
 	 * @var \Doctrine\Common\Collections\ArrayCollection<\Beech\Workflow\Core\ValidatorInterface>
 	 */
 	protected $validators;
 
 	/**
 	 * The preconditions
+	 *
 	 * @var \Doctrine\Common\Collections\ArrayCollection<\Beech\Workflow\Core\PreConditionInterface>
 	 */
 	protected $preConditions;
 
 	/**
 	 * The outputHandlers
+	 *
 	 * @var \Doctrine\Common\Collections\ArrayCollection<\Beech\Workflow\Core\OutputHandlerInterface>
 	 */
 	protected $outputHandlers;
@@ -83,6 +92,12 @@ abstract class ActionAbstract extends \Beech\Ehrm\Domain\Model\Document implemen
 	protected $configurationManager;
 
 	/**
+	 * @var \Beech\Workflow\Core\WorkflowConfigurationManager
+	 * @Flow\Inject
+	 */
+	protected $workflowConfigurationManager;
+
+	/**
 	 * Get workflowName
 	 *
 	 * @return string
@@ -98,6 +113,23 @@ abstract class ActionAbstract extends \Beech\Ehrm\Domain\Model\Document implemen
 	 */
 	public function setWorkflowName($workflowName) {
 		$this->workflowName = $workflowName;
+	}
+
+	/**
+	 * @param \Beech\Workflow\Domain\Model\Action $parentAction
+	 */
+	public function setParentAction(\Beech\Workflow\Domain\Model\Action $parentAction) {
+		$this->parentAction = $this->persistenceManager->getIdentifierByObject($parentAction, 'Beech\Workflow\Domain\Model\Action');
+	}
+
+	/**
+	 * @return \TYPO3\Party\Domain\Model\AbstractParty
+	 */
+	public function getParentAction() {
+		if (isset($this->parentAction)) {
+			return $this->persistenceManager->getObjectByIdentifier($this->parentAction, 'Beech\Workflow\Domain\Model\Action', TRUE);
+		}
+		return NULL;
 	}
 
 	/**
@@ -138,7 +170,7 @@ abstract class ActionAbstract extends \Beech\Ehrm\Domain\Model\Document implemen
 	 * @return object
 	 */
 	public function getTarget() {
-		if($this->targetEntity === NULL) {
+		if ($this->targetEntity === NULL) {
 			$this->targetEntity = $this->persistenceManager->getObjectByIdentifier($this->targetIdentifier, $this->targetClassName);
 		}
 		return $this->targetEntity;
@@ -152,8 +184,8 @@ abstract class ActionAbstract extends \Beech\Ehrm\Domain\Model\Document implemen
 	 * @return mixed, array, string
 	 */
 	protected function getSettings($key, $defaultValue = array()) {
-		$settings = $this->configurationManager->getConfiguration('Workflows', $this->workflowName.'.actions.'.$this->actionId.'.'.$key);
-		if($settings === NULL) {
+		$settings = $this->configurationManager->getConfiguration('Workflows', $this->workflowName . '.actions.' . $this->actionId . '.' . $key);
+		if ($settings === NULL) {
 			$settings = $defaultValue;
 		}
 		return $settings;
@@ -180,10 +212,10 @@ abstract class ActionAbstract extends \Beech\Ehrm\Domain\Model\Document implemen
 	 * Load PreConditions from config
 	 */
 	protected function loadPreConditions() {
-		if($this->preConditions === NULL) {
+		if ($this->preConditions === NULL) {
 			$this->initPreConditionsArray();
-			foreach($this->getSettings('preConditions') as $configuration) {
-				$this->preConditions->add($this->createHandlerInstance($configuration));
+			foreach ($this->getSettings('preConditions') as $configuration) {
+				$this->preConditions->add($this->workflowConfigurationManager->createHandlerInstance($configuration, $this->getTarget(), $this));
 			}
 		}
 	}
@@ -199,10 +231,10 @@ abstract class ActionAbstract extends \Beech\Ehrm\Domain\Model\Document implemen
 	 * Load OutputHandlers from config
 	 */
 	protected function loadOutputHandlers() {
-		if($this->outputHandlers === NULL) {
+		if ($this->outputHandlers === NULL) {
 			$this->initOutputHandlersArray();
-			foreach($this->getSettings('outputHandlers') as $configuration) {
-				$this->outputHandlers->add($this->createHandlerInstance($configuration));
+			foreach ($this->getSettings('outputHandlers') as $configuration) {
+				$this->outputHandlers->add($this->workflowConfigurationManager->createHandlerInstance($configuration, $this->getTarget(), $this));
 			}
 		}
 	}
@@ -218,98 +250,13 @@ abstract class ActionAbstract extends \Beech\Ehrm\Domain\Model\Document implemen
 	 * Load Validators from config
 	 */
 	protected function loadValidators() {
-		if($this->validators === NULL) {
+		if ($this->validators === NULL) {
 			$this->initValidatorsArray();
-			foreach($this->getSettings('validators') as $configuration) {
-				$this->validators->add($this->createHandlerInstance($configuration));
+			foreach ($this->getSettings('validators') as $configuration) {
+				$this->validators->add($this->workflowConfigurationManager->createHandlerInstance($configuration, $this->getTarget(), $this));
 			}
 		}
 	}
 
-	/**
-	 * @param array $configuration
-	 * @return mixed
-	 * @throws \Beech\Workflow\Exception
-	 */
-	protected function createHandlerInstance(array $configuration) {
-		if (!isset($configuration['className'])
-			|| !isset($configuration['properties'])
-			|| !is_array($configuration['properties'])) {
-			throw new \Beech\Workflow\Exception('Invalid handler configuration in Workflow '.$this->workflowName);
-		}
 
-		if (!class_exists($configuration['className'])) {
-			throw new \Beech\Workflow\Exception('Handler class '.$configuration['className'].' doesn\'t exists!');
-		}
-
-		$handler = new $configuration['className']();
-		foreach ($configuration['properties'] as $propertyName => $propertyDefinition) {
-			$setMethod = 'set' . ucfirst($propertyName);
-			if (method_exists($handler, $setMethod)) {
-				$property = $this->getPropertyFromDefinition($propertyDefinition, $configuration['className']);
-				if ($property !== FALSE) {
-					$handler->$setMethod($property);
-				}
-			} else {
-				throw new \Beech\Workflow\Exception(sprintf('Unknown method "%s->%s"', $configuration['className'], $setMethod));
-			}
-		}
-		return $handler;
-	}
-
-	/**
-	 * Determine which property was intended in the configuration yaml
-	 * A $propertyDefinition with a colon (:) holds a special value which should handle individually
-	 *
-	 * @param string $propertyDefinition
-	 * @param string $targetClassName
-	 * @throws \Beech\Workflow\Exception
-	 * @return mixed, false on failure
-	 */
-	protected function getPropertyFromDefinition($propertyDefinition, $targetClassName = '') {
-		$propertyParts = explode(':', $propertyDefinition);
-
-		if (count($propertyParts) == 1) {
-			return $propertyParts[0];
-		}
-
-		$property = FALSE;
-		switch ($propertyParts[0]) {
-			case 'TARGET':
-				$method = 'get'.ucfirst($propertyParts[1]);
-				if(is_callable(array($this->targetEntity(), $method))) {
-					$property = $this->targetEntity()->$method();
-				} else {
-					echo 'fail1';
-				}
-				break;
-			case 'ACTION':
-				$method = 'get'.ucfirst($propertyParts[1]);
-				if(is_callable(array($this, $method))) {
-					$property = $this->$method();
-				} else {
-					echo 'Fail2';
-				}
-				break;
-			case 'DATETIME';
-				$property = new \DateTime($propertyParts[1]);
-				break;
-			case 'CONSTANT':
-				if (defined($targetClassName . '::' . $propertyParts[1])) {
-					$property = constant($targetClassName . '::' . $propertyParts[1]);
-				}
-				break;
-			case 'ENTITY':
-				if($propertyParts[1] == 'TARGET') {
-					$property = $this->getTarget();
-				} elseif (class_exists($propertyParts[1])) {
-					$property = new $propertyParts[1]();
-				} else {
-					throw new \Beech\Workflow\Exception(sprintf('Unknown entity type "%s"', $propertyParts[1]));
-				}
-				break;
-		}
-
-		return $property;
-	}
 }

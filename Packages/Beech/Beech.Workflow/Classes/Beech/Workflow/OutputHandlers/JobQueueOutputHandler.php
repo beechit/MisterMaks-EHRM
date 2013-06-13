@@ -12,7 +12,7 @@ use TYPO3\Flow\Annotations as Flow;
 /**
  * JobQueueOutputHandler adds a Job to the TYPO3.Queue
  */
-class JobQueueOutputHandler extends \Beech\Workflow\Core\OutputHandlerAbstract implements \Beech\Workflow\Core\OutputHandlerInterface {
+class JobQueueOutputHandler extends \Beech\Workflow\Core\AbstractOutputHandler implements \Beech\Workflow\Core\OutputHandlerInterface {
 
 	/**
 	 * @var \TYPO3\Queue\Job\JobManager

@@ -12,7 +12,7 @@ use TYPO3\Flow\Annotations as Flow;
 /**
  * DocumentOutputHandler persists an entity
  */
-class DocumentOutputHandler extends \Beech\Workflow\Core\OutputHandlerAbstract implements \Beech\Workflow\Core\OutputHandlerInterface {
+class DocumentOutputHandler extends \Beech\Workflow\Core\AbstractOutputHandler implements \Beech\Workflow\Core\OutputHandlerInterface {
 
 	/**
 	 * @var \Doctrine\ODM\CouchDB\DocumentManager

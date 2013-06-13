@@ -14,7 +14,7 @@ use TYPO3\Flow\Annotations as Flow,
 /**
  * ActionExpiredOutputHandler sets the status of an action to expired
  */
-class ActionExpiredOutputHandler extends \Beech\Workflow\Core\OutputHandlerAbstract implements \Beech\Workflow\Core\OutputHandlerInterface {
+class ActionExpiredOutputHandler extends \Beech\Workflow\Core\AbstractOutputHandler implements \Beech\Workflow\Core\OutputHandlerInterface {
 
 	/**
 	 * @var \Beech\Workflow\Domain\Repository\ActionRepository

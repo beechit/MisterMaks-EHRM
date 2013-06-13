@@ -13,7 +13,7 @@ use TYPO3\Flow\Annotations as Flow,
 /**
  * ActionOutputHandler persists a new Action entity
  */
-class ActionOutputHandler extends \Beech\Workflow\Core\OutputHandlerAbstract implements \Beech\Workflow\Core\OutputHandlerInterface {
+class ActionOutputHandler extends \Beech\Workflow\Core\AbstractOutputHandler implements \Beech\Workflow\Core\OutputHandlerInterface {
 
 	/**
 	 * @var \Beech\Workflow\Domain\Repository\ActionRepository

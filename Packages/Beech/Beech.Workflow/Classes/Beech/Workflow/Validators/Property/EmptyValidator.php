@@ -15,14 +15,9 @@ use TYPO3\Flow\Annotations as Flow;
 class EmptyValidator implements \Beech\Workflow\Core\ValidatorInterface {
 
 	/**
-	 * @var string
+	 * @var mixed
 	 */
-	protected $propertyName = '';
-
-	/**
-	 * @var object
-	 */
-	protected $targetEntity = NULL;
+	protected $property;
 
 	/**
 	 * Validate a property
@@ -30,19 +25,18 @@ class EmptyValidator implements \Beech\Workflow\Core\ValidatorInterface {
 	 * @return boolean
 	 */
 	public function isValid() {
-		$propertyValue = $this->getPropertyValue();
 
-		if ($propertyValue) {
-			switch (gettype($propertyValue)) {
+		if ($this->property) {
+			switch (gettype($this->property)) {
 				case 'object':
-					return (count((array) $propertyValue)) === 0;
+					return (count((array) $this->property)) === 0;
 				case 'array':
-					return count($propertyValue) === 0;
+					return count($this->property) === 0;
 				case 'string':
-					return trim($propertyValue) === '';
+					return trim($this->property) === '';
 				default:
 						// default includes integer, boolean, double (yes, not float but double), resource, NULL, 'unknown type'
-					return empty($propertyValue);
+					return empty($this->property);
 			}
 		}
 
@@ -50,50 +44,9 @@ class EmptyValidator implements \Beech\Workflow\Core\ValidatorInterface {
 	}
 
 	/**
-	 * @param object $targetEntity
+	 * @param mixed $property
 	 */
-	public function setTargetEntity($targetEntity) {
-		$this->targetEntity = $targetEntity;
-	}
-
-	/**
-	 * @return object
-	 */
-	public function getTargetEntity() {
-		return $this->targetEntity;
-	}
-
-	/**
-	 * @param string $propertyName
-	 */
-	public function setPropertyName($propertyName) {
-		$this->propertyName = $propertyName;
-	}
-
-	/**
-	 * @return string
-	 */
-	public function getPropertyName() {
-		return $this->propertyName;
-	}
-
-	/**
-	 * Determine the value of the requested property of this entity
-	 *
-	 * @return mixed
-	 */
-	protected function getPropertyValue() {
-		if (is_object($this->targetEntity)
-			&& trim($this->propertyName) !== ''
-			&& property_exists($this->targetEntity, $this->propertyName)) {
-
-				// Get the property value from the target entity class
-			$methodName = 'get' . ucfirst($this->propertyName);
-			$propertyValue = $this->targetEntity->$methodName();
-			return $propertyValue;
-		} else {
-			throw new \Beech\Workflow\Exception\InvalidConfigurationException(sprintf('Unknow Entity Property "%s"->"%s"', get_class($this->targetEntity), $this->propertyName));
-		}
-		return FALSE;
+	public function setProperty($property) {
+		$this->property = $property;
 	}
 }

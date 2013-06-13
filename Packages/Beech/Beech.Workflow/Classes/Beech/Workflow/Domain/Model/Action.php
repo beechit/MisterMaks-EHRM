@@ -16,7 +16,7 @@ use TYPO3\Flow\Annotations as Flow,
  * An Action
  * @ODM\Document(indexed=true)
  */
-class Action extends \Beech\Workflow\Core\ActionAbstract implements \Beech\Workflow\Core\ActionInterface {
+class Action extends \Beech\Workflow\Core\AbstractAction implements \Beech\Workflow\Core\ActionInterface {
 
 	/**
 	 * @var \DateTime
@@ -106,13 +106,10 @@ class Action extends \Beech\Workflow\Core\ActionAbstract implements \Beech\Workf
 	protected function start() {
 		if ($this->getStatus() === self::STATUS_NEW) {
 			foreach ($this->getPreConditions() as $preCondition) {
-				if($preCondition instanceof \Beech\Workflow\Core\ValidatorInterface) {
-					// when a precondition fails terminate task
-					if (!$preCondition->isValid()) {
-						$this->setStatus(self::STATUS_TERMINATED);
-						return;
-					}
-				} elseif (!$preCondition->isMet()) {
+
+				// when a precondition fails terminate task
+				if (!$preCondition->isValid()) {
+					$this->setStatus(self::STATUS_TERMINATED);
 					return;
 				}
 			}
@@ -133,7 +130,6 @@ class Action extends \Beech\Workflow\Core\ActionAbstract implements \Beech\Workf
 		if ($this->getStatus() === self::STATUS_STARTED) {
 			foreach ($this->getValidators() as $validator) {
 				if (!$validator->isValid()) {
-					echo 'not valid' ;
 					return;
 				}
 			}
