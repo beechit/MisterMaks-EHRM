@@ -129,15 +129,10 @@ class ContractFormFactory extends \TYPO3\Form\Factory\AbstractFormFactory {
 			);
 			$this->form->addFinisher($databaseFinisher);
 
-			$redirectFinisher = new \TYPO3\Form\Finishers\RedirectFinisher();
-			$redirectFinisher->setOptions(
-				array(
-					'action' => 'list',
-					'controller' => 'Contract',
-					'package' => 'Beech.CLA\\Administration'
-				)
-			);
-			$this->form->addFinisher($redirectFinisher);
+			$summaryFinisher = new \Beech\Ehrm\Form\Finishers\ModalCloseConfirmationFinisher();
+			$summaryFinisher->setOption('templatePathAndFilename', 'resource://Beech.CLA/Private/Templates/Administration/Contract/Summary.html');
+			$this->form->addFinisher($summaryFinisher);
+
 		}
 		return $this->form;
 	}
