@@ -91,7 +91,7 @@ class ContractArticlesSection extends \TYPO3\Form\FormElements\Section {
 						} elseif (isset($value['valueId'])) {
 							$contractArticleValue->setLabel($value['valueId']);
 						}
-						if (isset($value['validation'])) {
+						if (isset($value['validation']['type']) && isset($value['validation']['options'])) {
 							$validator = $contractArticleValue->createValidator($value['validation']['type'], $value['validation']['options']);
 							$contractArticleValue->addValidator($validator);
 						}
