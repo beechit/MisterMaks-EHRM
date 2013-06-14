@@ -130,5 +130,8 @@
 	App.AdministrationDomainContractArticleModuleView = Ember.View.extend(App.AjaxModuleViewMixin, {
 		url: MM.url.module.contractArticle
 	});
+	App.BeechTaskTaskModuleView = Ember.View.extend(App.AjaxModuleViewMixin, {
+		url: MM.url.module.taskModule
+	});
 
 }).call(this);
