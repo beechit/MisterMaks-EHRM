@@ -75,7 +75,7 @@ class Task extends \Beech\Ehrm\Domain\Model\Document {
 	protected $closedBy;
 
 	/**
-	 * Priority of this task
+	 * Priority of this task 0-3
 	 *
 	 * @var integer
 	 * @Flow\Validate(type="NumberRange", options={ "minimum"=0, "maximum"=3 })
