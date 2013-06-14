@@ -72,6 +72,7 @@ Beech:
           - 'Beech.Ehrm/JavaScript/Component/UserInterface/Form.js'
           - 'Beech.Ehrm/JavaScript/Service/WebSocketClient.js'
           - 'Beech.Ehrm/JavaScript/Service/Notification.js'
+          - 'Beech.Task/JavaScript/Controller/TaskWidget.js'
           - 'Beech.CLA/JavaScript/Route/Contract.js'
           - 'Beech.CLA/JavaScript/Controller/Contract.js'
           - 'Beech.CLA/JavaScript/View/Contract.js'
@@ -251,6 +252,8 @@ Radmiraal:
             - 'Beech\Ehrm\Domain\Model\Notification'
             - 'Beech\Ehrm\Domain\Model\Log'
           typeMapping:
+            TYPO3PartyDomainModelAbstractParty: 'BeechPartyDomainModelPerson'
+            TYPO3PartyDomainModelElectronicAddress: 'BeechPartyDomainModelElectronicAddress'
             DateTime: 'date'
             integer: 'number'
           ignoredProperties:
