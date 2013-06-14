@@ -12,6 +12,18 @@ what you have allready have done::
 	CouchDB and Mysql or postgress is installed
 	You have created a database in mysql or postgress
 
+Patch TYPO3 party
+-----------------
+
+The TYPO3 Party package should be patched according to this instruction.
+
+.. toctree::
+	:maxdepth: 2
+	:numbered:
+
+	patch
+
+
 configuration database
 ----------------------
 
