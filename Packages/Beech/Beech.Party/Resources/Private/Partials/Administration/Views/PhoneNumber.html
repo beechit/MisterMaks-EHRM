@@ -1,0 +1,21 @@
+<h4>Phone Number</h4>
+
+<div class="control-group">
+
+	<f:form action="edit" controller="PhoneNumber" object="{phoneNumber}" name="phoneNumber" class="form-horizontal well">
+		<f:form.hidden property="party" value="{person}"/>
+		<f:form.submit value="{f:translate(id: 'action.delete')}" />
+	</f:form>
+	<a href="#" class="pull-right btn" data-action="removePhoneNumber" data-id="{phoneNumber.id}"><i class="icon-minus"></i> </a>
+	<hr/>
+	<f:link.action action="delete" controller="PhoneNumber" arguments="{phoneNumber: phoneNumber}">delete</f:link.action>
+	<hr/>
+	<f:link.action action="removePhoneNumber" controller="Person" subpackage="Administration" arguments="{phoneNumber: phoneNumber}">delete</f:link.action>
+
+	<div class="control-group form-inline">
+		<div class="controls-row">
+			{phoneNumber.number}
+		</div>
+	</div>
+</div>
+<hr />
