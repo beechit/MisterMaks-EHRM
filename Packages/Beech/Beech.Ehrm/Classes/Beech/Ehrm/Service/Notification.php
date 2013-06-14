@@ -65,6 +65,7 @@ class Notification {
 	 */
 	public function taskChanged(\Beech\Task\Domain\Model\Task $task) {
 
+
 		// don't notify about closed tasks
 		if($task->isClosed()) return;
 
