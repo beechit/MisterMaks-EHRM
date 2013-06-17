@@ -56,26 +56,37 @@ class Gerrit {
 				$patches = get_object_vars($patches);
 				$commits = self::executeShellCommand('git log -n30');
 				foreach ($patches as $description => $changeId) {
-					$change = self::fetchChangeInformation($changeId);
-					$header = $package . ': ' . $change->subject;
-					echo self::colorize($header, 'green') . PHP_EOL;
 
-					if ($change->status == 'MERGED') {
-						echo self::colorize('This change has been merged!', 'yellow') . PHP_EOL;
-					} elseif ($change->status == 'ABANDONED') {
-						echo self::colorize('This change has been abandoned!', 'red') . PHP_EOL;
-					} else {
-						$command = 'git fetch --quiet git://review.typo3.org/' . $change->project . ' ' . $change->revisions->{$change->current_revision}->fetch->git->ref . '';
-						$output = self::executeShellCommand($command);
-
-						$commit = self::executeShellCommand('git log --format="%H" -n1 FETCH_HEAD');
-						if (self::isAlreadyPicked($commit, $commits)) {
-							echo self::colorize('Already picked', 'yellow') . PHP_EOL;
-						} else {
-							echo $output;
-							system('git cherry-pick -x --strategy=recursive -X theirs FETCH_HEAD');
+						$revision = FALSE;
+						if(strpos($changeId,'/') !== FALSE) {
+							list($changeId,$revision) = explode('/', $changeId);
 						}
-					}
+						$change = self::fetchChangeInformation($changeId);
+						$header = $package . ': ' . $change->subject;
+						echo self::colorize($header, 'green') . PHP_EOL;
+
+						if (!$revision && $change->status == 'MERGED') {
+							echo self::colorize('This change has been merged!', 'yellow') . PHP_EOL;
+						} elseif (!$revision && $change->status == 'ABANDONED') {
+							echo self::colorize('This change has been abandoned!', 'red') . PHP_EOL;
+						} else {
+							if($revision) {
+								echo self::colorize('!!Fetching patch set '.$revision, 'yellow').PHP_EOL;
+								$command = 'git fetch --quiet git://review.typo3.org/' . $change->project . ' ' . preg_replace('#/'.$change->revisions->{$change->current_revision}->_number.'$#', '/'.$revision, $change->revisions->{$change->current_revision}->fetch->git->ref) . '';
+							} else {
+								$command = 'git fetch --quiet git://review.typo3.org/' . $change->project . ' ' . $change->revisions->{$change->current_revision}->fetch->git->ref . '';
+							}
+							$output = self::executeShellCommand($command);
+
+							$commit = self::executeShellCommand('git log --format="%H" -n1 FETCH_HEAD');
+							if (self::isAlreadyPicked($commit, $commits)) {
+								echo self::colorize('Already picked', 'yellow') . PHP_EOL;
+							} else {
+								echo $output;
+								system('git cherry-pick -x --strategy=recursive -X theirs FETCH_HEAD');
+							}
+						}
+
 
 					echo PHP_EOL;
 				}
