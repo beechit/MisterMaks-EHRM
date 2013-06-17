@@ -18,16 +18,16 @@
 			<table class="table table-striped">
 				<thead>
 				<tr>
-					<td><f:translate>Description</f:translate></td>
-					<td><f:translate>Creation date</f:translate></td>
-					<td><f:translate>Priority</f:translate></td>
+					<td><f:translate id="task.description">Description</f:translate></td>
+					<td><f:translate id="task.creationDate">Creation date</f:translate></td>
+					<td><f:translate id="task.priority">Priority</f:translate></td>
 				</tr>
 				</thead>
 				<f:for each="{tasks}" as="task" iteration="iterator">
 					<tr>
 						<td><a href="#/tasks/show/{task.id}">{task.description}</a></td>
 						<td>{task.creationDateTime -> f:format.date(format: 'Y-m-d H:i')}</td>
-						<td>{task.priority}</td>
+						<td><f:translate id="task.priority.{task.priority}" /></td>
 						<td>
 							<div class="pull-right">
 								<div class="btn-group">
@@ -37,7 +37,9 @@
 									</button>
 									<ul class="dropdown-menu pull-right">
 										<li><a href="#/tasks/edit/{task.id}"><i class="icon-pencil"></i> <f:translate id="task.edit">edit</f:translate></a></li>
-										<li><a href="#/tasks/close/{task.id}"><i class="icon-ok"></i> <f:translate id="task.setTaskDone">close</f:translate></a></li>
+										<f:if condition="{task.canBeClosedByCurrentParty}">
+											<li><a href="#/tasks/close/{task.id}"><i class="icon-ok"></i> <f:translate id="task.setTaskDone">close</f:translate></a></li>
+										</f:if>
 									</ul>
 								</div>
 							</div>

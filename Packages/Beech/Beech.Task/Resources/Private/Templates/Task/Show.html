@@ -1,4 +1,4 @@
-<f:layout name="Ajax"/>
+<f:layout name="Ajax"/>{namespace ehrm=Beech\Ehrm\ViewHelpers}
 <f:section name="Body">
 
 	<h1>
@@ -63,7 +63,7 @@
 			</label>
 
 			<div class="controls">
-				{task.priority}
+				<f:translate id="task.priority.{task.priority}" />
 			</div>
 		</div>
 		<f:if condition="{task.endDate}">
@@ -96,9 +96,11 @@
 			<a class="btn" href="/#/tasks/edit/{task.id}">
 				<f:translate id="task.edit">Edit</f:translate>
 			</a>
-			<a class="btn btn-warning" href="/#/tasks/close/{task.id}">
-				<f:translate id="action.setTaskDone">Close</f:translate>
-			</a>
+			<f:if condition="{task.canBeClosedByCurrentParty}">
+				<a class="btn btn-warning" href="/#/tasks/close/{task.id}">
+					<f:translate id="action.setTaskDone">Close</f:translate>
+				</a>
+			</f:if>
 		</div>
 	</div>
 </f:section>

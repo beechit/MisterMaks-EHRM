@@ -1,4 +1,4 @@
-<f:layout name="Ajax"/>
+<f:layout name="Ajax"/>{namespace ehrm=Beech\Ehrm\ViewHelpers}
 <f:section name="Body">
 
 	<h1>
@@ -43,7 +43,7 @@
 			</label>
 
 			<div class="controls">
-				<f:form.select property="priority" id="priority" options="{priorities}" optionValueField="id" optionLabelField="label" />
+				<f:form.select property="priority" id="priority" options="{priorities}" translate="{using: 'label'}" />
 			</div>
 		</div>
 
