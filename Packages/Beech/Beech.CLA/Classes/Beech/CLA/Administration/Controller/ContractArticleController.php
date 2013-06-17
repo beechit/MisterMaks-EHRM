@@ -43,13 +43,14 @@ class ContractArticleController extends \Beech\Ehrm\Controller\AbstractManagemen
 		$this->repository->add($contractArticle);
 		$this->documentManager->merge($contractArticle->getDocument());
 		$this->addFlashMessage($this->translator->translateById('Created a new contract article', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
-		$this->redirect('list');
+		$this->emberRedirect('#/administration/contractarticle');
 	}
 
 	/**
 	 * Shows a single article object
 	 *
 	 * @param \Beech\CLA\Domain\Model\ContractArticle $contractArticle The article to show
+	 * @Flow\IgnoreValidation("$contractArticle")
 	 * @return void
 	 */
 	public function showAction(ContractArticle $contractArticle) {
@@ -65,13 +66,14 @@ class ContractArticleController extends \Beech\Ehrm\Controller\AbstractManagemen
 	public function updateAction(ContractArticle $contractArticle) {
 		$this->repository->update($contractArticle);
 		$this->addFlashMessage($this->translator->translateById('Updated the article.', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
-		$this->redirect('list');
+		$this->emberRedirect('#/administration/contractarticle');
 	}
 
 	/**
 	 * Shows a form for editing an existing article object
 	 *
 	 * @param \Beech\CLA\Domain\Model\ContractArticle $contractArticle The article to edit
+	 * @Flow\IgnoreValidation("$contractArticle")
 	 * @return void
 	 */
 	public function editAction(ContractArticle $contractArticle) {
@@ -86,7 +88,8 @@ class ContractArticleController extends \Beech\Ehrm\Controller\AbstractManagemen
 	 */
 	public function deleteAction(ContractArticle $contractArticle) {
 		$this->repository->remove($contractArticle);
-		$this->redirect('list');
+		$this->addFlashMessage($this->translator->translateById('Deleted article.', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
+		$this->emberRedirect('#/administration/contractarticle');
 	}
 
 }

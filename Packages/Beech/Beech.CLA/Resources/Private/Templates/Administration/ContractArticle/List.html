@@ -1,6 +1,9 @@
-<f:layout name="Ajax"/>
+<f:layout name="Ajax"/>{namespace ehrm=Beech\Ehrm\ViewHelpers}
 <f:section name="Body">
 	<h1><f:translate id="contractArticle">Article</f:translate></h1>
+
+	<ehrm:flashMessages/>
+
 	<f:if condition="{entities}">
 		<f:then>
 			<table class="table">
@@ -15,22 +18,22 @@
 					<f:for each="{entities}" as="contractArticle" iteration="iterator">
 						<tr>
 							<td>
-								<f:link.action action="show" arguments="{contractArticle: contractArticle}">
+								<a href="#/administration/contractarticle/{contractArticle.id}">
 									<strong>{contractArticle.articleId}</strong>
-								</f:link.action>
+								</a>
 							</td>
 							<td>
-								<f:link.action action="show" arguments="{contractArticle: contractArticle}">
+								<a href="#/administration/contractarticle/{contractArticle.id}">
 									<strong>{contractArticle.articleHeader}</strong>
-								</f:link.action>
+								</a>
 							</td>
 							<td>
-								<f:link.action action="edit" arguments="{contractArticle: contractArticle}">
+								<a href="#/administration/contractarticle/edit/{contractArticle.id}">
 									<i class="icon-pencil"></i>
-								</f:link.action>
-								<f:link.action action="delete" arguments="{contractArticle: contractArticle}">
+								</a>
+								<a href="#/administration/contractarticle/delete/{contractArticle.id}">
 									<i class="icon-trash"></i>
-								</f:link.action>
+								</a>
 							</td>
 						</tr>
 					</f:for>
@@ -42,7 +45,7 @@
 		</f:else>
 	</f:if>
 	<div class="form-actions">
-		<a class="btn btn-primary" href="/{f:uri.action(package: 'Beech.CLA', subpackage: 'Administration', controller: 'ContractArticle', action: 'new')}">
+		<a class="btn btn-primary" href="#/administration/contractarticle/new">
 			<i class="icon-plus icon-white"></i>
 			<f:translate id="action.create">Create</f:translate>
 		</a>

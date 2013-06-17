@@ -76,6 +76,9 @@ Beech:
           - 'Beech.CLA/JavaScript/Route/Contract.js'
           - 'Beech.CLA/JavaScript/Controller/Contract.js'
           - 'Beech.CLA/JavaScript/View/Contract.js'
+          - 'Beech.CLA/JavaScript/Route/ContractArticle.js'
+          - 'Beech.CLA/JavaScript/Controller/ContractArticle.js'
+          - 'Beech.CLA/JavaScript/View/ContractArticle.js'
           - 'Beech.Document/JavaScript/Route/Document.js'
           - 'Beech.Document/JavaScript/Controller/Document.js'
           - 'Beech.Document/JavaScript/View/Document.js'
@@ -94,6 +97,7 @@ Beech:
       - ['Beech.Party', 'Administration', 'Company']
       - ['Beech.Document', NULL, 'Document']
       - ['Beech.Task', NULL, 'Task']
+      - ['Beech.CLA', 'Administration', 'ContractArticle']
 
     defaultActionsMapping:
       'list': 'Index'

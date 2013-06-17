@@ -4,19 +4,13 @@
       label: 'Article Id'
       validation:
         -
-          type: 'StringLength'
+          type: 'Integer'
     'articleLabel':
       label: 'Label'
     'articleHeader':
       label: 'Header'
-      validation:
-        -
-          type: 'Text'
     'articleText':
       label: 'Text'
-      validation:
-        -
-          type: 'Text'
     'order':
       label: 'Order'
       validation:

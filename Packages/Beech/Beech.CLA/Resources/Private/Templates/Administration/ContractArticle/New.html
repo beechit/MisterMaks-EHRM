@@ -1,4 +1,4 @@
-<f:layout name="Ajax"/>
+<f:layout name="Ajax"/>{namespace ehrm=Beech\Ehrm\ViewHelpers}
 <f:section name="Body">
 	<f:form.validationResults for="contractArticle">
 		<f:if condition="{validationResults.flattenedErrors}">
@@ -9,6 +9,9 @@
 			</div>
 		</f:if>
 	</f:form.validationResults>
+
+	<ehrm:flashMessages/>
+
 	<f:form action="create" object="{contractArticle}" name="contractArticle" class="form-horizontal well">
 		<div class="control-group">
 			<label class="control-label" for="articleId">
@@ -43,7 +46,7 @@
 			</label>
 
 			<div class="controls">
-				<f:form.textfield property="articleText" id="articleText"/>
+				<f:form.textarea rows="8" property="articleText" id="articleText"/>
 			</div>
 		</div>
 		<div class="control-group">
@@ -56,6 +59,9 @@
 			</div>
 		</div>
 		<div class="control-group">
+			<a class="btn" href="#/administration/contractarticle">
+				<f:translate id="action.cancel">Cancel</f:translate>
+			</a>
 			<f:form.submit value="{f:translate(id: 'action.create')}" class="btn btn-primary"/>
 		</div>
 	</f:form>

@@ -9,7 +9,6 @@
 
 			this.route('jobDescriptionModule', { path: 'jobdescriptions' });
 			this.route('jobDescriptionModule.new', { path: 'jobdescription/new' });
-			this.route('contractArticleModule', { path: 'contractarticles' });
 			this.route('userManagementModule', { path: 'usermanagement' });
 			this.route('wizardManagementModule', { path: 'wizards' });
 
@@ -18,6 +17,17 @@
 			this.route('contractModule.new', { path: 'contract/new' });
 			this.route('contractModule.start', { path: 'contract/start/:contractTemplate/:employee/:jobDescription' });
 			this.route('contractModule.show', { path: 'contract/show/:contract'});
+
+				// Beech.CLA/ContractArticle
+			this.resource('BeechCLAContractArticle', { path: 'contractarticles' }, function() {
+				this.route('index', { path: '/list' });
+			});
+			this.resource('BeechCLAContractArticle', { path: 'contractarticle' }, function() {
+				this.route('new', { path: '/new' });
+				this.route('show', { path: '/:contractArticle' });
+				this.route('edit', { path: '/edit/:contractArticle' });
+				this.route('delete', { path: '/delete/:contractArticle' });
+			});
 
 				// Beech.Party/Person
 			this.resource('BeechPartyAdministrationPerson', { path: 'persons' }, function() {
