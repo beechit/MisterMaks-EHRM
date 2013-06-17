@@ -531,12 +531,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/beechit/Radmiraal.Emberjs.git",
-                "reference": "8228b70e03193632d662a16b3098e87f5e022e94"
+                "reference": "d40cb1f9a5e0b86fd8fd3ba8c03eadfc0a925e6b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beechit/Radmiraal.Emberjs/zipball/8228b70e03193632d662a16b3098e87f5e022e94",
-                "reference": "8228b70e03193632d662a16b3098e87f5e022e94",
+                "url": "https://api.github.com/repos/beechit/Radmiraal.Emberjs/zipball/d40cb1f9a5e0b86fd8fd3ba8c03eadfc0a925e6b",
+                "reference": "d40cb1f9a5e0b86fd8fd3ba8c03eadfc0a925e6b",
                 "shasum": ""
             },
             "require": {
