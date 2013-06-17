@@ -4,7 +4,7 @@
 	"repositories": [
 		{
 			"type": "composer",
-			"url": "http://ci.beech.local:8080/job/composer-packages/ws/mistermaks/"
+			"url": "http://ci.beech.local:8080/job/composer-packages-1.0/ws/mistermaks/"
 		}
 	],
 	"config": {
@@ -21,7 +21,7 @@
 	},
 	"require": {
 		"php": ">=5.4.0",
-		"typo3/flow": "dev-master",
+		"typo3/flow": "2.0.0-beta3",
 		"typo3/eel": "*",
 		"beech/essentials": "dev-master",
 		"typo3/surf": "*",
