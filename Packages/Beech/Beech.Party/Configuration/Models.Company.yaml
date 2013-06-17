@@ -65,16 +65,6 @@
           type: 'StringLength'
           options:
             maximum: 20
-<<<<<<< HEAD
-=======
-    'chamberOfCommerce':
-      label: 'Chamber of Commerce Number'
-      validation:
-        -
-          type: 'StringLength'
-          options:
-            maximum: 20
->>>>>>> 1c9ea0c... [TASK] Remove NotEmpty validators from models
     'vatNumber':
       label: 'Vat Number'
       validation:

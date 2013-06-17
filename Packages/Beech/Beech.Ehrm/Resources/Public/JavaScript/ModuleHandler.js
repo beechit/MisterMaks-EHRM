@@ -125,7 +125,7 @@
 		},
 
 		prepareUrl: function (object) {
-			var urlParams = "?";
+			var urlParams = "";
 			if (object != '') {
 				var first = true;
 				for (var key in object) {

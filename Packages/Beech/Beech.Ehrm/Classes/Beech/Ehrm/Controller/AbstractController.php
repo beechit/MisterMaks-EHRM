@@ -79,17 +79,7 @@ class AbstractController extends \TYPO3\Flow\Mvc\Controller\ActionController {
 	protected function getErrorFlashMessage() {
 		return new \TYPO3\Flow\Error\Error('Validation error', NULL, array(get_class($this), $this->actionMethodName));
 	}
-	/**
-	 * A template method for displaying custom error flash messages, or to
-	 * display no flash message at all on errors. Override this to customize
-	 * the flash message in your action controller.
-	 *
-	 * @return \TYPO3\Flow\Error\Message The flash message or FALSE if no flash message should be set
-	 * @todo implement translations
-	 */
-	protected function getErrorFlashMessage() {
-		return new \TYPO3\Flow\Error\Error('Validation error', NULL, array(get_class($this), $this->actionMethodName));
-	}
+
 }
 
 ?>
