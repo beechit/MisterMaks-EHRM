@@ -98,7 +98,7 @@ class AbstractManagementController extends \Beech\Ehrm\Controller\AbstractContro
 	 * @return string
 	 */
 	protected function errorAction() {
-		$this->getControllerContext()->getResponse()->setStatus(500);
+		$this->getControllerContext()->getResponse()->setStatus(400);
 		$helper = new \Beech\Ehrm\Helper\SettingsHelper();
 			// Load template using default flash messages template
 		$view = new \TYPO3\Fluid\View\StandaloneView($this->getControllerContext()->getRequest());
