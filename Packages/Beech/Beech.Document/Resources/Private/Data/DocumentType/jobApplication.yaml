@@ -1,13 +1,13 @@
 documentTypes:
   -
-    'categoryName': 'image'
-    'documentType': 'Resume'
+    'categoryName': 'Image'
+    'typeName': 'Resume'
   -
-    'categoryName': 'image'
-    'documentType': 'Letter'
+    'categoryName': 'Image'
+    'typeName': 'Letter'
   -
-    'categoryName': 'image'
-    'documentType': 'Interview notes'
+    'categoryName': 'Image'
+    'typeName': 'Interview notes'
   -
-    'categoryName': 'image'
-    'documentType': 'Other'
+    'categoryName': 'Image'
+    'typeName': 'Other'

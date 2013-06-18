@@ -1,13 +1,13 @@
 documentTypes:
   -
     'categoryName': 'General'
-    'documentTypes': 'Correspondence'
+    'typeName': 'Correspondence'
   -
     'categoryName': 'General'
-    'documentTypes': 'Pictures'
+    'typeName': 'Pictures'
   -
     'categoryName': 'General'
-    'documentTypes': 'Report'
+    'typeName': 'Report'
   -
     'categoryName': 'General'
-    'documentTypes': 'Other'
+    'typeName': 'Other'

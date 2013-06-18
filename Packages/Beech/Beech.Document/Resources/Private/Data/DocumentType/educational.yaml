@@ -1,16 +1,16 @@
 documentTypes:
   -
-    'categoryName': 'educational'
-    'documentTypes': 'Renewable certificates'
+    'categoryName': 'Educational'
+    'typeName': 'Renewable certificates'
   -
-    'categoryName': 'educational'
-    'documentTypes': 'Permanent Certificates'
+    'categoryName': 'Educational'
+    'typeName': 'Permanent Certificates'
   -
-    'categoryName': 'educational'
-    'documentTypes': 'Diploma'
+    'categoryName': 'Educational'
+    'typeName': 'Diploma'
   -
-    'categoryName': 'educational'
-    'documentTypes': 'Certificate of registration'
+    'categoryName': 'Educational'
+    'typeName': 'Certificate of registration'
   -
-    'categoryName': 'educational'
-    'documentTypes': 'Other'
+    'categoryName': 'Educational'
+    'typeName': 'Other'

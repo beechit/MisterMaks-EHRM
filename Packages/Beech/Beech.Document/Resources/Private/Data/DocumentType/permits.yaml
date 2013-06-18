@@ -1,7 +1,7 @@
 documentTypes:
   -
-    'categoryName': 'permits'
-    'documentType': 'Workpermit'
+    'categoryName': 'Permits'
+    'typeName': 'Workpermit'
   -
-    'categoryName': 'permits'
-    'documentType': 'ResidencePermit'
+    'categoryName': 'Permits'
+    'typeName': 'ResidencePermit'

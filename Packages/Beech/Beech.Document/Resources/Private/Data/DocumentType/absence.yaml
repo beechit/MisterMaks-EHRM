@@ -1,13 +1,13 @@
 documentTypes:
   -
-    'categoryName': 'absence'
-    'documentTypes': 'Uwv'
+    'categoryName': 'Absence'
+    'typeName': 'Uwv'
   -
-    'categoryName': 'absence'
-    'documentTypes': 'Arbo'
+    'categoryName': 'Absence'
+    'typeName': 'Arbo'
   -
-    'categoryName': 'absence'
-    'documentTypes': 'Letter'
+    'categoryName': 'Absence'
+    'typeName': 'Letter'
   -
-    'categoryName': 'absence'
-    'documentTypes': 'Other'
+    'categoryName': 'Absence'
+    'typeName': 'Other'

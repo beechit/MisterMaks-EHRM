@@ -1,11 +1,11 @@
 documentTypes:
   -
-    'categoryName': 'identification'
-    'documentTypes': 'Passport'
+    'categoryName': 'Identification'
+    'typeName': 'Passport'
   -
-    'categoryName': 'identification'
-    'documentTypes': 'ID card'
+    'categoryName': 'Identification'
+    'typeName': 'ID card'
   -
-    'categoryName': 'identification'
-    'documentTypes': 'ID Validation report'
+    'categoryName': 'Identification'
+    'typeName': 'ID Validation report'
 

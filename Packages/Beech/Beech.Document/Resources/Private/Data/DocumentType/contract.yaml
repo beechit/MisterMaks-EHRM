@@ -1,13 +1,13 @@
 documentTypes:
   -
-    'categoryName': 'contract'
-    'documentTypes': 'Contract'
+    'categoryName': 'Contract'
+    'typeName': 'Contract'
   -
-    'categoryName': 'contract'
-    'documentTypes': 'End of contract'
+    'categoryName': 'Contract'
+    'typeName': 'End of contract'
   -
-    'categoryName': 'contract'
-    'documentTypes': 'Reference note'
+    'categoryName': 'Contract'
+    'typeName': 'Reference note'
   -
-    'categoryName': 'contract'
-    'documentTypes': 'Other'
+    'categoryName': 'Contract'
+    'typeName': 'Other'
