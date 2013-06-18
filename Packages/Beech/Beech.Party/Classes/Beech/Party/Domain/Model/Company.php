@@ -66,10 +66,17 @@ class Company extends \TYPO3\Party\Domain\Model\AbstractParty implements \TYPO3\
 	}
 
 	/**
+	 * @param string $chamberOfCommerce
+	 */
+	public function setChamberOfCommerceNumber($chamberOfCommerce) {
+		$this->chamberOfCommerce = $chamberOfCommerce;
+	}
+
+	/**
 	 * @return string
 	 */
 	public function getChamberOfCommerceNumber() {
-		return $this->chamberOfCommerceNumber;
+		return $this->chamberOfCommerce;
 	}
 
 	/**

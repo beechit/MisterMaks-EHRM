@@ -31,11 +31,11 @@ class CompanyTest extends \TYPO3\Flow\Tests\UnitTestCase {
 	 * @dataProvider companyDataProvider
 	 * @test
 	 */
-	public function settingSimpleProperties($name, $companyNumber, $companyType, $description, $legalForm, $chamberOfCommerceNumber) {
+	public function settingSimpleProperties($name, $companyNumber, $companyType, $description, $legalForm, $chamberOfCommerce) {
 		$this->company->setName($name);
-		$this->company->setChamberOfCommerceNumber($chamberOfCommerceNumber);
+		$this->company->setChamberOfCommerceNumber($chamberOfCommerce);
 		$this->assertSame($this->company->getName(), $name);
-		$this->assertSame($this->company->getChamberOfCommerceNumber(), $chamberOfCommerceNumber);
+		$this->assertSame($this->company->getChamberOfCommerceNumber(), $chamberOfCommerce);
 	}
 
 	/**
@@ -74,7 +74,7 @@ class CompanyTest extends \TYPO3\Flow\Tests\UnitTestCase {
 	}
 
 	/**
-	 * @return array Signature: name, companyNumber, companyType, description, legalForm, chamberOfCommerceNumber
+	 * @return array Signature: name, companyNumber, companyType, description, legalForm, chamberOfCommerce
 	 */
 	public function companyDataProvider() {
 		return array(
