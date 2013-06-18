@@ -79,6 +79,15 @@ class Contract extends \Beech\Ehrm\Domain\Model\Document {
 	protected $expirationDate;
 
 	/**
+	 * The contract creater
+	 *
+	 * @var \Beech\Party\Domain\Model\Person
+	 * @ODM\Field(type="string")
+	 * @ODM\Index
+	 */
+	protected $createdBy;
+
+	/**
 	 * @var \TYPO3\Flow\Persistence\PersistenceManagerInterface
 	 * @Flow\Transient
 	 */
@@ -213,6 +222,24 @@ class Contract extends \Beech\Ehrm\Domain\Model\Document {
 	 */
 	public function getStatus() {
 		return $this->status;
+	}
+
+	/**
+	 * @param \Beech\Party\Domain\Model\Person $creator
+	 * @return void
+	 */
+	public function setCreatedBy(\Beech\Party\Domain\Model\Person $creator = NULL) {
+		$this->createdBy = $this->persistenceManager->getIdentifierByObject($creator, 'Beech\Party\Domain\Model\Person');
+	}
+
+	/**
+	 * @return \Beech\Party\Domain\Model\Person
+	 */
+	public function getCreatedBy() {
+		if (!empty($this->createdBy)) {
+			return $this->persistenceManager->getObjectByIdentifier($this->createdBy, 'Beech\Party\Domain\Model\Person', TRUE);
+		}
+		return NULL;
 	}
 
 	/**

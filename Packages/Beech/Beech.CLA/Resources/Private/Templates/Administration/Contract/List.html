@@ -23,7 +23,6 @@
 							<td>{contract.status.statusName}</td>
 							<td>{contract.creationDate -> f:format.date(format: 'Y-m-d H:i')}</td>
 							<td>
-								<f:link.action action="show" controller="Contract" package="Beech.CLA" subpackage="Administration" arguments="{contract: contract}"></f:link.action>
 								<a href="#/administration/contract/show/{contract.id}"><i class="icon-camera"></i></a>
 							</td>
 						</tr>

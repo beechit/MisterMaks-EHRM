@@ -46,6 +46,10 @@ class ContractPreviewFactory extends \TYPO3\Form\Factory\AbstractFormFactory {
 		$this->init($factorySpecificConfiguration, $presetName);
 		$contract = $factorySpecificConfiguration['contract'];
 		$previewPage = $this->form->createPage('previewPage', 'Beech.CLA:ContractPreviewPage');
+
+			// add renderingOption so view known's it is in preview mode
+		$this->form->setRenderingOption('preview', TRUE);
+
 		$articlesSection = $previewPage->createElement('articles', 'Beech.CLA:ContractArticlesSection');
 		$articlesSection->setContract($contract);
 		$articlesSection->initContractArticles();

@@ -5,12 +5,13 @@
       options:
         values:
           - 'Draft'
-          - 'Pending'
-          - 'In progress'
-          - 'Completed'
+          - 'Pending approval'
+          - 'Approved'
+          - 'Active'
           - 'Rejected'
-          - 'Ended'
-          - 'stopped'
+          - 'Canceled'
+          - 'Closed'
+          - 'Suspended'
 # draft a draft version
 # pending awaiting decision
 # in progress this is in progress awaiting a status change
@@ -41,20 +42,11 @@
       defaultValue: 'currentUser'
       label: 'Created by'
       type: 'Beech\Party\Domain\Model\Person'
-    'modification':
-      items:
-        'modificationDate':
-          defaultValue: 'now'
-          label: 'Modification date'
-          validation:
-            -
-              type: 'DateTimeRange'
-              options:
-                earliestDate: 20130101
-                latestDate: 20200101
-        'modifiedBy':
-          defaultValue: 'currentUser'
-          label: 'Modified by'
-          type: 'Beech\Party\Domain\Model\Person'
-      label: 'Modification log'
-      type: 'array'
+    'lastUpdated':
+      type: 'DateTime'
+      validation:
+        -
+          type: 'DateTimeRange'
+          options:
+            earliestDate: 20130101
+            latestDate: 20200101
