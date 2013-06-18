@@ -68,3 +68,7 @@ jobdescriptions::
 ContractTemplates::
 
 	./flow import:yaml Beech.CLA ContractTemplate --sourcePath Packages/Beech/Beech.Ehrm.Glastuinbouw/Resources/Private/Data/ContractTemplates/ --pathInYaml contractTemplate
+
+DocumentType::
+
+	./flow import:collection Beech.Document DocumentType resource://Beech.Document/Private/Data/DocumentType documentTypes

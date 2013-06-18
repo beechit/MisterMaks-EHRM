@@ -4,13 +4,15 @@
       type: 'TYPO3\Party\Domain\Model\AbstractParty'
     'name':
       label: 'Document name'
-    'documentCategory':
-      label: 'Category'
-      type: 'Beech\Document\Domain\Model\DocumentCategory'
-# name and resource are in the php model
+      validation:
+        -
+          type: 'NotEmpty'
     'documentType':
       label: 'DocumentType'
-      type: 'Beech\Document\Domain\Model\DocumentCategory'
+    'resources':
+      validation:
+        -
+          type: 'NotEmpty'
     'document':
       label: 'Document'
     'uploadDate':

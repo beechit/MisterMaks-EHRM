@@ -16,6 +16,22 @@ use TYPO3\Flow\Annotations as Flow;
  */
 class DocumentTypeRepository extends \Radmiraal\CouchDB\Persistence\AbstractRepository {
 
+	/**
+	 * Get all categories
+	 * @return array
+	 */
+	public function findAllGroupedByCategories() {
+		$documentCategories = array();
+		$documentTypes = $this->findAll();
+		foreach ($documentTypes as $documentType) {
+			$categoryName = $documentType->getCategoryName();
+			if (!isset($documentCategories[$categoryName])) {
+				$documentCategories[$categoryName] =  array();
+			}
+			$documentCategories[$categoryName][$documentType->getId()] = $documentType;
+		}
+		return $documentCategories;
+	}
 }
 
 ?>

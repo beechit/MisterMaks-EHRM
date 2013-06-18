@@ -30,6 +30,12 @@ class DocumentController extends \Beech\Ehrm\Controller\AbstractController {
 	protected $documentRepository;
 
 	/**
+	 * @var \Beech\Document\Domain\Repository\DocumentTypeRepository
+	 * @Flow\Inject
+	 */
+	protected $documentTypeRepository;
+
+	/**
 	 * @var \TYPO3\Flow\Object\ObjectManagerInterface
 	 * @Flow\Inject
 	 */
@@ -41,6 +47,7 @@ class DocumentController extends \Beech\Ehrm\Controller\AbstractController {
 	 * @return void
 	 */
 	public function listAction() {
+		$this->view->assign('documentCategories', $this->documentTypeRepository->findAllGroupedByCategories());
 		$this->view->assign('documents', $this->documentRepository->findAll());
 	}
 
@@ -120,7 +127,7 @@ class DocumentController extends \Beech\Ehrm\Controller\AbstractController {
 	public function deleteAction(\Beech\Document\Domain\Model\Document $document) {
 		$this->documentRepository->remove($document);
 		$this->addFlashMessage($this->translator->translateById('document.documentDeleted', array(), NULL, NULL, 'Main', 'Beech.Document'));
-		$this->redirect('list');
+		$this->emberRedirect('#/documents');
 	}
 
 }

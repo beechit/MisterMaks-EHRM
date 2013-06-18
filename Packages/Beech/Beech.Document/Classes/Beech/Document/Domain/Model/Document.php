@@ -25,6 +25,12 @@ class Document extends \Beech\Ehrm\Domain\Model\Document {
 	protected $party;
 
 	/**
+	 * @var \Beech\Document\Domain\Model\DocumentType
+	 * @ODM\ReferenceOne(targetDocument="\Beech\Document\Domain\Model\DocumentType")
+	 */
+	protected $documentType;
+
+	/**
 	 * @var array<\Doctrine\CouchDB\Attachment>
 	 * @ODM\Attachments
 	 */

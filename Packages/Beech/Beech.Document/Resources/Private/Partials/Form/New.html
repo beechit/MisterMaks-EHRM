@@ -1,6 +1,22 @@
+{namespace ehrm=Beech\Ehrm\ViewHelpers}
+<ehrm:flashMessages/>
+<f:form.validationResults for="document">
+	<f:if condition="{validationResults.flattenedErrors}">
+		<div class="error">
+			<f:for each="{validationResults.flattenedErrors}" key="propertyPath" as="errors">{propertyPath}:
+				<f:for each="{errors}" as="error">
+					<div class="alert alert-warning">{error}</div>
+				</f:for>
+			</f:for>
+		</div>
+	</f:if>
+</f:form.validationResults>
 <f:form method="post" action="create" name="document" object="{document}" class="form-horizontal" enctype="multipart/form-data">
 	<div class="control-group">
 		<f:form.textfield property="name" />
+	</div>
+	<div class="control-group">
+		<ehrm:form.select property="documentType" options="{documentCategories}" optionLabelField="typeName"/>
 	</div>
 	<div class="control-group">
 		<f:form.upload property="resources.0" />

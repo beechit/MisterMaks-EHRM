@@ -1,17 +1,17 @@
 <f:layout name="Ajax" />
 
 <f:section name="Body">
-	<f:flashMessages />
-
+	<ehrm:flashMessages/>
 	<div class="row-fluid">
 		<div class="span12">
 			<legend><f:translate id="document.document" quantity="2">Documents</f:translate></legend>
 			<f:if condition="{documents}">
 				<f:then>
-					<table>
+					<table class="table">
 						<thead>
 							<tr>
 								<th><f:translate id="name">Name</f:translate></th>
+								<th><f:translate id="documentType">Category</f:translate></th>
 								<th><f:translate id="preview">Preview</f:translate></th>
 								<th>&nbsp;</th>
 							</tr>
@@ -19,6 +19,7 @@
 						<f:for each="{documents}" as="document" iteration="documentIterator">
 							<tr>
 								<td><f:link.action action="show" arguments="{document: document}">{document.name}</f:link.action></td>
+								<td>{document.documentType.categoryName} / {document.documentType.typeName}</td>
 								<td><f:render partial="Document/Preview" arguments="{document: document, width: 100}"/></td>
 								<td>
 									<div class="btn-group">
@@ -29,7 +30,7 @@
 										<ul class="dropdown-menu">
 											<li><a href="/download/{document.id}"><i class="icon-download-alt"></i>Download </a></li>
 											<li><a href="#/document/show/{document.id}"><i class="icon-eye-open"></i>Toewijzen </a></li>
-											<li><a href="#/document/edit/{document.id}"><i class="icon-pencil"></i>Wijzigen</a></li>
+											<f:comment><li><a href="#/document/edit/{document.id}"><i class="icon-pencil"></i>Wijzigen</a></li></f:comment>
 											<li><a href="#/document/delete/{document.id}"><i class="icon-trash"></i>Verwijderen</a></li>
 										</ul>
 									</div>
@@ -49,7 +50,7 @@
 		<div class="span8">
 			<fieldset>
 				<legend><f:translate id="document.new">New</f:translate></legend>
-				<f:render partial="Form/New" />
+				<f:render partial="Form/New" arguments="{_all}"/>
 			</fieldset>
 		</div>
 	</div>
