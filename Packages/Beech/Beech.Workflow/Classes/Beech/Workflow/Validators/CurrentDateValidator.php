@@ -15,13 +15,20 @@ use TYPO3\Flow\Annotations as Flow;
 class CurrentDateValidator implements \Beech\Workflow\Core\ValidatorInterface {
 
 	const	SMALLER_THEN = 0,
-			EQUAL = 1,
-			GREATER_THEN = 2;
+		EQUAL = 1,
+		GREATER_THEN = 2,
+		SMALLER_OR_EQUAL_THEN = 3,
+		GREATER_OR_EQUAL_THEN = 4;
 
 	/**
 	 * @var \DateTime
 	 */
-	protected $value;
+	protected $date;
+
+	/**
+	 * @var \DateInterval
+	 */
+	protected $dateInterval;
 
 	/**
 	 * @var integer
@@ -34,7 +41,7 @@ class CurrentDateValidator implements \Beech\Workflow\Core\ValidatorInterface {
 	 */
 	public function isValid() {
 
-		if (!$this->getValue() instanceof \DateTime) {
+		if (!$this->getDate() instanceof \DateTime) {
 			throw new \Beech\Workflow\Exception\InvalidConfigurationException('Match value has to be an instance of \DateTime');
 		}
 
@@ -42,31 +49,62 @@ class CurrentDateValidator implements \Beech\Workflow\Core\ValidatorInterface {
 			throw new \Beech\Workflow\Exception\InvalidConfigurationException('No match condition set');
 		}
 
+		$date = $this->getDate();
+		if($this->dateInterval) {
+			$date->add($this->dateInterval);
+		}
+
 		$currentDate = new \DateTime();
 		$currentDate->setTime(0, 0, 0);
 
 		switch ($this->matchCondition) {
 			case self::SMALLER_THEN:
-				return $this->getValue() < $currentDate;
+				return $date < $currentDate;
 			case self::EQUAL:
-				return $this->getValue() === $currentDate;
+				return $date === $currentDate;
 			case self::GREATER_THEN:
-				return $this->getValue() > $currentDate;
+				return $date > $currentDate;
+			case self::SMALLER_OR_EQUAL_THEN:
+				return $date <= $currentDate;
+			case self::GREATER_OR_EQUAL_THEN:
+				return $date >= $currentDate;
 		}
 	}
 
 	/**
 	 * @param \DateTime $value
 	 */
-	public function setValue(\DateTime $value) {
+	public function setDate(\DateTime $value) {
 		$this->value = $value->setTime(0, 0, 0);
 	}
 
 	/**
 	 * @return \DateTime
 	 */
-	public function getValue() {
+	public function getDate() {
 		return $this->value;
+	}
+
+	/**
+	 * Set dateInterval
+	 *
+	 * @param string|\DateInterval $dateInterval
+	 */
+	public function setDateInterval($dateInterval) {
+
+		if(is_string($dateInterval)) {
+			$dateInterval = \DateInterval::createFromDateString($dateInterval);
+		}
+		$this->dateInterval = $dateInterval;
+	}
+
+	/**
+	 * Get dateInterval
+	 *
+	 * @return \DateInterval
+	 */
+	public function getDateInterval() {
+		return $this->dateInterval;
 	}
 
 	/**
