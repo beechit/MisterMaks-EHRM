@@ -99,7 +99,7 @@ class DatabaseFinisher extends \TYPO3\Form\Core\Model\AbstractFinisher {
 	protected function storeContract(\Beech\CLA\Domain\Model\Contract $contract, \Beech\CLA\Domain\Repository\ContractRepository $repository) {
 		$formValues = $this->finisherContext->getFormValues();
 			// TODO: Maybe do this more generic
-		if (isset($formValues['employee'])) {
+		if (!empty($formValues['employee'])) {
 			$employeeRepository = new \Beech\Party\Domain\Repository\PersonRepository();
 			$employee = $employeeRepository->findByIdentifier($formValues['employee']);
 			$contract->setEmployee($employee);
@@ -107,15 +107,17 @@ class DatabaseFinisher extends \TYPO3\Form\Core\Model\AbstractFinisher {
 		}
 
 		$employerRepository = new \Beech\Party\Domain\Repository\CompanyRepository();
-		if (!isset($formValues['employer'])) {
+		if (empty($formValues['employer'])) {
 			$employerIdentifier = $this->preferenceUtility->getApplicationPreference('company');
 		} else {
 			$employerIdentifier = $formValues['employer'];
 		}
 		$employer = $employerRepository->findByIdentifier($employerIdentifier);
+		if(empty($employer)) throw new \Exception('No employer found by id '.$employerIdentifier, 1371558300);
+
 		$contract->setEmployer($employer);
 
-		if (isset($formValues['jobDescription'])) {
+		if (!empty($formValues['jobDescription'])) {
 			$jobDescriptionRepository = new \Beech\CLA\Domain\Repository\JobDescriptionRepository();
 			$jobDescription = $jobDescriptionRepository->findByIdentifier($formValues['jobDescription']);
 			$contract->setJobDescription($jobDescription);
