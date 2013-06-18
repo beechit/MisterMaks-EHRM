@@ -109,6 +109,9 @@ iframe { border: none; }
 #modal-body-only form fieldset legend + .control-group { margin-top: 0; }
 #modal-body-only form .form-actions { margin-bottom: 0; padding-left: 60px; }
 #modal-body-only form .form-actions .icon-spin { margin: 0 0 0 30px; }
+#modal-body-only form.form-horizontal { margin: 0; }
+#modal-body-only form.form-horizontal fieldset { padding: 0; margin: 20px; }
+#modal-body-only form.form-horizontal div.actions { position: absolute; bottom: 0; right: 0; left: 0; }
 
 .modal-large { width: 80%; height: 80%; left: 10%; top: 10% !important; margin: 0; }
 
