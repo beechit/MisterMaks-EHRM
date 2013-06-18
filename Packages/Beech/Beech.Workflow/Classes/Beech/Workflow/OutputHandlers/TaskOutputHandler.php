@@ -63,7 +63,6 @@ class TaskOutputHandler extends \Beech\Workflow\Core\AbstractOutputHandler imple
 
 	/**
 	 * Interval in days to escalation priority of task to next level
-	 *
 	 * see Beech\Task\Domain\Model\Taks::escalationInterval
 	 *
 	 * @var string
@@ -155,21 +154,25 @@ class TaskOutputHandler extends \Beech\Workflow\Core\AbstractOutputHandler imple
 
 	/**
 	 * Transform all replacements to simple types
+	 *
 	 * @return array
 	 */
 	protected function processDescriptionReplacements() {
 		$replacements = array();
 
-		foreach($this->descriptionReplacements as $key => $value) {
-			if($value instanceof \DateTime) {
+		foreach ($this->descriptionReplacements as $key => $value) {
+			if ($value instanceof \DateTime) {
 				$formatter = new \TYPO3\Flow\I18n\Formatter\DatetimeFormatter();
 				$value = $formatter->formatDate($value, $this->localizationService->getConfiguration()->getCurrentLocale());
 			}
-			if(is_object($value)) {
+			if (is_object($value)) {
 				$value = (string)$value;
 			}
 			$replacements[$key] = $value;
 		}
 		return $replacements;
 	}
+
 }
+
+?>

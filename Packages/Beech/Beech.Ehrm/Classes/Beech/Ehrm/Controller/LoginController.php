@@ -58,7 +58,7 @@ class LoginController extends \TYPO3\Flow\Security\Authentication\Controller\Abs
 	 */
 	public function onAuthenticationSuccess(\TYPO3\Flow\Mvc\ActionRequest $originalRequest = NULL) {
 		$this->session->putData('accountIdentifier', $this->securityContext->getAccount()->getAccountIdentifier());
-		if($this->request->hasArgument('modal')) {
+		if ($this->request->hasArgument('modal')) {
 			return 'ok';
 		} elseif ($originalRequest !== NULL) {
 			$this->redirectToRequest($originalRequest);

@@ -252,7 +252,7 @@ class Contract extends \Beech\Ehrm\Domain\Model\Document {
 	 */
 	public function getProbationEndDate() {
 		$endDate = FALSE;
-		if($this->getProbation()) {
+		if ($this->getProbation()) {
 
 			/** @var $startDate \DateTime */
 			$startDate = clone $this->getStartDate();
@@ -260,8 +260,8 @@ class Contract extends \Beech\Ehrm\Domain\Model\Document {
 			/** @var $probationInDays integer */
 			$probationInDays = $this->getProbationInDays();
 
-			if($startDate && $probationInDays) {
-				$endDate = $startDate->add(\DateInterval::createFromDateString($probationInDays.' days'));
+			if ($startDate && $probationInDays) {
+				$endDate = $startDate->add(\DateInterval::createFromDateString($probationInDays . ' days'));
 			}
 		}
 		return $endDate;

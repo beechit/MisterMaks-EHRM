@@ -530,7 +530,7 @@ class Task extends \Beech\Ehrm\Domain\Model\Document {
 			do {
 				$date->add($interval);
 				$priority++;
-			} while($date < $now && $priority < self::PRIORITY_IMMEDIATE);
+			} while ($date < $now && $priority < self::PRIORITY_IMMEDIATE);
 
 			$info['date'] = $date;
 			$info['prioriry'] = $priority;
@@ -541,20 +541,19 @@ class Task extends \Beech\Ehrm\Domain\Model\Document {
 
 	/**
 	 * Increase priority of Task
-	 *
 	 * When no priority is passed then the next priority will
 	 * be calculated and used
 	 *
 	 * @param integer $newPriority
 	 */
 	public function increasePriority($newPriority = NULL) {
-		if($newPriority !== NULL) {
+		if ($newPriority !== NULL) {
 			$this->priority = $newPriority;
 		} else {
 			$info = $this->nextPriorityIncreaseInfo();
 				// only update when new priority is higher than current
 				// to prevent decreasing priority when increaded manualy
-			if($this->priority < $info['priority']) {
+			if ($this->priority < $info['priority']) {
 				$this->priority = $info['priority'];
 			}
 		}

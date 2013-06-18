@@ -25,6 +25,7 @@ class ActionFactory {
 
 	/**
 	 * The settings to parse
+	 *
 	 * @var string
 	 */
 	protected $settings;
@@ -63,7 +64,7 @@ class ActionFactory {
 				$action->setWorkflowName($this->workflowName);
 				$action->setActionId($action_id);
 
-				if(!empty($actionSettings['description'])) {
+				if (!empty($actionSettings['description'])) {
 					$action->setDescription($actionSettings['description']);
 				}
 
@@ -76,4 +77,5 @@ class ActionFactory {
 	}
 
 }
+
 ?>

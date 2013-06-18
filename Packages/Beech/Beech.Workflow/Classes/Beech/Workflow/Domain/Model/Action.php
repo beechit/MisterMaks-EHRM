@@ -14,6 +14,7 @@ use TYPO3\Flow\Annotations as Flow,
 
 /**
  * An Action
+ *
  * @ODM\Document(indexed=true)
  */
 class Action extends \Beech\Workflow\Core\AbstractAction implements \Beech\Workflow\Core\ActionInterface {
@@ -38,6 +39,7 @@ class Action extends \Beech\Workflow\Core\AbstractAction implements \Beech\Workf
 
 	/**
 	 * Description of Action
+	 *
 	 * @var string
 	 * @ODM\Field(type="string")
 	 */
@@ -74,7 +76,7 @@ class Action extends \Beech\Workflow\Core\AbstractAction implements \Beech\Workf
 	public function __construct() {
 		$this->setCreationDateTime();
 		$this->setStatus(self::STATUS_NEW);
-		if($this->getCurrentParty() !== NULL) {
+		if ($this->getCurrentParty() !== NULL) {
 			$this->setCreatedBy($this->getCurrentParty());
 		}
 		$this->validators = new \Doctrine\Common\Collections\ArrayCollection();
@@ -83,6 +85,7 @@ class Action extends \Beech\Workflow\Core\AbstractAction implements \Beech\Workf
 
 	/**
 	 * Dispatch the action.
+	 *
 	 * @return void
 	 */
 	public function dispatch() {
@@ -101,6 +104,7 @@ class Action extends \Beech\Workflow\Core\AbstractAction implements \Beech\Workf
 
 	/**
 	 * Run and check all preconditions
+	 *
 	 * @return void
 	 */
 	protected function start() {
@@ -116,7 +120,7 @@ class Action extends \Beech\Workflow\Core\AbstractAction implements \Beech\Workf
 
 			$this->setStatus(self::STATUS_STARTED);
 			$this->setStartDateTime();
-			if($this->getCurrentParty() !== NULL) {
+			if ($this->getCurrentParty() !== NULL) {
 				$this->setStartedBy($this->getCurrentParty());
 			}
 		}
@@ -124,19 +128,20 @@ class Action extends \Beech\Workflow\Core\AbstractAction implements \Beech\Workf
 
 	/**
 	 * Run and evaluate all validators
+	 *
 	 * @return void
 	 */
 	protected function finish() {
 		if ($this->getStatus() === self::STATUS_STARTED) {
 			foreach ($this->getValidators() as $validator) {
 				if (!$validator->isValid()) {
-					echo 'not valid' ;
+					echo 'not valid';
 					return;
 				}
 			}
 
 			$this->setStatus(self::STATUS_FINISHED);
-			if($this->getCurrentParty() !== NULL) {
+			if ($this->getCurrentParty() !== NULL) {
 				$this->setClosedBy($this->getCurrentParty());
 			}
 		}
@@ -144,6 +149,7 @@ class Action extends \Beech\Workflow\Core\AbstractAction implements \Beech\Workf
 
 	/**
 	 * Run all output handlers
+	 *
 	 * @return void
 	 */
 	protected function runOutputHandlers() {
@@ -366,7 +372,6 @@ class Action extends \Beech\Workflow\Core\AbstractAction implements \Beech\Workf
 		return NULL;
 	}
 
-
 	/**
 	 * @param \TYPO3\Party\Domain\Model\AbstractParty $startedBy
 	 */
@@ -384,7 +389,6 @@ class Action extends \Beech\Workflow\Core\AbstractAction implements \Beech\Workf
 		return NULL;
 	}
 
-
 	/**
 	 * @return \TYPO3\Party\Domain\Model\AbstractParty
 	 */
@@ -392,7 +396,8 @@ class Action extends \Beech\Workflow\Core\AbstractAction implements \Beech\Workf
 
 		if ($this->securityContext !== NULL && $this->securityContext->isInitialized()
 			&& $this->securityContext->getAccount() instanceof \TYPO3\Flow\Security\Account
-			&& $this->securityContext->getAccount()->getParty() instanceof \Beech\Party\Domain\Model\Person) {
+			&& $this->securityContext->getAccount()->getParty() instanceof \Beech\Party\Domain\Model\Person
+		) {
 			return $this->securityContext->getAccount()->getParty();
 		}
 		return NULL;

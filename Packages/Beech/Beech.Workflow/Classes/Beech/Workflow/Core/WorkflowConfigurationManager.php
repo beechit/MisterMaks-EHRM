@@ -7,7 +7,6 @@ namespace Beech\Workflow\Core;
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
-
 use TYPO3\Flow\Annotations as Flow;
 
 /**
@@ -116,15 +115,15 @@ class WorkflowConfigurationManager {
 	 */
 	protected function getObjectProperty($object, $property_string) {
 
-		if(!is_object($object)) {
+		if (!is_object($object)) {
 			return NULL;
 		}
 
 		$propertyParts = explode('.', $property_string);
 
-		$method = 'get'.ucfirst(array_shift($propertyParts));
+		$method = 'get' . ucfirst(array_shift($propertyParts));
 
-		if(!is_callable(array($object, $method))) {
+		if (!is_callable(array($object, $method))) {
 			return NULL;
 		} elseif (count($propertyParts)) {
 			return self::getObjectProperty($object->$method(), implode('.', $propertyParts));
@@ -132,4 +131,7 @@ class WorkflowConfigurationManager {
 			return $object->$method();
 		}
 	}
+
 }
+
+?>

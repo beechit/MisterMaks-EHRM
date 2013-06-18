@@ -28,15 +28,17 @@ class WorkflowAspect {
 	 */
 	public function modelAspect(\TYPO3\Flow\Aop\JoinPointInterface $joinPoint) {
 
-		// find object
+			// find object
 		$arguments = $joinPoint->getMethodArguments();
 		$object = array_shift($arguments);
 		$action = $joinPoint->getMethodName();
 
-		// object found than delegate info to workflow dispatcher
-		if($object) {
+			// object found than delegate info to workflow dispatcher
+		if ($object) {
 			$workflowDispatcher = new \Beech\Workflow\Workflow\WorkflowDispatcher();
 			$workflowDispatcher->startWorkflow($action, $object, $this->securityContext->getAccount()->getParty());
 		}
 	}
 }
+
+?>
