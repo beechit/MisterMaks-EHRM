@@ -33,9 +33,7 @@ class CompanyTest extends \TYPO3\Flow\Tests\UnitTestCase {
 	 */
 	public function settingSimpleProperties($name, $companyNumber, $companyType, $description, $legalForm, $chamberOfCommerce) {
 		$this->company->setName($name);
-		$this->company->setChamberOfCommerceNumber($chamberOfCommerce);
 		$this->assertSame($this->company->getName(), $name);
-		$this->assertSame($this->company->getChamberOfCommerceNumber(), $chamberOfCommerce);
 	}
 
 	/**
