@@ -28,6 +28,7 @@ class Status extends \Beech\Ehrm\Domain\Model\Document {
 
 	/**
 	 * Is set when status has changed
+	 *
 	 * @var boolean
 	 */
 	protected $statusChanged = FALSE;
@@ -61,7 +62,7 @@ class Status extends \Beech\Ehrm\Domain\Model\Document {
 	 * @param string $statusName
 	 */
 	public function setStatusName($statusName, $ignoreStatusChange = FALSE) {
-		if(!$ignoreStatusChange && $statusName !== $this->statusName) {
+		if (!$ignoreStatusChange && $statusName !== $this->statusName) {
 			$this->statusChanged = TRUE;
 		}
 		$this->statusName = $statusName;
@@ -100,6 +101,5 @@ class Status extends \Beech\Ehrm\Domain\Model\Document {
 	public function getDocumentId() {
 		return $this->documentId;
 	}
-
 
 }

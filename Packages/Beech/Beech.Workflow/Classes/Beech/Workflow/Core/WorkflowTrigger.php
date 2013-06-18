@@ -7,7 +7,6 @@ namespace Beech\Workflow\Core;
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
-
 use TYPO3\Flow\Annotations as Flow;
 
 class WorkflowTrigger {
@@ -39,8 +38,8 @@ class WorkflowTrigger {
 	 * @param $settings
 	 */
 	protected function __construct($settings) {
-		foreach($settings as $key => $value) {
-			if(property_exists($this, $key)) {
+		foreach ($settings as $key => $value) {
+			if (property_exists($this, $key)) {
 				$this->$key = $value;
 			}
 		}
@@ -50,12 +49,12 @@ class WorkflowTrigger {
 	 * Check conditions
 	 */
 	protected function checkConditions($object) {
-		if(!is_array($this->conditions) || count($this->conditions) == 0) {
+		if (!is_array($this->conditions) || count($this->conditions) == 0) {
 			return TRUE;
 		}
 		foreach ($this->conditions as $configuration) {
 			$condition = $this->workflowConfigurationManager->createHandlerInstance($configuration, $object);
-			if($condition instanceof \Beech\Workflow\Core\ValidatorInterface && !$condition->isValid()) {
+			if ($condition instanceof \Beech\Workflow\Core\ValidatorInterface && !$condition->isValid()) {
 				return FALSE;
 			}
 		}
@@ -68,7 +67,7 @@ class WorkflowTrigger {
 	 * @return bool
 	 */
 	public function match($action, $object) {
-		if($this->action === $action && $this->className === get_class($object) && $this->checkConditions($object)) {
+		if ($this->action === $action && $this->className === get_class($object) && $this->checkConditions($object)) {
 			return TRUE;
 		} else {
 			return FALSE;
@@ -110,4 +109,7 @@ class WorkflowTrigger {
 	public function getClassName() {
 		return $this->className;
 	}
+
 }
+
+?>

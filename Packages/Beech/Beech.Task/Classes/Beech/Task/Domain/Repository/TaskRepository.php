@@ -30,7 +30,6 @@ class TaskRepository extends \Radmiraal\CouchDB\Persistence\AbstractRepository {
 		return count($this->findOpenTasksByPerson($person));
 	}
 
-
 	/**
 	 * @param array $filter
 	 * @return array
@@ -39,24 +38,24 @@ class TaskRepository extends \Radmiraal\CouchDB\Persistence\AbstractRepository {
 
 		$tasks = array();
 
-		if(!is_array($filter)) {
+		if (!is_array($filter)) {
 			$filter = array();
 		}
-		// @todo: find a better alternative for this
-		//        only show own not closed tasks
-		//        EmberData doesn't recognise new elements when you don't call find() without parameters
-		if(!array_key_exists('ids', $filter)) {
+			// @todo: find a better alternative for this
+			// only show own not closed tasks
+			// EmberData doesn't recognise new elements when you don't call find() without parameters
+		if (!array_key_exists('ids', $filter)) {
 			$filter['ownTasks'] = TRUE;
-			if(!array_key_exists('closed', $filter)) {
+			if (!array_key_exists('closed', $filter)) {
 				$filter['closed'] = FALSE;
 			}
 		}
 
-		if(array_key_exists('ids', $filter)) {
-			foreach($filter['ids'] as $id) {
+		if (array_key_exists('ids', $filter)) {
+			foreach ($filter['ids'] as $id) {
 				$tasks[] = $this->findByIdentifier($id);
 			}
-		} elseif(count($filter)) {
+		} elseif (count($filter)) {
 			$tasks = $this->findBy($filter);
 		} else {
 			$tasks = $this->backend->findAll();
@@ -72,14 +71,14 @@ class TaskRepository extends \Radmiraal\CouchDB\Persistence\AbstractRepository {
 	protected function findBy($filter) {
 
 		// map some custom filters
-		foreach($filter as $key => $value) {
-			switch($key) {
+		foreach ($filter as $key => $value) {
+			switch ($key) {
 				case 'ownTasks':
 					unset($filter['ownTasks']);
 					$filter['assignedTo'] = $this->getCurrentPartyIdentifier();
 					break;
 				default:
-					if(in_array($value, array('true','false'))) {
+					if (in_array($value, array('true', 'false'))) {
 						$filter[$key] = $value == 'true' ? TRUE : FALSE;
 					}
 			}
@@ -87,7 +86,6 @@ class TaskRepository extends \Radmiraal\CouchDB\Persistence\AbstractRepository {
 
 		return $this->backend->findBy($filter);
 	}
-
 
 	/**
 	 * @param \TYPO3\Party\Domain\Model\AbstractParty $person
@@ -104,9 +102,9 @@ class TaskRepository extends \Radmiraal\CouchDB\Persistence\AbstractRepository {
 		$_tasks = $this->findBy($filter);
 		$tasks = array();
 
-		if($priority !== NULL) {
-			foreach($_tasks as $task) {
-				if((int)$task->getPriority() === (int)$priority) {
+		if ($priority !== NULL) {
+			foreach ($_tasks as $task) {
+				if ((int)$task->getPriority() === (int)$priority) {
 					$tasks[] = $task;
 				}
 			}
@@ -119,6 +117,7 @@ class TaskRepository extends \Radmiraal\CouchDB\Persistence\AbstractRepository {
 
 	/**
 	 * Find all open tasks
+	 *
 	 * @return array
 	 */
 	public function findOpenTasks() {
@@ -132,14 +131,16 @@ class TaskRepository extends \Radmiraal\CouchDB\Persistence\AbstractRepository {
 	 * @return void
 	 * @Flow\Signal
 	 */
-	protected function emitTaskCreated(\Beech\Task\Domain\Model\Task $task) {}
+	protected function emitTaskCreated(\Beech\Task\Domain\Model\Task $task) {
+	}
 
 	/**
 	 * @param \Beech\Task\Domain\Model\Task $task
 	 * @return void
 	 * @Flow\Signal
 	 */
-	protected function emitTaskChanged(\Beech\Task\Domain\Model\Task $task) {}
+	protected function emitTaskChanged(\Beech\Task\Domain\Model\Task $task) {
+	}
 
 	/**
 	 * @param \Beech\Task\Domain\Model\Task $task
@@ -169,7 +170,8 @@ class TaskRepository extends \Radmiraal\CouchDB\Persistence\AbstractRepository {
 	protected function getCurrentParty() {
 		if (isset($this->securityContext)
 			&& $this->securityContext->getAccount() instanceof \TYPO3\Flow\Security\Account
-			&& $this->securityContext->getAccount()->getParty() instanceof \Beech\Party\Domain\Model\Person) {
+			&& $this->securityContext->getAccount()->getParty() instanceof \Beech\Party\Domain\Model\Person
+		) {
 			return $this->securityContext->getAccount()->getParty();
 		}
 		return NULL;

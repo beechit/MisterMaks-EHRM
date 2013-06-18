@@ -258,5 +258,6 @@ abstract class AbstractAction extends \Beech\Ehrm\Domain\Model\Document implemen
 		}
 	}
 
-
 }
+
+?>

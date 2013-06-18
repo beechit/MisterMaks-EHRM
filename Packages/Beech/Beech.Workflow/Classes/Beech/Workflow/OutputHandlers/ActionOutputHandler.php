@@ -50,16 +50,18 @@ class ActionOutputHandler extends \Beech\Workflow\Core\AbstractOutputHandler imp
 
 	/**
 	 * Execute this output handler class, create a new action and persist it
+	 *
 	 * @return void
 	 */
 	public function invoke() {
 		$factory = new ActionFactory();
 		$factory->setWorkflowName($this->workflowName);
-		$actions  = $factory->create();
+		$actions = $factory->create();
 		foreach ($actions as $action) {
 			$action->setTarget($this->targetEntity);
 			$this->actionRepository->add($action);
 		}
 	}
 }
+
 ?>

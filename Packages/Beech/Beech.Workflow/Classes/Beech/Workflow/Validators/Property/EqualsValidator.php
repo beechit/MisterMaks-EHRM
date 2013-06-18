@@ -51,4 +51,7 @@ class EqualsValidator implements \Beech\Workflow\Core\ValidatorInterface {
 	public function setValue($value) {
 		$this->value = $value;
 	}
+
 }
+
+?>

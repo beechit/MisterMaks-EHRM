@@ -82,4 +82,7 @@ class CurrentDateValidator implements \Beech\Workflow\Core\ValidatorInterface {
 	public function getMatchCondition() {
 		return $this->matchCondition;
 	}
+
 }
+
+?>

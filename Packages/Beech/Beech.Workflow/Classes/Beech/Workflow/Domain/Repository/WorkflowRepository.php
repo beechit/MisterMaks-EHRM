@@ -35,10 +35,10 @@ class WorkflowRepository {
 	 * @return array
 	 */
 	public function findAll() {
-		if($this->_parsed_settings === NULL) {
+		if ($this->_parsed_settings === NULL) {
 			$this->_parsed_settings = array();
 
-			foreach($this->configurationManager->getConfiguration('Workflows') as $workflow => $settings) {
+			foreach ($this->configurationManager->getConfiguration('Workflows') as $workflow => $settings) {
 				$this->_parsed_settings[] = new Workflow($workflow, $settings);
 			}
 		}
@@ -57,12 +57,15 @@ class WorkflowRepository {
 		$className = get_class($object);
 		$workflows = array();
 
-		foreach($this->findAll() as $workflow) {
-			if($workflow->matchTriggers($action, $object)) {
+		foreach ($this->findAll() as $workflow) {
+			if ($workflow->matchTriggers($action, $object)) {
 				$workflows[] = $workflow;
 			}
 		}
 
 		return $workflows;
 	}
+
 }
+
+?>

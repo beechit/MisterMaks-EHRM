@@ -36,3 +36,5 @@ interface OutputHandlerInterface {
 	public function setTargetEntity($targetEntity);
 
 }
+
+?>

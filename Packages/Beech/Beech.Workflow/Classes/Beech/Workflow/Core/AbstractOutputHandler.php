@@ -44,3 +44,5 @@ abstract class AbstractOutputHandler implements \Beech\Workflow\Core\OutputHandl
 	}
 
 }
+
+?>

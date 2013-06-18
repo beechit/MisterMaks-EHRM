@@ -49,4 +49,7 @@ class EmptyValidator implements \Beech\Workflow\Core\ValidatorInterface {
 	public function setProperty($property) {
 		$this->property = $property;
 	}
+
 }
+
+?>

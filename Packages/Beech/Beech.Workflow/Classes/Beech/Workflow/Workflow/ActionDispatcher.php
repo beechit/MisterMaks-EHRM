@@ -34,6 +34,7 @@ class ActionDispatcher {
 
 	/**
 	 * Collect and dispatch all active actions
+	 *
 	 * @return void
 	 */
 	public function run() {
@@ -52,10 +53,11 @@ class ActionDispatcher {
 				$action->dispatch();
 				$this->actionRepository->update($action);
 				$this->logger->log(sprintf('Dispatched "%s" action "%s" [status=%s]', $action->getWorkflowName(), $action->getActionId(), $action->getStatus()), LOG_DEBUG);
-			} catch(\Exception $exception) {
+			} catch (\Exception $exception) {
 				$this->logger->log(sprintf('Error "%s" action "%s". Error: %s', $action->getWorkflowName(), $action->getActionId(), $exception->getMessage()), LOG_ERR);
 			}
 		}
 	}
 }
+
 ?>

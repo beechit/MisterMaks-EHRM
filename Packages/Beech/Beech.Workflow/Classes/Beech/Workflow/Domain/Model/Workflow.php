@@ -17,9 +17,9 @@ use Beech\Workflow\Workflow\ActionFactory;
  */
 class Workflow {
 
-
 	/**
 	 * The settings to parse
+	 *
 	 * @var array
 	 */
 	protected $settings;
@@ -60,10 +60,10 @@ class Workflow {
 	 * Parse settings to load the triggers
 	 */
 	protected function loadTriggers() {
-		if(!$this->triggersLoaded) {
+		if (!$this->triggersLoaded) {
 			$this->triggersLoaded = TRUE;
-			if(!empty($this->settings['triggers'])) {
-				foreach($this->settings['triggers'] as $tmp) {
+			if (!empty($this->settings['triggers'])) {
+				foreach ($this->settings['triggers'] as $tmp) {
 					$this->triggers->add(new WorkflowTrigger($tmp));
 				}
 			}
@@ -72,15 +72,14 @@ class Workflow {
 
 	/**
 	 * Load actions from config
-	 *
 	 * only if actions aren't set already
 	 */
 	protected function loadActions() {
-		if($this->actions === NULL) {
+		if ($this->actions === NULL) {
 			$this->initActionsArrayCollection();
 			$actionFactory = new ActionFactory();
 			$actionFactory->setWorkflowName($this->getName());
-			foreach($actionFactory->create() as $action) {
+			foreach ($actionFactory->create() as $action) {
 				$this->actions->add($action);
 			}
 		}
@@ -94,7 +93,7 @@ class Workflow {
 	}
 
 	protected function initActionsArrayCollection() {
-		if($this->actions === NULL) {
+		if ($this->actions === NULL) {
 			$this->actions = new \Doctrine\Common\Collections\ArrayCollection();
 		}
 	}
@@ -106,8 +105,8 @@ class Workflow {
 	 */
 	public function matchTriggers($action, $object) {
 		$this->loadTriggers();
-		foreach($this->triggers as $trigger) {
-			if($trigger->match($action, $object)) {
+		foreach ($this->triggers as $trigger) {
+			if ($trigger->match($action, $object)) {
 				return TRUE;
 			}
 		}
@@ -139,7 +138,7 @@ class Workflow {
 	 */
 	public function setTriggers($triggers) {
 		$this->triggers->clear();
-		foreach($triggers as $trigger) {
+		foreach ($triggers as $trigger) {
 			$this->triggers->add($triggers);
 		}
 	}
@@ -163,7 +162,7 @@ class Workflow {
 		$this->initActionsArrayCollection();
 		$this->actions->clear();
 
-		foreach($actions as $action) {
+		foreach ($actions as $action) {
 			$this->actions->add($action);
 		}
 	}
@@ -189,3 +188,5 @@ class Workflow {
 	}
 
 }
+
+?>

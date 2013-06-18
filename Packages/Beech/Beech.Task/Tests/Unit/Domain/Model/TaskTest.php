@@ -103,15 +103,15 @@ class TaskTest extends \TYPO3\Flow\Tests\UnitTestCase {
 		$escalationDate2->sub(\DateInterval::createFromDateString($interval));
 
 		$task->setCreationDateTime($creationDate);
-		// no escalationInterval results in NULL
+			// no escalationInterval results in NULL
 		$this->assertEmpty($task->getEscalationDateTime());
 
 		$task->setEscalationInterval($interval);
-		// only escalationInterval then date is calculated from creationdate
+			// only escalationInterval then date is calculated from creationdate
 		$this->assertEquals($escalationDate1, $task->getEscalationDateTime());
 
 		$task->setEndDateTime($endDate);
-		// endDateTime set then date is calculated from that datetime
+			// endDateTime set then date is calculated from that datetime
 		$this->assertEquals($escalationDate2, $task->getEscalationDateTime());
 	}
 
@@ -132,19 +132,19 @@ class TaskTest extends \TYPO3\Flow\Tests\UnitTestCase {
 
 		$task->setCreationDateTime($creationDate);
 
-		// no increasePriorityInterval results in NULL
+			// no increasePriorityInterval results in NULL
 		$this->assertEmpty($task->getNextPriorityIncreaseDateTime());
 
 		$task->setIncreasePriorityInterval($interval);
-		// only increasePriorityInterval then date is calculated from creationdate
+			// only increasePriorityInterval then date is calculated from creationdate
 		$this->assertEquals($date1, $task->getNextPriorityIncreaseDateTime());
 
 		$task->setEndDateTime($endDate);
 
-		// endDateTime set then date is calculated from that datetime
+			// endDateTime set then date is calculated from that datetime
 		$this->assertEquals($date2, $task->getNextPriorityIncreaseDateTime());
 
-		//loser priority then it needs on other interval
+			// loser priority then it needs on other interval
 		$task->setPriority(Task::PRIORITY_LOW);
 		$date2->sub(\DateInterval::createFromDateString($interval));
 		$this->assertEquals($date2, $task->getNextPriorityIncreaseDateTime());
@@ -189,9 +189,9 @@ class TaskTest extends \TYPO3\Flow\Tests\UnitTestCase {
 
 		$mockPersistenceManager->expects($this->any())->method('getIdentifierByObject')->with($jane, 'Beech\Party\Domain\Model\Person')->will($this->returnValue('abcjane'));
 		$mockPersistenceManager->expects($this->any())->method('getObjectByIdentifier')->with('abcjane', 'Beech\Party\Domain\Model\Person', TRUE)->will($this->returnValue($jane));
-		//@todo find solution to mock method so it can have multiple results
-//		$mockPersistenceManager->expects($this->any())->method('getIdentifierByObject')->with($john, 'Beech\Party\Domain\Model\Person')->will($this->returnValue('abcjohn'));
-//		$mockPersistenceManager->expects($this->any())->method('getObjectByIdentifier')->with('abcjohn', 'Beech\Party\Domain\Model\Person', TRUE)->will($this->returnValue($john));
+		// @todo find solution to mock method so it can have multiple results
+		// $mockPersistenceManager->expects($this->any())->method('getIdentifierByObject')->with($john, 'Beech\Party\Domain\Model\Person')->will($this->returnValue('abcjohn'));
+		// $mockPersistenceManager->expects($this->any())->method('getObjectByIdentifier')->with('abcjohn', 'Beech\Party\Domain\Model\Person', TRUE)->will($this->returnValue($john));
 
 		$this->inject($task, 'persistenceManager', $mockPersistenceManager);
 
@@ -204,8 +204,8 @@ class TaskTest extends \TYPO3\Flow\Tests\UnitTestCase {
 
 		// assign person to a manager
 		// @todo: manager part has to be implemented for now createdBy
-//		$jane->setCreatedBy($john);
-//		$this->assertNotEmpty($task->escalate());
+		// $jane->setCreatedBy($john);
+		// $this->assertNotEmpty($task->escalate());
 	}
 
 }
