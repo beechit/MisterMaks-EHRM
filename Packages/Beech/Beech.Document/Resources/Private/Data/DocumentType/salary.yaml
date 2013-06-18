@@ -1,10 +1,10 @@
 documentTypes:
   -
-    'categoryName': 'salary'
-    'documentType': 'Wage document'
+    'categoryName': 'Salary'
+    'typeName': 'Wage document'
   -
-    'categoryName': 'salary'
-    'documentType': 'Year report'
+    'categoryName': 'Salary'
+    'typeName': 'Year report'
   -
-    'categoryName': 'salary'
-    'documentType': 'Wage tax declaration'
+    'categoryName': 'Salary'
+    'typeName': 'Wage tax declaration'

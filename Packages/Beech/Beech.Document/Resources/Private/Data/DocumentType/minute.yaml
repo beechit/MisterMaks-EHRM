@@ -1,13 +1,13 @@
 documentTypes:
   -
-    'categoryName': 'minutes'
-    'documentType': 'Performance review'
+    'categoryName': 'Minutes'
+    'typeName': 'Performance review'
   -
-    'categoryName': 'minutes'
-    'documentType': 'Team meetings'
+    'categoryName': 'Minutes'
+    'typeName': 'Team meetings'
   -
-    'categoryName': 'minutes'
-    'documentType': 'Progress report'
+    'categoryName': 'Minutes'
+    'typeName': 'Progress report'
   -
-    'categoryName': 'minutes'
-    'documentType': 'Other'
+    'categoryName': 'Minutes'
+    'typeName': 'Other'
