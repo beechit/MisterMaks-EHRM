@@ -22,11 +22,12 @@
           options:
             maximum: 34
     'primary':
-      label: 'Primary Bankaccount'
+      label: 'Primary'
       options:
         values:
           - TRUE
           - FALSE
+      default: FALSE
     'bic':
       label: 'Bic code'
       validation:

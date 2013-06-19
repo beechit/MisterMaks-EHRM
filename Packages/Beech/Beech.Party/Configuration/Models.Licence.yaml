@@ -44,10 +44,11 @@
       label: 'licenceDocument'
       type: 'Beech\Party\Domain\Model\Document'
     'notify':
-       label: 'notify for expirationdate'
-       options:
-         - TRUE
-         - FALSE
+      label: 'notify for expirationdate'
+      options:
+        values:
+          - TRUE
+          - FALSE
     'creationDate':
       defaultValue: 'now'
       label: 'creation date'

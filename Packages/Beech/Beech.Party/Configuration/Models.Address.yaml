@@ -86,17 +86,6 @@
           type: 'StringLength'
           options:
             maximum: 35
-    'residenceAbroad':
-      label: 'Residence'
-      validation:
-        -
-          type: 'RegularExpression'
-          options:
-            regularExpression: '/[a-zA-Z\\-\\s\\’]{2,30}/'
-        -
-          type: 'StringLength'
-          options:
-            maximum: 35
     'country':
       label: 'Country'
       validation:
@@ -105,6 +94,13 @@
           options:
             maximum: 30
       defaultValue: 'NL'
+    'primary':
+      label: 'Primary'
+      options:
+        values:
+          - TRUE
+          - FALSE
+      default: FALSE
     'description':
       label: 'Address description'
       validation:

@@ -22,11 +22,12 @@
           options:
             maximum: 35
     'primary':
-      label: 'primary electronic address'
+      label: 'Primary'
       options:
         values:
           - TRUE
           - FALSE
+      default: FALSE
       defaultValue: FALSE
     'creationDate':
       defaultValue: 'now'
