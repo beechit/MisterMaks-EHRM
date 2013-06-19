@@ -1,1 +1,10 @@
-<img src="download/{photo}" width="150" class="img-polaroid"/>
+<f:if condition="{photo}">
+	<f:then>
+		<img src="download/{photo}" width="150" class="img-polaroid"/>
+	</f:then>
+	<f:else>
+		<img src="{f:uri.resource(path: 'Images/NoProfilePhoto.png', package: 'Beech.Party')}" width="150" class="img-polaroid"/>
+	</f:else>
+</f:if>
+
+
