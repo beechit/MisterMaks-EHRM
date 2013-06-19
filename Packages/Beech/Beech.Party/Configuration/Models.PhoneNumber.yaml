@@ -31,12 +31,12 @@
           options:
             maximum: 15
     'primary':
-      label: 'Primary phone'
+      label: 'Primary'
       options:
         values:
           - TRUE
           - FALSE
-      validation: ''
+      default: FALSE
     'description':
       label: 'Description'
       validation:
