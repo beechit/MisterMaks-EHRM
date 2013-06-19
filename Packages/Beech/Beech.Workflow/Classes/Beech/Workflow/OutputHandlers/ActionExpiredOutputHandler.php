@@ -30,7 +30,7 @@ class ActionExpiredOutputHandler extends \Beech\Workflow\Core\AbstractOutputHand
 	public function invoke() {
 		if ($this->targetEntity instanceof ActionInterface && in_array($this->targetEntity->getStatus(), array(Action::STATUS_NEW, Action::STATUS_STARTED))) {
 			$this->targetEntity->setStatus(Action::STATUS_EXPIRED);
-			$this->actionRepository->update($this->actionEntity);
+			$this->actionRepository->update($this->action);
 		}
 	}
 }

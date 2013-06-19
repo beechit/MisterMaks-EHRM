@@ -21,6 +21,12 @@ class CompanyTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFunctional
 	static protected $testablePersistenceEnabled = TRUE;
 
 	/**
+	 * @var boolean
+	 */
+	protected $testableSecurityEnabled = TRUE;
+
+
+	/**
 	 * @var \Beech\Party\Domain\Repository\CompanyRepository
 	 */
 	protected $companyRepository;

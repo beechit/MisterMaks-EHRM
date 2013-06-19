@@ -17,7 +17,7 @@ use TYPO3\Flow\Annotations as Flow,
  * @Flow\Entity
  * @MM\EntityWithDocument
  */
-class Person extends \TYPO3\Party\Domain\Model\Person implements \TYPO3\Flow\Object\DeclaresGettablePropertyNamesInterface {
+class Person extends \TYPO3\Party\Domain\Model\AbstractParty implements \TYPO3\Flow\Object\DeclaresGettablePropertyNamesInterface {
 
 	use \Beech\Ehrm\Domain\EntityWithDocumentTrait,
 		\Beech\Ehrm\Domain\ConfigurableModelTrait;
@@ -28,6 +28,25 @@ class Person extends \TYPO3\Party\Domain\Model\Person implements \TYPO3\Flow\Obj
 	 * @Flow\Validate(type="NotEmpty", validationGroups={"Controller"})
 	 */
 	protected $name;
+
+	/**
+	 * Sets the current name of this person
+	 *
+	 * @param \TYPO3\Party\Domain\Model\PersonName $name Name of this person
+	 * @return void
+	 */
+	public function setName(\TYPO3\Party\Domain\Model\PersonName $name) {
+		$this->name = $name;
+	}
+
+	/**
+	 * Returns the current name of this person
+	 *
+	 * @return \TYPO3\Party\Domain\Model\PersonName Name of this person
+	 */
+	public function getName() {
+		return $this->name;
+	}
 
 	/**
 	 * Get his manager

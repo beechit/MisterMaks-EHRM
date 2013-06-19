@@ -19,6 +19,12 @@ class GroupTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 	static protected $testablePersistenceEnabled = TRUE;
 
 	/**
+	 * @var boolean
+	 */
+	protected $testableSecurityEnabled = TRUE;
+
+
+	/**
 	 * @var \Beech\Party\Domain\Repository\GroupRepository
 	 */
 	protected $groupRepository;

@@ -15,7 +15,7 @@ use Beech\Task\Domain\Model\Task;
 class TaskTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFunctionalTest {
 
 	/**
-	 * @var \Beech\Party\Domain\Repository\PersonRepository
+	 * @var \TYPO3\Party\Domain\Repository\PartyRepository
 	 */
 	protected $personRepository;
 
@@ -23,6 +23,11 @@ class TaskTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFunctionalTes
 	 * @var \Beech\Task\Domain\Repository\TaskRepository
 	 */
 	protected $taskRepository;
+
+	/**
+	 * @var \TYPO3\Flow\Security\Context
+	 */
+	protected $securityContext;
 
 	/**
 	 * @var boolean
@@ -54,16 +59,23 @@ class TaskTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFunctionalTes
 	 */
 	protected function createPerson($firstName, $lastName, $authenticate = FALSE) {
 		$person = new \Beech\Party\Domain\Model\Person();
-		$person->setName(new \TYPO3\Party\Domain\Model\PersonName('', $firstName, '', $lastName));
+		$name = new \TYPO3\Party\Domain\Model\PersonName('', $firstName, '', $lastName);
+		$person->setName($name);
 
-		$this->personRepository->add($person);
-		$this->persistenceManager->persistAll();
-
+		// set account before persisting so aspects that rely on the account don't break
 		if ($authenticate === TRUE) {
 			$account = new \TYPO3\Flow\Security\Account();
 			$account->setParty($person);
 
 			$this->authenticateAccount($account);
+		}
+
+		$this->personRepository->add($person);
+		$this->persistenceManager->persistAll();
+
+		if ($authenticate === TRUE) {
+			$person->addAccount($account);
+			$this->persistenceManager->persistAll();
 		}
 
 		return $person;
@@ -73,7 +85,7 @@ class TaskTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFunctionalTes
 	 * @test
 	 */
 	public function testPersonIsPersistedCorrectly() {
-		$this->createPerson('John', 'Doe');
+		$this->createPerson('John', 'Doe', TRUE);
 		$this->assertEquals(1, $this->personRepository->countAll());
 	}
 
@@ -90,17 +102,20 @@ class TaskTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFunctionalTes
 	 * @test
 	 */
 	public function countByAssignedToReturnsTheCorrectNumberOfTasks() {
+
+		$this->createPerson('Jan', 'Janssen', TRUE);
+
 		$john = $this->createPerson('John', 'Doe');
 		$jane = $this->createPerson('Jane', 'Doe');
 
-		for ($i = 0; $i < 10; $i ++) {
+		for ($i = 0; $i < 10; $i++) {
 			$task = new \Beech\Task\Domain\Model\Task();
 			$task->setAssignedTo($john);
 			$task->setDescription('Task ' . $i);
 			$this->taskRepository->add($task);
 		}
 
-		for ($i = 10; $i < 15; $i ++) {
+		for ($i = 10; $i < 15; $i++) {
 			$task = new \Beech\Task\Domain\Model\Task();
 			$task->setAssignedTo($jane);
 			$task->setDescription('Task ' . $i);
@@ -121,7 +136,7 @@ class TaskTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFunctionalTes
 	public function countOpenTasksByPersonReturnsTheCorrectNumberOfTasks() {
 		$john = $this->createPerson('John', 'Doe', TRUE);
 
-		for ($i = 0; $i < 10; $i ++) {
+		for ($i = 0; $i < 10; $i++) {
 			$task = new \Beech\Task\Domain\Model\Task();
 			$task->setCloseableByAssignee(TRUE);
 			$task->setAssignedTo($john);
@@ -159,7 +174,6 @@ class TaskTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFunctionalTes
 		$this->assertEquals(1, count($tasks));
 		$lastPersistedTask = $tasks[count($tasks) - 1];
 
-		$this->markTestSkipped('Simple value storage works, TODO: make objects persisted correctly');
 		$this->assertEquals('Test', $lastPersistedTask->getLink()->getControllerName());
 	}
 
@@ -168,8 +182,8 @@ class TaskTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFunctionalTes
 	 * @expectedException \Beech\Task\Exception
 	 */
 	public function taskCanNotBeClosedByPartyThatNotCreatedTheTask() {
-		$john = $this->createPerson('John', 'Doe');
 		$this->createPerson('Jane', 'Doe', TRUE);
+		$john = $this->createPerson('John', 'Doe');
 
 		$task = new \Beech\Task\Domain\Model\Task();
 		$task->setCreatedBy($john);
@@ -196,8 +210,8 @@ class TaskTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFunctionalTes
 	 * @expectedException \Beech\Task\Exception
 	 */
 	public function taskCanNotBeClosedByAssigneeIfTaskIsNotCloseableByAssignee() {
-		$john = $this->createPerson('John', 'Doe');
 		$jane = $this->createPerson('Jane', 'Doe', TRUE);
+		$john = $this->createPerson('John', 'Doe');
 
 		$task = new \Beech\Task\Domain\Model\Task();
 		$task->setCreatedBy($john);

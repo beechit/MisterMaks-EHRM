@@ -36,7 +36,20 @@ class WorkflowAspect {
 			// object found than delegate info to workflow dispatcher
 		if ($object) {
 			$workflowDispatcher = new \Beech\Workflow\Workflow\WorkflowDispatcher();
-			$workflowDispatcher->startWorkflow($action, $object, $this->securityContext->getAccount()->getParty());
+			$workflowDispatcher->startWorkflow($action, $object, $this->getCurrentParty());
+		}
+	}
+
+	/**
+	 * Get current party
+	 *
+	 * @return null|\TYPO3\Party\Domain\Model\AbstractParty
+	 */
+	protected function getCurrentParty() {
+		if($this->securityContext->canBeInitialized() && $this->securityContext->getAccount()) {
+			return $this->securityContext->getAccount()->getParty();
+		} else {
+			return NULL;
 		}
 	}
 }

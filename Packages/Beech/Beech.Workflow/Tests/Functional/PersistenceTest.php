@@ -201,26 +201,6 @@ class PersistenceTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFuncti
 	/**
 	 * @test
 	 */
-	public function aPreConditionCanBePersistedAndRetrieved() {
-		$action = new Action();
-
-		$preCondition = new \Beech\Workflow\PreConditions\DatePreCondition();
-		$preCondition->setValue(new \DateTime('yesterday'));
-		$preCondition->setMatchCondition(\Beech\Workflow\PreConditions\DatePreCondition::MATCH_CONDITION_SMALLER_THEN);
-
-		$action->addPreCondition($preCondition);
-		$this->actionRepository->add($action);
-
-		$this->documentManager->flush();
-
-		$persistedActions = $this->actionRepository->findAll();
-
-		$this->assertEquals($action, $persistedActions[0]);
-	}
-
-	/**
-	 * @test
-	 */
 	public function theActionExpiredOutputHandlerCanExpireAnAction() {
 		$this->actionRepository->add(new Action());
 		$this->documentManager->flush();
@@ -230,6 +210,7 @@ class PersistenceTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFuncti
 
 		$outputHandler = new \Beech\Workflow\OutputHandlers\ActionExpiredOutputHandler();
 		$outputHandler->setActionEntity($persistedActions[0]);
+		$outputHandler->setTargetEntity($persistedActions[0]);
 		$outputHandler->invoke();
 
 		$this->documentManager->flush();

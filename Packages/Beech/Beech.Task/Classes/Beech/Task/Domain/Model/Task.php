@@ -47,6 +47,14 @@ class Task extends \Beech\Ehrm\Domain\Model\Document {
 	protected $description;
 
 	/**
+	 * Link to the execution page for this task
+	 *
+	 * @var \Beech\Ehrm\Domain\Model\Link
+	 * @ODM\EmbedOne(targetDocument="Beech\Ehrm\Domain\Model\Link")
+	 */
+	protected $link;
+
+	/**
 	 * The task owner
 	 *
 	 * @var \TYPO3\Party\Domain\Model\AbstractParty
@@ -218,9 +226,27 @@ class Task extends \Beech\Ehrm\Domain\Model\Document {
 	}
 
 	/**
+	 * Set link
+	 *
+	 * @param \Beech\Ehrm\Domain\Model\Link $link
+	 */
+	public function setLink($link) {
+		$this->link = $link;
+	}
+
+	/**
+	 * Get link
+	 *
+	 * @return \Beech\Ehrm\Domain\Model\Link
+	 */
+	public function getLink() {
+		return $this->link;
+	}
+
+	/**
 	 * Sets the owner for this task
 	 *
-	 * @param \TYPO3\Party\Domain\Model\AbstractParty $assignee
+	 * @param \Beech\Party\Domain\Model\Person $assignee
 	 * @return void
 	 */
 	public function setAssignedTo(\TYPO3\Party\Domain\Model\AbstractParty $assignee) {
@@ -230,7 +256,7 @@ class Task extends \Beech\Ehrm\Domain\Model\Document {
 	/**
 	 * Returns the owner for this task
 	 *
-	 * @return \TYPO3\Party\Domain\Model\AbstractParty
+	 * @return \Beech\Party\Domain\Model\Person
 	 */
 	public function getAssignedTo() {
 		if (isset($this->assignedTo)) {
@@ -244,7 +270,7 @@ class Task extends \Beech\Ehrm\Domain\Model\Document {
 	 * We use the top-level AbstractParty class as typehint, because a task can also
 	 * be started by a system process
 	 *
-	 * @param \TYPO3\Party\Domain\Model\AbstractParty $creator
+	 * @param \Beech\Party\Domain\Model\Person $creator
 	 * @return void
 	 */
 	public function setCreatedBy(\TYPO3\Party\Domain\Model\AbstractParty $creator = NULL) {
@@ -258,7 +284,7 @@ class Task extends \Beech\Ehrm\Domain\Model\Document {
 	/**
 	 * Returns the starter for this task
 	 *
-	 * @return \TYPO3\Party\Domain\Model\AbstractParty
+	 * @return \Beech\Party\Domain\Model\Person
 	 */
 	public function getCreatedBy() {
 		if (isset($this->createdBy)) {
@@ -268,7 +294,7 @@ class Task extends \Beech\Ehrm\Domain\Model\Document {
 	}
 
 	/**
-	 * @param \TYPO3\Party\Domain\Model\AbstractParty $person
+	 * @param \Beech\Party\Domain\Model\Person $person
 	 * @return void
 	 */
 	public function setClosedBy(\TYPO3\Party\Domain\Model\AbstractParty $person = NULL) {
@@ -280,7 +306,7 @@ class Task extends \Beech\Ehrm\Domain\Model\Document {
 	}
 
 	/**
-	 * @return \TYPO3\Party\Domain\Model\AbstractParty
+	 * @return \Beech\Party\Domain\Model\Person
 	 */
 	public function getClosedBy() {
 		if (isset($this->closedBy)) {

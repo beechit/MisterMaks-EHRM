@@ -30,7 +30,7 @@ class TaskTest extends \TYPO3\Flow\Tests\UnitTestCase {
 		$person = new \Beech\Party\Domain\Model\Person();
 		$time = new \DateTime();
 		$endTime = new \DateTime('+1week');
-
+		$link = new \Beech\Ehrm\Domain\Model\Link();
 		$priority = \Beech\Task\Domain\Model\Task::PRIORITY_NORMAL;
 
 		$action = new \Beech\Workflow\Domain\Model\Action();
@@ -49,6 +49,7 @@ class TaskTest extends \TYPO3\Flow\Tests\UnitTestCase {
 		$task->setEndDateTime($endTime);
 
 		$task->setDescription('description');
+		$task->setLink($link);
 		$task->setPriority($priority);
 		$task->setAction($action);
 
@@ -60,6 +61,7 @@ class TaskTest extends \TYPO3\Flow\Tests\UnitTestCase {
 		$this->assertEquals($endTime, $task->getEndDateTime());
 
 		$this->assertEquals('description', $task->getDescription());
+		$this->assertEquals($link, $task->getLink());
 		$this->assertEquals($priority, $task->getPriority());
 		$this->assertEquals($action, $task->getAction());
 	}

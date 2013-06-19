@@ -20,6 +20,12 @@ class PersonTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFunctionalT
 	static protected $testablePersistenceEnabled = TRUE;
 
 	/**
+	 * @var boolean
+	 */
+	protected $testableSecurityEnabled = TRUE;
+
+
+	/**
 	 * @var \Beech\Party\Domain\Repository\PersonRepository
 	 */
 	protected $personRepository;
