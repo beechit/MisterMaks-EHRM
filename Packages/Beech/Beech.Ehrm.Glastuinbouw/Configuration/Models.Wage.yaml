@@ -1,7 +1,4 @@
-##################################################
-# This is the Wagemodel for GTB wages
 # todo: make an extend for the CLAWage model.
-##################################################
 'Beech.Party.Domain.Model.ModelGTBWage':
   properties:
     'wageName':

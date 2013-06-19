@@ -57,10 +57,10 @@
       label: 'Reason that contract was stopped'
       options:
         values:
-          - 'By employer'
-          - 'By employee'
-          - 'Sickness'
-          - 'Other'
+          'byEmployer': 'By employer'
+          'byEmployee': 'By employee'
+          'sickness': 'Sickness'
+          'other': 'Other'
       validation:
         -
           type: 'StringLength'
@@ -99,6 +99,7 @@
           options:
             earliestDate: 20130101
             latestDate: 20200101
+# todo check if we need this
     'streetName':
       label: 'Work address streetname'
       validation:
@@ -197,13 +198,13 @@
             maximum: 15
       options:
         values:
-          - 'Monday'
-          - 'Tuesday'
-          - 'wednessday'
-          - 'Thursday'
-          - 'Friday'
-          - 'Saturday'
-          - 'Sunday'
+          'monday': 'Monday'
+          'tuesday': 'Tuesday'
+          'wednessday': 'Wednessday'
+          'thursday': 'Thursday'
+          'friday': 'Friday'
+          'saturday': 'Saturday'
+          'sunday': 'Sunday'
     'startTime':
       label: 'Starttime'
       type: 'DateTime'

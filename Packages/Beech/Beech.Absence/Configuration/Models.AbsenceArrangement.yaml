@@ -4,9 +4,9 @@ Beech.AbsenceArrangment.Domain.Model.AbsenceArrangement:
       label: 'The unit in what absence is stored'
       options:
         values:
-          - 'hour'
-          - 'half a day'
-          - 'day'
+          'hour': 'Hour'
+          'halfADay': 'Half a day'
+          'day': 'Day'
       validation:
         -
           type: StringLength
@@ -17,15 +17,15 @@ Beech.AbsenceArrangment.Domain.Model.AbsenceArrangement:
       label: 'Grant balance after end Countdate'
       options:
         values:
-          - true
-          - false
+          - TRUE
+          - FALSE
     'calculateBalanceonFTE':
       defaultValue: false
       label: 'Calculate balance according to FTE factor'
       options:
         values:
-          - true
-          - false
+          - TRUE
+          - FALSE
     'customBalance':
       label: 'Custom  balance for full time'
     'endCount':
@@ -41,10 +41,10 @@ Beech.AbsenceArrangment.Domain.Model.AbsenceArrangement:
       label: 'Set balance source'
       options:
         values:
-          - 'CLA'
-          - 'BW'
-          - 'Custom'
-          - 'not applicable'
+          'cla': 'CLA'
+          'law': 'By law'
+          'custom': 'Custom'
+          'notApplicable': 'not applicable'
       validation:
         -
           type: StringLength
@@ -55,8 +55,8 @@ Beech.AbsenceArrangment.Domain.Model.AbsenceArrangement:
       label: 'Move unused balance hours to new balance period'
       options:
         values:
-          - true
-          - false
+          - TRUE
+          - FALSE
     'absenceTypeName':
       label: 'Absence type'
       validation:

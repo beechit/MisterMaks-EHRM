@@ -25,7 +25,7 @@
       validation:
         -
           type: 'Text'
-      default: 'Functiecontext'
+      default: 'Functioncontext'
     'jobGoal':
       label: 'Job goal'
       validation:
@@ -40,7 +40,7 @@
           type: 'StringLength'
           options:
             maximum: 30
-      default: 'Positie in de organisatie'
+      default: 'organisational position'
     'reportsTo':
       label: 'Reports to'
       validation:
@@ -66,14 +66,14 @@
           type: 'StringLength'
           options:
             maximum: 30
-      default: 'Resultaatgebieden'
+      default: 'Result area'
     'expectations':
       label: 'Expectations'
       type: 'array'
       values:
-        - 'Uitgevoerde Handelingen'
-        - 'Verstrekte informatie'
-        - 'Nageleefde voorschiften'
+        'actsPerformed': 'Acts performed'
+        'informationProvided': 'Information provided'
+        'compliedOperatingProcedures': 'Complied operating procedures'
     'mainActivities':
       label: 'Main activities'
       validation:
@@ -121,20 +121,3 @@
       default: 'currentUser'
       label: 'Created by'
       type: 'string'
-    'modification':
-      items:
-        'modificationDate':
-          default: 'now'
-          label: 'Modification date'
-          validation:
-            -
-              type: 'DateTimeRange'
-              options:
-                earliestDate: 20130101
-                latestDate: 20200101
-        'modifiedBy':
-          default: 'currentUser'
-          label: 'Modified by'
-          type: 'Beech\Party\Domain\Model\Person'
-      label: 'Modification log'
-      type: 'array'

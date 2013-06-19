@@ -6,9 +6,9 @@
       label: 'account type'
       options:
         values:
-          - 'Giro'
-          - 'Bank'
-          - 'Abroad'
+          'giro': 'Giro'
+          'bank': 'Bank'
+          'foreign': 'Foreign'
 #todo check regular expression
     'accountNumber':
       label: 'accountNumber'

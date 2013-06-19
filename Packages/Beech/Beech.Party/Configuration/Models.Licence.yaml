@@ -6,10 +6,11 @@
       label: 'Licence type'
       options:
         values:
-         - 'Drivers licence'
-         - 'Emergency response'
-         - 'Crop protection'
-         - 'Other'
+         'driversLicence': 'Drivers licence'
+         'emergencyResponce': 'Emergency response'
+         'cropProtection': 'Crop protection'
+         'other': 'Other'
+# todo make these values generic and move cropprotection and so to branche package.
     'name':
       label: 'Licence name'
       validation:

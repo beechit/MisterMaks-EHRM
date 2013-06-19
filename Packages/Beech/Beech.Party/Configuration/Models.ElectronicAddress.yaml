@@ -7,13 +7,12 @@
       label: 'electronicAdressType'
       options:
         values:
-         - 'e-Mail'
-         - 'Skype'
-         - 'Website Url'
-         - 'Twitter'
-         - 'Facebook'
-         - 'LinkedIn'
-         - 'Hyves'
+         'email': 'e-Mail'
+         'skype': 'Skype'
+         'url': 'Website'
+         'twitter': 'Twitter'
+         'facebook': 'Facebook'
+         'linkedin': 'LinkedIn'
     'address':
       label: 'electronicAddress'
       validation:

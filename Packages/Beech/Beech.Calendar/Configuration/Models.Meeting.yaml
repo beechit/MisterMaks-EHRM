@@ -12,14 +12,15 @@
           type: 'StringLength'
           options:
             maximum: 20
+# todo register this status in status model
     'status':
       label: 'Status'
       default: 'tentative'
       options:
         values:
-          - 'Confirmed'
-          - 'Tentative'
-          - 'Cancelled'
+          'confirmed': 'Confirmed'
+          'tentative': 'Tentative'
+          'cancelled': 'Cancelled'
       validation: ''
     'summary':
       label: 'Summary'
@@ -74,9 +75,9 @@
       label: 'Response status'
       options:
         values:
-          - 'Declined'
-          - 'Tentative'
-          - 'Accepted'
+          'declined': 'Declined'
+          'tentative': 'Tentative'
+          'accepted': 'Accepted'
     'comment':
       label: 'comment'
       validation:
@@ -126,9 +127,9 @@
       label: 'Notification method'
       options:
         values:
-          - 'e-mail'
-          - 'sms'
-          - 'notification'
+          'email': 'E-mail'
+          'sms': 'SMS'
+          'notification': 'Notification'
     'creationDate':
       default: 'now'
       label: 'creation date'
@@ -143,4 +144,3 @@
       default: 'currentUser'
       label: 'Created by'
       type: 'Beech\Party\Domain\Model\Person'
-

@@ -32,10 +32,10 @@
       label: 'Report Method'
       options:
         values:
-          - phone
-          - email
-          - letter
-          - other
+          'phone': 'Phone'
+          'email': 'E-mail'
+          'letter': 'Letter'
+          'other': 'Other'
 # case Leaverequest
     'needsGrant':
       label: 'Needs grant'
@@ -43,21 +43,22 @@
         values:
           - FALSE
           - TRUE
+# todo register in status model.
     'requestStatus':
       label: 'Status'
       options:
         values:
-          - pending
-          - accepted
-          - declined
+          'pending': 'Pending'
+          'accepted': 'Accept'
+          'declined': 'Declined'
     'notificationMethod':
       label: 'Notify'
       options:
         values:
-          - 'None'
-          - 'E-mail'
-          - 'Sms'
-          - 'Create task'
+          'none': 'None'
+          'email': 'E-mail'
+          'sms': 'Sms'
+          'createTask': 'Create task'
 #for later implementation
 # case Sickness
 #  Case labordispute

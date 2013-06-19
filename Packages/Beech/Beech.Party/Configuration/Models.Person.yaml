@@ -18,19 +18,20 @@
             maximum: 20
       options:
         values:
-          - 'contact'
-          - 'companyContact'
-          - 'employee'
-          - 'partnerCompanyContact'
+          'contact': 'Contact'
+          'companyContact': 'Company contact'
+          'employee': 'employee'
+          'partnerCompanyContact': 'partnerCompanyContact'
+          'relative': 'Relative'
 # only for usage with persontype = contact this employee relation is about registering relatives tot the employee
     'employeeRelations':
       label: 'Relation'
       options:
         values:
-          - 'Partner'
-          - 'Child'
-          - 'Family'
-          - 'Other'
+          'partner': 'Partner'
+          'child': 'Child'
+          'family': 'Family'
+          'other': 'Other'
     'middleOtherName':
       validation:
         -
@@ -42,7 +43,7 @@
           options:
             maximum: 10
     'otherName':
-      label: Birthname
+      label: 'Birthname'
       validation:
         -
           type: 'RegularExpression'
@@ -56,9 +57,9 @@
       label: 'Name usage'
       options:
         values:
-          - 'Birth name'
-          - 'Married name'
-          - 'Married name & birthname'
+          'birthName': 'Birth name'
+          'marriedName' : 'Married name'
+          'marriedNameBirthName': 'Married name & birthname'
     'initials':
       label: 'Initials'
       validation:
@@ -97,16 +98,16 @@
       label: 'Gender'
       options:
         values:
-          - 'Male'
-          - 'Female'
+          'male': 'Male'
+          'female': 'Female'
     'salutation':
       label: 'Salutation'
       options:
         values:
-          - 'Dear Mr.'
-          - 'Dear Ms.'
-          - 'Dear Miss.'
-          - 'Dear Mrs.'
+          'mr': 'Dear Mr.'
+          'ms': 'Dear Ms.'
+          'miss': 'Dear Miss.'
+          'mrs': 'Dear Mrs.'
 #todo: add bsn validation
     'bsn':
       label: 'bsn'
@@ -132,12 +133,12 @@
       label: 'Civil status'
       options:
         values:
-          - 'Uknown'
-          - 'Married'
-          - 'Single'
-          - 'Living together'
-          - 'Widow / widower'
-          - 'Divorced'
+          'unknown': 'Unknown'
+          'married': 'Married'
+          'single': 'Single'
+          'livingTogether': 'Living together'
+          'widowWidower': 'widow / widower'
+          'divorced': 'Divorced'
       validation:
         -
           type: 'StringLength'
@@ -150,23 +151,23 @@
       label: 'Prefered communication Method'
       options:
         values:
-          - 'None'
-          - 'e-mail'
-          - 'SMS'
-          - 'Phone'
+          'none': 'None'
+          'email': 'e-mail'
+          'sms': 'SMS'
+          'phone': 'Phone'
 # status is used to set the status of companycontacts, contacts and partnercompanycontacts
     'status':
       label: 'Status'
       options:
         values:
-          - 'Active'
-          - 'Archived'
+          'active': 'Active'
+          'achived': 'Archived'
     'majorShareholder':
       label: 'Major shareholder'
       options:
         values:
-          - 'TRUE'
-          - 'FALSE'
+          - FALSE
+          - TRUE
     'creationDate':
       defaultValue: 'now'
       label: 'creation date'
