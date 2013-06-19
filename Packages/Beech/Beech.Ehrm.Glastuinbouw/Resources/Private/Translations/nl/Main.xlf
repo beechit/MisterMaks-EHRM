@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-strict.xsd">
+	<file original="" source-language="en" target-language="nl" datatype="plaintext">
+		<body>
+			<trans-unit id="actsPerformed">
+				<source>Acts performed</source>
+				<target>Uitgevoerde Handelingen</target>
+			</trans-unit>
+			<trans-unit id="informationProvided">
+				<source>Information provided</source>
+				<target>Verstrekte informatie</target>
+			</trans-unit>
+			<trans-unit id="compliedOperatingProcedures">
+				<source>Complied operating procedures</source>
+				<target>Nageleefde voorschiften</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
