@@ -34,8 +34,8 @@
       label: 'Primary'
       options:
         values:
-          - TRUE
           - FALSE
+          - TRUE
       default: FALSE
     'description':
       label: 'Description'

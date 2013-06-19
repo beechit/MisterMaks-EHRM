@@ -50,8 +50,8 @@
       label: 'Graduated'
       options:
         values:
-          - TRUE
           - FALSE
+          - TRUE
     'creationDate':
       defaultValue: 'now'
       label: 'creation date'

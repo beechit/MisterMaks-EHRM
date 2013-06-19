@@ -47,8 +47,8 @@
       label: 'Returned'
       options:
         values:
-          - TRUE
           - FALSE
+          - TRUE
     'returnDate':
       label: 'Return Date'
 #      validation:

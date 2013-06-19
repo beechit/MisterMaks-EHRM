@@ -68,8 +68,8 @@
       label: 'Optional'
       options:
         values:
-          - TRUE
           - FALSE
+          - TRUE
     'responseStatus':
       label: 'Response status'
       options:
@@ -112,15 +112,15 @@
       label: 'Plan next meeting'
       options:
         values:
-          - TRUE
           - FALSE
+          - TRUE
       default: ''
     'notification':
       label: 'Notification'
       options:
         values:
-          - TRUE
           - FALSE
+          - TRUE
       default: TRUE
     'notificationMethod':
       label: 'Notification method'

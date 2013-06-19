@@ -41,8 +41,8 @@
       label: 'Needs grant'
       options:
         values:
-          - TRUE
           - FALSE
+          - TRUE
     'requestStatus':
       label: 'Status'
       options:

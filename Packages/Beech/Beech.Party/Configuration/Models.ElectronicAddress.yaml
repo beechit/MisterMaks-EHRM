@@ -25,8 +25,8 @@
       label: 'Primary'
       options:
         values:
-          - TRUE
           - FALSE
+          - TRUE
       default: FALSE
       defaultValue: FALSE
     'creationDate':

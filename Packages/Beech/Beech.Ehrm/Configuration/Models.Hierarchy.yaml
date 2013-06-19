@@ -9,15 +9,15 @@
       label: 'Head of company'
       options:
         values:
-          - TRUE
           - FALSE
+          - TRUE
 # sets the head of the department if TRUE
     'departmentHead':
       label: 'Head of department'
       options:
         values:
-          - TRUE
           - FALSE
+          - TRUE
 # Sets group" rights and roles that is connected to function.
     'group':
       label: 'Member of'
