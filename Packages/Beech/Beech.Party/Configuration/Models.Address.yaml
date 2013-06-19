@@ -32,14 +32,14 @@
       label: 'Primary postaddress'
       options:
         values:
-          - TRUE
           - FALSE
+          - TRUE
     'primary':
       label: 'Primary address'
       options:
         values:
-          - TRUE
           - FALSE
+          - TRUE
     'postBox':
       label: 'Postbox number'
       validation:
@@ -98,8 +98,8 @@
       label: 'Primary'
       options:
         values:
-          - TRUE
           - FALSE
+          - TRUE
       default: FALSE
     'description':
       label: 'Address description'

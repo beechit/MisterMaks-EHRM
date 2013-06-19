@@ -47,8 +47,8 @@
       label: 'notify for expirationdate'
       options:
         values:
-          - TRUE
           - FALSE
+          - TRUE
     'creationDate':
       defaultValue: 'now'
       label: 'creation date'

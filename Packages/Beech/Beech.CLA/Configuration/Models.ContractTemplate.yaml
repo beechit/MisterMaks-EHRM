@@ -14,5 +14,5 @@
         'required':
            options:
              values:
-               - TRUE
                - FALSE
+               - TRUE
