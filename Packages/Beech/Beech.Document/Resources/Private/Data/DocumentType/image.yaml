@@ -1,7 +1,8 @@
 documentTypes:
   -
     'categoryName': 'Image'
-    'typeName': 'Profile picture'
+    'typeName': 'profilePhoto'
+    'label': 'Profile photo'
   -
     'categoryName': 'Image'
     'typeName': 'Other'

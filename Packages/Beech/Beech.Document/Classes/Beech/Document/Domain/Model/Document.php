@@ -27,6 +27,7 @@ class Document extends \Beech\Ehrm\Domain\Model\Document {
 	/**
 	 * @var \Beech\Document\Domain\Model\DocumentType
 	 * @ODM\ReferenceOne(targetDocument="\Beech\Document\Domain\Model\DocumentType")
+	 * @ODM\Index
 	 */
 	protected $documentType;
 
@@ -35,6 +36,24 @@ class Document extends \Beech\Ehrm\Domain\Model\Document {
 	 * @ODM\Attachments
 	 */
 	protected $resources;
+
+	/**
+	 * Set documentType
+	 *
+	 * @param \Beech\Document\Domain\Model\DocumentType $documentType
+	 */
+	public function setDocumentType(\Beech\Document\Domain\Model\DocumentType $documentType) {
+		$this->documentType = $documentType;
+	}
+
+	/**
+	 * Get documentType
+	 *
+	 * @return \Beech\Document\Domain\Model\DocumentType
+	 */
+	public function getDocumentType() {
+		return $this->documentType;
+	}
 
 	/**
 	 * @param \Doctrine\CouchDB\Attachment $resource
@@ -81,6 +100,7 @@ class Document extends \Beech\Ehrm\Domain\Model\Document {
 	public function getResource() {
 		return reset($this->resources);
 	}
+
 }
 
 ?>

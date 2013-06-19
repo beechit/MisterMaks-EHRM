@@ -7,6 +7,7 @@ namespace Beech\Party\Controller;
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
+use Beech\Document\Domain\Model\DocumentType;
 use TYPO3\Flow\Annotations as Flow;
 use \Beech\Document\Domain\Model\Document;
 
@@ -21,6 +22,12 @@ class ProfilePhotoController extends \Beech\Document\Controller\DocumentControll
 	 * @Flow\Inject
 	 */
 	protected $personRepository;
+
+	/**
+	 * @var \Beech\Document\Domain\Repository\DocumentTypeRepository
+	 * @Flow\Inject
+	 */
+	protected $documentTypeRepository;
 
 	/**
 	 * @var \TYPO3\Flow\Object\ObjectManagerInterface
@@ -48,6 +55,8 @@ class ProfilePhotoController extends \Beech\Document\Controller\DocumentControll
 	 * @return void
 	 */
 	public function saveAction(\Beech\Document\Domain\Model\Document $document, \Beech\Party\Domain\Model\Person $party) {
+		$documentType = $this->documentTypeRepository->findOneByTypeName(DocumentType::PROFILE_PHOTO);
+		$document->setDocumentType($documentType);
 		$this->documentRepository->add($document);
 		$identifier = $this->persistenceManager->getIdentifierByObject($document);
 		$party->setProfilePhoto($identifier);

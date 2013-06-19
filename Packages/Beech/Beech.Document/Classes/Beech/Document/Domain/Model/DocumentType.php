@@ -17,6 +17,29 @@ use TYPO3\Flow\Annotations as Flow,
  */
 class DocumentType extends \Beech\Ehrm\Domain\Model\Document {
 
+	const PROFILE_PHOTO = 'profilePhoto';
+
+	/**
+	 * @var string
+	 * @ODM\Field(type="mixed")
+	 * @ODM\Index
+	 */
+	protected $typeName;
+
+	/**
+	 * @param $typeName
+	 */
+	public function setTypeName($typeName) {
+		$this->typeName = $typeName;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getTypeName() {
+		return $this->typeName;
+	}
+
 }
 
 ?>
