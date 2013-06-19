@@ -2,6 +2,7 @@
 	'use strict';
 
 	App.BeechTaskDomainModelTask.reopen({
+		link: DS.attr("string"),
 		assignedTo: DS.belongsTo("App.BeechPartyDomainModelPerson"),
 		createdBy: DS.belongsTo("App.BeechPartyDomainModelPerson"),
 		closedBy: DS.belongsTo("App.BeechPartyDomainModelPerson"),
