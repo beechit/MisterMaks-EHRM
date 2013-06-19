@@ -53,7 +53,7 @@ after that run the following commands on cli
 
 *to create initial user::
 
-	./flow usermanagement:user:create [<options>] <username> <password> <first name> <last name> <roles> (does currently not work!!!)
+	./flow ehrm:user:create [<options>] <username> <password> <first name> <last name> <roles>
 
 *import resource files*
 
