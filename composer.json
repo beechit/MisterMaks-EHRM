@@ -30,8 +30,7 @@
 		"radmiraal/couchdb": "dev-doctrine",
 		"typo3/formbuilder": "*",
 		"typo3/queue-redis": "*",
-		"react/event-loop": "*",
-		"typo3/usermanagement": "*"
+		"react/event-loop": "*"
 	},
 	"require-dev": {
 		"typo3/buildessentials": "*",

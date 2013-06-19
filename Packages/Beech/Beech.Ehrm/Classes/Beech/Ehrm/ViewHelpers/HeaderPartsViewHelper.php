@@ -258,7 +258,7 @@ class HeaderPartsViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHel
 					'userManagementModule' => $this->controllerContext->getUriBuilder()
 						->reset()
 						->setCreateAbsoluteUri(TRUE)
-						->uriFor('index', array(), 'Account', 'TYPO3.UserManagement'),
+						->uriFor('index', array(), 'Person', 'Beech.Party', 'Administration'),
 					'wizardManagementModule' => $this->controllerContext->getUriBuilder()
 						->reset()
 						->setCreateAbsoluteUri(TRUE)

@@ -1012,31 +1012,6 @@
             ],
             "description": "TYPO3 Surf is a deployment tool based on Flow and suited for a wide variety of applications",
             "time": "2013-05-28 09:56:52"
-        },
-        {
-            "name": "typo3/usermanagement",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "git://github.com/radmiraal/TYPO3.UserManagement.git",
-                "reference": "7273a4ca67dcdf01142ae2e6f8392efe399d155e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "http://ci.beech.local:8080/job/composer-packages/ws/mistermaks-1.0//dist/typo3-usermanagement-dev-master-44369d.zip",
-                "reference": "dev-master",
-                "shasum": "9ea128be48932fbd91840fb6484bd727600b36ba"
-            },
-            "require": {
-                "typo3/flow": "*"
-            },
-            "type": "typo3-flow-package",
-            "autoload": {
-                "psr-0": {
-                    "TYPO3\\UserManagement": "Classes"
-                }
-            },
-            "time": "2013-02-07 23:23:15"
         }
     ],
     "packages-dev": [
