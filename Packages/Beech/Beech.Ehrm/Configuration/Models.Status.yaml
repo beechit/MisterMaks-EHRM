@@ -4,14 +4,14 @@
       label: 'StatusName'
       options:
         values:
-          - 'Draft'
-          - 'Pending approval'
-          - 'Approved'
-          - 'Active'
-          - 'Rejected'
-          - 'Canceled'
-          - 'Closed'
-          - 'Suspended'
+          'draft': 'Draft'
+          'pendingApproval': 'Pending approval'
+          'approved': 'Approved'
+          'active': 'Active'
+          'rejected': 'Rejected'
+          'canceled': 'Canceled'
+          'closed': 'Closed'
+          'suspended': 'Suspended'
 # draft a draft version
 # pending awaiting decision
 # in progress this is in progress awaiting a status change
@@ -25,11 +25,11 @@
     'stopReason':
       options:
         values:
-          - 'By employer'
-          - 'By employee'
-          - 'Sickness'
-          - 'Other'
-          - 'Does not apply'
+          'byEmployer': 'By employer'
+          'byEmployee': 'By employee'
+          'sickness': 'Sickness'
+          'other': 'Other'
+          'doesNotApply': 'Does not apply'
       defaultValue: 'Does not apply'
 # in entity document we store document id's of entities that are stored, in way we only have to use one status connections to multiple entities.
     'entityIdentifier':

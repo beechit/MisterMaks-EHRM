@@ -11,10 +11,10 @@
       label: 'Company type'
       options:
         values:
-          - 'Primary'
-          - 'Department'
-          - 'Subsidiary'
-          - 'PartnerCompany'
+          'primary': 'Primary'
+          'department': 'Department'
+          'subsidiary': 'Subsidiary'
+          'partnerCompany': 'PartnerCompany'
       defaultValue: 'department'
       validation:
         -
@@ -47,11 +47,11 @@
       label: 'LegalForm'
       options:
         values:
-        - 'Subsidiary'
-        - 'Department'
-        - 'Sole proprietorship'
-        - 'V.O.F.'
-        - 'B.V.'
+          'subsidairy': 'Subsidiary'
+          'department': 'Department'
+          'solePropietorship': 'Sole Proprietorship'
+          'vof': 'V.O.F.'
+          'bv': 'B.V.'
       defaultValue: none
       validation:
         -

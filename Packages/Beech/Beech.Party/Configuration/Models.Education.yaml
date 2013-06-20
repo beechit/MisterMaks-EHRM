@@ -6,11 +6,11 @@
       label: 'Education'
       options:
         values:
-         - 'Primary'
-         - 'pre vocational'
-         - 'Vocational secondary'
-         - 'Higher vocational'
-         - 'Academic'
+         'primary': 'Primary'
+         'preVocational': 'pre vocational'
+         'vocationalSecondary': Vocational secondary'
+         'higerVoational': 'Higher vocational'
+         'academic': 'Academic'
       validation:
         -
           type: 'stringLength'

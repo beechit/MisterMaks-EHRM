@@ -13,11 +13,11 @@
       label: 'Asset Type'
       options:
         values:
-         - 'Laptop'
-         - 'Phone'
-         - 'Tools'
-         - 'Car'
-         - 'Other'
+         'laptop': 'Laptop'
+         'phone': 'Phone'
+         'tools': 'Tools'
+         'car': 'Car'
+         'other': 'Other'
     'model':
       label: 'Model'
       validation:
@@ -25,7 +25,7 @@
           type: 'StringLength'
           options:
             maximum: 35
-    'iDNumber':
+    'idNumber':
       label: 'Identification number'
       validation:
         -
@@ -49,6 +49,7 @@
         values:
           - FALSE
           - TRUE
+# todo implement this in the statusmodel
     'returnDate':
       label: 'Return Date'
 #      validation:

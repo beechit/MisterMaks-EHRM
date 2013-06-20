@@ -7,12 +7,12 @@
       label: 'minuteType'
       options:
         values:
-          - 'Periodic Assesment'
-          - 'Call Report'
-          - 'Assessment'
-          - 'Performance review'
-          - 'Other'
-          - 'SickReport update'
+          'periodicAssesment': 'Periodic Assesment'
+          'callReport': 'Call Report'
+          'assesment': 'Assessment'
+          'performanceReview': 'Performance review'
+          'other': 'Other'
+          'sickReportUpdate': 'SickReport update'
       validation:
         -
           type: 'StringLength'

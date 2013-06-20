@@ -1,6 +1,4 @@
-##################################################
 # todo:: make this model more generic
-##################################################
 'Beech.CLA.Domain.Model.Wage':
   properties:
     'wageName':
