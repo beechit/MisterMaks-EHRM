@@ -3,16 +3,16 @@
     'party':
       type: 'TYPO3\Party\Domain\Model\AbstractParty'
     'type':
-      label: 'phone type'
+      label: 'Phone type'
       options:
         values:
-          - 'Work'
-          - 'Fax'
-          - 'Home'
-          - 'Mobile'
-          - 'Emergency Call'
-          - 'Foreign'
-          - 'Other'
+          'work': 'Work'
+          'fax': 'Fax'
+          'home': 'Home'
+          'mobile': 'Mobile'
+          'emergencyCall': 'Emergency Call'
+          'foreign': 'Foreign'
+          'other': 'Other'
       validation:
         -
           type: 'StringLength'

@@ -7,8 +7,8 @@
       options:
         values:
          'primary': 'Primary'
-         'preVocational': 'pre vocational'
-         'vocationalSecondary': Vocational secondary'
+         'preVocational': 'Pre vocational'
+         'vocationalSecondary': 'Vocational secondary'
          'higerVoational': 'Higher vocational'
          'academic': 'Academic'
       validation:

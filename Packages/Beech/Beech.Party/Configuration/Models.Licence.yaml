@@ -10,7 +10,7 @@
          'emergencyResponce': 'Emergency response'
          'cropProtection': 'Crop protection'
          'other': 'Other'
-# todo make these values generic and move cropprotection and so to branche package.
+# todo make these values generic and move crop protection and so to branche package.
     'name':
       label: 'Licence name'
       validation:
@@ -42,10 +42,10 @@
 #            earliestDate: 19500101
 #            latestDate: 20200101
     'document':
-      label: 'licenceDocument'
+      label: 'Licence document'
       type: 'Beech\Party\Domain\Model\Document'
     'notify':
-      label: 'notify for expirationdate'
+      label: 'Notify for expiration date'
       options:
         values:
           - FALSE

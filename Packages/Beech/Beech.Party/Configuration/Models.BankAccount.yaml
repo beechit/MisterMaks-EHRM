@@ -11,7 +11,7 @@
           'foreign': 'Foreign'
 #todo check regular expression
     'accountNumber':
-      label: 'accountNumber'
+      label: 'Account number'
       validation:
 #        -
 #          type: 'RegularExpression'
@@ -51,7 +51,7 @@
           options:
             regularExpression: '/[a-zA-Z\\-\\s\\’]{2,20}/'
     'residence':
-      label: 'bank residence'
+      label: 'Bank residence'
       validation:
         -
           type: 'StringLength'
@@ -70,7 +70,7 @@
           options:
             maximum: 40
     'description':
-      label: 'BankDescription'
+      label: 'Bank description'
       validation:
         -
           type: 'Text'

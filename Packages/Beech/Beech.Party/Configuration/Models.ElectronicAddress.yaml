@@ -7,7 +7,7 @@
       label: 'electronicAdressType'
       options:
         values:
-         'email': 'e-Mail'
+         'email': 'E-Mail'
          'skype': 'Skype'
          'url': 'Website'
          'twitter': 'Twitter'
