@@ -2,12 +2,16 @@ documentTypes:
   -
     'categoryName': 'Image'
     'typeName': 'Resume'
+    'delete': FALSE
   -
     'categoryName': 'Image'
     'typeName': 'Letter'
+    'delete': FALSE
   -
     'categoryName': 'Image'
     'typeName': 'Interview notes'
+    'delete': FALSE
   -
     'categoryName': 'Image'
     'typeName': 'Other'
+    'delete': FALSE

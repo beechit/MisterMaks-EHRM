@@ -2,10 +2,12 @@ documentTypes:
   -
     'categoryName': 'Identification'
     'typeName': 'Passport'
+    'delete': FALSE
   -
     'categoryName': 'Identification'
     'typeName': 'ID card'
+    'delete': FALSE
   -
     'categoryName': 'Identification'
     'typeName': 'ID Validation report'
-
+    'delete': FALSE
