@@ -2,12 +2,16 @@ documentTypes:
   -
     'categoryName': 'Minutes'
     'typeName': 'Performance review'
+    'delete': FALSE
   -
     'categoryName': 'Minutes'
     'typeName': 'Team meetings'
+    'delete': FALSE
   -
     'categoryName': 'Minutes'
     'typeName': 'Progress report'
+    'delete': FALSE
   -
     'categoryName': 'Minutes'
     'typeName': 'Other'
+    'delete': FALSE

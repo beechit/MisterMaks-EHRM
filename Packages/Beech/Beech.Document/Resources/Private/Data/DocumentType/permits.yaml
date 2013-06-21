@@ -2,6 +2,8 @@ documentTypes:
   -
     'categoryName': 'Permits'
     'typeName': 'Workpermit'
+    'delete': FALSE
   -
     'categoryName': 'Permits'
     'typeName': 'ResidencePermit'
+    'delete': FALSE

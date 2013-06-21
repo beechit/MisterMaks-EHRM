@@ -2,12 +2,16 @@ documentTypes:
   -
     'categoryName': 'Absence'
     'typeName': 'Uwv'
+    'delete': FALSE
   -
     'categoryName': 'Absence'
     'typeName': 'Arbo'
+    'delete': FALSE
   -
     'categoryName': 'Absence'
     'typeName': 'Letter'
+    'delete': FALSE
   -
     'categoryName': 'Absence'
     'typeName': 'Other'
+    'delete': FALSE

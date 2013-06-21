@@ -2,9 +2,14 @@ documentTypes:
   -
     'categoryName': 'Salary'
     'typeName': 'Wage document'
+    'delete': FALSE
+
   -
     'categoryName': 'Salary'
     'typeName': 'Year report'
+    'delete': FALSE
+
   -
     'categoryName': 'Salary'
     'typeName': 'Wage tax declaration'
+    'delete': FALSE

@@ -2,15 +2,20 @@ documentTypes:
   -
     'categoryName': 'Educational'
     'typeName': 'Renewable certificates'
+    'delete': FALSE
   -
     'categoryName': 'Educational'
     'typeName': 'Permanent Certificates'
+    'delete': FALSE
   -
     'categoryName': 'Educational'
     'typeName': 'Diploma'
+    'delete': FALSE
   -
     'categoryName': 'Educational'
     'typeName': 'Certificate of registration'
+    'delete': FALSE
   -
     'categoryName': 'Educational'
     'typeName': 'Other'
+    'delete': FALSE

@@ -2,12 +2,16 @@ documentTypes:
   -
     'categoryName': 'Contract'
     'typeName': 'Contract'
+    'delete': FALSE
   -
     'categoryName': 'Contract'
     'typeName': 'End of contract'
+    'delete': FALSE
   -
     'categoryName': 'Contract'
     'typeName': 'Reference note'
+    'delete': FALSE
   -
     'categoryName': 'Contract'
     'typeName': 'Other'
+    'delete': FALSE
