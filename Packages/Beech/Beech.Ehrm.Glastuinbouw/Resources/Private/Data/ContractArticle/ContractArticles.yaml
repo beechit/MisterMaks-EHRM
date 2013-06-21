@@ -75,9 +75,10 @@ contractArticles:
           -
             type: 'Beech.CLA:SingleSelectDropdown'
             options:
-              - day
-              - days
-              - weeks
+              day: Day
+              days: Days
+              weeks: Weeks
+              months: Months
             default: weeks
             valueId: dayWeek
     -
@@ -113,7 +114,14 @@ contractArticles:
           valueId: jobTitle
         -
           type: 'Beech.CLA:MultipleSelectCheckboxes'
-          options: [ maandag, dinsdag, woensdag, donderdag, vrijdag, zaterdag, zondag ]
+          options:
+            monday: monday
+            tuesday: tuesday
+            wednessday: wednessday
+            thursday: thursday
+            friday: friday
+            saturday: saturday
+            sunday: sunday
           translated:
             nl: [ maandag, dinsdag, woensdag, donderdag, vrijdag, zaterdag, zondag ]
             en: [ monday , tuesday , wednesday , thursday , friday , saturday , sunday ]
@@ -123,6 +131,7 @@ contractArticles:
           type:  'Beech.Ehrm:DatePicker'
           default: '9.00'
           properties:
+            dateFormat: 'H.i'
             enableDatePicker: TRUE
             displayDateSelector: FALSE
             displayTimeSelector: TRUE
@@ -132,6 +141,7 @@ contractArticles:
           type: 'Beech.Ehrm:DatePicker'
           default: '17.00'
           properties:
+            dateFormat: 'H.i'
             enableDatePicker: TRUE
             displayDateSelector: FALSE
             displayTimeSelector: TRUE
@@ -223,6 +233,7 @@ contractArticles:
           default: '9.00'
           valueId: 'sickReportTime'
           properties:
+            dateFormat: 'H.i'
             enableDatePicker: TRUE
             displayDateSelector: FALSE
             displayTimeSelector: TRUE
@@ -432,7 +443,14 @@ contractArticles:
           valueId: 'workLocation'
         -
           type: 'Beech.CLA:MultipleSelectCheckboxes'
-          options: [ maandag, dinsdag, woensdag, donderdag, vrijdag, zaterdag, zondag ]
+          options:
+            monday: monday
+            tuesday: tuesday
+            wednessday: wednessday
+            thursday: thursday
+            friday: friday
+            saturday: saturday
+            sunday: sunday
           translated:
             nl: [ maandag, dinsdag, woensdag, donderdag, vrijdag, zaterdag, zondag ]
             en: [ monday, tuesday, wednessday , thursday, friday, saturday , sunday ]
@@ -444,6 +462,7 @@ contractArticles:
           valueId: 'startTime'
           default: '8.00'
           properties:
+            dateFormat: 'H.i'
             enableDatePicker: TRUE
             displayDateSelector: FALSE
             displayTimeSelector: TRUE
@@ -453,6 +472,7 @@ contractArticles:
           valueId: 'endTime'
           default: '18.00'
           properties:
+            dateFormat: 'H.i'
             enableDatePicker: TRUE
             displayDateSelector: FALSE
             displayTimeSelector: TRUE
@@ -512,16 +532,18 @@ contractArticles:
           type: 'Beech.CLA:SingleLineText'
           value: ''
           valueId: probationPeriod
-          validation: 'TYPO3.Flow:RegularExpression'
-          options:
-            regularExpression: '[0-9]{1,2}'
+          validation:
+            type: 'TYPO3.Flow:RegularExpression'
+            options:
+              regularExpression: '/[0-9]{1,2}/'
           default: 0
         -
           type: 'Beech.CLA:SingleSelectDropdown'
           options:
-            - day
-            - days
-            - weeks
+            day: Day
+            days: Days
+            weeks: Weeks
+            months: Months
           default: weeks
           valueId: dayWeek
     -

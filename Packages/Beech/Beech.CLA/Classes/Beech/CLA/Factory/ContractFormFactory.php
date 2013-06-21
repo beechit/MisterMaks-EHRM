@@ -103,6 +103,9 @@ class ContractFormFactory extends \TYPO3\Form\Factory\AbstractFormFactory {
 			$this->form->addFinisher($redirectFinisher);
 		} else {
 			$page = $this->form->createPage('page0');
+
+				// add model properties to wizard (for preview and database finisher)
+				// todo: should be objects and not model identifiers
 			$contractProperties = $this->modelInterpreterUtility->getModelProperties('Beech.CLA', 'Contract');
 			foreach ($contractProperties as $propertyName => $property) {
 				$contractField = $page->createElement($propertyName, 'TYPO3.Form:HiddenField');
@@ -114,6 +117,7 @@ class ContractFormFactory extends \TYPO3\Form\Factory\AbstractFormFactory {
 				}
 				$contractField->setDefaultValue($defaultValue);
 			}
+
 			while ($this->nextArticlesPage($page)) {
 				$this->pageIndex++;
 				$page = NULL;

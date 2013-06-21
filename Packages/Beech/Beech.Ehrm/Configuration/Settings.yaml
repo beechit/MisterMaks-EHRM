@@ -144,7 +144,7 @@ TYPO3:
             implementationClassName: 'Beech\Ehrm\Form\Elements\DatePicker'
             properties:
               elementClassAttribute: 'input-small'
-              timeSelectorClassAttribute: 'input-mini'
+              timeSelectorClassAttribute: 'input-mini input-time'
               dateFormat: 'Y-m-d'
               enableDatePicker: TRUE
               displayDateSelector: TRUE

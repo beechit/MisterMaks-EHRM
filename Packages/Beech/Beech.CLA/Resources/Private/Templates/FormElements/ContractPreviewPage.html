@@ -1,51 +1,40 @@
-{namespace form=TYPO3\Form\ViewHelpers}
+{namespace form=TYPO3\Form\ViewHelpers}{namespace cla=Beech\CLA\ViewHelpers}
 <fieldset>
-	<f:if condition="{page.label}">
-		<legend>{page.label}</legend>
-	</f:if>
-	<output>
-		<table>
-			<form:renderValues renderable="{page.rootForm}">
-				<f:if condition="{0: formValue.element.type} != {0: 'TYPO3.Form:HiddenField'}">
-					<f:then>
-						<f:if condition="{0: formValue.element.type} == {0: 'Beech.CLA:ContractArticleFormElement'}">
-							<f:then>
-								<tr>
-									<td colspan="2">
-										<b>Artikel: {formValue.element.properties.contractArticle.articleHeader}</b>
-									</td>
-								</tr>
-								<tr class="articleContent">
-									<td colspan="2">
-										{formValue.element.properties.preparedArticleText -> f:format.htmlentitiesDecode()}
-									</td>
-								</tr>
-							</f:then>
-							<f:else>
-								<tr class="articleData" style="display: block">
-									<td>
-										<span id="contractCreator-{formValue.element.identifier}"><f:if condition="{formValue.isMultiValue}"><f:then><f:for each="{formValue.processedValue}" as="value">{value}&nbsp;</f:for></f:then><f:else>{formValue.processedValue}</f:else></f:if></span>
-									</td>
-								</tr>
-							</f:else>
-						</f:if>
-					</f:then>
-					<f:else>
-						<f:if condition="{formValue.value}">
-						<tr>
-							<td><b>{formValue.element.label}</b></td>
-							<td>{formValue.value}</td>
-						</tr>
-						</f:if>
-					</f:else>
-				</f:if>
-			</form:renderValues>
-		</table>
-	</output>
+	<div class="preview">
+		<f:if condition="{page.label}">
+			<legend>{page.label}</legend>
+		</f:if>
+		<output>
+			<table>
+				<form:renderValues renderable="{page.rootForm}">
+					<f:if condition="{0: formValue.element.type} != {0: 'TYPO3.Form:HiddenField'}">
+						<f:then>
+							<f:if condition="{0: formValue.element.type} == {0: 'Beech.CLA:ContractArticleFormElement'}">
+								<f:then>
+									<tr class="article">
+										<td colspan="2">
+											<b>Artikel: {formValue.element.properties.contractArticle.articleHeader}</b>
+										</td>
+									</tr>
+									<tr class="articleContent">
+										<td colspan="2">
+											<cla:renderContractArticleText element="{formValue.element}"></cla:renderContractArticleText>
+										</td>
+									</tr>
+								</f:then>
+							</f:if>
+						</f:then>
+						<f:else>
+							<f:if condition="{formValue.value}">
+							<tr>
+								<td><b>{formValue.element.label}</b></td>
+								<td>{formValue.value}</td>
+							</tr>
+							</f:if>
+						</f:else>
+					</f:if>
+				</form:renderValues>
+			</table>
+		</output>
+	</div>
 </fieldset>
-<script type="text/javascript">
-	jQuery('.articleData span').each(function(index, element) {
-		var articleDataId = ($(element).attr('id') + '_text').replace('.','\\.');
-		$('#'+articleDataId).html($(element).html())
-	})
-</script>

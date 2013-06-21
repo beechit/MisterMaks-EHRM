@@ -60,6 +60,8 @@ class ContractArticlesSection extends \TYPO3\Form\FormElements\Section {
 				$filledContractValues = $this->contract->getArticles();
 			}
 			foreach ($this->contractArticles as $contractArticle) {
+
+				/** @var $contractArticleSection \TYPO3\Form\Core\Model\FormElementInterface */
 				$contractArticleSection = $this->createElement('article-section-' . $contractArticle->getArticleId() . '-identifier', 'Beech.CLA:ContractArticleContainer');
 				$contractArticleSection->setLabel($contractArticle->getArticleHeader());
 				$contractArticleSection->setProperty('help', $contractArticle->getHelp());
@@ -77,7 +79,7 @@ class ContractArticlesSection extends \TYPO3\Form\FormElements\Section {
 									$contractArticleValue->setProperty($propertyName, $property);
 								}
 							}
-							if ($value['type'] === 'TYPO3.Form:SingleSelectDropdown' || $value['type'] === 'TYPO3.Form:MultipleSelectCheckboxes') {
+							if (in_array($value['type'], array('TYPO3.Form:SingleSelectDropdown', 'TYPO3.Form:MultipleSelectCheckboxes', 'Beech.CLA:SingleSelectDropdown', 'Beech.CLA:MultipleSelectCheckboxes'))) {
 								if (isset($value['options'])) {
 									$contractArticleValue->setProperty('options', $value['options']);
 								}
@@ -106,9 +108,7 @@ class ContractArticlesSection extends \TYPO3\Form\FormElements\Section {
 					$contractArticleElement->articleValues = $filledContractValues[$contractArticle->getArticleId()];
 				}
 				$contractArticleElement->setDefaultValue($contractArticle->getArticleId());
-				$contractArticleElement->setProperty('contractArticle', $contractArticle);
-				$contractArticleElement->setProperty('preparedArticleText', $contractArticleElement->prepareArticleText($contractArticle));
-				$contractArticleElement->setProperty('subArticles', $contractArticle->getSubArticles());
+				$contractArticleElement->setContractArticle($contractArticle);
 			}
 		}
 	}

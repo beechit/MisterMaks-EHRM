@@ -72,6 +72,8 @@ ul.flashmessages { list-style-type: none; margin-left: 0px; }
 /* Start datepicker */
 .datepickerIcon { cursor: pointer; }
 
+input[readonly].datepicker { background: white; }
+
 /* End datepicker */
 /* Start Contract Wizard / Form */
 .collapse .row-fluid { margin: 20px 0px 20px 0px; }
@@ -83,6 +85,18 @@ ul.flashmessages { list-style-type: none; margin-left: 0px; }
 .country i { background: url("../../../Form/Images/flags.png") no-repeat; display: inline-block; width: 16px; height: 11px; }
 
 .article-values span { margin-right: 20px; }
+
+#contractCreator .articles-section { margin-bottom: 80px !important; }
+#contractCreator .articles-section div.inputs-list { border: 1px solid #e3e3e3; background: white; padding: 10px; border-radius: 3px; }
+#contractCreator .articles-section label { padding-right: 5px; }
+#contractCreator .articles-section .well { padding: 0; }
+#contractCreator .articles-section fieldset { margin-bottom: 0; }
+#contractCreator .articles-section legend { margin-bottom: 10px; }
+#contractCreator .articles-section .article-values { margin: 0; }
+#contractCreator .articles-section .control-group { margin-bottom: 0; }
+#contractCreator .preview { margin-bottom: 80px; }
+
+.preview table tr.article td { padding-top: 10px; }
 
 /* End Contract Wizard / Form */
 a:hover { text-decoration: none; }
@@ -103,6 +117,7 @@ iframe { border: none; }
 #modal-body-only .modal-body .icon-spin { margin: 30px; }
 #modal-body-only .modal-body .row { margin-left: 0; }
 #modal-body-only .modal-body ul.flashmessages { padding-left: 35px; }
+#modal-body-only .modal-body h1 { margin: 40px; }
 #modal-body-only form { margin: 30px 0 0 0; }
 #modal-body-only form fieldset { padding: 20px 0 20px 60px; margin-right: 20px; }
 #modal-body-only form fieldset legend { margin-bottom: 0; border: none; }
@@ -113,7 +128,7 @@ iframe { border: none; }
 #modal-body-only form.form-horizontal fieldset { padding: 0; margin: 20px; }
 #modal-body-only form.form-horizontal div.actions { position: absolute; bottom: 0; right: 0; left: 0; }
 
-.modal-large { width: 80%; height: 80%; left: 10%; top: 10% !important; margin: 0; }
+.modal-large { width: 80%; max-width: 1200px; height: 80%; left: 10%; right: 10%; top: 10% !important; margin: 0; }
 
 /* End Modal box / Wizard */
 /* Start Notifications */

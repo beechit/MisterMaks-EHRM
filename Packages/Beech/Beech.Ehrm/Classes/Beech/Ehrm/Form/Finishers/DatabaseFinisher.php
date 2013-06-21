@@ -31,6 +31,12 @@ class DatabaseFinisher extends \TYPO3\Form\Core\Model\AbstractFinisher {
 	protected $preferenceUtility;
 
 	/**
+	 * @var \TYPO3\Flow\Persistence\PersistenceManagerInterface
+	 * @Flow\Transient
+	 */
+	protected $persistenceManager;
+
+	/**
 	 * @var array
 	 */
 	protected $defaultOptions = array(
@@ -98,10 +104,12 @@ class DatabaseFinisher extends \TYPO3\Form\Core\Model\AbstractFinisher {
 	 */
 	protected function storeContract(\Beech\CLA\Domain\Model\Contract $contract, \Beech\CLA\Domain\Repository\ContractRepository $repository) {
 		$formValues = $this->finisherContext->getFormValues();
+
+		$personRepository = new \Beech\Party\Domain\Repository\PersonRepository();
+
 			// TODO: Maybe do this more generic
 		if (!empty($formValues['employee'])) {
-			$employeeRepository = new \Beech\Party\Domain\Repository\PersonRepository();
-			$employee = $employeeRepository->findByIdentifier($formValues['employee']);
+			$employee = $personRepository->findByIdentifier($formValues['employee']);
 			$contract->setEmployee($employee);
 			$contract->setEmployeeFullName($employee->getName()->getFullName());
 		}
@@ -128,7 +136,8 @@ class DatabaseFinisher extends \TYPO3\Form\Core\Model\AbstractFinisher {
 		$contract->setStatus($status);
 
 		if (isset($formValues['createdBy'])) {
-			$contract->setCreatedBy($formValues['createdBy']);
+			$createdBy = $personRepository->findByIdentifier($formValues['createdBy']);
+			$contract->setCreatedBy($createdBy);
 		}
 
 		if (isset($formValues['contractTemplate'])) {

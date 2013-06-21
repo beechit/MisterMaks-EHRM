@@ -15,6 +15,9 @@
 .datepickerIcon {
 	cursor: pointer;
 }
+input[readonly].datepicker {
+	background: $white;
+}
 /* End datepicker */
 
 /* Start Contract Wizard / Form */
@@ -34,5 +37,40 @@
 
 .article-values span {
     margin-right: 20px;
+}
+#contractCreator {
+	.articles-section {
+		margin-bottom: 80px !important;
+		div.inputs-list {
+			border: 1px solid #e3e3e3;
+			background: $white;
+			padding: 10px;
+			border-radius: $borderRadiusSmall;
+		}
+		label {
+			padding-right: 5px;
+		}
+		.well {
+			padding:0;
+		}
+		fieldset {
+			margin-bottom: 0;
+		}
+		legend {
+			margin-bottom: 10px;
+		}
+		.article-values {
+			margin:0;
+		}
+		.control-group {
+			margin-bottom: 0;
+		}
+	}
+	.preview {
+		margin-bottom: 80px;
+	}
+}
+.preview table tr.article td {
+	padding-top:10px;
 }
 /* End Contract Wizard / Form */
