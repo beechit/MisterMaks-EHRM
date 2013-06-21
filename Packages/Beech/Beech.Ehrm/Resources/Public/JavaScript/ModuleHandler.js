@@ -93,11 +93,13 @@
 			});
 
 			$moduleContainer.find('form').each(function(index, form) {
+
 				$(form).ajaxForm({
 					dataType: 'html',
 					beforeSend: that.startAjaxRequest,
 					complete: that.finishedAjaxRequest,
 					success: function(result) {
+
 						if ($(form).parent().parent().attr('id') != '') {
 							if ($(form).hasClass('remove')) {
 								that.loadContent(result, '#'+$(form).parent().parent().attr('id'));
@@ -106,9 +108,11 @@
 							} else if($('#'+$(form).parent().attr('id')).length) {
 								that.loadContent(result, '#'+$(form).parent().attr('id'), true);
 							} else {
+								$(target).parents('.modal-body').scrollTop(0);
 								that.loadContent(result, target);
 							}
 						} else {
+							$(target).parents('.modal-body').scrollTop(0);
 							that.loadContent(result, target);
 						}
 					},
