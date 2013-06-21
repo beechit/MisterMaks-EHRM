@@ -24,7 +24,7 @@
       validation:
         -
           type: 'Text'
-      defaultValue: 'Functiecontext'
+      default: 'Functiecontext'
     'jobGoal':
       label: 'Job goal'
       validation:
@@ -105,10 +105,10 @@
           options:
             maximum: 20
     'creationDate':
-      defaultValue: 'now'
+      default: 'now'
       label: 'creation date'
     'createdBy':
-      defaultValue: 'currentUser'
+      default: 'currentUser'
       label: 'Created by'
       type: 'string'
       validation: ''

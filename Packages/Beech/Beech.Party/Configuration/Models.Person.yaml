@@ -86,6 +86,13 @@
           type: 'RegularExpresssion'
           options:
             regularExpression: '/[a-zA-Z\\-\\s\\’]{2,30}/'
+    'countryOfBirth':
+      label: 'Country of birth'
+      validation:
+        -
+          type: 'RegularExpresssion'
+          options:
+            regularExpression: '/[a-zA-Z\\-\\s\\’]{2,30}/'
     'dateofDeath':
       label: 'Date of death'
       validation:
@@ -120,7 +127,6 @@
           type: 'StringLength'
           options:
             maximum: 20
-# todo: use the country and nationality table
     'nationality':
       label: 'Nationality'
       validation:
@@ -128,7 +134,7 @@
           type: 'StringLength'
           options:
             maximum: 35
-      defaultValue: 'NL'
+      default: 'NL'
     'civilStatus':
       label: 'Civil status'
       options:
@@ -169,7 +175,7 @@
           - FALSE
           - TRUE
     'creationDate':
-      defaultValue: 'now'
+      default: 'now'
       label: 'creation date'
       type: 'DateTime'
       validation:
@@ -179,6 +185,6 @@
             earliestDate: 20130101
             latestDate: 20200101
     'createdBy':
-      defaultValue: 'currentUser'
+      default: 'currentUser'
       label: 'Created by'
       type: 'Beech\Party\Domain\Model\Person'

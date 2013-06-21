@@ -30,16 +30,16 @@
           'sickness': 'Sickness'
           'other': 'Other'
           'doesNotApply': 'Does not apply'
-      defaultValue: 'Does not apply'
+      default: 'Does not apply'
 # in entity document we store document id's of entities that are stored, in way we only have to use one status connections to multiple entities.
     'entityIdentifier':
       label: 'entityID'
     'creationDate':
-      defaultValue: 'now'
+      default: 'now'
       label: 'creation date'
       type: 'DateTime'
     'createdBy':
-      defaultValue: 'currentUser'
+      default: 'currentUser'
       label: 'Created by'
       type: 'Beech\Party\Domain\Model\Person'
     'lastUpdated':
