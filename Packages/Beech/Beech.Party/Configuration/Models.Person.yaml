@@ -20,8 +20,8 @@
         values:
           'contact': 'Contact'
           'companyContact': 'Company contact'
-          'employee': 'employee'
-          'partnerCompanyContact': 'partnerCompanyContact'
+          'employee': 'Employee'
+          'partnerCompanyContact': 'Partner company contact'
           'relative': 'Relative'
 # only for usage with persontype = contact this employee relation is about registering relatives tot the employee
     'employeeRelations':

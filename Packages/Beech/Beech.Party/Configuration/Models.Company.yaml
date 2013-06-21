@@ -59,7 +59,7 @@
           options:
             maximum: 20
     'chamberOfCommerce':
-      label: 'Chamber of Commerce Number'
+      label: 'Chamber of commerce number'
       validation:
         -
           type: 'StringLength'

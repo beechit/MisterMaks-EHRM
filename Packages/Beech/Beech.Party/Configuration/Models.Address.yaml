@@ -9,7 +9,7 @@
           'business': 'Business'
           'postbox': 'Postbox'
           'mailing': 'Mailing'
-          'work': 'work'
+          'work': 'Work'
           'abroad': 'Abroad'
           'other': 'Other'
       validation:
