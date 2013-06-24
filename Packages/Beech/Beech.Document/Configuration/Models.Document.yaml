@@ -32,7 +32,7 @@
         -
           type: 'Text'
     'creationDate':
-      defaultValue: 'now'
+      default: 'now'
       label: 'creation date'
       type: 'DateTime'
       validation:
@@ -42,6 +42,6 @@
             earliestDate: 20130101
             latestDate: 20200101
     'createdBy':
-      defaultValue: 'currentUser'
+      default: 'currentUser'
       label: 'Created by'
       type: 'Beech\Party\Domain\Model\Person'

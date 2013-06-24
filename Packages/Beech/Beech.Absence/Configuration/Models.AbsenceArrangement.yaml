@@ -13,14 +13,14 @@ Beech.AbsenceArrangment.Domain.Model.AbsenceArrangement:
           options:
             maximum: 20
     'autoGrandBalance':
-      defaultValue: false
+      default: FALSE
       label: 'Grant balance after end Countdate'
       options:
         values:
           - TRUE
           - FALSE
     'calculateBalanceonFTE':
-      defaultValue: false
+      default: FALSE
       label: 'Calculate balance according to FTE factor'
       options:
         values:
@@ -29,7 +29,7 @@ Beech.AbsenceArrangment.Domain.Model.AbsenceArrangement:
     'customBalance':
       label: 'Custom  balance for full time'
     'endCount':
-      defaultValue: 31-12
+      default: 31-12
       label: 'End count of balance'
       type: DateTime
       validation:
@@ -51,7 +51,7 @@ Beech.AbsenceArrangment.Domain.Model.AbsenceArrangement:
           options:
             maximum: 20
     'moveUnusedBalance':
-      defaultValue: false
+      default: FALSE
       label: 'Move unused balance hours to new balance period'
       options:
         values:
@@ -77,7 +77,7 @@ Beech.AbsenceArrangment.Domain.Model.AbsenceArrangement:
           options:
             maximum: 25
     'startCount':
-      defaultValue: 1-1
+      default: 1-1
       label: 'Start count of balance'
       type: DateTime
       validation:
@@ -86,11 +86,11 @@ Beech.AbsenceArrangment.Domain.Model.AbsenceArrangement:
           options:
             maximum: 5
     'createdBy':
-      defaultValue: currentUser
+      default: currentUser
       label: 'Created by'
       type: Beech\Party\Domain\Model\Person
     'creationDate':
-      defaultValue: now
+      default: now
       label: 'creation date'
       type: DateTime
       validation:

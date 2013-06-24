@@ -186,8 +186,8 @@ WizardNewPerson:
                   identifier: dateofBirth
                   properties:
                     dateFormat: d-m-Y
-                    enableDatePicker: 'true'
-                    displayTimeSelector: 'false'
+                    enableDatePicker: 'TRUE'
+                    displayTimeSelector: 'FALSE'
                   label: 'Date of birth'
                   validators:
                     -

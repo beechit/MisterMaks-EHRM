@@ -88,8 +88,8 @@ WizardAddEducation:
                   identifier: startDate
                   properties:
                     dateFormat: d-m-Y
-                    enableDatePicker: 'true'
-                    displayTimeSelector: 'false'
+                    enableDatePicker: 'TRUE'
+                    displayTimeSelector: 'FALSE'
                   label: Start
                   validators:
                     -
@@ -113,8 +113,8 @@ WizardAddEducation:
                       identifier: endDate
                       properties:
                         dateFormat: d-m-Y
-                        enableDatePicker: 'true'
-                        displayTimeSelector: 'false'
+                        enableDatePicker: 'TRUE'
+                        displayTimeSelector: 'FALSE'
                       label: 'End date'
                       validators:
                         -

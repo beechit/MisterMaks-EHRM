@@ -28,10 +28,10 @@ class FieldDefaultValueHelper {
 	 */
 	public function getDefault($property) {
 		$defaultValue = '';
-		if (isset($property['defaultValue'])) {
-			if ($property['defaultValue'] === 'now' || $property['defaultValue'] === 'today') {
+		if (isset($property['default'])) {
+			if ($property['default'] === 'now' || $property['default'] === 'today') {
 				$defaultValue = date('Y-m-d');
-			} elseif ($property['defaultValue'] === 'currentUser') {
+			} elseif ($property['default'] === 'currentUser') {
 				$tokens = $this->securityContext->getAuthenticationTokens();
 
 				foreach ($tokens as $token) {
@@ -40,7 +40,7 @@ class FieldDefaultValueHelper {
 					}
 				}
 			} else {
-				$defaultValue = $property['defaultValue'];
+				$defaultValue = $property['default'];
 			}
 		}
 		return $defaultValue;
