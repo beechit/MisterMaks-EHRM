@@ -10,7 +10,6 @@
           'fax': 'Fax'
           'home': 'Home'
           'mobile': 'Mobile'
-          'emergencyCall': 'Emergency Call'
           'foreign': 'Foreign'
           'other': 'Other'
       validation:
