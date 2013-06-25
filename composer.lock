@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "630cbd9afabadd9424689cf909f7a69d",
+    "hash": "ae471dc10668c0af726033962add105c",
     "packages": [
         {
             "name": "beech/essentials",
@@ -38,12 +38,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "a30e407c1fdd4aa7adc53b3bf9275a7d47f925da"
+                "reference": "v1.0.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/a30e407c1fdd4aa7adc53b3bf9275a7d47f925da",
-                "reference": "a30e407c1fdd4aa7adc53b3bf9275a7d47f925da",
+                "url": "https://api.github.com/repos/composer/installers/zipball/v1.0.4",
+                "reference": "v1.0.4",
                 "shasum": ""
             },
             "replace": {
@@ -94,6 +94,7 @@
                 "li3",
                 "lithium",
                 "mako",
+                "modulework",
                 "phpbb",
                 "ppi",
                 "silverstripe",
@@ -101,7 +102,7 @@
                 "wordpress",
                 "zend"
             ],
-            "time": "2013-06-13 16:21:37"
+            "time": "2013-06-20 02:36:19"
         },
         {
             "name": "doctrine/common",
@@ -224,12 +225,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/couchdb-odm.git",
-                "reference": "facfac0e70a375b2c08bbd41fdbcb292d8cb5dec"
+                "reference": "20413518c86711b3f013e2f8742c31057885f97e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/couchdb-odm/zipball/facfac0e70a375b2c08bbd41fdbcb292d8cb5dec",
-                "reference": "facfac0e70a375b2c08bbd41fdbcb292d8cb5dec",
+                "url": "https://api.github.com/repos/doctrine/couchdb-odm/zipball/20413518c86711b3f013e2f8742c31057885f97e",
+                "reference": "20413518c86711b3f013e2f8742c31057885f97e",
                 "shasum": ""
             },
             "require": {
@@ -270,7 +271,7 @@
                 "couchdb",
                 "persistence"
             ],
-            "time": "2013-05-10 15:32:42"
+            "time": "2013-06-22 10:04:12"
         },
         {
             "name": "doctrine/dbal",
@@ -543,13 +544,13 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/beechit/Radmiraal.Emberjs.git",
-                "reference": "698560a79564b4aee12b5faff981b97a61e49335"
+                "reference": "d40cb1f9a5e0b86fd8fd3ba8c03eadfc0a925e6b"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://ci.beech.local:8080/job/composer-packages/ws/mistermaks-1.0//dist/radmiraal-emberjs-dev-master-cc03ce.zip",
+                "url": "http://ci.beech.local:8080/job/composer-packages/ws/mistermaks-1.0//dist/radmiraal-emberjs-dev-master-072cf7.zip",
                 "reference": "dev-master",
-                "shasum": "698560a79564b4aee12b5faff981b97a61e49335"
+                "shasum": "c1b0aa58fe274a0a517b6037bf34f05333ea30bc"
             },
             "require": {
                 "typo3/flow": "*"
@@ -568,7 +569,7 @@
                     "name": "Rens Admiraal"
                 }
             ],
-            "time": "2013-05-23 11:41:07"
+            "time": "2013-06-13 13:12:35"
         },
         {
             "name": "react/event-loop",
@@ -673,12 +674,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/DomCrawler.git",
-                "reference": "e8e7f344882324761e1a3bfbfce44f26437af22d"
+                "reference": "v2.2.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/DomCrawler/zipball/e8e7f344882324761e1a3bfbfce44f26437af22d",
-                "reference": "e8e7f344882324761e1a3bfbfce44f26437af22d",
+                "url": "https://api.github.com/repos/symfony/DomCrawler/zipball/v2.2.3",
+                "reference": "v2.2.3",
                 "shasum": ""
             },
             "require": {
@@ -786,7 +787,7 @@
             "version": "2.0.0-beta3",
             "source": {
                 "type": "git",
-                "url": "git://git.typo3.org/FLOW3/Packages/TYPO3.FLOW3.git",
+                "url": "git://git.typo3.org/Packages/TYPO3.Flow.git",
                 "reference": "2.0.0-beta3"
             },
             "require": {
@@ -825,8 +826,8 @@
             "version": "2.0.x-dev",
             "source": {
                 "type": "git",
-                "url": "git://git.typo3.org/FLOW3/Packages/TYPO3.Fluid.git",
-                "reference": "e3736a887a7278742961ef925a3bd8513e38447f"
+                "url": "git://git.typo3.org/Packages/TYPO3.Fluid.git",
+                "reference": "c9bd3320fb2d33844408efb346db19ce1c10daae"
             },
             "require": {
                 "typo3/flow": "2.0.*"
@@ -842,7 +843,7 @@
                 "LGPL-3.0+"
             ],
             "description": "Next-Generation Templating Framework for TYPO3 Flow and TYPO3 Neos, also backported to TYPO3 CMS",
-            "time": "2013-05-06 07:15:34"
+            "time": "2013-06-24 09:36:20"
         },
         {
             "name": "typo3/form",
@@ -918,7 +919,7 @@
             "version": "2.0.x-dev",
             "source": {
                 "type": "git",
-                "url": "git://git.typo3.org/FLOW3/Packages/TYPO3.Party.git",
+                "url": "git://git.typo3.org/Packages/TYPO3.Party.git",
                 "reference": "8b51051f1ca42c57bd86ce0cccdce5d0881a42fa"
             },
             "require": {
@@ -1215,12 +1216,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "8d0a47217af4a0ed74ac0e155ec2007205d1408f"
+                "reference": "58e6aa238f270d67187d16a50e14503bd9d02bee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/8d0a47217af4a0ed74ac0e155ec2007205d1408f",
-                "reference": "8d0a47217af4a0ed74ac0e155ec2007205d1408f",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/58e6aa238f270d67187d16a50e14503bd9d02bee",
+                "reference": "58e6aa238f270d67187d16a50e14503bd9d02bee",
                 "shasum": ""
             },
             "require": {
@@ -1230,13 +1231,18 @@
                 "phpunit/php-token-stream": ">=1.1.3@stable"
             },
             "require-dev": {
-                "phpunit/phpunit": "3.7.*"
+                "phpunit/phpunit": "3.7.*@dev"
             },
             "suggest": {
                 "ext-dom": "*",
                 "ext-xdebug": ">=2.0.5"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.2.x-dev"
+                }
+            },
             "autoload": {
                 "classmap": [
                     "PHP/"
@@ -1263,7 +1269,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2013-06-12 07:14:37"
+            "time": "2013-06-24 11:56:39"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -1449,12 +1455,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "268d9f12f6b7e982ad7bb40ea492085a3d1414d6"
+                "reference": "30110580b640440f6442a58322ee657216d2d8ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/268d9f12f6b7e982ad7bb40ea492085a3d1414d6",
-                "reference": "268d9f12f6b7e982ad7bb40ea492085a3d1414d6",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/30110580b640440f6442a58322ee657216d2d8ba",
+                "reference": "30110580b640440f6442a58322ee657216d2d8ba",
                 "shasum": ""
             },
             "require": {
@@ -1463,11 +1469,11 @@
                 "ext-reflection": "*",
                 "ext-spl": "*",
                 "php": ">=5.3.3",
-                "phpunit/php-code-coverage": ">=1.2.1,<1.3.0",
+                "phpunit/php-code-coverage": ">=1.2.1,<1.3",
                 "phpunit/php-file-iterator": ">=1.3.1",
                 "phpunit/php-text-template": ">=1.1.1",
-                "phpunit/php-timer": ">=1.0.2,<1.1.0",
-                "phpunit/phpunit-mock-objects": ">=1.2.0,<1.3.0",
+                "phpunit/php-timer": ">=1.0.2,<1.1",
+                "phpunit/phpunit-mock-objects": ">=1.2,<1.3",
                 "symfony/yaml": ">=2.0,<3.0"
             },
             "require-dev": {
@@ -1515,7 +1521,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2013-06-01 10:06:56"
+            "time": "2013-06-23 07:31:03"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -1523,22 +1529,31 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit-mock-objects.git",
-                "reference": "8e9d897b39ca6310ccc2d81b8f29cabd5ce12786"
+                "reference": "977c5327c5f9e2a0f08728a59389ee604e5b2f47"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/8e9d897b39ca6310ccc2d81b8f29cabd5ce12786",
-                "reference": "8e9d897b39ca6310ccc2d81b8f29cabd5ce12786",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/977c5327c5f9e2a0f08728a59389ee604e5b2f47",
+                "reference": "977c5327c5f9e2a0f08728a59389ee604e5b2f47",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3",
                 "phpunit/php-text-template": ">=1.1.1@stable"
             },
+            "require-dev": {
+                "pear-pear/pear": "1.9.4",
+                "phpunit/phpunit": "3.7.*@dev"
+            },
             "suggest": {
                 "ext-soap": "*"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.2.x-dev"
+                }
+            },
             "autoload": {
                 "classmap": [
                     "PHPUnit/"
@@ -1564,7 +1579,7 @@
                 "mock",
                 "xunit"
             ],
-            "time": "2013-05-07 12:11:45"
+            "time": "2013-06-23 05:41:31"
         },
         {
             "name": "sandstorm/phpprofiler",
@@ -1702,12 +1717,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "238a160b54b979bbf3e9f6941d1a1dc64ae9b48b"
+                "reference": "afa9112f5eaf83f62b891bab1b7a81f6e004020a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/238a160b54b979bbf3e9f6941d1a1dc64ae9b48b",
-                "reference": "238a160b54b979bbf3e9f6941d1a1dc64ae9b48b",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/afa9112f5eaf83f62b891bab1b7a81f6e004020a",
+                "reference": "afa9112f5eaf83f62b891bab1b7a81f6e004020a",
                 "shasum": ""
             },
             "require": {
@@ -1765,7 +1780,7 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2013-06-17 04:00:18"
+            "time": "2013-06-25 06:05:58"
         },
         {
             "name": "symfony/finder",
@@ -1774,12 +1789,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Finder.git",
-                "reference": "b709a80b766b47761ae1d1e27a6fa6b4e62dcf08"
+                "reference": "d8da924d4f7d9f325ebd72feefee40c17a3e9104"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Finder/zipball/b709a80b766b47761ae1d1e27a6fa6b4e62dcf08",
-                "reference": "b709a80b766b47761ae1d1e27a6fa6b4e62dcf08",
+                "url": "https://api.github.com/repos/symfony/Finder/zipball/d8da924d4f7d9f325ebd72feefee40c17a3e9104",
+                "reference": "d8da924d4f7d9f325ebd72feefee40c17a3e9104",
                 "shasum": ""
             },
             "require": {
@@ -1812,7 +1827,7 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "http://symfony.com",
-            "time": "2013-06-02 12:05:59"
+            "time": "2013-06-23 08:16:33"
         },
         {
             "name": "theseer/fdomdocument",
@@ -1979,7 +1994,7 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git://git.typo3.org/FLOW3/Packages/TYPO3.Kickstart.git",
+                "url": "git://git.typo3.org/Packages/TYPO3.Kickstart.git",
                 "reference": "4de1a56d356203540a0c8a1ef1f20b58fbee3dc8"
             },
             "require": {
