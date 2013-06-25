@@ -2,8 +2,8 @@
   properties:
     'party':
       type: 'TYPO3\Party\Domain\Model\AbstractParty'
-    'accountType':
-      label: 'account type'
+    'type':
+      label: 'Bank account type'
       options:
         values:
           'giro': 'Giro'

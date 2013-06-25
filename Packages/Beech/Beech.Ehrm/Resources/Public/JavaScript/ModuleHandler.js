@@ -132,6 +132,7 @@
 			$moduleContainer.find('select').chosen();
 			$moduleContainer.find('input').applyInputMasks();
 			$moduleContainer.find('.countrySelect').countrySelect();
+			$moduleContainer.find('input[type=checkbox].primary').controlPrimary();
 		},
 
 		prepareUrl: function (object) {

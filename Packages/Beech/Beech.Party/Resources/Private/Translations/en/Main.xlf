@@ -104,7 +104,7 @@
 			<trans-unit id="company.bankInformation">
 				<source>Bank information</source>
 			</trans-unit>
-			<trans-unit id="company.accountType">
+			<trans-unit id="company.bankAccountType">
 				<source>Account type</source>
 			</trans-unit>
 			<trans-unit id="company.bankName">
