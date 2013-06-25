@@ -13,6 +13,6 @@ NewEmployee:
             assignedTo: 'ACTION:createdBy'
             priority: 0
             increasePriorityInterval: '4days'
-            description: 'Send %s a welcom card'
+            description: 'Send %s a welcome card'
             descriptionReplacements:
               1: 'TARGET:name'
