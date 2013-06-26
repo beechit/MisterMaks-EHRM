@@ -3,7 +3,7 @@
     'party':
       type: 'TYPO3\Party\Domain\Model\AbstractParty'
 # todo: implement this that validation works on type address selected.
-    'type':
+    'electronicAddressType':
       label: 'electronicAdressType'
       options:
         values:

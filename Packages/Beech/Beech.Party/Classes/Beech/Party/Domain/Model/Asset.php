@@ -24,6 +24,12 @@ class Asset extends \Beech\Ehrm\Domain\Model\Document {
 	 */
 	protected $party;
 
+	/**
+	 * @var string
+	 * @ODM\Field(type="mixed")
+	 * @ODM\Index
+	 */
+	protected $assetType;
 }
 
 ?>
