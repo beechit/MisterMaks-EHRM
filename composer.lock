@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "ae471dc10668c0af726033962add105c",
+    "hash": "649454b97c2901d56c7d69f5406b31e5",
     "packages": [
         {
             "name": "beech/essentials",
@@ -158,7 +158,7 @@
                 {
                     "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "http://jmsyst.com",
+                    "homepage": "https://github.com/schmittjoh",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -544,13 +544,13 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/beechit/Radmiraal.Emberjs.git",
-                "reference": "d40cb1f9a5e0b86fd8fd3ba8c03eadfc0a925e6b"
+                "reference": "698560a79564b4aee12b5faff981b97a61e49335"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://ci.beech.local:8080/job/composer-packages/ws/mistermaks-1.0//dist/radmiraal-emberjs-dev-master-072cf7.zip",
+                "url": "http://ci.beech.local:8080/job/composer-packages/ws/mistermaks-1.0//dist/radmiraal-emberjs-dev-master-a78eab.zip",
                 "reference": "dev-master",
-                "shasum": "c1b0aa58fe274a0a517b6037bf34f05333ea30bc"
+                "shasum": "dca92275effe84970732c04e03fb44510c7c5488"
             },
             "require": {
                 "typo3/flow": "*"
@@ -569,7 +569,7 @@
                     "name": "Rens Admiraal"
                 }
             ],
-            "time": "2013-06-13 13:12:35"
+            "time": "2013-06-24 07:47:44"
         },
         {
             "name": "react/event-loop",
@@ -767,7 +767,7 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git://git.typo3.org/FLOW3/Packages/TYPO3.Eel.git",
+                "url": "git://git.typo3.org/Packages/TYPO3.Eel.git",
                 "reference": "8fcfc8a7faef0d05bf427f5d944a1fc21f5e191a"
             },
             "require": {
@@ -827,7 +827,7 @@
             "source": {
                 "type": "git",
                 "url": "git://git.typo3.org/Packages/TYPO3.Fluid.git",
-                "reference": "c9bd3320fb2d33844408efb346db19ce1c10daae"
+                "reference": "2f7a92559eebff872fad8022061320ae00067d6e"
             },
             "require": {
                 "typo3/flow": "2.0.*"
@@ -843,14 +843,14 @@
                 "LGPL-3.0+"
             ],
             "description": "Next-Generation Templating Framework for TYPO3 Flow and TYPO3 Neos, also backported to TYPO3 CMS",
-            "time": "2013-06-24 09:36:20"
+            "time": "2013-06-24 16:13:40"
         },
         {
             "name": "typo3/form",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git://git.typo3.org/FLOW3/Packages/TYPO3.Form.git",
+                "url": "git://git.typo3.org/Packages/TYPO3.Form.git",
                 "reference": "e296d50c9702668c88ddaad2ce8444ef08c14ac8"
             },
             "require": {
@@ -871,7 +871,7 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git://git.typo3.org/FLOW3/Packages/TYPO3.FormBuilder.git",
+                "url": "git://git.typo3.org/Packages/TYPO3.FormBuilder.git",
                 "reference": "79ceb85f3e16be61843c9e1f2a0609d05a07d8cc"
             },
             "dist": {
@@ -898,8 +898,14 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git://git.typo3.org/FLOW3/Packages/LDAP.git",
+                "url": "git://git.typo3.org/Packages/TYPO3.LDAP.git",
                 "reference": "3e621f8d2e2ae2f6082dd58638a4330c05fbd115"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://ci.beech.local:8080/job/composer-packages/ws/mistermaks-1.0//dist/typo3-ldap-dev-master-46f0e0.zip",
+                "reference": "dev-master",
+                "shasum": "d03b381a004ed911aae0366848250aab94768312"
             },
             "require": {
                 "typo3/flow": "*"
@@ -910,7 +916,6 @@
                     "TYPO3\\LDAP": "Classes"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "description": "LDAP Authentication for Flow",
             "time": "2012-10-08 15:21:08"
         },
@@ -968,7 +973,7 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git://git.typo3.org/FLOW3/Packages/TYPO3.Queue.Redis.git",
+                "url": "git://git.typo3.org/Packages/TYPO3.Queue.Redis.git",
                 "reference": "bbfdf6ada94caf6ad5c147a99f0aac1cbc0e3ddc"
             },
             "dist": {
@@ -995,7 +1000,7 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git://git.typo3.org/FLOW3/Packages/TYPO3.Surf.git",
+                "url": "git://git.typo3.org/Packages/TYPO3.Surf.git",
                 "reference": "3550cf3a6866446285b21bbc3813775e513bfea4"
             },
             "require": {
@@ -1972,7 +1977,7 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git://git.typo3.org/FLOW3/BuildEssentials.git",
+                "url": "git://git.typo3.org/Flow/BuildEssentials.git",
                 "reference": "ab108264ba4d4da8d6dac685104f94b3a0a84939"
             },
             "require": {
