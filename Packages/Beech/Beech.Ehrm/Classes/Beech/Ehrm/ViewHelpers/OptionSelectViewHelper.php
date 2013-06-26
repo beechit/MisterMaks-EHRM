@@ -50,8 +50,8 @@ class OptionSelectViewHelper extends \TYPO3\Fluid\ViewHelpers\Form\SelectViewHel
 			$propertyOptions = \TYPO3\Flow\Utility\Arrays::getValueByPath($modelConfiguration, 'properties.'.$property.'.options.values');
 			if ($propertyOptions !== NULL) {
 				$propertyOptionsValues = array();
-				foreach($propertyOptions as $value) {
-					$propertyOptionsValues[$value] = $value;
+				foreach($propertyOptions as $key => $value) {
+					$propertyOptionsValues[$key] = $value;
 				}
 					//Add empty value to support placeholder in chosen select plugin
 				$this->arguments['options'] = array_merge(array('' => ''), $propertyOptionsValues);
