@@ -15,17 +15,17 @@ use TYPO3\Flow\Validation\Validator\AbstractValidator;
 /**
  *
  */
-class ForeignPhoneNumberValidator extends AbstractValidator {
+class NLPhoneNumberValidator extends AbstractValidator {
 
 	/**
 	 * @var string
 	 */
-	protected $regularExpression = '([+(\d]{1})(([\d+() -.]){5,16})([+(\d]{1})';
+	protected $regularExpression = '^\(?(0)[1-9]{2}\)?(\-|\s)?[0-9]{7}$|^\(?(0)[1-9]{3}\)?(\-|\s)?[0-9]{6}$';
 
 	/**
 	 * @var string
 	 */
-	protected $expected = '+31 99 9999999';
+	protected $expected = '000 9999999';
 
 	/**
 	 * Checks if the given value matches the specified regular expression.
@@ -40,10 +40,12 @@ class ForeignPhoneNumberValidator extends AbstractValidator {
 			$this->addError('Format of your phone number is not correct. There is <b>%1$s</b> and should be <b>%2$s</b>', 1370528826, array($value, $this->expected));
 		}
 		if ($result === FALSE) {
-			throw new \TYPO3\Flow\Validation\Exception\InvalidValidationOptionsException('regularExpression "' . $this->regularExpression . '"ForeignPhoneNumberValidator contained an error.', 1298273089);
+			throw new \TYPO3\Flow\Validation\Exception\InvalidValidationOptionsException('regularExpression "' . $this->regularExpression . '"NLPhoneNumberValidator contained an error.', 1298273089);
 		}
 	}
 
+	// todo: add validators for Foreign phone number '([+(\d]{1})(([\d+() -.]){5,16})([+(\d]{1})';
+	//	mobile phone validator '\+??(\((\+)?31(6)?\)|(\()?06(\))?|316)( *|-)(?#openof)((\d{4}(\.|\-|\s)?\d{4})(?#of)|(\d{2}(\.|\-|\s)){3}\d{2}(?#of)|(\d{2}(\.|\-|\s)\d{3}(\.|\-|\s)\d{3})(?#of)|(\d{3}(\.|\-|\s)\d{2}(\.|\-|\s)\d{3})(?#of)|(\d{3}(\.|\-|\s)\d{3}(\.|\-|\s)\d{2}))';
 }
 
 ?>
