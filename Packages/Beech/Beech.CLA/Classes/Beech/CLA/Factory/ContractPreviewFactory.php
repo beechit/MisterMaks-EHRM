@@ -27,6 +27,13 @@ class ContractPreviewFactory extends \TYPO3\Form\Factory\AbstractFormFactory {
 	protected $form;
 
 	/**
+	 * Contains setting's values passed to form
+	 *
+	 * @var array
+	 */
+	protected $factorySpecificConfiguration;
+
+	/**
 	 * @param array $factorySpecificConfiguration
 	 * @param string $presetName
 	 * @return void
@@ -44,16 +51,31 @@ class ContractPreviewFactory extends \TYPO3\Form\Factory\AbstractFormFactory {
 	 */
 	public function build(array $factorySpecificConfiguration, $presetName) {
 		$this->init($factorySpecificConfiguration, $presetName);
+
+		/** @var $contract \Beech\CLA\Domain\Model\Contract */
 		$contract = $factorySpecificConfiguration['contract'];
+
+		/** @var $previewPage \Beech\CLA\FormElements\ContractPreviewPage */
 		$previewPage = $this->form->createPage('previewPage', 'Beech.CLA:ContractPreviewPage');
+		$previewPage->setLabel($contract->getContractTemplate()->getTemplateName());
 
 			// add renderingOption so view known's it is in preview mode
 		$this->form->setRenderingOption('preview', TRUE);
 
+		/** @var $contractHeader \Beech\CLA\FormElements\ContractHeaderSection */
+		$contractHeader = $previewPage->createElement('contractHeader', 'Beech.CLA:ContractHeaderSection');
+		$contractHeader->setProperty('contract', $contract);
+
+		/** @var $contractFooter \Beech\CLA\FormElements\ContractFooterSection */
+		$contractFooter = $previewPage->createElement('contractFooter', 'Beech.CLA:ContractFooterSection');
+		$contractFooter->setProperty('contract', $contract);
+
+		/** @var $articlesSection \Beech\CLA\FormElements\ContractArticlesSection */
 		$articlesSection = $previewPage->createElement('articles', 'Beech.CLA:ContractArticlesSection');
 		$articlesSection->setContract($contract);
 		$articlesSection->initContractArticles();
 		$articlesSection->initializeFormElement();
+
 		return $this->form;
 	}
 

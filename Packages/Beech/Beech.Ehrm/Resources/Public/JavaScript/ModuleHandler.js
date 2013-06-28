@@ -32,7 +32,6 @@
 
 		loadUrl: function(url, target) {
 			// only load url when set
-			console.log(url)
 			if(url) {
 				$.ajax({
 					format: 'html',

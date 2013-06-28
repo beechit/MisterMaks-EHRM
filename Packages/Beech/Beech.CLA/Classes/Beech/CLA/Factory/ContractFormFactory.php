@@ -16,16 +16,34 @@ use TYPO3\Form\Core\Model\FormDefinition;
 class ContractFormFactory extends \TYPO3\Form\Factory\AbstractFormFactory {
 
 	/**
-	 * @var \Beech\Ehrm\Utility\Domain\ModelInterpreterUtility
+	 * @var \Beech\Ehrm\Utility\PreferenceUtility
 	 * @Flow\Inject
 	 */
-	protected $modelInterpreterUtility;
+	protected $preferenceUtility;
 
 	/**
-	 * @var \Beech\Ehrm\Form\Helper\FieldDefaultValueHelper
+	 * @var \Beech\CLA\Domain\Repository\ContractTemplateRepository
 	 * @Flow\Inject
 	 */
-	protected $fieldDefaultValueHelper;
+	protected $contractTemplateRepository;
+
+	/**
+	 * @var \Beech\CLA\Domain\Repository\JobDescriptionRepository
+	 * @Flow\Inject
+	 */
+	protected $jobDescriptionRepository;
+
+	/**
+	 * @var \Beech\Party\Domain\Repository\PersonRepository
+	 * @Flow\Inject
+	 */
+	protected $personRepository;
+
+	/**
+	 * @var \Beech\Party\Domain\Repository\CompanyRepository
+	 * @Flow\Inject
+	 */
+	protected $companyRepository;
 
 	/**
 	 * @var \TYPO3\Form\Core\Model\FormDefinition
@@ -102,36 +120,47 @@ class ContractFormFactory extends \TYPO3\Form\Factory\AbstractFormFactory {
 			);
 			$this->form->addFinisher($redirectFinisher);
 		} else {
+
 			$page = $this->form->createPage('page0');
 
-				// add model properties to wizard (for preview and database finisher)
-				// todo: should be objects and not model identifiers
-			$contractProperties = $this->modelInterpreterUtility->getModelProperties('Beech.CLA', 'Contract');
-			foreach ($contractProperties as $propertyName => $property) {
-				$contractField = $page->createElement($propertyName, 'TYPO3.Form:HiddenField');
-				$contractField->setLabel(isset($property['label']) ? $property['label'] : $propertyName );
-				if (isset($this->factorySpecificConfiguration[$propertyName])) {
-					$defaultValue = $this->factorySpecificConfiguration[$propertyName];
-				} else {
-					$defaultValue = $this->fieldDefaultValueHelper->getDefault($property);
-				}
-				$contractField->setDefaultValue($defaultValue);
-			}
+			$contractTemplate = $this->contractTemplateRepository->findByIdentifier($this->factorySpecificConfiguration['contractTemplate']);
 
-			while ($this->nextArticlesPage($page)) {
+			$contract = new \Beech\CLA\Domain\Model\Contract();
+			$contract->setContractTemplate($contractTemplate);
+			$contract->setEmployee($this->personRepository->findByIdentifier($this->factorySpecificConfiguration['employee']));
+			$contract->setJobDescription($this->jobDescriptionRepository->findByIdentifier($this->factorySpecificConfiguration['jobDescription']));
+			$contract->setEmployer($this->companyRepository->findByIdentifier($this->preferenceUtility->getApplicationPreference('company')));
+
+			/**
+			 * @todo: flatten all Contract values (from yaml file) employee adress, jobtitle etc
+			 * 		  so all values are static for contract and use these values in fluid template
+			 */
+			$contract->setJobTitle($contract->getJobDescription()->getJobTitle());
+
+			while ($this->nextArticlesPage($contract, $page)) {
 				++$this->pageIndex;
 				$page = NULL;
 			}
 
-			$this->form->createPage('previewPage', 'Beech.CLA:ContractPreviewPage');
-			$databaseFinisher = new \Beech\Ehrm\Form\Finishers\DatabaseFinisher();
-			$databaseFinisher->setOptions(
+			/** @var $previewPage \Beech\CLA\FormElements\ContractPreviewPage */
+			$previewPage = $this->form->createPage('previewPage', 'Beech.CLA:ContractPreviewPage');
+			$previewPage->setLabel($contract->getContractTemplate()->getTemplateName());
+
+			/** @var $contractHeader \Beech\CLA\FormElements\ContractHeaderSection */
+			$contractHeader = $previewPage->createElement('contractHeader', 'Beech.CLA:ContractHeaderSection');
+			$contractHeader->setProperty('contract', $contract);
+
+			/** @var $contractFooter \Beech\CLA\FormElements\ContractFooterSection */
+			$contractFooter = $previewPage->createElement('contractFooter', 'Beech.CLA:ContractFooterSection');
+			$contractFooter->setProperty('contract', $contract);
+
+			$contractFinisher = new \Beech\CLA\Finishers\ContractFinisher();
+			$contractFinisher->setOptions(
 				array(
-					'model' => 'Contract',
-					'package' => 'Beech.CLA'
+					'contract' => $contract
 				)
 			);
-			$this->form->addFinisher($databaseFinisher);
+			$this->form->addFinisher($contractFinisher);
 
 			$summaryFinisher = new \Beech\Ehrm\Form\Finishers\ModalCloseConfirmationFinisher();
 			$summaryFinisher->setOption('templatePathAndFilename', 'resource://Beech.CLA/Private/Templates/Administration/Contract/Summary.html');
@@ -145,14 +174,18 @@ class ContractFormFactory extends \TYPO3\Form\Factory\AbstractFormFactory {
 	 * Create next page
 	 * Return FALSE when there is no elements on page
 	 *
+	 * @param \Beech\CLA\Domain\Model\Contract $contract
+	 * @param integer $articlesPage
 	 * @return boolean
 	 */
-	protected function nextArticlesPage($articlesPage = NULL) {
+	protected function nextArticlesPage($contract, $articlesPage = NULL) {
 		if ($articlesPage === NULL) {
 			$articlesPage = $this->form->createPage('page' . $this->pageIndex);
 		}
+
+		/** @var $articlesSection \Beech\CLA\FormElements\ContractArticlesSection */
 		$articlesSection = $articlesPage->createElement('articles' . $this->pageIndex, 'Beech.CLA:ContractArticlesSection');
-		$articlesSection->setContractTemplate($this->factorySpecificConfiguration['contractTemplate']);
+		$articlesSection->setContract($contract);
 		$contractArticles = $articlesSection->getContractArticles(($this->pageIndex - 1) * $this->fieldsPerPage, $this->fieldsPerPage);
 		$articlesSection->initializeFormElement();
 		if (count($contractArticles) > 0) {

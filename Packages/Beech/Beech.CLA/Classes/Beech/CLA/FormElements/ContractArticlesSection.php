@@ -30,10 +30,11 @@ class ContractArticlesSection extends \TYPO3\Form\FormElements\Section {
 	/**
 	 * @var \Beech\CLA\Domain\Model\ContractTemplate
 	 */
-	protected $contractTemplate = NULL;
+	protected $contractTemplate;
 
 	/**
 	 * Array of ContractArticles
+	 *
 	 * @var array
 	 */
 	protected $contractArticles = array();
@@ -41,7 +42,7 @@ class ContractArticlesSection extends \TYPO3\Form\FormElements\Section {
 	/**
 	 * @var \Beech\CLA\Domain\Model\Contract
 	 */
-	protected $contract = NULL;
+	protected $contract;
 
 	/**
 	 * @var integer
@@ -75,6 +76,7 @@ class ContractArticlesSection extends \TYPO3\Form\FormElements\Section {
 	public function initArticleIndex() {
 		$this->articleIndex = ($this->getParentRenderable()->getIndex()) * $this->settings['contractArticlesPerPage'];
 	}
+
 	/**
 	 * Initialize form element
 	 *
@@ -82,6 +84,7 @@ class ContractArticlesSection extends \TYPO3\Form\FormElements\Section {
 	 */
 	public function initializeFormElement() {
 		if ($this->contractTemplate !== NULL) {
+			$filledContractValues = array();
 			if ($this->contract !== NULL) {
 				$filledContractValues = $this->contract->getArticles();
 			}
@@ -125,13 +128,19 @@ class ContractArticlesSection extends \TYPO3\Form\FormElements\Section {
 							$contractArticleValue->addValidator($validator);
 						}
 
-						if (isset($value['default'])) {
+							// check if value exists is contract and use as default value
+						$getterName = 'get'.ucfirst($value['valueId']);
+						if(!is_null($this->contract->$getterName())) {
+							$contractArticleValue->setDefaultValue($this->contract->$getterName());
+						} elseif (isset($value['default'])) {
 							$contractArticleValue->setDefaultValue($value['default']);
 						}
 					}
 				}
+
+				/** @var $contractArticleElement \Beech\CLA\FormElements\ContractArticleFormElement */
 				$contractArticleElement = $contractArticleSection->createElement('article-' . $contractArticle->getArticleId() . '-identifier', 'Beech.CLA:ContractArticleFormElement');
-				if (!empty($filledContractValues) && isset($filledContractValues[$contractArticle->getArticleId()])) {
+				if (isset($filledContractValues[$contractArticle->getArticleId()])) {
 					$contractArticleElement->articleValues = $filledContractValues[$contractArticle->getArticleId()];
 				}
 				$contractArticleElement->setDefaultValue($contractArticle->getArticleId());
@@ -142,15 +151,15 @@ class ContractArticlesSection extends \TYPO3\Form\FormElements\Section {
 	}
 
 	/**
-	 * @param mixed $contractTemplate
+	 * @param \Beech\CLA\Domain\Model\Contract $contract
 	 */
-	public function setContract($contract) {
+	public function setContract(\Beech\CLA\Domain\Model\Contract $contract) {
 		$this->contract = $contract;
 		$this->setContractTemplate($contract->getContractTemplate());
 	}
 
 	/**
-	 * @param mixed $contractTemplate
+	 * @param \Beech\CLA\Domain\Model\ContractTemplate|string $contractTemplate
 	 */
 	public function setContractTemplate($contractTemplate) {
 		if (is_string($contractTemplate)) {
@@ -176,6 +185,7 @@ class ContractArticlesSection extends \TYPO3\Form\FormElements\Section {
 
 	/**
 	 * Get paginated array of ContractArticles
+	 *
 	 * @param integer $offset
 	 * @param integer $length
 	 * @return array
@@ -191,7 +201,11 @@ class ContractArticlesSection extends \TYPO3\Form\FormElements\Section {
 	 * @return mixed
 	 */
 	public function getArticleIds() {
-		return  $this->getContractTemplate()->getArticles();
+		$articlesIds = array();
+		if ($this->getContractTemplate() !== NULL) {
+			$articlesIds = $this->getContractTemplate()->getArticles();
+		}
+		return $articlesIds;
 	}
 }
 

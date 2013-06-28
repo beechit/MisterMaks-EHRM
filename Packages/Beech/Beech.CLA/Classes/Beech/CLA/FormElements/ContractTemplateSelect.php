@@ -38,4 +38,5 @@ class ContractTemplateSelect extends \TYPO3\Form\Core\Model\AbstractFormElement 
 	}
 
 }
+
 ?>

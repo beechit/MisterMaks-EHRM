@@ -39,11 +39,18 @@ class FieldValueLabelHelper {
 			return implode(', ', $return);
 		}
 
+			// @todo: can be removed/changed when dates are saved correctly
+		if (is_array($value) && array_key_exists('date', $value)) {
+			$value = new \DateTime($value['date'], new \DateTimeZone($value['timezone']));
+		}
+
 		if (is_object($value) && $value instanceof \DateTime) {
 			$format = isset($fieldInfo['properties']['dateFormat']) ? $fieldInfo['properties']['dateFormat'] : \DateTime::W3C;
 			$value = $value->format($format);
 		} elseif (is_object($value)) {
 			$value = 'object ' . get_class($value);
+		} elseif (is_array($value)) {
+			$value = 'array ' . print_r($value, 1);
 		}
 		return $value;
 	}

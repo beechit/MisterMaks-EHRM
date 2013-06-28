@@ -71,11 +71,11 @@ class ContractArticleFormElement extends \TYPO3\Form\Core\Model\AbstractFormElem
 					$valueIdentifier = $this->fieldDefaultValueHelper->generateIdentifierForArticle('', $this->contractArticle->getArticleId(), $contractValue['valueId']);
 
 					$pattern[] = sprintf('/<(%s)>/', $contractValue['valueId']);
-					if (isset($this->articleValues[$contractValue['valueId']]) && is_string($this->articleValues[$contractValue['valueId']])) {
+					if (isset($this->articleValues[$contractValue['valueId']])) {
 						$replacement[] = sprintf('<strong>%s</strong>', $this->fieldValueLabelHelper->getLabel($this->articleValues[$contractValue['valueId']], $contractValue));
 					} else {
 						$value = $formState->getFormValue($valueIdentifier);
-						if(is_null($value)) {
+						if (is_null($value)) {
 							$value = $this->fieldDefaultValueHelper->getDefault($contractValue);
 						}
 						$replacement[] = sprintf('<strong id="%s">%s</strong>', $identifier, $this->fieldValueLabelHelper->getLabel($value, $contractValue));

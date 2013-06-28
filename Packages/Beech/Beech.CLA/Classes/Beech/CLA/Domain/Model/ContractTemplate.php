@@ -13,7 +13,7 @@ use TYPO3\Flow\Annotations as Flow,
 /**
  * ContractTemplate, predefined rules for contract
  *
- * @ODM\Document(indexed=true)
+ * @ODM\Document(indexed="true")
  */
 class ContractTemplate extends \Beech\Ehrm\Domain\Model\Document {
 

@@ -18,8 +18,8 @@
 				<tbody>
 					<f:for each="{entities}" as="contract" iteration="iterator">
 						<tr>
-							<td>{contract.employeeFullName}</td>
-							<td>{contract.jobDescriptionName}</td>
+							<td>{contract.employee.name}</td>
+							<td>{contract.jobDescription.jobTitle}</td>
 							<td>{contract.status.statusName}</td>
 							<td>{contract.creationDate -> f:format.date(format: 'Y-m-d H:i')}</td>
 							<td>

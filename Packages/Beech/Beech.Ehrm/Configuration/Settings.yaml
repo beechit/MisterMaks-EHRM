@@ -208,12 +208,20 @@ TYPO3:
             formBuilder:
               label: 'JobDescription Select'
               group: contract
+          'Beech.CLA:ContractHeaderSection':
+            superTypes: ['TYPO3.Form:Section']
+            renderingOptions:
+              templatePathPattern: 'resource://Beech.CLA/Private/Templates/FormElements/ContractHeaderSection.html'
           'Beech.CLA:ContractArticlesSection':
             superTypes: ['TYPO3.Form:Section']
             implementationClassName: 'Beech\CLA\FormElements\ContractArticlesSection'
             renderingOptions:
               templatePathPattern: 'resource://Beech.CLA/Private/Templates/FormElements/ContractArticles.html'
               partialPathPattern: 'resource://Beech.CLA/Private/Templates/FormElements/Partials/{@type}.html'
+          'Beech.CLA:ContractFooterSection':
+            superTypes: ['TYPO3.Form:Section']
+            renderingOptions:
+              templatePathPattern: 'resource://Beech.CLA/Private/Templates/FormElements/ContractFooterSection.html'
           'Beech.CLA:ContractArticleContainer':
             superTypes: ['TYPO3.Form:Section']
             renderingOptions:
@@ -230,6 +238,7 @@ TYPO3:
               group: contract
           'Beech.CLA:ContractPreviewPage':
             superTypes: ['TYPO3.Form:Page']
+            implementationClassName: 'TYPO3\Form\Core\Model\Page'
             renderingOptions:
               templatePathPattern: 'resource://Beech.CLA/Private/Templates/FormElements/ContractPreviewPage.html'
               partialPathPattern: 'resource://Beech.CLA/Private/Templates/FormElements/Partials/{@type}.html'

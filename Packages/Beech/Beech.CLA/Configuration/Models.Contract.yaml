@@ -3,9 +3,19 @@
     'employee':
       label: 'Employee'
       type: 'Beech\Party\Domain\Model\Person'
-    'departmentId':
-      label: 'Department ID'
+      validation:
+        -
+          type: 'NotEmpty'
+    'employer':
+      label: 'Employer'
       type: 'Beech\Party\Domain\Model\Company'
+    'contractVersion':
+      label: 'contractversion'
+      validation:
+        -
+          type: 'StringLength'
+          options:
+            maximum: 10
     'status':
       label: 'Status of the contract'
       type: 'Beech\Ehrm\Domain\Model\Status'
@@ -21,16 +31,19 @@
     'firstContract':
       label: 'First contract'
       type: 'boolean'
-    'contractGenerationDate':
-      label: 'The date the contract was created'
+    'contractAcceptanceDate':
+      label: 'Date contract was accepted'
       type: 'DateTime'
       validation:
         -
           type: 'RegularExpression'
           options:
             regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
-    'contractAcceptanceDate':
-      label: 'Date contract was accepted'
+    'contractSigned':
+      label: 'Contract signed'
+      type: 'boolean'
+    'contractSignDate':
+      label: 'Date of signing contract'
       type: 'DateTime'
       validation:
         -

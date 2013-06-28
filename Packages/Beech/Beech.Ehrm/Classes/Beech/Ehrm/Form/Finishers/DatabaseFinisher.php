@@ -69,97 +69,28 @@ class DatabaseFinisher extends \TYPO3\Form\Core\Model\AbstractFinisher {
 
 		$model = new $modelClassName();
 		$repository = new $repositoryClassName();
-			// TODO: create ContractFinisher or do DatabaseFinisher more generic
-		if ($modelName === 'Contract') {
-			$this->storeContract($model, $repository);
-		} else {
-				// Map form input to the model and store data
-			foreach ($this->finisherContext->getFormValues() as $key => $value) {
-				if (is_array($value)) {
-					$subModelClassName = '\\' . $packageNamespace . '\\Domain\\Model\\' . ucfirst($key);
-					if (!class_exists($subModelClassName)) {
-						$subModelClassName = '\\TYPO3\\Party\\Domain\\Model\\' . ucfirst($key);
-					}
-					$subModel = new $subModelClassName();
 
-					foreach ($value as $property => $propertyValue) {
-						$methodName = 'set' . ucfirst($property);
-						$subModel->$methodName($propertyValue);
-					}
-					$methodName = 'add' . ucfirst($key);
-					$model->$methodName($subModel);
-				} else {
-					$methodName = 'set' . ucfirst($key);
-					$model->$methodName($value);
+			// Map form input to the model and store data
+		foreach ($this->finisherContext->getFormValues() as $key => $value) {
+			if (is_array($value)) {
+				$subModelClassName = '\\' . $packageNamespace . '\\Domain\\Model\\' . ucfirst($key);
+				if (!class_exists($subModelClassName)) {
+					$subModelClassName = '\\TYPO3\\Party\\Domain\\Model\\' . ucfirst($key);
 				}
-			}
-			$repository->add($model);
-		}
-	}
+				$subModel = new $subModelClassName();
 
-	/**
-	 * @param \Beech\CLA\Domain\Model\Contract $contract
-	 * @param \Beech\CLA\Domain\Repository\ContractRepository $repository
-	 * @return void
-	 */
-	protected function storeContract(\Beech\CLA\Domain\Model\Contract $contract, \Beech\CLA\Domain\Repository\ContractRepository $repository) {
-		$formValues = $this->finisherContext->getFormValues();
-
-		$personRepository = new \Beech\Party\Domain\Repository\PersonRepository();
-
-			// TODO: Maybe do this more generic
-		if (!empty($formValues['employee'])) {
-			$employee = $personRepository->findByIdentifier($formValues['employee']);
-			$contract->setEmployee($employee);
-			$contract->setEmployeeFullName($employee->getName()->getFullName());
-		}
-
-		$employerRepository = new \Beech\Party\Domain\Repository\CompanyRepository();
-		if (empty($formValues['employer'])) {
-			$employerIdentifier = $this->preferenceUtility->getApplicationPreference('company');
-		} else {
-			$employerIdentifier = $formValues['employer'];
-		}
-		$employer = $employerRepository->findByIdentifier($employerIdentifier);
-		if(empty($employer)) throw new \Exception('No employer found by id '.$employerIdentifier, 1371558300);
-
-		$contract->setEmployer($employer);
-
-		if (!empty($formValues['jobDescription'])) {
-			$jobDescriptionRepository = new \Beech\CLA\Domain\Repository\JobDescriptionRepository();
-			$jobDescription = $jobDescriptionRepository->findByIdentifier($formValues['jobDescription']);
-			$contract->setJobDescription($jobDescription);
-			$contract->setJobDescriptionName($jobDescription->getJobTitle());
-		}
-
-		$status = new \Beech\Ehrm\Domain\Model\Status(\Beech\Ehrm\Domain\Model\Status::STATUS_DRAFT);
-		$contract->setStatus($status);
-
-		if (isset($formValues['createdBy'])) {
-			$createdBy = $personRepository->findByIdentifier($formValues['createdBy']);
-			$contract->setCreatedBy($createdBy);
-		}
-
-		if (isset($formValues['contractTemplate'])) {
-			$contractTemplateRepository = new \Beech\CLA\Domain\Repository\ContractTemplateRepository();
-			$contractTemplate = $contractTemplateRepository->findByIdentifier($formValues['contractTemplate']);
-			$contract->setContractTemplate($contractTemplate);
-		}
-			// TODO: Store company identifier (employer)
-		$articles = array();
-
-		foreach ($this->finisherContext->getFormValues() as $key => $values) {
-			if (strpos($key, 'article') === 0) {
-				if (preg_match('/article-(\d+)-values/', $key, $articleId)) {
-					$articles[$articleId[1]] = $values;
+				foreach ($value as $property => $propertyValue) {
+					$methodName = 'set' . ucfirst($property);
+					$subModel->$methodName($propertyValue);
 				}
+				$methodName = 'add' . ucfirst($key);
+				$model->$methodName($subModel);
+			} else {
+				$methodName = 'set' . ucfirst($key);
+				$model->$methodName($value);
 			}
 		}
-		$contract->setArticles($articles);
-		$repository->add($contract);
-		$repository->flushDocumentManager();
-		$contract->getStatus()->setDocumentId($contract->getId());
-		$repository->update($contract);
+		$repository->add($model);
 	}
 }
 

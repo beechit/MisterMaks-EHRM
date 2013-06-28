@@ -7,31 +7,41 @@
 		<output>
 			<table>
 				<form:renderValues renderable="{page.rootForm}">
-					<f:if condition="{0: formValue.element.type} != {0: 'TYPO3.Form:HiddenField'}">
+					<f:if condition="{0: formValue.element.type} == {0: 'Beech.CLA:ContractHeaderSection'}">
 						<f:then>
-							<f:if condition="{0: formValue.element.type} == {0: 'Beech.CLA:ContractArticleFormElement'}">
-								<f:then>
-									<tr class="article">
-										<td colspan="2">
-											<b>Artikel {formValue.element.properties.articleIndex}: {formValue.element.properties.contractArticle.articleHeader}</b>
-										</td>
-									</tr>
-									<tr class="articleContent">
-										<td colspan="2">
-											<cla:renderContractArticleText element="{formValue.element}"></cla:renderContractArticleText>
-										</td>
-									</tr>
-								</f:then>
-							</f:if>
-						</f:then>
-						<f:else>
-							<f:if condition="{formValue.value}">
 							<tr>
-								<td><b>{formValue.element.label}</b></td>
-								<td>{formValue.value}</td>
+								<td colspan="2">
+									<form:renderRenderable renderable="{formValue.element}" />
+								</td>
 							</tr>
-							</f:if>
-						</f:else>
+						</f:then>
+					</f:if>
+				</form:renderValues>
+				<form:renderValues renderable="{page.rootForm}">
+					<f:if condition="{0: formValue.element.type} == {0: 'Beech.CLA:ContractArticleFormElement'}">
+						<f:then>
+							<tr class="article">
+								<td colspan="2">
+									<b>Artikel {formValue.element.properties.articleIndex}: {formValue.element.properties.contractArticle.articleHeader}</b>
+								</td>
+							</tr>
+							<tr class="articleContent">
+								<td colspan="2">
+									<cla:renderContractArticleText element="{formValue.element}"></cla:renderContractArticleText>
+								</td>
+							</tr>
+						</f:then>
+					</f:if>
+				</form:renderValues>
+				<form:renderValues renderable="{page.rootForm}">
+					<f:if condition="{0: formValue.element.type} == {0: 'Beech.CLA:ContractFooterSection'}">
+						<f:then>
+							<tr>
+								<td colspan="2">
+									<form:renderRenderable renderable="{formValue.element}" />
+								</td>
+							</tr>
+						</f:then>
 					</f:if>
 				</form:renderValues>
 			</table>
