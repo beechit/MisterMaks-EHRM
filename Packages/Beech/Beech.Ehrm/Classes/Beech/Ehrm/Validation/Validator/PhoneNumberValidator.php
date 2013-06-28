@@ -15,7 +15,7 @@ use TYPO3\Flow\Validation\Validator\AbstractValidator;
 /**
  *
  */
-class NLPhoneNumberValidator extends AbstractValidator {
+class PhoneNumberValidator extends AbstractValidator {
 
 	/**
 	 * @var string
@@ -25,7 +25,7 @@ class NLPhoneNumberValidator extends AbstractValidator {
 	/**
 	 * @var string
 	 */
-	protected $expected = '000 9999999';
+	protected $expected = '077 3030310';
 
 	/**
 	 * Checks if the given value matches the specified regular expression.
@@ -40,7 +40,7 @@ class NLPhoneNumberValidator extends AbstractValidator {
 			$this->addError('Format of your phone number is not correct. There is <b>%1$s</b> and should be <b>%2$s</b>', 1370528826, array($value, $this->expected));
 		}
 		if ($result === FALSE) {
-			throw new \TYPO3\Flow\Validation\Exception\InvalidValidationOptionsException('regularExpression "' . $this->regularExpression . '"NLPhoneNumberValidator contained an error.', 1298273089);
+			throw new \TYPO3\Flow\Validation\Exception\InvalidValidationOptionsException('regularExpression "' . $this->regularExpression . '"PhoneNumberValidator contained an error.', 1298273089);
 		}
 	}
 
