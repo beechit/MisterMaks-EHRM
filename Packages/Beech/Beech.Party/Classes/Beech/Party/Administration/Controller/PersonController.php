@@ -26,44 +26,6 @@ class PersonController extends \Beech\Party\Controller\PersonController {
 		$this->addFlashMessage('Person is updated.');
 		$this->emberRedirect('#/administration/person');
 	}
-
-	/**
-	 * @param \Beech\Party\Domain\Model\Asset $Asset A new asset to add
-	 *
-	 * @return void
-	 */
-	public function addAssetAction(\Beech\Party\Domain\Model\Asset $asset) {
-		$asset->setParty($this->persistenceManager->getIdentifierByObject($asset->getParty()));
-		$this->assetRepository->add($asset);
-		$this->addFlashMessage('Added.');
-		$this->redirect('edit', NULL, NULL, array('person' => $asset->getParty()));
-	}
-
-	/**
-	 * @param \Beech\Party\Domain\Model\Asset $asset A asset to update
-	 *
-	 * @return void
-	 */
-	public function updateAssetAction(\Beech\Party\Domain\Model\Asset $asset) {
-		$asset->setParty($this->persistenceManager->getIdentifierByObject($asset->getParty()));
-		$this->assetRepository->update($asset);
-		$this->addFlashMessage('Updated.');
-		$this->redirect('edit', NULL, NULL, array('person' => $asset->getParty()));
-	}
-
-	/**
-	 * @param \Beech\Party\Domain\Model\Asset $asset A asset to remove
-	 *
-	 * @return void
-	 */
-	public function removeAssetAction(\Beech\Party\Domain\Model\Asset $asset) {
-		$person = $asset->getParty();
-		$asset->setParty(NULL);
-		$this->assetRepository->update($asset);
-		$this->addFlashMessage('Removed.');
-		$this->redirect('edit', NULL, NULL, array('person' => $person));
-	}
-
 	/**
 	 * @param \Beech\Absence\Domain\Model\Absence $absence A absence to add
 	 *
