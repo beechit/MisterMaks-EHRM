@@ -19,8 +19,10 @@ use Doctrine\ORM\Mapping as ORM,
  */
 class Company extends \TYPO3\Party\Domain\Model\AbstractParty implements \TYPO3\Flow\Object\DeclaresGettablePropertyNamesInterface {
 
-	use \Beech\Ehrm\Domain\EntityWithDocumentTrait,
-		\Beech\Ehrm\Domain\ConfigurableModelTrait;
+	use \Beech\Ehrm\Domain\EntityWithDocumentTrait {
+		__get as ___get;
+	}
+	use \Beech\Ehrm\Domain\ConfigurableModelTrait;
 
 	/**
 	 * The company name
@@ -116,6 +118,28 @@ class Company extends \TYPO3\Party\Domain\Model\AbstractParty implements \TYPO3\
 		return $this->deleted;
 	}
 
+// Todo: make this more generic, this is also in person model
+// this is the function to get properties in collections see documentation in EHRM-Base for more info.
+	public function __get($property) {
+		$return = $this->___get($property);
+		if ($return === NULL) {
+			$explodedProperty = explode('_', $property);
+			if (count($explodedProperty) === 2) {
+				list($model, $type) = $explodedProperty;
+				$model = ucfirst($model);
+				$repositoryClassName = sprintf('Beech\Party\Domain\Repository\%sRepository', $model);
+				$repository = new $repositoryClassName();
+				$findBy = sprintf('findBy%sType', $model);
+				$allFounded = $repository->{$findBy}($type);
+				foreach ($allFounded as $object) {
+					if ($object->getPrimary()) {
+						return $object;
+					}
+				}
+			}
+		}
+		return $return;
+	}
 }
 
 ?>

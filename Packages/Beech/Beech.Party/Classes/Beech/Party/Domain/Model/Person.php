@@ -86,7 +86,8 @@ class Person extends \TYPO3\Party\Domain\Model\AbstractParty implements \TYPO3\F
 		}
 		return NULL;
 	}
-
+// Todo: make this more generic, this is also in person model
+// this is the function to get specific (primairy) properties in collections see documentation in EHRM-Base for more info.
 	public function __get($property) {
 		$return = $this->___get($property);
 		if ($return === NULL) {
