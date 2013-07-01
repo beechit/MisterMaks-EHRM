@@ -63,6 +63,8 @@ class ContractArticleFormElement extends \TYPO3\Form\Core\Model\AbstractFormElem
 		$pattern = array();
 		$replacement = array();
 		$text = '';
+
+			// replace values in text
 		if ($this->contractArticle && !is_null($this->contractArticle->getValues())) {
 			foreach ($this->contractArticle->getValues() as $contractValue) {
 				if (isset($contractValue['valueId'])) {
@@ -83,6 +85,10 @@ class ContractArticleFormElement extends \TYPO3\Form\Core\Model\AbstractFormElem
 				}
 			}
 			$text = preg_replace($pattern, $replacement, $this->contractArticle->getArticleText());
+
+			// only article text
+		} elseif ($this->contractArticle) {
+			$text = $this->contractArticle->getArticleText();
 		}
 		return $text;
 	}

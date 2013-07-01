@@ -28,6 +28,13 @@
 							<tr class="articleContent">
 								<td colspan="2">
 									<cla:renderContractArticleText element="{formValue.element}"></cla:renderContractArticleText>
+									<f:if condition="{formValue.element.contractArticle.subArticles}">
+										<ul>
+											<f:for each="{formValue.element.contractArticle.subArticles}" as="subArticle">
+												<li>{subArticle.articleText}</li>
+											</f:for>
+										</ul>
+									</f:if>
 								</td>
 							</tr>
 						</f:then>

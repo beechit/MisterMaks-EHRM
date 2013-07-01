@@ -5,7 +5,9 @@
 			<legend>
 				<div class="row-fluid">
 					<div class="span11"><f:translate id="{section.label}" source="Wizard" package="Beech.Ehrm">{section.label}</f:translate></div>
-					<div class="span1"><a href="#" data-toggle="tooltip" title="{section.properties.help}" class="help"><i class="icon-question-sign icon"></i></a></div>
+					<f:if condition="{section.properties.help}">
+						<div class="span1"><a href="#" data-toggle="tooltip" title="{section.properties.help}" class="help"><i class="icon-question-sign icon"></i></a></div>
+					</f:if>
 				</div>
 			</legend>
 		</f:if>
