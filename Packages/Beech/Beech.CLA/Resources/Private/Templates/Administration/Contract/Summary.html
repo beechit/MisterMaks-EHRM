@@ -6,7 +6,14 @@
 
 	<div class="actions">
 		<nav class="form-actions">
-			<button class="btn btn-primary" data-dismiss="modal">Close</button>
+			<button class="btn btn-primary btn-close" data-dismiss="modal">Close</button>
 		</nav>
 	</div>
+	<f:if condition="{actions}">
+		<f:for each="{actions}" as="actionContent" key="actionName">
+			<script type="text/javascript">
+				$('.btn-{actionName}').on('click', function() <![CDATA[{]]>window.location.href="{actionContent}"<![CDATA[}]]>)
+			</script>
+		</f:for>
+	</f:if>
 </f:section>

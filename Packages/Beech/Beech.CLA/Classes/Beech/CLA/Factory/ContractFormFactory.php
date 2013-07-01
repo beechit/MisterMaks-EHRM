@@ -164,6 +164,7 @@ class ContractFormFactory extends \TYPO3\Form\Factory\AbstractFormFactory {
 
 			$summaryFinisher = new \Beech\Ehrm\Form\Finishers\ModalCloseConfirmationFinisher();
 			$summaryFinisher->setOption('templatePathAndFilename', 'resource://Beech.CLA/Private/Templates/Administration/Contract/Summary.html');
+			$summaryFinisher->setOption('actions', array('close' => '/#/administration/contracts/'.time()));
 			$this->form->addFinisher($summaryFinisher);
 
 		}

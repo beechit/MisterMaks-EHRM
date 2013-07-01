@@ -24,6 +24,7 @@ class ModalCloseConfirmationFinisher extends \TYPO3\Form\Core\Model\AbstractFini
 		'templatePathAndFilename' => 'resource://Beech.Ehrm/Private/Templates/Wizard/ModalCloseConfirmation.html',
 		'layoutRootPath' => 'resource://Beech.Ehrm/Private/Layouts',
 		'buttons' => array('Ok'),
+		'actions' => array()
 	);
 
 	/**
@@ -46,11 +47,13 @@ class ModalCloseConfirmationFinisher extends \TYPO3\Form\Core\Model\AbstractFini
 
 		$message = $this->parseOption('message');
 		$buttons = $this->parseOption('buttons');
+		$actions = $this->parseOption('actions');
 
 			// TODO: use a Fluid template for rendering this snippet
 		$standaloneView = $this->initializeStandaloneView();
 		$standaloneView->assign('message', $message);
 		$standaloneView->assign('buttons', $buttons);
+		$standaloneView->assign('actions', $actions);
 
 		$response = $formRuntime->getResponse();
 		$response->setContent($standaloneView->render());

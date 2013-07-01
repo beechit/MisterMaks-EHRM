@@ -14,6 +14,8 @@
 
 				// Contracts
 			this.route('contractModule', { path: 'contracts' });
+				// TODO: Find a solution for adding multiple path patterns to the same
+			this.route('contractModule.refresh', { path: 'contracts/:random' });
 			this.route('contractModule.new', { path: 'contract/new' });
 			this.route('contractModule.start', { path: 'contract/start/:contractTemplate/:employee/:jobDescription' });
 			this.route('contractModule.show', { path: 'contract/show/:contract'});

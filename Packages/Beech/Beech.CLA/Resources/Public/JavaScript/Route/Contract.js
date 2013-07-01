@@ -10,6 +10,13 @@
 		}
 	});
 
+	App.AdministrationContractModuleRefreshRoute = App.ContractModuleRoute.extend({
+		redirect: function() {
+			this.transitionTo('administration.contractModule');
+		}
+	});
+	App.AdministrationContractModuleReloadRoute = App.ContractModuleRoute.extend();
+
 	App.AdministrationContractModuleNewRoute = App.ContractModuleRoute.extend();
 
 	App.AdministrationContractModuleStartRoute = App.ContractModuleRoute.extend();
