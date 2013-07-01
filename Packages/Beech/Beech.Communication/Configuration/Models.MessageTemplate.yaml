@@ -1,0 +1,11 @@
+'Beech.Communication.Domain.Model.MessageTemplate':
+  properties:
+    'templateName':
+      label: 'Template name'
+    'templateSubject':
+      label: 'Subject'
+    'templateContents':
+      label: 'Contents'
+      validation:
+        -
+          type: 'Text'

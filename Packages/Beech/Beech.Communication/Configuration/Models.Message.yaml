@@ -1,0 +1,43 @@
+'Beech.Communication.Domain.Model.Message':
+  properties:
+    'messageType':
+      options:
+        values:
+         'email': 'E-mail'
+         'sms': 'SMS'
+         'push': 'PushMessage'
+         'letter': 'Letter'
+         'phone': 'Phone'
+    'party':
+      label: 'send to'
+      type: 'TYPO3\Party\Domain\Model\AbstractParty'
+    'cc':
+      type: 'TYPO3\Party\Domain\Model\AbstractParty'
+    'bcc':
+      type: 'TYPO3\Party\Domain\Model\AbstractParty'
+    'from':
+      label: 'recieved from'
+      type: 'Beech\Party\Domain\Model\Person'
+    'subject':
+      label: 'Subject of message'
+    'template':
+      type: 'Beech\Communication\Domain\Model\messageTemplate'
+    'contents':
+    'sendDate':
+      type: 'DateTime'
+    'conversation':
+      type: 'Beech\Communication\Domain\Model\Message'
+    'creationDate':
+      default: 'now'
+      label: 'creation date'
+      type: 'DateTime'
+      validation:
+        -
+          type: 'DateTimeRange'
+          options:
+            earliestDate: 20130101
+            latestDate: 20200101
+    'createdBy':
+      default: 'currentUser'
+      label: 'Created by'
+      type: 'Beech\Party\Domain\Model\Person'
