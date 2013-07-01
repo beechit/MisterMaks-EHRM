@@ -18,12 +18,6 @@ use Doctrine\ORM\Mapping as ORM;
 class MakePrimaryUnique {
 
 	/**
-	 * @var \TYPO3\Flow\Reflection\ReflectionService
-	 * @Flow\Inject
-	 */
-	protected $reflectionService;
-
-	/**
 	 * @param  \TYPO3\Flow\Aop\JoinPointInterface $joinPoint
 	 * @Flow\Around("method(Beech\.*\Domain\Repository\.*->update())")
 	 * @return void
@@ -31,10 +25,12 @@ class MakePrimaryUnique {
 	public function unsetPrimary(\TYPO3\Flow\Aop\JoinPointInterface $joinPoint) {
 		$model = $joinPoint->getMethodArgument('object');
 		if ($model->getPrimary()) {
-			$type = $model->getType();
+			$reflectionClass = new \ReflectionClass($model);
+			$typeMethod = sprintf('get%sType', $reflectionClass->getShortName());
+			$type = $model->{$typeMethod}();
 			$objects = $joinPoint->getProxy()->findByParty($model->getParty());
 			foreach($objects as $object) {
-				if ($type === $object->getType()) {
+				if ($type === $object->{$typeMethod}()) {
 					$object->setPrimary('');
 				}
 			}
