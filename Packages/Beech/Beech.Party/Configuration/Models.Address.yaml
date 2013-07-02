@@ -6,6 +6,7 @@
       label: 'Address type'
       options:
         values:
+          'home': 'Home'
           'business': 'Business'
           'postbox': 'Postbox'
           'mailing': 'Mailing'
