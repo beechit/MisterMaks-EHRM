@@ -823,7 +823,7 @@
         },
         {
             "name": "typo3/fluid",
-            "version": "2.0.x-dev",
+            "version": "2.0.0-beta3",
             "source": {
                 "type": "git",
                 "url": "git://git.typo3.org/Packages/TYPO3.Fluid.git",
@@ -921,7 +921,7 @@
         },
         {
             "name": "typo3/party",
-            "version": "2.0.x-dev",
+            "version": "2.0.0-beta3",
             "source": {
                 "type": "git",
                 "url": "git://git.typo3.org/Packages/TYPO3.Party.git",
