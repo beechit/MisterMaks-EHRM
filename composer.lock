@@ -15,7 +15,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://ci.beech.local:8080/job/composer-packages/ws/mistermaks-1.0//dist/beech-essentials-dev-master-0a42be.zip",
+                "url": "http://ci.beech.local:8080/job/composer-packages-1.0/ws/mistermaks/dist/beech-essentials-dev-master-0a42be.zip",
                 "reference": "dev-master",
                 "shasum": "f773bf3e7d523f761cfeb5bc57193d608888d03b"
             },
@@ -517,7 +517,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://ci.beech.local:8080/job/composer-packages/ws/mistermaks-1.0//dist/radmiraal-couchdb-dev-doctrine-2c6bc7.zip",
+                "url": "http://ci.beech.local:8080/job/composer-packages-1.0/ws/mistermaks/dist/radmiraal-couchdb-dev-doctrine-2c6bc7.zip",
                 "reference": "dev-doctrine",
                 "shasum": "3cac937e2726b3738f5408e08eb1cedb98fd8395"
             },
@@ -548,7 +548,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://ci.beech.local:8080/job/composer-packages/ws/mistermaks-1.0//dist/radmiraal-emberjs-dev-master-a78eab.zip",
+                "url": "http://ci.beech.local:8080/job/composer-packages-1.0/ws/mistermaks/dist/radmiraal-emberjs-dev-master-a78eab.zip",
                 "reference": "dev-master",
                 "shasum": "dca92275effe84970732c04e03fb44510c7c5488"
             },
@@ -876,7 +876,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://ci.beech.local:8080/job/composer-packages/ws/mistermaks-1.0//dist/typo3-formbuilder-dev-master-9a2032.zip",
+                "url": "http://ci.beech.local:8080/job/composer-packages-1.0/ws/mistermaks/dist/typo3-formbuilder-dev-master-9a2032.zip",
                 "reference": "dev-master",
                 "shasum": "af679c8bccec82a8338e16fab70484b5e998e02f"
             },
@@ -903,7 +903,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://ci.beech.local:8080/job/composer-packages/ws/mistermaks-1.0//dist/typo3-ldap-dev-master-46f0e0.zip",
+                "url": "http://ci.beech.local:8080/job/composer-packages-1.0/ws/mistermaks/dist/typo3-ldap-dev-master-46f0e0.zip",
                 "reference": "dev-master",
                 "shasum": "d03b381a004ed911aae0366848250aab94768312"
             },
@@ -953,7 +953,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://ci.beech.local:8080/job/composer-packages/ws/mistermaks-1.0//dist/typo3-queue-dev-master-88ff6a.zip",
+                "url": "http://ci.beech.local:8080/job/composer-packages-1.0/ws/mistermaks/dist/typo3-queue-dev-master-88ff6a.zip",
                 "reference": "dev-master",
                 "shasum": "fe7f4bad69a20fb00562c817bec7062b34685c32"
             },
@@ -978,7 +978,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://ci.beech.local:8080/job/composer-packages/ws/mistermaks-1.0//dist/typo3-queue-redis-dev-master-2e282a.zip",
+                "url": "http://ci.beech.local:8080/job/composer-packages-1.0/ws/mistermaks/dist/typo3-queue-redis-dev-master-2e282a.zip",
                 "reference": "dev-master",
                 "shasum": "9e7a93fb6d453c4d75619ca8cf622ff951d36875"
             },
@@ -1031,7 +1031,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://ci.beech.local:8080/job/composer-packages/ws/mistermaks-1.0//dist/beech-dev-tools-dev-development-19b7a9.zip",
+                "url": "http://ci.beech.local:8080/job/composer-packages-1.0/ws/mistermaks/dist/beech-dev-tools-dev-development-19b7a9.zip",
                 "reference": "dev-development",
                 "shasum": "6a2781a8cab6598c584d715d8b3d9b474b3c7e8f"
             },
@@ -1056,7 +1056,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://ci.beech.local:8080/job/composer-packages/ws/mistermaks-1.0//dist/beech-style-dev-development-0c2193.zip",
+                "url": "http://ci.beech.local:8080/job/composer-packages-1.0/ws/mistermaks/dist/beech-style-dev-development-0c2193.zip",
                 "reference": "dev-development",
                 "shasum": "cd4663c7b9d3deec0acc8e17af52081b343ddc9b"
             },
@@ -1136,7 +1136,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://ci.beech.local:8080/job/composer-packages/ws/mistermaks-1.0//dist/phpcd-phpcd-dev-master-7425a4.zip",
+                "url": "http://ci.beech.local:8080/job/composer-packages-1.0/ws/mistermaks/dist/phpcd-phpcd-dev-master-7425a4.zip",
                 "reference": "dev-master",
                 "shasum": "91eec9392b70dc829705abd4db2a21da7a44dcf1"
             },
@@ -1596,7 +1596,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://ci.beech.local:8080/job/composer-packages/ws/mistermaks-1.0//dist/sandstorm-phpprofiler-dev-fixes-t3home13-af60e9.zip",
+                "url": "http://ci.beech.local:8080/job/composer-packages-1.0/ws/mistermaks/dist/sandstorm-phpprofiler-dev-fixes-t3home13-af60e9.zip",
                 "reference": "dev-fixes-t3home13",
                 "shasum": "42636e6f0079dc1dd7f840e9833861570609b686"
             },
@@ -1634,7 +1634,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://ci.beech.local:8080/job/composer-packages/ws/mistermaks-1.0//dist/sandstorm-plumber-dev-fixes-t3home13-8c8e9d.zip",
+                "url": "http://ci.beech.local:8080/job/composer-packages-1.0/ws/mistermaks/dist/sandstorm-plumber-dev-fixes-t3home13-8c8e9d.zip",
                 "reference": "dev-fixes-t3home13",
                 "shasum": "1c9009dd29a4c49cfa73ae398654ed23a5bf73e1"
             },
@@ -1884,7 +1884,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://ci.beech.local:8080/job/composer-packages/ws/mistermaks-1.0//dist/typo3-qa-typo3flow-dev-master-30bc84.zip",
+                "url": "http://ci.beech.local:8080/job/composer-packages-1.0/ws/mistermaks/dist/typo3-qa-typo3flow-dev-master-30bc84.zip",
                 "reference": "dev-master",
                 "shasum": "c7a7415d84fa9abe2828b75134c68afd40571fb6"
             },
@@ -1933,7 +1933,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://ci.beech.local:8080/job/composer-packages/ws/mistermaks-1.0//dist/typo3-qa-typo3pool-dev-master-070119.zip",
+                "url": "http://ci.beech.local:8080/job/composer-packages-1.0/ws/mistermaks/dist/typo3-qa-typo3pool-dev-master-070119.zip",
                 "reference": "dev-master",
                 "shasum": "102d3cef4470494cffcaa6dcefa8f9751df552e3"
             },
