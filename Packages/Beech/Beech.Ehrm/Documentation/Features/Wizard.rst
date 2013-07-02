@@ -2,6 +2,12 @@
 The Wizard
 ==========
 
+this functionality will not be used for general wizards, only for the contract wizard.
+
+todo: remove some preparations for this functionality in the source where its not needed.
+
+
+
 ... knows magic
 
 General Wizard considerations
@@ -54,7 +60,7 @@ Other validation, like MinLength for instance, should always be used on the mode
 validationGroups. These rules apply in both regular and wizard mode.
 
 Localization
---------------------
+------------
 
 In order to make our forms multilingual, use a preset. A preset defines which set of formelements, validators
 and finishers can be used in the Form. The preset named ``Wizard`` has alternative templates, which have handles
