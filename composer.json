@@ -22,6 +22,8 @@
 	"require": {
 		"php": ">=5.4.0",
 		"typo3/flow": "2.0.0-beta3",
+		"typo3/fluid": "2.0.0-beta3",
+		"typo3/party": "2.0.0-beta3",
 		"typo3/eel": "*",
 		"beech/essentials": "dev-master",
 		"typo3/surf": "*",
