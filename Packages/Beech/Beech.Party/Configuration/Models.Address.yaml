@@ -2,7 +2,7 @@
   properties:
     'party':
       type: 'TYPO3\Party\Domain\Model\AbstractParty'
-    'type':
+    'addressType':
       label: 'Address type'
       options:
         values:
