@@ -15,10 +15,25 @@ use Beech\Task\Domain\Model\Task;
 class TaskTest extends \TYPO3\Flow\Tests\UnitTestCase {
 
 	/**
+	 * @var \TYPO3\Flow\Configuration\ConfigurationManager
+	 */
+	protected $configurationManager;
+
+	protected $persons = array();
+
+	public function setUp() {
+		parent::setUp();
+		$this->configurationManager = new \TYPO3\Flow\Configuration\ConfigurationManager(new \TYPO3\Flow\Core\ApplicationContext('Testing'));
+		$this->inject($this->configurationManager, 'configurationSource', new \TYPO3\Flow\Configuration\Source\YamlSource());
+		$this->configurationManager->registerConfigurationType('Models', \TYPO3\Flow\Configuration\ConfigurationManager::CONFIGURATION_PROCESSING_TYPE_DEFAULT, TRUE);
+	}
+
+	/**
 	 * @test
 	 */
 	public function testInstance() {
 		$task = new Task();
+		$this->inject($task, 'configurationManager', $this->configurationManager);
 		$this->assertInstanceOf('Beech\Task\Domain\Model\Task', $task);
 	}
 
@@ -28,6 +43,7 @@ class TaskTest extends \TYPO3\Flow\Tests\UnitTestCase {
 	public function getterSetterTest() {
 		$task = new Task();
 		$person = new \Beech\Party\Domain\Model\Person();
+
 		$time = new \DateTime();
 		$endTime = new \DateTime('+1week');
 		$link = new \Beech\Ehrm\Domain\Model\Link();
@@ -40,6 +56,7 @@ class TaskTest extends \TYPO3\Flow\Tests\UnitTestCase {
 		$mockPersistenceManager->expects($this->any())->method('getObjectByIdentifier')->will($this->returnValue($person));
 
 		$this->inject($task, 'persistenceManager', $mockPersistenceManager);
+		$this->inject($task, 'configurationManager', $this->configurationManager);
 
 		$task->setCreatedBy($person);
 		$task->setAssignedTo($person);
@@ -83,6 +100,7 @@ class TaskTest extends \TYPO3\Flow\Tests\UnitTestCase {
 		$mockPersistenceManager->expects($this->any())->method('getObjectByIdentifier')->with('abcjane')->will($this->returnValue($jane));
 
 		$this->inject($task, 'persistenceManager', $mockPersistenceManager);
+		$this->inject($task, 'configurationManager', $this->configurationManager);
 
 		$task->setAssignedTo($jane);
 
@@ -98,6 +116,8 @@ class TaskTest extends \TYPO3\Flow\Tests\UnitTestCase {
 		$creationDate = new \DateTime();
 		$endDate = new \DateTime('1week');
 		$interval = '1day';
+
+		$this->inject($task, 'configurationManager', $this->configurationManager);
 
 		$escalationDate1 = clone $creationDate;
 		$escalationDate1->add(\DateInterval::createFromDateString($interval));
@@ -122,10 +142,12 @@ class TaskTest extends \TYPO3\Flow\Tests\UnitTestCase {
 	 */
 	public function calculateIncreasePriorityWorksAsExpected() {
 		$task = new Task();
+		$this->inject($task, 'configurationManager', $this->configurationManager);
 		$task->setPriority(Task::PRIORITY_NORMAL);
 		$creationDate = new \DateTime();
 		$endDate = new \DateTime('1month');
 		$interval = '1day';
+
 
 		$date1 = clone $creationDate;
 		$date1->add(\DateInterval::createFromDateString($interval));
@@ -169,6 +191,7 @@ class TaskTest extends \TYPO3\Flow\Tests\UnitTestCase {
 		$mockPersistenceManager->expects($this->any())->method('getObjectByIdentifier')->with('abcjane')->will($this->returnValue($jane));
 
 		$this->inject($task, 'persistenceManager', $mockPersistenceManager);
+		$this->inject($task, 'configurationManager', $this->configurationManager);
 
 		$task->setCreatedBy($jane);
 
@@ -177,37 +200,79 @@ class TaskTest extends \TYPO3\Flow\Tests\UnitTestCase {
 	}
 
 	/**
+	 * Create personRepository Mock with 2 persons
+	 *
+	 * @return \PHPUnit_Framework_MockObject_MockObject
+	 */
+	public function setupPersonRepository() {
+		$couchDocumentMock = $this->getMock('Beech\Ehrm\Domain\Model\Document');
+
+		$jane = new \Beech\Party\Domain\Model\Person();
+		$john = new \Beech\Party\Domain\Model\Person();
+
+		$this->inject($jane, 'documentObject', $couchDocumentMock);
+		$this->inject($john, 'documentObject', $couchDocumentMock);
+		$john->setName(new \TYPO3\Party\Domain\Model\PersonName('', 'John', '', 'Doe'));
+		$jane->setName(new \TYPO3\Party\Domain\Model\PersonName('', 'Jane', '', 'Doe'));
+		$this->persons['abcjane'] = $jane;
+		$this->persons['abcjohn'] = $john;
+
+		$mockPersistenceManager = $this->getMock('TYPO3\Flow\Persistence\Doctrine\PersistenceManager', array(), array(), '', FALSE);
+
+		$mockPersistenceManager->expects($this->any())->method('getIdentifierByObject')->with($this->logicalOr(
+			$this->equalTo($jane),
+			$this->equalTo($john)
+		), 'Beech\Party\Domain\Model\Person')->will($this->returnCallback(array($this,'getIdentifierByObjectCallback')));
+
+		$mockPersistenceManager->expects($this->any())->method('getObjectByIdentifier')->with($this->logicalOr(
+			$this->equalTo('abcjane'),
+			$this->equalTo('abcjohn')
+		), 'Beech\Party\Domain\Model\Person')->will($this->returnCallback(array($this,'getObjectByIdentifierCallback')));
+
+		return $mockPersistenceManager;
+	}
+
+	/**
+	 * @param \Beech\Party\Domain\Model\Person $person
+	 * @return string
+	 */
+	public function getIdentifierByObjectCallback($person) {
+		return array_search($person, $this->persons);
+	}
+
+	/**
+	 * @param string $personId
+	 * @return \Beech\Party\Domain\Model\Person
+	 */
+	public function getObjectByIdentifierCallback($personId) {
+		return $this->persons[$personId];
+	}
+
+	/**
 	 * @test
 	 */
 	public function escalationWorksAsExpected() {
 		$task = new Task();
 
-		$john = new \Beech\Party\Domain\Model\Person();
-		$john->setName(new \TYPO3\Party\Domain\Model\PersonName('', 'John', '', 'Doe'));
-		$jane = new \Beech\Party\Domain\Model\Person();
-		$jane->setName(new \TYPO3\Party\Domain\Model\PersonName('', 'Jane', '', 'Doe'));
+		$this->inject($task, 'persistenceManager', $this->setupPersonRepository());
+		$this->inject($task, 'configurationManager', $this->configurationManager);
 
-		$mockPersistenceManager = $this->getMock('TYPO3\Flow\Persistence\Doctrine\PersistenceManager', array(), array(), '', FALSE);
+		$jane = $this->persons['abcjane'];
+		$john = $this->persons['abcjohn'];
 
-		$mockPersistenceManager->expects($this->any())->method('getIdentifierByObject')->with($jane, 'Beech\Party\Domain\Model\Person')->will($this->returnValue('abcjane'));
-		$mockPersistenceManager->expects($this->any())->method('getObjectByIdentifier')->with('abcjane', 'Beech\Party\Domain\Model\Person', TRUE)->will($this->returnValue($jane));
-		// @todo find solution to mock method so it can have multiple results
-		// $mockPersistenceManager->expects($this->any())->method('getIdentifierByObject')->with($john, 'Beech\Party\Domain\Model\Person')->will($this->returnValue('abcjohn'));
-		// $mockPersistenceManager->expects($this->any())->method('getObjectByIdentifier')->with('abcjohn', 'Beech\Party\Domain\Model\Person', TRUE)->will($this->returnValue($john));
+			// no one assign so can't escalate
+		$this->assertFalse($task->escalate());
 
-		$this->inject($task, 'persistenceManager', $mockPersistenceManager);
-
-		// no one assign so can't escalate
-		$this->assertEmpty($task->escalate());
-
-		// someone assigne but had no manager
+			// someone assigne but had no manager
 		$task->setAssignedTo($jane);
-		$this->assertEmpty($task->escalate());
+		$this->assertFalse($task->escalate());
 
-		// assign person to a manager
-		// @todo: manager part has to be implemented for now createdBy
-		// $jane->setCreatedBy($john);
-		// $this->assertNotEmpty($task->escalate());
+			// assign person to a manager
+			// @todo: manager part has to be implemented for now createdBy
+		$this->markTestSkipped('person->getManager() needs to get implemented and/or person->$createdBy needs to get moved to model instait of YAML because can not mock it now');
+
+		$jane->setCreatedBy($john);
+		$this->assertTrue($task->escalate());
 	}
 
 }

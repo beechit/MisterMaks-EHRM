@@ -22,7 +22,6 @@ class Person extends \TYPO3\Party\Domain\Model\AbstractParty implements \TYPO3\F
 	use \Beech\Ehrm\Domain\EntityWithDocumentTrait {
 		__get as ___get;
 	}
-	use \Beech\Ehrm\Domain\ConfigurableModelTrait;
 
 	/**
 	 * @var \TYPO3\Party\Domain\Model\PersonName
@@ -72,22 +71,21 @@ class Person extends \TYPO3\Party\Domain\Model\AbstractParty implements \TYPO3\F
 	public function getAge() {
 		$dateOfBirth = $this->getDateOfBirth();
 		if (!empty($dateOfBirth)) {
-			list($year, $month, $day) = explode("-", substr($this->getDateOfBirth(), 0, 10));
-			$year_diff = date("Y") - $year;
-			$month_diff = date("m") - $month;
-			$day_diff = date("d") - $day;
-			if ($month_diff < 0) {
-				$year_diff--;
-			}
-			elseif (($month_diff == 0) && ($day_diff < 0)) {
-				$year_diff--;
-			}
-			return $year_diff;
+			$interval = $dateOfBirth->diff(new \TYPO3\Flow\Utility\Now());
+			return $interval->format('%y');
 		}
 		return NULL;
 	}
-// Todo: make this more generic, this is also in person model
-// this is the function to get specific (primairy) properties in collections see documentation in EHRM-Base for more info.
+
+	/**
+	 * This is the function to get specific (primairy) properties.
+	 *
+	 * See documentation in EHRM-Base for more info
+	 * Todo: make this more generic, this is also in person model
+	 *
+	 * @param $property
+	 * @return mixed|null
+	 */
 	public function __get($property) {
 		$return = $this->___get($property);
 		if ($return === NULL) {

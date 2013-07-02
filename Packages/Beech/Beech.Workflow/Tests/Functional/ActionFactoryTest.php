@@ -21,6 +21,8 @@ class ActionFactoryTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 	public function setUp() {
 		parent::setUp();
 		$this->configurationManager = new \TYPO3\Flow\Configuration\ConfigurationManager(new \TYPO3\Flow\Core\ApplicationContext('Testing'));
+		$this->inject($this->configurationManager, 'configurationSource', new \TYPO3\Flow\Configuration\Source\YamlSource());
+		$this->configurationManager->registerConfigurationType('Models', \TYPO3\Flow\Configuration\ConfigurationManager::CONFIGURATION_PROCESSING_TYPE_DEFAULT, TRUE);
 	}
 
 	/**

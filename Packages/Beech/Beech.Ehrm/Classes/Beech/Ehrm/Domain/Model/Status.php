@@ -40,6 +40,15 @@ class Status extends \Beech\Ehrm\Domain\Model\Document {
 	 */
 	protected $statusName;
 
+
+	/**
+	 * The dateTime this status was created
+	 *
+	 * @var \DateTime
+	 * @ODM\Field(type="datetime")
+	 */
+	protected $creationDate;
+
 	/**
 	 * @var string
 	 * @ODM\Field(type="string")
@@ -82,6 +91,24 @@ class Status extends \Beech\Ehrm\Domain\Model\Document {
 	 */
 	public function getStatusChanged() {
 		return $this->statusChanged;
+	}
+
+	/**
+	 * Set creationDate
+	 *
+	 * @param \DateTime $creationDate
+	 */
+	public function setCreationDate($creationDate) {
+		$this->creationDate = $creationDate;
+	}
+
+	/**
+	 * Get creationDate
+	 *
+	 * @return \DateTime
+	 */
+	public function getCreationDate() {
+		return $this->creationDate;
 	}
 
 	/**

@@ -10,12 +10,13 @@ namespace Beech\Ehrm\Property\TypeConverter;
 use TYPO3\Flow\Annotations as Flow;
 
 /**
- * Converter which transforms arrays to arrays.
+ * Converter date array's to datetimestring ready for DB
+ * Todo: this needs to get obsolete, all dates should get type: DateTime in YAML
  *
  * @api
  * @Flow\Scope("singleton")
  */
-class DateArrayConverter extends \TYPO3\Flow\Property\TypeConverter\AbstractTypeConverter {
+class DateArrayConverter extends \TYPO3\Flow\Property\TypeConverter\DateTimeConverter {
 
 	/**
 	 * @var array<string>
@@ -32,8 +33,12 @@ class DateArrayConverter extends \TYPO3\Flow\Property\TypeConverter\AbstractType
 	 */
 	protected $priority = 1;
 
+	public function canConvertFrom($source, $targetType) {
+		return TRUE;
+	}
+
 	/**
-	 * Actually convert from $source to $targetType, in fact a noop here.
+	 * Convert from $source to $targetType
 	 *
 	 * @param array $source
 	 * @param string $targetType
@@ -43,8 +48,8 @@ class DateArrayConverter extends \TYPO3\Flow\Property\TypeConverter\AbstractType
 	 * @api
 	 */
 	public function convertFrom($source, $targetType, array $convertedChildProperties = array(), \TYPO3\Flow\Property\PropertyMappingConfigurationInterface $configuration = NULL) {
-		$dateFormatted = \DateTime::createFromFormat($source['dateFormat'], $source['date']);
-		return ($dateFormatted) ? $dateFormatted->format('Y-m-d H:i:s') : NULL;
+		$dateFormatted = parent::convertFrom($source, 'DateTime', $convertedChildProperties, $configuration);
+		return ($dateFormatted) ? $dateFormatted->format('Y-m-d H:i:s.u') : NULL;
 	}
 }
 ?>

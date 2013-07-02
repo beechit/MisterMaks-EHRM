@@ -30,7 +30,11 @@
 		</tr>
 		<tr class="even">
 			<td>Geboortedatum</td>
-			<td>{person.dateOfBirth} <strong>({person.age})</strong></td>
+			<td>
+				<f:if condition="{person.dateOfBirth}">
+					<f:format.date format="d-m-Y">{person.dateOfBirth}</f:format.date> <strong>({person.age})</strong>
+				</f:if>
+			</td>
 		</tr>
 		</tbody>
 	</table>

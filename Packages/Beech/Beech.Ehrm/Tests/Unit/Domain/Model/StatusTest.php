@@ -15,10 +15,26 @@ use Beech\Ehrm\Domain\Model\Status;
 class StatusTest extends \TYPO3\Flow\Tests\UnitTestCase {
 
 	/**
+	 * @var \TYPO3\Flow\Configuration\ConfigurationManager
+	 */
+	protected $configurationManager;
+
+	/**
+	 * setup
+	 */
+	public function setUp() {
+		parent::setUp();
+		$this->configurationManager = new \TYPO3\Flow\Configuration\ConfigurationManager(new \TYPO3\Flow\Core\ApplicationContext('Testing'));
+		$this->inject($this->configurationManager, 'configurationSource', new \TYPO3\Flow\Configuration\Source\YamlSource());
+		$this->configurationManager->registerConfigurationType('Models', \TYPO3\Flow\Configuration\ConfigurationManager::CONFIGURATION_PROCESSING_TYPE_DEFAULT, TRUE);
+	}
+
+	/**
 	 * @test
 	 */
 	public function testInstance() {
 		$status = new Status();
+		$this->inject($status, 'configurationManager', $this->configurationManager);
 		$this->assertInstanceOf('Beech\Ehrm\Domain\Model\Status', $status);
 	}
 
@@ -27,9 +43,11 @@ class StatusTest extends \TYPO3\Flow\Tests\UnitTestCase {
 	 */
 	public function getterSetterTest() {
 		$status = new Status();
+		$this->inject($status, 'configurationManager', $this->configurationManager);
 		$status->setStatusName(Status::STATUS_CANCELED);
 		$this->assertEquals(Status::STATUS_CANCELED, $status->getStatusName());
 	}
 
 }
+
 ?>

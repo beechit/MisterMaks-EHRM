@@ -16,6 +16,7 @@ use TYPO3\Flow\Annotations as Flow;
 trait EntityWithDocumentTrait {
 
 	/**
+	 * Document identifier
 	 * @var string
 	 */
 	protected $document = '';
@@ -48,6 +49,15 @@ trait EntityWithDocumentTrait {
 	}
 
 	/**
+	 * Determin the document name for this entity
+	 *
+	 * @return string
+	 */
+	protected function getDocumentName() {
+		return get_class($this).'CouchDocument';
+	}
+
+	/**
 	 * @param mixed $document
 	 * @return void
 	 */
@@ -57,60 +67,98 @@ trait EntityWithDocumentTrait {
 			$this->document = $document->getId();
 		} elseif (is_string($document)) {
 			$this->document = $document;
-			$this->documentObject = $this->documentManager->find('Beech\Ehrm\Domain\Model\Document', $document);
+			$this->documentObject = $this->documentManager->find($this->getDocumentName(), $document);
 		}
+	}
+
+	/**
+	 * Returns a list of properties of this model. This will be a combination
+	 * of class properties and the properties defined in Models.yaml.
+	 *
+	 * The latter would overwrite class propertiess
+	 *
+	 * @return array
+	 */
+	public function getGettablePropertyNames() {
+		return $this->getDocument()->getGettablePropertyNames();
 	}
 
 	/**
 	 * @return \Beech\Ehrm\Domain\Model\Document
 	 */
 	public function getDocument() {
-		if (!empty($this->document)) {
-			$document = $this->documentManager->find('Beech\Ehrm\Domain\Model\Document', $this->document);
+		if ($this->documentObject !== NULL) {
+			return $this->documentObject;
+		} elseif (!empty($this->document)) {
+			$document = $this->documentManager->find($this->getDocumentName(), $this->document);
 			if (!empty($document)) {
-				$this->documentObject = $document;
-				$this->document = $document->getId();
+				$this->setDocument($document);
 				return $this->documentObject;
 			}
 		}
 
-		$document = new \Beech\Ehrm\Domain\Model\Document();
-		// check if documentManager exists otherwise UnitTests on/with Person break
-		// @todo: find out if it is ok to persist the document at this point. see MM-258
-		if($this->documentManager) {
+		if (!class_exists($this->getDocumentName())) {
+			throw new \Beech\Ehrm\Exception\UnknownModelException(sprintf('Model "%s" does not exist', $this->getDocumentName()), 1372843584);
+		}
+
+		$documentClass = $this->getDocumentName();
+		/** @var $document \Beech\Ehrm\Domain\Model\Document */
+		$document = new $documentClass();
+
+			// check if documentManager exists otherwise UnitTests on/with Person break
+			// @todo: find out if it is ok to persist the document at this point. see MM-258
+			//        we need to create object via presistance layer so we have an Id we can
+			//        save in current object. Just like object form presistance manager there we
+			//        have a Id even when object isn't persisted yet
+		if ($this->documentManager) {
 			$this->documentManager->persist($document);
 			$this->documentManager->flush();
 		}
-		$this->document = $document->getId();
-		$this->documentObject = $document;
+		$this->setDocument($document);
+
 		return $this->documentObject;
 	}
 
 	/**
+	 * Magic getter function
+	 *
+	 * Value not localy available then ask linked document
+	 *
 	 * @param string $property
 	 * @return mixed
 	 */
 	public function __get($property) {
-		if (property_exists($this, $property)) {
+		if ($property === 'id') {
+			return $this->Persistence_Object_Identifier;
+		} elseif (property_exists($this, $property)) {
 			return $this->$property;
+		} elseif (method_exists($this->getDocument(), 'get'.ucfirst($property))) {
+			$method = 'get'.ucfirst($property);
+			return $this->getDocument()->$method();
+		} else {
+			return $this->getDocument()->__get($property);
 		}
-
-		return $this->getDocument()->__get($property);
 	}
 
 	/**
 	 * Magic setter
+	 *
+	 * Value not localy available then ask linked document
 	 *
 	 * @param string $property
 	 * @param mixed $value
 	 * @return void
 	 */
 	public function __set($property, $value) {
-		if (substr($property, 0, 5) === 'Flow_') {
+		if ($property === 'id') {
 			return;
-		}
-		if (property_exists($this, $property)) {
+		} elseif (substr($property, 0, 5) === 'Flow_') {
+			return;
+		} elseif (property_exists($this, $property)) {
 			$this->$property = $value;
+		} elseif (method_exists($this->getDocument(), 'set'.ucfirst($property))) {
+			$method = 'set'.ucfirst($property);
+			$this->getDocument()->$method($value);
 		} else {
 			$this->getDocument()->__set($property, $value);
 		}

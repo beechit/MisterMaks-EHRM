@@ -39,9 +39,9 @@ class FieldValueLabelHelper {
 			return implode(', ', $return);
 		}
 
-			// @todo: can be removed/changed when dates are saved correctly
-		if (is_array($value) && array_key_exists('date', $value)) {
-			$value = new \DateTime($value['date'], new \DateTimeZone($value['timezone']));
+			// convert CouchDB datetime value to PHP DateTime value
+		if ($fieldInfo['type'] == 'Beech.Ehrm:DatePicker' && is_string($value) && !empty($value)) {
+			$value = \DateTime::createFromFormat('Y-m-d H:i:s.u', $value);
 		}
 
 		if (is_object($value) && $value instanceof \DateTime) {

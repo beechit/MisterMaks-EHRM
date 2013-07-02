@@ -89,10 +89,6 @@ class PersonController extends \Beech\Ehrm\Controller\AbstractManagementControll
 	 */
 	public function listAction() {
 		$persons = $this->repository->findAll();
-		foreach ($persons as $person) {
-			$identifier = $this->persistenceManager->getIdentifierByObject($person);
-			$person->id = $identifier;
-		}
 		$this->view->assign('persons', $this->repository->findAll());
 	}
 
@@ -100,27 +96,26 @@ class PersonController extends \Beech\Ehrm\Controller\AbstractManagementControll
 	 * Shows a single person object
 	 *
 	 * @param \Beech\Party\Domain\Model\Person $person
+	 * @Flow\IgnoreValidation("$person")
 	 * @return void
 	 */
 	public function showAction(Person $person) {
-		$identifier = $this->persistenceManager->getIdentifierByObject($person);
-		$person->id = $identifier;
 		$this->view->assign('person', $person);
-		$addresses = $this->addressRepository->findByParty($identifier);
+		$addresses = $this->addressRepository->findByParty($person->getId());
 		$this->view->assign('addresses', $addresses);
-		$phoneNumbers = $this->phoneNumberRepository->findByParty($identifier);
+		$phoneNumbers = $this->phoneNumberRepository->findByParty($person->getId());
 		$this->view->assign('phoneNumbers', $phoneNumbers);
-		$electronicAddresses = $this->electronicAddressRepository->findByParty($identifier);
+		$electronicAddresses = $this->electronicAddressRepository->findByParty($person->getId());
 		$this->view->assign('electronicAddresses', $electronicAddresses);
-		$bankAccounts = $this->bankAccountRepository->findByParty($identifier);
+		$bankAccounts = $this->bankAccountRepository->findByParty($person->getId());
 		$this->view->assign('bankAccounts', $bankAccounts);
-		$educations = $this->educationRepository->findByParty($identifier);
+		$educations = $this->educationRepository->findByParty($person->getId());
 		$this->view->assign('educations', $educations);
-		$assets = $this->assetRepository->findByParty($identifier);
+		$assets = $this->assetRepository->findByParty($person->getId());
 		$this->view->assign('assets', $assets);
-		$licences = $this->licenceRepository->findByParty($identifier);
+		$licences = $this->licenceRepository->findByParty($person->getId());
 		$this->view->assign('licences', $licences);
-		$absences = $this->absenceRepository->findByParty($identifier);
+		$absences = $this->absenceRepository->findByParty($person->getId());
 		$this->view->assign('absences', $absences);
 	}
 
@@ -132,24 +127,22 @@ class PersonController extends \Beech\Ehrm\Controller\AbstractManagementControll
 	 * @return void
 	 */
 	public function editAction(Person $person) {
-		$identifier = $this->persistenceManager->getIdentifierByObject($person);
-		$person->id = $identifier;
 		$this->view->assign('person', $person);
-		$addresses = $this->addressRepository->findByParty($identifier);
+		$addresses = $this->addressRepository->findByParty($person->getId());
 		$this->view->assign('addresses', $addresses);
-		$phoneNumbers = $this->phoneNumberRepository->findByParty($identifier);
+		$phoneNumbers = $this->phoneNumberRepository->findByParty($person->getId());
 		$this->view->assign('phoneNumbers', $phoneNumbers);
-		$electronicAddresses = $this->electronicAddressRepository->findByParty($identifier);
+		$electronicAddresses = $this->electronicAddressRepository->findByParty($person->getId());
 		$this->view->assign('electronicAddresses', $electronicAddresses);
-		$bankAccounts = $this->bankAccountRepository->findByParty($identifier);
+		$bankAccounts = $this->bankAccountRepository->findByParty($person->getId());
 		$this->view->assign('bankAccounts', $bankAccounts);
-		$educations = $this->educationRepository->findByParty($identifier);
+		$educations = $this->educationRepository->findByParty($person->getId());
 		$this->view->assign('educations', $educations);
-		$assets = $this->assetRepository->findByParty($identifier);
+		$assets = $this->assetRepository->findByParty($person->getId());
 		$this->view->assign('assets', $assets);
-		$licences = $this->licenceRepository->findByParty($identifier);
+		$licences = $this->licenceRepository->findByParty($person->getId());
 		$this->view->assign('licences', $licences);
-		$absences = $this->absenceRepository->findByParty($identifier);
+		$absences = $this->absenceRepository->findByParty($person->getId());
 		$this->view->assign('absences', $absences);
 	}
 
@@ -167,8 +160,9 @@ class PersonController extends \Beech\Ehrm\Controller\AbstractManagementControll
 	 */
 	public function createAction(Person $person) {
 		$this->repository->add($person);
+
 		$this->addFlashMessage('Person is added');
-		$this->redirect('list');
+		$this->emberRedirect('#/person');
 	}
 
 	/**
@@ -177,7 +171,7 @@ class PersonController extends \Beech\Ehrm\Controller\AbstractManagementControll
 	 */
 	public function updateAction(Person $person) {
 		$this->repository->update($person);
-		$this->addFlashMessage('Person is updated.');
+		$this->addFlashMessage('Person is updated');
 		$this->emberRedirect('#/person');
 	}
 
@@ -188,8 +182,10 @@ class PersonController extends \Beech\Ehrm\Controller\AbstractManagementControll
 	 */
 	public function deleteAction(Person $person) {
 		$this->repository->remove($person);
-		$this->addFlashMessage('Person is removed .');
-		$this->redirect('list');
+			// persist manualy because GET requests will not be auto persisted
+		$this->persistenceManager->persistAll();
+		$this->addFlashMessage('Person is removed');
+		$this->emberRedirect('#/person');
 	}
 
 }

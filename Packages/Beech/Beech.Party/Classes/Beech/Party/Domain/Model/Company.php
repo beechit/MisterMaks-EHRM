@@ -22,7 +22,6 @@ class Company extends \TYPO3\Party\Domain\Model\AbstractParty implements \TYPO3\
 	use \Beech\Ehrm\Domain\EntityWithDocumentTrait {
 		__get as ___get;
 	}
-	use \Beech\Ehrm\Domain\ConfigurableModelTrait;
 
 	/**
 	 * The company name
@@ -118,8 +117,15 @@ class Company extends \TYPO3\Party\Domain\Model\AbstractParty implements \TYPO3\
 		return $this->deleted;
 	}
 
-// Todo: make this more generic, this is also in person model
-// this is the function to get properties in collections see documentation in EHRM-Base for more info.
+	/**
+	 * This is the function to get specific (primairy) properties.
+	 *
+	 * See documentation in EHRM-Base for more info
+	 * Todo: make this more generic, this is also in person model
+	 *
+	 * @param $property
+	 * @return mixed|null
+	 */
 	public function __get($property) {
 		$return = $this->___get($property);
 		if ($return === NULL) {

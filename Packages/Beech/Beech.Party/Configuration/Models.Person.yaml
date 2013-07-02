@@ -73,6 +73,7 @@
             maximum: 10
     'dateOfBirth':
       label: 'Date of Birth'
+      type: 'DateTime'
       validation:
         -
           type: 'DateTimeRange'
@@ -93,8 +94,9 @@
           type: 'RegularExpresssion'
           options:
             regularExpression: '/[a-zA-Z\\-\\s\\’]{2,30}/'
-    'dateofDeath':
+    'dateOfDeath':
       label: 'Date of death'
+      type: 'DateTime'
       validation:
         -
           type: 'DateTimeRange'

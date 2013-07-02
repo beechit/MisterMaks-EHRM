@@ -19,6 +19,7 @@ class Document extends \Radmiraal\CouchDB\Persistence\AbstractDocument implement
 
 	use \Beech\Ehrm\Domain\ConfigurableModelTrait;
 
+
 }
 
 ?>

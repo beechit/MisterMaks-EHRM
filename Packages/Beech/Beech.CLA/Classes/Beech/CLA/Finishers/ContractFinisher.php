@@ -44,6 +44,15 @@ class ContractFinisher extends \TYPO3\Form\Core\Model\AbstractFinisher {
 		foreach ($this->finisherContext->getFormValues() as $key => $values) {
 			if (strpos($key, 'article') === 0) {
 				if (preg_match('/article-(\d+)-values/', $key, $articleId)) {
+					if(is_array($values)) {
+						foreach($values as $subkey => $value) {
+							if($value instanceof \DateTime) {
+								$values[$subkey] = $value->format('Y-m-d H:i:s.u');
+							}
+						}
+					} elseif ($values instanceof \DateTime) {
+						$values = $values->format('Y-m-d H:i:s.u');
+					}
 					$articles[$articleId[1]] = $values;
 				}
 			}

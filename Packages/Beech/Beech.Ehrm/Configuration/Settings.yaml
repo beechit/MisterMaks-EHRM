@@ -281,6 +281,7 @@ Radmiraal:
       _exclude:
         - 'configurationManager'
         - 'reflectionService'
+        - 'propertyMapper'
         - 'gettablePropertyNames'
         - 'documentManager'
         - 'documentObject'

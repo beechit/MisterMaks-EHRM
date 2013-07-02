@@ -63,11 +63,6 @@ class CompanyController extends \Beech\Ehrm\Controller\AbstractManagementControl
 	 * @return void
 	 */
 	public function listAction() {
-		$companies = $this->repository->findAll();
-		foreach ($companies as $company) {
-			$identifier = $this->persistenceManager->getIdentifierByObject($company);
-			$company->id = $identifier;
-		}
 		$this->view->assign('companies', $this->repository->findAll());
 	}
 
@@ -75,19 +70,18 @@ class CompanyController extends \Beech\Ehrm\Controller\AbstractManagementControl
 	 * Shows a single company object
 	 *
 	 * @param \Beech\Party\Domain\Model\Company $company
+	 * @Flow\IgnoreValidation("$company")
 	 * @return void
 	 */
 	public function showAction(Company $company) {
-		$identifier = $this->persistenceManager->getIdentifierByObject($company);
-		$company->id = $identifier;
 		$this->view->assign('company', $company);
-		$addresses = $this->addressRepository->findByParty($identifier);
+		$addresses = $this->addressRepository->findByParty($company->getId());
 		$this->view->assign('addresses', $addresses);
-		$phoneNumbers = $this->phoneNumberRepository->findByParty($identifier);
+		$phoneNumbers = $this->phoneNumberRepository->findByParty($company->getId());
 		$this->view->assign('phoneNumbers', $phoneNumbers);
-		$electronicAddresses = $this->electronicAddressRepository->findByParty($identifier);
+		$electronicAddresses = $this->electronicAddressRepository->findByParty($company->getId());
 		$this->view->assign('electronicAddresses', $electronicAddresses);
-		$bankAccounts = $this->bankAccountRepository->findByParty($identifier);
+		$bankAccounts = $this->bankAccountRepository->findByParty($company->getId());
 		$this->view->assign('bankAccounts', $bankAccounts);
 	}
 
@@ -95,17 +89,16 @@ class CompanyController extends \Beech\Ehrm\Controller\AbstractManagementControl
 	 * Edit a single company object
 	 *
 	 * @param \Beech\Party\Domain\Model\Company $company
+	 * @Flow\IgnoreValidation("$company")
 	 * @return void
 	 */
 	public function editAction(Company $company) {
-		$identifier = $this->persistenceManager->getIdentifierByObject($company);
-		$company->id = $identifier;
 		$this->view->assign('company', $company);
-		$addresses = $this->addressRepository->findByParty($identifier);
+		$addresses = $this->addressRepository->findByParty($company->getId());
 		$this->view->assign('addresses', $addresses);
-		$phoneNumbers = $this->phoneNumberRepository->findByParty($identifier);
+		$phoneNumbers = $this->phoneNumberRepository->findByParty($company->getId());
 		$this->view->assign('phoneNumbers', $phoneNumbers);
-		$electronicAddresses = $this->electronicAddressRepository->findByParty($identifier);
+		$electronicAddresses = $this->electronicAddressRepository->findByParty($company->getId());
 		$this->view->assign('electronicAddresses', $electronicAddresses);
 	}
 
@@ -125,7 +118,7 @@ class CompanyController extends \Beech\Ehrm\Controller\AbstractManagementControl
 	public function createAction(Company $company) {
 		$this->repository->add($company);
 		$this->addFlashMessage('Company is added');
-		$this->redirect('list');
+		$this->emberRedirect('#/company');
 	}
 
 	/**
@@ -135,20 +128,22 @@ class CompanyController extends \Beech\Ehrm\Controller\AbstractManagementControl
 	 */
 	public function updateAction(Company $company) {
 		$this->repository->update($company);
-		$this->addFlashMessage('Company is updated.');
+		$this->addFlashMessage('Company is updated');
 		$this->emberRedirect('#/company');
 	}
 
 	/**
 	 * @param \Beech\Party\Domain\Model\Company $company A new company to delete
-	 *
 	 * @return void
 	 */
 	public function deleteAction(Company $company) {
 		$this->repository->remove($company);
-		$this->addFlashMessage('Company is removed .');
-		$this->redirect('list');
+			// persist manualy because GET requests will not be auto persisted
+		$this->persistenceManager->persistAll();
+		$this->addFlashMessage('Company is removed');
+		$this->emberRedirect('#/company');
 	}
 
 }
+
 ?>

@@ -1,7 +1,7 @@
 'Beech.Party.Domain.Model.Education':
   properties:
     'party':
-      type: 'TYPO3\Party\Domain\Model\AbstractParty'
+      type: 'Beech\Party\Domain\Model\Person'
     'educationLevel':
       label: 'Education'
       options:
@@ -31,6 +31,7 @@
           options:
             maximum: 35
     'startDate':
+      type: 'DateTime'
       label: 'Education start date'
 #      validation:
 #        -
@@ -39,6 +40,7 @@
 #            earliestDate: 19500101
 #            latestDate: 20200101
     'endDate':
+      type: 'DateTime'
       label: 'Education end date'
 #      validation:
 #        -
@@ -53,6 +55,7 @@
           - FALSE
           - TRUE
     'creationDate':
+      type: 'DateTime'
       default: 'now'
       label: 'creation date'
       validation:
