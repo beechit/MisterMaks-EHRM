@@ -107,11 +107,11 @@
 							} else if($('#'+$(form).parent().attr('id')).length) {
 								that.loadContent(result, '#'+$(form).parent().attr('id'), true);
 							} else {
-								$(target).parents('.modal-body').scrollTop(0);
+								$(target).scrollTop(0);
 								that.loadContent(result, target);
 							}
 						} else {
-							$(target).parents('.modal-body').scrollTop(0);
+							$(target).scrollTop(0);
 							that.loadContent(result, target);
 						}
 					},
