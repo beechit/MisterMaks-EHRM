@@ -28,19 +28,19 @@
 </div>
 <div class="row-fluid">
 	<div class="span5">Adres:</div>
-	<div class="span7"></div>
+	<div class="span7">{section.properties.contract.employee.address_home.streetName} {section.properties.contract.employee.address_home.houseNumber}<f:if condition="{section.properties.contract.employee.address_home.houseNumberAddition}"> {section.properties.contract.employee.address_home.houseNumberAddition}</f:if></div>
 </div>
 <div class="row-fluid">
-	<div class="span5">Postcode en vestigingsplaats</div>
-	<div class="span7"></div>
+	<div class="span5">Postcode en woonplaats</div>
+	<div class="span7">{section.properties.contract.employee.address_home.postal} {section.properties.contract.employee.address_home.residence}</div>
 </div>
 <div class="row-fluid">
 	<div class="span5">Geboortedatum</div>
-	<div class="span7"></div>
+	<div class="span7"><f:if condition="{section.properties.contract.employee.dateOfBirth}"><f:format.date format="d-m-Y">{section.properties.contract.employee.dateOfBirth}</f:format.date></f:if></div>
 </div>
 <div class="row-fluid">
 	<div class="span5">Burgerservicenummer (BSN):</div>
-	<div class="span7"></div>
+	<div class="span7">{section.properties.contract.employee.bsn}</div>
 </div>
 <div class="row-fluid">
 	<div class="span5"><strong>Hierna te noemen wernemer,</strong></div>

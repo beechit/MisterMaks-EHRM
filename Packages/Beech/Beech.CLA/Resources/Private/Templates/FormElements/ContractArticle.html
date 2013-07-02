@@ -3,5 +3,12 @@
 <f:section name="field">
 	<div class="inputs-list" id="{element.uniqueIdentifier}">
 		<cla:renderContractArticleText element="{element}"></cla:renderContractArticleText>
+		<f:if condition="{element.contractArticle.subArticles}">
+			<ul>
+				<f:for each="{element.contractArticle.subArticles}" as="subArticle">
+					<li>{subArticle.articleText}</li>
+				</f:for>
+			</ul>
+		</f:if>
 	</div>
 </f:section>

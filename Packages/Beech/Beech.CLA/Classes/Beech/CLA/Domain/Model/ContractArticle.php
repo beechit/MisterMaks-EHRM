@@ -31,10 +31,14 @@ class ContractArticle extends \Beech\Ehrm\Domain\Model\Document {
 	 */
 	public function getSubArticles() {
 		$subArticles = array();
-		if (parent::getSubArticles() !== NULL) {
-			foreach(parent::getSubArticles() as $subArticle) {
-					//TODO: multi language support
-				$subArticles[] = $subArticle['articleText']['nl'];
+		$articleIndex = 0;
+		if (parent::getSubArticle() !== NULL) {
+			foreach(parent::getSubArticle() as $subArticle) {
+					//TODO: multi language support + transform to ContractArticle Object
+				$subArticle['articleIndex'] = ++$articleIndex;
+				$subArticle['articleText'] = $subArticle['articleText']['nl'];
+				$subArticles[] = $subArticle;
+
 			}
 		}
 		return $subArticles;
