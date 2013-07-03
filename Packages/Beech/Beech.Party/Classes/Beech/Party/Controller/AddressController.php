@@ -70,8 +70,7 @@ class AddressController extends \Beech\Ehrm\Controller\AbstractManagementControl
 	 * @return void
 	 */
 	public function removeAction(\Beech\Party\Domain\Model\Address $address) {
-		$address->setParty(NULL);
-		$this->repository->update($address);
+		$this->repository->remove($address);
 		$this->addFlashMessage($this->translator->translateById('Removed.', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
 	}
 

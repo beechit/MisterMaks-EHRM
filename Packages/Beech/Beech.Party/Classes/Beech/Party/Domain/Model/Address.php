@@ -28,6 +28,12 @@ class Address extends \Beech\Ehrm\Domain\Model\Document {
 	 * @ODM\Index
 	 */
 	protected $addressType;
+
+	/**
+	 * @var boolean
+	 * @ODM\Field(type="boolean")
+	 */
+	protected $primary = FALSE;
 }
 
 ?>

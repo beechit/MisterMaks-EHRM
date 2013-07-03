@@ -70,8 +70,7 @@ class ElectronicAddressController extends \Beech\Ehrm\Controller\AbstractManagem
 	 * @return void
 	 */
 	public function removeAction(\Beech\Party\Domain\Model\ElectronicAddress $electronicAddress) {
-		$electronicAddress->setParty(NULL);
-		$this->repository->update($electronicAddress);
+		$this->repository->remove($electronicAddress);
 		$this->addFlashMessage($this->translator->translateById('Removed.', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
 	}
 

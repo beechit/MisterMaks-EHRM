@@ -98,7 +98,6 @@
 					beforeSend: that.startAjaxRequest,
 					complete: that.finishedAjaxRequest,
 					success: function(result) {
-
 						if ($(form).parent().parent().attr('id') != '') {
 							if ($(form).hasClass('remove')) {
 								that.loadContent(result, '#'+$(form).parent().parent().attr('id'));

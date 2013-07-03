@@ -30,6 +30,12 @@ class PhoneNumber extends \Beech\Ehrm\Domain\Model\Document {
 	 * @ODM\Index
 	 */
 	protected $phoneNumberType;
+
+	/**
+	 * @var boolean
+	 * @ODM\Field(type="boolean")
+	 */
+	protected $primary = FALSE;
 }
 
 ?>

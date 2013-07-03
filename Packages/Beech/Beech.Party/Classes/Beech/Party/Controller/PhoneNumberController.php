@@ -70,8 +70,7 @@ class PhoneNumberController extends \Beech\Ehrm\Controller\AbstractManagementCon
 	 * @return void
 	 */
 	public function removeAction(\Beech\Party\Domain\Model\PhoneNumber $phoneNumber) {
-		$phoneNumber->setParty(NULL);
-		$this->repository->update($phoneNumber);
+		$this->repository->remove($phoneNumber);
 		$this->addFlashMessage($this->translator->translateById('Removed.', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
 	}
 

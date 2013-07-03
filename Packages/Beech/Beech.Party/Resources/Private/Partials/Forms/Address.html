@@ -11,7 +11,7 @@
 			<div class="row-fluid" >
 				<div class="span1"><f:render partial="Forms/Buttons/Icon" arguments="{_all}"/></div>
 				<div class="span3">
-					<ehrm:optionSelect property="addressType" id="addressType{address.id}" model="Beech.Party:Address" placeholder="{f:translate(value: 'Type')}" class="span10"/>
+					<ehrm:optionSelect property="addressType" id="addressType{address.id}" model="Beech.Party:Address" placeholder="{f:translate(value: 'Type')}" class="span10 addressType"/>
 				</div>
 				<div class="span2 offset6">
 					<button type="submit" name="action" class="btn btn-small" value="{action}">
@@ -45,7 +45,18 @@
 				<div class="span9">
 					<div class="input-append input-prepend">
 						<span class="add-on"><i class="icon-home"/></span>
-						<span class="add-on">Primary <f:form.checkbox property="primary" id="primary-address" class="primary" value="TRUE"/></span>
+						<f:if condition="{address.primary}">
+							<f:then>
+							<span class="add-on hide">Primary
+								<f:form.checkbox property="primary" id="primary-address-{address.id}" class="primary" value="TRUE"/>
+							</span>
+							</f:then>
+							<f:else>
+							<span class="add-on">Primary
+								<f:form.checkbox property="primary" id="primary-address-{address.id}" class="primary" value="TRUE"/>
+							</span>
+							</f:else>
+						</f:if>
 					</div>
 				</div>
 			</div>

@@ -70,8 +70,7 @@ class BankAccountController extends \Beech\Ehrm\Controller\AbstractManagementCon
 	 * @return void
 	 */
 	public function removeAction(\Beech\Party\Domain\Model\BankAccount $bankAccount) {
-		$bankAccount->setParty(NULL);
-		$this->repository->update($bankAccount);
+		$this->repository->remove($bankAccount);
 		$this->addFlashMessage($this->translator->translateById('Removed.', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
 	}
 

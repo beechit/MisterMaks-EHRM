@@ -70,8 +70,7 @@ class AssetController extends \Beech\Ehrm\Controller\AbstractManagementControlle
 	 * @return void
 	 */
 	public function removeAction(\Beech\Party\Domain\Model\Asset $asset) {
-		$asset->setParty(NULL);
-		$this->repository->update($asset);
+		$this->repository->remove($asset);
 		$this->addFlashMessage($this->translator->translateById('Removed.', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
 	}
 

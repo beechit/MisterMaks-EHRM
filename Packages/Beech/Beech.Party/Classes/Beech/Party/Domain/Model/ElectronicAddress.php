@@ -31,6 +31,11 @@ class ElectronicAddress extends \Beech\Ehrm\Domain\Model\Document {
 	 */
 	protected $electronicAddressType;
 
+	/**
+	 * @var boolean
+	 * @ODM\Field(type="boolean")
+	 */
+	protected $primary = FALSE;
 }
 
 ?>

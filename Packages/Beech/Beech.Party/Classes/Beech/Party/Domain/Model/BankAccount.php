@@ -30,6 +30,12 @@ class BankAccount extends \Beech\Ehrm\Domain\Model\Document {
 	 * @ODM\Index
 	 */
 	protected $bankAccountType;
+
+	/**
+	 * @var boolean
+	 * @ODM\Field(type="boolean")
+	 */
+	protected $primary = FALSE;
 }
 
 ?>

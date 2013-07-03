@@ -7,13 +7,14 @@
 	<div class="span1 offset1 primaryIcon"><f:if condition="{electronicAddress.primary}"><i class="icon-check"></i></f:if></div>
 	<div class="span2">
 		<div class="btn-group">
-			<a class="btn btn-small" data-toggle="collapse" data-target="#toggle{electronicAddress.id}"><i class="icon-pencil"></i></a>
-			<f:if condition="{0: action} != {0: 'add'}">
+			<f:render partial="Forms/Buttons/Toggle" arguments="{identifier: electronicAddress.id, icon: 'icon-pencil'}"/>
+			<f:if condition="{electronicAddress.primary}">
 				<f:then>
-					<button type="submit" name="action" class="btn btn-danger btn-small" value="remove">
-						<i class="icon-trash"></i>
-					</button>
+					<f:render partial="Forms/Buttons/Remove" arguments="{class: 'hide'}"/>
 				</f:then>
+				<f:else>
+					<f:render partial="Forms/Buttons/Remove" arguments="{_all}"/>
+				</f:else>
 			</f:if>
 		</div>
 	</div>

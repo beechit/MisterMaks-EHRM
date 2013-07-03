@@ -17,8 +17,19 @@
 					 <div class="input-append input-prepend">
 						<f:form.textfield property="accountNumber" class="span7" placeholder="{f:translate(value: 'AccountNumber')}"/>
 						<span class="add-on"><i class="icon-money"/></span>
-						<span class="add-on">Primary <f:form.checkbox property="primary" id="primary-bankAccount-{bankAccount.id}" class="primary" value="TRUE"/></span>
-						<div class="row-fluid" >
+					 	<f:if condition="{bankAccount.primary}">
+							<f:then>
+							<span class="add-on hide">Primary
+								<f:form.checkbox property="primary" id="primary-bankAccount-{bankAccount.id}" class="primary" value="TRUE"/>
+							</span>
+							</f:then>
+							<f:else>
+							<span class="add-on">Primary
+								<f:form.checkbox property="primary" id="primary-bankAccount-{bankAccount.id}" class="primary" value="TRUE"/>
+							</span>
+							</f:else>
+					 	</f:if>
+						 <div class="row-fluid" >
 
 						<f:form.textfield property="residence" class="span7 residence" placeholder="{f:translate(value: 'Residence')}..."/>
 
