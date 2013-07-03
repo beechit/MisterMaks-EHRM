@@ -47,6 +47,8 @@ after that run the following commands on cli
 
 	./flow migrate:designs
 
+for this to work a database name must be set in settings.yaml
+
 *to create initial company*::
 
 	./flow setup:initialize <CompanyName>
@@ -54,6 +56,13 @@ after that run the following commands on cli
 *to create initial user::
 
 	./flow ehrm:user:create [<options>] <username> <password> <first name> <last name> <roles>
+
+example::
+
+	./flow ehrm:user:create edward beech Edward Lenssen Beech.Ehrm:Administrator
+
+
+
 
 *import resource files*
 
