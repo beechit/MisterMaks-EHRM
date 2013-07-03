@@ -512,14 +512,8 @@
             "version": "dev-doctrine",
             "source": {
                 "type": "git",
-                "url": "git://github.com/radmiraal/Radmiraal.CouchDB.git",
-                "reference": "ff7a9bf9827786545eeaf2860ae23271dc8565a9"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "http://ci.beech.local:8080/job/composer-packages-1.0/ws/mistermaks/dist/radmiraal-couchdb-dev-doctrine-2c6bc7.zip",
-                "reference": "dev-doctrine",
-                "shasum": "3cac937e2726b3738f5408e08eb1cedb98fd8395"
+                "url": "git://github.com/beechit/Radmiraal.CouchDB.git",
+                "reference": "5ad5bcb419607b14570655e427c0add4a47d3f40"
             },
             "require": {
                 "doctrine/couchdb-odm": "dev-master",
@@ -790,6 +784,11 @@
                 "url": "git://git.typo3.org/Packages/TYPO3.Flow.git",
                 "reference": "2.0.0-beta3"
             },
+            "dist": {
+                "type": "zip",
+                "url": "http://ci.beech.local:8080/job/composer-packages-1.0/ws/mistermaks/dist/typo3-flow-2.0.0-beta3-a840a3.zip",
+                "reference": "2.0.0-beta3"
+            },
             "require": {
                 "composer/installers": ">=1.0.2,<1.1",
                 "doctrine/migrations": "dev-master",
@@ -829,6 +828,11 @@
                 "url": "git://git.typo3.org/Packages/TYPO3.Fluid.git",
                 "reference": "2f7a92559eebff872fad8022061320ae00067d6e"
             },
+            "dist": {
+                 "type": "zip",
+                 "url": "http://ci.beech.local:8080/job/composer-packages-1.0/ws/mistermaks/dist/typo3-fluid-2.0.0-beta3-a840a3.zip",
+                 "reference": "2.0.0-beta3"
+            },
             "require": {
                 "typo3/flow": "2.0.*"
             },
@@ -863,7 +867,7 @@
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
-            "description": "Extensible and flexible API for building web forms",
+            "description": "Extensible and flexible API for building webforms",
             "time": "2013-03-28 09:45:39"
         },
         {
@@ -926,6 +930,11 @@
                 "type": "git",
                 "url": "git://git.typo3.org/Packages/TYPO3.Party.git",
                 "reference": "8b51051f1ca42c57bd86ce0cccdce5d0881a42fa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://ci.beech.local:8080/job/composer-packages-1.0/ws/mistermaks/dist/typo3-party-2.0.0-beta3-a840a3.zip",
+                "reference": "2.0.0-beta3"
             },
             "require": {
                 "typo3/flow": "2.0.*"
