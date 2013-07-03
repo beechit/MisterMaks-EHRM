@@ -11,17 +11,19 @@
 		</div>
 	</f:if>
 </f:form.validationResults>
-<f:form method="post" action="create" name="document" object="{document}" class="form-horizontal" enctype="multipart/form-data">
+<f:form method="post" action="create" name="document" object="{document}" class="form-horizontal form-newDocument" enctype="multipart/form-data">
 	<div class="control-group">
-		<f:form.textfield property="name" />
+		<f:form.textfield property="name" class="documentName"/>
 	</div>
 	<div class="control-group">
-		<ehrm:form.select property="documentType" options="{documentCategories}" optionLabelField="typeName"/>
+		<ehrm:form.select property="documentType" class="documentType" options="{documentCategories}" optionLabelField="typeName"/>
 	</div>
 	<div class="control-group">
-		<f:form.upload property="resources.0" />
+		<f:form.upload property="resources.0" class="documentAttachment"/>
+		<label class="info-documentAttachment">* To save, name & attachment is required</label>
 	</div>
-	<div class="control-group">
+	<div class="control-group hide control-documentSubmit" >
 		<f:form.submit value="{f:translate(id:'document.upload')}" class="btn btn-primary"/>
 	</div>
 </f:form>
+<script src="resource://Beech.Document/Public/JavaScript/Component/UserInterface/Document.js"></script>
