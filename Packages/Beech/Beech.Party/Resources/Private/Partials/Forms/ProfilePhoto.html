@@ -10,13 +10,14 @@
 					<f:form.hidden property="name" value="Profile photo"/>
 				</div>
 				<div class="control-group">
-					<f:form.upload property="resources.0" />
+					<f:form.upload property="resources.0" class="profilePhoto"/>
 				</div>
 				<f:form.hidden name="party" value="{party.id}"/>
-				<div class="control-group">
+				<div class="control-group hide submit-profilePhoto" >
 					<f:form.submit value="{f:translate(id:'document.upload')}" class="btn btn-primary"/>
 				</div>
 			</div>
 		</div>
 	</ehrm:form>
+	<script src="resource://Beech.Party/Public/JavaScript/Component/UserInterface/ProfilePhoto.js"></script>
 </div>
