@@ -784,11 +784,6 @@
                 "url": "git://git.typo3.org/Packages/TYPO3.Flow.git",
                 "reference": "2.0.0-beta3"
             },
-            "dist": {
-                "type": "zip",
-                "url": "http://ci.beech.local:8080/job/composer-packages-1.0/ws/mistermaks/dist/typo3-flow-2.0.0-beta3-a840a3.zip",
-                "reference": "2.0.0-beta3"
-            },
             "require": {
                 "composer/installers": ">=1.0.2,<1.1",
                 "doctrine/migrations": "dev-master",
@@ -827,11 +822,6 @@
                 "type": "git",
                 "url": "git://git.typo3.org/Packages/TYPO3.Fluid.git",
                 "reference": "2f7a92559eebff872fad8022061320ae00067d6e"
-            },
-            "dist": {
-                 "type": "zip",
-                 "url": "http://ci.beech.local:8080/job/composer-packages-1.0/ws/mistermaks/dist/typo3-fluid-2.0.0-beta3-a840a3.zip",
-                 "reference": "2.0.0-beta3"
             },
             "require": {
                 "typo3/flow": "2.0.*"
