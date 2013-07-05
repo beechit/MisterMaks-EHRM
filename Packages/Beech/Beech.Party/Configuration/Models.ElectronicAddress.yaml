@@ -8,10 +8,10 @@
       options:
         values:
          'email': 'E-Mail'
-         'skype': 'Skype'
+#         'skype': 'Skype'
          'url': 'Website'
-         'twitter': 'Twitter'
-         'facebook': 'Facebook'
+#         'twitter': 'Twitter'
+#         'facebook': 'Facebook'
          'linkedin': 'LinkedIn'
     'address':
       label: 'electronicAddress'

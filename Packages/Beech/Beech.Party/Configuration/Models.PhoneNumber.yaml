@@ -7,17 +7,12 @@
       options:
         values:
           'work': 'Work'
-          'fax': 'Fax'
+#          'fax': 'Fax'
           'home': 'Home'
+          'business': 'Business'
           'mobile': 'Mobile'
-          'foreign': 'Foreign'
-          'other': 'Other'
-      validation:
-        -
-          type: 'StringLength'
-          options:
-            maximum: 25
-      default: 'businessPhone'
+#          'foreign': 'Foreign'
+#          'other': 'Other'
     'phoneNumber':
       label: 'Phone Number'
       validation:

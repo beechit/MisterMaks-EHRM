@@ -11,8 +11,8 @@
           'postbox': 'Postbox'
           'mailing': 'Mailing'
           'work': 'Work'
-          'abroad': 'Abroad'
-          'other': 'Other'
+#          'abroad': 'Abroad'
+#          'other': 'Other'
       validation:
         -
           type: 'StringLength'
