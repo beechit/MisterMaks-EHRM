@@ -37,7 +37,7 @@ class PostalCodeValidator extends AbstractValidator {
 	protected function isValid($value) {
 		$result = preg_match($this->regularExpression, $value);
 		if ($result === 0) {
-			$this->addError('Format of your postal code is not correct. There is <b>%1$s</b> and should be <b>%2$s</b>', 1370528826, array($value, $this->expected));
+			$this->addError('Format of your postal code is not correct. There is <b>%1$s</b> and should be <b>%2$s</b>', 1373962750, array($value, $this->expected));
 		}
 		if ($result === FALSE) {
 			throw new \TYPO3\Flow\Validation\Exception\InvalidValidationOptionsException('regularExpression "' . $this->regularExpression . '"PostalCodeValidator contained an error.', 1298273089);

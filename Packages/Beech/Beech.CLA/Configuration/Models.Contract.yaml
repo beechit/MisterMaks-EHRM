@@ -156,20 +156,19 @@
             maximum: 62
     'totalHours':
       label: 'Total hours of this contract'
-      type: 'Decimal'
       validation:
         -
-          type: 'RegularExpression'
+          type: 'Decimal'
           options:
-            regularExpression: '^([1-9]\d*(\.|\,)\d*|0?(\.|\,)\d*[1-9]\d*|[1-9]\d*)$'
+            digits: 4
+            decimal: 2
+#            regularExpression: '^([1-9]\d*(\.|\,)\d*|0?(\.|\,)\d*[1-9]\d*|[1-9]\d*)$'
     'hoursAWeek':
       label: 'Hours a week'
-      type: 'Decimal'
       validation:
         -
-          type: 'RegularExpression'
-          options:
-            regularExpression: '^([1-9]\d*(\.|\,)\d*|0?(\.|\,)\d*[1-9]\d*|[1-9]\d*)$'
+          type: 'Decimal'
+#            regularExpression: '^([1-9]\d*(\.|\,)\d*|0?(\.|\,)\d*[1-9]\d*|[1-9]\d*)$'
     'workDays':
       label: 'Workdays'
       validation:
@@ -198,9 +197,8 @@
       type: 'Decimal'
       validation:
         -
-          type: 'RegularExpression'
-          options:
-            regularExpression: '^([1-9]\d*(\.|\,)\d*|0?(\.|\,)\d*[1-9]\d*|[1-9]\d*)$'
+          type: 'DecimalValidator'
+#            regularExpression: '^([1-9]\d*(\.|\,)\d*|0?(\.|\,)\d*[1-9]\d*|[1-9]\d*)$'
     'minimumWage':
       label: 'Minimum wage'
       type: 'boolean'
@@ -249,17 +247,16 @@
       type: 'Decimal'
       validation:
         -
-          type: 'RegularExpression'
-          options:
-            regularExpression: '^([1-9]\d*(\.|\,)\d*|0?(\.|\,)\d*[1-9]\d*|[1-9]\d*)$'
+          type: 'DecimalValidator'
+
+#            regularExpression: '^([1-9]\d*(\.|\,)\d*|0?(\.|\,)\d*[1-9]\d*|[1-9]\d*)$'
     'vacationAllowancePercentage':
       label: 'Vacation allowance Percentage'
       type: 'Decimal'
       validation:
         -
-          type: 'RegularExpression'
-          options:
-            regularExpression: '^([1-9]\d*(\.|\,)\d*|0?(\.|\,)\d*[1-9]\d*|[1-9]\d*)$'
+          type: 'DecimalValidator'
+#            regularExpression: '^([1-9]\d*(\.|\,)\d*|0?(\.|\,)\d*[1-9]\d*|[1-9]\d*)$'
 # todo: add time validator
     'sickReportTime':
       label: 'Sickreport time'
@@ -280,17 +277,15 @@
       type: 'Decimal'
       validation:
         -
-          type: 'RegularExpression'
-          options:
-            regularExpression: '^([1-9]\d*(\.|\,)\d*|0?(\.|\,)\d*[1-9]\d*|[1-9]\d*)$'
+          type: 'DecimalValidator'
+#            regularExpression: '^([1-9]\d*(\.|\,)\d*|0?(\.|\,)\d*[1-9]\d*|[1-9]\d*)$'
     'accomodationRentMonth':
       label: 'Acomodation rent a month'
       type: 'Decimal'
       validation:
         -
-          type: 'RegularExpression'
-          options:
-            regularExpression: '^([1-9]\d*(\.|\,)\d*|0?(\.|\,)\d*[1-9]\d*|[1-9]\d*)$'
+          type: 'DecimalValidator'
+#           regularExpression: '^([1-9]\d*(\.|\,)\d*|0?(\.|\,)\d*[1-9]\d*|[1-9]\d*)$'
     'cafetariaModel':
       label: 'CafetariaModel'
       type: 'boolean'
