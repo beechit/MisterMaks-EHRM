@@ -8,6 +8,18 @@ iframe {
 	border: none;
 }
 
+#modal {
+	.modal-body.full-size {
+		padding: 0;
+	}
+	.modal-footer {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		left: 0;
+	}
+}
+
 #modal-body-only {
 	.modal-body {
 		padding: 0;
@@ -61,6 +73,7 @@ iframe {
 		}
 	}
 }
+
 
 .modal-large {
 	width: 80%;

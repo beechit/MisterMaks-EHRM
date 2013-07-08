@@ -34,9 +34,11 @@
 					$target.addClass('modal-' + $this.attr('modal-size'));
 				}
 
+				$target.find('.modal-header').addClass('hide');
 				$target.find('.modal-body').html('<p><i class="icon-spin icon-spinner icon-2x muted"></i></p>');
+				$target.find('.modal-footer').addClass('hide');
 
-				App.ModuleHandler.loadUrl(href, '#modal-body-only .modal-body');
+				App.ModuleHandler.loadUrl(href, $this.attr('data-target') + ' .modal-body');
 
 				$target
 					.modal()
