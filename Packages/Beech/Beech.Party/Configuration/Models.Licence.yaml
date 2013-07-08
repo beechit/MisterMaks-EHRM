@@ -26,21 +26,11 @@
           options:
             maximum: 35
     'startDate':
+      type: 'DateTime'
       label: 'licenceStart'
-#      validation:
-#        -
-#          type: 'DateTimeRange'
-#          options:
-#            earliestDate: 19500101
-#            latestDate: 20200101
     'expirationDate':
       label: 'Licence expiration date'
-#      validation:
-#        -
-#          type: 'DateTimeRange'
-#          options:
-#            earliestDate: 19500101
-#            latestDate: 20200101
+
     'document':
       label: 'Licence document'
       type: 'Beech\Party\Domain\Model\Document'
@@ -51,15 +41,8 @@
           - FALSE
           - TRUE
     'creationDate':
-      default: 'now'
       label: 'creation date'
       type: 'DateTime'
-#      validation:
-#        -
-#          type: 'DateTimeRange'
-#          options:
-#            earliestDate: 20130101
-#            latestDate: 20200101
     'createdBy':
       default: 'currentUser'
       label: 'Created by'

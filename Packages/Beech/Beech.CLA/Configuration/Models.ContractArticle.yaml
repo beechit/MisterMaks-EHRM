@@ -17,15 +17,9 @@
         -
           type: 'Integer'
     'creationDate':
-      default: 'now'
       label: 'creation date'
       type: 'DateTime'
-      validation:
-        -
-          type: 'DateTimeRange'
-          options:
-            earliestDate: 20130101
-            latestDate: 20200101
+      default: 'now'
     'createdBy':
       default: 'currentUser'
       label: 'Created by'

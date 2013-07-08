@@ -74,12 +74,6 @@
     'dateOfBirth':
       label: 'Date of Birth'
       type: 'DateTime'
-      validation:
-        -
-          type: 'DateTimeRange'
-          options:
-            earliestDate: 19200101
-            latestDate: 20200101
     'placeOfBirth':
       label: 'Place of birth'
       validation:
@@ -97,12 +91,6 @@
     'dateOfDeath':
       label: 'Date of death'
       type: 'DateTime'
-      validation:
-        -
-          type: 'DateTimeRange'
-          options:
-            earliestDate: 20000101
-            latestDate: 20200101
     'gender':
       label: 'Gender'
       options:
@@ -180,12 +168,6 @@
       default: 'now'
       label: 'creation date'
       type: 'DateTime'
-      validation:
-        -
-          type: 'DateTimeRange'
-          options:
-            earliestDate: 20130101
-            latestDate: 20200101
     'createdBy':
       default: 'currentUser'
       label: 'Created by'

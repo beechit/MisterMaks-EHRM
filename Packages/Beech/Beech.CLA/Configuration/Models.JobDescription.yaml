@@ -105,6 +105,7 @@
           options:
             maximum: 20
     'creationDate':
+      type: 'DateTime'
       default: 'now'
       label: 'creation date'
     'createdBy':

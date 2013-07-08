@@ -33,13 +33,8 @@
           options:
             maximum: 35
     'startDate':
+      type: 'DateTime'
       label: 'Provision date'
-#      validation:
-#        -
-#          type: 'DateTimeRange'
-#          options:
-#            earliestDate: 19500101
-#            latestDate: 20200101
     'provisionedBy':
       label: 'ProvisionedBy'
       type: 'TYPO3\Party\Domain\Model\AbstractParty'
@@ -52,12 +47,7 @@
 # todo implement this in the statusmodel
     'returnDate':
       label: 'Return Date'
-#      validation:
-#        -
-#          type: 'DateTimeRange'
-#          options:
-#            earliestDate: 19500101
-#            latestDate: 20200101
+      type: 'DateTime'
     'returnParty':
       label: 'Returned to'
       type: 'TYPO3\Party\Domain\Model\AbstractParty'
@@ -66,15 +56,8 @@
       label: 'Document'
       type: 'Beech\Party\Domain\Model\Document'
     'creationDate':
-      default: 'now'
       label: 'creation date'
       type: 'DateTime'
-#      validation:
-#        -
-#          type: 'DateTimeRange'
-#          options:
-#            earliestDate: 20130101
-#            latestDate: 20200101
     'createdBy':
       default: 'currentUser'
       label: 'Created by'

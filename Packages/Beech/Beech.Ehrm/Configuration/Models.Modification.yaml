@@ -4,12 +4,6 @@
     'modificationIdentifier':
     'modificationDate':
       type: 'DateTime'
-      validation:
-        -
-          type: 'DateTimeRange'
-          options:
-            earliestDate: 20130101
-            latestDate: 20200101
     'modifiedBy':
       type: 'Beech\Party\Domain\Model\Person'
 # todo: implement diff and rollback features.

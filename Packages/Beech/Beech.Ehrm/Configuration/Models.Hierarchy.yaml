@@ -1,3 +1,4 @@
+# todo remove this model this is done by the model jobposition.
 'Beech.Ehrm.Domain.Model.Hierarchy':
   properties:
 # group and hierarchy should be connected to a unique jobposition

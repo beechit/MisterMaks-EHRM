@@ -208,7 +208,7 @@ class YamlImportUtility {
 		foreach ($this->yamlModel as $key => $value) {
 			if (isset($value['default'])) {
 				if (isset($value['type']) && $value['type'] === 'DateTime' && $value['default'] === 'now') {
-					$defaultValue = date('Y-m-d');
+					$defaultValue = date('Y-m-d H:i:s.u');
 				} elseif ($value['default'] === 'currentUser') {
 						// TODO: Get default user or other solution, maybe from config file?
 					$defaultValue = 'MisterMaks';

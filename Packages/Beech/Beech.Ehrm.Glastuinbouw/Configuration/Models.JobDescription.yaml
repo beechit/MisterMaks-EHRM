@@ -1,5 +1,4 @@
 #############################################################
-# validated yaml for the jobDescriptions model Glastuinbouw
 # this is the jobDescriptions model.
 # todo: make this as an extend on the CLA.Jobdescriptions model.
 # it should be an extend of the jobdescriptions model that is in cla.

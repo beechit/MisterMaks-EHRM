@@ -1,8 +1,7 @@
 'Beech.Minute.Domain.Model.Minute':
   properties:
     'party':
-      items:
-        type: 'TYPO3\Party\Domain\Model\AbstractParty'
+      type: 'TYPO3\Party\Domain\Model\AbstractParty'
     'minuteType':
       label: 'minuteType'
       options:
@@ -35,15 +34,9 @@
       default: 'now'
       label: 'creation date'
       type: 'DateTime'
-      validation:
-        -
-          type: 'DateTimeRange'
-          options:
-            earliestDate: 20130101
-            latestDate: 20200101
     'createdBy':
       default: 'currentUser'
       label: 'Created by'
       type: 'Beech\Party\Domain\Model\Person'
-    'modificationIdentier':
+    'modification':
       type: 'Beech\Ehrm\Domain\Model\Modify'

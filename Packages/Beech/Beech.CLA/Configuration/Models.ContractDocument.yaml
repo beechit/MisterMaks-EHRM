@@ -33,37 +33,18 @@
       label: 'Date contract was accepted'
       type: 'DateTime'
       validation:
-        -
-          type: 'RegularExpression'
-          options:
-            regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
     'contractSigned':
       label: 'Contract signed'
       type: 'boolean'
     'contractSignDate':
       label: 'Date of signing contract'
       type: 'DateTime'
-      validation:
-        -
-          type: 'RegularExpression'
-          options:
-            regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
     'contractExpireDate':
       label: 'Expiration date'
       type: 'DateTime'
-      validation:
-        -
-          type: 'RegularExpression'
-          options:
-            regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
     'contactStopDate':
       label: 'Date contract is stopped'
       type: 'DateTime'
-      validation:
-        -
-          type: 'RegularExpression'
-          options:
-            regularExpression: '(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}( \\d{1,2}[:-]\\d{2}([:-]\\d{2,3})*)?'
     'contactStopDateReason':
       label: 'Reason that contract was stopped'
       options:
@@ -94,21 +75,10 @@
     'contractEndDate':
       label: 'Expiration date'
       type: 'DateTime'
-      validation:
-        -
-          type: 'DateTimeRange'
-          options:
-            earliestDate: 20130101
-            latestDate: 20500101
     'startDate':
       label: 'Startdate of the contract'
       type: 'DateTime'
       validation:
-        -
-          type: 'DateTimeRange'
-          options:
-            earliestDate: 20130101
-            latestDate: 20200101
 # todo check if we need this
     'streetName':
       label: 'Work address streetname'
@@ -291,12 +261,6 @@
 # todo: add time validator
     'sickReportTime':
       label: 'Sickreport time'
-      validation:
-        -
-          type: 'DateTimeRange'
-          options:
-            earliestDate: 20130101
-            latestDate: 20200101
     'noticePeriod':
       label: 'Notice period'
       type: 'boolean'
@@ -332,13 +296,8 @@
       type: 'array'
       validation: ''
     'creationDate':
+      type: 'DateTime'
       default: 'now'
       label: 'creation date'
-      validation:
-        -
-          type: 'DateTimeRange'
-          options:
-            earliestDate: 20130101
-            latestDate: 20200101
     'createdBy':
       label: 'Created by'

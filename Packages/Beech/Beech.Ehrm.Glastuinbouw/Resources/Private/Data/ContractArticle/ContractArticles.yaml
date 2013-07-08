@@ -3,9 +3,9 @@
 ######################################################################
 ---
 contractArticles:
-  CLA: None
-  CLAversion: ''
-  CLAversiondate: ''
+  Cla: None
+  ClaVersion: ''
+  ClaVersionDate: '2012-01-01 10:50:32.000000'
   articles:
     -
 # articles from the ARBEIDSOVEREENKOMST VOOR BEPAALDE TIJD (GELEGENHEIDSWERK) contract.
@@ -29,9 +29,9 @@ contractArticles:
             type: 'Beech.Ehrm:DatePicker'
             value: ''
             valueId: startDate
-            default: today
+            default: ''
             properties:
-              dateFormat: 'd-m-Y'
+              dateFormat: 'Y-m-d H:i:s.u'
               enableDatePicker: TRUE
               displayTimeSelector: FALSE
           -
@@ -39,7 +39,7 @@ contractArticles:
             value: ''
             valueId: endDate
             properties:
-              dateFormat: 'd-m-Y'
+              dateFormat: 'Y-m-d H:i:s.u'
               enableDatePicker: TRUE
               displayTimeSelector: FALSE
           -
@@ -497,12 +497,12 @@ contractArticles:
         -
           type: 'Beech.Ehrm:DatePicker'
           properties:
-            dateFormat: 'd-m-Y'
+            dateFormat: 'Y-m-d H:i:s.u'
             enableDatePicker: TRUE
             displayTimeSelector: FALSE
           value: ''
           valueId: startDate
-          default: today
+          default: ''
         -
           type: 'Beech.CLA:SingleLineText'
           value: ''
@@ -678,4 +678,3 @@ contractArticles:
             en: ''
             nl: ''
             pl: ''
-

@@ -44,9 +44,3 @@
       type: 'Beech\Party\Domain\Model\Person'
     'lastUpdated':
       type: 'DateTime'
-      validation:
-        -
-          type: 'DateTimeRange'
-          options:
-            earliestDate: 20130101
-            latestDate: 20200101

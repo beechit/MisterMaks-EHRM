@@ -17,12 +17,7 @@
       label: 'Document'
     'uploadDate':
       label: 'UploadDate'
-      validation:
-        -
-          type: 'DateTimeRange'
-          options:
-            earliestDate: 19600101
-            latestDate: 20200101
+      default: 'now'
     'accessGroup':
       label: 'AccesGroup'
       type: 'Beech\Person\Domain\Model\Group'
@@ -35,12 +30,6 @@
       default: 'now'
       label: 'creation date'
       type: 'DateTime'
-      validation:
-        -
-          type: 'DateTimeRange'
-          options:
-            earliestDate: 20130101
-            latestDate: 20200101
     'createdBy':
       default: 'currentUser'
       label: 'Created by'
