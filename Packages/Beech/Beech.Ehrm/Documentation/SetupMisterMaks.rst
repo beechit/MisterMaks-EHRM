@@ -53,6 +53,10 @@ for this to work a database name must be set in settings.yaml
 
 	./flow setup:initialize <CompanyName>
 
+*to initialize system roles, based on Policy.yaml files
+
+	./flow role:import
+
 *to create initial user::
 
 	./flow ehrm:user:create [<options>] <username> <password> <first name> <last name> <roles>
@@ -91,6 +95,7 @@ for easy cut and paste work.
 
 
 ./flow setup:initialize Beech.it
+./flow role:import
 ./flow ehrm:user:create admin admin admin admin Beech.Ehrm:Administrator
 ./flow import:collection Beech.CLA ContractArticle Packages/Beech/Beech.Ehrm.Glastuinbouw/Resources/Private/Data/ContractArticle/ContractArticles.yaml contractArticles.articles --language nl
 ./flow import:yaml Beech.CLA JobDescription --sourcePath Packages/Beech/Beech.Ehrm.Glastuinbouw/Resources/Private/Data/JobDescription/
