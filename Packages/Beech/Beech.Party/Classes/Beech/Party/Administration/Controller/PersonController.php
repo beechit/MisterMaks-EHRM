@@ -34,7 +34,7 @@ class PersonController extends \Beech\Party\Controller\PersonController {
 	public function updateAction(Person $person) {
 		$this->repository->update($person);
 		$this->addFlashMessage('Person is updated.');
-		$this->emberRedirect('#/administration/person');
+		$this->redirect('edit', NULL, NULL, array('person' => $person, 'withDetails' => FALSE));
 	}
 	/**
 	 * @param \Beech\Absence\Domain\Model\Absence $absence A absence to add

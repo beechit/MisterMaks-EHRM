@@ -8,6 +8,8 @@
 <div class="row-fluid">
 	<div class="span12">{address.postal} {address.residence}</div>
 </div>
+<f:if condition="{0: address.addressType} == {0: 'abroad'}">
 <div class="row-fluid">
 	<div class="span3"><strong>{address.country}</strong></div>
 </div>
+</f:if>

@@ -6,24 +6,36 @@
 				<f:render partial="Views/Show/ProfilePhoto" arguments="{photo: person.profilePhoto, width: 150}"/>
 			</td>
 			<td class="span3">Naam</td>
-			<td class="span6">{person.name.firstName} {person.name.middleName} {person.name.lastName}</td>
+			<td class="span6">{person.name.firstName} {person.name.middleName} {person.name.lastName}
+				<a href="{f:uri.action(package:'Beech.Party', subpackage:'Administration', controller:'Person', action:'edit', arguments: {person: person})}" data-toggle="modal-ajax" data-target="#modal" modal-size="large">
+					<i class="icon-pencil icon-white"></i> <f:translate id="action.edit">Edit</f:translate>
+				</a>
+			</td>
 		</tr>
 		<tr class="even">
 			<td>Email</td>
 			<td>
-				<f:for each="{electronicAddresses}" as="electronicAddress">
-					<div id="electronicAddress-{electronicAddress.id}">
-						<f:render partial="Views/Show/ElectronicAddress" arguments="{electronicAddress: electronicAddress}"/>
-					</div>
-				</f:for>
+				{person.electronicAddress_email.address}
+				<a href="{f:uri.action(package:'Beech.Party', subpackage:'Administration', controller:'ElectronicAddress', action:'list', arguments: {party: person})}" data-toggle="modal-ajax" data-target="#modal" modal-size="large">
+					<i class="icon-pencil icon-white"></i> <f:translate id="action.edit">Edit</f:translate>
+				</a>
 			</td>
 		</tr>
 		<tr class="odd">
-			<td>Telefoonnummer</td>
+			<td>
+				Telefoonnummer
+			</td>
 			<td>
 				<f:for each="{phoneNumbers}" as="phoneNumber">
-					<div id="phoneNumber-{phoneNumber.id}">
-						<f:render partial="Views/Show/PhoneNumber" arguments="{phoneNumber: phoneNumber}"/>
+					<div class="row-fluid">
+						<div id="phoneNumber-{phoneNumber.id}" class="span8">
+							<f:render partial="Views/Show/PhoneNumber" arguments="{phoneNumber: phoneNumber}"/>
+						</div>
+						<div class="span4">
+							<a href="{f:uri.action(package:'Beech.Party', subpackage:'Administration', controller:'PhoneNumber', action:'list', arguments: {party: person})}" data-toggle="modal-ajax" data-target="#modal" modal-size="large">
+								<i class="icon-pencil icon-white"></i> <f:translate id="action.edit">Edit</f:translate>
+							</a>
+						</div>
 					</div>
 				</f:for>
 			</td>
@@ -32,7 +44,14 @@
 			<td>Geboortedatum</td>
 			<td>
 				<f:if condition="{person.dateOfBirth}">
-					<f:format.date format="d-m-Y">{person.dateOfBirth}</f:format.date> <strong>({person.age})</strong>
+					<div class="row-fluid">
+						<div class="span4">
+							<f:format.date format="d-m-Y">{person.dateOfBirth}</f:format.date>
+						</div>
+						<div class="span8">
+							Age: <strong>{person.age}</strong>
+						</div>
+					</div>
 				</f:if>
 			</td>
 		</tr>

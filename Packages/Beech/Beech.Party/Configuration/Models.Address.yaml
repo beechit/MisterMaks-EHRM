@@ -11,7 +11,7 @@
           'postbox': 'Postbox'
           'mailing': 'Mailing'
           'work': 'Work'
-#          'abroad': 'Abroad'
+          'abroad': 'Abroad'
 #          'other': 'Other'
       validation:
         -
