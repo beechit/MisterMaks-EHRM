@@ -260,7 +260,7 @@ class Task extends \Beech\Ehrm\Domain\Model\Document {
 	 */
 	public function getAssignedTo() {
 		if (isset($this->assignedTo)) {
-			return $this->persistenceManager->getObjectByIdentifier($this->assignedTo, 'Beech\Party\Domain\Model\Person', TRUE);
+			return $this->persistenceManager->getObjectByIdentifier($this->assignedTo, 'Beech\Party\Domain\Model\Person');
 		}
 		return NULL;
 	}
@@ -288,7 +288,7 @@ class Task extends \Beech\Ehrm\Domain\Model\Document {
 	 */
 	public function getCreatedBy() {
 		if (isset($this->createdBy)) {
-			return $this->persistenceManager->getObjectByIdentifier($this->createdBy, 'Beech\Party\Domain\Model\Person', TRUE);
+			return $this->persistenceManager->getObjectByIdentifier($this->createdBy, 'Beech\Party\Domain\Model\Person');
 		}
 		return NULL;
 	}
@@ -310,7 +310,7 @@ class Task extends \Beech\Ehrm\Domain\Model\Document {
 	 */
 	public function getClosedBy() {
 		if (isset($this->closedBy)) {
-			return $this->persistenceManager->getObjectByIdentifier($this->closedBy, 'Beech\Party\Domain\Model\Person', TRUE);
+			return $this->persistenceManager->getObjectByIdentifier($this->closedBy, 'Beech\Party\Domain\Model\Person');
 		}
 		return NULL;
 	}

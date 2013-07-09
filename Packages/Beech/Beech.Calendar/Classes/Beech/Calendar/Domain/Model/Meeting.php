@@ -169,7 +169,10 @@ class Meeting extends \Beech\Ehrm\Domain\Model\Document {
 		$returnValue = new \Doctrine\Common\Collections\ArrayCollection();
 		if (!is_null($this->attendees)) {
 			foreach ($this->attendees as $attendee) {
-				$returnValue->add($this->persistenceManager->getObjectByIdentifier($attendee, 'Beech\Party\Domain\Model\Person', TRUE));
+				$_attendee = $this->persistenceManager->getObjectByIdentifier($attendee, 'Beech\Party\Domain\Model\Person');
+				if($_attendee !== NULL) {
+					$returnValue->add($_attendee);
+				}
 			}
 		}
 		return $returnValue;

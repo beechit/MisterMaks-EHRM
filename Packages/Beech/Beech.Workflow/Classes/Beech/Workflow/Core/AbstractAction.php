@@ -127,7 +127,7 @@ abstract class AbstractAction extends \Beech\Ehrm\Domain\Model\Document implemen
 	 */
 	public function getParentAction() {
 		if (isset($this->parentAction)) {
-			return $this->persistenceManager->getObjectByIdentifier($this->parentAction, 'Beech\Workflow\Domain\Model\Action', TRUE);
+			return $this->persistenceManager->getObjectByIdentifier($this->parentAction, 'Beech\Workflow\Domain\Model\Action');
 		}
 		return NULL;
 	}

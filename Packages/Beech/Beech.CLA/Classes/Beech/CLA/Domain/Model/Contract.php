@@ -137,7 +137,7 @@ class Contract extends \Beech\Ehrm\Domain\Model\Document {
 	 * @return \Beech\Party\Domain\Model\Person
 	 */
 	public function getEmployee() {
-		return ($this->employee !== NULL) ? $this->persistenceManager->getObjectByIdentifier($this->employee, '\Beech\Party\Domain\Model\Person', TRUE) : NULL;
+		return ($this->employee !== NULL) ? $this->persistenceManager->getObjectByIdentifier($this->employee, '\Beech\Party\Domain\Model\Person') : NULL;
 	}
 
 	/**
@@ -151,7 +151,7 @@ class Contract extends \Beech\Ehrm\Domain\Model\Document {
 	 * @return \Beech\Party\Domain\Model\Company
 	 */
 	public function getEmployer() {
-		return ($this->employer !== NULL) ? $this->persistenceManager->getObjectByIdentifier($this->employer, '\Beech\Party\Domain\Model\Company', TRUE) : NULL;
+		return ($this->employer !== NULL) ? $this->persistenceManager->getObjectByIdentifier($this->employer, '\Beech\Party\Domain\Model\Company') : NULL;
 	}
 
 	/**
@@ -238,7 +238,7 @@ class Contract extends \Beech\Ehrm\Domain\Model\Document {
 	 */
 	public function getCreatedBy() {
 		if (!empty($this->createdBy)) {
-			return $this->persistenceManager->getObjectByIdentifier($this->createdBy, 'Beech\Party\Domain\Model\Person', TRUE);
+			return $this->persistenceManager->getObjectByIdentifier($this->createdBy, 'Beech\Party\Domain\Model\Person');
 		}
 		return NULL;
 	}

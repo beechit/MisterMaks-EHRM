@@ -315,7 +315,7 @@ class Action extends \Beech\Workflow\Core\AbstractAction implements \Beech\Workf
 	 */
 	public function getClosedBy() {
 		if (isset($this->closedBy)) {
-			return $this->persistenceManager->getObjectByIdentifier($this->closedBy, 'Beech\Party\Domain\Model\Person', TRUE);
+			return $this->persistenceManager->getObjectByIdentifier($this->closedBy, 'Beech\Party\Domain\Model\Person');
 		}
 		return NULL;
 	}
@@ -367,7 +367,7 @@ class Action extends \Beech\Workflow\Core\AbstractAction implements \Beech\Workf
 	 */
 	public function getCreatedBy() {
 		if (isset($this->createdBy)) {
-			return $this->persistenceManager->getObjectByIdentifier($this->createdBy, 'Beech\Party\Domain\Model\Person', TRUE);
+			return $this->persistenceManager->getObjectByIdentifier($this->createdBy, 'Beech\Party\Domain\Model\Person');
 		}
 		return NULL;
 	}
@@ -384,7 +384,7 @@ class Action extends \Beech\Workflow\Core\AbstractAction implements \Beech\Workf
 	 */
 	public function getStartedBy() {
 		if (isset($this->startedBy)) {
-			return $this->persistenceManager->getObjectByIdentifier($this->startedBy, 'Beech\Party\Domain\Model\Person', TRUE);
+			return $this->persistenceManager->getObjectByIdentifier($this->startedBy, 'Beech\Party\Domain\Model\Person');
 		}
 		return NULL;
 	}
