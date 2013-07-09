@@ -38,9 +38,15 @@ class Group {
 	protected $type;
 
 	/**
+	 * @var \Beech\Party\Domain\Model\Group
+	 * @ORM\ManyToOne(inversedBy="children")
+	 * @ORM\JoinColumn(name="parent_id")
+	 */
+	protected $parent;
+
+	/**
 	 * @var \Doctrine\Common\Collections\Collection<\Beech\Party\Domain\Model\Group>
-	 * @ORM\ManyToMany
-	 * @ORM\JoinTable(inverseJoinColumns={@ORM\JoinColumn(unique=true)})
+	 * @ORM\OneToMany(mappedBy="parent")
 	 * @Flow\Lazy
 	 */
 	protected $children;

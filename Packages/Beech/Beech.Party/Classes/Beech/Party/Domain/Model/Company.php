@@ -32,9 +32,16 @@ class Company extends \TYPO3\Party\Domain\Model\AbstractParty implements \TYPO3\
 	protected $name;
 
 	/**
+	 * @var \Beech\Party\Domain\Model\Company
+	 * @ORM\ManyToOne(inversedBy="departments")
+	 * @ORM\JoinColumn(name="parent_company_id")
+	 * @Flow\Lazy
+	 */
+	protected $parentCompany;
+
+	/**
 	 * @var \Doctrine\Common\Collections\Collection<\Beech\Party\Domain\Model\Company>
-	 * @ORM\ManyToMany
-	 * @ORM\JoinTable(inverseJoinColumns={@ORM\JoinColumn(unique=true)})
+	 * @ORM\OneToMany(mappedBy="parentCompany")
 	 * @Flow\Lazy
 	 */
 	protected $departments;
@@ -64,20 +71,6 @@ class Company extends \TYPO3\Party\Domain\Model\AbstractParty implements \TYPO3\
 	 */
 	public function getName() {
 		return $this->name;
-	}
-
-	/**
-	 * @param string $chamberOfCommerce
-	 */
-	public function setChamberOfCommerceNumber($chamberOfCommerce) {
-		$this->chamberOfCommerce = $chamberOfCommerce;
-	}
-
-	/**
-	 * @return string
-	 */
-	public function getChamberOfCommerceNumber() {
-		return $this->chamberOfCommerce;
 	}
 
 	/**
@@ -115,6 +108,15 @@ class Company extends \TYPO3\Party\Domain\Model\AbstractParty implements \TYPO3\
 	 */
 	public function getDeleted() {
 		return $this->deleted;
+	}
+
+	/**
+	 * Get parentCompany
+	 *
+	 * @return \Beech\Party\Domain\Model\Company
+	 */
+	public function getParentCompany() {
+		return $this->parentCompany;
 	}
 
 	/**

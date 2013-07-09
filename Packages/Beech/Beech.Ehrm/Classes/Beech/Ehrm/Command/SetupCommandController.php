@@ -53,7 +53,6 @@ class SetupCommandController extends \TYPO3\Flow\Cli\CommandController {
 			// Create the company
 		$company = new \Beech\Party\Domain\Model\Company();
 		$company->setName($companyName);
-		$company->setChamberOfCommerceNumber('');
 
 		$this->companyRepository->add($company);
 
