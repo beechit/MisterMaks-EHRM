@@ -23,21 +23,15 @@
 			</div>
 		</div>
 		<div class="control-group">
-			<label class="control-label" for="firstName"><f:translate id="person.firstName">First name</f:translate></label>
+			<label class="control-label" for="person">Person</label>
 			<div class="controls">
-				<f:form.textfield name="firstName" id="firstName" />
-			</div>
-		</div>
-		<div class="control-group">
-			<label class="control-label" for="lastName">Last name</label>
-			<div class="controls">
-				<f:form.textfield name="lastName" id="lastName" />
+				<f:form.select name="person" id="person" options="{persons}" optionLabelField="name.fullName"/>
 			</div>
 		</div>
 		<div class="control-group">
 			<label class="control-label" for="roles">Role</label>
 			<div class="controls">
-				<f:form.select name="roles" id="roles" options="{Administrator: 'Administrator', SuperUser: 'SuperUser', User: 'User'}"/>
+				<f:form.select name="roles" id="roles" options="{roles}" multiple="true"/>
 			</div>
 		</div>
 		<div class="form-actions">

@@ -9,7 +9,6 @@
 
 			this.route('jobDescriptionModule', { path: 'jobdescriptions' });
 			this.route('jobDescriptionModule.new', { path: 'jobdescription/new' });
-			this.route('userManagementModule', { path: 'usermanagement' });
 			this.route('wizardManagementModule', { path: 'wizards' });
 
 				// Contracts
@@ -31,6 +30,16 @@
 				this.route('delete', { path: '/delete/:contractArticle' });
 			});
 
+				// Beech.Party/Account
+			this.resource('BeechPartyAdministrationAccount', { path: 'userManagement' }, function() {
+				this.route('index', { path: '/list' });
+			});
+			this.resource('BeechPartyAdministrationAccount', { path: 'userManagement' }, function() {
+				this.route('new', { path: '/new' });
+				this.route('show', { path: '/show/:account' });
+				this.route('edit', { path: '/edit/:account' });
+				this.route('delete', { path: '/delete/:account' });
+			});
 				// Beech.Party/Person
 			this.resource('BeechPartyAdministrationPerson', { path: 'persons' }, function() {
 				this.route('index', { path: '/list' });
@@ -129,10 +138,6 @@
 	App.AdministrationWizardManagementModuleView = Ember.View.extend(App.AjaxModuleViewMixin, {
 		url: MM.url.module.wizardManagementModule
 	});
-	App.AdministrationUserManagementModuleView = Ember.View.extend(App.AjaxModuleViewMixin, {
-		url: MM.url.module.userManagementModule
-	});
-
 	App.AdministrationJobDescriptionModuleView = Ember.View.extend(App.AjaxModuleViewMixin, {
 		url: MM.url.module.jobDescription
 	});

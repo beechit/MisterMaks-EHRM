@@ -17,19 +17,32 @@
 			</div>
 		</div>
 		<div class="control-group">
+			<label class="control-label" for="password"><f:translate id="account.password">Password</f:translate></label>
+			<div class="controls">
+				<f:form.password name="password" id="password" />
+			</div>
+		</div>
+		<div class="control-group">
 			<label class="control-label"><f:translate id="account.creationDate">Creation Date</f:translate></label>
 			<div class="controls">
 				{account.creationDate -> f:format.date(format: 'Y-m-d H:i')}
 			</div>
 		</div>
 		<div class="control-group">
-			<label class="control-label" for="account.expirationDate"><f:translate id="account.expirationDate">Expiration Date</f:translate></label>
+			<label class="control-label" for="person">Person</label>
 			<div class="controls">
-				<f:form.textfield name="expirationDate" id="expirationDate" />
+				{account.party.name.fullName}
+			</div>
+		</div>
+
+		<div class="control-group">
+			<label class="control-label" for="roles">Role</label>
+			<div class="controls">
+				<f:form.select property="roles" id="roles" options="{roles}" multiple="true"/>
 			</div>
 		</div>
 		<div class="form-actions">
-			<f:form.submit value="{f:translate(id: 'action.create')}"/>
+			<f:form.submit value="{f:translate(id: 'action.update')}"/>
 		</div>
 	</f:form>
 </f:section>

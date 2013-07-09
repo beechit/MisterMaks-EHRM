@@ -47,10 +47,13 @@ Beech:
           - 'Beech.Ehrm/JavaScript/Router.js'
           - 'Beech.Party/JavaScript/Route/Company.js'
           - 'Beech.Party/JavaScript/Route/Person.js'
+          - 'Beech.Party/JavaScript/Route/Account.js'
           - 'Beech.Party/JavaScript/Controller/Company.js'
           - 'Beech.Party/JavaScript/Controller/Person.js'
+          - 'Beech.Party/JavaScript/Controller/Account.js'
           - 'Beech.Party/JavaScript/View/Company.js'
           - 'Beech.Party/JavaScript/View/Person.js'
+          - 'Beech.Party/JavaScript/View/Account.js'
           - 'Beech.Ehrm/JavaScript/ModuleHandler.js'
           - 'Beech.Ehrm/JavaScript/Application.js'
           - 'Beech.Task/JavaScript/Model/Task.js'
@@ -96,6 +99,7 @@ Beech:
       - ['Beech.Party', 'Administration', 'Person']
       - ['Beech.Party', NULL, 'Company']
       - ['Beech.Party', 'Administration', 'Company']
+      - ['Beech.Party', 'Administration', 'Account']
       - ['Beech.Document', NULL, 'Document']
       - ['Beech.Task', NULL, 'Task']
       - ['Beech.CLA', 'Administration', 'ContractArticle']

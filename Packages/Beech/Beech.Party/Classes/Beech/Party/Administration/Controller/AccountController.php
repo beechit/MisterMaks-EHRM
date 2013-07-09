@@ -42,6 +42,18 @@ class AccountController extends \Beech\Ehrm\Controller\AbstractController {
 	protected $translator;
 
 	/**
+	 * @var \TYPO3\Flow\Security\Policy\PolicyService
+	 * @Flow\Inject
+	 */
+	protected $policyService;
+
+	/**
+	 * @var \TYPO3\Flow\Security\Cryptography\HashService
+	 * @Flow\Inject
+	 */
+	protected $hashService;
+
+	/**
 	 * Shows a list of accounts
 	 *
 	 * @return void
@@ -66,6 +78,8 @@ class AccountController extends \Beech\Ehrm\Controller\AbstractController {
 	 * @return void
 	 */
 	public function newAction() {
+		$this->view->assign('persons', $this->personRepository->findAll());
+		$this->view->assign('roles', $this->policyService->getRoles());
 	}
 
 	/**
@@ -73,19 +87,14 @@ class AccountController extends \Beech\Ehrm\Controller\AbstractController {
 	 *
 	 * @param string $accountIdentifier
 	 * @param string $password
-	 * @param string $firstName
-	 * @param string $lastName
-	 * @param string $roles
+	 * @param \Beech\Party\Domain\Model\Person $person
+	 * @param array $roles
 	 * @return void
 	 */
-	public function createAction($accountIdentifier, $password, $firstName, $lastName, $roles) {
-		$person = new \Beech\Party\Domain\Model\Person();
-		$person->addPersonName(new \TYPO3\Party\Domain\Model\PersonName('', $firstName, NULL, $lastName));
-		$this->personRepository->add($person);
-
+	public function createAction($accountIdentifier, $password, $person, array $roles) {
 		$authenticationProviderName = 'DefaultProvider';
 
-		$account = $this->accountFactory->createAccountWithPassword($accountIdentifier, $password, array($roles), $authenticationProviderName);
+		$account = $this->accountFactory->createAccountWithPassword($accountIdentifier, $password, $roles, $authenticationProviderName);
 		$account->setParty($person);
 		$this->accountRepository->add($account);
 		$this->redirect('list');
@@ -95,9 +104,11 @@ class AccountController extends \Beech\Ehrm\Controller\AbstractController {
 	 * Shows a form for editing an existing account object
 	 *
 	 * @param \TYPO3\Flow\Security\Account $account The account to edit
+
 	 * @return void
 	 */
 	public function editAction(Account $account) {
+		$this->view->assign('roles', $this->policyService->getRoles());
 		$this->view->assign('account', $account);
 	}
 
@@ -105,12 +116,16 @@ class AccountController extends \Beech\Ehrm\Controller\AbstractController {
 	 * Updates the given account object
 	 *
 	 * @param \TYPO3\Flow\Security\Account $account The account to update
+	 * @param string $password
 	 * @return void
 	 */
-	public function updateAction(Account $account) {
+	public function updateAction(Account $account, $password) {
+		if (!empty($password)) {
+			$account->setCredentialsSource($this->hashService->hashPassword($password, 'default'));
+		}
 		$this->accountRepository->update($account);
 		$this->addFlashMessage($this->translator->translateById('Updated', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
-		$this->redirect('list');
+		$this->emberRedirect('#/administration/userManagement');
 	}
 
 	/**
@@ -121,8 +136,9 @@ class AccountController extends \Beech\Ehrm\Controller\AbstractController {
 	 */
 	public function deleteAction(Account $account) {
 		$this->accountRepository->remove($account);
+		$this->persistenceManager->persistAll();
 		$this->addFlashMessage($this->translator->translateById('Removed.', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
-		$this->redirect('list');
+		$this->emberRedirect('#/administration/userManagement');
 	}
 
 	/**

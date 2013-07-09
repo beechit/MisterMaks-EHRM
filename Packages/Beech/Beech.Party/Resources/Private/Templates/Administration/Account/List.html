@@ -8,6 +8,7 @@
 				<thead>
 				<tr>
 					<th><f:translate id="account.accountIdentifier">Account identifier</f:translate></th>
+					<th><f:translate id="account.role">Role</f:translate></th>
 					<th><f:translate id="action">Action</f:translate></th>
 				</tr>
 				</thead>
@@ -15,11 +16,16 @@
 				<f:for each="{accounts}" as="account" iteration="iterator">
 					<tr>
 						<td>
-							<strong><f:link.action action="show" arguments="{account: account}">{account.accountIdentifier}</f:link.action></strong>
+							<strong><a href="#/administration/userManagement/show/{account -> f:format.identifier()}">{account.accountIdentifier}</a></strong>
 						</td>
 						<td>
-							<f:link.action action="edit" arguments="{account: account}"><i class="icon-pencil"></i></f:link.action>
-							<f:link.action action="delete" arguments="{account: account}"><i class="icon-trash"></i></f:link.action>
+							<f:for each="{account.roles}" key="roleName" as="role" iteration="roleIterator">
+								{roleName}{f:if(condition: roleIterator.isLast, then: '', else: ', ')}
+							</f:for>
+						</td>
+						<td>
+							<a href="#/administration/userManagement/edit/{account -> f:format.identifier()}"><i class="icon-pencil"></i></a>
+							<a href="#/administration/userManagement/delete/{account -> f:format.identifier()}"><i class="icon-trash"></i></a>
 						</td>
 					</tr>
 				</f:for>
@@ -31,6 +37,6 @@
 		</f:else>
 	</f:if>
 	<div class="form-actions">
-		<f:link.action action="new" arguments="{account: account}"><f:translate id="action.create">Create</f:translate></f:link.action>
+		<a href="#/administration/userManagement/new"><i class="icon-plus"></i><f:translate id="action.create">Create</f:translate></a>
 	</div>
 </f:section>
