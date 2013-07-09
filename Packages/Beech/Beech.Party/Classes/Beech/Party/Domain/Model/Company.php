@@ -79,6 +79,7 @@ class Company extends \TYPO3\Party\Domain\Model\AbstractParty implements \TYPO3\
 	 */
 	public function addDepartment(\Beech\Party\Domain\Model\Company $department) {
 		$this->departments->add($department);
+		$department->parentCompany = $this;
 	}
 
 	/**

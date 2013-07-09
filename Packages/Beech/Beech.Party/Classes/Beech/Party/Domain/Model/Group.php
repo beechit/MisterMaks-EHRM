@@ -92,6 +92,25 @@ class Group {
 	}
 
 	/**
+	 * Set parent
+	 *
+	 * @param \Beech\Party\Domain\Model\Group $parent
+	 */
+	public function setParent($parent) {
+		$this->parent = $parent;
+	}
+
+	/**
+	 * Get parent
+	 *
+	 * @return \Beech\Party\Domain\Model\Group
+	 */
+	public function getParent() {
+		return $this->parent;
+	}
+
+
+	/**
 	 * @param \Doctrine\Common\Collections\Collection<\Beech\Party\Domain\Model\Group> $children
 	 */
 	public function setChildren($children) {
@@ -111,6 +130,7 @@ class Group {
 	 */
 	public function addChild(\Beech\Party\Domain\Model\Group $child) {
 		$this->children->add($child);
+		$child->setParent($this);
 	}
 
 	/**
