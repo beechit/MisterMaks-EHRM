@@ -34,6 +34,14 @@ class AddressController extends \Beech\Ehrm\Controller\AbstractManagementControl
 	protected $translator;
 
 	/**
+	 * @param \TYPO3\Party\Domain\Model\AbstractParty $party
+	 */
+	public function listAction(\TYPO3\Party\Domain\Model\AbstractParty $party) {
+		$this->view->assign('party', $party);
+		$this->view->assign('addresses', $this->repository->findByParty($party));
+	}
+
+	/**
 	 * @param \Beech\Party\Domain\Model\Address $address A address to add
 	 *
 	 * @return void
