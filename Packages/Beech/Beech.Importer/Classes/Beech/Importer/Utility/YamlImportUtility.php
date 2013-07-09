@@ -208,10 +208,10 @@ class YamlImportUtility {
 		foreach ($this->yamlModel as $key => $value) {
 			if (isset($value['default'])) {
 				if (isset($value['type']) && $value['type'] === 'DateTime' && $value['default'] === 'now') {
-					$defaultValue = date('Y-m-d H:i:s.u');
+					$defaultValue = new \DateTime();
 				} elseif ($value['default'] === 'currentUser') {
 						// TODO: Get default user or other solution, maybe from config file?
-					$defaultValue = 'MisterMaks';
+					$defaultValue = NULL;
 				} else {
 					$defaultValue = $value['default'];
 				}
@@ -223,7 +223,11 @@ class YamlImportUtility {
 			if (isset($value[$this->language])) {
 				$value = $value[$this->language];
 			}
-			ObjectAccess::setProperty($document, $key, $value);
+			try {
+				ObjectAccess::setProperty($document, $key, $value);
+			} catch (\Exception $exception) {
+				echo PHP_EOL.get_class($document).'->'.$key." ".$exception->getMessage().PHP_EOL.PHP_EOL;
+			}
 		}
 
 		return $document;

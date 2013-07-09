@@ -33,8 +33,18 @@ class DateArrayConverter extends \TYPO3\Flow\Property\TypeConverter\DateTimeConv
 	 */
 	protected $priority = 1;
 
+	/**
+	 * Check if source matches expected input
+	 *
+	 * @param mixed $source
+	 * @param string $targetType
+	 * @return bool
+	 */
 	public function canConvertFrom($source, $targetType) {
-		return TRUE;
+		if(is_array($source) && array_key_exists('date', $source)) {
+			return TRUE;
+		}
+		return FALSE;
 	}
 
 	/**

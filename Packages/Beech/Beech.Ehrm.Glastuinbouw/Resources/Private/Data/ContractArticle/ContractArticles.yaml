@@ -29,9 +29,8 @@ contractArticles:
             type: 'Beech.Ehrm:DatePicker'
             value: ''
             valueId: startDate
-            default: ''
             properties:
-              dateFormat: 'Y-m-d H:i:s.u'
+              dateFormat: 'd-m-Y'
               enableDatePicker: TRUE
               displayTimeSelector: FALSE
           -
@@ -39,7 +38,7 @@ contractArticles:
             value: ''
             valueId: endDate
             properties:
-              dateFormat: 'Y-m-d H:i:s.u'
+              dateFormat: 'd-m-Y'
               enableDatePicker: TRUE
               displayTimeSelector: FALSE
           -
@@ -497,7 +496,7 @@ contractArticles:
         -
           type: 'Beech.Ehrm:DatePicker'
           properties:
-            dateFormat: 'Y-m-d H:i:s.u'
+            dateFormat: 'd-m-Y'
             enableDatePicker: TRUE
             displayTimeSelector: FALSE
           value: ''

@@ -72,13 +72,10 @@ trait ConfigurableModelTrait {
 	protected function getModelConfiguration() {
 		if ($this->modelConfiguration === NULL) {
 			$this->modelConfiguration = array();
-				// in some
-			//if (in_array('Models', $this->configurationManager->getAvailableConfigurationTypes())) {
-				$modelConfiguration = $this->configurationManager->getConfiguration('Models');
-				if (array_key_exists($this->getModelConfigurationPath(), $modelConfiguration)) {
-					$this->modelConfiguration = $modelConfiguration[$this->getModelConfigurationPath()]['properties'];
-				}
-			//}
+			$modelConfiguration = $this->configurationManager->getConfiguration('Models');
+			if (array_key_exists($this->getModelConfigurationPath(), $modelConfiguration)) {
+				$this->modelConfiguration = $modelConfiguration[$this->getModelConfigurationPath()]['properties'];
+			}
 		}
 		return $this->modelConfiguration;
 	}
@@ -147,7 +144,7 @@ trait ConfigurableModelTrait {
 			$this->$name = $value;
 		} elseif ($this->getDynamicPropertyType($name)) {
 
-			if(is_string($value)) {
+			if (is_string($value)) {
 				unset($this->mappedData[$name]);
 				$this->data[$name] = $value;
 			} elseif ($value === NULL) {
@@ -155,8 +152,10 @@ trait ConfigurableModelTrait {
 				$this->data[$name] = NULL;
 			} else {
 				$this->mappedData[$name] = $value;
-				if($this->getDynamicPropertyType($name) === 'DateTime') {
+				if ($this->getDynamicPropertyType($name) === 'DateTime') {
 					$this->data[$name] = $value->format('Y-m-d H:i:s.u');
+				} elseif ($this->getDynamicPropertyType($name) === 'array') {
+					$this->data[$name] = $this->propertyMapper->convert($value, 'array');
 				} else {
 					$this->data[$name] = $this->propertyMapper->convert($value, 'string');
 				}

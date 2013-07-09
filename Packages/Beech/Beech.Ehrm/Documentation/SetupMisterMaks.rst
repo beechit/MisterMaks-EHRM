@@ -82,7 +82,9 @@ DocumentType::
 
 	./flow import:collection Beech.Document DocumentType resource://Beech.Document/Private/Data/DocumentType documentTypes
 
+
 for easy cut and paste work.
+----------------------------
 
 ./flow doctrine:migrate
 ./flow migrate:designs
