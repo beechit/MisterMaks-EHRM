@@ -18,6 +18,16 @@ use Beech\Party\Domain\Model\Person as Person;
 class PersonController extends \Beech\Party\Controller\PersonController {
 
 	/**
+	 * @param \Beech\Party\Domain\Model\Person $person A new person to add
+	 * @return void
+	 */
+	public function createAction(Person $person) {
+		$this->repository->add($person);
+		$this->addFlashMessage('Person is added');
+		$this->redirect('edit', NULL, NULL, array('person' => $person, 'withDetails' => FALSE));
+	}
+
+	/**
 	 * @param \Beech\Party\Domain\Model\Person $person A new person to update
 	 * @return void
 	 */

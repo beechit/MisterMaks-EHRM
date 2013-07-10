@@ -7,7 +7,7 @@
 				<f:render partial="Views/List/ElectronicAddress" arguments="{_all}"/>
 			</f:then>
 		</f:if>
-		<div id="toggle{electronicAddress.id}{suffix}" class="collapse">
+		<div id="toggle{electronicAddress.id}{suffix}" class="{f:if(condition: collapsed, then: 'collapse', else: '')}">
 			<div class="row-fluid" >
 				<div class="span1"><i class="icon-plus"/></div>
 				<div class="span3">

@@ -1,38 +1,102 @@
 <f:layout name="Ajax"/>
 
 <f:section name="Body">
-	<div id="c261" class="csc-default">
-		<ul id="personTabs" class="nav nav-tabs">
-			<li class="">
-				<a href="#personal" data-toggle="tab">Persoonlijk</a>
-			</li>
-			<li class="">
-				<a href="#bank" data-toggle="tab">Bankgegevens</a>
-			</li>
-		</ul>
-		<div id="personTabsContent" class="tab-content">
-			<div id="general" class="tab-pane fade active in" >
-				<f:form action="create" object="{person}" name="person" class="form-horizontal">
-					<f:render partial="Forms/Person"/>
-					<div class="form-actions">
-						<f:form.submit value="{f:translate(id: 'action.create')}"/>
-					</div>
-				</f:form>
-			</div>
-			<div id="personal" class="tab-pane fade">
-				<f:form action="create" object="{person}" name="person" class="form-horizontal">
-					<f:render partial="Forms/Person"/>
-					<div class="form-actions">
-						<f:form.submit value="{f:translate(id: 'action.create')}"/>
-					</div>
-				</f:form>
-			</div>
-			<div id="bank" class="tab-pane fade">
-				<div id="bankAccount-add" class="clearfix">
-					<f:render partial="Forms/BankAccount"
-							  arguments="{party: person, action: 'add', suffix: 'bankAccount'}"/>
+	<div class="wizard" id="person-wizard">
+
+		<h1>Person wizard</h1>
+		<div class="wizard-card" data-cardname="person">
+			<h3>Personal data</h3>
+			<f:form action="create" object="{person}" name="person">
+				<f:render partial="Forms/Person"/>
+				<div class="form-actions">
+					<f:form.submit value="{f:translate(id: 'action.create')}"/>
 				</div>
+			</f:form>
+		</div>
+		<div class="wizard-card" data-cardname="electronicAddress">
+			<h3>Electronic addresses</h3>
+		</div>
+		<div class="wizard-card" data-cardname="address">
+			<h3>Addresses</h3>
+		</div>
+		<div class="wizard-card" data-cardname="phoneNumber">
+			<h3>Phone numbers</h3>
+		</div>
+		<div class="wizard-card" data-cardname="bankAccount">
+			<h3>Bank accounts</h3>
+		</div>
+		<div class="wizard-card" data-cardname="education">
+			<h3>Education</h3>
+		</div>
+		<div class="wizard-card" data-cardname="licence">
+			<h3>Licence</h3>
+		</div>
+		<div class="wizard-card" data-cardname="finish">
+			<h3>Finish</h3>
+			<f:form.radio name="nextStep" value="1" /><label>Enter another person</label><br/>
+			<f:form.radio name="nextStep" value="2" /><label>Generate contract</label><br/>
+			<f:form.radio name="nextStep" value="3" /><label>Close</label>
+		</div>
+		<div class="wizard-error">
+			<div class="alert alert-error">
+				<strong>There was a problem</strong> with your submission.
+				Please correct the errors and re-submit.
 			</div>
 		</div>
+
+		<div class="wizard-failure">
+			<div class="alert alert-error">
+				<strong>There was a problem</strong> submitting the form.
+				Please try again in a minute.
+			</div>
+		</div>
+
+		<div class="wizard-success">
+			<div class="alert alert-success">
+				<span class="create-server-name"></span>
+				was created <strong>successfully.</strong>
+			</div>
+
+			<a class="btn create-another-server">Create another server</a>
+			<span style="padding:0 10px">or</span>
+			<a class="btn im-done">Done</a>
+		</div>
 	</div>
+	<script>
+		$(function() {
+			$.fn.wizard.logging = false;
+			var options = {
+				width: 1250,
+				increaseHeight: 200,
+				submitUrl: 'beech.party/person/list'
+			};
+			var wizard = $("#person-wizard").wizard(options);
+//			wizard.on("submit", function() {
+//				alert('Now submit & redirect action');
+//			});
+
+			wizard.el.find('select').chosen({width: '350px'});
+			wizard.el.find('.countrySelect').countrySelect();
+			wizard.cards['person'].el.find('form').ajaxForm({
+				dataType: 'html',
+				success: function(result) {
+					App.ModuleHandler.loadContent(result, $(wizard.cards['person'].el))
+					wizard.entityId = $('input[name="person[__identity]"]').val();
+					$.each(wizard.cards, function(index, card) {
+						if (card.name != 'person' && card.name != 'finish') {
+							card.on('selected', function() {
+								App.ModuleHandler.loadUrl('beech.party/administration/' + card.name + '/list.html?party=' + wizard.entityId, $(this.el))
+							})
+						}
+					})
+					wizard.incrementCard()
+				},
+				error: function(result) {
+					$(wizard.cards['person'].el).find('form').prepend(result.responseText);
+				}
+			});
+			wizard.show();
+
+		});
+	</script>
 </f:section>
