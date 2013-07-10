@@ -4,7 +4,6 @@
 	$.fn.extend({
 		controlPrimary: function() {
 			return this.each(function(input_field, el) {
-				console.log('do it', el);
 				var $this;
 				$this = $(this);
 					// elementId should be in format primary-[elementName]-[elementIdentifier]
