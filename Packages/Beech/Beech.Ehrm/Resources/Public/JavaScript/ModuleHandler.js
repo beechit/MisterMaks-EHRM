@@ -4,7 +4,12 @@
 	App.ModuleHandlerAjaxController = Ember.Controller.extend({
 		url: '',
 		loadUrl: function(params) {
-			App.ModuleHandler.loadUrl(this.get('url')+params);
+			if (this.get('url').indexOf('?') > 0 && params.substr(0,1) == '?') {
+				App.ModuleHandler.loadUrl(this.get('url')+'&'+params.substr(1));
+			} else {
+				App.ModuleHandler.loadUrl(this.get('url')+params);
+			}
+
 		}
 	});
 
@@ -30,9 +35,10 @@
 			});
 		},
 
-		loadUrl: function(url, target) {
+		loadUrl: function(url, target, callback) {
 			// only load url when set
 			if(url) {
+				var $callback = callback;
 				$.ajax({
 					format: 'html',
 					dataType: 'html',
@@ -45,6 +51,9 @@
 					url: url,
 					success: function(result) {
 						this.loadContent(result, target);
+						if (typeof($callback) == "function") {
+							$callback(result, target);
+						}
 					},
 					statusCode: {
 						400: function(xhr,status,message) {

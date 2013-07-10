@@ -1,6 +1,9 @@
-<f:layout name="Ajax"/>
+<f:layout name="Ajax"/>{namespace ehrm=Beech\Ehrm\ViewHelpers}
 <f:section name="Body">
 	<h1><f:translate id="jobDescription">JobDescription</f:translate></h1>
+
+	<ehrm:flashMessages/>
+
 	<f:if condition="{entities}">
 		<f:then>
 			<table class="table">
@@ -15,10 +18,10 @@
 					<f:for each="{entities}" as="jobDescription" iteration="iterator">
 						<tr>
 							<td>{jobDescription.jobDescriptionNumber}</td>
-							<td><f:link.action action="show" arguments="{jobDescription: jobDescription}">{jobDescription.jobTitle}</f:link.action></td>
+							<td><a href="#/administration/jobdescription/{jobDescription.id}">{jobDescription.jobTitle}</a></td>
 							<td>
-								<f:link.action action="edit" arguments="{jobDescription: jobDescription}"><i class="icon-pencil"></i></f:link.action>
-								<f:link.action action="delete" arguments="{jobDescription: jobDescription}"><i class="icon-trash"></i></f:link.action>
+								<a href="#/administration/jobdescription/edit/{jobDescription.id}"><i class="icon-pencil"></i></a>
+								<a href="#/administration/jobdescription/delete/{jobDescription.id}"><i class="icon-trash"></i></a>
 							</td>
 						</tr>
 					</f:for>
@@ -29,12 +32,12 @@
 			<p></p>
 		</f:else>
 	</f:if>
+	<f:comment>
+		for now no option to create new jobDescriptions
 	<div class="form-actions">
-		<a class="btn btn-primary" href="/{f:uri.action(package: 'Beech.CLA', subpackage: 'Administration', controller: 'JobDescription', action: 'new')}">
-			<i class="icon-plus icon-white"></i> <f:translate id="action.create">Create</f:translate>
-		</a>
 		<a class="btn btn-primary" href="/#/administration/jobdescription/new">
-			<f:translate id="action.new">New</f:translate>
+			<i class="icon-plus icon-white"></i> <f:translate id="action.new">New</f:translate>
 		</a>
 	</div>
+	</f:comment>
 </f:section>

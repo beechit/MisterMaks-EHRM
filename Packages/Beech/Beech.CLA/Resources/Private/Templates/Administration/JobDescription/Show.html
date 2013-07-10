@@ -1,6 +1,9 @@
-<f:layout name="Ajax"/>
+<f:layout name="Ajax"/>{namespace ehrm=Beech\Ehrm\ViewHelpers}
 <f:section name="Body">
 	<h1><f:translate id="action.show">Show</f:translate></h1>
+
+	<ehrm:flashMessages/>
+
 	<dl class="dl-horizontal well">
 		<dt><f:translate>jobDescriptionNumber</f:translate></dt>
 		<dd>{jobDescription.jobDescriptionNumber}&nbsp;</dd>
@@ -71,6 +74,8 @@
 		</f:for>
 		</dl>
 	<div class="form-actions">
-		<f:link.action action="list"><f:translate id="action.back">Back</f:translate></f:link.action>
+		<a class="btn btn-primary" href="/#/administration/jobdescriptions">
+			<f:translate id="action.back">Back</f:translate>
+		</a>
 	</div>
 </f:section>

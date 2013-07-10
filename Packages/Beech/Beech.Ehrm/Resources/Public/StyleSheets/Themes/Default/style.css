@@ -7,12 +7,10 @@ html, body { font-family: 'Colaborate', sans-serif; height: 100%; }
 
 footer, .push { height: 40px; }
 
-footer { margin-top: -80px !important; }
-
 /* Sticky Footer End */
 .container-fluid { max-width: 960px; margin: 0 auto; }
 
-footer { position: relative; font-size: small; font-weight: 100; }
+footer { margin-top: -60px !important; position: relative; font-size: small; font-weight: 100; }
 footer .footer { float: left; }
 footer .logo { float: right; letter-spacing: -0.1em; color: #049cdb; position: relative; }
 footer .logo i { position: absolute; left: -8px; top: 1px; font-size: 0.8em; }
@@ -152,3 +150,21 @@ iframe { border: none; }
 
 .tooltip { text-transform: lowercase; letter-spacing: normal; }
 .tooltip .tooltip-inner { line-height: 1.8em; padding: 5px 20px; }
+
+.jOrgChart { /* Basic styling */ /* Draw the lines */ /* node cell */ /* The node */ /* jQuery drag 'n drop */ }
+.jOrgChart .line { height: 20px; width: 4px; }
+.jOrgChart .down { background-color: #999; margin: 0px auto; }
+.jOrgChart .top { border-top: 2px solid #999; }
+.jOrgChart .left { border-right: 4px solid #999; }
+.jOrgChart .right { border-left: 4px solid #999; }
+.jOrgChart table { margin: 0 auto; }
+.jOrgChart td { text-align: center; vertical-align: top; padding: 0; }
+.jOrgChart .node { text-align: left; background-color: #FFF; display: inline-block; min-width: 180px; min-height: 60px; z-index: 10; margin: 0 2px; border-radius: 8px; border: 2px solid #0088CC; padding: 5px; position: relative; }
+.jOrgChart .node strong, .jOrgChart .node p { padding: 2px; }
+.jOrgChart .node .profile-photo { float: left; width: 60px; margin-right: 10px; }
+.jOrgChart .node .actions { display: none; }
+.jOrgChart .node:hover .actions { display: block; position: absolute; top: 4px; right: 4px; background: #FFF; border-radius: 4px; padding: 0 0 4px 4px; }
+.jOrgChart .node-cells.contracted .node { border-bottom-style: dashed; cursor: s-resize; }
+.jOrgChart .node-cells.expanded .node { cursor: n-resize; }
+.jOrgChart .drag-active { border-style: dotted !important; }
+.jOrgChart .drop-hover { border-style: solid !important; border-color: #E05E00 !important; }

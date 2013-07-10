@@ -1,5 +1,5 @@
-Hierarchy
-=========
+Hierarchy (JobPosition)
+=======================
 
 Goal
 ====
@@ -27,7 +27,7 @@ Also the excalationmodel in workflow we want to follow the configured hierarchy.
 Domain Model
 ============
 
-see the hierarchy model /Packages/Beech/Beech.Ehrm/Configuration/Models.Hierarchy.yaml
+see the hierarchy model /Packages/Beech/Beech.Ehrm/Configuration/Models.JobPosition.yaml
 
 
 Overview

@@ -10,10 +10,9 @@ use TYPO3\Flow\Annotations as Flow;
 use Beech\CLA\Domain\Model\JobDescription;
 
 /**
-* JobDescription controller for the Beech.CLA package  and subpackage Administration
-*
-* @Flow\Scope("singleton")
-*/
+ * JobDescription controller for the Beech.CLA package  and subpackage Administration
+ * @Flow\Scope("singleton")
+ */
 class JobDescriptionController extends \Beech\Ehrm\Controller\AbstractManagementController {
 
 	/**
@@ -41,8 +40,8 @@ class JobDescriptionController extends \Beech\Ehrm\Controller\AbstractManagement
 	public function createAction(JobDescription $jobDescription) {
 		$this->repository->add($jobDescription);
 		$this->documentManager->merge($jobDescription->getDocument());
-		$this->addFlashMessage($this->translator->translateById('Created a new job description', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
-		$this->redirect('list');
+		$this->addFlashMessage($this->translator->translateById('Created a new job description'));
+		$this->emberRedirect('#/administration/jobdescriptions');
 	}
 
 	/**
@@ -56,15 +55,15 @@ class JobDescriptionController extends \Beech\Ehrm\Controller\AbstractManagement
 	}
 
 	/**
-	* Updates the given job description object
-	*
-	* @param \Beech\CLA\Domain\Model\JobDescription $jobDescription The job description to update
-	* @return void
-	*/
+	 * Updates the given job description object
+	 *
+	 * @param \Beech\CLA\Domain\Model\JobDescription $jobDescription The job description to update
+	 * @return void
+	 */
 	public function updateAction(JobDescription $jobDescription) {
 		$this->repository->update($jobDescription);
-		$this->addFlashMessage($this->translator->translateById('Updated the job description.', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
-		$this->redirect('list');
+		$this->addFlashMessage($this->translator->translateById('Updated the job description.'));
+		$this->emberRedirect('#/administration/jobdescriptions');
 	}
 
 	/**
@@ -78,14 +77,14 @@ class JobDescriptionController extends \Beech\Ehrm\Controller\AbstractManagement
 	}
 
 	/**
-	* Removes the given job description object from the job description repository
-	*
-	* @param \Beech\CLA\Domain\Model\JobDescription $jobDescription The job description to delete
-	* @return void
-	*/
+	 * Removes the given job description object from the job description repository
+	 *
+	 * @param \Beech\CLA\Domain\Model\JobDescription $jobDescription The job description to delete
+	 * @return void
+	 */
 	public function deleteAction(JobDescription $jobDescription) {
 		$this->repository->remove($jobDescription);
-		$this->redirect('list');
+		$this->emberRedirect('#/administration/jobdescriptions');
 	}
 
 }

@@ -19,7 +19,18 @@
 			this.route('contractModule.start', { path: 'contract/start/:contractTemplate/:employee/:jobDescription' });
 			this.route('contractModule.show', { path: 'contract/show/:contract'});
 
-				// Beech.CLA/ContractArticle
+			// Beech.CLA/JobDescription
+			this.resource('BeechCLAJobDescription', { path: 'jobdescriptions' }, function() {
+				this.route('index', { path: '/list' });
+			});
+			this.resource('BeechCLAJobDescription', { path: 'jobdescription' }, function() {
+				this.route('new', { path: '/new' });
+				this.route('show', { path: '/:jobDescription' });
+				this.route('edit', { path: '/edit/:jobDescription' });
+				this.route('delete', { path: '/delete/:jobDescription' });
+			});
+
+			// Beech.CLA/ContractArticle
 			this.resource('BeechCLAContractArticle', { path: 'contractarticles' }, function() {
 				this.route('index', { path: '/list' });
 			});
@@ -104,6 +115,17 @@
 				this.route('edit', {path: '/edit/:task'});
 				this.route('close', {path: '/close/:task'});
 			});
+			// Beech.Ehrm/JobPosition
+			this.resource('BeechCLAJobPosition', { path: 'jobpositions' }, function() {
+				this.route('index', { path: '/index' });
+				this.route('index', { path: '/:random' });
+			});
+			this.resource('BeechCLAJobPosition', { path: 'jobposition' }, function() {
+				this.route('new', { path: '/new/:parentJobPosition' });
+				this.route('show', { path: '/:jobPosition' });
+				this.route('edit', { path: '/edit/:jobPosition' });
+				this.route('delete', { path: '/delete/:jobPosition' });
+			});
 		});
 	});
 
@@ -137,12 +159,6 @@
 	});
 	App.AdministrationWizardManagementModuleView = Ember.View.extend(App.AjaxModuleViewMixin, {
 		url: MM.url.module.wizardManagementModule
-	});
-	App.AdministrationJobDescriptionModuleView = Ember.View.extend(App.AjaxModuleViewMixin, {
-		url: MM.url.module.jobDescription
-	});
-	App.AdministrationJobDescriptionModuleNewView = Ember.View.extend(App.AjaxModuleViewMixin, {
-		url: MM.url.module.jobDescriptionNew
 	});
 	App.AdministrationDomainContractArticleModuleView = Ember.View.extend(App.AjaxModuleViewMixin, {
 		url: MM.url.module.contractArticle

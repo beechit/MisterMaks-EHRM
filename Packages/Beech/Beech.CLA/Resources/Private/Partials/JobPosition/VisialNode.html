@@ -1,0 +1,43 @@
+<li <f:if condition="{jobPosition.parent.parent}">class="collapsed"</f:if>>
+
+		<f:if condition="{jobPosition.person.profilePhoto}">
+			<f:then>
+				<img src="download/{jobPosition.person.profilePhoto.id}" class="img-polaroid profile-photo"/>
+			</f:then>
+			<f:else>
+				<img src="{f:uri.resource(path: 'Images/NoProfilePhoto.png', package: 'Beech.Party')}" class="img-polaroid profile-photo"/>
+			</f:else>
+		</f:if>
+
+		<f:if condition="{jobPosition.person}">
+			<f:then>
+				<div class="name-person">{jobPosition.person.name}</div>
+			</f:then>
+			<f:else>
+				<div class="name-person not-assigned">not assigned yet</div>
+			</f:else>
+		</f:if>
+
+		<div class="name-jopposition">{jobPosition.name}</div>
+
+		<f:if condition="{jobPostion.department">
+			<div class="name-department">{jobPosition.department.name}</div>
+		</f:if>
+
+	<div class="actions">
+		<a href="{f:uri.action(package:'Beech.CLA', controller:'JobPosition', action:'edit', arguments: {jobPosition: jobPosition})}" data-toggle="modal-ajax" data-target="#modal" modal-size="large" title="<f:translate id="action.edit">Edit</f:translate>">
+			<i class="icon-pencil icon-white"></i>
+		</a>
+		<a href="{f:uri.action(package:'Beech.CLA', controller:'JobPosition', action:'new', arguments: {parentJobPosition: jobPosition})}" data-toggle="modal-ajax" data-target="#modal" modal-size="large" title="<f:translate id="action.add-jopPosition">Add JobPosition</f:translate>">
+			<i class="icon-plus icon-white"></i>
+		</a>
+	</div>
+
+	<f:if condition="{jobPosition.children}">
+		<ul>
+			<f:for each="{jobPosition.children}" as="child" iteration="iterator">
+				<f:render partial="JobPosition/VisialNode" arguments="{jobPosition:child}" />
+			</f:for>
+		</ul>
+	</f:if>
+</li>

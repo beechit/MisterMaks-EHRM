@@ -83,6 +83,39 @@
 			<trans-unit id="general.Benefits">
 				<source>General benefits</source>
 			</trans-unit>
+
+			<trans-unit id="jobDescription">
+				<source>Job description</source>
+			</trans-unit>
+			<trans-unit id="jobDescriptions">
+				<source>Job descriptions</source>
+			</trans-unit>
+
+			<trans-unit id="jobPosition">
+				<source>Job position</source>
+			</trans-unit>
+			<trans-unit id="jobPositions">
+				<source>Job positions</source>
+			</trans-unit>
+
+			<trans-unit id="jobPosition.selectJobDescription">
+				<source>- select a job description -</source>
+			</trans-unit>
+			<trans-unit id="jobPosition.jobDescription">
+				<source>Job description</source>
+			</trans-unit>
+			<trans-unit id="jobPosition.person">
+				<source>Employee</source>
+			</trans-unit>
+			<trans-unit id="jobPosition.selectPerson">
+				<source>- select a employee -</source>
+			</trans-unit>
+			<trans-unit id="jobPosition.selectDepartment">
+				<source>- select a department -</source>
+			</trans-unit>
+			<trans-unit id="jobPosition.department">
+				<source>Department</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

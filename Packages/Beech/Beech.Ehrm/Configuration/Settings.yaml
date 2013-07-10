@@ -25,6 +25,7 @@ Beech:
           - 'Beech.Ehrm/Library/jquery.gracefulWebSocket.js'
           - 'Beech.Ehrm/Library/jquery.form.js'
           - 'Beech.Ehrm/Library/jquery.cookie.js'
+          - 'Beech.Ehrm/Library/jquery.jOrgChart.js'
           - 'Beech.Ehrm/Library/datepicker/js/bootstrap-datepicker.js'
           - 'Beech.Ehrm/Library/chosen/chosen.jquery.min.js'
           - 'Beech.Ehrm/Library/inputmask/jquery.inputmask.js'
@@ -88,6 +89,12 @@ Beech:
           - 'Beech.Document/JavaScript/Route/Document.js'
           - 'Beech.Document/JavaScript/Controller/Document.js'
           - 'Beech.Document/JavaScript/View/Document.js'
+          - 'Beech.CLA/JavaScript/Route/JobDescription.js'
+          - 'Beech.CLA/JavaScript/Controller/JobDescription.js'
+          - 'Beech.CLA/JavaScript/View/JobDescription.js'
+          - 'Beech.CLA/JavaScript/Route/JobPosition.js'
+          - 'Beech.CLA/JavaScript/Controller/JobPosition.js'
+          - 'Beech.CLA/JavaScript/View/JobPosition.js'
 
 
     viewHelpers:
@@ -103,8 +110,10 @@ Beech:
       - ['Beech.Party', 'Administration', 'Company']
       - ['Beech.Party', 'Administration', 'Account']
       - ['Beech.Document', NULL, 'Document']
-      - ['Beech.Task', NULL, 'Task']
+      - ['Beech.Task', NULL, 'Task', {'close': 'Close', 'delete':null}]
       - ['Beech.CLA', 'Administration', 'ContractArticle']
+      - ['Beech.CLA', 'Administration', 'JobDescription']
+      - ['Beech.CLA', '', 'JobPosition', {'index': 'Index', 'list':null, 'delete':null}]
 
     defaultActionsMapping:
       'list': 'Index'

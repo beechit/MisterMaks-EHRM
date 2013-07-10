@@ -13,15 +13,13 @@ html, body {
 footer, .push {
 	height: 40px;
 }
-footer {
-	margin-top: -80px !important;
-}
 /* Sticky Footer End */
 .container-fluid {
 	max-width: 960px;
 	margin: 0 auto;
 }
 footer {
+	margin-top: -60px !important;
 	position: relative;
 	font-size: small;
 	font-weight: 100;

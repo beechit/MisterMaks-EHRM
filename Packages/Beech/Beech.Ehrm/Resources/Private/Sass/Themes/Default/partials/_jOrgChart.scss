@@ -1,0 +1,86 @@
+.jOrgChart {
+	/* Basic styling */
+	/* Draw the lines */
+	.line {
+		height: 20px;
+		width: 4px;
+	}
+	.down {
+		background-color: #999;
+		margin: 0px auto;
+	}
+	.top {
+		border-top: 2px solid #999;
+	}
+	.left {
+		border-right: 4px solid #999;
+	}
+	.right {
+		border-left: 4px solid #999;
+	}
+	table {
+		margin:0 auto;
+	}
+	/* node cell */
+	td {
+		text-align: center;
+		vertical-align: top;
+		padding: 0;
+	}
+
+	/* The node */
+	.node {
+		text-align: left;
+		background-color: #FFF;
+		display: inline-block;
+		min-width: 180px;
+		min-height: 60px;
+		z-index: 10;
+		margin: 0 2px;
+		border-radius: 8px;
+		border: 2px solid #0088CC;
+		padding: 5px;
+		position: relative;
+		strong, p {
+			padding: 2px;
+		}
+		.profile-photo {
+			float:left;
+			width: 60px;
+			margin-right: 10px;
+		}
+		.actions {
+			display: none;
+		}
+		&:hover .actions {
+			display: block;
+			position: absolute;
+			top: 4px;
+			right: 4px;
+			background: #FFF;
+			border-radius: 4px;
+			padding: 0 0 4px 4px;
+		}
+	}
+
+	.node-cells.contracted {
+		.node {
+			border-bottom-style: dashed;
+			cursor: s-resize;
+		}
+	}
+	.node-cells.expanded {
+		.node {
+			cursor: n-resize;
+		}
+	}
+	/* jQuery drag 'n drop */
+	.drag-active {
+		border-style: dotted !important;
+	}
+
+	.drop-hover {
+		border-style: solid !important;
+		border-color: #E05E00 !important;
+	}
+}

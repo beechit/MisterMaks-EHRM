@@ -185,9 +185,16 @@ class HeaderPartsViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHel
 		if (isset($defaultActionsMapping) && isset($moduleRoutes)) {
 			foreach ($moduleRoutes as $params) {
 				list($packageKey, $subpackage, $controller) = $params;
+				$actionMapping = $defaultActionsMapping;
+				if (isset($params[3])) {
+					$actionMapping = array_merge($actionMapping, $params[3]);
+				}
 				$package = str_replace('.', '', $packageKey);
-				foreach ($defaultActionsMapping as $action => $suffix) {
-					$modules[$package.$subpackage.$controller.$suffix] = $this->controllerContext->getUriBuilder()
+				foreach ($actionMapping as $action => $suffix) {
+					if ($suffix === NULL) {
+						continue;
+					}
+					$modules[$package . $subpackage . $controller . $suffix] = $this->controllerContext->getUriBuilder()
 						->reset()
 						->setCreateAbsoluteUri(TRUE)
 						->uriFor($action, array(), $controller, $packageKey, $subpackage);
@@ -213,58 +220,46 @@ class HeaderPartsViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHel
 			'url' => array()
 		);
 		$predefinedModules = $this->linkEmberRoutesToModules();
-				// TODO: those url's are just for loading modules by AJAX, should be replaced by ember-data
+			// TODO: those url's are just for loading modules by AJAX, should be replaced by ember-data
 		$customModules = array(
-					'userSettings' => $this->controllerContext->getUriBuilder()
-						->reset()
-						->setCreateAbsoluteUri(TRUE)
-						->uriFor('index', array(), 'UserPreferences', 'Beech.Ehrm'),
-					'applicationSettings' => $this->controllerContext->getUriBuilder()
-						->reset()
-						->setCreateAbsoluteUri(TRUE)
-						->uriFor('index', array(), 'ApplicationSettings', 'Beech.Ehrm', 'Administration'),
-					'documents' => $this->controllerContext->getUriBuilder()
-						->reset()
-						->setCreateAbsoluteUri(TRUE)
-						->uriFor('index', array(), 'Document', 'Beech.Document'),
-					'jobDescription' => $this->controllerContext->getUriBuilder()
-						->reset()
-						->setCreateAbsoluteUri(TRUE)
-						->uriFor('list', array(), 'JobDescription', 'Beech.CLA', 'Administration'),
-					'jobDescriptionNew' => $this->controllerContext->getUriBuilder()
-						->reset()
-						->setCreateAbsoluteUri(TRUE)
-						->uriFor('new', array(), 'JobDescription', 'Beech.CLA', 'Administration'),
-					'contractArticle' => $this->controllerContext->getUriBuilder()
-						->reset()
-						->setCreateAbsoluteUri(TRUE)
-						->uriFor('list', array(), 'ContractArticle', 'Beech.CLA', 'Administration'),
-					'contractModuleNew' => $this->controllerContext->getUriBuilder()
-						->reset()
-						->setCreateAbsoluteUri(TRUE)
-						->uriFor('new', array(), 'Contract', 'Beech.CLA', 'Administration'),
-					'contractModuleStart' => $this->controllerContext->getUriBuilder()
-						->reset()
-						->setCreateAbsoluteUri(TRUE)
-						->uriFor('start', array(), 'Contract', 'Beech.CLA', 'Administration'),
-					'contractModuleShow' => $this->controllerContext->getUriBuilder()
-						->reset()
-						->setCreateAbsoluteUri(TRUE)
-						->uriFor('show', array(), 'Contract', 'Beech.CLA', 'Administration'),
-					'contractModule' => $this->controllerContext->getUriBuilder()
-						->reset()
-						->setCreateAbsoluteUri(TRUE)
-						->uriFor('list', array(), 'Contract', 'Beech.CLA', 'Administration'),
-					'wizardManagementModule' => $this->controllerContext->getUriBuilder()
-						->reset()
-						->setCreateAbsoluteUri(TRUE)
-						->uriFor('index', array(), 'Wizard', 'Beech.Ehrm'),
-					'BeechTaskTaskClose' => $this->controllerContext->getUriBuilder()
-						->reset()
-						->setCreateAbsoluteUri(TRUE)
-						->uriFor('close', array(), 'Task', 'Beech.Task')
-				);
-		$settings['url']['module'] = (object) array_merge($predefinedModules, $customModules);
+			'userSettings' => $this->controllerContext->getUriBuilder()
+				->reset()
+				->setCreateAbsoluteUri(TRUE)
+				->uriFor('index', array(), 'UserPreferences', 'Beech.Ehrm'),
+			'applicationSettings' => $this->controllerContext->getUriBuilder()
+				->reset()
+				->setCreateAbsoluteUri(TRUE)
+				->uriFor('index', array(), 'ApplicationSettings', 'Beech.Ehrm', 'Administration'),
+			'documents' => $this->controllerContext->getUriBuilder()
+				->reset()
+				->setCreateAbsoluteUri(TRUE)
+				->uriFor('index', array(), 'Document', 'Beech.Document'),
+			'contractArticle' => $this->controllerContext->getUriBuilder()
+				->reset()
+				->setCreateAbsoluteUri(TRUE)
+				->uriFor('list', array(), 'ContractArticle', 'Beech.CLA', 'Administration'),
+			'contractModuleNew' => $this->controllerContext->getUriBuilder()
+				->reset()
+				->setCreateAbsoluteUri(TRUE)
+				->uriFor('new', array(), 'Contract', 'Beech.CLA', 'Administration'),
+			'contractModuleStart' => $this->controllerContext->getUriBuilder()
+				->reset()
+				->setCreateAbsoluteUri(TRUE)
+				->uriFor('start', array(), 'Contract', 'Beech.CLA', 'Administration'),
+			'contractModuleShow' => $this->controllerContext->getUriBuilder()
+				->reset()
+				->setCreateAbsoluteUri(TRUE)
+				->uriFor('show', array(), 'Contract', 'Beech.CLA', 'Administration'),
+			'contractModule' => $this->controllerContext->getUriBuilder()
+				->reset()
+				->setCreateAbsoluteUri(TRUE)
+				->uriFor('list', array(), 'Contract', 'Beech.CLA', 'Administration'),
+			'wizardManagementModule' => $this->controllerContext->getUriBuilder()
+				->reset()
+				->setCreateAbsoluteUri(TRUE)
+				->uriFor('index', array(), 'Wizard', 'Beech.Ehrm')
+		);
+		$settings['url']['module'] = (object)array_merge($predefinedModules, $customModules);
 
 		return sprintf('<script>var MM = %s;</script>', json_encode((object)$settings));
 	}

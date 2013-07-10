@@ -1,6 +1,9 @@
-<f:layout name="Ajax"/>
+<f:layout name="Ajax"/>{namespace ehrm=Beech\Ehrm\ViewHelpers}
 <f:section name="Body">
-	<f:form.validationResults for="person">
+
+	<ehrm:flashMessages/>
+
+	<f:form.validationResults for="jobDescription">
 		<f:if condition="{validationResults.flattenedErrors}">
 			<div class="error">
 				<f:for each="{validationResults.flattenedErrors}" key="propertyPath" as="errors">{propertyPath}:
@@ -9,6 +12,7 @@
 			</div>
 		</f:if>
 	</f:form.validationResults>
+
 	<f:form action="update" object="{jobDescription}" name="jobDescription" class="form-horizontal well">
 		<fieldset>
 			<legend>Job details</legend>
@@ -104,7 +108,10 @@
 			</f:for>
 		</fieldset>
 		<div class="control-group">
-			<f:form.submit value="Update" class="btn btn-primary"/>
+			<a class="btn btn-danger" href="/#/administration/jobdescriptions">
+				<f:translate id="action.cancel">Cancel</f:translate>
+			</a>
+			<f:form.submit value="{f:translate(id: 'action.save')}" class="btn btn-primary"/>
 		</div>
 	</f:form>
 </f:section>

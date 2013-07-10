@@ -111,6 +111,53 @@
 				<source>General benefits</source>
 				<target>Algemene Arbeidsvoorwaarden</target>
 			</trans-unit>
+
+			<trans-unit id="jobDescription">
+				<source>Job description</source>
+				<target>Functieomschrijving</target>
+			</trans-unit>
+			<trans-unit id="jobDescriptions">
+				<source>Job descriptions</source>
+				<target>Functieomschrijvingen</target>
+			</trans-unit>
+
+			<trans-unit id="jobPosition">
+				<source>Job position</source>
+				<target>Functie</target>
+			</trans-unit>
+			<trans-unit id="jobPositions">
+				<source>Job positions</source>
+				<target>Functies</target>
+			</trans-unit>
+
+			<trans-unit id="jobPosition.name">
+				<source>Name</source>
+				<target>Naam</target>
+			</trans-unit>
+			<trans-unit id="jobPosition.selectJobDescription">
+				<source>- select a job description -</source>
+				<target>- selecteer een functieomschrijving -</target>
+			</trans-unit>
+			<trans-unit id="jobPosition.jobDescription">
+				<source>Job description</source>
+				<target>Functieomschrijving</target>
+			</trans-unit>
+			<trans-unit id="jobPosition.person">
+				<source>Employee</source>
+				<target>Medewerker</target>
+			</trans-unit>
+			<trans-unit id="jobPosition.selectPerson">
+				<source>- select a employee -</source>
+				<target>- selecteer een medewerker -</target>
+			</trans-unit>
+			<trans-unit id="jobPosition.selectDepartment">
+				<source>- select a department -</source>
+				<target>- selecteer een afdeling -</target>
+			</trans-unit>
+			<trans-unit id="jobPosition.department">
+				<source>Department</source>
+				<target>Afdeling</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

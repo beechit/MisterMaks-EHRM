@@ -1,5 +1,8 @@
-<f:layout name="Ajax"/>
+<f:layout name="Ajax"/>{namespace ehrm=Beech\Ehrm\ViewHelpers}
 <f:section name="Body">
+
+	<ehrm:flashMessages/>
+
 	<f:form.validationResults for="jobDescription">
 		<f:if condition="{validationResults.flattenedErrors}">
 			<div class="error">
@@ -106,7 +109,10 @@
 		<f:form.hidden property="creationDate" id="creationDate"/>
 		<f:form.hidden property="createdBy" id="createdBy"/>
 		<div class="control-group">
-			<f:form.submit value="{f:translate(id: 'action.create')}" class="btn btn-primary"/>
+			<a class="btn btn-danger" href="/#/administration/jobdescriptions">
+				<f:translate id="action.cancel">Cancel</f:translate>
+			</a>
+			<f:form.submit value="{f:translate(id: 'action.save')}" class="btn btn-primary"/>
 		</div>
 	</f:form>
 </f:section>
