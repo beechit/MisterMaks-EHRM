@@ -11,18 +11,18 @@ use TYPO3\Flow\Annotations as Flow,
 	Doctrine\ODM\CouchDB\Mapping\Annotations as ODM;
 
 /**
- * A EmailTemplate
+ * A MessageTemplate
  *
  * @ODM\Document(indexed=true)
  */
-class EmailTemplate extends \Beech\Ehrm\Domain\Model\Document {
+class MessageTemplate extends \Beech\Ehrm\Domain\Model\Document {
 
 	/**
-	 * @var \Beech\Communication\Domain\Model\EmailTemplate
+	 * @var \Beech\Communication\Domain\Model\MessagelTemplate
 	 * @ODM\Field(type="mixed")
 	 * @ODM\Index
 	 */
-	protected $emailTemplate;
+	protected $messageTemplate;
 
 }
 
