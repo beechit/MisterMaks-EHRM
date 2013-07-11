@@ -34,11 +34,19 @@ class LicenceController extends \Beech\Ehrm\Controller\AbstractManagementControl
 	protected $translator;
 
 	/**
+	 * @param \TYPO3\Party\Domain\Model\AbstractParty $party
+	 */
+	public function listAction(\TYPO3\Party\Domain\Model\AbstractParty $party) {
+		$this->view->assign('party', $party);
+		$this->view->assign('licences', $this->repository->findByParty($party));
+	}
+
+	/**
 	 * @param \Beech\Party\Domain\Model\Licence $licence A licence to add
 	 *
 	 * @return void
 	 */
-	public function addAction(\Beech\Party\Domain\Model\licence $licence) {
+	public function addAction(\Beech\Party\Domain\Model\Licence $licence) {
 		$licence->setParty($this->persistenceManager->getIdentifierByObject($licence->getParty()));
 		$this->repository->add($licence);
 		$this->view->assign('licence', $licence);

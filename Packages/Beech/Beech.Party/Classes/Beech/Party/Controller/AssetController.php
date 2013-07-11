@@ -34,7 +34,15 @@ class AssetController extends \Beech\Ehrm\Controller\AbstractManagementControlle
 	protected $translator;
 
 	/**
-	 * @param \Beech\Party\Domain\Model\Asset $Asset A asset to add
+	 * @param \TYPO3\Party\Domain\Model\AbstractParty $party
+	 */
+	public function listAction(\TYPO3\Party\Domain\Model\AbstractParty $party) {
+		$this->view->assign('party', $party);
+		$this->view->assign('assets', $this->repository->findByParty($party));
+	}
+
+	/**
+	 * @param \Beech\Party\Domain\Model\Asset $asset A asset to add
 	 *
 	 * @return void
 	 */

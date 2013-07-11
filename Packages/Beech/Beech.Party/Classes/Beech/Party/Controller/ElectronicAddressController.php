@@ -34,6 +34,14 @@ class ElectronicAddressController extends \Beech\Ehrm\Controller\AbstractManagem
 	protected $translator;
 
 	/**
+	 * @param \TYPO3\Party\Domain\Model\AbstractParty $party
+	 */
+	public function listAction(\TYPO3\Party\Domain\Model\AbstractParty $party) {
+		$this->view->assign('party', $party);
+		$this->view->assign('electronicAddresses', $this->repository->findByParty($party));
+	}
+
+	/**
 	 * @param \Beech\Party\Domain\Model\ElectronicAddress $electronicAddress A electronicAddress to add
 	 *
 	 * @return void

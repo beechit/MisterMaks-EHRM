@@ -34,6 +34,14 @@ class PhoneNumberController extends \Beech\Ehrm\Controller\AbstractManagementCon
 	protected $translator;
 
 	/**
+	 * @param \TYPO3\Party\Domain\Model\AbstractParty $party
+	 */
+	public function listAction(\TYPO3\Party\Domain\Model\AbstractParty $party) {
+		$this->view->assign('party', $party);
+		$this->view->assign('phoneNumbers', $this->repository->findByParty($party));
+	}
+
+	/**
 	 * @param \Beech\Party\Domain\Model\PhoneNumber $phoneNumber A new phoneNumber to add
 	 *
 	 * @return void

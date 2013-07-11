@@ -34,7 +34,15 @@ class EducationController extends \Beech\Ehrm\Controller\AbstractManagementContr
 	protected $translator;
 
 	/**
-	 * @param \Beech\Party\Domain\Model\Education $Education A education to add
+	 * @param \TYPO3\Party\Domain\Model\AbstractParty $party
+	 */
+	public function listAction(\TYPO3\Party\Domain\Model\AbstractParty $party) {
+		$this->view->assign('party', $party);
+		$this->view->assign('educations', $this->repository->findByParty($party));
+	}
+
+	/**
+	 * @param \Beech\Party\Domain\Model\Education $education A education to add
 	 *
 	 * @return void
 	 */

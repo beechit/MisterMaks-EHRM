@@ -34,6 +34,14 @@ class BankAccountController extends \Beech\Ehrm\Controller\AbstractManagementCon
 	protected $translator;
 
 	/**
+	 * @param \TYPO3\Party\Domain\Model\AbstractParty $party
+	 */
+	public function listAction(\TYPO3\Party\Domain\Model\AbstractParty $party) {
+		$this->view->assign('party', $party);
+		$this->view->assign('bankAccounts', $this->repository->findByParty($party));
+	}
+
+	/**
 	 * @param \Beech\Party\Domain\Model\BankAccount $bankAccount A bankAccount to add
 	 *
 	 * @return void

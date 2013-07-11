@@ -1,0 +1,13 @@
+<div class="modal-header">
+	<h3><f:render partial="Views/Show/ProfilePhoto" arguments="{photo: party.profilePhoto, width: 50}"/>{party.name.fullName} / Assets</h3>
+</div>
+<div class="clearfix well">
+	<f:for each="{assets}" as="asset">
+		<div id="asset-{asset.id}">
+			<f:render partial="Forms/Asset" arguments="{party: party, asset: asset, action: 'update'}"/>
+		</div>
+	</f:for>
+	<div id="asset-add" class="clearfix">
+		<f:render partial="Forms/Asset" arguments="{party: party, action: 'add', suffix: 'asset'}"/>
+	</div>
+</div>
