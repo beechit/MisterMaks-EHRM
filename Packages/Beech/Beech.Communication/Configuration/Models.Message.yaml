@@ -8,26 +8,27 @@
          'push': 'PushMessage'
          'letter': 'Letter'
          'phone': 'Phone'
-    'party':
+    'personTo':
       label: 'send to'
-      type: 'TYPO3\Party\Domain\Model\AbstractParty'
-    'cc':
-      type: 'TYPO3\Party\Domain\Model\AbstractParty'
-    'bcc':
-      type: 'TYPO3\Party\Domain\Model\AbstractParty'
-    'from':
+      type: 'TYPO3\Party\Domain\Model\Person'
+    'personCc':
+      type: 'TYPO3\Party\Domain\Model\Person'
+    'PersonBcc':
+      type: 'TYPO3\Party\Domain\Model\Person'
+    'personInitiator':
       label: 'recieved from'
       type: 'Beech\Party\Domain\Model\Person'
     'subject':
       label: 'Subject of message'
-    'template':
+    'messageTemplate':
       type: 'Beech\Communication\Domain\Model\messageTemplate'
-    'contents':
-    'sendDate':
+    'content':
+      label: 'content of the message'
+    'sendDateTime':
       type: 'DateTime'
     'conversation':
       type: 'Beech\Communication\Domain\Model\Message'
-    'creationDate':
+    'creationDateTime':
       default: 'now'
       label: 'creation date'
       type: 'DateTime'
