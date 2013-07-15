@@ -95,9 +95,14 @@ class ContractArticlesSection extends \TYPO3\Form\FormElements\Section {
 				$contractArticleSection = $this->createElement('article-section-' . $contractArticle->getArticleId() . '-identifier', 'Beech.CLA:ContractArticleContainer');
 				$contractArticleSection->setLabel($contractArticle->getArticleHeader());
 				$contractArticleSection->setProperty('help', $contractArticle->getHelp());
-				$contractArticleValues = $contractArticle->getValues();
 
+				$contractArticleValueIdentifier = $this->fieldDefaultValueHelper->generateIdentifierForArticle('', $contractArticle->getArticleId(), 'textOnly');
+				$contractArticleValue = $contractArticleSection->createElement($contractArticleValueIdentifier, 'TYPO3.Form:HiddenField');
+				$contractArticleValues = $contractArticle->getValues();
+					// create one hidden field to force saving textOnly articles too.
 				if (is_array($contractArticleValues)) {
+						// TODO: check why set default to false is saved in couchDB as empty string
+					$contractArticleValue->setDefaultValue(FALSE);
 
 					foreach ($contractArticleValues as $value) {
 
@@ -136,6 +141,8 @@ class ContractArticlesSection extends \TYPO3\Form\FormElements\Section {
 							$contractArticleValue->setDefaultValue($value['default']);
 						}
 					}
+				} else {
+					$contractArticleValue->setDefaultValue(TRUE);
 				}
 
 				/** @var $contractArticleElement \Beech\CLA\FormElements\ContractArticleFormElement */
