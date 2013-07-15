@@ -1,5 +1,7 @@
 'Beech.Communication.Domain.Model.Message':
   properties:
+    'messageName':
+      label: 'Message name'
     'messageType':
       options:
         values:

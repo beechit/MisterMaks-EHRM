@@ -1,6 +1,6 @@
 'Beech.Communication.Domain.Model.MessageTemplate':
   properties:
-    'templateName':
+    'messageTemplateName':
       label: 'Template name'
     'templateSubject':
       label: 'Subject'

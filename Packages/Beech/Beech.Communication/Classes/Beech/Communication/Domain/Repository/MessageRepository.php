@@ -10,11 +10,11 @@ namespace Beech\Communication\Domain\Repository;
 use TYPO3\Flow\Annotations as Flow;
 
 /**
- * A repository for EmailTemplates
+ * A repository for Messages
  *
  * @Flow\Scope("singleton")
  */
-class EmailTemplateRepository extends \Radmiraal\CouchDB\Persistence\AbstractRepository {
+class MessageRepository extends \Radmiraal\CouchDB\Persistence\AbstractRepository {
 
 }
 

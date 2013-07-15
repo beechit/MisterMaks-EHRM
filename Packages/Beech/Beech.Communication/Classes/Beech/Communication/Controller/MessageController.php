@@ -32,39 +32,5 @@ class MessageController extends \Beech\Ehrm\Controller\AbstractManagementControl
 	 * @Flow\Inject
 	 */
 	protected $translator;
-
-	/**
-	 * @param \Beech\Communication\Domain\Model\Message $message A message to add
-	 *
-	 * @return void
-	 */
-	public function addAction(\Beech\Communication\Domain\Model\Message $message) {
-		$message->setParty($this->persistenceManager->getIdentifierByObject($message->getParty()));
-		$this->repository->add($message);
-		$this->addFlashMessage($this->translator->translateById('Added.', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
 	}
-
-	/**
-	 * @param \Beech\Communication\Domain\Model\Message $message A message to update
-	 *
-	 * @return void
-	 */
-	public function updateAction(\Beech\Communication\Domain\Model\Message $message) {
-		$message->setParty($this->persistenceManager->getIdentifierByObject($message->getParty()));
-		$this->repository->update($message);
-		$this->addFlashMessage($this->translator->translateById('Updated.', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
-	}
-
-	/**
-	 * @param \Beech\Communication\Domain\Model\Message $message A message to remove
-	 *
-	 * @return void
-	 */
-	public function removeAction(\Beech\Communication\Domain\Model\Message $message) {
-		$message->setParty(NULL);
-		$this->repository->update($message);
-		$this->addFlashMessage($this->translator->translateById('Removed.', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));;
-	}
-
-}
 ?>

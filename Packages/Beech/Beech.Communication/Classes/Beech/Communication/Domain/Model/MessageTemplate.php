@@ -18,11 +18,38 @@ use TYPO3\Flow\Annotations as Flow,
 class MessageTemplate extends \Beech\Ehrm\Domain\Model\Document {
 
 	/**
-	 * @var \Beech\Communication\Domain\Model\MessagelTemplate
+	 * @var \Beech\Communication\Domain\Model\MessageTemplate
 	 * @ODM\Field(type="mixed")
 	 * @ODM\Index
 	 */
-	protected $messageTemplate;
+	protected $messageTemplateName;
+
+	/**
+	 * Constructs the MessageTemplate
+	 * @param string $messageTemplateName
+	 */
+	public function __construct($messageTemplateName) {
+		$this->setMessageTemplateName($messageTemplateName);
+	}
+
+	/**
+	 * Sets the name of the template
+	 *
+	 * @param string $messageTemplateName
+	 * 	 * @return void
+	 */
+	public function setMessageTemplateName($messageTemplateName) {
+		$this->messageTemplateName = $messageTemplateName;
+	}
+
+	/**
+	 * Returns the message template name
+	 *
+	 * @return string
+	 */
+	public function getMessageTemplateName() {
+		return $this->messageTemplateName;
+	}
 
 }
 
