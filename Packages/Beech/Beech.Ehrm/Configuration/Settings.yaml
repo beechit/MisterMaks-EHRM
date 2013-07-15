@@ -16,6 +16,7 @@ Beech:
         - 'Beech.Ehrm/Library/bootstrap-notify/css/styles/alert-notification-animations.css'
         - 'Beech.Ehrm/Library/datepicker/css/datepicker.css'
         - 'Beech.Ehrm/Library/chosen/chosen.css'
+        - 'Beech.Ehrm/Library/bootstrap-wizard/bootstrap-wizard.css'
 
       javaScript:
         libraries:
@@ -28,6 +29,7 @@ Beech:
           - 'Beech.Ehrm/Library/chosen/chosen.jquery.min.js'
           - 'Beech.Ehrm/Library/inputmask/jquery.inputmask.js'
           - 'Beech.Ehrm/Library/inputmask/jquery.inputmask.extensions.js'
+          - 'Beech.Ehrm/Library/bootstrap-wizard/bootstrap-wizard.js'
 
         sources:
           - 'Beech.Ehrm/JavaScript/Init.js'
