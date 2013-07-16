@@ -81,6 +81,7 @@
 			});
 			wizard.el.find('select').chosen({width: '350px'});
 			wizard.el.find('.countrySelect').countrySelect();
+			wizard.el.find('input').applyInputMasks();
 			wizard.cards['person'].el.find('form').ajaxForm({
 				dataType: 'html',
 				success: function(result) {
