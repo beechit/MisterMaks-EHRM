@@ -131,8 +131,8 @@
 			$moduleContainer.find('input').applyInputMasks();
 			$moduleContainer.find('.countrySelect').countrySelect();
 			$moduleContainer.find('input[type=checkbox].primary').controlPrimary();
-			$moduleContainer.parent().find('.modal-header:first').replaceWith($moduleContainer.find('.modal-header'));
-			$moduleContainer.parent().find('.modal-footer:first').replaceWith($moduleContainer.find('.modal-footer')).removeClass('hide');
+			$moduleContainer.parent().find('.modal-header').replaceWith($moduleContainer.find('.modal-header'));
+			$moduleContainer.parent().find('.modal-footer').replaceWith($moduleContainer.find('.modal-footer')).removeClass('hide');
 		},
 
 		prepareUrl: function (object) {

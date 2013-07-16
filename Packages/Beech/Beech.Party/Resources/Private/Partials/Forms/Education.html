@@ -1,6 +1,6 @@
 {namespace ehrm=Beech\Ehrm\ViewHelpers}
 <ehrm:flashMessages/>
-<div id="{action}{education.id}{suffix}">
+<div id="{action}{education.id}{suffix}" class="educationSection">
 	<ehrm:form action="{action}" controller="Education" object="{education}" name="education" class="compact-form form-horizontal {action}">
 		<f:if condition="{0: action} == {0: 'update'}">
 			<f:then>

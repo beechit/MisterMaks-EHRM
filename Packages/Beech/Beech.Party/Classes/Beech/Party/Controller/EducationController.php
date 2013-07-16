@@ -51,6 +51,7 @@ class EducationController extends \Beech\Ehrm\Controller\AbstractManagementContr
 		$this->repository->add($education);
 		$this->view->assign('education', $education);
 		$this->view->assign('party', $education->getParty());
+		$this->view->assign('action', 'add');
 	}
 
 	/**
@@ -72,12 +73,11 @@ class EducationController extends \Beech\Ehrm\Controller\AbstractManagementContr
 
 	/**
 	 * @param \Beech\Party\Domain\Model\Education $education A education to remove
-	 *
+	 * @Flow\IgnoreValidation("$education")
 	 * @return void
 	 */
 	public function removeAction(\Beech\Party\Domain\Model\Education $education) {
-		$education->setParty(NULL);
-		$this->repository->update($education);
+		$this->repository->remove($education);
 		$this->addFlashMessage($this->translator->translateById('Removed.', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
 	}
 
