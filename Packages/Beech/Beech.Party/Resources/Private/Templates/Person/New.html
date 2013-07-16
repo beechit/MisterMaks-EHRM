@@ -71,10 +71,14 @@
 				submitUrl: 'beech.party/person/list'
 			};
 			var wizard = $("#person-wizard").wizard(options);
-//			wizard.on("submit", function() {
-//				alert('Now submit & redirect action');
-//			});
 
+			wizard.el.find('.datepicker').on('click', function() {
+				$(this).datepicker({showOn:'focus', format: 'dd-mm-yyyy' })
+						.on('changeDate', function() {
+							$(this).datepicker('hide');
+						})
+						.focus();
+			});
 			wizard.el.find('select').chosen({width: '350px'});
 			wizard.el.find('.countrySelect').countrySelect();
 			wizard.cards['person'].el.find('form').ajaxForm({
