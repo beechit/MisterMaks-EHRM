@@ -11,7 +11,7 @@
       label: 'Company type'
       options:
         values:
-          'primary': 'Primary'
+#          'primary': 'Primary'
           'department': 'Department'
           'subsidiary': 'Subsidiary'
           'partnerCompany': 'PartnerCompany'
