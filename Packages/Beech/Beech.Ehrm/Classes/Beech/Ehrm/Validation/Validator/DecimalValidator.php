@@ -21,8 +21,8 @@ class DecimalValidator extends AbstractValidator {
 	 * @var array
 	 */
 	protected $supportedOptions = array(
-		'digits' => array(NULL, 'Nkjdfnski', 'string'),
-		'decimal' => array(NULL, 'fdfdfd', 'string')
+		'digits' => array(NULL, 'Total, maximal number of digits', 'string'),
+		'decimal' => array(NULL, 'Number of digits after comma', 'string')
 	);
 
 	/**
