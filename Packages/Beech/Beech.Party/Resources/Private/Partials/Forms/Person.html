@@ -4,8 +4,8 @@
 </label>
 
 	<div class="controls controls-row">
-		<f:form.textfield property="initials" id="initials" class="span2" placeholder="{f:translate(id:'Initials')}"/>
-		<f:form.textfield property="name.firstName" id="firstName" class="span6"
+		<f:form.textfield property="initials" id="initials" class="span2 uppercase" placeholder="{f:translate(id:'Initials')}"/>
+		<f:form.textfield property="name.firstName" id="firstName" class="span6 capitalize"
 						  placeholder="{f:translate(id:'First name')}"/>
 	</div>
 </div>
@@ -16,7 +16,7 @@
 	<div class="controls controls-row">
 		<f:form.textfield property="name.middleName" id="middleName" class="span2"
 						  placeholder="{f:translate(id:'Middle name')}"/>
-		<f:form.textfield property="name.lastName" id="lastName" class="span6"
+		<f:form.textfield property="name.lastName" id="lastName" class="span6 capitalize"
 						  placeholder="{f:translate(id:'Last name')}"/>
 	</div>
 </div>
@@ -124,6 +124,6 @@
 </label>
 
 	<div class="controls controls-row">
-		<f:form.textfield property="bsn" id="bsn" class="span8" placeholder="{f:translate(id:'BSN Number')}"/>
+		<f:form.textfield property="bsn" id="bsn" class="span8 bsn" placeholder="{f:translate(id:'BSN Number')}"/>
 	</div>
 </div>
