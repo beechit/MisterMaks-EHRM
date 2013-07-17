@@ -37,6 +37,13 @@
 				$target.find('.modal-header').addClass('hide');
 				$target.find('.modal-body').html('<p><i class="icon-spin icon-spinner icon-2x muted"></i></p>');
 				$target.find('.modal-footer').addClass('hide');
+				if ($target.find('.modal-footer').find('.btn[data-action="save"]')) {
+					if ($this.attr('data-reload')) {
+						$target.find('.modal-footer').find('.btn[data-action="save"]').attr('data-reload', $this.attr('data-reload'))
+					} else {
+						$target.find('.modal-footer').find('.btn[data-action="save"]').removeAttr('data-reload')
+					}
+				}
 
 				App.ModuleHandler.loadUrl(href, $this.attr('data-target') + ' .modal-body');
 

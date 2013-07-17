@@ -37,3 +37,22 @@ Suggestion/TODO
 Some parts could be extended in the future:
  * make usage more simple, maybe by moving container of modal and container with default content to layout template
  * create a dynamic Title based on the process that started the wizard.
+
+
+TODO: Rewrite documentation because it is not up to date
+
+New feature of model
+====================
+
+argument:
+ * data-reload
+ By adding this param to modal link, content will be reload with url from 'data-reload' argument
+
+Example:
+<a href="{f:uri.action(package:'Beech.Party', subpackage:'Administration', controller:'Address', action:'list', arguments: {party: person})}"
+   data-toggle="modal-ajax" data-target="#modal" modal-size="large"
+   data-reload="{f:uri.action(package:'Beech.Party', controller:'Person', action:'show', arguments: {person: person})}">Edit</a>
+
+This open a content from 'href' url in modal box in 'data-target'. Modal box will be 'modal-size -> large'.
+After clicking save button in modal, main content will be reload with content from 'data-reload' url
+

@@ -131,8 +131,25 @@
 			$moduleContainer.find('input').applyInputMasks();
 			$moduleContainer.find('.countrySelect').countrySelect();
 			$moduleContainer.find('input[type=checkbox].primary').controlPrimary();
-			$moduleContainer.parent().find('.modal-header').replaceWith($moduleContainer.find('.modal-header'));
-			$moduleContainer.parent().find('.modal-footer').replaceWith($moduleContainer.find('.modal-footer')).removeClass('hide');
+			if ($moduleContainer.find('.modal-header.custom').length > 0) {
+				var $customHeader = $moduleContainer.find('.modal-header.custom')
+				$moduleContainer.parent().find('.modal-header:not(.custom)').replaceWith($customHeader);
+				$customHeader.removeClass('custom');
+			}
+			if ($moduleContainer.find('.modal-footer.custom').length > 0) {
+				var $customFooter = $moduleContainer.find('.modal-footer.custom')
+				$moduleContainer.parent().find('.modal-footer:not(.custom)').replaceWith($customFooter);
+				$customFooter.removeClass('custom');
+			}
+			$moduleContainer.parent().find('.modal-footer').removeClass('hide');
+			$moduleContainer.parent().find('.modal-footer .btn').each(function(i, button) {
+				$(button).unbind('click');
+				if ($(button).attr('data-reload') != '') {
+					$(button).on('click', function(event) {
+						that.loadUrl($(button).attr('data-reload'))
+					})
+				}
+			})
 		},
 
 		prepareUrl: function (object) {

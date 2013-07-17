@@ -1,8 +1,9 @@
-<f:layout name="Ajax" />
+<f:layout name="Ajax"/>
 
 <f:section name="Body">
 
 	<h1>Person information</h1>
+
 	<div id="c261" class="csc-default">
 		<ul id="personTabs" class="nav nav-tabs">
 			<li class="active">
@@ -20,19 +21,26 @@
 				<f:render partial="Views/Show/Person" arguments="{_all}"/>
 				<table id="addresses-{person.id}" class="table table-striped table-bordered">
 					<tbody>
-						<tr>
-							<td class="span6"><f:render partial="Views/Show/Address" arguments="{address: person.address_home}"/>
-								<a href="{f:uri.action(package:'Beech.Party', subpackage:'Administration', controller:'Address', action:'list', arguments: {party: person})}" data-toggle="modal-ajax" data-target="#modal" modal-size="large">
-									<i class="icon-pencil icon-white"></i> <f:translate id="action.edit">Edit</f:translate>
-								</a>
-							</td>
-							<td class="span6">
-								<f:render partial="Views/Show/Address" arguments="{address: person.address_work}"/>
-								<a href="{f:uri.action(package:'Beech.Party', subpackage:'Administration', controller:'Address', action:'list', arguments: {party: person})}" data-toggle="modal-ajax" data-target="#modal" modal-size="large">
-									<i class="icon-pencil icon-white"></i> <f:translate id="action.edit">Edit</f:translate>
-								</a>
-							</td>
-						</tr>
+					<tr>
+						<td class="span6">
+							<f:render partial="Views/Show/Address" arguments="{address: person.address_home}"/>
+							<a href="{f:uri.action(package:'Beech.Party', subpackage:'Administration', controller:'Address', action:'list', arguments: {party: person})}"
+							   data-toggle="modal-ajax" data-target="#modal" modal-size="large"
+							   data-reload="{f:uri.action(package:'Beech.Party', controller:'Person', action:'show', arguments: {person: person})}">
+								<i class="icon-pencil icon-white"></i>
+								<f:translate id="action.edit">Edit</f:translate>
+							</a>
+						</td>
+						<td class="span6">
+							<f:render partial="Views/Show/Address" arguments="{address: person.address_work}"/>
+							<a href="{f:uri.action(package:'Beech.Party', subpackage:'Administration', controller:'Address', action:'list', arguments: {party: person})}"
+							   data-toggle="modal-ajax" data-target="#modal" modal-size="large"
+							   data-reload="{f:uri.action(package:'Beech.Party', controller:'Person', action:'show', arguments: {person: person})}">
+								<i class="icon-pencil icon-white"></i>
+								<f:translate id="action.edit">Edit</f:translate>
+							</a>
+						</td>
+					</tr>
 					</tbody>
 				</table>
 			</div>
@@ -42,8 +50,11 @@
 						<f:render partial="Views/Show/Education" arguments="{education: education}"/>
 					</div>
 				</f:for>
-				<a href="{f:uri.action(package:'Beech.Party', subpackage:'Administration', controller:'Education', action:'list', arguments: {party: person})}" data-toggle="modal-ajax" data-target="#modal" modal-size="large">
-					<i class="icon-pencil icon-white"></i> <f:translate id="action.edit">Edit</f:translate>
+				<a href="{f:uri.action(package:'Beech.Party', subpackage:'Administration', controller:'Education', action:'list', arguments: {party: person})}"
+				   data-toggle="modal-ajax" data-target="#modal" modal-size="large"
+				   data-reload="{f:uri.action(package:'Beech.Party', controller:'Person', action:'show', arguments: {person: person})}">
+					<i class="icon-pencil icon-white"></i>
+					<f:translate id="action.edit">Edit</f:translate>
 				</a>
 			</div>
 			<div id="contract" class="tab-pane fade">

@@ -96,10 +96,11 @@ class PersonController extends \Beech\Ehrm\Controller\AbstractManagementControll
 	 * Shows a single person object
 	 *
 	 * @param \Beech\Party\Domain\Model\Person $person
+	 * @param boolean $withDetails
 	 * @Flow\IgnoreValidation("$person")
 	 * @return void
 	 */
-	public function showAction(Person $person) {
+	public function showAction(Person $person, $withDetails = TRUE) {
 		$this->view->assign('person', $person);
 		$addresses = $this->addressRepository->findByParty($person->getId());
 		$this->view->assign('addresses', $addresses);
