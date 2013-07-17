@@ -4,7 +4,7 @@ action:
       -
         className: 'Beech\Workflow\PreConditions\DatePreCondition'
         properties:
-          value: 'DATETIME:today'
+          value: 'DATETIME:now'
           matchCondition: 'CONSTANT:MATCH_CONDITION_EQUAL'
       -
         className: 'Beech\Workflow\PreConditions\DatePreCondition'

@@ -29,7 +29,7 @@ class FieldDefaultValueHelper {
 	public function getDefault($property) {
 		$defaultValue = '';
 		if (isset($property['default'])) {
-			if ($property['default'] === 'now' || $property['default'] === 'today') {
+			if ($property['default'] === 'now') {
 				$defaultValue = date('Y-m-d');
 			} elseif ($property['default'] === 'currentUser') {
 				$tokens = $this->securityContext->getAuthenticationTokens();

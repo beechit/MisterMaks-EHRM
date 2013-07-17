@@ -4,7 +4,7 @@ action:
       -
         className: 'Beech\Workflow\Validators\DateValidator'
         properties:
-          value: 'DATETIME:today'
+          value: 'DATETIME:now'
           matchCondition: 'CONSTANT:MATCH_CONDITION_EQUAL'
       -
         className: 'Beech\Workflow\Validators\DateValidator'

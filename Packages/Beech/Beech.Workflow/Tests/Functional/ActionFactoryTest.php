@@ -135,7 +135,7 @@ class ActionFactoryTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 		$this->markTestSkipped('http://jira.beech.local/browse/MM-193');
 			// Create mock action object
 		$validator1 = new \Beech\Workflow\Validators\DateValidator();
-		$validator1->setValue(new \DateTime('today'));
+		$validator1->setValue(new \DateTime('now'));
 		$validator1->setMatchCondition(\Beech\Workflow\Validators\DateValidator::MATCH_CONDITION_EQUAL);
 
 		$validator2 = new \Beech\Workflow\Validators\DateValidator();
@@ -160,7 +160,7 @@ class ActionFactoryTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 		$this->markTestSkipped('http://jira.beech.local/browse/MM-193');
 			// Create mock action object
 		$preCondition1 = new \Beech\Workflow\PreConditions\DatePreCondition();
-		$preCondition1->setValue(new \DateTime('today'));
+		$preCondition1->setValue(new \DateTime('now'));
 		$preCondition1->setMatchCondition(\Beech\Workflow\PreConditions\DatePreCondition::MATCH_CONDITION_EQUAL);
 
 		$preCondition2 = new \Beech\Workflow\PreConditions\DatePreCondition();
@@ -220,7 +220,7 @@ class ActionFactoryTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 
 			// Create mock action object
 		$validator1 = new \Beech\Workflow\Validators\DateValidator();
-		$validator1->setValue(new \DateTime('today'));
+		$validator1->setValue(new \DateTime('now'));
 		$validator1->setMatchCondition(\Beech\Workflow\Validators\DateValidator::MATCH_CONDITION_EQUAL);
 
 		$validator2 = new \Beech\Workflow\Validators\DateValidator();
@@ -235,7 +235,7 @@ class ActionFactoryTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 		$outputHandler2->setActionEntity(new \Beech\Workflow\Domain\Model\Action());
 
 		$preCondition1 = new \Beech\Workflow\PreConditions\DatePreCondition();
-		$preCondition1->setValue(new \DateTime('today'));
+		$preCondition1->setValue(new \DateTime('now'));
 		$preCondition1->setMatchCondition(\Beech\Workflow\PreConditions\DatePreCondition::MATCH_CONDITION_EQUAL);
 
 		$preCondition2 = new \Beech\Workflow\PreConditions\DatePreCondition();
@@ -264,7 +264,7 @@ class ActionFactoryTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 
 			// Create mock action object
 		$validator = new \Beech\Workflow\Validators\DateValidator();
-		$validator->setValue(new \DateTime('today'));
+		$validator->setValue(new \DateTime('now'));
 		$validator->setMatchCondition(\Beech\Workflow\Validators\DateValidator::MATCH_CONDITION_EQUAL);
 
 		$outputHandler = new \Beech\Workflow\OutputHandlers\EntityOutputHandler();
@@ -272,7 +272,7 @@ class ActionFactoryTest extends \TYPO3\Flow\Tests\FunctionalTestCase {
 		$outputHandler->setEntity($todoEntity);
 
 		$preCondition = new \Beech\Workflow\PreConditions\DatePreCondition();
-		$preCondition->setValue(new \DateTime('today'));
+		$preCondition->setValue(new \DateTime('now'));
 		$preCondition->setMatchCondition(\Beech\Workflow\PreConditions\DatePreCondition::MATCH_CONDITION_EQUAL);
 
 		$action = new Action();
