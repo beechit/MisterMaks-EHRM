@@ -48,7 +48,7 @@
 				App.ModuleHandler.loadUrl(href, $this.attr('data-target') + ' .modal-body');
 
 				$target
-					.modal()
+					.modal({backdrop: 'static'})
 					.one('hide', function () {
 						$this.focus();
 					});
