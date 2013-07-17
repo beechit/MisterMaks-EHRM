@@ -112,7 +112,7 @@
           type: 'StringLength'
           options:
             maximum: 10
-    'postalCodeNL':
+    'postalCode':
       label: 'Postal code'
       validation:
         -
@@ -158,7 +158,7 @@
       label: 'Total hours of this contract'
       validation:
         -
-          type: 'Decimal'
+          type: 'Beech.Ehrm:Decimal'
           options:
             digits: 4
             decimal: 2
@@ -167,7 +167,7 @@
       label: 'Hours a week'
       validation:
         -
-          type: 'Decimal'
+          type: 'Beech.Ehrm:Decimal'
 #            regularExpression: '^([1-9]\d*(\.|\,)\d*|0?(\.|\,)\d*[1-9]\d*|[1-9]\d*)$'
     'workDays':
       label: 'Workdays'
@@ -197,7 +197,7 @@
       type: 'Decimal'
       validation:
         -
-          type: 'DecimalValidator'
+          type: 'Beech.Ehrm:Decimal'
 #            regularExpression: '^([1-9]\d*(\.|\,)\d*|0?(\.|\,)\d*[1-9]\d*|[1-9]\d*)$'
     'minimumWage':
       label: 'Minimum wage'
@@ -244,18 +244,15 @@
       type: 'Beech\CLA\Domain\Model\LaborAgreement'
     'vacationAllowanceGLA':
       label: 'Vacation allowance in the GLA arrangment'
-      type: 'Decimal'
       validation:
         -
-          type: 'DecimalValidator'
-
+          type: 'Beech.Ehrm:Decimal'
 #            regularExpression: '^([1-9]\d*(\.|\,)\d*|0?(\.|\,)\d*[1-9]\d*|[1-9]\d*)$'
     'vacationAllowancePercentage':
       label: 'Vacation allowance Percentage'
-      type: 'Decimal'
       validation:
         -
-          type: 'DecimalValidator'
+          type: 'Beech.Ehrm:Decimal'
 #            regularExpression: '^([1-9]\d*(\.|\,)\d*|0?(\.|\,)\d*[1-9]\d*|[1-9]\d*)$'
 # todo: add time validator
     'sickReportTime':
@@ -277,14 +274,14 @@
       type: 'Decimal'
       validation:
         -
-          type: 'DecimalValidator'
+          type: 'Beech.Ehrm:Decimal'
 #            regularExpression: '^([1-9]\d*(\.|\,)\d*|0?(\.|\,)\d*[1-9]\d*|[1-9]\d*)$'
     'accomodationRentMonth':
       label: 'Acomodation rent a month'
       type: 'Decimal'
       validation:
         -
-          type: 'DecimalValidator'
+          type: 'Beech.Ehrm:Decimal'
 #           regularExpression: '^([1-9]\d*(\.|\,)\d*|0?(\.|\,)\d*[1-9]\d*|[1-9]\d*)$'
     'cafetariaModel':
       label: 'CafetariaModel'
@@ -296,7 +293,7 @@
       default: 'now'
       label: 'creation date'
       type: 'DateTime'
-      'createdBy':
+    'createdBy':
       default: 'currentUser'
       label: 'Created by'
       type: 'Beech\Party\Domain\Model\Person'

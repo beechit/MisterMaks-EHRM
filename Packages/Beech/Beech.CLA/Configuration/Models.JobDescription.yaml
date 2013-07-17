@@ -112,4 +112,3 @@
       default: 'currentUser'
       label: 'Created by'
       type: 'string'
-      validation: ''

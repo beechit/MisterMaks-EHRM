@@ -69,6 +69,7 @@ class ContractController extends \Beech\Ehrm\Controller\AbstractManagementContro
 	 * Shows a single contract object
 	 *
 	 * @param \Beech\CLA\Domain\Model\Contract $contract The contract to show
+	 * @Flow\IgnoreValidation("$contract")
 	 * @return void
 	 */
 	public function showAction(Contract $contract) {
