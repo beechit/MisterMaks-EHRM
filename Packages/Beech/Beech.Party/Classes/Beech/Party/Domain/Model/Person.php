@@ -95,10 +95,10 @@ class Person extends \TYPO3\Party\Domain\Model\AbstractParty implements \TYPO3\F
 				$model = ucfirst($model);
 				$repositoryClassName = sprintf('Beech\Party\Domain\Repository\%sRepository', $model);
 				$repository = new $repositoryClassName();
-				$findBy = sprintf('findBy%sType', $model);
-				$allFounded = $repository->{$findBy}($type);
+				$allFounded = $repository->findByParty($this);
+				$getType = sprintf('get%sType', $model);
 				foreach ($allFounded as $object) {
-					if ($object->getPrimary()) {
+					if (($object->{$getType}() === $type) && $object->getPrimary()) {
 						return $object;
 					}
 				}
