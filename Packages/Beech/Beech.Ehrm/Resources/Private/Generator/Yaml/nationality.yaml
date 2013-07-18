@@ -1705,17 +1705,6 @@ nationality:
     residencePermit: 'TRUE'
     active: 'TRUE'
   -
-    identifier: '0'
-    nationality: 'Unknown'
-    translation:
-      nl: 'Onbekend'
-      en: 'Unknown'
-      pl: 'Nieznany'
-      de: 'Unbekannt'
-    workPermit: 'TRUE'
-    residencePermit: 'TRUE'
-    active: 'TRUE'
-  -
     identifier: '82'
     nationality: 'East German'
     translation:
@@ -2331,4 +2320,3 @@ nationality:
     workPermit: 'TRUE'
     residencePermit: 'TRUE'
     active: 'TRUE'
-
