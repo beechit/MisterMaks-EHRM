@@ -65,7 +65,10 @@ class DocumentConverter extends \Beech\Ehrm\Property\TypeConverter\EntityWithDoc
 				$attachments = array();
 				foreach ($propertyValue as $version => $value) {
 					$safeFileName = preg_replace('/[^a-zA-Z-_0-9\.]*/', '', $value['name']);
-					$attachments[$safeFileName] = \Doctrine\CouchDB\Attachment::createFromBinaryData(\TYPO3\Flow\Utility\Files::getFileContents($value['tmp_name']));
+					if (!isset($value['type'])) {
+						$value['type'] = \TYPO3\Flow\Utility\MediaTypes::getMediaTypeFromFilename($safeFileName);
+					}
+					$attachments[$safeFileName] = \Doctrine\CouchDB\Attachment::createFromBinaryData(\TYPO3\Flow\Utility\Files::getFileContents($value['tmp_name']), $value['type']);
 				}
 				$propertyValue = $attachments;
 			}
