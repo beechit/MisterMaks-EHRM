@@ -32,44 +32,34 @@ class CompanyTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFunctional
 	protected $companyRepository;
 
 	/**
-	 * @var \Beech\Party\Domain\Repository\ElectronicAddressRepository
-	 */
-	protected $electronicAddressRepository;
-	/**
 	 */
 	public function setUp() {
 		parent::setUp();
 		$this->companyRepository = $this->objectManager->get('Beech\Party\Domain\Repository\CompanyRepository');
-		$this->electronicAddressRepository = $this->objectManager->get('Beech\Party\Domain\Repository\ElectronicAddressRepository');
 	}
 
 	/**
-	 * @return array Company: companyName, chamberOfCommerce, electronicAddressType, address
+	 * @return array Company: companyName, chamberOfCommerce, legalForm
 	 */
 	public function companiesDataProvider() {
 		return array(
-			array('Beech.IT', '212121212', 'email', 'beech@beech.it'),
-			array('Emaux', '412121222', 'email', 'info@emaux.nl'),
-			array('Google Inc.', '544543454', 'email', 'info@google.it'),
+			array('Beech.IT', '212121212'),
+			array('Emaux', '412121222'),
+			array('Google Inc.', '544543454'),
 		);
 	}
 
 	/**
 	 * Simple test for persistence a company
-	 * TODO:, departments
+	 * TODO: adding email, departments
 	 *
 	 * @dataProvider companiesDataProvider
 	 * @test
 	 */
-	public function companiesPersistingAndRetrievingWorksCorrectly($companyName, $chamberOfCommerce, $electronicAddressType,  $address) {
+	public function companiesPersistingAndRetrievingWorksCorrectly($companyName, $chamberOfCommerce) {
 		$company = new Company();
 		$company->setName($companyName);
 		$company->setChamberOfCommerceNumber($chamberOfCommerce);
-
-		$electronicAddress = new \Beech\Party\Domain\Model\ElectronicAddress();
-		$electronicAddress->setElectronicAddressType($electronicAddressType);
-		$electronicAddress->setAddress($address);
-		$this->electronicAddressRepository->add($electronicAddress);
 
 		$this->companyRepository->add($company);
 		$this->persistenceManager->persistAll();
