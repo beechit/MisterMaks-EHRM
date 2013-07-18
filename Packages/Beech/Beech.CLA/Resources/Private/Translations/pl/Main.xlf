@@ -21,6 +21,7 @@
 			<trans-unit id="working.Hours">
 				<source>Working hours</source>
 				<target>Godziny pracy</target>
+			</trans-unit>
 			<trans-unit id="day[1]">
 				<source>Day</source>
 				<target>Dzień</target>

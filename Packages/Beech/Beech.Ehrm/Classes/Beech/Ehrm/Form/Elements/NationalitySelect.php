@@ -27,10 +27,21 @@ class NationalitySelect extends \TYPO3\Form\Core\Model\AbstractFormElement {
 	protected $language = 'nl';
 
 	/**
+	 * @var \Beech\Ehrm\Utility\PreferenceUtility
+	 * @Flow\Inject
+	 */
+	protected $preferenceUtility;
+
+	/**
 	 * @return void
 	 */
 	public function initializeFormElement() {
+			// check user's locale
+		$locale = $this->preferenceUtility->getUserPreference('locale');
+		$this->language = !empty($locale) ? substr($locale, 0, 2) : $this->language;
+			//get data from yaml file
 		$parsedYaml = \Symfony\Component\Yaml\Yaml::parse($this->dataFile);
+			// prepare array
 		$nationalitiesArray = array();
 		foreach ($parsedYaml['nationality'] as $nationality) {
 			$nationalitiesArray[$nationality['identifier']] = $nationality['translation'][$this->language];

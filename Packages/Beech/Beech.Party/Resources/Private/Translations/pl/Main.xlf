@@ -407,7 +407,7 @@
 				<target></target>
 			</trans-unit>
 			<trans-unit id="person.electronicaddresses.facebook">
-				<source>facebook/source>
+				<source>facebook</source>
 				<target></target>
 			</trans-unit>
 			<trans-unit id="person.electronicaddresses.linkedin">

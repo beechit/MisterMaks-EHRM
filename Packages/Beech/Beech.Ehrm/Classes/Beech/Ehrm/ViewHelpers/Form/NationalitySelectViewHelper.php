@@ -69,9 +69,9 @@ class NationalitySelectViewHelper extends \TYPO3\Fluid\ViewHelpers\Form\SelectVi
 	 */
 	protected function isSelected($value) {
 		if($this->value === NULL) {
-			$this->value = (int)$this->getValue();
+			$this->value = $this->getValue();
 			if($this->value === NULL) {
-				$this->value = 0;
+				$this->value = '';
 			}
 		}
 		return $this->value === $value;

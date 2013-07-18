@@ -36,12 +36,20 @@ class CountriesArray {
 	public $countries = array();
 
 	/**
+	 * @var \Beech\Ehrm\Utility\PreferenceUtility
+	 * @Flow\Inject
+	 */
+	protected $preferenceUtility;
+
+	/**
 	 * Get countries array. If array is empty read data from yaml file
 	 *
 	 * @return array
 	 */
 	public function getCountries() {
-		if (empty($this->countries)) {
+		$locale = $this->preferenceUtility->getUserPreference('locale');
+		$this->language = !empty($locale) ? substr($locale, 0, 2) : $this->language;
+		if (empty($this->countries) || ($locale != NULL && $this->language != $locale)) {
 			$parsedYaml = \Symfony\Component\Yaml\Yaml::parse($this->dataFile);
 			foreach ($parsedYaml['country']['values'] as $index => $country) {
 				$this->countries[$country] = $parsedYaml['country']['translation'][$this->language][$index];
@@ -49,4 +57,5 @@ class CountriesArray {
 		}
 		return $this->countries;
 	}
+
 }

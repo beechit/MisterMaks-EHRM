@@ -16,7 +16,7 @@ nationality:
     translation:
       nl: 'Afgaanse'
       en: 'Afghan'
-      pl: 'Afganski'
+      pl: 'Afganska'
       de: 'Afghan'
     workPermit: 'TRUE'
     residencePermit: 'TRUE'
@@ -27,7 +27,7 @@ nationality:
     translation:
       nl: 'Albanese'
       en: 'Albanian'
-      pl: 'Albanski'
+      pl: 'Albanska'
       de: 'Albanian'
     workPermit: 'TRUE'
     residencePermit: 'TRUE'
@@ -38,7 +38,7 @@ nationality:
     translation:
       nl: 'Algerijnse'
       en: 'Algerian'
-      pl: 'Algierski'
+      pl: 'Algierska'
       de: 'Algerisch'
     workPermit: 'TRUE'
     residencePermit: 'TRUE'
@@ -49,7 +49,7 @@ nationality:
     translation:
       nl: 'Amerikaans burger'
       en: 'American citizen'
-      pl: 'Amerykanin'
+      pl: 'Amerykanska'
       de: 'American Bürger'
     workPermit: 'TRUE'
     residencePermit: 'TRUE'
@@ -60,7 +60,7 @@ nationality:
     translation:
       nl: 'Amerikaans onderdaan'
       en: 'American citizen'
-      pl: 'Amerykanin'
+      pl: 'Amerykanska'
       de: 'American Bürger'
     workPermit: 'TRUE'
     residencePermit: 'TRUE'
@@ -71,7 +71,7 @@ nationality:
     translation:
       nl: 'Andorrese'
       en: 'Andorran'
-      pl: 'Andorran'
+      pl: 'Andorska'
       de: 'Andorra'
     workPermit: 'TRUE'
     residencePermit: 'TRUE'
@@ -82,7 +82,7 @@ nationality:
     translation:
       nl: 'Angolese'
       en: 'Angolan'
-      pl: 'Angola'
+      pl: 'Angolska'
       de: 'Angola'
     workPermit: 'TRUE'
     residencePermit: 'TRUE'
@@ -93,7 +93,7 @@ nationality:
     translation:
       nl: 'Argentijnse'
       en: 'Argentine'
-      pl: 'Argentynskie'
+      pl: 'Argentynska'
       de: 'Argentine'
     workPermit: 'TRUE'
     residencePermit: 'TRUE'
@@ -115,7 +115,7 @@ nationality:
     translation:
       nl: 'Bahamaanse'
       en: 'Bahamian'
-      pl: 'Bahamian'
+      pl: 'Bahamska'
       de: 'Bahamas'
     workPermit: 'TRUE'
     residencePermit: 'TRUE'
@@ -2095,7 +2095,7 @@ nationality:
     translation:
       nl: 'Tsjechische'
       en: 'Czech'
-      pl: 'Czech'
+      pl: 'Czeska'
       de: 'Tschechisch'
     workPermit: 'TRUE'
     residencePermit: 'TRUE'
@@ -2128,7 +2128,7 @@ nationality:
     translation:
       nl: 'Turkse'
       en: 'Turkish'
-      pl: 'Turecki'
+      pl: 'Turecka'
       de: 'Türkischen'
     workPermit: 'TRUE'
     residencePermit: 'TRUE'
@@ -2161,7 +2161,7 @@ nationality:
     translation:
       nl: 'Uruguayaanse'
       en: 'Uruguayan'
-      pl: 'Urugwajczyk'
+      pl: 'Urugwajska'
       de: 'Uruguay'
     workPermit: 'TRUE'
     residencePermit: 'TRUE'
@@ -2183,7 +2183,7 @@ nationality:
     translation:
       nl: 'Vaticaanse'
       en: 'Vatican'
-      pl: 'Watykan'
+      pl: 'mieszkaniec Watykanu'
       de: 'Vatican'
     workPermit: 'TRUE'
     residencePermit: 'TRUE'
@@ -2194,7 +2194,7 @@ nationality:
     translation:
       nl: 'Venezolaanse'
       en: 'Venezuelan'
-      pl: 'Wenezuelski'
+      pl: 'Wenezuelska'
       de: 'Venezuela'
     workPermit: 'TRUE'
     residencePermit: 'TRUE'
@@ -2205,7 +2205,7 @@ nationality:
     translation:
       nl: 'Viëtnamese'
       en: 'Vietnamese'
-      pl: 'Wietnamski'
+      pl: 'Wietnamska'
       de: 'Vietnamese'
     workPermit: 'TRUE'
     residencePermit: 'TRUE'
@@ -2293,7 +2293,7 @@ nationality:
     translation:
       nl: 'Zuidkoreaanse'
       en: 'South Korean'
-      pl: 'Korea Poludniowa'
+      pl: 'Południowo koreańska'
       de: 'South Korean'
     workPermit: 'TRUE'
     residencePermit: 'TRUE'
@@ -2315,7 +2315,7 @@ nationality:
     translation:
       nl: 'Zweedse'
       en: 'Swedish'
-      pl: 'Szwedzki'
+      pl: 'Szwedzka'
       de: 'Schwedisch'
     workPermit: 'TRUE'
     residencePermit: 'TRUE'
@@ -2326,7 +2326,7 @@ nationality:
     translation:
       nl: 'Zwitserse'
       en: 'Swiss'
-      pl: 'Swiss'
+      pl: 'Szwajcarska'
       de: 'Swiss'
     workPermit: 'TRUE'
     residencePermit: 'TRUE'

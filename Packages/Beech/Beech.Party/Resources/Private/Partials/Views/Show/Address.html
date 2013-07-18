@@ -1,4 +1,4 @@
-<div class="row-fluid">
+<div class="row-fluid">{namespace ehrm=Beech\Ehrm\ViewHelpers}
 	<div class="span1"><i class="icon-home"></i></div>
 	<div class="span11"><strong>{address.addressType}</strong></div>
 </div>
@@ -10,6 +10,6 @@
 </div>
 <f:if condition="{0: address.addressType} == {0: 'abroad'}">
 <div class="row-fluid">
-	<div class="span3"><strong>{address.country}</strong></div>
+	<div class="span3"><strong>{address.country -> ehrm:format.country()}</strong></div>
 </div>
 </f:if>
