@@ -34,6 +34,12 @@ class ContractTemplate extends \Beech\Ehrm\Domain\Model\Document {
 	protected $articles = [];
 
 	/**
+	 * @Flow\Inject
+	 * @var \TYPO3\Flow\I18n\Service
+	 */
+	protected $localizationService;
+
+	/**
 	 * Set templateName
 	 *
 	 * @param string $templateName
@@ -67,6 +73,28 @@ class ContractTemplate extends \Beech\Ehrm\Domain\Model\Document {
 	 */
 	public function getArticles() {
 		return $this->articles;
+	}
+
+	/**
+	 * Get contract title
+	 * Override parent method to display contractTitle in correct translation
+	 *
+	 * @return string
+	 */
+	public function getContractTitle() {
+		$contractTitle = parent::getContractTitle();
+		return $contractTitle[$this->getCurrentLanguage()];
+	}
+
+	/**
+	 * Get current language based on current locale
+	 *
+	 * @return string
+	 */
+	private function getCurrentLanguage() {
+		$language = substr($this->localizationService->getConfiguration()->getCurrentLocale(), 0, 2);
+		// TODO: get default language from settings
+		return ($language != '') ? $language : 'nl';
 	}
 }
 
