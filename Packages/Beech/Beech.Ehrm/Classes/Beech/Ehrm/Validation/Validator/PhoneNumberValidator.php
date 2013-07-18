@@ -20,7 +20,7 @@ class PhoneNumberValidator extends AbstractValidator {
 	/**
 	 * @var string
 	 */
-	protected $regularExpression = '^\(?(0)[1-9]{2}\)?(\-|\s)?[0-9]{7}$|^\(?(0)[1-9]{3}\)?(\-|\s)?[0-9]{6}$';
+	protected $regularExpression = '/^\(?(0)[1-9]{2}\)?(\-|\s)?[0-9]{7}$|^\(?(0)[1-9]{3}\)?(\-|\s)?[0-9]{6}$/';
 
 	/**
 	 * @var string
@@ -37,10 +37,10 @@ class PhoneNumberValidator extends AbstractValidator {
 	protected function isValid($value) {
 		$result = preg_match($this->regularExpression, $value);
 		if ($result === 0) {
-			$this->addError('Format of your phone number is not correct. There is <b>%1$s</b> and should be <b>%2$s</b>', 1370528826, array($value, $this->expected));
+			$this->addError('Format of your phone number is not correct. There is <b>%1$s</b> and should be like <b>%2$s</b>', 1370528826, array($value, $this->expected));
 		}
 		if ($result === FALSE) {
-			throw new \TYPO3\Flow\Validation\Exception\InvalidValidationOptionsException('regularExpression "' . $this->regularExpression . '"PhoneNumberValidator contained an error.', 1298273089);
+			throw new \TYPO3\Flow\Validation\Exception\InvalidValidationOptionsException('regularExpression "' . $this->regularExpression . '"PhoneNumberValidator contained an error.', 1370528826);
 		}
 	}
 

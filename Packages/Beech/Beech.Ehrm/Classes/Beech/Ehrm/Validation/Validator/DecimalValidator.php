@@ -51,7 +51,7 @@ class DecimalValidator extends AbstractValidator {
 		$result = preg_match(sprintf($this->regularExpression, $digits - $decimal, $decimal), $value);
 
 		if ($result === 0) {
-			$this->addError('Format of input was not correct. There is <b>%1$s</b> and should be <b>%2$s</b>', 1373962725, array($value, $this->expected));
+			$this->addError('Format of input was not correct. There is <b>%1$s</b> and should be like <b>%2$s</b>', 1373962725, array($value, $this->expected));
 		}
 		if ($result === FALSE) {
 			throw new \TYPO3\Flow\Validation\Exception\InvalidValidationOptionsException('regularExpression "' . $this->regularExpression . 'DecimalValidator contained an error.', 1298273089);

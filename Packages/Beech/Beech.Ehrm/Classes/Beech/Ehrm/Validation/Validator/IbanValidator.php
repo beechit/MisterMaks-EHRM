@@ -3,7 +3,7 @@ namespace Beech\Ehrm\Validation\Validator;
 
 /*
  * This source file is proprietary property of Beech Applications B.V.
- * Date: 6/6/13 2:23 PM
+ * Date: 7/18/13 11:38 AM
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
@@ -15,17 +15,17 @@ use TYPO3\Flow\Validation\Validator\AbstractValidator;
 /**
  *
  */
-class PostalCodeValidator extends AbstractValidator {
+class IbanValidator extends AbstractValidator {
 
 	/**
 	 * @var string
 	 */
-	protected $regularExpression = '/^[1-9]{1}[0-9]{3}[ ][A-Z]{2}/';
+	protected $regularExpression = '/^[a-zA-Z]{2}[0-9]{2}[a-zA-Z0-9]{4}[0-9]{7}([a-zA-Z0-9]?){0,16}/';
 
 	/**
 	 * @var string
 	 */
-	protected $expected = '9999 AA';
+	protected $expected = 'NL91ABNA0417164300';
 
 	/**
 	 * Checks if the given value matches the specified regular expression.
@@ -37,10 +37,10 @@ class PostalCodeValidator extends AbstractValidator {
 	protected function isValid($value) {
 		$result = preg_match($this->regularExpression, $value);
 		if ($result === 0) {
-			$this->addError('Format of your postal code is not correct. There is <b>%1$s</b> and should be like <b>%2$s</b>', 1298273089, array($value, $this->expected));
+			$this->addError('Format of your Iban number is not correct. There is <b>%1$s</b> and should be <b>%2$s</b> for example', 1374140660, array($value, $this->expected));
 		}
 		if ($result === FALSE) {
-			throw new \TYPO3\Flow\Validation\Exception\InvalidValidationOptionsException('regularExpression "' . $this->regularExpression . '"PostalCodeValidator contained an error.', 1298273089);
+			throw new \TYPO3\Flow\Validation\Exception\InvalidValidationOptionsException('regularExpression "' . $this->regularExpression . '"IbanNumberValidator contained an error.', 1374140660);
 		}
 	}
 

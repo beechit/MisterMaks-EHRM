@@ -17,13 +17,9 @@
       label: 'Phone Number'
       validation:
         -
-          type: 'RegularExpression'
-          options:
-            regularExpression: '/^(((\\+31|0|0031)6){1}-[1-9]{1}[0-9]{7})$/i'
-        -
-          type: 'StringLength'
-          options:
-            maximum: 15
+          type: 'Beech.Ehrm:PhoneNumber'
+#        -
+#          type: 'NotEmpty'
     'primary':
       label: 'Primary'
       options:

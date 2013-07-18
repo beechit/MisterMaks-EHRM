@@ -22,10 +22,6 @@
       label: 'Street name'
       validation:
         -
-          type: 'RegularExpression'
-          options:
-            regularExpression: '/[a-zA-Z\\-\\s\\’]{2,30}/'
-        -
           type: 'StringLength'
           options:
             maximum: 35
@@ -45,11 +41,7 @@
       label: 'Postbox number'
       validation:
         -
-          type: 'RegularExpression'
-          options:
-            regularExpression: '/[0-9]{1,5}/'
-        -
-          type: 'Integer'
+          type: 'Beech.Ehrm:PostBoxNumber'
     'houseNumber':
       label: 'House number'
       validation:
@@ -75,14 +67,11 @@
       validation:
         -
           type: 'Beech.Ehrm:PostalCode'
-
+#        -
+#          type: 'NotEmpty'
     'residence':
       label: 'Residence'
       validation:
-        -
-          type: 'RegularExpression'
-          options:
-            regularExpression: '/[a-zA-Z\\-\\s\\’]{2,30}/'
         -
           type: 'StringLength'
           options:

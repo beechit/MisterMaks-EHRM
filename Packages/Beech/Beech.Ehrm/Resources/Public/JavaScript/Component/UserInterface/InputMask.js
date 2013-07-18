@@ -6,8 +6,10 @@
 			return this.each(function(input_field) {
 				var $this;
 				$this = $(this);
-				if ($this.hasClass('phone')) {
-					$this.inputmask("99-99999999", { "placeholder": "06_________" });
+				if ($this.hasClass('mobilephone')) {
+					$this.inputmask("99 99999999", { "placeholder": "06 ________" });
+				} else if ($this.hasClass('phone')) {
+					$this.inputmask("999 9999999", { "placeholder": "0__ ________" });
 				} else if ($this.hasClass('postal')) {
 					$this.inputmask("9999 AA");
 				} else if ($this.hasClass('bsn')) {
