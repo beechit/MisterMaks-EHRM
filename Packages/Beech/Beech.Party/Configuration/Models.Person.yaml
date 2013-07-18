@@ -35,20 +35,12 @@
     'middleOtherName':
       validation:
         -
-          type: 'RegularExpression'
-          options:
-            regularExpression: '/[\\w\\-]{2,10}]/'
-        -
           type: 'StringLength'
           options:
             maximum: 10
     'otherName':
       label: 'Birthname'
       validation:
-        -
-          type: 'RegularExpression'
-          options:
-            regularExpression: '/[\\w\\-]{2,30}]/'
         -
           type: 'StringLength'
           options:
@@ -64,10 +56,6 @@
       label: 'Initials'
       validation:
         -
-          type: 'RegularExpression'
-          options:
-            regularExpression: '/[a-zA-Z\\.\\s]{0,10}/'
-        -
           type: 'StringLength'
           options:
             maximum: 10
@@ -76,18 +64,8 @@
       type: 'DateTime'
     'placeOfBirth':
       label: 'Place of birth'
-      validation:
-        -
-          type: 'RegularExpresssion'
-          options:
-            regularExpression: '/[a-zA-Z\\-\\s\\’]{2,30}/'
     'countryOfBirth':
       label: 'Country of birth'
-      validation:
-        -
-          type: 'RegularExpresssion'
-          options:
-            regularExpression: '/[a-zA-Z\\-\\s\\’]{2,30}/'
     'dateOfDeath':
       label: 'Date of death'
       type: 'DateTime'
@@ -105,25 +83,13 @@
           'ms': 'Dear Ms.'
           'miss': 'Dear Miss.'
           'mrs': 'Dear Mrs.'
-#todo: add bsn validation
     'bsn':
       label: 'bsn'
       validation:
         -
-          type: 'RegularExpression'
-          options:
-            regularExpression: '/[0-9]{9}/'
-        -
-          type: 'StringLength'
-          options:
-            maximum: 20
+           type: 'Beech.Ehrm:Bsn'
     'nationality':
       label: 'Nationality'
-      validation:
-        -
-          type: 'StringLength'
-          options:
-            maximum: 35
       default: 'NL'
     'civilStatus':
       label: 'Civil status'
