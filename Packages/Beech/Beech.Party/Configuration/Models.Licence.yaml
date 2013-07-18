@@ -30,7 +30,7 @@
       label: 'licenceStart'
     'expirationDate':
       label: 'Licence expiration date'
-
+      type: 'DateTime'
     'document':
       label: 'Licence document'
       type: 'Beech\Party\Domain\Model\Document'

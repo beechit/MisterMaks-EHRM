@@ -1,6 +1,6 @@
 <div class="row-fluid">
 	<div class="span1"><f:render partial="Forms/Buttons/Icon" arguments="{_all}"/></div>
-	<div class="span9"><strong>{licence.name} {licence.startDate} {licence.expirationDate}</strong></div>
+	<div class="span9"><strong>{licence.name} {licence.startDate -> f:format.date(format: 'Y-m-d')} {licence.expirationDate  -> f:format.date(format: 'Y-m-d')}</strong></div>
 	<div class="span2">
 		<div class="btn-group">
 			<a class="btn btn-small" data-toggle="collapse" data-target="#toggle{licence.id}"><i class="icon-pencil"></i></a>
