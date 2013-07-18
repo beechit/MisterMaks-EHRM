@@ -220,9 +220,6 @@ class YamlImportUtility {
 		}
 		foreach ($parsedYaml as $key => $value) {
 				// check if value is language array
-			if (isset($value[$this->language])) {
-				$value = $value[$this->language];
-			}
 			try {
 				ObjectAccess::setProperty($document, $key, $value);
 			} catch (\Exception $exception) {
