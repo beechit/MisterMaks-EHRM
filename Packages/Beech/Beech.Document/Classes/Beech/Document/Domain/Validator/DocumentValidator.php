@@ -41,13 +41,15 @@ class DocumentValidator extends \TYPO3\Flow\Validation\Validator\AbstractValidat
 		}
 
 		$valid = TRUE;
-
 		foreach ($resources as $version => $resource) {
 			$finfo = new \finfo(FILEINFO_MIME);
-			$mimeType = \TYPO3\Flow\Utility\Arrays::trimExplode(';', $finfo->buffer($resource->getRawData()));
-
-			if (!in_array($mimeType[0], $this->settings['allowedMimeTypes'])) {
-				$this->addError(sprintf('Mimetype %s for %s is not in allowed mimetypes configuration', $mimeType, $value->getName() . '.v' . $version), 1356876520);
+			if (($resource instanceof \Doctrine\CouchDB\Attachment) && $resource->getContentType()) {
+				$mimeType = $resource->getContentType();
+			} else {
+				$mimeType = array_shift(\TYPO3\Flow\Utility\Arrays::trimExplode(';', $finfo->buffer($resource->getRawData())));
+			}
+			if (!in_array($mimeType, $this->settings['allowedMimeTypes'])) {
+				$this->addError(sprintf('Mimetype %s for %s is not in allowed mimetypes configuration', $mimeType, $value->getName() . ' - ' . $version), 1356876520);
 				$valid = FALSE;
 			}
 		}

@@ -19,7 +19,11 @@
 						<f:for each="{documents}" as="document" iteration="documentIterator">
 							<tr>
 								<td><f:link.action action="show" arguments="{document: document}">{document.name}</f:link.action></td>
-								<td>{document.documentType.categoryName} / {document.documentType.typeName}</td>
+								<td>{document.documentType.categoryName} / {document.documentType.typeName}<br/>
+									<f:for each="{document.resources}" as="resource">
+										<i>{resource.contentType}</i>
+									</f:for>
+								</td>
 								<td><f:render partial="Document/Preview" arguments="{document: document, width: 100}"/></td>
 								<td>
 									<div class="btn-group">
