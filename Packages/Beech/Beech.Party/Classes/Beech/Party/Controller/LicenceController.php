@@ -78,8 +78,7 @@ class LicenceController extends \Beech\Ehrm\Controller\AbstractManagementControl
 	 * @return void
 	 */
 	public function removeAction(\Beech\Party\Domain\Model\licence $licence) {
-		$licence->setParty(NULL);
-		$this->repository->update($licence);
+		$this->repository->remove($licence);
 		$this->addFlashMessage($this->translator->translateById('Removed.', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
 	}
 }
