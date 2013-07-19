@@ -31,6 +31,8 @@ Beech:
           - 'Beech.Ehrm/Library/inputmask/jquery.inputmask.js'
           - 'Beech.Ehrm/Library/inputmask/jquery.inputmask.extensions.js'
           - 'Beech.Ehrm/Library/bootstrap-wizard/bootstrap-wizard.js'
+          - 'Beech.Ehrm/Library/dataTables/media/js/jquery.dataTables.js'
+          - 'Beech.Ehrm/Library/dataTables/media/js/jquery.dataTables.TwitterBootstrap.js'
 
         sources:
           - 'Beech.Ehrm/JavaScript/Init.js'

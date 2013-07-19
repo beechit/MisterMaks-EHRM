@@ -77,7 +77,7 @@ class AbstractController extends \TYPO3\Flow\Mvc\Controller\ActionController {
 	 * @todo implement translations
 	 */
 	protected function getErrorFlashMessage() {
-		return new \TYPO3\Flow\Error\Error('Validation error', NULL, array(get_class($this), $this->actionMethodName));
+		return new \TYPO3\Flow\Error\Error('Validation error, ' . get_class($this) . ' ' . $this->actionMethodName, NULL, array(get_class($this), $this->actionMethodName));
 	}
 
 }

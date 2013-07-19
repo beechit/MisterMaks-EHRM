@@ -38,6 +38,13 @@ class Document extends \Beech\Ehrm\Domain\Model\Document {
 	protected $resources;
 
 	/**
+	 * @var \TYPO3\Flow\Persistence\PersistenceManagerInterface
+	 * @Flow\Inject
+	 * @Flow\Transient
+	 */
+	protected $persistenceManager;
+
+	/**
 	 * Set documentType
 	 *
 	 * @param \Beech\Document\Domain\Model\DocumentType $documentType
@@ -99,6 +106,27 @@ class Document extends \Beech\Ehrm\Domain\Model\Document {
 	 */
 	public function getResource() {
 		return reset($this->resources);
+	}
+
+	/**
+	 * Set party
+	 *
+	 * @param \TYPO3\Party\Domain\Model\AbstractParty $party
+	 */
+	public function setParty($party) {
+		$this->party = $this->persistenceManager->getIdentifierByObject($party);
+	}
+
+	/**
+	 * Get party
+	 *
+	 * @return \TYPO3\Party\Domain\Model\AbstractParty
+	 */
+	public function getParty() {
+		if (isset($this->party)) {
+			return $this->persistenceManager->getObjectByIdentifier($this->party, 'TYPO3\Party\Domain\Model\AbstractParty');
+		}
+		return NULL;
 	}
 
 }

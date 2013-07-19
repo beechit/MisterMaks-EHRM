@@ -1,4 +1,4 @@
-<f:layout name="Ajax"/>
+<f:layout name="Ajax"/>{namespace ehrm=Beech\Ehrm\ViewHelpers}
 
 <f:section name="Body">
 
@@ -14,6 +14,9 @@
 			</li>
 			<li>
 				<a data-toggle="tab" href="#contract">Contract</a>
+			</li>
+			<li>
+				<a data-toggle="tab" href="#documents">Documents</a>
 			</li>
 		</ul>
 		<div id="personTabsContent" class="tab-content">
@@ -58,8 +61,66 @@
 				</a>
 			</div>
 			<div id="contract" class="tab-pane fade">
-				contract...
+				contract...<br/>
+			</div>
+			<div id="documents" class="tab-pane fade">
+				<div style="position: absolute; height: 100%">
+					Filter: <ehrm:form.select name="documentType" class="documentType" options="{documentCategories}" optionLabelField="typeName"/>
+
+					<style>.chzn-container {width: 200px!important;}</style>
+				</div>
+
+				<table class="table" id="personDocuments">
+					<thead>
+					<tr>
+						<th><f:translate id="name">Name</f:translate></th>
+						<th><f:translate id="documentType">Category</f:translate></th>
+						<th>&nbsp;</th>
+					</tr>
+					</thead>
+					<f:for each="{documents}" as="document" iteration="documentIterator">
+						<tr>
+							<td><a href="#/document/show/{document.id}">{document.name}</a></td>
+							<td>{document.documentType.categoryName} / {document.documentType.typeName}<br/>
+								<f:for each="{document.resources}" as="resource">
+									<i>{resource.contentType}</i>
+								</f:for>
+							</td>
+							<td>
+								<div class="btn-group">
+									<button class="btn btn-small">Acties</button>
+									<button class="btn btn-small dropdown-toggle" data-toggle="dropdown">
+										<span class="caret"></span>
+									</button>
+									<ul class="dropdown-menu">
+										<li><a href="/download/{document.id}"><i class="icon-download-alt"></i>Download </a></li>
+										<li><a href="#/document/delete/{document.id}"><i class="icon-trash"></i>Verwijderen</a></li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+					</f:for>
+				</table>
+				<div style="text-align: right;">
+					<a id="addDocument" class="btn btn-primary" href="{f:uri.action(package:'Beech.Document', controller:'Document', action:'new', arguments: {party: person})}"
+															data-toggle="modal-ajax" data-target="#modal" modal-size="large"
+															data-reload="{f:uri.action(package:'Beech.Party', controller:'Person', action:'show', arguments: {person: person})}">
+					<i class="icon-plus icon-white"></i>
+					<f:translate id="action.add">Add</f:translate>
+				</a><div>
+
 			</div>
 		</div>
+		</div>
 	</div>
+	<script type="text/javascript">
+		var oPersonDocumentsTable = $('#personDocuments')
+				.dataTable({
+					"sDom": 'f'
+				})
+		$('select.documentType').change( function() { oPersonDocumentsTable.fnFilter( $(this).find('option:selected').text() ); } );
+		$('#addDocument').on('click', function() {
+			$(this).attr('href', $(this).attr('href').replace('person', 'trrr'))
+		})
+	</script>
 </f:section>

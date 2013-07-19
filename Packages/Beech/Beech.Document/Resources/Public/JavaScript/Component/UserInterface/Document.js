@@ -1,7 +1,6 @@
 (function() {
 	'use strict';
 	function verifyDocument() {
-		console.log('verify');
 		if ($('.documentAttachment').val() != '' && $('.documentName').val() != '') {
 			$('.info-documentAttachment').hide();
 			$('.control-documentSubmit').show();

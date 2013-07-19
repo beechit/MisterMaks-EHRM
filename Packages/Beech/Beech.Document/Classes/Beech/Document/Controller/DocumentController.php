@@ -44,24 +44,45 @@ class DocumentController extends \Beech\Ehrm\Controller\AbstractController {
 	/**
 	 * Shows a list of documents
 	 *
+	 * @param \TYPO3\Party\Domain\Model\AbstractParty $party
 	 * @return void
 	 */
-	public function listAction() {
+	public function listAction(\TYPO3\Party\Domain\Model\AbstractParty $party = NULL) {
 		$this->view->assign('documentCategories', $this->documentTypeRepository->findAllGroupedByCategories());
-		$this->view->assign('documents', $this->documentRepository->findAll());
+		if ($party != NULL) {
+			$this->view->assign('documents', $this->documentRepository->findByParty($party));
+		} else {
+			$this->view->assign('documents', $this->documentRepository->findAll());
+		}
+
+
+	}
+
+	public function newAction(\TYPO3\Party\Domain\Model\AbstractParty $party = NULL) {
+		$this->view->assign('documentCategories', $this->documentTypeRepository->findAllGroupedByCategories());
+		$this->view->assign('party', $party);
+		if ($party != NULL) {
+			$this->view->assign('documents', $this->documentRepository->findByParty($party));
+		} else {
+			$this->view->assign('documents', $this->documentRepository->findAll());
+		}
+
 	}
 
 	/**
 	 * Adds the given new document object to the document repository
 	 *
 	 * @param \Beech\Document\Domain\Model\Document $document
-	 * @param array $redirectArguments
 	 * @return void
 	 */
-	public function createAction(\Beech\Document\Domain\Model\Document $document, $redirectArguments = array('list')) {
+	public function createAction(\Beech\Document\Domain\Model\Document $document) {
 		$this->documentRepository->add($document);
 		$this->addFlashMessage($this->translator->translateById('document.documentUploaded', array(), NULL, NULL, 'Main', 'Beech.Document'));
-		call_user_func_array(array($this, 'redirect'), $redirectArguments);
+		if ($document->getParty() != NULL) {
+			$this->redirect('list', 'Document', 'Beech.Document', array('party' => $document->getParty()));
+		} else {
+			$this->redirect('list');
+		}
 	}
 
 	/**
@@ -84,6 +105,7 @@ class DocumentController extends \Beech\Ehrm\Controller\AbstractController {
 	 * @param \Beech\Document\Domain\Model\Document $document
 	 * @param string $name
 	 * @throws \Exception
+	 * @Flow\IgnoreValidation("$document")
 	 * @return string
 	 */
 	public function downloadAction(\Beech\Document\Domain\Model\Document $document, $name = NULL) {

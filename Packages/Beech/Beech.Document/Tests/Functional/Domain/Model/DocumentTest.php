@@ -27,6 +27,9 @@ class DocumentTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFunctiona
 	public function setUp() {
 		parent::setUp();
 		$this->documentRepository = $this->objectManager->get('Beech\Document\Domain\Repository\DocumentRepository');
+		$this->documentRepository->injectDocumentManagerFactory($this->documentManagerFactory);
+		$this->personRepository = $this->objectManager->get('Beech\Party\Domain\Repository\PersonRepository');
+		$this->companyRepository = $this->objectManager->get('Beech\Party\Domain\Repository\CompanyRepository');
 	}
 
 	/**
@@ -42,6 +45,41 @@ class DocumentTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFunctiona
 		$this->assertEquals(1, count($this->documentRepository->findAll()));
 	}
 
+	/**
+	 * @test
+	 */
+	public function checkIfTypeOfDocumentPartyIsCorrect() {
+		$person = new \Beech\Party\Domain\Model\Person();
+		$person->setName(new \TYPO3\Party\Domain\Model\PersonName('Mr', 'B.A.', '', 'Baracus'));
+		$this->personRepository->add($person);
+
+		$document = new \Beech\Document\Domain\Model\Document();
+		$document->setName('Personal report');
+		$document->setParty($person);
+		$this->documentRepository->add($document);
+
+		$this->documentManager->flush();
+
+		$this->assertEquals(1, $this->documentRepository->countAll());
+		$this->assertInstanceOf('Beech\Party\Domain\Model\Person', $document->getParty());
+		$this->assertInstanceOf('TYPO3\Party\Domain\Model\AbstractParty', $document->getParty());
+
+		$company = new \Beech\Party\Domain\Model\Company();
+		$company->setName('A Team');
+		$this->companyRepository->add($company);
+
+		$companyDocument = new \Beech\Document\Domain\Model\Document();
+		$companyDocument->setName('Company report');
+		$companyDocument->setParty($company);
+
+		$this->documentRepository->add($companyDocument);
+		$this->documentManager->flush();
+
+		$this->assertEquals(2, $this->documentRepository->countAll());
+		$this->assertInstanceOf('Beech\Party\Domain\Model\Company', $companyDocument->getParty());
+		$this->assertInstanceOf('TYPO3\Party\Domain\Model\AbstractParty', $companyDocument->getParty());
+
+	}
 }
 
 ?>

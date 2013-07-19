@@ -19,6 +19,9 @@
 		<ehrm:form.select property="documentType" class="documentType" options="{documentCategories}" optionLabelField="typeName"/>
 	</div>
 	<div class="control-group">
+		<f:form.hidden property="party" value="{party}"/>
+	</div>
+	<div class="control-group">
 		<f:form.upload property="resources.0" class="documentAttachment"/>
 		<label class="info-documentAttachment">* To save, name & attachment is required</label>
 	</div>

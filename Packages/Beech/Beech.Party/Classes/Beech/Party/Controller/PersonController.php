@@ -81,6 +81,17 @@ class PersonController extends \Beech\Ehrm\Controller\AbstractManagementControll
 	 */
 	protected $absenceRepository;
 
+	/**
+	 * @var \Beech\Document\Domain\Repository\DocumentRepository
+	 * @Flow\Inject
+	 */
+	protected $documentRepository;
+
+	/**
+	 * @var \Beech\Document\Domain\Repository\DocumentTypeRepository
+	 * @Flow\Inject
+	 */
+	protected $documentTypeRepository;
 
 	/**
 	 * Shows a list of persons
@@ -118,6 +129,9 @@ class PersonController extends \Beech\Ehrm\Controller\AbstractManagementControll
 		$this->view->assign('licences', $licences);
 		$absences = $this->absenceRepository->findByParty($person->getId());
 		$this->view->assign('absences', $absences);
+			// list of documents
+		$this->view->assign('documentCategories', $absences = $this->documentTypeRepository->findAllGroupedByCategories());
+		$this->view->assign('documents', $this->documentRepository->findByParty($person));
 	}
 
 	/**
