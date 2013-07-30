@@ -6,7 +6,7 @@
       type: 'Beech\Absence\Domain\Model\AbsenseArrangement'
     'absenceType':
       type: 'Beech\Absence\Domain\Model\AbsenseArrangement'
-    'startDate':
+    'startDateTime':
       label: 'Startdate'
       validation:
         -
@@ -14,7 +14,7 @@
           options:
             earliestDate: 20130101
             latestDate: 20200101
-    'endDate':
+    'endDateTime':
      label: 'Enddate'
      validation:
        -
@@ -22,8 +22,8 @@
          options:
            earliestDate: 20130101
            latestDate: 20200101
-    'remarks':
-      label: 'Remarks'
+    'remark':
+      label: 'Remark'
       type: 'text'
       validation:
         -

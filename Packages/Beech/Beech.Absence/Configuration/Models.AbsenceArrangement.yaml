@@ -1,4 +1,4 @@
-Beech.AbsenceArrangment.Domain.Model.AbsenceArrangement:
+'Beech.Absence.Domain.Model.AbsenceArrangement':
   properties:
     'setAbsenceUnit':
       label: 'The unit in what absence is stored'
@@ -69,7 +69,7 @@ Beech.AbsenceArrangment.Domain.Model.AbsenceArrangement:
       validation:
         -
           type: Text
-    'nameArrangement':
+    'absenceArrangementName':
       label: 'Absence Arrangement'
       validation:
         -

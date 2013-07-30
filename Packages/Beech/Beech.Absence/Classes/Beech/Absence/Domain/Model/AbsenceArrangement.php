@@ -24,6 +24,15 @@ class AbsenceArrangement extends \Beech\Ehrm\Domain\Model\Document {
 	 */
 	protected $absence;
 
+	/**
+	 * The name of the arrangement
+	 *
+	 * @var string
+	 * @ODM\Field(type="string")
+	 * @ODM\Index
+	 */
+	protected $absenceArrangementName;
+
 }
 
 ?>
