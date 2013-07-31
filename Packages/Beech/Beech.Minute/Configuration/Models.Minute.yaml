@@ -2,21 +2,6 @@
   properties:
     'party':
       type: 'TYPO3\Party\Domain\Model\AbstractParty'
-    'minuteType':
-      label: 'minuteType'
-      options:
-        values:
-          'periodicAssesment': 'Periodic Assesment'
-          'callReport': 'Call Report'
-          'assesment': 'Assessment'
-          'performanceReview': 'Performance review'
-          'other': 'Other'
-          'sickReportUpdate': 'SickReport update'
-      validation:
-        -
-          type: 'StringLength'
-          options:
-           maximum: 20
     'minuteContent':
       label: 'Minute content'
       type: 'text'
@@ -24,12 +9,7 @@
         -
           type: 'Text'
     'minuteTemplate':
-      label: 'Minute template'
-      validation:
-        -
-          type: 'StringLength'
-          options:
-           maximum: 20
+      type: 'Beech\Minute\Domain\Model\MinuteTemplate'
     'creationDate':
       default: 'now'
       label: 'creation date'

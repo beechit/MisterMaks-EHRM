@@ -48,7 +48,7 @@ class Minute extends \Beech\Ehrm\Domain\Model\Document {
 	 *
 	 * @var \Beech\Party\Domain\Model\Person
 	 * @Flow\Validate(type="NotEmpty")
-	 * @ODM\Field(type="string")
+	 * @ODM\Field(type="mixed")
 	 * @ODM\Index
 	 */
 	protected $personSubject;
@@ -57,7 +57,7 @@ class Minute extends \Beech\Ehrm\Domain\Model\Document {
 	 * The person initiating this minute
 	 *
 	 * @var \Beech\Party\Domain\Model\Person
-	 * @ODM\Field(type="string")
+	 * @ODM\Field(type="mixed")
 	 * @ODM\Index
 	 */
 	protected $personInitiator;
@@ -73,13 +73,13 @@ class Minute extends \Beech\Ehrm\Domain\Model\Document {
 	protected $title;
 
 	/**
-	 * The minute's type
+	 * The minute's template
 	 *
-	 * @var string
-	 * @ODM\Field(type="string")
+	 * @var Beech.Minute.Domain.Model.MinuteTemplate
+	 * @ODM\Field(type="mixed")
 	 * @ODM\Index
 	 */
-	protected $minuteType;
+	protected $minuteTemplate;
 
 	/**
 	 * The minute's content
@@ -165,25 +165,6 @@ class Minute extends \Beech\Ehrm\Domain\Model\Document {
 	 */
 	public function getTitle() {
 		return $this->title;
-	}
-
-	/**
-	 * Sets the type of this minute
-	 *
-	 * @param string $minuteType
-	 * @return void
-	 */
-	public function setMinuteType($minuteType) {
-		$this->minuteType = $minuteType;
-	}
-
-	/**
-	 * Returns the type of this minute
-	 *
-	 * @return string
-	 */
-	public function getMinuteType() {
-		return $this->minuteType;
 	}
 
 	/**
