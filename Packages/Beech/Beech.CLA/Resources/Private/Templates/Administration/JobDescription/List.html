@@ -17,8 +17,8 @@
 				<tbody>
 					<f:for each="{entities}" as="jobDescription" iteration="iterator">
 						<tr>
-							<td>{jobDescription.jobDescriptionNumber}</td>
-							<td><a href="#/administration/jobdescription/{jobDescription.id}">{jobDescription.jobTitle}</a></td>
+							<td>{jobDescription.number}</td>
+							<td><a href="#/administration/jobdescription/{jobDescription.id}">{jobDescription.name}</a></td>
 							<td>
 								<a href="#/administration/jobdescription/edit/{jobDescription.id}"><i class="icon-pencil"></i></a>
 								<a href="#/administration/jobdescription/delete/{jobDescription.id}"><i class="icon-trash"></i></a>

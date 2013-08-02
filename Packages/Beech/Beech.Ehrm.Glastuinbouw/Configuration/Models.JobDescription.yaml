@@ -5,14 +5,14 @@
 #############################################################
 'Beech.CLA.Domain.Model.JobDescription':
   properties:
-    'jobDescriptionNumber':
+    'number':
       label: 'Job description number'
       validation:
         -
           type: 'StringLength'
           options:
             maximum: 10
-    'jobTitle':
+    'name':
       label: 'Job Title'
       validation:
         -

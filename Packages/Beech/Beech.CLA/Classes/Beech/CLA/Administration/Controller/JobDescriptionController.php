@@ -48,6 +48,7 @@ class JobDescriptionController extends \Beech\Ehrm\Controller\AbstractManagement
 	 * Shows a single job description object
 	 *
 	 * @param \Beech\CLA\Domain\Model\JobDescription $jobDescription The job description to show
+	 * @Flow\IgnoreValidation("$jobDescription")
 	 * @return void
 	 */
 	public function showAction(\Beech\CLA\Domain\Model\JobDescription $jobDescription) {
@@ -70,6 +71,7 @@ class JobDescriptionController extends \Beech\Ehrm\Controller\AbstractManagement
 	 * Shows a form for editing an existing job description object
 	 *
 	 * @param \Beech\CLA\Domain\Model\JobDescription $jobDescription The job description to edit
+	 * @Flow\IgnoreValidation("$jobDescription")
 	 * @return void
 	 */
 	public function editAction(JobDescription $jobDescription) {

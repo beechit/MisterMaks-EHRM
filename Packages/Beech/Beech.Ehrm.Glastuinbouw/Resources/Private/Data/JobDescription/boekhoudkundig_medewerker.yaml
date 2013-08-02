@@ -1,5 +1,5 @@
-jobDescriptionNumber: '60.02'
-jobTitle: 'Boekhoudkundig medewerker'
+number: '60.02'
+name: 'Boekhoudkundig medewerker'
 jobContext: 'De afdeling boekhouding of administratie ressorteert rechtstreeks onder de directie, de directeur of de ondernemer. De boekhoudkundig medewerker voert de werkzaamheden in opdracht uit o.b.v. voorschriften en wordt achteraf steekproefsgewijs gecontroleerd.'
 reportsTo: 'operationeel leidinggevende, zoals bijv. hoofd administratie of boekhouder'
 manages: 'niet van toepassing'

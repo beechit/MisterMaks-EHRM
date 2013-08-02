@@ -29,7 +29,7 @@ class JobDescriptionSelect extends \TYPO3\Form\Core\Model\AbstractFormElement {
 		$jobDescriptions = $this->jobDescriptionRepository->findAll();
 		$jobDescriptionsArray = array();
 		foreach ($jobDescriptions as $jobDescription) {
-			$jobDescriptionsArray[$jobDescription->getId()] = $jobDescription->getJobTitle();
+			$jobDescriptionsArray[$jobDescription->getId()] = $jobDescription->getName();
 		}
 		$this->setProperty('options', $jobDescriptionsArray);
 	}
