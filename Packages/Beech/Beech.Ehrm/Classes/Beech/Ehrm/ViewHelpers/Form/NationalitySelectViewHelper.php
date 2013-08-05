@@ -26,6 +26,13 @@ class NationalitySelectViewHelper extends \TYPO3\Fluid\ViewHelpers\Form\SelectVi
 	protected $value;
 
 	/**
+	 * Setting hard default value for country
+	 */
+	protected $defaultOption = 1; // Dutch'
+
+	// todo: this should be fetched from the yaml model later. Issue MM-443
+
+	/**
 	 * Initialize arguments.
 	 *
 	 * @return void
@@ -56,7 +63,8 @@ class NationalitySelectViewHelper extends \TYPO3\Fluid\ViewHelpers\Form\SelectVi
 			$element = new $formElementClass($this->arguments['property'], $type);
 			$element->initializeFormElement();
 			$properties = $element->getProperties();
-			$this->arguments['options'] = array_merge(array('' => ''), $properties['options']);
+			array_push($properties['options'], '');
+			$this->arguments['options'] = $properties['options'];
 		}
 		return parent::render();
 	}
@@ -74,6 +82,19 @@ class NationalitySelectViewHelper extends \TYPO3\Fluid\ViewHelpers\Form\SelectVi
 				$this->value = '';
 			}
 		}
-		return $this->value === $value;
+		return ($this->value === $value) ? TRUE : $this->isDefault($value);
+	}
+
+	/**
+	 * Render the option tags.
+	 *
+	 * @param mixed $value Value to check for
+	 * @return boolean TRUE if the value should be marked a s selected; FALSE otherwise
+	 */
+	protected function isDefault($value) {
+		if ($value === $this->defaultOption)
+			return TRUE;
+		else
+			return FALSE;
 	}
 }

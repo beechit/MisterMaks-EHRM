@@ -66,6 +66,7 @@
       label: 'Place of birth'
     'countryOfBirth':
       label: 'Country of birth'
+#     default: '' see todo in Packages/Beech/Beech.Ehrm/Classes/Beech/Ehrm/ViewHelpers/Form/CountrySelectViewHelper.php
     'dateOfDeath':
       label: 'Date of death'
       type: 'DateTime'
@@ -90,7 +91,7 @@
            type: 'Beech.Ehrm:Bsn'
     'nationality':
       label: 'Nationality'
-      default: 'NL'
+#     default: '' see todo in Packages/Beech/Beech.Ehrm/Classes/Beech/Ehrm/ViewHelpers/Form/NationalitySelectViewHelper.php
     'civilStatus':
       label: 'Civil status'
       options:

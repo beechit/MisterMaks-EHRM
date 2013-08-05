@@ -21,6 +21,11 @@ class OptionSelectViewHelper extends \TYPO3\Fluid\ViewHelpers\Form\SelectViewHel
 	protected $configurationManager;
 
 	/**
+	 * Store default option if its set in yaml
+	 */
+	protected $defaultOption;
+
+	/**
 	 * Initialize arguments.
 	 *
 	 * @return void
@@ -48,6 +53,7 @@ class OptionSelectViewHelper extends \TYPO3\Fluid\ViewHelpers\Form\SelectViewHel
 		if (isset($modelsConfigurations[$packageKey.'.Domain.Model.'.$model])) {
 			$modelConfiguration = $modelsConfigurations[$packageKey.'.Domain.Model.'.$model];
 			$propertyOptions = \TYPO3\Flow\Utility\Arrays::getValueByPath($modelConfiguration, 'properties.'.$property.'.options.values');
+			$this->defaultOption = \TYPO3\Flow\Utility\Arrays::getValueByPath($modelConfiguration, 'properties.'.$property.'.default');
 			if ($propertyOptions !== NULL) {
 				$propertyOptionsValues = array();
 				foreach($propertyOptions as $key => $value) {
@@ -58,6 +64,40 @@ class OptionSelectViewHelper extends \TYPO3\Fluid\ViewHelpers\Form\SelectViewHel
 				return parent::render();
 			}
 		}
+
 	}
 
+	/**
+	 * Render one option tag
+	 *
+	 * @param string $value value attribute of the option tag (will be escaped)
+	 * @param string $label content of the option tag (will be escaped)
+	 * @return string the rendered option tag
+	 */
+	protected function renderOptionTag($value, $label) {
+		$output = '<option value="' . htmlspecialchars($value) . '"';
+		if ($this->isSelected($value) || $this->isDefault($value)) {
+			$output .= ' selected="selected"';
+		}
+
+		if ($this->hasArgument('translate')) {
+			$label = $this->getTranslatedLabel($value, $label);
+		}
+		$output .= '>' . htmlspecialchars($label) . '</option>';
+
+		return $output;
+	}
+
+	/**
+	 * Render the option tags.
+	 *
+	 * @param mixed $value Value to check for
+	 * @return boolean TRUE if the value should be marked a s selected; FALSE otherwise
+	 */
+	protected function isDefault($value) {
+		if ($value === $this->defaultOption)
+			return TRUE;
+		else
+			return FALSE;
+	}
 }

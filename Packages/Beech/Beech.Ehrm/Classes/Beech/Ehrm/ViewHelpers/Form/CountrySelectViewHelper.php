@@ -26,6 +26,13 @@ class CountrySelectViewHelper extends \TYPO3\Fluid\ViewHelpers\Form\SelectViewHe
 	protected $value;
 
 	/**
+	 * set hard default value for country.
+	 */
+	protected $defaultOption = 'NL';
+
+	// todo: this should be fetched from the yaml model later. issue MM-443
+
+	/**
 	 * Initialize arguments.
 	 *
 	 * @return void
@@ -79,6 +86,19 @@ class CountrySelectViewHelper extends \TYPO3\Fluid\ViewHelpers\Form\SelectViewHe
 				$this->value = '';
 			}
 		}
-		return $this->value === $value;
+		return ($this->value === $value) ? TRUE : $this->isDefault($value);
+	}
+
+	/**
+	 * Render the option tags.
+	 *
+	 * @param mixed $value Value to check for
+	 * @return boolean TRUE if the value should be marked a s selected; FALSE otherwise
+	 */
+	protected function isDefault($value) {
+		if ($value === $this->defaultOption)
+			return TRUE;
+		else
+			return FALSE;
 	}
 }
