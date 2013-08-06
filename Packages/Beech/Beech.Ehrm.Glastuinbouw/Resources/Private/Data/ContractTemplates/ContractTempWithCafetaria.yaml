@@ -11,9 +11,10 @@ contractTemplate:
     - 'nl_NL'
   templateName: 'Temporary contract with cafetaria arrangement'
   contractTitle:
-    en: ''
-    nl: 'Arbeidsovereenkomst voor bepaalde tijd voor de regeling gelegenheidsarbeid '
-    pl: ''
+    text:
+      en: ''
+      nl: 'Arbeidsovereenkomst voor bepaalde tijd voor de regeling gelegenheidsarbeid '
+      pl: ''
   signingParties:
     text:
       en: ''

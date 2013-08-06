@@ -76,14 +76,20 @@ class ContractTemplate extends \Beech\Ehrm\Domain\Model\Document {
 	}
 
 	/**
-	 * Get contract title
-	 * Override parent method to display contractTitle in correct translation
+	 * Override parent method to display text in correct translation
 	 *
-	 * @return string
+	 * @param string $name
+	 * @return mixed
 	 */
-	public function getContractTitle() {
-		$contractTitle = parent::getContractTitle();
-		return $contractTitle[$this->getCurrentLanguage()];
+	public function __get($name) {
+		if (property_exists($this, $name)) {
+			return $this->$name;
+		} elseif (isset($this->data[$name]['text']) && isset($this->data[$name]['text'][$this->getCurrentLanguage()])) {
+			return $this->data[$name]['text'][$this->getCurrentLanguage()];
+		} elseif (isset($this->data[$name])) {
+			return $this->data[$name];
+		}
+		return NULL;
 	}
 
 	/**
@@ -93,7 +99,7 @@ class ContractTemplate extends \Beech\Ehrm\Domain\Model\Document {
 	 */
 	private function getCurrentLanguage() {
 		$language = substr($this->localizationService->getConfiguration()->getCurrentLocale(), 0, 2);
-		// TODO: get default language from settings
+			// TODO: get default language from settings
 		return ($language != '') ? $language : 'nl';
 	}
 }

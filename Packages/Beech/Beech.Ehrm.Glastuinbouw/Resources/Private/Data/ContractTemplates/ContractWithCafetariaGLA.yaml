@@ -11,9 +11,10 @@ contractTemplate:
     - 'nl_NL'
   templateName: 'Temporary contract with GLA and Cafetaria Arrangement'
   contractTitle:
-    en: ''
-    nl: 'Arbeidsovereenkomst voor bepaalde tijd voor de regeling gelegenheidsarbeid en Cafetaria Arangement'
-    pl: ''
+    text:
+      en: ''
+      nl: 'Arbeidsovereenkomst voor bepaalde tijd voor de regeling gelegenheidsarbeid en Cafetaria Arangement'
+      pl: ''
   signingParties:
     text:
       en: ''
