@@ -7,10 +7,8 @@
 		<div class="wizard-card" data-cardname="person">
 			<h3>Personal data</h3>
 			<f:form action="create" object="{person}" name="person">
+				<input type="hidden" name="isPersonCreated" value="false" data-validate="isPersonCreated"/>
 				<f:render partial="Forms/Person"/>
-				<div class="form-actions">
-					<f:form.submit value="{f:translate(id: 'action.create')}"/>
-				</div>
 			</f:form>
 		</div>
 		<div class="wizard-card" data-cardname="electronicAddress">
@@ -63,6 +61,21 @@
 		</div>
 	</div>
 	<script>
+		var wizard;
+
+		function isPersonCreated(el) {
+			var val = el.val();
+			ret = {
+				status: false
+			};
+			if (val === 'false') {
+				wizard.cards['person'].el.find('form').submit();
+			} else {
+				ret.status = true;
+			}
+			return ret;
+		}
+
 		$(function() {
 			$.fn.wizard.logging = false;
 			var options = {
@@ -70,7 +83,7 @@
 				increaseHeight: 200,
 				submitUrl: 'beech.party/person/list'
 			};
-			var wizard = $("#person-wizard").wizard(options);
+			wizard = $("#person-wizard").wizard(options);
 
 			wizard.el.find('.datepicker').on('click', function() {
 				$(this).datepicker({showOn:'focus', format: 'dd-mm-yyyy' })
