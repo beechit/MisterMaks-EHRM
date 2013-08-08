@@ -75,37 +75,43 @@
 			</div>
 		</fieldset>
 		<fieldset>
-			<legend>Main activities</legend>
-			<f:for each="{jobDescription.expectations.mainActivities}" as="mainActivity">
-				<div class="control-group">
-					<label class="control-label">-</label>
-					<div class="controls">
-						{mainActivity}
+			<legend>Expectations</legend>
+			<f:for each="{jobDescription.expectations}" as="expectation">
+				<h4>{expectation.resultArea}</h4>
+
+				<div class="row-fluid">
+					<div class="span6">
+						<strong>Kernactiviteiten</strong>
+					</div>
+					<div class="span6">
+						<strong>Resultaatcriteria</strong>
 					</div>
 				</div>
-			</f:for>
-		</fieldset>
-		<fieldset>
-			<legend>Result criteria</legend>
-			<f:for each="{jobDescription.expectations.resultCriteria}" as="resultCriteria">
-				<div class="control-group">
-					<label class="control-label">-</label>
-					<div class="controls">
-						{resultCriteria}
+				<div class="row-fluid">
+					<div class="span6">
+						<ul>
+							<f:for each="{expectation.mainActivities}" as="mainActivity">
+								<li>{mainActivity}</li>
+							</f:for>
+						</ul>
+					</div>
+					<div class="span6">
+						<ul>
+							<f:for each="{expectation.resultCriteria}" as="resultCriteria">
+								<li>{resultCriteria}</li>
+							</f:for>
+						</ul>
 					</div>
 				</div>
 			</f:for>
 		</fieldset>
 		<fieldset>
 			<legend>Burdening circumstances</legend>
-			<f:for each="{jobDescription.burdeningCircumstances.circumstance}" as="circumstance">
-				<div class="control-group">
-					<label class="control-label">-</label>
-					<div class="controls">
-						{circumstance}
-					</div>
-				</div>
-			</f:for>
+			<ul>
+				<f:for each="{jobDescription.burdeningCircumstances.circumstance}" as="circumstance">
+					<li>{circumstance}</li>
+				</f:for>
+			</ul>
 		</fieldset>
 		<div class="control-group">
 			<a class="btn btn-danger" href="/#/administration/jobdescriptions">

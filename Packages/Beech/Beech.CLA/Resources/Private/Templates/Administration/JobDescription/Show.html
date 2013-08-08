@@ -1,78 +1,105 @@
 <f:layout name="Ajax"/>{namespace ehrm=Beech\Ehrm\ViewHelpers}
 <f:section name="Body">
-	<h1><f:translate id="action.show">Show</f:translate></h1>
+	<h1>
+		<f:translate id="action.show">Show</f:translate>
+	</h1>
 
 	<ehrm:flashMessages/>
 
 	<dl class="dl-horizontal well">
-		<dt><f:translate>number</f:translate></dt>
+		<dt>
+			<f:translate>number</f:translate>
+		</dt>
 		<dd>{jobDescription.number}&nbsp;</dd>
 	</dl>
 	<dl class="dl-horizontal well">
-		<dt><f:translate>Job title</f:translate></dt>
+		<dt>
+			<f:translate>Job title</f:translate>
+		</dt>
 		<dd>{jobDescription.name}&nbsp;</dd>
 	</dl>
 	<dl class="dl-horizontal well">
-		<dt><f:translate>jobContext</f:translate></dt>
+		<dt>
+			<f:translate>jobContext</f:translate>
+		</dt>
 		<dd>{jobDescription.jobContext}&nbsp;</dd>
 	</dl>
 	<dl class="dl-horizontal well">
-		<dt><f:translate>reportsTo</f:translate></dt>
+		<dt>
+			<f:translate>reportsTo</f:translate>
+		</dt>
 		<dd>{jobDescription.reportsTo}&nbsp;</dd>
 	</dl>
 	<dl class="dl-horizontal well">
-		<dt><f:translate>manages</f:translate></dt>
+		<dt>
+			<f:translate>manages</f:translate>
+		</dt>
 		<dd>{jobDescription.manages}&nbsp;</dd>
 	</dl>
 	<dl class="dl-horizontal well">
-		<dt><f:translate>Jobgoal</f:translate></dt>
+		<dt>
+			<f:translate>Jobgoal</f:translate>
+		</dt>
 		<dd>{jobDescription.jobGoal}&nbsp;</dd>
 	</dl>
 	<dl class="dl-horizontal well">
-		<dt><f:translate>department</f:translate></dt>
+		<dt>
+			<f:translate>department</f:translate>
+		</dt>
 		<dd>{jobDescription.department}&nbsp;</dd>
 	</dl>
 	<dl class="dl-horizontal well">
-		<dt><f:translate>orbaScore</f:translate></dt>
+		<dt>
+			<f:translate>orbaScore</f:translate>
+		</dt>
 		<dd>{jobDescription.orbaScore}&nbsp;</dd>
 	</dl>
 	<dl class="dl-horizontal well">
-		<dt><f:translate>wageScaleGroup</f:translate></dt>
+		<dt>
+			<f:translate>wageScaleGroup</f:translate>
+		</dt>
 		<dd>{jobDescription.wageScaleGroup}&nbsp;</dd>
 	</dl>
-	<dl class="dl-horizontal well">
-		<legend>Main activities</legend>
-		<f:for each="{jobDescription.expectations.mainActivities}" as="mainActivity">
-			<div class="control-group">
-				<label class="control-label">-</label>
-				<div class="controls">
-					{mainActivity}
+	<div class="well">
+		<legend>Expectations</legend>
+		<f:for each="{jobDescription.expectations}" as="expectation">
+			<h4>{expectation.resultArea}</h4>
+
+			<div class="row-fluid">
+				<div class="span6">
+					<strong>Kernactiviteiten</strong>
+				</div>
+				<div class="span6">
+					<strong>Resultaatcriteria</strong>
+				</div>
+			</div>
+			<div class="row-fluid">
+				<div class="span6">
+					<ul>
+						<f:for each="{expectation.mainActivities}" as="mainActivity">
+							<li>{mainActivity}</li>
+						</f:for>
+					</ul>
+				</div>
+				<div class="span6">
+					<ul>
+						<f:for each="{expectation.resultCriteria}" as="resultCriteria">
+							<li>{resultCriteria}</li>
+						</f:for>
+					</ul>
 				</div>
 			</div>
 		</f:for>
-	</dl>
-	<dl class="dl-horizontal well">
-		<legend>Result criteria</legend>
-		<f:for each="{jobDescription.expectations.resultCriteria}" as="resultCriteria">
-			<div class="control-group">
-				<label class="control-label">-</label>
-				<div class="controls">
-					{resultCriteria}
-				</div>
-			</div>
-		</f:for>
-	</dl>
-	<dl class="dl-horizontal well">
+	</div>
+
+	<div class="well">
 		<legend>Burdening circumstances</legend>
-		<f:for each="{jobDescription.burdeningCircumstances.circumstance}" as="circumstance">
-			<div class="control-group">
-				<label class="control-label">-</label>
-				<div class="controls">
-					{circumstance}
-				</div>
-			</div>
-		</f:for>
-		</dl>
+		<ul>
+			<f:for each="{jobDescription.burdeningCircumstances.circumstance}" as="circumstance">
+				<li>{circumstance}</li>
+			</f:for>
+		</ul>
+	</div>
 	<div class="form-actions">
 		<a class="btn btn-primary" href="/#/administration/jobdescriptions">
 			<f:translate id="action.back">Back</f:translate>
