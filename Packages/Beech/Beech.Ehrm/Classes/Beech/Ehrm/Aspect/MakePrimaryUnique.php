@@ -45,6 +45,11 @@ class MakePrimaryUnique {
 							$object->setPrimary('');
 						}
 						$model->setPrimary('TRUE');
+					} else if (count($objectsWithType) === 0) {
+							// if new object is not selected as primary
+							// and there is no other primary objects of the same type
+							// then set as primary 
+						$model->setPrimary('TRUE');
 					}
 				}
 				if ($joinPoint->getMethodName() === 'update') {
