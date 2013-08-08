@@ -29,12 +29,6 @@
 		<div class="wizard-card" data-cardname="licence">
 			<h3>Licence</h3>
 		</div>
-		<div class="wizard-card" data-cardname="finish">
-			<h3>Finish</h3>
-			<f:form.radio name="nextStep" value="1" /><label>Enter another person</label><br/>
-			<f:form.radio name="nextStep" value="2" /><label>Generate contract</label><br/>
-			<f:form.radio name="nextStep" value="3" /><label>Close</label>
-		</div>
 		<div class="wizard-error">
 			<div class="alert alert-error">
 				<strong>There was a problem</strong> with your submission.
@@ -51,11 +45,13 @@
 
 		<div class="wizard-success">
 			<div class="alert alert-success">
-				<span class="create-server-name"></span>
+				Person <span class="create-person-name"></span>
 				was created <strong>successfully.</strong>
 			</div>
 
-			<a class="btn create-another-server">Create another server</a>
+			<a class="btn create-another-person">Create another person</a>
+			<span style="padding:0 10px">or</span>
+			<a class="btn generate-contract">Generate contract</a>
 			<span style="padding:0 10px">or</span>
 			<a class="btn im-done">Done</a>
 		</div>
@@ -74,6 +70,27 @@
 				ret.status = true;
 			}
 			return ret;
+		}
+
+		function applyAjaxForm(wizard) {
+			wizard.cards['person'].el.find('form').ajaxForm({
+				dataType: 'html',
+				success: function(result) {
+					App.ModuleHandler.loadContent(result, $(wizard.cards['person'].el))
+					wizard.entityId = $('input[name="person[__identity]"]').val();
+					$.each(wizard.cards, function(index, card) {
+						if (card.name != 'person' && card.name != 'finish') {
+							card.on('selected', function() {
+								App.ModuleHandler.loadUrl('beech.party/administration/' + card.name + '/list.html?party=' + wizard.entityId, $(this.el))
+							})
+						}
+					})
+					wizard.incrementCard()
+				},
+				error: function(result) {
+					$(wizard.cards['person'].el).find('form').prepend(result.responseText);
+				}
+			});
 		}
 
 		$(function() {
@@ -95,26 +112,36 @@
 			wizard.el.find('select').chosen({width: '350px'});
 			wizard.el.find('.countrySelect').countrySelect();
 			wizard.el.find('input').applyInputMasks();
-			wizard.cards['person'].el.find('form').ajaxForm({
-				dataType: 'html',
-				success: function(result) {
-					App.ModuleHandler.loadContent(result, $(wizard.cards['person'].el))
-					wizard.entityId = $('input[name="person[__identity]"]').val();
-					$.each(wizard.cards, function(index, card) {
-						if (card.name != 'person' && card.name != 'finish') {
-							card.on('selected', function() {
-								App.ModuleHandler.loadUrl('beech.party/administration/' + card.name + '/list.html?party=' + wizard.entityId, $(this.el))
-							})
-						}
-					})
-					wizard.incrementCard()
-				},
-				error: function(result) {
-					$(wizard.cards['person'].el).find('form').prepend(result.responseText);
-				}
-			});
+
+			applyAjaxForm(wizard);
+
 			wizard.show();
 
+			wizard.on("submit", function(wizard) {
+				setTimeout(function() {
+					wizard.trigger("success");
+					wizard.hideButtons();
+					wizard._submitting = false;
+					wizard.showSubmitCard("success");
+					wizard._updateProgressBar(0);
+				}, 2000);
+			})
+
+			wizard.el.find(".wizard-success .create-another-person").click(function() {
+				wizard.reset();
+				App.ModuleHandler.loadUrl('/beech.party/administration/person/form.html', $(wizard.cards['person'].el))
+				applyAjaxForm(wizard);
+			});
+
+			wizard.el.find(".wizard-success .generate-contract").click(function() {
+				wizard.reset().close();
+				window.location.href = '#/administration/contracts'
+			});
+
+			wizard.el.find(".wizard-success .im-done").click(function() {
+				wizard.reset().close();
+				window.location.href = '#/administration/persons'
+			});
 		});
 	</script>
 </f:section>

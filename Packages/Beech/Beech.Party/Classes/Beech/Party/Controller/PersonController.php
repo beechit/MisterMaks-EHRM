@@ -148,11 +148,19 @@ class PersonController extends \Beech\Ehrm\Controller\AbstractManagementControll
 	}
 
 	/**
-	 * Shows a form for creating a new account object
+	 * Shows a wizard for creating a new person object
 	 *
 	 * @return void
 	 */
 	public function newAction() {
+	}
+
+	/**
+	 * Shows a form only for creating a new person object
+	 *
+	 * @return void
+	 */
+	public function formAction() {
 	}
 
 	/**
