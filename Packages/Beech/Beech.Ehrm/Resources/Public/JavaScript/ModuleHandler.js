@@ -87,11 +87,13 @@
 				target = '.ehrm-module';
 			}
 			var that = this, $moduleContainer = $(target);
-
+			var $primary;
 			if (replaceWith) {
 				var $moduleParent = $($moduleContainer.parent());
 				$moduleContainer.replaceWith(html);
+
 				$moduleContainer = $moduleParent;
+				$primary = $($.parseHTML( html )).find('input[type=checkbox].primary:checked');
 			} else {
 				$moduleContainer.html(html);
 			}
@@ -139,7 +141,10 @@
 			$moduleContainer.find('select:not(".input-mini")').chosen();
 			$moduleContainer.find('input').applyInputMasks();
 			$moduleContainer.find('.countrySelect').countrySelect();
-			$moduleContainer.find('input[type=checkbox].primary').controlPrimary();
+			if ($primary != undefined) {
+				$primary.controlPrimary();
+			}
+
 			if ($moduleContainer.find('.modal-header.custom').length > 0) {
 				var $customHeader = $moduleContainer.find('.modal-header.custom')
 				$moduleContainer.parent().find('.modal-header:not(.custom)').replaceWith($customHeader);
