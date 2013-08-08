@@ -44,8 +44,8 @@ class MakePrimaryUnique {
 						foreach($objectsWithType as $object) {
 							$object->setPrimary('');
 						}
+						$model->setPrimary('TRUE');
 					}
-					$model->setPrimary('TRUE');
 				}
 				if ($joinPoint->getMethodName() === 'update') {
 					if ($isPrimary) {
