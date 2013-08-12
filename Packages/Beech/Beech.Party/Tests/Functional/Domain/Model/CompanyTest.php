@@ -56,7 +56,6 @@ class CompanyTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFunctional
 
 	/**
 	 * Simple test for persistence a company
-	 * TODO:, departments
 	 *
 	 * @dataProvider companiesDataProvider
 	 * @test
@@ -76,6 +75,73 @@ class CompanyTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFunctional
 		$this->persistenceManager->clearState();
 
 		$this->assertEquals(1, $this->companyRepository->countAll());
+	}
+
+	/**
+	 * Simple test for persistence a company and departments
+	 *
+	 * @dataProvider companiesDataProvider
+	 * @test
+	 */
+	public function companyWithDepartmentsPersistingAndRetrievingWorksCorrectly($companyName) {
+		$company = new Company();
+		$company->setName($companyName);
+		$this->companyRepository->add($company);
+
+		$departmentOne = new Company();
+		$departmentOne->setName($companyName . ' - department 1');
+		$this->companyRepository->add($departmentOne);
+
+		$departmentTwo = new Company();
+		$departmentTwo->setName($companyName . ' - department 2');
+		$this->companyRepository->add($departmentTwo);
+
+		$this->persistenceManager->persistAll();
+
+		$this->assertEquals(3, $this->companyRepository->countAll());
+		$this->assertCount(0, $company->getDepartments());
+
+			// now add as departments
+		$company->addDepartment($departmentOne);
+		$company->addDepartment($departmentTwo);
+		$this->companyRepository->update($company);
+
+		$this->persistenceManager->persistAll();
+		$this->persistenceManager->clearState();
+
+		$this->assertCount(2, $company->getDepartments());
+
+			// check departments have got the same parent
+		list($persistedDepartmentOne, $persistedDepartmentTwo) = $this->companyRepository->findAll();
+		$this->assertEquals($persistedDepartmentOne->getParentCompany(), $persistedDepartmentTwo->getParentCompany());
+	}
+
+	/**
+	 * Simple test for removing departments
+	 *
+	 * @dataProvider companiesDataProvider
+	 * @test
+	 */
+	public function removeDepartmentOfCompany($companyName) {
+		$company = new Company();
+		$company->setName($companyName);
+		$this->companyRepository->add($company);
+
+		$department = new Company();
+		$department->setName($companyName . ' - department');
+		$this->companyRepository->add($department);
+
+			// first add department
+		$company->addDepartment($department);
+		$this->persistenceManager->persistAll();
+		$this->assertCount(1, $company->getDepartments());
+
+			// and now remove department
+		$company->removeDepartment($department);
+		$this->companyRepository->update($company);
+		$this->persistenceManager->persistAll();
+		$this->assertCount(0, $company->getDepartments());
+
 	}
 
 }
