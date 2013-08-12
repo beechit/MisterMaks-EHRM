@@ -22,7 +22,6 @@ Beech:
         libraries:
           - 'Beech.Ehrm/Library/bootstrap/js/bootstrap.min.js'
           - 'Beech.Ehrm/Library/bootstrap-notify/js/bootstrap-notify.js'
-          - 'Beech.Ehrm/Library/jquery.gracefulWebSocket.js'
           - 'Beech.Ehrm/Library/jquery.form.js'
           - 'Beech.Ehrm/Library/jquery.cookie.js'
           - 'Beech.Ehrm/Library/jquery.jOrgChart.js'
