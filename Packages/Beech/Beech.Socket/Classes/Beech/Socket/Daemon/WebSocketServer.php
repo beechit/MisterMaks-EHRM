@@ -155,29 +155,37 @@ class WebSocketServer extends Daemonize {
 							$this->logger->log(sprintf('Failed to initialise Session for account "%s" (via %s)', $sessionIdentifier, $connection->getRemoteAddress()), LOG_DEBUG);
 						}
 
-						// @todo: check if session info is checked/matched with connected client (ip, useragent etc)
+							// @todo: check if session info is checked/matched with connected client (ip, useragent etc)
 						if($session !== NULL) {
 							$accountIdentifier = $session->getData('accountIdentifier');
 							$this->accountConnections[$accountIdentifier] = $connection;
+							$connection->setAccountIdentifier($accountIdentifier);
+							$connection->setSessionIdentifier($sessionIdentifier);
+							$connection->setPartyId($session->getData('partyId'));
+
 							$this->logger->log(sprintf('Registered connection for account "%s" (session %s via %s)', $accountIdentifier, $sessionIdentifier, $connection->getRemoteAddress()));
 
-							// send welcom message
-							// @todo: remove is only for development/debug purposes
+								// send welcom message
+								// @todo: remove is only for development/debug purposes
 							$notificationsArray = array('notifications' => array(array('message' => 'Welcome '.$accountIdentifier.'!')));
 							$connection->write(\Beech\Socket\Socket\WebSocketServer::encode(json_encode($notificationsArray)));
+
+								// shutdown session
+							$session->shutdownObject();
+
 						} else {
-							// no valid session close connection
+								// no valid session close connection
 							$this->socketServer->emit('endconnection', $connection);
 						}
 						break;
 
 					default:
-						// @todo: make list of available commands
-						// for now we accept all availeble listeners
+							// @todo: make list of available commands
+							// for now we accept all available listeners
 						if(count($this->socketServer->getListeners($command))) {
 							$this->socketServer->emit($command, $connection, $options);
 						} else {
-							$this->logger->log(sprintf('Unknown command "%s" from "%s"', $command, $connection->getRemoteAddress()));
+							$this->logger->log(sprintf('Unknown command "%s" from "%s"', $command, $connection->getRemoteAddress()), LOG_ERR);
 						}
 						break;
 				}
@@ -194,6 +202,28 @@ class WebSocketServer extends Daemonize {
 			});
 		});
 
+		/**
+		 * Remove notification
+		 */
+		$this->socketServer->on('notificationClosed', function(Connection $connection, $data) {
+			$notification = $this->notificationRepository->findByIdentifier($data);
+
+			if ($notification && $notification->getPerson() && $notification->getPerson()->getId() === $connection->getPartyId()) {
+				$this->notificationRepository->remove($notification);
+				$this->notificationRepository->flushDocumentManager();
+				$this->logger->log(sprintf('Removed Notification "%s" for "%s"', $data, $connection->getAccountIdentifier()), LOG_INFO);
+			} elseif(!$notification) {
+				$this->logger->log(sprintf('Notification "%s" not found. Probably already removed.', $data), LOG_ERR);
+			} else {
+				$this->logger->log(sprintf('Not allowwed to remove Notification "%s" by "%s"', $data, $connection->getAccountIdentifier()), LOG_ERR);
+			}
+		});
+
+		/**
+		 * Send signal to connected accounts
+		 *
+		 * Todo: add check that this can only by done trough commandline (so not from unknown web client)
+		 */
 		$this->socketServer->on('sendSignal', function(Connection $connection, $data) {
 			$this->debug('sendSignal '.print_r($data,1));
 			$this->logger->log(sprintf('%s sends signal %s', $connection->getRemoteAddress(), print_r($data,1)), LOG_INFO);
@@ -233,13 +263,16 @@ class WebSocketServer extends Daemonize {
 			return;
 		}
 
+		/** @var $connection \Beech\Socket\Socket\Connection */
 		foreach ($this->accountConnections as $accountIdentifier => $connection) {
 			$accountNotifications = array();
 
 			/** @var $notification \Beech\Ehrm\Domain\Model\Notification */
 			foreach ($notifications as $notification) {
-				if ($notification->getAccountIdentifier() === $accountIdentifier) {
-					$accountNotifications[] = $notification;
+				if ($notification->getPerson() && $notification->getPerson()->getId() === $connection->getPartyId()) {
+					if (!in_array($notification->getId(), $connection->getSendNotificationIds())) {
+						$accountNotifications[] = $notification;
+					}
 				}
 			}
 
@@ -252,13 +285,18 @@ class WebSocketServer extends Daemonize {
 				/** @var $notification \Beech\Ehrm\Domain\Model\Notification */
 				foreach ($accountNotifications as $notification) {
 					$notificationsArray['notifications'][] = array(
+						'id' => $notification->getId(),
 						'type' => $notification->getLevel(),
 						'label' => $notification->getLabel(),
 						'message' => $notification->getMessage(),
 						'sticky' => $notification->getSticky(),
 						'closeable' => $notification->getCloseable()
 					);
-					$this->notificationRepository->remove($notification);
+						// mark every non-sticky notification as done
+					if (!$notification->getSticky()) {
+						$this->notificationRepository->remove($notification);
+					}
+					$connection->addSendNotificationId($notification->getId());
 				}
 				$this->notificationRepository->flushDocumentManager();
 				$connection->write(\Beech\Socket\Socket\WebSocketServer::encode(json_encode($notificationsArray)));

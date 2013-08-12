@@ -30,7 +30,8 @@ class Notification {
 		if($task->getAssignedTo() instanceof \Beech\Party\Domain\Model\Person) {
 
 			$notificationRepository = new \Beech\Ehrm\Domain\Repository\NotificationRepository();
-			$accountIntentifiers = array();
+			$accountIdentifiers = array();
+			$notificationCreated = FALSE;
 
 			/** @var $account \TYPO3\Flow\Security\Account */
 			foreach($task->getAssignedTo()->getAccounts() as $account) {
@@ -39,21 +40,25 @@ class Notification {
 					continue;
 				}
 
-				$notification = new \Beech\Ehrm\Domain\Model\Notification();
-				$notification->setLevel(\Beech\Ehrm\Domain\Model\Notification::INFO);
-				$notification->setLabel('Task added');
-				$notification->setMessage('Task "'.$task->getDescription().'" created');
-				$notification->setAccountIdentifier($account->getAccountIdentifier());
+				if (!$notificationCreated) {
+					$notification = new \Beech\Ehrm\Domain\Model\Notification();
+					$notification->setLevel(\Beech\Ehrm\Domain\Model\Notification::INFO);
+					$notification->setLabel('Task added');
+					$notification->setSticky(TRUE);
+					$notification->setMessage('Task "'.$task->getDescription().'" created');
+					$notification->setPerson($task->getAssignedTo());
 
-				$notificationRepository->add($notification);
-				$notificationRepository->flushDocumentManager();
+					$notificationRepository->add($notification);
+					$notificationRepository->flushDocumentManager();
+					$notificationCreated = TRUE;
+				}
 
-				$accountIntentifiers[] = $account->getAccountIdentifier();
+				$accountIdentifiers[] = $account->getAccountIdentifier();
 			}
 
 			// send signals to connected users
-			if(count($accountIntentifiers)) {
-				SendCommands::sendSignal('BeechTaskDomainModelTask:'.$task->getId(), $accountIntentifiers);
+			if(count($accountIdentifiers)) {
+				SendCommands::sendSignal('BeechTaskDomainModelTask:'.$task->getId(), $accountIdentifiers);
 			}
 		}
 	}
@@ -73,7 +78,8 @@ class Notification {
 		if($task->getAssignedTo() instanceof \Beech\Party\Domain\Model\Person) {
 
 			$notificationRepository = new \Beech\Ehrm\Domain\Repository\NotificationRepository();
-			$accountIntentifiers = array();
+			$accountIdentifiers = array();
+			$notificationCreated = FALSE;
 
 			/** @var $account \TYPO3\Flow\Security\Account */
 			foreach($task->getAssignedTo()->getAccounts() as $account) {
@@ -82,21 +88,24 @@ class Notification {
 					continue;
 				}
 
-				$notification = new \Beech\Ehrm\Domain\Model\Notification();
-				$notification->setLevel(\Beech\Ehrm\Domain\Model\Notification::INFO);
-				$notification->setLabel('Task updated');
-				$notification->setMessage('Task "'.$task->getDescription().'" is updated');
-				$notification->setAccountIdentifier($account->getAccountIdentifier());
+				if (!$notificationCreated) {
+					$notification = new \Beech\Ehrm\Domain\Model\Notification();
+					$notification->setLevel(\Beech\Ehrm\Domain\Model\Notification::INFO);
+					$notification->setLabel('Task updated');
+					$notification->setMessage('Task "'.$task->getDescription().'" is updated');
+					$notification->setPerson($task->getAssignedTo());
 
-				$notificationRepository->add($notification);
-				$notificationRepository->flushDocumentManager();
+					$notificationRepository->add($notification);
+					$notificationRepository->flushDocumentManager();
+					$notificationCreated = TRUE;
+				}
 
-				$accountIntentifiers[] = $account->getAccountIdentifier();
+				$accountIdentifiers[] = $account->getAccountIdentifier();
 			}
 
 			// send signals to connected users
-			if(count($accountIntentifiers)) {
-				SendCommands::sendSignal('BeechTaskDomainModelTask:'.$task->getId(), $accountIntentifiers);
+			if(count($accountIdentifiers)) {
+				SendCommands::sendSignal('BeechTaskDomainModelTask:'.$task->getId(), $accountIdentifiers);
 			}
 		}
 	}

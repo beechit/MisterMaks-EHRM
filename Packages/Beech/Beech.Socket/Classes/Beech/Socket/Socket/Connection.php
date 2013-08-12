@@ -18,6 +18,27 @@ use Beech\Socket\Stream\Stream;
 class Connection extends Stream implements ConnectionInterface {
 
 	/**
+	 * @var string
+	 */
+	protected $accountIdentifier;
+
+	/**
+	 * @var string
+	 */
+	protected $sessionIdentifier;
+
+	/**
+	 * Id of connected party
+	 * @var string
+	 */
+	protected $partyId;
+
+	/**
+	 * @var array
+	 */
+	protected $sendNotificationIds = array();
+
+	/**
 	 * Retrieve data from the given socket stream
 	 *
 	 * @param resource $stream A readable socket stream
@@ -52,6 +73,87 @@ class Connection extends Stream implements ConnectionInterface {
 	public function getRemoteAddress() {
 		$address = stream_socket_get_name($this->stream, TRUE);
 		return trim(substr($address, 0, strrpos($address, ':')), '[]');
+	}
+
+	/**
+	 * Set accountIdentifier
+	 *
+	 * @param string $accountIdentifier
+	 */
+	public function setAccountIdentifier($accountIdentifier) {
+		$this->accountIdentifier = $accountIdentifier;
+	}
+
+	/**
+	 * Get accountIdentifier
+	 *
+	 * @return string
+	 */
+	public function getAccountIdentifier() {
+		return $this->accountIdentifier;
+	}
+
+	/**
+	 * Set sessionIdentifier
+	 *
+	 * @param string $sessionIdentifier
+	 */
+	public function setSessionIdentifier($sessionIdentifier) {
+		$this->sessionIdentifier = $sessionIdentifier;
+	}
+
+	/**
+	 * Get sessionIdentifier
+	 *
+	 * @return string
+	 */
+	public function getSessionIdentifier() {
+		return $this->sessionIdentifier;
+	}
+
+	/**
+	 * Set partyId
+	 *
+	 * @param string $partyId
+	 */
+	public function setPartyId($partyId) {
+		$this->partyId = $partyId;
+	}
+
+	/**
+	 * Get partyId
+	 *
+	 * @return string
+	 */
+	public function getPartyId() {
+		return $this->partyId;
+	}
+
+	/**
+	 * Set sendNotificationIds
+	 *
+	 * @param array $sendNotificationIds
+	 */
+	public function setSendNotificationIds($sendNotificationIds) {
+		$this->sendNotificationIds = $sendNotificationIds;
+	}
+
+	/**
+	 * Get sendNotificationIds
+	 *
+	 * @return array
+	 */
+	public function getSendNotificationIds() {
+		return $this->sendNotificationIds;
+	}
+
+	/**
+	 * @param string $notificationId
+	 */
+	public function addSendNotificationId($notificationId) {
+		if (!in_array($notificationId, $this->sendNotificationIds)) {
+			$this->sendNotificationIds[] = $notificationId;
+		}
 	}
 }
 

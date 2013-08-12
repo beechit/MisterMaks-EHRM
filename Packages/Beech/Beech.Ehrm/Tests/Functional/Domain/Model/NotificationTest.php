@@ -57,13 +57,18 @@ class NotificationTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFunct
 	 * @test
 	 */
 	public function notificationPersistenceAndRetrievalWorksCorrectly($label, $closeable, $sticky) {
-		$company = new \Beech\Party\Domain\Model\Company();
-		$company->setName('Foo');
-		$this->companyRepository->add($company);
 
+		$person = new \Beech\Party\Domain\Model\Person();
 		$notification = new \Beech\Ehrm\Domain\Model\Notification();
+
+		$mockPersistenceManager = $this->getMock('TYPO3\Flow\Persistence\Doctrine\PersistenceManager', array(), array(), '', FALSE);
+		$mockPersistenceManager->expects($this->any())->method('getIdentifierByObject')->will($this->returnValue('abc123'));
+		$mockPersistenceManager->expects($this->any())->method('getObjectByIdentifier')->will($this->returnValue($person));
+
+		$this->inject($notification, 'persistenceManager', $mockPersistenceManager);
+
 		$notification->setLabel($label);
-		$notification->setParty($company);
+		$notification->setPerson($person);
 		$notification->setCloseable($closeable);
 		$notification->setSticky($sticky);
 
@@ -74,10 +79,10 @@ class NotificationTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFunct
 
 		$notifications = $this->notificationRepository->findAll();
 
-		$this->assertEquals('Foo', $notifications[0]->getParty()->getName());
 		$this->assertEquals($label, $notifications[0]->getLabel());
 		$this->assertEquals($closeable, $notifications[0]->getCloseable());
 		$this->assertEquals($sticky, $notifications[0]->getSticky());
+		$this->assertEquals($person, $notifications[0]->getPerson());
 	}
 
 }

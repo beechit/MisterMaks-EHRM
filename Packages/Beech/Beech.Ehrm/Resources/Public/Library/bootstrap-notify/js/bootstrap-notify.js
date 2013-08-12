@@ -22,7 +22,7 @@
     // Element collection
     this.$element = $(element);
     this.$note    = $('<div class="alert"></div>');
-    this.options  = $.extend(true, $.fn.notify.defaults, options, this.$element.data());
+    this.options  = $.extend(true, {}, $.fn.notify.defaults, options);
 
     // Setup from options
     if(this.options.transition)
@@ -64,12 +64,14 @@
 
     this.$element.append(this.$note);
     this.$note.alert();
+    return this;
   };
 
   Notification.prototype.hide = function () {
     if(this.options.fadeOut.enabled)
       this.$note.delay(this.options.fadeOut.delay || 3000).fadeOut('slow', $.proxy(onClose, this));
     else onClose.call(this);
+    return this;
   };
 
   $.fn.notify = function (options) {

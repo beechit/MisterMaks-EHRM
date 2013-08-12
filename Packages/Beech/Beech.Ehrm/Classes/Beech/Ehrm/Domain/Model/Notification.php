@@ -52,11 +52,13 @@ class Notification extends \Beech\Ehrm\Domain\Model\Document {
 	protected $message;
 
 	/**
-	 * The account identifier
-	 * @var string
-	 * @ODM\Field(type="string")
+	 * Person
+	 *
+	 * @var \Beech\Party\Domain\Model\Person
+	 * @ODM\Field(type="mixed")
+	 * @ODM\Index
 	 */
-	protected $accountIdentifier;
+	protected $person;
 
 	/**
 	 * The closeable
@@ -136,22 +138,25 @@ class Notification extends \Beech\Ehrm\Domain\Model\Document {
 	}
 
 	/**
-	 * Get the Notification's account identifier
+	 * Sets the Person linked to this notification
 	 *
-	 * @return string
+	 * @param \Beech\Party\Domain\Model\Person $person
+	 * @return void
 	 */
-	public function getAccountIdentifier() {
-		return $this->accountIdentifier;
+	public function setPerson(\Beech\Party\Domain\Model\Person $person) {
+		$this->person = $this->persistenceManager->getIdentifierByObject($person, 'Beech\Party\Domain\Model\Person');
 	}
 
 	/**
-	 * Sets this Notification's account identifier
+	 * Returns the Person linked to this notification
 	 *
-	 * @param string $accountIdentifier The account identifier
-	 * @return void
+	 * @return \Beech\Party\Domain\Model\Person
 	 */
-	public function setAccountIdentifier($accountIdentifier) {
-		$this->accountIdentifier = $accountIdentifier;
+	public function getPerson() {
+		if (isset($this->person)) {
+			return $this->persistenceManager->getObjectByIdentifier($this->person, 'Beech\Party\Domain\Model\Person');
+		}
+		return NULL;
 	}
 
 	/**

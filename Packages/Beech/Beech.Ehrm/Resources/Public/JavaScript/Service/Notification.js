@@ -50,7 +50,7 @@
 			$(element).on(event, action);
 		},
 
-		show: function(title, bodyMessage, type, timeout, removable, callBack, actions) {
+		show: function(title, bodyMessage, type, timeout, removable, callBack, actions, id) {
 			var notification,
 				fadeOut = { enabled: false},
 				body = bodyMessage;
@@ -80,7 +80,8 @@
 				closable: removable,
 				transition: 'fade',
 				fadeOut: fadeOut,
-				onClosed: callBack
+				onClosed: callBack,
+				notificationId: id
 			}).show();
 
 			// TODO: reimplement actions
