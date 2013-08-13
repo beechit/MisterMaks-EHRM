@@ -43,7 +43,7 @@ class AddressController extends \Beech\Ehrm\Controller\AbstractManagementControl
 
 	/**
 	 * @param \Beech\Party\Domain\Model\Address $address A address to add
-	 *
+	 * @Flow\Validate(argumentName="address", type="Beech.Party:Address")
 	 * @return void
 	 */
 	public function addAction(\Beech\Party\Domain\Model\Address $address) {
@@ -56,7 +56,7 @@ class AddressController extends \Beech\Ehrm\Controller\AbstractManagementControl
 
 	/**
 	 * @param \Beech\Party\Domain\Model\Address $address A address to update
-	 *
+	 * @Flow\Validate(argumentName="address", type="Beech.Party:Address")
 	 * @return void
 	 */
 	public function updateAction(\Beech\Party\Domain\Model\Address $address) {

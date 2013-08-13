@@ -71,7 +71,7 @@
             },
             val: $.fn.val, //store the original jquery val function
             escapeRegex: function (str) {
-                var specials = ['/', '.', '*', '+', '?', '|', '(', ')', '[', ']', '{', '}', '\\'];
+                var specials = ['/', '.', '*', '+', '?', '|', '(', ')', '[', ']', '{', '}', '\\', '-'];
                 return str.replace(new RegExp('(\\' + specials.join('|\\') + ')', 'gim'), '\\$1');
             }
         };
@@ -153,7 +153,7 @@
                             return masksets[activeMasksetIndex]['_buffer'].join('');
                         }
                         else return "";
-                    case "hasMaskedValue": //check wheter the returned value is masked or not; currently only works reliable when using jquery.val fn to retrieve the value 
+                    case "hasMaskedValue": //check wheter the returned value is masked or not; currently only works reliable when using jquery.val fn to retrieve the value
                         return this.data('inputmask') ? !this.data('inputmask')['opts'].autoUnmask : false;
                     case "isComplete":
                         masksets = this.data('inputmask')['masksets'];
@@ -475,7 +475,7 @@
                                     (isRTL ? (opts.greedy ? activeMaskset['lastValidPosition'] > newValidPosition : newValidPosition == getActiveBuffer().length - 1)
                                         : activeMaskset['lastValidPosition'] < newValidPosition))
                                     activeMaskset['lastValidPosition'] = newValidPosition; //set new position from isValid
-                            } else activeMaskset['lastValidPosition'] = isRTL ? pos == getMaskLength() ? undefined : seekNext(pos) : pos == 0 ? undefined : seekPrevious(pos); //autocorrect validposition from backspace etc  	
+                            } else activeMaskset['lastValidPosition'] = isRTL ? pos == getMaskLength() ? undefined : seekNext(pos) : pos == 0 ? undefined : seekPrevious(pos); //autocorrect validposition from backspace etc
                             results.push({ "activeMasksetIndex": index, "result": result });
                         }
                     }
@@ -761,7 +761,7 @@
 
                 //handle maxlength attribute
                 var maxLength = $input.prop('maxLength');
-                if (getMaskLength() > maxLength && maxLength > -1) { //FF sets no defined max length to -1 
+                if (getMaskLength() > maxLength && maxLength > -1) { //FF sets no defined max length to -1
                     if (maxLength < getActiveBufferTemplate().length) getActiveBufferTemplate().length = maxLength;
                     if (getActiveMaskSet()['greedy'] == false) {
                         getActiveMaskSet()['repeat'] = Math.round(maxLength / getActiveBufferTemplate().length);
@@ -1193,7 +1193,7 @@
                                         getActiveMaskSet()["lastValidPosition"] = undefined;
                                         getActiveMaskSet()["writeOutBuffer"] = true;
                                         getActiveMaskSet()["p"] = firstMaskPos;
-                                        //init first 
+                                        //init first
                                         activeMasksetIndex = 0;
                                         getActiveMaskSet()["buffer"] = getActiveBufferTemplate().slice();
                                         getActiveMaskSet()["p"] = isRTL ? seekPrevious(getMaskLength() + 1) : seekNext(-1);

@@ -26,6 +26,7 @@
 				// on load:
 				$this.on('change', function() {
 					$(this).parent().find('.country i').setFlagPosition($(this).val());
+					$(this).parents('form').find('.postal').applyInputMasks({country: $(this).val()})
 				});
 				$this.change();
 			});

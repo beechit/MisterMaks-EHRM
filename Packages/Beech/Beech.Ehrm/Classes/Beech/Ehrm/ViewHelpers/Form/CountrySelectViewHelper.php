@@ -85,8 +85,12 @@ class CountrySelectViewHelper extends \TYPO3\Fluid\ViewHelpers\Form\SelectViewHe
 			if($this->value === NULL) {
 				$this->value = '';
 			}
+		};
+		if ($this->value === '') {
+			return $this->isDefault($value);
+		} else {
+			return ($this->value === $value);
 		}
-		return ($this->value === $value) ? TRUE : $this->isDefault($value);
 	}
 
 	/**

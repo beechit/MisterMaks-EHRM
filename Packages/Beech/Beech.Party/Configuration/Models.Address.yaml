@@ -64,11 +64,6 @@
             maximum: 10
     'postal':
       label: 'Postal code'
-      validation:
-        -
-          type: 'Beech.Ehrm:PostalCode'
-#        -
-#          type: 'NotEmpty'
     'residence':
       label: 'Residence'
       validation:

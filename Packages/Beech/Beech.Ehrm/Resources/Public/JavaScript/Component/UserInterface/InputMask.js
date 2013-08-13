@@ -2,7 +2,7 @@
 	'use strict';
 
 	$.fn.extend({
-		applyInputMasks: function() {
+		applyInputMasks: function(options) {
 			return this.each(function(input_field) {
 				var $this;
 				$this = $(this);
@@ -11,7 +11,21 @@
 				} else if ($this.hasClass('phone')) {
 					$this.inputmask("999 9999999", { "placeholder": "0__ ________" });
 				} else if ($this.hasClass('postal')) {
-					$this.inputmask("9999 AA");
+					var inputMaskOptions = {};
+					if (options != undefined && options.country != undefined) {
+						// TODO: Read this from config file ? Probably there will be more masks...
+						switch (options.country) {
+							case 'NL':
+								inputMaskOptions = {mask: "9999 AA", placeholder: "_"};
+								break;
+							case 'PL':
+								inputMaskOptions = {mask: "99-999", placeholder: "_"};
+								break;
+							default:
+								inputMaskOptions = 'remove';
+						}
+						$this.inputmask(inputMaskOptions);
+					}
 				} else if ($this.hasClass('bsn')) {
 					$this.inputmask("9999.99.999");
 				} else if ($this.hasClass('capitalize')) {
