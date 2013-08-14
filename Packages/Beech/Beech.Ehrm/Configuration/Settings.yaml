@@ -107,7 +107,7 @@ Beech:
     moduleRoutes:
       - ['Beech.Party', NULL, 'Person']
       - ['Beech.Party', 'Administration', 'Person']
-      - ['Beech.Party', NULL, 'Company']
+      - ['Beech.Party', NULL, 'Company', {'index': 'Index', 'list': null}]
       - ['Beech.Party', 'Administration', 'Company']
       - ['Beech.Party', 'Administration', 'Account']
       - ['Beech.Document', NULL, 'Document']

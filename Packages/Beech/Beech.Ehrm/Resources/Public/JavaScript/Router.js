@@ -100,7 +100,7 @@
 			});
 			// Beech.Party/Company
 			this.resource('BeechPartyCompany', { path: 'companies' }, function() {
-				this.route('index', { path: '/list' });
+				this.route('index', { path: '/index' });
 			});
 			this.resource('BeechPartyCompany', { path: 'company' }, function() {
 				this.route('new', { path: '/new' });

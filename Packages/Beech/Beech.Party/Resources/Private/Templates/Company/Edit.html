@@ -8,7 +8,7 @@
 	<div class="well">
 		<h3>Company information</h3>
 		<f:form action="update" object="{company}" name="company" class="form-horizontal">
-			<f:render partial="Forms/Company" />
+			<f:render partial="Forms/Company" arguments="{persons: persons}"/>
 			<div class="form-actions">
 				<f:form.submit value="{f:translate(id: 'action.save')}" class="btn"/>
 			</div>
