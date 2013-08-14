@@ -146,7 +146,15 @@ class CompanyController extends \Beech\Ehrm\Controller\AbstractManagementControl
 	public function createAction(Company $company) {
 		$this->repository->add($company);
 		$this->addFlashMessage('Company is added');
-		$this->emberRedirect('#/company');
+		if ($this->request->hasArgument('noEmberRedirect')) {
+			$options = array('company' => $company);
+			if ($this->request->hasArgument('withDetails')) {
+				$options['withDetails'] = $this->request->getArgument('withDetails');
+			}
+			$this->redirect('edit', NULL, NULL, $options);
+		} else {
+			$this->emberRedirect('#/company');
+		}
 	}
 
 	/**
