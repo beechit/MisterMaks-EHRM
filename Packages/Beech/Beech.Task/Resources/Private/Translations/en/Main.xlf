@@ -50,6 +50,18 @@
 			<trans-unit id="action.cancel">
 				<source>Cancel</source>
 			</trans-unit>
+			<trans-unit id="low">
+				<source>Low</source>
+			</trans-unit>
+			<trans-unit id="high">
+				<source>High</source>
+			</trans-unit>
+			<trans-unit id="normal">
+				<source>Normal</source>
+			</trans-unit>
+			<trans-unit id="immediate">
+				<source>Immediate</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

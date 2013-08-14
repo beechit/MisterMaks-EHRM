@@ -154,6 +154,86 @@
 				<source>Add company contact</source>
 				<target>Dodaj kontakt</target>
 			</trans-unit>
+			<trans-unit id="general">
+				<source>General</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="settings">
+				<source>Settings</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="models">
+				<source>Models</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="persons">
+				<source>Person</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="companies">
+				<source>Companies</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="jobDescriptions">
+				<source>Job descriptions</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="contractArticles">
+				<source>Contract articles</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="contractManagement">
+				<source>Contract management</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="system">
+				<source>System</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="wizards">
+				<source>Wizards</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="userManagement">
+				<source>User management</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="employees">
+				<source>Employees</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="employee">
+				<source>Employee</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="reports">
+				<source>Reports</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company">
+				<source>company</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="documents">
+				<source>Documents</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="administration">
+				<source>Administration</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="logOut">
+				<source>Logout</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="hello">
+				<source>Hello</source>
+				<target>cześć</target>
+			</trans-unit>
+			<trans-unit id="dashboard">
+				<source>Dashboard</source>
+				<target>centrala</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

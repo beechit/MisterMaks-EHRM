@@ -1,5 +1,5 @@
 {namespace mm=Beech\Ehrm\ViewHelpers}
-<h3>Tasks {{#linkTo "BeechTaskTask" class="pull-right" rel="tooltip" data-placement="left" title="Go to all tasks"}}<i class="icon-tasks"></i>{{/linkTo}}</h3>
+<h3><f:translate id="tasks" package="Beech.Task">Tasks</f:translate>{{#linkTo "BeechTaskTask" class="pull-right" rel="tooltip" data-placement="left" title="Go to all tasks"}}<i class="icon-tasks"></i>{{/linkTo}}</h3>
 
 <div class="accordion boxes" id="tasklist">
 {{#if isLoaded}}
@@ -8,7 +8,7 @@
 			<div class="accordion-group">
 				<div class="accordion-heading">
 					<a class="accordion-toggle" data-toggle="collapse" data-parent="#tasklist" href="#taskwidget-priority-3">
-						Immediate
+						<f:translate id="immediate" package="Beech.Task">Immediate</f:translate>
 					</a>
 					<span class="badge badge-important">{{openTasksImmediate.length}}</span>
 				</div>
@@ -27,7 +27,7 @@
 		<div class="accordion-group">
 			<div class="accordion-heading">
 				<a class="accordion-toggle" data-toggle="collapse" data-parent="#tasklist" href="#taskwidget-priority-2">
-					High
+					<f:translate id="high" package="Beech.Task">High</f:translate>
 				</a>
 				<span class="badge badge-important">{{openTasksHigh.length}}</span>
 			</div>
@@ -46,7 +46,7 @@
 		<div class="accordion-group">
 			<div class="accordion-heading">
 				<a class="accordion-toggle" data-toggle="collapse" data-parent="#tasklist" href="#taskwidget-priority-1">
-					Normal
+					<f:translate id="normal" package="Beech.Task">Normal</f:translate>
 				</a>
 				<span class="badge badge-important">{{openTasksNormal.length}}</span>
 			</div>
@@ -65,7 +65,7 @@
 		<div class="accordion-group">
 			<div class="accordion-heading">
 				<a class="accordion-toggle" data-toggle="collapse" data-parent="#tasklist" href="#taskwidget-priority-0">
-					Low
+					<f:translate id="low" package="Beech.Task">Low</f:translate>
 				</a>
 				<span class="badge badge-important">{{openTasksLow.length}}</span>
 			</div>
@@ -81,7 +81,7 @@
 		</div>
 		{{/if}}
 	{{else}}
-		<p class="no-open-tasks"><em>No tasks</em></p>
+		<p class="no-open-tasks"><em><f:translate id="noTasks" package="Beech.Task">No tasks</f:translate></em></p>
 	{{/if}}
 {{else}}
 	<p><i class="icon-spin icon-spinner muted"></i></p>

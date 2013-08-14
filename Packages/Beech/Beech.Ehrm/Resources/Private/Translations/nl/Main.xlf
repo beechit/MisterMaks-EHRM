@@ -154,6 +154,86 @@
 				<source>Add company contact</source>
 				<target>Voeg een contactpersoon toe</target>
 			</trans-unit>
+			<trans-unit id="general">
+				<source>General</source>
+				<target>Algemeen</target>
+			</trans-unit>
+			<trans-unit id="settings">
+				<source>Settings</source>
+				<target>Instellingen</target>
+			</trans-unit>
+			<trans-unit id="models">
+				<source>Models</source>
+				<target>Modellen</target>
+			</trans-unit>
+			<trans-unit id="persons">
+				<source>Person</source>
+				<target>Persoon</target>
+			</trans-unit>
+			<trans-unit id="companies">
+				<source>Companies</source>
+				<target>Bedrijf</target>
+			</trans-unit>
+			<trans-unit id="jobDescriptions">
+				<source>Job descriptions</source>
+				<target>Functiebeschrijvingen</target>
+			</trans-unit>
+			<trans-unit id="contractArticle">
+				<source>contractArticle</source>
+				<target>Contractartikelen</target>
+			</trans-unit>
+			<trans-unit id="contractManagement">
+				<source>Contract management</source>
+				<target>Contract beheer</target>
+			</trans-unit>
+			<trans-unit id="system">
+				<source>System</source>
+				<target>Systeem</target>
+			</trans-unit>
+			<trans-unit id="wizards">
+				<source>Wizards</source>
+				<target>Wizard</target>
+			</trans-unit>
+			<trans-unit id="userManagement">
+				<source>User management</source>
+				<target>Gebruikersbeheer</target>
+			</trans-unit>
+			<trans-unit id="employees">
+				<source>Employees</source>
+				<target>Werknemers</target>
+			</trans-unit>
+			<trans-unit id="employee">
+				<source>Employee</source>
+				<target>Werknemer</target>
+			</trans-unit>
+			<trans-unit id="reports">
+				<source>Reports</source>
+				<target>Overzichten</target>
+			</trans-unit>
+			<trans-unit id="company">
+				<source>company</source>
+				<target>Bedrijf</target>
+			</trans-unit>
+			<trans-unit id="documents">
+				<source>Documents</source>
+				<target>documenten</target>
+			</trans-unit>
+			<trans-unit id="administration">
+				<source>Administration</source>
+				<target>Beheer</target>
+			</trans-unit>
+			<trans-unit id="logOut">
+				<source>Logout</source>
+				<target>Uitloggen</target>
+			</trans-unit>
+			<trans-unit id="hello">
+				<source>Hello</source>
+				<target>Hallo</target>
+			</trans-unit>
+			<trans-unit id="dashboard">
+				<source>Dashboard</source>
+				<target>Dashboard</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

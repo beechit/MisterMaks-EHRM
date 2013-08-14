@@ -4,11 +4,11 @@
 		<body>
 			<trans-unit id="tasks">
 				<source>Tasks</source>
-				<source>Taken</source>
+				<target>Taken</target>
 			</trans-unit>
 			<trans-unit id="task">
 				<source>Task</source>
-				<source>Taak</source>
+				<target>Taak</target>
 			</trans-unit>
 			<trans-unit id="task.status">
 				<source>Status</source>
