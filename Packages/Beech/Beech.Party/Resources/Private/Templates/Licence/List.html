@@ -5,10 +5,17 @@
 	<h3>Licence</h3>
 	<f:for each="{licences}" as="licence">
 		<div id="licence-{licence.id}">
-			<f:render partial="Forms/Licence" arguments="{party: party, licence: licence, action: 'update'}"/>
+			<f:render partial="Forms/Licence" arguments="{party: party, licence: licence, action: 'update', collapsed: true}"/>
 		</div>
 	</f:for>
 	<div id="licence-add" class="clearfix">
-		<f:render partial="Forms/Licence" arguments="{party: party, action: 'add', suffix: 'licence'}"/>
+		<f:if condition="{licences}">
+			<f:then>
+				<f:render partial="Forms/Licence" arguments="{party: party, action: 'add', suffix: 'licence', collapsed: true}"/>
+			</f:then>
+			<f:else>
+				<f:render partial="Forms/Licence" arguments="{party: party, action: 'add', suffix: 'licence'}"/>
+			</f:else>
+		</f:if>
 	</div>
 </div>

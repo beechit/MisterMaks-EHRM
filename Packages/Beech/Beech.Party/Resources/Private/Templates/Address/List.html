@@ -1,13 +1,20 @@
 <div class="modal-header custom">
-	<h3><f:render partial="Views/Show/ProfilePhoto" arguments="{photo: party.profilePhoto, width: 50}"/>{party.name.fullName} / Addresses</h3>
+	<h3><f:render partial="Views/Show/ProfilePhoto" arguments="{photo: party.profilePhoto, width: 50}"/>{party.name} / Addresses</h3>
 </div>
 <div class="clearfix well">
 	<f:for each="{addresses}" as="address">
 		<div id="address-{address.id}">
-			<f:render partial="Forms/Address" arguments="{party: party, address: address, action: 'update'}"/>
+			<f:render partial="Forms/Address" arguments="{party: party, address: address, action: 'update', collapsed: true}"/>
 		</div>
 	</f:for>
 	<div id="address-add" class="clearfix">
-		<f:render partial="Forms/Address" arguments="{party: party, action: 'add', suffix: 'address'}"/>
+		<f:if condition="{addresses}">
+			<f:then>
+				<f:render partial="Forms/Address" arguments="{party: party, action: 'add', suffix: 'address', collapsed: true}"/>
+			</f:then>
+			<f:else>
+				<f:render partial="Forms/Address" arguments="{party: party, action: 'add', suffix: 'address', collapsed: false}"/>
+			</f:else>
+		</f:if>
 	</div>
 </div>
