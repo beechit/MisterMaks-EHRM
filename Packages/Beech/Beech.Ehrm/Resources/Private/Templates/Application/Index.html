@@ -3,4 +3,11 @@
 	<emberjs:handlebars paths="{0: 'resource://Beech.Ehrm/Private/Templates/Handlebar'}" />
 	<emberjs:handlebars paths="{0: 'resource://Beech.Task/Private/Templates/Handlebar'}" templateNamePrefix="beech_task" />
 	<f:render partial="Modals" />
+	<f:if condition="{emberRedirect}">
+		<script type="text/javascript">
+			$(function(){
+				window.location.href = "#{emberRedirect}";
+			})
+		</script>
+	</f:if>
 </f:section>

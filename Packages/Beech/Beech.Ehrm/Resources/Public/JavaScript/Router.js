@@ -5,7 +5,9 @@
 
 			// Administration
 		this.resource('administration', function() {
-			this.route('applicationSettings', { path: 'settings' });
+			this.resource('BeechEhrmAdministrationApplicationSettings', { path: 'settings' }, function() {
+				this.route('setupWizard', { path: '/setupwizard' });
+			});
 
 			this.route('jobDescriptionModule', { path: 'jobdescriptions' });
 			this.route('jobDescriptionModule.new', { path: 'jobdescription/new' });
@@ -70,6 +72,7 @@
 				this.route('show', { path: '/show/:company' });
 				this.route('edit', { path: '/edit/:company' });
 				this.route('delete', { path: '/delete/:company' });
+				this.route('setupWizard', { path: '/setupWizard' });
 			});
 		});
 
@@ -150,13 +153,10 @@
 	// Administration routes
 	App.AdministrationIndexRoute = Ember.Route.extend({
 		redirect: function() {
-			this.transitionTo('administration.applicationSettings');
+			this.transitionTo('BeechEhrmAdministrationApplicationSettings');
 		}
 	});
 
-	App.AdministrationApplicationSettingsView = Ember.View.extend(App.AjaxModuleViewMixin, {
-		url: MM.url.module.applicationSettings
-	});
 	App.AdministrationWizardManagementModuleView = Ember.View.extend(App.AjaxModuleViewMixin, {
 		url: MM.url.module.wizardManagementModule
 	});

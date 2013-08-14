@@ -47,6 +47,12 @@ class ApplicationSettingsController extends \Beech\Ehrm\Controller\AbstractContr
 	protected $preferenceUtility;
 
 	/**
+	 * @var \Beech\Party\Domain\Repository\CompanyRepository
+	 * @Flow\Inject
+	 */
+	protected $companyRepository;
+
+	/**
 	 * Index action
 	 *
 	 * @return void
@@ -78,6 +84,39 @@ class ApplicationSettingsController extends \Beech\Ehrm\Controller\AbstractContr
 		$this->redirect('index');
 	}
 
+	/**
+	 * Environment wizard
+	 */
+	public function setupWizardAction() {
+
+		$company = $this->companyRepository->findByIdentifier($this->preferenceUtility->getApplicationPreference('company'));
+
+		$this->view->assign('company', $company);
+		$this->view->assign('person', $this->getPerson());
+	}
+
+	/**
+	 * Environment wizard completed
+	 */
+	public function setupWizardCompleteAction() {
+		$this->preferenceUtility->setApplicationPreference('setupWizardComplete', TRUE);
+		return TRUE;
+	}
+
+	/**
+	 * Get current loggedin user
+	 *
+	 * @return \TYPO3\Party\Domain\Model\AbstractParty
+	 * @throws \TYPO3\Flow\Security\Exception\AuthenticationRequiredException
+	 */
+	protected function getPerson() {
+
+		if(!$this->securityContext->getAccount()) {
+			throw new \TYPO3\Flow\Security\Exception\AuthenticationRequiredException();
+		}
+
+		return $this->securityContext->getAccount()->getParty();
+	}
 }
 
 ?>

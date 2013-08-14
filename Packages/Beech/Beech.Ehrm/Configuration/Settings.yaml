@@ -72,6 +72,9 @@ Beech:
           - 'Beech.Party/JavaScript/Controller/Person.js'
           - 'Beech.Party/JavaScript/View/Company.js'
           - 'Beech.Party/JavaScript/View/Person.js'
+          - 'Beech.Ehrm/JavaScript/Route/ApplicationSettings.js'
+          - 'Beech.Ehrm/JavaScript/Controller/ApplicationSettings.js'
+          - 'Beech.Ehrm/JavaScript/View/ApplicationSettings.js'
           - 'Beech.Ehrm/JavaScript/Component/UserInterface/BreadcrumbMenu.js'
           - 'Beech.Ehrm/JavaScript/Component/UserInterface/DatePicker.js'
           - 'Beech.Ehrm/JavaScript/Component/UserInterface/Country.js'
@@ -114,6 +117,7 @@ Beech:
       - ['Beech.Task', NULL, 'Task', {'close': 'Close', 'delete':null}]
       - ['Beech.CLA', 'Administration', 'ContractArticle']
       - ['Beech.CLA', 'Administration', 'JobDescription']
+      - ['Beech.Ehrm', 'Administration', 'ApplicationSettings', {'index': 'Index', 'edit':null, 'delete':null, 'list':null, 'new':null, 'show': null,'setupwizard':'SetupWizard'}]
       - ['Beech.CLA', '', 'JobPosition', {'index': 'Index', 'list':null, 'delete':null}]
 
     defaultActionsMapping:

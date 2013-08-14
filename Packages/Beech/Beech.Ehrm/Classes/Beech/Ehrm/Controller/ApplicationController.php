@@ -17,6 +17,12 @@ use TYPO3\Flow\Annotations as Flow;
 class ApplicationController extends AbstractController {
 
 	/**
+	 * @var \Beech\Ehrm\Utility\PreferenceUtility
+	 * @Flow\Inject
+	 */
+	protected $preferenceUtility;
+
+	/**
 	 * @var \TYPO3\Flow\Security\Authentication\AuthenticationManagerInterface
 	 * @FLOW\Inject
 	 */
@@ -28,6 +34,10 @@ class ApplicationController extends AbstractController {
 	public function indexAction() {
 		if ($this->authenticationManager->isAuthenticated() === FALSE) {
 			$this->redirect('intro');
+		}
+			// trigger setup wizard
+		if(!$this->preferenceUtility->getApplicationPreference('setupWizardComplete')) {
+			$this->view->assign('emberRedirect', '/administration/settings/setupwizard');
 		}
 	}
 

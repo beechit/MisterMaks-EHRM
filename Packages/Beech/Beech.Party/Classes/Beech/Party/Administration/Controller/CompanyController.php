@@ -18,13 +18,21 @@ use Beech\Party\Domain\Model\Company as Company;
 class CompanyController extends \Beech\Party\Controller\CompanyController {
 
 	/**
-	 * @param \Beech\Party\Domain\Model\Company $person A new person to update
+	 * @param \Beech\Party\Domain\Model\Company $company A company to update
 	 * @return void
 	 */
 	public function updateAction(Company $company) {
 		$this->repository->update($company);
 		$this->addFlashMessage('Company is updated.');
-		$this->emberRedirect('#/administration/company');
+		if ($this->request->hasArgument('noEmberRedirect')) {
+			$options = array('company' => $company);
+			if ($this->request->hasArgument('withDetails')) {
+				$options['withDetails'] = $this->request->getArgument('withDetails');
+			}
+			$this->redirect('edit', NULL, NULL, $options);
+		} else {
+			$this->emberRedirect('#/administration/company');
+		}
 	}
 
 	/**

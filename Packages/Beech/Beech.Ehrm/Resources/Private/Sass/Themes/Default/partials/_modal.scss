@@ -73,8 +73,6 @@ iframe {
 		}
 	}
 }
-
-
 .modal-large {
 	width: 80%;
 	max-width: 1200px;
@@ -83,6 +81,22 @@ iframe {
 	right: 10%;
 	top: 10% !important;
 	margin: 0;
+}
+.wizard-modal {
+	.well {
+		padding:  0;
+		border: none;
+		background: transparent;
+		@include box-shadow(none);
+	}
+	.wizard-card {
+		h1 {
+			display: none;
+		}
+	}
+	.row-fluid {
+		width: auto;
+	}
 }
 
 /* End Modal box / Wizard */

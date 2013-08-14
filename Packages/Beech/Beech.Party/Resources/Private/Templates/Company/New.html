@@ -8,7 +8,7 @@
 	<div class="well">
 		<h3>Company information</h3>
 		<f:form action="create" object="{company}" name="company" class="form-horizontal">
-			<f:render partial="Forms/Company" />
+			<f:render partial="Forms/Company" arguments="{_all}" />
 			<div class="form-actions">
 				<f:form.submit value="{f:translate(id: 'action.create')}" class="btn"/>
 			</div>
