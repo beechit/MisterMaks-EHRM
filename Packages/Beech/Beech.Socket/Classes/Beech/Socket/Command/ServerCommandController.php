@@ -30,11 +30,11 @@ class ServerCommandController extends \TYPO3\Flow\Cli\CommandController {
 	 * Start the socket server
 	 *
 	 * @param integer $port The port number to bind to
-	 * @param string $host IP address of the host, 127.0.0.1 by default
+	 * @param string $host IP address of the host, 0.0.0.0 by default (allow connection on all ip's)
 	 * @param boolean $debug output debug info to console (processed will not be daemonized)
 	 * @return void
 	 */
-	public function startCommand($port = 8000, $host = '127.0.0.1', $debug = FALSE) {
+	public function startCommand($port = 8000, $host = '0.0.0.0', $debug = FALSE) {
 
 		$this->output('Starting WebSocket server ');
 		if($debug) {
@@ -83,11 +83,11 @@ class ServerCommandController extends \TYPO3\Flow\Cli\CommandController {
 	 * Restart the socket server
 	 *
 	 * @param integer $port The port number to bind to
-	 * @param string $host IP address of the host, 127.0.0.1 by default
+	 * @param string $host IP address of the host, 0.0.0.0 by default
 	 * @param boolean $debug output debug info to console (processed will not be daemonized)
 	 * @return void
 	 */
-	public function restartCommand($port = 8000, $host = '127.0.0.1', $debug = FALSE) {
+	public function restartCommand($port = 8000, $host = '0.0.0.0', $debug = FALSE) {
 		$this->stopCommand();
 		$this->startCommand($port, $host, $debug);
 	}
@@ -106,10 +106,8 @@ class ServerCommandController extends \TYPO3\Flow\Cli\CommandController {
 	 *
 	 * @param string $signal
 	 * @param string $persons Comma seperated list of accountIdentifiers
-	 * @param int $port
-	 * @param string $host
 	 */
-	public function sendSignalCommand($signal, $persons = NULL, $port = 8000, $host = '127.0.0.1') {
+	public function sendSignalCommand($signal, $persons = NULL) {
 
 		SendCommands::sendSignal($signal, $persons !== NULL ? explode(',', $persons) : NULL);
 	}
