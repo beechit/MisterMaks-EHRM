@@ -24,6 +24,12 @@ class Company extends \TYPO3\Party\Domain\Model\AbstractParty implements \TYPO3\
 	}
 
 	/**
+	 * @Flow\Inject
+	 * @var \TYPO3\Flow\Object\ObjectManagerInterface
+	 */
+	protected $objectManager;
+
+	/**
 	 * The company name
 	 *
 	 * @var string
@@ -137,11 +143,11 @@ class Company extends \TYPO3\Party\Domain\Model\AbstractParty implements \TYPO3\
 				list($model, $type) = $explodedProperty;
 				$model = ucfirst($model);
 				$repositoryClassName = sprintf('Beech\Party\Domain\Repository\%sRepository', $model);
-				$repository = new $repositoryClassName();
-				$findBy = sprintf('findBy%sType', $model);
-				$allFounded = $repository->{$findBy}($type);
+				$repository = $this->objectManager->get($repositoryClassName);
+				$allFounded = $repository->findByParty($this->getId());
+				$getType = sprintf('get%sType', $model);
 				foreach ($allFounded as $object) {
-					if ($object->getPrimary()) {
+					if (($object->{$getType}() === $type) && $object->getPrimary()) {
 						return $object;
 					}
 				}

@@ -42,4 +42,14 @@
 			<f:form.textarea property="description" class="span11"/>
 		</div>
 	</div>
+
+	<div class="control-group">
+		<label class="control-label" for="contactPerson">
+			<f:translate id="contactPerson">Contact person</f:translate>
+		</label>
+		<div class="controls controls" >
+			<f:form.select property="contactPerson" id="contactPerson" options="{persons}"  optionLabelField="name.fullName" prependOptionLabel="- select contact person -"/>
+		</div>
+	</div>
+
 </div>

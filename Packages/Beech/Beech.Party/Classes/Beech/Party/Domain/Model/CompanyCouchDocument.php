@@ -17,6 +17,40 @@ use TYPO3\Flow\Annotations as Flow,
  */
 class CompanyCouchDocument extends \Beech\Ehrm\Domain\Model\Document {
 
+	/**
+	 * @var \TYPO3\Flow\Persistence\PersistenceManagerInterface
+	 * @Flow\Inject
+	 * @Flow\Transient
+	 */
+	protected $persistenceManager;
+
+	/**
+	 * @var \Beech\Party\Domain\Model\Person
+	 * @ODM\Field(type="mixed")
+	 * @ODM\Index
+	 */
+	protected $contactPerson;
+
+	/**
+	 * Set contactPerson
+	 *
+	 * @param \Beech\Party\Domain\Model\Person $contactPerson
+	 */
+	public function setContactPerson($contactPerson) {
+		$this->contactPerson = $this->persistenceManager->getIdentifierByObject($contactPerson);
+	}
+
+	/**
+	 * Get contactPerson
+	 *
+	 * @return \Beech\Party\Domain\Model\Person
+	 */
+	public function getContactPerson() {
+		if (!empty($this->contactPerson)) {
+			return $this->persistenceManager->getObjectByIdentifier($this->contactPerson, '\Beech\Party\Domain\Model\Person');
+		}
+		return NULL;
+	}
 
 }
 

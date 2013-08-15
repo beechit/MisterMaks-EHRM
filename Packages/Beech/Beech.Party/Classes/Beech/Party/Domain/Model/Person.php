@@ -24,6 +24,12 @@ class Person extends \TYPO3\Party\Domain\Model\AbstractParty implements \TYPO3\F
 	}
 
 	/**
+	 * @Flow\Inject
+	 * @var \TYPO3\Flow\Object\ObjectManagerInterface
+	 */
+	protected $objectManager;
+
+	/**
 	 * @var \TYPO3\Party\Domain\Model\PersonName
 	 * @ORM\OneToOne(cascade={"persist"})
 	 * @Flow\Validate(type="NotEmpty", validationGroups={"Controller"})
@@ -81,7 +87,7 @@ class Person extends \TYPO3\Party\Domain\Model\AbstractParty implements \TYPO3\F
 	 * This is the function to get specific (primairy) properties.
 	 *
 	 * See documentation in EHRM-Base for more info
-	 * Todo: make this more generic, this is also in person model
+	 * Todo: make this more generic, this is also in company model
 	 *
 	 * @param $property
 	 * @return mixed|null
@@ -94,8 +100,8 @@ class Person extends \TYPO3\Party\Domain\Model\AbstractParty implements \TYPO3\F
 				list($model, $type) = $explodedProperty;
 				$model = ucfirst($model);
 				$repositoryClassName = sprintf('Beech\Party\Domain\Repository\%sRepository', $model);
-				$repository = new $repositoryClassName();
-				$allFounded = $repository->findByParty($this);
+				$repository = $this->objectManager->get($repositoryClassName);
+				$allFounded = $repository->findByParty($this->getId());
 				$getType = sprintf('get%sType', $model);
 				foreach ($allFounded as $object) {
 					if (($object->{$getType}() === $type) && $object->getPrimary()) {

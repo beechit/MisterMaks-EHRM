@@ -1,0 +1,49 @@
+<f:layout name="Ajax" />{namespace ehrm=Beech\Ehrm\ViewHelpers}
+
+<f:section name="Body">
+	<ehrm:flashMessages/>
+	<div>
+		<div><a href="#/jobposition" target="_top" title="Organogram" class="btn  btn-gspm-4 pull-left"><i class="icon-tasks"></i> Organogram</a></div>
+		<div><a href="#" target="_top" title="Contacts" class="btn btn-warning btn-gspm-4 pull-left"><i class="icon-user"></i> Contacts</a></div>
+		<div>
+			<f:render partial="Widgets/Departments" arguments="{companies: companies, selected: company}"/>
+		</div>
+		<div>
+			<a class="btn btn-primary" href="/#/company/new">
+				<f:translate id="action.new">New</f:translate>
+			</a>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+	<div>
+
+		<ul id="companyTabs" class="nav nav-tabs">
+			<li class="active">
+				<a data-toggle="tab" href="#main">Main</a>
+			</li>
+			<li>
+				<a data-toggle="tab" href="#departments">Departments</a>
+			</li>
+			<li>
+				<a data-toggle="tab" href="#extra">Extra</a>
+			</li>
+		</ul>
+		<div id="companyTabsContent" class="tab-content">
+			<div id="main" class="tab-pane fade active in">
+				<f:render partial="Views/Show/Company/Details" arguments="{company: company}"/>
+				<f:render partial="Views/Show/Address" arguments="{address: company.address_business}"/>
+				<f:render partial="Views/Show/Address" arguments="{address: company.address_postbox}"/>
+				<f:render partial="Views/Show/ElectronicAddress" arguments="{electronicAddress: company.electronicAddress_email}"/>
+				<f:render partial="Views/Show/PhoneNumber" arguments="{phoneNumber: company.phoneNumber_business}"/>
+				<f:render partial="Views/Show/Company/ContactPerson" arguments="{person: company.contactPerson}"/>
+			</div>
+			<div id="departments" class="tab-pane fade in">
+				<!--TODO: list of departments-->
+			</div>
+			<div id="extra" class="tab-pane fade in">
+				<!--TODO: extra information-->
+			</div>
+		</div>
+	</div>
+
+</f:section>

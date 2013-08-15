@@ -58,6 +58,30 @@ class CompanyController extends \Beech\Ehrm\Controller\AbstractManagementControl
 	protected $bankAccountRepository;
 
 	/**
+	 * @var \Beech\Party\Domain\Repository\PersonRepository
+	 * @Flow\Inject
+	 */
+	protected $personRepository;
+
+	/**
+	 * @var \Beech\Ehrm\Utility\PreferenceUtility
+	 * @Flow\Inject
+	 */
+	protected $preferenceUtility;
+
+	/**
+	 * Shows company preview with departments
+	 *
+	 * @return void
+	 */
+	public function indexAction() {
+		$this->view->assign('companies', $this->repository->findAll());
+			// take initial company as a default
+		$initialCompanyIdentifier = $this->preferenceUtility->getApplicationPreference('company');
+		$this->view->assign('company', $this->repository->findByIdentifier($initialCompanyIdentifier));
+	}
+
+	/**
 	 * Shows a list of companies
 	 *
 	 * @return void
@@ -100,6 +124,8 @@ class CompanyController extends \Beech\Ehrm\Controller\AbstractManagementControl
 		$this->view->assign('phoneNumbers', $phoneNumbers);
 		$electronicAddresses = $this->electronicAddressRepository->findByParty($company->getId());
 		$this->view->assign('electronicAddresses', $electronicAddresses);
+		$persons = $this->personRepository->findAll();
+		$this->view->assign('persons', $persons);
 	}
 
 	/**

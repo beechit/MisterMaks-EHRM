@@ -88,6 +88,9 @@
       validation:
         -
           type: 'Text'
+    'contactPerson':
+      label: 'Contact person'
+      type: 'Beech\Party\Domain\Model\Person'
     'creationDate':
       default: 'now'
       label: 'creation date'
