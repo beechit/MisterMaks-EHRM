@@ -23,6 +23,18 @@
 		</div>
 	</div>
 
+	<f:if condition="{companies}">
+		<div class="control-group">
+			<label class="control-label" for="parentCompany">
+				<f:translate id="parentCompany">Department of</f:translate>
+			</label>
+
+			<div class="controls">
+				<f:form.select property="parentCompany" id="parentCompany" options="{companies}" optionLabelField="name" />
+			</div>
+		</div>
+	</f:if>
+
 	<div class="control-group">
 		<label class="control-label" for="chamberOfCommerce"><f:translate id="chamberOfCommerce">Chamber of commerce</f:translate></label>
 		<div class="controls controls">

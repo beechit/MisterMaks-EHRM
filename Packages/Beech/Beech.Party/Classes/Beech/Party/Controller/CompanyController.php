@@ -125,6 +125,7 @@ class CompanyController extends \Beech\Ehrm\Controller\AbstractManagementControl
 		$this->view->assign('phoneNumbers', $phoneNumbers);
 		$electronicAddresses = $this->electronicAddressRepository->findByParty($company->getId());
 		$this->view->assign('electronicAddresses', $electronicAddresses);
+		$this->view->assign('companies', $this->repository->findAllowedParentsFor($company));
 		$this->view->assign('withDetails', $withDetails);
 		$persons = $this->personRepository->findAll();
 		$this->view->assign('persons', $persons);
@@ -136,6 +137,7 @@ class CompanyController extends \Beech\Ehrm\Controller\AbstractManagementControl
 	 * @return void
 	 */
 	public function newAction() {
+		$this->view->assign('companies', $this->repository->findAll());
 	}
 
 	/**
