@@ -6,6 +6,7 @@
 		<div><a href="#/jobposition" target="_top" title="Organogram" class="btn  btn-gspm-4 pull-left"><i class="icon-tasks"></i> Organogram</a></div>
 		<div><a href="#" target="_top" title="Contacts" class="btn btn-warning btn-gspm-4 pull-left"><i class="icon-user"></i> Contacts</a></div>
 		<div>
+			<!--All companies with departments-->
 			<f:render partial="Widgets/Departments" arguments="{companies: companies, selected: company}"/>
 		</div>
 		<div>
@@ -38,10 +39,12 @@
 				<f:render partial="Views/Show/Company/ContactPerson" arguments="{person: company.contactPerson}"/>
 			</div>
 			<div id="departments" class="tab-pane fade in">
-				<!--TODO: list of departments-->
+				<div class="media-list">
+					<f:render partial="Views/List/Department" arguments="{companies: company.departments}"/>
+				</div>
 			</div>
 			<div id="extra" class="tab-pane fade in">
-				<!--TODO: extra information-->
+				<f:render partial="Views/Show/Company/Extra" arguments="{company: company}"/>
 			</div>
 		</div>
 	</div>

@@ -26,5 +26,17 @@ class CompanyController extends \Beech\Party\Controller\CompanyController {
 		$this->addFlashMessage('Company is updated.');
 		$this->emberRedirect('#/administration/company');
 	}
+
+	/**
+	 * @param \Beech\Party\Domain\Model\Company $company A new company to delete
+	 * @return void
+	 */
+	public function deleteAction(Company $company) {
+		$this->repository->remove($company);
+		// persist manualy because GET requests will not be auto persisted
+		$this->persistenceManager->persistAll();
+		$this->addFlashMessage('Company is removed');
+		$this->emberRedirect('#/administration/company');
+	}
 }
 ?>
