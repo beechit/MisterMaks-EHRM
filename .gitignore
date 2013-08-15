@@ -5,6 +5,7 @@
 /Build/BuildEssentials/
 /Build/Beech.Essentials/
 /Configuration/
+/Web/.htaccess
 /Data/
 /Tests/
 /Web/_Resources/
@@ -27,3 +28,4 @@ Thumbs.db
 /*.txt
 /node_modules/
 /bin/
+
