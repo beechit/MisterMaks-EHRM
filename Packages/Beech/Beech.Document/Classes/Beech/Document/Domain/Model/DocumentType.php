@@ -18,6 +18,7 @@ use TYPO3\Flow\Annotations as Flow,
 class DocumentType extends \Beech\Ehrm\Domain\Model\Document {
 
 	const PROFILE_PHOTO = 'profilePhoto';
+	const COMPANY_LOGO = 'companyLogo';
 
 	/**
 	 * @var string

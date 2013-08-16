@@ -74,11 +74,14 @@ class CompanyController extends \Beech\Ehrm\Controller\AbstractManagementControl
 	 *
 	 * @return void
 	 */
-	public function indexAction() {
+	public function indexAction(Company $company = NULL) {
 		$this->view->assign('companies', $this->repository->findAll());
 			// take initial company as a default
-		$initialCompanyIdentifier = $this->preferenceUtility->getApplicationPreference('company');
-		$this->view->assign('company', $this->repository->findByIdentifier($initialCompanyIdentifier));
+		if ($company === NULL) {
+			$initialCompanyIdentifier = $this->preferenceUtility->getApplicationPreference('company');
+			$company = $this->repository->findByIdentifier($initialCompanyIdentifier);
+		}
+		$this->view->assign('company', $company);
 	}
 
 	/**

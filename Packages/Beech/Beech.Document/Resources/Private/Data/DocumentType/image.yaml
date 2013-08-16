@@ -6,5 +6,10 @@ documentTypes:
     'delete': FALSE
   -
     'categoryName': 'Image'
+    'typeName': 'companyLogo'
+    'label': 'Company logo'
+    'delete': FALSE
+  -
+    'categoryName': 'Image'
     'typeName': 'Other'
     'delete': FALSE

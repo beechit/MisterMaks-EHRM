@@ -91,6 +91,9 @@
     'contactPerson':
       label: 'Contact person'
       type: 'Beech\Party\Domain\Model\Person'
+    'logo':
+      label: 'Image'
+      type: 'Beech\Document\Domain\Model\Document'
     'creationDate':
       default: 'now'
       label: 'creation date'
