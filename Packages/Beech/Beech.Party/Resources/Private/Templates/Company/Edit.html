@@ -4,15 +4,22 @@
 	<h1>
 		<f:translate id="action.edit">Edit</f:translate>
 	</h1>
+
 	<ehrm:flashMessages/>
+
 	<div class="well">
 		<h3>Company information</h3>
+
 		<f:form action="update" object="{company}" name="company" class="form-horizontal">
-			<f:render partial="Forms/Company" arguments="{persons: persons}"/>
+			<f:comment>This hidden input is for the applicaton setupWizard</f:comment>
+			<input type="hidden" name="iscomplete" value="true" data-validate="isComplete"/>
+			<input type="hidden" name="withDetails" value="{withDetails}" />
+			<f:render partial="Forms/Company" arguments="{_all}" />
 			<div class="form-actions">
 				<f:form.submit value="{f:translate(id: 'action.save')}" class="btn"/>
 			</div>
 		</f:form>
+
 		<f:if condition="{withDetails}">
 			<!-- addresses -->
 			<h3>Address</h3>

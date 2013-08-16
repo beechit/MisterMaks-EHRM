@@ -26,7 +26,7 @@ class AbstractManagementController extends \Beech\Ehrm\Controller\AbstractContro
 	protected $repositoryClassName;
 
 	/**
-	 * @var mixed
+	 * @var \TYPO3\Flow\Persistence\RepositoryInterface
 	 */
 	protected $repository;
 

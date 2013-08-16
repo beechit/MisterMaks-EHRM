@@ -113,10 +113,11 @@ class CompanyController extends \Beech\Ehrm\Controller\AbstractManagementControl
 	 * Edit a single company object
 	 *
 	 * @param \Beech\Party\Domain\Model\Company $company
+	 * @param boolean $withDetails
 	 * @Flow\IgnoreValidation("$company")
 	 * @return void
 	 */
-	public function editAction(Company $company) {
+	public function editAction(Company $company, $withDetails = TRUE) {
 		$this->view->assign('company', $company);
 		$addresses = $this->addressRepository->findByParty($company->getId());
 		$this->view->assign('addresses', $addresses);
@@ -124,6 +125,7 @@ class CompanyController extends \Beech\Ehrm\Controller\AbstractManagementControl
 		$this->view->assign('phoneNumbers', $phoneNumbers);
 		$electronicAddresses = $this->electronicAddressRepository->findByParty($company->getId());
 		$this->view->assign('electronicAddresses', $electronicAddresses);
+		$this->view->assign('withDetails', $withDetails);
 		$persons = $this->personRepository->findAll();
 		$this->view->assign('persons', $persons);
 	}

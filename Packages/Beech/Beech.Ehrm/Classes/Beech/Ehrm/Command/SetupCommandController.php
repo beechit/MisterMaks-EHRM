@@ -67,17 +67,24 @@ class SetupCommandController extends \TYPO3\Flow\Cli\CommandController {
 	 */
 	public function initializeCommand($companyName) {
 
+		$company = NULL;
+
 		if ($this->preferenceUtility->getApplicationPreference('company') !== NULL) {
 			$this->outputLine('Application is already initialized');
+			$company = $this->companyRepository->findByIdentifier($this->preferenceUtility->getApplicationPreference('company'));
+		}
 
-		} elseif ($this->companyRepository->countByName($companyName) > 0) {
+		if ($company === NULL && $this->companyRepository->countByName($companyName) > 0) {
 			$this->outputLine('Company "%s" already exists.', array($companyName));
 			$this->quit(1);
-		} else {
+		}
+
+		if ($company === NULL) {
 
 				// Create the company
 			$company = new \Beech\Party\Domain\Model\Company();
 			$company->setName($companyName);
+			$company->setType('primary');
 
 			$this->companyRepository->add($company);
 
@@ -86,25 +93,25 @@ class SetupCommandController extends \TYPO3\Flow\Cli\CommandController {
 			$this->outputLine('Created an application for company "%s".', array($companyName));
 		}
 
+			// check if main company is set as primary
+		if ($company->getType() !== 'primary') {
+			$this->outputLine('Set main company as primary');
+			$company->setType('primary');
+			$this->companyRepository->update($company);
+		}
+
 			// create top of job position hirarchy
 		if ($this->jobPositionRepository->findOneByParentId('') === NULL) {
 
-			$company = $this->companyRepository->findByIdentifier($this->preferenceUtility->getApplicationPreference('company'));
+			$jobPosition = new \Beech\CLA\Domain\Model\JobPosition();
+			$jobPosition->setName('Owner');
 
-			if ($company !== NULL) {
+			$jobPosition->setDepartment($company);
+			$this->jobPositionRepository->add($jobPosition);
 
-				$jobPosition = new \Beech\CLA\Domain\Model\JobPosition();
-				$jobPosition->setName('Owner');
+			$this->documentManager->flush();
 
-				$jobPosition->setDepartment($company);
-				$this->jobPositionRepository->add($jobPosition);
-
-				$this->documentManager->flush();
-
-				$this->outputLine('Created "%s" job position.', array($jobPosition->getName()));
-			} else {
-				$this->outputLine('Could not found main company!');
-			}
+			$this->outputLine('Created "%s" job position.', array($jobPosition->getName()));
 		}
 	}
 }

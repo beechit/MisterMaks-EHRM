@@ -226,10 +226,6 @@ class HeaderPartsViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHel
 				->reset()
 				->setCreateAbsoluteUri(TRUE)
 				->uriFor('index', array(), 'UserPreferences', 'Beech.Ehrm'),
-			'applicationSettings' => $this->controllerContext->getUriBuilder()
-				->reset()
-				->setCreateAbsoluteUri(TRUE)
-				->uriFor('index', array(), 'ApplicationSettings', 'Beech.Ehrm', 'Administration'),
 			'documents' => $this->controllerContext->getUriBuilder()
 				->reset()
 				->setCreateAbsoluteUri(TRUE)

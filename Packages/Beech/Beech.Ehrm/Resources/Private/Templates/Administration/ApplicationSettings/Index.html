@@ -1,8 +1,10 @@
-<f:layout name="Ajax" />
+<f:layout name="Ajax" />{namespace ehrm=Beech\Ehrm\ViewHelpers}
 
 <f:section name="Body">
-	<f:flashMessages class="flashmessages success" />
+	<ehrm:flashMessages/>
 	<f:form action="update" class="form-horizontal" name="settings">
+		<f:comment>This hidden input is for the applicaton setupWizard</f:comment>
+		<input type="hidden" name="iscomplete" value="true" data-validate="isComplete"/>
 		<fieldset>
 			<legend><f:translate id="menu.settings">Settings</f:translate></legend>
 			<div class="control-group">
@@ -15,16 +17,14 @@
 		<fieldset>
 			<legend><f:translate id="menu.themes">Themes</f:translate></legend>
 			<div class="control-group">
+				<label class="control-label" for="theme"><f:translate id="theme">Theme</f:translate></label>
 				<div class="controls">
-					{currentTheme}
 					<f:form.select id="theme" name="theme" options="{themes}" value="{currentTheme}" />
 				</div>
 			</div>
 		</fieldset>
-		<div class="control-group">
-			<div class="controls">
-				<button type="submit" class="btn btn-primary"><f:translate id="action.save">Save</f:translate></button>
-			</div>
+		<div class="form-actions">
+			<button type="submit" class="btn btn-primary"><f:translate id="action.save">Save</f:translate></button>
 		</div>
 	</f:form>
 </f:section>

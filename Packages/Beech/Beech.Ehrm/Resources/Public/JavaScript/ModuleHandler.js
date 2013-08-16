@@ -145,12 +145,12 @@
 				$primary.controlPrimary();
 			}
 
-			if ($moduleContainer.find('.modal-header.custom').length > 0) {
+			if ($moduleContainer.find('.modal-header.custom').length > 0 && $moduleContainer.parent().find('.modal-header:not(.custom)').length > 0) {
 				var $customHeader = $moduleContainer.find('.modal-header.custom')
 				$moduleContainer.parent().find('.modal-header:not(.custom)').replaceWith($customHeader);
 				$customHeader.removeClass('custom');
 			}
-			if ($moduleContainer.find('.modal-footer.custom').length > 0) {
+			if ($moduleContainer.find('.modal-footer.custom').length > 0 && $moduleContainer.parent().find('.modal-footer:not(.custom)').length > 0) {
 				var $customFooter = $moduleContainer.find('.modal-footer.custom')
 				$moduleContainer.parent().find('.modal-footer:not(.custom)').replaceWith($customFooter);
 				$customFooter.removeClass('custom');
