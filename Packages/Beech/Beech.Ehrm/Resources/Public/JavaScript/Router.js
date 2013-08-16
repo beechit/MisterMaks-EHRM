@@ -69,6 +69,7 @@
 			});
 			this.resource('BeechPartyAdministrationCompany', { path: 'company' }, function() {
 				this.route('new', { path: '/new' });
+				this.route('new', { path: '/new/:random' });
 				this.route('show', { path: '/show/:company' });
 				this.route('edit', { path: '/edit/:company' });
 				this.route('delete', { path: '/delete/:company' });
@@ -107,6 +108,7 @@
 			});
 			this.resource('BeechPartyCompany', { path: 'company' }, function() {
 				this.route('new', { path: '/new' });
+				this.route('new', { path: '/new/:random' });
 				this.route('show', { path: '/show/:company' });
 				this.route('edit', { path: '/edit/:company' });
 				this.route('delete', { path: '/delete/:company' });
