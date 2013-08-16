@@ -513,7 +513,7 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/beechit/Radmiraal.CouchDB.git",
-                "reference": "5ad5bcb419607b14570655e427c0add4a47d3f40"
+                "reference": "107a20e9e8d72c5fee291535fb1c7beabf5a77cf"
             },
             "require": {
                 "doctrine/couchdb-odm": "dev-master",
