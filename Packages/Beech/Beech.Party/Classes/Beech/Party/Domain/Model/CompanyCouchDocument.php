@@ -37,7 +37,11 @@ class CompanyCouchDocument extends \Beech\Ehrm\Domain\Model\Document {
 	 * @param \Beech\Party\Domain\Model\Person $contactPerson
 	 */
 	public function setContactPerson($contactPerson) {
-		$this->contactPerson = $this->persistenceManager->getIdentifierByObject($contactPerson);
+		if ($contactPerson) {
+			$this->contactPerson = $this->persistenceManager->getIdentifierByObject($contactPerson);
+		} else {
+			$this->contactPerson = NULL;
+		}
 	}
 
 	/**
