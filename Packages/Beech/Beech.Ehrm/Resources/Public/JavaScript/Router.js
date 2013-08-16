@@ -59,6 +59,7 @@
 			});
 			this.resource('BeechPartyAdministrationPerson', { path: 'person' }, function() {
 				this.route('new', { path: '/new' });
+				this.route('new', { path: '/new/:random' });
 				this.route('show', { path: '/show/:person' });
 				this.route('edit', { path: '/edit/:person' });
 				this.route('delete', { path: '/delete/:person' });
@@ -98,6 +99,7 @@
 			});
 			this.resource('BeechPartyPerson', { path: 'person' }, function() {
 				this.route('new', { path: '/new' });
+				this.route('new', { path: '/new/:random' });
 				this.route('show', { path: '/show/:person' });
 				this.route('edit', { path: '/edit/:person' });
 				this.route('delete', { path: '/delete/:person' });

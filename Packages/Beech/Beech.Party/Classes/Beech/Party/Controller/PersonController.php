@@ -138,10 +138,11 @@ class PersonController extends \Beech\Ehrm\Controller\AbstractManagementControll
 	 * Edit a single person object
 	 *
 	 * @param \Beech\Party\Domain\Model\Person $person
+	 * @param boolean $withDetails
 	 * @Flow\IgnoreValidation("$person")
 	 * @return void
 	 */
-	public function editAction(Person $person) {
+	public function editAction(Person $person, $withDetails = TRUE) {
 		$this->view->assign('person', $person);
 		$addresses = $this->addressRepository->findByParty($person->getId());
 		$this->view->assign('addresses', $addresses);
@@ -159,6 +160,8 @@ class PersonController extends \Beech\Ehrm\Controller\AbstractManagementControll
 		$this->view->assign('licences', $licences);
 		$absences = $this->absenceRepository->findByParty($person->getId());
 		$this->view->assign('absences', $absences);
+
+		$this->view->assign('withDetails', $withDetails);
 	}
 
 	/**
@@ -170,14 +173,6 @@ class PersonController extends \Beech\Ehrm\Controller\AbstractManagementControll
 	}
 
 	/**
-	 * Shows a form only for creating a new person object
-	 *
-	 * @return void
-	 */
-	public function formAction() {
-	}
-
-	/**
 	 * @param \Beech\Party\Domain\Model\Person $person A new person to add
 	 * @return void
 	 */
@@ -185,7 +180,16 @@ class PersonController extends \Beech\Ehrm\Controller\AbstractManagementControll
 		$this->repository->add($person);
 
 		$this->addFlashMessage('Person is added');
-		$this->emberRedirect('#/person');
+
+		if ($this->request->hasArgument('noEmberRedirect')) {
+			$options = array('person' => $company);
+			if ($this->request->hasArgument('withDetails')) {
+				$options['withDetails'] = $this->request->getArgument('withDetails');
+			}
+			$this->redirect('edit', NULL, NULL, $options);
+		} else {
+			$this->emberRedirect('#/person');
+		}
 	}
 
 	/**
@@ -195,7 +199,15 @@ class PersonController extends \Beech\Ehrm\Controller\AbstractManagementControll
 	public function updateAction(Person $person) {
 		$this->repository->update($person);
 		$this->addFlashMessage('Person is updated');
-		$this->emberRedirect('#/person');
+		if ($this->request->hasArgument('noEmberRedirect')) {
+			$options = array('person' => $company);
+			if ($this->request->hasArgument('withDetails')) {
+				$options['withDetails'] = $this->request->getArgument('withDetails');
+			}
+			$this->redirect('edit', NULL, NULL, $options);
+		} else {
+			$this->emberRedirect('#/person');
+		}
 	}
 
 	/**
