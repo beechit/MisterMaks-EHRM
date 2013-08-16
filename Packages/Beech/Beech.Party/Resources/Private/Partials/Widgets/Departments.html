@@ -1,2 +1,7 @@
 Departments:
 	<f:form.select name="department" id="departmentWidget" options="{companies}"  optionLabelField="name" value="{selected}"/>
+<script type="text/javascript">
+	$('#departmentWidget').on('change', function() {
+		App.ModuleHandler.loadUrl('/beech.party/administration/company/show.html?company=' + $(this).val(), '#companyTabsContainer');
+	});
+</script>

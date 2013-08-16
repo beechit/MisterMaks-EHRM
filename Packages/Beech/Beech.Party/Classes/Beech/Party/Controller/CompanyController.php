@@ -94,10 +94,11 @@ class CompanyController extends \Beech\Ehrm\Controller\AbstractManagementControl
 	 * Shows a single company object
 	 *
 	 * @param \Beech\Party\Domain\Model\Company $company
+	 * @param boolean $withDetails
 	 * @Flow\IgnoreValidation("$company")
 	 * @return void
 	 */
-	public function showAction(Company $company) {
+	public function showAction(Company $company, $withDetails = TRUE) {
 		$this->view->assign('company', $company);
 		$addresses = $this->addressRepository->findByParty($company->getId());
 		$this->view->assign('addresses', $addresses);
@@ -107,6 +108,7 @@ class CompanyController extends \Beech\Ehrm\Controller\AbstractManagementControl
 		$this->view->assign('electronicAddresses', $electronicAddresses);
 		$bankAccounts = $this->bankAccountRepository->findByParty($company->getId());
 		$this->view->assign('bankAccounts', $bankAccounts);
+		$this->view->assign('withDetails', $withDetails);
 	}
 
 	/**

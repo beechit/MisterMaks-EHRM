@@ -16,37 +16,5 @@
 		</div>
 	</div>
 	<div class="clearfix"></div>
-	<div>
-
-		<ul id="companyTabs" class="nav nav-tabs">
-			<li class="active">
-				<a data-toggle="tab" href="#main">Main</a>
-			</li>
-			<li>
-				<a data-toggle="tab" href="#departments">Departments</a>
-			</li>
-			<li>
-				<a data-toggle="tab" href="#extra">Extra</a>
-			</li>
-		</ul>
-		<div id="companyTabsContent" class="tab-content">
-			<div id="main" class="tab-pane fade active in">
-				<f:render partial="Views/Show/Company/Details" arguments="{company: company}"/>
-				<f:render partial="Views/Show/Address" arguments="{address: company.address_business}"/>
-				<f:render partial="Views/Show/Address" arguments="{address: company.address_postbox}"/>
-				<f:render partial="Views/Show/ElectronicAddress" arguments="{electronicAddress: company.electronicAddress_email}"/>
-				<f:render partial="Views/Show/PhoneNumber" arguments="{phoneNumber: company.phoneNumber_business}"/>
-				<f:render partial="Views/Show/Company/ContactPerson" arguments="{person: company.contactPerson}"/>
-			</div>
-			<div id="departments" class="tab-pane fade in">
-				<div class="media-list">
-					<f:render partial="Views/List/Department" arguments="{companies: company.departments}"/>
-				</div>
-			</div>
-			<div id="extra" class="tab-pane fade in">
-				<f:render partial="Views/Show/Company/Extra" arguments="{company: company}"/>
-			</div>
-		</div>
-	</div>
-
+	<f:render partial="Views/Show/Company" arguments="{company: company}"/>
 </f:section>

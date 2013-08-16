@@ -2,34 +2,35 @@
 
 <f:section name="Body">
 
-	<h1>Company information</h1>
 	<f:render partial="Views/Show/Company" arguments="{company: company}"/>
-	<!-- Addresses -->
-	<h3>Addresses</h3>
-	<f:for each="{addresses}" as="address">
-		<div id="address-{address.id}">
-			<f:render partial="Views/Show/Address" arguments="{address: address}"/>
-		</div>
-	</f:for>
-	<!-- Phone numbers -->
-	<h3>Phone numbers</h3>
-	<f:for each="{phoneNumbers}" as="phoneNumber">
-		<div id="phoneNumber-{phoneNumber.id}">
-			<f:render partial="Views/Show/PhoneNumber" arguments="{phoneNumber: phoneNumber}"/>
-		</div>
-	</f:for>
-	<!-- Electronic addresses -->
-	<h3>Electronic addresses</h3>
-	<f:for each="{electronicAddresses}" as="electronicAddress">
-		<div id="electronicAddress-{electronicAddress.id}">
-			<f:render partial="Views/Show/ElectronicAddress" arguments="{electronicAddress: electronicAddress}"/>
-		</div>
-	</f:for>
-	<!-- Bank accounts -->
-	<h3>Bank accounts</h3>
-	<f:for each="{bankAccounts}" as="bankAccount">
-		<div id="bankAccount-{bankAccount.id}">
-			<f:render partial="Views/Show/BankAccount" arguments="{bankAccount: bankAccount}"/>
-		</div>
-	</f:for>
+	<f:if condition="{withDetails}">
+		<!-- Addresses -->
+		<h3>Addresses</h3>
+		<f:for each="{addresses}" as="address">
+			<div id="address-{address.id}">
+				<f:render partial="Views/Show/Address" arguments="{address: address}"/>
+			</div>
+		</f:for>
+		<!-- Phone numbers -->
+		<h3>Phone numbers</h3>
+		<f:for each="{phoneNumbers}" as="phoneNumber">
+			<div id="phoneNumber-{phoneNumber.id}">
+				<f:render partial="Views/Show/PhoneNumber" arguments="{phoneNumber: phoneNumber}"/>
+			</div>
+		</f:for>
+		<!-- Electronic addresses -->
+		<h3>Electronic addresses</h3>
+		<f:for each="{electronicAddresses}" as="electronicAddress">
+			<div id="electronicAddress-{electronicAddress.id}">
+				<f:render partial="Views/Show/ElectronicAddress" arguments="{electronicAddress: electronicAddress}"/>
+			</div>
+		</f:for>
+		<!-- Bank accounts -->
+		<h3>Bank accounts</h3>
+		<f:for each="{bankAccounts}" as="bankAccount">
+			<div id="bankAccount-{bankAccount.id}">
+				<f:render partial="Views/Show/BankAccount" arguments="{bankAccount: bankAccount}"/>
+			</div>
+		</f:for>
+	</f:if>
 </f:section>
