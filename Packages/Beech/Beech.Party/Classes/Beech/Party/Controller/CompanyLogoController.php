@@ -59,7 +59,7 @@ class CompanyLogoController extends \Beech\Document\Controller\DocumentControlle
 		$identifier = $this->persistenceManager->getIdentifierByObject($document);
 		$company->setLogo($identifier);
 		$this->companyRepository->update($company);
-		$this->redirect('change', NULL, NULL, array('document' => $document, 'company' => $company));
+		$this->redirect('change', NULL, NULL, array('company' => $company));
 	}
 }
 
