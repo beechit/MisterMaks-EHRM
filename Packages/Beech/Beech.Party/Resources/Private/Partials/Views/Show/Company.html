@@ -12,7 +12,15 @@
 <div id="companyTabsContent" class="tab-content">
 	<div id="main" class="tab-pane fade active in">
 		<div class="rows">
-			<div class="span8"><f:render partial="Views/Show/Company/Details" arguments="{company: company}"/></div>
+			<div class="span8">
+				<f:render partial="Views/Show/Company/Details" arguments="{company: company}"/>
+				<a href="{f:uri.action(package:'Beech.Party', subpackage:'Administration', controller:'Company', action:'edit', arguments: {company: company, withDetails: false})}"
+				   data-toggle="modal-ajax" data-target="#modal" modal-size="large"
+				   data-reload="{f:uri.action(package:'Beech.Party', controller:'Company', action:'index', arguments: {company: company})}">
+					<i class="icon-pencil icon-white"></i>
+					<f:translate id="action.edit">Edit</f:translate>
+				</a>
+			</div>
 			<div class="span4">
 				<f:render partial="Views/Show/ProfilePhoto" arguments="{photo: company.logo, width: 150}"/>
 				<a href="{f:uri.action(package:'Beech.Party', controller:'CompanyLogo', action:'change', arguments: {company: company})}"
@@ -24,13 +32,45 @@
 			</div>
 		</div>
 		<div class="rows">
-			<div class="span6"><f:render partial="Views/Show/Address" arguments="{address: company.address_business}"/></div>
-			<div class="span6"><f:render partial="Views/Show/Address" arguments="{address: company.address_postbox}"/></div>
+			<div class="span6">
+				<f:render partial="Views/Show/Address" arguments="{address: company.address_business}"/>
+				<a href="{f:uri.action(package:'Beech.Party', subpackage:'Administration', controller:'Address', action:'list', arguments: {party: company})}"
+				   data-toggle="modal-ajax" data-target="#modal" modal-size="large"
+				   data-reload="{f:uri.action(package:'Beech.Party', controller:'Company', action:'index', arguments: {company: company})}">
+					<i class="icon-pencil icon-white"></i>
+					<f:translate id="action.edit">Edit</f:translate>
+				</a>
+			</div>
+			<div class="span6">
+				<f:render partial="Views/Show/Address" arguments="{address: company.address_postbox}"/>
+				<a href="{f:uri.action(package:'Beech.Party', subpackage:'Administration', controller:'Address', action:'list', arguments: {party: company})}"
+				   data-toggle="modal-ajax" data-target="#modal" modal-size="large"
+				   data-reload="{f:uri.action(package:'Beech.Party', controller:'Company', action:'index', arguments: {company: company})}">
+					<i class="icon-pencil icon-white"></i>
+					<f:translate id="action.edit">Edit</f:translate>
+				</a>
+			</div>
 		</div>
 
 		<div class="rows">
-			<div class="span6"><f:render partial="Views/Show/ElectronicAddress" arguments="{electronicAddress: company.electronicAddress_email}"/></div>
-			<div class="span6"><f:render partial="Views/Show/PhoneNumber" arguments="{phoneNumber: company.phoneNumber_business}"/></div>
+			<div class="span6">
+				<f:render partial="Views/Show/ElectronicAddress" arguments="{electronicAddress: company.electronicAddress_email}"/>
+				<a href="{f:uri.action(package:'Beech.Party', subpackage:'Administration', controller:'ElectronicAddress', action:'list', arguments: {party: company})}"
+				   data-toggle="modal-ajax" data-target="#modal" modal-size="large"
+				   data-reload="{f:uri.action(package:'Beech.Party', controller:'Company', action:'index', arguments: {company: company})}">
+					<i class="icon-pencil icon-white"></i>
+					<f:translate id="action.edit">Edit</f:translate>
+				</a>
+			</div>
+			<div class="span6">
+				<f:render partial="Views/Show/PhoneNumber" arguments="{phoneNumber: company.phoneNumber_business}"/>
+				<a href="{f:uri.action(package:'Beech.Party', subpackage:'Administration', controller:'PhoneNumber', action:'list', arguments: {party: company})}"
+				   data-toggle="modal-ajax" data-target="#modal" modal-size="large"
+				   data-reload="{f:uri.action(package:'Beech.Party', controller:'Company', action:'index', arguments: {company: company})}">
+					<i class="icon-pencil icon-white"></i>
+					<f:translate id="action.edit">Edit</f:translate>
+				</a>
+			</div>
 		</div>
 		<div class="rows">
 			<div class="span6">
