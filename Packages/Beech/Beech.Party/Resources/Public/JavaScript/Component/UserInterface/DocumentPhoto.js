@@ -1,6 +1,6 @@
 (function() {
 	'use strict';
-	$('.documentPhoto').on('focus', function() {
+	$('.documentPhoto').on('change', function() {
 		if ($(this).val() != '') {
 			$('.submit-documentPhoto').show()
 		}
