@@ -190,7 +190,7 @@ class PersonController extends \Beech\Ehrm\Controller\AbstractManagementControll
 		$this->addFlashMessage('Person is added');
 
 		if ($this->request->hasArgument('noEmberRedirect')) {
-			$options = array('person' => $company);
+			$options = array('person' => $person);
 			if ($this->request->hasArgument('withDetails')) {
 				$options['withDetails'] = $this->request->getArgument('withDetails');
 			}
@@ -208,7 +208,7 @@ class PersonController extends \Beech\Ehrm\Controller\AbstractManagementControll
 		$this->repository->update($person);
 		$this->addFlashMessage('Person is updated');
 		if ($this->request->hasArgument('noEmberRedirect')) {
-			$options = array('person' => $company);
+			$options = array('person' => $person);
 			if ($this->request->hasArgument('withDetails')) {
 				$options['withDetails'] = $this->request->getArgument('withDetails');
 			}
