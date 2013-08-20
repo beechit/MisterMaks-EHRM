@@ -43,7 +43,7 @@ class ElectronicAddressController extends \Beech\Ehrm\Controller\AbstractManagem
 
 	/**
 	 * @param \Beech\Party\Domain\Model\ElectronicAddress $electronicAddress A electronicAddress to add
-	 *
+	 * @Flow\Validate(argumentName="electronicAddress", type="Beech.Party:ElectronicAddress")
 	 * @return void
 	 */
 	public function addAction(\Beech\Party\Domain\Model\ElectronicAddress $electronicAddress) {
@@ -56,7 +56,7 @@ class ElectronicAddressController extends \Beech\Ehrm\Controller\AbstractManagem
 
 	/**
 	 * @param \Beech\Party\Domain\Model\ElectronicAddress $electronicAddress A electronicAddress to update
-	 *
+	 * @Flow\Validate(argumentName="electronicAddress", type="Beech.Party:ElectronicAddress")
 	 * @return void
 	 */
 	public function updateAction(\Beech\Party\Domain\Model\ElectronicAddress $electronicAddress) {

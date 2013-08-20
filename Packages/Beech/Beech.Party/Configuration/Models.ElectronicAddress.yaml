@@ -15,11 +15,6 @@
          'linkedin': 'LinkedIn'
     'address':
       label: 'electronicAddress'
-      validation:
-        -
-          type: 'StringLength'
-          options:
-            maximum: 35
     'primary':
       label: 'Primary'
       options:
