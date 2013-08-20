@@ -12,18 +12,6 @@ what you have allready have done::
 	CouchDB and Mysql or postgress is installed
 	You have created a database in mysql or postgress
 
-Patch TYPO3 party
------------------
-
-The TYPO3 Party package should be patched according to this instruction.
-
-.. toctree::
-	:maxdepth: 2
-	:numbered:
-
-	patch
-
-
 configuration database
 ----------------------
 
@@ -86,6 +74,14 @@ DocumentType::
 
 	./flow import:collection Beech.Document DocumentType resource://Beech.Document/Private/Data/DocumentType documentTypes
 
+
+Production context
+-----------------
+
+if not configured differently by the server environment, (SETenv: Production in vhost or change context in .htaccess) the flow script is run in the Development context by default. It is recommended to set the FLOW_CONTEXT environment variable to Production on a production server – that way you don't execute commands in an unintended context accidentally.
+If you usually run the flow script in one context but need to call it in another context occasionally, you can do so by temporarily setting the respective environment variable for the single command run::
+
+	FLOW_CONTEXT=Production ./flow flow:cache:flush
 
 for easy cut and paste work.
 ----------------------------
