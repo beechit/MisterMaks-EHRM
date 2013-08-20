@@ -43,7 +43,7 @@ class PhoneNumberController extends \Beech\Ehrm\Controller\AbstractManagementCon
 
 	/**
 	 * @param \Beech\Party\Domain\Model\PhoneNumber $phoneNumber A new phoneNumber to add
-	 *
+	 * @Flow\Validate(argumentName="phoneNumber", type="Beech.Party:PhoneNumber")
 	 * @return void
 	 */
 	public function addAction(\Beech\Party\Domain\Model\PhoneNumber $phoneNumber) {
@@ -56,7 +56,7 @@ class PhoneNumberController extends \Beech\Ehrm\Controller\AbstractManagementCon
 
 	/**
 	 * @param \Beech\Party\Domain\Model\PhoneNumber $phoneNumber A  phoneNumber to update
-	 *
+	 * @Flow\Validate(argumentName="phoneNumber", type="Beech.Party:PhoneNumber")
 	 * @return void
 	 */
 	public function updateAction(\Beech\Party\Domain\Model\PhoneNumber $phoneNumber) {
