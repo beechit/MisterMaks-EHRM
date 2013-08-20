@@ -174,6 +174,8 @@ class WebSocketServer extends Daemonize {
 							$session->shutdownObject();
 
 						} else {
+							$this->logger->log(sprintf('No valid session found for account "%s" (via %s)', $sessionIdentifier, $connection->getRemoteAddress()), LOG_DEBUG);
+
 								// no valid session close connection
 							$this->socketServer->emit('endconnection', $connection);
 						}

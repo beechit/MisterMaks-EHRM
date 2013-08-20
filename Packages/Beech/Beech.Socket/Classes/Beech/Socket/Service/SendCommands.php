@@ -34,7 +34,9 @@ class SendCommands {
 	 */
 	public static function startServer() {
 
-		passthru(FLOW_PATH_ROOT."flow server:start >> /dev/null &");
+		$context = (isset($_SERVER['FLOW_CONTEXT']) ? $_SERVER['FLOW_CONTEXT'] : (isset($_SERVER['FLOW3_CONTEXT']) ? $_SERVER['FLOW3_CONTEXT'] : 'Development'));
+
+		passthru('FLOW_CONTEXT='.$context.' '.FLOW_PATH_ROOT.'flow server:start >> /dev/null &');
 	}
 
 }
