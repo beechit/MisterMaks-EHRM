@@ -65,9 +65,11 @@ trait EntityWithDocumentTrait {
 		if ($document instanceof \Beech\Ehrm\Domain\Model\Document) {
 			$this->documentObject = $document;
 			$this->document = $document->getId();
+			$this->documentObject->setOrgObject($this);
 		} elseif (is_string($document)) {
 			$this->document = $document;
 			$this->documentObject = $this->documentManager->find($this->getDocumentName(), $document);
+			$this->documentObject->setOrgObject($this);
 		}
 	}
 
