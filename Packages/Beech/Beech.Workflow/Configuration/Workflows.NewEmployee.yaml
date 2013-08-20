@@ -1,7 +1,7 @@
 NewEmployee:
   triggers:
     -
-      action: 'update'
+      action: 'add'
       className: 'Beech\Party\Domain\Model\Person'
   actions:
     1:
