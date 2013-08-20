@@ -1,13 +1,17 @@
-<f:layout name="Ajax" />
+<f:layout name="Ajax" />{namespace ehrm=Beech\Ehrm\ViewHelpers}
 
 <f:section name="Body">
 	<h1><f:translate id="accounts">Accounts</f:translate></h1>
+
+	<ehrm:flashMessages/>
+
 	<f:if condition="{accounts}">
 		<f:then>
 			<table class="table">
 				<thead>
 				<tr>
 					<th><f:translate id="account.accountIdentifier">Account identifier</f:translate></th>
+					<th><f:translate id="account.person">Person</f:translate></th>
 					<th><f:translate id="account.role">Role</f:translate></th>
 					<th><f:translate id="action">Action</f:translate></th>
 				</tr>
@@ -17,6 +21,9 @@
 					<tr>
 						<td>
 							<strong><a href="#/administration/userManagement/show/{account -> f:format.identifier()}">{account.accountIdentifier}</a></strong>
+						</td>
+						<td>
+							{account.party.name}
 						</td>
 						<td>
 							<f:for each="{account.roles}" key="roleName" as="role" iteration="roleIterator">
@@ -37,6 +44,6 @@
 		</f:else>
 	</f:if>
 	<div class="form-actions">
-		<a href="#/administration/userManagement/new"><i class="icon-plus"></i><f:translate id="action.create">Create</f:translate></a>
+		<a href="#/administration/userManagement/new" class="btn btn-primary"><i class="icon-plus"></i><f:translate id="action.create">Create</f:translate></a>
 	</div>
 </f:section>

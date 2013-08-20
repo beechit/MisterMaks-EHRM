@@ -75,9 +75,11 @@ class AccountController extends \Beech\Ehrm\Controller\AbstractController {
 	/**
 	 * Shows a form for creating a new account object
 	 *
+	 * @param \Beech\Party\Domain\Model\Person $person
 	 * @return void
 	 */
-	public function newAction() {
+	public function newAction(\Beech\Party\Domain\Model\Person $person = NULL) {
+		$this->view->assign('person', $person);
 		$this->view->assign('persons', $this->personRepository->findAll());
 		$this->view->assign('roles', $this->policyService->getRoles());
 	}
@@ -97,7 +99,10 @@ class AccountController extends \Beech\Ehrm\Controller\AbstractController {
 		$account = $this->accountFactory->createAccountWithPassword($accountIdentifier, $password, $roles, $authenticationProviderName);
 		$account->setParty($person);
 		$this->accountRepository->add($account);
-		$this->redirect('list');
+
+		$this->addFlashMessage($this->translator->translateById('Created', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
+
+		$this->redirect('edit', NULL, NULL, array('account' => $account));
 	}
 
 	/**

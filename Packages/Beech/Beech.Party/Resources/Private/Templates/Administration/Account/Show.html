@@ -1,7 +1,10 @@
-<f:layout name="Ajax" />
+<f:layout name="Ajax" />{namespace ehrm=Beech\Ehrm\ViewHelpers}
 
 <f:section name="Body">
-	<h1><f:translate id="action.show">Show</f:translate> "{account.name.firstName} {account.name.lastName}"</h1>
+	<h1>{account.party.name}</h1>
+
+	<ehrm:flashMessages/>
+
 	<dl class="dl-horizontal well">
 		<dt><f:translate id="account.accountIdentifier">Account identifier</f:translate></dt>
 		<dd>{account.accountIdentifier}&nbsp;</dd>
@@ -14,6 +17,6 @@
 	</dl>
 
 	<div class="form-actions">
-		<f:link.action action="list"><f:translate id="action.back">Back</f:translate></f:link.action>
+		<a href="#/administration/userManagement" class="button"><f:translate id="action.back">Back</f:translate></a>
 	</div>
 </f:section>

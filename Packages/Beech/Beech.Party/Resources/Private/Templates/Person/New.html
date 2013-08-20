@@ -35,6 +35,11 @@
 			data-url="<f:uri.action action='list' controller='Licence' subpackage='administration' package='Beech.Party' arguments='{party:"new"}'></f:uri.action>">
 			<h3><f:translate>Licence</f:translate></h3>
 		</div>
+		<div class="wizard-card" data-cardname="user">
+			<h3><f:translate id="useraccount">User account</f:translate></h3>
+			<p><f:translate id="wizard-create-user-text">Create a useraccount for this employee</f:translate></p>
+			<button id="create-user"><f:translate>Create user</f:translate></button>
+		</div>
 
 		<div class="wizard-error">
 			<div class="alert alert-error">
@@ -160,9 +165,9 @@
 				card.on('selected', function() {
 					// on first select load content
 					if ($('*', this.el).length <= 1 && $(this.el).attr('data-url')) {
-						var departmentId = $('.wizard-cards input[name="person[__identity]"]:first').val()
+						var personId = $('.wizard-cards input[name="person[__identity]"]:first').val();
 						App.ModuleHandler.loadUrl(
-								$(this.el).attr('data-url').replace('party=new', 'party='+departmentId),
+								$(this.el).attr('data-url').replace('party=new', 'party='+personId),
 								$(this.el),
 								function(result,target) {
 									applyAjaxForm(target);
@@ -182,6 +187,19 @@
 			$('.wizard-success a').on('click', function() {
 				wizard.reset().close();
 				$(wizard.el).remove();
+			})
+			$('#create-user').on('click', function(){
+				var personId = $('.wizard-cards input[name="person[__identity]"]:first').val(),
+					link = "<f:uri.action action='new' controller='Account' subpackage='administration' package='Beech.Party' arguments='{person:"new"}'></f:uri.action>"
+				App.ModuleHandler.loadUrl(
+						link.replace('person=new', 'person='+personId),
+						$(this).parents('.wizard-card:first'),
+						function(result,target) {
+							applyAjaxForm(target);
+							// after first load we force a save action on save
+							$('input[name="iscomplete"]', target).val('');
+						}
+				);
 			})
 
 			wizard.on("submit", function(wizard) {

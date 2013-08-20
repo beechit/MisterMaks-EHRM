@@ -1,7 +1,10 @@
-<f:layout name="Ajax" />
+<f:layout name="Ajax" />{namespace ehrm=Beech\Ehrm\ViewHelpers}
 
 <f:section name="Body">
 	<h1><f:translate id="action.edit">Edit</f:translate></h1>
+
+	<ehrm:flashMessages/>
+
 	<f:form.validationResults for="account">
 		<f:if condition="{validationResults.flattenedErrors}">
 			<div class="error">
@@ -9,7 +12,12 @@
 			</div>
 		</f:if>
 	</f:form.validationResults>
+
 	<f:form action="update" object="{account}" name="account" class="form-horizontal well">
+
+		<f:comment>This hidden input is for the applicaton setupWizard</f:comment>
+		<input type="hidden" name="iscomplete" value="true" data-validate="isComplete"/>
+
 		<div class="control-group">
 			<label class="control-label" for="accountIdentifier"><f:translate id="account.accountIdentifier">Account identifier</f:translate></label>
 			<div class="controls">
@@ -42,7 +50,8 @@
 			</div>
 		</div>
 		<div class="form-actions">
-			<f:form.submit value="{f:translate(id: 'action.update')}"/>
+			<a href="#/administration/userManagement" class="btn"><f:translate id="action.back">Back</f:translate></a>
+			<f:form.submit class="btn btn-primary" value="{f:translate(id: 'action.update')}"/>
 		</div>
 	</f:form>
 </f:section>
