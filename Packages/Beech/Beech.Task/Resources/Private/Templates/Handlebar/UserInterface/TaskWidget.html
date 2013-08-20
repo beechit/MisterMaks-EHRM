@@ -16,7 +16,7 @@
 					<div class="accordion-inner">
 						<ul class="unstyled">
 							{{#each task in openTasksImmediate}}
-								<li>{{#linkTo "BeechTaskTask.show" task}}{{task.description}}{{/linkTo}}</li>
+								<li>{{#linkTo "BeechTaskTask.show" task.id}}{{task.description}}{{/linkTo}}</li>
 							{{/each}}
 						</ul>
 					</div>
@@ -35,7 +35,7 @@
 				<div class="accordion-inner">
 					<ul class="unstyled">
 						{{#each task in openTasksHigh}}
-						<li>{{#linkTo "BeechTaskTask.show" task}}{{task.description}}{{/linkTo}}</li>
+						<li>{{#linkTo "BeechTaskTask.show" task.id}}{{task.description}}{{/linkTo}}</li>
 						{{/each}}
 					</ul>
 				</div>
@@ -54,7 +54,7 @@
 				<div class="accordion-inner">
 					<ul class="unstyled">
 						{{#each task in openTasksNormal}}
-						<li>{{#linkTo "BeechTaskTask.show" task}}{{task.description}}{{/linkTo}}</li>
+						<li>{{#linkTo "BeechTaskTask.show" task.id}}{{task.description}}{{/linkTo}}</li>
 						{{/each}}
 					</ul>
 				</div>
@@ -73,7 +73,7 @@
 				<div class="accordion-inner">
 					<ul class="unstyled">
 						{{#each task in openTasksLow}}
-						<li>{{#linkTo "BeechTaskTask.show" task}}{{task.description}}{{/linkTo}}</li>
+						<li>{{#linkTo "BeechTaskTask.show" task.id}}{{task.description}}{{/linkTo}}</li>
 						{{/each}}
 					</ul>
 				</div>

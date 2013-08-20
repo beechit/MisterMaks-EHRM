@@ -1,20 +1,20 @@
 (function () {
 	'use strict';
-	App.BeechCLAContractArticleController = App.ModuleHandlerAjaxController.extend({
-	});
-	App.BeechCLAContractArticleIndexController = App.ModuleHandlerAjaxController.extend({
+
+	App.BeechCLAContractArticleController = App.ModuleHandlerAjaxController.extend();
+	App.BeechCLAContractArticleIndexController = App.BeechCLAContractArticleController.extend({
 		url: MM.url.module.BeechCLAAdministrationContractArticleIndex
 	});
-	App.BeechCLAContractArticleNewController = App.ModuleHandlerAjaxController.extend({
+	App.BeechCLAContractArticleNewController = App.BeechCLAContractArticleController.extend({
 		url: MM.url.module.BeechCLAAdministrationContractArticleNew
 	});
-	App.BeechCLAContractArticleShowController = App.ModuleHandlerAjaxController.extend({
+	App.BeechCLAContractArticleShowController = App.BeechCLAContractArticleController.extend({
 		url: MM.url.module.BeechCLAAdministrationContractArticleShow
 	});
-	App.BeechCLAContractArticleEditController = App.ModuleHandlerAjaxController.extend({
+	App.BeechCLAContractArticleEditController = App.BeechCLAContractArticleController.extend({
 		url: MM.url.module.BeechCLAAdministrationContractArticleEdit
 	});
-	App.BeechCLAContractArticleDeleteController = App.ModuleHandlerAjaxController.extend({
+	App.BeechCLAContractArticleDeleteController = App.BeechCLAContractArticleController.extend({
 		url: MM.url.module.BeechCLAAdministrationContractArticleDelete
 	});
 

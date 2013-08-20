@@ -50,6 +50,7 @@ Beech:
                 application: 'MisterMaks'
           - 'Beech.Ehrm/JavaScript/Model.js'
           - 'Beech.Ehrm/JavaScript/Router.js'
+          - 'Beech.Ehrm/JavaScript/ModuleHandler.js'
           - 'Beech.Party/JavaScript/Route/Company.js'
           - 'Beech.Party/JavaScript/Route/Person.js'
           - 'Beech.Party/JavaScript/Route/Account.js'
@@ -59,7 +60,6 @@ Beech:
           - 'Beech.Party/JavaScript/View/Company.js'
           - 'Beech.Party/JavaScript/View/Person.js'
           - 'Beech.Party/JavaScript/View/Account.js'
-          - 'Beech.Ehrm/JavaScript/ModuleHandler.js'
           - 'Beech.Ehrm/JavaScript/Application.js'
           - 'Beech.Task/JavaScript/Model/Task.js'
           - 'Beech.Task/JavaScript/Controller/Task.js'
@@ -74,8 +74,11 @@ Beech:
           - 'Beech.Party/JavaScript/View/Company.js'
           - 'Beech.Party/JavaScript/View/Person.js'
           - 'Beech.Ehrm/JavaScript/Route/ApplicationSettings.js'
+          - 'Beech.Ehrm/JavaScript/Route/UserPreferences.js'
           - 'Beech.Ehrm/JavaScript/Controller/ApplicationSettings.js'
+          - 'Beech.Ehrm/JavaScript/Controller/UserPreferences.js'
           - 'Beech.Ehrm/JavaScript/View/ApplicationSettings.js'
+          - 'Beech.Ehrm/JavaScript/View/UserPreferences.js'
           - 'Beech.Ehrm/JavaScript/Component/UserInterface/BreadcrumbMenu.js'
           - 'Beech.Ehrm/JavaScript/Component/UserInterface/DatePicker.js'
           - 'Beech.Ehrm/JavaScript/Component/UserInterface/Country.js'
@@ -115,6 +118,7 @@ Beech:
       - ['Beech.Party', 'Administration', 'Account']
       - ['Beech.Document', NULL, 'Document', {'chart': 'Chart'}]
       - ['Beech.Task', NULL, 'Task', {'close': 'Close', 'delete':null}]
+      - ['Beech.CLA', 'Administration', 'Contract', {'start':'Start', 'edit':null, 'delete':null}]
       - ['Beech.CLA', 'Administration', 'ContractArticle']
       - ['Beech.CLA', 'Administration', 'JobDescription']
       - ['Beech.Ehrm', 'Administration', 'ApplicationSettings', {'index': 'Index', 'edit':null, 'delete':null, 'list':null, 'new':null, 'show': null,'setupwizard':'SetupWizard'}]

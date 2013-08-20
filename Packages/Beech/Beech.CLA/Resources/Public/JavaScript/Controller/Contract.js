@@ -1,20 +1,20 @@
 (function() {
 	'use strict';
-	App.ContractModuleController = Ember.Controller.extend({
-		url: '',
-		loadUrl: function(params) {
-			App.ModuleHandler.loadUrl(this.get('url') + params);
-		}
-	});
 
-	App.AdministrationContractModuleNewController = App.ContractModuleController.extend({
-		url: MM.url.module.contractModuleNew
+	App.BeechCLAAdministrationContractController = App.ModuleHandlerAjaxController.extend();
+	App.BeechCLAAdministrationContractIndexController = App.BeechCLAAdministrationContractController.extend({
+		url: MM.url.module.BeechCLAAdministrationContractIndex
 	});
-	App.AdministrationContractModuleStartController = App.ContractModuleController.extend({
-		url: MM.url.module.contractModuleStart
+	App.BeechCLAAdministrationContractRefreshController = App.BeechCLAAdministrationContractController.extend({
+		url: MM.url.module.BeechCLAAdministrationContractIndex
 	});
-	App.AdministrationContractModuleShowController = App.ContractModuleController.extend({
-		url: MM.url.module.contractModuleShow
+	App.BeechCLAAdministrationContractNewController = App.BeechCLAAdministrationContractController.extend({
+		url: MM.url.module.BeechCLAAdministrationContractNew
 	});
-
+	App.BeechCLAAdministrationContractStartController = App.BeechCLAAdministrationContractController.extend({
+		url: MM.url.module.BeechCLAAdministrationContractStart
+	});
+	App.BeechCLAAdministrationContractShowController = App.BeechCLAAdministrationContractController.extend({
+		url: MM.url.module.BeechCLAAdministrationContractShow
+	});
 }).call(this);

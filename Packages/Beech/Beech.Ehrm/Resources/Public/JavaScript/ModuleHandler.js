@@ -4,7 +4,9 @@
 	App.ModuleHandlerAjaxController = Ember.Controller.extend({
 		url: '',
 		loadUrl: function(params) {
-			if (this.get('url').indexOf('?') > 0 && params.substr(0,1) == '?') {
+			if (!params) {
+				App.ModuleHandler.loadUrl(this.get('url'));
+			} else if (this.get('url').indexOf('?') > 0 && params.substr(0,1) == '?') {
 				App.ModuleHandler.loadUrl(this.get('url')+'&'+params.substr(1));
 			} else {
 				App.ModuleHandler.loadUrl(this.get('url')+params);
@@ -14,16 +16,19 @@
 	});
 
 	App.ModuleHandlerAjaxRoute = App.ModuleRoute.extend({
-		deserialize: function(params){
-			return {params: App.ModuleHandler.prepareUrl(params)}
-		},
 		setupController: function(controller, model) {
-			controller.loadUrl(model.params);
+		//	console.log('setupController in route')
+			if (model) {
+				controller.loadUrl(App.ModuleHandler.prepareUrl(model));
+			} else {
+				controller.loadUrl()
+			}
 		}
 	});
 
 	App.ModuleHandler = Ember.Object.create({
 		loadingFlag: false,
+		currentRequest: null,
 		init: function() {
 			var that = this;
 
@@ -39,7 +44,11 @@
 			// only load url when set
 			if(url) {
 				var $callback = callback;
-				$.ajax({
+				// stop current request
+				if (this.currentRequest) {
+					this.currentRequest.abort();
+				}
+				this.currentRequest = $.ajax({
 					format: 'html',
 					dataType: 'html',
 					context: this,

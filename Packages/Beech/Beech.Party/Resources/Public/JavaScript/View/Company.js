@@ -1,25 +1,20 @@
 (function() {
 	'use strict';
-	App.BeechPartyCompanyViewMixin = Ember.View.extend(App.AjaxModuleViewMixin, {
-		didInsertElement: function() {/* override default */}
-	});
 
 	// Front
-	App.BeechPartyCompanyIndexView = Ember.View.extend(App.AjaxModuleViewMixin, {
-		url: MM.url.module.BeechPartyCompanyIndex
-	});
-	App.BeechPartyCompanyShowView = App.BeechPartyCompanyViewMixin.extend();
-	App.BeechPartyCompanyNewView = App.BeechPartyCompanyViewMixin.extend();
-	App.BeechPartyCompanyEditView = App.BeechPartyCompanyViewMixin.extend();
-	App.BeechPartyCompanyDeleteView = App.BeechPartyCompanyViewMixin.extend();
+	App.BeechPartyCompanyView = Ember.View.extend(App.AjaxModuleViewMixin);
+	App.BeechPartyCompanyIndexView = Ember.View.extend(App.AjaxModuleViewMixin);
+	App.BeechPartyCompanyShowView = App.BeechPartyCompanyView.extend();
+	App.BeechPartyCompanyNewView = App.BeechPartyCompanyView.extend();
+	App.BeechPartyCompanyEditView = App.BeechPartyCompanyView.extend();
+	App.BeechPartyCompanyDeleteView = App.BeechPartyCompanyView.extend();
 
 	// Administration
-	App.BeechPartyAdministrationCompanyIndexView = Ember.View.extend(App.AjaxModuleViewMixin, {
-		url: MM.url.module.BeechPartyAdministrationCompanyIndex
-	});
-	App.BeechPartyAdministrationCompanyShowView = App.BeechPartyCompanyViewMixin.extend();
-	App.BeechPartyAdministrationCompanyNewView = App.BeechPartyCompanyViewMixin.extend();
-	App.BeechPartyAdministrationCompanyEditView = App.BeechPartyCompanyViewMixin.extend();
-	App.BeechPartyAdministrationCompanyDeleteView = App.BeechPartyCompanyViewMixin.extend();
+	App.BeechPartyAdministrationCompanyView = Ember.View.extend(App.AjaxModuleViewMixin);
+	App.BeechPartyAdministrationCompanyIndexView = Ember.View.extend(App.AjaxModuleViewMixin);
+	App.BeechPartyAdministrationCompanyShowView = App.BeechPartyCompanyView.extend();
+	App.BeechPartyAdministrationCompanyNewView = App.BeechPartyCompanyView.extend();
+	App.BeechPartyAdministrationCompanyEditView = App.BeechPartyCompanyView.extend();
+	App.BeechPartyAdministrationCompanyDeleteView = App.BeechPartyCompanyView.extend();
 
 }).call(this);

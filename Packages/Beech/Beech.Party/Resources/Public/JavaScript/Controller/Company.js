@@ -1,16 +1,15 @@
 (function() {
 	'use strict';
-	App.BeechPartyCompanyController = Ember.Controller.extend({
-		url: '',
-		loadUrl: function(params) {
-			App.ModuleHandler.loadUrl(this.get('url') + params);
-		}
-	});
+
 	// Front
+	App.BeechPartyCompanyController = App.ModuleHandlerAjaxController.extend();
 	App.BeechPartyCompanyIndexController = App.BeechPartyCompanyController.extend({
 		url: MM.url.module.BeechPartyAdministrationCompanyIndex
 	});
 	App.BeechPartyCompanyNewController = App.BeechPartyCompanyController.extend({
+		url: MM.url.module.BeechPartyAdministrationCompanyNew
+	});
+	App.BeechPartyCompanyRefreshNewController = App.BeechPartyCompanyController.extend({
 		url: MM.url.module.BeechPartyAdministrationCompanyNew
 	});
 	App.BeechPartyCompanyShowController = App.BeechPartyCompanyController.extend({
@@ -24,10 +23,14 @@
 	});
 
 	// Administration
+	App.BeechPartyAdministrationCompanyController = App.BeechPartyCompanyController.extend();
 	App.BeechPartyAdministrationCompanyIndexController = App.BeechPartyCompanyController.extend({
 		url: MM.url.module.BeechPartyAdministrationCompanyIndex
 	});
 	App.BeechPartyAdministrationCompanyNewController = App.BeechPartyCompanyController.extend({
+		url: MM.url.module.BeechPartyAdministrationCompanyNew
+	});
+	App.BeechPartyAdministrationCompanyRefreshNewController = App.BeechPartyCompanyController.extend({
 		url: MM.url.module.BeechPartyAdministrationCompanyNew
 	});
 	App.BeechPartyAdministrationCompanyShowController = App.BeechPartyCompanyController.extend({

@@ -1,10 +1,9 @@
 (function() {
 	'use strict';
 
-	// default resource view needs to be empty Index is loaded direct after this one
-	// http://emberjs.com/guides/routing/defining-your-routes/#toc_resources
-	App.BeechTaskTaskView = Ember.View.extend(App.AjaxModuleViewMixin, {
-		url: ''
-	});
+	App.BeechTaskTaskView = Ember.View.extend(App.AjaxModuleViewMixin);
+	App.BeechTaskTaskIndexView = App.BeechTaskTaskView.extend();
+	App.BeechTaskTaskShowView = App.BeechTaskTaskView.extend();
+	App.BeechTaskTaskEditView = App.BeechTaskTaskView.extend();
 
 }).call(this);

@@ -1,11 +1,9 @@
 (function() {
 	'use strict';
-	App.BeechEhrmApplicationSettingsView = Ember.View.extend(App.AjaxModuleViewMixin, {
-		didInsertElement: function() {/* override default */}
-	});
 
 	// Administration
-	App.BeechEhrmAdministrationApplicationSettingsIndexView = App.BeechEhrmApplicationSettingsView.extend();
-	App.BeechEhrmAdministrationApplicationSettingsSetupWizardView = App.BeechEhrmApplicationSettingsView.extend();
+	App.BeechEhrmAdministrationApplicationSettingsView = Ember.View.extend(App.AjaxModuleViewMixin);
+	App.BeechEhrmAdministrationApplicationSettingsIndexView = App.BeechEhrmAdministrationApplicationSettingsView.extend();
+	App.BeechEhrmAdministrationApplicationSettingsSetupWizardView = App.BeechEhrmAdministrationApplicationSettingsView.extend();
 
 }).call(this);

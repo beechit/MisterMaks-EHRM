@@ -1,12 +1,8 @@
 (function() {
 	'use strict';
-	App.BeechDocumentDocumentController = Ember.Controller.extend({
-		url: '',
-		loadUrl: function(params) {
-			App.ModuleHandler.loadUrl(this.get('url') + params);
-		}
-	});
+
 	// Front
+	App.BeechDocumentDocumentController = App.ModuleHandlerAjaxController.extend();
 	App.BeechDocumentDocumentIndexController = App.BeechDocumentDocumentController.extend({
 		url: MM.url.module.BeechDocumentDocumentIndex
 	});
@@ -25,7 +21,9 @@
 	App.BeechDocumentDocumentChartController = App.BeechDocumentDocumentController.extend({
 		url: MM.url.module.BeechDocumentDocumentChart
 	});
+
 	// Administration
+	App.BeechDocumentAdministrationDocumentController = App.BeechDocumentDocumentController.extend();
 	App.BeechDocumentAdministrationDocumentIndexController = App.BeechDocumentDocumentController.extend({
 		url: MM.url.module.BeechDocumentAdministrationDocumentIndex
 	});

@@ -13,13 +13,15 @@
 			this.route('jobDescriptionModule.new', { path: 'jobdescription/new' });
 			this.route('wizardManagementModule', { path: 'wizards' });
 
-				// Contracts
-			this.route('contractModule', { path: 'contracts' });
-				// TODO: Find a solution for adding multiple path patterns to the same
-			this.route('contractModule.refresh', { path: 'contracts/:random' });
-			this.route('contractModule.new', { path: 'contract/new' });
-			this.route('contractModule.start', { path: 'contract/start/:contractTemplate/:employee/:jobDescription' });
-			this.route('contractModule.show', { path: 'contract/show/:contract'});
+			// Beech.CLA/Contracts
+			this.resource('BeechCLAAdministrationContract', { path: 'contracts' }, function() {
+				this.route('refresh', { path: '/:random' });
+			});
+			this.resource('BeechCLAAdministrationContract', { path: 'contract' }, function() {
+				this.route('new', { path: '/new' });
+				this.route('start', { path: '/start/:contractTemplate/:employee/:jobDescription' });
+				this.route('show', { path: '/show/:contract' });
+			});
 
 			// Beech.CLA/JobDescription
 			this.resource('BeechCLAJobDescription', { path: 'jobdescriptions' }, function() {
@@ -59,7 +61,7 @@
 			});
 			this.resource('BeechPartyAdministrationPerson', { path: 'person' }, function() {
 				this.route('new', { path: '/new' });
-				this.route('new', { path: '/new/:random' });
+				this.route('refreshNew', { path: '/new/:random' });
 				this.route('show', { path: '/show/:person' });
 				this.route('edit', { path: '/edit/:person' });
 				this.route('delete', { path: '/delete/:person' });
@@ -70,7 +72,7 @@
 			});
 			this.resource('BeechPartyAdministrationCompany', { path: 'company' }, function() {
 				this.route('new', { path: '/new' });
-				this.route('new', { path: '/new/:random' });
+				this.route('refreshNew', { path: '/new/:random' });
 				this.route('show', { path: '/show/:company' });
 				this.route('edit', { path: '/edit/:company' });
 				this.route('delete', { path: '/delete/:company' });
@@ -80,7 +82,10 @@
 
 		this.resource('index', { path: '/' }, function() {
 			this.route('dashboard', { path: 'dashboard' });
-			this.route('userSettings', { path: 'user/settings' });
+
+			this.resource('BeechEhrmUserPreferences', { path: 'user/settings' }, function() {
+				this.route('index', {path:'/'})
+			});
 
 			// Beech.Document/Document
 			//this.route('documentModule', { path: 'documents' });
@@ -100,7 +105,7 @@
 			});
 			this.resource('BeechPartyPerson', { path: 'person' }, function() {
 				this.route('new', { path: '/new' });
-				this.route('new', { path: '/new/:random' });
+				this.route('refreshNew', { path: '/new/:random' });
 				this.route('show', { path: '/show/:person' });
 				this.route('edit', { path: '/edit/:person' });
 				this.route('delete', { path: '/delete/:person' });
@@ -111,7 +116,7 @@
 			});
 			this.resource('BeechPartyCompany', { path: 'company' }, function() {
 				this.route('new', { path: '/new' });
-				this.route('new', { path: '/new/:random' });
+				this.route('refreshNew', { path: '/new/:random' });
 				this.route('show', { path: '/show/:company' });
 				this.route('edit', { path: '/edit/:company' });
 				this.route('delete', { path: '/delete/:company' });
@@ -123,10 +128,10 @@
 				this.route('edit', {path: '/edit/:task'});
 				this.route('close', {path: '/close/:task'});
 			});
-			// Beech.Ehrm/JobPosition
+			// Beech.CLA/JobPosition
 			this.resource('BeechCLAJobPosition', { path: 'jobpositions' }, function() {
 				this.route('index', { path: '/index' });
-				this.route('index', { path: '/:random' });
+				this.route('refresh', { path: '/:random' });
 			});
 			this.resource('BeechCLAJobPosition', { path: 'jobposition' }, function() {
 				this.route('new', { path: '/new/:parentJobPosition' });
@@ -151,9 +156,6 @@
 		templateName: 'user_interface_dashboard'
 	});
 
-	App.IndexUserSettingsView = Ember.View.extend(App.AjaxModuleViewMixin, {
-		url: MM.url.module.userSettings
-	});
 	App.IndexDocumentModuleView = Ember.View.extend(App.AjaxModuleViewMixin, {
 		url: MM.url.module.documents
 	});

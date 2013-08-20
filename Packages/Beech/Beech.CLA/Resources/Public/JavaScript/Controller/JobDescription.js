@@ -1,20 +1,19 @@
 (function () {
 	'use strict';
-	App.BeechCLAJobDescriptionController = App.ModuleHandlerAjaxController.extend({
-	});
-	App.BeechCLAJobDescriptionIndexController = App.ModuleHandlerAjaxController.extend({
+	App.BeechCLAJobDescriptionController = App.ModuleHandlerAjaxController.extend();
+	App.BeechCLAJobDescriptionIndexController = App.BeechCLAJobDescriptionController.extend({
 		url: MM.url.module.BeechCLAAdministrationJobDescriptionIndex
 	});
-	App.BeechCLAJobDescriptionNewController = App.ModuleHandlerAjaxController.extend({
+	App.BeechCLAJobDescriptionNewController = App.BeechCLAJobDescriptionController.extend({
 		url: MM.url.module.BeechCLAAdministrationJobDescriptionNew
 	});
-	App.BeechCLAJobDescriptionShowController = App.ModuleHandlerAjaxController.extend({
+	App.BeechCLAJobDescriptionShowController = App.BeechCLAJobDescriptionController.extend({
 		url: MM.url.module.BeechCLAAdministrationJobDescriptionShow
 	});
-	App.BeechCLAJobDescriptionEditController = App.ModuleHandlerAjaxController.extend({
+	App.BeechCLAJobDescriptionEditController = App.BeechCLAJobDescriptionController.extend({
 		url: MM.url.module.BeechCLAAdministrationJobDescriptionEdit
 	});
-	App.BeechCLAJobDescriptionDeleteController = App.ModuleHandlerAjaxController.extend({
+	App.BeechCLAJobDescriptionDeleteController = App.BeechCLAJobDescriptionController.extend({
 		url: MM.url.module.BeechCLAAdministrationJobDescriptionDelete
 	});
 

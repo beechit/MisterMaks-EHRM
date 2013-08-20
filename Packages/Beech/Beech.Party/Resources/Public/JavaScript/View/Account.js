@@ -1,25 +1,20 @@
 (function() {
 	'use strict';
-	App.BeechPartyAccountViewMixin = Ember.View.extend(App.AjaxModuleViewMixin, {
-		didInsertElement: function() {/* override default */}
-	});
 
 	// Front
-	App.BeechPartyAccountIndexView = Ember.View.extend(App.AjaxModuleViewMixin, {
-		url: MM.url.module.BeechPartyAccountIndex
-	});
-	App.BeechPartyAccountShowView = App.BeechPartyAccountViewMixin.extend();
-	App.BeechPartyAccountNewView = App.BeechPartyAccountViewMixin.extend();
-	App.BeechPartyAccountEditView = App.BeechPartyAccountViewMixin.extend();
-	App.BeechPartyAccountDeleteView = App.BeechPartyAccountViewMixin.extend();
+	App.BeechPartyAccountView = Ember.View.extend(App.AjaxModuleViewMixin);
+	App.BeechPartyAccountIndexView = App.BeechPartyAccountView.extend();
+	App.BeechPartyAccountShowView = App.BeechPartyAccountView.extend();
+	App.BeechPartyAccountNewView = App.BeechPartyAccountView.extend();
+	App.BeechPartyAccountEditView = App.BeechPartyAccountView.extend();
+	App.BeechPartyAccountDeleteView = App.BeechPartyAccountView.extend();
 
 	// Administration
-	App.BeechPartyAdministrationAccountIndexView = Ember.View.extend(App.AjaxModuleViewMixin, {
-		url: MM.url.module.BeechPartyAdministrationAccountIndex
-	});
-	App.BeechPartyAdministrationAccountShowView = App.BeechPartyAccountViewMixin.extend();
-	App.BeechPartyAdministrationAccountNewView = App.BeechPartyAccountViewMixin.extend();
-	App.BeechPartyAdministrationAccountEditView = App.BeechPartyAccountViewMixin.extend();
-	App.BeechPartyAdministrationAccountDeleteView = App.BeechPartyAccountViewMixin.extend();
+	App.BeechPartyAdministrationAccountView = App.BeechPartyAccountView.extend();;
+	App.BeechPartyAdministrationAccountIndexView = App.BeechPartyAccountView.extend();;
+	App.BeechPartyAdministrationAccountShowView = App.BeechPartyAccountView.extend();
+	App.BeechPartyAdministrationAccountNewView = App.BeechPartyAccountView.extend();
+	App.BeechPartyAdministrationAccountEditView = App.BeechPartyAccountView.extend();
+	App.BeechPartyAdministrationAccountDeleteView = App.BeechPartyAccountView.extend();
 
 }).call(this);

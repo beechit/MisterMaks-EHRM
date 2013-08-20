@@ -1,20 +1,23 @@
 (function () {
 	'use strict';
-	App.BeechCLAJobPositionController = App.ModuleHandlerAjaxController.extend({
-	});
-	App.BeechCLAJobPositionIndexController = App.ModuleHandlerAjaxController.extend({
+
+	App.BeechCLAJobPositionController = App.ModuleHandlerAjaxController.extend();
+	App.BeechCLAJobPositionIndexController = App.BeechCLAJobPositionController.extend({
 		url: MM.url.module.BeechCLAJobPositionIndex
 	});
-	App.BeechCLAJobPositionNewController = App.ModuleHandlerAjaxController.extend({
+	App.BeechCLAJobPositionRefreshController = App.BeechCLAJobPositionController.extend({
+		url: MM.url.module.BeechCLAJobPositionIndex
+	});
+	App.BeechCLAJobPositionNewController = App.BeechCLAJobPositionController.extend({
 		url: MM.url.module.BeechCLAJobPositionNew
 	});
-	App.BeechCLAJobPositionShowController = App.ModuleHandlerAjaxController.extend({
+	App.BeechCLAJobPositionShowController = App.BeechCLAJobPositionController.extend({
 		url: MM.url.module.BeechCLAJobPositionShow
 	});
-	App.BeechCLAJobPositionEditController = App.ModuleHandlerAjaxController.extend({
+	App.BeechCLAJobPositionEditController = App.BeechCLAJobPositionController.extend({
 		url: MM.url.module.BeechCLAJobPositionEdit
 	});
-	App.BeechCLAJobPositionDeleteController = App.ModuleHandlerAjaxController.extend({
+	App.BeechCLAJobPositionDeleteController = App.BeechCLAJobPositionController.extend({
 		url: MM.url.module.BeechCLAJobPositionDelete
 	});
 

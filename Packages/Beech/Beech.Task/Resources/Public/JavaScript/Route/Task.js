@@ -1,19 +1,11 @@
 (function() {
 	'use strict';
 
-	App.TaskModuleRoute = App.ModuleHandlerAjaxRoute.extend({
-		setupController: function(controller, model) {
-			var params = model.params;
-			if(!params && model.id) {
-				params = '?task='+model.id;
-			}
-			controller.loadUrl(params);
-		}
-	});
-	App.BeechTaskTaskIndexRoute = App.TaskModuleRoute.extend();
-	App.BeechTaskTaskNewRoute = App.TaskModuleRoute.extend();
-	App.BeechTaskTaskShowRoute = App.TaskModuleRoute.extend();
-	App.BeechTaskTaskEditRoute = App.TaskModuleRoute.extend();
-	App.BeechTaskTaskCloseRoute = App.TaskModuleRoute.extend();
+	App.BeechTaskTaskRoute = App.ModuleHandlerAjaxRoute.extend();
+	App.BeechTaskTaskIndexRoute = App.BeechTaskTaskRoute.extend();
+	App.BeechTaskTaskNewRoute = App.BeechTaskTaskRoute.extend();
+	App.BeechTaskTaskShowRoute = App.BeechTaskTaskRoute.extend();
+	App.BeechTaskTaskEditRoute = App.BeechTaskTaskRoute.extend();
+	App.BeechTaskTaskCloseRoute = App.BeechTaskTaskRoute.extend();
 
 }).call(this);

@@ -1,26 +1,21 @@
 (function() {
 	'use strict';
-	App.BeechDocumentDocumentViewMixin = Ember.View.extend(App.AjaxModuleViewMixin, {
-		didInsertElement: function() {/* override default */}
-	});
 
 	// Front
-	App.BeechDocumentDocumentIndexView = Ember.View.extend(App.AjaxModuleViewMixin, {
-		url: MM.url.module.BeechDocumentDocumentIndex
-	});
-	App.BeechDocumentDocumentShowView = App.BeechDocumentDocumentViewMixin.extend();
-	App.BeechDocumentDocumentNewView = App.BeechDocumentDocumentViewMixin.extend();
-	App.BeechDocumentDocumentEditView = App.BeechDocumentDocumentViewMixin.extend();
-	App.BeechDocumentDocumentDeleteView = App.BeechDocumentDocumentViewMixin.extend();
-	App.BeechDocumentDocumentChartView = App.BeechDocumentDocumentViewMixin.extend();
+	App.BeechDocumentDocumentView = Ember.View.extend(App.AjaxModuleViewMixin);
+	App.BeechDocumentDocumentIndexView = App.BeechDocumentDocumentView.extend();
+	App.BeechDocumentDocumentShowView = App.BeechDocumentDocumentView.extend();
+	App.BeechDocumentDocumentNewView = App.BeechDocumentDocumentView.extend();
+	App.BeechDocumentDocumentEditView = App.BeechDocumentDocumentView.extend();
+	App.BeechDocumentDocumentDeleteView = App.BeechDocumentDocumentView.extend();
+	App.BeechDocumentDocumentChartView = App.BeechDocumentDocumentView.extend();
 
 	// Administration
-	App.BeechDocumentAdministrationDocumentIndexView = Ember.View.extend(App.AjaxModuleViewMixin, {
-		url: MM.url.module.BeechDocumentAdministrationDocumentIndex
-	});
-	App.BeechDocumentAdministrationDocumentShowView = App.BeechDocumentDocumentViewMixin.extend();
-	App.BeechDocumentAdministrationDocumentNewView = App.BeechDocumentDocumentViewMixin.extend();
-	App.BeechDocumentAdministrationDocumentEditView = App.BeechDocumentDocumentViewMixin.extend();
-	App.BeechDocumentAdministrationDocumentDeleteView = App.BeechDocumentDocumentViewMixin.extend();
+	App.BeechDocumentAdministrationDocumentView = App.BeechDocumentDocumentView.extend();
+	App.BeechDocumentAdministrationDocumentIndexView = App.BeechDocumentDocumentView.extend();
+	App.BeechDocumentAdministrationDocumentShowView = App.BeechDocumentDocumentView.extend();
+	App.BeechDocumentAdministrationDocumentNewView = App.BeechDocumentDocumentView.extend();
+	App.BeechDocumentAdministrationDocumentEditView = App.BeechDocumentDocumentView.extend();
+	App.BeechDocumentAdministrationDocumentDeleteView = App.BeechDocumentDocumentView.extend();
 
 }).call(this);

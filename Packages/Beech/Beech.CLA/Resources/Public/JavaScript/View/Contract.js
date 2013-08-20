@@ -1,14 +1,11 @@
 (function() {
 	'use strict';
-	App.ContractModuleViewMixin = Ember.View.extend(App.AjaxModuleViewMixin, {
-		didInsertElement: function() {/* override default */}
-	});
-	App.AdministrationContractModuleView = Ember.View.extend(App.AjaxModuleViewMixin, {
-		url: MM.url.module.contractModule
-	});
+	App.BeechCLAAdministrationContractView = Ember.View.extend(App.AjaxModuleViewMixin);
+	App.BeechCLAAdministrationContractIndexView = App.BeechCLAAdministrationContractView.extend();
+	App.BeechCLAAdministrationContractRefreshView = App.BeechCLAAdministrationContractView.extend();
 
-	App.AdministrationContractModuleShowView = App.ContractModuleViewMixin.extend();
-	App.AdministrationContractModuleStartView = App.ContractModuleViewMixin.extend({
+	App.BeechCLAAdministrationContractShowView = App.BeechCLAAdministrationContractView.extend();
+	App.BeechCLAAdministrationContractStartView = App.BeechCLAAdministrationContractView.extend({
 		didInsertElement: function() {
 			$('#modal-body-only')
 				.find('.modal-body').html('');
@@ -18,6 +15,6 @@
 				.modal('show');
 		}
 	});
-	App.AdministrationContractModuleNewView = App.AdministrationContractModuleStartView;
+	App.BeechCLAAdministrationContractNewView = App.BeechCLAAdministrationContractStartView;
 
 }).call(this);

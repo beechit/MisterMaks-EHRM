@@ -1,12 +1,8 @@
 (function() {
 	'use strict';
-	App.BeechPartyAccountController = Ember.Controller.extend({
-		url: '',
-		loadUrl: function(params) {
-			App.ModuleHandler.loadUrl(this.get('url') + params);
-		}
-	});
+
 	// Front
+	App.BeechPartyAccountController = App.ModuleHandlerAjaxController.extend();
 	App.BeechPartyAccountIndexController = App.BeechPartyAccountController.extend({
 		url: MM.url.module.BeechPartyAccountIndex
 	});
@@ -24,6 +20,7 @@
 	});
 
 	// Administration
+	App.BeechPartyAdministrationAccountController = App.BeechPartyAccountController.extend();
 	App.BeechPartyAdministrationAccountIndexController = App.BeechPartyAccountController.extend({
 		url: MM.url.module.BeechPartyAdministrationAccountIndex
 	});

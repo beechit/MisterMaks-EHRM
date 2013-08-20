@@ -5,7 +5,7 @@
 		content: [],
 		loaded: false,
 		init: function() {
-			this.set('content', App.BeechTaskDomainModelTask.find());
+			this.set('content', App.BeechTaskDomainModelTask.find({ownTasks:true}));
 		},
 		isLoaded: function() {
 			if(this.get('content').get('isLoaded') && !this.get('content').get('isUpdating')) {
@@ -13,7 +13,7 @@
 			} else {
 				return false;
 			}
-		}.property('content.isLoaded').property('content.isUpdating'),
+		}.property('content.isLoaded').property('content.isUpdating').property('content.@each.id'),
 		countOpenTasks: function() {
 			return this.get('content').filterProperty('closed', false).length;
 		}.property('content.@each.closed'),
