@@ -25,7 +25,7 @@
 			<f:comment>This hidden input is for the applicaton setupWizard</f:comment>
 			<input type="hidden" name="iscomplete" value="true" data-validate="isComplete"/>
 			<input type="hidden" name="withDetails" value="{withDetails}" />
-			<f:render partial="Forms/Person" />
+			<f:render partial="Forms/Person" arguments="{_all}" />
 			<div class="form-actions">
 				<f:form.submit value="{f:translate(id: 'action.save')}" class="btn"/>
 			</div>

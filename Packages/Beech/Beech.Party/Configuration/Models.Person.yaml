@@ -139,3 +139,5 @@
       default: 'currentUser'
       label: 'Created by'
       type: 'Beech\Party\Domain\Model\Person'
+    'preferences':
+      type: '\Beech\Ehrm\Domain\Model\PersonPreferences'

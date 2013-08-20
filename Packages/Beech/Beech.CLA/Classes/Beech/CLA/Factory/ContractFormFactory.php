@@ -16,10 +16,10 @@ use TYPO3\Form\Core\Model\FormDefinition;
 class ContractFormFactory extends \TYPO3\Form\Factory\AbstractFormFactory {
 
 	/**
-	 * @var \Beech\Ehrm\Utility\PreferenceUtility
+	 * @var \Beech\Ehrm\Utility\PreferencesUtility
 	 * @Flow\Inject
 	 */
-	protected $preferenceUtility;
+	protected $preferencesUtility;
 
 	/**
 	 * @var \Beech\CLA\Domain\Repository\ContractTemplateRepository
@@ -129,7 +129,7 @@ class ContractFormFactory extends \TYPO3\Form\Factory\AbstractFormFactory {
 			$contract->setContractTemplate($contractTemplate);
 			$contract->setEmployee($this->personRepository->findByIdentifier($this->factorySpecificConfiguration['employee']));
 			$contract->setJobDescription($this->jobDescriptionRepository->findByIdentifier($this->factorySpecificConfiguration['jobDescription']));
-			$contract->setEmployer($this->companyRepository->findByIdentifier($this->preferenceUtility->getApplicationPreference('company')));
+			$contract->setEmployer($this->companyRepository->findByIdentifier($this->preferencesUtility->getApplicationPreference('company')));
 
 			/**
 			 * @todo: flatten all Contract values (from yaml file) employee adress, jobtitle etc

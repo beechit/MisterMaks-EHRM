@@ -64,10 +64,10 @@ class CompanyController extends \Beech\Ehrm\Controller\AbstractManagementControl
 	protected $personRepository;
 
 	/**
-	 * @var \Beech\Ehrm\Utility\PreferenceUtility
+	 * @var \Beech\Ehrm\Utility\PreferencesUtility
 	 * @Flow\Inject
 	 */
-	protected $preferenceUtility;
+	protected $preferencesUtility;
 
 	/**
 	 * Shows company preview with departments
@@ -78,7 +78,7 @@ class CompanyController extends \Beech\Ehrm\Controller\AbstractManagementControl
 		$this->view->assign('companies', $this->repository->findAll());
 			// take initial company as a default
 		if ($company === NULL) {
-			$initialCompanyIdentifier = $this->preferenceUtility->getApplicationPreference('company');
+			$initialCompanyIdentifier = $this->preferencesUtility->getApplicationPreference('company');
 			$company = $this->repository->findByIdentifier($initialCompanyIdentifier);
 		}
 		$this->view->assign('company', $company);

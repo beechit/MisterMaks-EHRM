@@ -32,10 +32,10 @@ class LocaleAspect {
 	protected $applicationLogger;
 
 	/**
-	 * @var \Beech\Ehrm\Utility\PreferenceUtility
+	 * @var \Beech\Ehrm\Utility\PreferencesUtility
 	 * @Flow\Inject
 	 */
-	protected $preferenceUtility;
+	protected $preferencesUtility;
 
 	/**
 	 * @Flow\Around("method(TYPO3\Flow\I18n\Configuration->getCurrentLocale())")
@@ -43,7 +43,7 @@ class LocaleAspect {
 	 * @return \TYPO3\Flow\I18n\Locale
 	 */
 	public function overrideCurrentLocaleByUserSettings(\TYPO3\Flow\Aop\JoinPointInterface $joinPoint) {
-		$localeIdentifier = $this->preferenceUtility->getApplicationPreference('locale');
+		$localeIdentifier = $this->preferencesUtility->getApplicationPreference('locale');
 		if (empty($localeIdentifier)) {
 			$localeIdentifier = 'mul_ZZ';
 		}

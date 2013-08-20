@@ -41,10 +41,10 @@ class ApplicationSettingsController extends \Beech\Ehrm\Controller\AbstractContr
 	protected $applicationLogger;
 
 	/**
-	 * @var \Beech\Ehrm\Utility\PreferenceUtility
+	 * @var \Beech\Ehrm\Utility\PreferencesUtility
 	 * @Flow\Inject
 	 */
-	protected $preferenceUtility;
+	protected $preferencesUtility;
 
 	/**
 	 * @var \Beech\Party\Domain\Repository\CompanyRepository
@@ -65,9 +65,9 @@ class ApplicationSettingsController extends \Beech\Ehrm\Controller\AbstractContr
 		}
 
 		$this->view->assignMultiple(array(
-			'currentLocale' => $this->preferenceUtility->getApplicationPreference('locale', FALSE),
+			'currentLocale' => $this->preferencesUtility->getApplicationPreference('locale', FALSE),
 			'locales' => $this->settingsHelper->getAvailableLanguages(),
-			'currentTheme' => $this->preferenceUtility->getApplicationPreference('theme', FALSE),
+			'currentTheme' => $this->preferencesUtility->getApplicationPreference('theme', FALSE),
 			'themes' => $themes
 		));
 	}
@@ -78,8 +78,8 @@ class ApplicationSettingsController extends \Beech\Ehrm\Controller\AbstractContr
 	 * @return void
 	 */
 	public function updateAction($locale = 'en_EN', $theme = 'Default') {
-		$this->preferenceUtility->setApplicationPreference('locale', $locale);
-		$this->preferenceUtility->setApplicationPreference('theme', $theme);
+		$this->preferencesUtility->setApplicationPreference('locale', $locale);
+		$this->preferencesUtility->setApplicationPreference('theme', $theme);
 		$this->addFlashMessage('Application preferences updated');
 		$this->redirect('index');
 	}
@@ -89,7 +89,7 @@ class ApplicationSettingsController extends \Beech\Ehrm\Controller\AbstractContr
 	 */
 	public function setupWizardAction() {
 
-		$company = $this->companyRepository->findByIdentifier($this->preferenceUtility->getApplicationPreference('company'));
+		$company = $this->companyRepository->findByIdentifier($this->preferencesUtility->getApplicationPreference('company'));
 
 		$this->view->assign('company', $company);
 		$this->view->assign('person', $this->getPerson());
@@ -99,7 +99,7 @@ class ApplicationSettingsController extends \Beech\Ehrm\Controller\AbstractContr
 	 * Environment wizard completed
 	 */
 	public function setupWizardCompleteAction() {
-		$this->preferenceUtility->setApplicationPreference('setupWizardComplete', TRUE);
+		$this->preferencesUtility->setApplicationPreference('setupWizardComplete', TRUE);
 		return TRUE;
 	}
 

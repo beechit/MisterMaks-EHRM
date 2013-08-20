@@ -8,7 +8,7 @@
 			<h3>Personal data</h3>
 			<f:form action="create" object="{person}" name="person">
 				<input type="hidden" name="iscomplete" value="false" data-validate="isComplete"/>
-				<f:render partial="Forms/Person"/>
+				<f:render partial="Forms/Person" arguments="{_all}" />
 			</f:form>
 		</div>
 		<div class="wizard-card row-fluid" data-cardname="electronicAddress"

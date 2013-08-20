@@ -15,10 +15,10 @@ use TYPO3\Flow\Annotations as Flow;
 class ThemeHelper {
 
 	/**
-	 * @var \Beech\Ehrm\Utility\PreferenceUtility
+	 * @var \Beech\Ehrm\Utility\PreferencesUtility
 	 * @Flow\Inject
 	 */
-	protected $preferenceUtility;
+	protected $preferencesUtility;
 
 	/**
 	 * @var array
@@ -86,7 +86,7 @@ class ThemeHelper {
 	public function getSelectedTheme() {
 		$availableThemes = $this->getAvailableThemes();
 
-		$defaultTheme = $this->preferenceUtility->getApplicationPreference('theme', FALSE);
+		$defaultTheme = $this->preferencesUtility->getApplicationPreference('theme', FALSE);
 		if ($defaultTheme !== NULL && isset($availableThemes[$defaultTheme])) {
 			return $availableThemes[$defaultTheme];
 		}

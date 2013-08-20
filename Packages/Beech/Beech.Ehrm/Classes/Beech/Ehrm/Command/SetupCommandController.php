@@ -23,10 +23,10 @@ class SetupCommandController extends \TYPO3\Flow\Cli\CommandController {
 	protected $persistenceManager;
 
 	/**
-	 * @var \Beech\Ehrm\Utility\PreferenceUtility
+	 * @var \Beech\Ehrm\Utility\PreferencesUtility
 	 * @Flow\Inject
 	 */
-	protected $preferenceUtility;
+	protected $preferencesUtility;
 
 	/**
 	 * @var \Beech\Party\Domain\Repository\CompanyRepository
@@ -69,14 +69,15 @@ class SetupCommandController extends \TYPO3\Flow\Cli\CommandController {
 
 		$company = NULL;
 
-		if ($this->preferenceUtility->getApplicationPreference('company') !== NULL) {
+		if ($this->preferencesUtility->getApplicationPreference('company') !== NULL) {
 			$this->outputLine('Application is already initialized');
-			$company = $this->companyRepository->findByIdentifier($this->preferenceUtility->getApplicationPreference('company'));
+			$company = $this->companyRepository->findByIdentifier($this->preferencesUtility->getApplicationPreference('company'));
 		}
 
 		if ($company === NULL && $this->companyRepository->countByName($companyName) > 0) {
-			$this->outputLine('Company "%s" already exists.', array($companyName));
-			$this->quit(1);
+			$company = $this->companyRepository->findOneByName($companyName);
+			$this->preferencesUtility->setApplicationPreference('company', $this->persistenceManager->getIdentifierByObject($company));
+			$this->outputLine('Company "%s" already exists. Using existing company', array($companyName));
 		}
 
 		if ($company === NULL) {
@@ -88,7 +89,7 @@ class SetupCommandController extends \TYPO3\Flow\Cli\CommandController {
 
 			$this->companyRepository->add($company);
 
-			$this->preferenceUtility->setApplicationPreference('company', $this->persistenceManager->getIdentifierByObject($company));
+			$this->preferencesUtility->setApplicationPreference('company', $this->persistenceManager->getIdentifierByObject($company));
 
 			$this->outputLine('Created an application for company "%s".', array($companyName));
 		}

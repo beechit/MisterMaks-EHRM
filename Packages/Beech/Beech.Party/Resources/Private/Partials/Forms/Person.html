@@ -119,11 +119,23 @@
 	</div>
 </div>
 
-<div class="control-group"><label class="control-label" for="bsn">
-	<f:translate id="bsn">BSN</f:translate>
-</label>
+<div class="control-group">
+	<label class="control-label" for="bsn">
+		<f:translate id="bsn">BSN</f:translate>
+	</label>
 
 	<div class="controls controls-row">
 		<f:form.textfield property="bsn" id="bsn" class="span8 bsn" placeholder="{f:translate(id:'BSN Number')}"/>
 	</div>
 </div>
+
+<f:if condition="{languages}">
+	<div class="control-group">
+		<label class="control-label" for="locale">
+			<f:translate id="language">Language</f:translate>
+		</label>
+		<div class="controls">
+			<f:form.select id="locale" property="preferences.locale" options="{languages}" />
+		</div>
+	</div>
+</f:if>

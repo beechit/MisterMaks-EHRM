@@ -17,6 +17,32 @@ use TYPO3\Flow\Annotations as Flow,
  */
 class PersonCouchDocument extends \Beech\Ehrm\Domain\Model\Document {
 
+	/**
+	 * @var \Beech\Ehrm\Domain\Model\PersonPreferences
+	 * @ODM\ReferenceOne(targetDocument="\Beech\Ehrm\Domain\Model\PersonPreferences", cascade={"persist"})
+	 */
+	protected $preferences;
+
+	/**
+	 * Set preferences
+	 *
+	 * @param \Beech\Ehrm\Domain\Model\PersonPreferences $preferences
+	 */
+	public function setPreferences(\Beech\Ehrm\Domain\Model\PersonPreferences $preferences) {
+		$this->preferences = $preferences;
+	}
+
+	/**
+	 * Get preferences
+	 *
+	 * @return \Beech\Ehrm\Domain\Model\PersonPreferences
+	 */
+	public function getPreferences() {
+		if ($this->preferences === NULL) {
+			$this->preferences = new \Beech\Ehrm\Domain\Model\PersonPreferences();
+		}
+		return $this->preferences;
+	}
 
 }
 

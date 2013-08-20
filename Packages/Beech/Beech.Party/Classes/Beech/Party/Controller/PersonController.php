@@ -94,6 +94,12 @@ class PersonController extends \Beech\Ehrm\Controller\AbstractManagementControll
 	protected $documentTypeRepository;
 
 	/**
+	 * @var \Beech\Ehrm\Helper\SettingsHelper
+	 * @Flow\Inject
+	 */
+	protected $settingsHelper;
+
+	/**
 	 * Shows a list of persons
 	 *
 	 * @return void
@@ -160,6 +166,7 @@ class PersonController extends \Beech\Ehrm\Controller\AbstractManagementControll
 		$this->view->assign('licences', $licences);
 		$absences = $this->absenceRepository->findByParty($person->getId());
 		$this->view->assign('absences', $absences);
+		$this->view->assign('languages', $this->settingsHelper->getAvailableLanguages());
 
 		$this->view->assign('withDetails', $withDetails);
 	}
@@ -170,6 +177,7 @@ class PersonController extends \Beech\Ehrm\Controller\AbstractManagementControll
 	 * @return void
 	 */
 	public function newAction() {
+		$this->view->assign('languages', $this->settingsHelper->getAvailableLanguages());
 	}
 
 	/**

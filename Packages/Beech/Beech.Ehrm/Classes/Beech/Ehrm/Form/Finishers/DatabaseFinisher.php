@@ -25,10 +25,10 @@ class DatabaseFinisher extends \TYPO3\Form\Core\Model\AbstractFinisher {
 	protected $objectManager;
 
 	/**
-	 * @var \Beech\Ehrm\Utility\PreferenceUtility
+	 * @var \Beech\Ehrm\Utility\PreferencesUtility
 	 * @Flow\Inject
 	 */
-	protected $preferenceUtility;
+	protected $preferencesUtility;
 
 	/**
 	 * @var \TYPO3\Flow\Persistence\PersistenceManagerInterface

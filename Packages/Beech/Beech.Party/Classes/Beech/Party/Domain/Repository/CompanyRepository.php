@@ -17,10 +17,10 @@ use TYPO3\Flow\Annotations as Flow;
 class CompanyRepository extends \TYPO3\Flow\Persistence\Repository {
 
 	/**
-	 * @var \Beech\Ehrm\Utility\PreferenceUtility
+	 * @var \Beech\Ehrm\Utility\PreferencesUtility
 	 * @Flow\Inject
 	 */
-	protected $preferenceUtility;
+	protected $preferencesUtility;
 
 	/**
 	 * Find all allowed parent Companies for a certain Company
@@ -31,7 +31,7 @@ class CompanyRepository extends \TYPO3\Flow\Persistence\Repository {
 	public function findAllowedParentsFor(\Beech\Party\Domain\Model\Company $company) {
 
 		$companies = new \Doctrine\Common\Collections\ArrayCollection();
-		$mainCompanyId = $this->preferenceUtility->getApplicationPreference('company');
+		$mainCompanyId = $this->preferencesUtility->getApplicationPreference('company');
 
 		if ($company->getId() === $mainCompanyId) {
 			return $companies;

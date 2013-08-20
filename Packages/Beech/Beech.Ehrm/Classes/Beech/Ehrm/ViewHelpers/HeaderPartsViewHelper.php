@@ -12,10 +12,10 @@ use TYPO3\Flow\Annotations as Flow;
 class HeaderPartsViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper {
 
 	/**
-	 * @var \Beech\Ehrm\Utility\PreferenceUtility
+	 * @var \Beech\Ehrm\Utility\PreferencesUtility
 	 * @Flow\Inject
 	 */
-	protected $preferenceUtility;
+	protected $preferencesUtility;
 
 	/**
 	 * @var \TYPO3\Flow\Security\Authentication\AuthenticationManagerInterface
@@ -216,7 +216,7 @@ class HeaderPartsViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHel
 				'onLoad' => array(),
 				'afterInitialize' => array()
 			),
-			'locale' => $this->preferenceUtility->getApplicationPreference('locale'),
+			'locale' => $this->preferencesUtility->getApplicationPreference('locale'),
 			'url' => array()
 		);
 		$predefinedModules = $this->linkEmberRoutesToModules();

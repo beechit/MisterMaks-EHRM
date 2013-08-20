@@ -23,10 +23,10 @@ class LoginController extends \TYPO3\Flow\Security\Authentication\Controller\Abs
 	protected $translator;
 
 	/**
-	 * @var \Beech\Ehrm\Utility\PreferenceUtility
+	 * @var \Beech\Ehrm\Utility\PreferencesUtility
 	 * @Flow\Inject
 	 */
-	protected $preferenceUtility;
+	protected $preferencesUtility;
 
 	/**
 	 * @var \TYPO3\Flow\Security\Authentication\AuthenticationManagerInterface
@@ -48,7 +48,7 @@ class LoginController extends \TYPO3\Flow\Security\Authentication\Controller\Abs
 		if ($this->authenticationManager->isAuthenticated()) {
 			$this->redirect('index', 'Application', 'Beech.Ehrm');
 		}
-		$this->view->assign('applicationConfigured', $this->preferenceUtility->getApplicationPreference('company') !== NULL);
+		$this->view->assign('applicationConfigured', $this->preferencesUtility->getApplicationPreference('company') !== NULL);
 		$this->view->assign('username', $username);
 	}
 

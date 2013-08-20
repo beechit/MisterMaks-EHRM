@@ -17,12 +17,6 @@ use TYPO3\Flow\Annotations as Flow;
 class UserCommandController extends \TYPO3\Flow\Cli\CommandController {
 
 	/**
-	 * @var \Beech\Ehrm\Utility\PreferenceUtility
-	 * @Flow\Inject
-	 */
-	protected $preferenceUtility;
-
-	/**
 	 * @var \TYPO3\Flow\Security\AccountRepository
 	 * @Flow\Inject
 	 */
@@ -94,27 +88,29 @@ class UserCommandController extends \TYPO3\Flow\Cli\CommandController {
 			$this->outputLine('Account "%s" not found', array($username));
 		}
 
-		if (!$account->getParty() instanceof \Beech\Party\Domain\Model\Person) {
+		/** @var \Beech\Party\Domain\Model\Person $person */
+		$person = $account->getParty();
+
+		if (!$person instanceof \Beech\Party\Domain\Model\Person) {
 			$this->outputLine('Account "%s" does not have a valid Person object ', array($username));
 		}
 
 		if ($value === NULL) {
 			$this->outputLine('Setting "%s" for "%s" contains value "%s"', array(
 				$setting,
-				$account->getParty()->getName()->getFullName(),
-				$this->preferenceUtility->getModelPreference($account->getParty(), \Beech\Ehrm\Utility\PreferenceUtility::CATEGORY_USER, $setting)
+				$person->getName()->getFullName(),
+				$person->getPreferences()->get($setting)
 			));
 		} else {
-			$this->preferenceUtility->setModelPreference($account->getParty(), \Beech\Ehrm\Utility\PreferenceUtility::CATEGORY_USER, $setting, $value);
+			$person->getPreferences()->set($setting, $value);
+			$this->personRepository->update($person);
 
 			$this->outputLine('Setting "%s" for "%s" set to "%s"', array(
 				$setting,
-				$account->getParty()->getName()->getFullName(),
+				$person->getName()->getFullName(),
 				$value
 			));
 		}
-
-		$this->personRepository->update($account->getParty());
 	}
 
 }
