@@ -11,13 +11,10 @@
           'home': 'Home'
           'business': 'Business'
           'mobile': 'Mobile'
-#          'foreign': 'Foreign'
+          'foreign': 'Foreign'
 #          'other': 'Other'
     'phoneNumber':
       label: 'Phone Number'
-      validation:
-        -
-          type: 'Beech.Ehrm:PhoneNumber'
 #        -
 #          type: 'NotEmpty'
     'primary':
