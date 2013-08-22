@@ -116,14 +116,16 @@
 					// let flow know we do not want a ember redirect
 					data: {noEmberRedirect: true},
 					beforeSend: App.ModuleHandler.startAjaxRequest,
+					beforeSubmit: App.ModuleHandler.beforeSubmit,
 					complete: App.ModuleHandler.finishedAjaxRequest,
 					success: function(result) {
-
+						$form.removeAttr('isSubmitting')
 						$element.html(result);
 						wizard.incrementCard();
 						applyAjaxForm($element);
 					},
 					error: function(result) {
+						$form.removeAttr('isSubmitting')
 						$form.prepend(result.responseText);
 					}
 				});

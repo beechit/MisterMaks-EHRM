@@ -27,24 +27,32 @@
 	(function($) {
 		$.fn.updateModal = function() {
 			$(this).on('submit', function(event) {
-				$('<i class="icon-spin icon-spinner icon-large muted"></i>').insertAfter('button');
-				var form = $(this);
-				var target = $(form.attr('data-target'));
+				var that = $(this);
+				if (!$(this).attr('isSubmitting')) {
+					$(this).attr('isSubmitting', true);
 
-				$.ajax({
-					type: form.attr('method'),
-					url: form.attr('action'),
-					data: form.serialize(),
-					success: function(result) {
+					$('<i class="icon-spin icon-spinner icon-large muted"></i>').insertAfter('button');
+					var form = $(this);
+					var target = $(form.attr('data-target'));
+
+					$.ajax({
+						type: form.attr('method'),
+						url: form.attr('action'),
+						data: form.serialize(),
+						success: function(result) {
 							// Redirect upon successful login
-						if (!result || result == 'ok') {
-							window.location = $('base').text();
-						} else {
-							target.html(result);
-							$('#modal-body-only form').updateModal();
+							if (!result || result == 'ok') {
+								window.location = $('base').text();
+							} else {
+								target.html(result);
+								$('#modal-body-only form').updateModal();
+							}
+							that.removeAttr('isSubmitting')
 						}
-					}
-				});
+					});
+				}
+
+
 
 				event.preventDefault();
 			});

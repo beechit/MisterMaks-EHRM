@@ -107,8 +107,10 @@
 				$(form).ajaxForm({
 					dataType: 'html',
 					beforeSend: that.startAjaxRequest,
+					beforeSubmit: that.beforeSubmit,
 					complete: that.finishedAjaxRequest,
 					success: function(result) {
+						$(form).removeAttr('isSubmitting')
 						if ($(form).parent().parent().attr('id') != '') {
 							if ($(form).hasClass('remove')) {
 								that.loadContent(result, '#'+$(form).parent().parent().attr('id'));
@@ -126,6 +128,7 @@
 						}
 					},
 					error: function(result) {
+						$(form).removeAttr('isSubmitting')
 						$(form).parent().parent().prepend(result.responseText);
 					}
 				});
@@ -182,6 +185,17 @@
 			$('body').addClass('ajax-loading');
 		},
 
+		beforeSubmit: function(formData, form) {
+			if (form != undefined) {
+				if (!form.attr('isSubmitting') ) {
+					form.attr('isSubmitting', true);
+					return true;
+				} else {
+					return false;
+				}
+			}
+			return true;
+		},
 		finishedAjaxRequest: function() {
 			$('body').removeClass('ajax-loading');
 		}
