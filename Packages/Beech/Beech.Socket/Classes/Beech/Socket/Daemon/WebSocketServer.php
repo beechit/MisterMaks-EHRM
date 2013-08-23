@@ -35,7 +35,7 @@ class WebSocketServer extends Daemonize {
 	/**
 	 * @Flow\Inject
 	 * @Flow\Lazy
-	 * @var \TYPO3\Flow\Session\SessionManagerInterface
+	 * @var \Beech\Socket\Session\SessionManager
 	 */
 	protected $sessionManager;
 
@@ -110,7 +110,11 @@ class WebSocketServer extends Daemonize {
 
 		$this->initServer();
 
+			// check every 5 seconds for new notifications that can be send
 		$this->loop->addPeriodicTimer(5, array($this, 'processNotificationQueue'));
+
+			// check every 60 seconds the connected sessions
+		$this->loop->addPeriodicTimer(60, array($this, 'checkConnectedSessions'));
 
 		$this->logger->log(sprintf('Starting socket server %s:%s', $this->host, $this->port));
 		$this->debug('Start socket server');
@@ -119,7 +123,11 @@ class WebSocketServer extends Daemonize {
 		} catch(\Exception $exception) {
 			$this->logger->log(sprintf('Error socket server %s:%s %s', $this->host, $this->port, $exception->getMessage()), LOG_DEBUG);
 		}
-		$this->loop->run();
+		try {
+			$this->loop->run();
+		} catch(\Exception $exception) {
+			$this->logger->log(sprintf('Socket server %s:%s ended with following exception: %s', $this->host, $this->port, $exception->getMessage()), LOG_DEBUG);
+		}
 		exit;
 	}
 
@@ -169,9 +177,6 @@ class WebSocketServer extends Daemonize {
 								// @todo: remove is only for development/debug purposes
 							$notificationsArray = array('notifications' => array(array('message' => 'Welcome '.$accountIdentifier.'!')));
 							$connection->write(\Beech\Socket\Socket\WebSocketServer::encode(json_encode($notificationsArray)));
-
-								// shutdown session
-							$session->shutdownObject();
 
 						} else {
 							$this->logger->log(sprintf('No valid session found for account "%s" (via %s)', $sessionIdentifier, $connection->getRemoteAddress()), LOG_DEBUG);
@@ -259,7 +264,7 @@ class WebSocketServer extends Daemonize {
 	public function processNotificationQueue() {
 
 		$notifications = $this->notificationRepository->findAll();
-		$this->logger->log(sprintf('Found %s notifications in queue', count($notifications)), LOG_DEBUG);
+		$this->logger->log(sprintf('Found %s notifications in queue', count($notifications)), LOG_INFO);
 
 		if(count($notifications) == 0) {
 			return;
@@ -304,6 +309,51 @@ class WebSocketServer extends Daemonize {
 				$connection->write(\Beech\Socket\Socket\WebSocketServer::encode(json_encode($notificationsArray)));
 			}
 		}
+	}
+
+	/**
+	 * loop trough active connections and check/update sessions
+	 */
+	public function checkConnectedSessions() {
+
+		$this->logger->log(sprintf('checkConnectedSessions (%s connections)', count($this->accountConnections)), LOG_DEBUG);
+
+		/** @var $connection \Beech\Socket\Socket\Connection */
+		foreach ($this->accountConnections as $connection) {
+
+			$session = NULL;
+			$message = '';
+			try {
+				$session = $this->sessionManager->getSession($connection->getSessionIdentifier());
+			} catch(\Exception $exception) {
+				$message = $exception->getMessage();
+			}
+
+			if ($session === NULL) {
+				$this->logger->log(sprintf('No valid session found for account "%s" (%s) via %s%s',
+					$connection->getAccountIdentifier(),
+					$connection->getSessionIdentifier(),
+					$connection->getRemoteAddress(),
+					$message !== '' ? ' Exception: '.$message : ''
+				), LOG_INFO);
+
+					// no active session found than close connection
+				$connection->close();
+
+			} else {
+
+				$this->logger->log(sprintf(
+					'Touch session of "%s" (%s). Last activity %s',
+					$connection->getAccountIdentifier(),
+					$connection->getSessionIdentifier(),
+					date('YmdHis', $session->getLastActivityTimestamp())
+				), LOG_DEBUG);
+
+				$session->touch();
+			}
+		}
+
+		$this->logger->log(sprintf('Memory usage %s Mb', round(memory_get_usage(true)/1048576,2)), LOG_INFO);
 	}
 
 	/**
