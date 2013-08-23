@@ -38,6 +38,7 @@ var App;
 						}
 						if(App.SocketConnectAttempts == 0) {
 							App.Service.Notification.showWarning('Connection to the server has been lost trying to reconnect');
+							console.log(this)
 						}
 						if(App.SocketConnectAttempts < App.SocketMaxConnectAttempts) {
 							setTimeout('App.initializeWebSocket()', 1000);

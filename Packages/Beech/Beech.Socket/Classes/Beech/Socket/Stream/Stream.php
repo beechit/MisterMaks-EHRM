@@ -68,6 +68,17 @@ class Stream implements ReadableStreamInterface, WritableStreamInterface {
 		return $this->buffer->write($data);
 	}
 
+	/**
+	 * Send signal to connected client
+	 *
+	 * @param string $signal
+	 */
+	public function sendSignal($signal) {
+		$this->write(\Beech\Socket\Socket\WebSocketServer::encode(
+			json_encode(array('signals' => array($signal)))
+		));
+	}
+
 	public function close() {
 		if (!$this->writable && !$this->closing) {
 			return;
