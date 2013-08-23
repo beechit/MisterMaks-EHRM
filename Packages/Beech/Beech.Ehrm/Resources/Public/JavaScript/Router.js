@@ -92,6 +92,7 @@
 				this.route('show', { path: '/show/:document' });
 				this.route('edit', { path: '/edit/:document' });
 				this.route('delete', { path: '/delete/:document' });
+				this.route('chart', { path: '/chart' });
 			});
 			// Beech.Party/Person
 			this.resource('BeechPartyPerson', { path: 'persons' }, function() {
@@ -132,6 +133,9 @@
 				this.route('show', { path: '/:jobPosition' });
 				this.route('edit', { path: '/edit/:jobPosition' });
 				this.route('delete', { path: '/delete/:jobPosition' });
+			});
+			this.resource('BeechStyleChart', { path: 'chart' }, function() {
+				this.route('index', { path: '/index' });
 			});
 		});
 	});

@@ -54,8 +54,6 @@ class DocumentController extends \Beech\Ehrm\Controller\AbstractController {
 		} else {
 			$this->view->assign('documents', $this->documentRepository->findAll());
 		}
-
-
 	}
 
 	public function newAction(\TYPO3\Party\Domain\Model\AbstractParty $party = NULL) {
@@ -66,7 +64,6 @@ class DocumentController extends \Beech\Ehrm\Controller\AbstractController {
 		} else {
 			$this->view->assign('documents', $this->documentRepository->findAll());
 		}
-
 	}
 
 	/**
@@ -151,6 +148,8 @@ class DocumentController extends \Beech\Ehrm\Controller\AbstractController {
 		$this->addFlashMessage($this->translator->translateById('document.documentDeleted', array(), NULL, NULL, 'Main', 'Beech.Document'));
 		$this->emberRedirect('#/documents');
 	}
+
+
 
 }
 

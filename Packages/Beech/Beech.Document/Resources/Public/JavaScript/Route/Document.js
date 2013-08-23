@@ -19,6 +19,8 @@
 
 	App.BeechDocumentDocumentDeleteRoute = App.BeechDocumentDocumentRoute.extend();
 
+	App.BeechDocumentDocumentChartRoute = App.BeechDocumentDocumentRoute.extend();
+
 	// Administration
 	App.BeechDocumentAdministrationDocumentNewRoute = App.BeechDocumentDocumentRoute.extend();
 

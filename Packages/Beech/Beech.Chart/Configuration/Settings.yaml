@@ -1,0 +1,30 @@
+Beech:
+  Chart:
+    resources:
+      jQuery:
+        name: 'jquery.min.js'
+        path: 'http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/'
+      mootools:
+        name: 'mootools-yui-compressed.js'
+        path: 'https://ajax.googleapis.com/ajax/libs/mootools/1.4.5/'
+      prototype:
+        name: 'prototype.js'
+        path: 'https://ajax.googleapis.com/ajax/libs/prototype/1.7.0.0/'
+      highcharts:
+        name: 'highcharts.js'
+        path: 'http://code.highcharts.com/'
+      highchartsMootoolsAdapter:
+        name: 'mootools-adapter.js'
+        path: 'http://code.highcharts.com/adapters/'
+      highchartsPrototypeAdapter:
+        name: 'prototype-adapter.js'
+        path: 'http://code.highcharts.com/adapters/'
+      highstock:
+        name: 'highstock.js'
+        path: 'http://code.highcharts.com/stock/'
+      highstockMootoolsAdapter:
+        name: 'mootools-adapter.js'
+        path: 'http://code.highcharts.com/stock/adapters/'
+      highstockPrototypeAdapter:
+        name: 'prototype-adapter.js'
+        path: 'http://code.highcharts.com/stock/adapters/'

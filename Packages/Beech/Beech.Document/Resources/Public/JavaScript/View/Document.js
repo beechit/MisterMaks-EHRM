@@ -12,6 +12,7 @@
 	App.BeechDocumentDocumentNewView = App.BeechDocumentDocumentViewMixin.extend();
 	App.BeechDocumentDocumentEditView = App.BeechDocumentDocumentViewMixin.extend();
 	App.BeechDocumentDocumentDeleteView = App.BeechDocumentDocumentViewMixin.extend();
+	App.BeechDocumentDocumentChartView = App.BeechDocumentDocumentViewMixin.extend();
 
 	// Administration
 	App.BeechDocumentAdministrationDocumentIndexView = Ember.View.extend(App.AjaxModuleViewMixin, {

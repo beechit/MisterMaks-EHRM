@@ -1,0 +1,15 @@
+{
+	"name": "beech/chart",
+	"type": "typo3-flow-package",
+	"description": "",
+	"version": "",
+	"require": {
+		"typo3/flow": "*",
+		"beech/ehrm": "*"
+	},
+	"autoload": {
+		"psr-0": {
+			"Beech\\Chart": "Classes"
+		}
+	}
+}

@@ -22,7 +22,9 @@
 	App.BeechDocumentDocumentDeleteController = App.BeechDocumentDocumentController.extend({
 		url: MM.url.module.BeechDocumentDocumentDelete
 	});
-
+	App.BeechDocumentDocumentChartController = App.BeechDocumentDocumentController.extend({
+		url: MM.url.module.BeechDocumentDocumentChart
+	});
 	// Administration
 	App.BeechDocumentAdministrationDocumentIndexController = App.BeechDocumentDocumentController.extend({
 		url: MM.url.module.BeechDocumentAdministrationDocumentIndex

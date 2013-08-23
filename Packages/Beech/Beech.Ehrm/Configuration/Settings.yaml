@@ -32,6 +32,7 @@ Beech:
           - 'Beech.Ehrm/Library/bootstrap-wizard/bootstrap-wizard.js'
           - 'Beech.Ehrm/Library/dataTables/media/js/jquery.dataTables.js'
           - 'Beech.Ehrm/Library/dataTables/media/js/jquery.dataTables.TwitterBootstrap.js'
+          - 'Beech.Chart/Library/highcharts.js'
 
         sources:
           - 'Beech.Ehrm/JavaScript/Init.js'
@@ -100,7 +101,6 @@ Beech:
           - 'Beech.CLA/JavaScript/Controller/JobPosition.js'
           - 'Beech.CLA/JavaScript/View/JobPosition.js'
 
-
     viewHelpers:
       partialRootPath: 'resource://Beech.Ehrm/Private/Templates/ViewHelpers/Partials/'
       templates:
@@ -113,7 +113,7 @@ Beech:
       - ['Beech.Party', NULL, 'Company', {'index': 'Index', 'list': null}]
       - ['Beech.Party', 'Administration', 'Company']
       - ['Beech.Party', 'Administration', 'Account']
-      - ['Beech.Document', NULL, 'Document']
+      - ['Beech.Document', NULL, 'Document', {'chart': 'Chart'}]
       - ['Beech.Task', NULL, 'Task', {'close': 'Close', 'delete':null}]
       - ['Beech.CLA', 'Administration', 'ContractArticle']
       - ['Beech.CLA', 'Administration', 'JobDescription']
