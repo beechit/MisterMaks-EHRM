@@ -18,6 +18,22 @@
     'uploadDate':
       label: 'UploadDate'
       default: 'now'
+    'number':
+      label: 'Document Number'
+    'startDate':
+      label: 'startdate'
+      default: 'now'
+    'expireDate':
+      label: 'Expire date'
+    'required':
+      label: 'Required'
+# if set on true use generic workflow to monitor the expiration date on this document.
+    'monitoring':
+      label: 'monitoring'
+      options:
+        values:
+          - TRUE
+          - FALSE
     'accessGroup':
       label: 'AccesGroup'
       type: 'Beech\Person\Domain\Model\Group'
