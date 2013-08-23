@@ -164,14 +164,20 @@ class WebSocketServer extends Daemonize {
 						}
 
 							// @todo: check if session info is checked/matched with connected client (ip, useragent etc)
-						if($session !== NULL) {
+						if($session !== NULL && $session->getData('partyId')) {
 							$accountIdentifier = $session->getData('accountIdentifier');
-							$this->accountConnections[$accountIdentifier] = $connection;
+							$this->accountConnections[] = $connection;
 							$connection->setAccountIdentifier($accountIdentifier);
 							$connection->setSessionIdentifier($sessionIdentifier);
 							$connection->setPartyId($session->getData('partyId'));
 
-							$this->logger->log(sprintf('Registered connection for account "%s" (session %s via %s)', $accountIdentifier, $sessionIdentifier, $connection->getRemoteAddress()));
+							$this->logger->log(sprintf(
+								'Registered connection for account "%s" (session %s via %s) partyId = %s',
+								$accountIdentifier,
+								$sessionIdentifier,
+								$connection->getRemoteAddress(),
+								$session->getData('partyId')
+							));
 
 								// send welcom message
 								// @todo: remove is only for development/debug purposes
@@ -181,8 +187,7 @@ class WebSocketServer extends Daemonize {
 						} else {
 							$this->logger->log(sprintf('No valid session found for account "%s" (via %s)', $sessionIdentifier, $connection->getRemoteAddress()), LOG_DEBUG);
 
-								// no valid session close connection
-							$this->socketServer->emit('endconnection', $connection);
+							$connection->sendSignal('sessionExpired');
 						}
 						break;
 
@@ -200,12 +205,17 @@ class WebSocketServer extends Daemonize {
 
 			$connection->on('end', function(Connection $connection) {
 				$this->debug('end '.$connection->getRemoteAddress());
-				$sessionIdentifier = array_search($connection, $this->accountConnections);
-				if ($sessionIdentifier !== FALSE) {
-					unset ($this->accountConnections[$sessionIdentifier]);
+
+				$connectionId = array_search($connection, $this->accountConnections);
+				if ($connectionId !== FALSE) {
+					$this->logger->log('Removed connection from accountConnections', LOG_DEBUG);
+					unset ($this->accountConnections[$connectionId]);
 				}
 				$this->socketServer->emit('endconnection', $connection);
 
+					// when client disconnects it can be that is was a loggout
+					// check all active connections if a connnection is "expired"
+				$this->checkConnectedSessions();
 			});
 		});
 
@@ -213,12 +223,25 @@ class WebSocketServer extends Daemonize {
 		 * Remove notification
 		 */
 		$this->socketServer->on('notificationClosed', function(Connection $connection, $data) {
+
+			/** @var $notification \Beech\Ehrm\Domain\Model\Notification */
 			$notification = $this->notificationRepository->findByIdentifier($data);
 
 			if ($notification && $notification->getPerson() && $notification->getPerson()->getId() === $connection->getPartyId()) {
 				$this->notificationRepository->remove($notification);
 				$this->notificationRepository->flushDocumentManager();
 				$this->logger->log(sprintf('Removed Notification "%s" for "%s"', $data, $connection->getAccountIdentifier()), LOG_INFO);
+
+				/**
+				 * notice other connections of this account that the notification is closed
+				 */
+				/** @var $_connection \Beech\Socket\Socket\Connection */
+				foreach ($this->getActiveConnections($connection->getAccountIdentifier()) as $_connection) {
+					if ($connection !== $_connection) {
+						$_connection->sendSignal('closeNotification:'.$notification->getId());
+					}
+				}
+
 			} elseif(!$notification) {
 				$this->logger->log(sprintf('Notification "%s" not found. Probably already removed.', $data), LOG_ERR);
 			} else {
@@ -239,12 +262,14 @@ class WebSocketServer extends Daemonize {
 
 			$persons = isset($data->persons) && is_array($data->persons) ? $data->persons : FALSE;
 
-			foreach ($this->accountConnections as $accountIdentifier => $connection) {
+			/** @var $connection \Beech\Socket\Socket\Connection */
+			foreach ($this->accountConnections as $connection) {
 
-				if($persons && !in_array($accountIdentifier, $persons)) continue;
+					// signal not intended for account than skip
+				if ($persons && !in_array($connection->getAccountIdentifier(), $persons)) continue;
 
-				$this->debug('send singal to'.$accountIdentifier);
-				$connection->write(\Beech\Socket\Socket\WebSocketServer::encode(json_encode(array('signals' => array($data->signal)))));
+				$this->debug('send singal to'.$connection->getAccountIdentifier());
+				$connection->sendSignal($data->signal);
 			}
 
 		});
@@ -264,6 +289,9 @@ class WebSocketServer extends Daemonize {
 	public function processNotificationQueue() {
 
 		$notifications = $this->notificationRepository->findAll();
+		$processedAccountIdentifiers = array();
+		$notificationsToRemove = array();
+
 		$this->logger->log(sprintf('Found %s notifications in queue', count($notifications)), LOG_INFO);
 
 		if(count($notifications) == 0) {
@@ -271,27 +299,18 @@ class WebSocketServer extends Daemonize {
 		}
 
 		/** @var $connection \Beech\Socket\Socket\Connection */
-		foreach ($this->accountConnections as $accountIdentifier => $connection) {
+		foreach ($this->accountConnections as $connection) {
+
+				// accountIdentifier already processed than skip
+			if (in_array($connection->getAccountIdentifier(), $processedAccountIdentifiers)) continue;
+
 			$accountNotifications = array();
 
 			/** @var $notification \Beech\Ehrm\Domain\Model\Notification */
 			foreach ($notifications as $notification) {
 				if ($notification->getPerson() && $notification->getPerson()->getId() === $connection->getPartyId()) {
-					if (!in_array($notification->getId(), $connection->getSendNotificationIds())) {
-						$accountNotifications[] = $notification;
-					}
-				}
-			}
 
-			$this->logger->log(sprintf('Found %s notifications for account %s', count($accountNotifications), $accountIdentifier), LOG_DEBUG);
-
-			if (count($accountNotifications) > 0) {
-
-				$notificationsArray['notifications'] = array();
-
-				/** @var $notification \Beech\Ehrm\Domain\Model\Notification */
-				foreach ($accountNotifications as $notification) {
-					$notificationsArray['notifications'][] = array(
+					$accountNotifications[] = array(
 						'id' => $notification->getId(),
 						'type' => $notification->getLevel(),
 						'label' => $notification->getLabel(),
@@ -299,15 +318,51 @@ class WebSocketServer extends Daemonize {
 						'sticky' => $notification->getSticky(),
 						'closeable' => $notification->getCloseable()
 					);
-						// mark every non-sticky notification as done
+
+					// mark every non-sticky notification as done
 					if (!$notification->getSticky()) {
-						$this->notificationRepository->remove($notification);
+						$notificationsToRemove[$notification->getId()] = $notification;
 					}
-					$connection->addSendNotificationId($notification->getId());
 				}
-				$this->notificationRepository->flushDocumentManager();
-				$connection->write(\Beech\Socket\Socket\WebSocketServer::encode(json_encode($notificationsArray)));
 			}
+
+			$this->logger->log(sprintf(
+				'Found %s notifications for account %s',
+				count($accountNotifications),
+				$connection->getAccountIdentifier()
+			), LOG_DEBUG);
+
+			if (count($accountNotifications) > 0) {
+
+				foreach ($this->getActiveConnections($connection->getAccountIdentifier()) as $_connection) {
+
+					$notificationsArray = array();
+
+					foreach ($accountNotifications as $notification) {
+						if (!in_array($notification['id'], $_connection->getSendNotificationIds())) {
+							$notificationsArray[] = $notification;
+							$_connection->addSendNotificationId($notification['id']);
+						}
+					}
+
+					if (count($notificationsArray)) {
+						$_connection->write(\Beech\Socket\Socket\WebSocketServer::encode(
+							json_encode(array('notifications' => $notificationsArray))
+						));
+					}
+				}
+			}
+
+				// add accountIdentifier to the processed array
+			$processedAccountIdentifiers[] = $connection->getAccountIdentifier();
+		}
+
+			// process notifications that can be removed
+		if (count($notificationsToRemove)) {
+			foreach ($notificationsToRemove as $notification) {
+				$this->notificationRepository->remove($notification);
+			}
+			$this->notificationRepository->flushDocumentManager();
 		}
 	}
 
@@ -318,8 +373,15 @@ class WebSocketServer extends Daemonize {
 
 		$this->logger->log(sprintf('checkConnectedSessions (%s connections)', count($this->accountConnections)), LOG_DEBUG);
 
+		$processedSessionsIds = array();
+
 		/** @var $connection \Beech\Socket\Socket\Connection */
 		foreach ($this->accountConnections as $connection) {
+
+				// every session is only processed ones
+			if (in_array($connection->getSessionIdentifier(), $processedSessionsIds)) {
+				continue;
+			}
 
 			$session = NULL;
 			$message = '';
@@ -327,6 +389,11 @@ class WebSocketServer extends Daemonize {
 				$session = $this->sessionManager->getSession($connection->getSessionIdentifier());
 			} catch(\Exception $exception) {
 				$message = $exception->getMessage();
+			}
+
+			if ($session !== NULL && $connection->getPartyId() !== $session->getData('partyId')) {
+				$message = 'Session is corrupt';
+				$session = NULL;
 			}
 
 			if ($session === NULL) {
@@ -337,8 +404,20 @@ class WebSocketServer extends Daemonize {
 					$message !== '' ? ' Exception: '.$message : ''
 				), LOG_INFO);
 
-					// no active session found than close connection
-				$connection->close();
+				/**
+				 * No active session found than send sessionExpired signal
+				 * and remove connection from activeConnections
+				 */
+				foreach ($this->getActiveConnections(NULL, $connection->getSessionIdentifier()) as $_connection) {
+					$this->logger->log(sprintf('Send sessionExpired to "%s" and close connection', $_connection->getSessionIdentifier()));
+					$_connection->sendSignal('sessionExpired');
+
+					$connectionId = array_search($_connection, $this->accountConnections);
+					if ($connectionId !== FALSE) {
+						$this->logger->log('Removed connection from accountConnections', LOG_DEBUG);
+						unset ($this->accountConnections[$connectionId]);
+					}
+				}
 
 			} else {
 
@@ -351,9 +430,45 @@ class WebSocketServer extends Daemonize {
 
 				$session->touch();
 			}
+
+				// add sessionId to the processed array
+			$processedSessionsIds[] = $connection->getSessionIdentifier();
 		}
 
 		$this->logger->log(sprintf('Memory usage %s Mb', round(memory_get_usage(true)/1048576,2)), LOG_INFO);
+	}
+
+	/**
+	 * Get all active connections
+	 * Filtered by accountIdentifier and/or SessionIdentifier
+	 *
+	 * @param null $accountIdentifier
+	 * @param null $sessionIdentifier
+	 * @return array<\Beech\Socket\Socket\Connection>
+	 */
+	protected function getActiveConnections($accountIdentifier = NULL, $sessionIdentifier = NULL) {
+
+		if ($accountIdentifier === NULL && $sessionIdentifier === NULL) {
+			return $this->accountConnections;
+		}
+
+		$connections = array();
+
+		/** @var $connection \Beech\Socket\Socket\Connection */
+		foreach ($this->accountConnections as $connection) {
+
+			if ($accountIdentifier !== NULL && $accountIdentifier !== $connection->getAccountIdentifier()) {
+				continue;
+			}
+
+			if ($sessionIdentifier !== NULL && $sessionIdentifier !== $connection->getSessionIdentifier()) {
+				continue;
+			}
+
+			$connections[] = $connection;
+		}
+
+		return $connections;
 	}
 
 	/**
