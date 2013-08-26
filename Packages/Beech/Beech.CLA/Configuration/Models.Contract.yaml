@@ -85,10 +85,6 @@
       label: 'Work address streetname'
       validation:
         -
-          type: 'RegularExpression'
-          options:
-            regularExpression: '[a-zA-Z\\-\\s\\’]{2,30}'
-        -
           type: 'StringLength'
           options:
             maximum: 30
@@ -96,40 +92,19 @@
       label: 'Work address House number'
       validation:
         -
-          type: 'RegularExpression'
-          options:
-            regularExpression: '[0-9]{1,5}'
-        -
           type: 'Integer'
     'houseNumberAddition':
       label: 'Workaddress House number addition'
       validation:
-        -
-          type: 'RegularExpression'
-          options:
-            regularExpression: '[a-zA-Z0-9\\-]{0,10}'
         -
           type: 'StringLength'
           options:
             maximum: 10
     'postalCode':
       label: 'Postal code'
-      validation:
-        -
-          type: 'StringLength'
-          options:
-          maximum: 6
-        -
-          type: 'RegularExpression'
-          options:
-            regularExpression: '\\d{4}\\s?[a-z]{2}'
     'residence':
       label: 'Residence'
       validation:
-       -
-         type: 'RegularExpression'
-         options:
-           regularExpression: '[a-zA-Z\\-\\s\\’]{2,30}'
        -
          type: 'StringLength'
          options:
@@ -162,13 +137,11 @@
           options:
             digits: 4
             decimal: 2
-#            regularExpression: '^([1-9]\d*(\.|\,)\d*|0?(\.|\,)\d*[1-9]\d*|[1-9]\d*)$'
     'hoursAWeek':
       label: 'Hours a week'
       validation:
         -
           type: 'Beech.Ehrm:Decimal'
-#            regularExpression: '^([1-9]\d*(\.|\,)\d*|0?(\.|\,)\d*[1-9]\d*|[1-9]\d*)$'
     'workDays':
       label: 'Workdays'
       validation:
@@ -198,7 +171,6 @@
       validation:
         -
           type: 'Beech.Ehrm:Decimal'
-#            regularExpression: '^([1-9]\d*(\.|\,)\d*|0?(\.|\,)\d*[1-9]\d*|[1-9]\d*)$'
     'minimumWage':
       label: 'Minimum wage'
       type: 'boolean'
@@ -217,8 +189,8 @@
         -
           type: 'Count'
           options:
-           minimum: 0
-           maximum: 15
+            minimum: 0
+            maximum: 15
     'wagestep':
       label: 'Wage step'
       validation:
@@ -247,13 +219,17 @@
       validation:
         -
           type: 'Beech.Ehrm:Decimal'
-#            regularExpression: '^([1-9]\d*(\.|\,)\d*|0?(\.|\,)\d*[1-9]\d*|[1-9]\d*)$'
+          options:
+            digits: 4
+            decimal: 2
     'vacationAllowancePercentage':
       label: 'Vacation allowance Percentage'
       validation:
         -
           type: 'Beech.Ehrm:Decimal'
-#            regularExpression: '^([1-9]\d*(\.|\,)\d*|0?(\.|\,)\d*[1-9]\d*|[1-9]\d*)$'
+          options:
+            digits: 4
+            decimal: 2
 # todo: add time validator
     'sickReportTime':
       label: 'Sickreport time'
@@ -275,14 +251,18 @@
       validation:
         -
           type: 'Beech.Ehrm:Decimal'
-#            regularExpression: '^([1-9]\d*(\.|\,)\d*|0?(\.|\,)\d*[1-9]\d*|[1-9]\d*)$'
+          options:
+            digits: 4
+            decimal: 2
     'accomodationRentMonth':
       label: 'Acomodation rent a month'
       type: 'Decimal'
       validation:
         -
           type: 'Beech.Ehrm:Decimal'
-#           regularExpression: '^([1-9]\d*(\.|\,)\d*|0?(\.|\,)\d*[1-9]\d*|[1-9]\d*)$'
+          options:
+            digits: 4
+            decimal: 2
     'cafetariaModel':
       label: 'CafetariaModel'
       type: 'boolean'
