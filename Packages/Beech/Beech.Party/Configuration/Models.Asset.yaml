@@ -9,6 +9,9 @@
           type: 'StringLength'
           options:
             maximum: 35
+    'department':
+      label: 'Department'
+      type: 'Beech\Party\Domain\Model\Company'
     'assetType':
       label: 'Asset Type'
       options:
@@ -38,13 +41,13 @@
     'provisionedBy':
       label: 'ProvisionedBy'
       type: 'TYPO3\Party\Domain\Model\AbstractParty'
+      default: 'currentUser'
     'returned':
       label: 'Returned'
       options:
         values:
           - FALSE
           - TRUE
-# todo implement this in the statusmodel
     'returnDate':
       label: 'Return Date'
       type: 'DateTime'
