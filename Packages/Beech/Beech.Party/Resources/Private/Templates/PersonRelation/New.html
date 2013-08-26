@@ -1,0 +1,32 @@
+<div class="modal-header custom">
+	<h3><f:render partial="Views/Show/ProfilePhoto" arguments="{photo: party.profilePhoto, width: 50}"/> Relative</h3>
+</div>
+<div class="clearfix well">
+	<h1></h1>
+	<f:form action="create" object="{person}" name="person" class="form-horizontal">
+		<input type="hidden" name="iscomplete" value="false" data-validate="isComplete"/>
+		<f:render partial="Forms/PersonRelation" arguments="{_all}" />
+		<f:form.hidden name="personRelatedTo" id="personRelatedTo{personRelation.id}" value="{personRelatedTo}" />
+		<div class="control-group">
+			<label class="control-label">
+				Phone number
+			</label>
+			<div class="controls controls-row">
+				<f:form.textfield property="phoneNumber" class="span7 phone home" placeholder="{f:translate(value: 'Phone Number')}..."/>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label">
+				Email
+			</label>
+			<div class="controls controls-row">
+				<f:form.textfield property="electronicAddress" class="span7 electronicAddress email" placeholder="{f:translate(value: 'Email')}..."/>
+			</div>
+		</div>
+
+		<button type="submit" name="action" class="btn btn-small" value="{action}">
+			<i class="icon-save"></i>
+		</button>
+	</f:form>
+</div>
+

@@ -17,6 +17,8 @@ use TYPO3\Flow\Annotations as Flow,
  */
 class PhoneNumber extends \Beech\Ehrm\Domain\Model\Document {
 
+	const TYPE_HOME = 'home';
+
 	/**
 	 * @var \TYPO3\Party\Domain\Model\AbstractParty
 	 * @ODM\Field(type="mixed")

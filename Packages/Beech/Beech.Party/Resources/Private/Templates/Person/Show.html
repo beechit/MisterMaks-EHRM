@@ -21,6 +21,9 @@
 			<li>
 				<a data-toggle="tab" href="#documents"><f:translate id="documents">Documents</f:translate></a>
 			</li>
+			<li>
+				<a data-toggle="tab" href="#personRelations">Relatives</a>
+			</li>
 		</ul>
 		<div id="personTabsContent" class="tab-content">
 			<div id="general" class="tab-pane fade active in">
@@ -65,6 +68,19 @@
 			</div>
 			<div id="contract" class="tab-pane fade">
 				contract...<br/>
+			</div>
+			<div id="personRelations" class="tab-pane fade">
+				<f:for each="{personRelations}" as="personRelation">
+					<div id="personRelation-{personRelation.id}">
+						<f:render partial="Views/List/PersonRelation" arguments="{_all}"/>
+					</div>
+				</f:for>
+				<a href="{f:uri.action(package:'Beech.Party', subpackage:'Administration', controller:'PersonRelation', action:'new', arguments: {personRelatedTo: person})}"
+				   data-toggle="modal-ajax" data-target="#modal" modal-size="large"
+				   data-reload="{f:uri.action(package:'Beech.Party', controller:'Person', action:'show', arguments: {person: person})}">
+					<i class="icon-pencil icon-white"></i>
+					Add relative
+				</a>
 			</div>
 			<div id="documents" class="tab-pane fade">
 				<div style="position: absolute; height: 100%">
@@ -115,6 +131,7 @@
 			</div>
 		</div>
 		</div>
+
 	</div>
 	<script type="text/javascript">
 		var oPersonDocumentsTable = $('#personDocuments')

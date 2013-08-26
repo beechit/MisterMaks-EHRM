@@ -18,6 +18,12 @@ use Beech\Party\Domain\Model\Education as Education;
 class EducationController extends \Beech\Ehrm\Controller\AbstractManagementController {
 
 	/**
+	 * @var \TYPO3\Flow\Object\ObjectManagerInterface
+	 * @Flow\Inject
+	 */
+	protected $objectManager;
+
+	/**
 	 * @var string
 	 */
 	protected $entityClassName = 'Beech\Party\Domain\Model\Education';

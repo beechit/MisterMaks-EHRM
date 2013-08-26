@@ -1,0 +1,401 @@
+/* First 4 need to have this order */
+/* General */
+html, body {
+  font-family: 'Colaborate', sans-serif;
+  height: 100%; }
+
+/* Sticky Footer Begin */
+.body {
+  min-height: 100%;
+  height: 100%;
+  height: auto !important;
+  margin: 0 auto -40px !important; }
+
+footer, .push {
+  height: 40px; }
+
+/* Sticky Footer End */
+.container-fluid {
+  max-width: 960px;
+  margin: 0 auto; }
+
+footer {
+  margin-top: -60px !important;
+  position: relative;
+  font-size: small;
+  font-weight: 100; }
+  footer .footer {
+    float: left; }
+  footer .logo {
+    float: right;
+    letter-spacing: -0.1em;
+    color: #049cdb;
+    position: relative; }
+    footer .logo i {
+      position: absolute;
+      left: -8px;
+      top: 1px;
+      font-size: 0.8em; }
+
+.page-header {
+  position: relative; }
+  .page-header .home {
+    font-size: 300%;
+    position: absolute;
+    bottom: 15px;
+    color: #049cdb; }
+  .page-header h1 {
+    text-align: right;
+    color: #eeeeee; }
+
+.left h3 {
+  font-size: 1em;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  margin-bottom: 0; }
+
+/* Breadcrumb */
+.breadcrumb {
+  background: none;
+  padding: 0; }
+
+/* Index */
+.jumbotron {
+  margin: 100px 0;
+  text-align: center; }
+  .jumbotron h1 {
+    letter-spacing: -0.1em;
+    color: #049cdb; }
+    .jumbotron h1 i {
+      margin-right: 8px; }
+  .jumbotron .lead {
+    text-transform: uppercase;
+    font-size: small;
+    letter-spacing: -0.05em; }
+
+.index {
+  text-align: center; }
+  .index .btn {
+    padding: 20px 30px;
+    position: relative; }
+    .index .btn i {
+      position: absolute;
+      top: 5px;
+      left: 8px; }
+
+/* This forces the main application div to be 100% height in order to allow for a sticky footer */
+.ember-view.full {
+  height: 100%; }
+
+@font-face {
+  font-family: 'Colaborate';
+  src: url("Fonts/Colaborate/ColabThi-webfont.eot");
+  src: url("Fonts/Colaborate/ColabThi-webfont.eot?#iefix") format("embedded-opentype"), url("Fonts/Colaborate/ColabThi-webfont.woff") format("woff"), url("Fonts/Colaborate/ColabThi-webfont.ttf") format("truetype"), url("Fonts/Colaborate/ColabThi-webfont.svg#ColaborateThinRegular") format("svg");
+  font-weight: 100;
+  font-style: normal; }
+
+/* From here add alphabetically */
+.accordion-group {
+  border: 1px solid #e5e5e5;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  margin-bottom: 2px; }
+
+.accordion-group ul {
+  margin-bottom: 0; }
+
+.block {
+  position: relative;
+  text-align: center;
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  padding: 30px 0 20px 0; }
+  .block .badge {
+    position: absolute;
+    top: -5px;
+    right: -10px; }
+
+/* Start Buttons */
+.btn-gspm-4 {
+  height: 35px;
+  margin: 0 20px 20px 0;
+  padding-top: 15px;
+  width: 133px; }
+
+p:nth-child(4n+4) .btn-gspm-4, p:nth-child(3n+3) .btn-gspm {
+  margin: 0 0 20px !important; }
+
+/* End DataTables */
+/* Start DataTables */
+table.dataTable thead th,
+table.dataTable td {
+  padding: 8px; }
+
+table.dataTable tfoot td {
+  padding: 1px 0px 1px 8px; }
+
+table.dataTable tfoot input {
+  width: 90%; }
+
+/* End DataTables */
+ul.flashmessages {
+  list-style-type: none;
+  margin-left: 0px; }
+
+.left {
+  /* Search */ }
+  .left form fieldset {
+    position: relative; }
+    .left form fieldset .icon-search {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      color: #049cdb; }
+
+/* Start datepicker */
+.datepickerIcon {
+  cursor: pointer; }
+
+input[readonly].datepicker {
+  background: white; }
+
+/* End datepicker */
+/* Start Contract Wizard / Form */
+.collapse .row-fluid {
+  margin: 20px 0px 20px 0px; }
+
+.compact-form {
+  margin: 0px; }
+
+.country {
+  float: left; }
+
+.country i {
+  background: url("../../../Form/Images/flags.png") no-repeat;
+  display: inline-block;
+  width: 16px;
+  height: 11px; }
+
+.article-values span {
+  margin-right: 20px; }
+
+#contractCreator .articles-section {
+  margin-bottom: 80px !important; }
+  #contractCreator .articles-section div.inputs-list {
+    border: 1px solid #e3e3e3;
+    background: white;
+    padding: 10px;
+    border-radius: 3px; }
+  #contractCreator .articles-section label {
+    padding-right: 5px; }
+  #contractCreator .articles-section .well {
+    padding: 0; }
+  #contractCreator .articles-section fieldset {
+    margin-bottom: 0; }
+  #contractCreator .articles-section legend {
+    margin-bottom: 10px; }
+  #contractCreator .articles-section .article-values {
+    margin: 0; }
+  #contractCreator .articles-section .control-group {
+    margin-bottom: 0; }
+#contractCreator .preview {
+  margin-bottom: 80px; }
+
+.preview table tr.article td {
+  padding-top: 10px; }
+
+/* End Contract Wizard / Form */
+a:hover {
+  text-decoration: none; }
+
+.align-center {
+  text-align: center; }
+
+.muted {
+  opacity: 0.6; }
+
+/* ajax-loading */
+body.ajax-loading {
+  cursor: progress; }
+
+/* Start Modal box / Wizard */
+.modal-body-content {
+  width: 100%;
+  height: 320px; }
+
+iframe {
+  border: none; }
+
+#modal .modal-body.full-size {
+  padding: 0;
+  height: 100%; }
+#modal .modal-footer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0; }
+
+#modal-body-only .modal-body {
+  padding: 0;
+  max-height: 100%;
+  height: 100%; }
+  #modal-body-only .modal-body .icon-spin {
+    margin: 30px; }
+  #modal-body-only .modal-body .row {
+    margin-left: 0; }
+  #modal-body-only .modal-body ul.flashmessages {
+    padding-left: 35px; }
+  #modal-body-only .modal-body h1 {
+    margin: 40px; }
+#modal-body-only form {
+  margin: 30px 0 0 0; }
+  #modal-body-only form fieldset {
+    padding: 20px 0 20px 60px;
+    margin-right: 20px; }
+    #modal-body-only form fieldset legend {
+      margin-bottom: 0;
+      border: none; }
+    #modal-body-only form fieldset legend + .control-group {
+      margin-top: 0; }
+  #modal-body-only form .form-actions {
+    margin-bottom: 0;
+    padding-left: 60px; }
+    #modal-body-only form .form-actions .icon-spin {
+      margin: 0 0 0 30px; }
+#modal-body-only form.form-horizontal {
+  margin: 0; }
+  #modal-body-only form.form-horizontal fieldset {
+    padding: 0;
+    margin: 20px; }
+  #modal-body-only form.form-horizontal div.actions {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0; }
+
+.modal-large {
+  width: 80%;
+  max-width: 1200px;
+  height: 80%;
+  left: 10%;
+  right: 10%;
+  top: 10% !important;
+  margin: 0; }
+
+.wizard-modal .well {
+  padding: 0;
+  border: none;
+  background: transparent;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none; }
+.wizard-modal .wizard-card h1 {
+  display: none; }
+.wizard-modal .row-fluid {
+  width: auto; }
+
+/* End Modal box / Wizard */
+/* Start Notifications */
+.notifications {
+  z-index: 10001; }
+
+/* End Notifications */
+.stack {
+  display: inline-block; }
+  .stack i {
+    display: block;
+    clear: both;
+    height: 6px;
+    line-height: 10px; }
+
+.left {
+  /* Tasks */ }
+  .left #task-widget {
+    margin-bottom: 40px; }
+  .left .accordion .accordion-heading {
+    position: relative; }
+    .left .accordion .accordion-heading .badge {
+      position: absolute;
+      right: 10px;
+      top: 10px; }
+  .left .accordion .accordion-inner ul li a {
+    display: block; }
+
+.task.show .control-group .control-label:after {
+  content: ":"; }
+.task.show .control-group .controls {
+  margin-bottom: 5px;
+  padding-top: 5px;
+  line-height: 20px; }
+
+.tooltip {
+  text-transform: lowercase;
+  letter-spacing: normal; }
+  .tooltip .tooltip-inner {
+    line-height: 1.8em;
+    padding: 5px 20px; }
+
+.jOrgChart {
+  /* Basic styling */
+  /* Draw the lines */
+  /* node cell */
+  /* The node */
+  /* jQuery drag 'n drop */ }
+  .jOrgChart .line {
+    height: 20px;
+    width: 4px; }
+  .jOrgChart .down {
+    background-color: #999;
+    margin: 0px auto; }
+  .jOrgChart .top {
+    border-top: 2px solid #999; }
+  .jOrgChart .left {
+    border-right: 4px solid #999; }
+  .jOrgChart .right {
+    border-left: 4px solid #999; }
+  .jOrgChart table {
+    margin: 0 auto; }
+  .jOrgChart td {
+    text-align: center;
+    vertical-align: top;
+    padding: 0; }
+  .jOrgChart .node {
+    text-align: left;
+    background-color: #FFF;
+    display: inline-block;
+    min-width: 180px;
+    min-height: 60px;
+    z-index: 10;
+    margin: 0 2px;
+    border-radius: 8px;
+    border: 2px solid #0088CC;
+    padding: 5px;
+    position: relative; }
+    .jOrgChart .node strong, .jOrgChart .node p {
+      padding: 2px; }
+    .jOrgChart .node .profile-photo {
+      float: left;
+      width: 60px;
+      margin-right: 10px; }
+    .jOrgChart .node .actions {
+      display: none; }
+    .jOrgChart .node:hover .actions {
+      display: block;
+      position: absolute;
+      top: 4px;
+      right: 4px;
+      background: #FFF;
+      border-radius: 4px;
+      padding: 0 0 4px 4px; }
+  .jOrgChart .node-cells.contracted .node {
+    border-bottom-style: dashed;
+    cursor: s-resize; }
+  .jOrgChart .node-cells.expanded .node {
+    cursor: n-resize; }
+  .jOrgChart .drag-active {
+    border-style: dotted !important; }
+  .jOrgChart .drop-hover {
+    border-style: solid !important;
+    border-color: #E05E00 !important; }
