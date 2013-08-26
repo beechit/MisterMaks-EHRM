@@ -24,12 +24,12 @@
           - FALSE
           - TRUE
       default: FALSE
-    'bic':
-      label: 'Bic code'
-      validation:
-        -
-          type: 'Bic'
-    'bankname':
+#    'bic':
+#      label: 'Bic code'
+#      validation:
+#        -
+#          type: 'Bic'
+    'bankName':
       label: 'Bank name'
       validation:
         -

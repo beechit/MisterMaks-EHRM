@@ -31,15 +31,20 @@
 					 	</f:if>
 						 <div class="row-fluid" >
 
-						<f:form.textfield property="residence" class="span7 capitalize residence" placeholder="{f:translate(value: 'Residence')}..."/>
+						<f:form.textfield property="bankName" class="span12 capitalize bankName" placeholder="{f:translate(value: 'Bank name')}..."/>
+
+						</div>
+						 <div class="row-fluid" >
+
+						 <f:form.textfield property="residence" class="span12 capitalize residence" placeholder="{f:translate(value: 'Residence')}..."/>
+
+						 </div>
+						<div class="row-fluid" >
+						<ehrm:form.countrySelect property="country" id="bankAccountCountry{bankAccount.id}" class="countrySelect span8" placeholder="{f:translate(id:'Choose country')}"/>
 
 						</div>
 						<div class="row-fluid" >
-						<ehrm:form.countrySelect property="country" id="bankAccountCountry{bankAccount.id}" class="countrySelect span6" placeholder="{f:translate(id:'Choose country')}"/>
-
-						</div>
-						<div class="row-fluid" >
-						<f:form.textarea property="description" class="span8 capitalize"/>
+						<f:form.textarea property="description" class="span12 capitalize"/>
 						</div>
 
 					</div>
