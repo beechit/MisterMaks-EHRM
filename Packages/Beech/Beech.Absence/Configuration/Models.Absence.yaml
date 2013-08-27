@@ -22,8 +22,8 @@
          options:
            earliestDate: 20130101
            latestDate: 20200101
-    'remark':
-      label: 'Remark'
+    'reason':
+      label: 'Reason'
       type: 'text'
       validation:
         -
@@ -59,8 +59,14 @@
           'email': 'E-mail'
           'sms': 'Sms'
           'createTask': 'Create task'
-#for later implementation
-# case Sickness
+    'notes':
+      label: 'Notes'
+      type: 'text'
+      validation:
+        -
+          type: 'Text'
+#  For later implementation
+#  case Sickness
 #  Case labordispute
 #  Case accident
 #  case pregnancy

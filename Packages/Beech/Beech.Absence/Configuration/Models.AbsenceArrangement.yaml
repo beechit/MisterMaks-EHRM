@@ -17,15 +17,8 @@
       label: 'Grant balance after end Countdate'
       options:
         values:
-          - TRUE
           - FALSE
-    'calculateBalanceonFTE':
-      default: FALSE
-      label: 'Calculate balance according to FTE factor'
-      options:
-        values:
           - TRUE
-          - FALSE
     'customBalance':
       label: 'Custom  balance for full time'
     'endCount':
@@ -55,8 +48,8 @@
       label: 'Move unused balance hours to new balance period'
       options:
         values:
-          - TRUE
           - FALSE
+          - TRUE
     'absenceTypeName':
       label: 'Absence type'
       validation:
