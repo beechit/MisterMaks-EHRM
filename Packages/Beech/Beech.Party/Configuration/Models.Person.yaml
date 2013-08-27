@@ -9,13 +9,11 @@
     'name':
       label: 'name'
       type: 'TYPO3\Party\Domain\Model\PersonName'
+    'emgencyContact':
+      label: 'Emgency contact'
+      type: 'Beech\Party\Domain\Model\Person'
     'personType':
       label: 'Person type'
-      validation:
-        -
-          type: 'StringLength'
-          options:
-            maximum: 20
       options:
         values:
           'contact': 'Contact'
@@ -23,8 +21,8 @@
           'employee': 'Employee'
           'partnerCompanyContact': 'Partner company contact'
           'relative': 'Relative'
-# only for usage with persontype = contact this employee relation is about registering relatives tot the employee
-    'employeeRelations':
+# only for usage with persontype = relative this employee relation is about registering relatives tot the employee
+    'relativeType':
       label: 'Relation'
       options:
         values:
@@ -32,6 +30,12 @@
           'child': 'Child'
           'family': 'Family'
           'other': 'Other'
+    'emergencyContact':
+      label: 'Emergency contact'
+      options:
+        values:
+          - FALSE
+          - TRUE
     'middleOtherName':
       validation:
         -
