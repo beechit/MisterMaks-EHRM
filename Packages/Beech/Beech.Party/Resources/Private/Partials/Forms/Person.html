@@ -114,7 +114,7 @@
 	</label>
 
 	<div class="controls controls">
-		<ehrm:form.nationalitySelect property="nationality" id="nationality" class="countrySelect span8"
+		<ehrm:form.nationalitySelect property="nationality" id="nationality" class="countrySelect span7"
 									 placeholder="{f:translate(id:'Choose your nationality')}"/>
 	</div>
 </div>
@@ -125,7 +125,7 @@
 	</label>
 
 	<div class="controls controls-row">
-		<f:form.textfield property="bsn" id="bsn" class="span8 bsn" placeholder="{f:translate(id:'BSN Number')}"/>
+		<f:form.textfield property="bsn" id="bsn" class="span7 bsn" placeholder="{f:translate(id:'BSN Number')}"/>
 	</div>
 </div>
 
@@ -135,7 +135,7 @@
 			<f:translate id="language">Language</f:translate>
 		</label>
 		<div class="controls">
-			<f:form.select id="locale" property="preferences.locale" options="{languages}" />
+			<f:form.select id="locale" class="span7" property="preferences.locale" options="{languages}" />
 		</div>
 	</div>
 </f:if>
