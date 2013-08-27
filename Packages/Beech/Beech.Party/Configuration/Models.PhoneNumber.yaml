@@ -15,8 +15,6 @@
 #          'other': 'Other'
     'phoneNumber':
       label: 'Phone Number'
-#        -
-#          type: 'NotEmpty'
     'primary':
       label: 'Primary'
       options:
