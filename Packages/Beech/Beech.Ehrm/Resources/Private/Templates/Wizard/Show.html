@@ -1,8 +1,0 @@
-{namespace form=TYPO3\Form\ViewHelpers}
-<form:renderHead presetName="{presetName}" />
-<div id="presetSelector">
-	<f:form action="show" method="get">
-		<f:form.hidden name="formPersistenceIdentifier" value="{formPersistenceIdentifier}" />
-	</f:form>
-</div>
-<form:render persistenceIdentifier="{formPersistenceIdentifier}" presetName="{presetName}" />
