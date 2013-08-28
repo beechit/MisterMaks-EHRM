@@ -12,7 +12,7 @@
           type: 'StringLength'
           options:
             maximum: 20
-# todo register this status in status model
+# todo register this status in status model ?
     'status':
       label: 'Status'
       default: 'tentative'
@@ -99,8 +99,6 @@
             maximum: 20
     'documentType':
       label: 'Document type'
-      options:
-        values: []
       validation:
         -
           type: 'StringLength'
