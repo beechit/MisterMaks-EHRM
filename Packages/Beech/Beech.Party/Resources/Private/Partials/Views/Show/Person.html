@@ -7,7 +7,7 @@
 			</td>
 			<td class="span3">Naam</td>
 			<td class="span6">{person.name.firstName} {person.name.middleName} {person.name.lastName}
-				<a href="{f:uri.action(package:'Beech.Party', subpackage:'Administration', controller:'Person', action:'edit', arguments: {person: person})}"
+				<a href="{f:uri.action(package:'Beech.Party', subpackage:'Administration', controller:'Person', action:'edit', arguments: {person: person, withDetails: false})}"
 				   data-toggle="modal-ajax" data-target="#modal" modal-size="large"
 				   data-reload="{f:uri.action(package:'Beech.Party', controller:'Person', action:'show', arguments: {person: person})}">
 					<i class="icon-pencil icon-white"></i>
