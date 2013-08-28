@@ -4,7 +4,7 @@
       type: 'TYPO3\Party\Domain\Model\AbstractParty'
 # todo: implement this that validation works on type address selected.
     'electronicAddressType':
-      label: 'electronicAdressType'
+      label: 'Electronic adress type'
       options:
         values:
          'email': 'E-Mail'
@@ -14,7 +14,7 @@
 #         'facebook': 'Facebook'
          'linkedin': 'LinkedIn'
     'address':
-      label: 'electronicAddress'
+      label: 'Electronic address'
     'primary':
       label: 'Primary'
       options:

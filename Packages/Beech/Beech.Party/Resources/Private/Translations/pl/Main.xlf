@@ -814,6 +814,334 @@
 				<source>Mobile home</source>
 				<target></target>
 			</trans-unit>
+			<trans-unit id="asset.assetType.laptop">
+				<source>Laptop</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="asset.assetType.phone">
+				<source>Phone</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="asset.assetType.tools">
+				<source>Tools</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="asset.assetType.car">
+				<source>Car</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="asset.assetType.other">
+				<source>Other</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="bankAccount.BankAccountType.giro">
+				<source>Giro</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="bankAccount.BankAccountType.bank">
+				<source>Bank</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="bankAccount.BankAccountType.foreign">
+				<source>Foreign</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.companyType.primary">
+				<source>Primary</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.companyType.department">
+				<source>Department</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.companyType.subsidairy">
+				<source>Subsidairy</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.companyType.partnerCompany">
+				<source>Partner company</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.legalForm.subsidairy">
+				<source>Subsidairy</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.legalForm.department">
+				<source>Department</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.legalForm.solePropietorship">
+				<source>Sole propietorship</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.legalForm.vof">
+				<source>V.O.F.</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company.legalForm.bv">
+				<source>B.V.</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="education.educationLevel.primary">
+				<source>primary</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="education.educationLevel.preVocational">
+				<source>Pre vocational</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="education.educationLevel.vocationalSecondary">
+				<source>Vocational secondary</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="education.educationLevel.academic">
+				<source>Academic</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="education.educationLevel.higerVocational">
+				<source>Higher vocational</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="electronicAddress.electronicAddressType.skype">
+				<source>Skype</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="electronicAddress.electronicAddressType.website">
+				<source>Website</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="electronicAddress.electronicAddressType.twitter">
+				<source>Twitter</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="electronicAddress.electronicAddressType.facebook">
+				<source>Facebook</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="electronicAddress.electronicAddressType.linkedin">
+				<source>LinkedIn</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="licence.licenceType.driversLicence">
+				<source>Drivers licence</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="licence.licenceType.emergencyResponce">
+				<source>Emergency response</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="licence.licenceType.cropProtection">
+				<source>Crop protection</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="licence.licenceType.other">
+				<source>Other</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.personType.contact">
+				<source>Contact</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.personType.companyContact">
+				<source>Company contact</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.personType.employee">
+				<source>Employee</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.personType.contact">
+				<source>Contact</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.personType.partnerCompanyContact">
+				<source>Partner contact</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.personType.relative">
+				<source>Relative</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.nameUsage.birthName">
+				<source>Relative</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.nameUsage.marriedName">
+				<source>Married name</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.nameUsage.marriedNameBirthName">
+				<source>Married name + birthname</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.civilStatus.unknown">
+				<source>unknown</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.civilStatus.married">
+				<source>Married</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.civilStatus.single">
+				<source>Single</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.civilStatus.livingTogether">
+				<source>Living together</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.civilStatus.widowWidower">
+				<source>Widow / widower</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.civilStatus.divorced">
+				<source>Divorced</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.preferedCommunicationMethod.none">
+				<source>none</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.preferedCommunicationMethod.email">
+				<source>E-mail</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.preferedCommunicationMethod.sms">
+				<source>SMS</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.preferedCommunicationMethod.phone">
+				<source>Phone</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.status.active">
+				<source>Active</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.status.archived">
+				<source>Archived</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.salutation.mr">
+				<source>Dear Mr</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.salutation.ms">
+				<source>Dear Ms.</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.salutation.miss">
+				<source>Dear miss</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="person.salutation.mrs">
+				<source>Dear mrs</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="phoneNumber.phoneNumberType.work">
+				<source>Work number</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="phoneNumber.phoneNumberType.home">
+				<source>Home number</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="phoneNumber.phoneNumberType.business">
+				<source>Business number</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="phoneNumber.phoneNumberType.mobile">
+				<source>Mobile number</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="phoneNumber.phoneNumberType.foreign">
+				<source>Foreign number</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="email">
+				<source>E-mail</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="birthDate">
+				<source>Birth date</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="nationality">
+				<source>Nationality</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="name">
+				<source>Name</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="age:">
+				<source>Age:</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="main:">
+				<source>Main</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="departments">
+				<source>Departments</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="extra">
+				<source>Extra</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="select">
+				<source>Select</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="age">
+				<source>Age</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="jobDescription">
+				<source>Jobdescription</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="action">
+				<source>Action</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="address.addressType.business">
+				<source>Work address</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="address.addressType.postbox">
+				<source>Postbox</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="address.addressType.postAddress">
+				<source>Post address</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="address.addressType.abroad">
+				<source>address abroad</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="electronicAddress.electronicAddressType.email">
+				<source>E-mail</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="electronicAddress.electronicAddressType.url">
+				<source>Website</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="electronicAddress.electronicAddressType.linkedIn">
+				<source>LinkedIn</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="bankAccount.bankAccountType.bank">
+				<source>Bank</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="bankAccount.bankAccountType.giro">
+				<source>Giro</source>
+				<target></target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

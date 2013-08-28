@@ -3,9 +3,9 @@
 <f:section name="Body">
 	<div class="wizard" id="person-wizard">
 
-		<h1>Person wizard</h1>
+		<h1><f:translate id="person wizard">Person wizard</f:translate></h1>
 		<div class="wizard-card" data-cardname="person">
-			<h3>Personal data</h3>
+			<h3><f:translate id="personalData">Personal data</f:translate></h3>
 			<f:form action="create" object="{person}" name="person">
 				<input type="hidden" name="iscomplete" value="false" data-validate="isComplete"/>
 				<f:render partial="Forms/Person" arguments="{_all}" />
@@ -13,30 +13,30 @@
 		</div>
 		<div class="wizard-card row-fluid" data-cardname="electronicAddress"
 			data-url="<f:uri.action action='list' controller='ElectronicAddress' subpackage='administration' package='Beech.Party' arguments='{party:"new"}'></f:uri.action>">
-			<h3><f:translate>Electronic addresses</f:translate></h3>
+			<h3><f:translate id="electronicAddresses">Electronic addresses</f:translate></h3>
 		</div>
 		<div class="wizard-card row-fluid" data-cardname="address"
 			data-url="<f:uri.action action='list' controller='Address' subpackage='administration' package='Beech.Party' arguments='{party:"new"}'></f:uri.action>">
-			<h3><f:translate>Addresses</f:translate></h3>
+			<h3><f:translate id="addresses">Addresses</f:translate></h3>
 		</div>
 		<div class="wizard-card row-fluid" data-cardname="phoneNumber"
 			data-url="<f:uri.action action='list' controller='PhoneNumber' subpackage='administration' package='Beech.Party' arguments='{party:"new"}'></f:uri.action>">
-			<h3><f:translate>Phone numbers</f:translate></h3>
+			<h3><f:translate id="phoneNumbers">Phone numbers</f:translate></h3>
 		</div>
 		<div class="wizard-card row-fluid" data-cardname="bankAccount"
 			data-url="<f:uri.action action='list' controller='BankAccount' subpackage='administration' package='Beech.Party' arguments='{party:"new"}'></f:uri.action>">
-			<h3><f:translate>Bank accounts</f:translate></h3>
+			<h3><f:translate id="bankAccounts">Bank accounts</f:translate></h3>
 		</div>
 		<div class="wizard-card" data-cardname="education"
 			 data-url="<f:uri.action action='list' controller='Education' subpackage='administration' package='Beech.Party' arguments='{party:"new"}'></f:uri.action>">
-			<h3><f:translate>Education</f:translate></h3>
+			<h3><f:translate id="education">Education</f:translate></h3>
 		</div>
 		<div class="wizard-card" data-cardname="licence"
 			data-url="<f:uri.action action='list' controller='Licence' subpackage='administration' package='Beech.Party' arguments='{party:"new"}'></f:uri.action>">
-			<h3><f:translate>Licence</f:translate></h3>
+			<h3><f:translate id="licence">Licence</f:translate></h3>
 		</div>
 		<div class="wizard-card" data-cardname="user">
-			<h3><f:translate id="useraccount">User account</f:translate></h3>
+			<h3><f:translate id="userAccount">User account</f:translate></h3>
 			<p><f:translate id="wizard-create-user-text">Create a useraccount for this employee</f:translate></p>
 			<button id="create-user"><f:translate>Create user</f:translate></button>
 		</div>

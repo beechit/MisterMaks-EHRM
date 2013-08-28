@@ -27,14 +27,14 @@
 								<td><f:render partial="Document/Preview" arguments="{document: document, width: 100}"/></td>
 								<td>
 									<div class="btn-group">
-										<button class="btn btn-small">Acties</button>
+										<button class="btn btn-small"><f:translate id="action">Action</f:translate></button>
 										<button class="btn btn-small dropdown-toggle" data-toggle="dropdown">
 											<span class="caret"></span>
 										</button>
 										<ul class="dropdown-menu">
-											<li><a href="/download/{document.id}"><i class="icon-download-alt"></i>Download </a></li>
-											<f:comment><li><a href="#/document/edit/{document.id}"><i class="icon-pencil"></i>Wijzigen</a></li></f:comment>
-											<li><a href="#/document/delete/{document.id}"><i class="icon-trash"></i>Verwijderen</a></li>
+											<li><a href="/download/{document.id}"><i class="icon-download-alt"></i><f:translate id="download">Download</f:translate> </a></li>
+											<f:comment><li><a href="#/document/edit/{document.id}"><i class="icon-pencil"></i><f:translate id="edit">Edit</f:translate></a></li></f:comment>
+											<li><a href="#/document/delete/{document.id}"><i class="icon-trash"></i><f:translate id="delete">Delete</f:translate></a></li>
 										</ul>
 									</div>
 								</td>
