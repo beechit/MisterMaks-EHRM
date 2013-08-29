@@ -1,4 +1,4 @@
-'Beech.Party.Domain.Model.Asset':
+laptop'Beech.Party.Domain.Model.Asset':
   properties:
     'party':
       type: 'TYPO3\Party\Domain\Model\AbstractParty'

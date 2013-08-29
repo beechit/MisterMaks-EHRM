@@ -52,7 +52,6 @@
           'solePropietorship': 'Sole Proprietorship'
           'vof': 'V.O.F.'
           'bv': 'B.V.'
-      default: none
       validation:
         -
           type: 'StringLength'

@@ -9,7 +9,7 @@
          'primary': 'Primary'
          'preVocational': 'Pre vocational'
          'vocationalSecondary': 'Vocational secondary'
-         'higerVoational': 'Higher vocational'
+         'higerVocational': 'Higher vocational'
          'academic': 'Academic'
       validation:
         -
