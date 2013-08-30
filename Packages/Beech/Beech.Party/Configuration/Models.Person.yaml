@@ -95,7 +95,6 @@
            type: 'Beech.Ehrm:Bsn'
     'nationality':
       label: 'Nationality'
-#     default: '' see todo in Packages/Beech/Beech.Ehrm/Classes/Beech/Ehrm/ViewHelpers/Form/NationalitySelectViewHelper.php
     'civilStatus':
       label: 'Civil status'
       options:
