@@ -538,7 +538,7 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/beechit/Radmiraal.Emberjs.git",
-                "reference": "f55b79771b489e56070939f31504958ab31e1345"
+                "reference": "bb65d44c303421e2826ba109f97dc007d9ccd42e"
             },
             "require": {
                 "typo3/flow": "*"
