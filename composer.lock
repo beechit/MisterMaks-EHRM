@@ -538,13 +538,7 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/beechit/Radmiraal.Emberjs.git",
-                "reference": "698560a79564b4aee12b5faff981b97a61e49335"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "http://ci.beech.local:8080/job/composer-packages-1.0/ws/mistermaks/dist/radmiraal-emberjs-dev-master-a78eab.zip",
-                "reference": "dev-master",
-                "shasum": "dca92275effe84970732c04e03fb44510c7c5488"
+                "reference": "f55b79771b489e56070939f31504958ab31e1345"
             },
             "require": {
                 "typo3/flow": "*"
