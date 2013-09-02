@@ -169,6 +169,12 @@
 			<trans-unit id="action.update">
 				<source>Update</source>
 			</trans-unit>
+			<trans-unit id="documentName">
+				<source>Document name</source>
+			</trans-unit>
+			<trans-unit id="NameAttachmentAreRequired">
+				<source>* Document name and attachment are required</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

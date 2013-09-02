@@ -218,6 +218,15 @@
 				<source>Update</source>
 				<target></target>
 			</trans-unit>
+		</trans-unit>
+		<trans-unit id="documentName">
+			<source>Document name</source>
+			<target></target>
+		</trans-unit>
+		<trans-unit id="NameAttachmentAreRequired">
+			<source>* Document name and attachment are required</source>
+			<target></target>
+		</trans-unit>
 		</body>
 	</file>
 </xliff>

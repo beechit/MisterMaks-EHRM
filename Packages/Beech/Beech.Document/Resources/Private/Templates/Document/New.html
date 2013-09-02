@@ -1,8 +1,9 @@
-<div class="row-fluid">
-	<div class="span8">
-		<fieldset>
-			<legend><f:translate id="document.new">New</f:translate></legend>
-			<f:render partial="Form/New" arguments="{_all}"/>
-		</fieldset>
+{namespace ehrm=Beech\Ehrm\ViewHelpers}
+<div class="modal-header custom">
+	<h3><f:render partial="Beech.Party:Views/Show/ProfilePhoto" arguments="{photo: party.profilePhoto, width: 50}"/>{party.name} / Documents</h3>
+</div>
+<div class="clearfix well">
+	<div id="document-add" class="clearfix">
+		<f:render partial="Form/New" arguments="{_all}"/>
 	</div>
 </div>

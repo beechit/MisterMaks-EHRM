@@ -228,6 +228,14 @@
 				<source>Update</source>
 				<target>Bijwerken</target>
 			</trans-unit>
+			<trans-unit id="documentName">
+				<source>Document name</source>
+				<target>Document naam</target>
+			</trans-unit>
+			<trans-unit id="NameAttachmentAreRequired">
+				<source>* Document name and attachment are required</source>
+				<target>Documentnaam en bestand zijn vereist.</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

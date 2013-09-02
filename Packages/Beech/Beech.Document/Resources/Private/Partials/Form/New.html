@@ -13,20 +13,36 @@
 </f:form.validationResults>
 <f:form method="post" action="create" name="document" object="{document}" class="form-horizontal form-newDocument" enctype="multipart/form-data">
 	<div class="control-group">
-		<f:form.textfield property="name" class="documentName"/>
+		<label class="control-label" for="documentName">
+			<f:translate id="documentName">Document name:</f:translate>
+		</label>
+		<f:form.textfield property="name" class="documentName" placeholder="{f:translate(id:'documentName')}..."/>
 	</div>
 	<div class="control-group">
+		<label class="control-label" for="documentType">Document category</label>
 		<ehrm:form.select property="documentType" class="documentType" options="{documentCategories}" optionLabelField="typeName"/>
 	</div>
 	<div class="control-group">
-		<f:form.hidden property="party" value="{party}"/>
+		<label class="control-label" for="expireDate">
+			<f:translate id="expireDate">Expiration date:</f:translate>
+		</label>
+		<ehrm:form.datePicker id="expireDate" property="expireDate" class="datepicker" dateFormat="d-m-Y"/>
 	</div>
+
 	<div class="control-group">
+		<label class="control-label" for="required"><f:translate id="required">Required</f:translate></label>
+		<span class="add-on"><f:form.checkbox property="required" id="required" value="TRUE"/></span>
+	</div>
+
+	<div class="control-group">
+		<label class="control-label" for="documentAttachment"></label>
 		<f:form.upload property="resources.0" class="documentAttachment"/>
-		<label class="info-documentAttachment">* To save, name & attachment is required</label>
+		<span class="info-documentAttachment"><f:translate id="NameAttachmentAreRequired">* To save, name & attachment is required</f:translate><span>
 	</div>
 	<div class="control-group hide control-documentSubmit" >
+		<label class="control-label" for="submit">&nbsp;</label>
 		<f:form.submit value="{f:translate(id:'document.upload')}" class="btn btn-primary"/>
 	</div>
+	<f:form.hidden property="party" value="{party}"/>
 </f:form>
 <script src="resource://Beech.Document/Public/JavaScript/Component/UserInterface/Document.js"></script>
