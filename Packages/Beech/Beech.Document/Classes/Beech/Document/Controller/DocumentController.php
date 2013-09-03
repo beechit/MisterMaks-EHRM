@@ -100,24 +100,16 @@ class DocumentController extends \Beech\Ehrm\Controller\AbstractController {
 
 	/**
 	 * @param \Beech\Document\Domain\Model\Document $document
-	 * @param string $name
-	 * @throws \Exception
 	 * @Flow\IgnoreValidation("$document")
 	 * @return string
 	 */
-	public function downloadAction(\Beech\Document\Domain\Model\Document $document, $name = NULL) {
+	public function downloadAction(\Beech\Document\Domain\Model\Document $document) {
 
 		$attachments = $document->getResources();
-
-		if ($name !== NULL && !isset($attachments[$name])) {
-			throw new \Exception('Document with name %s not found', $name);
-		}
 		$attachment = reset($attachments);
-		if ($name === NULL) {
-			$name = key($attachments);
-		}
 
-			// TODO: Use the mimetype
+		$name = key($attachments);
+
 		$this->response->setHeader('Content-Type', $attachment->getContentType());
 		$this->response->setHeader('Content-Disposition', 'attachment; filename="' . $name . '"');
 		$this->response->setContent($attachment->getRawData());

@@ -42,26 +42,27 @@ class ProfilePhotoController extends \Beech\Document\Controller\DocumentControll
 	 * @param \Beech\Party\Domain\Model\Person $party
 	 * @return void
 	 */
-	public function changeAction(\Beech\Document\Domain\Model\Document $document, \Beech\Party\Domain\Model\Person $party) {
+	public function editAction(\Beech\Document\Domain\Model\Document $document, \Beech\Party\Domain\Model\Person $party) {
 		$this->view->assign('document', $document);
 		$this->view->assign('party', $party);
+		$this->view->assign('random', uniqid());
 	}
 
 	/**
-	 * Save action, used to store  profile photo
+	 * Add action, used to store  profile photo
 	 *
 	 * @param \Beech\Document\Domain\Model\Document $document
 	 * @param \Beech\Party\Domain\Model\Person $party
 	 * @return void
 	 */
-	public function saveAction(\Beech\Document\Domain\Model\Document $document, \Beech\Party\Domain\Model\Person $party) {
+	public function updateAction(\Beech\Document\Domain\Model\Document $document, \Beech\Party\Domain\Model\Person $party) {
 		$documentType = $this->documentTypeRepository->findOneByTypeName(DocumentType::PROFILE_PHOTO);
 		$document->setDocumentType($documentType);
 		$this->documentRepository->add($document);
 		$identifier = $this->persistenceManager->getIdentifierByObject($document);
 		$party->setProfilePhoto($identifier);
 		$this->personRepository->update($party);
-		$this->redirect('update', NULL, NULL, array('document' => $document, 'party' => $party));
+		$this->redirect('edit', NULL, NULL, array('document' => $document, 'party' => $party));
 	}
 }
 
