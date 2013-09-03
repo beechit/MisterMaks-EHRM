@@ -12,6 +12,10 @@
 			 data-url="<f:uri.action action='edit' controller='Company' subpackage='administration' package='Beech.Party' arguments='{company:company,withDetails:false}'></f:uri.action>">
 			<h3><f:translate>Company data</f:translate></h3>
 		</div>
+		<div class="wizard-card row-fluid" data-cardname="companyLogo"
+			 data-url="<f:uri.action action='change' controller='CompanyLogo' package='Beech.Party' arguments='{company:company}'></f:uri.action>">
+			<h3><f:translate>Company logo</f:translate></h3>
+		</div>
 		<div class="wizard-card row-fluid" data-cardname="address"
 			 data-url="<f:uri.action action='list' controller='Address' subpackage='administration' package='Beech.Party' arguments='{party:company}'></f:uri.action>">
 			<h3><f:translate>Company addresses</f:translate></h3>
@@ -28,6 +32,7 @@
 			 data-url="<f:uri.action action='list' controller='BankAccount' subpackage='administration' package='Beech.Party' arguments='{party:company}'></f:uri.action>">
 			<h3><f:translate>Company bank accounts</f:translate></h3>
 		</div>
+
 		<div class="wizard-card row-fluid" data-cardname="mainUser"
 			 data-url="<f:uri.action action='edit' controller='Person' subpackage='administration' package='Beech.Party' arguments='{person:person,withDetails:false}'></f:uri.action>">
 		<h3><f:translate>Main user</f:translate></h3>
