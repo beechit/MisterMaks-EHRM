@@ -1,0 +1,12 @@
+absenceArrangement:
+ absenceArrangmentName: 'laborDispute'
+   label: 'Labour dispute'
+   absenceType: 'sickness'
+   help: ''
+   days: ''
+   reportInpectionAction: TRUE
+   needsGrant: FALSE
+   autoGrandBalance: FALSE
+   deductFromBalance: FALSE
+   addToBalance: TRUE
+   unit: 'hours'

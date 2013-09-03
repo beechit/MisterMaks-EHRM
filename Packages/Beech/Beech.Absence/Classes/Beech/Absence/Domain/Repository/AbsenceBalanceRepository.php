@@ -14,7 +14,7 @@ use TYPO3\Flow\Annotations as Flow;
  *
  * @Flow\Scope("singleton")
  */
-class LeaveBalanceRepository extends \Radmiraal\CouchDB\Persistence\AbstractRepository {
+class AbsenceBalanceRepository extends \Radmiraal\CouchDB\Persistence\AbstractRepository {
 
 }
 

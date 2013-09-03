@@ -1,94 +1,22 @@
 'Beech.Absence.Domain.Model.AbsenceArrangement':
   properties:
-    'setAbsenceUnit':
-      label: 'The unit in what absence is stored'
-      options:
-        values:
-          'hour': 'Hour'
-          'halfADay': 'Half a day'
-          'day': 'Day'
-      validation:
-        -
-          type: StringLength
-          options:
-            maximum: 20
-    'autoGrandBalance':
-      default: FALSE
-      label: 'Grant balance after end Countdate'
-      options:
-        values:
-          - FALSE
-          - TRUE
-    'customBalance':
-      label: 'Custom  balance for full time'
-    'endCount':
-      default: 31-12
-      label: 'End count of balance'
-      type: DateTime
-      validation:
-        -
-          type: StringLength
-          options:
-            maximum: 5
-    'leaveBalanceSource':
-      label: 'Set balance source'
-      options:
-        values:
-          'cla': 'CLA'
-          'law': 'By law'
-          'custom': 'Custom'
-          'notApplicable': 'not applicable'
-      validation:
-        -
-          type: StringLength
-          options:
-            maximum: 20
-    'moveUnusedBalance':
-      default: FALSE
-      label: 'Move unused balance hours to new balance period'
-      options:
-        values:
-          - FALSE
-          - TRUE
-    'absenceTypeName':
-      label: 'Absence type'
-      validation:
-        -
-          type: StringLength
-          options:
-            maximum: 35
-    'absenceTypeDescription':
-      label: AbsenceDesription
-      validation:
-        -
-          type: Text
-    'absenceArrangementName':
-      label: 'Absence Arrangement'
-      validation:
-        -
-          type: Stringlength
-          options:
-            maximum: 25
-    'startCount':
-      default: 1-1
-      label: 'Start count of balance'
-      type: DateTime
-      validation:
-        -
-          type: StringLength
-          options:
-            maximum: 5
-    'createdBy':
-      default: currentUser
-      label: 'Created by'
-      type: Beech\Party\Domain\Model\Person
-    'creationDate':
-      default: now
-      label: 'creation date'
-      type: DateTime
-      validation:
-        -
-          type: DateTimeRange
-          options:
-            earliestDate: 20130101
-            latestDate: 20200101
+    arrangmentName:
+    absenceType:
+    # only for registering special days like holiday should show in view an extra selectfield to select the day.
+    days:
+    # report inspection should be used to create a task, in case of labour accident this should be reported in some cases
+    #to the arbeidsinspectie. todo: we should me a simple assessment tool if this is the case
+    # this value should trigger this accesmenttool.
+    reportInpectionAction:
+    # needsGrant is a setting used to trigger the granting workflow of leaveRequest.
+    needsGrant:
+    # autogrant, is used for vacationdays, the can be granted when a new contracdt is created or the beginning of each year.
+    # this could trigger a autogrant workflow.
+    autoGrandBalance:
+    # deductFromBalance will deduct the number of hours in the Leave request from the balance.
+    deductFromBalance:
+    # add to balance is used for sickreport to set the number of hours
+    addToBalance:
+     # sets the unit to calculate with in this arrangement.
+    unit:
+      default: 'hours'

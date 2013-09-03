@@ -25,13 +25,19 @@ class AbsenceArrangement extends \Beech\Ehrm\Domain\Model\Document {
 	protected $absence;
 
 	/**
+	 * @var string
+	 * @Flow\Validate(type="StringLength", options={ "minimum"=1, "maximum"=255 })
+	 */
+	protected $absenceType;
+
+	/**
 	 * The name of the arrangement
 	 *
 	 * @var string
 	 * @ODM\Field(type="string")
 	 * @ODM\Index
 	 */
-	protected $absenceArrangementName;
+	protected $arrangementName;
 
 }
 

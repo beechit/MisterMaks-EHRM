@@ -11,21 +11,21 @@ use TYPO3\Flow\Annotations as Flow;
 use Beech\Absence\Domain\Model\LeaveBalance as LeaveBalance;
 
 /**
- * LeaveBalance controller for the Beech.Absence package
+ * AbsenceBalance controller for the Beech.Absence package
  *
  * @Flow\Scope("singleton")
  */
-class LeaveBalanceController extends \Beech\Ehrm\Controller\AbstractManagementController {
+class AbsenceBalanceController extends \Beech\Ehrm\Controller\AbstractManagementController {
 
 	/**
 	 * @var string
 	 */
-	protected $entityClassName = 'Beech\Absence\Domain\Model\LeaveBalance';
+	protected $entityClassName = 'Beech\Absence\Domain\Model\AbsenceBalance';
 
 	/**
 	 * @var string
 	 */
-	protected $repositoryClassName = 'Beech\Absence\Domain\Repository\LeaveBalanceRepository';
+	protected $repositoryClassName = 'Beech\Absence\Domain\Repository\AbsenceBalanceRepository';
 }
 
 ?>
