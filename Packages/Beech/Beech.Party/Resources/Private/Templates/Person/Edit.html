@@ -3,7 +3,7 @@
 <f:section name="Body">
 
 	<h1>
-		<f:translate id="action.edit">Edit</f:translate>
+		<f:translate id="action.edit"></f:translate>
 	</h1>
 
 	<ehrm:flashMessages/>
@@ -19,7 +19,7 @@
 	</f:form.validationResults>
 
 	<div class="well clearfix">
-		<h3>Person information</h3>
+		<h3><f:translate id="personInformation">Person information</f:translate></h3>
 
 		<f:form action="update" object="{person}" name="person" class="form-horizontal">
 			<f:comment>This hidden input is for the applicaton setupWizard</f:comment>
@@ -33,12 +33,12 @@
 
 		<f:if condition="{withDetails}">
 			<!-- Profile picture -->
-			<h3> Profile picture</h3>
+			<h3><f:translate id="profilePicture">Profile picture</f:translate></h3>
 			<div id="profilePhoto">
 				<f:render partial="Forms/ProfilePhoto" arguments="{party: person, width: 150}"/>
 			</div>
 			<!-- Addresses -->
-			<h3>Addresses</h3>
+			<h3><f:translate id="addresses">Addresses</f:translate></h3>
 			<f:for each="{addresses}" as="address">
 				<div id="address-{address.id}">
 					<f:render partial="Forms/Address" arguments="{party: person, address: address, action: 'update'}"/>
@@ -49,7 +49,7 @@
 			</div>
 			<hr/>
 			<!-- Phone numbers -->
-			<h3>Phone numbers</h3>
+			<h3><f:translate id="phoneNumbers">Phone numbers</f:translate></h3>
 			<f:for each="{phoneNumbers}" as="phoneNumber">
 				<div id="phoneNumber-{phoneNumber.id}">
 					<f:render partial="Forms/PhoneNumber" arguments="{party: person, phoneNumber: phoneNumber, action: 'update'}"/>
@@ -60,7 +60,7 @@
 			</div>
 			<hr/>
 			<!-- Electronic addresses -->
-			<h3>Electronic addresses</h3>
+			<h3><f:translate id="electronicAddresses">Electronic addresses</f:translate></h3>
 			<f:for each="{electronicAddresses}" as="electronicAddress">
 				<div id="electronicAddress-{electronicAddress.id}">
 					<f:render partial="Forms/ElectronicAddress" arguments="{party: person, electronicAddress: electronicAddress, action: 'update'}"/>
@@ -71,7 +71,7 @@
 			</div>
 			<hr/>
 			<!-- Bank accounts -->
-			<h3>Bank accounts</h3>
+			<h3><f:translate id="bankAccounts">Bank accounts</f:translate></h3>
 			<f:for each="{bankAccounts}" as="bankAccount">
 				<div id="bankAccount-{bankAccount.id}">
 					<f:render partial="Forms/BankAccount" arguments="{party: person, bankAccount: bankAccount, action: 'update'}"/>
@@ -82,7 +82,7 @@
 			</div>
 			<hr/>
 			<!-- Education -->
-			<h3>Education</h3>
+			<h3><f:translate id="education">Education</f:translate></h3>
 			<f:for each="{educations}" as="education">
 				<div id="education-{education.id}">
 					<f:render partial="Forms/Education" arguments="{party: person, education: education, action: 'update'}"/>
@@ -93,7 +93,7 @@
 			</div>
 			<hr/>
 			<!-- Asset -->
-			<h3>Asset</h3>
+			<h3><f:translate id="asset">Asset</f:translate></h3>
 			<f:for each="{assets}" as="asset">
 				<div id="asset-{asset.id}">
 					<f:render partial="Forms/Asset" arguments="{party: person, asset: asset, action: 'update'}"/>
@@ -104,7 +104,7 @@
 			</div>
 			<hr/>
 			<!-- Licence -->
-			<h3>Licence</h3>
+			<h3><f:translate id="licence">Licence</f:translate></h3>
 			<f:for each="{licences}" as="licence">
 				<div id="licence-{licence.id}">
 					<f:render partial="Forms/Licence" arguments="{party: person, licence: licence, action: 'update'}"/>

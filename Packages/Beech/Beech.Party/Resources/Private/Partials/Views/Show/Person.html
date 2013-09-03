@@ -5,7 +5,7 @@
 			<td rowspan="5">
 				<f:render partial="Views/Show/ProfilePhoto" arguments="{photo: person.profilePhoto, width: 150}"/>
 			</td>
-			<td class="span3">Naam</td>
+			<td class="span3"><f:translate id="Name">Name</f:translate></td>
 			<td class="span6">{person.name.firstName} {person.name.middleName} {person.name.lastName}
 				<a href="{f:uri.action(package:'Beech.Party', subpackage:'Administration', controller:'Person', action:'edit', arguments: {person: person, withDetails: false})}"
 				   data-toggle="modal-ajax" data-target="#modal" modal-size="large"
@@ -16,7 +16,7 @@
 			</td>
 		</tr>
 		<tr class="even">
-			<td>Email</td>
+			<td><f:translate id="email">E-mail</f:translate></td>
 			<td>
 				{person.electronicAddress_email.address}
 				<a href="{f:uri.action(package:'Beech.Party', subpackage:'Administration', controller:'ElectronicAddress', action:'list', arguments: {party: person})}"
@@ -29,7 +29,7 @@
 		</tr>
 		<tr class="odd">
 			<td>
-				Telefoonnummer
+				<f:translate id="phoneNumber">Phone number</f:translate>
 			</td>
 			<td>
 				<f:for each="{phoneNumbers}" as="phoneNumber">
@@ -48,7 +48,7 @@
 			</td>
 		</tr>
 		<tr class="even">
-			<td>Geboortedatum</td>
+			<td><f:translate id="birthDate">Birth date</f:translate></td>
 			<td>
 				<f:if condition="{person.dateOfBirth}">
 					<div class="row-fluid">
@@ -56,7 +56,7 @@
 							<f:format.date format="d-m-Y">{person.dateOfBirth}</f:format.date>
 						</div>
 						<div class="span8">
-							Age: <strong>{person.age}</strong>
+							<f:translate id="age:">Age:</f:translate><strong>{person.age}</strong>
 							<a href="{f:uri.action(package:'Beech.Party', subpackage:'Administration', controller:'Person', action:'edit', arguments: {person: person})}"
 							   data-toggle="modal-ajax" data-target="#modal" modal-size="large"
 							   data-reload="{f:uri.action(package:'Beech.Party', controller:'Person', action:'show', arguments: {person: person})}">
@@ -69,7 +69,7 @@
 			</td>
 		</tr>
 		<tr class="odd">
-			<td>Nationality</td>
+			<td><f:translate id="nationality">Nationality</f:translate></td>
 			<td>
 				{person.nationality -> ehrm:format.nationality()}
 			</td>
