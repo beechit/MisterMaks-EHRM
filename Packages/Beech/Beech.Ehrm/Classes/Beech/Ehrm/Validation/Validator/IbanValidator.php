@@ -35,13 +35,17 @@ class IbanValidator extends AbstractValidator {
 	 * @throws \TYPO3\Flow\Validation\Exception\InvalidValidationOptionsException
 	 */
 	protected function isValid($value) {
-		$result = preg_match($this->regularExpression, $value);
-		if ($result === 0) {
-			$this->addError('Format of your Iban number is not correct. There is <b>%1$s</b> and should be <b>%2$s</b> for example', 1374140660, array($value, $this->expected));
+		$bankAccountType = $value->getBankAccountType();
+		if ($bankAccountType === 'bank') {
+			$result = preg_match($this->regularExpression, $value->getAccountNumber());
+			if ($result === 0) {
+				$this->addError('Format of your Iban number is not correct. There is <b>%1$s</b> and should be <b>%2$s</b> for example', 1374140660, array($value->getAccountNumber(), $this->expected));
+			}
+			if ($result === FALSE) {
+				throw new \TYPO3\Flow\Validation\Exception\InvalidValidationOptionsException('regularExpression "' . $this->regularExpression . '"IbanNumberValidator contained an error.', 1374140660);
+			}
 		}
-		if ($result === FALSE) {
-			throw new \TYPO3\Flow\Validation\Exception\InvalidValidationOptionsException('regularExpression "' . $this->regularExpression . '"IbanNumberValidator contained an error.', 1374140660);
-		}
+
 	}
 
 }

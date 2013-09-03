@@ -43,7 +43,7 @@ class BankAccountController extends \Beech\Ehrm\Controller\AbstractManagementCon
 
 	/**
 	 * @param \Beech\Party\Domain\Model\BankAccount $bankAccount A bankAccount to add
-	 *
+	 * @Flow\Validate(argumentName="bankAccount", type="Beech.Ehrm:Iban")
 	 * @return void
 	 */
 	public function addAction(\Beech\Party\Domain\Model\BankAccount $bankAccount) {
@@ -56,7 +56,7 @@ class BankAccountController extends \Beech\Ehrm\Controller\AbstractManagementCon
 
 	/**
 	 * @param \Beech\Party\Domain\Model\BankAccount $bankAccount A bankAccount to update
-	 *
+	 * @Flow\Validate(argumentName="bankAccount", type="Beech.Ehrm:Iban")
 	 * @return void
 	 */
 	public function updateAction(\Beech\Party\Domain\Model\BankAccount $bankAccount) {
