@@ -17,6 +17,9 @@ use TYPO3\Flow\Annotations as Flow,
  */
 class Absence extends \Beech\Ehrm\Domain\Model\Document {
 
+	const OPTION_LEAVE = 'leave';
+	const OPTION_SICKNESS = 'sickness';
+
 	/**
 	 * @var \TYPO3\Flow\Persistence\PersistenceManagerInterface
 	 * @Flow\Inject
@@ -25,11 +28,18 @@ class Absence extends \Beech\Ehrm\Domain\Model\Document {
 	protected $persistenceManager;
 
 	/**
-	 * @var \TYPO3\Party\Domain\Model\AbstractParty
+	 * @var \Beech\Party\Domain\Model\Person
 	 * @ODM\Field(type="mixed")
 	 * @ODM\Index
 	 */
-	protected $party;
+	protected $person;
+
+	/**
+	 * @var \Beech\Party\Domain\Model\Company
+	 * @ODM\Field(type="mixed")
+	 * @ODM\Index
+	 */
+	protected $department;
 
 	/**
 	 * @var \Beech\Absence\Domain\Model\AbsenceArrangement
@@ -64,34 +74,6 @@ class Absence extends \Beech\Ehrm\Domain\Model\Document {
 	 * @ODM\Field(type="string")
 	 * @ODM\Index
 	 */
-	protected $reportMethod;
-
-	/**
-	 * The remark on this absence
-	 *
-	 * @var string
-	 * @ODM\Field(type="string")
-	 * @ODM\Index
-	 */
-	protected $remark;
-
-	/**
-	 * The requestStatus on this absence
-	 *
-	 * @var string
-	 * @ODM\Field(type="string")
-	 * @ODM\Index
-	 */
-	protected $requestStatus;
-
-	/**
-	 * The needsGrant on this absence
-	 *
-	 * @var string
-	 * @ODM\Field(type="string")
-	 * @ODM\Index
-	 */
-	protected $needsGrant;
 
 	/**
 	 * @var \DateTime

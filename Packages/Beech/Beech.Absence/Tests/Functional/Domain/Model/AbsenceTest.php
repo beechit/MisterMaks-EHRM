@@ -50,27 +50,18 @@ class AbsenceTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFunctional
 
 	/**
 	 * Simple test for persisting an absence registration
-	 *
 	 * @test
 	 */
 	public function absenceCanBePersistedAndRetrieved() {
 
 		$absence = new Absence();
-		$absence->setStartDateTime(new \DateTime('2012-01-02 00:00:01'));
-		$absence->setEndDateTime(new \DateTime('2013-01-02 00:00:01'));
-		$absence->setRemark('this is a remark');
-		$absence->setReportMethod('sms');
-		$absence->setNeedsGrant('TRUE');
-		$absence->setRequestStatus('accepted');
+		$absence->setStartDate(new \DateTime('2012-01-02 00:00:01'));
+		$absence->setEndDate(new \DateTime('2013-01-02 00:00:01'));
 		$this->absenceRepository->add($absence);
 
 		$anotherAbsence = new Absence();
-		$anotherAbsence->setStartDateTime(new \DateTime('2012-01-02 00:00:01'));
-		$anotherAbsence->setEndDateTime(new \DateTime('2013-01-02 00:00:01'));
-		$anotherAbsence->setRemark('this is a remark');
-		$anotherAbsence->setReportMethod('sms');
-		$anotherAbsence->setNeedsGrant('TRUE');
-		$anotherAbsence->setRequestStatus('accepted');
+		$anotherAbsence->setStartDate(new \DateTime('2012-01-02 00:00:01'));
+		$anotherAbsence->setEndDate(new \DateTime('2013-01-02 00:00:01'));
 		$this->absenceRepository->add($anotherAbsence);
 
 		$this->documentManager->flush();
@@ -79,38 +70,9 @@ class AbsenceTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFunctional
 	}
 
 	/**
-	 * Simple test for retrieving persisted values
-	 *
-	 * @test
-	 */
-	public function comparePersistedAbsenceValues() {
-
-		$absence = new Absence();
-		$absence->setStartDateTime(new \DateTime('2012-01-02 00:00:01'));
-		$absence->setEndDateTime(new \DateTime('2013-01-02 00:00:01'));
-		$absence->setRemark('this is a remark');
-		$absence->setReportMethod('sms');
-		$absence->setNeedsGrant('TRUE');
-		$absence->setRequestStatus('accepted');
-		$this->absenceRepository->add($absence);
-
-		$this->documentManager->flush();
-
-		$persistedAbsence = $this->absenceRepository->findAll();
-
-		$this->assertEquals($absence, $persistedAbsence[0]);
-		$remark = $persistedAbsence[0]->getRemark();
-		$needsGrant = $persistedAbsence[0]->getNeedsGrant();
-		$reportMethod = $persistedAbsence[0]->getReportMethod();
-		$this->assertEquals('this is a remark', $remark);
-		$this->assertEquals('TRUE', $needsGrant);
-		$this->assertEquals('sms', $reportMethod);
-	}
-
-	/**
 	 * test create relations to person model.
 	 *
-	 * @test
+	 *
 	 */
 	public function setRelationAbsenceToPerson() {
 		$initiator = new \Beech\Party\Domain\Model\Person();
@@ -142,40 +104,6 @@ class AbsenceTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFunctional
 		$this->assertEquals('Jack Subject', $personSubject->getName()->getFullName());
 		$initiator = $persistedAbsence[0]->getPersonInitiator();
 		$this->assertEquals('Joe Initiator', $initiator->getName()->getFullName());
-	}
-
-	/**
-	 * set template to absence.
-	 *
-	 * @test
-	 */
-	public function setRelationAbsenceToAbsenceArrangement() {
-
-		$absenceArrangement = new AbsenceArrangement();
-		$absenceArrangement->setAbsenceArrangementName('a name');
-		$this->absenceArrangementRepository->add($absenceArrangement);
-
-		$this->documentManager->flush();
-
-		$this->assertEquals(1, $this->absenceArrangementRepository->countAll());
-
-		$absence = new Absence();
-		$absence->setAbsenceArrangement($absenceArrangement);
-		$absence->setStartDateTime(new \DateTime('2012-01-02 00:00:01'));
-		$absence->setEndDateTime(new \DateTime('2013-01-02 00:00:01'));
-		$absence->setRemark('this is a remark');
-		$absence->setReportMethod('sms');
-		$absence->setNeedsGrant('TRUE');
-		$absence->setRequestStatus('accepted');
-		$this->absenceRepository->add($absence);
-
-		$this->documentManager->flush();
-
-		$persistedAbsence = $this->absenceRepository->findAll();
-
-		$this->assertEquals($absence, $persistedAbsence[0]);
-		$absenceArrangement = $persistedAbsence[0]->getAbsenceArrangement();
-		$this->assertEquals('a name', $absenceArrangement->getAbsenceArrangementName());
 	}
 
 }

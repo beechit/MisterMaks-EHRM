@@ -1,0 +1,12 @@
+absenceArrangment:
+  absenceArrangementName: 'workRelatedMental'
+  label: 'work related mental'
+  absencetype: 'sickness'
+  help: 'sickness due to Focus / attention / pressure'
+  days: ''
+  reportInpectionAction: TRUE
+  needsGrant: FALSE
+  autoGrandBalance: FALSE
+  deductFromBalance: FALSE
+  addToBalance: TRUE
+  unit: 'hours'

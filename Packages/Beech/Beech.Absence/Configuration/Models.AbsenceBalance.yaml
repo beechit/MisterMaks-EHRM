@@ -1,0 +1,40 @@
+'Beech.Absence.Domain.Model.AbsenceBalance':
+  properties:
+# the contract is the base where balance is build on.
+# contracts get registered here and based on contracts date and hours a week the leave balance can be calculated and
+# stored in this model.
+# when taking leavedays they should be deducted from the balances.
+# from the views an actual balance state can be retrieved from this model.
+# absence works the other way around and each sickreport should register the number of hours in this model so
+# sickness hours should buildup in this model.
+    contract:
+      type: 'Beech\Party\Domain\Model\CLA'
+    person:
+      type: 'Beech\Party\Domain\Model\Person'
+    department:
+      type: 'Beech\Party\Domain\Model\Company'
+    balanceYear:
+       label: 'Balance year'
+       validation:
+        -
+          type: 'Integer'
+# Here the vacation day balance get stored.
+# about statutory days
+# for a fultime job you get 20 statutory vacation day's
+# a lot of CLA's or employers offer extra day's, these vacation days have a differtent status and should
+# registered seperately.
+# cumulation of statury and above statutory days gives the current balance of vacation days.
+    leaveBalanceStartStatutory:
+      label: 'Statutory holidays balance start'
+    leaveBalanceAboveStatutory:
+      label: 'Above statutory vacation days'
+    leaveBalanceCurrentStatutory:
+      label: 'Current Statutory vacation days'
+    leaveBalanceCurrentAboveStatutory:
+      label: 'Current above Statutory vacation days'
+# Here the Sickness balance get stored.
+    sicknessBalance:
+      label: 'Sickness balance'
+# here the absence % that is calculated on each sickness report is stored.
+    sicknessPercentage:
+      label: 'absence rate'
