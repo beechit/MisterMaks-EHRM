@@ -6,15 +6,11 @@
       label: 'Bank account type'
       options:
         values:
-          'giro': 'Giro'
           'bank': 'Bank'
           'foreign': 'Foreign'
 #todo check regular expression
     'accountNumber':
       label: 'Account number'
-      validation:
-        -
-          type: 'Beech.Ehrm:Iban'
 #        -
 #          type: 'NotEmpty'
     'primary':
