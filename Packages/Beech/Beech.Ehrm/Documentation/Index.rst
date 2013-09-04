@@ -28,3 +28,4 @@ Features
 		Features/Diagram
 		Features/MessageQueue
 		Features/FetchingProperties
+		Features/Partials
