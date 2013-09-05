@@ -1,5 +1,5 @@
-absenceArrangment:
-  absenceArrangmentName: 'docterVisit'
+absenceArrangement:
+  absenceArrangementName: 'docterVisit'
   label: 'DocterVisit'
   absenceType: 'leave'
   help: ''
@@ -8,5 +8,5 @@ absenceArrangment:
   needsGrant: FALSE
   autoGrandBalance: FALSE
   deductFromBalance: FALSE
-  addToBalance: TRUE
+  addToBalance: FALSE
   unit: 'hours'

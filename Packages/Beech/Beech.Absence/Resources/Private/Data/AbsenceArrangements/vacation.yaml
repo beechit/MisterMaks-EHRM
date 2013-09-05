@@ -5,8 +5,8 @@ absenceArrangement:
   help: ''
   days: ''
   reportInpectionAction: TRUE
-  needsGrant: FALSE
+  needsGrant: TRUE
   autoGrandBalance: FALSE
-  deductFromBalance: FALSE
+  deductFromBalance: TRUE
   addToBalance: TRUE
   unit: 'hours'
