@@ -79,13 +79,13 @@ class AbsenceTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFunctional
 		$initiator->setName(new \TYPO3\Party\Domain\Model\PersonName('', 'Joe', '', 'Initiator'));
 		$this->personRepository->add($initiator);
 
-		$personSubject = new \Beech\Party\Domain\Model\Person();
-		$personSubject->setName(new \TYPO3\Party\Domain\Model\PersonName('', 'Jack', '', 'Subject'));
-		$this->personRepository->add($personSubject);
+		$person = new \Beech\Party\Domain\Model\Person();
+		$person->setName(new \TYPO3\Party\Domain\Model\PersonName('', 'Jack', '', 'Subject'));
+		$this->personRepository->add($person);
 
 		$absence = new Absence();
-		$absence->setPersonInitiator($initiator);
-		$absence->setPersonSubject($personSubject);
+		$absence->setReportedTo($initiator);
+		$absence->setPersonSubject($person);
 		$absence->setStartDateTime(new \DateTime('2012-01-02 00:00:01'));
 		$absence->setEndDateTime(new \DateTime('2013-01-02 00:00:01'));
 		$absence->setRemark('this is a remark');
@@ -99,10 +99,10 @@ class AbsenceTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFunctional
 		$persistedAbsence = $this->absenceRepository->findAll();
 
 		$this->assertEquals($absence, $persistedAbsence[0]);
-		$personSubject = $persistedAbsence[0]->getPersonSubject();
+		$person = $persistedAbsence[0]->getPersonSubject();
 
-		$this->assertEquals('Jack Subject', $personSubject->getName()->getFullName());
-		$initiator = $persistedAbsence[0]->getPersonInitiator();
+		$this->assertEquals('Jack Subject', $person->getName()->getFullName());
+		$initiator = $persistedAbsence[0]->getReportedTo();
 		$this->assertEquals('Joe Initiator', $initiator->getName()->getFullName());
 	}
 

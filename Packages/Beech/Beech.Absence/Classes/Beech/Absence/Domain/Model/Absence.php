@@ -28,13 +28,6 @@ class Absence extends \Beech\Ehrm\Domain\Model\Document {
 	protected $persistenceManager;
 
 	/**
-	 * @var \Beech\Party\Domain\Model\Person
-	 * @ODM\Field(type="mixed")
-	 * @ODM\Index
-	 */
-	protected $person;
-
-	/**
 	 * @var \Beech\Party\Domain\Model\Company
 	 * @ODM\Field(type="mixed")
 	 * @ODM\Index
@@ -56,7 +49,7 @@ class Absence extends \Beech\Ehrm\Domain\Model\Document {
 	 * @ODM\Field(type="string")
 	 * @ODM\Index
 	 */
-	protected $personSubject;
+	protected $person;
 
 	/**
 	 * The person initiating this absence Registration
@@ -65,7 +58,7 @@ class Absence extends \Beech\Ehrm\Domain\Model\Document {
 	 * @ODM\Field(type="string")
 	 * @ODM\Index
 	 */
-	protected $personInitiator;
+	protected $reportedTo;
 
 	/**
 	 * The the report method that the subject used
@@ -77,27 +70,35 @@ class Absence extends \Beech\Ehrm\Domain\Model\Document {
 
 	/**
 	 * @var \DateTime
+	 * @Flow\Validate(type="NotEmpty", validationGroups={"Controller"})
 	 * @ODM\Field(type="datetime")
 	 * @ODM\Index
 	 */
-	protected $startDateTime;
+	protected $startDate;
 
 	/**
 	 * @var \DateTime
 	 * @ODM\Field(type="datetime")
 	 * @ODM\Index
 	 */
-	protected $endDateTime;
+	protected $endDate;
+
+	/**
+	 * @var \DateTime
+	 * @ODM\Field(type="datetime")
+	 * @ODM\Index
+	 */
+	protected $estimatedRecoveryDate;
 
 
 	/**
 	 * Set the person that is subject of the absence
 	 *
-	 * @param \Beech\Party\Domain\Model\Person $personSubject
+	 * @param \Beech\Party\Domain\Model\Person $person
 	 * @return void
 	 */
-	public function setPersonSubject(\Beech\Party\Domain\Model\Person $personSubject) {
-		$this->personSubject = $this->persistenceManager->getIdentifierByObject($personSubject, '\Beech\Party\Domain\Model\Person');
+	public function setPerson(\Beech\Party\Domain\Model\Person $person) {
+		$this->person = $this->persistenceManager->getIdentifierByObject($person, '\Beech\Party\Domain\Model\Person');
 	}
 
 	/**
@@ -105,9 +106,9 @@ class Absence extends \Beech\Ehrm\Domain\Model\Document {
 	 *
 	 * @return \Beech\Party\Domain\Model\Person
 	 */
-	public function getPersonSubject() {
-		if (isset($this->personSubject)) {
-			return $this->persistenceManager->getObjectByIdentifier($this->personSubject, '\Beech\Party\Domain\Model\Person');
+	public function getPerson() {
+		if (isset($this->person)) {
+			return $this->persistenceManager->getObjectByIdentifier($this->person, '\Beech\Party\Domain\Model\Person');
 		}
 		return NULL;
 	}
@@ -116,17 +117,17 @@ class Absence extends \Beech\Ehrm\Domain\Model\Document {
 	 * Set the person who initiated this absenceRegistration.
 	 * Load the current user if NULL was emitted
 	 *
-	 * @param \Beech\Party\Domain\Model\Person $personInitiator
+	 * @param \Beech\Party\Domain\Model\Person $reportedTo
 	 * @return void
 	 */
-	public function setPersonInitiator(\Beech\Party\Domain\Model\Person $personInitiator = NULL) {
-		if ($personInitiator === NULL ) {
+	public function setReportedTo(\Beech\Party\Domain\Model\Person $reportedTo = NULL) {
+		if ($reportedTo === NULL ) {
 			if (is_object($this->securityContext->getAccount())
 				&& $this->securityContext->getAccount()->getParty() instanceof \Beech\Party\Domain\Model\Person) {
-				$personInitiator = $this->securityContext->getAccount()->getParty();
+				$reportedTo = $this->securityContext->getAccount()->getParty();
 			}
 		}
-		$this->personInitiator = $this->persistenceManager->getIdentifierByObject($personInitiator, '\Beech\Party\Domain\Model\Person');
+		$this->reportedTo = $this->persistenceManager->getIdentifierByObject($reportedTo, '\Beech\Party\Domain\Model\Person');
 	}
 
 	/**
@@ -134,9 +135,9 @@ class Absence extends \Beech\Ehrm\Domain\Model\Document {
 	 *
 	 * @return \Beech\Party\Domain\Model\Person
 	 */
-	public function getPersonInitiator() {
-		if (isset($this->personInitiator)) {
-			return $this->persistenceManager->getObjectByIdentifier($this->personInitiator, '\Beech\Party\Domain\Model\Person');
+	public function getReportedTo() {
+		if (isset($this->reportedTo)) {
+			return $this->persistenceManager->getObjectByIdentifier($this->reportedTo, '\Beech\Party\Domain\Model\Person');
 		}
 		return NULL;
 	}
@@ -145,36 +146,54 @@ class Absence extends \Beech\Ehrm\Domain\Model\Document {
 	 * @param \DateTime $startDateTime
 	 * @return void
 	 */
-	public function setStartDateTime(\DateTime $startDateTime = NULL) {
-		if ($startDateTime === NULL) {
-			$startDateTime = new \DateTime();
+	public function setStartDate(\DateTime $startDate = NULL) {
+		if ($startDate === NULL) {
+			$startDate = new \DateTime();
 		}
-		$this->startDateTime = $startDateTime;
+		$this->startDate = $startDate;
 	}
 
 	/**
 	 * @return \DateTime
 	 */
-	public function getStartDateTime() {
-		return $this->startDateTime;
+	public function getStartDate() {
+		return $this->startDate;
 	}
 
 	/**
-	 * @param \DateTime $endDateTime
+	 * @param \DateTime $endDate
 	 * @return void
 	 */
-	public function setEndDateTime(\DateTime $endDateTime = NULL) {
-		if ($endDateTime === NULL) {
-			$endDateTime = new \DateTime();
+	public function setEndDate(\DateTime $endDate = NULL) {
+		if ($endDate === NULL) {
+			$endDate = new \DateTime();
 		}
-		$this->endDateTime = $endDateTime;
+		$this->endDate = $endDate;
 	}
 
 	/**
 	 * @return \DateTime
 	 */
-	public function getEndDateTime() {
-		return $this->EndDateTime;
+	public function getEndDate() {
+		return $this->endDate;
+	}
+
+	/**
+	 * @param \DateTime $estimatedRecoveryDate
+	 * @return void
+	 */
+	public function setEstimatedRecoveryDate(\DateTime $estimatedRecoveryDate = NULL) {
+		if ($estimatedRecoveryDate === NULL) {
+			$estimatedRecoveryDate = new \DateTime();
+		}
+		$this->estimatedRecoveryDate = $estimatedRecoveryDate;
+	}
+
+	/**
+	 * @return \DateTime
+	 */
+	public function getEstimatedRecoveryDate() {
+		return $this->estimatedRecoveryDate;
 	}
 }
 ?>

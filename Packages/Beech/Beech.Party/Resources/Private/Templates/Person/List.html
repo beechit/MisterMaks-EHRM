@@ -3,10 +3,18 @@
 <f:section name="Body">
 	<ehrm:flashMessages/>
 	<div>
-		<p><a href="#" target="_top" title=<f:translate id="leaveRequest">Leave request"</f:translate> <i class="btn btn-warning btn-gspm-4 pull-left"><i class="icon-briefcase"></i><f:translate id="leaveRequest">Leave request</f:translate></a></p>
-		<p><a href="#" target="_top" title=<f:translate id="sickReport">Sickreport</f:translate><i class="btn btn-danger btn-gspm-4 pull-left"><i class="icon-ambulance"></i><f:translate id="sickReport">Sickreport</f:translate></a></p>
-		<p><a href="#" target="_top" title=<f:translate id="newContract">New contract</f:translate><i class="btn btn-warning btn-gspm-4 pull-left"><i class="icon-briefcase"></i><f:translate id="newContract">New contract</f:translate></a></p>
-		<p><a href="/#/administration/person/new" target="_top" title=<f:translate id="newEmployee">New employee</f:translate><i class="btn btn-success btn-gspm-4 pull-left"><i class="icon-user"></i><f:translate id="newEmployee">New employee</f:translate></a></p>
+		<p><a href="#" target="_top" title="{f:translate(id: 'leaveRequest')}">
+			<i class="btn btn-warning btn-gspm-4 pull-left"><i class="icon-briefcase"></i><f:translate id="leaveRequest">Leave request</f:translate></i>
+		</a></p>
+		<p><a href="#" target="_top" title="{f:translate(id: 'sickReport')}">
+			<i class="btn btn-danger btn-gspm-4 pull-left"><i class="icon-ambulance"></i><f:translate id="sickReport">Sickreport</f:translate></i>
+		</a></p>
+		<p><a href="#" target="_top" title="{f:translate(id: 'newContract')}">
+			<i class="btn btn-success btn-gspm-4 pull-left"><i class="icon-briefcase"></i><f:translate id="newContract">New contract</f:translate></i>
+		</a></p>
+		<p><a href="/#/administration/person/new" target="_top" title="{f:translate(id: 'newEmployee')}">
+			<i class="btn btn-success btn-gspm-4 pull-left"><i class="icon-user"></i><f:translate id="newEmployee">New employee</f:translate></i>
+		</a></p>
 	</div>
 	<f:if condition="{persons}">
 		<f:then>

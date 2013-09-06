@@ -149,6 +149,9 @@
 		renderTemplate: function() {
 			this._super.apply(this, arguments);
 			this.render(this.get('routeName').replace('.', '/'));
+			// All modals should be closed when transition of ember is done
+			// TODO: Find a nicer way to auto-close modals when route is changed
+			$('.modal').modal('hide');
 		}
 	});
 
