@@ -8,7 +8,7 @@
 		startDate: '',
 		intervalInDays: 28,
 		init: function() {
-			this.set('departments',this.get('store').find('beechPartyDomainModelCompany'));
+			this.set('departments',this.get('store').findAll('beechPartyDomainModelCompany'));
 		},
 		selectionChanged: function() {
 			this.openDepartmentOverview();
@@ -34,10 +34,6 @@
 
 	App.BeechAbsenceAbsencesDepartmentController =  Ember.ObjectController.extend({
 		needs: ['BeechAbsenceAbsences'],
-		absences: [],
-		department: null,
-		startDate: '',
-		intervalInDays: 7,
 		actions: {
 			next: function() {
 				this.get('controllers.BeechAbsenceAbsences').next();
@@ -47,19 +43,19 @@
 			}
 		},
 		dates: function () {
-			if (!this.get('startDate')) {
+			if (!this.get('controllers.BeechAbsenceAbsences').get('startDate')) {
 				return [];
 			}
 
-			var curr = moment(new Date(this.get('startDate'))),
-				dates = [], i, interval = this.get('intervalInDays');
+			var curr = moment(new Date(this.get('controllers.BeechAbsenceAbsences').get('startDate'))),
+				dates = [], i, interval = this.get('controllers.BeechAbsenceAbsences').get('intervalInDays');
 
 			for (i = 0; i < interval; i++) {
 				dates.push(curr.clone().add('days', i));
 			}
 
 			return dates;
-		}.property('department', 'startDate', 'intervalInDays', 'absences.isLoaded')
+		}.property('controllers.BeechAbsenceAbsences.department','controllers.BeechAbsenceAbsences.department.employees.@each.name', 'controllers.BeechAbsenceAbsences.startDate', 'controllers.BeechAbsenceAbsences.intervalInDays')
 	});
 
 }).call(this);

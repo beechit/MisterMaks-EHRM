@@ -10,34 +10,6 @@
 
 TYPO3:
   Flow:
-    security:
-      authentication:
-        authenticationStrategy: oneToken
-        providers:
-          LdapProvider:
-            provider: TYPO3\LDAP\Security\Authentication\Provider\LDAPProvider
-            providerOptions:
-              type: 'LDAP'
-              host: '172.31.100.1'
-              port: 389
-              baseDn: 'dc=beech,dc=it'
-
-              bind:
-                anonymous: TRUE
-
-              ldapOptions:
-                protocol_version: 3
-
-              filter:
-                account: '(uid=?)'
-                ignoreDomain: TRUE
-
-            entryPoint: 'WebRedirect'
-            entryPointOptions:
-              routeValues:
-                '@package': 'Beech.Ehrm'
-                '@controller': 'Login'
-                '@action': 'login'
     persistence:
       backendOptions:
         dbname: 'flow'       # adjust to your database name

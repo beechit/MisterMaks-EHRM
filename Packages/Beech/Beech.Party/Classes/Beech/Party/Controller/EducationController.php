@@ -60,6 +60,10 @@ class EducationController extends \Beech\Ehrm\Controller\AbstractManagementContr
 		$this->view->assign('action', 'add');
 	}
 
+	public function newAction(){
+
+	}
+
 	/**
 	 * @param \Beech\Party\Domain\Model\Education $education A education to update
 	 *
