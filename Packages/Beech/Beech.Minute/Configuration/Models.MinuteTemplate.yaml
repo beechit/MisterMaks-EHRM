@@ -24,3 +24,5 @@
 #            maximum: 20
 # todo: add some template specific properties here .
 # or point to resource files.
+    'modification':
+      type: 'Beech\Ehrm\Domain\Model\Modify'

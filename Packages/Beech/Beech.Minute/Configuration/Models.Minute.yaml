@@ -1,10 +1,13 @@
 'Beech.Minute.Domain.Model.Minute':
   properties:
-    'party':
-      type: 'TYPO3\Party\Domain\Model\AbstractParty'
+    'person':
+      type: 'Beech\Party\Domain\Model\Person'
+    personInitiator:
+      type: 'Beech\Party\Domain\Model\Person'
+    'title':
+      label: 'Title'
     'minuteContent':
       label: 'Minute content'
-      type: 'text'
       validation:
         -
           type: 'Text'

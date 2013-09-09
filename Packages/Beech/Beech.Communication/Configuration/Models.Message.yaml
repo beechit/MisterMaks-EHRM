@@ -10,7 +10,7 @@
          'push': 'PushMessage'
          'letter': 'Letter'
          'phone': 'Phone'
-    'personTo':
+    'person':
       label: 'send to'
       type: 'TYPO3\Party\Domain\Model\Person'
     'personCc':

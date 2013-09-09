@@ -24,6 +24,15 @@ class MinuteTemplate extends \Beech\Ehrm\Domain\Model\Document {
 	 */
 	protected $minute;
 
+	/**
+	* The minute type
+	 *
+	 * @var string
+	 * @ODM\Field(type="string")
+	 * @ODM\Index
+	 */
+	protected $minuteType;
+
 }
 
 ?>

@@ -47,8 +47,8 @@ class MinuteTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFunctionalT
 		$this->personInitiator = new \Beech\Party\Domain\Model\Person();
 		$this->personInitiator->setName(new \TYPO3\Party\Domain\Model\PersonName('', 'Joe', '', 'Initiator'));
 
-		$this->personSubject = new \Beech\Party\Domain\Model\Person();
-		$this->personSubject->setName(new \TYPO3\Party\Domain\Model\PersonName('', 'Jack', '', 'Subject'));
+		$this->person = new \Beech\Party\Domain\Model\Person();
+		$this->person->setName(new \TYPO3\Party\Domain\Model\PersonName('', 'Jack', '', 'Subject'));
 	}
 
 	/**
@@ -58,11 +58,11 @@ class MinuteTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFunctionalT
 	 */
 	public function minuteCanBePersistedAndRetrieved() {
 		$this->personRepository->add($this->personInitiator);
-		$this->personRepository->add($this->personSubject);
+		$this->personRepository->add($this->person);
 
 		$minute = new Minute();
 		$minute->setPersonInitiator($this->personInitiator);
-		$minute->setPersonSubject($this->personSubject);
+		$minute->setPerson($this->person);
 		$minute->setTitle('Title of this minute');
 		$minute->setContent('Content of this minute');
 		$minute->setCreationDateTime(new \DateTime('2012-01-01 00:00:01'));
@@ -76,13 +76,13 @@ class MinuteTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFunctionalT
 			// Add another minute to ensure the ManyToOne relation is correct
 		$anotherMinute = new Minute();
 		$anotherMinute->setPersonInitiator($this->personInitiator);
-		$anotherMinute->setPersonSubject($this->personSubject);
+		$anotherMinute->setperson($this->person);
 		$anotherMinute->setTitle('Another minute');
 		$anotherMinute->setContent('Content of another minute');
 		$anotherMinute->setCreationDateTime(new \DateTime('2011-01-01 00:00:01'));
 		$this->minuteRepository->add($anotherMinute);
 
-		$this->assertEquals('Jack Subject', $this->personSubject->getName()->getFullName());
+		$this->assertEquals('Jack Subject', $this->person->getName()->getFullName());
 		$personInitiator = $persistedMinute[0]->getPersonInitiator();
 		$this->assertEquals('Joe Initiator', $this->personInitiator->getName()->getFullName());
 	}
@@ -103,7 +103,7 @@ class MinuteTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFunctionalT
 
 		$minute = new Minute();
 		$minute->setPersonInitiator($this->personInitiator);
-		$minute->setPersonSubject($this->personSubject);
+		$minute->setperson($this->person);
 		$minute->setTitle('Title of this minute');
 		$minute->setContent('Content of this minute');
 		$minute->setCreationDateTime(new \DateTime('2012-01-01 00:00:01'));

@@ -56,9 +56,9 @@ class MessageTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFunctional
 		$initiator->setName(new \TYPO3\Party\Domain\Model\PersonName('', 'Joe', '', 'Initiator'));
 		$this->personRepository->add($initiator);
 
-		$personTo = new \Beech\Party\Domain\Model\Person();
-		$personTo->setName(new \TYPO3\Party\Domain\Model\PersonName('', 'Jack', '', 'PersonTo'));
-		$this->personRepository->add($personTo);
+		$person = new \Beech\Party\Domain\Model\Person();
+		$person->setName(new \TYPO3\Party\Domain\Model\PersonName('', 'Jack', '', 'Person'));
+		$this->personRepository->add($person);
 
 		$messageTemplateName = new \Beech\Communication\Domain\Model\MessageTemplate('emailtemplate');
 		$this->messageTemplateRepository->add($messageTemplateName);
@@ -73,7 +73,7 @@ class MessageTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFunctional
 
 		$message = new Message();
 		$message->setPersonInitiator($initiator);
-		$message->setPersonTo($personTo);
+		$message->setPersonTo($person);
 		$message->setPersonCc($personCc);
 		$message->setPersonBcc($personBcc);
 		$message->setMessageTemplateName($messageTemplateName);
@@ -90,7 +90,7 @@ class MessageTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFunctional
 			// Add another message to ensure the ManyToOne relation is correct
 		$anotherMessage = new Message();
 		$anotherMessage->setPersonInitiator($initiator);
-		$anotherMessage->setPersonTo($personTo);
+		$anotherMessage->setPersonTo($person);
 		$anotherMessage->setPersonCc($personCc);
 		$anotherMessage->setPersonBcc($personBcc);
 		$anotherMessage->setMessageTemplateName($messageTemplateName);

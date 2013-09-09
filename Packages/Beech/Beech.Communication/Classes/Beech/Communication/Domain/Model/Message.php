@@ -39,15 +39,6 @@ class Message extends \Beech\Ehrm\Domain\Model\Document {
 	protected $securityContext;
 
 	/**
-	 * The Abstractparty
-	 *
-	 * @var \TYPO3\Party\Domain\Model\AbstractParty
-	 * @ODM\Field(type="mixed")
-	 * @ODM\Index
-	 */
-	protected $party;
-
-	/**
 	 * The person that is is message for
 	 *
 	 * @var \Beech\Party\Domain\Model\Person
@@ -55,7 +46,7 @@ class Message extends \Beech\Ehrm\Domain\Model\Document {
 	 * @ODM\Field(type="string")
 	 * @ODM\Index
 	 */
-	protected $personTo;
+	protected $person;
 
 	/**
 	 * The person who gets a carbon copy of this message
@@ -164,8 +155,8 @@ class Message extends \Beech\Ehrm\Domain\Model\Document {
 	 * @param \Beech\Party\Domain\Model\Person $personSubject
 	 * @return void
 	 */
-	public function setPersonTo(\Beech\Party\Domain\Model\Person $personTo) {
-		$this->personTo = $this->persistenceManager->getIdentifierByObject($personTo, '\Beech\Party\Domain\Model\Person');
+	public function setPersonTo(\Beech\Party\Domain\Model\Person $person) {
+		$this->person = $this->persistenceManager->getIdentifierByObject($person, '\Beech\Party\Domain\Model\Person');
 	}
 
 	/**
@@ -174,8 +165,8 @@ class Message extends \Beech\Ehrm\Domain\Model\Document {
 	 * @return \Beech\Party\Domain\Model\Person
 	 */
 	public function getPersonTo() {
-		if (isset($this->personTo)) {
-			return $this->persistenceManager->getObjectByIdentifier($this->personTo, '\Beech\Party\Domain\Model\Person');
+		if (isset($this->person)) {
+			return $this->persistenceManager->getObjectByIdentifier($this->person, '\Beech\Party\Domain\Model\Person');
 		}
 		return NULL;
 	}

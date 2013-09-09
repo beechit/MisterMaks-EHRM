@@ -19,6 +19,12 @@ class Minute extends \Beech\Ehrm\Domain\Model\Document {
 
 	const TYPE_APPRAISAL = 'Appraisal';
 	const TYPE_MEETING = 'Meeting';
+	const TYPE_CALLREPORT = 'Call report';
+	const TYPE_ASSESMENT = 'Assesment';
+	const TYPE_PERFORMANCEREVIEW = 'Performance review';
+	const TYPE_SICKREPORTUPDATE = 'SickReport update';
+	const TYPE_MEMO = 'Memo';
+	const TYPE_OTHER = 'Other';
 
 	/**
 	 * @var \TYPO3\Flow\Persistence\PersistenceManagerInterface
@@ -35,15 +41,6 @@ class Minute extends \Beech\Ehrm\Domain\Model\Document {
 	protected $securityContext;
 
 	/**
-	 * The Abstractparty
-	 *
-	 * @var \TYPO3\Party\Domain\Model\AbstractParty
-	 * @ODM\Field(type="mixed")
-	 * @ODM\Index
-	 */
-	protected $party;
-
-	/**
 	 * The person who is subject of this Minute
 	 *
 	 * @var \Beech\Party\Domain\Model\Person
@@ -51,7 +48,7 @@ class Minute extends \Beech\Ehrm\Domain\Model\Document {
 	 * @ODM\Field(type="mixed")
 	 * @ODM\Index
 	 */
-	protected $personSubject;
+	protected $person;
 
 	/**
 	 * The person initiating this minute
@@ -103,8 +100,8 @@ class Minute extends \Beech\Ehrm\Domain\Model\Document {
 	 * @param \Beech\Party\Domain\Model\Person $personSubject
 	 * @return void
 	 */
-	public function setPersonSubject(\Beech\Party\Domain\Model\Person $personSubject) {
-		$this->personSubject = $this->persistenceManager->getIdentifierByObject($personSubject, '\Beech\Party\Domain\Model\Person');
+	public function setPersonSubject(\Beech\Party\Domain\Model\Person $person) {
+		$this->personSubject = $this->persistenceManager->getIdentifierByObject($person, '\Beech\Party\Domain\Model\Person');
 	}
 
 	/**
@@ -112,9 +109,9 @@ class Minute extends \Beech\Ehrm\Domain\Model\Document {
 	 *
 	 * @return \Beech\Party\Domain\Model\Person
 	 */
-	public function getPersonSubject() {
-		if (isset($this->personSubject)) {
-			return $this->persistenceManager->getObjectByIdentifier($this->personSubject, '\Beech\Party\Domain\Model\Person');
+	public function getPerson() {
+		if (isset($this->person)) {
+			return $this->persistenceManager->getObjectByIdentifier($this->person, '\Beech\Party\Domain\Model\Person');
 		}
 		return NULL;
 	}
