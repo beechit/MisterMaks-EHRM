@@ -3,6 +3,7 @@
 
 	// Front
 	App.BeechPartyCompanyController = App.ModuleHandlerAjaxController.extend();
+
 	App.BeechPartyCompanyIndexController = App.BeechPartyCompanyController.extend({
 		url: MM.url.module.BeechPartyCompanyIndex
 	});

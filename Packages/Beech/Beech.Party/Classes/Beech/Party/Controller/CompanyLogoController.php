@@ -38,10 +38,12 @@ class CompanyLogoController extends \Beech\Document\Controller\DocumentControlle
 	/**
 	 * Notice: Its called 'changeAction' to have no conflicts with parent 'editAction'
 	 *
+	 * @param \Beech\Document\Domain\Model\Document $document
 	 * @param \Beech\Party\Domain\Model\Company $company
 	 * @return void
 	 */
-	public function changeAction(\Beech\Party\Domain\Model\Company $company) {
+	public function editAction(\Beech\Document\Domain\Model\Document $document = NULL, \Beech\Party\Domain\Model\Company $company = NULL) {
+		$this->view->assign('document', $document);
 		$this->view->assign('company', $company);
 	}
 
@@ -52,14 +54,14 @@ class CompanyLogoController extends \Beech\Document\Controller\DocumentControlle
 	 * @param \Beech\Party\Domain\Model\Company $company
 	 * @return void
 	 */
-	public function saveAction(\Beech\Document\Domain\Model\Document $document, \Beech\Party\Domain\Model\Company $company) {
+	public function updateAction(\Beech\Document\Domain\Model\Document $document = NULL, \Beech\Party\Domain\Model\Company $company = NULL) {
 		$documentType = $this->documentTypeRepository->findOneByTypeName(DocumentType::COMPANY_LOGO);
 		$document->setDocumentType($documentType);
 		$this->documentRepository->add($document);
 		$identifier = $this->persistenceManager->getIdentifierByObject($document);
 		$company->setLogo($identifier);
 		$this->companyRepository->update($company);
-		$this->redirect('change', NULL, NULL, array('company' => $company));
+		$this->redirect('edit', NULL, NULL, array('document' => $document, 'company' => $company));
 	}
 }
 

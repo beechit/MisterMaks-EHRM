@@ -3,7 +3,11 @@
 		<tbody>
 		<tr class="odd">
 			<td rowspan="6">
-				<f:render partial="Views/Show/ProfilePhoto" arguments="{photo: person.profilePhoto, width: 150}"/>
+				<f:render partial="Views/Show/ProfilePhoto" arguments="{photo: person.profilePhoto, width: 150, random: 'TRUE'}"/>
+				<ehrm:link.edit controller='ProfilePhoto' action='edit'
+								arguments='{party: person}'
+								dataReload="{f:uri.action(package:'Beech.Party', controller:'Person', action:'show', arguments: {person: person})}"/>
+
 			</td>
 			<td class="span3"><f:translate id="Name">Name</f:translate></td>
 			<td class="span6">{person.name.firstName} {person.name.middleName} {person.name.lastName}

@@ -1,9 +1,9 @@
 {namespace ehrm=Beech\Ehrm\ViewHelpers}
 <div id="save{party.profilePhoto.id}">
-	<f:form action="save" controller="CompanyLogo" name="document" object="{company.logo}" class="compact-form form-horizontal save" enctype="multipart/form-data">
+	<f:form action="update" controller="CompanyLogo" name="document" object="{company.logo}" class="compact-form form-horizontal save" enctype="multipart/form-data">
 		<div class="row-fluid" >
 			<div class="span3">
-				<f:render partial="Views/Show/Company/Logo" arguments="{photo: company.logo, width: 150}"/>
+				<f:render partial="Views/Show/Company/Logo" arguments="{photo: company.logo, width: 150, random: 'TRUE'}"/>
 			</div>
 			<div class="span9">
 				<div class="control-group">
@@ -12,12 +12,13 @@
 				<div class="control-group">
 					<f:form.upload property="resources.0" class="documentPhoto"/>
 				</div>
-				<f:form.hidden name="company" value="{company.id}"/>
+
 				<div class="control-group hide submit-documentPhoto" >
 					<f:form.submit value="{f:translate(id:'document.upload')}" class="btn btn-primary"/>
 				</div>
 			</div>
 		</div>
+		<f:form.hidden name="company" value="{company.id}"/>
 	</f:form>
 	<script src="resource://Beech.Party/Public/JavaScript/Component/UserInterface/DocumentPhoto.js"></script>
 </div>

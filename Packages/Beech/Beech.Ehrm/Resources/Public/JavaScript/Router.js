@@ -93,9 +93,10 @@
 			// Beech.Document/Document
 			//this.route('documentModule', { path: 'documents' });
 			this.resource('BeechDocumentDocument', { path: 'documents' }, function() {
-				this.route('index', { path: '/list' });
+				this.route('index', { path: '/' });
 			});
 			this.resource('BeechDocumentDocument', { path: 'document' }, function() {
+				this.route('index', { path: '/' });
 				this.route('new', { path: '/new' });
 				this.route('show', { path: '/show/:document' });
 				this.route('edit', { path: '/edit/:document' });
@@ -104,7 +105,7 @@
 			});
 			// Beech.Party/Person
 			this.resource('BeechPartyPerson', { path: 'persons' }, function() {
-				this.route('index', { path: '/list' });
+				this.route('index', { path: '/' });
 			});
 			this.resource('BeechPartyPerson', { path: 'person' }, function() {
 				this.route('new', { path: '/new' });
@@ -116,7 +117,7 @@
 			});
 			// Beech.Party/Company
 			this.resource('BeechPartyCompany', { path: 'companies' }, function() {
-				this.route('index', { path: '/index' });
+				this.route('index', { path: '/' });
 			});
 			this.resource('BeechPartyCompany', { path: 'company' }, function() {
 				this.route('new', { path: '/new' });

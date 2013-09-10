@@ -1,9 +1,9 @@
 {namespace ehrm=Beech\Ehrm\ViewHelpers}
 <div id="save{party.profilePhoto.id}">
-	<f:form action="edit" controller="ProfilePhoto" name="document" object="{party.profilePhoto}" class="compact-form form-horizontal save" enctype="multipart/form-data">
+	<f:form action="update" controller="ProfilePhoto" name="document" object="{party.profilePhoto}" class="compact-form form-horizontal save" enctype="multipart/form-data">
 		<div class="row-fluid" >
 			<div class="span3">
-				<f:render partial="Views/Show/ProfilePhoto" arguments="{photo: party.profilePhoto, width: 150, random: random}"/>
+				<f:render partial="Views/Show/ProfilePhoto" arguments="{photo: party.profilePhoto, width: 150, random: 'TRUE'}"/>
 			</div>
 			<div class="span9">
 				<div class="control-group">

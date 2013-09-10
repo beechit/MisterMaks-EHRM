@@ -14,13 +14,13 @@
 		<div class="rows">
 			<div class="span8">
 				<f:render partial="Views/Show/Company/Details" arguments="{company: company}"/>
-				<ehrm:link.edit subpackage='Administration' controller='Company' action='edit'
+				<ehrm:link.edit controller='Company' action='edit'
 								arguments='{company: company, withDetails: false}'
 								dataReload="{f:uri.action(package:'Beech.Party', controller:'Company', action:'index', arguments: {company: company})}"/>
 			</div>
 			<div class="span4">
-				<f:render partial="Views/Show/ProfilePhoto" arguments="{photo: company.logo, width: 150}"/>
-				<ehrm:link.edit subpackage='' controller='CompanyLogo' action='change'
+				<f:render partial="Views/Show/Company/Logo" arguments="{photo: company.logo, width: 150, random: 'TRUE'}"/>
+				<ehrm:link.edit controller='CompanyLogo' action='edit'
 								arguments='{company: company}'
 								dataReload="{f:uri.action(package:'Beech.Party', controller:'Company', action:'index', arguments: {company: company})}"/>
 			</div>
