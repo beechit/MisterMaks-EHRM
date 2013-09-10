@@ -1,0 +1,39 @@
+<div class="modal-header custom">
+	<h3><f:render partial="Beech.Party:Views/Show/ProfilePhoto" arguments="{photo: person.profilePhoto, width: 50}"/>{person.name} / Sick report</h3>
+</div>
+<div class="clearfix well">
+	<div class="row-fluid">
+		<div class="span3">Sickness: %</div>
+		<div class="span3">Avarage department: %</div>
+		<div class="span3">Avarage company: %</div>
+		<div class="span3">Avarage branche: %</div>
+	</div>
+	<div class="row-fluid">
+		<div class="span12">
+			<table class="table absenceList">
+				<thead>
+				<tr>
+					<th>Type</th>
+					<th>From</th>
+					<th>Till</th>
+					<th>Days</th>
+					<th>Hours</th>
+				</tr>
+				</thead>
+				<f:for each="{absences}" as="absence">
+					<tr>
+						<td>{absence.absenceType}</td>
+						<td>{absence.startDate -> f:format.date(format: 'd-m-Y')}</td>
+						<td>{absence.estimatedRecoveryDate -> f:format.date(format: 'd-m-Y')}</td>
+						<td>{absence.days}</td>
+						<td>{absence.hours}</td>
+					</tr>
+				</f:for>
+			</table>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		$('table.absenceList').dataTable();
+	</script>
+</div>

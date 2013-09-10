@@ -40,6 +40,18 @@ class AbsenceController extends \Beech\Ehrm\Controller\AbstractManagementControl
 	protected $translator;
 
 	/**
+	 * List a history of sickness
+	 *
+	 * @param \Beech\Party\Domain\Model\Person $person
+	 * @return void
+	 */
+	public function listAction(\Beech\Party\Domain\Model\Person $person = NULL) {
+		$absences = $this->repository->findByPerson($person);
+		$this->view->assign('person', $person);
+		$this->view->assign('absences', $absences);
+	}
+
+	/**
 	 * Shows a form for creating a person sick report
 	 *
 	 * @param \Beech\Party\Domain\Model\Person $person
@@ -48,7 +60,7 @@ class AbsenceController extends \Beech\Ehrm\Controller\AbstractManagementControl
 	public function newAction(\Beech\Party\Domain\Model\Person $person = NULL) {
 		$this->view->assign('person', $person);
 		$this->view->assign('persons', $this->personRepository->findAll());
-		$this->view->assign('absenceTypes', array('Sickness', 'Leave'));
+		$this->view->assign('absenceTypes', array('sickness' => 'Sickness', 'leave' => 'Leave'));
 	}
 
 	/**

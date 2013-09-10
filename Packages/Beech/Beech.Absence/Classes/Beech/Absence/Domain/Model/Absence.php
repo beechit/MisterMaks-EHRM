@@ -195,5 +195,24 @@ class Absence extends \Beech\Ehrm\Domain\Model\Document {
 	public function getEstimatedRecoveryDate() {
 		return $this->estimatedRecoveryDate;
 	}
+
+	/**
+	 * Calculated value for number of days when absence is
+	 *
+	 * @return integer
+	 */
+	public function getDays() {
+		// TODO: Calculate number of absence's days
+		return 0;
+	}
+
+	/**
+	 * Calculated value for number of days when absence is
+	 * @return \DateTime
+	 */
+	public function getHours() {
+		// TODO: Calculate number of absence's hours
+		return 0;
+	}
 }
 ?>

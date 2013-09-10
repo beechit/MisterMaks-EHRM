@@ -13,6 +13,12 @@
 			<i class="icon-ambulance icon-white"></i>
 			Sick report
 		</a>
+		<a class="btn" href="{f:uri.action(package:'Beech.Absence', controller:'Absence', action:'list', arguments: {person: person})}"
+		   data-toggle="modal-ajax" data-target="#modal" modal-size="large"
+		   data-reload="{f:uri.action(package:'Beech.Party', controller:'Person', action:'show', arguments: {person: person})}">
+			<i class="icon-ambulance icon-white"></i>
+			Sickness history
+		</a>
 		<ul id="personTabs" class="nav nav-tabs">
 			<li class="active">
 				<a data-toggle="tab" href="#general">
