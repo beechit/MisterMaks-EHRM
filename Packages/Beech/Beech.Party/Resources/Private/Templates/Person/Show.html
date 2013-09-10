@@ -5,6 +5,12 @@
 	<h1><f:translate id="personInformation">Person information</f:translate></h1>
 
 	<div id="c261" class="csc-default">
+		<a class="btn" href="{f:uri.action(package:'Beech.Absence', controller:'Absence', action:'new', arguments: {person: person})}"
+		   data-toggle="modal-ajax" data-target="#modal" modal-size="large"
+		   data-reload="{f:uri.action(package:'Beech.Party', controller:'Person', action:'show', arguments: {person: person})}">
+			<i class="icon-ambulance icon-white"></i>
+			Sick report
+		</a>
 		<ul id="personTabs" class="nav nav-tabs">
 			<li class="active">
 				<a data-toggle="tab" href="#general"><f:translate id="general">General</f:translate></a>
@@ -80,6 +86,12 @@
 				   data-reload="{f:uri.action(package:'Beech.Party', controller:'Person', action:'show', arguments: {person: person})}">
 					<i class="icon-pencil icon-white"></i>
 					Add relative
+				</a>
+				<a href="{f:uri.action(package:'Beech.Party', controller:'PersonRelation', action:'new', arguments: {personRelatedTo: person})}"
+				   data-toggle="modal-ajax" data-target="#modal" modal-size="large"
+				   data-reload="{f:uri.action(package:'Beech.Party', controller:'Person', action:'show', arguments: {person: person})}">
+					<i class="icon-pencil icon-white"></i>
+					Add relative no admin
 				</a>
 			</div>
 			<div id="documents" class="tab-pane fade">

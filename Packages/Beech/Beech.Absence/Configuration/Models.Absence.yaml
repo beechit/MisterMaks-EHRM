@@ -1,9 +1,7 @@
 'Beech.Absence.Domain.Model.Absence':
   properties:
-    personSubject:
+    person:
       type: 'Beech\Party\Domain\Model\Person'
-    absence:
-      type: 'Beech\Absence\Domain\Model\Absence'
     absenceArrangement:
       type: 'Beech\Absence\Domain\Model\AbsenceArrangement'
     department:
@@ -30,12 +28,6 @@
     endTime:
       label: 'end time'
       default: now
-    reason:
-      label: 'Reason'
-      type: 'text'
-      validation:
-        -
-         type: 'Text'
     estimatedRecoveryDate:
       label: 'Probably recovered on:'
       validation:
@@ -59,7 +51,7 @@
           'letter': 'Letter'
           'other': 'Other'
       default: 'phone'
-    personInitiator:
+    reportedTo:
       label: 'Registered By'
       default: 'currentUser'
 # Specific fields for Leave requests.
@@ -74,14 +66,12 @@
 # note is used to add some explanation to the request.
     note:
       label: 'Note'
-      type: 'text'
       validation:
         -
           type: 'Text'
 # remark is used by the employee to explain why leave was granted or not.
     remark:
       label: 'Remark'
-      type: 'Text'
       validation:
         -
          type: 'Text'
@@ -89,7 +79,6 @@
 # to explain the reason for sickness.
     reason:
       label: 'reason for sick report'
-      type: 'Text'
       validation:
         -
          type: 'Text'

@@ -1,0 +1,5 @@
+'Beech.Absence':
+  requestFilter: 'isPackage("Beech.Absence")'
+  viewObjectName: 'Beech\Ehrm\View\TemplateView'
+  options:
+    layoutRootPath: 'resource://Beech.Ehrm/Private/Layouts'
