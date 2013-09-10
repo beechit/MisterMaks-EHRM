@@ -52,8 +52,9 @@
           'other': 'Other'
       default: 'phone'
     reportedTo:
-      label: 'Registered By'
+      label: 'Reported to'
       default: 'currentUser'
+      type: 'Beech\Party\Domain\Model\Person'
 # Specific fields for Leave requests.
     requestStatus:
       label: 'Status'
@@ -77,17 +78,38 @@
          type: 'Text'
 # Specific fields for sickness registration
 # to explain the reason for sickness.
+    reportMethodRecovery:
+      label: 'Report MethodRecovery'
+      options:
+        values:
+          'phone': 'Phone'
+          'email': 'E-mail'
+          'letter': 'Letter'
+          'other': 'Other'
+    reportedRecoveryTo:
+      label: 'Reported recovery to'
+      default: 'currentUser'
+      type: 'Beech\Party\Domain\Model\Person'
+    recoveryRegistrationDate:
+      default: 'now'
+      label: 'creation date'
+      type: 'DateTime'
+      validation:
+        -
+          type: 'DateTimeRange'
+          options:
+            earliestDate: 20130101
+            latestDate: 20200101
     reason:
       label: 'reason for sick report'
       validation:
         -
          type: 'Text'
-    expectedRecovery:
-      label: 'Recovery in 2 weeks?'
-      options:
-        values:
-          - FALSE
-          - TRUE
+    recoveryNote:
+      label: 'Recovery note'
+      validation:
+        -
+          type: 'Text'
     creationDate:
       default: 'now'
       label: 'creation date'
