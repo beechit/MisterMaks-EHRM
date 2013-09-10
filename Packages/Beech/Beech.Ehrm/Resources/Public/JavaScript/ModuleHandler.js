@@ -143,13 +143,8 @@
 				});
 			});
 				// When content of module is loaded, apply datepicker plugin if its necessary
-			$moduleContainer.find('.datepicker').on('click', function() {
-				$(this).datepicker({showOn:'focus', format: 'dd-mm-yyyy' })
-					.on('changeDate', function() {
-						$(this).datepicker('hide');
-					})
-					.focus();
-			});
+			$moduleContainer.find('.datepicker').datetimepicker(App.datePickerSettings);
+			$moduleContainer.find('.datepickerIcon').on('click', function(){$(this).parent().find('.datepicker').trigger('focus')});
 			$moduleContainer.find('select:not(".input-mini")').chosen();
 			$moduleContainer.find('input').applyInputMasks();
 			$moduleContainer.find('.countrySelect').countrySelect();

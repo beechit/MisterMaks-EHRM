@@ -113,7 +113,7 @@ iframe { border: none; }
 
 #modal { position: absolute; overflow: visible; }
 #modal .modal-body { max-height: none; overflow: visible; }
-#modal .modal-body.full-size { padding: 0; }
+#modal .modal-body.full-size { padding: 0; height: 100%; }
 #modal .modal-footer { bottom: 0; right: 0; left: 0; }
 
 #modal-body-only .modal-body { padding: 0; max-height: 100%; height: 100%; }
@@ -174,3 +174,34 @@ iframe { border: none; }
 .jOrgChart .node-cells.expanded .node { cursor: n-resize; }
 .jOrgChart .drag-active { border-style: dotted !important; }
 .jOrgChart .drop-hover { border-style: solid !important; border-color: #E05E00 !important; }
+
+input.datetimepicker-hrvalue { width: 9em; cursor: pointer; }
+
+input.datetimepicker-hrvalue.date-only, input.datepicker { cursor: pointer; width: 6em; }
+
+.datetimepicker { padding: 4px; margin-top: 1px; white-space: normal; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; direction: ltr; }
+.datetimepicker.datetimepicker-rtl { direction: rtl; }
+.datetimepicker.datetimepicker-rtl table tr td span { float: right; }
+.datetimepicker > div { display: none; }
+.datetimepicker.minutes div.datetimepicker-minutes { display: block; }
+.datetimepicker.hours div.datetimepicker-hours { display: block; }
+.datetimepicker.days div.datetimepicker-days { display: block; }
+.datetimepicker.months div.datetimepicker-months { display: block; }
+.datetimepicker.years div.datetimepicker-years { display: block; }
+.datetimepicker table { margin: 0; width: 200px; }
+.datetimepicker table tr th:hover { background: #eeeeee; cursor: pointer; }
+.datetimepicker table tr td { text-align: center; }
+.datetimepicker table tr td.minute:hover { background: #eeeeee; cursor: pointer; }
+.datetimepicker table tr td.hour:hover { background: #eeeeee; cursor: pointer; }
+.datetimepicker table tr td.day:hover { background: #eeeeee; cursor: pointer; }
+.datetimepicker table tr td span { display: block; width: 23%; height: 54px; line-height: 54px; float: left; margin: 1%; cursor: pointer; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; }
+.datetimepicker table tr td span:hover { background: #eeeeee; }
+.datetimepicker table tr td span.old { color: #999999; }
+.datetimepicker .datetimepicker-hours span { height: 26px; line-height: 26px; }
+.datetimepicker .datetimepicker-minutes span { height: 26px; line-height: 26px; }
+.datetimepicker th.switch { width: 145px; }
+.datetimepicker th.next, .datetimepicker th.prev { font-size: 1.5em; }
+
+.datetimepicker-inline { width: 220px; }
+
+.datetimepicker-dropdown, .datetimepicker-dropdown-left { top: 0; left: 0; }

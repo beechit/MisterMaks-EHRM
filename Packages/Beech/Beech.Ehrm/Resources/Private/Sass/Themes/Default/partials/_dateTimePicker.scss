@@ -1,0 +1,144 @@
+
+input.datetimepicker-hrvalue {
+	width: 9em;
+	cursor: pointer;
+}
+input.datetimepicker-hrvalue.date-only,
+input.datepicker {
+	cursor: pointer;
+	width: 6em;
+}
+.datetimepicker {
+	padding: 4px;
+	margin-top: 1px;
+	white-space: normal;
+	@include border-radius(4px);
+	direction: ltr;
+	&.datetimepicker-rtl {
+		direction: rtl;
+		table {
+			tr {
+				td {
+					span {
+						float: right;
+					}
+				}
+			}
+		}
+	}
+	& > div {
+		display: none;
+	}
+	&.minutes {
+		div {
+			&.datetimepicker-minutes {
+				display: block;
+			}
+		}
+	}
+	&.hours {
+		div {
+			&.datetimepicker-hours {
+				display: block;
+			}
+		}
+	}
+	&.days {
+		div {
+			&.datetimepicker-days {
+				display: block;
+			}
+		}
+	}
+	&.months {
+		div {
+			&.datetimepicker-months {
+				display: block;
+			}
+		}
+	}
+	&.years {
+		div {
+			&.datetimepicker-years {
+				display: block;
+			}
+		}
+	}
+	table {
+		margin: 0;
+		width: 200px;
+		tr {
+			th {
+				&:hover {
+					background: $grayLighter;
+					cursor: pointer;
+				}
+			}
+			td {
+				text-align: center;
+				&.minute {
+					&:hover {
+						background: $grayLighter;
+						cursor: pointer;
+					}
+				}
+				&.hour {
+					&:hover {
+						background: $grayLighter;
+						cursor: pointer;
+					}
+				}
+				&.day {
+					&:hover {
+						background: $grayLighter;
+						cursor: pointer;
+					}
+				}
+				span {
+					display: block;
+					width: 23%;
+					height: 54px;
+					line-height: 54px;
+					float: left;
+					margin: 1%;
+					cursor: pointer;
+					@include border-radius(4px);
+					&:hover {
+						background: $grayLighter;
+					}
+					&.old {
+						color: $grayLight;
+					}
+				}
+			}
+		}
+	}
+	.datetimepicker-hours {
+		span {
+			height: 26px;
+			line-height: 26px;
+		}
+	}
+	.datetimepicker-minutes {
+		span {
+			height: 26px;
+			line-height: 26px;
+		}
+	}
+	th {
+		&.switch {
+			width: 145px;
+		}
+		&.next,
+		&.prev {
+			font-size: 1.5em;
+		}
+	}
+}
+.datetimepicker-inline {
+	width: 220px;
+}
+.datetimepicker-dropdown, .datetimepicker-dropdown-left {
+	top: 0;
+	left: 0;
+}

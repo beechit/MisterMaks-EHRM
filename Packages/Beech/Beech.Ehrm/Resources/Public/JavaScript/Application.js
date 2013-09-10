@@ -15,13 +15,6 @@
 		title: 'Mister Maks',
 
 		init: function() {
-			$('.datepicker').on('click', function() {
-				$(this).datepicker({showOn:'focus'})
-					.on('changeDate', function() {
-						$(this).datepicker('hide');
-					})
-					.focus();
-			});
 
 				// Add modal-ajax toggle for rendering wizards in modal boxes
 			$(document).on('click.modal.data-api', '[data-toggle="modal-ajax"]', function (e) {

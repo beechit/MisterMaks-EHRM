@@ -117,13 +117,8 @@
 			}
 
 			// apply input masks etc.
-			element.find('.datepicker').on('click', function() {
-				$(this).datepicker({showOn:'focus', format: 'dd-mm-yyyy' })
-						.on('changeDate', function() {
-							$(this).datepicker('hide');
-						})
-						.focus();
-			});
+			element.find('.datepicker').datetimepicker(App.datePickerSettings);
+			element.find('.datepickerIcon').on('click', function(){$(this).parent().find('.datepicker').trigger('focus')});
 			element.find('select').chosen({width: '350px'});
 			element.find('.countrySelect').countrySelect();
 			element.find('input').applyInputMasks();
