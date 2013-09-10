@@ -47,7 +47,7 @@
 </div>
 <div class="control-group">
 	<label class="control-label" for="personRelationType{personRelation.id}">
-		Relation type
+		<f:Translate id="relationType">Relation type</f:Translate>
 	</label>
 
 	<div class="controls controls-row">
@@ -57,11 +57,10 @@
 </div>
 <div class="control-group">
 	<label class="control-label" for="emergencyContact">
-		<i class="icon-medkit"></i> Emergency contact
+		<i class="icon-medkit"></i> <f:translate id="emergencyContact">Emergency contact</f:translate>
 	</label>
 
 	<div class="controls controls-row">
 		 <f:form.checkbox property="emergencyContact" id="emergencyContact" value="true"/>
 	</div>
 </div>
-

@@ -7,10 +7,10 @@
       options:
         values:
           'home': 'Home'
-          'business': 'Business'
+          'work': 'Work'
+#          'business': 'Business'
           'postbox': 'Postbox'
           'mailing': 'Mailing'
-          'work': 'Work'
           'abroad': 'Abroad'
 #          'other': 'Other'
       validation:

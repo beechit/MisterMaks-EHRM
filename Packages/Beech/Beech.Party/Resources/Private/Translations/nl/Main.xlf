@@ -1138,6 +1138,74 @@
 				<source>Giro</source>
 				<target>Giro</target>
 			</trans-unit>
+			<trans-unit id="address.addressType.home">
+				<source>Home address</source>
+				<target>Huisadres</target>
+			</trans-unit>
+			<trans-unit id="address.addressType.work">
+				<source>Work address</source>
+				<target>Werkadres</target>
+			</trans-unit>
+			<trans-unit id="address.addressType.postbox">
+				<source>Postbox</source>
+				<target>Postbus</target>
+			</trans-unit>
+			<trans-unit id="address.addressType.mailing">
+				<source>Mailing address</source>
+				<target>Postadres</target>
+			</trans-unit>
+			<trans-unit id="address.addressType.abroad">
+				<source>Address abroad</source>
+				<target>Buitenlands adres</target>
+			</trans-unit>
+			<trans-unit id="relative">
+				<source>Relative</source>
+				<target>Relatie</target>
+			</trans-unit>
+			<trans-unit id="emergencyContact">
+				<source>Emergency contact</source>
+				<target>Contactpersoon Noodgevallen</target>
+			</trans-unit>
+			<trans-unit id="personRelation.relationType.child">
+				<source>Child</source>
+				<target>Kind</target>
+			</trans-unit>
+			<trans-unit id="personRelation.relationType.partner">
+				<source>Partner</source>
+				<target>partner</target>
+			</trans-unit>
+			<trans-unit id="personRelation.relationType.parent">
+				<source>Parent</source>
+				<target>Ouder</target>
+			</trans-unit>
+			<trans-unit id="personRelation.relationType.family">
+				<source>Family</source>
+				<target>Familie</target>
+			</trans-unit>
+			<trans-unit id="personRelation.relationType.other">
+				<source>Other</source>
+				<target>Anders</target>
+			</trans-unit>
+			<trans-unit id="address.addressType.">
+				<source>Address</source>
+				<target>Adres</target>
+			</trans-unit>
+			<trans-unit id="addRelative">
+				<source>Add relative</source>
+				<target>Relatie toevoegen</target>
+			</trans-unit>
+			<trans-unit id="relative">
+				<source>Relative</source>
+				<target>Relatie</target>
+			</trans-unit>
+			<trans-unit id="relations">
+				<source>Relations</source>
+				<target>Relaties</target>
+			</trans-unit>
+			<trans-unit id="relationType">
+				<source>Relation type</source>
+				<target>Soort relatie</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

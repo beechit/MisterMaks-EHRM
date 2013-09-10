@@ -1,5 +1,5 @@
 <div class="modal-header custom">
-	<h3><f:render partial="Views/Show/ProfilePhoto" arguments="{photo: person.profilePhoto, width: 50}"/>{person.name} / Relations</h3>
+	<h3><f:render partial="Views/Show/ProfilePhoto" arguments="{photo: person.profilePhoto, width: 50}"/>{person.name} / <f:translate id="relations">Relations</f:translate></h3>
 </div>
 <div class="clearfix well">
 	<f:for each="{personRelations}" as="personRelation">
@@ -7,7 +7,7 @@
 			<f:render partial="Forms/PersonRelation" arguments="{person: person, persons: persons, personRelation: personRelation, action: 'update', collapsed: true}"/>
 		</div>
 	</f:for>
-	<div id="education-add" class="clearfix">
+	<div id="personRelation-add" class="clearfix">
 		<f:if condition="{personRelations}">
 			<f:then>
 				<f:render partial="Forms/PersonRelation" arguments="{person: person, persons: persons, personRelation: personRelation, action: 'add', suffix: 'personRelation', collapsed: true}"/>

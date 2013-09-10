@@ -1,5 +1,5 @@
 <div class="modal-header custom">
-	<h3><f:render partial="Views/Show/ProfilePhoto" arguments="{photo: party.profilePhoto, width: 50}"/> Relative</h3>
+	<h3><f:render partial="Views/Show/ProfilePhoto" arguments="{photo: party.profilePhoto, width: 50}"/><f:translate id="relative">Relative</f:translate></h3>
 </div>
 <div class="clearfix well">
 	<h1></h1>
@@ -9,7 +9,7 @@
 		<f:form.hidden name="personRelatedTo" id="personRelatedTo{personRelation.id}" value="{personRelatedTo}" />
 		<div class="control-group">
 			<label class="control-label">
-				Phone number
+				<f:translate id="phoneNumber">Phone number</f:translate>
 			</label>
 			<div class="controls controls-row">
 				<f:form.textfield property="phoneNumber" class="span7 phone home" placeholder="{f:translate(value: 'Phone Number')}..."/>
@@ -17,7 +17,7 @@
 		</div>
 		<div class="control-group">
 			<label class="control-label">
-				Email
+				<f:translate id="Email">E-mail</f:translate>
 			</label>
 			<div class="controls controls-row">
 				<f:form.textfield property="electronicAddress" class="span7 electronicAddress email" placeholder="{f:translate(value: 'Email')}..."/>

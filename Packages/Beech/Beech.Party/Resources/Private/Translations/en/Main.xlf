@@ -782,6 +782,60 @@
 			<trans-unit id="bankAccount.bankAccountType.giro">
 				<source>Giro</source>
 			</trans-unit>
+			<trans-unit id="address.addressType.home">
+				<source>Home address</source>
+			</trans-unit>
+			<trans-unit id="address.addressType.work">
+				<source>Work address</source>
+			</trans-unit>
+			<trans-unit id="address.addressType.postbox">
+				<source>Postbox</source>
+			</trans-unit>
+			<trans-unit id="address.addressType.mailing">
+				<source>Mailing address</source>
+			</trans-unit>
+			<trans-unit id="address.addressType.abroad">
+				<source>Address abroad</source>
+			</trans-unit>
+			<trans-unit id="relative">
+				<source>Relative</source>
+			</trans-unit>
+			<trans-unit id="emergencyContact">
+				<source>Emergency contact</source>
+			</trans-unit>
+			<trans-unit id="emergencyContact">
+				<source>Emergency contact</source>
+			</trans-unit>
+			<trans-unit id="personRelation.relationType.child">
+				<source>Child</source>
+			</trans-unit>
+			<trans-unit id="personRelation.relationType.partner">
+				<source>Partner</source>
+			</trans-unit>
+			<trans-unit id="personRelation.relationType.parent">
+				<source>Parent</source>
+			</trans-unit>
+			<trans-unit id="personRelation.relationType.family">
+				<source>Family</source>
+			</trans-unit>
+			<trans-unit id="personRelation.relationType.other">
+				<source>Other</source>
+			</trans-unit>
+			<trans-unit id="address.addressType.">
+				<source>Address</source>
+			</trans-unit>
+			<trans-unit id="addRelative">
+			<source>Add relative</source>
+			</trans-unit>
+			<trans-unit id="relative">
+				<source>Relative</source>
+			</trans-unit>
+			<trans-unit id="relations">
+			 <source>Relations</source>
+			</trans-unit>
+			<trans-unit id="relationType">
+				<source>Relation type</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

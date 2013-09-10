@@ -114,7 +114,7 @@ class PersonRelationController extends \Beech\Ehrm\Controller\AbstractManagement
 	 * @param \Beech\Party\Domain\Model\Person $personRelatedTo
 	 * @return void
 	 */
-	public function editAction(\Beech\Party\Domain\Model\Person $person, \Beech\Party\Domain\Model\PersonRelation $personRelation) {
+	public function editAction(\Beech\Party\Domain\Model\Person $person = NULL, \Beech\Party\Domain\Model\PersonRelation $personRelation) {
 		$this->view->assign('person', $person);
 		$this->view->assign('personRelation', $personRelation);
 		$phoneNumbers = $this->phoneNumberRepository->findByParty($person);

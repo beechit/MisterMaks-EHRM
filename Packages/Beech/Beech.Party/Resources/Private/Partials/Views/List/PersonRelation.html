@@ -1,8 +1,14 @@
-<div class="row-fluid">
+<div class="row-fluid">{namespace ehrm=Beech\Ehrm\ViewHelpers}
 
 	<div class="span2">{personRelation.person.name.fullName} </div>
-	<div class="span2"><strong>{personRelation.relationType}</strong></div>
-	<div class="span4"><f:if condition="{personRelation.emergencyContact}"><i class="icon-medkit"></i></f:if></div>
+	<div class="span1"><strong><f:translate id="personRelation.relationType.{personRelation.relationType}">{personRelation.relationType}</f:translate></strong></div>
+	<div Class="span2"><f:format.date format="d-m-Y">{personRelation.person.dateOfBirth}</f:format.date></div>
+	<div Class="span2">{personRelation.person.phoneNumber_home.phoneNumber}</div>
+	<div class="span1"><f:if condition="{personRelation.emergencyContact}"><i class="icon-medkit"></i></f:if></div>
+	<div>		<ehrm:link.edit subpackage='Administration' controller='PersonRelation' action='edit' arguments='{person: personRelation.person, personRelation: personRelation, withDetails: false}'
+						dataReload="{f:uri.action(package:'Beech.Party', controller:'Person', action:'show', arguments: {person: person})}"/>
+
+	</div>
 	<f:comment>
 		<!-- TODO: support remove action -->
 		<div class="span2">

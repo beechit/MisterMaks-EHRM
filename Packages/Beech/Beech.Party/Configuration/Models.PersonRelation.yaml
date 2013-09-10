@@ -9,6 +9,7 @@
       options:
         values:
           'partner': 'Partner'
+          'parent': 'Parent'
           'child': 'Child'
           'family': 'Family'
           'other': 'Other'
