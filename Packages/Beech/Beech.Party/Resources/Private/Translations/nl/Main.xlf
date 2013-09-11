@@ -1206,6 +1206,14 @@
 				<source>Relation type</source>
 				<target>Soort relatie</target>
 			</trans-unit>
+			<trans-unit id="electronicAddress.electronicAddressType.">
+				<source>Add an e-mail address</source>
+				<target>Voeg een e-mail adres toe</target>
+			</trans-unit>
+			<trans-unit id="phoneNumber.phoneNumberType.">
+				<source>Add a phone number</source>
+				<target>Voeg een telefoonnummer toe</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

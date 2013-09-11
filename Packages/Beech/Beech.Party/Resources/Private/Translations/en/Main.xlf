@@ -825,7 +825,7 @@
 				<source>Address</source>
 			</trans-unit>
 			<trans-unit id="addRelative">
-			<source>Add relative</source>
+				<source>Add relative</source>
 			</trans-unit>
 			<trans-unit id="relative">
 				<source>Relative</source>
@@ -835,6 +835,12 @@
 			</trans-unit>
 			<trans-unit id="relationType">
 				<source>Relation type</source>
+			</trans-unit>
+			<trans-unit id="electronicAddress.electronicAddressType.">
+				<source>Add a electronic address</source>
+			</trans-unit>
+			<trans-unit id="phoneNumber.phoneNumberType.">
+				<source>Add a phone number</source>
 			</trans-unit>
 		</body>
 	</file>
