@@ -3,7 +3,7 @@
 
 	App.BeechTaskTaskWidgetView = Ember.View.extend({
 		elementId: 'task-widget',
-		templateName: 'beech_task_user_interface_task_widget',
+		templateName: 'BeechTaskUserInterface/taskWidget',
 	});
 
 }).call(this);

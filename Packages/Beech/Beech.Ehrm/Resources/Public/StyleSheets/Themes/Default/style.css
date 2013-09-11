@@ -205,3 +205,14 @@ input.datetimepicker-hrvalue.date-only, input.datepicker { cursor: pointer; widt
 .datetimepicker-inline { width: 220px; }
 
 .datetimepicker-dropdown, .datetimepicker-dropdown-left { top: 0; left: 0; }
+
+.absence table.absence-table { table-layout: fixed; }
+.absence table.absence-table th, .absence table.absence-table td { border: 1px solid #555555; text-align: center; width: 25px; height: 20px; vertical-align: top; }
+.absence table.absence-table th { vertical-align: bottom; font-size: .7em; }
+.absence table.absence-table th:first-child, .absence table.absence-table td:first-child { text-align: right; border: none; font-size: 1em; padding: 0 4px 0 0; width: 170px; }
+.absence table.absence-table td span { display: block; width: 25px; height: 20px; background-color: #46a546; }
+.absence table.absence-table td span.estimated { background-color: lightgreen; }
+.absence table.absence-table td span.unknown-end { background-color: yellow; }
+.absence table.absence-table td span.loading { background-color: #eeeeee; color: #eeeeee; }
+.absence table.absence-table td span.sickness { background-color: red; }
+.absence table.absence-table td span.sickness.estimated { background-color: lightcoral; }

@@ -1,0 +1,48 @@
+.absence {
+
+	table.absence-table {
+		table-layout: fixed;
+		th, td {
+			border: 1px solid $gray;
+			text-align: center;
+			width: 25px;
+			height: 20px;
+			vertical-align: top;
+		}
+		th {
+			vertical-align: bottom;
+			font-size: .7em;
+		}
+		th:first-child, td:first-child {
+			text-align: right;
+			border: none;
+			font-size: 1em;
+			padding: 0 4px 0 0;
+			width: 170px;
+		}
+		td{
+			span {
+				display: block;
+				width: 25px;
+				height: 20px;
+				background-color: $green;
+			}
+			span.estimated {
+				background-color: lightgreen;
+			}
+			span.unknown-end {
+				background-color: yellow;
+			}
+			span.loading {
+				background-color: $grayLighter;
+				color: $grayLighter;
+			}
+			span.sickness {
+				background-color: red;
+			}
+			span.sickness.estimated {
+				background-color: lightcoral;
+			}
+		}
+	}
+}

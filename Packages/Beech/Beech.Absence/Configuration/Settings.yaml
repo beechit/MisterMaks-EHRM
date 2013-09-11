@@ -1,0 +1,7 @@
+Radmiraal:
+  Emberjs:
+    restInterfaces:
+      beech_absence_domain_model_absence:
+        routePath: 'beech_absence_domain_model_absences'
+        model: 'Beech\Absence\Domain\Model\Absence'
+        repository: 'Beech\Absence\Domain\Repository\AbsenceRepository'

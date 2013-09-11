@@ -99,7 +99,10 @@ trait ConfigurableModelTrait {
 		}
 
 		foreach ($this->gettableProperties as $index => $property) {
-			if ($this->reflectionService->isPropertyAnnotatedWith(get_class($this), $property, 'TYPO3\Flow\Annotations\Transient')) {
+			if (in_array($property, array('data', 'document', 'gettableProperties', 'gettablePropertyNames', 'modelConfiguration', 'mappedData'))
+				|| preg_match('/Repository$/', $property)
+				|| $this->reflectionService->isPropertyAnnotatedWith(get_class($this), $property, 'TYPO3\Flow\Annotations\Inject')
+			) {
 				unset($this->gettableProperties[$index]);
 			}
 		}

@@ -148,6 +148,15 @@
 				this.route('index', { path: '/index' });
 			});
 		});
+
+		this.resource('reports', { path: 'reports' }, function() {
+			this.route('index', {path: '/'});
+			// Beech.Absence/Absence
+			this.resource('BeechAbsenceAbsences', {path: 'absences'}, function() {
+				this.route('department', {path:'/:departmentId/'});
+				this.route('department', {path:'/:departmentId/:startDate'});
+			});
+		});
 	});
 
 	App.ModuleRoute = Ember.Route.extend({
@@ -161,7 +170,7 @@
 	});
 
 	App.IndexIndexView = Ember.View.extend({
-		templateName: 'user_interface_dashboard'
+		templateName: 'userInterface/dashboard'
 	});
 
 	App.IndexDocumentModuleView = Ember.View.extend(App.AjaxModuleViewMixin, {

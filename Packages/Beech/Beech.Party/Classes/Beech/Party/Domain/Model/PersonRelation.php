@@ -34,7 +34,6 @@ class PersonRelation extends \Beech\Ehrm\Domain\Model\Document {
 	/**
 	 * @var \TYPO3\Flow\Persistence\PersistenceManagerInterface
 	 * @Flow\Inject
-	 * @Flow\Transient
 	 */
 	protected $persistenceManager;
 

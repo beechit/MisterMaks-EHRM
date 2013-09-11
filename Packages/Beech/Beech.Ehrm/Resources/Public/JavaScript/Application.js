@@ -7,7 +7,7 @@
 	});
 
 	App.AdministrationMenuView = Ember.View.extend({
-		templateName: 'administration_menu'
+		templateName: 'administration/menu'
 	});
 
 	App.ApplicationController = Ember.Controller.extend();

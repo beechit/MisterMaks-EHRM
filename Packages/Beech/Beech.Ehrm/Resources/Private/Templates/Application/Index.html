@@ -1,7 +1,8 @@
 <f:layout />{namespace emberjs=Radmiraal\Emberjs\ViewHelpers}
 <f:section name="Body">
-	<emberjs:handlebars paths="{0: 'resource://Beech.Ehrm/Private/Templates/Handlebar'}" />
-	<emberjs:handlebars paths="{0: 'resource://Beech.Task/Private/Templates/Handlebar'}" templateNamePrefix="beech_task" />
+	<emberjs:handlebars paths="{0: 'resource://Beech.Ehrm/Private/Templates/Handlebar'}" upperCamelCase="true" />
+	<emberjs:handlebars paths="{0: 'resource://Beech.Absence/Private/Templates/Handlebar'}" templateNamePrefix="BeechAbsence" upperCamelCase="true" />
+	<emberjs:handlebars paths="{0: 'resource://Beech.Task/Private/Templates/Handlebar'}" templateNamePrefix="BeechTask" upperCamelCase="true" />
 	<f:render partial="Modals" />
 	<f:if condition="{emberRedirect}">
 		<script type="text/javascript">

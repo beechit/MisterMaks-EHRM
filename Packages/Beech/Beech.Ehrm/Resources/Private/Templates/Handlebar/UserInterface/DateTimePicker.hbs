@@ -1,0 +1,5 @@
+<div class="input-append">
+	{{view Ember.TextField valueBinding="view.value" type="hidden"}}
+	{{view Ember.TextField valueBinding="view.hrValue" type="text" class="datetimepicker-hrvalue" }}
+	<span class="add-on"><i {{bindAttr class="view.timeOnly:icon-time:icon-calendar"}}></i></span>
+</div>
