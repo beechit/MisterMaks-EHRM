@@ -9,9 +9,6 @@
 	App.BeechPartyCompanyNewController = App.BeechPartyCompanyController.extend({
 		url: MM.url.module.BeechPartyAdministrationCompanyNew
 	});
-	App.BeechPartyCompanyRefreshNewController = App.BeechPartyCompanyController.extend({
-		url: MM.url.module.BeechPartyAdministrationCompanyNew
-	});
 	App.BeechPartyCompanyShowController = App.BeechPartyCompanyController.extend({
 		url: MM.url.module.BeechPartyAdministrationCompanyShow
 	});
@@ -28,9 +25,6 @@
 		url: MM.url.module.BeechPartyAdministrationCompanyIndex
 	});
 	App.BeechPartyAdministrationCompanyNewController = App.BeechPartyCompanyController.extend({
-		url: MM.url.module.BeechPartyAdministrationCompanyNew
-	});
-	App.BeechPartyAdministrationCompanyRefreshNewController = App.BeechPartyCompanyController.extend({
 		url: MM.url.module.BeechPartyAdministrationCompanyNew
 	});
 	App.BeechPartyAdministrationCompanyShowController = App.BeechPartyCompanyController.extend({

@@ -9,9 +9,6 @@
 	App.BeechPartyPersonNewController = App.BeechPartyPersonController.extend({
 		url: MM.url.module.BeechPartyPersonNew
 	});
-	App.BeechPartyPersonRefreshNewController = App.BeechPartyPersonController.extend({
-		url: MM.url.module.BeechPartyPersonNew
-	});
 	App.BeechPartyPersonShowController = App.BeechPartyPersonController.extend({
 		url: MM.url.module.BeechPartyPersonShow
 	});
@@ -28,9 +25,6 @@
 		url: MM.url.module.BeechPartyAdministrationPersonIndex
 	});
 	App.BeechPartyAdministrationPersonNewController = App.BeechPartyPersonController.extend({
-		url: MM.url.module.BeechPartyAdministrationPersonNew
-	});
-	App.BeechPartyAdministrationPersonRefreshNewController = App.BeechPartyPersonController.extend({
 		url: MM.url.module.BeechPartyAdministrationPersonNew
 	});
 	App.BeechPartyAdministrationPersonShowController = App.BeechPartyPersonController.extend({

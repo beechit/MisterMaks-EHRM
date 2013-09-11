@@ -5,9 +5,6 @@
 	App.BeechCLAJobPositionIndexController = App.BeechCLAJobPositionController.extend({
 		url: MM.url.module.BeechCLAJobPositionIndex
 	});
-	App.BeechCLAJobPositionRefreshController = App.BeechCLAJobPositionController.extend({
-		url: MM.url.module.BeechCLAJobPositionIndex
-	});
 	App.BeechCLAJobPositionNewController = App.BeechCLAJobPositionController.extend({
 		url: MM.url.module.BeechCLAJobPositionNew
 	});

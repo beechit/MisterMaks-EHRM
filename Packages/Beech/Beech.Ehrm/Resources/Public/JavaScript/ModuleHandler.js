@@ -23,6 +23,12 @@
 			} else {
 				controller.loadUrl()
 			}
+		},
+		// fix overriding routes with params
+		// ember expects a model but our setup breaks when there is a same route without params
+		serialize: function(model, params) {
+			if (!model) model = {}
+			return this._super(model, params);
 		}
 	});
 

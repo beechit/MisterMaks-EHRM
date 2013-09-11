@@ -15,9 +15,12 @@
 
 			// Beech.CLA/Contracts
 			this.resource('BeechCLAAdministrationContract', { path: 'contracts' }, function() {
-				this.route('refresh', { path: '/:random' });
+				this.route('index', { path: '/' });
+				this.route('index', { path: '/:random' });
 			});
 			this.resource('BeechCLAAdministrationContract', { path: 'contract' }, function() {
+				this.route('index', { path: '/' });
+				this.route('index', { path: '/:random' });
 				this.route('new', { path: '/new' });
 				this.route('start', { path: '/start/:contractTemplate/:employee/:jobDescription' });
 				this.route('show', { path: '/show/:contract' });
@@ -61,7 +64,7 @@
 			});
 			this.resource('BeechPartyAdministrationPerson', { path: 'person' }, function() {
 				this.route('new', { path: '/new' });
-				this.route('refreshNew', { path: '/new/:random' });
+				this.route('new', { path: '/new/:random' });
 				this.route('show', { path: '/show/:person' });
 				this.route('edit', { path: '/edit/:person' });
 				this.route('delete', { path: '/delete/:person' });
@@ -72,7 +75,7 @@
 			});
 			this.resource('BeechPartyAdministrationCompany', { path: 'company' }, function() {
 				this.route('new', { path: '/new' });
-				this.route('refreshNew', { path: '/new/:random' });
+				this.route('new', { path: '/new/:random' });
 				this.route('show', { path: '/show/:company' });
 				this.route('edit', { path: '/edit/:company' });
 				this.route('delete', { path: '/delete/:company' });
@@ -105,7 +108,7 @@
 			});
 			this.resource('BeechPartyPerson', { path: 'person' }, function() {
 				this.route('new', { path: '/new' });
-				this.route('refreshNew', { path: '/new/:random' });
+				this.route('new', { path: '/new/:random' });
 				this.route('show', { path: '/show/:person' });
 				this.route('edit', { path: '/edit/:person' });
 				this.route('delete', { path: '/delete/:person' });
@@ -116,7 +119,7 @@
 			});
 			this.resource('BeechPartyCompany', { path: 'company' }, function() {
 				this.route('new', { path: '/new' });
-				this.route('refreshNew', { path: '/new/:random' });
+				this.route('new', { path: '/new/:random' });
 				this.route('show', { path: '/show/:company' });
 				this.route('edit', { path: '/edit/:company' });
 				this.route('delete', { path: '/delete/:company' });
@@ -130,10 +133,11 @@
 			});
 			// Beech.CLA/JobPosition
 			this.resource('BeechCLAJobPosition', { path: 'jobpositions' }, function() {
-				this.route('index', { path: '/index' });
-				this.route('refresh', { path: '/:random' });
+				this.route('index', { path: '/' });
+				this.route('index', { path: '/:random' });
 			});
 			this.resource('BeechCLAJobPosition', { path: 'jobposition' }, function() {
+				this.route('index', { path: '/:random' });
 				this.route('new', { path: '/new/:parentJobPosition' });
 				this.route('show', { path: '/:jobPosition' });
 				this.route('edit', { path: '/edit/:jobPosition' });

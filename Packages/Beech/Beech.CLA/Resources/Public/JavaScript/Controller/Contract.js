@@ -5,9 +5,6 @@
 	App.BeechCLAAdministrationContractIndexController = App.BeechCLAAdministrationContractController.extend({
 		url: MM.url.module.BeechCLAAdministrationContractIndex
 	});
-	App.BeechCLAAdministrationContractRefreshController = App.BeechCLAAdministrationContractController.extend({
-		url: MM.url.module.BeechCLAAdministrationContractIndex
-	});
 	App.BeechCLAAdministrationContractNewController = App.BeechCLAAdministrationContractController.extend({
 		url: MM.url.module.BeechCLAAdministrationContractNew
 	});
