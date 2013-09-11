@@ -46,7 +46,7 @@
 				<source>Owner</source>
 				<target></target>
 			</trans-unit>
-			<trans-unit id="departmentId">
+			<trans-unit id="department">
 				<source>DepartmentID</source>
 				<target></target>
 			</trans-unit>

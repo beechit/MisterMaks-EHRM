@@ -40,7 +40,7 @@
 			<trans-unit id="documentOwner">
 				<source>Owner</source>
 			</trans-unit>
-			<trans-unit id="departmentId">
+			<trans-unit id="department">
 				<source>DepartmentID</source>
 			</trans-unit>
 			<trans-unit id="documentType">
