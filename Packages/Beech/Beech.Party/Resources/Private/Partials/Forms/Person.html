@@ -139,3 +139,14 @@
 		</div>
 	</div>
 </f:if>
+
+<f:if condition="{departments}">
+	<div class="control-group">
+		<label class="control-label" for="department">
+			<f:translate id="Department">Department</f:translate>
+		</label>
+		<div class="controls">
+			<f:form.select id="department" class="span7" property="department" options="{departments}" optionLabelField="name" />
+		</div>
+	</div>
+</f:if>

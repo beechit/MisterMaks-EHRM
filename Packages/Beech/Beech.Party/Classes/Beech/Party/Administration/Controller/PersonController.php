@@ -18,6 +18,12 @@ use Beech\Party\Domain\Model\Person as Person;
 class PersonController extends \Beech\Party\Controller\PersonController {
 
 	/**
+	 * @var \Beech\Party\Domain\Repository\CompanyRepository
+	 * @Flow\Inject
+	 */
+	protected $companyRepository;
+
+	/**
 	 * @param \Beech\Party\Domain\Model\Person $person A new person to add
 	 * @return void
 	 */

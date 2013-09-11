@@ -2,7 +2,7 @@
 	<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered">
 		<tbody>
 		<tr class="odd">
-			<td rowspan="5">
+			<td rowspan="6">
 				<f:render partial="Views/Show/ProfilePhoto" arguments="{photo: person.profilePhoto, width: 150}"/>
 			</td>
 			<td class="span3"><f:translate id="Name">Name</f:translate></td>
@@ -58,6 +58,14 @@
 				{person.nationality -> ehrm:format.nationality()}
 			</td>
 		</tr>
+		<f:if condition="{person.department}">
+			<tr class="even">
+				<td><f:translate id="Department">Department</f:translate></td>
+				<td>
+					{person.department.name}
+				</td>
+			</tr>
+		</f:if>
 		</tbody>
 	</table>
 </div>

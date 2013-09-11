@@ -100,6 +100,12 @@ class PersonController extends \Beech\Ehrm\Controller\AbstractManagementControll
 	protected $personRelationRepository;
 
 	/**
+	 * @var \Beech\Party\Domain\Repository\CompanyRepository
+	 * @Flow\Inject
+	 */
+	protected $companyRepository;
+
+	/**
 	 * @var \Beech\Ehrm\Helper\SettingsHelper
 	 * @Flow\Inject
 	 */
@@ -141,7 +147,8 @@ class PersonController extends \Beech\Ehrm\Controller\AbstractManagementControll
 		$this->view->assign('licences', $licences);
 		$absences = $this->absenceRepository->findByParty($person->getId());
 		$this->view->assign('absences', $absences);
-			// list of documents
+
+		// list of documents
 		$this->view->assign('documentCategories', $absences = $this->documentTypeRepository->findAllGroupedByCategories());
 		$this->view->assign('documents', $this->documentRepository->findByParty($person));
 
@@ -176,6 +183,7 @@ class PersonController extends \Beech\Ehrm\Controller\AbstractManagementControll
 		$absences = $this->absenceRepository->findByParty($person->getId());
 		$this->view->assign('absences', $absences);
 		$this->view->assign('languages', $this->settingsHelper->getAvailableLanguages());
+		$this->view->assign('departments', $this->companyRepository->findAll());
 
 		$this->view->assign('withDetails', $withDetails);
 	}
@@ -187,6 +195,7 @@ class PersonController extends \Beech\Ehrm\Controller\AbstractManagementControll
 	 */
 	public function newAction() {
 		$this->view->assign('languages', $this->settingsHelper->getAvailableLanguages());
+		$this->view->assign('departments', $this->companyRepository->findAll());
 	}
 
 	/**
