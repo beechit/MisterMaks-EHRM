@@ -1,10 +1,10 @@
 'Beech.Party.Domain.Model.Person':
   properties:
-    'companyId':
-      label: 'Company ID'
+    'company':
+      label: 'Company'
       type: 'Beech\Party\Domain\Model\Company'
-    'departmentId':
-      label: 'Department ID'
+    'department':
+      label: 'Department'
       type: 'Beech\Party\Domain\Model\Company'
     'name':
       label: 'name'

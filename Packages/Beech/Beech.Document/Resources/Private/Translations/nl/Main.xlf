@@ -56,7 +56,7 @@
 				<source>Owner</source>
 				<target>Eigenaar</target>
 			</trans-unit>
-			<trans-unit id="departmentId">
+			<trans-unit id="department">
 				<source>DepartmentID</source>
 				<target>Afdelingsnummer</target>
 			</trans-unit>
