@@ -3,7 +3,7 @@
 <f:section name="Body">
 	<ehrm:flashMessages/>
 	<div>
-		<div><a href="#/jobposition" target="_top" title="Organogram" class="btn  btn-gspm-4 pull-left"><i class="icon-tasks"></i> Organogram</a></div>
+		<div><a href="#/jobpositions" target="_top" title="Organogram" class="btn  btn-gspm-4 pull-left"><i class="icon-tasks"></i> Organogram</a></div>
 		<div><a href="#" target="_top" title="Contacts" class="btn btn-warning btn-gspm-4 pull-left"><i class="icon-user"></i> Contacts</a></div>
 		<div>
 			<!--All companies with departments-->
@@ -16,7 +16,7 @@
 		</div>
 	</div>
 	<div class="clearfix"></div>
-	<div>
+	<div id="companyTabsContainer">
 		<f:render partial="Views/Show/Company" arguments="{company: company}"/>
 	</div>
 

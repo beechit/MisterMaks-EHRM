@@ -20,7 +20,7 @@
 			</div>
 			<div class="span4">
 				<f:render partial="Views/Show/ProfilePhoto" arguments="{photo: company.logo, width: 150}"/>
-				<ehrm:link.edit subpackage='Administration' controller='CompanyLogo' action='change'
+				<ehrm:link.edit subpackage='' controller='CompanyLogo' action='change'
 								arguments='{company: company}'
 								dataReload="{f:uri.action(package:'Beech.Party', controller:'Company', action:'index', arguments: {company: company})}"/>
 			</div>
