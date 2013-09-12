@@ -37,6 +37,14 @@ class Person extends \TYPO3\Party\Domain\Model\AbstractParty implements \TYPO3\F
 	protected $name;
 
 	/**
+	 * @var \Beech\Party\Domain\Model\Company
+	 * @ORM\ManyToOne(inversedBy="employees")
+	 * @ORM\JoinColumn(name="department_id")
+	 * @Flow\Lazy
+	 */
+	protected $department;
+
+	/**
 	 * Sets the current name of this person
 	 *
 	 * @param \TYPO3\Party\Domain\Model\PersonName $name Name of this person
@@ -53,6 +61,24 @@ class Person extends \TYPO3\Party\Domain\Model\AbstractParty implements \TYPO3\F
 	 */
 	public function getName() {
 		return $this->name;
+	}
+
+	/**
+	 * Set department
+	 *
+	 * @param \Beech\Party\Domain\Model\Company $department
+	 */
+	public function setDepartment($department) {
+		$this->department = $department;
+	}
+
+	/**
+	 * Get department
+	 *
+	 * @return \Beech\Party\Domain\Model\Company
+	 */
+	public function getDepartment() {
+		return $this->department;
 	}
 
 	/**

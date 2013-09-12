@@ -53,6 +53,13 @@ class Company extends \TYPO3\Party\Domain\Model\AbstractParty implements \TYPO3\
 	protected $departments;
 
 	/**
+	 * @var \Doctrine\Common\Collections\Collection<\Beech\Party\Domain\Model\Person>
+	 * @ORM\OneToMany(mappedBy="department")
+	 * @Flow\Lazy
+	 */
+	protected $employees;
+
+	/**
 	 * @var boolean
 	 */
 	protected $deleted = FALSE;
@@ -108,6 +115,24 @@ class Company extends \TYPO3\Party\Domain\Model\AbstractParty implements \TYPO3\
 	 */
 	public function setDeleted($deleted) {
 		$this->deleted = $deleted;
+	}
+
+	/**
+	 * Set employees
+	 *
+	 * @param \Doctrine\Common\Collections\Collection $employees
+	 */
+	public function setEmployees($employees) {
+		$this->employees = $employees;
+	}
+
+	/**
+	 * Get employees
+	 *
+	 * @return \Doctrine\Common\Collections\Collection
+	 */
+	public function getEmployees() {
+		return $this->employees;
 	}
 
 	/**
