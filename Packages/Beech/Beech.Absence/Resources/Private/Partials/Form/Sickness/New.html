@@ -18,18 +18,18 @@
 				<label class="control-label" for="startDate">
 					<f:translate id="sickness.startDate">Date:</f:translate>
 				</label>
-				<ehrm:form.datePicker id="sickness.startDate" property="startDate" class="datepicker" dateFormat="d-m-Y"/>
+				<ehrm:form.datePicker id="sickness.startDate" property="startDate" class="datepicker"/>
 			</div>
 
 			<div class="control-group">
 				<label class="control-label" for="absenceType">Sickness type</label>
-				<f:form.select property="absenceType" class="absenceType" options="{absenceTypes}"/>
+				<f:form.select property="absenceType" class="absenceType" options="{absenceTypes}" value="sickness"/>
 			</div>
 			<div class="control-group">
 				<label class="control-label" for="estimatedRecoveryDate">
 					<f:translate id="sickness.estimatedRecoveryDate">Probably recovery on:</f:translate>
 				</label>
-				<ehrm:form.datePicker id="estimatedRecoveryDate" property="estimatedRecoveryDate" class="datepicker" dateFormat="d-m-Y"/>
+				<ehrm:form.datePicker id="estimatedRecoveryDate" property="estimatedRecoveryDate" class="datepicker"/>
 				<f:form.checkbox name="recoveryDateUnknown" id="recoveryDateUnknown" value="TRUE"/><f:translate id="unknown">Unknown</f:translate>
 			</div>
 

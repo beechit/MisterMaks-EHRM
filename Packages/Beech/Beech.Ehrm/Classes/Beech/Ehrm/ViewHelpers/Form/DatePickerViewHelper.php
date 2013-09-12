@@ -28,6 +28,18 @@ class DatePickerViewHelper extends \TYPO3\Fluid\ViewHelpers\Form\AbstractFormFie
 	protected $propertyMapper;
 
 	/**
+	 * @var \Beech\Ehrm\Utility\PreferencesUtility
+	 * @Flow\Inject
+	 */
+	protected $preferencesUtility;
+
+	/**
+	 * Default language for translations
+	 * @var string
+	 */
+	protected $language = 'en';
+
+	/**
 	 * Initialize the arguments.
 	 *
 	 * @return void
@@ -49,10 +61,17 @@ class DatePickerViewHelper extends \TYPO3\Fluid\ViewHelpers\Form\AbstractFormFie
 	 * @param boolean $displayDateSelector
 	 * @return string
 	 */
-	public function render($dateFormat = 'Y-m-d', $enableDatePicker = TRUE, $displayDateSelector = TRUE) {
+	public function render($dateFormat = NULL, $enableDatePicker = TRUE, $displayDateSelector = TRUE) {
 		$name = $this->getName();
 		$this->registerFieldNameForFormTokenGeneration($name);
 
+			// get current locale & language
+		$locale = $this->preferencesUtility->getUserPreference('locale');
+		$this->language = !empty($locale) ? substr($locale, 0, 2) : $this->language;
+
+		if ($dateFormat === NULL) {
+			$dateFormat = $this->getCurrentDateFormat($this->language);
+		}
 		if ($displayDateSelector) {
 			$this->tag->addAttribute('type', 'text');
 		} else {
@@ -73,6 +92,8 @@ class DatePickerViewHelper extends \TYPO3\Fluid\ViewHelpers\Form\AbstractFormFie
 			$id = 'field' . md5(uniqid());
 			$this->tag->addAttribute('id', $id);
 		}
+
+		$this->tag->addAttribute('data-date-language', $this->language);
 
 		$this->setErrorClassAttribute();
 		$content = '';
@@ -130,6 +151,17 @@ class DatePickerViewHelper extends \TYPO3\Fluid\ViewHelpers\Form\AbstractFormFie
 		return strtr($dateFormat, $replacements);
 	}
 
+	/**
+	 * TODO: Move this to settings.yaml
+	 */
+	protected function getCurrentDateFormat($language) {
+		if ($language === 'nl') {
+			$dateFormat = 'd-m-Y';
+		} else {
+			$dateFormat = 'Y-m-d';
+		}
+		return $dateFormat;
+	}
 }
 
 ?>

@@ -3,7 +3,6 @@
 
 	App.datePickerSettings = {
 		showOn: 'focus',
-		format: 'dd-mm-yyyy' ,
 		minView:3
 	};
 
