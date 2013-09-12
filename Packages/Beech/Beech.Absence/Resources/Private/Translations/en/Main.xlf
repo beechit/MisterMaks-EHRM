@@ -50,6 +50,12 @@
 			<trans-unit id="absence.flashmessage.deletedAbsense">
 				<source>Minute was deleted</source>
 			</trans-unit>
+			<trans-unit id="absence.leave.startDate">
+				<source>Start leave</source>
+			</trans-unit>
+			<trans-unit id="absence.leave.endDate">
+				<source>End leave</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

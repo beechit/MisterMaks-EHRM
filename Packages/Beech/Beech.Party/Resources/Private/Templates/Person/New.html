@@ -138,7 +138,9 @@
 			}
 
 			// apply input masks etc.
-			element.find('.datepicker').datetimepicker(App.datePickerSettings);
+			element.find('.datepicker').each(function(index, datepicker) {
+				$(datepicker).datetimepicker($(datepicker).hasClass('withTime') ? App.dateTimePickerSettings : App.datePickerSettings);
+			});
 			element.find('.datepickerIcon').on('click', function(){$(this).parent().find('.datepicker').trigger('focus')});
 			element.find('select').chosen({width: '350px'});
 			element.find('.countrySelect').countrySelect();

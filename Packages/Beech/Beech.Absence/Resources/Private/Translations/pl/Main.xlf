@@ -66,6 +66,14 @@
 				<source>Absense report was deleted</source>
 				<target></target>
 			</trans-unit>
+			<trans-unit id="absence.leave.startDate">
+				<source>Start leave</source>
+				<target>Wyjście</target>
+			</trans-unit>
+			<trans-unit id="absence.leave.endDate">
+				<source>End leave</source>
+				<target>Powrót</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

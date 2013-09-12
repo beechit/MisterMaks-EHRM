@@ -149,7 +149,9 @@
 				});
 			});
 				// When content of module is loaded, apply datepicker plugin if its necessary
-			$moduleContainer.find('.datepicker').datetimepicker(App.datePickerSettings);
+			$moduleContainer.find('.datepicker').each(function(index, datepicker) {
+				$(datepicker).datetimepicker($(datepicker).hasClass('withTime') ? App.dateTimePickerSettings : App.datePickerSettings);
+			});
 			$moduleContainer.find('.datepickerIcon').on('click', function(){$(this).parent().find('.datepicker').trigger('focus')});
 			$moduleContainer.find('select:not(".input-mini")').chosen();
 			$moduleContainer.find('input').applyInputMasks();

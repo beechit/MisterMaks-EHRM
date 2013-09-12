@@ -55,12 +55,14 @@ class AbsenceController extends \Beech\Ehrm\Controller\AbstractManagementControl
 	 * Shows a form for creating a person sick report
 	 *
 	 * @param \Beech\Party\Domain\Model\Person $person
+	 * @param string $absenceType
 	 * @return void
 	 */
-	public function newAction(\Beech\Party\Domain\Model\Person $person = NULL) {
+	public function newAction(\Beech\Party\Domain\Model\Person $person = NULL, $absenceType = Absence::OPTION_SICKNESS) {
 		$this->view->assign('person', $person);
 		$this->view->assign('persons', $this->personRepository->findAll());
-		$this->view->assign('absenceTypes', array('sickness' => 'Sickness', 'leave' => 'Leave'));
+		$this->view->assign('absenceType', $absenceType);
+		$this->view->assign('absenceTypes', array(Absence::OPTION_SICKNESS => 'Sickness', Absence::OPTION_LEAVE => 'Leave'));
 	}
 
 	/**

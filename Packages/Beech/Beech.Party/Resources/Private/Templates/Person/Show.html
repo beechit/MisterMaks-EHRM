@@ -7,11 +7,17 @@
 	</h1>
 
 	<div id="c261" class="csc-default">
-		<a class="btn" href="{f:uri.action(package:'Beech.Absence', controller:'Absence', action:'new', arguments: {person: person})}"
+		<a class="btn" href="{f:uri.action(package:'Beech.Absence', controller:'Absence', action:'new', arguments: {person: person, absenceType: 'sickness'})}"
 		   data-toggle="modal-ajax" data-target="#modal" modal-size="large"
 		   data-reload="{f:uri.action(package:'Beech.Party', controller:'Person', action:'show', arguments: {person: person})}">
 			<i class="icon-ambulance icon-white"></i>
 			Sick report
+		</a>
+		<a class="btn" href="{f:uri.action(package:'Beech.Absence', controller:'Absence', action:'new', arguments: {person: person, absenceType: 'leave'})}"
+		   data-toggle="modal-ajax" data-target="#modal" modal-size="large"
+		   data-reload="{f:uri.action(package:'Beech.Party', controller:'Person', action:'show', arguments: {person: person})}">
+			<i class="icon-ambulance icon-white"></i>
+			Leave request
 		</a>
 		<a class="btn" href="{f:uri.action(package:'Beech.Absence', controller:'Absence', action:'list', arguments: {person: person})}"
 		   data-toggle="modal-ajax" data-target="#modal" modal-size="large"

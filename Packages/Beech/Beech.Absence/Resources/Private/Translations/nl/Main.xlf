@@ -66,6 +66,18 @@
 				<source>Absense report was deleted</source>
 				<target>Verzuimmelding is verwijderd</target>
 			</trans-unit>
+			<trans-unit id="absence.leave.startDate">
+				<source>Aaaaa</source>
+				<target>Bbbbb</target>
+			</trans-unit>
+			<trans-unit id="absence.leave.startDate">
+				<source>Start leave</source>
+				<target>Start verflof</target>
+			</trans-unit>
+			<trans-unit id="absence.leave.endDate">
+				<source>End leave</source>
+				<target>Einde verlof</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

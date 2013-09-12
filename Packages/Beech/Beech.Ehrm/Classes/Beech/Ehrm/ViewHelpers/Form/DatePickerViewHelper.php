@@ -59,9 +59,10 @@ class DatePickerViewHelper extends \TYPO3\Fluid\ViewHelpers\Form\AbstractFormFie
 	 * @param string $dateFormat
 	 * @param boolean $enableDatePicker
 	 * @param boolean $displayDateSelector
+	 * @param boolean $enableTimePicker
 	 * @return string
 	 */
-	public function render($dateFormat = NULL, $enableDatePicker = TRUE, $displayDateSelector = TRUE) {
+	public function render($dateFormat = NULL, $enableDatePicker = TRUE, $displayDateSelector = TRUE, $enableTimePicker = FALSE) {
 		$name = $this->getName();
 		$this->registerFieldNameForFormTokenGeneration($name);
 
@@ -71,6 +72,9 @@ class DatePickerViewHelper extends \TYPO3\Fluid\ViewHelpers\Form\AbstractFormFie
 
 		if ($dateFormat === NULL) {
 			$dateFormat = $this->getCurrentDateFormat($this->language);
+		}
+		if ($enableTimePicker) {
+			$dateFormat .= ' H:i';
 		}
 		if ($displayDateSelector) {
 			$this->tag->addAttribute('type', 'text');
@@ -98,9 +102,10 @@ class DatePickerViewHelper extends \TYPO3\Fluid\ViewHelpers\Form\AbstractFormFie
 		$this->setErrorClassAttribute();
 		$content = '';
 		$content .= '<div class="input-append">';
-		if ($displayDateSelector === TRUE && $enableDatePicker === TRUE) {
+		if ($displayDateSelector === TRUE && $enableTimePicker === TRUE) {
 			$datePickerDateFormat = $this->convertDateFormatToDatePickerFormat($dateFormat);
-			$this->tag->addAttribute('format', $datePickerDateFormat);
+			$this->tag->addAttribute('class', $this->tag->getAttribute('class') . ' withTime');
+			$this->tag->addAttribute('data-date-format', $datePickerDateFormat);
 		}
 		$content .= $this->tag->render();
 		if ($displayDateSelector === TRUE) {
@@ -146,7 +151,9 @@ class DatePickerViewHelper extends \TYPO3\Fluid\ViewHelpers\Form\AbstractFormFie
 			'm' => 'mm',
 			'M' => 'm',
 			'Y' => 'yyyy',
-			'y' => 'yy'
+			'y' => 'yy',
+			'H' => 'hh',
+			'i' => 'ii'
 		);
 		return strtr($dateFormat, $replacements);
 	}
