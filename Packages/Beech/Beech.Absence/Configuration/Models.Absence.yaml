@@ -6,6 +6,8 @@
       type: 'Beech\Absence\Domain\Model\AbsenceArrangement'
     department:
       type: 'Beech\Party\Domain\Model\Company'
+    absenceType:
+      label: 'absenceType'
     startDate:
       label: 'Startdate'
       validation:
