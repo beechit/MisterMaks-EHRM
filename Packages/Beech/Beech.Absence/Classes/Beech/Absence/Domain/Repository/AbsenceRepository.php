@@ -16,6 +16,20 @@ use TYPO3\Flow\Annotations as Flow;
  */
 class AbsenceRepository extends \Radmiraal\CouchDB\Persistence\AbstractRepository {
 
+	/**
+	 * Get absence history based on person and absenceType
+	 *
+	 * @param $person
+	 * @param $absenceType
+	 * @return array
+	 */
+	public function findByPersonAndType($person, $absenceType) {
+		$filter = array(
+			'person' => $this->getQueryMatchValue($person),
+			'absenceType' => $absenceType
+		);
+		return $this->backend->findBy($filter);
+	}
 }
 
 ?>

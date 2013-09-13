@@ -35,6 +35,13 @@ class Absence extends \Beech\Ehrm\Domain\Model\Document {
 	protected $department;
 
 	/**
+	 * @var string
+	 * @ODM\Field(type="string")
+	 * @ODM\Index
+	 */
+	protected $absenceType;
+
+	/**
 	 * @var \Beech\Absence\Domain\Model\AbsenceArrangement
 	 * @ODM\Field(type="mixed")
 	 * @ODM\Index

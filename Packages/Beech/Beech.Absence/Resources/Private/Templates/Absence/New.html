@@ -1,18 +1,10 @@
-{namespace ehrm=Beech\Ehrm\ViewHelpers}
-<div class="modal-header custom">
-	<h3><f:render partial="Beech.Party:Views/Show/ProfilePhoto" arguments="{photo: person.profilePhoto, width: 50}"/>{person.name} / Sick report</h3>
-</div>
-<div class="clearfix well">
-	<div id="absence-add" class="clearfix">
-		<f:if condition="{0: absenceType} == {0: 'sickness'}">
-			<f:then>
-				<f:render partial="Form/Sickness/New" arguments="{_all}"/>
-			</f:then>
-		</f:if>
-		<f:if condition="{0: absenceType} == {0: 'leave'}">
-			<f:then>
-				<f:render partial="Form/Leave/New" arguments="{_all}"/>
-			</f:then>
-		</f:if>
-	</div>
-</div>
+<f:if condition="{0: absenceType} == {0: 'sickness'}">
+	<f:then>
+		<f:render partial="Form/Sickness/New" arguments="{_all}"/>
+	</f:then>
+</f:if>
+<f:if condition="{0: absenceType} == {0: 'leave'}">
+	<f:then>
+		<f:render partial="Form/Leave/New" arguments="{_all}"/>
+	</f:then>
+</f:if>

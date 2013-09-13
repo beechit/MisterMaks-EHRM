@@ -110,6 +110,7 @@
 				this.route('new', { path: '/new' });
 				this.route('new', { path: '/new/:random' });
 				this.route('show', { path: '/show/:person' });
+				this.route('show', { path: '/show/:person/:random' });
 				this.route('edit', { path: '/edit/:person' });
 				this.route('delete', { path: '/delete/:person' });
 			});

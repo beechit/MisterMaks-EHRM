@@ -43,12 +43,15 @@ class AbsenceController extends \Beech\Ehrm\Controller\AbstractManagementControl
 	 * List a history of sickness
 	 *
 	 * @param \Beech\Party\Domain\Model\Person $person
+	 * @param string $absenceType
 	 * @return void
 	 */
-	public function listAction(\Beech\Party\Domain\Model\Person $person = NULL) {
-		$absences = $this->repository->findByPerson($person);
+	public function listAction(\Beech\Party\Domain\Model\Person $person = NULL, $absenceType = Absence::OPTION_SICKNESS) {
+		$absences = $this->repository->findByPersonAndType($person, $absenceType);
+
 		$this->view->assign('person', $person);
 		$this->view->assign('absences', $absences);
+		$this->view->assign('absenceType', $absenceType);
 	}
 
 	/**
@@ -72,7 +75,9 @@ class AbsenceController extends \Beech\Ehrm\Controller\AbstractManagementControl
 	public function createAction(\Beech\Absence\Domain\Model\Absence $absence) {
 		$this->repository->add($absence);
 		$options = array('absence' => $absence);
-		$this->emberRedirect('#/person');
+		$personIdentifier = $this->persistenceManager->getIdentifierByObject($absence->getPerson(), '\Beech\Party\Domain\Model\Person');
+
+		$this->emberRedirect('#/person/show/' . $personIdentifier . '/' . uniqid());
 	}
 
 }
