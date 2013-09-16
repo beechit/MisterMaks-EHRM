@@ -141,6 +141,10 @@
 							$(target).scrollTop(0);
 							that.loadContent(result, target);
 						}
+						$moduleContainer.parent().modal('hide');
+						if ($moduleContainer.parent().find('.btn-save').attr('data-reload') != '') {
+							that.loadUrl($moduleContainer.parent().find('.btn-save').attr('data-reload'));
+						}
 					},
 					error: function(result) {
 						$(form).removeAttr('isSubmitting')
@@ -171,14 +175,24 @@
 				$customFooter.removeClass('custom');
 			}
 			$moduleContainer.parent().find('.modal-footer').removeClass('hide');
-			$moduleContainer.parent().find('.modal-footer .btn').each(function(i, button) {
-				$(button).unbind('click');
-				if ($(button).attr('data-reload') != '') {
-					$(button).on('click', function(event) {
-						that.loadUrl($(button).attr('data-reload'))
+
+			var $saveButton = $moduleContainer.parent().find('.modal-footer .btn-save');
+			var $closeButton = $moduleContainer.parent().find('.modal-footer .btn-close');
+			if ($moduleContainer.parent().find('input[name="iscomplete"]').length > 0) {
+				$moduleContainer.parent().find('input[name="iscomplete"]').each(function(k,isCompleteElement) {
+					var $form = $(isCompleteElement).parents('form:first');
+					$form.find('input[type="submit"],button[type="submit"],.form-actions').remove();
+
+					$saveButton.show();
+					$saveButton.on('click', function(event) {
+						$form.submit() ;
 					})
-				}
-			})
+					$closeButton.hide()
+				});
+			} else {
+				$closeButton.show();
+				$saveButton.hide();
+			}
 		},
 
 		prepareUrl: function (object) {

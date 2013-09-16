@@ -1,10 +1,9 @@
 <f:layout name="Ajax" />{namespace ehrm=Beech\Ehrm\ViewHelpers}
 
 <f:section name="Body">
-
-	<h1>
-		<f:translate id="action.edit"></f:translate>
-	</h1>
+	<div class="modal-header custom">
+		<h3><f:render partial="Views/Show/ProfilePhoto" arguments="{photo: person.profilePhoto, width: 50}"/><f:translate id="action.edit"></f:translate> / {person.name.fullName} </h3>
+	</div>
 
 	<ehrm:flashMessages/>
 

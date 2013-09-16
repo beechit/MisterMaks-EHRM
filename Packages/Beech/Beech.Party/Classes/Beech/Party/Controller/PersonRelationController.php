@@ -136,7 +136,7 @@ class PersonRelationController extends \Beech\Ehrm\Controller\AbstractManagement
 	 * @Flow\IgnoreValidation("electronicAddressObject")
 	 * @return void
 	 */
-	public function updateAction(\Beech\Party\Domain\Model\Person $person, \Beech\Party\Domain\Model\PersonRelation $personRelation, PhoneNumber $phoneNumberObject, ElectronicAddress $electronicAddressObject) {
+	public function updateAction(\Beech\Party\Domain\Model\Person $person, \Beech\Party\Domain\Model\PersonRelation $personRelation, PhoneNumber $phoneNumberObject = NULL, ElectronicAddress $electronicAddressObject) {
 		$this->personRepository->update($person);
 		$phoneNumberObject->setPhoneNumber($person->getPhoneNumber());
 		$this->phoneNumberRepository->update($phoneNumberObject);

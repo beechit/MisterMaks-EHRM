@@ -5,7 +5,7 @@
 <div class="clearfix well">
 	<div id="absence-add" class="clearfix">
 		<ehrm:flashMessages/>
-		<f:form.validationResults for="document">
+		<f:form.validationResults for="absence">
 			<f:if condition="{validationResults.flattenedErrors}">
 				<div class="error">
 					<f:for each="{validationResults.flattenedErrors}" key="propertyPath" as="errors">{propertyPath}:
@@ -16,7 +16,8 @@
 				</div>
 			</f:if>
 		</f:form.validationResults>
-		<f:form method="post" action="create" name="absence" object="{sickness}" class="compact-form form-horizontal" enctype="multipart/form-data">
+		<f:form method="post" action="create" name="absence" object="{absence}" class="compact-form form-horizontal" enctype="multipart/form-data">
+			<input type="hidden" name="iscomplete" value="true" data-validate="isComplete"/>
 			<div class="row-fluid">
 				<div class="span6">
 					<div class="control-group">
