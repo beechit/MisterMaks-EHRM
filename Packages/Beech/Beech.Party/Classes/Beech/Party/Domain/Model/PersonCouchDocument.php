@@ -18,13 +18,6 @@ use TYPO3\Flow\Annotations as Flow,
 class PersonCouchDocument extends \Beech\Ehrm\Domain\Model\Document {
 
 	/**
-	 * @var \Beech\Party\Domain\Model\Company
-	 * @ODM\Field(type="mixed")
-	 * @ODM\Index
-	 */
-	protected $department;
-
-	/**
 	 * @var \Beech\Ehrm\Domain\Model\PersonPreferences
 	 * @ODM\ReferenceOne(targetDocument="\Beech\Ehrm\Domain\Model\PersonPreferences", cascade={"persist"})
 	 */
@@ -36,31 +29,6 @@ class PersonCouchDocument extends \Beech\Ehrm\Domain\Model\Document {
 	 * @Flow\Transient
 	 */
 	protected $persistenceManager;
-
-	/**
-	 * Set department
-	 *
-	 * @param \Beech\Party\Domain\Model\Company $department
-	 */
-	public function setDepartment($department) {
-		if ($department) {
-			$this->department = $this->persistenceManager->getIdentifierByObject($department);
-		} else {
-			$this->department = NULL;
-		}
-	}
-
-	/**
-	 * Get department
-	 *
-	 * @return \Beech\Party\Domain\Model\Company
-	 */
-	public function getDepartment() {
-		if (!empty($this->department)) {
-			return $this->persistenceManager->getObjectByIdentifier($this->department, '\Beech\Party\Domain\Model\Company');
-		}
-		return NULL;
-	}
 
 	/**
 	 * Set preferences
