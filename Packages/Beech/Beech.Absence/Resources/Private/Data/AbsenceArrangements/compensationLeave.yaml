@@ -1,5 +1,5 @@
 absenceArrangement:
-  absenceArrangementName: 'compensationLeave'
+  arrangementName: 'compensationLeave'
   label: 'Compensation hours'
   absenceType: 'leave'
   help: ''

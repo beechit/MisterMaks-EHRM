@@ -1,5 +1,5 @@
 absenceArrangement:
-  absenseArrangementName: 'other'
+  arrangementName: 'other'
   label: 'Other'
   absenceType: 'sickness'
   help: ''

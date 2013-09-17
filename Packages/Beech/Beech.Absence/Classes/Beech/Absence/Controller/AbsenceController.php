@@ -34,6 +34,11 @@ class AbsenceController extends \Beech\Ehrm\Controller\AbstractManagementControl
 	protected $personRepository;
 
 	/**
+	 * @var \Beech\Absence\Domain\Repository\AbsenceArrangementRepository
+	 * @Flow\Inject
+	 */
+	protected $absenceArrangementRepository;
+	/**
 	 * @var \TYPO3\Flow\I18n\Translator
 	 * @Flow\Inject
 	 */

@@ -18,15 +18,9 @@ use TYPO3\Flow\Annotations as Flow,
 class AbsenceArrangement extends \Beech\Ehrm\Domain\Model\Document {
 
 	/**
-	 * @var \Beech\Absence\Domain\Model\Absence
-	 * @ODM\Field(type="mixed")
-	 * @ODM\Index
-	 */
-	protected $absence;
-
-	/**
 	 * @var string
-	 * @Flow\Validate(type="StringLength", options={ "minimum"=1, "maximum"=255 })
+	 * @ODM\Field(type="string")
+	 * @ODM\Index
 	 */
 	protected $absenceType;
 

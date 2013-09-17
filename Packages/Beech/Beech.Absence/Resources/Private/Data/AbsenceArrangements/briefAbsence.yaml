@@ -1,8 +1,8 @@
-absenceArrangment:
-  absenceArrangementName: 'briefAbsence'
-  label: 'Brief Absence'
-  absencetype: 'sickness'
-  help: 'Brief Absence eg headache / flu'
+absenceArrangement:
+  arrangementName: 'briefAbsence'
+  label: 'Brief absence'
+  absenceType: 'sickness'
+  help: 'Brief absence eg headache / flu'
   days: ''
   reportInpectionAction: TRUE
   needsGrant: FALSE
