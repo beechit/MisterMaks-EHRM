@@ -1,5 +1,5 @@
 absenceArrangement:
-  absenceArrangementName: 'docterVisit'
+  arrangementName: 'docterVisit'
   label: 'DocterVisit'
   absenceType: 'leave'
   help: ''

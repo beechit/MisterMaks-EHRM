@@ -1,8 +1,8 @@
 absenceArrangement:
-  absenceArrangementName: 'workRelatedFysical'
-  label: 'work related fysical'
-  absencetype: 'sickness'
-  help: 'Sickness due to Bending / lifting / standing'
+  arrangementName: 'workRelatedFysical'
+  label: 'Work related fysical'
+  absenceType: 'sickness'
+  help: 'Sickness due to bending / lifting / standing'
   days: ''
   reportInpectionAction: TRUE
   needsGrant: FALSE

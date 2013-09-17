@@ -1,7 +1,7 @@
 absenceArrangement:
-  absenseArrangementName: 'holiday'
-  label: 'holiday'
-  absenceType: 'Leave'
+  arrangementName: 'holiday'
+  label: 'Holiday'
+  absenceType: 'leave'
   days:
   options:
     values:
@@ -9,7 +9,7 @@ absenceArrangement:
       kingsday: 'Kingsday'
       christmas: 'Christmas'
       eastern: 'Eastern'
-      ascensionDay: 'ascension day'
+      ascensionDay: 'Ascension day'
       liberationDay: 'Liberation day'
       holyFriday: 'Holy friday'
   reportInpectionAction: FALSE

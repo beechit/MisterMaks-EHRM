@@ -1,6 +1,6 @@
 absenceArrangement:
-  absenceArrangementName: 'vacation'
-  label: 'vacation'
+  arrangementName: 'vacation'
+  label: 'Vacation'
   absenceType: 'leave'
   help: ''
   days: ''

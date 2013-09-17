@@ -58,21 +58,25 @@ example::
 
 *import resource files*
 
-contractarticles::
+Contract articles::
 
 	./flow import:collection Beech.CLA ContractArticle Packages/Beech/Beech.Ehrm.Glastuinbouw/Resources/Private/Data/ContractArticle/ContractArticles.yaml contractArticles.articles --language nl
 
-jobdescriptions::
+Job descriptions::
 
-	 ./flow import:yaml Beech.CLA JobDescription --sourcePath Packages/Beech/Beech.Ehrm.Glastuinbouw/Resources/Private/Data/JobDescription/
+	./flow import:yaml Beech.CLA JobDescription --sourcePath Packages/Beech/Beech.Ehrm.Glastuinbouw/Resources/Private/Data/JobDescription/
 
-ContractTemplates::
+Contract templates::
 
 	./flow import:yaml Beech.CLA ContractTemplate --sourcePath Packages/Beech/Beech.Ehrm.Glastuinbouw/Resources/Private/Data/ContractTemplates/ --pathInYaml contractTemplate
 
-DocumentType::
+Document types::
 
 	./flow import:collection Beech.Document DocumentType resource://Beech.Document/Private/Data/DocumentType documentTypes
+
+Absence arrangements::
+	./flow import:yaml Beech.Absence AbsenceArrangement --sourcePath Packages/Beech/Beech.Absence/Resources/Private/Data/AbsenceArrangements/ --pathInYaml absenceArrangement
+
 
 
 Production context
@@ -97,3 +101,4 @@ for easy cut and paste work.
 ./flow import:yaml Beech.CLA JobDescription --sourcePath Packages/Beech/Beech.Ehrm.Glastuinbouw/Resources/Private/Data/JobDescription/
 ./flow import:yaml Beech.CLA ContractTemplate --sourcePath Packages/Beech/Beech.Ehrm.Glastuinbouw/Resources/Private/Data/ContractTemplates/ --pathInYaml contractTemplate
 ./flow import:collection Beech.Document DocumentType resource://Beech.Document/Private/Data/DocumentType documentTypes
+./flow import:yaml Beech.Absence AbsenceArrangement --sourcePath Packages/Beech/Beech.Absence/Resources/Private/Data/AbsenceArrangements/ --pathInYaml absenceArrangement

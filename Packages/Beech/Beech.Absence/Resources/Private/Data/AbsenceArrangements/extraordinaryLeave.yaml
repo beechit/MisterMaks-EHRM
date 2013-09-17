@@ -1,5 +1,5 @@
 absenceArrangement:
-  absenceArrangementName: 'extraordinaryLeave'
+  arrangementName: 'extraordinaryLeave'
   label: 'Extraordinary leave'
   absenceType: 'leave'
   help: ''

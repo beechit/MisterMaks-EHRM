@@ -1,8 +1,8 @@
 absenceArrangement:
-  absenceArrangementName: 'workRelatedMental'
-  label: 'work related mental'
-  absencetype: 'sickness'
-  help: 'sickness due to Focus / attention / pressure'
+  arrangementName: 'workRelatedMental'
+  label: 'Work related mental'
+  absenceType: 'sickness'
+  help: 'Sickness due to focus / attention / pressure'
   days: ''
   reportInpectionAction: TRUE
   needsGrant: FALSE
