@@ -25,7 +25,7 @@
 				</thead>
 				<f:for each="{absences}" as="absence">
 					<tr>
-						<td>{absence.absenceType}</td>
+						<td>{absence.absenceArrangement.arrangementName}</td>
 						<td>{absence.startDate -> f:format.date(format: 'd-m-Y')}</td>
 						<td>{absence.estimatedRecoveryDate -> f:format.date(format: 'd-m-Y')}</td>
 						<td>{absence.days}</td>

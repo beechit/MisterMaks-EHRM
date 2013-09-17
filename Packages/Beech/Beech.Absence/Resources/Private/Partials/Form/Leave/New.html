@@ -34,7 +34,7 @@
 					</div>
 					<div class="control-group">
 						<label class="control-label" for="absenceType">Type</label>
-						<f:form.select property="absenceType" class="absenceType" options="{absenceTypes}" value="leave"/>
+						<f:form.select property="absenceArrangement" class="absenceArrangement" options="{absenceArrangements}" optionLabelField="label"/>
 					</div>
 
 					<div class="control-group hide control-documentSubmit" >
@@ -64,6 +64,7 @@
 				</div>
 			</div>
 
+			<f:form.hidden property="absenceType" value="{absenceType}"/>
 			<f:form.hidden property="person" value="{person}"/>
 			<button type="submit" name="action" class="btn btn-small" value="{action}">
 				<i class="icon-save"></i>

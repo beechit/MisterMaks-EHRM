@@ -1,6 +1,6 @@
 'Beech.Absence.Domain.Model.AbsenceArrangement':
   properties:
-    arrangmentName:
+    arrangementName:
     absenceType:
     # only for registering special days like holiday should show in view an extra selectfield to select the day.
     days:
