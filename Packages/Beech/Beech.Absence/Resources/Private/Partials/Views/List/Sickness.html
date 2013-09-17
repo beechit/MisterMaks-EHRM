@@ -39,5 +39,13 @@
 
 </div>
 <script type="text/javascript">
-	$('table.absenceList').dataTable();
+	$('table.absenceList').dataTable({
+		"aoColumns": [
+			null,
+			{ "sType": "date-nl" },
+			{ "sType": "date-nl" },
+			{ "sType": "numeric" },
+			{ "sType": "numeric" }
+		]
+	});
 </script>
