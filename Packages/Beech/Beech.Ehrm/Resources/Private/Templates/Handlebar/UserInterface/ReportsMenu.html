@@ -1,0 +1,49 @@
+{namespace mm=Beech\Ehrm\ViewHelpers}
+<h3><f:translate id="reports" package="Beech.Ehrm">Reports</f:translate></h3>
+
+	<div class="accordion boxes" id="reportsMenu">
+
+		<div class="accordion-group">
+			<div class="accordion-heading">
+				<a class="accordion-toggle" data-toggle="collapse" data-parent="#reportsMenu" href="#reportsMenu-general">General</a>
+			</div>
+			<div id="reportsMenu-general" class="accordion-body">
+				<div class="accordion-inner">
+					<ul class="unstyled">
+						<li>Age</li>
+						<li>Education</li>
+						<li>Gender</li>
+						<li>Function grid</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="accordion-group">
+			<div class="accordion-heading">
+				<a class="accordion-toggle" data-toggle="collapse" data-parent="#reportsMenu" href="#reportsMenu-leave">
+					Leave
+				</a>
+			</div>
+			<div id="reportsMenu-leave" class="accordion-body collapse">
+				<div class="accordion-inner">
+					<ul class="unstyled">
+						<li>{{#linkTo "BeechAbsenceAbsences"}}<i class="icon-bar-chart"></i> <f:translate id="Absence" package="Beech.Ehrm">Absence</f:translate>{{/linkTo}}</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="accordion-group">
+			<div class="accordion-heading">
+				<a class="accordion-toggle" data-toggle="collapse" data-parent="#reportsMenu" href="#reportsMenu-contract">
+					Contracts
+				</a>
+			</div>
+			<div id="reportsMenu-contract" class="accordion-body collapse">
+				<div class="accordion-inner">
+					<ul class="unstyled">
+						<li></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
