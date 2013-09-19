@@ -116,7 +116,8 @@ iframe { border: none; }
 #modal .modal-body.full-size { padding: 0; height: 100%; }
 #modal .modal-footer { bottom: 0; right: 0; left: 0; }
 
-#modal-body-only .modal-body { padding: 0; max-height: 100%; height: 100%; }
+#modal-body-only { position: absolute; overflow: visible; }
+#modal-body-only .modal-body { padding: 0; max-height: none; overflow: visible; }
 #modal-body-only .modal-body .icon-spin { margin: 30px; }
 #modal-body-only .modal-body .row { margin-left: 0; }
 #modal-body-only .modal-body ul.flashmessages { padding-left: 35px; }
@@ -129,7 +130,7 @@ iframe { border: none; }
 #modal-body-only form .form-actions .icon-spin { margin: 0 0 0 30px; }
 #modal-body-only form.form-horizontal { margin: 0; }
 #modal-body-only form.form-horizontal fieldset { padding: 0; margin: 20px; }
-#modal-body-only form.form-horizontal div.actions { position: absolute; bottom: 0; right: 0; left: 0; }
+#modal-body-only form.form-horizontal div.actions { position: relative; bottom: 0; right: 0; left: 0; }
 
 .modal-large { width: 80%; max-width: 1200px; left: 10%; right: 10%; top: 10% !important; margin: 0; }
 

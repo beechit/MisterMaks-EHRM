@@ -242,43 +242,46 @@ iframe {
     right: 0;
     left: 0; }
 
-#modal-body-only .modal-body {
-  padding: 0;
-  max-height: 100%;
-  height: 100%; }
-  #modal-body-only .modal-body .icon-spin {
-    margin: 30px; }
-  #modal-body-only .modal-body .row {
-    margin-left: 0; }
-  #modal-body-only .modal-body ul.flashmessages {
-    padding-left: 35px; }
-  #modal-body-only .modal-body h1 {
-    margin: 40px; }
-#modal-body-only form {
-  margin: 30px 0 0 0; }
-  #modal-body-only form fieldset {
-    padding: 20px 0 20px 60px;
-    margin-right: 20px; }
-    #modal-body-only form fieldset legend {
-      margin-bottom: 0;
-      border: none; }
-    #modal-body-only form fieldset legend + .control-group {
-      margin-top: 0; }
-  #modal-body-only form .form-actions {
-    margin-bottom: 0;
-    padding-left: 60px; }
-    #modal-body-only form .form-actions .icon-spin {
-      margin: 0 0 0 30px; }
-#modal-body-only form.form-horizontal {
-  margin: 0; }
-  #modal-body-only form.form-horizontal fieldset {
+#modal-body-only {
+  position: absolute;
+  overflow: visible; }
+  #modal-body-only .modal-body {
     padding: 0;
-    margin: 20px; }
-  #modal-body-only form.form-horizontal div.actions {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    left: 0; }
+    max-height: none;
+    overflow: visible; }
+    #modal-body-only .modal-body .icon-spin {
+      margin: 30px; }
+    #modal-body-only .modal-body .row {
+      margin-left: 0; }
+    #modal-body-only .modal-body ul.flashmessages {
+      padding-left: 35px; }
+    #modal-body-only .modal-body h1 {
+      margin: 40px; }
+  #modal-body-only form {
+    margin: 30px 0 0 0; }
+    #modal-body-only form fieldset {
+      padding: 20px 0 20px 60px;
+      margin-right: 20px; }
+      #modal-body-only form fieldset legend {
+        margin-bottom: 0;
+        border: none; }
+      #modal-body-only form fieldset legend + .control-group {
+        margin-top: 0; }
+    #modal-body-only form .form-actions {
+      margin-bottom: 0;
+      padding-left: 60px; }
+      #modal-body-only form .form-actions .icon-spin {
+        margin: 0 0 0 30px; }
+  #modal-body-only form.form-horizontal {
+    margin: 0; }
+    #modal-body-only form.form-horizontal fieldset {
+      padding: 0;
+      margin: 20px; }
+    #modal-body-only form.form-horizontal div.actions {
+      position: relative;
+      bottom: 0;
+      right: 0;
+      left: 0; }
 
 .modal-large {
   width: 80%;
@@ -486,3 +489,37 @@ input.datepicker {
 .datetimepicker-dropdown, .datetimepicker-dropdown-left {
   top: 0;
   left: 0; }
+
+.absence table.absence-table {
+  table-layout: fixed; }
+  .absence table.absence-table th, .absence table.absence-table td {
+    border: 1px solid #555555;
+    text-align: center;
+    width: 25px;
+    height: 20px;
+    vertical-align: top; }
+  .absence table.absence-table th {
+    vertical-align: bottom;
+    font-size: .7em; }
+  .absence table.absence-table th:first-child, .absence table.absence-table td:first-child {
+    text-align: right;
+    border: none;
+    font-size: 1em;
+    padding: 0 4px 0 0;
+    width: 170px; }
+  .absence table.absence-table td span {
+    display: block;
+    width: 25px;
+    height: 20px;
+    background-color: #46a546; }
+  .absence table.absence-table td span.estimated {
+    background-color: lightgreen; }
+  .absence table.absence-table td span.unknown-end {
+    background-color: yellow; }
+  .absence table.absence-table td span.loading {
+    background-color: #eeeeee;
+    color: #eeeeee; }
+  .absence table.absence-table td span.sickness {
+    background-color: red; }
+  .absence table.absence-table td span.sickness.estimated {
+    background-color: lightcoral; }
