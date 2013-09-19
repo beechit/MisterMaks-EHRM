@@ -430,7 +430,7 @@ contractArticles:
           validation:
             type: 'TYPO3.Flow:RegularExpression'
             options:
-              regularExpression: /^[0-9]{1,2}([\.][0-9]{0,2}){0,1}$/
+              regularExpression: '/^[0-9]{1,2}([\.][0-9]{0,2}){0,1}$/'
           valueId: hoursAWeek
         -
           type: 'Beech.CLA:SingleLineText'
@@ -677,3 +677,19 @@ contractArticles:
             en: ''
             nl: ''
             pl: ''
+    -
+      articleHeader:
+        en: ''
+        nl: 'Gegevensuitwisseling'
+        pl: ''
+      articleLabel: gegevensuitwisseling
+      articleId: 10035
+      order: 910
+      articleText:
+        en: ''
+        nl: 'Werkgever en werknemer verlenen het UWV, Arbo-Dienst en Mister Maks toestemming om de aan hen verstrekte persoon- en loongegevens ter beschikking te stellen aan stichtingen / fondsen / verzekeringsmaatschappijen, voor zover die gegevens noodzakelijk zijn voor de uitvoering van statuten, regelementen en verzekeringsovereenkomsten van en met de stichtinten fondsen en verzekeringsmaatschappijen'
+        pl: ''
+      help:
+        en: ''
+        nl: ''
+        pl: ''
