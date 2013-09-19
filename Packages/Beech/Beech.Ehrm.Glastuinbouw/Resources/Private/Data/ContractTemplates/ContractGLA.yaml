@@ -118,6 +118,9 @@ contractTemplate:
     -
       '10013':
         required: FALSE
+    -
+      '10035':
+        required: TRUE
   sigatureStatement:
     text:
       en: ''

@@ -149,6 +149,9 @@ contractTemplate:
     -
       '10027':
         required: TRUE
+    -
+      '10035':
+        required: TRUE
   sigatureStatement:
     text:
       en: ''
