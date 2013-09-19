@@ -29,7 +29,7 @@
 
 					<div class="control-group">
 						<label class="control-label" for="absenceType">Sickness type</label>
-						<f:form.select property="absenceType" class="absenceType" options="{absenceTypes}" value="sickness" />
+						<f:form.select property="absenceArrangement" class="absenceArrangement" options="{absenceArrangements}" optionLabelField="label" />
 					</div>
 					<div class="control-group">
 						<label class="control-label" for="estimatedRecoveryDate">
@@ -66,6 +66,7 @@
 				</div>
 			</div>
 
+			<f:form.hidden property="absenceType" value="{absenceType}"/>
 			<f:form.hidden property="person" value="{person}"/>
 			<button type="submit" name="action" class="btn btn-small" value="{action}">
 				<i class="icon-save"></i>

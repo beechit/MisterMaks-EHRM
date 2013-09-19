@@ -43,7 +43,7 @@ class Absence extends \Beech\Ehrm\Domain\Model\Document {
 
 	/**
 	 * @var \Beech\Absence\Domain\Model\AbsenceArrangement
-	 * @ODM\Field(type="mixed")
+	 * @ODM\ReferenceOne(targetDocument="\Beech\Absence\Domain\Model\AbsenceArrangement")
 	 * @ODM\Index
 	 */
 	protected $absenceArrangement;
@@ -147,6 +147,25 @@ class Absence extends \Beech\Ehrm\Domain\Model\Document {
 			return $this->persistenceManager->getObjectByIdentifier($this->reportedTo, '\Beech\Party\Domain\Model\Person');
 		}
 		return NULL;
+	}
+
+	/**
+	 * Set the absenceArrangement that is subject of the absence
+	 *
+	 * @param \Beech\Absence\Domain\Model\AbsenceArrangement $absenceArrangement
+	 * @return void
+	 */
+	public function setAbsenceArrangement(\Beech\Absence\Domain\Model\AbsenceArrangement $absenceArrangement) {
+		$this->absenceArrangement = $absenceArrangement;
+	}
+
+	/**
+	 * Returns the absenceArrangement that is subject of the absence
+	 *
+	 * @return \Beech\Absence\Domain\Model\AbsenceArrangement
+	 */
+	public function getAbsenceArrangement() {
+		return $this->absenceArrangement;
 	}
 
 	/**

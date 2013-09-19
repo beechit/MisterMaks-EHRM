@@ -38,6 +38,7 @@ class AbsenceController extends \Beech\Ehrm\Controller\AbstractManagementControl
 	 * @Flow\Inject
 	 */
 	protected $absenceArrangementRepository;
+
 	/**
 	 * @var \TYPO3\Flow\I18n\Translator
 	 * @Flow\Inject
@@ -70,7 +71,8 @@ class AbsenceController extends \Beech\Ehrm\Controller\AbstractManagementControl
 		$this->view->assign('person', $person);
 		$this->view->assign('persons', $this->personRepository->findAll());
 		$this->view->assign('absenceType', $absenceType);
-		$this->view->assign('absenceTypes', array(Absence::OPTION_SICKNESS => 'Sickness', Absence::OPTION_LEAVE => 'Leave'));
+		$absenceArrangements = $this->absenceArrangementRepository->findByAbsenceType($absenceType);
+		$this->view->assign('absenceArrangements', $absenceArrangements);
 	}
 
 	/**

@@ -19,7 +19,7 @@ class AbsenceArrangement extends \Beech\Ehrm\Domain\Model\Document {
 
 	/**
 	 * @var string
-	 * @ODM\Field(type="string")
+	 * @ODM\Field(type="mixed")
 	 * @ODM\Index
 	 */
 	protected $absenceType;

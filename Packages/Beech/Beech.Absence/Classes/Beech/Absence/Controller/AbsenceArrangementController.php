@@ -8,7 +8,6 @@ namespace Beech\Absence\Controller;
  */
 
 use TYPO3\Flow\Annotations as Flow;
-use Beech\Absence\Domain\Model\AbsenceArrangement as AbsenceArrangement;
 
 /**
  * AbsenceArrangement controller for the Beech.Absence package
