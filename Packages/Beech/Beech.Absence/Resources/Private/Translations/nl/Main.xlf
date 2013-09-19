@@ -67,16 +67,224 @@
 				<target>Verzuimmelding is verwijderd</target>
 			</trans-unit>
 			<trans-unit id="absence.leave.startDate">
-				<source>Aaaaa</source>
-				<target>Bbbbb</target>
-			</trans-unit>
-			<trans-unit id="absence.leave.startDate">
 				<source>Start leave</source>
-				<target>Start verflof</target>
+				<target>Start verlof</target>
 			</trans-unit>
 			<trans-unit id="absence.leave.endDate">
 				<source>End leave</source>
 				<target>Einde verlof</target>
+			</trans-unit>
+			<trans-unit id="sickness.startDate">
+				<source>Date</source>
+				<target>Datum</target>
+			</trans-unit>
+			<trans-unit id="sickReport">
+				<source>Sick Report</source>
+				<target>Ziekmelding</target>
+			</trans-unit>
+			<trans-unit id="sickness.absenceType">
+				<source>Sickness Type</source>
+				<target>Soort melding</target>
+			</trans-unit>
+			<trans-unit id="sickness.estimatedRecoveryDate">
+				<source>Estimated Recovery date</source>
+				<target>Verwachte betermelding</target>
+			</trans-unit>
+			<trans-unit id="recoveryDateUnknown">
+				<source>Unknown</source>
+				<target>Onbekend</target>
+			</trans-unit>
+			<trans-unit id="reason">
+				<source>Reason:</source>
+				<target>Reden:</target>
+			</trans-unit>
+			<trans-unit id="reportMethod">
+				<source>Report method</source>
+				<target>Melding gedaan via</target>
+			</trans-unit>
+			<trans-unit id="reportedTo">
+				<source>Reported to</source>
+				<target>Gemeld bij</target>
+			</trans-unit>
+			<trans-unit id="absenceArrangement.labourDispute">
+				<source>Labour dispute</source>
+				<target>Arbeidsconfict</target>
+			</trans-unit>
+			<trans-unit id="absenceArrangement.accident">
+				<source>Accident</source>
+				<target>Ongeluk</target>
+			</trans-unit>
+			<trans-unit id="absenceArrangement.briefAbsence">
+				<source>Brief absence</source>
+				<target>Kort verzuim bijv. griep/hoofdpijn</target>
+			</trans-unit>
+			<trans-unit id="absenceArrangement.workRelatedFysical">
+				<source>Work related fysical</source>
+				<target>Werkgerelateerd lichamelijk</target>
+			</trans-unit>
+			<trans-unit id="absenceArrangement.workRelatedMental">
+				<source>Work related mental</source>
+				<target>Werkgerelateerd geestelijk</target>
+			</trans-unit>
+			<trans-unit id="absenceArrangement.other">
+				<source>Other</source>
+				<target>Anders</target>
+			</trans-unit>
+			<trans-unit id="reportMethod.phone">
+				<source>Phone</source>
+				<target>Telefoon</target>
+			</trans-unit>
+			<trans-unit id="reportMethod.email">
+				<source>E-mail</source>
+				<target>E-mail></target>
+			</trans-unit>
+			<trans-unit id="reportMethod.letter">
+				<source>Letter</source>
+				<target>Brief</target>
+			</trans-unit>
+			<trans-unit id="reportMethod.other">
+				<source>other</source>
+				<target>Anders</target>
+			</trans-unit>
+			<trans-unit id="reportMethod.inPerson">
+				<source>In person</source>
+				<target>Persoonlijk</target>
+			</trans-unit>
+			<trans-unit id="leave.reportMethod">
+				<source>Request by</source>
+				<target>Aangevraagd via</target>
+			</trans-unit>
+			<trans-unit id="leave.type">
+				<source>Leave type</source>
+				<target>Soort verlof</target>
+			</trans-unit>
+			<trans-unit id="leave.leave.reason">
+				<source>Reason</source>
+				<target>Reden van de verlofaanvraag</target>
+			</trans-unit>
+			<trans-unit id="absenceArrangement.extraordinaryLeave">
+				<source>Extraordinary leave</source>
+				<target>Bijzonder verlof</target>
+			</trans-unit>
+			<trans-unit id="absenceArrangement.holiday">
+				<source>Holiday</source>
+				<target>Feestdagen</target>
+			</trans-unit>
+			<trans-unit id="absenceArrangement.vacation">
+				<source>Vacation</source>
+				<target>Vakantie</target>
+			</trans-unit>
+			<trans-unit id="absenceArrangement.doctorVisit">
+				<source>Doctor visit eg.</source>
+				<target>Bezoek aan dokter e.d.</target>
+			</trans-unit>
+			<trans-unit id="absenceArrangement.compensationHours">
+				<source>Compensation hours</source>
+				<target>Compensatie uren</target>
+			</trans-unit>
+			<trans-unit id="leaveRequest">
+				<source>Leave request</source>
+				<target>Verlof verzoek</target>
+			</trans-unit>
+			<trans-unit id="leaveHistory">
+				<source>Leave history</source>
+				<target>Verlof historie</target>
+			</trans-unit>
+			<trans-unit id="percentageLeaveBalanceUsed">
+				<source>% of balance used</source>
+				<target>% opgenomen verlof</target>
+			</trans-unit>
+			<trans-unit id="remainingLeaveBalance">
+				<source>remaining balance</source>
+				<target>Restand verlof</target>
+			</trans-unit>
+			<trans-unit id="company">
+				<source>Company</source>
+				<target>Bedrijf</target>
+			</trans-unit>
+			<trans-unit id="department">
+				<source>Department</source>
+				<target>Afdeling</target>
+			</trans-unit>
+			<trans-unit id="companyLeavePercentage">
+				<source>Company %</source>
+				<target>Bedrijf %</target>
+			</trans-unit>
+			<trans-unit id="departmentLeavePercentage">
+				<source>Department %</source>
+				<target>Afdeling %</target>
+			</trans-unit>
+			<trans-unit id="type">
+				<source>Type</source>
+				<target>Type</target>
+			</trans-unit>
+			<trans-unit id="from">
+				<source>from</source>
+				<target>van</target>
+			</trans-unit>
+			<trans-unit id="till">
+				<source>till</source>
+				<target>tot</target>
+			</trans-unit>
+			<trans-unit id="days">
+				<source>Days</source>
+				<target>Dagen</target>
+			</trans-unit>
+			<trans-unit id="hours">
+				<source>hours</source>
+				<target>uren</target>
+			</trans-unit>
+			<trans-unit id="status">
+				<source>Status</source>
+				<target>Status</target>
+			</trans-unit>
+			<trans-unit id="absence.sEmptyTable">
+				<source>No data available</source>
+				<target>Geen registratie bekend</target>
+			</trans-unit>
+			<trans-unit id="absence.sSearch">
+				<source>Search</source>
+				<target>Zoek</target>
+			</trans-unit>
+			<trans-unit id="absence.sInfo">
+				<source>Showing (_START_ of _END_) of _TOTAL_ entries.</source>
+				<target>(_START_ of _END_) van _TOTAL_.</target>
+			</trans-unit>
+			<trans-unit id="absence.sFirst">
+				<source>First</source>
+				<target>Eerste</target>
+			</trans-unit>
+			<trans-unit id="absence.sLast">
+				<source>Last</source>
+				<target>Laatste</target>
+			</trans-unit>
+			<trans-unit id="absence.sNext">
+				<source>Next</source>
+				<target>Volgende</target>
+			</trans-unit>
+			<trans-unit id="absence.sPrevious">
+				<source>Previous</source>
+				<target>Vorige</target>
+			</trans-unit>
+			<trans-unit id="sicknessHistory">
+				<source>Sickness history</source>
+				<target>Verzuim historie</target>
+			</trans-unit>
+			<trans-unit id="percentageSick">
+				<source>Sickness %</source>
+				<target>Verzuim historie</target>
+			</trans-unit>
+			<trans-unit id="percentageAverageSickDepartment">
+				<source>Department %</source>
+				<target>Afdelings %</target>
+			</trans-unit>
+			<trans-unit id="percentageAverageSickAverage">
+				<source>Company: %</source>
+				<target>Bedrijf %</target>
+			</trans-unit>
+			<trans-unit id="percentageAverageBranche">
+				<source>Branche %</source>
+				<target>Branche %</target>
 			</trans-unit>
 		</body>
 	</file>

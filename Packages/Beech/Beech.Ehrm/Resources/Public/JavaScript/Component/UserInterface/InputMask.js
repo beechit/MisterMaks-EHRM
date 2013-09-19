@@ -8,9 +8,9 @@
 				$this = $(this);
 
 				if ($this.hasClass('phone')) {
-					if ($this.hasClass('mobile')) {
+					if ($this.hasClass('mobileNumber')) {
 						$this.inputmask("99 99999999", { "placeholder": "06 ________" });
-					} else if ($this.hasClass('foreign')) {
+					} else if ($this.hasClass('foreignNumber')) {
 						$this.inputmask("+99 999999999", { "placeholder": "+__ _________" });
 					} else {
 						$this.inputmask("999 9999999", { "placeholder": "0__ _______" });

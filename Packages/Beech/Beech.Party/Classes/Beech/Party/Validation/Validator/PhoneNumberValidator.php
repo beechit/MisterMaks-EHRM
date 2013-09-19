@@ -46,11 +46,11 @@ class PhoneNumberValidator extends AbstractValidator {
 	private function validationRules($type) {
 		$rules = array();
 		switch ($type) {
-			case 'mobile':
+			case 'mobileNumber':
 				$rules['regularExpression'] = '/(^\+31|^\+31\(0\)|^\(\+[0-9]{2}\)\(0\)|^0031|^0)(6)([0-9]{8}$|[0-9\-\s]{9}$)/';
 				$rules['expected'] = '06 54232123';
 				break;
-			case 'foreign':
+			case 'foreignNumber':
 				$rules['regularExpression'] = '/([+(\d]{1})(([\d+() -.]){5,16})([+(\d]{1})/';
 				$rules['expected'] = '+31 654232123';
 				break;

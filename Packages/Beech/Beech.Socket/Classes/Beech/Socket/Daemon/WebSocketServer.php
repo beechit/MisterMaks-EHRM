@@ -181,7 +181,7 @@ class WebSocketServer extends Daemonize {
 
 								// send welcom message
 								// @todo: remove is only for development/debug purposes
-							$notificationsArray = array('notifications' => array(array('message' => 'Welcome '.$accountIdentifier.'!')));
+							$notificationsArray = array('notifications' => array(array('message' => 'Welkom '.$accountIdentifier.'!')));
 							$connection->write(\Beech\Socket\Socket\WebSocketServer::encode(json_encode($notificationsArray)));
 
 						} else {

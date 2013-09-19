@@ -1,26 +1,27 @@
 <div class="modal-header custom">
 	<h3>
 		<f:render partial="Beech.Party:Views/Show/ProfilePhoto" arguments="{photo: person.profilePhoto, width: 50}"/>
-		{person.name} / Sick report
+		{person.name} / <f:translate id="sicknessHistory">Sickness history</f:translate>
 	</h3>
 </div>
 <div class="clearfix container-fluid">
 	<div class="row-fluid">
-		<div class="span3">Sickness: %</div>
-		<div class="span3">Avarage department: %</div>
-		<div class="span3">Avarage company: %</div>
-		<div class="span3">Avarage branche: %</div>
+		<div class="span3"><f:translate id="percentageSick">Sickness %</f:translate></div>
+		<div class="span3"><f:translate id="percentageAverageSickDepartment">Department: %</f:translate></div>
+		<div class="span3"><f:translate id="percentageAverageSickAverage">Company: %</f:translate></div>
+		<div class="span3"><f:translate id="percentageAverageBranche">Branche: %</f:translate></div>
 	</div>
 	<div class="row-fluid">
 		<div class="span12">
 			<table class="table absenceList table-striped table-bordered">
 				<thead>
 				<tr>
-					<th>Type</th>
-					<th>From</th>
-					<th>Till</th>
-					<th>Days</th>
-					<th>Hours</th>
+					<th><f:translate id="type">Type</f:translate></th>
+					<th><f:translate id="from">From</f:translate></th>
+					<th><f:translate id="till">Till</f:translate></th>
+					<th><f:translate id="days">Days</f:translate></th>
+					<th><f:translate id="hours">Hours</f:translate></th>
+					<th><f:translate id="status">Status</f:translate></th>
 				</tr>
 				</thead>
 				<f:for each="{absences}" as="absence">
@@ -30,6 +31,7 @@
 						<td>{absence.estimatedRecoveryDate -> f:format.date(format: 'd-m-Y')}</td>
 						<td>{absence.days}</td>
 						<td>{absence.hours}</td>
+						<td> </td>
 					</tr>
 				</f:for>
 			</table>
@@ -40,6 +42,15 @@
 </div>
 <script type="text/javascript">
 	$('table.absenceList').dataTable({
+		"oLanguage": {
+			"sEmptyTable": '<f:translate id="absence.sEmptyTable">No data available</f:translate>',
+			"sSearch": '<f:translate id="absence.sSearch">Search</f:translate>',
+			"sInfo": '<f:translate id="absence.sInfo">Showing (_START_ of _END_) of _TOTAL_ entries.</f:translate>',
+			"oPaginate": {
+				"sFirst": '<f:translate id="absence.sFirst">Search</f:translate>',
+				"sLast": '<f:translate id="absence.sLast">Last</f:translate>',
+				"sNext": '<f:translate id="absence.sNext">Next</f:translate>',
+				"sPrevious": '<f:translate id="absence.sPrevious">Previous</f:translate>',
 		"aoColumns": [
 			null,
 			{ "sType": "date-nl" },
@@ -47,5 +58,7 @@
 			{ "sType": "numeric" },
 			{ "sType": "numeric" }
 		]
+		}
+	}
 	});
 </script>

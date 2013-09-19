@@ -52,6 +52,7 @@
           'email': 'E-mail'
           'letter': 'Letter'
           'other': 'Other'
+          'inPerson': 'In person'
       default: 'phone'
     reportedTo:
       label: 'Reported to'

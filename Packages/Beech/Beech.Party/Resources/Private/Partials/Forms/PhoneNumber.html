@@ -11,20 +11,20 @@
 			<div class="row-fluid phoneNumber-row" >
 				<div class="span1"><i class="icon-plus"/></div>
 				<div class="span3">
-					<ehrm:optionSelect property="phoneNumberType" id="phoneNumberType{phoneNumber.id}" model="Beech.Party:PhoneNumber" placeholder="{f:translate(value: 'Type')}..." class="span10 phoneNumberType"/>
+					<ehrm:optionSelect property="phoneNumberType" id="phoneNumberType{phoneNumber.id}" model="Beech.Party:PhoneNumber" placeholder="{f:translate(value: 'Type')}..." class="span10 phoneNumberType" translate="{by: 'id'}"/>
 				</div>
 				<div class="span6">
 					<div class="input-append input-prepend">
-						<f:form.textfield property="phoneNumber" class="span7 phone {phoneNumber.phoneNumberType}" placeholder="{f:translate(value: 'Phone Number')}..."/>
+						<f:form.textfield property="phoneNumber" class="span7 phone {phoneNumber.phoneNumberType}" placeholder="{f:translate(value: 'phoneNumber')}..."/>
 						<span class="add-on"><i class="icon-phone"/></span>
 						<f:if condition="{phoneNumber.primary}">
 							<f:then>
-							<span class="add-on hide">Primary
+							<span class="add-on hide"><f:translate id="primary">Primary</f:translate>
 								<f:form.checkbox property="primary" id="primary-phoneNumber-{phoneNumber.id}" class="primary" value="TRUE"/>
 							</span>
 							</f:then>
 							<f:else>
-								<span class="add-on">Primary
+								<span class="add-on"><f:translate id="primary">Primary</f:translate>
 									<f:form.checkbox property="primary" id="primary-phoneNumber-{phoneNumber.id}" class="primary" value="TRUE"/>
 								</span>
 							</f:else>

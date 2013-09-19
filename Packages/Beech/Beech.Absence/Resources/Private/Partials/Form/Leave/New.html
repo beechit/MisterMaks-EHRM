@@ -1,6 +1,6 @@
 {namespace ehrm=Beech\Ehrm\ViewHelpers}
 <div class="modal-header custom">
-	<h3><f:render partial="Beech.Party:Views/Show/ProfilePhoto" arguments="{photo: person.profilePhoto, width: 50}"/>{person.name} / Leave request</h3>
+	<h3><f:render partial="Beech.Party:Views/Show/ProfilePhoto" arguments="{photo: person.profilePhoto, width: 50}"/>{person.name} / <f:translate id="leaveRequest">Leave request</f:translate></h3>
 </div>
 <div class="clearfix well">
 	<div id="absence-add" class="clearfix">
@@ -22,19 +22,21 @@
 				<div class="span6">
 					<div class="control-group">
 						<label class="control-label" for="startDate">
-							<f:translate id="absence.leave.startDate">Start date:</f:translate>
+							<f:translate id="absence.leave.startDate">Start date</f:translate>
 						</label>
 						<ehrm:form.datePicker id="leave.startDate" property="startDate" class="datepicker span8" enableTimePicker="TRUE"/>
 					</div>
 					<div class="control-group">
 						<label class="control-label" for="endDate">
-							<f:translate id="absence.leave.endDate">End date:</f:translate>
+							<f:translate id="absence.leave.endDate">End date</f:translate>
 						</label>
 						<ehrm:form.datePicker id="leave.endDate" property="endDate" class="datepicker span8" enableTimePicker="TRUE"/>
 					</div>
 					<div class="control-group">
-						<label class="control-label" for="absenceType">Type</label>
-						<f:form.select property="absenceArrangement" class="absenceArrangement" options="{absenceArrangements}" optionLabelField="label"/>
+						<label class="control-label" for="absenceType">
+							<f:translate id="leave.type">Type</f:translate>
+						</label>
+						<f:form.select property="absenceArrangement" class="absenceArrangement" options="{absenceArrangements}" optionLabelField="label"  translate="{by: 'label'}"/>
 					</div>
 
 					<div class="control-group hide control-documentSubmit" >
@@ -43,29 +45,32 @@
 					</div>
 				</div>
 				<div class="span6">
-					<label for="reason">Reason</label>
+					<label for="reason"><f:translate id="leave.reason">Reason</f:translate></label>
 					<div class="control-group">
 						<f:form.textarea id="reason" property="reason" class="span12" rows="10">Reason</f:form.textarea>
 					</div>
 				</div>
 
 			</div>
-			<div class="row-fluid">
-				<div class="span4 offset8">
-
+			<div>
+				<div class="span6 offset6">
 					<div class="control-group">
-						<label for="reportMethod">Report method</label>
-						<ehrm:optionSelect property="reportMethod" id="reportMethod" model="Beech.Absence:Absence" placeholder="{f:translate(value: 'reportMethod')}" class="reportMethod"/>
+						<label class="control-label" for="reportMethod">
+							<f:translate id="leave.reportMethod">Report method</f:translate>
+						</label>
+						<ehrm:optionSelect property="reportMethod" id="reportMethod" model="Beech.Absence:Absence" placeholder="{f:translate(id: 'reportMethod')}" class="reportMethod" translate="{by: 'label'}"/>
 					</div>
 					<div class="control-group">
-						<label for="reportedTo">Reported to</label>
+						<label class="control-label" for="reportedTo">
+							<f:translate id="reportedTo">Reported to</f:translate>
+						</label>
 						<f:form.select property="reportedTo" id="reportedTo" options="{persons}" optionLabelField="name"/>
 					</div>
 				</div>
 			</div>
-
 			<f:form.hidden property="absenceType" value="{absenceType}"/>
 			<f:form.hidden property="person" value="{person}"/>
+			<f:form.hidden property="status" value="pending"/>
 			<button type="submit" name="action" class="btn btn-small" value="{action}">
 				<i class="icon-save"></i>
 			</button>
