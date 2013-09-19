@@ -31,6 +31,12 @@
 			<i class="icon-ambulance icon-white"></i>
 			Leave history
 		</a>
+		<a class="btn btn-success" href="{f:uri.action(package:'Beech.CLA', subpackage:'Administration', controller:'contract', action:'new', arguments: {employee: person})}"
+		   data-toggle="modal-ajax" data-target="#modal-body-only" modal-size="large"
+		   data-reload="{f:uri.action(package:'Beech.Party', controller:'Person', action:'show', arguments: {person: person})}">
+			<i class="icon-plus icon-white"></i>
+			Create contract
+		</a>
 		<ul id="personTabs" class="nav nav-tabs">
 			<li class="active">
 				<a data-toggle="tab" href="#general">

@@ -1,0 +1,6 @@
+<f:layout name="TYPO3.Form:Field" />
+<f:section name="field">
+	<f:form.textfield name="{element.identifier}_display" id="{element.uniqueIdentifier}_display" placeholder="{element.properties.placeholder}" errorClass="error" readonly="TRUE"
+					  value="{element.properties.text}"/>
+	<f:form.hidden property="{element.identifier}" id="{element.uniqueIdentifier}" />
+</f:section>

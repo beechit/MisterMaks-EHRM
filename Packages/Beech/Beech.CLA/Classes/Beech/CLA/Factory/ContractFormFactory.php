@@ -104,10 +104,14 @@ class ContractFormFactory extends \TYPO3\Form\Factory\AbstractFormFactory {
 		$this->init($factorySpecificConfiguration, $presetName);
 		if (!isset($this->factorySpecificConfiguration['contractTemplate'])) {
 			$selectTemplateStep = $this->form->createPage('initialStep');
-
-			$selectTemplateStep->createElement('contractTemplate', 'Beech.CLA:ContractTemplateSelect');
 				// Employee field
-			$selectTemplateStep->createElement('employee', 'Beech.Party:EmployeeSelect');
+			$employeeElement = $selectTemplateStep->createElement('employee', 'Beech.Ehrm:SelectedValue');
+			$employeeElement->setDefaultValue($this->factorySpecificConfiguration['employee']);
+			$employeeElement->setProperty('text', $this->factorySpecificConfiguration['employee']->getName()->getFullName());
+			$employeeElement->setLabel('Employee');
+				// Contract template
+			$selectTemplateStep->createElement('contractTemplate', 'Beech.CLA:ContractTemplateSelect');
+
 				// Job description field
 			$selectTemplateStep->createElement('jobDescription', 'Beech.CLA:JobDescriptionSelect');
 			$redirectFinisher = new \Beech\CLA\Finishers\RedirectToTemplateFinisher();
@@ -164,7 +168,7 @@ class ContractFormFactory extends \TYPO3\Form\Factory\AbstractFormFactory {
 
 			$summaryFinisher = new \Beech\Ehrm\Form\Finishers\ModalCloseConfirmationFinisher();
 			$summaryFinisher->setOption('templatePathAndFilename', 'resource://Beech.CLA/Private/Templates/Administration/Contract/Summary.html');
-			$summaryFinisher->setOption('actions', array('close' => '/#/administration/contracts/'.time()));
+			$summaryFinisher->setOption('actions', array('close' => '/#/person/show/' . $contract->getEmployee()->getId(). '/'.time()));
 			$this->form->addFinisher($summaryFinisher);
 
 		}
