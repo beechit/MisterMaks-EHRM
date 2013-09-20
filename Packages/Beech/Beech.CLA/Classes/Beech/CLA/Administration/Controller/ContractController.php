@@ -35,8 +35,12 @@ class ContractController extends \Beech\Ehrm\Controller\AbstractManagementContro
 
 	/**
 	 * Select contract template
+	 * @param \Beech\Party\Domain\Model\Person $employee
 	 */
-	public function newAction() {
+	public function newAction($employee = NULL) {
+		$this->view->assign('overrideConfiguration', array(
+			'employee' => $employee
+		));
 	}
 
 	/**
@@ -62,7 +66,7 @@ class ContractController extends \Beech\Ehrm\Controller\AbstractManagementContro
 		$this->repository->add($contract);
 		$this->documentManager->merge($contract->getDocument());
 		$this->addFlashMessage($this->translator->translateById('Created a new contract', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
-		$this->redirect('list');
+		$this->redirect('show', 'Person', 'Beech.Party', array('person' => $contract->getEmployee()));
 	}
 
 	/**

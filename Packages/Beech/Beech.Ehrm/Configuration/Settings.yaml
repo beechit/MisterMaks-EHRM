@@ -201,6 +201,11 @@ TYPO3:
             formBuilder:
               label: 'Country Select'
               group: custom
+          'Beech.Ehrm:SelectedValue':
+            superTypes: ['TYPO3.Form:FormElement', 'TYPO3.Form:TextMixin']
+            renderingOptions:
+              layoutPathPattern: 'resource://Beech.Ehrm/Private/Templates/Form/Elements/Layouts/{@type}.html'
+              templatePathPattern: 'resource://Beech.Ehrm/Private/Templates/Form/Elements/SelectedValue.html'
           'Beech.Party:EmployeeSelect':
             superTypes: ['TYPO3.Form:FormElement', 'TYPO3.Form:SingleSelectDropdown']
             implementationClassName: 'Beech\Party\FormElements\EmployeeSelect'
