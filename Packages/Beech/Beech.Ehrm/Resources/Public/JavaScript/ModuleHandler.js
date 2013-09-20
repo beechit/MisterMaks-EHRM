@@ -141,9 +141,10 @@
 							$(target).scrollTop(0);
 							that.loadContent(result, target);
 						}
-						$moduleContainer.parent().modal('hide');
-						if ($moduleContainer.parent().find('.btn-save').attr('data-reload') != '') {
+
+						if ($moduleContainer.parent().find('.btn-save').attr('data-reload') != undefined) {
 							that.loadUrl($moduleContainer.parent().find('.btn-save').attr('data-reload'));
+							$moduleContainer.parent().modal('hide');console.log($moduleContainer.parent().find('.btn-save').attr('data-reload'), 'hmmm mmn');
 						}
 					},
 					error: function(result) {
