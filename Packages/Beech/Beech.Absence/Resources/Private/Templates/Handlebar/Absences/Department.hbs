@@ -1,4 +1,3 @@
-
 <div class="row-fluid absence">
 <table class="absence-table">
 	<tr>
@@ -13,13 +12,13 @@
 		{{/each}}
 	</tr>
 
-	{{#each employee in department.employees}}
+	{{#each employee in controllers.BeechAbsenceAbsences.selectedDepartment.employees}}
 		<tr>
 			<td>
 				{{#linkTo "BeechPartyPerson.show" employee.id}}{{employee.name.fullName}}{{/linkTo}}
 			</td>
 			{{#each date in dates}}
-				<td>{{absenceOfEmployee absences employee date}}</td>
+				<td>{{absenceOfEmployee controllers.BeechAbsenceAbsences.absences employee date}}</td>
 			{{/each}}
 		</tr>
 	{{/each}}

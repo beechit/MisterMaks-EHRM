@@ -3,7 +3,7 @@
 
 	App.BeechAbsenceAbsencesRoute = Ember.Route.extend({
 		model: function() {
-			return this.get('store').find('BeechAbsenceDomainModelAbsence');
+			return this.get('store').findAll('beechAbsenceDomainModelAbsence');
 		},
 		setupController:function(controller,model) {
 
@@ -24,14 +24,14 @@
 			if (!model.startDate) {
 				model.startDate = moment().format('YYYY-MM-DD');
 			}
+			var _this = this, _controller = controller;
+			this.get('store').find('beechPartyDomainModelCompany', model.departmentId).then(function(department){
+				// set controls in parent controller
+				_this.controllerFor('BeechAbsenceAbsences').set('selectedDepartment',department);
+			});
 
-			// set controls in parent controller
-			this.controllerFor('BeechAbsenceAbsences').set('selectedDepartment',this.get('store').find('beechPartyDomainModelCompany', model.departmentId));
-			controller.set('department',this.get('store').find('beechPartyDomainModelCompany', model.departmentId));
 			this.controllerFor('BeechAbsenceAbsences').set('startDate', model.startDate);
-			controller.set('startDate', model.startDate);
-			controller.set('intervalInDays', this.controllerFor('BeechAbsenceAbsences').get('intervalInDays'));
-			controller.set('absences', this.controllerFor('BeechAbsenceAbsences').get('absences'));
+
 		}
 	});
 

@@ -3,9 +3,9 @@
 
 	App.BeechTaskDomainModelTask.reopen({
 		link: DS.attr("string"),
-		assignedTo: DS.belongsTo("App.BeechPartyDomainModelPerson"),
-		createdBy: DS.belongsTo("App.BeechPartyDomainModelPerson"),
-		closedBy: DS.belongsTo("App.BeechPartyDomainModelPerson"),
+		assignedTo: DS.belongsTo("beechPartyDomainModelPerson"),
+		createdBy: DS.belongsTo("beechPartyDomainModelPerson"),
+		closedBy: DS.belongsTo("beechPartyDomainModelPerson"),
 		action: DS.attr("string"),
 		escalatedTask: DS.attr("string")
 	});

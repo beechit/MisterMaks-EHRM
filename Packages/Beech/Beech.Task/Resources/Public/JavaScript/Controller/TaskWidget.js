@@ -3,17 +3,23 @@
 
 	App.BeechTaskTaskWidgetController = Ember.ArrayController.extend({
 		content: [],
-		loaded: false,
+		initialLoadFinished: false,
 		init: function() {
-			this.set('content', App.BeechTaskDomainModelTask.find({ownTasks:true}));
+			var that = this;
+			this.get('store').findQuery('beechTaskDomainModelTask', {ownTasks:true}).then(function(){
+				that.set('initialLoadFinished', true);
+			});
+			this.set('content', this.get('store').filter('beechTaskDomainModelTask', function(task) {
+				return task.get('closed') == false;
+			}));
 		},
 		isLoaded: function() {
-			if(this.get('content').get('isLoaded') && !this.get('content').get('isUpdating')) {
+			if(this.get('initialLoadFinished')) {
 				return true;
 			} else {
 				return false;
 			}
-		}.property('content.isLoaded').property('content.isUpdating').property('content.@each.id'),
+		}.property('initialLoadFinished'),
 		countOpenTasks: function() {
 			return this.get('content').filterProperty('closed', false).length;
 		}.property('content.@each.closed'),
@@ -32,7 +38,7 @@
 				return 0 //default return value (no sorting)
 			});
 			return tasks;
-		}.property('content.@each.closed').property('content.@each.priority'),
+		}.property('content.@each.closed', 'content.@each.priority', 'content.@each.id', 'content.@each.description'),
 		openTasksNormal: function() {
 			var tasks = this.get('content');
 			tasks = tasks.filterProperty('closed', false).filterProperty('priority',1).sort(function(a, b){
@@ -46,7 +52,7 @@
 				return 0 //default return value (no sorting)
 			});
 			return tasks;
-		}.property('content.@each.closed').property('content.@each.priority'),
+		}.property('content.@each.closed', 'content.@each.priority', 'content.@each.id', 'content.@each.description'),
 		openTasksHigh: function() {
 			var tasks = this.get('content');
 			tasks = tasks.filterProperty('closed', false).filterProperty('priority',2).sort(function(a, b){
@@ -60,7 +66,7 @@
 				return 0 //default return value (no sorting)
 			});
 			return tasks;
-		}.property('content.@each.closed').property('content.@each.priority'),
+		}.property('content.@each.closed', 'content.@each.priority', 'content.@each.id', 'content.@each.description'),
 		openTasksImmediate: function() {
 			var tasks = this.get('content');
 			tasks = tasks.filterProperty('closed', false).filterProperty('priority',3).sort(function(a, b){
@@ -74,7 +80,7 @@
 				return 0 //default return value (no sorting)
 			});
 			return tasks;
-		}.property('content.@each.closed').property('content.@each.priority')
+		}.property('content.@each.closed', 'content.@each.priority', 'content.@each.id', 'content.@each.description'),
 	});
 
 }).call(this);

@@ -17,6 +17,12 @@ use Beech\Party\Domain\Model\Education as Education;
  */
 class EducationController extends \Beech\Party\Controller\EducationController {
 
+	/**
+	 *
+	 */
+	public function newAction(){
+
+	}
 }
 
 ?>

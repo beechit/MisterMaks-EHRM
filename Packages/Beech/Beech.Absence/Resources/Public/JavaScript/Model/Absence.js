@@ -2,10 +2,10 @@
 	'use strict';
 
 	App.BeechAbsenceDomainModelAbsence.reopen({
-		department: DS.belongsTo("App.BeechPartyDomainModelCompany"),
-		absenceArrangement: DS.belongsTo("App.BeechAbsenceDomainModelAbsenceArrangement"),
-		person: DS.belongsTo("App.BeechPartyDomainModelPerson"),
-		reportedTo: DS.belongsTo("App.BeechPartyDomainModelPerson"),
+		department: DS.belongsTo("beechPartyDomainModelCompany"),
+		absenceArrangement: DS.belongsTo("beechAbsenceDomainModelAbsenceArrangement"),
+		person: DS.belongsTo("beechPartyDomainModelPerson"),
+		reportedTo: DS.belongsTo("beechPartyDomainModelPerson"),
 		absenceType: DS.attr('string')
 	});
 

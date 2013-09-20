@@ -61,10 +61,6 @@ var App;
 		},
 
 		ready: function() {
-			this.SocketMessageListeners = Ember.ArrayProxy.create({
-				content: []
-			});
-
 			this.initializeWebSocket();
 
 			if (MM.init.afterInitialize) {

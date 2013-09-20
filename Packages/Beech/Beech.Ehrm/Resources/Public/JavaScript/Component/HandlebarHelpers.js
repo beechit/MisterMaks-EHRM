@@ -17,7 +17,7 @@
 	 */
 	Ember.Handlebars.registerBoundHelper('absenceOfEmployee', function(absences, employee, date) {
 
-		if (!absences.get('isLoaded')) {
+		if (!absences.get('isLoaded') || !employee) {
 			return new Handlebars.SafeString('<span class="loading">..</span>');
 		}
 

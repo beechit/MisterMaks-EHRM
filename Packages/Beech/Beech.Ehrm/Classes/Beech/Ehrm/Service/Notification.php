@@ -70,10 +70,6 @@ class Notification {
 	 */
 	public function taskChanged(\Beech\Task\Domain\Model\Task $task) {
 
-
-		// don't notify about closed tasks
-		if($task->isClosed()) return;
-
 		// taks assign to person then send a notification
 		if($task->getAssignedTo() instanceof \Beech\Party\Domain\Model\Person) {
 
@@ -88,7 +84,8 @@ class Notification {
 					continue;
 				}
 
-				if (!$notificationCreated) {
+				// don't notify about closed tasks
+				if (!$task->isClosed() && !$notificationCreated) {
 					$notification = new \Beech\Ehrm\Domain\Model\Notification();
 					$notification->setLevel(\Beech\Ehrm\Domain\Model\Notification::INFO);
 					$notification->setLabel('Task updated');
