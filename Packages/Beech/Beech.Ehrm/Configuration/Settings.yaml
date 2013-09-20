@@ -111,9 +111,6 @@ Beech:
           - 'Beech.CLA/JavaScript/Route/JobPosition.js'
           - 'Beech.CLA/JavaScript/Controller/JobPosition.js'
           - 'Beech.CLA/JavaScript/View/JobPosition.js'
-          - 'Beech.Chart/JavaScript/Route/Report.js'
-          - 'Beech.Chart/JavaScript/Controller/Report.js'
-          - 'Beech.Chart/JavaScript/View/Report.js'
 
     viewHelpers:
       partialRootPath: 'resource://Beech.Ehrm/Private/Templates/ViewHelpers/Partials/'
@@ -134,7 +131,6 @@ Beech:
       - ['Beech.CLA', 'Administration', 'JobDescription']
       - ['Beech.Ehrm', 'Administration', 'ApplicationSettings', {'index': 'Index', 'edit':null, 'delete':null, 'list':null, 'new':null, 'show': null,'setupwizard':'SetupWizard'}]
       - ['Beech.CLA', '', 'JobPosition', {'index': 'Index', 'list':null, 'delete':null}]
-      - ['Beech.Chart', 'General', 'AgeReport', {'index': 'Index'}]
 
     defaultActionsMapping:
       'list': 'Index'
