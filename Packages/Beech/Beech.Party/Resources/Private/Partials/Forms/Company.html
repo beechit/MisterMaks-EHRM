@@ -13,13 +13,13 @@
 	<div class="control-group">
 		<label class="control-label" for="name"><f:translate id="Company name">Company name</f:translate></label>
 		<div class="controls controls">
-			<f:form.textfield property="name" id="companyName" class="span6" placeholder="{f:translate(id:'Company name')}"/>
+			<f:form.textfield property="name" id="companyName" class="span7" placeholder="{f:translate(id:'companyName')}"/>
 		</div>
 	</div>
 	<div class="control-group">
 		<label class="control-label" for="legalForm"><f:translate id="legalForm">Legal form</f:translate></label>
 		<div class="controls controls">
-			<ehrm:optionSelect property="legalForm" id="legalForm" class="span6" model="Beech.Party:Company" placeholder="{f:translate(id:'Legal form')}"/>
+			<ehrm:optionSelect property="legalForm" id="legalForm" class="span6" model="Beech.Party:Company" placeholder="{f:translate(id:'Legal form')}" translate="{by: 'id'}"/>
 		</div>
 	</div>
 
@@ -38,21 +38,21 @@
 	<div class="control-group">
 		<label class="control-label" for="chamberOfCommerce"><f:translate id="chamberOfCommerce">Chamber of commerce</f:translate></label>
 		<div class="controls controls">
-			<f:form.textfield property="chamberOfCommerce" id="chamberOfCommerce" class="span6" placeholder="{f:translate(id:'Chamber of commerce')}"/>
+			<f:form.textfield property="chamberOfCommerce" id="chamberOfCommerce" class="span7" placeholder="{f:translate(id:'chamberOfCommerce')}"/>
 		</div>
 	</div>
 
 	<div class="control-group">
 		<label class="control-label" for="vatNumber"><f:translate id="vatNumber">VAT number</f:translate></label>
 		<div class="controls controls">
-			<f:form.textfield property="vatNumber" id="vatNumber" class="span6" placeholder="{f:translate(id:'Vat number')}"/>
+			<f:form.textfield property="vatNumber" id="vatNumber" class="span7" placeholder="{f:translate(id:'vatNumber')}"/>
 		</div>
 	</div>
 
 	<div class="control-group">
 		<label class="control-label" for="description"><f:translate id="description">Description</f:translate></label>
 		<div class="controls controls" >
-			<f:form.textarea property="description" id="description" class="span6" />
+			<f:form.textarea property="description" id="description" class="span7" />
 		</div>
 	</div>
 
@@ -61,7 +61,7 @@
 			<f:translate id="contactPerson">Contact person</f:translate>
 		</label>
 		<div class="controls controls" >
-			<f:form.select property="contactPerson" id="contactPerson" options="{persons}"  optionLabelField="name.fullName" prependOptionLabel="- select contact person -"/>
+			<f:form.select property="contactPerson" id="contactPerson" options="{persons}"  optionLabelField="name.fullName" prependOptionLabel="{f:translate(id: 'selectContactPerson')}"/>
 		</div>
 	</div>
 

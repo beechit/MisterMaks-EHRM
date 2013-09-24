@@ -11,11 +11,11 @@
 			<div class="row-fluid" >
 				<div class="span1"><i class="icon-plus"/></div>
 				<div class="span3">
-					<ehrm:optionSelect property="type" id="licenceType{licence.id}" model="Beech.Party:Licence" placeholder="{f:translate(value: 'Type')}..." class="span10"/>
+					<ehrm:optionSelect property="licenceType" id="licenceType{licence.id}" model="Beech.Party:Licence" placeholder="{f:translate(id: 'Type')}..." class="span10" translate="{by: 'id'}"/>
 				</div>
 				<div class="span6">
-					<f:form.textfield property="name" class="span5 capitalize" placeholder="{f:translate(value: 'Licence')}..."/>
-					<f:form.textfield property="grantedBy" class="span5 capitalize" placeholder="{f:translate(value: 'GrantedBy')}..."/>
+					<f:form.textfield property="name" class="span5 capitalize" placeholder="{f:translate(id: 'licence')}..."/>
+					<f:form.textfield property="grantedBy" class="span5 capitalize" placeholder="{f:translate(id: 'grantedBy')}..."/>
 				</div>
 				<div class="span2">
 					<button type="submit" name="action" class="btn btn-small" value="{action}">

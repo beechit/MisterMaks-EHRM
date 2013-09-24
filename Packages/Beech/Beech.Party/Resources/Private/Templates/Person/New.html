@@ -37,41 +37,41 @@
 		</div>
 		<div class="wizard-card" data-cardname="user">
 			<h3><f:translate id="userAccount">User account</f:translate></h3>
-			<p><f:translate id="wizard-create-user-text">Create a useraccount for this employee</f:translate></p>
-			<button id="create-user"><f:translate>Create user</f:translate></button>
+			<p><f:translate id="createUserAccount">Create a useraccount for this employee</f:translate></p>
+			<button id="create-user"><f:translate id="createUser">Create user</f:translate></button>
 		</div>
 
 		<div class="wizard-error">
 			<div class="alert alert-error">
-				<f:translate><strong>There was a problem</strong> with your submission. Please correct the errors and re-submit.</f:translate>
+				<f:translate id="errorSubmitting">There was a problem with your submission. Please correct the errors and re-submit.</f:translate>
 			</div>
 		</div>
 
 		<div class="wizard-failure">
 			<div class="alert alert-error">
-				<f:translate><strong>There was a problem</strong> submitting the form. Please try again in a minute.</f:translate>
+				<f:translate id="errorSubmitting1">There was a problem submitting the form. Please try again in a minute.</f:translate>
 			</div>
 		</div>
 
 		<div class="wizard-success">
 			<div class="alert alert-success">
-				<f:translate>Person was created <strong>successfully.</strong></f:translate>
+				<f:translate id="personCreated">Person was created</f:translate>
 			</div>
 
 			<a class="btn create-another-person" href="#/administration/person/new/<f:format.date format="YmdHis">now</f:format.date>">
-				<f:translate>Create another person</f:translate>
+				<f:translate id="createAnotherPerson">Create another person</f:translate>
 			</a>
 			<span style="padding:0 10px">
-				<f:translate>or</f:translate>
+				<f:translate id="or">or</f:translate>
 			</span>
 			<a class="btn generate-contract" href="#/administration/contracts">
-				<f:translate>Generate contract</f:translate>
+				<f:translate id="createContract">Generate contract</f:translate>
 			</a>
 			<span style="padding:0 10px">
-				<f:translate>or</f:translate>
+				<f:translate id="or">or</f:translate>
 			</span>
 			<a class="btn im-done" href="#/administration/persons">
-				<f:translate>Done</f:translate>
+				<f:translate id="done">Done</f:translate>
 			</a>
 		</div>
 	</div>

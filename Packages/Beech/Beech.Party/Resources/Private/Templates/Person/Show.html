@@ -3,7 +3,7 @@
 <f:section name="Body">
 
 	<h1>
-		<f:translate id="personInformation">Person information</f:translate>
+		<f:translate id="personInfo">Person information</f:translate>
 	</h1>
 
 	<div id="c261" class="csc-default">
@@ -11,25 +11,25 @@
 		   data-toggle="modal-ajax" data-target="#modal" modal-size="large"
 		   data-reload="{f:uri.action(package:'Beech.Party', controller:'Person', action:'show', arguments: {person: person})}">
 			<i class="icon-ambulance icon-white"></i>
-			Sick report
+			<f:translate id="sickReport">Sick report</f:translate>
 		</a>
 		<a class="btn" href="{f:uri.action(package:'Beech.Absence', controller:'Absence', action:'new', arguments: {person: person, absenceType: 'leave'})}"
 		   data-toggle="modal-ajax" data-target="#modal" modal-size="large"
 		   data-reload="{f:uri.action(package:'Beech.Party', controller:'Person', action:'show', arguments: {person: person})}">
 			<i class="icon-ambulance icon-white"></i>
-			Leave request
+			<f:translate id="leaveRequest">Leave request</f:translate>
 		</a>
 		<a class="btn" href="{f:uri.action(package:'Beech.Absence', controller:'Absence', action:'list', arguments: {person: person, absenceType: 'sickness'})}"
 		   data-toggle="modal-ajax" data-target="#modal" modal-size="large"
 		   data-reload="{f:uri.action(package:'Beech.Party', controller:'Person', action:'show', arguments: {person: person})}">
 			<i class="icon-ambulance icon-white"></i>
-			Sickness history
+			<f:translate id="sicknessHistory">Sickness history</f:translate>
 		</a>
 		<a class="btn" href="{f:uri.action(package:'Beech.Absence', controller:'Absence', action:'list', arguments: {person: person, absenceType: 'leave'})}"
 		   data-toggle="modal-ajax" data-target="#modal" modal-size="large"
 		   data-reload="{f:uri.action(package:'Beech.Party', controller:'Person', action:'show', arguments: {person: person})}">
 			<i class="icon-ambulance icon-white"></i>
-			Leave history
+			<f:translate id="leaveHistory">Leave history</f:translate>
 		</a>
 		<a class="btn btn-success" href="{f:uri.action(package:'Beech.CLA', subpackage:'Administration', controller:'contract', action:'new', arguments: {employee: person})}"
 		   data-toggle="modal-ajax" data-target="#modal-body-only" modal-size="large"
@@ -50,7 +50,7 @@
 			</li>
 			<li>
 				<a data-toggle="tab" href="#personal">
-					<f:translate id="contract">Personal</f:translate>
+					<f:translate id="personal">Personal</f:translate>
 				</a>
 			</li>
 			<li>
@@ -59,12 +59,23 @@
 				</a>
 			</li>
 			<li>
+				<a data-toggle="tab" href="#asset">
+					<f:translate id="asset">Asset</f:translate>
+				</a>
+			</li>
+			<li>
+				<a data-toggle="tab" href="#licence">
+					<f:translate id="licence">Licence</f:translate>
+				</a>
+			</li>
+			<li>
 				<a data-toggle="tab" href="#documents">
 					<f:translate id="documents">Documents</f:translate>
 				</a>
 			</li>
 			<li>
-				<a data-toggle="tab" href="#personRelations">Relatives</a>
+				<a data-toggle="tab" href="#personRelations">
+                  <f:translate id="relatives">Relatives</f:translate></a>
 			</li>
 		</ul>
 		<div id="personTabsContent" class="tab-content">
@@ -74,13 +85,13 @@
 					<tbody>
 					<tr>
 						<td class="span6">
-							<f:render partial="Views/Show/Address" arguments="{address: person.address_home}"/>
+							<f:render partial="Views/Show/Address" arguments="{address: person.address_homeAddress}"/>
 							<ehrm:link.edit subpackage='Administration' controller='Address' action='list'
 											arguments='{party: person}'
 											dataReload="{f:uri.action(package:'Beech.Party', controller:'Person', action:'show', arguments: {person: person})}"/>
 						</td>
 						<td class="span6">
-							<f:render partial="Views/Show/Address" arguments="{address: person.address_work}"/>
+							<f:render partial="Views/Show/Address" arguments="{address: person.address_workAddress}"/>
 							<ehrm:link.edit subpackage='Administration' controller='Address' action='list'
 											arguments='{party: person}'
 											dataReload="{f:uri.action(package:'Beech.Party', controller:'Person', action:'show', arguments: {person: person})}"/>
@@ -102,11 +113,32 @@
 			<div id="contract" class="tab-pane fade">
 				contract...<br/>
 			</div>
+			<div id="asset" class="tab-pane fade">
+				<f:for each="{assets}" as="asset">
+					<div id="asset-{asset.id}">
+						<f:render partial="Views/Show/Asset" arguments="{asset: asset}"/>
+					</div>
+				</f:for>
+				<ehrm:link.edit subpackage='Administration' controller='Asset' action='list'
+								arguments='{party: person}'
+								dataReload="{f:uri.action(package:'Beech.Party', controller:'Person', action:'show', arguments: {person: person})}"/>
+			</div>
+			<div id="licence" class="tab-pane fade">
+				<f:for each="{licences}" as="licence">
+					<div id="licence-{licence.id}">
+						<f:render partial="Views/Show/Licence" arguments="{licence: licence}"/>
+					</div>
+				</f:for>
+				<ehrm:link.edit subpackage='Administration' controller='Licence' action='list'
+								arguments='{party: person}'
+								dataReload="{f:uri.action(package:'Beech.Party', controller:'Person', action:'show', arguments: {person: person})}"/>
+			</div>
 			<div id="personRelations" class="tab-pane fade">
 				<f:for each="{personRelations}" as="personRelation">
 					<div id="personRelation-{personRelation.id}">
 						<f:render partial="Views/List/PersonRelation" arguments="{_all}"/>
 					</div>
+
 				</f:for>
 				<ehrm:link.edit subpackage='Administration' controller='PersonRelation' action='new'
 								arguments='{personRelatedTo: person}'
@@ -116,7 +148,7 @@
 			</div>
 			<div id="documents" class="tab-pane fade">
 				<div style="position: absolute; height: 100%">
-					Filter:
+					<f:translate id="filter:">Filter:</f:translate>
 					<ehrm:form.select name="documentType" class="documentType" options="{documentCategories}"
 									  optionLabelField="typeName"/>
 
@@ -132,10 +164,10 @@
 							<f:translate id="name">Name</f:translate>
 						</th>
 						<th>
-							<f:translate id="documentType">Category</f:translate>
+							<f:translate id="category">Category</f:translate>
 						</th>
 						<th>&nbsp;</th>
-					</tr>
+				</tr>
 					</thead>
 					<f:for each="{documents}" as="document" iteration="documentIterator">
 						<tr>
@@ -188,7 +220,18 @@
 		<script type="text/javascript">
 			var oPersonDocumentsTable = $('#personDocuments')
 					.dataTable({
-						"sDom": 'f'
+						"sDom": 'f',
+						"oLanguage": {
+							"sEmptyTable": '<f:translate id="document.sEmptyTable">No data available in table</f:translate>',
+							"sSearch": '<f:translate id="document.sSearch">Search</f:translate>',
+							"sLengthMenu": '<f:translate id="document.sLengthMenu">Show _MENU_ entries</f:translate>',
+							"oPaginate": {
+								"sFirst": '<f:translate id="document.sFirst">Search</f:translate>',
+								"sLast": '<f:translate id="document.sLast">Last</f:translate>',
+								"sNext": '<f:translate id="document.sNext">Next</f:translate>',
+								"sPrevious": '<f:translate id="document.sPrevious">Previous</f:translate>'
+							}
+						}
 					})
 			$('select.documentType').change(function () {
 				oPersonDocumentsTable.fnFilter($(this).find('option:selected').text());

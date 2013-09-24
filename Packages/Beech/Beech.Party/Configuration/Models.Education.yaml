@@ -6,10 +6,10 @@
       label: 'Education'
       options:
         values:
-         'primary': 'Primary'
+         'primaryEducation': 'Primary education'
          'preVocational': 'Pre vocational'
          'vocationalSecondary': 'Vocational secondary'
-         'higerVocational': 'Higher vocational'
+         'higherVocational': 'Higher vocational'
          'academic': 'Academic'
       validation:
         -

@@ -1,12 +1,12 @@
 {namespace ehrm=Beech\Ehrm\ViewHelpers}
 <div class="control-group"><label class="control-label" for="initials">
-	<f:translate id="Person name">Person name</f:translate>
+	<f:translate id="personName">Person name</f:translate>
 </label>
 
 	<div class="controls controls-row">
-		<f:form.textfield property="initials" id="initials" class="span2 uppercase" placeholder="{f:translate(id:'Initials')}"/>
+		<f:form.textfield property="initials" id="initials" class="span2 uppercase" placeholder="{f:translate(id:'initials')}"/>
 		<f:form.textfield property="name.firstName" id="firstName" class="span6 capitalize"
-						  placeholder="{f:translate(id:'First name')}"/>
+						  placeholder="{f:translate(id:'firstName')}"/>
 	</div>
 </div>
 <div class="control-group"><label class="control-label" for="lastName">
@@ -15,9 +15,9 @@
 
 	<div class="controls controls-row">
 		<f:form.textfield property="name.middleName" id="middleName" class="span2 capitalize"
-						  placeholder="{f:translate(id:'Middle name')}"/>
+						  placeholder="{f:translate(id:'middleName')}"/>
 		<f:form.textfield property="name.lastName" id="lastName" class="span6 capitalize"
-						  placeholder="{f:translate(id:'Last name')}"/>
+						  placeholder="{f:translate(id:'lastname')}"/>
 	</div>
 </div>
 <div class="control-group">
@@ -27,7 +27,7 @@
 
 	<div class="controls controls">
 		<ehrm:optionSelect property="gender" id="gender" model="Beech.Party:Person"
-						   placeholder="{f:translate(value: 'Gender')}..." class="span8"/>
+						   placeholder="{f:translate(id: 'gender')}..." class="span8" translate="{by: 'id'}"/>
 	</div>
 </div>
 <div class="control-group">
@@ -37,18 +37,18 @@
 
 	<div class="controls controls">
 		<ehrm:optionSelect property="salutation" id="salutation" model="Beech.Party:Person"
-						   placeholder="{f:translate(value: 'Salutation')}..." class="span8"/>
+						   placeholder="{f:translate(id: 'salutation')}..." class="span8" translate="{by: 'id'}"/>
 	</div>
 </div>
 <div class="control-group">
 	<label class="control-label" for="civilStatus">
-		<f:translate id="civil status">Civil status</f:translate>
+		<f:translate id="civilstatus">Civil status</f:translate>
 	</label>
 
 	<div class="control-group">
 		<div class="controls controls-row">
 			<ehrm:optionSelect property="civilStatus" id="civilStatus" model="Beech.Party:Person"
-							   placeholder="{f:translate(value: 'Civil status')}..." class="span8"/>
+							   placeholder="{f:translate(id: 'civilStatus')}..." class="span8" translate="{by: 'id'}"/>
 		</div>
 	</div>
 </div>
@@ -59,20 +59,20 @@
 
 	<div class="controls controls-row">
 		<f:form.textfield property="middleOtherName" id="middleOtherName" class="span2 capitalize"
-						  placeholder="{f:translate(id:'Middle name')}"/>
+						  placeholder="{f:translate(id:'middleName')}"/>
 		<f:form.textfield property="otherName" id="otherName" class="span6 capitalize"
-						  placeholder="{f:translate(id:'Birth name')}"/>
+						  placeholder="{f:translate(id:'birthName')}"/>
 	</div>
 </div>
 
 <div class="control-group">
 	<label class="control-label" for="nameUsage">
-		<f:translate id="name Usage">Name usage</f:translate>
+		<f:translate id="nameUsage">Name usage</f:translate>
 	</label>
 
 	<div class="controls controls-row">
 		<ehrm:optionSelect property="nameUsage" id="nameUsage" model="Beech.Party:Person"
-						   placeholder="{f:translate(value: 'Name Usage')}..." class="span8"/>
+						   placeholder="{f:translate(id: 'nameUsage')}..." class="span8" translate="{by: 'id'}"/>
 	</div>
 </div>
 
@@ -93,7 +93,7 @@
 
 	<div class="controls controls">
 		<f:form.textfield property="placeOfBirth" id="placeOfBirth" class="span8 capitalize"
-						  placeholder="{f:translate(id:'Place of Birth')}"/>
+						  placeholder="{f:translate(id:'placeOfBirth')}"/>
 	</div>
 </div>
 
@@ -125,7 +125,7 @@
 	</label>
 
 	<div class="controls controls-row">
-		<f:form.textfield property="bsn" id="bsn" class="span7 bsn" placeholder="{f:translate(id:'BSN Number')}"/>
+		<f:form.textfield property="bsn" id="bsn" class="span7 bsn" placeholder="{f:translate(id:'BSNNumber')}"/>
 	</div>
 </div>
 
@@ -135,7 +135,7 @@
 			<f:translate id="language">Language</f:translate>
 		</label>
 		<div class="controls">
-			<f:form.select id="locale" class="span7" property="preferences.locale" options="{languages}" />
+			<f:form.select id="locale" class="span7" property="preferences.locale" options="{languages}" translate="{by: 'id'}"/>
 		</div>
 	</div>
 </f:if>

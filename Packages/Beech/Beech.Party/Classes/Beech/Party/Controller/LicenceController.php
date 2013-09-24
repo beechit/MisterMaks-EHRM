@@ -18,6 +18,12 @@ use Beech\Party\Domain\Model\Licence as Licence;
 class LicenceController extends \Beech\Ehrm\Controller\AbstractManagementController {
 
 	/**
+	 * @var \TYPO3\Flow\Object\ObjectManagerInterface
+	 * @Flow\Inject
+	 */
+	protected $objectManager;
+
+	/**
 	 * @var string
 	 */
 	protected $entityClassName = 'Beech\Party\Domain\Model\Licence';
@@ -54,8 +60,12 @@ class LicenceController extends \Beech\Ehrm\Controller\AbstractManagementControl
 		$this->view->assign('action', 'add');
 	}
 
+	public function newAction(){
+
+	}
+
 	/**
-	 * @param \Beech\Party\Domain\Model\licence $licence A licence to update
+	 * @param \Beech\Party\Domain\Model\Licence $licence A licence to update
 	 *
 	 * @return void
 	 */

@@ -10,7 +10,7 @@
          'emergencyResponce': 'Emergency response'
          'cropProtection': 'Crop protection'
          'other': 'Other'
-# todo make these values generic and move crop protection and so to branche package.
+# todo make these values generic and move crop protection and so to branch package.
     'name':
       label: 'Licence name'
       validation:

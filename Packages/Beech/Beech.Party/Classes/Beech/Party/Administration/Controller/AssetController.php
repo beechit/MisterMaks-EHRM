@@ -17,6 +17,13 @@ use Beech\Party\Domain\Model\Asset as Asset;
  */
 class AssetController extends \Beech\Party\Controller\AssetController {
 
+
+	/**
+	 *
+	 */
+	public function newAction(){
+
+	}
 }
 
 ?>

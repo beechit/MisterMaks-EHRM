@@ -6,12 +6,12 @@
       label: 'Phone type'
       options:
         values:
-          'work': 'Work number'
+          'workNumber': 'Work number'
 #          'fax': 'Fax'
-          'home': 'Home number'
-          'business': 'Business number'
-          'mobile': 'Mobile number'
-          'foreign': 'Foreign number'
+          'homeNumber': 'Home number'
+#          'business': 'Business number'
+          'mobileNumber': 'Mobile number'
+          'foreignNumber': 'Foreign number'
 #          'other': 'Other'
     'phoneNumber':
       label: 'Phone Number'

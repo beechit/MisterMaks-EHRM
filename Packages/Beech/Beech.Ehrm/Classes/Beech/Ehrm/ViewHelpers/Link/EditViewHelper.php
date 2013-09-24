@@ -95,7 +95,7 @@ class EditViewHelper extends \TYPO3\Fluid\ViewHelpers\Link\ActionViewHelper {
 		if ($this->tag->hasContent()) {
 			$this->tag->setContent($this->renderChildren());
 		} else {
-			$this->tag->setContent('<i class="icon-pencil icon-white"></i> ' . $this->translator->translateById('action.edit', array(), NULL, NULL, 'Main', 'Beech.Party'));
+			$this->tag->setContent('<i class="icon-pencil icon-white"></i> ' . $this->translator->translateById('', array(), NULL, NULL, 'Main', 'Beech.Party'));
 		}
 
 		$this->tag->forceClosingTag(TRUE);

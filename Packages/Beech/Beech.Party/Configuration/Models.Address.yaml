@@ -6,12 +6,12 @@
       label: 'Address type'
       options:
         values:
-          'home': 'Home'
-          'work': 'Work'
+          'homeAddress': 'Home address'
+          'workAddress': 'Work address'
 #          'business': 'Business'
           'postbox': 'Postbox'
           'mailing': 'Mailing'
-          'abroad': 'Abroad'
+          'foreign': 'Foreign'
 #          'other': 'Other'
       validation:
         -

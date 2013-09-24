@@ -18,6 +18,12 @@ use Beech\Party\Domain\Model\Asset as Asset;
 class AssetController extends \Beech\Ehrm\Controller\AbstractManagementController {
 
 	/**
+	 * @var \TYPO3\Flow\Object\ObjectManagerInterface
+	 * @Flow\Inject
+	 */
+	protected $objectManager;
+
+	/**
 	 * @var string
 	 */
 	protected $entityClassName = 'Beech\Party\Domain\Model\Asset';
@@ -52,6 +58,10 @@ class AssetController extends \Beech\Ehrm\Controller\AbstractManagementControlle
 		$this->view->assign('asset', $asset);
 		$this->view->assign('party', $asset->getParty());
 		$this->view->assign('action', 'add');
+	}
+
+	public function newAction(){
+
 	}
 
 	/**

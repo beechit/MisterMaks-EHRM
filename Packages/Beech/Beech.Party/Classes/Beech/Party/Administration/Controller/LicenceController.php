@@ -17,6 +17,12 @@ use Beech\Party\Domain\Model\Licence as Licence;
  */
 class LicenceController extends \Beech\Party\Controller\LicenceController {
 
+	/**
+	 *
+	 */
+	public function newAction(){
+
+	}
 }
 
 ?>
