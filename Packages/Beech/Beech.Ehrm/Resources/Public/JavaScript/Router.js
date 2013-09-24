@@ -5,9 +5,7 @@
 
 			// Administration
 		this.resource('administration', function() {
-			this.resource('BeechEhrmAdministrationApplicationSettings', { path: 'settings' }, function() {
-				this.route('setupWizard', { path: '/setupwizard' });
-			});
+			this.resource('BeechEhrmAdministrationApplicationSettings', { path: 'settings' }, function() {});
 
 			this.route('jobDescriptionModule', { path: 'jobdescriptions' });
 			this.route('jobDescriptionModule.new', { path: 'jobdescription/new' });
@@ -88,6 +86,10 @@
 
 			this.resource('BeechEhrmUserPreferences', { path: 'user/settings' }, function() {
 				this.route('index', {path:'/'})
+			});
+
+			this.resource('BeechEhrmApplicationSettings', { path: 'settings' }, function() {
+				this.route('setupWizard', { path: '/setupwizard' });
 			});
 
 			// Beech.Document/Document
