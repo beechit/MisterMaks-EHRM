@@ -7,7 +7,7 @@
       options:
         values:
           'bank': 'Bank'
-          'foreignBank': 'ForeignBank'
+          'foreign': 'Foreign'
 #todo check regular expression
     'accountNumber':
       label: 'Account number'

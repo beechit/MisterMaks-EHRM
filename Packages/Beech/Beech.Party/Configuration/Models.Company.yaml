@@ -47,7 +47,7 @@
       label: 'LegalForm'
       options:
         values:
-#          'subsidairy': 'Subsidiary'
+          'subsidairy': 'Subsidiary'
           'department': 'Department'
           'solePropietorship': 'Sole Proprietorship'
           'vof': 'V.O.F.'

@@ -3,71 +3,71 @@
 <f:section name="Body">
 	<div class="wizard" id="setup-environment-wizard">
 
-		<h1><f:translate id="setupWizard">Environment setup wizard</f:translate></h1>
+		<h1><f:translate>Environment setup wizard</f:translate></h1>
 		<div class="wizard-card row-fluid" data-cardname="applicationSettings"
 			 data-url="<f:uri.action action='index' controller='ApplicationSettings' subpackage='administration' package='Beech.Ehrm'></f:uri.action>">
-			<h3><f:translate id="localisation">Localisation</f:translate></h3>
+			<h3><f:translate>Localisation</f:translate></h3>
 		</div>
 		<div class="wizard-card row-fluid" data-cardname="company"
 			 data-url="<f:uri.action action='edit' controller='Company' subpackage='administration' package='Beech.Party' arguments='{company:company,withDetails:false}'></f:uri.action>">
-			<h3><f:translate id="companyData">Company data</f:translate></h3>
+			<h3><f:translate>Company data</f:translate></h3>
 		</div>
 		<div class="wizard-card row-fluid" data-cardname="companyLogo"
 			 data-url="<f:uri.action action='edit' controller='CompanyLogo' package='Beech.Party' arguments='{company:company}'></f:uri.action>">
-			<h3><f:translate id="companyLogo">Company logo</f:translate></h3>
+			<h3><f:translate>Company logo</f:translate></h3>
 		</div>
 		<div class="wizard-card row-fluid" data-cardname="address"
 			 data-url="<f:uri.action action='list' controller='Address' subpackage='administration' package='Beech.Party' arguments='{party:company}'></f:uri.action>">
-			<h3><f:translate id="companyAddresses">Company addresses</f:translate></h3>
+			<h3><f:translate>Company addresses</f:translate></h3>
 		</div>
 		<div class="wizard-card row-fluid" data-cardname="phoneNumber"
 			 data-url="<f:uri.action action='list' controller='PhoneNumber' subpackage='administration' package='Beech.Party' arguments='{party:company}'></f:uri.action>">
-			<h3><f:translate id="companyPhoneNumbers">Company phone numbers</f:translate></h3>
+			<h3><f:translate>Company phone numbers</f:translate></h3>
 		</div>
 		<div class="wizard-card row-fluid" data-cardname="electronicAddress"
 			 data-url="<f:uri.action action='list' controller='ElectronicAddress' subpackage='administration' package='Beech.Party' arguments='{party:company}'></f:uri.action>">
-			<h3><f:translate id="companyElectronicAddresses">Company electronic addresses</f:translate></h3>
+			<h3><f:translate>Company electronic addresses</f:translate></h3>
 		</div>
 		<div class="wizard-card row-fluid" data-cardname="bankAccount"
 			 data-url="<f:uri.action action='list' controller='BankAccount' subpackage='administration' package='Beech.Party' arguments='{party:company}'></f:uri.action>">
-			<h3><f:translate id="companyBankAccounts">Company bank accounts</f:translate></h3>
+			<h3><f:translate>Company bank accounts</f:translate></h3>
 		</div>
 
 		<div class="wizard-card row-fluid" data-cardname="mainUser"
 			 data-url="<f:uri.action action='edit' controller='Person' subpackage='administration' package='Beech.Party' arguments='{person:person,withDetails:false}'></f:uri.action>">
-		<h3><f:translate id="mainUser">Main user</f:translate></h3>
+		<h3><f:translate>Main user</f:translate></h3>
 		</div>
 		<div class="wizard-card row-fluid" data-cardname="mainUserProfilePhoto"
 			 data-url="<f:uri.action action='edit' controller='ProfilePhoto' subpackage='administration' package='Beech.Party' arguments='{party: person}'></f:uri.action>">
-			<h3><f:translate id="mainUserProfilePhoto">Main user profile photo</f:translate></h3>
+			<h3><f:translate>Main user profile photo</f:translate></h3>
 		</div>
 		<div class="wizard-card row-fluid" data-cardname="mainUserElectronicAddress"
 			 data-url="<f:uri.action action='list' controller='ElectronicAddress' subpackage='administration' package='Beech.Party' arguments='{party:person}'></f:uri.action>">
-			<h3><f:translate id="mainUserElectronicAddresses">Main user electronic addresses</f:translate></h3>
+			<h3><f:translate>Main user electronic addresses</f:translate></h3>
 		</div>
 		<div class="wizard-error">
 			<div class="alert alert-error">
-				<f:translate id="errorSubmitting">There was a problem with your submission. Please correct the errors and re-submit.</f:translate>
+				<f:translate><strong>There was a problem</strong> with your submission. Please correct the errors and re-submit.</f:translate>
 			</div>
 		</div>
 
 		<div class="wizard-failure">
 			<div class="alert alert-error">
-				<f:translate id="errorSubmitting1">There was a problem submitting the form. Please try again in a minute.</f:translate>
+				<f:translate><strong>There was a problem</strong> submitting the form. Please try again in a minute.</f:translate>
 			</div>
 		</div>
 
 		<div class="wizard-success">
 
 			<div class="alert alert-success">
-				<f:translate id="setupComplete">System is setup successfully.</f:translate>
+				<f:translate>System is setup <strong>successfully</strong>.</f:translate>
 			</div>
 
-			<a class="btn create-department" href="#/administration/company/new"><f:translate id="createDepartment">Create an department</f:translate></a>
+			<a class="btn create-department" href="#/administration/company/new"><f:translate>Create an department</f:translate></a>
 			<span style="padding:0 10px"><f:translate>or</f:translate></span>
-			<a class="btn create-person" href="#/administration/person/new"><f:translate id="createPerson">Create an person</f:translate></a>
-			<span style="padding:0 10px"><f:translate id="or">or</f:translate></span>
-			<a class="btn im-done" href="#/company"><f:translate id="done">Done</f:translate></a>
+			<a class="btn create-person" href="#/administration/person/new"><f:translate>Create an person</f:translate></a>
+			<span style="padding:0 10px"><f:translate>or</f:translate></span>
+			<a class="btn im-done" href="#/company"><f:translate>Done</f:translate></a>
 		</div>
 	</div>
 	<script>

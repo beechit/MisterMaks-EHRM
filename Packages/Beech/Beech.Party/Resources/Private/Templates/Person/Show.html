@@ -3,7 +3,7 @@
 <f:section name="Body">
 
 	<h1>
-		<f:translate id="personInfo">Person information</f:translate>
+		<f:translate id="personInformation">Person information</f:translate>
 	</h1>
 
 	<div id="c261" class="csc-default">
@@ -11,25 +11,25 @@
 		   data-toggle="modal-ajax" data-target="#modal" modal-size="large"
 		   data-reload="{f:uri.action(package:'Beech.Party', controller:'Person', action:'show', arguments: {person: person})}">
 			<i class="icon-ambulance icon-white"></i>
-			<f:translate id="sickReport">Sick report</f:translate>
+			Sick report
 		</a>
 		<a class="btn" href="{f:uri.action(package:'Beech.Absence', controller:'Absence', action:'new', arguments: {person: person, absenceType: 'leave'})}"
 		   data-toggle="modal-ajax" data-target="#modal" modal-size="large"
 		   data-reload="{f:uri.action(package:'Beech.Party', controller:'Person', action:'show', arguments: {person: person})}">
 			<i class="icon-ambulance icon-white"></i>
-			<f:translate id="leaveRequest">Leave request</f:translate>
+			Leave request
 		</a>
 		<a class="btn" href="{f:uri.action(package:'Beech.Absence', controller:'Absence', action:'list', arguments: {person: person, absenceType: 'sickness'})}"
 		   data-toggle="modal-ajax" data-target="#modal" modal-size="large"
 		   data-reload="{f:uri.action(package:'Beech.Party', controller:'Person', action:'show', arguments: {person: person})}">
 			<i class="icon-ambulance icon-white"></i>
-			<f:translate id="sicknessHistory">Sickness history</f:translate>
+			Sickness history
 		</a>
 		<a class="btn" href="{f:uri.action(package:'Beech.Absence', controller:'Absence', action:'list', arguments: {person: person, absenceType: 'leave'})}"
 		   data-toggle="modal-ajax" data-target="#modal" modal-size="large"
 		   data-reload="{f:uri.action(package:'Beech.Party', controller:'Person', action:'show', arguments: {person: person})}">
 			<i class="icon-ambulance icon-white"></i>
-			<f:translate id="leaveHistory">Leave history</f:translate>
+			Leave history
 		</a>
 		<a class="btn btn-success" href="{f:uri.action(package:'Beech.CLA', subpackage:'Administration', controller:'contract', action:'new', arguments: {employee: person})}"
 		   data-toggle="modal-ajax" data-target="#modal-body-only" modal-size="large"
@@ -50,7 +50,7 @@
 			</li>
 			<li>
 				<a data-toggle="tab" href="#personal">
-					<f:translate id="personal">Personal</f:translate>
+					<f:translate id="contract">Personal</f:translate>
 				</a>
 			</li>
 			<li>
@@ -64,8 +64,7 @@
 				</a>
 			</li>
 			<li>
-				<a data-toggle="tab" href="#personRelations">
-                  <f:translate id="relatives">Relatives</f:translate></a>
+				<a data-toggle="tab" href="#personRelations">Relatives</a>
 			</li>
 		</ul>
 		<div id="personTabsContent" class="tab-content">
@@ -117,7 +116,7 @@
 			</div>
 			<div id="documents" class="tab-pane fade">
 				<div style="position: absolute; height: 100%">
-					<f:translate id="filter:">Filter:</f:translate>
+					Filter:
 					<ehrm:form.select name="documentType" class="documentType" options="{documentCategories}"
 									  optionLabelField="typeName"/>
 
@@ -133,10 +132,10 @@
 							<f:translate id="name">Name</f:translate>
 						</th>
 						<th>
-							<f:translate id="category">Category</f:translate>
+							<f:translate id="documentType">Category</f:translate>
 						</th>
 						<th>&nbsp;</th>
-				</tr>
+					</tr>
 					</thead>
 					<f:for each="{documents}" as="document" iteration="documentIterator">
 						<tr>
@@ -189,18 +188,7 @@
 		<script type="text/javascript">
 			var oPersonDocumentsTable = $('#personDocuments')
 					.dataTable({
-						"sDom": 'f',
-						"oLanguage": {
-							"sEmptyTable": '<f:translate id="document.sEmptyTable">No data available in table</f:translate>',
-							"sSearch": '<f:translate id="document.sSearch">Search</f:translate>',
-							"sLengthMenu": '<f:translate id="document.sLengthMenu">Show _MENU_ entries</f:translate>',
-							"oPaginate": {
-								"sFirst": '<f:translate id="document.sFirst">Search</f:translate>',
-								"sLast": '<f:translate id="document.sLast">Last</f:translate>',
-								"sNext": '<f:translate id="document.sNext">Next</f:translate>',
-								"sPrevious": '<f:translate id="document.sPrevious">Previous</f:translate>'
-							}
-						}
+						"sDom": 'f'
 					})
 			$('select.documentType').change(function () {
 				oPersonDocumentsTable.fnFilter($(this).find('option:selected').text());

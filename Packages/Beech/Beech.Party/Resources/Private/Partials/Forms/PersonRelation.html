@@ -3,14 +3,14 @@
 
 <div class="control-group">
 	<label class="control-label" for="initials">
-		<f:translate id="personName">Person name</f:translate>
+		<f:translate id="Person name">Person name</f:translate>
 	</label>
 
 	<div class="controls controls-row">
 		<f:form.textfield property="initials" id="initials" class="span2 uppercase"
-						  placeholder="{f:translate(id:'initials')}"/>
+						  placeholder="{f:translate(id:'Initials')}"/>
 		<f:form.textfield property="name.firstName" id="firstName" class="span6 capitalize"
-						  placeholder="{f:translate(id:'firstName')}"/>
+						  placeholder="{f:translate(id:'First name')}"/>
 	</div>
 </div>
 <div class="control-group">
@@ -20,9 +20,9 @@
 
 	<div class="controls controls-row">
 		<f:form.textfield property="name.middleName" id="middleName" class="span2 capitalize"
-						  placeholder="{f:translate(id:'middleName')}"/>
+						  placeholder="{f:translate(id:'Middle name')}"/>
 		<f:form.textfield property="name.lastName" id="lastName" class="span6 capitalize"
-						  placeholder="{f:translate(id:'lastName')}"/>
+						  placeholder="{f:translate(id:'Last name')}"/>
 	</div>
 </div>
 <div class="control-group">
@@ -32,7 +32,7 @@
 
 	<div class="controls controls">
 		<ehrm:optionSelect property="gender" id="gender" model="Beech.Party:Person"
-						   placeholder="{f:translate(value: 'Gender')}..." class="span8" translate="{by: 'id'}"/>
+						   placeholder="{f:translate(value: 'Gender')}..." class="span8"/>
 	</div>
 </div>
 
@@ -52,7 +52,7 @@
 
 	<div class="controls controls-row">
 		<ehrm:optionSelect property="relationType" id="personRelationType{personRelation.id}" model="Beech.Party:PersonRelation"
-						   placeholder="{f:translate(id: 'Type')}..." class="span10 personRelationType" translate="{by: 'id'}"/>
+						   placeholder="{f:translate(value: 'Type')}..." class="span10 personRelationType"/>
 	</div>
 </div>
 <div class="control-group">

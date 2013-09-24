@@ -11,7 +11,7 @@
 			<div class="row-fluid" >
 				<div class="span1"><i class="icon-plus"/></div>
 				<div class="span3">
-					<ehrm:optionSelect property="electronicAddressType" id="electronicAddressType{electronicAddress.id}" model="Beech.Party:ElectronicAddress" placeholder="{f:translate(id: 'Type')}..." class="span10 electronicAddressType" translate="{by: 'id'}"/>
+					<ehrm:optionSelect property="electronicAddressType" id="electronicAddressType{electronicAddress.id}" model="Beech.Party:ElectronicAddress" placeholder="{f:translate(value: 'Type')}..." class="span10 electronicAddressType"/>
 				</div>
 				<div class="span6">
 					<div class="input-append input-prepend">
@@ -19,12 +19,12 @@
 						<span class="add-on"><i class="icon-envelope"/></span>
 						<f:if condition="{electronicAddress.primary}">
 							<f:then>
-							<span class="add-on hide"><f:translate id="primair">Primary</f:translate>
+							<span class="add-on hide">Primary
 								<f:form.checkbox property="primary" id="primary-electronicAddress-{electronicAddress.id}{suffix}" class="primary" value="TRUE"/>
 							</span>
 							</f:then>
 							<f:else>
-								<span class="add-on"><f:translate id="primair">Primary</f:translate>
+								<span class="add-on">Primary
 									<f:form.checkbox property="primary" id="primary-electronicAddress-{electronicAddress.id}{suffix}" class="primary" value="TRUE"/>
 								</span>
 							</f:else>
