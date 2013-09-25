@@ -62,6 +62,150 @@
 				<source>Step 2 - Adding address</source>
 				<target>Krok 2 - Dodawanie adresu</target>
 			</trans-unit>
+			<trans-unit id="employee">
+				<source>Employee</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="contractTemplate">
+				<source>Contract template</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="jobDescription">
+				<source>Jobdescription</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="article-10000-values.startDate">
+				<source>StartDate</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="article-10000-values.endDate">
+				<source>End date</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="article-10000-values.jobTitle">
+				<source>Jobtitle</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="article-10000-values.workLocation">
+				<source>Worklocation</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="article-10001-values.probationPeriod">
+				<source>Probation</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="article-10001-values.dayWeek">
+				<source>day week</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="article-10002-values.totalHours">
+				<source>Total hours</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="article-10002-values.hoursAWeek">
+				<source>Hours a week</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="article-10002-values.jobTitle">
+				<source>JobTitle</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="article-10002-values.workDays">
+				<source>WorkDays></source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="article-10002-values.startTime">
+				<source>Start time</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="article-10002-values.endTime">
+				<source>End time</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="article-10004-values.CLA">
+				<source>CAO</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="article-10005-values.vacationAllowanceGLA">
+				<source>Vacantion allowance GLA</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="article-10006-values.sickReportTime">
+				<source>Sick report time</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="article-10010-values.accomodationRent">
+				<source>Rent</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="article-10010-values.weekMaand">
+				<source>Week month</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="article-10014-values.wageScaleGroup">
+				<source>Wagegroup</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="article-10014-values.wageStep">
+				<source>Wage step</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="article-10014-values.hourWage">
+				<source>Hour wage</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="article-10016-values.hoursAWeek">
+				<source>Hours a week</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="article-10016-values.jobTitle">
+				<source>JobTitle</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="article-10016-values.workLocation">
+				<source>Worklocation</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="article-10016-values.workDays">
+				<source>Work days</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="article-10016-values.startTime">
+				<source>Start time</source>
+				.<target></target>
+			</trans-unit>
+			<trans-unit id="article-10016-values.endTime">
+				<source>End time</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="article-10015-values.vacationAllowancePercentage">
+				<source>Vacation allowance %</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="article-10003-values.minimumWage">
+				<source>Minimum wage</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="article-10018-values.probationPeriod">
+				<source>Probation</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="article-10018-values.dayWeek">
+				<source>Day / Week</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="article-10017-values.startDate">
+				<source>StartDate</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="article-10017-values.jobTitle">
+				<source>JobTitle</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="article-10017-values.workLocation">
+				<source>Worklocation</source>
+				<target></target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

@@ -65,6 +65,149 @@
 			<trans-unit id="Step 2 - Adding address">
 				<source>Step 2 - Adding address</source>
 				<target>Stap 2 - Een adres toevoegen</target>
+			<trans-unit id="employee">
+				<source>Employee</source>
+				<target>Werknemer</target>
+			</trans-unit>
+			<trans-unit id="contractTemplate">
+				<source>Contract template</source>
+				<target>Contract sjabloon </target>
+			</trans-unit>
+			<trans-unit id="jobDescription">
+				<source>Jobdescription</source>
+				<target>Functieomschrijving</target>
+			</trans-unit>
+			<trans-unit id="article-10000-values.startDate">
+				<source>StartDate</source>
+				<target>Start datum</target>
+			</trans-unit>
+			<trans-unit id="article-10000-values.endDate">
+				<source>End date</source>
+				<target>Eind datum</target>
+			</trans-unit>
+			<trans-unit id="article-10000-values.jobTitle">
+				<source>Jobtitle</source>
+				<target>Functienaam</target>
+			</trans-unit>
+			<trans-unit id="article-10000-values.workLocation">
+				<source>Worklocation</source>
+				<target>Werklocatie</target>
+			</trans-unit>
+			<trans-unit id="article-10001-values.probationPeriod">
+				<source>Probation</source>
+				<target>Proeftijd</target>
+			</trans-unit>
+			<trans-unit id="article-10001-values.dayWeek">
+				<source>day week</source>
+				<target>dag / week</target>
+			</trans-unit>
+			<trans-unit id="article-10002-values.totalHours">
+				<source>Total hours</source>
+				<target>totaal uren</target>
+			</trans-unit>
+			<trans-unit id="article-10002-values.hoursAWeek">
+				<source>Hours a week</source>
+				<target>Uren per week</target>
+			</trans-unit>
+			<trans-unit id="article-10002-values.jobTitle">
+				<source>JobTitle</source>
+				<target>Functienaam</target>
+			</trans-unit>
+			<trans-unit id="article-10002-values.workDays">
+				<source>WorkDays></source>
+				<target>Werkdagen</target>
+			</trans-unit>
+			<trans-unit id="article-10002-values.startTime">
+				<source>Start time</source>
+				<target>Start tijd</target>
+			</trans-unit>
+			<trans-unit id="article-10002-values.endTime">
+				<source>End time</source>
+				<target>Eind tijd</target>
+			</trans-unit>
+			<trans-unit id="article-10004-values.CLA">
+				<source>CAO</source>
+				<target>CAO</target>
+			</trans-unit>
+			<trans-unit id="article-10005-values.vacationAllowanceGLA">
+				<source>Vacation allowance GLA</source>
+				<target>Vacantie</target>
+			</trans-unit>
+			<trans-unit id="article-10006-values.sickReportTime">
+				<source>Sick report time</source>
+				<target>Ziekmelding</target>
+			</trans-unit>
+			<trans-unit id="article-10010-values.accomodationRent">
+				<source>Rent</source>
+				<target>Huur</target>
+			</trans-unit>
+			<trans-unit id="article-10010-values.weekMaand">
+				<source>Week month</source>
+				<target>week maand</target>
+			</trans-unit>
+			<trans-unit id="article-10014-values.wageScaleGroup">
+				<source>Wagegroup</source>
+				<target>Salarisschaal</target>
+			</trans-unit>
+			<trans-unit id="article-10014-values.wageStep">
+				<source>Wage step</source>
+				<target>functiejaar</target>
+			</trans-unit>
+			<trans-unit id="article-10014-values.hourWage">
+				<source>Hour wage</source>
+				<target>Uurloon</target>
+			</trans-unit>
+			<trans-unit id="article-10016-values.hoursAWeek">
+				<source>Hours a week</source>
+				<target>Uren per week</target>
+			</trans-unit>
+			<trans-unit id="article-10016-values.jobTitle">
+				<source>JobTitle</source>
+				<target>Functienaam</target>
+			</trans-unit>
+			<trans-unit id="article-10016-values.workLocation">
+				<source>Worklocation</source>
+				<target>Werklocatie</target>
+			</trans-unit>
+			<trans-unit id="article-10016-values.workDays">
+				<source>Work days</source>
+				<target>Werkdagen</target>
+			</trans-unit>
+			<trans-unit id="article-10016-values.startTime">
+				<source>Start time</source>
+				.<target>Aanvangstijd</target>
+			</trans-unit>
+			<trans-unit id="article-10016-values.endTime">
+				<source>End time</source>
+				<target>Eind tijd</target>
+			</trans-unit>
+			<trans-unit id="article-10015-values.vacationAllowancePercentage">
+				<source>Vacation allowance %</source>
+				<target>Vakantiegeld %</target>
+			</trans-unit>
+			<trans-unit id="article-10003-values.minimumWage">
+				<source>Minimum wage</source>
+				<target>Wettelijk minimum loon</target>
+			</trans-unit>
+			<trans-unit id="article-10018-values.probationPeriod">
+				<source>Probation</source>
+				<target>Proeftijd</target>
+			</trans-unit>
+			<trans-unit id="article-10018-values.dayWeek">
+				<source>Day / Week</source>
+				<target>Dag / week</target>
+			</trans-unit>
+			<trans-unit id="article-10017-values.startDate">
+				<source>StartDate</source>
+				<target>Startdatum</target>
+			</trans-unit>
+			<trans-unit id="article-10017-values.jobTitle">
+				<source>JobTitle</source>
+				<target>Functienaam</target>
+			</trans-unit>
+			<trans-unit id="article-10017-values.workLocation">
+				<source>Worklocation</source>
+				<target>Werklocatie</target>
 			</trans-unit>
 		</body>
 	</file>
