@@ -27,7 +27,7 @@
 		</div>
 		<div class="rows">
 			<div class="span6">
-				<f:render partial="Views/Show/Address" arguments="{address: company.address_business}"/>
+				<f:render partial="Views/Show/Address" arguments="{address: company.address_workAddress}"/>
 				<ehrm:link.edit subpackage='Administration' controller='Address' action='list'
 								arguments='{party: company}'
 								dataReload="{f:uri.action(package:'Beech.Party', controller:'Company', action:'index', arguments: {company: company})}"/>
@@ -49,7 +49,7 @@
 								dataReload="{f:uri.action(package:'Beech.Party', controller:'Company', action:'index', arguments: {company: company})}"/>
 			</div>
 			<div class="span6">
-				<f:render partial="Views/Show/PhoneNumber" arguments="{phoneNumber: company.phoneNumber_business}"/>
+				<f:render partial="Views/Show/PhoneNumber" arguments="{phoneNumber: company.phoneNumber_workNumber}"/>
 				<ehrm:link.edit subpackage='Administration' controller='PhoneNumber' action='list'
 								arguments='{party: company}'
 								dataReload="{f:uri.action(package:'Beech.Party', controller:'Company', action:'index', arguments: {company: company})}"/>

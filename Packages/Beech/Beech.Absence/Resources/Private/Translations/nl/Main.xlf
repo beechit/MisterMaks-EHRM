@@ -136,7 +136,7 @@
 			</trans-unit>
 			<trans-unit id="reportMethod.email">
 				<source>E-mail</source>
-				<target>E-mail></target>
+				<target>E-mail</target>
 			</trans-unit>
 			<trans-unit id="reportMethod.letter">
 				<source>Letter</source>

@@ -1706,6 +1706,30 @@
 				<source>Foreign number</source>
 				<target>Buitenlands nummer</target>
 			</trans-unit>
+			<trans-unit id="provisionDate">
+				<source>Provision date</source>
+				<target>Uitgifte datum</target>
+			</trans-unit>
+			<trans-unit id="emergencyResponce">
+				<source>Emergency responce</source>
+				<target>Bedrijfshulpverlening</target>
+			</trans-unit>
+			<trans-unit id="cropProtection ">
+				<source>Crop protection</source>
+				<target>Gewasbescherming</target>
+			</trans-unit>
+			<trans-unit id="startDate">
+				<source>Start date</source>
+				<target>Start</target>
+			</trans-unit>
+			<trans-unit id="expirationDate">
+				<source>Expiration</source>
+				<target>Verloopt</target>
+			</trans-unit>
+			<trans-unit id="phoneNumber.phoneNumberType.home">
+				<source>Home phone number</source>
+				<target>Privé nummer</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
