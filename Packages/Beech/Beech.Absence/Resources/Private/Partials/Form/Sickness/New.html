@@ -13,7 +13,7 @@
 							<div class="alert alert-warning">{error}</div>
 						</f:for>
 					</f:for>
-				</div>
+				</divPerson wizard>
 			</f:if>
 		</f:form.validationResults>
 		<f:form method="post" action="create" name="absence" object="{absence}" class="compact-form form-horizontal" enctype="multipart/form-data">
@@ -24,9 +24,8 @@
 						<label class="control-label" for="startDate">
 							<f:translate id="sickness.startDate">Date:</f:translate>
 						</label>
-						<ehrm:form.datePicker id="sickness.startDate" property="startDate" class="datepicker span8" />
+						<ehrm:form.datePicker id="sickness.startDate" property="startDate" class="datepicker span8" enableTimePicker="TRUE"/>
 					</div>
-
 					<div class="control-group">
 						<label class="control-label" for="sickness.absenceType">
 							<f:translate id="sickness.absenceType">Sickness type</f:translate>
