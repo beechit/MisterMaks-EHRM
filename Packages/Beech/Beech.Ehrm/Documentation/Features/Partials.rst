@@ -9,4 +9,4 @@ Example:
 <f:render partial="Beech.Document:Form/New" arguments="{_all}"/>
 To use this feature, package must use TemplateView from Beech.Ehrm package
 It can be done by adding to Views.yaml, line:
-  viewObjectName:\Beech\Ehrm\View\TemplateView
+  viewObjectName: 'Beech\Ehrm\View\TemplateView'
