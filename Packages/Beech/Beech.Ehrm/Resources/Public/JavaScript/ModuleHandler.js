@@ -144,7 +144,7 @@
 
 						if ($moduleContainer.parent().find('.btn-save').attr('data-reload') != undefined) {
 							that.loadUrl($moduleContainer.parent().find('.btn-save').attr('data-reload'));
-							$moduleContainer.parent().modal('hide');console.log($moduleContainer.parent().find('.btn-save').attr('data-reload'), 'hmmm mmn');
+							$moduleContainer.parent().modal('hide');
 						}
 					},
 					error: function(result) {
@@ -185,6 +185,7 @@
 					$form.find('input[type="submit"],button[type="submit"],.form-actions').remove();
 
 					$saveButton.show();
+					$saveButton.unbind('click');
 					$saveButton.on('click', function(event) {
 						$form.submit() ;
 					})
