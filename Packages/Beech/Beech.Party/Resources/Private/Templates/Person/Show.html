@@ -111,7 +111,7 @@
 								dataReload="{f:uri.action(package:'Beech.Party', controller:'Person', action:'show', arguments: {person: person})}"/>
 			</div>
 			<div id="contract" class="tab-pane fade">
-				contract...<br/>
+				<f:render partial="Beech.CLA:Views/List/Contract" arguments="{_all}"/>
 			</div>
 			<div id="asset" class="tab-pane fade">
 				<f:for each="{assets}" as="asset">

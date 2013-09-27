@@ -71,6 +71,14 @@ class Contract extends \Beech\Ehrm\Domain\Model\Document {
 	protected $startDate;
 
 	/**
+	 * The end date
+	 * @var \DateTime
+	 * @ODM\Field(type="datetime")
+	 * @ODM\Index
+	 */
+	protected $endDate;
+
+	/**
 	 * The expire date
 	 * @var \DateTime
 	 * @ODM\Field(type="datetime")
@@ -208,6 +216,20 @@ class Contract extends \Beech\Ehrm\Domain\Model\Document {
 	 */
 	public function getStartDate() {
 		return $this->startDate;
+	}
+
+	/**
+	 * @param \DateTime $endDate
+	 */
+	public function setEndDate($endDate) {
+		$this->endDate = $endDate;
+	}
+
+	/**
+	 * @return \DateTime
+	 */
+	public function getEndDate() {
+		return $this->endDate;
 	}
 
 	/**

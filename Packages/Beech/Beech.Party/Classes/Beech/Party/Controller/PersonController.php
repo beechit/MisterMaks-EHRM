@@ -82,6 +82,12 @@ class PersonController extends \Beech\Ehrm\Controller\AbstractManagementControll
 	protected $absenceRepository;
 
 	/**
+	 * @var \Beech\CLA\Domain\Repository\ContractRepository
+	 * @Flow\Inject
+	 */
+	protected $contractRepository;
+
+	/**
 	 * @var \Beech\Document\Domain\Repository\DocumentRepository
 	 * @Flow\Inject
 	 */
@@ -147,6 +153,12 @@ class PersonController extends \Beech\Ehrm\Controller\AbstractManagementControll
 		$this->view->assign('licences', $licences);
 		$absences = $this->absenceRepository->findByParty($person->getId());
 		$this->view->assign('absences', $absences);
+
+		$contracts = $this->contractRepository->findByEmployee($person->getId());
+
+			// need to be sorted, latest should be on the top
+		\Beech\Ehrm\Utility\ObjectSorter::quickSort($contracts, 'creationDate', 'DESC');
+		$this->view->assign('contracts', $contracts);
 
 		// list of documents
 		$this->view->assign('documentCategories', $absences = $this->documentTypeRepository->findAllGroupedByCategories());

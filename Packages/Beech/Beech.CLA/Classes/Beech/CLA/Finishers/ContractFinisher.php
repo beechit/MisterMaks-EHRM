@@ -46,9 +46,11 @@ class ContractFinisher extends \TYPO3\Form\Core\Model\AbstractFinisher {
 				if (preg_match('/article-(\d+)-values/', $key, $articleId)) {
 					if(is_array($values)) {
 						foreach($values as $subkey => $value) {
+							$setter = 'set'. ucfirst($subkey);
 							if($value instanceof \DateTime) {
 								$values[$subkey] = $value->format('Y-m-d H:i:s.u');
 							}
+							$contract->{$setter}($value);
 						}
 					} elseif ($values instanceof \DateTime) {
 						$values = $values->format('Y-m-d H:i:s.u');
@@ -63,6 +65,7 @@ class ContractFinisher extends \TYPO3\Form\Core\Model\AbstractFinisher {
 		$this->contractRepository->flushDocumentManager();
 		$contract->getStatus()->setDocumentId($contract->getId());
 		$this->contractRepository->update($contract);
+
 	}
 }
 

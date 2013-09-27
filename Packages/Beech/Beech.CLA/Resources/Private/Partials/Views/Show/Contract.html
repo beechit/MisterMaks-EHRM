@@ -1,0 +1,73 @@
+
+<table class="table table-striped">
+	<colgroup>
+		<col class="span1">
+		<col class="span7">
+	</colgroup>
+	<tbody>
+	<tr>
+		<td class="span2">
+			<strong>Status</strong>
+		</td>
+		<td class="span3">
+			{contract.status.statusName}
+		</td>
+		<td class="span4">
+			<strong>{contract.jobTitle}</strong>
+		</td>
+		<td>
+			<a href="#/administration/contract/show/{contract.id}"><i class="icon-eye-open"></i></a>
+			<a href="#"><i class="icon-file"></i></a>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<strong>Contract type</strong>
+		</td>
+		<td>
+			{contract.contractTemplate.templateName}
+		</td>
+		<td colspan="2">
+			<strong>Hours:</strong> {contract.hoursAWeek} / week
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<strong>Start date</strong>
+		</td>
+		<td colspan="3">
+			{contract.startDate -> f:format.date(format: 'Y-m-d')}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<strong>End date</strong>
+		</td>
+		<td>
+			{contract.endDate -> f:format.date(format: 'Y-m-d')}
+		</td>
+		<td colspan="2">
+			<strong>Days till end:</strong> xx
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<strong>Salary</strong>
+		</td>
+		<td>
+			{contract.salary}
+		</td>
+		<td colspan="2"></td>
+	</tr>
+	<tr>
+		<td>
+			<strong>{contract.wageScaleGroup}</strong>
+		</td>
+		<td>
+			<strong>{contract.wageStep}</strong>
+		</td>
+		<td colspan="2"></td>
+	</tr>
+	</tbody>
+</table>
+
