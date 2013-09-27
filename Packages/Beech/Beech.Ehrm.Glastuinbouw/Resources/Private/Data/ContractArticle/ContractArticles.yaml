@@ -1,16 +1,12 @@
-######################################################################
-# varified yaml of the contract article repository CLA GTB
-######################################################################
----
 contractArticles:
-  Cla: None
-  ClaVersion: ''
-  ClaVersionDate: '2012-01-01 10:50:32.000000'
+  cao: 'Glastuinbouw'
+  claVersion: 'current'
+  caoVersionDate: '2012-01-01 10:50:32.000000'
   articles:
     -
-# articles from the ARBEIDSOVEREENKOMST VOOR BEPAALDE TIJD (GELEGENHEIDSWERK) contract.
+      # articles from the ARBEIDSOVEREENKOMST VOOR BEPAALDE TIJD (GELEGENHEIDSWERK) contract.
       articleHeader:
-        en: ''
+        en: 'Employment, job and place of work'
         nl: 'Dienstverband, functie en plaats van werkzaamheden'
         pl: ''
       articleLabel: employmentJobTitleLocation
@@ -21,7 +17,7 @@ contractArticles:
         nl: 'Werknemer treedt per <startDate> bij werkgever in dienst. De arbeidsovereenkomst wordt aangegaan voor bepaalde tijd en eindigt van rechtswege op <endDate>. De werknemer is aangenomen voor de functie van <jobTitle>. De werkzaamheden worden hoofdzakelijk verricht op adres <workLocation>.'
         pl: ''
       help:
-        en: ''
+        en: 'Select the name of the function, for example crop employee, assistant agricultural employee, or production employee. See the functionmanual or function grid in the collective agreement.'
         nl: 'Selecteer de naam van de functie, bijvoorbeeld oogstmedewerker, assistent agrarisch medewerker of productiemedewerker. Zie hiervoor het functiehandboek of het functieraster in de cao.'
         pl: ''
       values:
@@ -51,38 +47,37 @@ contractArticles:
             valueId: 'workLocation'
     -
       articleHeader:
-        en: ''
+        en: 'Probation'
         nl: 'Proeftijd'
         pl: ''
-      articleLabel: employmentJobTitleLocation
+      articleLabel: probation
       articleId: 10001
       order: 150
       articleText:
         en: ''
-        nl: 'Op deze arbeidsovereenkomst is een proeftijd van <probationPeriod> <dayWeek> van toepassing. Gedurende deze proeftijd kunnen beide partijen de arbeidsovereenkomst dagelijks beëindigen.'
+        nl: 'Op deze arbeidsovereenkomst is een proeftijd van <probationPeriod> <probationUnitOfTime> van toepassing. Gedurende deze proeftijd kunnen beide partijen de arbeidsovereenkomst dagelijks beëindigen.'
         pl: ''
       help:
-        en: ''
+        en: 'Under the CAO Glastuinbouw a contract with a duration shorter then 2 years can only have a probation with a maximum of a month'
         nl: 'Voor de CAO Glastuinbouw geld dat er een arbeidsovereenkomst voor korter dan twee jaar een proeftijd van maximaal een maand mag worden overeengekomen.'
         pl: ''
       values:
-          -
-            type: 'Beech.CLA:SingleLineText'
-            value: ''
-            valueId: probationPeriod
-            default: 4
-          -
-            type: 'Beech.CLA:SingleSelectDropdown'
-            options:
-              day: Day
-              days: Days
-              weeks: Weeks
-              months: Months
-            default: weeks
-            valueId: dayWeek
+        -
+          type: 'Beech.CLA:SingleLineText'
+          value: ''
+          valueId: probationPeriod
+          default: 4
+        -
+          type: 'Beech.CLA:SingleSelectDropdown'
+          options:
+            day: 'Day'
+            week: 'Week'
+            month: 'Month'
+          default: 'week'
+          valueId: probationUnitOfTime
     -
       articleHeader:
-        en: ''
+        en: 'Working hours'
         nl: 'Arbeidsduur en werktijden'
         pl: ''
       articleLabel: hoursAndWorkingHours
@@ -90,7 +85,7 @@ contractArticles:
       order: 200
       articleText:
         en: ''
-        nl: 'De arbeidsduur bedraagt voor de totale looptijd van deze arbeidsovereenkomst <totalHours> uur. De gemiddelde arbeidsduur bedraagt <hoursAWeek> per week. De werknemer werkt op de dagen <workDays> van <startTime> tot <endTime> De werknemer stemt ermee in dat door de seizoensmatige aard van het werk de arbeidsduur kan fluctueren, waardoor dagelijks en/of wekelijks meer/minder uren worden gewerkt dan de overeengekomen gemiddelde arbeidsduur. Werkgever en werknemer maken hierover in onderling overleg werkafspraken.'
+        nl: 'De gemiddelde arbeidsduur bedraagt <hoursAWeek> per week. De werknemer werkt voornamelijk op <workDays> van <startTime> tot <endTime> De werknemer stemt ermee in dat door de seizoensmatige aard van het werk de arbeidsduur kan fluctueren, waardoor dagelijks en/of wekelijks meer/minder uren worden gewerkt dan de overeengekomen gemiddelde arbeidsduur. Werkgever en werknemer maken hierover in onderling overleg werkafspraken.'
         pl: ''
       help:
         en: ''
@@ -100,17 +95,8 @@ contractArticles:
         -
           type: 'Beech.CLA:SingleLineText'
           value: ''
-          valueId: totalHours
-          default: '0'
-        -
-          type: 'Beech.CLA:SingleLineText'
-          value: ''
           valueId: hoursAWeek
           default: '38'
-        -
-          type: 'Beech.CLA:SingleLineText'
-          value: ''
-          valueId: jobTitle
         -
           type: 'Beech.CLA:MultipleSelectCheckboxes'
           options:
@@ -128,7 +114,7 @@ contractArticles:
           valueId: workDays
         -
           type:  'Beech.Ehrm:DatePicker'
-          default: '9.00'
+          default: '8.00'
           properties:
             dateFormat: 'H.i'
             enableDatePicker: TRUE
@@ -148,15 +134,15 @@ contractArticles:
           valueId: 'endTime'
     -
       articleHeader:
-        en: ''
+        en: 'Payment'
         nl: 'Beloning'
         pl: ''
       articleLabel: Wage
       articleId: 10003
       order: 300
       articleText:
-        en: ''
-        nl: 'Werknemer wordt beloond conform het wettelijk minimumloon. Bij indiensttreding bedraagt het salaris € <minimumWage> bruto per uur.'
+        en: 'Employee is paid in accordance the statutory minimum wage.'
+        nl: 'Werknemer wordt beloond conform het wettelijk minimumloon. Bij indiensttreding bedraagt het salaris € <minimumWage> <wage> bruto per uur. Het loon word per <paymentSequence> uitbetaald.'
         pl: ''
       help:
         en: ''
@@ -164,13 +150,26 @@ contractArticles:
         pl: ''
       values:
         -
-          type: 'Beech.CLA:SingleLineText'
-          value: ''
+          type: 'Beech.CLA:SingleSelectDropdown'
+          value: 'Beech\CLA\Domain\Model\SalaryScale'
           valueId: 'minimumWage'
           default: ''
+        -
+          type: 'Beech.CLA:SingleLineText'
+          value: ''
+          valueId: 'wage'
+          default: ''
+        -
+          type: 'Beech.CLA:SingleSelectDropdown'
+          options:
+            'week': 'Week'
+            '4 weeks': '4 weeks'
+            'month': 'Month'
+          default: 'month'
+          valueId: 'paymentSequence'
     -
       articleHeader:
-        en: ''
+        en: 'CAO'
         nl: 'CAO'
         pl: ''
       articleLabel: CLA
@@ -178,38 +177,29 @@ contractArticles:
       order: 400
       articleText:
         en: ''
-        nl: 'Op deze arbeidsovereenkomst zijn van toepassing de huidige en toekomstige bepalingen van de cao <CLA>.'
+        nl: 'Op deze arbeidsovereenkomst zijn van toepassing de huidige en toekomstige bepalingen van de cao <strong>Glastuinbouw</strong>.'
         pl: ''
       help:
         en: ''
         nl: 'Geeft aan welke cao op de arbeidsovereenkomst van toepassing is.'
         pl: ''
-      values:
-        -
-          type: 'Beech.CLA:SingleLineText'
-          default: 'Glastuinbouw'
-          valueId: 'CLA'
     -
       articleHeader:
-        en: ''
+        en: 'Vacation allowance and vacation days'
         nl: 'Vakantietoeslag en vakantiedagen'
         pl: ''
-      articleLabel: vacation
+      articleLabel: vacationAllowance
       articleId: 10005
       order: 500
       articleText:
         en: ''
-        nl: 'Ter compensatie van de opgebouwde vakantiedagen en vakantietoeslag wordt over het brutoloon een toeslag betaald van <vacationAllowanceGLA> % bij het einde van de dienstbetrekking. Hierop wordt de vergoeding in mindering gebracht die de werknemer heeft ontvangen voor de op zijn verzoek opgenomen vakantiedagen.'
+        nl: 'Ter compensatie van de opgebouwde vakantiedagen en vakantietoeslag wordt over het brutoloon een toeslag betaald van <strong>20 %</strong> bij het einde van de dienstbetrekking. Hierop wordt de vergoeding in mindering gebracht die de werknemer heeft ontvangen voor de op zijn verzoek opgenomen vakantiedagen.'
         pl: ''
       help:
         en: ''
         nl: 'Ter compensatie van de opgebouwde vakantiedagen en vakantietoeslag wordt over het brutoloon een toeslag betaald van 20% bij het einde van de dienstbetrekking. Hierop wordt de vergoeding in mindering gebracht die de werknemer heeft ontvangen voor de op zijn verzoek opgenomen vakantiedagen.'
         pl: ''
       values:
-        -
-          type: 'Beech.CLA:SingleLineText'
-          default: '20'
-          valueId: 'vacationAllowanceGLA'
     -
       articleHeader:
          en: ''
@@ -224,12 +214,12 @@ contractArticles:
         pl: ''
       help:
         en: ''
-        nl: 'Zie voor de loondoorbetaling bij ziekte artikel 29 van de cao Glastuinbouw.'
+        nl: 'Zie voor loondoorbetaling bij ziekte artikel 29 van de cao Glastuinbouw.'
         pl: ''
       values:
         -
           type: 'Beech.Ehrm:DatePicker'
-          default: '9.00'
+          default: '8.00'
           valueId: 'sickReportTime'
           properties:
             dateFormat: 'H.i'
@@ -238,7 +228,7 @@ contractArticles:
             displayTimeSelector: TRUE
     -
       articleHeader:
-        en: ''
+        en: 'Interim denunciation'
         nl: 'Tussentijdse opzegging'
         pl: ''
       articleLabel: noticePeriod
@@ -246,15 +236,15 @@ contractArticles:
       order: 700
       articleText:
         en: ''
-        nl: 'Een eventuele tussentijdse opzegging van deze arbeidsovereenkomst is mogelijk, op basis van de afspraken in de wet en de geldende cao.'
+        nl: 'Een eventuele tussentijdse opzegging van deze arbeidsovereenkomst is mogelijk, op basis van de afspraken in de wet en de geldende CAO.'
         pl: ''
       help:
         en: ''
-        nl: 'Indien dit artikel wordt opgenomen in de arbeidsovereenkomst, kan het contract tussentijds door werkgever of werknemer worden opgezegd.'
+        nl: 'Indien dit artikel wordt opgenomen in de arbeidsovereenkomst, kan het contract tussentijds door werkgever of werknemer worden opgezegd met in acht neming van de afspraken hierover in de CAO.'
         pl: ''
     -
       articleHeader:
-        en: ''
+        en: 'General company rules'
         nl: 'Bedrijfsreglement'
         pl: ''
       articleLabel: generalCompanyRules
@@ -270,7 +260,7 @@ contractArticles:
         pl: ''
     -
       articleHeader:
-        en: ''
+        en: 'Identification requirement'
         nl: 'Identificatieplicht'
         pl: ''
       articleLabel: Identification
@@ -286,7 +276,7 @@ contractArticles:
         pl: ''
     -
       articleHeader:
-         en: ''
+         en: 'Accomodation'
          nl: 'Huisvesting'
          pl: ''
       articleLabel: accomodationRent
@@ -294,11 +284,11 @@ contractArticles:
       order: 1000
       articleText:
         en: ''
-        nl: 'De werkgever draagt zorg voor huisvesting van de werknemer. Deze huisvesting voldoet minimaal aan alle wettelijke en gemeentelijke regels. De werknemer betaalt de werkgever een vergoeding van € <accomodationRent> per <weekMaand> voor het gebruik van deze voorziening.'
+        nl: 'De werkgever draagt zorg voor huisvesting van de werknemer. Deze huisvesting voldoet minimaal aan alle wettelijke en gemeentelijke regels. De werknemer betaalt de werkgever een vergoeding van € <accomodationRent> per <accomodationRentUnitOfTime> voor het gebruik van deze voorziening.'
         pl: ''
       help:
         en: ''
-        nl: 'ndien u de huisvesting voor uw werknemers verzorgd moet deze aan de voorwaarden voldoen. U mag de werknemer om een redelijke vergoeding vragen voor het verzorgen van deze huisvesting.'
+        nl: 'indien u de huisvesting voor uw werknemers verzorgd moet deze aan de voorwaarden voldoen. U mag de werknemer een passende vergoeding vragen voor het verzorgen van deze huisvesting.'
         pl: ''
       values:
         -
@@ -309,45 +299,49 @@ contractArticles:
               regularExpression: '/^[0-9]{1,4}([\.][0-9]{0,2}){0,1}$/'
           valueId: 'accomodationRent'
         -
-          type: 'Beech.CLA:SingleLineText'
-          options: [ week , maand ]
-          valueId: weekMaand
+          type: 'Beech.CLA:SingleSelectDropdown'
+          options:
+            day: 'Day'
+            week: 'Week'
+            month: 'Month'
           default: 'week'
+          valueId: 'accomodationRentUnitOfTime'
     -
       articleHeader:
-         en: ''
-         nl: 'Overige bepalingen'
+         en: 'Confidentiality agreement'
+         nl: 'Geheimhoudingsverklaring'
          pl: ''
-      articleLabel: otherStipulations
+      articleLabel: confidentialityAgreement
       articleId: 10011
       order: 1100
-      subArticles:
-        -
-          articleId: 10012
-          order: 1200
-          articleText:
-            en: ''
-            nl: 'De werknemer is verplicht tot geheimhouding van al hetgeen hij bij de uitoefening van zijn functie met betrekking tot de zaken en de belangen van de werkgever te weten komt.'
-            pl: ''
-          help:
-            en: ''
-            nl: 'Afspraken betreffende geheimhouding en werkkleding. Hier kunt u naar behoefte ook nog andere (individuele) afspraken vastleggen.'
-            pl: ''
-        -
-          articleId: 10013
-          order: 1300
-          articleText:
-            en: ''
-            nl: 'De werkgever is verplicht om aan de werknemer bedrijfskleding en of veiligheidsschoeisel te verstrekken overeenkomstig veiligheidsvoorschriften of ten behoeve van het verrichten van vuil werk. Werknemer is gehouden deze bedrijfsmiddelen te gebruiken volgens de geldende voorschriften. De bedrijfsmiddelen blijven in eigendom van de werkgever en dienen bij het einde van het dienstverband door de werknemer te worden ingeleverd.'
-            pl: ''
-          help:
-            en: ''
-            nl: 'Afspraken betreffende geheimhouding en werkkleding. Hier kunt u naar behoefte ook nog andere (individuele) afspraken vastleggen.'
-            pl: ''
-# articles for contact for Bepaalde tijd en OTB
+      articleText:
+        en: ''
+        nl: 'De werknemer is verplicht tot geheimhouding van al hetgeen hij bij de uitoefening van zijn functie met betrekking tot de zaken en de belangen van de werkgever te weten komt.'
+        pl: ''
+      help:
+        en: ''
+        nl: 'Afspraken betreffende geheimhouding en werkkleding. Hier kunt u naar behoefte ook nog andere (individuele) afspraken vastleggen.'
+        pl: ''
     -
       articleHeader:
+         en: 'work clothing'
+         nl: 'Bedrijfskleding'
+         pl: ''
+      articleLabel: workClothing
+      articleId: 10012
+      order: 1200
+      articleText:
         en: ''
+        nl: 'De werkgever is verplicht om aan de werknemer bedrijfskleding en of veiligheidsschoeisel te verstrekken overeenkomstig veiligheidsvoorschriften of ten behoeve van het verrichten van vuil werk. Werknemer is gehouden deze bedrijfsmiddelen te gebruiken volgens de geldende voorschriften. De bedrijfsmiddelen blijven in eigendom van de werkgever en dienen bij het einde van het dienstverband door de werknemer te worden ingeleverd.'
+        pl: ''
+      help:
+        en: ''
+        nl: 'Afspraken betreffende geheimhouding en werkkleding. Hier kunt u naar behoefte ook nog andere (individuele) afspraken vastleggen.'
+        pl: ''
+       # articles for contact for Bepaalde tijd en OTB
+    -
+      articleHeader:
+        en: 'Payment'
         nl: 'Beloning'
         pl: ''
       articleLabel: Wage
@@ -355,130 +349,62 @@ contractArticles:
       order: 305
       articleText:
         en: ''
-        nl: 'Werknemer is ingedeeld in functiegroep <wageScaleGroup> in functiejaar <wageStep>. Bij indiensttreding bedraagt het salaris € <hourWage> bruto per uur.'
+        nl: 'Werknemer is ingedeeld in functiegroep <wageScaleGroup> in functiejaar <wageStep>. Bij indiensttreding bedraagt het salaris € <wage> bruto per uur. Het loon word per <paymentSequence> uitbetaald.'
         pl: ''
       help:
         en: ''
         nl: ''
         pl: ''
       values:
-# selectable values from the wagemodel.
+      # selectable values from the wagemodel.
         -
-          type: 'Beech.CLA:SingleLineText'
+          type: 'Beech.CLA:SingleSelectDropdown'
+          value: 'Beech/CLA/Domain/Model/SalaryScale'
+          valueId: 'salaryScale'
+          default: 'B'
+        -
+          type: 'Beech.CLA:SingleSelectDropdown'
           value: ''
           valueId: 'wageScaleGroup'
           default: ''
         -
-          type: 'Beech.CLA:SingleLineText'
+          type: 'Beech.CLA:SingleSelectDropdown'
           value: ''
           valueId: 'wageStep'
           default: ''
         -
           type: 'Beech.CLA:SingleLineText'
           value: ''
-          valueId: 'hourWage'
-          validation:
-            type: 'TYPO3.Flow:RegularExpression'
-            options:
-              regularExpression: /^[0-9]{1,3}([\.][0-9]{0,2}){0,1}$/
+          valueId: 'wage'
           default: ''
+        -
+          type: 'Beech.CLA:SingleSelectDropdown'
+          options:
+            'week': 'Week'
+            '4 weeks': '4 weeks'
+            'month': 'Month'
+          default: 'month'
+          valueId: 'paymentSequence'
     -
       articleHeader:
-        en: ''
+        en: 'Vacation allowance and vacation days'
         nl: 'Vakantietoeslag en vakantiedagen'
         pl: ''
-      articleLabel: Wage
+      articleLabel: VacationAllowance
       articleId: 10015
       order: 1500
       articleText:
         en: ''
-        nl: 'Afhandeling van vakantierechten vindt plaats door uitbetaling van vakantiegeld (bruto <vacationAllowancePercentage>%) en opbouw van betaalde vakantiedagen en feestdagen conform cao.'
+        nl: 'Afhandeling van vakantierechten vindt plaats door uitbetaling van vakantiegeld (bruto 8.33%) en opbouw van betaalde vakantiedagen en feestdagen conform CAO.'
         pl: ''
       help:
         en: ''
         nl: ''
         pl: ''
-      values:
-        -
-          type: 'Beech.CLA:SingleLineText'
-          default: '8.33'
-          valueId: vacationAllowancePercentage
-          validation:
-            type: 'TYPO3.Flow:RegularExpression'
-            options:
-              regularExpression: '/^[0-9]{1,2}([\.][0-9]{0,2}){0,1}$/'
+      # Articles for OBT
     -
       articleHeader:
-        en: ''
-        nl: 'Arbeidsduur en werktijden'
-        pl: ''
-      articleLabel: hoursAndWorkingHours
-      articleId: 10016
-      order: 550
-      articleText:
-        en: ''
-        nl: 'De gemiddelde arbeidsduur bedraagt <hoursAWeek> per week. De werknemer werkt op de dagen <workDays> van <startTime> tot <endTime> De werknemer stemt ermee in dat door de seizoensmatige aard van het werk de arbeidsduur kan fluctueren, waardoor dagelijks en/of wekelijks meer/minder uren worden gewerkt dan de overeengekomen gemiddelde arbeidsduur. Werkgever en werknemer maken hierover in onderling overleg werkafspraken.'
-        pl: ''
-      help:
-        en: ''
-        nl: ''
-        pl: ''
-      values:
-        -
-          type: 'Beech.CLA:SingleLineText'
-          value: ''
-          validation:
-            type: 'TYPO3.Flow:RegularExpression'
-            options:
-              regularExpression: '/^[0-9]{1,2}([\.][0-9]{0,2}){0,1}$/'
-          valueId: hoursAWeek
-        -
-          type: 'Beech.CLA:SingleLineText'
-          value: ''
-          valueId: jobTitle
-        -
-          type: 'Beech.Party:WorkLocationSelect'
-          value: ''
-          valueId: 'workLocation'
-        -
-          type: 'Beech.CLA:MultipleSelectCheckboxes'
-          options:
-            monday: monday
-            tuesday: tuesday
-            wednessday: wednessday
-            thursday: thursday
-            friday: friday
-            saturday: saturday
-            sunday: sunday
-          translated:
-            nl: [ maandag, dinsdag, woensdag, donderdag, vrijdag, zaterdag, zondag ]
-            en: [ monday, tuesday, wednessday , thursday, friday, saturday , sunday ]
-            pl: [ poniedzialek, wtorek, sroda, czwartek, piatek, sobota, niedziela ]
-          valueId: workDays
-        -
-          type:  'Beech.Ehrm:DatePicker'
-          value: ''
-          valueId: 'startTime'
-          default: '8.00'
-          properties:
-            dateFormat: 'H.i'
-            enableDatePicker: TRUE
-            displayDateSelector: FALSE
-            displayTimeSelector: TRUE
-        -
-          type: 'Beech.Ehrm:DatePicker'
-          value: ''
-          valueId: 'endTime'
-          default: '18.00'
-          properties:
-            dateFormat: 'H.i'
-            enableDatePicker: TRUE
-            displayDateSelector: FALSE
-            displayTimeSelector: TRUE
-# Articles for OBT
-    -
-      articleHeader:
-        en: ''
+        en: 'Employment, job and place of work'
         nl: 'Dienstverband, functie en plaats van werkzaamheden'
         pl: ''
       articleLabel: employmentJobTitleLocation
@@ -490,7 +416,7 @@ contractArticles:
         pl: ''
       help:
         en: ''
-        nl: 'Selecteer de naam van de functie, bijvoorbeeld oogstmedewerker, assistent agrarisch medewerker of productiemedewerker. Zie hiervoor het functiehandboek of het functieraster in de cao.'
+        nl: 'Selecteer de naam van de functie, bijvoorbeeld Voorman, HR adviseur of productiemedewerker. Zie hiervoor het functiehandboek of het functieraster in de cao.'
         pl: ''
       values:
         -
@@ -520,7 +446,7 @@ contractArticles:
       order: 151
       articleText:
         en: ''
-        nl: 'Op deze arbeidsovereenkomst is een proeftijd van <probationPeriod> <dayWeek> van toepassing. Gedurende deze proeftijd kunnen beide partijen de arbeidsovereenkomst dagelijks beëindigen.'
+        nl: 'Op deze arbeidsovereenkomst is een proeftijd van <probationPeriod> <probationUnitOfTime> van toepassing. Gedurende deze proeftijd kunnen beide partijen de arbeidsovereenkomst dagelijks beëindigen.'
         pl: ''
       help:
         en: ''
@@ -540,11 +466,10 @@ contractArticles:
           type: 'Beech.CLA:SingleSelectDropdown'
           options:
             day: Day
-            days: Days
-            weeks: Weeks
-            months: Months
-          default: weeks
-          valueId: dayWeek
+            week: Week
+            month: Month
+          default: week
+          valueId: probationUnitOfTime
     -
       articleHeader:
         en: ''
@@ -555,7 +480,7 @@ contractArticles:
       order: 152
       articleText:
         en: ''
-        nl: 'Op deze arbeidsovereenkomst is geen proeftijd van toepassing.'
+        nl: 'Op deze arbeidsovereenkomst is <strong>geen</strong> proeftijd van toepassing.'
         pl: ''
       help:
         en: ''
@@ -577,8 +502,9 @@ contractArticles:
         en: ''
         nl: ''
         pl: ''
-# possibly add article about notice period.
-# articles belonging to the cafeteria arrangement that was made by LTO Nederland.
+      # possibly add article about notice period.
+      # articles belonging to the cafeteria arrangement that was made by LTO Nederland.
+    -
       articleHeader:
         en: ''
         nl: 'Lidmaatschap LTO Nederland'
@@ -671,7 +597,7 @@ contractArticles:
           order: 358
           articleText:
             en: ''
-            nl: 'Voor de extra kosten voor levensonderhoud kan een bedrag uitgeruild worden, afhankelijk van het land van herkomst  van de werknemer. Zie hiervoor de door LTO Nederland uitgebrachte brochure'
+            nl: 'Voor de extra kosten voor levensonderhoud kan een bedrag uitgeruild worden, afhankelijk van het land van herkomst van de werknemer. Zie hiervoor de door LTO Nederland uitgebrachte brochure'
             pl: ''
           help:
             en: ''
@@ -679,7 +605,7 @@ contractArticles:
             pl: ''
     -
       articleHeader:
-        en: ''
+        en: 'Exchange of data'
         nl: 'Gegevensuitwisseling'
         pl: ''
       articleLabel: gegevensuitwisseling

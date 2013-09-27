@@ -19,18 +19,9 @@
     'status':
       label: 'Status of the contract'
       type: 'Beech\Ehrm\Domain\Model\Status'
-      validation:
-        -
-          type: 'NotEmpty'
     'contractTemplate':
       label: 'Contract type'
       type: 'Beech\CLA\Domain\Model\ContractTemplate'
-      validation:
-        -
-          type: 'NotEmpty'
-    'firstContract':
-      label: 'First contract'
-      type: 'boolean'
     'contractAcceptanceDate':
       label: 'Date contract was accepted'
       type: 'DateTime'
@@ -74,53 +65,18 @@
       type: 'Beech\CLA\Domain\Model\JobDescription'
     'defaultSalaryScale':
       label: 'defaultSalaryScale'
-    'contractEndDate':
+      type: 'Beech\CLA\Domain\Model\SalaryScale'
+    'endDate':
       label: 'Expiration date'
       type: 'DateTime'
     'startDate':
       label: 'Startdate of the contract'
       type: 'DateTime'
-# todo check if we need this
-    'streetName':
-      label: 'Work address streetname'
-      validation:
-        -
-          type: 'StringLength'
-          options:
-            maximum: 30
-    'houseNumber':
-      label: 'Work address House number'
-      validation:
-        -
-          type: 'Integer'
-    'houseNumberAddition':
-      label: 'Workaddress House number addition'
-      validation:
-        -
-          type: 'StringLength'
-          options:
-            maximum: 10
-    'postalCode':
-      label: 'Postal code'
-    'residence':
-      label: 'Residence'
-      validation:
-       -
-         type: 'StringLength'
-         options:
-          maximum: 30
-    'country':
-      label: 'Country'
-      validation:
-        -
-         type: 'StringLength'
-         options:
-          maximum: 30
     'probation':
       label: 'probation'
       type: 'boolean'
-    'probationInDays':
-      label: 'Probation in Days'
+    'probationPeriod':
+      label: 'Probation'
       validation:
         -
           type: 'Integer'
@@ -129,14 +85,8 @@
           options:
             minimum: 0
             maximum: 62
-    'totalHours':
-      label: 'Total hours of this contract'
-      validation:
-        -
-          type: 'Beech.Ehrm:Decimal'
-          options:
-            digits: 4
-            decimal: 2
+    'probationUnitOfTime':
+      label: 'ProbationUnitOfTime'
     'hoursAWeek':
       label: 'Hours a week'
       validation:
@@ -165,41 +115,24 @@
       label: 'EndTime'
       type: 'DateTime'
 # we need a custom validator here for time
-    'hourWage':
+    'wage':
       label: 'Hour Wage'
-      validation:
-        -
-          type: 'Beech.Ehrm:Decimal'
-    'minimumWage':
-      label: 'Minimum wage'
-      type: 'boolean'
+    'paymentSequence':
+      label: 'PaymentInterval'
+      options:
+        values:
+          'week': 'Week'
+          '4 weeks': '4 weeks'
+          'month': 'Month'
     'wageScale':
       label: 'wage Scale'
-      validation:
-        -
-          type: 'StringLength'
-          options:
-            maximum: 3
-    'currentWageScale':
-      label: 'Current wage Scale'
-      validation:
-        -
-          type: 'Integer'
-        -
-          type: 'Count'
-          options:
-            minimum: 0
-            maximum: 15
+      type: ' Beech\CLA\DomainModel\SalaryScale'
+    'wageGroup':
+      label: ' WageGroup'
+      type: ' Beech\CLA\DomainModel\SalaryScale'
     'wagestep':
       label: 'Wage step'
-      validation:
-        -
-          type: 'Integer'
-        -
-          type: 'Count'
-          options:
-            minimum: 0
-            maximum: 15
+      type: ' Beech\CLA\DomainModel\SalaryScale'
     'currentWageStep':
       label: 'Current Wage Step'
       validation:
@@ -212,15 +145,6 @@
             maximum: 15
     'cla':
       label: 'collective labour agreement'
-      type: 'Beech\CLA\Domain\Model\LaborAgreement'
-    'vacationAllowanceGLA':
-      label: 'Vacation allowance in the GLA arrangment'
-      validation:
-        -
-          type: 'Beech.Ehrm:Decimal'
-          options:
-            digits: 4
-            decimal: 2
     'vacationAllowancePercentage':
       label: 'Vacation allowance Percentage'
       validation:
@@ -229,7 +153,6 @@
           options:
             digits: 4
             decimal: 2
-# todo: add time validator
     'sickReportTime':
       label: 'Sickreport time'
     'noticePeriod':
@@ -244,28 +167,21 @@
     'accomodation':
       label: 'accomodation'
       type: 'boolean'
-    'accomodationRentWeek':
-      label: 'Accomodation rent for a week'
+    'accomodationRent':
+      label: 'Accomodationrent'
       validation:
         -
           type: 'Beech.Ehrm:Decimal'
           options:
             digits: 4
             decimal: 2
-    'accomodationRentMonth':
-      label: 'Acomodation rent a month'
-      validation:
-        -
-          type: 'Beech.Ehrm:Decimal'
-          options:
-            digits: 4
-            decimal: 2
+    'accomodationRentUnitOfTime':
+      label: 'rentperiod'
     'cafetariaModel':
       label: 'CafetariaModel'
       type: 'boolean'
     'articlesInCurrentContract':
       type: 'array'
-      validation: ''
     'creationDate':
       default: 'now'
       label: 'creation date'

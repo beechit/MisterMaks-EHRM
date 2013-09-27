@@ -102,9 +102,6 @@ contractTemplate:
       '10006':
         required: TRUE
     -
-      '10007':
-        required: TRUE
-    -
       '10008':
         required: FALSE
     -
@@ -120,11 +117,37 @@ contractTemplate:
       '10012':
         required: FALSE
     -
-      '10013':
-        required: FALSE
+      '10020':
+        required: TRUE
+    -
+      '10021':
+        required: TRUE
+    -
+      '10022':
+        required: TRUE
+    -
+      '10023':
+        required: TRUE
+    -
+      '10024':
+        required: TRUE
+    -
+      '10025':
+        required: TRUE
+    -
+      '10026':
+        required: TRUE
+    -
+      '10027':
+        required: TRUE
     -
       '10035':
         required: TRUE
+# these settings should be persisted while saving contract.
+  vacationAllowancePercentage: '20'
+  gla: TRUE
+  cafetariaModel: TRUE
+# for 'paper' contract generation
   sigatureStatement:
     text:
       en: ''

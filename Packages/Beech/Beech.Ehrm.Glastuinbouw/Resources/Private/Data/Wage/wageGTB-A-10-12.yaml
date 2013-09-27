@@ -1,14 +1,11 @@
-################################################
-#This Yaml holds the wages of the
-#CLA Glastuinbouw at 01-01-2013,
-################################################
-Beech.Ehrm.Glastuinbouw.Wage:
+GlastuinbouwscaleA:
   properties:
-      wageName: 'GlastuinbouwWageA'
+    wageName: 'GlastuinbouwScaleA'
     wageStartDate: '01-09-2012'
     wageEndDate: '30-06-2013'
+    wageType: 'hour'
     'wageGroup':
-      'B-1':
+      'b-1':
         -
           step: '15 year'
           value: '3,70'
@@ -61,7 +58,7 @@ Beech.Ehrm.Glastuinbouw.Wage:
       orbaPointsStart: ''
       orbaPointsEnd: ''
     -
-      'GroupB-2':
+      'b-2':
         -
           step: '15 year'
           value: '3,94'
@@ -120,7 +117,7 @@ Beech.Ehrm.Glastuinbouw.Wage:
       orbaPointsStart: ''
       orbaPointsEnd: ''
     -
-      'GroupC':
+      'c':
         -
           step: '15 year'
           value: '4,58'
@@ -173,7 +170,7 @@ Beech.Ehrm.Glastuinbouw.Wage:
       orbaPointsStart: ''
       orbaPointsEnd: ''
     -
-      'GroupD':
+      'd':
         -
           step: '15 year'
           value: '4,87'
@@ -226,7 +223,7 @@ Beech.Ehrm.Glastuinbouw.Wage:
       orbaPointsStart: ''
       orbaPointsEnd: ''
     -
-      'GroupE':
+      'e':
         -
           step: '15 year'
           value: '5,11'
@@ -279,7 +276,7 @@ Beech.Ehrm.Glastuinbouw.Wage:
       orbaPointsStart: ''
       orbaPointsEnd: ''
     -
-      'GroupF':
+      'f':
         -
           step: '15 year'
           value: '5,37'
@@ -332,7 +329,7 @@ Beech.Ehrm.Glastuinbouw.Wage:
       orbaPointsEnd: ''
       label: 'Group F'
     -
-      'GroupG':
+      'g':
         -
           step: '15 year'
           value: '5,58'
@@ -385,7 +382,7 @@ Beech.Ehrm.Glastuinbouw.Wage:
       orbaPointsStart: ''
       orbaPointsEnd: ''
     -
-      'groupH':
+      'h':
         -
           step: '15 year'
           value: '5,80'

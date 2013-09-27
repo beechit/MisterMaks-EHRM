@@ -1,2 +1,34 @@
 'Beech.CLA.Domain.Model.SalaryScale':
-# todo: write his model
+  properties:
+    'ScaleName':
+      label: 'Wagename'
+      validation:
+        -
+          type: 'StringLength'
+          options:
+            maximum: 20
+    'wageStartDate':
+      label: 'Startdate of this wagescale'
+    'endDate':
+      label: 'Enddate of this wagescale'
+    'wageType':
+      label: 'month week or hour wage'
+    'wagegroup':
+      -
+        'step':
+        label: 'Step'
+        'value':
+      -
+        label: 'value'
+        default: '0,0'
+      -
+        'age':
+         label: 'Age'
+    'label':
+      label: 'label'
+    'orbaStart':
+      label: 'Orba points start'
+    'orbaEnd':
+      label: 'orba points end'
+
+
