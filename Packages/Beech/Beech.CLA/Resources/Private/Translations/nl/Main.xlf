@@ -110,7 +110,6 @@
 				<source>General benefits</source>
 				<target>Algemene Arbeidsvoorwaarden</target>
 			</trans-unit>
-
 			<trans-unit id="jobDescription">
 				<source>Job description</source>
 				<target>Functieomschrijving</target>
@@ -119,7 +118,6 @@
 				<source>Job descriptions</source>
 				<target>Functieomschrijvingen</target>
 			</trans-unit>
-
 			<trans-unit id="jobPosition">
 				<source>Job position</source>
 				<target>Functie</target>
@@ -128,7 +126,6 @@
 				<source>Job positions</source>
 				<target>Functies</target>
 			</trans-unit>
-
 			<trans-unit id="jobPosition.name">
 				<source>Name</source>
 				<target>Naam</target>

@@ -334,6 +334,10 @@
 				<source>Environment setup wizard</source>
 				<target>Basis instellingen Mister maks</target>
 			</trans-unit>
+			<trans-unit id="personWizard">
+				<source>Person wizard</source>
+				<target>Nieuwe Persoon</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

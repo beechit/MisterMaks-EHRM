@@ -65,6 +65,7 @@
 			<trans-unit id="Step 2 - Adding address">
 				<source>Step 2 - Adding address</source>
 				<target>Stap 2 - Een adres toevoegen</target>
+			</trans-unit>
 			<trans-unit id="employee">
 				<source>Employee</source>
 				<target>Werknemer</target>
