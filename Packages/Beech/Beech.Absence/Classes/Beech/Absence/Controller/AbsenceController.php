@@ -50,10 +50,22 @@ class AbsenceController extends \Beech\Ehrm\Controller\AbstractManagementControl
 	 *
 	 * @param \Beech\Party\Domain\Model\Person $person
 	 * @param string $absenceType
+	 * @param \Beech\Party\Domain\Model\Company $department
 	 * @return void
 	 */
-	public function listAction(\Beech\Party\Domain\Model\Person $person = NULL, $absenceType = Absence::OPTION_SICKNESS) {
-		$absences = $this->repository->findByPersonAndType($person, $absenceType);
+	public function listAction(\Beech\Party\Domain\Model\Person $person = NULL, $absenceType = Absence::OPTION_SICKNESS, \Beech\Party\Domain\Model\Company $department = NULL) {
+
+		if (!in_array($absenceType, array(Absence::OPTION_SICKNESS, Absence::OPTION_LEAVE))) {
+			$absenceType = Absence::OPTION_SICKNESS;
+		}
+
+		if ($department !== NULL) {
+			$absences = $this->repository->findByDepartmentAndType($department, $absenceType);
+		} elseif ($person !== NULL) {
+			$absences = $this->repository->findByPersonAndType($person, $absenceType);
+		} else {
+			$absences = $this->repository->findByAbsenceType($absenceType);
+		}
 
 		$this->view->assign('person', $person);
 		$this->view->assign('absences', $absences);

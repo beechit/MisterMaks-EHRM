@@ -1,24 +1,6 @@
 {namespace mm=Beech\Ehrm\ViewHelpers}
 <h3><f:translate id="Absence" package="Beech.Absence">Absence</f:translate></h3>
 
-<div class="row-fluid">
-	<div class="span9">
-		<f:translate id="Department:" package="Beech.Absence">Department:</f:translate>
-		{{view Ember.Select viewName="select"
-			contentBinding="departments"
-			id="department"
-			optionLabelPath="content.name"
-			optionValuePath="content.id"
-			prompt="<f:translate id="selectDepartment" package="Beech.Absence">- select a department -</f:translate>"
-			selectionBinding="selectedDepartment"
-		}}
-	</div>
-	<div class="span3">
-		<div class="pull-right">{{view App.DateTimePicker format="dd-mm-yyyy" valueBinding='startDate'}}</div>
-	</div>
-</div>
-
 {{outlet}}
 
 {{render userInterface.buttons.reports}}
-

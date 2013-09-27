@@ -4,26 +4,28 @@
 	App.BeechAbsenceAbsencesController = Ember.ObjectController.extend({
 		departments: [],
 		absences: [],
-		selectedDepartment: null,
+		init: function() {
+			this.set('absences', this.get('store').findAll('beechAbsenceDomainModelAbsence'));
+			this.set('departments',this.get('store').findAll('beechPartyDomainModelCompany'));
+		}
+	});
+
+	App.BeechAbsenceAbsencesOverviewController =  Ember.ObjectController.extend({
+		needs: ['BeechAbsenceAbsences', 'BeechAbsenceAbsencesOverviewOverview'],
+		department: null,
 		startDate: '',
 		intervalInDays: 28,
 		init: function() {
-			this.set('departments',this.get('store').findAll('beechPartyDomainModelCompany'));
+			this.set('startDate', moment().format('YYYY-MM-DD'));
 		},
-		selectionChanged: function() {
-			this.openDepartmentOverview();
-		}.observes('selectedDepartment'),
-		startDateChanged: function() {
-			this.openDepartmentOverview();
-		}.observes('startDate'),
 		openDepartmentOverview: function() {
-			if (this.get('selectedDepartment') && this.get('selectedDepartment').get('id') && this.get('startDate')) {
-				this.transitionToRoute('BeechAbsenceAbsences.department', {
-					departmentId: this.get('selectedDepartment').get('id'),
+			if (this.get('department') && this.get('department').get('id') && this.get('startDate')) {
+				this.transitionToRoute('BeechAbsenceAbsencesOverview.overview', {
+					department: this.get('department'),
 					startDate: this.get('startDate')
 				});
 			}
-		},
+		}.observes('department', 'startDate'),
 		next: function(){
 			this.set('startDate', moment(new Date(this.get('startDate'))).add('days', this.get('intervalInDays')).format('YYYY-MM-DD'));
 		},
@@ -32,30 +34,54 @@
 		}
 	});
 
-	App.BeechAbsenceAbsencesDepartmentController =  Ember.ObjectController.extend({
-		needs: ['BeechAbsenceAbsences'],
+	App.BeechAbsenceAbsencesOverviewOverviewController =  Ember.ObjectController.extend({
+		needs: ['BeechAbsenceAbsences','BeechAbsenceAbsencesOverview'],
+		department: null,
+		startDate: null,
 		actions: {
 			next: function() {
-				this.get('controllers.BeechAbsenceAbsences').next();
+				this.get('controllers.BeechAbsenceAbsencesOverview').next();
 			},
 			prev: function() {
-				this.get('controllers.BeechAbsenceAbsences').prev();
+				this.get('controllers.BeechAbsenceAbsencesOverview').prev();
 			}
 		},
 		dates: function () {
-			if (!this.get('controllers.BeechAbsenceAbsences').get('startDate')) {
+
+			if (!this.get('startDate')) {
 				return [];
 			}
-
-			var curr = moment(new Date(this.get('controllers.BeechAbsenceAbsences').get('startDate'))),
-				dates = [], i, interval = this.get('controllers.BeechAbsenceAbsences').get('intervalInDays');
+			var curr = moment(new Date(this.get('startDate'))),
+				dates = [], i, interval = this.get('controllers.BeechAbsenceAbsencesOverview.intervalInDays');
 
 			for (i = 0; i < interval; i++) {
 				dates.push(curr.clone().add('days', i));
 			}
 
 			return dates;
-		}.property('controllers.BeechAbsenceAbsences.department','controllers.BeechAbsenceAbsences.department.employees.@each.name', 'controllers.BeechAbsenceAbsences.startDate', 'controllers.BeechAbsenceAbsences.intervalInDays')
+		}.property('department','controllers.BeechAbsenceAbsences.absences', 'startDate', 'controllers.BeechAbsenceAbsencesOverview.intervalInDays')
+	});
+
+
+	App.BeechAbsenceAbsencesListController = Ember.ObjectController.extend({
+		needs: ['BeechAbsenceAbsences'],
+		department: null,
+		//absenceType: '', //do not decleare is done by ember because of route param
+		selectionChanged: function() {
+			this.transitionToRoute('BeechAbsenceAbsencesList.list', this.get('department'));
+		}.observes('department')
+	});
+
+	App.BeechAbsenceAbsencesListListController = Ember.ObjectController.extend({
+		needs: ['BeechAbsenceAbsences', 'BeechAbsenceAbsencesList'],
+		url: MM.url.module.BeechAbsenceAbsenceList,
+		department: null,
+		ajaxUrl: '',
+		generateUrl: function() {
+			if (this.get('department')) {
+				this.set('ajaxUrl', this.get('url')+'&department='+this.get('department').get('id')+'&absenceType='+this.get('controllers.BeechAbsenceAbsencesList.absenceType'));
+			}
+		}.observes('department')
 	});
 
 }).call(this);

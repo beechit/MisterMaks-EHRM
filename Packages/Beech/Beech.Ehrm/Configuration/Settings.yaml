@@ -57,6 +57,7 @@ Beech:
           - 'Beech.Absence/JavaScript/Route/Absence.js'
           - 'Beech.Absence/JavaScript/Model/Absence.js'
           - 'Beech.Absence/JavaScript/Controller/Absence.js'
+          - 'Beech.Absence/JavaScript/View/Absence.js'
           - 'Beech.Party/JavaScript/Route/Company.js'
           - 'Beech.Party/JavaScript/Route/Person.js'
           - 'Beech.Party/JavaScript/Route/Account.js'
@@ -135,6 +136,7 @@ Beech:
       - ['Beech.Ehrm', 'Administration', 'ApplicationSettings', {'index': 'Index', 'edit':null, 'delete':null, 'list':null, 'new':null, 'show': null,'setupwizard':'SetupWizard'}]
       - ['Beech.CLA', '', 'JobPosition', {'index': 'Index', 'list':null, 'delete':null}]
       - ['Beech.Chart', 'General', 'AgeReport', {'index': 'Index'}]
+      - ['Beech.Absence', '', 'Absence', {'list':'List','edit':null, 'delete':null, 'new':null, 'show': null}]
 
     defaultActionsMapping:
       'list': 'Index'

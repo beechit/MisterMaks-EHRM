@@ -30,6 +30,38 @@ class AbsenceRepository extends \Radmiraal\CouchDB\Persistence\AbstractRepositor
 		);
 		return $this->backend->findBy($filter);
 	}
+
+	/**
+	 * Get absence history bases on department and absenceType
+	 *
+	 * @param \Beech\Party\Domain\Model\Company $deparment
+	 * @param string $absenceType
+	 * @return array
+	 *
+	 * @todo make this a real couchDB query
+	 */
+	public function findByDepartmentAndType(\Beech\Party\Domain\Model\Company $deparment, $absenceType) {
+
+		$filter = array(
+			'absenceType' => $absenceType
+		);
+
+		$personIds = array();
+		$absences = array();
+
+		foreach ($deparment->getEmployees() as $person) {
+			$personIds[] = $person->getId();
+		};
+
+		if ($personIds) {
+			foreach ($this->backend->findBy($filter) as $absence) {
+				if (in_array($absence->getPerson()->getId(), $personIds)) {
+					$absences[] = $absence;
+				}
+			}
+		}
+		return $absences;
+	}
 }
 
 ?>

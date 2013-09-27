@@ -21,13 +21,15 @@
 		<div class="accordion-group">
 			<div class="accordion-heading">
 				<a class="accordion-toggle" data-toggle="collapse" data-parent="#reportsMenu" href="#reportsMenu-leave">
-					Leave
+					Absence
 				</a>
 			</div>
 			<div id="reportsMenu-leave" class="accordion-body collapse">
 				<div class="accordion-inner">
 					<ul class="unstyled">
-						<li>{{#linkTo "BeechAbsenceAbsences"}}<i class="icon-bar-chart"></i> <f:translate id="Absence" package="Beech.Ehrm">Absence</f:translate>{{/linkTo}}</li>
+						<li>{{#linkTo "BeechAbsenceAbsencesOverview"}}<i class="icon-bar-chart"></i> <f:translate id="Absence.Chart" package="Beech.Ehrm">Chart</f:translate>{{/linkTo}}</li>
+						<li>{{#linkTo "BeechAbsenceAbsencesList" "leave"}}<i class="icon-bar-list"></i> <f:translate id="Leave" package="Beech.Ehrm">Leave</f:translate>{{/linkTo}}</li>
+						<li>{{#linkTo "BeechAbsenceAbsencesList" "sicknes"}}<i class="icon-bar-list"></i> <f:translate id="Sicknes" package="Beech.Ehrm">Sicknes</f:translate>{{/linkTo}}</li>
 					</ul>
 				</div>
 			</div>

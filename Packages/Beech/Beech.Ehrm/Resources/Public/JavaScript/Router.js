@@ -154,10 +154,15 @@
 
 		this.resource('reports', { path: 'reports' }, function() {
 			this.route('index', {path: '/'});
+
 			// Beech.Absence/Absence
-			this.resource('BeechAbsenceAbsences', {path: 'leave/absences'}, function() {
-				this.route('department', {path:'/:departmentId/'});
-				this.route('department', {path:'/:departmentId/:startDate'});
+			this.resource('BeechAbsenceAbsences', {path: 'absences'}, function() {
+				this.resource('BeechAbsenceAbsencesOverview', {path:'overview'}, function() {
+					this.route('overview', {path:'/:department/:startDate'});
+				});
+				this.resource('BeechAbsenceAbsencesList', {path:'list/:absenceType'}, function() {
+					this.route('list', {path:'/:department_id'});
+				});
 			});
 			this.resource('BeechChartReport', {path: 'general'}, function() {
 				this.route('index', { path: '/age' });
@@ -165,15 +170,17 @@
 		});
 	});
 
-	App.ModuleRoute = Ember.Route.extend({
-		renderTemplate: function() {
-			this._super.apply(this, arguments);
-			this.render(this.get('routeName').replace('.', '/'));
-			// All modals should be closed when transition of ember is done
-			// TODO: Find a nicer way to auto-close modals when route is changed
-			$('.modal').modal('hide');
+	Ember.Route.reopen({
+		enter: function() {
+			this._super();
+			// on everey route change hide all modals
+			Ember.run.once(this, function () {
+				$('.modal').modal('hide');
+			});
 		}
 	});
+	// deprecated use Ember.Route
+	App.ModuleRoute = Ember.Route.extend();
 
 	App.IndexIndexView = Ember.View.extend({
 		templateName: 'userInterface/dashboard'

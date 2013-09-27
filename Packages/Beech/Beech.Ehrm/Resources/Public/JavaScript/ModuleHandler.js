@@ -202,8 +202,10 @@
 			if (object != '') {
 				var first = true;
 				for (var key in object) {
-					urlParams += (first ? '?' : '&') + key + "=" + object[key];
-					first = false;
+					if (object[key] != "undefined") {
+						urlParams += (first ? '?' : '&') + key + "=" + object[key];
+						first = false;
+					}
 				}
 			}
 			return urlParams;

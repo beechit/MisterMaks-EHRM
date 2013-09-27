@@ -1,7 +1,10 @@
 <div class="modal-header custom">
 	<h3>
-		<f:render partial="Beech.Party:Views/Show/ProfilePhoto" arguments="{photo: person.profilePhoto, width: 50}"/>
-		{person.name} / <f:translate id="sicknessHistory">Sickness history</f:translate>
+		<f:if condition="{person}">
+			<f:render partial="Beech.Party:Views/Show/ProfilePhoto" arguments="{photo: person.profilePhoto, width: 50}"/>
+			{person.name} /
+		</f:if>
+		<f:translate id="sicknessHistory">Sickness history</f:translate>
 	</h3>
 </div>
 <div class="clearfix container-fluid">

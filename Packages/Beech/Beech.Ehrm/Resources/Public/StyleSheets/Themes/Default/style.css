@@ -10,7 +10,7 @@ footer, .push { height: 40px; }
 /* Sticky Footer End */
 .container-fluid { max-width: 960px; margin: 0 auto; }
 
-footer { margin-top: -60px !important; position: relative; font-size: small; font-weight: 100; }
+footer { margin-top: -40px !important; position: relative; font-size: small; font-weight: 100; }
 footer .footer { float: left; }
 footer .logo { float: right; letter-spacing: -0.1em; color: #049cdb; position: relative; }
 footer .logo i { position: absolute; left: -8px; top: 1px; font-size: 0.8em; }
