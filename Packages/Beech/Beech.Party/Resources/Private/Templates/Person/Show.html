@@ -207,8 +207,8 @@
 					</f:for>
 				</table>
 				<div style="text-align: right;">
-					<ehrm:link.edit id="addDocument" class="btn btn-primary" subpackage='Administration'
-									controller='PersonRelation' action='new' arguments='{personRelatedTo: person}'
+					<ehrm:link.edit id="addDocument" class="btn btn-primary" package="Beech.Document"
+									controller='Document' action='new' arguments='{party: person}'
 									dataReload="{f:uri.action(package:'Beech.Party', controller:'Person', action:'show', arguments: {person: person})}">
 						<i class="icon-plus icon-white"></i>
 						<f:translate id="action.add">Add</f:translate>
@@ -236,8 +236,5 @@
 			$('select.documentType').change(function () {
 				oPersonDocumentsTable.fnFilter($(this).find('option:selected').text());
 			});
-			$('#addDocument').on('click', function () {
-				$(this).attr('href', $(this).attr('href').replace('person', 'trrr'))
-			})
 		</script>
 </f:section>

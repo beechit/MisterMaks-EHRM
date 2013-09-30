@@ -64,6 +64,9 @@ class DocumentConverter extends \Beech\Ehrm\Property\TypeConverter\EntityWithDoc
 			if ($this->reflectionService->isPropertyAnnotatedWith($targetType, $propertyName, 'Doctrine\ODM\CouchDB\Mapping\Annotations\Attachments')) {
 				$attachments = array();
 				foreach ($propertyValue as $version => $value) {
+					if (!isset($value['name'])) {
+						break;
+					}
 					$safeFileName = preg_replace('/[^a-zA-Z-_0-9\.]*/', '', $value['name']);
 					if (!isset($value['type'])) {
 						$value['type'] = \TYPO3\Flow\Utility\MediaTypes::getMediaTypeFromFilename($safeFileName);

@@ -25,6 +25,12 @@
       default: 'now'
     'expireDate':
       label: 'Expire date'
+      validation:
+        -
+          type: 'DateTimeRange'
+          options:
+            earliestDate: 20130101
+            latestDate: 20200101
     'required':
       label: 'Required'
 # if set on true use generic workflow to monitor the expiration date on this document.

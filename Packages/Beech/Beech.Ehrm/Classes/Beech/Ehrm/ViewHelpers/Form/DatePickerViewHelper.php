@@ -76,6 +76,7 @@ class DatePickerViewHelper extends \TYPO3\Fluid\ViewHelpers\Form\AbstractFormFie
 		if ($enableTimePicker) {
 			$dateFormat .= ' H:i';
 		}
+
 		if ($displayDateSelector) {
 			$this->tag->addAttribute('type', 'text');
 		} else {
@@ -127,7 +128,9 @@ class DatePickerViewHelper extends \TYPO3\Fluid\ViewHelpers\Form\AbstractFormFie
 		}
 
 		if ($date !== NULL) {
-			$date = array('date' => $date, 'dateFormat' => 'Y-m-d H:i:s.u');
+			if (is_string($date)) {
+				$date = array('date' => $date, 'dateFormat' => 'Y-m-d H:i:s.u');
+			}
 			$date = $this->propertyMapper->convert($date, 'DateTime');
 
 			if (!$date instanceof \DateTime) {

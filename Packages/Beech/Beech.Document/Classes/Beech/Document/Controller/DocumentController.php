@@ -15,7 +15,7 @@ use \Beech\Document\Domain\Model\Document;
  *
  * @Flow\Scope("singleton")
  */
-class DocumentController extends \Beech\Ehrm\Controller\AbstractController {
+class DocumentController extends \Beech\Ehrm\Controller\AbstractManagementController {
 
 	/**
 	 * @var \TYPO3\Flow\I18n\Translator
@@ -24,10 +24,14 @@ class DocumentController extends \Beech\Ehrm\Controller\AbstractController {
 	protected $translator;
 
 	/**
-	 * @var \Beech\Document\Domain\Repository\DocumentRepository
-	 * @Flow\Inject
+	 * @var string
 	 */
-	protected $documentRepository;
+	protected $entityClassName = 'Beech\Document\Domain\Model\Document';
+
+	/**
+	 * @var string
+	 */
+	protected $repositoryClassName = 'Beech\Document\Domain\Repository\DocumentRepository';
 
 	/**
 	 * @var \Beech\Document\Domain\Repository\DocumentTypeRepository
@@ -50,9 +54,9 @@ class DocumentController extends \Beech\Ehrm\Controller\AbstractController {
 	public function listAction(\TYPO3\Party\Domain\Model\AbstractParty $party = NULL) {
 		$this->view->assign('documentCategories', $this->documentTypeRepository->findAllGroupedByCategories());
 		if ($party != NULL) {
-			$this->view->assign('documents', $this->documentRepository->findByParty($party));
+			$this->view->assign('documents', $this->repository->findByParty($party));
 		} else {
-			$this->view->assign('documents', $this->documentRepository->findAll());
+			$this->view->assign('documents', $this->repository->findAll());
 		}
 	}
 
@@ -60,9 +64,9 @@ class DocumentController extends \Beech\Ehrm\Controller\AbstractController {
 		$this->view->assign('documentCategories', $this->documentTypeRepository->findAllGroupedByCategories());
 		$this->view->assign('party', $party);
 		if ($party != NULL) {
-			$this->view->assign('documents', $this->documentRepository->findByParty($party));
+			$this->view->assign('documents', $this->repository->findByParty($party));
 		} else {
-			$this->view->assign('documents', $this->documentRepository->findAll());
+			$this->view->assign('documents', $this->repository->findAll());
 		}
 	}
 
@@ -73,12 +77,12 @@ class DocumentController extends \Beech\Ehrm\Controller\AbstractController {
 	 * @return void
 	 */
 	public function createAction(\Beech\Document\Domain\Model\Document $document) {
-		$this->documentRepository->add($document);
+		$this->repository->add($document);
 		$this->addFlashMessage($this->translator->translateById('document.documentUploaded', array(), NULL, NULL, 'Main', 'Beech.Document'));
 		if ($document->getParty() != NULL) {
-			$this->redirect('list', 'Document', 'Beech.Document', array('party' => $document->getParty()));
+			$this->redirect('new', 'Document', 'Beech.Document', array('party' => $document->getParty()));
 		} else {
-			$this->redirect('list');
+			$this->redirect('new');
 		}
 	}
 
@@ -124,7 +128,7 @@ class DocumentController extends \Beech\Ehrm\Controller\AbstractController {
 	 * @return void
 	 */
 	public function updateAction(\Beech\Document\Domain\Model\Document $document) {
-		$this->documentRepository->update($document);
+		$this->repository->update($document);
 		$this->redirect('list');
 	}
 
@@ -136,7 +140,7 @@ class DocumentController extends \Beech\Ehrm\Controller\AbstractController {
 	 * @return void
 	 */
 	public function deleteAction(\Beech\Document\Domain\Model\Document $document) {
-		$this->documentRepository->remove($document);
+		$this->repository->remove($document);
 		$this->addFlashMessage($this->translator->translateById('document.documentDeleted', array(), NULL, NULL, 'Main', 'Beech.Document'));
 		$this->emberRedirect('#/documents');
 	}

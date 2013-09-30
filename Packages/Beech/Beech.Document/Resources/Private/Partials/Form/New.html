@@ -12,6 +12,7 @@
 	</f:if>
 </f:form.validationResults>
 <f:form method="post" action="create" name="document" object="{document}" class="form-horizontal form-newDocument" enctype="multipart/form-data">
+	<input type="hidden" name="iscomplete" value="true" data-validate="isComplete"/>
 	<div class="control-group">
 		<label class="control-label" for="documentName">
 			<f:translate id="documentName">Document name:</f:translate>
