@@ -48,6 +48,10 @@ argument:
  * data-reload
  By adding this param to modal link, content will be reload with url from 'data-reload' argument
 
+ special values:
+ - reload-current-page (triggers a reload of current page after save)
+ - close-modal (just closed modal after save)
+
 Example:
 <a href="{f:uri.action(package:'Beech.Party', subpackage:'Administration', controller:'Address', action:'list', arguments: {party: person})}"
    data-toggle="modal-ajax" data-target="#modal" modal-size="large"

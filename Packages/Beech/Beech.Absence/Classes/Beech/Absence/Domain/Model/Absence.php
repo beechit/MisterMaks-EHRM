@@ -228,17 +228,55 @@ class Absence extends \Beech\Ehrm\Domain\Model\Document {
 	 * @return integer
 	 */
 	public function getDays() {
-		// TODO: Calculate number of absence's days
-		return 0;
+
+		$endDate = $this->getEndDate();
+
+		if ($endDate === NULL) {
+			$endDate = $this->getEstimatedrecoveryDate();
+		}
+
+		if ($endDate === NULL || $this->getStartDate() === NULL) {
+			return 0;
+		}
+
+		return $endDate->diff($this->getStartDate())->format("%a");;
 	}
 
 	/**
-	 * Calculated value for number of days when absence is
-	 * @return \DateTime
+	 * Total working hours off the absence
+	 *
+	 * @return float
 	 */
 	public function getHours() {
-		// TODO: Calculate number of absence's hours
-		return 0;
+		return isset($this->data['hours']) ? $this->data['hours'] : 0;
+	}
+
+	/**
+	 * @return bool
+	 */
+	public function getApproved() {
+		return $this->getRequestStatus() == 'accepted';
+	}
+
+	/**
+	 * Get status of absence
+	 *
+	 * @return string
+	 */
+	public function getStatus() {
+
+			// leave
+		if ($this->getAbsenceType() === self::OPTION_LEAVE) {
+			return $this->getRequestStatus();
+
+			// sickness
+		} else {
+			if ($this->getEndDate() === NULL) {
+				return 'sick';
+			} else {
+				return 'recovered';
+			}
+		}
 	}
 }
 ?>

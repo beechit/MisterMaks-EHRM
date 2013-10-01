@@ -3,15 +3,19 @@
 
 	App.ModuleHandlerAjaxController = Ember.Controller.extend({
 		url: '',
+		currentUrl: '',
 		loadUrl: function(params) {
 			if (!params) {
-				App.ModuleHandler.loadUrl(this.get('url'));
+				this.set('currentUrl', this.get('url'));
 			} else if (this.get('url').indexOf('?') > 0 && params.substr(0,1) == '?') {
-				App.ModuleHandler.loadUrl(this.get('url')+'&'+params.substr(1));
+				this.set('currentUrl', this.get('url')+'&'+params.substr(1));
 			} else {
-				App.ModuleHandler.loadUrl(this.get('url')+params);
+				this.set('currentUrl', this.get('url')+params);
 			}
-
+			App.ModuleHandler.loadUrl(this.get('currentUrl'));
+		},
+		refresh: function() {
+			App.ModuleHandler.loadUrl(this.get('currentUrl'));
 		}
 	});
 
@@ -54,12 +58,26 @@
 				if (this.currentRequest) {
 					this.currentRequest.abort();
 				}
+				if (url == 'close-modal') {
+					return;
+				} else if (url == 'reload-current-page') {
+					App.refreshCurrentPath();
+					return;
+				} else if (url.substr(0,9) == 'redirect:') {
+					if (document.location.hash == url.substr(9)) {
+						App.refreshCurrentPath();
+					} else {
+						document.location = '/'+url.substr(9);
+					}
+					return;
+				}
+
 				this.currentRequest = $.ajax({
 					format: 'html',
 					dataType: 'html',
 					context: this,
 					beforeSend: function(){
-						this.loadContent('<p><i class="icon-spin icon-spinner icon-3x muted"></i></p>', target);
+						this.showLoading(target);
 						this.startAjaxRequest();
 					},
 					complete: this.finishedAjaxRequest,
@@ -91,10 +109,27 @@
 				});
 			}
 		},
-
+		showLoading: function(target) {
+			if (!target) {
+				target = '.ehrm-module';
+			}
+			$(target).html('<p><i class="icon-spin icon-spinner icon-3x muted"></i></p>', target);
+		},
 		loadContent: function(html, target, replaceWith) {
-			if(html.substr(0,9) == 'redirect:') {
-				document.location = '/'+html.substr(9);
+
+			if (!html) {
+				return;
+			} else if (html == 'close-modal') {
+				return;
+			} else if (html == 'reload-current-page') {
+				App.refreshCurrentPath();
+				return;
+			} else if (html.substr(0,9) == 'redirect:') {
+				if (document.location.hash == html.substr(9)) {
+					App.refreshCurrentPath();
+				} else {
+					document.location = '/'+html.substr(9);
+				}
 				return;
 			}
 
@@ -125,26 +160,33 @@
 					beforeSubmit: that.beforeSubmit,
 					complete: that.finishedAjaxRequest,
 					success: function(result) {
+						var target = false, replaceWith = false;
+
 						$(form).removeAttr('isSubmitting')
 						if ($(form).parent().parent().attr('id') != '') {
 							if ($(form).hasClass('remove')) {
-								that.loadContent(result, '#'+$(form).parent().parent().attr('id'));
+								target = '#'+$(form).parent().parent().attr('id');
 							} else if ($(form).hasClass('add')) {
-								that.loadContent(result, '#'+$(form).parent().parent().attr('id'), true);
+								target = '#'+$(form).parent().parent().attr('id');
+								replaceWith = true;
 							} else if($('#'+$(form).parent().attr('id')).length) {
-								that.loadContent(result, '#'+$(form).parent().attr('id'), true);
+								target = '#'+$(form).parent().attr('id');
+								replaceWith = true;
 							} else {
 								$(target).scrollTop(0);
-								that.loadContent(result, target);
 							}
 						} else {
 							$(target).scrollTop(0);
-							that.loadContent(result, target);
 						}
 
 						if ($moduleContainer.parent().find('.btn-save').attr('data-reload') != undefined) {
 							that.loadUrl($moduleContainer.parent().find('.btn-save').attr('data-reload'));
 							$moduleContainer.parent().modal('hide');
+						} else if ($moduleContainer.parents('.modal').attr('data-reload')) {
+							that.loadUrl($moduleContainer.parents('.modal').attr('data-reload'));
+							$moduleContainer.parent().modal('hide');
+						} else {
+							that.loadContent(result, target, replaceWith);
 						}
 					},
 					error: function(result) {
@@ -170,30 +212,30 @@
 				$moduleContainer.parent().find('.modal-header:not(.custom)').replaceWith($customHeader);
 				$customHeader.removeClass('custom');
 			}
-			if ($moduleContainer.find('.modal-footer.custom').length > 0 && $moduleContainer.parent().find('.modal-footer:not(.custom)').length > 0) {
-				var $customFooter = $moduleContainer.find('.modal-footer.custom')
-				$moduleContainer.parent().find('.modal-footer:not(.custom)').replaceWith($customFooter);
-				$customFooter.removeClass('custom');
-			}
-			$moduleContainer.parent().find('.modal-footer').removeClass('hide');
+			if ($moduleContainer.find('.modal-footer.custom').length > 0) {
 
-			var $saveButton = $moduleContainer.parent().find('.modal-footer .btn-save');
-			var $closeButton = $moduleContainer.parent().find('.modal-footer .btn-close');
-			if ($moduleContainer.parent().find('input[name="iscomplete"]').length > 0) {
-				$moduleContainer.parent().find('input[name="iscomplete"]').each(function(k,isCompleteElement) {
-					var $form = $(isCompleteElement).parents('form:first');
-					$form.find('input[type="submit"],button[type="submit"],.form-actions').remove();
-
-					$saveButton.show();
-					$saveButton.unbind('click');
-					$saveButton.on('click', function(event) {
-						$form.submit() ;
-					})
-					$closeButton.hide()
-				});
+				$moduleContainer.parent().find('.modal-footer:last').addClass('hide');
 			} else {
-				$closeButton.show();
-				$saveButton.hide();
+				$moduleContainer.parent().find('.modal-footer').removeClass('hide');
+
+				var $saveButton = $moduleContainer.parent().find('.modal-footer .btn-save');
+				var $closeButton = $moduleContainer.parent().find('.modal-footer .btn-close');
+				if ($moduleContainer.parent().find('input[name="iscomplete"]').length > 0) {
+					$moduleContainer.parent().find('input[name="iscomplete"]').each(function(k,isCompleteElement) {
+						var $form = $(isCompleteElement).parents('form:first');
+						$form.find('input[type="submit"],button[type="submit"],.form-actions').remove();
+
+						$saveButton.show();
+						$saveButton.unbind('click');
+						$saveButton.on('click', function(event) {
+							$form.submit() ;
+						})
+						$closeButton.hide()
+					});
+				} else {
+					$closeButton.show();
+					$saveButton.hide();
+				}
 			}
 		},
 

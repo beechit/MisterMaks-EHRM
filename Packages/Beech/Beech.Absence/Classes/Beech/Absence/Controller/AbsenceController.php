@@ -80,11 +80,18 @@ class AbsenceController extends \Beech\Ehrm\Controller\AbstractManagementControl
 	 * @return void
 	 */
 	public function newAction(\Beech\Party\Domain\Model\Person $person = NULL, $absenceType = Absence::OPTION_SICKNESS) {
-		$this->view->assign('person', $person);
+
 		$this->view->assign('persons', $this->personRepository->findAll());
-		$this->view->assign('absenceType', $absenceType);
 		$absenceArrangements = $this->absenceArrangementRepository->findByAbsenceType($absenceType);
 		$this->view->assign('absenceArrangements', $absenceArrangements);
+
+		$absence = new Absence();
+		$absence->setPerson($person);
+		$absence->setAbsenceType($absenceType);
+		if ($absence->getAbsenceType() === 'leave') {
+			$absence->setRequestStatus('pending');
+		}
+		$this->view->assign('absence', $absence);
 	}
 
 	/**
@@ -99,5 +106,36 @@ class AbsenceController extends \Beech\Ehrm\Controller\AbstractManagementControl
 		$this->emberRedirect('#/person/show/' . $personIdentifier . '/' . uniqid());
 	}
 
+	/**
+	 * @param \Beech\Absence\Domain\Model\Absence $absence
+	 * @return void
+	 */
+	public function approveAction(\Beech\Absence\Domain\Model\Absence $absence) {
+		$this->view->assign('absence', $absence);
+	}
+
+	/**
+	 * @param \Beech\Absence\Domain\Model\Absence $absence
+	 * @return void
+	 */
+	public function editAction(\Beech\Absence\Domain\Model\Absence $absence) {
+
+		$this->view->assign('absence', $absence);
+
+		$this->view->assign('persons', $this->personRepository->findAll());
+		$this->view->assign('absenceArrangements', $this->absenceArrangementRepository->findByAbsenceType($absence->getAbsenceType()));
+	}
+
+	/**
+	 * @param \Beech\Absence\Domain\Model\Absence $absence
+	 * @return void
+	 */
+	public function updateAction(\Beech\Absence\Domain\Model\Absence $absence) {
+		$this->repository->update($absence);
+		$options = array('absence' => $absence);
+		$personIdentifier = $this->persistenceManager->getIdentifierByObject($absence->getPerson(), '\Beech\Party\Domain\Model\Person');
+
+		$this->emberRedirect('#/person/show/' . $personIdentifier . '/' . uniqid());
+	}
 }
 ?>

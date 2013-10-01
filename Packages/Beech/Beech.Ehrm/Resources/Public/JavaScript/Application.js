@@ -12,6 +12,12 @@
 
 	App.ApplicationController = Ember.Controller.extend();
 	App.ApplicationController = App.ApplicationController.reopen({
+
+			// update current RouteName in App
+		updateCurrentRouteName: function() {
+			App.set('currentRouteName', this.get('currentRouteName'));
+		}.observes('currentRouteName'),
+
 		title: 'Mister Maks',
 
 		init: function() {
@@ -25,6 +31,11 @@
 
 				if ($this.attr('modal-size') != '') {
 					$target.addClass('modal-' + $this.attr('modal-size'));
+				}
+
+				$target.removeAttr('data-reload');
+				if ($this.attr('data-reload')) {
+					$target.attr('data-reload', $this.attr('data-reload'));
 				}
 
 				$target.find('.modal-header').addClass('hide');

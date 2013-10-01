@@ -30,6 +30,9 @@
     endTime:
       label: 'end time'
       default: now
+    hours:
+      label: 'Hours'
+      type: 'float'
     estimatedRecoveryDate:
       label: 'Probably recovered on:'
       validation:

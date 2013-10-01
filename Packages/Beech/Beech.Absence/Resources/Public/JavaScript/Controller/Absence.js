@@ -81,7 +81,12 @@
 			if (this.get('department')) {
 				this.set('ajaxUrl', this.get('url')+'&department='+this.get('department').get('id')+'&absenceType='+this.get('controllers.BeechAbsenceAbsencesList.absenceType'));
 			}
-		}.observes('department')
+		}.observes('department'),
+		refresh: function() {
+			if (this.get('ajaxUrl')) {
+				this.set('ajaxUrl', this.ajaxUrl+'&');
+			}
+		}
 	});
 
 }).call(this);
