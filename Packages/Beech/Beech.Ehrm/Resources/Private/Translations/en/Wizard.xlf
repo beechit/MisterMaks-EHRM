@@ -50,7 +50,6 @@
 			<trans-unit id="employee">
 				<source>Employee</source>
 			</trans-unit>
-			</trans-unit>
 			<trans-unit id="contractTemplate">
 				<source>Contract template</source>
 			</trans-unit>
