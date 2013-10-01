@@ -1,3 +1,7 @@
+/* bootstrap */
+@import "../../SassTwitterBootstrap/lib/bootstrap";
+@import "../../SassTwitterBootstrap/lib/responsive";
+
 /* First 4 need to have this order */
 @import "partials/variables";
 @import "partials/mixins";
