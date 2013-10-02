@@ -24,15 +24,23 @@
 				<tbody>
 					<f:for each="{persons}" as="person" iteration="iterator">
 						<tr>
-							<td><f:render partial="Views/Show/ProfilePhoto" arguments="{photo: person.profilePhoto, width: 50, random: 'TRUE'}"/></td>
-							<td>{person.name.fullName}</td>
+							<td><a href="#/person/show/{person.id}"><f:render partial="Views/Show/ProfilePhoto" arguments="{photo: person.profilePhoto, width: 50, random: 'TRUE'}"/></a></td>
+							<td><a href="#/person/show/{person.id}">{person.name.fullName}</td>
 							<td>{person.age}</td>
 							<td>{person.department.Name}</td>
 							<td></td>
 							<td>
-								<a href="#/person/show/{person.id}"><i class="icon-eye-open"></i></a>
-								<a href="#/person/edit/{person.id}"><i class="icon-pencil"></i></a>
-								<a href="#/person/delete/{person.id}"><i class="icon-trash"></i></a>
+								<div class="pull-right">
+									<div class="btn-group">
+										<a href="#/person/show/{person.id}" class="btn"><f:translate>view</f:translate></a>
+										<button class="btn dropdown-toggle" data-toggle="dropdown">
+											<span class="caret"></span>
+										</button>
+										<ul class="dropdown-menu pull-right">
+											<a href="#/person/show/{person.id}"><i class="icon-eye-open"></i> <f:translate id="View">View</f:translate></a>
+									<a href="#/person/delete/{person.id}"><i class="icon-trash"></i> <f:translate id="delete">Delete</f:translate></a></ul>
+									</div>
+								</div>
 							</td>
 						</tr>
 					</f:for>

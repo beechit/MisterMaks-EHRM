@@ -48,7 +48,7 @@
 							<f:format.date format="d-m-Y">{person.dateOfBirth}</f:format.date>
 						</div>
 						<div class="span8">
-							<f:translate id="age:">Age: </f:translate><strong>{person.age}</strong>
+							<f:translate id="person.age:"> Age: </f:translate> <strong>{person.age}</strong> <f:translate id="yearsOld">years old</f:translate>
 							<ehrm:link.edit subpackage='Administration' controller='Person' action='edit' arguments='{person: person, withDetails: false}'
 											dataReload="{f:uri.action(package:'Beech.Party', controller:'Person', action:'show', arguments: {person: person})}"/>
 						</div>
