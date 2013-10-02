@@ -11,6 +11,13 @@
 	}
 }
 
+.uneditable-input {
+	border-color: transparent;
+	color: #000;
+	background: transparent;
+	width: auto;
+}
+
 /* Start datepicker */
 .datepickerIcon {
 	cursor: pointer;

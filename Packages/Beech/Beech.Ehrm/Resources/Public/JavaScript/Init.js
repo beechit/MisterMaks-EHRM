@@ -6,6 +6,18 @@ var App;
 	App = Ember.Application.create({
 		LOG_TRANSITIONS: true,
 		LOG_STACKTRACE_ON_DEPRECATION: true,
+		currentRouteName: '',
+		refreshCurrentPath: function() {
+			var currentController = App.__container__.lookup('controller:'+this.currentRouteName),
+				currentRoute = App.__container__.lookup('route:'+this.currentRouteName);
+			if (currentController.refresh) {
+				currentController.refresh();
+			} else if (currentRoute.refresh) {
+				currentRoute.refresh();
+			} else {
+				window.location.reload();
+			}
+		},
 		Service: {},
 		Socket: null,
 		SocketMessageListeners: [],

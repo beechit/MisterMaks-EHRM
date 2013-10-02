@@ -157,10 +157,13 @@ trait ConfigurableModelTrait {
 				$this->mappedData[$name] = $value;
 				if ($this->getDynamicPropertyType($name) === 'DateTime') {
 					$this->data[$name] = $value->format('Y-m-d H:i:s.u');
-				} elseif ($this->getDynamicPropertyType($name) === 'array') {
-					$this->data[$name] = $this->propertyMapper->convert($value, 'array');
 				} else {
-					$this->data[$name] = $this->propertyMapper->convert($value, 'string');
+					$type = $this->getDynamicPropertyType($name);
+					if (in_array($type, array('array', 'integer', 'float', 'boolean'))) {
+						$this->data[$name] = $this->propertyMapper->convert($value, $type);
+					} else {
+						$this->data[$name] = $this->propertyMapper->convert($value, 'string');
+					}
 				}
 			}
 		} else {

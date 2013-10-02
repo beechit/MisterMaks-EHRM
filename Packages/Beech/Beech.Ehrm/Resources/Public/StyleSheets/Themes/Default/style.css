@@ -1553,6 +1553,8 @@ footer .logo i { position: absolute; left: -8px; top: 1px; font-size: 0.8em; }
 .index .btn { padding: 20px 30px; position: relative; }
 .index .btn i { position: absolute; top: 5px; left: 8px; }
 
+.content-padding { padding: 20px; }
+
 /* This forces the main application div to be 100% height in order to allow for a sticky footer */
 .ember-view.full { height: 100%; }
 
@@ -1585,6 +1587,8 @@ ul.flashmessages { list-style-type: none; margin-left: 0px; }
 .left { /* Search */ }
 .left form fieldset { position: relative; }
 .left form fieldset .icon-search { position: absolute; top: 8px; right: 8px; color: #049cdb; }
+
+.uneditable-input { border-color: transparent; color: #000; background: transparent; width: auto; }
 
 /* Start datepicker */
 .datepickerIcon { cursor: pointer; }
@@ -1656,6 +1660,11 @@ iframe { border: none; }
 .wizard-modal .well { padding: 0; border: none; background: transparent; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; }
 .wizard-modal .wizard-card h1 { display: none; }
 .wizard-modal .row-fluid { width: auto; }
+
+/* elements that only need to be visible when in modal */
+.only-in-modal { visibility: hidden; }
+
+.modal .only-in-modal { visibility: visible; }
 
 /* End Modal box / Wizard */
 /* Start Notifications */

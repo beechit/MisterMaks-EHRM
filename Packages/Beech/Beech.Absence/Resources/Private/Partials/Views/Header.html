@@ -1,0 +1,9 @@
+<div class="modal-header custom">
+	<h3>
+		<f:if condition="{person}">
+			<f:render partial="Beech.Party:Views/Show/ProfilePhoto" arguments="{photo: person.profilePhoto, width: 50}"/>
+			{person.name} /
+		</f:if>
+		{title}
+	</h3>
+</div>

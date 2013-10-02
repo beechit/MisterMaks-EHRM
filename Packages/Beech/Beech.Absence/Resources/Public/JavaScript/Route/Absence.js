@@ -1,7 +1,7 @@
 (function() {
 	'use strict';
 
-	App.BeechAbsenceAbsencesListRoute = App.ModuleRoute.extend({
+	App.BeechAbsenceAbsencesListRoute = Ember.Route.extend({
 		activate: function() {
 			// redirect on re-entering
 			var department = this.controllerFor('BeechAbsenceAbsencesList').get('department');
@@ -13,7 +13,7 @@
 		}
 	});
 
-	App.BeechAbsenceAbsencesListListRoute = App.ModuleRoute.extend({
+	App.BeechAbsenceAbsencesListListRoute = Ember.Route.extend({
 		model: function(params) {
 			return this.get('store').find('beechPartyDomainModelCompany', params.department_id);
 		},
@@ -24,7 +24,7 @@
 		}
 	});
 
-	App.BeechAbsenceAbsencesOverviewRoute = App.ModuleRoute.extend({
+	App.BeechAbsenceAbsencesOverviewRoute = Ember.Route.extend({
 		activate: function() {
 			// redirect on re-entering
 			Ember.run.once(this, function () {

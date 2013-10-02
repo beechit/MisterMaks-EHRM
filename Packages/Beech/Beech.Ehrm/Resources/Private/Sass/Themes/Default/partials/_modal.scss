@@ -106,4 +106,12 @@ iframe {
 	}
 }
 
+/* elements that only need to be visible when in modal */
+.only-in-modal {
+	visibility: hidden;
+}
+.modal .only-in-modal {
+	visibility: visible;
+}
+
 /* End Modal box / Wizard */

@@ -8,32 +8,28 @@
 
 	<div id="c261" class="csc-default">
 		<a class="btn" href="{f:uri.action(package:'Beech.Absence', controller:'Absence', action:'new', arguments: {person: person, absenceType: 'sickness'})}"
-		   data-toggle="modal-ajax" data-target="#modal" modal-size="large"
-		   data-reload="{f:uri.action(package:'Beech.Party', controller:'Person', action:'show', arguments: {person: person})}">
+		   data-toggle="modal-ajax" data-target="#modal" modal-size="large" data-reload="close-modal">
 			<i class="icon-ambulance icon-white"></i>
 			<f:translate id="sickReport">Sick report</f:translate>
 		</a>
 		<a class="btn" href="{f:uri.action(package:'Beech.Absence', controller:'Absence', action:'new', arguments: {person: person, absenceType: 'leave'})}"
-		   data-toggle="modal-ajax" data-target="#modal" modal-size="large"
-		   data-reload="{f:uri.action(package:'Beech.Party', controller:'Person', action:'show', arguments: {person: person})}">
+		   data-toggle="modal-ajax" data-target="#modal" modal-size="large" data-reload="close-modal">
 			<i class="icon-ambulance icon-white"></i>
 			<f:translate id="leaveRequest">Leave request</f:translate>
 		</a>
 		<a class="btn" href="{f:uri.action(package:'Beech.Absence', controller:'Absence', action:'list', arguments: {person: person, absenceType: 'sickness'})}"
-		   data-toggle="modal-ajax" data-target="#modal" modal-size="large"
-		   data-reload="{f:uri.action(package:'Beech.Party', controller:'Person', action:'show', arguments: {person: person})}">
+		   data-toggle="modal-ajax" data-target="#modal" modal-size="large">
 			<i class="icon-ambulance icon-white"></i>
 			<f:translate id="sicknessHistory">Sickness history</f:translate>
 		</a>
 		<a class="btn" href="{f:uri.action(package:'Beech.Absence', controller:'Absence', action:'list', arguments: {person: person, absenceType: 'leave'})}"
-		   data-toggle="modal-ajax" data-target="#modal" modal-size="large"
-		   data-reload="{f:uri.action(package:'Beech.Party', controller:'Person', action:'show', arguments: {person: person})}">
+		   data-toggle="modal-ajax" data-target="#modal" modal-size="large">
 			<i class="icon-ambulance icon-white"></i>
 			<f:translate id="leaveHistory">Leave history</f:translate>
 		</a>
 		<a class="btn btn-success" href="{f:uri.action(package:'Beech.CLA', subpackage:'Administration', controller:'contract', action:'new', arguments: {employee: person})}"
 		   data-toggle="modal-ajax" data-target="#modal-body-only" modal-size="large"
-		   data-reload="{f:uri.action(package:'Beech.Party', controller:'Person', action:'show', arguments: {person: person})}">
+		   data-reload="reload-current-page">
 			<i class="icon-plus icon-white"></i>
 			Create contract
 		</a>

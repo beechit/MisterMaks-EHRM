@@ -1,12 +1,6 @@
-<div class="modal-header custom">
-	<h3>
-		<f:if condition="{person}">
-			<f:render partial="Beech.Party:Views/Show/ProfilePhoto" arguments="{photo: person.profilePhoto, width: 50}"/>
-			{person.name} /
-		</f:if>
-		<f:translate id="sicknessHistory">Sickness history</f:translate>
-	</h3>
-</div>
+
+<f:render partial="Views/Header" arguments="{person:person, title:'{f:translate(id: \'sicknessHistory\', value: \'Sickness history\')}'}"/>
+
 <div class="clearfix container-fluid">
 	<div class="row-fluid">
 		<div class="span3"><f:translate id="percentageSick">Sickness %</f:translate></div>
@@ -19,22 +13,31 @@
 			<table class="table absenceList table-striped table-bordered">
 				<thead>
 				<tr>
+					<f:if condition="{person}"><f:else><th><f:translate id="type">Name</f:translate></th></f:else></f:if>
 					<th><f:translate id="type">Type</f:translate></th>
 					<th><f:translate id="from">From</f:translate></th>
 					<th><f:translate id="till">Till</f:translate></th>
 					<th><f:translate id="days">Days</f:translate></th>
 					<th><f:translate id="hours">Hours</f:translate></th>
 					<th><f:translate id="status">Status</f:translate></th>
+					<th></th>
 				</tr>
 				</thead>
 				<f:for each="{absences}" as="absence">
 					<tr>
-						<td>{absence.absenceArrangement.arrangementName}</td>
+						<f:if condition="{person}"><f:else><td>{absence.person.name}</td></f:else></f:if>
+						<td>{absence.absenceArrangement.label}</td>
 						<td>{absence.startDate -> f:format.date(format: 'd-m-Y')}</td>
 						<td>{absence.estimatedRecoveryDate -> f:format.date(format: 'd-m-Y')}</td>
 						<td>{absence.days}</td>
 						<td>{absence.hours}</td>
-						<td> </td>
+						<td>{absence.status}</td>
+						<td>
+							<a class="btn btn-small" href="{f:uri.action(package:'Beech.Absence', controller:'Absence', action:'edit', arguments: {absence: absence})}"
+							   data-toggle="modal-ajax" data-target="#modal" modal-size="large" data-reload="reload-current-page" title="<f:translate id='edit' />">
+								<i class="icon-edit"></i>
+							</a>
+						</td>
 					</tr>
 				</f:for>
 			</table>
@@ -55,11 +58,14 @@
 				"sNext": '<f:translate id="absence.sNext">Next</f:translate>',
 				"sPrevious": '<f:translate id="absence.sPrevious">Previous</f:translate>',
 		"aoColumns": [
+			<f:if condition="{person}"><f:else>null,</f:else></f:if>
 			null,
 			{ "sType": "date-nl" },
 			{ "sType": "date-nl" },
 			{ "sType": "numeric" },
-			{ "sType": "numeric" }
+			{ "sType": "numeric" },
+			null,
+			null
 		]
 		}
 	}
