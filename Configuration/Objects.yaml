@@ -1,2 +1,0 @@
-TYPO3\Form\Persistence\FormPersistenceManagerInterface:
-  className: Beech\Ehrm\Form\Persistence\YamlPersistenceManager
