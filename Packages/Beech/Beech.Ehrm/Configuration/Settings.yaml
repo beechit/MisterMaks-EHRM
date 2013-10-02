@@ -6,8 +6,6 @@ Beech:
       themes: []
 
       styleSheets:
-        - 'Beech.Ehrm/Library/bootstrap/css/bootstrap.css'
-        - 'Beech.Ehrm/Library/bootstrap/css/bootstrap-responsive.css'
         - 'Beech.Ehrm/Library/fontawesome/css/font-awesome.min.css'
         - 'Beech.Ehrm/Library/dataTables/media/css/jquery.dataTables.TwitterBootstrap.css'
         - 'Beech.Ehrm/Library/dataTables/media/css/jquery.dataTables.css'
