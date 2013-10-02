@@ -85,7 +85,7 @@ class NationalitySelectViewHelper extends \TYPO3\Fluid\ViewHelpers\Form\SelectVi
 		if ($this->value === '') {
 			return $this->isDefault($value);
 		} else {
-			return ($this->value === $value);
+			return ((string) $this->value === (string) $value);
 		}
 	}
 
