@@ -30,6 +30,31 @@
 						   placeholder="{f:translate(id: 'gender')}..." class="span8" translate="{by: 'id'}"/>
 	</div>
 </div>
+
+<div class="control-group gender-femaleOnly hide">
+	<label class="control-label" for="birthName">
+		<f:translate id="birthName">Birth name</f:translate>
+	</label>
+
+	<div class="controls controls-row">
+		<f:form.textfield property="middleOtherName" id="middleOtherName" class="span2 capitalize"
+						  placeholder="{f:translate(id:'middleName')}"/>
+		<f:form.textfield property="otherName" id="otherName" class="span6 capitalize"
+						  placeholder="{f:translate(id:'birthName')}"/>
+	</div>
+</div>
+
+<div class="control-group gender-femaleOnly hide">
+	<label class="control-label" for="nameUsage">
+		<f:translate id="nameUsage">Name usage</f:translate>
+	</label>
+
+	<div class="controls controls-row">
+		<ehrm:optionSelect property="nameUsage" id="nameUsage" model="Beech.Party:Person"
+						   placeholder="{f:translate(id: 'nameUsage')}..." class="span8" translate="{by: 'id'}"/>
+	</div>
+</div>
+
 <div class="control-group">
 	<label class="control-label" for="salutation">
 		<f:translate id="salutation">Salutation</f:translate>
@@ -50,29 +75,6 @@
 			<ehrm:optionSelect property="civilStatus" id="civilStatus" model="Beech.Party:Person"
 							   placeholder="{f:translate(id: 'civilStatus')}..." class="span8" translate="{by: 'id'}"/>
 		</div>
-	</div>
-</div>
-<div class="control-group">
-	<label class="control-label" for="birthName">
-		<f:translate id="birthName">Birth name</f:translate>
-	</label>
-
-	<div class="controls controls-row">
-		<f:form.textfield property="middleOtherName" id="middleOtherName" class="span2 capitalize"
-						  placeholder="{f:translate(id:'middleName')}"/>
-		<f:form.textfield property="otherName" id="otherName" class="span6 capitalize"
-						  placeholder="{f:translate(id:'birthName')}"/>
-	</div>
-</div>
-
-<div class="control-group">
-	<label class="control-label" for="nameUsage">
-		<f:translate id="nameUsage">Name usage</f:translate>
-	</label>
-
-	<div class="controls controls-row">
-		<ehrm:optionSelect property="nameUsage" id="nameUsage" model="Beech.Party:Person"
-						   placeholder="{f:translate(id: 'nameUsage')}..." class="span8" translate="{by: 'id'}"/>
 	</div>
 </div>
 
@@ -150,3 +152,14 @@
 		</div>
 	</div>
 </f:if>
+<script type="text/javascript">
+	$('#gender').on('change', function() {
+		if ($(this).val() === 'female') {
+			$('.gender-femaleOnly').removeClass('hide');
+		} else {
+			$('.gender-femaleOnly').addClass('hide');
+			$('.gender-femaleOnly input').val('');
+		}
+	});
+	$('#gender').trigger('change');
+</script>
