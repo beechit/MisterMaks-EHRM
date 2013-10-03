@@ -30,6 +30,12 @@ class ProfilePhotoController extends \Beech\Document\Controller\DocumentControll
 	protected $documentTypeRepository;
 
 	/**
+	 * @var \Beech\Document\Domain\Repository\DocumentRepository
+	 * @Flow\Inject
+	 */
+	protected $documentRepository;
+
+	/**
 	 * @var \TYPO3\Flow\Object\ObjectManagerInterface
 	 * @Flow\Inject
 	 */
