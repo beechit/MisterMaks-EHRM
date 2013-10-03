@@ -17,6 +17,12 @@ use TYPO3\Flow\Annotations as Flow;
 class WorkflowConfigurationManager {
 
 	/**
+	 * @Flow\Inject
+	 * @var \TYPO3\Flow\Log\SystemLoggerInterface
+	 */
+	protected $logger;
+
+	/**
 	 * @param array $configuration
 	 * @param object $target
 	 * @param \Beech\Workflow\Domain\Model\Action $action
@@ -116,6 +122,7 @@ class WorkflowConfigurationManager {
 	protected function getObjectProperty($object, $property_string) {
 
 		if (!is_object($object)) {
+			$this->logger->log('getObjectProperty: NULL '.$property_string.' from '.get_class($object), LOG_DEBUG);
 			return NULL;
 		}
 
@@ -124,10 +131,13 @@ class WorkflowConfigurationManager {
 		$method = 'get' . ucfirst(array_shift($propertyParts));
 
 		if (!is_callable(array($object, $method))) {
+			$this->logger->log('getObjectProperty: unknown '.get_class($object).'.'.$method.'()', LOG_DEBUG);
 			return NULL;
 		} elseif (count($propertyParts)) {
+			$this->logger->log('getObjectProperty: get '.implode('.', $propertyParts).' from '.get_class($object).'.'.$method.'()', LOG_DEBUG);
 			return self::getObjectProperty($object->$method(), implode('.', $propertyParts));
 		} else {
+			$this->logger->log('getObjectProperty: return '.get_class($object).'.'.$method.'()', LOG_DEBUG);
 			return $object->$method();
 		}
 	}

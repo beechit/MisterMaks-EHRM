@@ -22,7 +22,7 @@ class WorkflowAspect {
 	protected $securityContext;
 
 	/**
-	 * @Flow\After("method(Beech\Party\Domain\Repository\.*Repository->(add|update|remove)())")
+	 * @Flow\After("method(Beech\.*\Domain\Repository\.*Repository->(add|update|remove)())")
 	 * @param \TYPO3\Flow\Aop\JoinPointInterface $joinPoint The current join point
 	 * @return void
 	 */

@@ -80,6 +80,12 @@ abstract class AbstractAction extends \Beech\Ehrm\Domain\Model\Document implemen
 	protected $persistenceManager;
 
 	/**
+	 * @var \TYPO3\Flow\Object\ObjectManagerInterface
+	 * @Flow\Inject
+	 */
+	protected $objectManager;
+
+	/**
 	 * @var \TYPO3\Flow\Security\Context
 	 * @Flow\Inject
 	 */
@@ -171,7 +177,13 @@ abstract class AbstractAction extends \Beech\Ehrm\Domain\Model\Document implemen
 	 */
 	public function getTarget() {
 		if ($this->targetEntity === NULL) {
-			$this->targetEntity = $this->persistenceManager->getObjectByIdentifier($this->targetIdentifier, $this->targetClassName);
+			$repositoryClassName = str_replace('\Model\\', '\Repository\\', $this->targetClassName).'Repository';
+			$repository = $this->objectManager->get($repositoryClassName);
+			if ($repository) {
+				$this->targetEntity = $repository->findByIdentifier($this->targetIdentifier);
+			} else {
+				$this->targetEntity = $this->persistenceManager->getObjectByIdentifier($this->targetIdentifier, $this->targetClassName);
+			}
 		}
 		return $this->targetEntity;
 	}
