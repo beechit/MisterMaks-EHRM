@@ -236,6 +236,30 @@ class TaskTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFunctionalTes
 		$this->assertTrue($task->isClosed());
 	}
 
+
+	/**
+	 * @test
+	 */
+	public function escalationWorksAsExpected() {
+		$task = new Task();
+
+		$jane = $this->createPerson('Jane', 'Doe', TRUE);
+		$john = $this->createPerson('John', 'Doe', TRUE);
+
+		// no one assign so can't escalate
+		$this->assertFalse($task->escalate());
+
+		// someone assigne but had no manager
+		$task->setAssignedTo($jane);
+		$this->assertFalse($task->escalate());
+
+		// assign person to a manager
+		// @todo: manager part has to be implemented for now createdBy
+		$this->markTestSkipped('person->getManager() needs to get implemented and/or person->$createdBy needs to get moved to model instait of YAML because can not mock it now');
+
+		$jane->setCreatedBy($john);
+		$this->assertTrue($task->escalate());
+	}
 }
 
 ?>

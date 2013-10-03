@@ -248,33 +248,6 @@ class TaskTest extends \TYPO3\Flow\Tests\UnitTestCase {
 		return $this->persons[$personId];
 	}
 
-	/**
-	 * @test
-	 */
-	public function escalationWorksAsExpected() {
-		$task = new Task();
-
-		$this->inject($task, 'persistenceManager', $this->setupPersonRepository());
-		$this->inject($task, 'configurationManager', $this->configurationManager);
-
-		$jane = $this->persons['abcjane'];
-		$john = $this->persons['abcjohn'];
-
-			// no one assign so can't escalate
-		$this->assertFalse($task->escalate());
-
-			// someone assigne but had no manager
-		$task->setAssignedTo($jane);
-		$this->assertFalse($task->escalate());
-
-			// assign person to a manager
-			// @todo: manager part has to be implemented for now createdBy
-		$this->markTestSkipped('person->getManager() needs to get implemented and/or person->$createdBy needs to get moved to model instait of YAML because can not mock it now');
-
-		$jane->setCreatedBy($john);
-		$this->assertTrue($task->escalate());
-	}
-
 }
 
 ?>

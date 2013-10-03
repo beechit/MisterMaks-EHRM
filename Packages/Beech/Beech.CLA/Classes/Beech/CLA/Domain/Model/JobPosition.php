@@ -261,6 +261,32 @@ class JobPosition extends \Beech\Ehrm\Domain\Model\Document {
 		$this->children->removeElement($child);
 	}
 
+	/**
+	 * Get the manager of this position
+	 *
+	 * @todo: better implementation of the hierarchy with
+	 *		  all the necessary exceptions
+	 *
+	 * @return \Beech\Party\Domain\Model\Person
+	 */
+	public function getManager() {
+
+		if ($this->getParent()) {
+				// if parent jobposition has a person with account that is the manager
+			if ($this->getParent()->getPerson() &&
+				$this->getParent()->getPerson()->hasUserAccount()) {
+				return $this->getParent()->getPerson();
+
+				// else go level higher
+			} else {
+				return $this->getParent()->getManager();
+			}
+
+		} else {
+			return $this->getPerson();
+		}
+	}
+
 }
 
 ?>

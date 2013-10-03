@@ -25,6 +25,12 @@ class Person extends \TYPO3\Party\Domain\Model\AbstractParty implements \TYPO3\F
 
 	/**
 	 * @Flow\Inject
+	 * @var \Beech\CLA\Domain\Repository\JobPositionRepository
+	 */
+	protected $jobPositionRepository;
+
+	/**
+	 * @Flow\Inject
 	 * @var \TYPO3\Flow\Object\ObjectManagerInterface
 	 */
 	protected $objectManager;
@@ -82,17 +88,37 @@ class Person extends \TYPO3\Party\Domain\Model\AbstractParty implements \TYPO3\F
 	}
 
 	/**
+	 * Get jobposition
+	 *
+	 * @return \Beech\CLA\Domain\Model\JobPosition
+	 */
+	public function getJobPosition() {
+		return $this->jobPositionRepository->findOneByPerson($this->getId());
+	}
+
+	/**
 	 * Get his manager
 	 *
 	 * @todo implement hierarchy until then use the creator
 	 * @return \Beech\Party\Domain\Model\Person
 	 */
-	protected function getManager() {
-		if ($this->getCreatedBy() !== NULL && $this->getCreatedBy() !== $this) {
-			return $this->getCreatedBy();
+	public function getManager() {
+
+		$jobPosition = $this->getJobPosition();
+		if ($jobPosition !== NULL) {
+			return $jobPosition->getManager();
 		} else {
 			return NULL;
 		}
+	}
+
+	/**
+	 * Check if person has a user account
+	 *
+	 * @return boolean
+	 */
+	public function hasUserAccount() {
+		return count($this->getAccounts()) !== 0 ? TRUE : FALSE;
 	}
 
 	/**
