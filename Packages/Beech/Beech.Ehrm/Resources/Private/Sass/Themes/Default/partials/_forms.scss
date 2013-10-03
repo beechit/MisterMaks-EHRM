@@ -81,3 +81,11 @@ input[readonly].datepicker {
 	padding-top:10px;
 }
 /* End Contract Wizard / Form */
+
+.ehrm-module td .icon-pencil {
+	opacity: 0;
+}
+.ehrm-module td:hover .icon-pencil {
+	opacity: 1;
+	transition: opacity .25s ease-in-out;
+}

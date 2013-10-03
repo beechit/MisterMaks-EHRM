@@ -1620,6 +1620,10 @@ input[readonly].datepicker { background: white; }
 .preview table tr.article td { padding-top: 10px; }
 
 /* End Contract Wizard / Form */
+.ehrm-module td .icon-pencil { opacity: 0; }
+
+.ehrm-module td:hover .icon-pencil { opacity: 1; transition: opacity .25s ease-in-out; }
+
 a:hover { text-decoration: none; }
 
 .align-center { text-align: center; }
