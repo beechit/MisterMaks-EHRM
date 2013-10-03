@@ -22,6 +22,7 @@
 				<f:render partial="Views/Show/Company/Logo" arguments="{photo: company.logo, width: 150, random: 'TRUE'}"/>
 				<ehrm:link.edit controller='CompanyLogo' action='edit'
 								arguments='{company: company}'
+								modalSize="small"
 								dataReload="{f:uri.action(package:'Beech.Party', controller:'Company', action:'index', arguments: {company: company})}"/>
 			</div>
 		</div>

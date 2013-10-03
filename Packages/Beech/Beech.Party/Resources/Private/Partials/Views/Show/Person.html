@@ -6,6 +6,7 @@
 				<f:render partial="Views/Show/ProfilePhoto" arguments="{photo: person.profilePhoto, width: 150, random: 'TRUE'}"/>
 				<ehrm:link.edit controller='ProfilePhoto' action='edit'
 								arguments='{party: person}'
+								modalSize="small"
 								dataReload="{f:uri.action(package:'Beech.Party', controller:'Person', action:'show', arguments: {person: person})}"/>
 
 			</td>
