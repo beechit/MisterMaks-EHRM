@@ -50,6 +50,12 @@ class Contract extends \Beech\Ehrm\Domain\Model\Document {
 	protected $contractTemplate;
 
 	/**
+	 * @var \Beech\CLA\Domain\Model\SalaryScale
+	 * @ODM\ReferenceOne(targetDocument="\Beech\CLA\Domain\Model\SalaryScale")
+	 */
+	protected $salaryScale;
+
+	/**
 	 * @var \Beech\Ehrm\Domain\Model\Status
 	 * @ODM\ReferenceOne(targetDocument="\Beech\Ehrm\Domain\Model\Status", cascade={"persist"})
 	 */

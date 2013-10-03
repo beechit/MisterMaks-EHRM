@@ -9,6 +9,8 @@ contractTemplate:
   claversiondate: '01-07-2012'
   availableLanguages:
     - 'nl_NL'
+    - 'en_EN'
+    - 'pl_PL'
   templateName: 'Permanent Contract'
   contractTitle:
     text:
@@ -77,6 +79,9 @@ contractTemplate:
       pl: 'zwany dalej „Pracownikiem” oświadczają niniejszym, że zawarli umowę o pracę na następujących warunkach:'
   articles:
     -
+      '10002':
+        required: TRUE
+    -
       '10004':
         required: TRUE
     -
@@ -101,7 +106,10 @@ contractTemplate:
       '10013':
         required: FALSE
     -
-      '10016':
+      '10014':
+        required: TRUE
+    -
+      '10015':
         required: TRUE
     -
       '10017':
@@ -111,13 +119,15 @@ contractTemplate:
         required: FALSE
     -
       '10019':
-        required: FALSE
-    -
-      '10014':
         required: TRUE
     -
       '10035':
         required: TRUE
+# these settings should be persisted while saving contract.
+  vacationAllowancePercentage: '8.33'
+  gla: FALSE
+  cafetariaModel: FALSE
+# for 'paper' contract generation
   sigatureStatement:
     text:
       en: ''

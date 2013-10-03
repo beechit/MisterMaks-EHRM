@@ -38,26 +38,7 @@ class ContractTest extends \Radmiraal\CouchDB\Tests\Functional\AbstractFunctiona
 		$this->contractRepository->injectDocumentManagerFactory($this->documentManagerFactory);
 	}
 
-	/**
-	 * @test
-	 */
-	public function testBasicContractPersistence() {
-		$contract = new \Beech\CLA\Domain\Model\Contract();
-		$contract->setStatus(new \Beech\Ehrm\Domain\Model\Status());
-		$contract->setCreationDate(new \DateTime);
 
-		$wage = new \Beech\CLA\Domain\Model\Wage();
-		$wage->setAmount(9999);
-		$wage->setType($wage::TYPE_DAILY);
-		$this->documentManager->persist($wage);
-
-		$contract->addWage($wage);
-		$this->contractRepository->add($contract);
-
-		$this->documentManager->flush();
-
-		$this->assertEquals(1, $this->contractRepository->countAll());
-	}
 
 	/**
 	 * @test

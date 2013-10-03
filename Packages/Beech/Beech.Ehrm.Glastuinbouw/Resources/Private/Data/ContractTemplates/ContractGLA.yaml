@@ -9,6 +9,8 @@ contractTemplate:
   claVersiondate: '01-07-2012'
   availableLanguages:
     - 'nl_NL'
+    - 'en_EN'
+    - 'pl_PL'
   templateName: 'Temporary contract with GLA Arrangement'
   contractTitle:
     text:
@@ -116,11 +118,13 @@ contractTemplate:
       '10012':
         required: FALSE
     -
-      '10013':
-        required: FALSE
-    -
       '10035':
         required: TRUE
+# these settings should be persisted while saving contract.
+  vacationAllowancePercentage: '20'
+  isMinimumWage: TRUE
+  gla: TRUE
+# for 'paper' contract generation
   sigatureStatement:
     text:
       en: ''
