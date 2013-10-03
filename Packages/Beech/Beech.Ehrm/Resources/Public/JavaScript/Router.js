@@ -138,10 +138,9 @@
 			// Beech.CLA/JobPosition
 			this.resource('BeechCLAJobPosition', { path: 'jobpositions' }, function() {
 				this.route('index', { path: '/' });
-				this.route('index', { path: '/:random' });
 			});
 			this.resource('BeechCLAJobPosition', { path: 'jobposition' }, function() {
-				this.route('index', { path: '/:random' });
+				this.route('index', { path: '/' });
 				this.route('new', { path: '/new/:parentJobPosition' });
 				this.route('show', { path: '/:jobPosition' });
 				this.route('edit', { path: '/edit/:jobPosition' });
