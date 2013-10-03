@@ -29,6 +29,7 @@
 					$target = $($this.attr('data-target') || (href && href.replace(/\.*(?=#[^\s]+$)/, '')));
 				e.preventDefault();
 
+				$target.removeClass('modal-small modal-large');
 				if ($this.attr('modal-size') != '') {
 					$target.addClass('modal-' + $this.attr('modal-size'));
 				}
