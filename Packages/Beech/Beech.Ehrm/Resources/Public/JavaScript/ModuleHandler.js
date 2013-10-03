@@ -160,9 +160,13 @@
 					beforeSubmit: that.beforeSubmit,
 					complete: that.finishedAjaxRequest,
 					success: function(result) {
-						var target = false, replaceWith = false;
+						var replaceWith = false, redirect = false;
+
+						// check if response is redirect
+						redirect = (result == 'close-modal' || result == 'reload-current-page' || result.substr(0,9) == 'redirect:');
 
 						$(form).removeAttr('isSubmitting')
+						// override target
 						if ($(form).parent().parent().attr('id') != '') {
 							if ($(form).hasClass('remove')) {
 								target = '#'+$(form).parent().parent().attr('id');
@@ -179,10 +183,11 @@
 							$(target).scrollTop(0);
 						}
 
+						// if data-reload is set on btn-save use that location
 						if ($moduleContainer.parent().find('.btn-save').attr('data-reload') != undefined) {
 							that.loadUrl($moduleContainer.parent().find('.btn-save').attr('data-reload'));
 							$moduleContainer.parent().modal('hide');
-						} else if ($moduleContainer.parents('.modal').attr('data-reload')) {
+						} else if (redirect && $moduleContainer.parents('.modal').attr('data-reload')) {
 							that.loadUrl($moduleContainer.parents('.modal').attr('data-reload'));
 							$moduleContainer.parent().modal('hide');
 						} else {
