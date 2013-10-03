@@ -45,14 +45,7 @@ class WorkflowConfigurationManager {
 		foreach ($configuration['properties'] as $propertyName => $propertyDefinition) {
 			$setMethod = 'set' . ucfirst($propertyName);
 			if (method_exists($handler, $setMethod)) {
-				if (is_array($propertyDefinition)) {
-					$property = array();
-					foreach ($propertyDefinition as $key => $definition) {
-						$property[$key] = $this->getPropertyFromDefinition($definition, $configuration['className'], $target, $action);
-					}
-				} else {
-					$property = $this->getPropertyFromDefinition($propertyDefinition, $configuration['className'], $target, $action);
-				}
+				$property = $this->getPropertyFromDefinition($propertyDefinition, $configuration['className'], $target, $action);
 				if ($property !== FALSE) {
 					$handler->$setMethod($property);
 				}
@@ -75,37 +68,45 @@ class WorkflowConfigurationManager {
 	 * @return mixed, false on failure
 	 */
 	protected function getPropertyFromDefinition($propertyDefinition, $className = '', $target, $action) {
-		$propertyParts = explode(':', $propertyDefinition);
 
-		if (count($propertyParts) == 1) {
-			return $propertyParts[0];
-		}
+		if (is_array($propertyDefinition)) {
+			$property = array();
+			foreach ($propertyDefinition as $key => $definition) {
+				$property[$key] = $this->getPropertyFromDefinition($definition, $className, $target, $action);
+			}
+		} else {
 
-		$property = FALSE;
-		switch ($propertyParts[0]) {
-			case 'TARGET':
-				$property = $this->getObjectProperty($target, $propertyParts[1]);
-				break;
-			case 'ACTION':
-				$property = $this->getObjectProperty($action, $propertyParts[1]);
-				break;
-			case 'DATETIME';
-				$property = new \DateTime($propertyParts[1]);
-				break;
-			case 'CONSTANT':
-				if (defined($className . '::' . $propertyParts[1])) {
-					$property = constant($className . '::' . $propertyParts[1]);
-				}
-				break;
-			case 'ENTITY':
-				if ($propertyParts[1] == 'TARGET') {
-					$property = $target;
-				} elseif (class_exists($propertyParts[1])) {
-					$property = new $propertyParts[1]();
-				} else {
-					throw new \Beech\Workflow\Exception(sprintf('Unknown entity type "%s"', $propertyParts[1]));
-				}
-				break;
+			$propertyParts = explode(':', $propertyDefinition);
+			if (count($propertyParts) == 1) {
+				return $propertyParts[0];
+			}
+
+			$property = FALSE;
+			switch ($propertyParts[0]) {
+				case 'TARGET':
+					$property = $this->getObjectProperty($target, $propertyParts[1]);
+					break;
+				case 'ACTION':
+					$property = $this->getObjectProperty($action, $propertyParts[1]);
+					break;
+				case 'DATETIME';
+					$property = new \DateTime($propertyParts[1]);
+					break;
+				case 'CONSTANT':
+					if (defined($className . '::' . $propertyParts[1])) {
+						$property = constant($className . '::' . $propertyParts[1]);
+					}
+					break;
+				case 'ENTITY':
+					if ($propertyParts[1] == 'TARGET') {
+						$property = $target;
+					} elseif (class_exists($propertyParts[1])) {
+						$property = new $propertyParts[1]();
+					} else {
+						throw new \Beech\Workflow\Exception(sprintf('Unknown entity type "%s"', $propertyParts[1]));
+					}
+					break;
+			}
 		}
 
 		return $property;

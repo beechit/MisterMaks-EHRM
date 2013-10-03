@@ -27,6 +27,14 @@ class Link {
 	protected $packageKey;
 
 	/**
+	 * The subpackage key
+	 *
+	 * @var string
+	 * @ODM\Field(type="string")
+	 */
+	protected $subpackageKey;
+
+	/**
 	 * The controller name
 	 *
 	 * @var string
@@ -51,6 +59,20 @@ class Link {
 	protected $arguments;
 
 	/**
+	 * Whether or not to open the link in a modal
+	 *
+	 * If filled the value will determin the model type:
+	 * - empty = normal link
+	 * - true = default modal size
+	 * - "small" = small modal
+	 * - "large" = large modal
+	 *
+	 * @var string
+	 * @ODM\Field(type="string")
+	 */
+	protected $modal;
+
+	/**
 	 * Sets the package key of the Link
 	 *
 	 * @param string $packageKey The packageKey of the Link
@@ -67,6 +89,24 @@ class Link {
 	 */
 	public function getPackageKey() {
 		return $this->packageKey;
+	}
+
+	/**
+	 * Sets the subpackage key of the Link
+	 *
+	 * @param string $subpackageKey
+	 */
+	public function setSubpackageKey($subpackageKey) {
+		$this->subpackageKey = $subpackageKey;
+	}
+
+	/**
+	 * Gets the subpackage key of the link
+	 *
+	 * @return string
+	 */
+	public function getSubpackageKey() {
+		return $this->subpackageKey;
 	}
 
 	/**
@@ -125,6 +165,25 @@ class Link {
 	public function getArguments() {
 		return $this->arguments;
 	}
+
+	/**
+	 * Set modal
+	 *
+	 * @param string $modal
+	 */
+	public function setModal($modal) {
+		$this->modal = $modal;
+	}
+
+	/**
+	 * Get modal
+	 *
+	 * @return string
+	 */
+	public function getModal() {
+		return $this->modal;
+	}
+
 }
 
 ?>

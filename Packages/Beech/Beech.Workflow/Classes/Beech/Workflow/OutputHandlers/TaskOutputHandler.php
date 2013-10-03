@@ -70,6 +70,20 @@ class TaskOutputHandler extends \Beech\Workflow\Core\AbstractOutputHandler imple
 	protected $escalationInterval;
 
 	/**
+	 * The datetime the task has to be done
+	 *
+	 * @var \DateTime
+	 */
+	protected $endDateTime;
+
+	/**
+	 * Link options
+	 *
+	 * @var array
+	 */
+	protected $link;
+
+	/**
 	 * Set assignedTo
 	 *
 	 * @param \TYPO3\Party\Domain\Model\AbstractParty $assignedTo
@@ -125,6 +139,15 @@ class TaskOutputHandler extends \Beech\Workflow\Core\AbstractOutputHandler imple
 	}
 
 	/**
+	 * Set endDateTime
+	 *
+	 * @param \DateTime $endDateTime
+	 */
+	public function setEndDateTime($endDateTime) {
+		$this->endDateTime = $endDateTime;
+	}
+
+	/**
 	 * Execute the output handler class
 	 *
 	 * @return mixed
@@ -136,6 +159,16 @@ class TaskOutputHandler extends \Beech\Workflow\Core\AbstractOutputHandler imple
 		if ($this->priority !== NULL) {
 			$task->setPriority($this->priority);
 		}
+		if ($this->escalationInterval !== NULL) {
+			$task->setEscalationInterval($this->escalationInterval);
+		}
+		if ($this->increasePriorityInterval !== NULL) {
+			$task->setIncreasePriorityInterval($this->increasePriorityInterval);
+		}
+		if ($this->endDateTime !== NULL) {
+			$task->setEndDateTime($this->endDateTime);
+		}
+		$task->setLink($this->getLink());
 		$task->setAction($this->action);
 		$this->taskRepository->add($task);
 	}
@@ -173,6 +206,44 @@ class TaskOutputHandler extends \Beech\Workflow\Core\AbstractOutputHandler imple
 		return $replacements;
 	}
 
+	/**
+	 * Set link options
+	 *
+	 * @param array $link
+	 */
+	public function setLink($link) {
+		$this->link = $link;
+	}
+
+	/**
+	 * Get link
+	 *
+	 * @return \Beech\Ehrm\Domain\Model\Link|null
+	 */
+	public function getLink() {
+		$link = NULL;
+		if (is_array($this->link)
+			&& array_key_exists('packageKey', $this->link)
+			&& array_key_exists('controllerName', $this->link)
+			&& array_key_exists('actionName', $this->link)
+		) {
+			$link = new \Beech\Ehrm\Domain\Model\Link();
+			$link->setPackageKey($this->link['packageKey']);
+			$link->setControllerName($this->link['controllerName']);
+			$link->setActionName($this->link['actionName']);
+
+			if (!empty($this->link['subpackageKey'])) {
+				$link->setSubpackageKey($this->link['subpackageKey']);
+			}
+			if (!empty($this->link['arguments'])) {
+				$link->setArguments($this->link['arguments']);
+			}
+			if (!empty($this->link['modal'])) {
+				$link->setModal($this->link['modal']);
+			}
+		}
+		return $link;
+	}
 }
 
 ?>
