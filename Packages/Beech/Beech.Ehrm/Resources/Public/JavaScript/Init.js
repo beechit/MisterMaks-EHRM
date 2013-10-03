@@ -17,6 +17,7 @@ var App;
 			} else {
 				window.location.reload();
 			}
+			$('.modal').modal('hide');
 		},
 		Service: {},
 		Socket: null,
