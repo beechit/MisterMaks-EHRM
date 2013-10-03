@@ -1643,9 +1643,10 @@ iframe { border: none; }
 #modal .modal-body.full-size { padding: 0; height: 100%; }
 #modal .modal-footer { bottom: 0; right: 0; left: 0; }
 
+.modal .modal-body .icon-spin { margin: 30px; }
+
 #modal-body-only { position: absolute; overflow: visible; }
 #modal-body-only .modal-body { padding: 0; max-height: none; overflow: visible; }
-#modal-body-only .modal-body .icon-spin { margin: 30px; }
 #modal-body-only .modal-body .row { margin-left: 0; }
 #modal-body-only .modal-body ul.flashmessages { padding-left: 35px; }
 #modal-body-only .modal-body h1 { margin: 40px; }

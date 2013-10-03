@@ -25,7 +25,9 @@ iframe {
 		left: 0;
 	}
 }
-
+.modal .modal-body .icon-spin {
+	margin: 30px;
+}
 #modal-body-only {
 	position: absolute;
 	overflow: visible;
@@ -33,9 +35,6 @@ iframe {
 		padding: 0;
 		max-height: none;
 		overflow: visible;
-		.icon-spin {
-			margin: 30px;
-		}
 		.row {
 			margin-left: 0;
 		}
