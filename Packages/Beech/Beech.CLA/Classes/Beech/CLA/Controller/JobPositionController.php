@@ -77,18 +77,7 @@ class JobPositionController extends \Beech\Ehrm\Controller\AbstractController {
 	public function createAction(JobPosition $jobPosition) {
 		$this->jobPositionRepository->add($jobPosition);
 		$this->addFlashMessage('Created a new job position');
-		$this->emberRedirect('#/jobpositions/' . time());
-	}
-
-	/**
-	 * Shows a single job position object
-	 *
-	 * @param \Beech\CLA\Domain\Model\JobPosition $jobPosition The job position to show
-	 * @Flow\IgnoreValidation("$jobPosition")
-	 * @return void
-	 */
-	public function showAction(JobPosition $jobPosition) {
-		$this->view->assign('jobPosition', $jobPosition);
+		$this->emberRedirect('#/jobpositions');
 	}
 
 	/**
@@ -116,7 +105,7 @@ class JobPositionController extends \Beech\Ehrm\Controller\AbstractController {
 	public function updateAction(JobPosition $jobPosition) {
 		$this->jobPositionRepository->update($jobPosition);
 		$this->addFlashMessage('Updated the job position');
-		$this->emberRedirect('#/jobpositions/' . time());
+		$this->emberRedirect('#/jobpositions');
 	}
 }
 
