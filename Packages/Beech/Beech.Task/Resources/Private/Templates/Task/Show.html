@@ -89,6 +89,18 @@
 			</div>
 		</f:if>
 
+		<f:if condition="{task.link}">
+			<div class="control-group">
+				<label class="control-label" for="priority">
+					<f:translate id="Link">Link</f:translate>
+				</label>
+
+				<div class="controls">
+					<ehrm:link.action link="{task.link}" class="btn"><f:translate id="task.action">Action</f:translate></ehrm:link.action>
+				</div>
+			</div>
+		</f:if>
+
 		<div class="control-group">
 			<a class="btn btn-primary" href="/#/tasks">
 				<f:translate id="action.back">Back</f:translate>
