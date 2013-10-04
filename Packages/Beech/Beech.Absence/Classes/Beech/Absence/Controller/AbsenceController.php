@@ -86,10 +86,13 @@ class AbsenceController extends \Beech\Ehrm\Controller\AbstractManagementControl
 		$this->view->assign('absenceArrangements', $absenceArrangements);
 
 		$absence = new Absence();
+		$absence->setReportedTo($this->preferencesUtility->getCurrentUser());
 		$absence->setPerson($person);
 		$absence->setAbsenceType($absenceType);
 		if ($absence->getAbsenceType() === 'leave') {
 			$absence->setRequestStatus('pending');
+		} else {
+			$absence->setStartDate(new \TYPO3\Flow\Utility\Now());
 		}
 		$this->view->assign('absence', $absence);
 	}

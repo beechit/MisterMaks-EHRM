@@ -17,6 +17,12 @@ use TYPO3\Flow\Annotations as Flow;
 class AbstractController extends \TYPO3\Flow\Mvc\Controller\ActionController {
 
 	/**
+	 * @var \Beech\Ehrm\Utility\PreferencesUtility
+	 * @Flow\Inject
+	 */
+	protected $preferencesUtility;
+
+	/**
 	 * Redirects the request to another action and / or controller.
 	 *
 	 * Redirect will be sent to the client which then performs another request to the new URI.

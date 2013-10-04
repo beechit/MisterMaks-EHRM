@@ -84,10 +84,7 @@ class PreferencesUtility {
 
 		if (!isset($this->userPreferences)) {
 
-			if (!$this->securityContext->isInitialized()
-				|| !$this->securityContext->getAccount() instanceof \TYPO3\Flow\Security\Account
-				|| !$this->securityContext->getAccount()->getParty() instanceof \Beech\Party\Domain\Model\Person
-			) {
+			if ($this->getCurrentUser() === NULL) {
 				$this->userPreferences = new \Beech\Ehrm\Domain\Model\PersonPreferences();
 			} else {
 				$this->userPreferences = $this->securityContext->getAccount()->getParty()->getPreferences();
@@ -105,6 +102,25 @@ class PreferencesUtility {
 	 */
 	public function getUserPreference($key) {
 		return $this->getUserPreferenceDocument()->get($key);
+	}
+
+	/**
+	 * Get current logged in user
+	 *
+	 * @return \Beech\Party\Domain\Model\Person
+	 */
+	public function getCurrentUser() {
+
+		$currentUser = NULL;
+
+		if ($this->securityContext
+			&& $this->securityContext->getAccount() instanceof \TYPO3\Flow\Security\Account
+			&& $this->securityContext->getAccount()->getParty() instanceof \Beech\Party\Domain\Model\Person
+		) {
+			$currentUser = $this->securityContext->getAccount()->getParty();
+		}
+
+		return $currentUser;
 	}
 }
 
