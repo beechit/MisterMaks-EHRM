@@ -1,17 +1,20 @@
 <f:layout name="Ajax"/>{namespace ehrm=Beech\Ehrm\ViewHelpers}
 <f:section name="Body">
 
-	<h1>
-		<f:translate id="tasks">Tasks</f:translate>
-	</h1>
+	<div class="header">
+
+		<div class="pull-right">
+			<a class="btn btn-success" href="#/tasks/new/">
+				<i class="icon-plus icon-white"></i> <f:translate>Add task</f:translate>
+			</a>
+		</div>
+
+		<h1>
+			<f:translate id="tasks">Tasks</f:translate>
+		</h1>
+	</div>
 
 	<ehrm:flashMessages/>
-
-	<div>
-		<a class="btn pull-right btn-success" href="#/tasks/new/">
-			<i class="icon-plus icon-white"></i> <f:translate>Add task</f:translate>
-		</a>
-	</div>
 
 	<f:if condition="{tasks}">
 		<f:then>
@@ -50,7 +53,9 @@
 			</table>
 		</f:then>
 		<f:else>
-			<p><f:translate>No tasks at this moment</f:translate></p>
+			<div class="content-padding">
+				<p><f:translate>No tasks at this moment</f:translate></p>
+			</div>
 		</f:else>
 	</f:if>
 </f:section>

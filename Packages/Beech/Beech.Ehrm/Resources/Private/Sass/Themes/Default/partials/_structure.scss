@@ -101,7 +101,10 @@ footer {
 }
 
 .content-padding {
-	padding: 20px;
+	margin: 20px 0;
+}
+.modal .content-padding {
+	padding: 0 20px;
 }
 
 /* This forces the main application div to be 100% height in order to allow for a sticky footer */

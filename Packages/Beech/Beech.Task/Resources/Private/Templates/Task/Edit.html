@@ -1,9 +1,11 @@
 <f:layout name="Ajax"/>{namespace ehrm=Beech\Ehrm\ViewHelpers}
 <f:section name="Body">
 
-	<h1>
-		<f:translate id="task">Task</f:translate>
-	</h1>
+	<div class="header">
+		<h1>
+			<f:translate id="task">Task</f:translate>
+		</h1>
+	</div>
 
 	<ehrm:flashMessages/>
 	<f:form.validationResults for="task">
@@ -15,38 +17,41 @@
 			</div>
 		</f:if>
 	</f:form.validationResults>
-	<f:form action="update" object="{task}" name="task" class="form-horizontal well">
 
-		<div class="control-group">
-			<label class="control-label" for="assigned_to">
-				<f:translate id="task.assignedTo">Assigned to</f:translate>
-			</label>
+	<f:form action="update" object="{task}" name="task" class="compact-form form-horizontal">
 
-			<div class="controls">
-				<f:form.select property="assignedTo" id="assigned_to" options="{persons}" optionLabelField="name" />
+		<div class="content-padding">
+			<div class="control-group">
+				<label class="control-label" for="assigned_to">
+					<f:translate id="task.assignedTo">Assigned to</f:translate>
+				</label>
+
+				<div class="controls">
+					<f:form.select property="assignedTo" id="assigned_to" options="{persons}" optionLabelField="name" />
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="description">
+					<f:translate id="task.description">Description</f:translate>
+				</label>
+
+				<div class="controls">
+					<f:form.textarea property="description" id="description"/>
+				</div>
+			</div>
+
+			<div class="control-group">
+				<label class="control-label" for="priority">
+					<f:translate id="task.priority">Priority</f:translate>
+				</label>
+
+				<div class="controls">
+					<f:form.select property="priority" id="priority" options="{priorities}" translate="{using: 'label'}" />
+				</div>
 			</div>
 		</div>
-		<div class="control-group">
-			<label class="control-label" for="description">
-				<f:translate id="task.description">Description</f:translate>
-			</label>
 
-			<div class="controls">
-				<f:form.textarea property="description" id="description"/>
-			</div>
-		</div>
-
-		<div class="control-group">
-			<label class="control-label" for="priority">
-				<f:translate id="task.priority">Priority</f:translate>
-			</label>
-
-			<div class="controls">
-				<f:form.select property="priority" id="priority" options="{priorities}" translate="{using: 'label'}" />
-			</div>
-		</div>
-
-		<div class="control-group">
+		<div class="form-actions">
 			<a class="btn btn-danger" href="/#/tasks"><f:translate id="action.cancel">Cancel</f:translate></a>
 			<f:form.submit value="<f:translate id='action.save'>Save</f:translate>" class="btn btn-primary"/>
 		</div>
