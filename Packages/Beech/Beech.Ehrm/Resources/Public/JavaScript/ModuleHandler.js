@@ -212,34 +212,37 @@
 				$primary.controlPrimary();
 			}
 
-			if ($moduleContainer.find('.modal-header.custom').length > 0 && $moduleContainer.parent().find('.modal-header:not(.custom)').length > 0) {
-				var $customHeader = $moduleContainer.find('.modal-header.custom')
-				$moduleContainer.parent().find('.modal-header:not(.custom)').replaceWith($customHeader);
-				$customHeader.removeClass('custom');
-			}
-			if ($moduleContainer.find('.modal-footer.custom').length > 0) {
+			// modal customization
+			if ($moduleContainer.parents('.modal').length) {
 
-				$moduleContainer.parent().find('.modal-footer:last').addClass('hide');
-			} else {
-				$moduleContainer.parent().find('.modal-footer').removeClass('hide');
-
-				var $saveButton = $moduleContainer.parent().find('.modal-footer .btn-save');
-				var $closeButton = $moduleContainer.parent().find('.modal-footer .btn-close');
-				if ($moduleContainer.parent().find('input[name="iscomplete"]').length > 0) {
-					$moduleContainer.parent().find('input[name="iscomplete"]').each(function(k,isCompleteElement) {
-						var $form = $(isCompleteElement).parents('form:first');
-						$form.find('input[type="submit"],button[type="submit"],.form-actions').remove();
-
-						$saveButton.show();
-						$saveButton.unbind('click');
-						$saveButton.on('click', function(event) {
-							$form.submit() ;
-						})
-						$closeButton.hide()
-					});
+				if ($moduleContainer.find('.modal-header.custom').length > 0 && $moduleContainer.parent().find('.modal-header:not(.custom)').length > 0) {
+					var $customHeader = $moduleContainer.find('.modal-header.custom')
+					$moduleContainer.parent().find('.modal-header:not(.custom)').replaceWith($customHeader);
+					$customHeader.removeClass('custom');
+				}
+				if ($moduleContainer.find('.modal-footer.custom').length > 0) {
+					$moduleContainer.parent().find('.modal-footer:last').addClass('hide');
 				} else {
-					$closeButton.show();
-					$saveButton.hide();
+					$moduleContainer.parent().find('.modal-footer').removeClass('hide');
+
+					var $saveButton = $moduleContainer.parent().find('.modal-footer .btn-save');
+					var $closeButton = $moduleContainer.parent().find('.modal-footer .btn-close');
+					if ($moduleContainer.parent().find('input[name="iscomplete"]').length > 0) {
+						$moduleContainer.parent().find('input[name="iscomplete"]').each(function(k,isCompleteElement) {
+							var $form = $(isCompleteElement).parents('form:first');
+							$form.find('input[type="submit"],button[type="submit"],.form-actions').remove();
+
+							$saveButton.show();
+							$saveButton.unbind('click');
+							$saveButton.on('click', function(event) {
+								$form.submit() ;
+							})
+							$closeButton.hide()
+						});
+					} else {
+						$closeButton.show();
+						$saveButton.hide();
+					}
 				}
 			}
 		},
