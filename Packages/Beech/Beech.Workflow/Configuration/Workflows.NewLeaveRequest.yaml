@@ -1,0 +1,34 @@
+NewLeaveRequest:
+  triggers:
+    -
+      action: 'add'
+      className: 'Beech\Absence\Domain\Model\Absence'
+      conditions:
+        -
+          className: '\Beech\Workflow\Validators\Property\EqualsValidator'
+          properties:
+            property: 'TARGET:absenceType'
+            value: 'leave'
+  actions:
+    1:
+      description: 'Approve Leave request'
+      outputHandlers:
+        -
+          className: 'Beech\Workflow\OutputHandlers\TaskOutputHandler'
+          properties:
+            assignedTo: 'TARGET:person.manager'
+            priority: 1
+            increasePriorityInterval: '4days'
+            escalationInterval: '1day'
+            endDateTime: 'TARGET:startDate'
+            description: 'Approve leave request for %s before %s'
+            descriptionReplacements:
+              1: 'TARGET:person.name.fullName'
+              2: 'TARGET:startDate'
+            link:
+              packageKey: 'Beech.Absence'
+              controllerName: 'Absence'
+              actionName: 'approve'
+              arguments:
+                absence: 'TARGET:id'
+              modal: true
