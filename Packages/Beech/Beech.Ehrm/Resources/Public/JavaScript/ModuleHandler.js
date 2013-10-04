@@ -200,6 +200,14 @@
 					}
 				});
 			});
+
+			var customBreadcrumbElements = [];
+			$moduleContainer.find('.breadcrumbElement').each(function(index, element) {
+				var position = $(element).attr('position');
+				customBreadcrumbElements.push({value: $(element).text(), position: $(element).attr('position')});
+			})
+			App.set('customBreadcrumbElements', customBreadcrumbElements);
+
 				// When content of module is loaded, apply datepicker plugin if its necessary
 			$moduleContainer.find('.datepicker').each(function(index, datepicker) {
 				$(datepicker).datetimepicker($(datepicker).hasClass('withTime') ? App.dateTimePickerSettings : App.datePickerSettings);

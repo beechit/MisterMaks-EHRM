@@ -1,7 +1,8 @@
 (function() {
 	'use strict';
 
-	App.BeechChartReportRoute = App.ModuleHandlerAjaxRoute.extend();
-	App.BeechChartReportIndexRoute = App.BeechChartReportRoute.extend();
+	App.BeechChartGeneralRoute = App.ModuleHandlerAjaxRoute.extend();
+	App.BeechChartGeneralIndexRoute = App.BeechChartGeneralRoute.extend();
+	App.BeechChartGeneralAgeIndexRoute = App.BeechChartGeneralRoute.extend();
 
 }).call(this);

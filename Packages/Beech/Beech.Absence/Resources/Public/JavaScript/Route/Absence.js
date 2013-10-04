@@ -24,19 +24,19 @@
 		}
 	});
 
-	App.BeechAbsenceAbsencesOverviewRoute = Ember.Route.extend({
+	App.BeechAbsenceAbsencesHeadcountRoute = Ember.Route.extend({
 		activate: function() {
 			// redirect on re-entering
 			Ember.run.once(this, function () {
-				this.controllerFor('BeechAbsenceAbsencesOverview').openDepartmentOverview();
+				this.controllerFor('BeechAbsenceAbsencesHeadcount').openDepartmentOverview();
 			});
 		}
 	});
 
-	App.BeechAbsenceAbsencesOverviewOverviewRoute = Ember.Route.extend({
+	App.BeechAbsenceAbsencesHeadcountOverviewRoute = Ember.Route.extend({
 
 		model: function(params) {
-			var parentController = this.controllerFor('BeechAbsenceAbsencesOverview');
+			var parentController = this.controllerFor('BeechAbsenceAbsencesHeadcount');
 
 			if (params.department && params.department != 'undefined') {
 				this.get('store').find('beechPartyDomainModelCompany', params.department).then(function(department){
@@ -60,7 +60,7 @@
 				var _controller = controller, _this = this;
 				this.get('store').find('beechPartyDomainModelCompany', model.department).then(function(department) {
 					_controller.set('department', department);
-					_this.controllerFor('BeechAbsenceAbsencesOverview').set('department', department);
+					_this.controllerFor('BeechAbsenceAbsencesHeadcount').set('department', department);
 				});
 			}
 		},

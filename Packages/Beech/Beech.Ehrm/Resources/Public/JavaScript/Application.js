@@ -12,13 +12,77 @@
 
 	App.ApplicationController = Ember.Controller.extend();
 	App.ApplicationController = App.ApplicationController.reopen({
-
 			// update current RouteName in App
 		updateCurrentRouteName: function() {
 			App.set('currentRouteName', this.get('currentRouteName'));
+
 		}.observes('currentRouteName'),
 
+		updateCurrentPath: function() {
+			App.set('currentPath', this.get('currentPath'));
+			App.set('customBreadcrumbElements', []);
+		}.observes('currentPath'),
+
+		breadcrumbElements: [],
+
+		updateBreadcrumbs: function() {
+
+			var regexContent = 'BeechEhrm|BeechParty|BeechDocument|BeechTask|BeechAbsence|BeechCLA|BeechChart';
+			// reset breadcrumbs
+			this.set('breadcrumbElements', []);
+
+			// prepare new breadcrumbs
+			var breadcrumbElements = [];
+			var breadcrumbTemp = this.get('currentPath').split('.');
+			// exception
+			if (breadcrumbTemp[0] == 'index' && breadcrumbTemp[1] == 'index') {
+				breadcrumbTemp[0] = 'Dashboard';
+				breadcrumbTemp[1] = '';
+			}
+
+			// check if there are custom breadcrumb elements
+			var customBreadcrumbElements = App.get('customBreadcrumbElements');
+			for (var i = 0; i < customBreadcrumbElements.length ; i++) {
+				if (customBreadcrumbElements[i].position >= 0) {
+					breadcrumbTemp[customBreadcrumbElements[i].position] = customBreadcrumbElements[i].value;
+				} else {
+					breadcrumbTemp.push(customBreadcrumbElements[i].value);
+				}
+			}
+			for (var i = 0; i < breadcrumbTemp.length ; i++) {
+
+				var element = breadcrumbTemp[i];
+				if (element != "#" && element != '' && element != 'index' && element != 'show' && element != 'edit' && element != 'list' ) {
+					// remove package name
+					element = element.replace(new RegExp('^('+regexContent+')', 'g'), '')
+					element = {
+						value: element.replace(/^(.)|\s(.)/g, function($1){ return $1.toUpperCase( ); }),
+						isLast: false
+					}
+					breadcrumbElements.push(element)
+				}
+				//update content of replacements regex
+				regexContent = breadcrumbTemp[i] + '|'+ regexContent;
+			}
+
+			// mark element as last, to not display divider after it in handlebar
+			breadcrumbElements[breadcrumbElements.length - 1].isLast = true;
+
+			this.set('breadcrumbElements', breadcrumbElements);
+			App.set('breadcrumbElements', this.get('breadcrumbElements')) ;
+
+			// update title
+			this.updateTitle() ;
+
+		}.observes('currentPath', 'App.customBreadcrumbElements'),
+
 		title: 'Mister Maks',
+
+		updateTitle: function() {
+			var breadcrumbTemp = this.get('breadcrumbElements');
+			this.set('title', this.get('breadcrumbElements')[0].value + ' :: Mister Maks')
+			document.title = this.get('title');
+		},
 
 		init: function() {
 

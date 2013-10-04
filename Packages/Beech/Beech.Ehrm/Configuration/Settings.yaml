@@ -83,7 +83,7 @@ Beech:
           - 'Beech.Ehrm/JavaScript/Controller/UserPreferences.js'
           - 'Beech.Ehrm/JavaScript/View/ApplicationSettings.js'
           - 'Beech.Ehrm/JavaScript/View/UserPreferences.js'
-          - 'Beech.Ehrm/JavaScript/Component/UserInterface/BreadcrumbMenu.js'
+          - 'Beech.Ehrm/JavaScript/Component/UserInterface/Breadcrumbs.js'
           - 'Beech.Ehrm/JavaScript/Component/UserInterface/DatePicker.js'
           - 'Beech.Ehrm/JavaScript/Component/UserInterface/DataTables.js'
           - 'Beech.Ehrm/JavaScript/Component/UserInterface/Country.js'

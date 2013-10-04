@@ -156,15 +156,18 @@
 
 			// Beech.Absence/Absence
 			this.resource('BeechAbsenceAbsences', {path: 'absences'}, function() {
-				this.resource('BeechAbsenceAbsencesOverview', {path:'headcount'}, function() {
+				this.resource('BeechAbsenceAbsencesHeadcount', {path:'headcount'}, function() {
 					this.route('overview', {path:'/:department/:startDate'});
 				});
 				this.resource('BeechAbsenceAbsencesList', {path:'list/:absenceType'}, function() {
 					this.route('list', {path:'/:department_id'});
 				});
 			});
-			this.resource('BeechChartReport', {path: 'general'}, function() {
-				this.route('index', { path: '/age' });
+			this.resource('BeechChartGeneral', {path: 'general'}, function() {
+				this.resource('BeechChartGeneralAge', {path:'age'}, function() {
+					this.route('index', { path: '/' });
+				});
+
 			});
 		});
 	});

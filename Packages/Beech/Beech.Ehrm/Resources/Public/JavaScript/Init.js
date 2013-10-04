@@ -10,6 +10,9 @@ var App;
 		LOG_TRANSITIONS: true,
 		LOG_STACKTRACE_ON_DEPRECATION: true,
 		currentRouteName: '',
+		currentPath: '',
+		breadcrumbsElements: [],
+		customBreadcrumbElements: [],
 		refreshCurrentPath: function() {
 			var currentController = App.__container__.lookup('controller:'+this.currentRouteName),
 				currentRoute = App.__container__.lookup('route:'+this.currentRouteName);

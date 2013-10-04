@@ -11,7 +11,7 @@
 
 			</td>
 			<td class="span3"><f:translate id="Name">Name</f:translate></td>
-			<td class="span6">{person.name.firstName} {person.name.middleName} {person.name.lastName}
+			<td class="span6"><span class="breadcrumbElement">{person.name.firstName} {person.name.middleName} {person.name.lastName}</span>
 				<ehrm:link.edit controller='Person' action='edit' arguments='{person: person, withDetails: false}'
 								dataReload="reload-current-page"/>
 			</td>

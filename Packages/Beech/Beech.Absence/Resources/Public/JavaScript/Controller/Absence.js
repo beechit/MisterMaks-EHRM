@@ -10,8 +10,8 @@
 		}
 	});
 
-	App.BeechAbsenceAbsencesOverviewController =  Ember.ObjectController.extend({
-		needs: ['BeechAbsenceAbsences', 'BeechAbsenceAbsencesOverviewOverview'],
+	App.BeechAbsenceAbsencesHeadcountController =  Ember.ObjectController.extend({
+		needs: ['BeechAbsenceAbsences', 'BeechAbsenceAbsencesHeadcountOverview'],
 		department: null,
 		startDate: '',
 		intervalInDays: 28,
@@ -20,7 +20,7 @@
 		},
 		openDepartmentOverview: function() {
 			if (this.get('department') && this.get('department').get('id') && this.get('startDate')) {
-				this.transitionToRoute('BeechAbsenceAbsencesOverview.overview', {
+				this.transitionToRoute('BeechAbsenceAbsencesHeadcount.overview', {
 					department: this.get('department'),
 					startDate: this.get('startDate')
 				});
@@ -34,16 +34,16 @@
 		}
 	});
 
-	App.BeechAbsenceAbsencesOverviewOverviewController =  Ember.ObjectController.extend({
-		needs: ['BeechAbsenceAbsences','BeechAbsenceAbsencesOverview'],
+	App.BeechAbsenceAbsencesHeadcountOverviewController =  Ember.ObjectController.extend({
+		needs: ['BeechAbsenceAbsences','BeechAbsenceAbsencesHeadcount'],
 		department: null,
 		startDate: null,
 		actions: {
 			next: function() {
-				this.get('controllers.BeechAbsenceAbsencesOverview').next();
+				this.get('controllers.BeechAbsenceAbsencesHeadcount').next();
 			},
 			prev: function() {
-				this.get('controllers.BeechAbsenceAbsencesOverview').prev();
+				this.get('controllers.BeechAbsenceAbsencesHeadcount').prev();
 			}
 		},
 		dates: function () {
@@ -52,14 +52,14 @@
 				return [];
 			}
 			var curr = moment(new Date(this.get('startDate'))),
-				dates = [], i, interval = this.get('controllers.BeechAbsenceAbsencesOverview.intervalInDays');
+				dates = [], i, interval = this.get('controllers.BeechAbsenceAbsencesHeadcount.intervalInDays');
 
 			for (i = 0; i < interval; i++) {
 				dates.push(curr.clone().add('days', i));
 			}
 
 			return dates;
-		}.property('department','controllers.BeechAbsenceAbsences.absences', 'startDate', 'controllers.BeechAbsenceAbsencesOverview.intervalInDays')
+		}.property('department','controllers.BeechAbsenceAbsences.absences', 'startDate', 'controllers.BeechAbsenceAbsencesHeadcount.intervalInDays')
 	});
 
 

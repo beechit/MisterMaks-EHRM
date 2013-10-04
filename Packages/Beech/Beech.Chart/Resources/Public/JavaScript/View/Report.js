@@ -2,7 +2,7 @@
 	'use strict';
 
 	// Front
-	App.BeechChartReportView = Ember.View.extend(App.AjaxModuleViewMixin);
-	App.BeechChartReportIndexView = Ember.View.extend(App.AjaxModuleViewMixin);
+	App.BeechChartGeneralView = Ember.View.extend(App.AjaxModuleViewMixin);
+	App.BeechChartGeneralIndexView = Ember.View.extend(App.AjaxModuleViewMixin);
 
 }).call(this);

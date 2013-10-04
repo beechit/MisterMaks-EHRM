@@ -2,8 +2,11 @@
 	'use strict';
 
 	// Front
-	App.BeechChartReportController = App.ModuleHandlerAjaxController.extend();
-	App.BeechChartReportIndexController = App.BeechChartReportController.extend({
+	App.BeechChartGeneralController = App.ModuleHandlerAjaxController.extend();
+	App.BeechChartGeneralIndexController = App.BeechChartGeneralController.extend({
+		url: MM.url.module.BeechChartGeneralAgeReportIndex
+	});
+	App.BeechChartGeneralAgeIndexController = App.BeechChartGeneralController.extend({
 		url: MM.url.module.BeechChartGeneralAgeReportIndex
 	});
 
