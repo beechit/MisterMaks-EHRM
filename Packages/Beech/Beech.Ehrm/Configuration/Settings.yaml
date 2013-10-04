@@ -222,7 +222,7 @@ TYPO3:
             superTypes: ['TYPO3.Form:FormElement', 'TYPO3.Form:SingleSelectDropdown']
             implementationClassName: 'Beech\Party\FormElements\WorkLocationSelect'
             renderingOptions:
-              templatePathPattern: 'resource://Beech.Ehrm/Private/Templates/Form/Elements/SingleSelectDropdown.html'
+              templatePathPattern: 'resource://Beech.Party/Private/Templates/Form/Elements/WorkLocationSelect.html'
           'Beech.CLA:HiddenField':
             superTypes: ['TYPO3.Form:HiddenField']
             renderingOptions:
