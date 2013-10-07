@@ -13,12 +13,13 @@
           'closed': 'Closed'
           'suspended': 'Suspended'
 # draft a draft version
-# pending awaiting decision
-# in progress this is in progress awaiting a status change
-# completed is endstate but and can only be changed by ended or stopped.
-# rejected is an end state, stopped before completed.
-# ended means the status is closed by the system due to an expire date
-# stopped means that an active user has set this state on the entity
+# pendingApproval awaiting decision
+# approved is a substate where a user approves so proces can go on.
+# active normal state of active proces document etc.
+# rejected is an end state, where something was draft en never started.
+# cancelled is a state where a user actively stopped a current proces this is an end state
+# closed means the status is closed by the system due to an expire date
+# suspended means this is on hold by a proces or user
       validation:
         -
           type: 'NotEmpty'
