@@ -68,21 +68,23 @@
 			</div>
 		</div>
 
-		<div class="span6 offset6">
-			<div class="control-group">
-				<label class="control-label" for="reportMethod">
-					<f:translate id="leave.reportMethod">Report method</f:translate>
-				</label>
-				<div class="controls">
-					<ehrm:optionSelect property="reportMethod" id="reportMethod" model="Beech.Absence:Absence" placeholder="{f:translate(id: 'reportMethod')}" class="reportMethod" translate="{by: 'label'}"/>
+		<div class="row-fluid">
+			<div class="span6 offset6">
+				<div class="control-group">
+					<label class="control-label" for="reportMethod">
+						<f:translate id="leave.reportMethod">Report method</f:translate>
+					</label>
+					<div class="controls">
+						<ehrm:optionSelect property="reportMethod" id="reportMethod" model="Beech.Absence:Absence" placeholder="{f:translate(id: 'reportMethod')}" class="reportMethod" translate="{by: 'label'}"/>
+					</div>
 				</div>
-			</div>
-			<div class="control-group">
-				<label class="control-label" for="reportedTo">
-					<f:translate id="reportedTo">Reported to</f:translate>
-				</label>
-				<div class="controls">
-					<f:form.select property="reportedTo" id="reportedTo" options="{persons}" optionLabelField="name"/>
+				<div class="control-group">
+					<label class="control-label" for="reportedTo">
+						<f:translate id="reportedTo">Reported to</f:translate>
+					</label>
+					<div class="controls">
+						<f:form.select property="reportedTo" id="reportedTo" options="{persons}" optionLabelField="name"/>
+					</div>
 				</div>
 			</div>
 		</div>
