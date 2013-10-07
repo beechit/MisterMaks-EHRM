@@ -3,7 +3,7 @@
 }
 .wizard-modal form {
 	margin:0;
-	padding:0;
+	padding:15px 0 0 0;
 }
 .wizard-modal.modal {
 	margin-left:-375px;

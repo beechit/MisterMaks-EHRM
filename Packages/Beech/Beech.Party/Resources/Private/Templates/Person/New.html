@@ -18,6 +18,10 @@
 			data-url="<f:uri.action action='list' controller='ElectronicAddress' package='Beech.Party' arguments='{party:"new"}'></f:uri.action>">
 			<h3><f:translate id="electronicAddresses">Electronic addresses</f:translate></h3>
 		</div>
+		<div class="wizard-card" data-cardname="document"
+			data-url="<f:uri.action action='new' controller='Document'  package='Beech.Document' arguments='{party:"new", documentCategories: documentCategories}'></f:uri.action>">
+			<h3><f:translate id="documents">Documents</f:translate></h3>
+		</div>
 		<div class="wizard-card row-fluid" data-cardname="address"
 			data-url="<f:uri.action action='list' controller='Address' package='Beech.Party' arguments='{party:"new"}'></f:uri.action>">
 			<h3><f:translate id="addresses">Addresses</f:translate></h3>
@@ -38,6 +42,7 @@
 			data-url="<f:uri.action action='list' controller='Licence' package='Beech.Party' arguments='{party:"new"}'></f:uri.action>">
 			<h3><f:translate id="licence">Licence</f:translate></h3>
 		</div>
+
 		<div class="wizard-card" data-cardname="user">
 			<h3><f:translate id="userAccount">User account</f:translate></h3>
 			<p><f:translate id="createUserAccount">Create a useraccount for this employee</f:translate></p>

@@ -161,7 +161,7 @@ class PersonController extends \Beech\Ehrm\Controller\AbstractManagementControll
 		$this->view->assign('contracts', $contracts);
 
 		// list of documents
-		$this->view->assign('documentCategories', $absences = $this->documentTypeRepository->findAllGroupedByCategories());
+		$this->view->assign('documentCategories', $this->documentTypeRepository->findAllGroupedByCategories());
 		$this->view->assign('documents', $this->documentRepository->findByParty($person));
 
 		$this->view->assign('persons', $this->repository->findAll());
@@ -208,6 +208,7 @@ class PersonController extends \Beech\Ehrm\Controller\AbstractManagementControll
 	public function newAction() {
 		$this->view->assign('languages', $this->settingsHelper->getAvailableLanguages());
 		$this->view->assign('departments', $this->companyRepository->findAll());
+		//$this->view->assign('documentCategories', $this->documentTypeRepository->findAllGroupedByCategories());
 	}
 
 	/**

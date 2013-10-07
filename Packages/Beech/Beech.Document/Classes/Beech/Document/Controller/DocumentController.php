@@ -60,8 +60,15 @@ class DocumentController extends \Beech\Ehrm\Controller\AbstractManagementContro
 		}
 	}
 
-	public function newAction(\TYPO3\Party\Domain\Model\AbstractParty $party = NULL) {
-		$this->view->assign('documentCategories', $this->documentTypeRepository->findAllGroupedByCategories());
+	/**
+	 * @param \TYPO3\Party\Domain\Model\AbstractParty $party
+	 * @param array $documentCategories
+	 */
+	public function newAction(\TYPO3\Party\Domain\Model\AbstractParty $party = NULL, $documentCategories = array()) {
+		if (empty($documentCategories)) {
+			$documentCategories = $this->documentTypeRepository->findAllGroupedByCategories();
+		}
+		$this->view->assign('documentCategories', $documentCategories);
 		$this->view->assign('party', $party);
 		if ($party != NULL) {
 			$this->view->assign('documents', $this->repository->findByParty($party));
