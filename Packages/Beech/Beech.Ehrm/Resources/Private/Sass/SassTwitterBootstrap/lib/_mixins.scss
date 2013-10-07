@@ -98,6 +98,8 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  -o-text-overflow: ellipsis;
+  -ms-text-overflow: ellipsis;
 }
 
 // CSS image replacement
@@ -243,7 +245,7 @@
 }
 
 // Drop shadows
-@mixin box-shadow($shadow...) { 
+@mixin box-shadow($shadow...) {
   -webkit-box-shadow: $shadow;
      -moz-box-shadow: $shadow;
           box-shadow: $shadow;
@@ -331,6 +333,7 @@
 @mixin box-sizing($boxmodel) {
   -webkit-box-sizing: $boxmodel;
      -moz-box-sizing: $boxmodel;
+      -ms-box-sizing: $boxmodel;
           box-sizing: $boxmodel;
 }
 
