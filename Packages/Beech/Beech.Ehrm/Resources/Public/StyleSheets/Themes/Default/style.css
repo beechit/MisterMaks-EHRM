@@ -44,7 +44,7 @@ input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-s
 
 textarea { overflow: auto; vertical-align: top; }
 
-body { margin: 0; font-family: "Colaborate", "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 14px; line-height: 20px; color: #333333; background-color: white; }
+body { margin: 0; font-family: "colaborate-thinregular", "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 14px; line-height: 20px; color: #333333; background-color: white; }
 
 a { color: #0088cc; text-decoration: none; }
 
@@ -188,7 +188,7 @@ cite { font-style: normal; }
 
 .text-success { color: #468847; }
 
-h1, h2, h3, h4, h5, h6 { margin: 10px 0; font-family: inherit; font-weight: bold; line-height: 1; color: inherit; text-rendering: optimizelegibility; }
+h1, h2, h3, h4, h5, h6 { margin: 10px 0; font-family: "colaborate-regularregular", Georgia, "Times New Roman", Times, serif; font-weight: bold; line-height: 1; color: inherit; text-rendering: optimizelegibility; }
 h1 small, h2 small, h3 small, h4 small, h5 small, h6 small { font-weight: normal; line-height: 1; color: #999999; }
 
 h1 { font-size: 36px; line-height: 40px; }
@@ -273,7 +273,7 @@ legend small { font-size: 15px; color: #999999; }
 
 label, input, button, select, textarea { font-size: 14px; font-weight: normal; line-height: 20px; }
 
-input, button, select, textarea { font-family: "Colaborate", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+input, button, select, textarea { font-family: "colaborate-thinregular", "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 label { display: block; margin-bottom: 5px; }
 
@@ -914,7 +914,7 @@ button.btn.btn-mini, input[type="submit"].btn.btn-mini { *padding-top: 1px; *pad
 .navbar-form .input-append input, .navbar-form .input-prepend input { margin-top: 0; }
 
 .navbar-search { position: relative; float: left; margin-top: 5px; margin-bottom: 0; }
-.navbar-search .search-query { margin-bottom: 0; padding: 4px 14px; font-family: "Colaborate", "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 13px; font-weight: normal; line-height: 1; -webkit-border-radius: 15px; -moz-border-radius: 15px; border-radius: 15px; }
+.navbar-search .search-query { margin-bottom: 0; padding: 4px 14px; font-family: "colaborate-thinregular", "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 13px; font-weight: normal; line-height: 1; -webkit-border-radius: 15px; -moz-border-radius: 15px; border-radius: 15px; }
 
 .navbar-static-top { position: static; width: 100%; margin-bottom: 0; }
 .navbar-static-top .navbar-inner { -webkit-border-radius: 0; -moz-border-radius: 0; border-radius: 0; }
@@ -1560,7 +1560,15 @@ footer .logo i { position: absolute; left: -8px; top: 1px; font-size: 0.8em; }
 /* This forces the main application div to be 100% height in order to allow for a sticky footer */
 .ember-view.full { height: 100%; }
 
-@font-face { font-family: 'Colaborate'; src: url("Fonts/Colaborate/ColabThi-webfont.eot"); src: url("Fonts/Colaborate/ColabThi-webfont.eot?#iefix") format("embedded-opentype"), url("Fonts/Colaborate/ColabThi-webfont.woff") format("woff"), url("Fonts/Colaborate/ColabThi-webfont.ttf") format("truetype"), url("Fonts/Colaborate/ColabThi-webfont.svg#ColaborateThinRegular") format("svg"); font-weight: 100; font-style: normal; }
+@font-face { font-family: 'colaborate-thinregular'; src: url("Fonts/Colaborate/ColabThi-webfont.eot"); src: url("Fonts/Colaborate/ColabThi-webfont.eot?#iefix") format("embedded-opentype"), url("Fonts/Colaborate/ColabThi-webfont.woff") format("woff"), url("Fonts/Colaborate/ColabThi-webfont.ttf") format("truetype"), url("Fonts/Colaborate/ColabThi-webfont.svg#colaborate-thinregular") format("svg"); font-weight: normal; font-style: normal; }
+
+@font-face { font-family: 'colaborate-lightregular'; src: url("ColabLig-webfont.eot"); src: url("ColabLig-webfont.eot?#iefix") format("embedded-opentype"), url("ColabLig-webfont.woff") format("woff"), url("ColabLig-webfont.ttf") format("truetype"), url("ColabLig-webfont.svg#colaborate-lightregular") format("svg"); font-weight: normal; font-style: normal; }
+
+@font-face { font-family: 'colaborate-regularregular'; src: url("Fonts/Colaborate/ColabReg-webfont.eot"); src: url("Fonts/Colaborate/ColabReg-webfont.eot?#iefix") format("embedded-opentype"), url("Fonts/Colaborate/ColabReg-webfont.woff") format("woff"), url("Fonts/Colaborate/ColabReg-webfont.ttf") format("truetype"), url("Fonts/Colaborate/ColabReg-webfont.svg#colaborate-regularregular") format("svg"); font-weight: normal; font-style: normal; }
+
+@font-face { font-family: 'colaborate-mediumregular'; src: url("ColabMed-webfont.eot"); src: url("ColabMed-webfont.eot?#iefix") format("embedded-opentype"), url("ColabMed-webfont.woff") format("woff"), url("ColabMed-webfont.ttf") format("truetype"), url("ColabMed-webfont.svg#colaborate-mediumregular") format("svg"); font-weight: normal; font-style: normal; }
+
+@font-face { font-family: 'colaborate-boldregular'; src: url("ColabBol-webfont.eot"); src: url("ColabBol-webfont.eot?#iefix") format("embedded-opentype"), url("ColabBol-webfont.woff") format("woff"), url("ColabBol-webfont.ttf") format("truetype"), url("ColabBol-webfont.svg#colaborate-boldregular") format("svg"); font-weight: normal; font-style: normal; }
 
 /* From here add alphabetically */
 .accordion-group { border: 1px solid #e5e5e5; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; margin-bottom: 2px; }
