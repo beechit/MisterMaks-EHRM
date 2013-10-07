@@ -184,7 +184,7 @@
 						}
 
 						// if data-reload is set on btn-save use that location
-						if ($moduleContainer.parent().find('.btn-save').attr('data-reload') != undefined) {
+						if ($moduleContainer.parent().find('.btn-save').is(':visible') && $moduleContainer.parent().find('.btn-save').attr('data-reload') != undefined) {
 							that.loadUrl($moduleContainer.parent().find('.btn-save').attr('data-reload'));
 							$moduleContainer.parent().modal('hide');
 						} else if (redirect && $moduleContainer.parents('.modal').attr('data-reload')) {
