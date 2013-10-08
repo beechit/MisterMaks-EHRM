@@ -73,7 +73,7 @@ contractArticles:
       order: 150
       articleText:
         en: ''
-        nl: 'Op deze arbeidsovereenkomst is een proeftijd van <probationPeriod> <probationUnitOfTime> van toepassing. Gedurende deze proeftijd kunnen beide partijen de arbeidsovereenkomst dagelijks beëindigen.'
+        nl: 'Op deze arbeidsovereenkomst is een proeftijd van <probationPeriod> van toepassing. Gedurende deze proeftijd kunnen beide partijen de arbeidsovereenkomst dagelijks beëindigen.'
         pl: ''
       help:
         en: 'Under the CAO Glastuinbouw a contract with a duration shorter then 2 years can only have a probation with a maximum of a month'
@@ -81,24 +81,10 @@ contractArticles:
         pl: ''
       values:
         -
-          type: 'Beech.CLA:SingleLineText'
+          type: 'Beech.Ehrm:UnitOfTimeSelect'
           value: ''
           valueId: probationPeriod
-          default: 4
-          validation:
-            -
-              type: 'Integer'
-        -
-          type: 'Beech.CLA:SingleSelectDropdown'
-          options:
-            day: 'Day'
-            week: 'Week'
-            month: 'Month'
-          default: 'week'
-          valueId: probationUnitOfTime
-          validation:
-            -
-              type: 'NotEmpty'
+          default: 'P4W'
     -
       articleHeader:
         en: 'Working hours'
@@ -196,12 +182,12 @@ contractArticles:
           valueId: 'wage'
           default: ''
         -
-          type: 'Beech.CLA:SingleSelectDropdown'
+          type: 'Beech.Ehrm:UnitOfTimeSelect'
           options:
             'week': 'Week'
             '4 weeks': '4 weeks'
             'month': 'Month'
-          default: 'month'
+          default: 'P1M'
           valueId: 'paymentSequence'
           validation:
             -
@@ -510,7 +496,7 @@ contractArticles:
       order: 151
       articleText:
         en: ''
-        nl: 'Op deze arbeidsovereenkomst is een proeftijd van <probationPeriod> <probationUnitOfTime> van toepassing. Gedurende deze proeftijd kunnen beide partijen de arbeidsovereenkomst dagelijks beëindigen.'
+        nl: 'Op deze arbeidsovereenkomst is een proeftijd van <probationPeriod> van toepassing. Gedurende deze proeftijd kunnen beide partijen de arbeidsovereenkomst dagelijks beëindigen.'
         pl: ''
       help:
         en: ''
@@ -518,9 +504,10 @@ contractArticles:
         pl: ''
       values:
         -
-          type: 'Beech.CLA:SingleLineText'
+          type: 'Beech.Ehrm:UnitOfTimeSelect'
           value: ''
           valueId: probationPeriod
+          default: 'P0D'
           validation:
             -
               type: 'Integer'

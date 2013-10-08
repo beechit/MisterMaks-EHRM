@@ -155,6 +155,33 @@
 			<trans-unit id="article-10017-values.workLocation">
 				<source>Worklocation</source>
 			</trans-unit>
+			<trans-unit id="article-10001-values.probationPeriod">
+				<source>Probation period is</source>
+			</trans-unit>
+			<trans-unit id="article-10003-values.paymentSequence">
+				<source>Payment interval</source>
+			</trans-unit>
+			<trans-unit id="article-10003-values.wage">
+				<source>Wage</source>
+			</trans-unit>
+			<trans-unit id="article-10010-values.accomodationRentUnitOfTime">
+				<source>for</source>
+			</trans-unit>
+			<trans-unit id="article-10014-values.salaryScale">
+				<source>Salary scale</source>
+			</trans-unit>
+			<trans-unit id="article-10001-values.probationUnitOfTime">
+				<source> </source>
+			</trans-unit>
+			<trans-unit id="article-10014-values.paymentSequence">
+				<source>Salary payment each</source>
+			</trans-unit>
+			<trans-unit id="article-10014-values.wage">
+				<source>Wage</source>
+			</trans-unit>
+			<trans-unit id="article-10018-values.probationUnitOfTime">
+				<source> </source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

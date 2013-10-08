@@ -132,11 +132,11 @@
 			</trans-unit>
 			<trans-unit id="article-10005-values.vacationAllowanceGLA">
 				<source>Vacation allowance GLA</source>
-				<target>Vacantie</target>
+				<target>Vacantiegeld</target>
 			</trans-unit>
 			<trans-unit id="article-10006-values.sickReportTime">
-				<source>Sick report time</source>
-				<target>Ziekmelding</target>
+				<source>Sickreport before</source>
+				<target>Ziekmelden voor</target>
 			</trans-unit>
 			<trans-unit id="article-10010-values.accomodationRent">
 				<source>Rent</source>
@@ -209,6 +209,42 @@
 			<trans-unit id="article-10017-values.workLocation">
 				<source>Worklocation</source>
 				<target>Werklocatie</target>
+			</trans-unit>
+			<trans-unit id="article-10001-values.probationPeriod">
+				<source>Probation period is</source>
+				<target>De proeftijdsperiode is</target>
+			</trans-unit>
+			<trans-unit id="article-10003-values.paymentSequence">
+				<source>Payment interval</source>
+				<target>Loonbetaling per</target>
+			</trans-unit>
+			<trans-unit id="article-10003-values.wage">
+				<source>Wage</source>
+				<target>Salaris</target>
+			</trans-unit>
+			<trans-unit id="article-10010-values.accomodationRentUnitOfTime">
+				<source>for</source>
+				<target>per</target>
+			</trans-unit>
+			<trans-unit id="article-10014-values.salaryScale">
+				<source>Salary scale</source>
+				<target>Salaris groep </target>
+			</trans-unit>
+			<trans-unit id="article-10001-values.probationUnitOfTime">
+				<source> </source>
+				<target> </target>
+			</trans-unit>
+			<trans-unit id="article-10014-values.paymentSequence">
+				<source>Salary payment each</source>
+				<target>Salarisbetaling per</target>
+			</trans-unit>
+			<trans-unit id="article-10014-values.wage">
+				<source>Wage</source>
+				<target>Salaris</target>
+			</trans-unit>
+			<trans-unit id="article-10018-values.probationUnitOfTime">
+				<source> </source>
+				<target> </target>
 			</trans-unit>
 		</body>
 	</file>
