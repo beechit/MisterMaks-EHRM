@@ -1,14 +1,13 @@
-<f:layout />{namespace emberjs=Radmiraal\Emberjs\ViewHelpers}
+<f:layout />
 <f:section name="Body">
-	<emberjs:handlebars paths="{0: 'resource://Beech.Ehrm/Private/Templates/Handlebar'}" upperCamelCase="true" />
-	<emberjs:handlebars paths="{0: 'resource://Beech.Absence/Private/Templates/Handlebar'}" templateNamePrefix="BeechAbsence" upperCamelCase="true" />
-	<emberjs:handlebars paths="{0: 'resource://Beech.Task/Private/Templates/Handlebar'}" templateNamePrefix="BeechTask" upperCamelCase="true" />
+	<f:security.ifAuthenticated>
+		<f:then>
+			<f:render partial="Application/Index" arguments="{_all}"/>
+		</f:then>
+		<f:else>
+			<f:render partial="Application/Intro" arguments="{_all}"/>
+		</f:else>
+	</f:security.ifAuthenticated>
+
 	<f:render partial="Modals" />
-	<f:if condition="{emberRedirect}">
-		<script type="text/javascript">
-			$(function(){
-				window.location.href = "#{emberRedirect}";
-			})
-		</script>
-	</f:if>
 </f:section>

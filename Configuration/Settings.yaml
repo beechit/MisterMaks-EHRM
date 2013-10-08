@@ -11,7 +11,7 @@ TYPO3:
               routeValues:
                 '@package': 'Beech.Ehrm'
                 '@controller': 'Application'
-                '@action': 'intro'
+                '@action': 'index'
     object:
       excludeClasses:
        'composer*': ['.*']

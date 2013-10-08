@@ -1544,6 +1544,9 @@ footer .logo i { position: absolute; left: -8px; top: 1px; font-size: 0.8em; }
 .breadcrumb { background: none; padding: 0; }
 
 /* Index */
+.intro .row-fluid .span6 { position: relative; }
+.intro .alert { position: absolute; top: 20px; left: 0; right: 0; }
+
 .jumbotron { margin: 100px 0; text-align: center; }
 .jumbotron h1 { letter-spacing: -0.1em; color: #049cdb; }
 .jumbotron h1 i { margin-right: 8px; }

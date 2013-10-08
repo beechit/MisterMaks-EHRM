@@ -1,6 +1,6 @@
 resources:
   methods:
-    ApplicationControllers: 'method(Beech\.*\Controller\(?!Login).*Controller->(?!initialize)(?!intro).*Action())'
+    ApplicationControllers: 'method(Beech\.*\Controller\(?!Login).*Controller->(?!initialize)(?!index).*Action())'
     ManagementControllers: 'method(\Beech\.*\Management\.*Controller->(?!initialize).*Action())'
     SetupController: 'method(Beech\Ehrm\SetupController->(?!initialize).*Action())'
 

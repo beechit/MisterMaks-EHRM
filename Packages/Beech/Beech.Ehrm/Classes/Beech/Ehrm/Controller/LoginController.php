@@ -103,7 +103,7 @@ class LoginController extends \TYPO3\Flow\Security\Authentication\Controller\Abs
 	public function logoutAction() {
 		parent::logoutAction();
 		$this->addFlashMessage('Successfully logged out.');
-		$this->redirect('intro', 'Application');
+		$this->redirect('index', 'Application');
 	}
 
 }
