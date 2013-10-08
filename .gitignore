@@ -4,7 +4,9 @@
 /Build/cache.properties
 /Build/BuildEssentials/
 /Build/Beech.Essentials/
-/Configuration/
+/Configuration/Development/
+/Configuration/Production/
+/Configuration/Testing/
 /Web/.htaccess
 /Data/
 /Tests/
@@ -28,4 +30,6 @@ Thumbs.db
 /*.txt
 /node_modules/
 /bin/
-
+/Configuration/PackageStates.php
+/Configuration/README
+/Configuration/Settings.yaml.example
