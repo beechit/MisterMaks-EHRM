@@ -234,6 +234,34 @@
 				<source>Dashboard</source>
 				<target>centrala</target>
 			</trans-unit>
+			<trans-unit id="headcount">
+				<source>Headcount</source>
+				<target></target>
+			</trans-unit>
+			<transunit id="leave">
+				<source>Leave</source>
+				<target></target>
+			</transunit>
+			<transunit id="sickness">
+				<source>Sickness</source>
+				<target></target>
+			</transunit>
+			<trans-unit id="age">
+				<source>Age</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="report.absence">
+				<source>Absence</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="report.general">
+				<source>General</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="report.contracts">
+				<source>Contracts</source>
+				<target></target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

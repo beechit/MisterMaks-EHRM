@@ -338,6 +338,34 @@
 				<source>Person wizard</source>
 				<target>Nieuwe Persoon</target>
 			</trans-unit>
+			<trans-unit id="headcount">
+				<source>Headcount</source>
+				<target>Bezetting</target>
+			</trans-unit>
+			<transunit id="leave">
+				<source>Leave</source>
+				<target>Verlof</target>
+			</transunit>
+			<transunit id="sickness">
+				<source>Sickness</source>
+				<target>Verzuim</target>
+			</transunit>
+			<trans-unit id="age">
+				<source>Age</source>
+				<target>Leeftijd</target>
+			</trans-unit>
+			<trans-unit id="report.absence">
+				<source>Absence</source>
+				<target>Verlof en verzuim</target>
+			</trans-unit>
+			<trans-unit id="report.general">
+				<source>General</source>
+				<target>Algemeen</target>
+			</trans-unit>
+			<trans-unit id="report.contracts">
+				<source>Contracts</source>
+				<target>Arbeidsovereenkomsten</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

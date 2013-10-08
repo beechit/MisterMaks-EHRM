@@ -176,6 +176,27 @@
 			<trans-unit id="dashboard">
 				<source>Dashboard</source>
 			</trans-unit>
+			<trans-unit id="headcount">
+				<source>Headcount</source>
+			</trans-unit>
+			<transunit id="leave">
+				<source>Leave</source>
+			</transunit>
+			<transunit id="sickness">
+				<source>Sickness</source>
+			</transunit>
+			<trans-unit id="age">
+				<source>Age</source>
+			</trans-unit>
+			<trans-unit id="report.absence">
+				<source>Absence</source>
+			</trans-unit>
+			<trans-unit id="report.general">
+				<source>General</source>
+			</trans-unit>
+			<trans-unit id="report.contracts">
+				<source>Contracts</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
