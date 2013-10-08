@@ -156,7 +156,7 @@
 
 			// Beech.Absence/Absence
 			this.resource('BeechAbsenceAbsences', {path: 'absences'}, function() {
-				this.resource('BeechAbsenceAbsencesOverview', {path:'overview'}, function() {
+				this.resource('BeechAbsenceAbsencesOverview', {path:'headcount'}, function() {
 					this.route('overview', {path:'/:department/:startDate'});
 				});
 				this.resource('BeechAbsenceAbsencesList', {path:'list/:absenceType'}, function() {
