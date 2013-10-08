@@ -205,7 +205,14 @@
 				$(datepicker).datetimepicker($(datepicker).hasClass('withTime') ? App.dateTimePickerSettings : App.datePickerSettings);
 			});
 			$moduleContainer.find('.datepickerIcon').on('click', function(){$(this).parent().find('.datepicker').trigger('focus')});
-			$moduleContainer.find('select:not(".input-mini")').chosen();
+			$moduleContainer.find('select:not(".input-mini")').each(function(key, element) {
+				var $element = $(element);
+				if ($element.parents('form').length) {
+					$element.chosen({width: '100%'});
+				} else {
+					$element.chosen();
+				}
+			});
 			$moduleContainer.find('input').applyInputMasks();
 			$moduleContainer.find('.countrySelect').countrySelect();
 			if ($primary != undefined) {

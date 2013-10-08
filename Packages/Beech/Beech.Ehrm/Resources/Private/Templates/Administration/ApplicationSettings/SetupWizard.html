@@ -126,7 +126,7 @@
 				$(datepicker).datetimepicker($(datepicker).hasClass('withTime') ? App.dateTimePickerSettings : App.datePickerSettings);
 			});
 			element.find('.datepickerIcon').on('click', function(){$(this).parent().find('.datepicker').trigger('focus')});
-			element.find('select').chosen({width: '350px'});
+			element.find('select').chosen({width: '100%'});
 			element.find('.countrySelect').countrySelect();
 			element.find('input').applyInputMasks();
 
