@@ -236,6 +236,190 @@
 				<source>* Document name and attachment are required</source>
 				<target>Documentnaam en bestand zijn vereist.</target>
 			</trans-unit>
+			<trans-unit id="resource.contentType.image/gif">
+				<source>Image (gif)</source>
+				<target>Afbeelding (gif)</target>
+			</trans-unit>
+			<trans-unit id="resource.contentType.image/tiff">
+				<source>Image (tiff)</source>
+				<target>Afbeelding (tiff)</target>
+			</trans-unit>
+			<trans-unit id="resource.contentType.image/jpeg">
+				<source>Image (jpeg)</source>
+				<target>Afbeelding (jpeg)</target>
+			</trans-unit>
+			<trans-unit id="resource.contentType.text/plain">
+				<source>File (txt)</source>
+				<target>Bestand (txt)</target>
+			</trans-unit>
+			<trans-unit id="resource.contentType.application/vnd.ms-excel">
+				<source>Spreadsheet (xls)</source>
+				<target>Rekenblad (xls)</target>
+			</trans-unit>
+			<trans-unit id="resource.contentType.image/png">
+				<source>Image (png)</source>
+				<target>Afbeelding (png)</target>
+			</trans-unit>
+			<trans-unit id="resource.contentType.application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+				<source>Document (docx)</source>
+				<target>Document (docx)</target>
+			</trans-unit>
+			<trans-unit id="resource.contentType.application/vnd.oasis.opendocument.text">
+				<source>Document (odt)</source>
+				<target>Document (odt)</target>
+			</trans-unit>
+			<trans-unit id="resource.contentType.application/pdf">
+				<source>Document (pdf)</source>
+				<target>Document (pdf)</target>
+			</trans-unit>
+			<trans-unit id="resource.contentType.application/vnd.openxmlformats-officedocument.spreadsheetml.sheet">
+				<source>Spreadsheet (xlsx)</source>
+				<target>Rekenblad (xlsx)</target>
+			</trans-unit>
+			<trans-unit id="resource.contentType.application/vnd.oasis.opendocument.spreadsheet">
+				<source>Spreadsheet (ods)</source>
+				<target>Rekenblad (ods)</target>
+			</trans-unit>
+			<trans-unit id="document.documentType.categoryName.Absence">
+				<source>Absence</source>
+				<target>Verlof en verzuim</target>
+			</trans-unit>
+			<trans-unit id="document.documentType.typeName.Correspondence">
+				<source>Correspondence</source>
+				<target>Correspondentie</target>
+			</trans-unit>
+			<trans-unit id="document.documentType.typeName.Arbo">
+				<source>Arbo</source>
+				<target>Arbodienst</target>
+			</trans-unit>
+			<trans-unit id="document.documentType.typeName.Other">
+				<source>Other</source>
+				<target>Anders</target>
+			</trans-unit>
+			<trans-unit id="document.documentType.categoryName.Contract">
+				<source>Contract</source>
+				<target>Arbeidsovereenkomst</target>
+			</trans-unit>
+			<trans-unit id="document.documentType.categoryName.Reference note">
+				<source>Reference note</source>
+				<target>Referenties</target>
+			</trans-unit>
+			<trans-unit id="document.documentType.typeName.Renewable certificates">
+				<source>Renewable certificates</source>
+				<target>Verlengbare certificaten</target>
+			</trans-unit>
+			<trans-unit id="document.documentType.typeName.Certificates">
+				<source>Certificates</source>
+				<target>Certificaten</target>
+			</trans-unit>
+			<trans-unit id="document.documentType.categoryName.Educational">
+				<source>Education</source>
+				<target>Opleiding</target>
+			</trans-unit>
+			<trans-unit id="document.documentType.typeName.Diploma">
+				<source>Diploma</source>
+				<target>Diploma</target>
+			</trans-unit>
+			<trans-unit id="document.documentType.typeName.Certificate of registration">
+				<source>Certificate of registration</source>
+				<target>Inschrijfbewijs</target>
+			</trans-unit>
+			<trans-unit id="document.documentType.categoryName.General">
+				<source>General</source>
+				<target>Algemeen</target>
+			</trans-unit>
+			<trans-unit id="document.documentType.typeName.Report">
+				<source>Report</source>
+				<target>Raport</target>
+			</trans-unit>
+			<trans-unit id="document.documentType.categoryName.Identification">
+				<source>Identification</source>
+				<target>Identificatie</target>
+			</trans-unit>
+			<trans-unit id="document.documentType.typeName.Passport">
+				<source>Passport</source>
+				<target>Passpoort</target>
+			</trans-unit>
+			<trans-unit id="document.documentType.typeName.ID card">
+				<source>ID card</source>
+				<target>Id kaart</target>
+			</trans-unit>
+			<trans-unit id="document.documentType.categoryName.Image">
+				<source>Image</source>
+				<target>Afbeelding</target>
+			</trans-unit>
+			<trans-unit id="document.documentType.typeName.profilePhoto">
+				<source>Profile photo</source>
+				<target>Profielfoto</target>
+			</trans-unit>
+			<trans-unit id="document.documentType.typeName.companyLogo">
+				<source>Company logo</source>
+				<target>Bedrijfslogo</target>
+			</trans-unit>
+			<trans-unit id="document.documentType.typeName.Other">
+				<source>Other</source>
+				<target>Anders</target>
+			</trans-unit>
+			<trans-unit id="document.documentType.typeName.Images">
+				<source>Images</source>
+				<target>Afbeeldingen</target>
+			</trans-unit>
+			<trans-unit id="document.documentType.categoryName.jobApplication">
+				<source>jobApplication</source>
+				<target>functieomschrijving</target>
+			</trans-unit>
+			<trans-unit id="document.documentType.typeName.Resume">
+				<source>Resume</source>
+				<target>CV</target>
+			</trans-unit>
+			<trans-unit id="document.documentType.typeName.Interview notes">
+				<source>Interview notes</source>
+				<target>Gespreksverslag</target>
+			</trans-unit>
+			<trans-unit id="document.documentType.typeName.Performance review">
+				<source>Performance Review</source>
+				<target>Functioneringsgesprek</target>
+			</trans-unit>
+			<trans-unit id="document.documentType.typeName.Team minutes">
+				<source>Team minutes</source>
+				<target>Verslagen</target>
+			</trans-unit>
+			<trans-unit id="document.documentType.typeName.Progress report">
+				<source>Progress report</source>
+				<target>Voortgangsverslag</target>
+			</trans-unit>
+			<trans-unit id="document.documentType.typeName.Workpermit">
+				<source>Workpermit</source>
+				<target>Werkvergunning</target>
+			</trans-unit>
+			<trans-unit id="document.documentType.typeName.ResidencePermit">
+				<source>ResidencePermit</source>
+				<target>Verblijfsvergunning</target>
+			</trans-unit>
+			<trans-unit id="document.documentType.typeName.Application form">
+				<source>Application form</source>
+				<target>Aanvraag formulier</target>
+			</trans-unit>
+			<trans-unit id="document.documentType.typeName.Wage document">
+				<source>Wage document</source>
+				<target>Salarisstrook</target>
+			</trans-unit>
+			<trans-unit id="document.documentType.typeName.Wage tax declaration">
+				<source>Wage tax declaration</source>
+				<target>Loonbelasting documenten</target>
+			</trans-unit>
+			<trans-unit id="document.documentType.categoryName.Salary">
+				<source>Salary</source>
+				<target>Salaris</target>
+			</trans-unit>
+			<trans-unit id="document.documentType.categoryName.Permits">
+				<source>Permits</source>
+				<target>Vergunningen</target>
+			</trans-unit>
+			<trans-unit id="document.documentType.typeName.Year report">
+				<source>Year report</source>
+				<target>Jaaropgave</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

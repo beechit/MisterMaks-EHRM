@@ -185,17 +185,19 @@
 							<tr>
 								<td><a href="#/document/show/{document.id}">{document.name}</a></td>
 								<td>
-									<f:translate id="document.documentType.{document.documentType.categoryName}">
+									<f:translate id="document.documentType.categoryName.{document.documentType.categoryName}" package="Beech.Document">
 										{document.documentType.categoryName}
 									</f:translate>
 									/
-									<f:translate id="document.documentType.{document.documentType.typeName}">
+									<strong></strong><f:translate id="document.documentType.typeName.{document.documentType.typeName}" package="Beech.Document">
 										{document.documentType.typeName}
-									</f:translate>
+									</f:translate></
 								</td>
 								<td>
 									<f:for each="{document.resources}" as="resource">
-										<i>{resource.contentType}</i>
+										<i><f:translate id="resource.contentType.{resource.contentType}" package="Beech.Document">
+											{resource.contentType}
+										</f:translate></i>
 									</f:for>
 								</td>
 								<td>
