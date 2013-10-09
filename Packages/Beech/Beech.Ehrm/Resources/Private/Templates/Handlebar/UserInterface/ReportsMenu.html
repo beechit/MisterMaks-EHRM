@@ -1,51 +1,51 @@
 {namespace mm=Beech\Ehrm\ViewHelpers}
 <h3><f:translate id="reports" package="Beech.Ehrm">Reports</f:translate></h3>
 
-	<div class="accordion boxes" id="reportsMenu">
+<div class="accordion boxes" id="reportsMenu">
 
-		<div class="accordion-group">
-			<div class="accordion-heading">
-				<a class="accordion-toggle" data-toggle="collapse" data-parent="#reportsMenu" href="#reportsMenu-general">General</a>
-			</div>
-			<div id="reportsMenu-general" class="accordion-body">
-				<div class="accordion-inner">
-					<ul class="unstyled">
-						<li>{{#linkTo "BeechChartReport"}}<i class="icon-bar-chart"></i> <f:translate id="Age" package="Beech.Ehrm">Age</f:translate>{{/linkTo}}</li>
-						<li>Education</li>
-						<li>Gender</li>
-						<li>Function grid</li>
-					</ul>
-				</div>
-			</div>
+	<div class="accordion-group">
+		<div class="accordion-heading">
+			<a class="accordion-toggle" data-toggle="collapse" data-parent="#reportsMenu" href="#reportsMenu-general"><f:translate id="report.general" package="Beech.Ehrm">General</f:translate></a>
 		</div>
-		<div class="accordion-group">
-			<div class="accordion-heading">
-				<a class="accordion-toggle" data-toggle="collapse" data-parent="#reportsMenu" href="#reportsMenu-leave">
-					Absence
-				</a>
-			</div>
-			<div id="reportsMenu-leave" class="accordion-body collapse">
-				<div class="accordion-inner">
-					<ul class="unstyled">
-						<li>{{#linkTo "BeechAbsenceAbsencesOverview"}}<i class="icon-bar-chart"></i> <f:translate id="Absence.Chart" package="Beech.Ehrm">Chart</f:translate>{{/linkTo}}</li>
-						<li>{{#linkTo "BeechAbsenceAbsencesList" "leave"}}<i class="icon-bar-list"></i> <f:translate id="Leave" package="Beech.Ehrm">Leave</f:translate>{{/linkTo}}</li>
-						<li>{{#linkTo "BeechAbsenceAbsencesList" "sicknes"}}<i class="icon-bar-list"></i> <f:translate id="Sicknes" package="Beech.Ehrm">Sicknes</f:translate>{{/linkTo}}</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-		<div class="accordion-group">
-			<div class="accordion-heading">
-				<a class="accordion-toggle" data-toggle="collapse" data-parent="#reportsMenu" href="#reportsMenu-contract">
-					Contracts
-				</a>
-			</div>
-			<div id="reportsMenu-contract" class="accordion-body collapse">
-				<div class="accordion-inner">
-					<ul class="unstyled">
-						<li></li>
-					</ul>
-				</div>
+		<div id="reportsMenu-general" class="accordion-body">
+			<div class="accordion-inner">
+				<ul class="unstyled">
+					<li>{{#linkTo "BeechChartReport"}}<i class="icon-bar-chart"></i> <f:translate id="report.age" package="Beech.Ehrm">Age</f:translate>{{/linkTo}}</li>
+					<li>Education</li>
+					<li>Gender</li>
+					<li>Function grid</li>
+				</ul>
 			</div>
 		</div>
 	</div>
+	<div class="accordion-group">
+		<div class="accordion-heading">
+			<a class="accordion-toggle" data-toggle="collapse" data-parent="#reportsMenu" href="#reportsMenu-leave">
+				<f:translate id="report.absence" package="Beech.Ehrm">Absence</f:translate>
+			</a>
+		</div>
+		<div id="reportsMenu-leave" class="accordion-body collapse">
+			<div class="accordion-inner">
+				<ul class="unstyled">
+					<li>{{#linkTo "BeechAbsenceAbsencesOverview"}}<i class="icon-bar-chart"></i> <f:translate id="Absence.headCount" package="Beech.Ehrm">Headcount</f:translate>{{/linkTo}}</li>
+					<li>{{#linkTo "BeechAbsenceAbsencesList" "leave"}}<i class="icon-bar-list"></i> <f:translate id="Leave" package="Beech.Ehrm">Leave</f:translate>{{/linkTo}}</li>
+					<li>{{#linkTo "BeechAbsenceAbsencesList" "sickness"}}<i class="icon-bar-list"></i> <f:translate id="Sickness" package="Beech.Ehrm">Sickness</f:translate>{{/linkTo}}</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="accordion-group">
+		<div class="accordion-heading">
+			<a class="accordion-toggle" data-toggle="collapse" data-parent="#reportsMenu" href="#reportsMenu-contract">
+				<f:translate id="report.contracts" package="Beech.Ehrm">Contracts</f:translate>
+			</a>
+		</div>
+		<div id="reportsMenu-contract" class="accordion-body collapse">
+			<div class="accordion-inner">
+				<ul class="unstyled">
+					<li></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
