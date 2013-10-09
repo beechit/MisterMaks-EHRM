@@ -191,8 +191,7 @@
 				<target>Verlof historie</target>
 			</trans-unit>
 			<trans-unit id="percentageLeaveBalanceUsed">
-				<source>% of balance used</source>
-				<target>% opgenomen verlof</target>
+er				<target>% opgenomen verlof</target>
 			</trans-unit>
 			<trans-unit id="remainingLeaveBalance">
 				<source>remaining balance</source>
@@ -285,6 +284,42 @@
 			<trans-unit id="percentageAverageBranche">
 				<source>Branche %</source>
 				<target>Branche %</target>
+			</trans-unit>
+			<trans-unit id="absence.leave.hours">
+				<source>Number of hours</source>
+				<target>Aantal uur</target>
+			</trans-unit>
+			<trans-unit id="absence.status.pending">
+				<source>Pending</source>
+				<target>In afwachting</target>
+			</trans-unit>
+			<trans-unit id="absence.status.accepted">
+				<source>Accepted</source>
+				<target>Geaccepteerd</target>
+			</trans-unit>
+			<trans-unit id="absence.status.declined">
+				<source>Declined</source>
+				<target>Afgewezen</target>
+			</trans-unit>
+			<trans-unit id="absence.status.sick">
+				<source>sick</source>
+				<target>Ziek</target>
+			</trans-unit>
+			<trans-unit id="absence.sInfo">
+				<source>Showing (_START_ of _END_) of _TOTAL_ entries.</source>
+				<target>Toon(_START_ of _END_) van _TOTAL_.</target>
+			</trans-unit>
+			<trans-unit id="absence.sSearch">
+				<source>Search</source>
+				<target>Zoek</target>
+			</trans-unit>
+			<trans-unit id="absence.sEmptyTable">
+				<source>No data available</source>
+				<target>Geen registraties bekend</target>
+			</trans-unit>
+			<trans-unit id="absence.sLengthMenu">
+				<source>Show _MENU_ entries</source>
+				<target>Toon _MENU_ records</target>
 			</trans-unit>
 		</body>
 	</file>

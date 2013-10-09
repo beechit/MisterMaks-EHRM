@@ -26,12 +26,12 @@
 				<f:for each="{absences}" as="absence">
 					<tr>
 						<f:if condition="{person}"><f:else><td>{absence.person.name}</td></f:else></f:if>
-						<td><f:translate id="{absence.absenceArrangement.label}"></f:translate></td>
+						<td><f:translate id="absence.absenceArrangement.label.{absence.absenceArrangement.label}">{absence.absenceArrangement.label}</f:translate></td>
 						<td>{absence.startDate -> f:format.date(format: 'd-m-Y H:i')}</td>
 						<td>{absence.endDate -> f:format.date(format: 'd-m-Y H:i')}</td>
 						<td>{absence.days}</td>
 						<td>{absence.hours}</td>
-						<td>{absence.status}</td>
+						<td><f:translate id="absence.status.{absence.status}">{absence.status}</f:translate></td>
 						<td>
 							<f:if condition="{absence.approved}">
 								<f:then>
@@ -58,12 +58,14 @@
 </div>
 <script type="text/javascript">
 
-	$('table.absenceList').dataTable({
+	$('table.absenceList')
+		.dataTable({
 		"oLanguage": {
 			"sEmptyTable": '<f:translate id="absence.sEmptyTable">No data available</f:translate>',
 			"sSearch": '<f:translate id="absence.sSearch">Search</f:translate>',
 			"sInfo": '<f:translate id="absence.sInfo">Showing (_START_ of _END_) of _TOTAL_ entries.</f:translate>',
-			"oPaginate": {
+			"sLengthMenu": '<f:translate id="absence.sLengthMenu">Show _MENU_ entries</f:translate>',
+				"oPaginate": {
 				"sFirst": '<f:translate id="absence.sFirst">Search</f:translate>',
 				"sLast": '<f:translate id="absence.sLast">Last</f:translate>',
 				"sNext": '<f:translate id="absence.sNext">Next</f:translate>',
