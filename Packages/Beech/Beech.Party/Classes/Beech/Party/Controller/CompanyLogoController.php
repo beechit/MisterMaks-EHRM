@@ -30,6 +30,12 @@ class CompanyLogoController extends \Beech\Document\Controller\DocumentControlle
 	protected $documentTypeRepository;
 
 	/**
+	 * @var \Beech\Document\Domain\Repository\DocumentRepository
+	 * @Flow\Inject
+	 */
+	protected $documentRepository;
+
+	/**
 	 * @var \TYPO3\Flow\Object\ObjectManagerInterface
 	 * @Flow\Inject
 	 */
@@ -61,7 +67,8 @@ class CompanyLogoController extends \Beech\Document\Controller\DocumentControlle
 		$identifier = $this->persistenceManager->getIdentifierByObject($document);
 		$company->setLogo($identifier);
 		$this->companyRepository->update($company);
-		$this->redirect('edit', NULL, NULL, array('document' => $document, 'company' => $company));
+
+		$this->emberRedirect('#/person/show/'.$company->getId());
 	}
 }
 

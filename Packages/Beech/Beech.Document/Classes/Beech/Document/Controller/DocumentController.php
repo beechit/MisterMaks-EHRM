@@ -80,7 +80,11 @@ class DocumentController extends \Beech\Ehrm\Controller\AbstractManagementContro
 		$this->repository->add($document);
 		$this->addFlashMessage($this->translator->translateById('document.documentUploaded', array(), NULL, NULL, 'Main', 'Beech.Document'));
 		if ($document->getParty() != NULL) {
-			$this->redirect('new', 'Document', 'Beech.Document', array('party' => $document->getParty()));
+			if ($document->getParty() instanceof \Beech\Party\Domain\Model\Person) {
+				$this->emberRedirect('#/person/show/'.$document->getParty()->getId());
+			} else {
+				$this->emberRedirect('#/company/show/'.$document->getParty()->getId());
+			}
 		} else {
 			$this->redirect('new');
 		}

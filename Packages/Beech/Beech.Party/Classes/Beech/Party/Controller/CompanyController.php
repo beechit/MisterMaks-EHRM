@@ -101,7 +101,7 @@ class CompanyController extends \Beech\Ehrm\Controller\AbstractManagementControl
 	 * @Flow\IgnoreValidation("$company")
 	 * @return void
 	 */
-	public function showAction(Company $company, $withDetails = TRUE) {
+	public function showAction(Company $company = NULL, $withDetails = TRUE) {
 		$this->view->assign('company', $company);
 		$addresses = $this->addressRepository->findByParty($company->getId());
 		$this->view->assign('addresses', $addresses);
@@ -122,7 +122,7 @@ class CompanyController extends \Beech\Ehrm\Controller\AbstractManagementControl
 	 * @Flow\IgnoreValidation("$company")
 	 * @return void
 	 */
-	public function editAction(Company $company, $withDetails = TRUE) {
+	public function editAction(Company $company = NULL, $withDetails = TRUE) {
 		$this->view->assign('company', $company);
 		$addresses = $this->addressRepository->findByParty($company->getId());
 		$this->view->assign('addresses', $addresses);
@@ -150,7 +150,7 @@ class CompanyController extends \Beech\Ehrm\Controller\AbstractManagementControl
 	 *
 	 * @return void
 	 */
-	public function createAction(Company $company) {
+	public function createAction(Company $company = NULL) {
 		$this->repository->add($company);
 		$this->addFlashMessage('Company is added');
 		if ($this->request->hasArgument('noEmberRedirect')) {
@@ -169,7 +169,7 @@ class CompanyController extends \Beech\Ehrm\Controller\AbstractManagementControl
 	 *
 	 * @return void
 	 */
-	public function updateAction(Company $company) {
+	public function updateAction(Company $company = NULL) {
 		$this->repository->update($company);
 		$this->addFlashMessage('Company is updated');
 		$this->emberRedirect('#/company');
@@ -179,7 +179,7 @@ class CompanyController extends \Beech\Ehrm\Controller\AbstractManagementControl
 	 * @param \Beech\Party\Domain\Model\Company $company A new company to delete
 	 * @return void
 	 */
-	public function deleteAction(Company $company) {
+	public function deleteAction(Company $company = NULL) {
 		$this->repository->remove($company);
 			// persist manualy because GET requests will not be auto persisted
 		$this->persistenceManager->persistAll();

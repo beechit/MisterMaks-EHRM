@@ -1,9 +1,9 @@
 <f:if condition="{licence}">
 	<f:then>
-		<div id="licence-{licence.id}" class="clearfix">
+		<div id="licence-{licence.id}" class="multi-form-item">
 			<f:render partial="Forms/Licence" arguments="{party: party, licence: licence, controller: 'Licence', action: 'update'}"/>
 		</div>
-		<div id="licence-add" class="clearfix">
+		<div id="licence-add" class="multi-form-item">
 			<f:render partial="Forms/Licence" arguments="{party: party, controller: 'Licence', action: 'add', suffix: 'licence'}"/>
 		</div>
 	</f:then>

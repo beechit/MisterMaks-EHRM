@@ -28,8 +28,9 @@ $chosen-sprite-retina: image-url('Library/chosen/chosen-sprite@2x.png');
 	a {
 		cursor: pointer;
 	}
-	/* set default max width */
+	/* set default min/max width */
 	max-width: 345px;
+	min-width: 45px;
 }
 
 .input-prepend, .input-append {

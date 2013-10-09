@@ -2,34 +2,33 @@
 
 <f:section name="Body">
 
-		<div class="row" id="content">
-
-			<f:flashMessages class="flashmessages alert" />
+			<f:flashMessages class="login flashmessages alert" />
 
 			<f:if condition="{applicationConfigured}">
 				<f:then>
-					<f:form action="authenticate" class="form" additionalAttributes="{data-target:'#modal-body-only .modal-body'}">
+					<f:form action="authenticate" class="compact-form login-form" additionalAttributes="{data-target:'#modal .modal-content'}">
 						<f:form.hidden name="modal" value="1" />
-						<fieldset>
-							<legend><f:translate id="panel.login.legend">Login panel</f:translate></legend>
-							<div class="control-group">
-								<div class="controls">
-									<div class="input-prepend">
-										<span class="add-on"><i class="icon-user"></i></span>
-										<f:form.textfield name="__authentication[TYPO3][Flow][Security][Authentication][Token][UsernamePassword][username]" class="input-xlarge" id="username" value="{username}" placeholder="{f:translate(id:'panel.login.username')}" />
+						<div class="content-padding">
+							<fieldset>
+								<legend><f:translate id="panel.login.legend">Login panel</f:translate></legend>
+								<div class="control-group">
+									<div class="controls">
+										<div class="input-prepend">
+											<span class="add-on"><i class="icon-user"></i></span>
+											<f:form.textfield name="__authentication[TYPO3][Flow][Security][Authentication][Token][UsernamePassword][username]" class="input-xlarge" id="username" value="{username}" placeholder="{f:translate(id:'panel.login.username')}" />
+										</div>
 									</div>
 								</div>
-							</div>
-							<div class="control-group">
-								<div class="controls">
-									<div class="input-prepend">
-										<span class="add-on"><i class="icon-key"></i></span>
-										<f:form.password name="__authentication[TYPO3][Flow][Security][Authentication][Token][UsernamePassword][password]" class="input-xlarge" id="password" additionalAttributes="{placeholder: '{f:translate(id:\'panel.login.password\')}'}" />
+								<div class="control-group">
+									<div class="controls">
+										<div class="input-prepend">
+											<span class="add-on"><i class="icon-key"></i></span>
+											<f:form.password name="__authentication[TYPO3][Flow][Security][Authentication][Token][UsernamePassword][password]" class="input-xlarge" id="password" additionalAttributes="{placeholder: '{f:translate(id:\'panel.login.password\')}'}" />
+										</div>
 									</div>
 								</div>
-							</div>
-						</fieldset>
-
+							</fieldset>
+						</div>
 						<div class="form-actions">
 							<button type="submit" class="btn btn-primary"><f:translate id="action.login">Login</f:translate></button>
 						</div>
@@ -43,7 +42,7 @@
 				</f:else>
 
 			</f:if>
-		</div>
+
 
 
 </f:section>

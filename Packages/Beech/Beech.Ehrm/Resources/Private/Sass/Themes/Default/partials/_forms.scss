@@ -54,7 +54,6 @@ input[readonly].datepicker {
 }
 #contractCreator {
 	.articles-section {
-		margin-bottom: 80px !important;
 		div.inputs-list {
 			border: 1px solid #e3e3e3;
 			background: $white;
@@ -68,7 +67,7 @@ input[readonly].datepicker {
 			padding:0;
 		}
 		fieldset {
-			margin-bottom: 0;
+
 		}
 		legend {
 			margin-bottom: 10px;
@@ -95,4 +94,18 @@ input[readonly].datepicker {
 .ehrm-module td:hover .icon-pencil {
 	opacity: 1;
 	transition: opacity .25s ease-in-out;
+}
+
+.multi-form {
+	.multi-form-item {
+		&:not(:last-child) {
+			border-bottom: 1px solid $grayLighter;
+		}
+		.row-fluid .span1:last-child {
+			text-align: right;
+		}
+		form {
+			margin: 15px 0;
+		}
+	}
 }

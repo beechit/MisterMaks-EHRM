@@ -135,7 +135,7 @@ class PersonController extends \Beech\Ehrm\Controller\AbstractManagementControll
 	 * @Flow\IgnoreValidation("$person")
 	 * @return void
 	 */
-	public function showAction(Person $person, $withDetails = TRUE) {
+	public function showAction(Person $person = NULL, $withDetails = TRUE) {
 		$this->view->assign('person', $person);
 		$addresses = $this->addressRepository->findByParty($person->getId());
 		$this->view->assign('addresses', $addresses);
@@ -176,7 +176,7 @@ class PersonController extends \Beech\Ehrm\Controller\AbstractManagementControll
 	 * @Flow\IgnoreValidation("$person")
 	 * @return void
 	 */
-	public function editAction(Person $person, $withDetails = TRUE) {
+	public function editAction(Person $person = NULL, $withDetails = TRUE) {
 		$this->view->assign('person', $person);
 		$addresses = $this->addressRepository->findByParty($person->getId());
 		$this->view->assign('addresses', $addresses);
@@ -214,13 +214,13 @@ class PersonController extends \Beech\Ehrm\Controller\AbstractManagementControll
 	 * @param \Beech\Party\Domain\Model\Person $person A new person to add
 	 * @return void
 	 */
-	public function createAction(Person $person) {
+	public function createAction(Person $person = NULL) {
 		$this->repository->add($person);
 
 		$this->addFlashMessage('Person is added');
 
 		if ($this->request->hasArgument('noEmberRedirect')) {
-			$options = array('person' => $person);
+			$options = array('person' => $person, 'withDetails' => FALSE);
 			if ($this->request->hasArgument('withDetails')) {
 				$options['withDetails'] = $this->request->getArgument('withDetails');
 			}
@@ -234,11 +234,11 @@ class PersonController extends \Beech\Ehrm\Controller\AbstractManagementControll
 	 * @param \Beech\Party\Domain\Model\Person $person A new person to update
 	 * @return void
 	 */
-	public function updateAction(Person $person) {
+	public function updateAction(Person $person = NULL) {
 		$this->repository->update($person);
 		$this->addFlashMessage('Person is updated');
 		if ($this->request->hasArgument('noEmberRedirect')) {
-			$options = array('person' => $person);
+			$options = array('person' => $person, 'withDetails' => FALSE);
 			if ($this->request->hasArgument('withDetails')) {
 				$options['withDetails'] = $this->request->getArgument('withDetails');
 			}
@@ -253,7 +253,7 @@ class PersonController extends \Beech\Ehrm\Controller\AbstractManagementControll
 	 * @Flow\IgnoreValidation("$person")
 	 * @return void
 	 */
-	public function deleteAction(Person $person) {
+	public function deleteAction(Person $person = NULL) {
 		$this->repository->remove($person);
 			// persist manualy because GET requests will not be auto persisted
 		$this->persistenceManager->persistAll();

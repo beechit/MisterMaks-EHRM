@@ -3,6 +3,9 @@ var App;
 (function() {
 	'use strict';
 
+		// disable by default closing modal on backdrop click
+	$.extend($.fn.modal.defaults, {backdrop:'static'});
+
 	App = Ember.Application.create({
 		LOG_TRANSITIONS: true,
 		LOG_STACKTRACE_ON_DEPRECATION: true,

@@ -6,40 +6,43 @@
 		<f:translate id="personInfo">Person information</f:translate>
 	</h1>
 
-	<div class="row-fluid">
+	<div class="row-fluid content-padding">
 		<div class="span12">
 			<a class="btn" href="{f:uri.action(package:'Beech.Absence', controller:'Absence', action:'new', arguments: {person: person, absenceType: 'sickness'})}"
 			   data-toggle="modal-ajax" data-target="#modal" modal-size="large"
-			   data-reload="{f:uri.action(package:'Beech.Party', controller:'Person', action:'show', arguments: {person: person})}">
+			   data-reload="close-modal">
 				<i class="icon-ambulance icon-white"></i>
 				<f:translate id="sickReport">Sick report</f:translate>
 			</a>
 			<a class="btn" href="{f:uri.action(package:'Beech.Absence', controller:'Absence', action:'new', arguments: {person: person, absenceType: 'leave'})}"
 			   data-toggle="modal-ajax" data-target="#modal" modal-size="large"
-			   data-reload="{f:uri.action(package:'Beech.Party', controller:'Person', action:'show', arguments: {person: person})}">
+			   data-reload="close-modal">
 				<i class="icon-ambulance icon-white"></i>
 				<f:translate id="leaveRequest">Leave request</f:translate>
 			</a>
 			<a class="btn" href="{f:uri.action(package:'Beech.Absence', controller:'Absence', action:'list', arguments: {person: person, absenceType: 'sickness'})}"
 			   data-toggle="modal-ajax" data-target="#modal" modal-size="large"
-			   data-reload="{f:uri.action(package:'Beech.Party', controller:'Person', action:'show', arguments: {person: person})}">
+			   data-reload="close-modal">
 				<i class="icon-ambulance icon-white"></i>
 				<f:translate id="sicknessHistory">Sickness history</f:translate>
 			</a>
 			<a class="btn" href="{f:uri.action(package:'Beech.Absence', controller:'Absence', action:'list', arguments: {person: person, absenceType: 'leave'})}"
 			   data-toggle="modal-ajax" data-target="#modal" modal-size="large"
-			   data-reload="{f:uri.action(package:'Beech.Party', controller:'Person', action:'show', arguments: {person: person})}">
+			   data-reload="close-modal">
 				<i class="icon-ambulance icon-white"></i>
 				<f:translate id="leaveHistory">Leave history</f:translate>
 			</a>
 			<a class="btn btn-success" href="{f:uri.action(package:'Beech.CLA', subpackage:'Administration', controller:'contract', action:'new', arguments: {employee: person})}"
-			   data-toggle="modal-ajax" data-target="#modal-body-only" modal-size="large"
+			   data-toggle="modal-ajax" data-target="#modal" modal-size="large"
 			   data-reload="reload-current-page">
 				<i class="icon-plus icon-white"></i>
 				Create contract
 			</a>
 		</div>
 	</div>
+
+	<ehrm:flashMessages/>
+
 	<div class="row-fluid">
 		<div class="span12">
 			<ul id="personTabs" class="nav nav-tabs">
@@ -91,13 +94,13 @@
 						<tr>
 							<td class="span6">
 								<f:render partial="Views/Show/Address" arguments="{address: person.address_homeAddress}"/>
-								<ehrm:link.edit subpackage='Administration' controller='Address' action='list'
+								<ehrm:link.edit controller='Address' action='list'
 												arguments='{party: person}'
 												dataReload="reload-current-page"/>
 							</td>
 							<td class="span6">
 								<f:render partial="Views/Show/Address" arguments="{address: person.address_workAddress}"/>
-								<ehrm:link.edit subpackage='Administration' controller='Address' action='list'
+								<ehrm:link.edit controller='Address' action='list'
 												arguments='{party: person}'
 												dataReload="reload-current-page"/>
 							</td>
@@ -111,7 +114,7 @@
 							<f:render partial="Views/Show/Education" arguments="{education: education}"/>
 						</div>
 					</f:for>
-					<ehrm:link.edit subpackage='Administration' controller='Education' action='list'
+					<ehrm:link.edit controller='Education' action='list'
 									arguments='{party: person}'
 									dataReload="reload-current-page"/>
 				</div>
@@ -124,7 +127,7 @@
 							<f:render partial="Views/Show/Asset" arguments="{asset: asset}"/>
 						</div>
 					</f:for>
-					<ehrm:link.edit subpackage='Administration' controller='Asset' action='list'
+					<ehrm:link.edit controller='Asset' action='list'
 									arguments='{party: person}'
 									dataReload="reload-current-page"/>
 				</div>
@@ -134,7 +137,7 @@
 							<f:render partial="Views/Show/Licence" arguments="{licence: licence}"/>
 						</div>
 					</f:for>
-					<ehrm:link.edit subpackage='Administration' controller='Licence' action='list'
+					<ehrm:link.edit controller='Licence' action='list'
 									arguments='{party: person}'
 									dataReload="reload-current-page"/>
 				</div>
@@ -145,7 +148,7 @@
 						</div>
 
 					</f:for>
-					<ehrm:link.edit subpackage='Administration' controller='PersonRelation' action='new'
+					<ehrm:link.edit controller='PersonRelation' action='new'
 									arguments='{personRelatedTo: person}'
 									dataReload="reload-current-page">
 						<i class="icon-plus icon-white"></i>

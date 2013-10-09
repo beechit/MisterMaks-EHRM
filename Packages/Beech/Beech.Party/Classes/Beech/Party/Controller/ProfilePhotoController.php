@@ -67,7 +67,8 @@ class ProfilePhotoController extends \Beech\Document\Controller\DocumentControll
 		$identifier = $this->persistenceManager->getIdentifierByObject($document);
 		$party->setProfilePhoto($identifier);
 		$this->personRepository->update($party);
-		$this->redirect('edit', NULL, NULL, array('document' => $document, 'party' => $party));
+
+		$this->emberRedirect('#/person/show/'.$party->getId());
 	}
 }
 

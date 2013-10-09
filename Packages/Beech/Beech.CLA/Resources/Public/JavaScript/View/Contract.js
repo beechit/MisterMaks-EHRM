@@ -6,10 +6,10 @@
 	App.BeechCLAAdministrationContractShowView = App.BeechCLAAdministrationContractView.extend();
 	App.BeechCLAAdministrationContractStartView = App.BeechCLAAdministrationContractView.extend({
 		didInsertElement: function() {
-			$('#modal-body-only')
-				.find('.modal-body').html('');
-			this.$().prependTo('.modal-body')
-			$('#modal-body-only')
+			$('#modal')
+				.find('.modal-content').html('');
+			this.$().prependTo('.modal-content')
+			$('#modal')
 				.addClass('modal-large')
 				.modal('show');
 		}

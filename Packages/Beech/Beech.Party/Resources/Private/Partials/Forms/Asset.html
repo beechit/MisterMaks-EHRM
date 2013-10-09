@@ -1,6 +1,9 @@
 {namespace ehrm=Beech\Ehrm\ViewHelpers}
-<ehrm:flashMessages/>
+
 <div id="{action}{asset.id}{suffix}">
+
+	<ehrm:flashMessages/>
+
 	<f:form action="{action}" controller="Asset" object="{asset}" name="asset" class="compact-form form-horizontal {action}">
 		<f:if condition="{0: action} == {0: 'update'}">
 			<f:then>
@@ -13,11 +16,11 @@
 				<div class="span3">
 					<ehrm:optionSelect property="assetType" id="assetType{asset.id}" model="Beech.Party:Asset" placeholder="{f:translate(id: 'Type')}..." class="input-small" translate="{by: 'id'}"/>
 				</div>
-				<div class="span8">
+				<div class="span7">
 					<f:form.textfield property="name"  placeholder="{f:translate(value: 'AssetName')}..." class="input-medium capitalize"/>
 					<f:form.textfield property="model"  placeholder="{f:translate(value: 'Model')}..." class="input-medium capitalize"/>
 				</div>
-				<div class="span2">
+				<div class="span1">
 					<button type="submit" name="action" class="btn btn-small" value="{action}">
 						<i class="icon-save"></i>
 					</button>

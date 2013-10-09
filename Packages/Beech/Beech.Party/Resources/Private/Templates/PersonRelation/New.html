@@ -1,10 +1,12 @@
-<div class="modal-header custom">
+<div class="header">
 	<h3><f:render partial="Views/Show/ProfilePhoto" arguments="{photo: party.profilePhoto, width: 50}"/><f:translate id="relative">Relative</f:translate></h3>
 </div>
-<div class="clearfix well">
-	<h1></h1>
-	<f:form action="create" object="{person}" name="person" class="form-horizontal">
-		<input type="hidden" name="iscomplete" value="false" data-validate="isComplete"/>
+
+<f:form action="create" object="{person}" name="person" class="form-horizontal">
+	<input type="hidden" name="iscomplete" value="false" data-validate="isComplete"/>
+
+	<div class="content-padding">
+
 		<f:render partial="Forms/PersonRelation" arguments="{_all}" />
 		<f:form.hidden name="personRelatedTo" id="personRelatedTo{personRelation.id}" value="{personRelatedTo}" />
 		<div class="control-group">
@@ -23,10 +25,13 @@
 				<f:form.textfield property="electronicAddress" class="span7 electronicAddress email" placeholder="{f:translate(value: 'Email')}..."/>
 			</div>
 		</div>
+	</div>
 
-		<button type="submit" name="action" class="btn btn-small" value="{action}">
-			<i class="icon-save"></i>
+	<div class="form-actions">
+		<button type="submit" name="action" class="btn btn-primary" value="{action}">
+			<i class="icon-save"></i> <f:translate id="Save">Save</f:translate>
 		</button>
-	</f:form>
-</div>
+	</div>
+</f:form>
+
 

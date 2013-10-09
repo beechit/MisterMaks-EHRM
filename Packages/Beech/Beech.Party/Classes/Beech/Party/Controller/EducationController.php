@@ -42,7 +42,7 @@ class EducationController extends \Beech\Ehrm\Controller\AbstractManagementContr
 	/**
 	 * @param \TYPO3\Party\Domain\Model\AbstractParty $party
 	 */
-	public function listAction(\TYPO3\Party\Domain\Model\AbstractParty $party) {
+	public function listAction(\TYPO3\Party\Domain\Model\AbstractParty $party = NULL) {
 		$this->view->assign('party', $party);
 		$this->view->assign('educations', $this->repository->findByParty($party));
 	}
@@ -52,7 +52,7 @@ class EducationController extends \Beech\Ehrm\Controller\AbstractManagementContr
 	 *
 	 * @return void
 	 */
-	public function addAction(\Beech\Party\Domain\Model\Education $education) {
+	public function addAction(\Beech\Party\Domain\Model\Education $education = NULL) {
 		$education->setParty($this->persistenceManager->getIdentifierByObject($education->getParty()));
 		$this->repository->add($education);
 		$this->view->assign('education', $education);
@@ -69,7 +69,7 @@ class EducationController extends \Beech\Ehrm\Controller\AbstractManagementContr
 	 *
 	 * @return void
 	 */
-	public function updateAction(\Beech\Party\Domain\Model\Education $education) {
+	public function updateAction(\Beech\Party\Domain\Model\Education $education = NULL) {
 		if	($this->getControllerContext()->getRequest()->getArgument('action') === 'remove') {
 			$this->redirect('remove', 'Education', NULL, array('education' => $education, 'party' => $education->getParty()));
 		} else {
@@ -86,7 +86,7 @@ class EducationController extends \Beech\Ehrm\Controller\AbstractManagementContr
 	 * @Flow\IgnoreValidation("$education")
 	 * @return void
 	 */
-	public function removeAction(\Beech\Party\Domain\Model\Education $education) {
+	public function removeAction(\Beech\Party\Domain\Model\Education $education = NULL) {
 		$this->repository->remove($education);
 		$this->addFlashMessage($this->translator->translateById('Removed.', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
 	}

@@ -5,34 +5,37 @@
 
 		<h1><f:translate id="personWizard">Person wizard</f:translate></h1>
 		<div class="wizard-card" data-cardname="person">
-			<h3><f:translate id="personalData">Personal data</f:translate></h3>
+
 			<f:form action="create" object="{person}" name="person">
-				<input type="hidden" name="iscomplete" value="false" data-validate="isComplete"/>
-				<f:render partial="Forms/Person" arguments="{_all}" />
+				<div class="content-padding">
+					<h3><f:translate id="personalData">Personal data</f:translate></h3>
+					<input type="hidden" name="iscomplete" value="false" data-validate="isComplete"/>
+					<f:render partial="Forms/Person" arguments="{_all}" />
+				</div>
 			</f:form>
 		</div>
 		<div class="wizard-card row-fluid" data-cardname="electronicAddress"
-			data-url="<f:uri.action action='list' controller='ElectronicAddress' subpackage='administration' package='Beech.Party' arguments='{party:"new"}'></f:uri.action>">
+			data-url="<f:uri.action action='list' controller='ElectronicAddress' package='Beech.Party' arguments='{party:"new"}'></f:uri.action>">
 			<h3><f:translate id="electronicAddresses">Electronic addresses</f:translate></h3>
 		</div>
 		<div class="wizard-card row-fluid" data-cardname="address"
-			data-url="<f:uri.action action='list' controller='Address' subpackage='administration' package='Beech.Party' arguments='{party:"new"}'></f:uri.action>">
+			data-url="<f:uri.action action='list' controller='Address' package='Beech.Party' arguments='{party:"new"}'></f:uri.action>">
 			<h3><f:translate id="addresses">Addresses</f:translate></h3>
 		</div>
 		<div class="wizard-card row-fluid" data-cardname="phoneNumber"
-			data-url="<f:uri.action action='list' controller='PhoneNumber' subpackage='administration' package='Beech.Party' arguments='{party:"new"}'></f:uri.action>">
+			data-url="<f:uri.action action='list' controller='PhoneNumber' package='Beech.Party' arguments='{party:"new"}'></f:uri.action>">
 			<h3><f:translate id="phoneNumbers">Phone numbers</f:translate></h3>
 		</div>
 		<div class="wizard-card row-fluid" data-cardname="bankAccount"
-			data-url="<f:uri.action action='list' controller='BankAccount' subpackage='administration' package='Beech.Party' arguments='{party:"new"}'></f:uri.action>">
+			data-url="<f:uri.action action='list' controller='BankAccount' package='Beech.Party' arguments='{party:"new"}'></f:uri.action>">
 			<h3><f:translate id="bankAccounts">Bank accounts</f:translate></h3>
 		</div>
 		<div class="wizard-card" data-cardname="education"
-			 data-url="<f:uri.action action='list' controller='Education' subpackage='administration' package='Beech.Party' arguments='{party:"new"}'></f:uri.action>">
+			 data-url="<f:uri.action action='list' controller='Education' package='Beech.Party' arguments='{party:"new"}'></f:uri.action>">
 			<h3><f:translate id="education">Education</f:translate></h3>
 		</div>
 		<div class="wizard-card" data-cardname="licence"
-			data-url="<f:uri.action action='list' controller='Licence' subpackage='administration' package='Beech.Party' arguments='{party:"new"}'></f:uri.action>">
+			data-url="<f:uri.action action='list' controller='Licence' package='Beech.Party' arguments='{party:"new"}'></f:uri.action>">
 			<h3><f:translate id="licence">Licence</f:translate></h3>
 		</div>
 		<div class="wizard-card" data-cardname="user">
@@ -58,7 +61,7 @@
 				<f:translate id="personCreated">Person was created</f:translate>
 			</div>
 
-			<a class="btn create-another-person" href="#/administration/person/new/<f:format.date format="YmdHis">now</f:format.date>">
+			<a class="btn create-another-person" href="#/person/new/<f:format.date format="YmdHis">now</f:format.date>">
 				<f:translate id="createAnotherPerson">Create another person</f:translate>
 			</a>
 			<span style="padding:0 10px">
@@ -70,7 +73,7 @@
 			<span style="padding:0 10px">
 				<f:translate id="or">or</f:translate>
 			</span>
-			<a class="btn im-done" href="#/administration/persons">
+			<a class="btn im-done" href="#/person">
 				<f:translate id="done">Done</f:translate>
 			</a>
 		</div>
@@ -123,6 +126,9 @@
 						$element.html(result);
 						wizard.incrementCard();
 						applyAjaxForm($element);
+						if ($element.data('cardname') == 'person') {
+							$('form', $element).removeClass('form-horizontal');
+						}
 					},
 					error: function(result) {
 						$form.removeAttr('isSubmitting')
@@ -189,7 +195,7 @@
 			})
 			$('#create-user').on('click', function(){
 				var personId = $('.wizard-cards input[name="person[__identity]"]:first').val(),
-					link = "<f:uri.action action='new' controller='Account' subpackage='administration' package='Beech.Party' arguments='{person:"new"}'></f:uri.action>"
+					link = "<f:uri.action action='new' controller='Account' package='Beech.Party' arguments='{person:"new"}'></f:uri.action>"
 				App.ModuleHandler.loadUrl(
 						link.replace('person=new', 'person='+personId),
 						$(this).parents('.wizard-card:first'),

@@ -19,7 +19,7 @@
 <f:form method="post" action="update" name="absence" object="{absence}" class="compact-form form-horizontal" enctype="multipart/form-data">
 	<input type="hidden" name="iscomplete" value="true" data-validate="isComplete"/>
 
-	<div id="absence-add" class="clearfix content-padding">
+	<div id="absence-add" class="content-padding">
 		<div class="row-fluid">
 			<div class="span6">
 
@@ -107,7 +107,7 @@
 		</div>
 	</div>
 
-	<div class="modal-footer custom">
+	<div class="form-actions">
 		<f:if condition="{absence.approved}">
 			<f:else>
 				<a class="btn" href="{f:uri.action(package:'Beech.Absence', controller:'Absence', action:'approve', arguments: {absence: absence})}"
@@ -117,8 +117,8 @@
 			</f:else>
 		</f:if>
 
-		<button type="submit" name="action" class="btn btn-save" value="{action}">
-			<i class="icon-save"></i> <f:translate id="save">save</f:translate>
+		<button type="submit" name="action" class="btn btn-primary" value="{action}">
+			<i class="icon-save"></i> <f:translate id="Save">Save</f:translate>
 		</button>
 	</div>
 

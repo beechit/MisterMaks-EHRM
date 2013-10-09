@@ -219,37 +219,19 @@
 				$primary.controlPrimary();
 			}
 
-			// modal customization
-			if ($moduleContainer.parents('.modal').length) {
+				// modal customization
+				// add close/cancel button
+			if ($moduleContainer.parents('#modal').length && $('.btn-cancel:not(".previous, .hide"), .btn-close:not(".hide")', $moduleContainer.parents('#modal')).length == 0) {
 
-				if ($moduleContainer.find('.modal-header.custom').length > 0 && $moduleContainer.parent().find('.modal-header:not(.custom)').length > 0) {
-					var $customHeader = $moduleContainer.find('.modal-header.custom')
-					$moduleContainer.parent().find('.modal-header:not(.custom)').replaceWith($customHeader);
-					$customHeader.removeClass('custom');
+				var $actionsContainer = $('.form-actions', $moduleContainer);
+				if ($actionsContainer.length == 0) {
+					$actionsContainer = $('<div >').addClass('form-actions').appendTo($moduleContainer);
 				}
-				if ($moduleContainer.find('.modal-footer.custom').length > 0) {
-					$moduleContainer.parent().find('.modal-footer:last').addClass('hide');
+					// form present than add cancel button else cancel
+				if ($('form', $moduleContainer).length == 1) {
+					$actionsContainer.append($('#modal .btn-cancel:last').clone().removeClass('hide'));
 				} else {
-					$moduleContainer.parent().find('.modal-footer').removeClass('hide');
-
-					var $saveButton = $moduleContainer.parent().find('.modal-footer .btn-save');
-					var $closeButton = $moduleContainer.parent().find('.modal-footer .btn-close');
-					if ($moduleContainer.parent().find('input[name="iscomplete"]').length > 0) {
-						$moduleContainer.parent().find('input[name="iscomplete"]').each(function(k,isCompleteElement) {
-							var $form = $(isCompleteElement).parents('form:first');
-							$form.find('input[type="submit"],button[type="submit"],.form-actions').remove();
-
-							$saveButton.show();
-							$saveButton.unbind('click');
-							$saveButton.on('click', function(event) {
-								$form.submit() ;
-							})
-							$closeButton.hide()
-						});
-					} else {
-						$closeButton.show();
-						$saveButton.hide();
-					}
+					$actionsContainer.append($('#modal .btn-close').clone().removeClass('hide'));
 				}
 			}
 		},

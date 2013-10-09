@@ -1,9 +1,9 @@
 <f:if condition="{bankAccount}">
 	<f:then>
-		<div id="bankAccount-{bankAccount.id}" class="clearfix">
+		<div id="bankAccount-{bankAccount.id}" class="multi-form-item">
 			<f:render partial="Forms/BankAccount" arguments="{party: party, bankAccount: bankAccount, action: 'update'}"/>
 		</div>
-		<div id="bankAccount-add" class="clearfix">
+		<div id="bankAccount-add" class="multi-form-item">
 			<f:render partial="Forms/BankAccount" arguments="{party: party, action: 'add', suffix: 'bankAccount'}"/>
 		</div>
 	</f:then>

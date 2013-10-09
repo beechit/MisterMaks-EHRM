@@ -16,44 +16,44 @@
 				<f:render partial="Views/Show/Company/Details" arguments="{company: company}"/>
 				<ehrm:link.edit controller='Company' action='edit'
 								arguments='{company: company, withDetails: false}'
-								dataReload="{f:uri.action(package:'Beech.Party', controller:'Company', action:'index', arguments: {company: company})}"/>
+								dataReload="reload-current-page"/>
 			</div>
 			<div class="span4">
 				<f:render partial="Views/Show/Company/Logo" arguments="{photo: company.logo, width: 150, random: 'TRUE'}"/>
 				<ehrm:link.edit controller='CompanyLogo' action='edit'
 								arguments='{company: company}'
 								modalSize="small"
-								dataReload="{f:uri.action(package:'Beech.Party', controller:'Company', action:'index', arguments: {company: company})}"/>
+								dataReload="reload-current-page"/>
 			</div>
 		</div>
 		<div class="rows">
 			<div class="span6">
 				<f:render partial="Views/Show/Address" arguments="{address: company.address_workAddress}"/>
-				<ehrm:link.edit subpackage='Administration' controller='Address' action='list'
+				<ehrm:link.edit controller='Address' action='list'
 								arguments='{party: company}'
-								dataReload="{f:uri.action(package:'Beech.Party', controller:'Company', action:'index', arguments: {company: company})}"/>
+								dataReload="reload-current-page"/>
 
 			</div>
 			<div class="span6">
 				<f:render partial="Views/Show/Address" arguments="{address: company.address_postbox}"/>
-				<ehrm:link.edit subpackage='Administration' controller='Address' action='list'
+				<ehrm:link.edit controller='Address' action='list'
 								arguments='{party: company}'
-								dataReload="{f:uri.action(package:'Beech.Party', controller:'Company', action:'index', arguments: {company: company})}"/>
+								dataReload="reload-current-page"/>
 			</div>
 		</div>
 
 		<div class="rows">
 			<div class="span6">
 				<f:render partial="Views/Show/ElectronicAddress" arguments="{electronicAddress: company.electronicAddress_email}"/>
-				<ehrm:link.edit subpackage='Administration' controller='ElectronicAddress' action='list'
+				<ehrm:link.edit controller='ElectronicAddress' action='list'
 								arguments='{party: company}'
-								dataReload="{f:uri.action(package:'Beech.Party', controller:'Company', action:'index', arguments: {company: company})}"/>
+								dataReload="reload-current-page"/>
 			</div>
 			<div class="span6">
 				<f:render partial="Views/Show/PhoneNumber" arguments="{phoneNumber: company.phoneNumber_workNumber}"/>
-				<ehrm:link.edit subpackage='Administration' controller='PhoneNumber' action='list'
+				<ehrm:link.edit controller='PhoneNumber' action='list'
 								arguments='{party: company}'
-								dataReload="{f:uri.action(package:'Beech.Party', controller:'Company', action:'index', arguments: {company: company})}"/>
+								dataReload="reload-current-page"/>
 			</div>
 		</div>
 		<div class="rows">

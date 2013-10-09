@@ -36,7 +36,7 @@ class AddressController extends \Beech\Ehrm\Controller\AbstractManagementControl
 	/**
 	 * @param \TYPO3\Party\Domain\Model\AbstractParty $party
 	 */
-	public function listAction(\TYPO3\Party\Domain\Model\AbstractParty $party) {
+	public function listAction(\TYPO3\Party\Domain\Model\AbstractParty $party = NULL) {
 		$this->view->assign('party', $party);
 		$this->view->assign('addresses', $this->repository->findByParty($party));
 	}
@@ -46,7 +46,7 @@ class AddressController extends \Beech\Ehrm\Controller\AbstractManagementControl
 	 * @Flow\Validate(argumentName="address", type="Beech.Party:Address")
 	 * @return void
 	 */
-	public function addAction(\Beech\Party\Domain\Model\Address $address) {
+	public function addAction(\Beech\Party\Domain\Model\Address $address = NULL) {
 		$address->setParty($this->persistenceManager->getIdentifierByObject($address->getParty()));
 		$this->repository->add($address);
 		$this->view->assign('address', $address);
@@ -59,7 +59,7 @@ class AddressController extends \Beech\Ehrm\Controller\AbstractManagementControl
 	 * @Flow\Validate(argumentName="address", type="Beech.Party:Address")
 	 * @return void
 	 */
-	public function updateAction(\Beech\Party\Domain\Model\Address $address) {
+	public function updateAction(\Beech\Party\Domain\Model\Address $address = NULL) {
 		if	($this->getControllerContext()->getRequest()->getArgument('action') === 'remove') {
 			$this->redirect('remove', 'Address', NULL, array('address' => $address, 'party' => $address->getParty()));
 		} else {
@@ -77,7 +77,7 @@ class AddressController extends \Beech\Ehrm\Controller\AbstractManagementControl
 	 * @Flow\IgnoreValidation("address")
 	 * @return void
 	 */
-	public function removeAction(\Beech\Party\Domain\Model\Address $address) {
+	public function removeAction(\Beech\Party\Domain\Model\Address $address = NULL) {
 		$this->repository->remove($address);
 		$this->addFlashMessage($this->translator->translateById('Removed.', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
 	}

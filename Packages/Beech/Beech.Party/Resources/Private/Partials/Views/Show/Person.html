@@ -7,21 +7,21 @@
 				<ehrm:link.edit controller='ProfilePhoto' action='edit'
 								arguments='{party: person}'
 								modalSize="small"
-								dataReload="{f:uri.action(package:'Beech.Party', controller:'Person', action:'show', arguments: {person: person})}"/>
+								dataReload="reload-current-page"/>
 
 			</td>
 			<td class="span3"><f:translate id="Name">Name</f:translate></td>
 			<td class="span6">{person.name.firstName} {person.name.middleName} {person.name.lastName}
-				<ehrm:link.edit subpackage='Administration' controller='Person' action='edit' arguments='{person: person, withDetails: false}'
-								dataReload="{f:uri.action(package:'Beech.Party', controller:'Person', action:'show', arguments: {person: person})}"/>
+				<ehrm:link.edit controller='Person' action='edit' arguments='{person: person, withDetails: false}'
+								dataReload="reload-current-page"/>
 			</td>
 		</tr>
 		<tr class="even">
 			<td><f:translate id="email">E-mail</f:translate></td>
 			<td>
 				{person.electronicAddress_email.address}
-				<ehrm:link.edit subpackage='Administration' controller='ElectronicAddress' action='list' arguments='{party: person}'
-								dataReload="{f:uri.action(package:'Beech.Party', controller:'Person', action:'show', arguments: {person: person})}"/>
+				<ehrm:link.edit controller='ElectronicAddress' action='list' arguments='{party: person}'
+								dataReload="reload-current-page"/>
 			</td>
 		</tr>
 		<tr class="odd">
@@ -36,8 +36,8 @@
 						</div>
 					</div>
 				</f:for>
-				<ehrm:link.edit subpackage='Administration' controller='PhoneNumber' action='list' arguments='{party: person}'
-								dataReload="{f:uri.action(package:'Beech.Party', controller:'Person', action:'show', arguments: {person: person})}"/>
+				<ehrm:link.edit controller='PhoneNumber' action='list' arguments='{party: person}'
+								dataReload="reload-current-page"/>
 			</td>
 		</tr>
 		<tr class="even">
@@ -50,8 +50,8 @@
 						</div>
 						<div class="span8">
 							<f:translate id="person.age:"> Age: </f:translate> <strong>{person.age}</strong> <f:translate id="yearsOld">years old</f:translate>
-							<ehrm:link.edit subpackage='Administration' controller='Person' action='edit' arguments='{person: person, withDetails: false}'
-											dataReload="{f:uri.action(package:'Beech.Party', controller:'Person', action:'show', arguments: {person: person})}"/>
+							<ehrm:link.edit controller='Person' action='edit' arguments='{person: person, withDetails: false}'
+											dataReload="reload-current-page"/>
 						</div>
 					</div>
 				</f:if>

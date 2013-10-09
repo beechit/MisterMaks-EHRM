@@ -19,7 +19,7 @@
 <f:form method="post" action="update" name="absence" object="{absence}" class="compact-form form-horizontal" enctype="multipart/form-data">
 	<input type="hidden" name="iscomplete" value="true" data-validate="isComplete"/>
 
-	<div id="absence-edit" class="clearfix content-padding">
+	<div id="absence-edit" class="content-padding">
 
 		<div class="row-fluid">
 			<div class="span6">
@@ -88,13 +88,10 @@
 
 	</div>
 
-	<div class="modal-footer custom">
-
-		<button type="submit" name="action" class="btn" value="{action}">
-			<i class="icon-save"></i> <f:translate id="save">save</f:translate>
+	<div class="form-actions">
+		<button type="submit" name="action" class="btn btn-primary" value="{action}">
+			<i class="icon-save"></i> <f:translate id="Save">Save</f:translate>
 		</button>
-
 	</div>
 
 </f:form>
-

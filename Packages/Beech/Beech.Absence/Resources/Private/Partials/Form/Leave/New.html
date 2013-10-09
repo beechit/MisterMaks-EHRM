@@ -2,26 +2,26 @@
 
 <f:render partial="Views/Header" arguments="{person:absence.person, title:'{f:translate(id: \'leaveRequest\', value: \'Leave request\')}'}"/>
 
-
-<div id="absence-add" class="clearfix content-padding">
-	<ehrm:flashMessages/>
-	<f:form.validationResults for="absence">
-		<f:if condition="{validationResults.flattenedErrors}">
-			<div class="error">
-				<f:for each="{validationResults.flattenedErrors}" key="propertyPath" as="errors">{propertyPath}:
-					<f:for each="{errors}" as="error">
-						<div class="alert alert-warning">{error}</div>
-					</f:for>
+<ehrm:flashMessages/>
+<f:form.validationResults for="absence">
+	<f:if condition="{validationResults.flattenedErrors}">
+		<div class="error">
+			<f:for each="{validationResults.flattenedErrors}" key="propertyPath" as="errors">{propertyPath}:
+				<f:for each="{errors}" as="error">
+					<div class="alert alert-warning">{error}</div>
 				</f:for>
-			</div>
-		</f:if>
-	</f:form.validationResults>
+			</f:for>
+		</div>
+	</f:if>
+</f:form.validationResults>
 
-	<f:form method="post" action="create" name="absence" object="{absence}" class="compact-form form-horizontal" enctype="multipart/form-data">
-		<input type="hidden" name="iscomplete" value="true" data-validate="isComplete"/>
-		<f:form.hidden property="absenceType" />
-		<f:form.hidden property="person" />
-		<f:form.hidden property="requestStatus" />
+<f:form method="post" action="create" name="absence" object="{absence}" class="compact-form form-horizontal" enctype="multipart/form-data">
+	<input type="hidden" name="iscomplete" value="true" data-validate="isComplete"/>
+	<f:form.hidden property="absenceType" />
+	<f:form.hidden property="person" />
+	<f:form.hidden property="requestStatus" />
+
+	<div id="absence-add" class="content-padding">
 
 		<div class="row-fluid">
 			<div class="span6">
@@ -90,9 +90,11 @@
 			</div>
 		</div>
 
-		<button type="submit" name="action" class="btn btn-small" value="{action}">
-			<i class="icon-save"></i>
-		</button>
-	</f:form>
+	</div>
 
-</div>
+	<div class="form-actions">
+		<button type="submit" name="action" class="btn btn-primary" value="{action}">
+			<i class="icon-save"></i> <f:translate id="Save">Save</f:translate>
+		</button>
+	</div>
+</f:form>

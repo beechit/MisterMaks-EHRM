@@ -1,6 +1,9 @@
 {namespace ehrm=Beech\Ehrm\ViewHelpers}
-<ehrm:flashMessages/>
+
 <div id="{action}{address.id}{suffix}" class="addressSection">
+
+	<ehrm:flashMessages/>
+
 	<f:form action="{action}" controller="Address" object="{address}" name="address" class="compact-form form-horizontal {action}">
 		<f:if condition="{0: action} == {0: 'update'}">
 			<f:then>
@@ -13,7 +16,8 @@
 				<div class="span3">
 					<ehrm:optionSelect property="addressType" id="addressType{address.id}" model="Beech.Party:Address" placeholder="{f:translate(id: 'addressType')}" class="span10 addressType" translate="{by: 'id'}"/>
 				</div>
-				<div class="span2 offset6">
+				<div class="span7"></div>
+				<div class="span1">
 					<button type="submit" name="action" class="btn btn-small" value="{action}">
 						<i class="icon-save"></i>
 					</button>

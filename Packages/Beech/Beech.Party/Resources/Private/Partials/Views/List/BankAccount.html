@@ -4,9 +4,9 @@
 	</div>
 	<div class="span3"><strong><f:translate id="bankAccount.bankAccountType.{bankAccount.bankAccountType}">{bankAccount.bankAccountType}</f:translate></strong></div>
 	<div class="span2"> {bankAccount.accountNumber}</div>
-	<div class="span2"> {bankAccount.description}</div>
-	<div class="span1 offset1 primaryIcon"><f:if condition="{bankAccount.primary}"><i class="icon-check"></i></f:if></div>
-	<div class="span2">
+	<div class="span4"> {bankAccount.description}</div>
+	<div class="span1 primaryIcon"><f:if condition="{bankAccount.primary}"><i class="icon-check"></i></f:if></div>
+	<div class="span1">
 		<div class="btn-group">
 			<f:render partial="Forms/Buttons/Toggle" arguments="{identifier: bankAccount.id, icon: 'icon-pencil'}"/>
 			<f:if condition="{bankAccount.primary}">

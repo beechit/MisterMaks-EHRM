@@ -42,7 +42,7 @@ class LicenceController extends \Beech\Ehrm\Controller\AbstractManagementControl
 	/**
 	 * @param \TYPO3\Party\Domain\Model\AbstractParty $party
 	 */
-	public function listAction(\TYPO3\Party\Domain\Model\AbstractParty $party) {
+	public function listAction(\TYPO3\Party\Domain\Model\AbstractParty $party = NULL) {
 		$this->view->assign('party', $party);
 		$this->view->assign('licences', $this->repository->findByParty($party));
 	}
@@ -52,7 +52,7 @@ class LicenceController extends \Beech\Ehrm\Controller\AbstractManagementControl
 	 *
 	 * @return void
 	 */
-	public function addAction(\Beech\Party\Domain\Model\Licence $licence) {
+	public function addAction(\Beech\Party\Domain\Model\Licence $licence = NULL) {
 		$licence->setParty($this->persistenceManager->getIdentifierByObject($licence->getParty()));
 		$this->repository->add($licence);
 		$this->view->assign('licence', $licence);
@@ -69,7 +69,7 @@ class LicenceController extends \Beech\Ehrm\Controller\AbstractManagementControl
 	 *
 	 * @return void
 	 */
-	public function updateAction(\Beech\Party\Domain\Model\licence $licence) {
+	public function updateAction(\Beech\Party\Domain\Model\licence $licence = NULL) {
 		if ($this->getControllerContext()->getRequest()->getArgument('action') === 'remove') {
 			$this->redirect('remove', 'Licence', NULL, array('licence' => $licence, 'party' => $licence->getParty()));
 		} else {
@@ -87,7 +87,7 @@ class LicenceController extends \Beech\Ehrm\Controller\AbstractManagementControl
 	 *
 	 * @return void
 	 */
-	public function removeAction(\Beech\Party\Domain\Model\licence $licence) {
+	public function removeAction(\Beech\Party\Domain\Model\licence $licence = NULL) {
 		$this->repository->remove($licence);
 		$this->addFlashMessage($this->translator->translateById('Removed.', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
 	}

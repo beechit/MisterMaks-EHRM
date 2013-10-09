@@ -36,7 +36,7 @@ class PhoneNumberController extends \Beech\Ehrm\Controller\AbstractManagementCon
 	/**
 	 * @param \TYPO3\Party\Domain\Model\AbstractParty $party
 	 */
-	public function listAction(\TYPO3\Party\Domain\Model\AbstractParty $party) {
+	public function listAction(\TYPO3\Party\Domain\Model\AbstractParty $party = NULL) {
 		$this->view->assign('party', $party);
 		$this->view->assign('phoneNumbers', $this->repository->findByParty($party));
 	}
@@ -46,20 +46,20 @@ class PhoneNumberController extends \Beech\Ehrm\Controller\AbstractManagementCon
 	 * @Flow\Validate(argumentName="phoneNumber", type="Beech.Party:PhoneNumber")
 	 * @return void
 	 */
-	public function addAction(\Beech\Party\Domain\Model\PhoneNumber $phoneNumber) {
+	public function addAction(\Beech\Party\Domain\Model\PhoneNumber $phoneNumber = NULL) {
 		$phoneNumber->setParty($this->persistenceManager->getIdentifierByObject($phoneNumber->getParty()));
 		$this->repository->add($phoneNumber);
 		$this->view->assign('phoneNumber', $phoneNumber);
 		$this->view->assign('party', $phoneNumber->getParty());
 		$this->view->assign('action', 'add');
-		}
+	}
 
 	/**
 	 * @param \Beech\Party\Domain\Model\PhoneNumber $phoneNumber A  phoneNumber to update
 	 * @Flow\Validate(argumentName="phoneNumber", type="Beech.Party:PhoneNumber")
 	 * @return void
 	 */
-	public function updateAction(\Beech\Party\Domain\Model\PhoneNumber $phoneNumber) {
+	public function updateAction(\Beech\Party\Domain\Model\PhoneNumber $phoneNumber = NULL) {
 		if ($this->getControllerContext()->getRequest()->getArgument('action') === 'remove') {
 			$this->redirect('remove', 'PhoneNumber', NULL, array('phoneNumber' => $phoneNumber, 'party' => $phoneNumber->getParty()));
 		} else {
@@ -77,7 +77,7 @@ class PhoneNumberController extends \Beech\Ehrm\Controller\AbstractManagementCon
 	 * @Flow\IgnoreValidation("$phoneNumber")
 	 * @return void
 	 */
-	public function removeAction(\Beech\Party\Domain\Model\PhoneNumber $phoneNumber) {
+	public function removeAction(\Beech\Party\Domain\Model\PhoneNumber $phoneNumber = NULL) {
 		$this->repository->remove($phoneNumber);
 		$this->addFlashMessage($this->translator->translateById('Removed.', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
 	}

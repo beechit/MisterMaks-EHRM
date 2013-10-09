@@ -1,7 +1,7 @@
 <f:layout name="Ajax"/>{namespace ehrm=Beech\Ehrm\ViewHelpers}
 <f:section name="Body">
 
-	<div class="modal-header custom">
+	<div class="header">
 		<h3>
 			<f:translate id="jobPosition">JobPosition</f:translate>
 		</h3>
@@ -82,12 +82,8 @@
 			</div>
 		</div>
 
-		<div class="modal-footer custom">
+		<div class="form-actions">
 			<f:form.submit value="<f:translate id='action.save'>Save</f:translate>" class="btn btn-primary"/>
-
-			<a class="btn btn-close only-in-modal" data-dismiss="modal">
-				<f:translate id="Cancel">Cancel</f:translate>
-			</a>
 		</div>
 	</f:form>
 </f:section>

@@ -1,71 +1,75 @@
 <f:layout name="Ajax" />{namespace ehrm=Beech\Ehrm\ViewHelpers}
 
 <f:section name="Body">
-	<h1>
-		<f:translate id="action.edit">Edit</f:translate>
-	</h1>
+	<div class="header">
+		<h1>
+			<f:translate id="action.edit">Edit</f:translate>
+		</h1>
+	</div>
 
 	<ehrm:flashMessages/>
 
-	<div class="well">
-		<h3><f:translate id="companyInfo">Company information</f:translate></h3>
+	<f:form action="update" object="{company}" name="company" class="form-horizontal">
+		<f:comment>This hidden input is for the application setupWizard</f:comment>
+		<input type="hidden" name="iscomplete" value="true" data-validate="isComplete"/>
+		<input type="hidden" name="withDetails" value="{withDetails}" />
 
-		<f:form action="update" object="{company}" name="company" class="form-horizontal">
-			<f:comment>This hidden input is for the application setupWizard</f:comment>
-			<input type="hidden" name="iscomplete" value="true" data-validate="isComplete"/>
-			<input type="hidden" name="withDetails" value="{withDetails}" />
+		<div class="content-padding">
+			<h3><f:translate id="companyInfo">Company information</f:translate></h3>
+
 			<f:render partial="Forms/Company" arguments="{_all}" />
-			<div class="form-actions">
-				<f:form.submit value="{f:translate(id: 'action.save')}" class="btn"/>
-			</div>
-		</f:form>
+		</div>
+		<div class="form-actions">
+			<f:form.submit value="{f:translate(id: 'action.save')}" class="btn btn-primary"/>
+		</div>
+	</f:form>
 
-		<f:if condition="{withDetails}">
-			<!-- addresses -->
-			<h3>Address</h3>
-			<f:for each="{addresses}" as="address">
-				<div id="address-{address.id}">
-					<f:render partial="Forms/Address" arguments="{party: company, address: address, action: 'update'}"/>
-				</div>
-			</f:for>
-			<div id="address-add" class="clearfix">
-				<f:render partial="Forms/Address" arguments="{party: company, action: 'add', suffix: 'address'}"/>
+	<f:if condition="{withDetails}">
+		<!-- addresses -->
+		<h3>Address</h3>
+		<f:for each="{addresses}" as="address">
+			<div id="address-{address.id}">
+				<f:render partial="Forms/Address" arguments="{party: company, address: address, action: 'update'}"/>
 			</div>
-			<hr/>
-			<!-- Phone numbers -->
-			<h3>Phone numbers</h3>
-			<f:for each="{phoneNumbers}" as="phoneNumber">
-				<div id="phoneNumber-{phoneNumber.id}">
-					<f:render partial="Forms/PhoneNumber" arguments="{party: company, phoneNumber: phoneNumber, action: 'update'}"/>
-				</div>
-			</f:for>
-			<div id="phoneNumber-add" class="clearfix">
-				<f:render partial="Forms/PhoneNumber" arguments="{party: company, action: 'add', suffix: 'phonenumber'}"/>
+		</f:for>
+		<div id="address-add" class="clearfix">
+			<f:render partial="Forms/Address" arguments="{party: company, action: 'add', suffix: 'address'}"/>
+		</div>
+		<hr/>
+		<!-- Phone numbers -->
+		<h3>Phone numbers</h3>
+		<f:for each="{phoneNumbers}" as="phoneNumber">
+			<div id="phoneNumber-{phoneNumber.id}">
+				<f:render partial="Forms/PhoneNumber" arguments="{party: company, phoneNumber: phoneNumber, action: 'update'}"/>
 			</div>
-			<hr/>
-			<!-- Electronic addresses -->
-			<h3>Electronic addresses</h3>
-			<f:for each="{electronicAddresses}" as="electronicAddress">
-				<div id="electronicAddress-{electronicAddress.id}">
-					<f:render partial="Forms/ElectronicAddress" arguments="{party: company, electronicAddress: electronicAddress, action: 'update'}"/>
-				</div>
-			</f:for>
-			<div id="electronicAddress-add" class="clearfix">
-				<f:render partial="Forms/ElectronicAddress" arguments="{party: company, action: 'add', suffix: 'electronicAddress'}"/>
+		</f:for>
+		<div id="phoneNumber-add" class="clearfix">
+			<f:render partial="Forms/PhoneNumber" arguments="{party: company, action: 'add', suffix: 'phonenumber'}"/>
+		</div>
+		<hr/>
+		<!-- Electronic addresses -->
+		<h3>Electronic addresses</h3>
+		<f:for each="{electronicAddresses}" as="electronicAddress">
+			<div id="electronicAddress-{electronicAddress.id}">
+				<f:render partial="Forms/ElectronicAddress" arguments="{party: company, electronicAddress: electronicAddress, action: 'update'}"/>
 			</div>
-			<hr/>
-			<!-- bankAccounts -->
-			<h3>bankAccounts</h3>
-			<f:for each="{bankAccounts}" as="bankAccount">
-				<div id="bankAccount-{bankAccount.id}">
-					<f:render partial="Forms/BankAccount" arguments="{party: company, bankAccount: bankAccount, action: 'update'}"/>
-				</div>
-			</f:for>
-			<div id="bankAccount-add" class="clearfix">
-				<f:render partial="Forms/BankAccount" arguments="{party: company, action: 'add', suffix: 'bankAccount'}"/>
+		</f:for>
+		<div id="electronicAddress-add" class="clearfix">
+			<f:render partial="Forms/ElectronicAddress" arguments="{party: company, action: 'add', suffix: 'electronicAddress'}"/>
+		</div>
+		<hr/>
+		<!-- bankAccounts -->
+		<h3>bankAccounts</h3>
+		<f:for each="{bankAccounts}" as="bankAccount">
+			<div id="bankAccount-{bankAccount.id}">
+				<f:render partial="Forms/BankAccount" arguments="{party: company, bankAccount: bankAccount, action: 'update'}"/>
 			</div>
-			<hr/>
-		</f:if>
-	</div>
+		</f:for>
+		<div id="bankAccount-add" class="clearfix">
+			<f:render partial="Forms/BankAccount" arguments="{party: company, action: 'add', suffix: 'bankAccount'}"/>
+		</div>
+		<hr/>
+	</f:if>
+
 
 </f:section>

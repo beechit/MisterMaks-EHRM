@@ -1,13 +1,16 @@
-<div class="modal-header custom">
+<div class="header">
 	<h3><f:render partial="Views/Show/ProfilePhoto" arguments="{photo: party.profilePhoto, width: 50}"/>{party.name} / Bank accounts</h3>
 </div>
-<div class="clearfix well">
+
+<div class="content-padding multi-form">
+
 	<f:for each="{bankAccounts}" as="bankAccount">
-		<div id="bankAccount-{bankAccount.id}">
+		<div id="bankAccount-{bankAccount.id}" class="multi-form-item">
 			<f:render partial="Forms/BankAccount" arguments="{party: party, bankAccount: bankAccount, action: 'update', collapsed: true}"/>
 		</div>
 	</f:for>
-	<div id="bankAccount-add" class="clearfix">
+
+	<div id="bankAccount-add" class="multi-form-item">
 		<f:if condition="{bankAccounts}">
 			<f:then>
 				<f:render partial="Forms/BankAccount" arguments="{party: party, action: 'add', suffix: 'bankAccount', collapsed: true}"/>
@@ -17,4 +20,5 @@
 			</f:else>
 		</f:if>
 	</div>
+
 </div>

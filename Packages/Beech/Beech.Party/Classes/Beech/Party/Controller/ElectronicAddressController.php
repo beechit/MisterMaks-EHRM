@@ -36,7 +36,7 @@ class ElectronicAddressController extends \Beech\Ehrm\Controller\AbstractManagem
 	/**
 	 * @param \TYPO3\Party\Domain\Model\AbstractParty $party
 	 */
-	public function listAction(\TYPO3\Party\Domain\Model\AbstractParty $party) {
+	public function listAction(\TYPO3\Party\Domain\Model\AbstractParty $party = NULL) {
 		$this->view->assign('party', $party);
 		$this->view->assign('electronicAddresses', $this->repository->findByParty($party));
 	}
@@ -46,7 +46,7 @@ class ElectronicAddressController extends \Beech\Ehrm\Controller\AbstractManagem
 	 * @Flow\Validate(argumentName="electronicAddress", type="Beech.Party:ElectronicAddress")
 	 * @return void
 	 */
-	public function addAction(\Beech\Party\Domain\Model\ElectronicAddress $electronicAddress) {
+	public function addAction(\Beech\Party\Domain\Model\ElectronicAddress $electronicAddress = NULL) {
 		$electronicAddress->setParty($this->persistenceManager->getIdentifierByObject($electronicAddress->getParty()));
 		$this->repository->add($electronicAddress);
 		$this->view->assign('electronicAddress', $electronicAddress);
@@ -59,7 +59,7 @@ class ElectronicAddressController extends \Beech\Ehrm\Controller\AbstractManagem
 	 * @Flow\Validate(argumentName="electronicAddress", type="Beech.Party:ElectronicAddress")
 	 * @return void
 	 */
-	public function updateAction(\Beech\Party\Domain\Model\ElectronicAddress $electronicAddress) {
+	public function updateAction(\Beech\Party\Domain\Model\ElectronicAddress $electronicAddress = NULL) {
 		if ($this->getControllerContext()->getRequest()->getArgument('action') === 'remove') {
 			$this->redirect('remove', 'ElectronicAddress', NULL, array('electronicAddress' => $electronicAddress, 'party' => $electronicAddress->getParty()));
 		} else {
@@ -77,7 +77,7 @@ class ElectronicAddressController extends \Beech\Ehrm\Controller\AbstractManagem
 	 * @Flow\IgnoreValidation("$electronicAddress")
 	 * @return void
 	 */
-	public function removeAction(\Beech\Party\Domain\Model\ElectronicAddress $electronicAddress) {
+	public function removeAction(\Beech\Party\Domain\Model\ElectronicAddress $electronicAddress = NULL) {
 		$this->repository->remove($electronicAddress);
 		$this->addFlashMessage($this->translator->translateById('Removed.', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
 	}

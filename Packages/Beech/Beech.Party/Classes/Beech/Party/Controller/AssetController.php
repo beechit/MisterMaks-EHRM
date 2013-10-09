@@ -42,7 +42,7 @@ class AssetController extends \Beech\Ehrm\Controller\AbstractManagementControlle
 	/**
 	 * @param \TYPO3\Party\Domain\Model\AbstractParty $party
 	 */
-	public function listAction(\TYPO3\Party\Domain\Model\AbstractParty $party) {
+	public function listAction(\TYPO3\Party\Domain\Model\AbstractParty $party = NULL) {
 		$this->view->assign('party', $party);
 		$this->view->assign('assets', $this->repository->findByParty($party));
 	}
@@ -52,7 +52,7 @@ class AssetController extends \Beech\Ehrm\Controller\AbstractManagementControlle
 	 *
 	 * @return void
 	 */
-	public function addAction(\Beech\Party\Domain\Model\Asset $asset) {
+	public function addAction(\Beech\Party\Domain\Model\Asset $asset = NULL) {
 		$asset->setParty($this->persistenceManager->getIdentifierByObject($asset->getParty()));
 		$this->repository->add($asset);
 		$this->view->assign('asset', $asset);
@@ -69,7 +69,7 @@ class AssetController extends \Beech\Ehrm\Controller\AbstractManagementControlle
 	 *
 	 * @return void
 	 */
-	public function updateAction(\Beech\Party\Domain\Model\Asset $asset) {
+	public function updateAction(\Beech\Party\Domain\Model\Asset $asset = NULL) {
 		if ($this->getControllerContext()->getRequest()->getArgument('action') === 'remove') {
 			$this->redirect('remove', 'Asset', NULL, array('asset' => $asset, 'person' => $asset->getParty()));
 		} else {
@@ -87,7 +87,7 @@ class AssetController extends \Beech\Ehrm\Controller\AbstractManagementControlle
 	 * @Flow\IgnoreValidation("$asset")
 	 * @return void
 	 */
-	public function removeAction(\Beech\Party\Domain\Model\Asset $asset) {
+	public function removeAction(\Beech\Party\Domain\Model\Asset $asset = NULL) {
 		$this->repository->remove($asset);
 		$this->addFlashMessage($this->translator->translateById('Removed.', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
 	}

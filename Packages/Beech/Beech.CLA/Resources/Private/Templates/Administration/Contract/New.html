@@ -1,5 +1,7 @@
 <f:layout name="Ajax"/>{namespace form=TYPO3\Form\ViewHelpers}
 <f:section name="Body">
-	<h1><f:translate id="action.create">Create contract</f:translate></h1>
+	<div class="header">
+		<h1><f:translate id="action.create">Create contract</f:translate></h1>
+	</div>
 	<form:render factoryClass="Beech\CLA\Factory\ContractFormFactory" presetName="wizard" overrideConfiguration="{overrideConfiguration}"/>
 </f:section>

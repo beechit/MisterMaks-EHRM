@@ -36,7 +36,7 @@ class BankAccountController extends \Beech\Ehrm\Controller\AbstractManagementCon
 	/**
 	 * @param \TYPO3\Party\Domain\Model\AbstractParty $party
 	 */
-	public function listAction(\TYPO3\Party\Domain\Model\AbstractParty $party) {
+	public function listAction(\TYPO3\Party\Domain\Model\AbstractParty $party = NULL) {
 		$this->view->assign('party', $party);
 		$this->view->assign('bankAccounts', $this->repository->findByParty($party));
 	}
@@ -46,7 +46,7 @@ class BankAccountController extends \Beech\Ehrm\Controller\AbstractManagementCon
 	 * @Flow\Validate(argumentName="bankAccount", type="Beech.Ehrm:Iban")
 	 * @return void
 	 */
-	public function addAction(\Beech\Party\Domain\Model\BankAccount $bankAccount) {
+	public function addAction(\Beech\Party\Domain\Model\BankAccount $bankAccount = NULL) {
 		$bankAccount->setParty($this->persistenceManager->getIdentifierByObject($bankAccount->getParty()));
 		$this->repository->add($bankAccount);
 		$this->view->assign('bankAccount', $bankAccount);
@@ -59,7 +59,7 @@ class BankAccountController extends \Beech\Ehrm\Controller\AbstractManagementCon
 	 * @Flow\Validate(argumentName="bankAccount", type="Beech.Ehrm:Iban")
 	 * @return void
 	 */
-	public function updateAction(\Beech\Party\Domain\Model\BankAccount $bankAccount) {
+	public function updateAction(\Beech\Party\Domain\Model\BankAccount $bankAccount = NULL) {
 		If	($this->getControllerContext()->getRequest()->getArgument('action') === 'remove') {
 			$this->redirect('remove', 'BankAccount', NULL, array('bankAccount' => $bankAccount, 'party' => $address->getParty()));
 		} else {
@@ -77,7 +77,7 @@ class BankAccountController extends \Beech\Ehrm\Controller\AbstractManagementCon
 	 * @Flow\IgnoreValidation("bankAccount")
 	 * @return void
 	 */
-	public function removeAction(\Beech\Party\Domain\Model\BankAccount $bankAccount) {
+	public function removeAction(\Beech\Party\Domain\Model\BankAccount $bankAccount = NULL) {
 		$this->repository->remove($bankAccount);
 		$this->addFlashMessage($this->translator->translateById('Removed.', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));
 	}

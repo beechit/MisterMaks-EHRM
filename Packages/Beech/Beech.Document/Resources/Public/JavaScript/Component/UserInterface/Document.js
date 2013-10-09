@@ -9,6 +9,6 @@
 			$('.control-documentSubmit').hide();
 		}
 	}
-	$('.form-newDocument').find('.documentAttachment').on('focus', verifyDocument);
-	$('.form-newDocument').find('.documentName').on('blur', verifyDocument);
+	$('.form-newDocument').find('.documentAttachment').on('change', verifyDocument);
+	$('.form-newDocument').find('.documentName').on('blur keyup', verifyDocument);
 }).call(this);

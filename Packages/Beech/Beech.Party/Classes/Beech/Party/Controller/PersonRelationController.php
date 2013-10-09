@@ -55,7 +55,7 @@ class PersonRelationController extends \Beech\Ehrm\Controller\AbstractManagement
 	/**
 	 * @param \Beech\Party\Domain\Model\Person $person
 	 */
-	public function listAction(\Beech\Party\Domain\Model\Person $person) {
+	public function listAction(\Beech\Party\Domain\Model\Person $person = NULL) {
 		$this->view->assign('person', $person);
 		$this->view->assign('persons', $this->personRepository->findAll());
 		$this->view->assign('personRelations', $this->repository->findAll());
@@ -67,7 +67,7 @@ class PersonRelationController extends \Beech\Ehrm\Controller\AbstractManagement
 	 * @param \Beech\Party\Domain\Model\Person $personRelatedTo
 	 * @return void
 	 */
-	public function newAction(\Beech\Party\Domain\Model\Person $personRelatedTo) {
+	public function newAction(\Beech\Party\Domain\Model\Person $personRelatedTo = NULL) {
 		$this->view->assign('personRelatedTo', $personRelatedTo);
 	}
 
@@ -76,7 +76,7 @@ class PersonRelationController extends \Beech\Ehrm\Controller\AbstractManagement
 	 * @param \Beech\Party\Domain\Model\Person $personRelatedTo
 	 * @return void
 	 */
-	public function createAction(\Beech\Party\Domain\Model\Person $person, \Beech\Party\Domain\Model\Person $personRelatedTo) {
+	public function createAction(\Beech\Party\Domain\Model\Person $person = NULL, \Beech\Party\Domain\Model\Person $personRelatedTo = NULL) {
 		$relationType = $person->getRelationType();
 		$emergencyContact = $person->getEmergencyContact();
 		$phoneNumberValue = $person->getPhoneNumber();
@@ -104,8 +104,7 @@ class PersonRelationController extends \Beech\Ehrm\Controller\AbstractManagement
 		$electronicAddress->setAddress($electronicAddressValue);
 		$this->electronicAddressRepository->add($electronicAddress);
 
-		$options = array('person' => $person, 'personRelation' => $personRelation);
-		$this->redirect('edit', NULL, NULL, $options);
+		$this->emberRedirect('#/person/show/'.$personRelation->getId());
 	}
 
 	/**
@@ -114,7 +113,7 @@ class PersonRelationController extends \Beech\Ehrm\Controller\AbstractManagement
 	 * @param \Beech\Party\Domain\Model\Person $personRelatedTo
 	 * @return void
 	 */
-	public function editAction(\Beech\Party\Domain\Model\Person $person = NULL, \Beech\Party\Domain\Model\PersonRelation $personRelation) {
+	public function editAction(\Beech\Party\Domain\Model\Person $person = NULL, \Beech\Party\Domain\Model\PersonRelation $personRelation = NULL) {
 		$this->view->assign('person', $person);
 		$this->view->assign('personRelation', $personRelation);
 		$phoneNumbers = $this->phoneNumberRepository->findByParty($person);
@@ -136,21 +135,22 @@ class PersonRelationController extends \Beech\Ehrm\Controller\AbstractManagement
 	 * @Flow\IgnoreValidation("electronicAddressObject")
 	 * @return void
 	 */
-	public function updateAction(\Beech\Party\Domain\Model\Person $person, \Beech\Party\Domain\Model\PersonRelation $personRelation, PhoneNumber $phoneNumberObject = NULL, ElectronicAddress $electronicAddressObject) {
+	public function updateAction(\Beech\Party\Domain\Model\Person $person = NULL, \Beech\Party\Domain\Model\PersonRelation $personRelation = NULL, PhoneNumber $phoneNumberObject = NULL, ElectronicAddress $electronicAddressObject = NULL) {
 		$this->personRepository->update($person);
 		$phoneNumberObject->setPhoneNumber($person->getPhoneNumber());
 		$this->phoneNumberRepository->update($phoneNumberObject);
 		$electronicAddressObject->setAddress($person->getElectronicAddress());
 		$this->electronicAddressRepository->update($electronicAddressObject);
 		$options = array('person' => $person, 'personRelation' => $personRelation);
-		$this->redirect('edit', NULL, NULL, $options);
+
+		$this->emberRedirect('#/person/show/'.$personRelation->getId());
 	}
 
 	/**
 	 * @param \Beech\Party\Domain\Model\PersonRelation $personRelation
 	 * @return void
 	 */
-	public function removeAction(\Beech\Party\Domain\Model\PersonRelation $personRelation) {
+	public function removeAction(\Beech\Party\Domain\Model\PersonRelation $personRelation = NULL) {
 		$this->personRepository->remove($personRelation->getPerson());
 		$this->repository->remove($personRelation);
 		$this->addFlashMessage($this->translator->translateById('Removed.', array(), NULL, NULL, 'Actions', 'Beech.Ehrm'));

@@ -9,19 +9,13 @@
 			var url = $(this).attr('href');
 
 				// Use AJAX get function to fetch the html
-			$('#modal-body-only').modal();
-			$('#modal-body-only .modal-body').load(url, function() {
-				// Make sure clicks stays in the modal
-				$('#modal-body-only form').updateModal();
-				$('#modal-body-only #username').focus();
+			$('#modal .modal-content').html('<p><i class="icon-spin icon-spinner icon-4x muted"></i></p>');
+			$('#modal').modal();
+			$('#modal .modal-content').load(url, function() {
+				$('#modal form').updateModal();
+				$('#modal #username').focus();
 			});
 		});
-
-			// Reset the stage so on reloads we don't get old data
-		$('#modal-body-only').on('hidden', function () {
-			$('#modal-body-only .modal-body').html('<p><i class="icon-spin icon-spinner icon-4x muted"></i></p>');
-		});
-
 	});
 
 	(function($) {
@@ -31,7 +25,7 @@
 				if (!$(this).attr('isSubmitting')) {
 					$(this).attr('isSubmitting', true);
 
-					$('<i class="icon-spin icon-spinner icon-large muted"></i>').insertAfter('button');
+					$('<i class="icon-spin icon-spinner icon-large muted"></i>').appendTo('.form-actions');
 					var form = $(this);
 					var target = $(form.attr('data-target'));
 
@@ -45,7 +39,7 @@
 								window.location = $('base').text();
 							} else {
 								target.html(result);
-								$('#modal-body-only form').updateModal();
+								$('#modal form').updateModal();
 							}
 							that.removeAttr('isSubmitting')
 						}

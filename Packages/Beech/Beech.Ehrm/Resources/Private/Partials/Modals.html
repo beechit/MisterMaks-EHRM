@@ -1,33 +1,7 @@
 <div class="modal hide fade" id="modal">
-	<div class="modal-header hide">
-		<button type="button" class="close" data-dismiss="modal">x</button>
-		<h3><i class="icon-fire"></i> Header</h3>
-	</div>
-	<div class="modal-body full-size">
-		<p>Content</p>
-	</div>
-	<div class="modal-footer hide">
-		<button class="btn btn-close" data-dismiss="modal" data-action="close">Close</button>
-		<button class="btn btn-save" data-action="save">Save</button>
-	</div>
-</div>
+	<div class="modal-content"></div>
 
-<div id="modal-from-dom" class="modal hide fade">
-	<div class="modal-header">
-		<a href="#" class="close">&times;</a>
-		<h3>Header</h3>
-	</div>
-	<div class="modal-body">{{outlet modal}}
-		<p>You are about to delete one track url, this procedure is irreversible.</p>
-	</div>
-	<div class="modal-footer">
-		<a href="#" class="btn btn-danger">Yes</a>
-		<a href="javascript:$('#modal-from-dom').modal('hide')" class="btn secondary">No</a>
-	</div>
-</div>
-
-<div class="modal hide fade" id="modal-body-only">
-	<div class="modal-body">
-		<p><i class="icon-spin icon-spinner icon-4x muted"></i></p>
-	</div>
+	<f:comment>default buttons will be copied to modal-content ondemand</f:comment>
+	<button class="btn btn-cancel hide" data-dismiss="modal" data-action="close"><f:translate id="Cancel">Cancel</f:translate></button>
+	<button class="btn btn-close hide" data-dismiss="modal" data-action="close"><f:translate id="Close">Close</f:translate></button>
 </div>
