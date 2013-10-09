@@ -1,9 +1,36 @@
 documentTypes:
   -
     'categoryName': 'Permits'
-    'typeName': 'Workpermit'
+    'typeName': 'Work permit'
     'delete': FALSE
+    'expiration': TRUE
+    'document': TRUE
+    'number': TRUE
+    'period': FALSE
+    'year': FALSE
   -
     'categoryName': 'Permits'
-    'typeName': 'ResidencePermit'
+    'typeName': 'Residence permit'
     'delete': FALSE
+    'expiration': TRUE
+    'document': TRUE
+    'number': TRUE
+    'period': FALSE
+    'year': FALSE
+  -
+    'categoryName': 'Permits'
+    'typeName': 'Application Form'
+    'delete': FALSE
+    'expiration': FALSE
+    'document': TRUE
+    'number': FALSE
+    'period': FALSE
+    'year': FALSE
+  -
+    'categoryName': 'Permits'
+    'typeName': 'Correnspondence'
+    'delete': FALSE
+    'expiration': FALSE
+    'document': TRUE
+    'period': FALSE
+    'year': FALSE

@@ -3,11 +3,17 @@ documentTypes:
     'categoryName': 'Identification'
     'typeName': 'Passport'
     'delete': FALSE
+    'expiration': TRUE
+    'document': TRUE
+    'number': TRUE
+    'period': FALSE
+    'year': FALSE
   -
     'categoryName': 'Identification'
     'typeName': 'ID card'
     'delete': FALSE
-  -
-    'categoryName': 'Identification'
-    'typeName': 'ID Validation report'
-    'delete': FALSE
+    'expiration': TRUE
+    'document': TRUE
+    'number': TRUE
+    'period': FALSE
+    'year': FALSE

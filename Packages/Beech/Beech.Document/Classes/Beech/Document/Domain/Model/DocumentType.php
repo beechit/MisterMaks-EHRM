@@ -28,6 +28,48 @@ class DocumentType extends \Beech\Ehrm\Domain\Model\Document {
 	protected $typeName;
 
 	/**
+	 * @var boolean
+	 * @ODM\Field(type="boolean")
+	 * @ODM\Index
+	 */
+	protected $delete;
+
+	/**
+	 * @var boolean
+	 * @ODM\Field(type="boolean")
+	 * @ODM\Index
+	 */
+	protected $expiration;
+
+	/**
+	 * @var boolean
+	 * @ODM\Field(type="boolean")
+	 * @ODM\Index
+	 */
+	protected $document;
+
+	/**
+	 * @var boolean
+	 * @ODM\Field(type="boolean")
+	 * @ODM\Index
+	 */
+	protected $number;
+
+	/**
+	 * @var boolean
+	 * @ODM\Field(type="boolean")
+	 * @ODM\Index
+	 */
+	protected $period;
+
+	/**
+	 * @var boolean
+	 * @ODM\Field(type="boolean")
+	 * @ODM\Index
+	 */
+	protected $year;
+
+	/**
 	 * @param $typeName
 	 */
 	public function setTypeName($typeName) {

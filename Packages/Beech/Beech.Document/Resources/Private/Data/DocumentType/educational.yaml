@@ -3,19 +3,53 @@ documentTypes:
     'categoryName': 'Educational'
     'typeName': 'Renewable certificates'
     'delete': FALSE
+    'expiration': TRUE
+    'document': TRUE
+    'number': FALSE
+    'period': FALSE
+    'year': FALSE
   -
     'categoryName': 'Educational'
-    'typeName': 'Permanent Certificates'
+    'typeName': 'Certificates'
     'delete': FALSE
+    'expiration': FALSE
+    'document': TRUE
+    'number': FALSE
+    'period': FALSE
+    'year': FALSE
   -
     'categoryName': 'Educational'
     'typeName': 'Diploma'
     'delete': FALSE
+    'expiration': FALSE
+    'document': TRUE
+    'number': FALSE
+    'period': FALSE
+    'year': FALSE
   -
     'categoryName': 'Educational'
     'typeName': 'Certificate of registration'
     'delete': FALSE
+    'expiration': TRUE
+    'document': TRUE
+    'number': FALSE
+    'period': FALSE
+    'year': FALSE
   -
     'categoryName': 'Educational'
     'typeName': 'Other'
     'delete': FALSE
+    'expiration': FALSE
+    'document': TRUE
+    'number': FALSE
+    'period': FALSE
+    'year': FALSE
+  -
+    'categoryName': 'Educational'
+    'typeName': 'Correspondence'
+    'delete': FALSE
+    'expiration': FALSE
+    'document': TRUE
+    'number': FALSE
+    'period': FALSE
+    'year': FALSE

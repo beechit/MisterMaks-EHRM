@@ -42,7 +42,7 @@ class Document extends \Beech\Ehrm\Domain\Model\Document {
 	 * @var \DateTime
 	 * @ODM\Field(type="datetime")
 	 */
-	protected $expireDate;
+	protected $expiration;
 
 	/**
 	 * @var \TYPO3\Flow\Persistence\PersistenceManagerInterface
@@ -139,18 +139,18 @@ class Document extends \Beech\Ehrm\Domain\Model\Document {
 	/**
 	 * @param \DateTime $expireDate
 	 */
-	public function setExpireDate($expireDate = NULL) {
-		if ($expireDate === NULL) {
-			$expireDate = new \DateTime();
+	public function setExpireDate($expiration = NULL) {
+		if ($expiration === NULL) {
+			$expiration = new \DateTime();
 		}
-		$this->expireDate = $expireDate;
+		$this->expiration = $expiration;
 	}
 
 	/**
 	 * @return \DateTime
 	 */
-	public function getExpireDate() {
-		return $this->expireDate;
+	public function getExpiration() {
+		return $this->expiration;
 	}
 }
 

@@ -3,15 +3,44 @@ documentTypes:
     'categoryName': 'Contract'
     'typeName': 'Contract'
     'delete': FALSE
+    'expiration': FALSE
+    'document': TRUE
+    'number': FALSE
+    'period': FALSE
+    'year': FALSE
   -
     'categoryName': 'Contract'
     'typeName': 'End of contract'
     'delete': FALSE
+    'expiration': FALSE
+    'document': TRUE
+    'number': FALSE
+    'period': FALSE
+    'year': FALSE
   -
     'categoryName': 'Contract'
     'typeName': 'Reference note'
     'delete': FALSE
+    'expiration': FALSE
+    'document': TRUE
+    'number': FALSE
+    'period': FALSE
+    'year': FALSE
   -
     'categoryName': 'Contract'
     'typeName': 'Other'
     'delete': FALSE
+    'expiration': FALSE
+    'document': TRUE
+    'number': FALSE
+    'period': FALSE
+    'year': FALSE
+  -
+    'categoryName': 'Contract'
+    'typeName': 'Correspondence'
+    'delete': FALSE
+    'expiration': FALSE
+    'document': TRUE
+    'number': FALSE
+    'period': FALSE
+    'year': FALSE

@@ -3,15 +3,26 @@ documentTypes:
     'categoryName': 'General'
     'typeName': 'Correspondence'
     'delete': FALSE
-  -
-    'categoryName': 'General'
-    'typeName': 'Pictures'
-    'delete': FALSE
+    'expiration': FALSE
+    'document': TRUE
+    'number': FALSE
+    'period': FALSE
+    'year': FALSE
   -
     'categoryName': 'General'
     'typeName': 'Report'
     'delete': FALSE
+    'expiration': FALSE
+    'document': TRUE
+    'number': FALSE
+    'period': FALSE
+    'year': FALSE
   -
     'categoryName': 'General'
     'typeName': 'Other'
     'delete': FALSE
+    'expiration': FALSE
+    'document': TRUE
+    'number': FALSE
+    'period': FALSE
+    'year': FALSE

@@ -3,15 +3,36 @@ documentTypes:
     'categoryName': 'Absence'
     'typeName': 'Uwv'
     'delete': FALSE
+    'expiration': FALSE
+    'document': TRUE
+    'number': FALSE
+    'number': FALSE
+    'period': FALSE
+    'year': FALSE
   -
     'categoryName': 'Absence'
     'typeName': 'Arbo'
     'delete': FALSE
+    'expiration': FALSE
+    'document': TRUE
+    'number': FALSE
+    'period': FALSE
+    'year': FALSE
   -
     'categoryName': 'Absence'
-    'typeName': 'Letter'
+    'typeName': 'Correspondence'
     'delete': FALSE
+    'expiration': FALSE
+    'document': TRUE
+    'number': FALSE
+    'period': FALSE
+    'year': FALSE
   -
     'categoryName': 'Absence'
     'typeName': 'Other'
     'delete': FALSE
+    'expiration': FALSE
+    'document': TRUE
+    'number': FALSE
+    'period': FALSE
+    'year': FALSE
