@@ -29,6 +29,11 @@ contractArticles:
               dateFormat: 'd-m-Y'
               enableDatePicker: TRUE
               displayTimeSelector: FALSE
+            validation:
+              -
+                type: 'DateTimeRange'
+                options:
+                  earliestDate: 'now/P30D'
           -
             type: 'Beech.Ehrm:DatePicker'
             value: ''
@@ -37,14 +42,27 @@ contractArticles:
               dateFormat: 'd-m-Y'
               enableDatePicker: TRUE
               displayTimeSelector: FALSE
+            validation:
+              -
+                type: 'DateTimeRange'
+                options:
+                  earliestDate: 'P90D/now'
           -
             type: 'Beech.CLA:SingleLineText'
             value: ''
             valueId: jobTitle
+            validation:
+              -
+                type: 'NotEmpty'
+              -
+                type: 'String'
           -
             type: 'Beech.Party:WorkLocationSelect'
             value: ''
             valueId: 'workLocation'
+            validation:
+              -
+                type: 'NotEmpty'
     -
       articleHeader:
         en: 'Probation'
@@ -67,6 +85,9 @@ contractArticles:
           value: ''
           valueId: probationPeriod
           default: 4
+          validation:
+            -
+              type: 'Integer'
         -
           type: 'Beech.CLA:SingleSelectDropdown'
           options:
@@ -75,6 +96,9 @@ contractArticles:
             month: 'Month'
           default: 'week'
           valueId: probationUnitOfTime
+          validation:
+            -
+              type: 'NotEmpty'
     -
       articleHeader:
         en: 'Working hours'
@@ -97,6 +121,12 @@ contractArticles:
           value: ''
           valueId: hoursAWeek
           default: '38'
+          validation:
+            -
+              type: 'Beech.Ehrm:Decimal'
+              options:
+                digits: 2
+                decimal: 2
         -
           type: 'Beech.CLA:MultipleSelectCheckboxes'
           options:
@@ -112,6 +142,9 @@ contractArticles:
             en: [ monday , tuesday , wednesday , thursday , friday , saturday , sunday ]
             pl: [ poniedzialek, wtorek, sroda, czwartek, piatek, sobota, niedziela ]
           valueId: workDays
+          validation:
+            -
+              type: 'NotEmpty'
         -
           type:  'Beech.Ehrm:DatePicker'
           default: '8.00'
@@ -122,6 +155,9 @@ contractArticles:
             displayTimeSelector: TRUE
           value: ''
           valueId: 'startTime'
+          validation:
+            -
+              type: 'NotEmpty'
         -
           type: 'Beech.Ehrm:DatePicker'
           default: '17.00'
@@ -167,6 +203,9 @@ contractArticles:
             'month': 'Month'
           default: 'month'
           valueId: 'paymentSequence'
+          validation:
+            -
+              type: 'NotEmpty'
     -
       articleHeader:
         en: 'CAO'
@@ -226,6 +265,9 @@ contractArticles:
             enableDatePicker: TRUE
             displayDateSelector: FALSE
             displayTimeSelector: TRUE
+          validation:
+            -
+              type: 'NotEmpty'
     -
       articleHeader:
         en: 'Interim denunciation'
@@ -284,7 +326,7 @@ contractArticles:
       order: 1000
       articleText:
         en: ''
-        nl: 'De werkgever draagt zorg voor huisvesting van de werknemer. Deze huisvesting voldoet minimaal aan alle wettelijke en gemeentelijke regels. De werknemer betaalt de werkgever een vergoeding van € <accomodationRent> per <accomodationRentUnitOfTime> voor het gebruik van deze voorziening.'
+        nl: 'De werkgever draagt zorg voor huisvesting van de werknemer. Deze huisvesting voldoet minimaal aan alle wettelijke en gemeentelijke regels. De werknemer betaalt de werkgever een vergoeding van € <accomodationRent> per week voor het gebruik van deze voorziening.'
         pl: ''
       help:
         en: ''
@@ -293,19 +335,13 @@ contractArticles:
       values:
         -
           type: 'Beech.CLA:SingleLineText'
-          validation:
-            type: 'TYPO3.Flow:RegularExpression'
-            options:
-              regularExpression: '/^[0-9]{1,4}([\.][0-9]{0,2}){0,1}$/'
           valueId: 'accomodationRent'
-        -
-          type: 'Beech.CLA:SingleSelectDropdown'
-          options:
-            day: 'Day'
-            week: 'Week'
-            month: 'Month'
-          default: 'week'
-          valueId: 'accomodationRentUnitOfTime'
+          validation:
+            -
+              type: 'Beech.Ehrm:Decimal'
+              options:
+                digits: 3
+                decimal: 2
     -
       articleHeader:
          en: 'Confidentiality agreement'
@@ -353,7 +389,7 @@ contractArticles:
         pl: ''
       help:
         en: ''
-        nl: ''
+        nl: 'Voor nieuwe medewerkers kiest u salaris schaal B. Salarisschaal A is slechts van toepassing op werknemers waarvan het dienstverband is aangevangen voor 1 juli 2005 en de werknemer die in 2003 en 2004 telkens ten minste 1200 uur in dienst is geweest bij dezelfde werkgever. Zie artikel 17 lid 2 sub A. Voor alle andere werknemers geldt loongebouw B, '
         pl: ''
       values:
       # selectable values from the wagemodel.
@@ -367,16 +403,30 @@ contractArticles:
           value: ''
           valueId: 'wageScaleGroup'
           default: ''
+          validation:
+            -
+              type: 'NotEmpty'
         -
           type: 'Beech.CLA:SingleSelectDropdown'
           value: ''
           valueId: 'wageStep'
-          default: ''
+          default: '1'
+          validation:
+            -
+              type: 'NotEmpty'
         -
           type: 'Beech.CLA:SingleLineText'
           value: ''
           valueId: 'wage'
           default: ''
+          validation:
+            -
+              type: 'NotEmpty'
+            -
+              type: 'Beech.Ehrm:Decimal'
+              options:
+                digits: 2
+                decimal: 2
         -
           type: 'Beech.CLA:SingleSelectDropdown'
           options:
@@ -385,6 +435,9 @@ contractArticles:
             'month': 'Month'
           default: 'month'
           valueId: 'paymentSequence'
+          validation:
+            -
+              type: 'NotEmpty'
     -
       articleHeader:
         en: 'Vacation allowance and vacation days'
@@ -428,14 +481,25 @@ contractArticles:
           value: ''
           valueId: startDate
           default: ''
+          validation:
+            -
+              type: 'DateTimeRange'
+              options:
+                earliestDate: 'now/P30D'
         -
           type: 'Beech.CLA:SingleLineText'
           value: ''
           valueId: jobTitle
+          validation:
+            -
+              type: 'NotEmpty'
         -
           type: 'Beech.Party:WorkLocationSelect'
           value: ''
           valueId: 'workLocation'
+          validation:
+            -
+              type: 'NotEmpty'
     -
       articleHeader:
         en: ''
@@ -458,10 +522,9 @@ contractArticles:
           value: ''
           valueId: probationPeriod
           validation:
-            type: 'TYPO3.Flow:RegularExpression'
-            options:
-              regularExpression: '/[0-9]{1,2}/'
-          default: 0
+            -
+              type: 'Integer'
+          default: 4
         -
           type: 'Beech.CLA:SingleSelectDropdown'
           options:
@@ -470,6 +533,9 @@ contractArticles:
             month: Month
           default: week
           valueId: probationUnitOfTime
+          validation:
+            -
+              type: 'NotEmpty'
     -
       articleHeader:
         en: ''
