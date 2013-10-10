@@ -32,23 +32,11 @@ class ApplicationController extends AbstractController {
 	 * @return void
 	 */
 	public function indexAction() {
-		if ($this->authenticationManager->isAuthenticated() === FALSE) {
-			$this->redirect('intro');
-		}
+
 			// trigger setup wizard
 		if(!$this->preferencesUtility->getApplicationPreference('setupWizardComplete')) {
 			$this->view->assign('emberRedirect', '/settings/setupwizard');
 		}
-	}
-
-	/**
-	 * @return void
-	 */
-	public function introAction() {
-		if ($this->authenticationManager->isAuthenticated() === TRUE) {
-			$this->redirect('index');
-		}
-		$this->flashMessageContainer->flush();
 	}
 
 	/**

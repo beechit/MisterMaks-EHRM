@@ -69,6 +69,17 @@ footer {
 }
 
 /* Index */
+.intro {
+	.row-fluid .span6 {
+		position: relative;
+	}
+	.alert {
+		position: absolute;
+		top: 20px;
+		left: 0;
+		right: 0;
+	}
+}
 .jumbotron {
 	margin: 100px 0;
 	text-align: center;

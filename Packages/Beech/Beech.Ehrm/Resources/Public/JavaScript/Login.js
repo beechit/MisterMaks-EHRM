@@ -36,7 +36,7 @@
 						success: function(result) {
 							// Redirect upon successful login
 							if (!result || result == 'ok') {
-								window.location = $('base').text();
+								document.location.reload();
 							} else {
 								target.html(result);
 								$('#modal form').updateModal();
@@ -46,10 +46,9 @@
 					});
 				}
 
-
-
 				event.preventDefault();
 			});
 		};
 	})(jQuery);
+
 }).call(this);
