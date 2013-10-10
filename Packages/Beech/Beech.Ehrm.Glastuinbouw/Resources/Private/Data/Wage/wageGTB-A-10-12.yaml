@@ -31,28 +31,28 @@ GlastuinbouwscaleA:
           value: '8,33'
           age: 20
         -
-          step: '1th job year'
+          step: '1'
           value: '9,26'
         -
-          step: '2th job year'
+          step: '2'
           value: '9,56'
         -
-          step: '3th job year'
+          step: '3'
           value: '9,84'
         -
-          step: '4th job year'
+          step: '4'
           value: '10,12'
         -
-          step: '5th job year'
+          step: '5'
           value: '10,44'
         -
-          step: '6th job year'
+          step: '6'
           value: '10,70'
         -
-          step: '7th job year'
+          step: '7'
           value: '11,00'
         -
-          step: '8th job year'
+          step: '8'
           value: '11,30'
       label: 'Group B-1'
       orbaPointsStart: ''
@@ -84,34 +84,34 @@ GlastuinbouwscaleA:
           value: '8,86'
           age: 20
         -
-          step: '1th job year'
+          step: '1'
           value: ''
         -
-          step: '2th job year'
+          step: '2'
           value: ''
         -
-          step: '3th job year'
+          step: '3'
           value: '9,84'
         -
-          step: '4th job year'
+          step: '4'
           value: '10,12'
         -
-          step: '5th job year'
+          step: '5'
           value: '10,44'
         -
-          step: '6th job year'
+          step: '6'
           value: '10,70'
         -
-          step: '7th job year'
+          step: '7'
           value: '11,00'
         -
-          step: '8th job year'
+          step: '8'
           value: '11,30'
         -
-          step: '9th job year'
+          step: '9'
           value: '11,57'
         -
-          step: '10th job year'
+          step: '10'
           value: '11,86'
       label: 'Group B-2'
       orbaPointsStart: ''
@@ -143,28 +143,28 @@ GlastuinbouwscaleA:
           value: '10,30'
           age: 20
         -
-          step: '1th job year'
+          step: '1'
           value: '11,44'
         -
-          step: '2th job year'
+          step: '2'
           value: '11,65'
         -
-          step: '3th job year'
+          step: '3'
           value: '11,81'
         -
-          step: '4th job year'
+          step: '4'
           value: '11,98'
         -
-          step: '5th job year'
+          step: '5'
           value: '12,18'
         -
-          step: '6th job year'
+          step: '6'
           value: '12,35'
         -
-          step: '7th job year'
+          step: '7'
           value: '12,52'
         -
-          step: '8th job year'
+          step: '8'
           value: '12,70'
       label: 'Group C'
       orbaPointsStart: ''
@@ -196,28 +196,28 @@ GlastuinbouwscaleA:
           value: '10,96'
           age: 20
         -
-          step: '1th job year'
+          step: '1'
           value: '12,18'
         -
-          step: '2th job year'
+          step: '2'
           value: '12,35'
         -
-          step: '3th job year'
+          step: '3'
           value: '12,52'
         -
-          step: '4th job year'
+          step: '4'
           value: '12,70'
         -
-          step: '5th job year'
+          step: '5'
           value: '12,86'
         -
-          step: '6th job year'
+          step: '6'
           value: '13,07'
         -
-          step: '7th job year'
+          step: '7'
           value: '13,26'
         -
-          step: '8th job year'
+          step: '8'
           value: '13,42'
       label: 'Group D'
       orbaPointsStart: ''
@@ -249,28 +249,28 @@ GlastuinbouwscaleA:
           value: '11,50'
           age: 20
         -
-          step: '1th job year'
+          step: '1'
           value: '12,78'
         -
-          step: '2th job year'
+          step: '2'
           value: '12,99'
         -
-          step: '3th job year'
+          step: '3'
           value: '13,17'
         -
-          step: '4th job year'
+          step: '4'
           value: '13,34'
         -
-          step: '5th job year'
+          step: '5'
           value: '13,50'
         -
-          step: '6th job year'
+          step: '6'
           value: '13,69'
         -
-          step: '7th job year'
+          step: '7'
           value: '13,87'
         -
-          step: '8th job year'
+          step: '8'
           value: '14,05'
       label: 'Group E'
       orbaPointsStart: ''
@@ -302,28 +302,28 @@ GlastuinbouwscaleA:
           value: '12,08'
           age: 20
         -
-          step: '1th job year'
+          step: '1'
           value: '13,42'
         -
-          step: '2th job year'
+          step: '2'
           value: '13,58'
         -
-          step: '3th job year'
+          step: '3'
           value: '13,77'
         -
-          step: '4th job year'
+          step: '4'
           value: '13,96'
         -
-          step: '5th job year'
+          step: '5'
           value: '14,13'
         -
-          step: '6th job year'
+          step: '6'
           value: '14,34'
         -
-          step: '7th job year'
+          step: '7'
           value: '14,49'
         -
-          step: '8th job year'
+          step: '8'
           value: '14,66'
       orbaPointsStart: ''
       orbaPointsEnd: ''
@@ -355,28 +355,28 @@ GlastuinbouwscaleA:
           value: '12,56'
           age: 20
         -
-          step: '1th job year'
+          step: '1'
           value: '13,96'
         -
-          step: '2th job year'
+          step: '2'
           value: '14,13'
         -
-          step: '3th job year'
+          step: '3'
           value: '14,34'
         -
-          step: '4th job year'
+          step: '4'
           value: '14,49'
         -
-          step: '5th job year'
+          step: '5'
           value: '14,66'
         -
-          step: '6th job year'
+          step: '6'
           value: '14,85'
         -
-          step: '7th job year'
+          step: '7'
           value: '15,04'
         -
-          step: '8th job year'
+          step: '8'
           value: '15,21'
       label: 'Group G'
       orbaPointsStart: ''
@@ -408,28 +408,28 @@ GlastuinbouwscaleA:
           value: '13,04'
           age: 20
         -
-          step: '1th job year'
+          step: '1'
           value: '14,49'
         -
-          step: '2th job year'
+          step: '2'
           value: '14,66'
         -
-          step: '3th job year'
+          step: '3'
           value: '14,85'
         -
-          step: '4th job year'
+          step: '4'
           value: '15,04'
         -
-          step: '5th job year'
+          step: '5'
           value: '15,21'
         -
-          step: '6th job year'
+          step: '6'
           value: '15,39'
         -
-          step: '7th job year'
+          step: '7'
           value: '15,56'
         -
-          step: '8th job year'
+          step: '8'
           value: '15,75'
       label: 'Group H'
       orbaPointsStart: ''
