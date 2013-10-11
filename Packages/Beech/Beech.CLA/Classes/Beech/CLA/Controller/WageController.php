@@ -1,5 +1,5 @@
 <?php
-namespace Beech\CLA\Administration\Controller;
+namespace Beech\CLA\Controller;
 
 /*
  * This source file is proprietary property of Beech Applications B.V.

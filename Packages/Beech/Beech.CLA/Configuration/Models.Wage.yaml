@@ -1,0 +1,18 @@
+'Beech.CLA.Domain.Model.Wage':
+  properties:
+    'step':
+      label: 'Step'
+      default:
+    'value':
+      label: 'value'
+      default: '0'
+    'age':
+      label: 'Age'
+    'wagetype':
+      label: 'WageType'
+      options:
+        values:
+          - 'value'
+          - 'calculation'
+    'default':
+      label: 'Sets default wage in this group'

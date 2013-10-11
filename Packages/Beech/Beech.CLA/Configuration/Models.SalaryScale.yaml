@@ -7,28 +7,21 @@
           type: 'StringLength'
           options:
             maximum: 20
+    'wageName':
+      label: 'Wage name'
     'wageStartDate':
       label: 'Startdate of this wagescale'
     'endDate':
       label: 'Enddate of this wagescale'
-    'wageType':
+    'wageUnit':
       label: 'month week or hour wage'
-    'wagegroup':
-      -
-        'step':
-        label: 'Step'
-        'value':
-      -
-        label: 'value'
-        default: '0,0'
-      -
-        'age':
-         label: 'Age'
-    'label':
-      label: 'label'
-    'orbaStart':
-      label: 'Orba points start'
-    'orbaEnd':
-      label: 'orba points end'
-
-
+      options:
+        values:
+          hour : 'Hour'
+          week : 'Week'
+          month: 'Month'
+    'wageGroup':
+      label: 'Wage'
+      type: 'Beech\CLA\Domain\Model\WageGroup'
+    'minimumWage':
+      type: 'Boolean'

@@ -7,27 +7,27 @@ GlastuinbouwscaleA:
     'wageGroup':
       'b-1':
         -
-          step: '15 year'
+          step: '15'
           value: '3,70'
           age: 15
         -
-          step: '16 year'
+          step: '16'
           value: '4,63'
           age: 16
         -
-          step: '17 year'
+          step: '17'
           value: '5,56'
           age: 17
         -
-          step: '18 year'
+          step: '18'
           value: '6,48'
           age: 18
         -
-          step: '19 year'
+          step: '19'
           value: '7,41'
           age: 19
         -
-          step: '20 year'
+          step: '20'
           value: '8,33'
           age: 20
         -
@@ -60,27 +60,27 @@ GlastuinbouwscaleA:
     -
       'b-2':
         -
-          step: '15 year'
+          step: '15'
           value: '3,94'
           age: 15
         -
-          step: '16 year'
+          step: '16'
           value: '4,92'
           age: 16
         -
-          step: '17 year'
+          step: '17'
           value: '5,90'
           age: 17
         -
-          step: '18 year'
+          step: '18'
           value: '6,89'
           age: 18
         -
-          step: '19 year'
+          step: '19'
           value: '7,87'
           age: 19
         -
-          step: '20 year'
+          step: '20'
           value: '8,86'
           age: 20
         -
@@ -119,32 +119,33 @@ GlastuinbouwscaleA:
     -
       'c':
         -
-          step: '15 year'
+          step: '15'
           value: '4,58'
           age: 15
         -
-          step: '16 year'
+          step: '16'
           value: '5,72'
           age: 16
         -
-          step: '17 year'
+          step: '17'
           value: '6,86'
           age: 17
         -
-          step: '18 year'
+          step: '18'
           value: '8,01'
           age: 18
         -
-          step: '19 year'
+          step: '19'
           value: '9,15'
           age: 19
         -
-          step: '20 year'
+          step: '20'
           value: '10,30'
           age: 20
         -
           step: '1'
           value: '11,44'
+          default: TRUE
         -
           step: '2'
           value: '11,65'
@@ -172,32 +173,33 @@ GlastuinbouwscaleA:
     -
       'd':
         -
-          step: '15 year'
+          step: '15'
           value: '4,87'
           age: 15
         -
-          step: '16 year'
+          step: '16'
           value: '6,09'
           age: 16
         -
-          step: '17 year'
+          step: '17'
           value: '7,31'
           age: 17
         -
-          step: '18 year'
+          step: '18'
           value: '8,53'
           age: 18
         -
-          step: '19 year'
+          step: '19'
           value: '9,74'
           age: 19
         -
-          step: '20 year'
+          step: '20'
           value: '10,96'
           age: 20
         -
           step: '1'
           value: '12,18'
+          default: TRUE
         -
           step: '2'
           value: '12,35'
@@ -225,32 +227,33 @@ GlastuinbouwscaleA:
     -
       'e':
         -
-          step: '15 year'
+          step: '15'
           value: '5,11'
           age: 15
         -
-          step: '16 year'
+          step: '16'
           value: '6,39'
           age: 16
         -
-          step: '17 year'
+          step: '17'
           value: '7,67'
           age: 17
         -
-          step: '18 year'
+          step: '18'
           value: '8,95'
           age: 18
         -
-          step: '19 year'
+          step: '19'
           value: '10,22'
           age: 19
         -
-          step: '20 year'
+          step: '20'
           value: '11,50'
           age: 20
         -
           step: '1'
           value: '12,78'
+          default: TRUE
         -
           step: '2'
           value: '12,99'
@@ -278,32 +281,33 @@ GlastuinbouwscaleA:
     -
       'f':
         -
-          step: '15 year'
+          step: '15'
           value: '5,37'
           age: 15
         -
-          step: '16 year'
+          step: '16'
           value: '6,71'
           age: 16
         -
-          step: '17 year'
+          step: '17'
           value: '8,05'
           age: 17
         -
-          step: '18 year'
+          step: '18'
           value: '9,39'
           age: 18
         -
-          step: '19 year'
+          step: '19'
           value: '10,74'
           age: 19
         -
-          step: '20 year'
+          step: '20'
           value: '12,08'
           age: 20
         -
           step: '1'
           value: '13,42'
+          default: TRUE
         -
           step: '2'
           value: '13,58'
@@ -331,32 +335,33 @@ GlastuinbouwscaleA:
     -
       'g':
         -
-          step: '15 year'
+          step: '15'
           value: '5,58'
           age: 15
         -
-          step: '16 year'
+          step: '16'
           value: '6,98'
           age: 16
         -
-          step: '17 year'
+          step: '17'
           value: '8,38'
           age: 17
         -
-          step: '18 year'
+          step: '18'
           value: '9,77'
           age: 18
         -
-          step: '19 year'
+          step: '19'
           value: '11,17'
           age: 19
         -
-          step: '20 year'
+          step: '20'
           value: '12,56'
           age: 20
         -
           step: '1'
           value: '13,96'
+          default: TRUE
         -
           step: '2'
           value: '14,13'
@@ -384,32 +389,33 @@ GlastuinbouwscaleA:
     -
       'h':
         -
-          step: '15 year'
+          step: '15'
           value: '5,80'
           age: 15
         -
-          step: '16 year'
+          step: '16'
           value: '7,25'
           age: 16
         -
-          step: '17 year'
+          step: '17'
           value: '8,69'
           age: 17
         -
-          step: '18 year'
+          step: '18'
           value: '10,14'
           age: 18
         -
-          step: '19 year'
+          step: '19'
           value: '11,59'
           age: 19
         -
-          step: '20 year'
+          step: '20'
           value: '13,04'
           age: 20
         -
           step: '1'
           value: '14,49'
+          default: TRUE
         -
           step: '2'
           value: '14,66'

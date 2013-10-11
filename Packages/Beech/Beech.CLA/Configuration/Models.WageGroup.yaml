@@ -1,0 +1,14 @@
+'Beech.CLA.Domain.Model.WageGroup':
+  properties:
+    'wageGroupName':
+      label: 'wageGroup'
+    'wage':
+      label: 'Wage'
+      type: 'Beech\CLA\Domain\Model\Wage'
+    'jobDescription':
+      label: 'JobDescription'
+      type: 'Beech\CLA\Domain\Model\JobDescription'
+    'orbaStart':
+      label: 'Orba points start'
+    'orbaEnd':
+      label: 'orba points end'

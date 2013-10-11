@@ -42,3 +42,4 @@ minimumWage:
           step: 23
           value: '1469,40'
           age: 23
+          default: TRUE

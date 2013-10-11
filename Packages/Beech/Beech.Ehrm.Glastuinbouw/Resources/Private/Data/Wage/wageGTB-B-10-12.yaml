@@ -4,52 +4,53 @@ GlastuinbouwscaleB:
         wageName: 'glastuinbouwScaleB'
         wageStartDate: '01-09-2013'
         wageEndDate: '01-07-2013'
-        wageType: 'hour'
+        wageUnit: 'hour'
         'wageGroup':
           'b':
             -
-              step: '15 year'
+              step: '15'
               wage: '* 0,40'
-              age: '15 year'
-              type: 'calculation'
+              age: '15'
+              wageType: 'calculation'
             -
-              step: '16 year'
+              step: '16'
               wage: '* 0,50'
-              age: '16 year'
-              type: 'calculation'
+              age: '16'
+              wageType: 'calculation'
             -
-              step: '17 year'
+              step: '17'
               wage: '* 0,60'
-              age: '17 year'
-              type: 'calculation'
+              age: '17'
+              wageType: 'calculation'
             -
-              step: '18 year'
+              step: '18'
               wage: '* 0,70'
-              age: '18 year'
-              type: 'calculation'
+              age: '18'
+              wageType: 'calculation'
             -
-              step: '19 year'
+              step: '19'
               wage: '* 0,80'
-              age: '19 year'
-              type: 'calculation'
+              age: '19'
+              wageType: 'calculation'
             -
-              step: '20 year'
+              step: '20'
               wage: '* 0,90'
-              age: '20 year'
-              type: 'calculation'
+              age: '20'
+              wageType: 'calculation'
             -
               step: '1'
               wage: '* 1'
               age: '1'
-              type: 'calculation'
+              wageType: 'calculation'
+              default: TRUE
             -
               step: '2'
               wage: '* 1,017'
-              type: 'calculation'
+              wageType: 'calculation'
             -
               step: '3'
               wage: '* 1,031'
-              type: 'calculation'
+              wageType: 'calculation'
             -
               step: '4'
               wage: '9,25'
@@ -68,32 +69,33 @@ GlastuinbouwscaleB:
         -
           'c':
             -
-              step: '15 year'
+              step: '15'
               wage: '3,98'
-              age: '15 year'
+              age: '15'
             -
-              step: '16 year'
+              step: '16'
               wage: '4,97'
-              age: '16 year'
+              age: '16'
             -
-              step: '17 year'
+              step: '17'
               wage: '5,96'
-              age: '17 year'
+              age: '17'
             -
-              step: '18 year'
+              step: '18'
               wage: '6,96'
-              age: '18 year'
+              age: '18'
             -
-              step: '19 year'
+              step: '19'
               wage: '7,95'
-              age: '19 year'
+              age: '19'
             -
-              step: '20 year'
+              step: '20'
               wage: '8,95'
-              age: '20 year'
+              age: '20'
             -
               step: '1'
               wage: '9,94'
+              default: TRUE
             -
               step: '2'
               wage: '10,34'
@@ -118,32 +120,33 @@ GlastuinbouwscaleB:
         -
           'd':
             -
-              step: '15 year'
+              step: '15'
               wage: '4,04'
-              age: '15 year'
+              age: '15'
             -
-              step: '16 year'
+              step: '16'
               wage: '5,06'
-              age: '16 year'
+              age: '16'
             -
-              step: '17 year'
+              step: '17'
               wage: '6,07'
-              age: '17 year'
+              age: '17'
             -
-              step: '18 year'
+              step: '18'
               wage: '7,08'
-              age: '18 year'
+              age: '18'
             -
-              step: '19 year'
+              step: '19'
               wage: '8,09'
-              age: '19 year'
+              age: '19'
             -
-              step: '20 year'
+              step: '20'
               wage: '9,1'
-              age: '20 year'
+              age: '20'
             -
               step: '1'
               wage: '10,11'
+              default: TRUE
             -
               step: '2'
               wage: '10,52'
@@ -168,32 +171,33 @@ GlastuinbouwscaleB:
         -
           'e':
             -
-              step: '15 year'
+              step: '15'
               wage: '4,21'
-              age: '15 year'
+              age: '15'
             -
-              step: '16 year'
+              step: '16'
               wage: '5,26'
-              age: '16 year'
+              age: '16'
             -
-              step: '17 year'
+              step: '17'
               wage: '6,31'
-              age: '17 year'
+              age: '17'
             -
-              step: '18 year'
+              step: '18'
               wage: '7,36'
-              age: '18 year'
+              age: '18'
             -
-              step: '19 year'
+              step: '19'
               wage: '8,42'
-              age: '19 year'
+              age: '19'
             -
-              step: '20 year'
+              step: '20'
               wage: '9,47'
-              age: '20 year'
+              age: '20'
             -
               step: '1'
               wage: '10,52'
+              default: TRUE
             -
               step: '2'
               wage: '10,94'
@@ -221,32 +225,33 @@ GlastuinbouwscaleB:
         -
           'f':
             -
-              step: '15 year'
+              step: '15'
               wage: '4,42'
-              age: '15 year'
+              age: '15'
             -
-              step: '16 year'
+              step: '16'
               wage: '5,53'
-              age: '16 year'
+              age: '16'
             -
-              step: '17 year'
+              step: '17'
               wage: '6,63'
-              age: '17 year'
+              age: '17'
             -
-              step: '18 year'
+              step: '18'
               wage: '7,74'
-              age: '18 year'
+              age: '18'
             -
-              step: '19 year'
+              step: '19'
               wage: '8,84'
-              age: '19 year'
+              age: '19'
             -
-              step: '20 year'
+              step: '20'
               wage: '9,95'
-              age: '20 year'
+              age: '20'
             -
               step: '1'
               wage: '11,05'
+              default: TRUE
             -
               step: '2'
               wage: '11,49'
@@ -277,32 +282,33 @@ GlastuinbouwscaleB:
         -
           'g':
             -
-              step: '15 year'
+              step: '15'
               wage: '4,69'
-              age: '15 year'
+              age: '15'
             -
-              step: '16 year'
+              step: '16'
               wage: '5,86'
-              age: '16 year'
+              age: '16'
             -
-              step: '17 year'
+              step: '17'
               wage: '7,03'
-              age: '17 year'
+              age: '17'
             -
-              step: '18 year'
+              step: '18'
               wage: '8,2'
-              age: '18 year'
+              age: '18'
             -
-              step: '19 year'
+              step: '19'
               wage: '9,38'
-              age: '19 year'
+              age: '19'
             -
-              step: '20 year'
+              step: '20'
               wage: '10,55'
-              age: '20 year'
+              age: '20'
             -
               step: '1'
               wage: '11,72'
+              default: TRUE
             -
               step: '2'
               wage: '12,19'
@@ -336,32 +342,33 @@ GlastuinbouwscaleB:
         -
           'h':
             -
-              step: '15 year'
+              step: '15'
               wage: '5,1'
-              age: '15 year'
+              age: '15'
             -
-              step: '16 year'
+              step: '16'
               wage: '6,38'
-              age: '16 year'
+              age: '16'
             -
-              step: '17 year'
+              step: '17'
               wage: '7,66'
-              age: '17 year'
+              age: '17'
             -
-              step: '18 year'
+              step: '18'
               wage: '8,93'
-              age: '18 year'
+              age: '18'
             -
-              step: '19 year'
+              step: '19'
               wage: '10,21'
-              age: '19 year'
+              age: '19'
             -
-              step: '20 year'
+              step: '20'
               wage: '11,48'
-              age: '20 year'
+              age: '20'
             -
               step: '1'
               wage: '12,76'
+              default: TRUE
             -
               step: '2'
               wage: '13,29'
