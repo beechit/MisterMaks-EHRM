@@ -13,8 +13,12 @@
           'mobileNumber': 'Mobile number'
           'foreignNumber': 'Foreign number'
 #          'other': 'Other'
+      validation:
+        -
+          type: 'NotEmpty'
     'phoneNumber':
       label: 'Phone Number'
+# validation is done in phonevalidator.
     'primary':
       label: 'Primary'
       options:

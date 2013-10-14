@@ -7,6 +7,8 @@
           type: 'StringLength'
           options:
             maximum: 35
+        -
+          type: 'NotEmpty'
     'type':
       label: 'Company type'
       options:
@@ -18,9 +20,7 @@
       default: 'department'
       validation:
         -
-          type: 'StringLength'
-          options:
-            maximum: 20
+          type: 'NotEmpty'
     'departments':
       label: 'Departments'
       type: 'Beech\Party\Domain\Model\Company'
@@ -36,7 +36,7 @@
             maximum: 99999999
 #    'policyNumberAbsenceInsurer':
 #      label: 'Policy Number Absence Insurer'
-#      validation:
+#       validation:
 #        -
 #          type: 'RegularExpression'
 #          options:
@@ -47,7 +47,7 @@
       label: 'LegalForm'
       options:
         values:
-#          'subsidairy': 'Subsidiary'
+#         'subsidairy': 'Subsidiary'
           'department': 'Department'
           'solePropietorship': 'Sole Proprietorship'
           'vof': 'V.O.F.'
@@ -57,6 +57,8 @@
           type: 'StringLength'
           options:
             maximum: 20
+        -
+          type: 'NotEmtpty'
     'chamberOfCommerce':
       label: 'Chamber of commerce number'
       validation:
@@ -71,17 +73,17 @@
           type: 'StringLength'
           options:
             maximum: 14
-#    'wageTaxNumber':
-#      label: 'wage Tax Number'
-#      validation:
-#        -
-#          type: 'RegularExpression'
-#          options:
-#            regularExpression: '/[0-9]{9}L[0-9]{2}/'
-#        -
-#          type: 'Stringlength'
-#          options:
-#            maximum: 9
+    'wageTaxNumber':
+      label: 'wage Tax Number'
+      validation:
+        -
+          type: 'RegularExpression'
+          options:
+            regularExpression: '/[0-9]{9}L[0-9]{2}/'
+        -
+          type: 'Stringlength'
+          options:
+            maximum: 9
     'description':
       label: 'Company description'
       validation:

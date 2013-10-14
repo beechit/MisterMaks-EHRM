@@ -2,12 +2,21 @@
   properties:
     person:
       type: 'Beech\Party\Domain\Model\Person'
+      validation:
+        -
+          type: 'NotEmpty'
     absenceArrangement:
       type: 'Beech\Absence\Domain\Model\AbsenceArrangement'
+      validation:
+        -
+          type: 'NotEmpty'
     department:
       type: 'Beech\Party\Domain\Model\Company'
     absenceType:
       label: 'absenceType'
+      validation:
+        -
+          type: 'NotEmpty'
     startDate:
       label: 'Startdate'
       validation:
@@ -16,20 +25,8 @@
           options:
             earliestDate: 20130101
             latestDate: 20200101
-    startTime:
-      label: 'starttime'
-      default: now
-    endDate:
-      label: 'Enddate'
-      validation:
         -
-          type: 'DateTimeRange'
-          options:
-            earliestDate: 20130101
-            latestDate: 20200101
-    endTime:
-      label: 'end time'
-      default: now
+          type: 'NotEmpty'
     hours:
       label: 'Hours'
       type: 'float'
@@ -57,10 +54,16 @@
           'other': 'Other'
           'inPerson': 'In person'
       default: 'phone'
+      validation:
+        -
+          type: 'NotEmpty'
     reportedTo:
       label: 'Reported to'
       default: 'currentUser'
       type: 'Beech\Party\Domain\Model\Person'
+      validation:
+        -
+          type: 'NotEmpty'
 # Specific fields for Leave requests.
     requestStatus:
       label: 'Status'
@@ -96,6 +99,7 @@
       label: 'Reported recovery to'
       default: 'currentUser'
       type: 'Beech\Party\Domain\Model\Person'
+      validation:
     recoveryRegistrationDate:
       default: 'now'
       label: 'creation date'

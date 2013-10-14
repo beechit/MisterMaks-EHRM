@@ -25,6 +25,8 @@
           type: 'StringLength'
           options:
             maximum: 35
+        -
+          type: 'NotEmpty'
     'primaryPost':
       label: 'Primary postaddress'
       options:
@@ -64,6 +66,9 @@
             maximum: 10
     'postal':
       label: 'Postal code'
+      validation:
+        -
+          type: 'NotEmpty'
     'residence':
       label: 'Residence'
       validation:
@@ -71,6 +76,8 @@
           type: 'StringLength'
           options:
             maximum: 35
+        -
+          type: 'NotEmpty'
     'country':
       label: 'Country'
       validation:
@@ -78,7 +85,10 @@
           type: 'StringLength'
           options:
             maximum: 30
+        -
+          type: 'NotEmpty'
       default: 'NL'
+
     'primary':
       label: 'Primary'
       options:

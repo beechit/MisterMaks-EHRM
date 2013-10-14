@@ -10,6 +10,9 @@
          'emergencyResponce': 'Emergency response'
          'cropProtection': 'Crop protection'
          'other': 'Other'
+      validation:
+        -
+          type: 'NotEmpty'
 # todo make these values generic and move crop protection and so to branch package.
     'name':
       label: 'Licence name'
@@ -18,6 +21,8 @@
           type: 'StringLength'
           options:
             maximum: 35
+        -
+          type: 'NotEmpty'
     'grantedBy':
       label: 'Granted by institute'
       validation:
@@ -28,6 +33,9 @@
     'startDate':
       type: 'DateTime'
       label: 'licenceStart'
+      validation:
+        -
+          type: 'NotEmpty'
     'expirationDate':
       label: 'Licence expiration date'
       type: 'DateTime'

@@ -63,6 +63,8 @@
           type: 'StringLength'
           options:
             maximum: 10
+        -
+          type: 'NotEmpty'
     'dateOfBirth':
       label: 'Date of Birth'
       type: 'DateTime'
@@ -80,6 +82,9 @@
         values:
           'male': 'Male'
           'female': 'Female'
+      validation:
+        -
+          type: 'NotEmpty'
     'salutation':
       label: 'Salutation'
       options:
@@ -128,6 +133,7 @@
         values:
           'active': 'Active'
           'achived': 'Archived'
+      default: 'active'
     'majorShareholder':
       label: 'Major shareholder'
       options:

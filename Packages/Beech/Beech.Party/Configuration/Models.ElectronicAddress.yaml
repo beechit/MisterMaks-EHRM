@@ -13,8 +13,12 @@
 #         'twitter': 'Twitter'
 #         'facebook': 'Facebook'
          'linkedin': 'LinkedIn'
+      validation:
+        -
+          type: 'NotEmpty'
     'address':
       label: 'Electronic address'
+# validation is done in electronic address validator.
     'primary':
       label: 'Primary'
       options:

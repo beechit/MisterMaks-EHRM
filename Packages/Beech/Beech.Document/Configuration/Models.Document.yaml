@@ -9,6 +9,9 @@
           type: 'NotEmpty'
     'documentType':
       label: 'DocumentType'
+      validation:
+        -
+          type: 'NotEmpty'
     'resources':
       validation:
         -
@@ -18,6 +21,9 @@
     'uploadDate':
       label: 'UploadDate'
       default: 'now'
+      validation:
+        -
+          type: 'NotEmpty'
     'number':
       label: 'Document Number'
     'period':
@@ -58,9 +64,6 @@
         values:
           - TRUE
           - FALSE
-    'accessGroup':
-      label: 'AccesGroup'
-      type: 'Beech\Person\Domain\Model\Group'
     'documentDescription':
       label: 'Description'
       validation:

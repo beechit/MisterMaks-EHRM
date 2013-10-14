@@ -8,11 +8,15 @@
         values:
           'bank': 'Bank'
           'foreignBank': 'ForeignBank'
+      validation:
+        -
+          type: 'NotEmpty'
 #todo check regular expression
     'accountNumber':
       label: 'Account number'
-#        -
-#          type: 'NotEmpty'
+      validation:
+        -
+          type: 'NotEmpty'
     'primary':
       label: 'Primary'
       options:
@@ -20,11 +24,6 @@
           - FALSE
           - TRUE
       default: FALSE
-#    'bic':
-#      label: 'Bic code'
-#      validation:
-#        -
-#          type: 'Bic'
     'bankName':
       label: 'Bank name'
       validation:
@@ -44,9 +43,7 @@
       label: 'Country bank'
       validation:
         -
-          type: 'StringLength'
-          options:
-            maximum: 40
+          type: 'NotEmpty'
     'description':
       label: 'Bank description'
       validation:

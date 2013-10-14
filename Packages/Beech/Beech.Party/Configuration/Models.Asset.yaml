@@ -2,6 +2,9 @@
   properties:
     'party':
       type: 'TYPO3\Party\Domain\Model\AbstractParty'
+      validation:
+        -
+          type: 'NotEmpty'
     'name':
       label: 'Assent name'
       validation:
@@ -9,6 +12,8 @@
           type: 'StringLength'
           options:
             maximum: 35
+        -
+          type: 'NotEmpty'
     'department':
       label: 'Department'
       type: 'Beech\Party\Domain\Model\Company'
@@ -21,6 +26,9 @@
          'tools': 'Tools'
          'car': 'Car'
          'other': 'Other'
+      validation:
+        -
+          type: 'NotEmpty'
     'model':
       label: 'Model'
       validation:
@@ -38,10 +46,16 @@
     'startDate':
       type: 'DateTime'
       label: 'Provision date'
+      validation:
+        -
+          type: 'NotEmpty'
     'provisionedBy':
       label: 'ProvisionedBy'
       type: 'TYPO3\Party\Domain\Model\AbstractParty'
       default: 'currentUser'
+      validation:
+        -
+          type: 'NotEmpty'
     'returned':
       label: 'Returned'
       options:
