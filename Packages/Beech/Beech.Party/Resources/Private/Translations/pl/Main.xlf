@@ -1218,6 +1218,42 @@
 				<source>Add a phone number</source>
 				<target></target>
 			</trans-unit>
+			<trans-unit id="department">
+				<source>Department</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="subsidairy">
+				<source>Subsidairy</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="solePropietorship">
+				<source>SolePropietorship</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="bv">
+				<source>B.V.</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="vof">
+				<source>V.O.F.</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="companyType">
+				<source>Type of company</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="companyType">
+				<source>companyType</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="Company name">
+				<source>Company name</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company Name">
+				<source>Name of department or company</source>
+				<target></target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

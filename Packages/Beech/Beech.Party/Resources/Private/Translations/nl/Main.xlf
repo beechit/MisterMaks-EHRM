@@ -1730,6 +1730,42 @@
 				<source>Home phone number</source>
 				<target>Privé nummer</target>
 			</trans-unit>
+			<trans-unit id="department">
+				<source>Department</source>
+				<target>Afdeling</target>
+			</trans-unit>
+			<trans-unit id="subsidairy">
+				<source>Subsidairy</source>
+				<target>Dochter onderneming</target>
+			</trans-unit>
+			<trans-unit id="solePropietorship">
+				<source>SolePropietorship</source>
+				<target>Eenmanszaak</target>
+			</trans-unit>
+			<trans-unit id="bv">
+				<source>B.V.</source>
+				<target>Besloten Venootschap</target>
+			</trans-unit>
+			<trans-unit id="vof">
+				<source>V.O.F.</source>
+				<target>Vennootschap onder firma</target>
+			</trans-unit>
+			<trans-unit id="companyType">
+				<source>Type of company</source>
+				<target>Bedrijf</target>
+			</trans-unit>
+			<trans-unit id="companyType">
+				<source>companyType</source>
+				<target>Soort bedrijf(sonderdeel)</target>
+			</trans-unit>
+			<trans-unit id="Company name">
+				<source>Company name</source>
+				<target>Naam bedrijf(sonderdeel)</target>
+			</trans-unit>
+			<trans-unit id="company Name">
+				<source>Name of department or company</source>
+				<target>Naam van bedrijfs(onderdeel)</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

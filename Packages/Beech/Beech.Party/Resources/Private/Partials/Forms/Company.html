@@ -5,21 +5,21 @@
 			<div class="control-group">
 					<label class="control-label" for="companyType"><f:translate id="companyType">Company type </f:translate></label>
 				<div class="controls controls">
-					<ehrm:optionSelect property="type" id="companyType" class="span6" model="Beech.Party:Company" placeholder="{f:translate(id:'Company type')}"/>
+					<ehrm:optionSelect property="type" id="companyType" class="span6" model="Beech.Party:Company" placeholder="{f:translate(id:'companyType')}" translate="{by: 'id'}"/>
 				</div>
 			</div>
 		</f:else>
 	</f:if>
 	<div class="control-group">
-		<label class="control-label" for="name"><f:translate id="Company name">Company name</f:translate></label>
+		<label class="control-label" for="companyName"><f:translate id="Company name">Company name</f:translate></label>
 		<div class="controls controls">
-			<f:form.textfield property="name" id="companyName" class="span7" placeholder="{f:translate(id:'companyName')}"/>
+			<f:form.textfield property="name" id="companyName" class="span7" placeholder="{f:translate(id:'company Name')}"/>
 		</div>
 	</div>
 	<div class="control-group">
 		<label class="control-label" for="legalForm"><f:translate id="legalForm">Legal form</f:translate></label>
 		<div class="controls controls">
-			<ehrm:optionSelect property="legalForm" id="legalForm" class="span6" model="Beech.Party:Company" placeholder="{f:translate(id:'Legal form')}" translate="{by: 'id'}"/>
+			<ehrm:optionSelect property="legalForm" id="legalForm" class="span6" model="Beech.Party:Company" placeholder="{f:translate(id:'legalForm')}" translate="{by: 'id'}"/>
 		</div>
 	</div>
 
