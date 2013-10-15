@@ -24,11 +24,13 @@ class DocumentTypeRepository extends \Radmiraal\CouchDB\Persistence\AbstractRepo
 		$documentCategories = array();
 		$documentTypes = $this->findAll();
 		foreach ($documentTypes as $documentType) {
-			$categoryName = $documentType->getCategoryName();
-			if (!isset($documentCategories[$categoryName])) {
-				$documentCategories[$categoryName] =  array();
+			if ($documentType->getDocument()) {
+				$categoryName = $documentType->getCategoryName();
+				if (!isset($documentCategories[$categoryName])) {
+					$documentCategories[$categoryName] =  array();
+				}
+				$documentCategories[$categoryName][$documentType->getId()] = $documentType;
 			}
-			$documentCategories[$categoryName][$documentType->getId()] = $documentType;
 		}
 		return $documentCategories;
 	}

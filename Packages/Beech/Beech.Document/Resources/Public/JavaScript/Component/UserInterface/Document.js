@@ -13,11 +13,27 @@
 	$('.form-newDocument').find('.documentName').on('blur keyup', verifyDocument);
 
 	$('select.documentType').on('change', function() {
-		if ($(this).find('option:selected').attr('expiration')) {
-			$('#expiration').parents('.control-group').removeClass('hide');
-		} else {
-			$('#expiration').parents('.control-group').addClass('hide').val('');
+		var selected = $(this).find('option:selected');
 
+		if (selected.attr('expiration')) {
+			$('#documentExpiration').parents('.control-group').removeClass('hide');
+		} else {
+			$('#documentExpiration').parents('.control-group').addClass('hide').val('');
+		}
+		if (selected.attr('number')) {
+			$('#documentNumber').parents('.control-group').removeClass('hide');
+		} else {
+			$('#documentNumber').parents('.control-group').addClass('hide').val('');
+		}
+		if (selected.attr('period')) {
+			$('#documentPeriod').parents('.control-group').removeClass('hide');
+		} else {
+			$('#documentPeriod').parents('.control-group').addClass('hide').val('');
+		}
+		if (selected.attr('year')) {
+			$('#documentYear').parents('.control-group').removeClass('hide');
+		} else {
+			$('#documentYear').parents('.control-group').addClass('hide').val('');
 		}
 	})
 	$('select.documentType').trigger('change')

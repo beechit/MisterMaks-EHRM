@@ -125,6 +125,18 @@ class SelectViewHelper extends \TYPO3\Fluid\ViewHelpers\Form\SelectViewHelper {
 		if ($option->getExpiration() != '') {
 			$output.= ' expiration="'.$option->getExpiration().'"';
 		}
+
+		if ($option->getNumber() != '') {
+			$output.= ' number="'.$option->getNumber().'"';
+		}
+
+		if ($option->getPeriod() != '') {
+			$output.= ' period="'.$option->getPeriod().'"';
+		}
+
+		if ($option->getYear() != '') {
+			$output.= ' year="'.$option->getYear().'"';
+		}
 		$output .= '>' . htmlspecialchars($label) . '</option>';
 
 		return $output;

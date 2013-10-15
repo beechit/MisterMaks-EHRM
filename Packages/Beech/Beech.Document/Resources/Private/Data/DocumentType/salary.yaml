@@ -16,7 +16,7 @@ documentTypes:
     'document': TRUE
     'number': FALSE
     'period': FALSE
-    'year': FALSE
+    'year': TRUE
   -
     'categoryName': 'Salary'
     'typeName': 'Wage tax declaration'

@@ -30,7 +30,28 @@
 		<label class="control-label" for="expiration">
 			<f:translate id="expiration">Expiration date:</f:translate>
 		</label>
-		<ehrm:form.datePicker id="expiration" property="expiration" class="datepicker"/>
+		<ehrm:form.datePicker id="documentExpiration" property="expiration" class="datepicker"/>
+	</div>
+
+	<div class="control-group hide">
+		<label class="control-label" for="number">
+			<f:translate id="number">Number:</f:translate>
+		</label>
+		<f:form.textfield id="documentNumber" property="number" placeholder="{f:translate(id:'number')}..."/>
+	</div>
+
+	<div class="control-group hide">
+		<label class="control-label" for="number">
+			<f:translate id="period">Period:</f:translate>
+		</label>
+		<f:form.textfield id="documentPeriod" property="period" placeholder="{f:translate(id:'period')}..."/>
+	</div>
+
+	<div class="control-group hide">
+		<label class="control-label" for="number">
+			<f:translate id="year">Year:</f:translate>
+		</label>
+		<f:form.textfield id="documentYear" property="year" placeholder="{f:translate(id:'year')}..."/>
 	</div>
 
 	<div class="control-group">
