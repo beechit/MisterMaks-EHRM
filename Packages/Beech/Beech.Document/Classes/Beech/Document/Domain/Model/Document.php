@@ -137,9 +137,9 @@ class Document extends \Beech\Ehrm\Domain\Model\Document {
 	}
 
 	/**
-	 * @param \DateTime $expireDate
+	 * @param \DateTime $expiration
 	 */
-	public function setExpireDate($expiration = NULL) {
+	public function setExpiration($expiration = NULL) {
 		if ($expiration === NULL) {
 			$expiration = new \DateTime();
 		}
