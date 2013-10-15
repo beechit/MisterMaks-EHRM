@@ -62,7 +62,7 @@ class SelectViewHelper extends \TYPO3\Fluid\ViewHelpers\Form\SelectViewHelper {
 
 				$output .= $this->renderOptionGroupTag($value, $children);
 			} else {
-				$output .= $this->renderOptionTag($value, $this->getLabel($option)) . chr(10);
+				$output .= $this->renderOptionTag($value, $this->getLabel($option), $option) . chr(10);
 			}
 		}
 		return $output;
@@ -103,6 +103,31 @@ class SelectViewHelper extends \TYPO3\Fluid\ViewHelpers\Form\SelectViewHelper {
 	 */
 	protected function renderOptionGroupTag($label, $options) {
 		return '<optgroup label="' . htmlspecialchars($label) . '">' . $this->renderOptionTags($options) . '</optgroup>';
+	}
+
+	/**
+	 * Render one option tag
+	 *
+	 * @param string $value value attribute of the option tag (will be escaped)
+	 * @param string $label content of the option tag (will be escaped)
+	 * @return string the rendered option tag
+	 */
+	protected function renderOptionTag($value, $label, $option = NULL) {
+		$output = '<option value="' . htmlspecialchars($value) . '"';
+		if ($this->isSelected($value)) {
+			$output .= ' selected="selected"';
+		}
+
+		if ($this->hasArgument('translate')) {
+			$label = $this->getTranslatedLabel($value, $label);
+		}
+
+		if ($option->getExpiration() != '') {
+			$output.= ' expiration="'.$option->getExpiration().'"';
+		}
+		$output .= '>' . htmlspecialchars($label) . '</option>';
+
+		return $output;
 	}
 }
 
