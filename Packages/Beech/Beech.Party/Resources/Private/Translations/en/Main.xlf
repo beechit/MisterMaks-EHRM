@@ -831,7 +831,7 @@
 				<source>Relative</source>
 			</trans-unit>
 			<trans-unit id="relations">
-			 <source>Relations</source>
+			 	<source>Relations</source>
 			</trans-unit>
 			<trans-unit id="relationType">
 				<source>Relation type</source>
@@ -868,6 +868,18 @@
 			</trans-unit>
 			<trans-unit id="company Name">
 				<source>Name of department or company</source>
+			</trans-unit>
+			<trans-unit id="actions">
+				<source>Actions</source>
+			</trans-unit>
+			<trans-unit id="remove">
+				<source>Delete</source>
+			</trans-unit>
+			<trans-unit id="download">
+				<source>Download</source>
+			</trans-unit>
+			<trans-unit id="jobPosition">
+				<source>Job position</source>
 			</trans-unit>
 		</body>
 	</file>

@@ -420,6 +420,30 @@
 				<source>Year report</source>
 				<target>Jaaropgave</target>
 			</trans-unit>
+			<trans-unit id="year">
+				<source>Year</source>
+				<target>Jaar</target>
+			</trans-unit>
+			<trans-unit id="number">
+				<source>Number</source>
+				<target>Nummer</target>
+			</trans-unit>
+			<trans-unit id="expiration">
+				<source>Expiration</source>
+				<target>Verloop datum</target>
+			</trans-unit>
+			<trans-unit id="required">
+				<source>Required</source>
+				<target>Vereist</target>
+			</trans-unit>
+			<trans-unit id="remove">
+				<source>Delete</source>
+				<target>Verwijder</target>
+			</trans-unit>
+			<trans-unit id="download">
+				<source>Download</source>
+				<target>Download</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

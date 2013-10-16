@@ -1254,6 +1254,22 @@
 				<source>Name of department or company</source>
 				<target></target>
 			</trans-unit>
+			<trans-unit id="actions">
+				<source>Actions</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="remove">
+				<source>Delete</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="download">
+				<source>Download</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="jobPosition">
+				<source>Job position</source>
+				<target></target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

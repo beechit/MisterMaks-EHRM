@@ -20,10 +20,11 @@
       label: 'Document'
     'uploadDate':
       label: 'UploadDate'
+      type: 'DateTime'
       default: 'now'
-      validation:
-        -
-          type: 'NotEmpty'
+#      validation:
+#        -
+#          type: 'NotEmpty'
     'number':
       label: 'Document Number'
     'period':
