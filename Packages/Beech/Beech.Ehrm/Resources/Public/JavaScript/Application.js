@@ -52,7 +52,7 @@
 			for (var i = 0; i < breadcrumbTemp.length ; i++) {
 
 				var element = breadcrumbTemp[i];
-				if (element != "#" && element != '' && element != 'index' && element != 'show' && element != 'edit' && element != 'list' ) {
+				if (element != "#" && element != '' && element != 'index' && element != 'show' && element != 'edit' && element != 'list' && element != 'overview') {
 					// remove package name
 					element = element.replace(new RegExp('^('+regexContent+')', 'g'), '')
 					element = {
