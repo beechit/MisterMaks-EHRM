@@ -37,7 +37,8 @@
 						<f:translate id="sickness.absenceType">Sickness type</f:translate>
 					</label>
 					<div class="controls">
-						<f:form.select property="absenceArrangement" class="absenceArrangement" options="{absenceArrangements}" optionLabelField="label" translate="{by: 'label'}"/>
+						<f:form.select property="absenceArrangement" class="absenceArrangement" options="{absenceArrangements}"
+							optionLabelField="label" translate="{by: 'label'}" prependOptionLabel="{f:translate(id: 'absence.selectAbsenceArrangement')}"/>
 					</div>
 				</div>
 				<div class="control-group">

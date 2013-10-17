@@ -16,58 +16,75 @@
 
 <f:form method="post" action="create" name="document" object="{document}" class="form-horizontal form-newDocument" enctype="multipart/form-data">
 	<input type="hidden" name="iscomplete" value="true" data-validate="isComplete"/>
-	<div class="control-group">
-		<label class="control-label" for="documentName">
-			<f:translate id="documentName">Document name:</f:translate>
-		</label>
-		<f:form.textfield property="name" class="documentName" placeholder="{f:translate(id:'documentName')}..."/>
-	</div>
-	<div class="control-group">
-		<label class="control-label" for="documentType">Document category</label>
-		<ehrm:form.select property="documentType" class="documentType" options="{documentCategories}" translate="{by: 'label'}" optionLabelField="typeName"/>
-	</div>
-	<div class="control-group hide">
-		<label class="control-label" for="expiration">
-			<f:translate id="expiration">Expiration date:</f:translate>
-		</label>
-		<ehrm:form.datePicker id="documentExpiration" property="expiration" class="datepicker"/>
-	</div>
-
-	<div class="control-group hide">
-		<label class="control-label" for="number">
-			<f:translate id="number">Number:</f:translate>
-		</label>
-		<f:form.textfield id="documentNumber" property="number" placeholder="{f:translate(id:'number')}..."/>
-	</div>
-
-	<div class="control-group hide">
-		<label class="control-label" for="number">
-			<f:translate id="period">Period:</f:translate>
-		</label>
-		<f:form.textfield id="documentPeriod" property="period" placeholder="{f:translate(id:'period')}..."/>
-	</div>
-
-	<div class="control-group hide">
-		<label class="control-label" for="number">
-			<f:translate id="year">Year:</f:translate>
-		</label>
-		<f:form.textfield id="documentYear" property="year" placeholder="{f:translate(id:'year')}..."/>
-	</div>
-
-	<div class="control-group">
-		<label class="control-label" for="required"><f:translate id="required">Required</f:translate></label>
-		<span class="add-on"><f:form.checkbox property="required" id="required" value="TRUE"/></span>
-	</div>
-
-	<div class="control-group">
-		<label class="control-label" for="documentAttachment"></label>
-		<f:form.upload property="resources.0" class="documentAttachment"/>
-		<span class="info-documentAttachment"><f:translate id="NameAttachmentAreRequired">* To save, name & attachment is required</f:translate><span>
-	</div>
-	<div class="control-group hide control-documentSubmit" >
-		<label class="control-label" for="submit">&nbsp;</label>
-		<f:form.submit value="{f:translate(id:'document.upload')}" class="btn btn-primary"/>
-	</div>
 	<f:form.hidden property="party" value="{party}"/>
+
+	<div class="content-padding">
+		<div class="control-group">
+			<label class="control-label" for="documentName">
+				<f:translate id="documentName">Document name:</f:translate>
+			</label>
+			<div class="controls">
+				<f:form.textfield property="name" class="documentName" placeholder="{f:translate(id:'documentName')}..."/>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="documentType">
+				<f:translate id="documentType">Document type</f:translate>
+			</label>
+			<div class="controls">
+				<ehrm:form.select property="documentType" class="documentType" options="{documentCategories}"
+								  optionLabelField="typeName" prependOptionLabel="{f:translate(id: 'selectDocumentType')}"/>
+			</div>
+		</div>
+		<div class="control-group hide">
+			<label class="control-label" for="expiration">
+				<f:translate id="expiration">Expiration date:</f:translate>
+			</label>
+			<ehrm:form.datePicker id="documentExpiration" property="expiration" class="datepicker"/>
+		</div>
+
+		<div class="control-group hide">
+			<label class="control-label" for="number">
+				<f:translate id="number">Number:</f:translate>
+			</label>
+			<div class="controls">
+				<f:form.textfield id="documentNumber" property="number" placeholder="{f:translate(id:'number')}..."/>
+			</div>
+		</div>
+
+		<div class="control-group hide">
+			<label class="control-label" for="number">
+				<f:translate id="period">Period:</f:translate>
+			</label>
+			<div class="controls">
+				<f:form.textfield id="documentPeriod" property="period" placeholder="{f:translate(id:'period')}..."/>
+			</div>
+		</div>
+
+		<div class="control-group hide">
+			<label class="control-label" for="number">
+				<f:translate id="year">Year:</f:translate>
+			</label>
+			<div class="controls">
+				<f:form.textfield id="documentYear" property="year" placeholder="{f:translate(id:'year')}..."/>
+			</div>
+		</div>
+
+		<div class="control-group">
+			<label class="control-label" for="required"><f:translate id="required">Required</f:translate></label>
+			<span class="add-on"><f:form.checkbox property="required" id="required" value="TRUE"/></span>
+		</div>
+
+		<div class="control-group">
+			<label class="control-label" for="documentAttachment"></label>
+			<f:form.upload property="resources.0" class="documentAttachment"/>
+			<span class="info-documentAttachment"><f:translate id="NameAttachmentAreRequired">* To save, name & attachment is required</f:translate><span>
+		</div>
+	</div>
+
+	<div class="form-actions">
+		<f:form.submit value="{f:translate(id:'document.upload')}" class="btn btn-primary hide control-documentSubmit"/>
+	</div>
+
 </f:form>
 <script src="resource://Beech.Document/Public/JavaScript/Component/UserInterface/Document.js"></script>
