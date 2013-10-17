@@ -1766,6 +1766,22 @@
 				<source>Name of department or company</source>
 				<target>Naam van bedrijfs(onderdeel)</target>
 			</trans-unit>
+			<trans-unit id="actions">
+				<source>Actions</source>
+				<target>Acties</target>
+			</trans-unit>
+			<trans-unit id="remove">
+				<source>Delete</source>
+				<target>Verwijder</target>
+			</trans-unit>
+			<trans-unit id="download">
+				<source>Download</source>
+				<target>Download</target>
+			</trans-unit>
+			<trans-unit id="jobPosition">
+				<source>Job position</source>
+				<target>Bedrijfsfunctie</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
