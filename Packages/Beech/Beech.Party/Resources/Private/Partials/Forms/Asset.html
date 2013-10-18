@@ -14,11 +14,11 @@
 			<div class="row-fluid" >
 				<div class="span1"><i class="icon-plus"/></div>
 				<div class="span3">
-					<ehrm:optionSelect property="assetType" id="assetType{asset.id}" model="Beech.Party:Asset" placeholder="{f:translate(id: 'Type')}..." class="input-small" translate="{by: 'id'}"/>
+					<ehrm:optionSelect property="assetType" id="assetType{asset.id}" model="Beech.Party:Asset" placeholder="{f:translate(id: 'assetType')}..." class="input-small" translate="{by: 'id'}"/>
 				</div>
 				<div class="span7">
-					<f:form.textfield property="name"  placeholder="{f:translate(value: 'AssetName')}..." class="input-medium capitalize"/>
-					<f:form.textfield property="model"  placeholder="{f:translate(value: 'Model')}..." class="input-medium capitalize"/>
+					<f:form.textfield property="assetName"  placeholder="{f:translate(id: 'assetName')}..." class="input-medium capitalize"/>
+					<f:form.textfield property="model"  placeholder="{f:translate(id: 'model')}..." class="input-medium capitalize"/>
 				</div>
 				<div class="span1">
 					<button type="submit" name="action" class="btn btn-small" value="{action}">
@@ -37,7 +37,7 @@
 				<div class="span1"></div>
 				<div class="span3">
 					<label for="provisionDate{provision.id}">
-						<f:translate id="ProvisionDate">Provision Date</f:translate>
+						<f:translate id="provisionDate">Provision Date</f:translate>
 					</label>
 				</div>
 				<div class="span6">

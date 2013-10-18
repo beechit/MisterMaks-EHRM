@@ -322,6 +322,30 @@
 				<source>Show _MENU_ entries</source>
 				<target>Toon _MENU_ records</target>
 			</trans-unit>
+			<trans-unit id="accepted">
+				<source>Accepted</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="declined">
+				<source>Declined</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="leave.accept">
+				<source>Accept</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="leave.decline">
+				<source>Decline</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="edit">
+				<source>Edit</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="cancel">
+				<source>Cancel</source>
+				<target></target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

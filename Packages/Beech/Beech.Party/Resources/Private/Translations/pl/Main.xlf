@@ -1822,6 +1822,66 @@
 				<source>No</source>
 				<target></target>
 			</trans-unit>
+			<trans-unit id="licence.licenceType.driversLicence">
+				<source>Drivers licence</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="licence.licenceType.emergencyResponce">
+				<source>Emergency responce</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="licence.licenceType.cropProtection">
+				<source>Crop protection</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="licence.licenceType.other">
+				<source>Other</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="driversLicence">
+				<source>Drivers licence</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="emergencyResponce">
+				<source>Emergency responce</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="cropProtection">
+				<source>Crop protection</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="other">
+				<source>Other</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="grantedBy">
+				<source>Granted by</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="laptop">
+				<source>Laptop</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="tools">
+				<source>Tools</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="car">
+				<source>Lease car</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="assetType">
+				<source>Type</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="assetName">
+				<source>Name of asset</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="idNumber">
+				<source>ID number</source>
+				<target></target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

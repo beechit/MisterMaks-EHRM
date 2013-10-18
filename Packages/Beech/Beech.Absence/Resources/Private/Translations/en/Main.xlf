@@ -245,6 +245,24 @@
 			<trans-unit id="absence.sLengthMenu">
 				<source>Show _MENU_ entries</source>
 			</trans-unit>
+			<trans-unit id="accepted">
+				<source>Accepted</source>
+			</trans-unit>
+			<trans-unit id="declined">
+				<source>Declined</source>
+			</trans-unit>
+			<trans-unit id="leave.accept">
+				<source>Accept</source>
+			</trans-unit>
+			<trans-unit id="leave.decline">
+				<source>Decline</source>
+			</trans-unit>
+			<trans-unit id="edit">
+				<source>Edit</source>
+			</trans-unit>
+			<trans-unit id="cancel">
+				<source>Cancel</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

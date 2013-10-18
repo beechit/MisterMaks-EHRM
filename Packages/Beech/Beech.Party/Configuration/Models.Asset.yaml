@@ -5,7 +5,7 @@
       validation:
         -
           type: 'NotEmpty'
-    'name':
+    'assetName':
       label: 'Assent name'
       validation:
         -
@@ -43,7 +43,7 @@
           type: 'StringLength'
           options:
             maximum: 35
-    'startDate':
+    'provisionDate':
       type: 'DateTime'
       label: 'Provision date'
       validation:
@@ -53,9 +53,6 @@
       label: 'ProvisionedBy'
       type: 'TYPO3\Party\Domain\Model\AbstractParty'
       default: 'currentUser'
-      validation:
-        -
-          type: 'NotEmpty'
     'returned':
       label: 'Returned'
       options:

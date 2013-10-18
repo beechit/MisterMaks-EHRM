@@ -321,6 +321,54 @@ er				<target>% opgenomen verlof</target>
 				<source>Show _MENU_ entries</source>
 				<target>Toon _MENU_ records</target>
 			</trans-unit>
+			<trans-unit id="pending">
+				<source>Pending</source>
+				<target>In afwachting</target>
+			</trans-unit>
+			<trans-unit id="extraordinaryLeave">
+				<source>Extraordinary leave</source>
+				<target>Bijzonder verlof</target>
+			</trans-unit>
+			<trans-unit id="holiday">
+				<source>Holiday</source>
+				<target>Feestdagen</target>
+			</trans-unit>
+			<trans-unit id="vacation">
+				<source>Vacation</source>
+				<target>Vakantie</target>
+			</trans-unit>
+			<trans-unit id="doctorVisit">
+				<source>Doctor visit eg.</source>
+				<target>Bezoek aan dokter e.d.</target>
+			</trans-unit>
+			<trans-unit id="compensationHours">
+				<source>Compensation hours</source>
+				<target>Compensatie uren</target>
+			</trans-unit>
+			<trans-unit id="accepted">
+				<source>Accepted</source>
+				<target>Geaccepteerd</target>
+			</trans-unit>
+			<trans-unit id="declined">
+				<source>Declined</source>
+				<target>Afgewezen</target>
+			</trans-unit>
+			<trans-unit id="leave.accept">
+				<source>Accept</source>
+				<target>Accepteer</target>
+			</trans-unit>
+			<trans-unit id="leave.decline">
+				<source>Decline</source>
+				<target>Afwijzen</target>
+			</trans-unit>
+			<trans-unit id="edit">
+				<source>Edit</source>
+				<target>Wijzig</target>
+			</trans-unit>
+			<trans-unit id="cancel">
+				<source>Cancel</source>
+				<target>Annuleer</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

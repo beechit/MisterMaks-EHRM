@@ -911,7 +911,7 @@
 			</trans-unit>
 			<trans-unit id="asset.assetType.tools">
 				<source>Tools</source>
-				<target>Gereedschap</target>
+				<target>Gerechap</target>
 			</trans-unit>
 			<trans-unit id="asset.assetType.car">
 				<source>Car</source>
@@ -1750,7 +1750,7 @@
 				<source>Start date</source>
 				<target>Start</target>
 			</trans-unit>
-			<trans-unit id="expirationDate">
+			<trans-unit id="expiration">
 				<source>Expiration</source>
 				<target>Verloopt</target>
 			</trans-unit>
@@ -1821,6 +1821,66 @@
 			<trans-unit id="education.graduated.">
 				<source>No</source>
 				<target>Nee</target>
+			</trans-unit>
+			<trans-unit id="licence.licenceType.driversLicence">
+		`		<source>Drivers licence</source>
+				<target>Rijbewijs</target>
+			</trans-unit>
+			<trans-unit id="licence.licenceType.emergencyResponce">
+		`		<source>Emergency responce</source>
+				<target>Bedrijfshulpverlening</target>
+			</trans-unit>
+			<trans-unit id="licence.licenceType.cropProtection">
+		`		<source>Crop protection</source>
+				<target>Gewasbescherming</target>
+			</trans-unit>
+			<trans-unit id="licence.licenceType.other">
+		`		<source>Other</source>
+				<target>Anders</target>
+			</trans-unit>
+			<trans-unit id="driversLicence">
+				<source>Drivers licence</source>
+				<target>Rijbewijs</target>
+			</trans-unit>
+			<trans-unit id="emergencyResponce">
+				<source>Emergency responce</source>
+				<target>Bedrijfshulpverlening</target>
+			</trans-unit>
+			<trans-unit id="cropProtection">
+				<source>Crop protection</source>
+				<target>Gewasbescherming</target>
+			</trans-unit>
+			<trans-unit id="other">
+				<source>Other</source>
+				<target>Anders</target>
+			</trans-unit>
+			<trans-unit id="grantedBy">
+				<source>Granted by</source>
+				<target>Uitgegeven door</target>
+			</trans-unit>
+			<trans-unit id="laptop">
+				<source>Laptop</source>
+				<target>Laptop</target>
+			</trans-unit>
+			<trans-unit id="tools">
+				<source>Tools</source>
+				<target>Gereedschap</target>
+			</trans-unit>
+			<trans-unit id="car">
+				<source>Lease car</source>
+				<target>Lease auto</target>
+			</trans-unit>
+			<trans-unit id="assetType">
+				<source>Type</source>
+				<target>Type</target>
+			</trans-unit>
+			<trans-unit id="assetName">
+				<source>Name of asset</source>
+				<target>naam</target>
+			</trans-unit>
+			<trans-unit id="idNumber">
+				<source>ID number</source>
+				<target>Kenmerk / nummer</target>
 			</trans-unit>
 		</body>
 	</file>
