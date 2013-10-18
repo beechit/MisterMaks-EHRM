@@ -1,6 +1,6 @@
 {namespace form=TYPO3\Form\ViewHelpers}
 {namespace m=TYPO3\Media\ViewHelpers}
-<f:layout name="Beech.Ehrm:Field" />
+<f:layout name="Beech.Ehrm:FieldInline" />
 <f:section name="field">
 	<form:form.uploadedImage property="{element.identifier}" as="image">
 		<div id="{element.uniqueIdentifier}-uploadfields"{f:if(condition:image, then: ' style="display:none"')}>

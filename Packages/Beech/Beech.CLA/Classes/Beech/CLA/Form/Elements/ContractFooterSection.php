@@ -1,5 +1,5 @@
 <?php
-namespace Beech\CLA\FormElements;
+namespace Beech\CLA\Form\Elements;
 
 /*
  * This source file is proprietary property of Beech Applications B.V.
@@ -12,14 +12,14 @@ use TYPO3\Flow\Annotations as Flow;
 /**
  * Contract template form element
  */
-class ContractHeaderSection extends \TYPO3\Form\Core\Model\AbstractFormElement {
+class ContractFooterSection extends \TYPO3\Form\Core\Model\AbstractFormElement {
 
 	/**
 	 * Initialize form element
 	 * @return void
 	 */
 	public function initializeFormElement() {
-		$this->setLabel('Contract Header');
+		$this->setLabel('Contract Footer');
 	}
 
 }

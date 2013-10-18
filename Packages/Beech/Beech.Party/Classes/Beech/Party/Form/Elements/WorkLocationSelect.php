@@ -1,5 +1,5 @@
 <?php
-namespace Beech\Party\FormElements;
+namespace Beech\Party\Form\Elements;
 
 /*
  * This source file is proprietary property of Beech Applications B.V.

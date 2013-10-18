@@ -49,11 +49,12 @@ class Contract extends \Beech\Ehrm\Domain\Model\Document {
 	 */
 	protected $contractTemplate;
 
-	/**
-	 * @var \Beech\CLA\Domain\Model\SalaryScale
-	 * @ODM\ReferenceOne(targetDocument="\Beech\CLA\Domain\Model\SalaryScale")
-	 */
-	protected $salaryScale;
+// it should be commented out until it will be really implemented, otherwise it breaks contract wizard
+//	/**
+//	 * @var \Beech\CLA\Domain\Model\SalaryScale
+//	 * @ODM\ReferenceOne(targetDocument="\Beech\CLA\Domain\Model\SalaryScale")
+//	 */
+//	protected $salaryScale;
 
 	/**
 	 * @var \Beech\Ehrm\Domain\Model\Status

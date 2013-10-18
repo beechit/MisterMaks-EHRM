@@ -35,7 +35,8 @@ class ApplicationController extends AbstractController {
 
 			// trigger setup wizard
 		if(!$this->preferencesUtility->getApplicationPreference('setupWizardComplete')) {
-			$this->view->assign('emberRedirect', '/settings/setupwizard');
+			// Commented until setup wizard is be fixed
+			//$this->view->assign('emberRedirect', '/settings/setupwizard');
 		}
 	}
 

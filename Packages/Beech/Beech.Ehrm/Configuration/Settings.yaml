@@ -130,7 +130,7 @@ Beech:
       - ['Beech.CLA', 'Administration', 'Contract', {'start':'Start', 'edit':null, 'delete':null}]
       - ['Beech.CLA', 'Administration', 'ContractArticle']
       - ['Beech.CLA', 'Administration', 'JobDescription']
-      - ['Beech.Ehrm', 'Administration', 'ApplicationSettings', {'index': 'Index', 'edit':null, 'delete':null, 'list':null, 'new':null, 'show': null,'setupwizard':'SetupWizard'}]
+      - ['Beech.Ehrm', 'Administration', 'ApplicationSettings', {'index': 'Index', 'update': 'Update', 'edit':null, 'delete':null, 'list':null, 'new':null, 'show': null,'setupwizard':'SetupWizard'}]
       - ['Beech.CLA', '', 'JobPosition', {'index': 'Index', 'list':null, 'delete':null}]
       - ['Beech.Chart', 'General', 'AgeReport', {'index': 'Index'}]
       - ['Beech.Absence', '', 'Absence', {'list':'List','edit':null, 'delete':null, 'new':null, 'show': null}]
@@ -153,6 +153,9 @@ TYPO3:
             implementationClassName: 'Beech\Ehrm\Form\Finishers\DatabaseFinisher'
           'Beech.Ehrm:ModalCloseConfirmation':
             implementationClassName: 'Beech\Ehrm\Form\Finishers\ModalCloseConfirmationFinisher'
+        validatorPresets:
+          'Beech.Ehrm:Decimal':
+            implementationClassName: 'Beech\Ehrm\Validation\Validator\DecimalValidator'
         formElementGroups:
           contract:
             sorting: 250
@@ -161,8 +164,8 @@ TYPO3:
           'TYPO3.Form:Base':
             renderingOptions:
               templatePathPattern: 'resource://Beech.Ehrm/Private/Templates/Form/Elements/{@type}.html'
-              partialPathPattern: 'resource://Beech.Ehrm/Private/Templates/Form/Elements/Partials/{@type}.html'
-              layoutPathPattern: 'resource://Beech.Ehrm/Private/Templates/Form/Elements/Layouts/{@type}.html'
+              partialPathPattern: 'resource://Beech.Ehrm/Private/Templates/Form/Partials/{@type}.html'
+              layoutPathPattern: 'resource://Beech.Ehrm/Private/Templates/Form/Layouts/{@type}.html'
           'TYPO3.Form:Form':
             formBuilder:
               editors:
@@ -207,7 +210,7 @@ TYPO3:
           'Beech.Ehrm:SelectedValue':
             superTypes: ['TYPO3.Form:FormElement', 'TYPO3.Form:TextMixin']
             renderingOptions:
-              layoutPathPattern: 'resource://Beech.Ehrm/Private/Templates/Form/Elements/Layouts/{@type}.html'
+              layoutPathPattern: 'resource://Beech.Ehrm/Private/Templates/Form/Layouts/{@type}.html'
               templatePathPattern: 'resource://Beech.Ehrm/Private/Templates/Form/Elements/SelectedValue.html'
           'Beech.Ehrm:UnitOfTimeSelect':
             superTypes: ['TYPO3.Form:FormElement', 'TYPO3.Form:SingleSelectDropdown']
@@ -216,7 +219,7 @@ TYPO3:
               templatePathPattern: 'resource://Beech.Ehrm/Private/Templates/Form/Elements/UnitOfTimeSelect.html'
           'Beech.Party:EmployeeSelect':
             superTypes: ['TYPO3.Form:FormElement', 'TYPO3.Form:SingleSelectDropdown']
-            implementationClassName: 'Beech\Party\FormElements\EmployeeSelect'
+            implementationClassName: 'Beech\Party\Form\Elements\EmployeeSelect'
             renderingOptions:
               templatePathPattern: 'resource://Beech.Ehrm/Private/Templates/Form/Elements/SingleSelectDropdown.html'
             formBuilder:
@@ -224,32 +227,32 @@ TYPO3:
               group: custom
           'Beech.Party:WorkLocationSelect':
             superTypes: ['TYPO3.Form:FormElement', 'TYPO3.Form:SingleSelectDropdown']
-            implementationClassName: 'Beech\Party\FormElements\WorkLocationSelect'
+            implementationClassName: 'Beech\Party\Form\Elements\WorkLocationSelect'
             renderingOptions:
               templatePathPattern: 'resource://Beech.Party/Private/Templates/Form/Elements/WorkLocationSelect.html'
           'Beech.CLA:HiddenField':
             superTypes: ['TYPO3.Form:HiddenField']
             renderingOptions:
-              layoutPathPattern: 'resource://Beech.CLA/Private/Templates/FormElements/Layouts/{@type}.html'
-              templatePathPattern: 'resource://Beech.CLA/Private/Templates/FormElements/HiddenField.html'
+              layoutPathPattern: 'resource://Beech.Ehrm/Private/Templates/Form/Layouts/{@type}.html'
+              templatePathPattern: 'resource://Beech.Ehrm/Private/Templates/Form/Elements/HiddenField.html'
           'Beech.CLA:SingleLineText':
             superTypes: ['TYPO3.Form:FormElement', 'TYPO3.Form:TextMixin']
             renderingOptions:
-              layoutPathPattern: 'resource://Beech.CLA/Private/Templates/FormElements/Layouts/{@type}.html'
-              templatePathPattern: 'resource://Beech.CLA/Private/Templates/FormElements/SingleLineText.html'
+              layoutPathPattern: 'resource://Beech.Ehrm/Private/Templates/Form/Layouts/{@type}.html'
+              templatePathPattern: 'resource://Beech.Ehrm/Private/Templates/Form/Elements/SingleLineText.html'
           'Beech.CLA:SingleSelectDropdown':
             superTypes: ['TYPO3.Form:SingleSelectDropdown']
             renderingOptions:
-              layoutPathPattern: 'resource://Beech.CLA/Private/Templates/FormElements/Layouts/{@type}.html'
-              templatePathPattern: 'resource://Beech.CLA/Private/Templates/FormElements/SingleSelectDropdown.html'
+              layoutPathPattern: 'resource://Beech.Ehrm/Private/Templates/Form/Layouts/{@type}.html'
+              templatePathPattern: 'resource://Beech.Ehrm/Private/Templates/Form/Elements/SingleSelectDropdown.html'
           'Beech.CLA:MultipleSelectCheckboxes':
             superTypes: ['TYPO3.Form:MultipleSelectCheckboxes']
             renderingOptions:
-              layoutPathPattern: 'resource://Beech.CLA/Private/Templates/FormElements/Layouts/{@type}.html'
-              templatePathPattern: 'resource://Beech.CLA/Private/Templates/FormElements/MultipleSelectCheckboxes.html'
+              layoutPathPattern: 'resource://Beech.Ehrm/Private/Templates/Form/Layouts/{@type}.html'
+              templatePathPattern: 'resource://Beech.Ehrm/Private/Templates/Form/Elements/MultipleSelectCheckboxes.html'
           'Beech.CLA:ContractTemplateSelect':
             superTypes: ['TYPO3.Form:FormElement', 'TYPO3.Form:SingleSelectDropdown']
-            implementationClassName: 'Beech\CLA\FormElements\ContractTemplateSelect'
+            implementationClassName: 'Beech\CLA\Form\Elements\ContractTemplateSelect'
             renderingOptions:
               templatePathPattern: 'resource://Beech.Ehrm/Private/Templates/Form/Elements/SingleSelectDropdown.html'
             formBuilder:
@@ -257,7 +260,7 @@ TYPO3:
               group: custom
           'Beech.CLA:JobDescriptionSelect':
             superTypes: ['TYPO3.Form:FormElement', 'TYPO3.Form:SingleSelectDropdown']
-            implementationClassName: 'Beech\CLA\FormElements\JobDescriptionSelect'
+            implementationClassName: 'Beech\CLA\Form\Elements\JobDescriptionSelect'
             renderingOptions:
               templatePathPattern: 'resource://Beech.Ehrm/Private/Templates/Form/Elements/SingleSelectDropdown.html'
             formBuilder:
@@ -266,28 +269,28 @@ TYPO3:
           'Beech.CLA:ContractHeaderSection':
             superTypes: ['TYPO3.Form:Section']
             renderingOptions:
-              templatePathPattern: 'resource://Beech.CLA/Private/Templates/FormElements/ContractHeaderSection.html'
+              templatePathPattern: 'resource://Beech.CLA/Private/Templates/Form/Elements/ContractHeaderSection.html'
           'Beech.CLA:ContractArticlesSection':
             superTypes: ['TYPO3.Form:Section']
-            implementationClassName: 'Beech\CLA\FormElements\ContractArticlesSection'
+            implementationClassName: 'Beech\CLA\Form\Elements\ContractArticlesSection'
             renderingOptions:
-              templatePathPattern: 'resource://Beech.CLA/Private/Templates/FormElements/ContractArticles.html'
-              partialPathPattern: 'resource://Beech.CLA/Private/Templates/FormElements/Partials/{@type}.html'
+              templatePathPattern: 'resource://Beech.CLA/Private/Templates/Form/Elements/ContractArticles.html'
+              partialPathPattern: 'resource://Beech.CLA/Private/Templates/Form/Elements/Partials/{@type}.html'
           'Beech.CLA:ContractFooterSection':
             superTypes: ['TYPO3.Form:Section']
             renderingOptions:
-              templatePathPattern: 'resource://Beech.CLA/Private/Templates/FormElements/ContractFooterSection.html'
+              templatePathPattern: 'resource://Beech.CLA/Private/Templates/Form/Elements/ContractFooterSection.html'
           'Beech.CLA:ContractArticleContainer':
             superTypes: ['TYPO3.Form:Section']
             renderingOptions:
-              templatePathPattern: 'resource://Beech.CLA/Private/Templates/FormElements/ContractArticleContainer.html'
-              partialPathPattern: 'resource://Beech.CLA/Private/Templates/FormElements/Partials/{@type}.html'
+              templatePathPattern: 'resource://Beech.CLA/Private/Templates/Form/Elements/ContractArticleContainer.html'
+              partialPathPattern: 'resource://Beech.CLA/Private/Templates/Form/Elements/Partials/{@type}.html'
           'Beech.CLA:ContractArticleFormElement':
             superTypes: ['TYPO3.Form:FormElement']
-            implementationClassName: 'Beech\CLA\FormElements\ContractArticleFormElement'
+            implementationClassName: 'Beech\CLA\Form\Elements\ContractArticleFormElement'
             renderingOptions:
-              templatePathPattern: 'resource://Beech.CLA/Private/Templates/FormElements/ContractArticle.html'
-              partialPathPattern: 'resource://Beech.CLA/Private/Templates/FormElements/Partials/{@type}.html'
+              templatePathPattern: 'resource://Beech.CLA/Private/Templates/Form/Elements/ContractArticle.html'
+              partialPathPattern: 'resource://Beech.CLA/Private/Templates/Form/Elements/Partials/{@type}.html'
             formBuilder:
               label: 'ContractArticle Element'
               group: contract
@@ -295,8 +298,8 @@ TYPO3:
             superTypes: ['TYPO3.Form:Page']
             implementationClassName: 'TYPO3\Form\Core\Model\Page'
             renderingOptions:
-              templatePathPattern: 'resource://Beech.CLA/Private/Templates/FormElements/ContractPreviewPage.html'
-              partialPathPattern: 'resource://Beech.CLA/Private/Templates/FormElements/Partials/{@type}.html'
+              templatePathPattern: 'resource://Beech.CLA/Private/Templates/Form/Elements/ContractPreviewPage.html'
+              partialPathPattern: 'resource://Beech.CLA/Private/Templates/Form/Elements/Partials/{@type}.html'
   FormBuilder:
     handlebarsTemplates:
       # include the handlebars template

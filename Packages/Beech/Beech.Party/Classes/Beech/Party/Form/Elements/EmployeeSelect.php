@@ -1,5 +1,5 @@
 <?php
-namespace Beech\Party\FormElements;
+namespace Beech\Party\Form\Elements;
 
 use TYPO3\Flow\Annotations as Flow;
 

@@ -1,5 +1,5 @@
 <?php
-namespace Beech\CLA\FormElements;
+namespace Beech\CLA\Form\Elements;
 
 /*
  * This source file is proprietary property of Beech Applications B.V.
@@ -9,6 +9,7 @@ namespace Beech\CLA\FormElements;
 
 use TYPO3\Flow\Annotations as Flow;
 use TYPO3\Flow\Utility\TypeHandling;
+use Beech\Ehrm\Validation\Validator;
 
 /**
  * Contract articles list section
@@ -130,9 +131,13 @@ class ContractArticlesSection extends \TYPO3\Form\FormElements\Section {
 						} elseif (isset($value['valueId'])) {
 							$contractArticleValue->setLabel($value['valueId']);
 						}
-						if (isset($value['validation']['type']) && isset($value['validation']['options'])) {
-							$validator = $contractArticleValue->createValidator($value['validation']['type'], $value['validation']['options']);
-							$contractArticleValue->addValidator($validator);
+						if (isset($value['validation'])) {
+							foreach ($value['validation'] as $validation) {
+								if (!empty($validation['type'])) {
+									$validator = $contractArticleValue->createValidator($validation['type'], isset($validation['options']) ? $validation['options'] : array());
+									$contractArticleValue->addValidator($validator);
+								}
+							}
 						}
 							// check if value exists is contract and use as default value
 						$getterName = 'get'.ucfirst($value['valueId']);
