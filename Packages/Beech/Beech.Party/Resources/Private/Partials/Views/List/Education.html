@@ -3,7 +3,7 @@
 		<f:render partial="Forms/Buttons/Icon" arguments="{_all}"/>
 	</div>
 	<div class="span10">
-		<strong><f:translate id="education.educationLevel.{education.educationLevel}">{education.educationLevel}</f:translate></strong>
+		<strong><f:translate id="Education">Education</f:translate>: {education.direction}</strong>
 	</div>
 	<div class="span1">
 		<div class="btn-group">
@@ -21,21 +21,24 @@
 </div>
 <div class="row-fluid">
 	<div class="span1"></div>
-	<div class="span6">{education.direction}</div>
+	<div class="span2"><f:translate id="educationLevel">EducationLevel</f:translate></div>
+	<div class="span4"><f:translate id="education.educationLevel.{education.educationLevel}">{education.educationLevel}</f:translate></div>
 </div>
 <div class="row-fluid">
 	<div class="span1"></div>
-	<div class="span6">{education.nameInstitute}</div>
+	<div class="span2"><f:translate id="institute">Institute</f:translate></div>
+	<div class="span4">{education.nameInstitute}</div>
 </div>
 <div class="row-fluid">
 	<div class="span1"></div>
-	<div class="span6">
-		<strong>{education.startDate -> f:format.date(format: 'd-m-Y')} - {education.endDate ->f:format.date(format: 'd-m-Y')}</strong>
+	<div class="span2"><f:translate id="Period">Period</f:translate></div>
+	<div class="span4"><f:format.date format="d-m-Y">{education.startDate}</f:format.date>
+		<f:translate id="until">until</f:translate>
+		<f:format.date format="d-m-Y">{education.endDate}</f:format.date>
 	</div>
 </div>
 <div class="row-fluid">
 	<div class="span1"></div>
-	<div class="span6">
-		<strong><f:translate id="graduated">graduated</f:translate> {education.graduated}</strong>
-	</div>
+	<div class="span2"><f:translate id="graduated">graduated</f:translate></div>
+	<div class="span4"><strong><f:translate id="education.graduated.{education.graduated}">{education.graduated}</f:translate></strong></div>
 </div>

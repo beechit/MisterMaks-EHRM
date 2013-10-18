@@ -969,13 +969,13 @@
 				<source>B.V.</source>
 				<target>B.V.</target>
 			</trans-unit>
-			<trans-unit id="education.educationLevel.primary">
+			<trans-unit id="education.educationLevel.preVocational">
+				<source>Prevocational</source>
+				<target>Voorbereidend Beroepsonderwijs</target>
+			</trans-unit>
+			<trans-unit id="education.educationLevel.primaryEducation">
 				<source>primary</source>
 				<target>Basisonderwijs</target>
-			</trans-unit>
-			<trans-unit id="education.educationLevel.preVocational">
-				<source>Pre vocational</source>
-				<target>Lager beroepsonderwijs</target>
 			</trans-unit>
 			<trans-unit id="education.educationLevel.vocationalSecondary">
 				<source>Vocational secondary</source>
@@ -1380,7 +1380,7 @@
 			</trans-unit>
 			<trans-unit id="start">
 				<source>Start</source>
-				<target>Start</target
+				<target>Start</target>
 			></trans-unit>
 			<trans-unit id="end">
 				<source>End</source>
@@ -1394,9 +1394,29 @@
 				<source>Direction</source>
 				<target>Studierichting</target>
 				"</trans-unit>
-			<trans-unit id="educationlevel">
+			<trans-unit id="educationLevel">
 				<source>Educatation level</source>
-				<target>Opleidingsniveau</target>
+				<target>Niveau</target>
+			</trans-unit>
+			<trans-unit id="education.educationLevel.primaryEducation">
+				<source>Primary Education</source>
+				<target>Basisonderwijs</target>
+			</trans-unit>
+			<trans-unit id="education.educationLevel.preVocational">
+				<source>Pre vocational</source>
+				<target>Lager beroepsonderwijs</target>
+			</trans-unit>
+			<trans-unit id="education.educationLevel.vocationalSecondary">
+				<source>Vocational secondary</source>
+				<target>Middelbaar beroepsonderwijs</target>
+			</trans-unit>
+			<trans-unit id="education.educationLevel.higherVocational">
+				<source>Higher vocational</source>
+				<target>Hoger beroepsonderwijs</target>
+			</trans-unit>
+			<trans-unit id="education.educationLevel.academic">
+				<source>Academic</source>
+				<target>Wetenschappelijk Onderwijs</target>
 			</trans-unit>
 			<trans-unit id="primaryEducation">
 				<source>Primary Education</source>
@@ -1418,9 +1438,17 @@
 				<source>Academic</source>
 				<target>Wetenschappelijk Onderwijs</target>
 			</trans-unit>
-			<trans-unit id="nameInstitute">
-				<source>Name of institute</source>
-				<target>Naam onderwijs instelling</target>
+			<trans-unit id="institute">
+				<source>Institute</source>
+				<target>Onderwijs instelling</target>
+			</trans-unit>
+			<trans-unit id="until">
+				<source>until</source>
+				<target>t/m</target>
+			</trans-unit>
+			<trans-unit id="period">
+				<source>Period</source>
+				<target>Periode</target>
 			</trans-unit>
 			<trans-unit id="document.sEmptyTable">
 				<source>No documents available</source>
@@ -1547,8 +1575,8 @@
 				<target>Er is een fout opgetreden bij het verzenden van de gegevens probeer het later nog eens.</target>
 			</trans-unit>
 			<trans-unit id="electronicAddresses">
-			<source>Electronic addresses</source>
-			<target>Electronische adressen</target>
+				<source>Electronic addresses</source>
+				<target>Electronische adressen</target>
 			</trans-unit>
 			<trans-unit id="addresses">
 				<source>Addresses</source>
@@ -1781,6 +1809,18 @@
 			<trans-unit id="jobPosition">
 				<source>Job position</source>
 				<target>Bedrijfsfunctie</target>
+			</trans-unit>
+			<trans-unit id="education.graduated.TRUE">
+				<source>Yes</source>
+				<target>Ja</target>
+			</trans-unit>
+			<trans-unit id="education.graduated.FALSE">
+				<source>No</source>
+				<target>Nee</target>
+			</trans-unit>
+			<trans-unit id="education.graduated.">
+				<source>No</source>
+				<target>Nee</target>
 			</trans-unit>
 		</body>
 	</file>
