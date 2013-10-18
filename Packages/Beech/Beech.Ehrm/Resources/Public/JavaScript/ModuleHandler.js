@@ -200,7 +200,7 @@
 					}
 				});
 			});
-
+				// customize breadcrumbs if it is necessary
 			var customBreadcrumbElements = [];
 			$moduleContainer.find('.breadcrumbElement').each(function(index, element) {
 				var position = $(element).attr('position');
@@ -226,7 +226,7 @@
 			if ($primary != undefined) {
 				$primary.controlPrimary();
 			}
-
+			$moduleContainer.find('.unitOfTime').trigger('change');
 				// modal customization
 				// add close/cancel button
 			if ($moduleContainer.parents('#modal').length && $('.btn-cancel:not(".previous, .hide"), .btn-close:not(".hide")', $moduleContainer.parents('#modal')).length == 0) {

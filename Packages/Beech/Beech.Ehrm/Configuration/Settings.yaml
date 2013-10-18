@@ -28,7 +28,7 @@ Beech:
           - 'Beech.Ehrm/Library/chosen/chosen.jquery.min.js'
           - 'Beech.Ehrm/Library/inputmask/jquery.inputmask.js'
           - 'Beech.Ehrm/Library/inputmask/jquery.inputmask.extensions.js'
-          - 'Beech.Ehrm/Library/momentjs/moment.min.js'
+          - 'Beech.Ehrm/Library/momentjs/moment-with-langs.min.js'
           - 'Beech.Ehrm/Library/bootstrap-wizard/bootstrap-wizard.js'
           - 'Beech.Ehrm/Library/dataTables/media/js/jquery.dataTables.js'
           - 'Beech.Ehrm/Library/dataTables/media/js/jquery.dataTables.TwitterBootstrap.js'
@@ -209,6 +209,11 @@ TYPO3:
             renderingOptions:
               layoutPathPattern: 'resource://Beech.Ehrm/Private/Templates/Form/Elements/Layouts/{@type}.html'
               templatePathPattern: 'resource://Beech.Ehrm/Private/Templates/Form/Elements/SelectedValue.html'
+          'Beech.Ehrm:UnitOfTimeSelect':
+            superTypes: ['TYPO3.Form:FormElement', 'TYPO3.Form:SingleSelectDropdown']
+            implementationClassName: 'Beech\Ehrm\Form\Elements\UnitOfTimeSelect'
+            renderingOptions:
+              templatePathPattern: 'resource://Beech.Ehrm/Private/Templates/Form/Elements/UnitOfTimeSelect.html'
           'Beech.Party:EmployeeSelect':
             superTypes: ['TYPO3.Form:FormElement', 'TYPO3.Form:SingleSelectDropdown']
             implementationClassName: 'Beech\Party\FormElements\EmployeeSelect'

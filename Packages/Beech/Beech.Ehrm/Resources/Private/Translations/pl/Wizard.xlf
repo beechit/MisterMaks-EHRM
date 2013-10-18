@@ -206,6 +206,42 @@
 				<source>Worklocation</source>
 				<target></target>
 			</trans-unit>
+			<trans-unit id="article-10001-values.probationPeriod">
+				<source>Probation period is</source>
+				<target>D</target>
+			</trans-unit>
+			<trans-unit id="article-10003-values.paymentSequence">
+				<source>Payment interval</source>
+				<target>r</target>
+			</trans-unit>
+			<trans-unit id="article-10003-values.wage">
+				<source>Wage</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="article-10010-values.accomodationRentUnitOfTime">
+				<source>for</source>
+				<target>></target>
+			</trans-unit>
+			<trans-unit id="article-10014-values.salaryScale">
+				<source>Salary scale</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="article-10001-values.probationUnitOfTime">
+				<source> </source>
+				<target> </target>
+			</trans-unit>
+			<trans-unit id="article-10014-values.paymentSequence">
+				<source>Salary payment each</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="article-10014-values.wage">
+				<source>Wage</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="article-10018-values.probationUnitOfTime">
+				<source> </source>
+				<target> </target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

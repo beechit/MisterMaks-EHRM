@@ -1,6 +1,6 @@
 {namespace form=TYPO3\Form\ViewHelpers}
 <f:form.validationResults for="{element.identifier}">
-	<label for="{element.uniqueIdentifier}"><f:format.nl2br><b><i>"{element.identifier}"</i></b><f:translate id="{element.identifier}" source="Wizard" package="Beech.Ehrm">{element.label}</f:translate></f:format.nl2br><f:if condition="{element.required}"><f:render partial="Beech.Ehrm:Field/Required" /></f:if></label>
+	<label for="{element.uniqueIdentifier}"><f:format.nl2br><f:translate id="{element.identifier}" source="Wizard" package="Beech.Ehrm">{element.label}</f:translate></f:format.nl2br><f:if condition="{element.required}"><f:render partial="Beech.Ehrm:Field/Required" /></f:if></label>
 	<f:render section="field" />
 	<f:if condition="{validationResults.flattenedErrors}">
 		<span class="help-inline">

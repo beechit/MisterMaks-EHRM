@@ -80,7 +80,8 @@ class ContractArticleFormElement extends \TYPO3\Form\Core\Model\AbstractFormElem
 						if (is_null($value)) {
 							$value = $this->fieldDefaultValueHelper->getDefault($contractValue);
 						}
-						$replacement[] = sprintf('<strong id="%s">%s</strong>', $identifier, $this->fieldValueLabelHelper->getLabel($value, $contractValue));
+						$class = $contractValue['valueId'];
+						$replacement[] = sprintf('<strong id="%s" class="%s">%s</strong>', $identifier, $class, $this->fieldValueLabelHelper->getLabel($value, $contractValue));
 					}
 				}
 			}
