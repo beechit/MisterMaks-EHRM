@@ -444,6 +444,10 @@
 				<source>Download</source>
 				<target>Download</target>
 			</trans-unit>
+			<trans-unit id="period">
+				<source>Period</source>
+				<target>Periode</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

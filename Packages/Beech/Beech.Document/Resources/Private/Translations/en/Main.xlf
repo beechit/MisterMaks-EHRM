@@ -213,7 +213,6 @@
 			</trans-unit>
 			<trans-unit id="document.documentType.categoryName.Absence">
 				<source>Absence</source>
-				<target>Verlof en verzuim</target>
 			</trans-unit>
 			<trans-unit id="document.documentType.typeName.Correspondence">
 				<source>Correspondence</source>
@@ -313,6 +312,9 @@
 			</trans-unit>
 			<trans-unit id="document.documentType.categoryName.Permits">
 				<source>Permits</source>
+			</trans-unit>
+			<trans-unit id="period">
+				<source>Period</source>
 			</trans-unit>
 		</body>
 	</file>
