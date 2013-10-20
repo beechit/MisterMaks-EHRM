@@ -110,6 +110,7 @@ class SelectViewHelper extends \TYPO3\Fluid\ViewHelpers\Form\SelectViewHelper {
 	 *
 	 * @param string $value value attribute of the option tag (will be escaped)
 	 * @param string $label content of the option tag (will be escaped)
+	 * @param mixed $option
 	 * @return string the rendered option tag
 	 */
 	protected function renderOptionTag($value, $label, $option = NULL) {

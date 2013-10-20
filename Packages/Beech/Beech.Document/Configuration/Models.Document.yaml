@@ -50,6 +50,7 @@
       default: 'now'
     'expiration':
       label: 'Expire date'
+      type: 'DateTime'
       validation:
         -
           type: 'DateTimeRange'
