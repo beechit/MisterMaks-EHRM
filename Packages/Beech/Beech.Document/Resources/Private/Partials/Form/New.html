@@ -20,7 +20,7 @@
 	<div class="content-padding">
 		<div class="control-group">
 			<label class="control-label" for="documentName">
-				<f:translate id="documentName">Document name:</f:translate>
+				<f:translate id="documentName">Document name</f:translate>
 			</label>
 			<div class="controls">
 				<f:form.textfield property="name" class="documentName" placeholder="{f:translate(id:'documentName')}..."/>
@@ -29,15 +29,15 @@
 		<div class="control-group">
 			<label class="control-label" for="documentType">Document category</label>
 			<div class="controls">
-				<ehrm:form.select property="documentType" class="documentType" options="{documentCategories}" optionLabelField="typeName"/>
+				<ehrm:form.select property="documentType" class="documentType" options="{documentCategories}" translate="{by: 'label'}" optionLabelField="typeName"/>
 			</div>
 		</div>
 		<div class="control-group">
-			<label class="control-label" for="expireDate">
-				<f:translate id="expireDate">Expiration date:</f:translate>
+			<label class="control-label" for="expiration">
+				<f:translate id="expiration">Expiration</f:translate>
 			</label>
 			<div class="controls">
-				<ehrm:form.datePicker id="expireDate" property="expireDate" class="datepicker"/>
+				<ehrm:form.datePicker id="expiration" property="expiration" class="datepicker"/>
 			</div>
 		</div>
 
@@ -56,7 +56,7 @@
 			</div>
 		</div>
 		<div class="alert alert-info info-documentAttachment">
-			<f:translate id="NameAttachmentAreRequired">* To save, name & attachment is required</f:translate>
+			<f:translate id="nameAttachmentAreRequired">* To save, name & attachment is required</f:translate>
 		</div>
 	</div>
 
