@@ -1,1 +1,22 @@
-<a class="btn btn-small{f:if(condition: collapsed, then: ' collapsed', else: '')}" data-toggle="collapse" data-target="#toggle{identifier}"><i class="{icon}"></i></a>
+<button name="action" class="btn btn-small toggle{identifier}_save" value="add">
+	<i class="icon-save"></i>
+</button>
+<a class="btn btn-small{f:if(condition: collapsed, then: ' collapsed', else: '')} toggle{identifier}_add" data-toggle="collapse" data-target="#toggle{identifier}"><i class="{icon}"></i></a>
+<script>
+	$('.toggle{identifier}_add').on('click', function() {
+		if ($(this).hasClass('collapsed')) {
+			$('#toggle{identifier} button[type=submit]').hide();
+			$('.toggle{identifier}_save').show()
+		} else {
+			$('#toggle{identifier} button[type=submit]').show();
+			$('.toggle{identifier}_save').hide()
+		}
+	})
+	$('.toggle{identifier}_save').on('click', function() {
+		$('#toggle{identifier} button[type=submit]').trigger('click')
+	});
+	$('#toggle{identifier} button[type=submit]').hide();
+	if ($('.toggle{identifier}_add').hasClass('collapsed')) {
+		$('.toggle{identifier}_save').hide()
+	}
+</script>

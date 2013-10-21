@@ -10,7 +10,7 @@
 				<f:render partial="Views/List/PhoneNumber" arguments="{_all}"/>
 			</f:then>
 		</f:if>
-		<div id="toggle{phoneNumber.id}{suffix}" class="{f:if(condition: collapsed, then: 'collapse', else: '')}">
+		<div id="toggle{phoneNumber.id}{suffix}" class="{f:if(condition: collapsed, then: 'collapse', else: 'in collapse')}">
 			<div class="row-fluid phoneNumber-row" >
 				<div class="span1"><i class="icon-plus"/></div>
 				<div class="span3">

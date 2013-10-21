@@ -15,7 +15,7 @@
 				<f:render partial="Forms/Education" arguments="{party: party, action: 'add', suffix: 'education', collapsed: true}"/>
 			</f:then>
 			<f:else>
-				<f:render partial="Forms/Education" arguments="{party: party, action: 'add', suffix: 'education'}"/>
+				<f:render partial="Forms/Education" arguments="{party: party, action: 'add', suffix: 'education', collapsed: false}"/>
 			</f:else>
 		</f:if>
 	</div>

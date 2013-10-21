@@ -15,7 +15,7 @@
 				<f:render partial="Forms/Licence" arguments="{party: party, action: 'add', suffix: 'licence', collapsed: true}"/>
 			</f:then>
 			<f:else>
-				<f:render partial="Forms/Licence" arguments="{party: party, action: 'add', suffix: 'licence'}"/>
+				<f:render partial="Forms/Licence" arguments="{party: party, action: 'add', suffix: 'licence', collapsed: false}"/>
 			</f:else>
 		</f:if>
 	</div>

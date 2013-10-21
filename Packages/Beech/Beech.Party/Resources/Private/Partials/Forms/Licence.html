@@ -10,7 +10,7 @@
 				<f:render partial="Views/List/Licence" arguments="{_all}"/>
 			</f:then>
 		</f:if>
-		<div id="toggle{licence.id}{suffix}" class="{f:if(condition: collapsed, then: 'collapse', else: '')}">
+		<div id="toggle{licence.id}{suffix}" class="{f:if(condition: collapsed, then: 'collapse', else: 'in collapse')}">
 			<div class="row-fluid" >
 				<div class="span1"><i class="icon-plus"/></div>
 				<div class="span3">
@@ -27,35 +27,19 @@
 				</div>
 			</div>
 			<div class="row-fluid" >
-				<div class="span1"></div>
-				<div class="span3">
-					<label for="startDate{licence.id}">
-						<f:translate id="startDate">StartDate</f:translate>
-					</label>
-				</div>
+				<div class="span4"></div>
 				<div class="span6">
-					<ehrm:form.datePicker id="startDate{licence.id}" property="startDate" class="datepicker span8"/>
+					<ehrm:form.datePicker id="startDate{licence.id}" property="startDate" class="datepicker span8" placeholder="{f:translate(id: 'startDate')}"/>
 				</div>
 			</div>
 			<div class="row-fluid" >
-				<div class="span1"></div>
-				<div class="span3">
-					<label for="Expiration">
-						<f:translate id="Expiration">Expiration</f:translate>
-					</label>
-				</div>
+				<div class="span4"></div>
 				<div class="span6">
-					<ehrm:form.datePicker id="expirationDate{licence.id}" property="expirationDate" class="datepicker span8"/>
+					<ehrm:form.datePicker id="expirationDate{licence.id}" property="expirationDate" class="datepicker span8" placeholder="{f:translate(id: 'Expiration')}"/>
 				</div>
 			</div>
 		</div>
-
-<f:if condition="{0: action} == {0: 'remove'}">
-	<button type="submit" name="submit" class="btn btn-danger btn-mini">
-		<i class="icon-trash"></i>
-	</button>
-</f:if>
-<f:form.hidden property="party" value="{party}"/>
+	<f:form.hidden property="party" value="{party}"/>
 </f:form>
 </div>
 <f:if condition="{0: action} == {0: 'add'}">
