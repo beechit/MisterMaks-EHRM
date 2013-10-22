@@ -49,6 +49,7 @@ class ProfilePhotoController extends \Beech\Document\Controller\DocumentControll
 	 * @return void
 	 */
 	public function editAction(\Beech\Document\Domain\Model\Document $document = NULL, \Beech\Party\Domain\Model\Person $party = NULL) {
+		$this->view->assign('documentType', $this->documentTypeRepository->findOneByTypeName(DocumentType::PROFILE_PHOTO));
 		$this->view->assign('document', $document);
 		$this->view->assign('party', $party);
 	}

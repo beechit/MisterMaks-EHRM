@@ -8,9 +8,10 @@
 			<f:translate id="profilePhoto.edit">Change profile picture</f:translate>
 		</h3>
 	</div>
-
 	<f:form action="update" controller="ProfilePhoto" name="document" object="{party.profilePhoto}" class="compact-form form-horizontal save" enctype="multipart/form-data">
 		<f:form.hidden name="party" value="{party.id}"/>
+		<f:form.hidden property="documentType" value="{documentType}"/>
+		<f:form.hidden property="name" value="Profile photo"/>
 
 		<div class="content-padding">
 			<div class="row-fluid" >
@@ -18,13 +19,7 @@
 					<f:render partial="Views/Show/ProfilePhoto" arguments="{photo: party.profilePhoto, width: 150, random: 'TRUE'}"/>
 				</div>
 				<div class="span9">
-					<div class="control-group">
-						<f:form.hidden property="name" value="Profile photo"/>
-					</div>
-					<div class="control-group">
-						<f:form.upload property="resources.0" class="documentPhoto"/>
-					</div>
-
+					<f:form.upload property="resources.0" class="documentPhoto"/>
 				</div>
 			</div>
 		</div>
