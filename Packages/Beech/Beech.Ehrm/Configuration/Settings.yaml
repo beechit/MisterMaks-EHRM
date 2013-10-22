@@ -230,6 +230,11 @@ TYPO3:
             implementationClassName: 'Beech\Party\Form\Elements\WorkLocationSelect'
             renderingOptions:
               templatePathPattern: 'resource://Beech.Party/Private/Templates/Form/Elements/WorkLocationSelect.html'
+          'Beech.Party:WorkDaySelect':
+            superTypes: ['TYPO3.Form:FormElement', 'TYPO3.Form:SingleSelectDropdown']
+            implementationClassName: 'Beech\Party\Form\Elements\WorkDaySelect'
+            renderingOptions:
+              templatePathPattern: 'resource://Beech.Party/Private/Templates/Form/Elements/WorkDaySelect.html'
           'Beech.CLA:HiddenField':
             superTypes: ['TYPO3.Form:HiddenField']
             renderingOptions:

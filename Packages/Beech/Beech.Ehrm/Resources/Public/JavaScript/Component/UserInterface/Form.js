@@ -28,10 +28,6 @@
 		}
 	}
 
-	function convertISO8601ToText(valueISO8601) {
-
-	}
-
 	/**
 	 * TODO: Extend it. This works only for dates in format: 'DD-MM-YYYY'
 	 * @param unit
@@ -125,6 +121,10 @@
 		return text;
 	}
 
+	function dayOfWeek(number) {
+		return moment().day(number).format('dddd');
+	}
+
 	$(function () {
 		$(document).on('change keyup blur', '.articles-section input, .articles-section select', function() {
 			var value = "";
@@ -178,6 +178,19 @@
 		$(document).on('click', '.help', function() {
 			return false;
 		});
+
+		$(document).on('change', '.articles-section .workDaySelect', function() {
+			var identifier = $(this).attr('id');
+			var value;
+			if ($(this).val() != null) {
+				var valuesArray = []
+				$.each($(this).val(), function(index, element) {
+					valuesArray.push(dayOfWeek(element))
+				})
+				value = valuesArray.join();
+			}
+			$('#' + identifier.replace('_','\\.') + '_text').html(value);
+		});
 	});
 
 	$.fn.extend({
@@ -186,6 +199,19 @@
 				var valueISO8601 = $(this).text();
 				var text = valueISO8601.replace(/^P([0-9]+)([a-zA-Z]+)/g, function($1, $2, $3){ return timeAsText({amount: parseInt($2), unit: mapISO8601ToMomentsFormat($3)})});
 				$(this).text(text);
+			})
+		}
+	});
+
+	$.fn.extend({
+		workDaySelect: function(options) {
+			return this.each(function(index) {
+				$('#' + $(this).attr('id')).find('option').each(function(index, element) {
+					if ($(element).val() != '') {
+						$(element).text( dayOfWeek($(element).val()) );
+					}
+				})
+				$('#' + $(this).attr('id')).trigger("chosen:updated")
 			})
 		}
 	});

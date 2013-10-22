@@ -117,7 +117,7 @@ class ContractArticlesSection extends \TYPO3\Form\FormElements\Section {
 									$contractArticleValue->setProperty($propertyName, $property);
 								}
 							}
-							if (in_array($value['type'], array('TYPO3.Form:SingleSelectDropdown', 'TYPO3.Form:MultipleSelectCheckboxes', 'Beech.CLA:SingleSelectDropdown', 'Beech.CLA:MultipleSelectCheckboxes'))) {
+							if (in_array($value['type'], array('TYPO3.Form:SingleSelectDropdown', 'TYPO3.Form:MultipleSelectCheckboxes', 'Beech.CLA:SingleSelectDropdown', 'Beech.CLA:MultipleSelectCheckboxes', 'Beech.Party:WorkDaySelect'))) {
 								if (isset($value['options'])) {
 									$contractArticleValue->setProperty('options', $value['options']);
 								}

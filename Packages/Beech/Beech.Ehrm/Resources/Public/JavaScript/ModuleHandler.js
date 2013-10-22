@@ -227,6 +227,7 @@
 				$primary.controlPrimary();
 			}
 			$moduleContainer.find('.unitOfTime').trigger('change');
+			$moduleContainer.find('.workDaySelect').workDaySelect();
 				// modal customization
 				// add close/cancel button
 			if ($moduleContainer.parents('#modal').length && $('.btn-cancel:not(".previous, .hide"), .btn-close:not(".hide")', $moduleContainer.parents('#modal')).length == 0) {
