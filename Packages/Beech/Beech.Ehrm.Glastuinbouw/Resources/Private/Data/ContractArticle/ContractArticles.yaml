@@ -31,7 +31,7 @@ contractArticles:
               displayTimeSelector: FALSE
             validation:
               -
-                type: 'NotEmpty'
+                type: 'TYPO3.Flow:NotEmpty'
               -
                 type: 'TYPO3.Flow:DateTimeRange'
                 options:
@@ -46,23 +46,23 @@ contractArticles:
               displayTimeSelector: FALSE
             validation:
               -
-                type: 'NotEmpty'
+                type: 'TYPO3.Flow:NotEmpty'
           -
             type: 'Beech.CLA:SingleLineText'
             value: ''
             valueId: jobTitle
             validation:
               -
-                type: 'NotEmpty'
+                type: 'TYPO3.Flow:NotEmpty'
               -
-                type: 'String'
+                type: 'TYPO3.Flow:Text'
           -
             type: 'Beech.Party:WorkLocationSelect'
             value: ''
             valueId: 'workLocation'
             validation:
               -
-                type: 'NotEmpty'
+                type: 'TYPO3.Flow:NotEmpty'
     -
       articleHeader:
         en: 'Probation'
@@ -114,15 +114,15 @@ contractArticles:
                 digits: 4
                 decimal: 2
         -
-          type: 'Beech.CLA:MultipleSelectCheckboxes'
+          type: 'Beech.Party:WorkDaySelect'
           options:
-            monday: monday
-            tuesday: tuesday
-            wednessday: wednessday
-            thursday: thursday
-            friday: friday
-            saturday: saturday
-            sunday: sunday
+            1: monday
+            2: tuesday
+            3: wednessday
+            4: thursday
+            5: friday
+            6: saturday
+            0: sunday
           translated:
             nl: [ maandag, dinsdag, woensdag, donderdag, vrijdag, zaterdag, zondag ]
             en: [ monday , tuesday , wednesday , thursday , friday , saturday , sunday ]
@@ -130,7 +130,7 @@ contractArticles:
           valueId: workDays
           validation:
             -
-              type: 'NotEmpty'
+              type: 'TYPO3.Flow:NotEmpty'
         -
           type:  'Beech.Ehrm:DatePicker'
           default: '8.00'
@@ -143,7 +143,7 @@ contractArticles:
           valueId: 'startTime'
           validation:
             -
-              type: 'NotEmpty'
+              type: 'TYPO3.Flow:NotEmpty'
         -
           type: 'Beech.Ehrm:DatePicker'
           default: '17.00'
@@ -191,7 +191,7 @@ contractArticles:
           valueId: 'paymentSequence'
           validation:
             -
-              type: 'NotEmpty'
+              type: 'TYPO3.Flow:NotEmpty'
     -
       articleHeader:
         en: 'CAO'
@@ -253,7 +253,7 @@ contractArticles:
             displayTimeSelector: TRUE
           validation:
             -
-              type: 'NotEmpty'
+              type: 'TYPO3.Flow:NotEmpty'
     -
       articleHeader:
         en: 'Interim denunciation'
@@ -391,7 +391,7 @@ contractArticles:
           default: ''
           validation:
             -
-              type: 'NotEmpty'
+              type: 'TYPO3.Flow:NotEmpty'
         -
           type: 'Beech.CLA:SingleSelectDropdown'
 #          value: ''
@@ -399,7 +399,7 @@ contractArticles:
           default: '1'
           validation:
             -
-              type: 'NotEmpty'
+              type: 'TYPO3.Flow:NotEmpty'
         -
           type: 'Beech.CLA:SingleLineText'
           value: ''
@@ -407,7 +407,7 @@ contractArticles:
           default: ''
           validation:
             -
-              type: 'NotEmpty'
+              type: 'TYPO3.Flow:NotEmpty'
             -
               type: 'Beech.Ehrm:Decimal'
               options:
@@ -423,7 +423,7 @@ contractArticles:
           valueId: 'paymentSequence'
           validation:
             -
-              type: 'NotEmpty'
+              type: 'TYPO3.Flow:NotEmpty'
     -
       articleHeader:
         en: 'Vacation allowance and vacation days'
@@ -478,14 +478,14 @@ contractArticles:
           valueId: jobTitle
           validation:
             -
-              type: 'NotEmpty'
+              type: 'TYPO3.Flow:NotEmpty'
         -
           type: 'Beech.Party:WorkLocationSelect'
           value: ''
           valueId: 'workLocation'
           validation:
             -
-              type: 'NotEmpty'
+              type: 'TYPO3.Flow:NotEmpty'
     -
       articleHeader:
         en: ''
@@ -522,7 +522,7 @@ contractArticles:
           valueId: probationUnitOfTime
           validation:
             -
-              type: 'NotEmpty'
+              type: 'TYPO3.Flow:NotEmpty'
     -
       articleHeader:
         en: ''
