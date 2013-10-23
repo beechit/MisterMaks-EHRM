@@ -31,9 +31,11 @@ contractArticles:
               displayTimeSelector: FALSE
             validation:
               -
-                type: 'DateTimeRange'
+                type: 'NotEmpty'
+              -
+                type: 'TYPO3.Flow:DateTimeRange'
                 options:
-                  earliestDate: 'now/P30D'
+                  earliestDate: 'P30D/now'
           -
             type: 'Beech.Ehrm:DatePicker'
             value: ''
@@ -44,9 +46,7 @@ contractArticles:
               displayTimeSelector: FALSE
             validation:
               -
-                type: 'DateTimeRange'
-                options:
-                  earliestDate: 'P90D/now'
+                type: 'NotEmpty'
           -
             type: 'Beech.CLA:SingleLineText'
             value: ''
@@ -111,7 +111,7 @@ contractArticles:
             -
               type: 'Beech.Ehrm:Decimal'
               options:
-                digits: 2
+                digits: 4
                 decimal: 2
         -
           type: 'Beech.CLA:MultipleSelectCheckboxes'
@@ -173,7 +173,7 @@ contractArticles:
       values:
         -
           type: 'Beech.CLA:SingleSelectDropdown'
-          value: 'Beech\CLA\Domain\Model\SalaryScale'
+#          value: 'Beech\CLA\Domain\Model\SalaryScale'
           valueId: 'minimumWage'
           default: ''
         -
@@ -326,7 +326,7 @@ contractArticles:
             -
               type: 'Beech.Ehrm:Decimal'
               options:
-                digits: 3
+                digits: 5
                 decimal: 2
     -
       articleHeader:
@@ -381,12 +381,12 @@ contractArticles:
       # selectable values from the wagemodel.
         -
           type: 'Beech.CLA:SingleSelectDropdown'
-          value: 'Beech/CLA/Domain/Model/SalaryScale'
+#          value: 'Beech/CLA/Domain/Model/SalaryScale'
           valueId: 'salaryScale'
           default: 'B'
         -
           type: 'Beech.CLA:SingleSelectDropdown'
-          value: ''
+#          value: ''
           valueId: 'wageScaleGroup'
           default: ''
           validation:
@@ -394,7 +394,7 @@ contractArticles:
               type: 'NotEmpty'
         -
           type: 'Beech.CLA:SingleSelectDropdown'
-          value: ''
+#          value: ''
           valueId: 'wageStep'
           default: '1'
           validation:
@@ -411,7 +411,7 @@ contractArticles:
             -
               type: 'Beech.Ehrm:Decimal'
               options:
-                digits: 2
+                digits: 4
                 decimal: 2
         -
           type: 'Beech.CLA:SingleSelectDropdown'
@@ -469,7 +469,7 @@ contractArticles:
           default: ''
           validation:
             -
-              type: 'DateTimeRange'
+              type: 'TYPO3.Flow:DateTimeRange'
               options:
                 earliestDate: 'now/P30D'
         -
