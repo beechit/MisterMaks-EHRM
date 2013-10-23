@@ -676,6 +676,7 @@
 			</trans-unit>
 			<trans-unit id="address.addressType.business">
 				<source>Business</source>
+			</trans-unit>
 			<trans-unit id="asset.assetType.laptop">
 				<source>Laptop</source>
 			</trans-unit>
