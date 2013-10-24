@@ -1369,63 +1369,114 @@
 			</trans-unit>
 			<trans-unit id="licence.licenceType.driversLicence">
 				<source>Drivers licence</source>
-				<target>Rijbewijs</target>
 			</trans-unit>
 			<trans-unit id="licence.licenceType.emergencyResponce">
 				`<source>Emergency responce</source>
-				<target>Bedrijfshulpverlening</target>
 			</trans-unit>
 			<trans-unit id="licence.licenceType.cropProtection">
 				<source>Crop protection</source>
-				<target>Gewasbescherming</target>
 			</trans-unit>
 			<trans-unit id="licence.licenceType.other">
 				<source>Other</source>
-				<target>Anders</target>
 			</trans-unit>
 			<trans-unit id="driversLicence">
 				<source>Drivers licence</source>
-				<target>Rijbewijs</target>
 			</trans-unit>
 			<trans-unit id="emergencyResponce">
 				<source>Emergency responce</source>
-				<target>Bedrijfshulpverlening</target>
 			</trans-unit>
 			<trans-unit id="cropProtection">
 				<source>Crop protection</source>
-				<target>Gewasbescherming</target>
 			</trans-unit>
 			<trans-unit id="other">
 				<source>Other</source>
-				<target>Anders</target>
 			</trans-unit>
 			<trans-unit id="grantedBy">
 				<source>Granted by</source>
-				<target>Uitgegeven door</target>
 			</trans-unit>
 			<trans-unit id="laptop">
 				<source>Laptop</source>
-				<target>Laptop</target>
 			</trans-unit>
 			<trans-unit id="tools">
 				<source>Tools</source>
-				<target>Gereedschap</target>
 			</trans-unit>
 			<trans-unit id="car">
 				<source>Lease car</source>
-				<target>Lease auto</target>
 			</trans-unit>
 			<trans-unit id="assetType">
 				<source>Type</source>
-				<target>Type</target>
 			</trans-unit>
 			<trans-unit id="assetName">
 				<source>Name of asset</source>
-				<target>Naam</target>
 			</trans-unit>
 			<trans-unit id="idNumber">
 				<source>ID number</source>
-				<target>Kenmerk / nummer</target>
+			</trans-unit>
+			<trans-unit id="contract.contractTemplate.Temporary contract with GLA Arrangement">
+				<source>Temporary contract with GLA arrangement</source>
+			</trans-unit>
+			<trans-unit id="contract.contractTemplate.Permanent Contract">
+				<source>Permanent contract</source>
+			</trans-unit>
+			<trans-unit id="contract.contractTemplate.Temporary contract">
+				<source>Temporary contract</source>
+			</trans-unit>
+			<trans-unit id="contract.contractTemplate.Temporary contract with cafetaria arrangement">
+				<source>Temporary contract with cafetaria arrangement</source>
+			</trans-unit>
+			<trans-unit id="status">
+				<source>Status</source>
+			</trans-unit>
+			<trans-unit id="contractType">
+				<source>Contract type</source>
+			</trans-unit>
+			<trans-unit id="hours">
+				<source>Hours</source>
+			</trans-unit>
+			<trans-unit id="week">
+				<source>Week</source>
+			</trans-unit>
+			<trans-unit id="startDate">
+				<source>Start date</source>
+			</trans-unit>
+			<trans-unit id="endDate">
+				<source>End date</source>
+			</trans-unit>
+			<trans-unit id="daysTillEnd">
+				<source>Days till end</source>
+			</trans-unit>
+			<trans-unit id="salary">
+				<source>Salary</source>
+			</trans-unit>
+			<trans-unit id="contract">
+				<source>Contract</source>
+			</trans-unit>
+			<trans-unit id="wageGroup">
+				<source>Wagegroup</source>
+			</trans-unit>
+			<trans-unit id="wageStep">
+				<source>Wage step</source>
+			</trans-unit>
+			<trans-unit id="contract.status.draft">
+				<source>Draft</source>
+			</trans-unit>
+			<trans-unit id="contract.status.active">
+				<source>Active</source>
+			</trans-unit>
+			<trans-unit id="contract.status.rejected">
+				<source>Rejected</source>
+			</trans-unit>
+			<trans-unit id="contract.status.cancelled">
+				<source>Cancelled</source>
+			</trans-unit>
+			<trans-unit id="contract.status.closed">
+				<source>Ended</source>
+			</trans-unit>
+			<trans-unit id="contract.status.pendingApproval">
+				<source>Pending approval</source>
+			</trans-unit>
+			<trans-unit id="noContract">
+				<source>There is no contract for this person.</source>
 			</trans-unit>
 		</body>
 	</file>

@@ -1882,6 +1882,94 @@
 				<source>ID number</source>
 				<target>Kenmerk / nummer</target>
 			</trans-unit>
+			<trans-unit id="contract.contractTemplate.Temporary contract with GLA Arrangement">
+				<source>Temporary contract with GLA arrangement</source>
+				<target>Tijdelijk contract met gelegenheidsarbeidregeling</target>
+			</trans-unit>
+			<trans-unit id="contract.contractTemplate.Permanent Contract">
+				<source>Permanent contract</source>
+				<target>Vast dienstverband</target>
+			</trans-unit>
+			<trans-unit id="contract.contractTemplate.Temporary contract">
+				<source>Temporary contract</source>
+				<target>Tijdelijk dienstverband</target>
+			</trans-unit>
+			<trans-unit id="contract.contractTemplate.Temporary contract with cafetaria arrangement">
+				<source>Temporary contract with cafetaria arrangement</source>
+				<target>Tijdelijk contract met LTO cafetariaregeling</target>
+			</trans-unit>
+			<trans-unit id="status">
+				<source>Status</source>
+				<target>Status</target>
+			</trans-unit>
+			<trans-unit id="contractType">
+				<source>Contract type</source>
+				<target>Contracttype</target>
+			</trans-unit>
+			<trans-unit id="hours">
+				<source>Hours</source>
+				<target>Uren</target>
+			</trans-unit>
+			<trans-unit id="week">
+				<source>Week</source>
+				<target>Week</target>
+			</trans-unit>
+			<trans-unit id="startDate">
+				<source>Start date</source>
+				<target>Startdatum</target>
+			</trans-unit>
+			<trans-unit id="endDate">
+				<source>End date</source>
+				<target>Einddatum</target>
+			</trans-unit>
+			<trans-unit id="daysTillEnd">
+				<source>Days till end</source>
+				<target>Dagen tot eind</target>
+			</trans-unit>
+			<trans-unit id="salary">
+				<source>Salary</source>
+				<target>Salaris</target>
+			</trans-unit>
+			<trans-unit id="contract">
+				<source>Contract</source>
+				<target>Contract</target>
+			</trans-unit>
+			<trans-unit id="wageGroup">
+				<source>Wagegroup</source>
+				<target>Salarisgroep</target>
+			</trans-unit>
+			<trans-unit id="wageStep">
+				<source>Wage step</source>
+				<target>Functiejaar</target>
+			</trans-unit>
+			<trans-unit id="contract.status.draft">
+				<source>Draft</source>
+				<target>Concept</target>
+			</trans-unit>
+			<trans-unit id="contract.status.active">
+				<source>Active</source>
+				<target>Actief</target>
+			</trans-unit>
+			<trans-unit id="contract.status.rejected">
+				<source>Rejected</source>
+				<target>Afgewezen</target>
+			</trans-unit>
+			<trans-unit id="contract.status.cancelled">
+				<source>Cancelled</source>
+				<target>Gestopt</target>
+			</trans-unit>
+			<trans-unit id="contract.status.closed">
+				<source>Ended</source>
+				<target>Afgelopen</target>
+			</trans-unit>
+			<trans-unit id="contract.status.pendingApproval">
+				<source>Pending approval</source>
+				<target>Wachten tot goedkeuring</target>
+			</trans-unit>
+			<trans-unit id="noContract">
+				<source>There is no contract for this person.</source>
+				<target>Er is geen contract bij deze persoon</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

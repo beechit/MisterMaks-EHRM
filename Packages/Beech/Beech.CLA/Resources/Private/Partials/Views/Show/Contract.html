@@ -1,4 +1,4 @@
-
+{namespace ehrm=Beech\Ehrm\ViewHelpers}
 <table class="table table-striped">
 	<colgroup>
 		<col class="span1">
@@ -7,10 +7,10 @@
 	<tbody>
 	<tr>
 		<td class="span2">
-			<strong>Status</strong>
+			<strong><f:translate id="status">Status</f:translate></strong>
 		</td>
 		<td class="span3">
-			{contract.status.statusName}
+			<f:translate id="contract.status.{contract.status.statusName}">{contract.status.statusName}</f:translate>
 		</td>
 		<td class="span4">
 			<strong>{contract.jobTitle}</strong>
@@ -22,37 +22,37 @@
 	</tr>
 	<tr>
 		<td>
-			<strong>Contract type</strong>
+			<strong><f:translate id="contractType">Contract type</f:translate></strong>
 		</td>
 		<td>
-			{contract.contractTemplate.templateName}
+			<f:translate id="contract.contractTemplate.{contract.contractTemplate.templateName}">{contract.contractTemplate.templateName}</f:translate>
 		</td>
 		<td colspan="2">
-			<strong>Hours:</strong> {contract.hoursAWeek} / week
+			<strong><f:translate id="hours"></f:translate></strong> {contract.hoursAWeek} / <f:translate id="week">week</f:translate>
 		</td>
 	</tr>
 	<tr>
 		<td>
-			<strong>Start date</strong>
+			<strong><f:translate id="startDate">Start date10110</f:translate></strong>
 		</td>
 		<td colspan="3">
-			{contract.startDate -> f:format.date(format: 'Y-m-d')}
+			{contract.startDate -> f:format.date(format: 'd-m-Y')}
 		</td>
 	</tr>
 	<tr>
 		<td>
-			<strong>End date</strong>
+			<strong><f:translate id="endDate">End date</f:translate></strong>
 		</td>
 		<td>
-			{contract.endDate -> f:format.date(format: 'Y-m-d')}
+			{contract.endDate -> f:format.date(format: 'd-m-Y')}
 		</td>
 		<td colspan="2">
-			<strong>Days till end:</strong>
+			<strong><f:translate id="daysTillEnd">Days till end</f:translate></strong>
 		</td>
 	</tr>
 	<tr>
 		<td>
-			<strong>Salary</strong>
+			<strong><f:translate id="salary">Salary</f:translate></strong>
 		</td>
 		<td>
 			{contract.salary}
@@ -61,10 +61,13 @@
 	</tr>
 	<tr>
 		<td>
-			<strong>{contract.wageScaleGroup}</strong>
+		 	<strong><f:translate id="wageGroup">WageGroup</f:translate></strong>
 		</td>
 		<td>
-			<strong>{contract.wageStep}</strong>
+			<strong>{contract.wageScaleGroup}22</strong>
+		</td>
+		<td colspan="2">
+			<strong><f:translate id="wageStep">WageStep</f:translate> {contract.wageStep}11</strong>
 		</td>
 		<td colspan="2"></td>
 	</tr>
