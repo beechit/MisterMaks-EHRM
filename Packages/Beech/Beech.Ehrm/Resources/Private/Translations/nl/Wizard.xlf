@@ -148,7 +148,7 @@
 			</trans-unit>
 			<trans-unit id="article-10014-values.wageScaleGroup">
 				<source>Wagegroup</source>
-				<target>Salarisschaal</target>
+				<target>Salaris groep</target>
 			</trans-unit>
 			<trans-unit id="article-10014-values.wageStep">
 				<source>Wage step</source>
@@ -228,7 +228,7 @@
 			</trans-unit>
 			<trans-unit id="article-10014-values.salaryScale">
 				<source>Salary scale</source>
-				<target>Salaris groep </target>
+				<target>Salarisschaal</target>
 			</trans-unit>
 			<trans-unit id="article-10001-values.probationUnitOfTime">
 				<source> </source>

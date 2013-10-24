@@ -1,0 +1,17 @@
+<f:layout name="Beech.Ehrm:FieldInline" />
+<f:section name="field">
+	<f:form.select property="{element.identifier}" id="{element.uniqueIdentifier}" options="{element.properties.options}" class="xlarge" errorClass="error" optionLabelField="{element.properties.optionLabelField}"/>
+	<script>
+		$('#contractCreator-article-10014-values_wageScaleGroup').on('change', function() {
+			$.ajax({
+				type: 'GET',
+				url: 'beech.cla/wage/filter',
+				data: 'salaryScale=' + $('#contractCreator-article-10014-values_salaryScale').val()+'&wageScaleGroup='+ $('#contractCreator-article-10014-values_wageScaleGroup').val(),
+				success: function(result) {
+					// Redirect upon successful login
+					$('#contractCreator-article-10014-values_wageStep').html(result).trigger("chosen:updated");
+				}
+			});
+		})
+	</script>
+</f:section>

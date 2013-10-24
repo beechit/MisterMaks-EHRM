@@ -1,11 +1,14 @@
-GlastuinbouwscaleA:
-  properties:
-    wageName: 'GlastuinbouwScaleA'
-    wageStartDate: '01-09-2012'
-    wageEndDate: '30-06-2013'
-    wageType: 'hour'
-    'wageGroup':
-      'b-1':
+SalaryScale:
+  wageName: 'GlastuinbouwScaleA'
+  wageStartDate: '01-09-2012'
+  wageEndDate: '30-06-2013'
+  wageType: 'hour'
+  wageGroups:
+    -
+      label: 'Group B-1'
+      orbaPointsStart: ''
+      orbaPointsEnd: ''
+      data:
         -
           step: '15'
           value: '3,70'
@@ -54,11 +57,11 @@ GlastuinbouwscaleA:
         -
           step: '8'
           value: '11,30'
-      label: 'Group B-1'
+    -
+      label: 'Group B-2'
       orbaPointsStart: ''
       orbaPointsEnd: ''
-    -
-      'b-2':
+      data:
         -
           step: '15'
           value: '3,94'
@@ -113,11 +116,11 @@ GlastuinbouwscaleA:
         -
           step: '10'
           value: '11,86'
-      label: 'Group B-2'
+    -
+      label: 'Group C'
       orbaPointsStart: ''
       orbaPointsEnd: ''
-    -
-      'c':
+      data:
         -
           step: '15'
           value: '4,58'
@@ -167,11 +170,11 @@ GlastuinbouwscaleA:
         -
           step: '8'
           value: '12,70'
-      label: 'Group C'
+    -
+      label: 'Group D'
       orbaPointsStart: ''
       orbaPointsEnd: ''
-    -
-      'd':
+      data:
         -
           step: '15'
           value: '4,87'
@@ -221,11 +224,11 @@ GlastuinbouwscaleA:
         -
           step: '8'
           value: '13,42'
-      label: 'Group D'
+    -
+      label: 'Group E'
       orbaPointsStart: ''
       orbaPointsEnd: ''
-    -
-      'e':
+      data:
         -
           step: '15'
           value: '5,11'
@@ -275,11 +278,11 @@ GlastuinbouwscaleA:
         -
           step: '8'
           value: '14,05'
-      label: 'Group E'
+    -
       orbaPointsStart: ''
       orbaPointsEnd: ''
-    -
-      'f':
+      label: 'Group F'
+      data:
         -
           step: '15'
           value: '5,37'
@@ -329,11 +332,11 @@ GlastuinbouwscaleA:
         -
           step: '8'
           value: '14,66'
+    -
+      label: 'Group G'
       orbaPointsStart: ''
       orbaPointsEnd: ''
-      label: 'Group F'
-    -
-      'g':
+      data:
         -
           step: '15'
           value: '5,58'
@@ -383,11 +386,12 @@ GlastuinbouwscaleA:
         -
           step: '8'
           value: '15,21'
-      label: 'Group G'
+
+    -
+      label: 'Group H'
       orbaPointsStart: ''
       orbaPointsEnd: ''
-    -
-      'h':
+      data:
         -
           step: '15'
           value: '5,80'
@@ -437,6 +441,3 @@ GlastuinbouwscaleA:
         -
           step: '8'
           value: '15,75'
-      label: 'Group H'
-      orbaPointsStart: ''
-      orbaPointsEnd: ''

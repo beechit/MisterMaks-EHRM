@@ -371,7 +371,7 @@ contractArticles:
       order: 305
       articleText:
         en: ''
-        nl: 'Werknemer is ingedeeld in functiegroep <wageScaleGroup> in functiejaar <wageStep>. Bij indiensttreding bedraagt het salaris € <wage> bruto per uur. Het loon word per <paymentSequence> uitbetaald.'
+        nl: 'Werknemer is ingedeeld in functiegroep <wageScaleGroup> in functiejaar <wageStep>. Bij indiensttreding bedraagt het salaris € <wageValue> bruto per uur. Het loon word per <wagePaymentSequence> uitbetaald.'
         pl: ''
       help:
         en: ''
@@ -380,12 +380,11 @@ contractArticles:
       values:
       # selectable values from the wagemodel.
         -
-          type: 'Beech.CLA:SingleSelectDropdown'
-#          value: 'Beech/CLA/Domain/Model/SalaryScale'
+          type: 'Beech.CLA:SalaryScaleSelect'
           valueId: 'salaryScale'
           default: 'B'
         -
-          type: 'Beech.CLA:SingleSelectDropdown'
+          type: 'Beech.CLA:WageGroupSelect'
 #          value: ''
           valueId: 'wageScaleGroup'
           default: ''
@@ -393,7 +392,7 @@ contractArticles:
             -
               type: 'TYPO3.Flow:NotEmpty'
         -
-          type: 'Beech.CLA:SingleSelectDropdown'
+          type: 'Beech.CLA:WageStepSelect'
 #          value: ''
           valueId: 'wageStep'
           default: '1'
@@ -403,7 +402,7 @@ contractArticles:
         -
           type: 'Beech.CLA:SingleLineText'
           value: ''
-          valueId: 'wage'
+          valueId: 'wageValue'
           default: ''
           validation:
             -
@@ -420,7 +419,7 @@ contractArticles:
             '4 weeks': '4 weeks'
             'month': 'Month'
           default: 'month'
-          valueId: 'paymentSequence'
+          valueId: 'wagePaymentSequence'
           validation:
             -
               type: 'TYPO3.Flow:NotEmpty'

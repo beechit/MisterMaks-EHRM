@@ -10,3 +10,4 @@
 #./flow import:yaml Beech.CLA ContractTemplate --sourcePath Packages/Beech/Beech.Ehrm.Glastuinbouw/Resources/Private/Data/ContractTemplates/ --pathInYaml contractTemplate
 #./flow import:collection Beech.Document DocumentType resource://Beech.Document/Private/Data/DocumentType documentTypes
 #./flow import:yaml Beech.Absence AbsenceArrangement --sourcePath Packages/Beech/Beech.Absence/Resources/Private/Data/AbsenceArrangements/ --pathInYaml absenceArrangement
+./flow import:yaml Beech.CLA SalaryScale --sourcePath Packages/Beech/Beech.Ehrm.Glastuinbouw/Resources/Private/Data/Wage/ --pathInYaml SalaryScale

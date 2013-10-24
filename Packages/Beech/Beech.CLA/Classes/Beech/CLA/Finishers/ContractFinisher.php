@@ -41,17 +41,27 @@ class ContractFinisher extends \TYPO3\Form\Core\Model\AbstractFinisher {
 		}
 
 		$articles = array();
-		foreach ($this->finisherContext->getFormValues() as $key => $values) {
+		foreach ($formValues as $key => $values) {
 			if (strpos($key, 'article') === 0) {
 				if (preg_match('/article-(\d+)-values/', $key, $articleId)) {
 					if(is_array($values)) {
-						foreach($values as $subkey => $value) {
-							$setter = 'set'. ucfirst($subkey);
-							if($value instanceof \DateTime) {
-								$values[$subkey] = $value->format('Y-m-d H:i:s.u');
+						if (isset($values['wageValue'])) {
+							$wage = new \Beech\CLA\Domain\Model\Wage();
+							$wage->setScaleGroup($values['wageScaleGroup']);
+							$wage->setValue($values['wageValue']);
+							$wage->setStep($values['wageStep']);
+							$wage->setPaymentSequence($values['wagePaymentSequence']);
+							$contract->addWage($wage);
+						} else {
+							foreach($values as $subkey => $value) {
+								$setter = 'set'. ucfirst($subkey);
+								if($value instanceof \DateTime) {
+									$values[$subkey] = $value->format('Y-m-d H:i:s.u');
+								}
+								$contract->{$setter}($value);
 							}
-							$contract->{$setter}($value);
 						}
+					} elseif ($values instanceof \DateTime) {
 					} elseif ($values instanceof \DateTime) {
 						$values = $values->format('Y-m-d H:i:s.u');
 					}
