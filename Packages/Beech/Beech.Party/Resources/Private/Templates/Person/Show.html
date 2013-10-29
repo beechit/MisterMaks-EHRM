@@ -96,13 +96,13 @@
 								<f:render partial="Views/Show/Address" arguments="{address: person.address_homeAddress}"/>
 								<ehrm:link.edit controller='Address' action='list'
 												arguments='{party: person}'
-												dataReload="reload-current-page"/>
+												dataReload="reload-current-page" count="<f:count subject='{addresses}'/>"/>
 							</td>
 							<td class="span6">
 								<f:render partial="Views/Show/Address" arguments="{address: person.address_workAddress}"/>
 								<ehrm:link.edit controller='Address' action='list'
 												arguments='{party: person}'
-												dataReload="reload-current-page"/>
+												dataReload="reload-current-page" count="<f:count subject='{addresses}'/>"/>
 							</td>
 						</tr>
 						</tbody>
@@ -118,7 +118,7 @@
 					</f:for>
 					<ehrm:link.edit controller='Education' action='list'
 									arguments='{party: person}'
-									dataReload="reload-current-page"/>
+									dataReload="reload-current-page" count="<f:count subject='{educations}'/>"/>
 				</div>
 				<div id="contract" class="tab-pane fade">
 					<f:render partial="Beech.CLA:Views/List/Contract" arguments="{_all}"/>
@@ -131,7 +131,7 @@
 					</f:for>
 					<ehrm:link.edit controller='Asset' action='list'
 									arguments='{party: person}'
-									dataReload="reload-current-page"/>
+									dataReload="reload-current-page" count="<f:count subject='{assets}'/>"/>
 				</div>
 				<div id="licence" class="tab-pane fade">
 					<f:for each="{licences}" as="licence">
@@ -141,7 +141,7 @@
 					</f:for>
 					<ehrm:link.edit controller='Licence' action='list'
 									arguments='{party: person}'
-									dataReload="reload-current-page"/>
+									dataReload="reload-current-page" count="<f:count subject='{licences}'/>"/>
 				</div>
 				<div id="personRelations" class="tab-pane fade">
 					<f:for each="{personRelations}" as="personRelation">
@@ -152,7 +152,7 @@
 					</f:for>
 					<ehrm:link.edit controller='PersonRelation' action='new'
 									arguments='{personRelatedTo: person}'
-									dataReload="reload-current-page">
+									dataReload="reload-current-page" count="<f:count subject='{personRelations}'/>">
 						<i class="icon-plus icon-white"></i>
 						<f:translate id="action.add">Add</f:translate>
 					</ehrm:link.edit>
