@@ -56,7 +56,7 @@ class Document extends \Beech\Ehrm\Domain\Model\Document {
 	 *
 	 * @param \Beech\Document\Domain\Model\DocumentType $documentType
 	 */
-	public function setDocumentType(\Beech\Document\Domain\Model\DocumentType $documentType) {
+	public function setDocumentType(\Beech\Document\Domain\Model\DocumentType $documentType = NULL) {
 		$this->documentType = $documentType;
 	}
 

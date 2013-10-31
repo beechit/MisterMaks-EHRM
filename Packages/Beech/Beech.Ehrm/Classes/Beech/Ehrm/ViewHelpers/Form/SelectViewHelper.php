@@ -43,9 +43,9 @@ class SelectViewHelper extends \TYPO3\Fluid\ViewHelpers\Form\SelectViewHelper {
 	 * @param array $options the options for the form.
 	 * @return string rendered tags.
 	 */
-	protected function renderOptionTags($options) {
+	protected function renderOptionTags($options, $prependOptionValue = TRUE) {
 		$output = '';
-		if ($this->hasArgument('prependOptionLabel')) {
+		if ($this->hasArgument('prependOptionLabel') && $prependOptionValue) {
 			$value = $this->hasArgument('prependOptionValue') ? $this->arguments['prependOptionValue'] : '';
 			$label = $this->arguments['prependOptionLabel'];
 			$output .= $this->renderOptionTag($value, $label, FALSE) . chr(10);
@@ -102,7 +102,7 @@ class SelectViewHelper extends \TYPO3\Fluid\ViewHelpers\Form\SelectViewHelper {
 	 * @return string
 	 */
 	protected function renderOptionGroupTag($label, $options) {
-		return '<optgroup label="' . htmlspecialchars($label) . '">' . $this->renderOptionTags($options) . '</optgroup>';
+		return '<optgroup label="' . htmlspecialchars($label) . '">' . $this->renderOptionTags($options, FALSE) . '</optgroup>';
 	}
 
 	/**
@@ -122,21 +122,26 @@ class SelectViewHelper extends \TYPO3\Fluid\ViewHelpers\Form\SelectViewHelper {
 			$label = $this->getTranslatedLabel($value, $label);
 		}
 
-		if ($option->getExpiration() != '') {
-			$output.= ' expiration="'.$option->getExpiration().'"';
+
+
+		if ($option instanceof \Beech\Document\Domain\Model\DocumentType) {
+			if ($option->getExpiration() != '') {
+				$output.= ' expiration="'.$option->getExpiration().'"';
+			}
+
+			if ($option->getNumber() != '') {
+				$output.= ' number="'.$option->getNumber().'"';
+			}
+
+			if ($option->getPeriod() != '') {
+				$output.= ' period="'.$option->getPeriod().'"';
+			}
+
+			if ($option->getYear() != '') {
+				$output.= ' year="'.$option->getYear().'"';
+			}
 		}
 
-		if ($option->getNumber() != '') {
-			$output.= ' number="'.$option->getNumber().'"';
-		}
-
-		if ($option->getPeriod() != '') {
-			$output.= ' period="'.$option->getPeriod().'"';
-		}
-
-		if ($option->getYear() != '') {
-			$output.= ' year="'.$option->getYear().'"';
-		}
 		$output .= '>' . htmlspecialchars($label) . '</option>';
 
 		return $output;

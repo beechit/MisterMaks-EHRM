@@ -155,7 +155,7 @@ class Absence extends \Beech\Ehrm\Domain\Model\Document {
 	 * @param \Beech\Absence\Domain\Model\AbsenceArrangement $absenceArrangement
 	 * @return void
 	 */
-	public function setAbsenceArrangement(\Beech\Absence\Domain\Model\AbsenceArrangement $absenceArrangement) {
+	public function setAbsenceArrangement(\Beech\Absence\Domain\Model\AbsenceArrangement $absenceArrangement = NULL) {
 		$this->absenceArrangement = $absenceArrangement;
 	}
 

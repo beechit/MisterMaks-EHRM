@@ -42,7 +42,7 @@
 				<source>Modified by</source>
 			</trans-unit>
 			<trans-unit id="absence.selectAbsenceArrangement">
-				<source>Select absence arrangement</source>
+				<source>Select absence type</source>
 			</trans-unit>
 			<trans-unit id="absence.flashmessage.createdAbsence">
 				<source>New minute created</source>

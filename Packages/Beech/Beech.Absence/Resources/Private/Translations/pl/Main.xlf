@@ -346,6 +346,10 @@
 				<source>Cancel</source>
 				<target></target>
 			</trans-unit>
+			<trans-unit id="absense.selectAbsenceArangement">
+				<source>Select absence type</source>
+				<target></target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

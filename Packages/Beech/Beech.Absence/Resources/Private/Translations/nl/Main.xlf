@@ -54,6 +54,10 @@
 				<source>Modified by</source>
 				<target>Gewijzigd door</target>
 			</trans-unit>
+			<trans-unit id="absence.selectAbsenceArrangement">
+				<source>Select absence type</source>
+				<target>Select...</target>
+			</trans-unit>
 			<trans-unit id="absence.flashmessage.createdAbsenseReport">
 				<source>New absence report created</source>
 				<target>Nieuwe verauimmelding toegevoegd</target>
