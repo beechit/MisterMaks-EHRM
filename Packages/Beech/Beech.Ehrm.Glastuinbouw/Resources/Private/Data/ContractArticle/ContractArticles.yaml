@@ -508,21 +508,6 @@ contractArticles:
           value: ''
           valueId: probationPeriod
           default: 'P0D'
-          validation:
-            -
-              type: 'Integer'
-          default: 4
-        -
-          type: 'Beech.CLA:SingleSelectDropdown'
-          options:
-            day: Day
-            week: Week
-            month: Month
-          default: week
-          valueId: probationUnitOfTime
-          validation:
-            -
-              type: 'TYPO3.Flow:NotEmpty'
     -
       articleHeader:
         en: ''
