@@ -58,10 +58,11 @@ class EditViewHelper extends \TYPO3\Fluid\ViewHelpers\Link\ActionViewHelper {
 	 * @param string $dataTarget
 	 * @param string $dataReload
 	 * @param string $modalSize
+	 * @param integer $count
 	 * @return string The rendered link
 	 * @throws \TYPO3\Fluid\Core\ViewHelper\Exception
 	 */
-	public function render($action, $arguments = array(), $controller = NULL, $package = NULL, $subpackage = NULL, $section = '', $format = '',  array $additionalParams = array(), $addQueryString = FALSE, array $argumentsToBeExcludedFromQueryString = array(), $useParentRequest = FALSE, $dataToggle = NULL, $dataTarget = NULL, $dataReload = NULL, $modalSize = NULL) {
+	public function render($action, $arguments = array(), $controller = NULL, $package = NULL, $subpackage = NULL, $section = '', $format = '',  array $additionalParams = array(), $addQueryString = FALSE, array $argumentsToBeExcludedFromQueryString = array(), $useParentRequest = FALSE, $dataToggle = NULL, $dataTarget = NULL, $dataReload = NULL, $modalSize = NULL, $count = -1) {
 		// TODO: implement permission checking, if no rights to edit, don't display link
 		$uriBuilder = $this->controllerContext->getUriBuilder();
 		if ($useParentRequest) {
@@ -71,6 +72,12 @@ class EditViewHelper extends \TYPO3\Fluid\ViewHelpers\Link\ActionViewHelper {
 			}
 			$uriBuilder = clone $uriBuilder;
 			$uriBuilder->setRequest($request->getParentRequest());
+		}
+
+		if ($count === 0) {
+			$icon = 'icon-plus';
+		} else {
+			$icon = 'icon-pencil';
 		}
 
 		$uriBuilder
@@ -95,7 +102,7 @@ class EditViewHelper extends \TYPO3\Fluid\ViewHelpers\Link\ActionViewHelper {
 		if ($this->tag->hasContent()) {
 			$this->tag->setContent($this->renderChildren());
 		} else {
-			$this->tag->setContent('<i class="icon-pencil icon-white"></i> ' . $this->translator->translateById('', array(), NULL, NULL, 'Main', 'Beech.Party'));
+			$this->tag->setContent('<i class="' . $icon . ' icon-white"></i> ' . $this->translator->translateById('', array(), NULL, NULL, 'Main', 'Beech.Party'));
 		}
 
 		$this->tag->forceClosingTag(TRUE);
