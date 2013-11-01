@@ -1970,6 +1970,10 @@
 				<source>There is no contract for this person.</source>
 				<target>Er is geen contract bij deze persoon</target>
 			</trans-unit>
+			<trans-unit id="yearsOld">
+				<source>years old</source>
+				<target>jaar</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

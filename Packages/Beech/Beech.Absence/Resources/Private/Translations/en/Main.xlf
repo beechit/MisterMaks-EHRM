@@ -75,7 +75,7 @@
 				<source>Unknown</source>
 			</trans-unit>
 			<trans-unit id="reason">
-				<source>Reason:</source>
+				<source>Reason</source>
 			</trans-unit>
 			<trans-unit id="reportMethod">
 				<source>Report method</source>
