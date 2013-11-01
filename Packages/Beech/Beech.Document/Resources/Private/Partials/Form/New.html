@@ -32,16 +32,39 @@
 				<ehrm:form.select property="documentType" class="documentType" options="{documentCategories}" translate="{by: 'label'}" optionLabelField="typeName"/>
 			</div>
 		</div>
-		<div class="control-group">
+		<div class="control-group hide">
 			<label class="control-label" for="expiration">
 				<f:translate id="expiration">Expiration</f:translate>
 			</label>
 			<div class="controls">
-				<ehrm:form.datePicker id="expiration" property="expiration" class="datepicker"/>
+				<ehrm:form.datePicker id="documentExpiration" property="expiration" class="datepicker"/>
 			</div>
 		</div>
 
-		<div class="control-group">
+		<div class="control-group hide">
+			<label class="control-label" for="number">
+				<f:translate id="number">Number:</f:translate>
+			</label>
+			<div class="controls">
+				<f:form.textfield id="documentNumber" property="number" placeholder="{f:translate(id:'number')}..."/>
+			</div>
+		</div>
+
+		<div class="control-group hide">
+			<label class="control-label" for="period">
+				<f:translate id="period">Period:</f:translate>
+			</label>
+			<f:form.textfield id="documentPeriod" property="period" placeholder="{f:translate(id:'period')}..."/>
+		</div>
+
+		<div class="control-group hide">
+			<label class="control-label" for="year">
+				<f:translate id="year">Year:</f:translate>
+			</label>
+			<f:form.textfield id="documentYear" property="year" placeholder="{f:translate(id:'year')}..."/>
+		</div>
+
+		<div class="control-group hide">
 			<label class="control-label" for="required"><f:translate id="required">Required</f:translate></label>
 
 			<div class="controls">
