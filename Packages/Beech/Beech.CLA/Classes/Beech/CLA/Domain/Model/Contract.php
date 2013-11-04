@@ -25,7 +25,7 @@ class Contract extends \Beech\Ehrm\Domain\Model\Document {
 
 	/**
 	 * @var \Doctrine\Common\Collections\Collection<\Beech\CLA\Domain\Model\Wage>
-	 * @ODM\ReferenceMany(targetDocument="\Beech\CLA\Domain\Model\Wage")
+	 * @ODM\ReferenceMany(targetDocument="\Beech\CLA\Domain\Model\Wage", cascade={"persist"})
 	 */
 	protected $wages;
 
@@ -329,7 +329,7 @@ class Contract extends \Beech\Ehrm\Domain\Model\Document {
 	 */
 	public function getWage() {
 		if (count($this->wages) > 0) {
-			return $this->wages[0];
+			return $this->wages->last();
 		}
 		return NULL;
 	}

@@ -18,11 +18,30 @@ use TYPO3\Flow\Annotations as Flow,
 class SalaryScale extends \Beech\Ehrm\Domain\Model\Document {
 
 	/**
-	 * @var \Beech\CLA\Domain\Model\Contract
+	 * @var string
 	 * @ODM\Field(type="mixed")
 	 * @ODM\Index
 	 */
-	protected $contract;
+	protected $wageName;
+
+	/**
+	 * Set wageName
+	 *
+	 * @param string $wageName
+	 */
+	public function setWageName($wageName) {
+		$this->wageName = $wageName;
+	}
+
+	/**
+	 * Get wageName
+	 *
+	 * @return string
+	 */
+	public function getWageName() {
+		return $this->wageName;
+	}
+
 
 }
 

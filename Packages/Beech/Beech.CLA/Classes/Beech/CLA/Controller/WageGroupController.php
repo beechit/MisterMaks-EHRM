@@ -15,17 +15,23 @@ use Beech\CLA\Domain\Model\WageGroup as WageGroup;
  *
  * @Flow\Scope("singleton")
  */
-class WageGroupController extends \Beech\Ehrm\Controller\AbstractManagementController {
+class WageGroupController extends \Beech\Ehrm\Controller\AbstractController {
 
 	/**
-	 * @var string
+	 * @var \Beech\CLA\Domain\Repository\SalaryScaleRepository
+	 * @Flow\Inject
 	 */
-	protected $entityClassName = 'Beech\CLA\Domain\Model\WageGroup';
+	protected $salaryScaleRepository;
 
 	/**
-	 * @var string
 	 */
-	protected $repositoryClassName = 'Beech\CLA\Domain\Repository\WageGroupRepository';
+	public function filterAction() {
+		$salaryScale = $this->salaryScaleRepository->findByIdentifier($this->request->getArgument('salaryScale'));
+		$options = array('' => '');
+		foreach ($salaryScale->getWageGroups() as $wageGroup) {
+			$options[$wageGroup['label']] = $wageGroup['label'];
+		}
+		$this->view->assign('options', $options);
+	}
 }
-
 ?>

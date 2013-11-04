@@ -1,0 +1,9 @@
+<f:layout name="Beech.Ehrm:FieldInline" />
+<f:section name="field">
+	<f:form.select property="{element.identifier}" id="{element.uniqueIdentifier}" options="{element.properties.options}" class="xlarge" errorClass="error" optionLabelField="{element.properties.optionLabelField}"/>
+	<script>
+		$('#contractCreator-article-10014-values_wageStep').on('change', function() {
+			$('#contractCreator-article-10014-values_wageValue').val($(this).find('option:selected').attr('wage')).trigger('change')
+		})
+	</script>
+</f:section>

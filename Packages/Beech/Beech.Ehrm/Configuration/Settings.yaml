@@ -271,6 +271,30 @@ TYPO3:
             formBuilder:
               label: 'JobDescription Select'
               group: contract
+          'Beech.CLA:SalaryScaleSelect':
+            superTypes: ['TYPO3.Form:FormElement', 'TYPO3.Form:SingleSelectDropdown']
+            implementationClassName: 'Beech\CLA\Form\Elements\SalaryScaleSelect'
+            renderingOptions:
+              templatePathPattern: 'resource://Beech.CLA/Private/Templates/Form/Elements/SalaryScaleSelect.html'
+            formBuilder:
+              label: 'Salaryscale Select'
+              group: contract
+          'Beech.CLA:WageGroupSelect':
+            superTypes: ['TYPO3.Form:FormElement', 'TYPO3.Form:SingleSelectDropdown']
+            implementationClassName: 'Beech\CLA\Form\Elements\WageGroupSelect'
+            renderingOptions:
+              templatePathPattern: 'resource://Beech.CLA/Private/Templates/Form/Elements/WageGroupSelect.html'
+            formBuilder:
+              label: 'Salaryscale Select'
+              group: contract
+          'Beech.CLA:WageStepSelect':
+            superTypes: ['TYPO3.Form:FormElement', 'TYPO3.Form:SingleSelectDropdown']
+            implementationClassName: 'Beech\CLA\Form\Elements\WageStepSelect'
+            renderingOptions:
+              templatePathPattern: 'resource://Beech.CLA/Private/Templates/Form/Elements/WageStepSelect.html'
+            formBuilder:
+              label: 'Salarystep Select'
+              group: contract
           'Beech.CLA:ContractHeaderSection':
             superTypes: ['TYPO3.Form:Section']
             renderingOptions:
