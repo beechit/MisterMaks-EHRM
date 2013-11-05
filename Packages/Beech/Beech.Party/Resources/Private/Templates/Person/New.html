@@ -156,7 +156,7 @@
 			element.find('select').chosen({width: '100%'});
 			element.find('.countrySelect').countrySelect();
 			element.find('input').applyInputMasks();
-
+			element.find('.header').show()
 			// reset complete flag on change in form so form is resend on clicking "Next"
 			$("input,select,textarea", element).on('change', function() {
 				$(this).parents('form:first').find('input[name="iscomplete"]').val('');
