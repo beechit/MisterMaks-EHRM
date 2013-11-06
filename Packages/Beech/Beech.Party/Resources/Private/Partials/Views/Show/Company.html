@@ -11,7 +11,7 @@
 </ul>
 <div id="companyTabsContent" class="tab-content">
 	<div id="main" class="tab-pane fade active in">
-		<div class="rows">
+		<div class="row-fluid">
 			<div class="span8">
 				<f:render partial="Views/Show/Company/Details" arguments="{company: company}"/>
 				<ehrm:link.edit controller='Company' action='edit'
@@ -26,7 +26,12 @@
 								dataReload="reload-current-page"/>
 			</div>
 		</div>
-		<div class="rows">
+		<div class="row-fluid">
+			<div class="span5">
+				<h5><f:translate id="address">Address</f:translate></h5>
+			</div>
+		</div>
+		<div class="row-fluid">
 			<div class="span6">
 				<f:render partial="Views/Show/Address" arguments="{address: company.address_workAddress}"/>
 				<ehrm:link.edit controller='Address' action='list'
@@ -41,8 +46,12 @@
 								dataReload="reload-current-page"/>
 			</div>
 		</div>
-
-		<div class="rows">
+		<div class="row-fluid">
+			<div class="span5">
+				<h5><f:translate id="contactdata">ContactData</f:translate></h5>
+			</div>
+		</div>
+		<div class="row-fluid">
 			<div class="span6">
 				<f:render partial="Views/Show/ElectronicAddress" arguments="{electronicAddress: company.electronicAddress_email}"/>
 				<ehrm:link.edit controller='ElectronicAddress' action='list'
@@ -56,7 +65,7 @@
 								dataReload="reload-current-page"/>
 			</div>
 		</div>
-		<div class="rows">
+		<div class="row-fluid">
 			<div class="span6">
 				<f:render partial="Views/Show/Company/ContactPerson" arguments="{person: company.contactPerson}"/>
 			</div>

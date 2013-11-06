@@ -670,42 +670,6 @@
 				<source>department</source>
 				<target></target>
 			</trans-unit>
-			<trans-unit id="company.soleProprietorship">
-				<source>Sole Proprietorship</source>
-				<target></target>
-			</trans-unit>
-			<trans-unit id="company.partnership">
-				<source>partnership</source>
-				<target></target>
-			</trans-unit>
-			<trans-unit id="company.vof">
-				<source>VOF</source>
-				<target></target>
-			</trans-unit>
-			<trans-unit id="company.cv">
-				<source>CV</source>
-				<target></target>
-			</trans-unit>
-			<trans-unit id="company.bv">
-				<source>BV</source>
-				<target></target>
-			</trans-unit>
-			<trans-unit id="company.nv">
-				<source>NV</source>
-				<target></target>
-			</trans-unit>
-			<trans-unit id="company.association">
-				<source>Association</source>
-				<target></target>
-			</trans-unit>
-			<trans-unit id="company.foundation">
-				<source>Foundation</source>
-				<target></target>
-			</trans-unit>
-			<trans-unit id="company.cooperative">
-				<source>Cooperative</source>
-				<target></target>
-			</trans-unit>
 			<trans-unit id="company.primary">
 				<source>primary</source>
 				<target></target>
@@ -1976,6 +1940,10 @@
 			</trans-unit>
 			<trans-unit id="yearsOld">
 				<source>years old</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="contactData">
+				<source>Contact data</source>
 				<target></target>
 			</trans-unit>
 		</body>

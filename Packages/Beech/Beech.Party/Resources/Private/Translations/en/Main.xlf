@@ -1485,6 +1485,9 @@
 			<trans-unit id="yearsOld">
 				<source>years old</source>
 			</trans-unit>
+			<trans-unit id="contactData">
+				<source>Contact data</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

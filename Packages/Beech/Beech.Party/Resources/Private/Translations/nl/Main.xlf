@@ -136,7 +136,7 @@
 			</trans-unit>
 			<trans-unit id="company.bankInformation">
 				<source>Bank information</source>
-				<target>Bank info</target>
+				<target>Bank information</target>
 			</trans-unit>
 			<trans-unit id="company.bankAccountType">
 				<source>Account type</source>
@@ -666,30 +666,6 @@
 				<source>Modifiedby</source>
 				<target>Gewijzigd door</target>
 			</trans-unit>
-			<trans-unit id="company.department">
-				<source>department</source>
-				<target>afdeling</target>
-			</trans-unit>
-			<trans-unit id="company.soleProprietorship">
-				<source>Sole Proprietorship</source>
-				<target>Eenmanszaak</target>
-			</trans-unit>
-			<trans-unit id="company.partnership">
-				<source>partnership</source>
-				<target>Maatschap</target>
-			</trans-unit>
-			<trans-unit id="company.vof">
-				<source>VOF</source>
-				<target>VOF</target>
-			</trans-unit>
-			<trans-unit id="company.cv">
-				<source>CV</source>
-				<target>CV</target>
-			</trans-unit>
-			<trans-unit id="company.bv">
-				<source>BV</source>
-				<target>BV</target>
-			</trans-unit>
 			<trans-unit id="company.nv">
 				<source>NV</source>
 				<target>NV</target>
@@ -967,7 +943,7 @@
 			</trans-unit>
 			<trans-unit id="company.legalForm.bv">
 				<source>B.V.</source>
-				<target>B.V.</target>
+				<target>Besloten vennootschap</target>
 			</trans-unit>
 			<trans-unit id="education.educationLevel.preVocational">
 				<source>Prevocational</source>
@@ -1977,6 +1953,10 @@
 			<trans-unit id="yearsOld">
 				<source>years old</source>
 				<target>jaar</target>
+			</trans-unit>
+			<trans-unit id="contactData">
+				<source>Contact data</source>
+				<target>Contact gegevens</target>
 			</trans-unit>
 		</body>
 	</file>
