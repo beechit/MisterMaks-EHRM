@@ -2,8 +2,7 @@
 	<f:if condition="{address.addressType}">
 		<f:then>
 			<div class="row-fluid">
-				<div class="span1"><i class="icon-home"></i></div>
-				<div class="span11"><strong><f:translate id="address.addressType.{address.addressType}">{address.addressType}</f:translate></strong></div>
+				<div class="span12"><i class="icon-home"></i> <strong><f:translate id="address.addressType.{address.addressType}">{address.addressType}</f:translate></strong></div>
 			</div>
 			<div class="row-fluid">
 				<div class="span12">{address.streetName} {address.houseNumber}<f:if condition="{address.houseNumberAddition}"> {address.houseNumberAddition}</f:if></div>
