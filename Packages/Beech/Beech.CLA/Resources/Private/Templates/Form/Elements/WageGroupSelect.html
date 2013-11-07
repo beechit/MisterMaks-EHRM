@@ -10,6 +10,7 @@
 				success: function(result) {
 					// Redirect upon successful login
 					$('#contractCreator-article-10014-values_wageStep').html(result).trigger("chosen:updated");
+					$('#contractCreator-article-10014-values_wageValue').val('').trigger('change')
 				}
 			});
 		})
