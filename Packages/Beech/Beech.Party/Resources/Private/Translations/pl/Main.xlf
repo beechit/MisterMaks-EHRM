@@ -1694,6 +1694,10 @@
 				<source>Bank name</source>
 				<target></target>
 			</trans-unit>
+			<trans-unit id="bank">
+				<source>Bank</source>
+				<target>Bank</target>
+			</trans-unit>
 			<trans-unit id="foreignBank">
 				<source>Foreign bank</source>
 				<target></target>

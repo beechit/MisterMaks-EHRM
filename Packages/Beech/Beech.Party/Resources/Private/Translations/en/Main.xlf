@@ -1271,6 +1271,10 @@
 			<trans-unit id="bankName">
 				<source>Bank name</source>
 			</trans-unit>
+			<trans-unit id="bank">
+				<source>Bank</source>
+				<target>Bank</target>
+			</trans-unit>
 			<trans-unit id="foreignBank">
 				<source>Foreign bank</source>
 			</trans-unit>
