@@ -7,7 +7,7 @@
 	<div class="span1 primaryIcon"><f:if condition="{phoneNumber.primary}"><i class="icon-check"></i></f:if></div>
 	<div class="span1">
 		<div class="btn-group">
-			<a class="btn btn-small" data-toggle="collapse" data-target="#toggle{phoneNumber.id}"><i class="icon-pencil"></i></a>
+			<f:render partial="Forms/Buttons/Toggle" arguments="{identifier: phoneNumber.id, icon: 'icon-pencil', action: action, collapsed: collapsed}"/>
 			<f:if condition="{phoneNumber.primary}">
 				<f:then>
 					<f:render partial="Forms/Buttons/Remove" arguments="{class: 'hide'}"/>

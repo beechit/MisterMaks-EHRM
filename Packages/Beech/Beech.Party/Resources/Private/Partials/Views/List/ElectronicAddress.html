@@ -7,7 +7,7 @@
 	<div class="span1 primaryIcon"><f:if condition="{electronicAddress.primary}"><i class="icon-check"></i></f:if></div>
 	<div class="span1">
 		<div class="btn-group">
-			<f:render partial="Forms/Buttons/Toggle" arguments="{identifier: electronicAddress.id, icon: 'icon-pencil'}"/>
+			<f:render partial="Forms/Buttons/Toggle" arguments="{identifier: electronicAddress.id, action: action, icon: 'icon-pencil', collapsed: collapsed}"/>
 			<f:if condition="{electronicAddress.primary}">
 				<f:then>
 					<f:render partial="Forms/Buttons/Remove" arguments="{class: 'hide'}"/>

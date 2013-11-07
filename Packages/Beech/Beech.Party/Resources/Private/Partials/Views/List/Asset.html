@@ -5,7 +5,7 @@
 	<div class="span5"><f:format.date format="d-m-Y">{asset.provisionDate}</f:format.date></div>
 	<div class="span1">
 		<div class="btn-group">
-			<a class="btn btn-small" data-toggle="collapse" data-target="#toggle{asset.id}"><i class="icon-pencil"></i></a>
+			<f:render partial="Forms/Buttons/Toggle" arguments="{identifier: asset.id, icon: 'icon-pencil', action: action, collapsed: collapsed}"/>
 			<f:if condition="{0: action} != {0: 'add'}">
 				<f:then>
 					<button type="submit" name="action" class="btn btn-danger btn-small" value="remove">
