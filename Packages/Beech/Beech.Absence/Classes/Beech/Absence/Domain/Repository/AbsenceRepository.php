@@ -32,6 +32,23 @@ class AbsenceRepository extends \Radmiraal\CouchDB\Persistence\AbstractRepositor
 	}
 
 	/**
+	 * Get absence history based on person and absenceType
+	 *
+	 * @param $person
+	 * @param $absenceType
+	 * @return array
+	 */
+	public function findActiveAbsence($person) {
+		$absences = $this->findByPersonAndType($person, \Beech\Absence\Domain\Model\Absence::OPTION_SICKNESS);
+		foreach ($absences as $index => $absence) {
+			if ($absence->getEndDate() != NULL) {
+				unset($absences[$index]);
+			}
+		}
+		return $absences;
+	}
+
+	/**
 	 * Get absence history bases on department and absenceType
 	 *
 	 * @param \Beech\Party\Domain\Model\Company $deparment

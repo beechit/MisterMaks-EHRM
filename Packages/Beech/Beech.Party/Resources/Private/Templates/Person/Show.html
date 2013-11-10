@@ -8,15 +8,27 @@
 
 	<div class="row-fluid content-padding">
 		<div class="span12">
-			<a class="btn" href="{f:uri.action(package:'Beech.Absence', controller:'Absence', action:'new', arguments: {person: person, absenceType: 'sickness'})}"
-			   data-toggle="modal-ajax" data-target="#modal" modal-size="large"
-			   data-reload="close-modal">
-				<i class="icon-ambulance icon-white"></i>
-				<f:translate id="sickReport">Sick report</f:translate>
-			</a>
+			<f:if condition="{absence}">
+				<f:then>
+					<a class="btn" href="{f:uri.action(package:'Beech.Absence', controller:'Absence', action:'recovery', arguments: {absence: absence})}"
+					   data-toggle="modal-ajax" data-target="#modal" modal-size="large"
+					   data-reload="reload-current-page">
+						<i class="icon-ambulance icon-white"></i>
+						<f:translate id="recoveryRequest">Recovery</f:translate>
+					</a>
+				</f:then>
+				<f:else>
+					<a class="btn" href="{f:uri.action(package:'Beech.Absence', controller:'Absence', action:'new', arguments: {person: person, absenceType: 'sickness'})}"
+					   data-toggle="modal-ajax" data-target="#modal" modal-size="large"
+					   data-reload="reload-current-page">
+						<i class="icon-ambulance icon-white"></i>
+						<f:translate id="sickReport">Sick report</f:translate>
+					</a>
+				</f:else>
+			</f:if>
 			<a class="btn" href="{f:uri.action(package:'Beech.Absence', controller:'Absence', action:'new', arguments: {person: person, absenceType: 'leave'})}"
 			   data-toggle="modal-ajax" data-target="#modal" modal-size="large"
-			   data-reload="close-modal">
+			   data-reload="reload-current-page">
 				<i class="icon-ambulance icon-white"></i>
 				<f:translate id="leaveRequest">Leave request</f:translate>
 			</a>

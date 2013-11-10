@@ -97,6 +97,14 @@ class Absence extends \Beech\Ehrm\Domain\Model\Document {
 	 */
 	protected $estimatedRecoveryDate;
 
+	/**
+	 * The person initiating recovery of this absence
+	 *
+	 * @var \Beech\Party\Domain\Model\Person
+	 * @ODM\Field(type="string")
+	 * @ODM\Index
+	 */
+	protected $reportedRecoveryTo;
 
 	/**
 	 * Set the person that is subject of the absence
@@ -145,6 +153,35 @@ class Absence extends \Beech\Ehrm\Domain\Model\Document {
 	public function getReportedTo() {
 		if (isset($this->reportedTo)) {
 			return $this->persistenceManager->getObjectByIdentifier($this->reportedTo, '\Beech\Party\Domain\Model\Person');
+		}
+		return NULL;
+	}
+
+	/**
+	 * Set the person who initiated this absenceRegistration.
+	 * Load the current user if NULL was emitted
+	 *
+	 * @param \Beech\Party\Domain\Model\Person $reportedRecoveryTo
+	 * @return void
+	 */
+	public function setReportedRecoveryTo(\Beech\Party\Domain\Model\Person $reportedRecoveryTo = NULL) {
+		if ($reportedRecoveryTo === NULL ) {
+			if (is_object($this->securityContext->getAccount())
+				&& $this->securityContext->getAccount()->getParty() instanceof \Beech\Party\Domain\Model\Person) {
+				$reportedRecoveryTo = $this->securityContext->getAccount()->getParty();
+			}
+		}
+		$this->reportedRecoveryTo = $this->persistenceManager->getIdentifierByObject($reportedRecoveryTo, '\Beech\Party\Domain\Model\Person');
+	}
+
+	/**
+	 * Returns the person who initiated this absenceregistration.
+	 *
+	 * @return \Beech\Party\Domain\Model\Person
+	 */
+	public function getReportedRecoveryTo() {
+		if (isset($this->reportedRecoveryTo)) {
+			return $this->persistenceManager->getObjectByIdentifier($this->reportedRecoveryTo, '\Beech\Party\Domain\Model\Person');
 		}
 		return NULL;
 	}

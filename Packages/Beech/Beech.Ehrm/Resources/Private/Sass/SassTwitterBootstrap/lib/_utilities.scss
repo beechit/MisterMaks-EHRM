@@ -43,3 +43,15 @@
 .input-block-level {
   @include input-block-level();
 }
+
+.align-left {
+	text-align: left;
+}
+
+.align-center {
+	text-align: center;
+}
+
+.align-right {
+  text-align: right;
+}

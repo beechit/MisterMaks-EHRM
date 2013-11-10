@@ -121,6 +121,16 @@ class AbsenceController extends \Beech\Ehrm\Controller\AbstractManagementControl
 	 * @param \Beech\Absence\Domain\Model\Absence $absence
 	 * @return void
 	 */
+	public function recoveryAction(\Beech\Absence\Domain\Model\Absence $absence) {
+		$absence->setRecoveryRegistrationDate(new \DateTime());
+		$this->view->assign('persons', $this->personRepository->findAll());
+		$this->view->assign('absence', $absence);
+	}
+
+	/**
+	 * @param \Beech\Absence\Domain\Model\Absence $absence
+	 * @return void
+	 */
 	public function editAction(\Beech\Absence\Domain\Model\Absence $absence) {
 
 		$this->view->assign('absence', $absence);

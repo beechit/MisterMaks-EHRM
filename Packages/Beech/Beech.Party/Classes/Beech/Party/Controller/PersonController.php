@@ -7,6 +7,7 @@ namespace Beech\Party\Controller;
  * All code (c) Beech Applications B.V. all rights reserved
  */
 
+use Beech\Absence\Domain\Model\Absence;
 use TYPO3\Flow\Annotations as Flow;
 use Beech\Party\Domain\Model\Person as Person;
 
@@ -151,9 +152,9 @@ class PersonController extends \Beech\Ehrm\Controller\AbstractManagementControll
 		$this->view->assign('assets', $assets);
 		$licences = $this->licenceRepository->findByParty($person->getId());
 		$this->view->assign('licences', $licences);
-		$absences = $this->absenceRepository->findByParty($person->getId());
+		$absences = $this->absenceRepository->findActiveAbsence($person);
 		$this->view->assign('absences', $absences);
-
+		$this->view->assign('absence', is_array($absences) ? reset($absences):NULL);
 		$contracts = $this->contractRepository->findByEmployee($person->getId());
 
 			// need to be sorted, latest should be on the top

@@ -309,6 +309,10 @@ er				<target>% opgenomen verlof</target>
 				<source>sick</source>
 				<target>Ziek</target>
 			</trans-unit>
+			<trans-unit id="absence.status.recovered">
+				<source>Recovered</source>
+				<target>Recovered</target>
+			</trans-unit>
 			<trans-unit id="absence.sInfo">
 				<source>Showing (_START_ of _END_) of _TOTAL_ entries.</source>
 				<target>Toon(_START_ of _END_) van _TOTAL_.</target>

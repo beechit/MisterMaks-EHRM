@@ -233,6 +233,9 @@
 			<trans-unit id="absence.status.sick">
 				<source>sick</source>
 			</trans-unit>
+			<trans-unit id="absence.status.recovered">
+				<source>recovered</source>
+			</trans-unit>
 			<trans-unit id="absence.sInfo">
 				<source>Showing (_START_ of _END_) of _TOTAL_ entries.</source>
 			</trans-unit>

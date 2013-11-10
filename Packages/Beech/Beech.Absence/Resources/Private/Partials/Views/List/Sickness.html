@@ -29,11 +29,20 @@
 					<tr>
 						<f:if condition="{person}"><f:else><td>{absence.person.name}</td></f:else></f:if>
 						<td><f:translate id="absence.absenceArrangement.label.{absence.absenceArrangement.label}">{absence.absenceArrangement.label}</f:translate></td>
-						<td>{absence.startDate -> f:format.date(format: 'd-m-Y')}</td>
-						<td>{absence.estimatedRecoveryDate -> f:format.date(format: 'd-m-Y')}</td>
+						<td><i class="icon-calendar"/> {absence.startDate -> f:format.date(format: 'd-m-Y')}</td>
+						<td><i class="icon-calendar"/>
+							<f:if condition="{absence.endDate}">
+								<f:then>{absence.endDate -> f:format.date(format: 'd-m-Y')}</f:then>
+								<f:else>{absence.estimatedRecoveryDate -> f:format.date(format: 'd-m-Y')}</f:else>
+							</f:if>
+						</td>
 						<td>{absence.days}</td>
-						<td>{absence.hours}</td>
-						<td><f:translate id="absence.status.{absence.status}">{absence.status}</f:translate></td>
+						<td>{absence.hours} </td>
+						<td>
+							<span {f:if(condition: '{0: absence.status} == {0: "recovered"}', then: 'class="text-success"', else: 'class="text-error"')}>
+							<f:translate id="absence.status.{absence.status}">{absence.status}</f:translate>
+							</span>
+						</td>
 						<td>
 							<a class="btn btn-small" href="{f:uri.action(package:'Beech.Absence', controller:'Absence', action:'edit', arguments: {absence: absence})}"
 							   data-toggle="modal-ajax" data-target="#modal" modal-size="large" data-reload="reload-current-page" title="<f:translate id='edit' />">

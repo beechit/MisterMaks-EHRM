@@ -3,70 +3,100 @@
 		<div class="span3">
 			<f:render partial="Views/Show/ProfilePhoto"
 					  arguments="{photo: person.profilePhoto, width: 150, random: 'TRUE'}"/>
-				<ehrm:link.edit controller='ProfilePhoto' action='edit'
-								arguments='{party: person}'
-								modalSize="small"
-								dataReload="reload-current-page"/>
+			<ehrm:link.edit controller='ProfilePhoto' action='edit'
+							arguments='{party: person}'
+							modalSize="small"
+							dataReload="reload-current-page"/>
 		</div>
 		<div class="span9">
-			<blockquote>
-				<p>
-				<h4>
-					<span class="breadcrumbElement">{person.name.firstName} {person.name.middleName} {person.name.lastName}</span>
-				<ehrm:link.edit controller='Person' action='edit' arguments='{person: person, withDetails: false}'
-								dataReload="reload-current-page"/>
-				</h4>
-				</p>
-				<cite title="Source Title">
-					<small>
-						<f:if condition="{person.department}">{person.department.name},</f:if>
-						<strong>{person.age}</strong>
-						<f:translate id="yearsOld">years old</f:translate>
-					</small>
-				</cite>
-			</blockquote>
-					<div class="row-fluid">
-				<div class="span4">
-				<f:if condition="{person.dateOfBirth}">
-						<p>
-							<strong><f:translate id="birthDate">Birth date</f:translate></strong><br/>
-							<i class="icon-gift"></i>
-							<f:format.date format="d-m-Y">{person.dateOfBirth}</f:format.date>
+			<div class="row-fluid">
+				<div class="span6">
+					<blockquote>
+						<h4>
+							<span class="breadcrumbElement">{person.name.firstName} {person.name.middleName} {person.name.lastName}</span>
 							<ehrm:link.edit controller='Person' action='edit' arguments='{person: person, withDetails: false}'
 											dataReload="reload-current-page"/>
-						</p>
+						</h4>
+						<cite title="Source Title">
+							<f:if condition="{person.department}">{person.department.name},</f:if>
+							<strong>{person.age}</strong>
+							<f:translate id="yearsOld">years old</f:translate>
+						</cite>
+					</blockquote>
+				</div>
+				<f:if condition="{absence}">
+					<div class="span6">
+						<blockquote>
+							<h5 class="text-error">
+								<i class="icon-ambulance"></i> Sick
+							</h5>
+							<cite><f:translate id="absence.startDate">Start date:</f:translate> {absence.startDate -> f:format.date(format: 'd-m-Y')} </cite><br/>
+							<cite><f:translate id="sickness.estimatedRecoveryDate">Probably recovery on:</f:translate> {absence.estimatedRecoveryDate -> f:format.date(format: 'd-m-Y')} </cite>
+						</blockquote>
+					</div>
 				</f:if>
+			</div>
+
+			<div class="row-fluid">
+				<div class="span4">
+					<f:if condition="{person.dateOfBirth}">
+						<p>
+							<strong>
+								<f:translate id="birthDate">Birth date</f:translate>
+							</strong><br/>
+							<i class="icon-gift"></i>
+							<f:format.date format="d-m-Y">{person.dateOfBirth}</f:format.date>
+							<ehrm:link.edit controller='Person' action='edit'
+											arguments='{person: person, withDetails: false}'
+											dataReload="reload-current-page"/>
+						</p>
+					</f:if>
 					<p>
-						<strong><f:translate id="nationality">Nationality</f:translate></strong><br/>
+						<strong>
+							<f:translate id="nationality">Nationality</f:translate>
+						</strong><br/>
 						<i class="icon-flag"></i> {person.nationality -> ehrm:format.nationality()}
-						<ehrm:link.edit controller='Person' action='edit' arguments='{person: person, withDetails: false}'
+						<ehrm:link.edit controller='Person' action='edit'
+										arguments='{person: person, withDetails: false}'
 										dataReload="reload-current-page"/>
 					</p>
-		<f:if condition="{person.jobposition}">
+					<f:if condition="{person.jobposition}">
 						<p>
-							<strong><f:translate id="jobposition">Job position</f:translate></strong>
+							<strong>
+								<f:translate id="jobposition">Job position</f:translate>
+							</strong>
 							<i class="icon-wrench"></i> {person.jobposition.name}
 						</p>
-		</f:if>
-		<f:if condition="{person.manager}">
+					</f:if>
+					<f:if condition="{person.manager}">
 						<p>
-							<strong><f:translate id="Manager">Manager</f:translate></strong>
+							<strong>
+								<f:translate id="Manager">Manager</f:translate>
+							</strong>
 							<i class="icon-user"></i> {person.manager.name}
 						</p>
-		</f:if>
+					</f:if>
 				</div>
 				<div class="span8">
 					<p>
-						<strong><f:translate id="email">E-mail</f:translate></strong><br/>
-						<i class="icon-envelope"></i> {person.electronicAddress_email.address} <ehrm:link.edit controller='ElectronicAddress' action='list' arguments='{party: person}'
-																											   dataReload="reload-current-page"/>
+						<strong>
+							<f:translate id="email">E-mail</f:translate>
+						</strong><br/>
+						<i class="icon-envelope"></i> {person.electronicAddress_email.address}
+						<ehrm:link.edit controller='ElectronicAddress' action='list' arguments='{party: person}'
+										dataReload="reload-current-page"/>
 					</p>
 					<p>
-						<strong><f:translate id="phoneNumber">Phone number</f:translate></strong></br/>
+						<strong>
+							<f:translate id="phoneNumber">Phone number</f:translate>
+						</strong></br/>
 						<f:for each="{phoneNumbers}" as="phoneNumber">
 							<i class="icon-phone"></i> {phoneNumber.phoneNumber}
 							<small>
-								(<f:translate id="phoneNumber.phoneNumberType.{phoneNumber.phoneNumberType}"></f:translate>)
+								(
+								<f:translate
+										id="phoneNumber.phoneNumberType.{phoneNumber.phoneNumberType}"></f:translate>
+								)
 							</small>
 							<br/>
 						</f:for>
@@ -76,7 +106,7 @@
 				</div>
 			</div>
 		</div>
-</div>
+	</div>
 
 </div>
 <hr/>

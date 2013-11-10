@@ -459,6 +459,7 @@ legend + .control-group { margin-top: 20px; -webkit-margin-top-collapse: separat
 .form-horizontal .control-group:before, .form-horizontal .control-group:after { display: table; content: ""; line-height: 0; }
 .form-horizontal .control-group:after { clear: both; }
 .form-horizontal .control-label { float: left; width: 160px; padding-top: 5px; text-align: right; }
+.form-horizontal .align-left { text-align: left!important; }
 .form-horizontal .controls { *display: inline-block; *padding-left: 20px; margin-left: 180px; *margin-left: 0; }
 .form-horizontal .controls:first-child { *padding-left: 180px; }
 .form-horizontal .help-block { margin-bottom: 0; }
@@ -1254,6 +1255,12 @@ a.label:hover, a.badge:hover { color: white; text-decoration: none; cursor: poin
 .hide-text { font: 0/0 a; color: transparent; text-shadow: none; background-color: transparent; border: 0; }
 
 .input-block-level { display: block; width: 100%; min-height: 30px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; box-sizing: border-box; }
+
+.align-left { text-align: left; }
+
+.align-center { text-align: center; }
+
+.align-right { text-align: right; }
 
 /*
  * Bootstrap Responsive v2.1.1
