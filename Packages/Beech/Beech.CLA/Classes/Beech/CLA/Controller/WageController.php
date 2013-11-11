@@ -27,7 +27,7 @@ class WageController extends \Beech\Ehrm\Controller\AbstractController {
 	 * @param $salaryScale
 	 * @param string $wageScaleGroup
 	 */
-	public function filterAction(\Beech\CLA\Domain\Model\SalaryScale $salaryScale, $wageScaleGroup) {
+	public function filterAction(\Beech\CLA\Domain\Model\SalaryScale $salaryScale = NULL, $wageScaleGroup) {
 		$salaryScale = $this->salaryScaleRepository->findByIdentifier($this->request->getArgument('salaryScale'));
 		$options = array(array('label' => '', 'value' => ''));
 		foreach ($salaryScale->getWageGroups() as $wageGroup) {
