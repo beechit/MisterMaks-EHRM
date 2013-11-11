@@ -188,105 +188,12 @@
 					</ehrm:link.edit>
 				</div>
 				<div id="documents" class="tab-pane fade">
-					<div style="position: absolute; height: 100%">
-						<f:translate id="filter:">Filter:</f:translate>
-						<ehrm:form.select name="documentType" class="documentType" options="{documentCategories}"
-										  optionLabelField="typeName"/>
-
-						<style>.chzn-container {
-							width: 200px !important;
-						}</style>
-					</div>
-
-					<table class="table table-striped table-bordered" id="personDocuments">
-						<thead>
-						<tr>
-							<th>
-								<f:translate id="name">Name</f:translate>
-							</th>
-							<th>
-								<f:translate id="category">Category</f:translate>
-							</th>
-							<th>
-								<f:translate id="mimeType">Type</f:translate>
-							</th>
-							<th>&nbsp;</th>
-						</tr>
-						</thead>
-						<f:for each="{documents}" as="document" iteration="documentIterator">
-							<tr>
-								<td><a href="#/document/show/{document.id}">{document.name}</a></td>
-								<td>
-									<f:translate id="document.documentType.categoryName.{document.documentType.categoryName}" package="Beech.Document">
-										{document.documentType.categoryName}
-									</f:translate>
-									/
-									<strong></strong><f:translate id="document.documentType.typeName.{document.documentType.typeName}" package="Beech.Document">
-										{document.documentType.typeName}
-									</f:translate>
-								</td>
-								<td>
-									<f:for each="{document.resources}" as="resource">
-										<i><f:translate id="resource.contentType.{resource.contentType}" package="Beech.Document">
-											{resource.contentType}
-										</f:translate></i>
-									</f:for>
-								</td>
-								<td>
-									<div class="btn-group">
-										<button class="btn btn-small">
-											<f:translate id="actions">Actions</f:translate>
-										</button>
-										<button class="btn btn-small dropdown-toggle" data-toggle="dropdown">
-											<span class="caret"></span>
-										</button>
-										<ul class="dropdown-menu">
-											<li><a href="/download/{document.id}"><i class="icon-download-alt"></i>
-												<f:translate id="download">Download</f:translate>
-											</a></li>
-											<li><a href="#/document/delete/{document.id}"><i class="icon-trash"></i>
-												<f:translate id="remove">Delete</f:translate>
-											</a></li>
-										</ul>
-									</div>
-								</td>
-							</tr>
-						</f:for>
-					</table>
-					<div style="text-align: right; margin-top: 20px">
-						<ehrm:link.edit id="addDocument" class="btn btn-primary" package="Beech.Document"
-										controller='Document' action='new' arguments='{party: person}'
-										dataReload="reload-current-page">
-							<i class="icon-plus icon-white"></i>
-							<f:translate id="action.add">Add</f:translate>
-						</ehrm:link.edit>
-					</div>
-					<hr>
+					<f:render partial="Beech.Document:Document/Filter" arguments="{_all}"/>
+					<f:render partial="Beech.Document:Document/List" arguments="{_all}"/>
+					<f:render partial="Beech.Document:Document/Add" arguments="{_all}"/>
+					<hr/>
 				</div>
-
 			</div>
 		</div>
 	</div>
-
-
-		<script type="text/javascript">
-			var oPersonDocumentsTable = $('#personDocuments')
-					.dataTable({
-						"sDom": 'f',
-						"oLanguage": {
-							"sEmptyTable": '<f:translate id="document.sEmptyTable">No data available in table</f:translate>',
-							"sSearch": '<f:translate id="document.sSearch">Search</f:translate>',
-							"sLengthMenu": '<f:translate id="document.sLengthMenu">Show _MENU_ entries</f:translate>',
-							"oPaginate": {
-								"sFirst": '<f:translate id="document.sFirst">Search</f:translate>',
-								"sLast": '<f:translate id="document.sLast">Last</f:translate>',
-								"sNext": '<f:translate id="document.sNext">Next</f:translate>',
-								"sPrevious": '<f:translate id="document.sPrevious">Previous</f:translate>'
-							}
-						}
-					})
-			$('select.documentType').change(function () {
-				oPersonDocumentsTable.fnFilter($(this).find('option:selected').text());
-			});
-		</script>
 </f:section>

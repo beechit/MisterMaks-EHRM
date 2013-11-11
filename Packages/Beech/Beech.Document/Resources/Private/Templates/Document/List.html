@@ -1,4 +1,5 @@
-<f:layout name="Ajax" />
+<f:layout name="Ajax" />{namespace ehrm=Beech\Ehrm\ViewHelpers}
+
 
 <f:section name="Body">
 	<ehrm:flashMessages/>
@@ -7,47 +8,13 @@
 			<legend><f:translate id="document.document" quantity="2">Documents</f:translate></legend>
 			<f:if condition="{documents}">
 				<f:then>
-					<table class="table">
-						<thead>
-							<tr>
-								<th><f:translate id="name">Name</f:translate></th>
-								<th><f:translate id="documentType">Category</f:translate></th>
-								<th><f:translate id="preview">Preview</f:translate></th>
-								<th>&nbsp;</th>
-							</tr>
-						</thead>
-						<f:for each="{documents}" as="document" iteration="documentIterator">
-							<tr>
-								<td><f:link.action action="show" arguments="{document: document}">{document.name}</f:link.action></td>
-								<td>{document.documentType.categoryName} / {document.documentType.typeName}<br/>
-									<f:for each="{document.resources}" as="resource">
-										<i>{resource.contentType}</i>
-									</f:for>
-								</td>
-								<td><f:render partial="Document/Preview" arguments="{document: document, width: 100}"/></td>
-								<td>
-									<div class="btn-group">
-										<button class="btn btn-small"><f:translate id="action">Action</f:translate></button>
-										<button class="btn btn-small dropdown-toggle" data-toggle="dropdown">
-											<span class="caret"></span>
-										</button>
-										<ul class="dropdown-menu">
-											<li><a href="/download/{document.id}"><i class="icon-download-alt"></i><f:translate id="download">Download</f:translate> </a></li>
-											<f:comment><li><a href="#/document/edit/{document.id}"><i class="icon-pencil"></i><f:translate id="edit">Edit</f:translate></a></li></f:comment>
-											<li><a href="#/document/delete/{document.id}"><i class="icon-trash"></i><f:translate id="delete">Delete</f:translate></a></li>
-										</ul>
-									</div>
-								</td>
-							</tr>
-						</f:for>
-					</table>
+					<f:render partial="Document/List" arguments="{_all}"/>
 				</f:then>
 				<f:else>
 					<p><f:translate id="document.noDocumentsFound">No documents found</f:translate></p>
 				</f:else>
 			</f:if>
 		</div>
-
 	</div>
 	<div class="row-fluid">
 		<div class="span8">

@@ -1,0 +1,11 @@
+{namespace ehrm=Beech\Ehrm\ViewHelpers}
+<f:if condition="{person}">
+<div style="text-align: right; margin-top: 20px">
+	<ehrm:link.edit id="addDocument" class="btn btn-primary" package="Beech.Document"
+					controller='Document' action='new' arguments='{party: person}'
+					dataReload="reload-current-page">
+		<i class="icon-plus icon-white"></i>
+		<f:translate id="action.add">Add</f:translate>
+	</ehrm:link.edit>
+</div>
+</f:if>

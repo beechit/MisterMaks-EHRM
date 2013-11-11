@@ -1,0 +1,76 @@
+{namespace ehrm=Beech\Ehrm\ViewHelpers}
+
+<table class="table table-striped table-bordered" id="documentsList">
+	<thead>
+	<tr>
+		<th>
+			<f:translate id="name">Name</f:translate>
+		</th>
+		<th>
+			<f:translate id="category">Category</f:translate>
+		</th>
+		<th>
+			<f:translate id="mimeType">Type</f:translate>
+		</th>
+		<th>&nbsp;</th>
+	</tr>
+	</thead>
+	<f:for each="{documents}" as="document" iteration="documentIterator">
+		<tr>
+			<td><a href="#/document/show/{document.id}"><f:render partial="Beech.Document:Document/Preview" arguments="{document: document, width: 30}"/> {document.name}</a></td>
+			<td>
+				<f:translate id="document.documentType.categoryName.{document.documentType.categoryName}" package="Beech.Document">
+					{document.documentType.categoryName}
+				</f:translate>
+				/
+				<strong></strong><f:translate id="document.documentType.typeName.{document.documentType.typeName}" package="Beech.Document">
+				{document.documentType.typeName}
+			</f:translate>
+			</td>
+			<td>
+				<f:for each="{document.resources}" as="resource">
+					<i><f:translate id="resource.contentType.{resource.contentType}" package="Beech.Document">
+						{resource.contentType}
+					</f:translate></i>
+				</f:for>
+			</td>
+			<td>
+				<div class="btn-group">
+					<button class="btn btn-small">
+						<f:translate id="actions">Actions</f:translate>
+					</button>
+					<button class="btn btn-small dropdown-toggle" data-toggle="dropdown">
+						<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu">
+						<li><a href="/download/{document.id}"><i class="icon-download-alt"></i>
+							<f:translate id="download">Download</f:translate>
+						</a></li>
+						<f:if condition="{document.documentType.delete}">
+						<li><a href="#/document/delete/{document.id}"><i class="icon-trash"></i>
+							<f:translate id="remove">Delete</f:translate>
+						</a></li>
+						</f:if>
+					</ul>
+				</div>
+			</td>
+		</tr>
+	</f:for>
+</table>
+<script type="text/javascript">
+	var oPersonDocumentsTable = $('#documentsList')
+			.dataTable({
+				"sDom": 'f',
+				"oLanguage": {
+					"sEmptyTable": '<f:translate id="document.sEmptyTable">No data available in table</f:translate>',
+					"sSearch": '<f:translate id="document.sSearch">Search</f:translate>',
+					"sLengthMenu": '<f:translate id="document.sLengthMenu">Show _MENU_ entries</f:translate>',
+					"oPaginate": {
+						"sFirst": '<f:translate id="document.sFirst">Search</f:translate>',
+						"sLast": '<f:translate id="document.sLast">Last</f:translate>',
+						"sNext": '<f:translate id="document.sNext">Next</f:translate>',
+						"sPrevious": '<f:translate id="document.sPrevious">Previous</f:translate>'
+					}
+				}
+			})
+</script>
