@@ -1,94 +1,83 @@
 <div class="span12">{namespace ehrm=Beech\Ehrm\ViewHelpers}
-	<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered">
-		<tbody>
-		<tr class="odd">
-			<td rowspan="8">
-				<f:render partial="Views/Show/ProfilePhoto" arguments="{photo: person.profilePhoto, width: 150, random: 'TRUE'}"/>
+	<div class="row-fluid">
+		<div class="span3">
+			<f:render partial="Views/Show/ProfilePhoto"
+					  arguments="{photo: person.profilePhoto, width: 150, random: 'TRUE'}"/>
 				<ehrm:link.edit controller='ProfilePhoto' action='edit'
 								arguments='{party: person}'
 								modalSize="small"
 								dataReload="reload-current-page"/>
-
-			</td>
-			<td class="span3"><f:translate id="Name">Name</f:translate></td>
-			<td class="span6"><span class="breadcrumbElement">{person.name.firstName} {person.name.middleName} {person.name.lastName}</span>
+		</div>
+		<div class="span9">
+			<blockquote>
+				<p>
+				<h4>
+					<span class="breadcrumbElement">{person.name.firstName} {person.name.middleName} {person.name.lastName}</span>
 				<ehrm:link.edit controller='Person' action='edit' arguments='{person: person, withDetails: false}'
 								dataReload="reload-current-page"/>
-			</td>
-		</tr>
-		<tr class="even">
-			<td><f:translate id="email">E-mail</f:translate></td>
-			<td>
-				{person.electronicAddress_email.address}
-				<ehrm:link.edit controller='ElectronicAddress' action='list' arguments='{party: person}'
-								dataReload="reload-current-page"/>
-			</td>
-		</tr>
-		<tr class="odd">
-			<td>
-				<f:translate id="phoneNumber">Phone number</f:translate>
-			</td>
-			<td>
-				<f:for each="{phoneNumbers}" as="phoneNumber">
+				</h4>
+				</p>
+				<cite title="Source Title">
+					<small>
+						<f:if condition="{person.department}">{person.department.name},</f:if>
+						<strong>{person.age}</strong>
+						<f:translate id="yearsOld">years old</f:translate>
+					</small>
+				</cite>
+			</blockquote>
 					<div class="row-fluid">
-						<div id="phoneNumber-{phoneNumber.id}" class="span8">
-							<f:render partial="Views/Show/PhoneNumber" arguments="{phoneNumber: phoneNumber}"/>
-						</div>
-					</div>
-				</f:for>
-				<ehrm:link.edit controller='PhoneNumber' action='list' arguments='{party: person}'
-								dataReload="reload-current-page"/>
-			</td>
-		</tr>
-		<tr class="even">
-			<td><f:translate id="birthDate">Birth date</f:translate></td>
-			<td>
+				<div class="span4">
 				<f:if condition="{person.dateOfBirth}">
-					<div class="row-fluid">
-						<div class="span4">
+						<p>
+							<strong><f:translate id="birthDate">Birth date</f:translate></strong><br/>
+							<i class="icon-gift"></i>
 							<f:format.date format="d-m-Y">{person.dateOfBirth}</f:format.date>
-						</div>
-						<div class="span8">
-							<f:translate id="person.age:"> Age: </f:translate> <strong>{person.age}</strong> <f:translate id="yearsOld">years old</f:translate>
 							<ehrm:link.edit controller='Person' action='edit' arguments='{person: person, withDetails: false}'
 											dataReload="reload-current-page"/>
-						</div>
-					</div>
+						</p>
 				</f:if>
-			</td>
-		</tr>
-		<tr class="odd">
-			<td><f:translate id="nationality">Nationality</f:translate></td>
-			<td>
-				{person.nationality -> ehrm:format.nationality()}
-			</td>
-		</tr>
-		<f:if condition="{person.department}">
-			<tr class="even">
-				<td><f:translate id="department">Department</f:translate></td>
-				<td>
-					{person.department.name}
-				</td>
-			</tr>
-		</f:if>
+					<p>
+						<strong><f:translate id="nationality">Nationality</f:translate></strong><br/>
+						<i class="icon-flag"></i> {person.nationality -> ehrm:format.nationality()}
+						<ehrm:link.edit controller='Person' action='edit' arguments='{person: person, withDetails: false}'
+										dataReload="reload-current-page"/>
+					</p>
 		<f:if condition="{person.jobposition}">
-			<tr class="odd">
-				<td><f:translate id="jobposition">Job position</f:translate></td>
-				<td>
-					{person.jobposition.name}
-				</td>
-			</tr>
+						<p>
+							<strong><f:translate id="jobposition">Job position</f:translate></strong>
+							<i class="icon-wrench"></i> {person.jobposition.name}
+						</p>
 		</f:if>
 		<f:if condition="{person.manager}">
-			<tr class="even">
-				<td><f:translate id="Manager">Manager</f:translate></td>
-				<td>
-					{person.manager.name}
-				</td>
-			</tr>
+						<p>
+							<strong><f:translate id="Manager">Manager</f:translate></strong>
+							<i class="icon-user"></i> {person.manager.name}
+						</p>
 		</f:if>
-		</tbody>
-	</table>
+				</div>
+				<div class="span8">
+					<p>
+						<strong><f:translate id="email">E-mail</f:translate></strong><br/>
+						<i class="icon-envelope"></i> {person.electronicAddress_email.address} <ehrm:link.edit controller='ElectronicAddress' action='list' arguments='{party: person}'
+																											   dataReload="reload-current-page"/>
+					</p>
+					<p>
+						<strong><f:translate id="phoneNumber">Phone number</f:translate></strong></br/>
+						<f:for each="{phoneNumbers}" as="phoneNumber">
+							<i class="icon-phone"></i> {phoneNumber.phoneNumber}
+							<small>
+								(<f:translate id="phoneNumber.phoneNumberType.{phoneNumber.phoneNumberType}"></f:translate>)
+							</small>
+							<br/>
+						</f:for>
+						<ehrm:link.edit controller='PhoneNumber' action='list' arguments='{party: person}'
+										dataReload="reload-current-page"/>
+					</p>
+				</div>
+			</div>
+		</div>
 </div>
 
+</div>
+<hr/>
 
