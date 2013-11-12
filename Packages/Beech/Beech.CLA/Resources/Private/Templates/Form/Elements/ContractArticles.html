@@ -23,4 +23,10 @@
 		return false;
 	})
 	jQuery('.articles-section input, .articles-section select').trigger('change');
+	jQuery('.text-error').each(function(index, element) {
+		var errorContent = '<div class="alert alert-error"><button class="close" data-dismiss="alert">&times;</button><strong>'+ $(element).parent().find('label').text()+ '</strong>:'+$(element).html()+'</div>';
+		var legend = $(element).parents('fieldset').first().find('legend').after(errorContent);
+		$(element).hide()
+	});
 </script>
+
