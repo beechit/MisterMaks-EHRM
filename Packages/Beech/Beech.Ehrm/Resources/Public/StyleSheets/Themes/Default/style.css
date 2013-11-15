@@ -1636,7 +1636,8 @@ input[readonly].datepicker { background: white; }
 #contractCreator .articles-section .well { padding: 0; }
 #contractCreator .articles-section legend { margin-bottom: 10px; }
 #contractCreator .articles-section .article-values { margin: 0; }
-#contractCreator .articles-section .control-group { margin-bottom: 0; display: inline-block; }
+#contractCreator .articles-section .control-group { margin-bottom: 10px; display: inline-block; }
+#contractCreator .articles-section .alert { margin: 20px 0px!important; }
 #contractCreator .preview { margin-bottom: 80px; }
 
 .preview table tr.article td { padding-top: 10px; }
