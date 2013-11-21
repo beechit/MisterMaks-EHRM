@@ -210,9 +210,6 @@ class Absence extends \Beech\Ehrm\Domain\Model\Document {
 	 * @return void
 	 */
 	public function setStartDate(\DateTime $startDate = NULL) {
-		if ($startDate === NULL) {
-			$startDate = new \DateTime();
-		}
 		$this->startDate = $startDate;
 	}
 
@@ -228,8 +225,8 @@ class Absence extends \Beech\Ehrm\Domain\Model\Document {
 	 * @return void
 	 */
 	public function setEndDate(\DateTime $endDate = NULL) {
-		if ($endDate === NULL) {
-			$endDate = new \DateTime();
+		if ($this->getStartDate() > $endDate && $endDate !== NULL) {
+			$endDate = $this->getStartDate();
 		}
 		$this->endDate = $endDate;
 	}
