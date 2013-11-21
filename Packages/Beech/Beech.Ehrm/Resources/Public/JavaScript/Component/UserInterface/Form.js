@@ -118,6 +118,14 @@
 			}
 			text += moment.duration(rest, time.unit).humanize(false);
 		}
+		if (text == '') {
+			$('strong[amount="0"]').show();
+			$('strong[amount="positive"]').hide();
+		} else {
+			$('strong[amount="positive"]').show();
+			$('strong[amount="0"]').hide();
+		}
+
 		return text;
 	}
 

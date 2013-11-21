@@ -73,7 +73,7 @@ contractArticles:
       order: 150
       articleText:
         en: ''
-        nl: 'Op deze arbeidsovereenkomst is een proeftijd van <probationPeriod> van toepassing. Gedurende deze proeftijd kunnen beide partijen de arbeidsovereenkomst dagelijks beëindigen.'
+        nl: 'Op deze arbeidsovereenkomst is <strong amount="0">geen proeftijd</strong><strong amount="positive">een proeftijd van </strong><probationPeriod> van toepassing. Gedurende deze proeftijd kunnen beide partijen de arbeidsovereenkomst dagelijks beëindigen.'
         pl: ''
       help:
         en: 'Under the CAO Glastuinbouw a contract with a duration shorter then 2 years can only have a probation with a maximum of a month'
@@ -495,7 +495,7 @@ contractArticles:
       order: 151
       articleText:
         en: ''
-        nl: 'Op deze arbeidsovereenkomst is een proeftijd van <probationPeriod> van toepassing. Gedurende deze proeftijd kunnen beide partijen de arbeidsovereenkomst dagelijks beëindigen.'
+        nl: 'Op deze arbeidsovereenkomst is <strong amount="0">geen proeftijd</strong><strong amount="positive">een proeftijd van</strong><probationPeriod> van toepassing. Gedurende deze proeftijd kunnen beide partijen de arbeidsovereenkomst dagelijks beëindigen.'
         pl: ''
       help:
         en: ''
