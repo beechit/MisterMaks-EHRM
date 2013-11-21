@@ -6,7 +6,7 @@
 	<div Class="span2">{personRelation.person.phoneNumber_home.phoneNumber}</div>
 	<div class="span1"><f:if condition="{personRelation.emergencyContact}"><i class="icon-medkit"></i></f:if></div>
 	<div>
-		<ehrm:link.edit controller='PersonRelation' action='edit' arguments='{person: personRelation.person, personRelation: personRelation, withDetails: false}'
+		<ehrm:link.edit controller='PersonRelation' action='edit' arguments='{personRelation: personRelation}'
 				dataReload="reload-current-page"/>
 	</div>
 

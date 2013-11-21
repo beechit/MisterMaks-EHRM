@@ -15,4 +15,4 @@
           'other': 'Other'
       validation:
         -
-          type: 'NotEmtpy'
+          type: 'TYPO3.Flow:NotEmpty'

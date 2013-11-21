@@ -110,14 +110,14 @@ class PersonRelationController extends \Beech\Ehrm\Controller\AbstractManagement
 	/**
 	 * Edit person object with relation
 	 *
-	 * @param \Beech\Party\Domain\Model\Person $personRelatedTo
+	 * @param \Beech\Party\Domain\Model\PersonRelation $personRelation
 	 * @return void
 	 */
-	public function editAction(\Beech\Party\Domain\Model\Person $person = NULL, \Beech\Party\Domain\Model\PersonRelation $personRelation = NULL) {
-		$this->view->assign('person', $person);
+	public function editAction(\Beech\Party\Domain\Model\PersonRelation $personRelation = NULL) {
+		$this->view->assign('person', $personRelation->getPerson());
 		$this->view->assign('personRelation', $personRelation);
-		$phoneNumbers = $this->phoneNumberRepository->findByParty($person);
-		$electronicAddresses = $this->electronicAddressRepository->findByParty($person);
+		$phoneNumbers = $this->phoneNumberRepository->findByParty($personRelation->getPerson());
+		$electronicAddresses = $this->electronicAddressRepository->findByParty($personRelation->getPerson());
 		if (isset($phoneNumbers[0])) {
 			$this->view->assign('phoneNumber', $phoneNumbers[0]);
 		}

@@ -120,22 +120,15 @@
 											dataReload="reload-current-page" count="<f:count subject='{addresses}'/>"/>
 							</blockquote>
 						</div>
-						<div class="span3">
+						<f:if condition="{person.emergencyContact}">
+						<div class="span6">
 							<blockquote>
-								<f:render partial="Views/Show/Address" arguments="{address: person.address_postAddress}"/>
-								<ehrm:link.edit controller='Address' action='list'
-												arguments='{party: person}'
-												dataReload="reload-current-page" count="<f:count subject='{addresses}'/>"/>
+								<f:render partial="Views/Show/EmergencyContact" arguments="{emergencyContact: person.emergencyContact}"/>
+								<ehrm:link.edit controller='PersonRelation' action='edit' arguments='{personRelation: person.emergencyContactRelation}'
+												dataReload="reload-current-page"/>
 							</blockquote>
 						</div>
-						<div class="span3">
-							<blockquote>
-								<f:render partial="Views/Show/Address" arguments="{address: person.address_foreignAddress}"/>
-								<ehrm:link.edit controller='Address' action='list'
-												arguments='{party: person}'
-												dataReload="reload-current-page" count="<f:count subject='{addresses}'/>"/>
-							</blockquote>
-						</div>
+						</f:if>
 					</div>
 				</div>
 				<div id="personal" class="tab-pane fade">

@@ -30,6 +30,12 @@ class Person extends \TYPO3\Party\Domain\Model\AbstractParty implements \TYPO3\F
 	protected $jobPositionRepository;
 
 	/**
+	 * @var \Beech\Party\Domain\Repository\PersonRelationRepository
+	 * @Flow\Inject
+	 */
+	protected $personRelationRepository;
+
+	/**
 	 * @Flow\Inject
 	 * @var \TYPO3\Flow\Object\ObjectManagerInterface
 	 */
@@ -94,6 +100,31 @@ class Person extends \TYPO3\Party\Domain\Model\AbstractParty implements \TYPO3\F
 	 */
 	public function getJobPosition() {
 		return $this->jobPositionRepository->findOneByPerson($this->getId());
+	}
+
+	/**
+	 * Get emergency contact relation
+	 *
+	 * @return \Beech\Party\Domain\Model\PersonRelation
+	 */
+	public function getEmergencyContactRelation() {
+		$personRelations = $this->personRelationRepository->findByPersonRelatedTo($this);
+		foreach ($personRelations as $personRelation) {
+			if ($personRelation->getEmergencyContact()) {
+				return $personRelation;
+			}
+		}
+		return NULL;
+	}
+
+	/**
+	 * Get emergency contact
+	 *
+	 * @return \Beech\Party\Domain\Model\Person
+	 */
+	public function getEmergencyContact() {
+		$emergencyContactRelation = $this->getEmergencyContactRelation();
+		return ($emergencyContactRelation instanceof \Beech\Party\Domain\Model\PersonRelation) ? $emergencyContactRelation->getPerson() : NULL;
 	}
 
 	/**
