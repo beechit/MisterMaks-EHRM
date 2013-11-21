@@ -71,6 +71,12 @@ class ContractFinisher extends \TYPO3\Form\Core\Model\AbstractFinisher {
 		}
 		$contract->setArticles($articles);
 
+		$activeContract = $this->contractRepository->findActiveByEmployee($contract->getEmployee());
+
+		if ($activeContract) {
+			$activeContract->setStatus(new \Beech\Ehrm\Domain\Model\Status(\Beech\Ehrm\Domain\Model\Status::STATUS_CLOSED));
+			$this->contractRepository->update($activeContract);
+		}
 		$this->contractRepository->add($contract);
 		$this->contractRepository->flushDocumentManager();
 		$contract->getStatus()->setDocumentId($contract->getId());

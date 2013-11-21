@@ -14,6 +14,19 @@ use TYPO3\Flow\Annotations as Flow;
  */
 class ContractRepository extends \Radmiraal\CouchDB\Persistence\AbstractRepository {
 
+	/**
+	 * @param \Beech\Party\Domain\Model\Person $employee
+	 * @return mixed|null
+	 */
+	public function findActiveByEmployee(\Beech\Party\Domain\Model\Person $employee) {
+		$activeContract = NULL;
+		$contracts = $this->findByEmployee($employee);
+		if (count($contracts) > 0) {
+			\Beech\Ehrm\Utility\ObjectSorter::quickSort($contracts, 'creationDate', 'DESC');
+			$activeContract = reset($contracts);
+		}
+		return $activeContract;
+	}
 }
 
 ?>
