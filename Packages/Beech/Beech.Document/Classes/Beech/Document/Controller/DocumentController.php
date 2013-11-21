@@ -147,13 +147,19 @@ class DocumentController extends \Beech\Ehrm\Controller\AbstractManagementContro
 	 * Removes the given document object
 	 *
 	 * @param \Beech\Document\Domain\Model\Document $document The document to delete
+	 * @param \Beech\Party\Domain\Model\Person $person
 	 * @Flow\IgnoreValidation("$document")
 	 * @return void
 	 */
-	public function deleteAction(\Beech\Document\Domain\Model\Document $document) {
+	public function deleteAction(\Beech\Document\Domain\Model\Document $document, \Beech\Party\Domain\Model\Person $person = NULL) {
 		$this->repository->remove($document);
 		$this->addFlashMessage($this->translator->translateById('document.documentDeleted', array(), NULL, NULL, 'Main', 'Beech.Document'));
-		$this->emberRedirect('#/documents');
+		if ($person !== NULL) {
+			$this->emberRedirect('#/person/show/' . $person->getId());
+		} else {
+			$this->emberRedirect('#/documents');
+		}
+
 	}
 
 
