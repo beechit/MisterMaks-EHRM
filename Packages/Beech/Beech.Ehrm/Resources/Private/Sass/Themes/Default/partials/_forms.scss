@@ -76,8 +76,11 @@ input[readonly].datepicker {
 			margin:0;
 		}
 		.control-group {
-			margin-bottom: 0;
+			margin-bottom: 10px;
 			display: inline-block;
+		}
+		.alert {
+			margin: 20px 0px!important;
 		}
 	}
 	.preview {
