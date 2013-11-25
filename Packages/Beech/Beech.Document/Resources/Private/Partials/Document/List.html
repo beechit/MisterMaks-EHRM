@@ -47,9 +47,19 @@
 							<f:translate id="download">Download</f:translate>
 						</a></li>
 						<f:if condition="{document.documentType.delete}">
-						<li><a href="#/document/delete/{document.id}"><i class="icon-trash"></i>
-							<f:translate id="remove">Delete</f:translate>
-						</a></li>
+							<f:if condition="{person}">
+								<f:then>
+									<li><a href="#/document/delete/{document.id}/{person.id}"><i class="icon-trash"></i>
+										<f:translate id="remove">Delete</f:translate>
+									</a></li>
+								</f:then>
+								<f:else>
+									<li><a href="#/document/delete/{document.id}"><i class="icon-trash"></i>
+										<f:translate id="remove">Delete</f:translate>
+									</a></li>
+								</f:else>
+							</f:if>
+
 						</f:if>
 					</ul>
 				</div>

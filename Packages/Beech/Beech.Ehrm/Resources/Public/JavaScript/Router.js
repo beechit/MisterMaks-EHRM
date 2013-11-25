@@ -103,6 +103,7 @@
 				this.route('show', { path: '/show/:document' });
 				this.route('edit', { path: '/edit/:document' });
 				this.route('delete', { path: '/delete/:document' });
+				this.route('delete', { path: '/delete/:document/:person' });
 				this.route('chart', { path: '/chart' });
 			});
 			// Beech.Party/Person
