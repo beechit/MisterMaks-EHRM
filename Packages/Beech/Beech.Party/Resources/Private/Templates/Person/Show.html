@@ -44,7 +44,7 @@
 				<i class="icon-ambulance icon-white"></i>
 				<f:translate id="leaveHistory">Leave history</f:translate>
 			</a>
-			<a class="btn btn-success" href="{f:uri.action(package:'Beech.CLA', subpackage:'Administration', controller:'contract', action:'new', arguments: {employee: person})}"
+			<a class="btn btn-success {f:if(condition: contracts, then: 'isActiveContract', else: '')}" href="{f:uri.action(package:'Beech.CLA', subpackage:'Administration', controller:'contract', action:'new', arguments: {employee: person})}"
 			   data-toggle="modal-ajax" data-target="#modal" modal-size="large"
 			   data-reload="reload-current-page">
 				<i class="icon-plus icon-white"></i>
@@ -189,4 +189,9 @@
 			</div>
 		</div>
 	</div>
+	<script>
+		$('.isActiveContract').on('click', function() {
+			return confirm('<f:translate id="active.contract.exists">Active contract already exists. Do you want to continue?</f:translate>');
+		})
+	</script>
 </f:section>
