@@ -84,6 +84,20 @@ class ContractController extends \Beech\Ehrm\Controller\AbstractManagementContro
 	}
 
 	/**
+	 * Shows a single contract object as pdf
+	 *
+	 * @param \Beech\CLA\Domain\Model\Contract $contract The contract to show
+	 * @Flow\IgnoreValidation("$contract")
+	 * @return void
+	 */
+	public function pdfAction(Contract $contract) {
+		$this->view->assign('overrideConfiguration', array(
+			'contract' => $contract
+		));
+		$this->view->assign('contract', $contract);
+	}
+
+	/**
 	 * Updates the given contract object
 	 *
 	 * @param \Beech\CLA\Domain\Model\Contract $contract The contract to update

@@ -1,19 +1,11 @@
 {namespace form=TYPO3\Form\ViewHelpers}{namespace cla=Beech\CLA\ViewHelpers}
 <fieldset>
 	<div class="preview">
-		<f:if condition="{page.label}">
-			<legend>{page.label}</legend>
-		</f:if>
 		<output>
-			<table>
 				<form:renderValues renderable="{page.rootForm}">
 					<f:if condition="{0: formValue.element.type} == {0: 'Beech.CLA:ContractHeaderSection'}">
 						<f:then>
-							<tr>
-								<td colspan="2">
-									<form:renderRenderable renderable="{formValue.element}" />
-								</td>
-							</tr>
+							<form:renderRenderable renderable="{formValue.element}" />
 						</f:then>
 					</f:if>
 				</form:renderValues>
@@ -21,17 +13,14 @@
 					<f:if condition="{0: formValue.element.type} == {0: 'Beech.CLA:ContractArticleFormElement'}">
 						<f:then>
 							<cla:renderContractArticle element="{formValue.element}"></cla:renderContractArticle>
+							<br/>
 						</f:then>
 					</f:if>
 				</form:renderValues>
 				<form:renderValues renderable="{page.rootForm}">
 					<f:if condition="{0: formValue.element.type} == {0: 'Beech.CLA:ContractFooterSection'}">
 						<f:then>
-							<tr>
-								<td colspan="2">
-									<form:renderRenderable renderable="{formValue.element}" />
-								</td>
-							</tr>
+							<form:renderRenderable renderable="{formValue.element}" />
 						</f:then>
 					</f:if>
 				</form:renderValues>
@@ -43,5 +32,4 @@
 	$(document).ready(function() {
 		$('.probationPeriod').convertISO8601ToText();
 	});
-
 </script>

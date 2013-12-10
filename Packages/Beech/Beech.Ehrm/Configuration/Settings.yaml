@@ -299,6 +299,10 @@ TYPO3:
             superTypes: ['TYPO3.Form:Section']
             renderingOptions:
               templatePathPattern: 'resource://Beech.CLA/Private/Templates/Form/Elements/ContractHeaderSection.html'
+          'Beech.CLA:ContractHeaderPdfSection':
+            superTypes: ['TYPO3.Form:Section']
+            renderingOptions:
+              templatePathPattern: 'resource://Beech.CLA/Private/Templates/Form/Elements/ContractHeaderPdfSection.html'
           'Beech.CLA:ContractArticlesSection':
             superTypes: ['TYPO3.Form:Section']
             implementationClassName: 'Beech\CLA\Form\Elements\ContractArticlesSection'
@@ -328,6 +332,12 @@ TYPO3:
             implementationClassName: 'TYPO3\Form\Core\Model\Page'
             renderingOptions:
               templatePathPattern: 'resource://Beech.CLA/Private/Templates/Form/Elements/ContractPreviewPage.html'
+              partialPathPattern: 'resource://Beech.CLA/Private/Templates/Form/Elements/Partials/{@type}.html'
+          'Beech.CLA:ContractPdfPage':
+            superTypes: ['TYPO3.Form:Page']
+            implementationClassName: 'TYPO3\Form\Core\Model\Page'
+            renderingOptions:
+              templatePathPattern: 'resource://Beech.CLA/Private/Templates/Form/Elements/ContractPdfPage.html'
               partialPathPattern: 'resource://Beech.CLA/Private/Templates/Form/Elements/Partials/{@type}.html'
   FormBuilder:
     handlebarsTemplates:

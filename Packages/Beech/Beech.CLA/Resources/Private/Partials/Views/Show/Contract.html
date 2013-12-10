@@ -16,8 +16,12 @@
 			<strong>{contract.jobTitle}</strong>
 		</td>
 		<td>
-			<a href="#/administration/contract/show/{contract.id}"><i class="icon-eye-open"></i></a>
-			<a href="#"><i class="icon-file"></i></a>
+			<a href="{f:uri.action(package:'Beech.CLA', subpackage:'Administration', controller:'contract', action:'show', arguments: {contract: contract})}"
+			   data-toggle="modal-ajax" data-target="#modal" modal-size="large"
+			   data-reload="reload-current-page">
+				<i class="icon-eye-open"></i>
+			</a>
+			<f:link.action action="pdf" controller="Contract" package="Beech.CLA" subpackage="Administration" arguments="{contract: contract}"><i class="icon-file"></i></f:link.action>
 		</td>
 	</tr>
 	<tr>
@@ -33,7 +37,7 @@
 	</tr>
 	<tr>
 		<td>
-			<strong><f:translate id="startDate">Start date10110</f:translate></strong>
+			<strong><f:translate id="startDate">Start date</f:translate></strong>
 		</td>
 		<td colspan="3">
 			{contract.startDate -> f:format.date(format: 'd-m-Y')}

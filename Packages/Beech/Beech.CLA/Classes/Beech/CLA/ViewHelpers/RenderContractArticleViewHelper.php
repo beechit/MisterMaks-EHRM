@@ -71,7 +71,9 @@ class RenderContractArticleViewHelper extends \TYPO3\Fluid\Core\ViewHelper\Abstr
 			$view->assign('settings' ,$this->settings);
 			$view->assign('element' ,$this->arguments['element']);
 			$view->assign('articleText', $this->arguments['element']->generateArticleText($formState));
-			if ($formValues['article-section-'. $articleId .'-isSelected'] === 'TRUE') {
+			if (isset($formValues['article-section-'. $articleId .'-isSelected'])
+				&& $formValues['article-section-'. $articleId .'-isSelected'] === 'TRUE'
+				|| !isset($formValues['article-section-'. $articleId .'-isSelected'])) {
 				$view->assign('articleIndex' ,++self::$articleIndex);
 				return $view->render();
 			}

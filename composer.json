@@ -27,7 +27,6 @@
 		"typo3/eel": "*",
 		"beech/essentials": "dev-master",
 		"typo3/surf": "*",
-		"typo3/ldap": "*",
 		"radmiraal/emberjs": "dev-master",
 		"radmiraal/couchdb": "dev-doctrine",
 		"typo3/formbuilder": "*",
@@ -48,7 +47,7 @@
 		"pdepend/pdepend": "dev-master",
 		"beech/dev-tools": "dev-development",
 		"sandstorm/plumber": "dev-fixes-t3home13",
-		"sandstorm/phpprofiler": "dev-fixes-t3home13 as 1.0.3-dev"
+		"sandstorm/phpprofiler": "*"
 	},
 	"minimum-stability": "dev",
 	"scripts": {
