@@ -12,6 +12,20 @@ what you have allready have done::
 	CouchDB and Mysql or postgress is installed
 	You have created a database in mysql or postgress
 
+to set up a "production enviroment"
+
+use php composer.phar install
+
+to setup a dev enviroment (due to use of satis for package distribution you have to use
+
+composer install --dev --prefer-source
+
+otherwise the .git folders dont exist
+they are needed for the php gerrit update part.
+
+
+
+
 configuration database
 ----------------------
 
