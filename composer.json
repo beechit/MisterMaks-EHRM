@@ -31,8 +31,10 @@
 		"radmiraal/emberjs": "dev-master",
 		"radmiraal/couchdb": "dev-doctrine",
 		"typo3/formbuilder": "*",
-		"typo3/queue-redis": "*",
-		"react/event-loop": "*"
+		"react/event-loop": "*",
+		"typo3/jobqueue-common": "dev-master",
+		"dompdf/dompdf": "dev-master",
+		"typo3/swiftmailer": "*"
 	},
 	"require-dev": {
 		"typo3/buildessentials": "*",

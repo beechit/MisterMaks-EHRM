@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "649454b97c2901d56c7d69f5406b31e5",
+    "hash": "a49438edeee3d09f7dad3d897d22896d",
     "packages": [
         {
             "name": "beech/essentials",
@@ -140,7 +140,8 @@
                 {
                     "name": "Jonathan Wage",
                     "email": "jonwage@gmail.com",
-                    "homepage": "http://www.jwage.com/"
+                    "homepage": "http://www.jwage.com/",
+                    "role": "Creator"
                 },
                 {
                     "name": "Guilherme Blanco",
@@ -158,7 +159,7 @@
                 {
                     "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "https://github.com/schmittjoh",
+                    "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -461,51 +462,78 @@
             "time": "2012-12-04 22:04:25"
         },
         {
-            "name": "predis/predis",
+            "name": "dompdf/dompdf",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/nrk/predis.git",
-                "reference": "4576dc029f04f25438521065aa4d29419a19bf2a"
+                "url": "git://github.com/beechit/dompdf.git",
+                "reference": "ae1e0d4987741b1d0a153b48f671b10a45c1cb59"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nrk/predis/zipball/4576dc029f04f25438521065aa4d29419a19bf2a",
-                "reference": "4576dc029f04f25438521065aa4d29419a19bf2a",
-                "shasum": ""
+                "url": "http://ci.beech.local:8080/job/composer-packages-1.0/ws/mistermaks//dist/dompdf-dompdf-dev-master-2ca8b7.zip",
+                "reference": "ae1e0d4987741b1d0a153b48f671b10a45c1cb59",
+                "shasum": "32db499dca949648be926dd17e92f0ca116dcf05"
             },
             "require": {
-                "php": ">=5.3.2"
-            },
-            "suggest": {
-                "ext-curl": "Allows access to Webdis when paired with phpiredis",
-                "ext-phpiredis": "Allows faster serialization and deserialization of the Redis protocol"
+                "phenx/php-font-lib": "0.2.*"
             },
             "type": "library",
             "autoload": {
-                "psr-0": {
-                    "Predis": "lib/"
-                }
+                "classmap": [
+                    "include/"
+                ]
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "MIT"
+                "LGPL"
             ],
             "authors": [
                 {
-                    "name": "Daniele Alessandri",
-                    "email": "suppakilla@gmail.com",
-                    "homepage": "http://clorophilla.net"
+                    "name": "Fabien Ménager",
+                    "email": "fabien.menager@gmail.com"
+                },
+                {
+                    "name": "Brian Sweeney",
+                    "email": "eclecticgeek@gmail.com"
                 }
             ],
-            "description": "Flexible and feature-complete PHP client library for Redis",
-            "homepage": "http://github.com/nrk/predis",
-            "keywords": [
-                "nosql",
-                "predis",
-                "redis"
+            "description": "DOMPDF is a CSS 2.1 compliant HTML to PDF converter",
+            "homepage": "https://github.com/dompdf/dompdf",
+            "time": "2013-12-04 04:50:54"
+        },
+        {
+            "name": "phenx/php-font-lib",
+            "version": "0.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PhenX/php-font-lib.git",
+                "reference": "42a1ca6d19f14076911a118705b771c3a5a8b179"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PhenX/php-font-lib/zipball/42a1ca6d19f14076911a118705b771c3a5a8b179",
+                "reference": "42a1ca6d19f14076911a118705b771c3a5a8b179",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "classes/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL"
             ],
-            "time": "2013-06-17 09:16:07"
+            "authors": [
+                {
+                    "name": "Fabien Ménager",
+                    "email": "fabien.menager@gmail.com"
+                }
+            ],
+            "description": "A library to read, parse, export and make subsets of different types of font files.",
+            "homepage": "https://github.com/PhenX/php-font-lib",
+            "time": "2013-02-22 23:30:49"
         },
         {
             "name": "radmiraal/couchdb",
@@ -530,7 +558,7 @@
             "license": [
                 "LGPL-3.0+"
             ],
-            "time": "2013-03-06 21:55:43"
+            "time": "2013-08-16 11:29:27"
         },
         {
             "name": "radmiraal/emberjs",
@@ -557,7 +585,7 @@
                     "name": "Rens Admiraal"
                 }
             ],
-            "time": "2013-06-24 07:47:44"
+            "time": "2013-09-20 06:30:54"
         },
         {
             "name": "react/event-loop",
@@ -776,10 +804,16 @@
             "source": {
                 "type": "git",
                 "url": "git://git.typo3.org/Packages/TYPO3.Flow.git",
-                "reference": "2.0.0-beta3"
+                "reference": "03037be0dd36a16a79c791e90deb3d3e23ce00d9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://ci.beech.local:8080/job/composer-packages-1.0/ws/mistermaks//dist/typo3-flow-2.0.0-beta3-3da453.zip",
+                "reference": "03037be0dd36a16a79c791e90deb3d3e23ce00d9",
+                "shasum": "9d275aef8cf6acd8f5a1d69eb9dcefc522c899b4"
             },
             "require": {
-                "composer/installers": ">=1.0.2,<1.1",
+                "composer/installers": "~1.0.2",
                 "doctrine/migrations": "dev-master",
                 "doctrine/orm": "2.3.*",
                 "ext-json": ">=1.2.0",
@@ -801,7 +835,6 @@
                     "TYPO3\\Flow": "Classes"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "LGPL-3.0+"
             ],
@@ -815,7 +848,13 @@
             "source": {
                 "type": "git",
                 "url": "git://git.typo3.org/Packages/TYPO3.Fluid.git",
-                "reference": "2f7a92559eebff872fad8022061320ae00067d6e"
+                "reference": "f10ef060ab22884891d6f419e3b76309f4570a2a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://ci.beech.local:8080/job/composer-packages-1.0/ws/mistermaks//dist/typo3-fluid-2.0.0-beta3-4600d3.zip",
+                "reference": "f10ef060ab22884891d6f419e3b76309f4570a2a",
+                "shasum": "b27aee9518a78903070cb6f54b362c2a103ac662"
             },
             "require": {
                 "typo3/flow": "2.0.*"
@@ -826,12 +865,11 @@
                     "TYPO3\\Fluid": "Classes"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "LGPL-3.0+"
             ],
             "description": "Next-Generation Templating Framework for TYPO3 Flow and TYPO3 Neos, also backported to TYPO3 CMS",
-            "time": "2013-06-24 16:13:40"
+            "time": "2013-04-15 15:26:44"
         },
         {
             "name": "typo3/form",
@@ -882,6 +920,26 @@
             "time": "2012-12-13 14:07:05"
         },
         {
+            "name": "typo3/jobqueue-common",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git://git.typo3.org/Packages/TYPO3.Jobqueue.Common.git",
+                "reference": "1bbe24c254f3e1ea403ffb1bb4288d628903d2e2"
+            },
+            "require": {
+                "typo3/flow": "*"
+            },
+            "type": "typo3-flow-package",
+            "autoload": {
+                "psr-0": {
+                    "TYPO3\\Jobqueue\\Common": "Classes"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "time": "2012-11-12 10:53:17"
+        },
+        {
             "name": "typo3/ldap",
             "version": "dev-master",
             "source": {
@@ -913,12 +971,13 @@
             "source": {
                 "type": "git",
                 "url": "git://git.typo3.org/Packages/TYPO3.Party.git",
-                "reference": "8b51051f1ca42c57bd86ce0cccdce5d0881a42fa"
+                "reference": "d819951736f17d3c68db5f8bba9a9795ae6d8606"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://ci.beech.local:8080/job/composer-packages-1.0/ws/mistermaks/dist/typo3-party-2.0.0-beta3-a840a3.zip",
-                "reference": "2.0.0-beta3"
+                "url": "http://ci.beech.local:8080/job/composer-packages-1.0/ws/mistermaks//dist/typo3-party-2.0.0-beta3-9ee10d.zip",
+                "reference": "d819951736f17d3c68db5f8bba9a9795ae6d8606",
+                "shasum": "2aeecdf7e1c566c206fee54aa15da552ebc60bf6"
             },
             "require": {
                 "typo3/flow": "2.0.*"
@@ -929,64 +988,11 @@
                     "TYPO3\\Party": "Classes"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "LGPL-3.0+"
             ],
             "description": "A PHP implementation of the OASIS Customer Information Quality (CIQ) XML Standard.",
-            "time": "2013-04-15 08:48:17"
-        },
-        {
-            "name": "typo3/queue",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "git://github.com/radmiraal/TYPO3.Queue.git",
-                "reference": "6fd6469e97b56116d479998273ce494a1b4e95c0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "http://ci.beech.local:8080/job/composer-packages-1.0/ws/mistermaks/dist/typo3-queue-dev-master-88ff6a.zip",
-                "reference": "dev-master",
-                "shasum": "fe7f4bad69a20fb00562c817bec7062b34685c32"
-            },
-            "require": {
-                "typo3/flow": "*"
-            },
-            "type": "typo3-flow-package",
-            "autoload": {
-                "psr-0": {
-                    "TYPO3\\Queue": "Classes"
-                }
-            },
-            "time": "2012-10-10 08:24:49"
-        },
-        {
-            "name": "typo3/queue-redis",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "git://git.typo3.org/Packages/TYPO3.Queue.Redis.git",
-                "reference": "bbfdf6ada94caf6ad5c147a99f0aac1cbc0e3ddc"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "http://ci.beech.local:8080/job/composer-packages-1.0/ws/mistermaks/dist/typo3-queue-redis-dev-master-2e282a.zip",
-                "reference": "dev-master",
-                "shasum": "9e7a93fb6d453c4d75619ca8cf622ff951d36875"
-            },
-            "require": {
-                "predis/predis": "*",
-                "typo3/flow": "*",
-                "typo3/queue": "*"
-            },
-            "type": "typo3-flow-package",
-            "autoload": {
-                "psr-0": {
-                    "TYPO3\\Queue\\Redis": "Classes"
-                }
-            },
-            "time": "2012-10-10 06:49:39"
+            "time": "2013-02-28 08:58:34"
         },
         {
             "name": "typo3/surf",
@@ -1011,6 +1017,33 @@
             ],
             "description": "TYPO3 Surf is a deployment tool based on Flow and suited for a wide variety of applications",
             "time": "2013-05-28 09:56:52"
+        },
+        {
+            "name": "typo3/swiftmailer",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git://git.typo3.org/Packages/TYPO3.SwiftMailer.git",
+                "reference": "6537ea19ea4b7a17fa727fd96d83f6ce4993337d"
+            },
+            "require": {
+                "typo3/flow": "*"
+            },
+            "provide": {
+                "swiftmailer/swiftmailer": "4.1.5"
+            },
+            "type": "typo3-flow-package",
+            "autoload": {
+                "psr-0": {
+                    "TYPO3\\SwiftMailer": "Classes"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0"
+            ],
+            "description": "A TYPO3 Flow package of SwiftMailer",
+            "time": "2013-05-03 10:11:04"
         }
     ],
     "packages-dev": [
@@ -1069,14 +1102,14 @@
             "version": "v1.1.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/mikey179/vfsStream",
-                "reference": "v1.1.0"
+                "url": "https://github.com/mikey179/vfsStream.git",
+                "reference": "ab14f19f31bda3d4ba3e45b2cbe6b627adb58806"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/mikey179/vfsStream/zipball/v1.1.0",
-                "reference": "v1.1.0",
-                "shasum": ""
+                "url": "http://ci.beech.local:8080/job/composer-packages-1.0/ws/mistermaks//dist/mikey179-vfsstream-v1.1.0-f965b6.zip",
+                "reference": "ab14f19f31bda3d4ba3e45b2cbe6b627adb58806",
+                "shasum": "567e68cd1ef275924ab214d7840f694a9df00880"
             },
             "require": {
                 "php": ">=5.3.0"
@@ -1087,12 +1120,11 @@
                     "org\\bovigo\\vfs": "src/main/php"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "BSD"
             ],
             "homepage": "http://vfs.bovigo.org/",
-            "time": "2012-08-25 05:49:29"
+            "time": "2012-08-25 12:49:29"
         },
         {
             "name": "pdepend/pdepend",
@@ -1183,14 +1215,14 @@
             "version": "1.4.1",
             "source": {
                 "type": "git",
-                "url": "git://github.com/phpmd/phpmd.git",
-                "reference": "1.4.1"
+                "url": "https://github.com/phpmd/phpmd",
+                "reference": "7d03a50e937811970751697ad1aea33a1089d66f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/phpmd/phpmd/archive/1.4.1.zip",
-                "reference": "1.4.1",
-                "shasum": ""
+                "url": "http://ci.beech.local:8080/job/composer-packages-1.0/ws/mistermaks//dist/phpmd-phpmd-1.4.1-91ceb6.zip",
+                "reference": "7d03a50e937811970751697ad1aea33a1089d66f",
+                "shasum": "554fea17aaadeefd4e563518c343e31fc398f8e2"
             },
             "require": {
                 "pdepend/pdepend": "*",
@@ -1200,7 +1232,6 @@
                 "src/bin/phpmd"
             ],
             "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
             "include-path": [
                 "../../pdepend/pdepend/src/main/php",
                 "src/main/php"
@@ -1578,6 +1609,53 @@
                 "xunit"
             ],
             "time": "2013-06-23 05:41:31"
+        },
+        {
+            "name": "predis/predis",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nrk/predis.git",
+                "reference": "4576dc029f04f25438521065aa4d29419a19bf2a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nrk/predis/zipball/4576dc029f04f25438521065aa4d29419a19bf2a",
+                "reference": "4576dc029f04f25438521065aa4d29419a19bf2a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2"
+            },
+            "suggest": {
+                "ext-curl": "Allows access to Webdis when paired with phpiredis",
+                "ext-phpiredis": "Allows faster serialization and deserialization of the Redis protocol"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Predis": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniele Alessandri",
+                    "email": "suppakilla@gmail.com",
+                    "homepage": "http://clorophilla.net"
+                }
+            ],
+            "description": "Flexible and feature-complete PHP client library for Redis",
+            "homepage": "http://github.com/nrk/predis",
+            "keywords": [
+                "nosql",
+                "predis",
+                "redis"
+            ],
+            "time": "2013-06-17 09:16:07"
         },
         {
             "name": "sandstorm/phpprofiler",
@@ -2012,6 +2090,31 @@
             "time": "2013-05-08 09:43:00"
         },
         {
+            "name": "typo3/queue",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git://github.com/radmiraal/TYPO3.Queue.git",
+                "reference": "6fd6469e97b56116d479998273ce494a1b4e95c0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://ci.beech.local:8080/job/composer-packages-1.0/ws/mistermaks/dist/typo3-queue-dev-master-88ff6a.zip",
+                "reference": "dev-master",
+                "shasum": "fe7f4bad69a20fb00562c817bec7062b34685c32"
+            },
+            "require": {
+                "typo3/flow": "*"
+            },
+            "type": "typo3-flow-package",
+            "autoload": {
+                "psr-0": {
+                    "TYPO3\\Queue": "Classes"
+                }
+            },
+            "time": "2012-10-10 08:24:49"
+        },
+        {
             "name": "zetacomponents/base",
             "version": "dev-master",
             "source": {
@@ -2151,10 +2254,11 @@
     ],
     "minimum-stability": "dev",
     "stability-flags": {
-        "typo3/flow": 10,
         "beech/essentials": 20,
         "radmiraal/emberjs": 20,
         "radmiraal/couchdb": 20,
+        "typo3/jobqueue-common": 20,
+        "dompdf/dompdf": 20,
         "beech/style": 20,
         "phpcd/phpcd": 20,
         "pdepend/pdepend": 20,
