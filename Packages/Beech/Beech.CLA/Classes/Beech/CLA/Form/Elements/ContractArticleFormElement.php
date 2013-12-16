@@ -37,6 +37,12 @@ class ContractArticleFormElement extends \TYPO3\Form\Core\Model\AbstractFormElem
 	protected $contractArticle;
 
 	/**
+	 * @Flow\Inject
+	 * @var \Beech\Party\Domain\Repository\AddressRepository
+	 */
+	protected $addressRepository;
+
+	/**
 	 * Set contractArticle
 	 *
 	 * @param \Beech\CLA\Domain\Model\ContractArticle $contractArticle
@@ -74,7 +80,11 @@ class ContractArticleFormElement extends \TYPO3\Form\Core\Model\AbstractFormElem
 
 					$pattern[] = sprintf('/<(%s)>/', $contractValue['valueId']);
 					if (isset($this->articleValues[$contractValue['valueId']])) {
-						$replacement[] = sprintf('<strong>%s</strong>', $this->fieldValueLabelHelper->getLabel($this->articleValues[$contractValue['valueId']], $contractValue));
+						$value = $this->articleValues[$contractValue['valueId']];
+						if ($contractValue['type'] === 'Beech.Party:WorkLocationSelect') {
+							$value = $this->addressRepository->findByIdentifier($value)->getFullAddress();
+						}
+						$replacement[] = sprintf('<strong>%s</strong>', $this->fieldValueLabelHelper->getLabel($value, $contractValue));
 					} else {
 						$value = $formState->getFormValue($valueIdentifier);
 						if (is_null($value)) {

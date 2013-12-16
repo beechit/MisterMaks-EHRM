@@ -65,7 +65,7 @@ contractTemplate:
   bsnEmployee:
     text:
       en: 'BSN number:'
-      nl: 'Burgerservicenummber (BSN):'
+      nl: 'Burgerservicenummer (BSN):'
       pl: 'Numer BSN/SOFI pracownika :'
   employeeStatement:
     text:

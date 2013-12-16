@@ -6,8 +6,8 @@
       label: 'Address type'
       options:
         values:
-          'homeAddress': 'Home address'
-          'workAddress': 'Work address'
+          'homeAddress': 'Home address' # dont change key value, it breaks working of application
+          'workAddress': 'Work address' # dont change key value, it breaks working of application
 #          'business': 'Business'
           'postbox': 'Postbox'
           'mailing': 'Mailing'

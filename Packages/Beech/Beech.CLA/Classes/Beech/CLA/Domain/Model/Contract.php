@@ -356,6 +356,18 @@ class Contract extends \Beech\Ehrm\Domain\Model\Document {
 		}
 		return $endDate;
 	}
+
+	/**
+	 * Get signature statement from template and fill out it with real data
+	 */
+	public function getFormattedSignatureStatement() {
+		$pattern[] = '/<SignDate>/';
+		$replacement[] = sprintf('<strong>%s</strong>', $this->getCreationDate()->format('d-m-Y'));
+		$pattern[] = '/<SignLocation>/';
+		$replacement[] = sprintf('<strong>%s</strong>', $this->getEmployer()->getPrimaryAddress()->getResidence());
+		$signatureStatement = preg_replace($pattern, $replacement, $this->getContractTemplate()->getSigatureStatement());
+		return $signatureStatement;
+	}
 }
 
 ?>

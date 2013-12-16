@@ -16,19 +16,19 @@
 <br/>
 <div class="row-fluid">
 	<div class="span5">{section.properties.contract.contractTemplate.addressCompany}</div>
-	<div class="span7"></div>
+	<div class="span7">{section.properties.contract.employer.address_workAddress.streetName} {section.properties.contract.employer.address_workAddress.houseNumber}</div>
 </div>
 <br/>
 <div class="row-fluid">
 	<div class="span5">{section.properties.contract.contractTemplate.postalResidenceEmployer}</div>
-	<div class="span7"></div>
+	<div class="span7">{section.properties.contract.employer.address_workAddress.postal} {section.properties.contract.employer.address_workAddress.residence}</div>
 </div>
 <br/>
 <div class="row-fluid">
 	<div class="span5"><strong>{section.properties.contract.contractTemplate.employerStatement}</strong></div>
 	<div class="span7"></div>
 </div>
-<br/>
+<br/><br/>
 <div class="row-fluid">
 	<div class="span5">{section.properties.contract.contractTemplate.nameEmployee}</div>
 	<div class="span7">{section.properties.contract.employee.name}</div>
@@ -36,12 +36,12 @@
 <br/>
 <div class="row-fluid">
 	<div class="span5">{section.properties.contract.contractTemplate.addressCompany}</div>
-	<div class="span7">{section.properties.contract.employee.address_home.streetName} {section.properties.contract.employee.address_home.houseNumber}<f:if condition="{section.properties.contract.employee.address_home.houseNumberAddition}"> {section.properties.contract.employee.address_home.houseNumberAddition}</f:if></div>
+	<div class="span7">{section.properties.contract.employee.address_homeAddress.streetName} {section.properties.contract.employee.address_homeAddress.houseNumber}</div>
 </div>
 <br/>
 <div class="row-fluid">
 	<div class="span5">{section.properties.contract.contractTemplate.postalResidenceEmployee}</div>
-	<div class="span7">{section.properties.contract.employee.address_home.postal} {section.properties.contract.employee.address_home.residence}</div>
+	<div class="span7">{section.properties.contract.employee.address_homeAddress.postal} {section.properties.contract.employee.address_homeAddress.residence}</div>
 </div>
 <br/>
 <div class="row-fluid">
@@ -58,7 +58,7 @@
 	<div class="span5"><strong>{section.properties.contract.contractTemplate.employeeStatement}</strong></div>
 	<div class="span7"></div>
 </div>
-<br/>
+<br/><br/>
 <div class="row-fluid">
 	<div class="span12">{section.properties.contract.contractTemplate.contractStatement}</div>
 </div>

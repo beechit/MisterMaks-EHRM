@@ -152,6 +152,15 @@ class Company extends \TYPO3\Party\Domain\Model\AbstractParty implements \TYPO3\
 	}
 
 	/**
+	 * Get primaryAddress
+	 *
+	 * @return \Beech\Party\Domain\Model\Address
+	 */
+	public function getPrimaryAddress() {
+		return $this->__get('address_workAddress');
+	}
+
+	/**
 	 * This is the function to get specific (primairy) properties.
 	 *
 	 * See documentation in EHRM-Base for more info

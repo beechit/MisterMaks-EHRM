@@ -15,6 +15,18 @@ use TYPO3\Flow\Annotations as Flow;
 class FieldValueLabelHelper {
 
 	/**
+	 * @var \Beech\Ehrm\Utility\PreferencesUtility
+	 * @Flow\Inject
+	 */
+	protected $preferencesUtility;
+
+	/**
+	 * Language selected for translations
+	 * @var string
+	 */
+	protected $language = 'nl';
+
+	/**
 	 * Get label that belongs to a field value
 	 *
 	 * @todo implement localisation handling and maybe move this to formElement object(viewhelper)
@@ -24,6 +36,8 @@ class FieldValueLabelHelper {
 	 */
 	public function getLabel($value, $fieldInfo) {
 		if (!empty($fieldInfo['options'])) {
+			$locale = $this->preferencesUtility->getUserPreference('locale');
+			$this->language = !empty($locale) ? substr($locale, 0, 2) : $this->language;
 			if (!is_array($value)) {
 				$value = array($value);
 			}
@@ -31,7 +45,7 @@ class FieldValueLabelHelper {
 			foreach ($value as $id) {
 
 				if (array_key_exists($id, $fieldInfo['options'])) {
-					$return[] = $fieldInfo['options'][$id];
+					$return[] = isset($fieldInfo['translated'][$this->language]) ? $fieldInfo['translated'][$this->language][$id] : $fieldInfo['options'][$id];
 				} else {
 					$return[] = $id;
 				}

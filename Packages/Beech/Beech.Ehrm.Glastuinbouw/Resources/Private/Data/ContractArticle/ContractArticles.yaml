@@ -124,9 +124,9 @@ contractArticles:
             6: saturday
             0: sunday
           translated:
-            nl: [ maandag, dinsdag, woensdag, donderdag, vrijdag, zaterdag, zondag ]
-            en: [ monday , tuesday , wednesday , thursday , friday , saturday , sunday ]
-            pl: [ poniedzialek, wtorek, sroda, czwartek, piatek, sobota, niedziela ]
+            nl: [ zondag, maandag, dinsdag, woensdag, donderdag, vrijdag, zaterdag ]
+            en: [ sunday, monday , tuesday , wednesday , thursday , friday , saturday ]
+            pl: [ niedziela, poniedzialek, wtorek, sroda, czwartek, piatek, sobota ]
           valueId: workDays
           validation:
             -
@@ -187,6 +187,15 @@ contractArticles:
             'week': 'Week'
             '4 weeks': '4 weeks'
             'month': 'Month'
+          translated:
+            nl:
+              'week': 'week'
+              '4 weeks': '4 weken'
+              'month': 'maand'
+            pl:
+              'week': 'tydzień'
+              '4 weeks': '4 tygodnie'
+              'month': 'miesiąc'
           default: 'P1M'
           valueId: 'paymentSequence'
           validation:
