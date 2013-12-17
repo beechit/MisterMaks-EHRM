@@ -106,7 +106,7 @@ contractArticles:
           type: 'Beech.CLA:SingleLineText'
           value: ''
           valueId: hoursAWeek
-          default: '38'
+          default: '38.00'
           validation:
             -
               type: 'Beech.Ehrm:Decimal'

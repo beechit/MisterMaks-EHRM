@@ -179,6 +179,9 @@
 			<trans-unit id="noContract">
 				<source>There is no contract for this person.</source>
 			</trans-unit>
+			<trans-unit id="/week">
+				<source>/ week</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

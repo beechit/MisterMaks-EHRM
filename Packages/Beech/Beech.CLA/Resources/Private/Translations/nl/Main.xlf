@@ -242,6 +242,10 @@
 				<source>There is no contract for this person.</source>
 				<target>Er is geen contract bij deze persoon</target>
 			</trans-unit>
+			<trans-unit id="/week">
+				<source>/ week</source>
+				<target>per week</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
