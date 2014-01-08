@@ -9,9 +9,5 @@
 	"TYPO3.Fluid": {
 		"[FEATURE] Add supportedOptions and setOptions": "16393/15",
 		"[FEATURE] Configurable prepend option for Select ViewHelper": "18526/1"
-	},
-	"TYPO3.Eel":
-	{
-		"[BUGFIX] Prevent PHP error for undefined variable tmpId in CompilingEelParser": "21998/2"
 	}
 }
