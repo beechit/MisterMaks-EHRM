@@ -32,14 +32,14 @@
 		"typo3/formbuilder": "*",
 		"react/event-loop": "*",
 		"typo3/jobqueue-common": "dev-master",
-		"dompdf/dompdf": "dev-master",
+		"dompdf/dompdf": "v0.6.0",
 		"typo3/swiftmailer": "*"
 	},
 	"require-dev": {
 		"typo3/buildessentials": "*",
 		"typo3/kickstart": "*",
 		"phpunit/phpunit": "3.7.*",
-		"typo3-qa/typo3flow": "*",
+		"typo3-ci/typo3flow": "*",
 		"mikey179/vfsstream": "1.1.*",
 		"beech/style": "dev-development",
 		"phpmd/phpmd": "1.4.*",
