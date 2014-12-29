@@ -1,23 +1,23 @@
 {
 	"name": "beech/mister-maks-base-distribution",
 	"description": "Mister Maks Base Distribution",
+
 	"repositories": [
-		{
-			"type": "composer",
-			"url": "http://ci.beech.local:8080/job/composer-packages-1.0/ws/mistermaks/"
-		}
+		{ "type": "git", "url": "git://github.com/beechit/Radmiraal.Emberjs.git" },
+		{ "type": "git", "url": "git://github.com/beechit/TYPO3.Queue.git" },
+		{ "type": "git", "url": "git://git.typo3.org/Packages/TYPO3.FormBuilder.git" },
+		{ "type": "git", "url": "git://github.com/beechit/Radmiraal.CouchDB.git" },
+		{ "type": "git", "url": "git://github.com/beechit/serializer.git" },
+		{ "type": "git", "url": "git://git.typo3.org/Packages/TYPO3.Kickstart.git" },
+		{ "type": "git", "url": "git://git.typo3.org/Packages/TYPO3.Surf.git" },
+		{ "type": "git", "url": "git://git.typo3.org/Flow/BuildEssentials.git" },
+		{ "type": "git", "url": "git://github.com/beechit/dompdf.git" },
+		{ "type": "git", "url": "git://github.com/beechit/couchdb-odm" }
 	],
+
 	"config": {
 		"vendor-dir":"Packages/Libraries",
 		"bin-dir": "bin"
-	},
-	"extra": {
-		"installer-paths": {
-			"Packages/Beech/{$name}/": [
-				"beech/dev-tools",
-				"beech/style"
-			]
-		}
 	},
 	"require": {
 		"php": ">=5.4.0",
@@ -25,29 +25,15 @@
 		"typo3/fluid": "2.0.0-beta3",
 		"typo3/party": "2.0.0-beta3",
 		"typo3/eel": "*",
-		"beech/essentials": "dev-master",
 		"typo3/surf": "*",
-		"radmiraal/emberjs": "dev-master",
-		"radmiraal/couchdb": "dev-doctrine",
+		"beechit/emberjs": "*",
+		"beechit/couchdb": "dev-doctrine",
+		"beechit/couchdb-odm": "*",
 		"typo3/formbuilder": "*",
 		"react/event-loop": "*",
 		"typo3/jobqueue-common": "dev-master",
 		"dompdf/dompdf": "v0.6.0",
 		"typo3/swiftmailer": "*"
-	},
-	"require-dev": {
-		"typo3/buildessentials": "*",
-		"typo3/kickstart": "*",
-		"phpunit/phpunit": "3.7.*",
-		"typo3-ci/typo3flow": "*",
-		"mikey179/vfsstream": "1.1.*",
-		"beech/style": "dev-development",
-		"phpmd/phpmd": "1.4.*",
-		"phpcd/phpcd": "dev-master",
-		"pdepend/pdepend": "dev-master",
-		"beech/dev-tools": "dev-development",
-		"sandstorm/plumber": "dev-fixes-t3home13",
-		"sandstorm/phpprofiler": "*"
 	},
 	"minimum-stability": "dev",
 	"scripts": {

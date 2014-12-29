@@ -6,8 +6,8 @@
 	"require": {
 		"typo3/flow": "*",
 		"typo3/formbuilder": "*",
-		"radmiraal/emberjs": "dev-master",
-		"radmiraal/couchdb": "dev-doctrine"
+		"beechit/emberjs": "*",
+		"beechit/couchdb": "dev-doctrine"
 	},
 	"autoload": {
 		"psr-0": {

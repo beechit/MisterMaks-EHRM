@@ -7,7 +7,7 @@
 		"typo3/flow": "*",
 		"typo3/party": "*",
 		"beech/ehrm": "*",
-		"radmiraal/couchdb": "dev-doctrine"
+		"beechit/couchdb": "dev-doctrine"
 	},
 	"autoload": {
 		"psr-0": {
