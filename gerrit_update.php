@@ -71,10 +71,12 @@ class Gerrit {
 							echo self::colorize('This change has been abandoned!', 'red') . PHP_EOL;
 						} else {
 							if($revision) {
-								echo self::colorize('!!Fetching patch set '.$revision, 'yellow').PHP_EOL;
-								$command = 'git fetch --quiet git://review.typo3.org/' . $change->project . ' ' . preg_replace('#/'.$change->revisions->{$change->current_revision}->_number.'$#', '/'.$revision, $change->revisions->{$change->current_revision}->fetch->git->ref) . '';
+								$git = 'git';
+								echo self::colorize('!!Fetching patch set '.$revision, 'yellow').PHP_EOL; // var_dump($change->project, $change->current_revision, $change->revisions, $change->revisions->{$change->current_revision}->fetch);
+								$command = 'git fetch --quiet git://review.typo3.org/' . $change->project . ' ' . preg_replace('#/'.$change->revisions->{$change->current_revision}->_number.'$#', '/'.$revision, $change->revisions->{$change->current_revision}->fetch->{$git}->ref) . '';
 							} else {
 								$command = 'git fetch --quiet git://review.typo3.org/' . $change->project . ' ' . $change->revisions->{$change->current_revision}->fetch->git->ref . '';
+
 							}
 							$output = self::executeShellCommand($command);
 
@@ -139,6 +141,7 @@ class Gerrit {
 		// trim []
 		$output = ltrim($output, '[');
 		$output = rtrim(rtrim($output), ']');
+		$output = str_replace("anonymous http", "git", $output);
 
 		$data = json_decode($output);
 		return $data;
