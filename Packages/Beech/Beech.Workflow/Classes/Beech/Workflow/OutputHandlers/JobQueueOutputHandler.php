@@ -1,11 +1,25 @@
 <?php
 namespace Beech\Workflow\OutputHandlers;
 
-/*
- * This source file is proprietary property of Beech Applications B.V.
- * Date: 24-09-2012 22:53
- * All code (c) Beech Applications B.V. all rights reserved
- */
+/*                                                                        *
+ * This script belongs to beechit/mrmaks.                                 *
+ *                                                                        *
+ * It is free software; you can redistribute it and/or modify it under    *
+ * the terms of the GNU Lesser General Public License as published by the *
+ * Free Software Foundation, either version 3 of the License, or (at your *
+ * option) any later version.                                             *
+ *                                                                        *
+ * This script is distributed in the hope that it will be useful, but     *
+ * WITHOUT ANY WARRANTY; without even the implied warranty of MERCHAN-    *
+ * TABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser       *
+ * General Public License for more details.                               *
+ *                                                                        *
+ * You should have received a copy of the GNU Lesser General Public       *
+ * License along with the script.                                         *
+ * If not, see http://www.gnu.org/licenses/lgpl.html                      *
+ *                                                                        *
+ * The TYPO3 project - inspiring people to share!                         *
+ *                                                                        */
 
 use TYPO3\Flow\Annotations as Flow;
 
@@ -15,7 +29,7 @@ use TYPO3\Flow\Annotations as Flow;
 class JobQueueOutputHandler extends \Beech\Workflow\Core\AbstractOutputHandler implements \Beech\Workflow\Core\OutputHandlerInterface {
 
 	/**
-	 * @var \TYPO3\Queue\Job\JobManager
+	 * @var \TYPO3\Jobqueue\Common\Job\JobManager
 	 */
 	protected $jobManager;
 
@@ -41,7 +55,7 @@ class JobQueueOutputHandler extends \Beech\Workflow\Core\AbstractOutputHandler i
 	 * Class constructor
 	 */
 	public function __construct() {
-		$queueManager = new \TYPO3\Queue\QueueManager();
+		$queueManager = new \TYPO3\Jobqueue\Common\Queue\QueueManager();
 		$queueManager->injectSettings(array(
 			'queues' => array(
 				'Workflow' => array(
@@ -117,7 +131,7 @@ class JobQueueOutputHandler extends \Beech\Workflow\Core\AbstractOutputHandler i
 	 * @return void
 	 */
 	public function invoke() {
-		$job = new \TYPO3\Queue\Job\StaticMethodCallJob($this->getJobClassName(), $this->getJobMethodName(), $this->getJobMethodArguments());
+		$job = new \TYPO3\JobQueue\Common\Job\StaticMethodCallJob($this->getJobClassName(), $this->getJobMethodName(), $this->getJobMethodArguments());
 		$this->jobManager->queue('Workflow', $job);
 	}
 }

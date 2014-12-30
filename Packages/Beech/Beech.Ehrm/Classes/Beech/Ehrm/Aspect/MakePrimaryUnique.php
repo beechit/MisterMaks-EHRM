@@ -1,11 +1,25 @@
 <?php
 namespace Beech\Ehrm\Aspect;
 
-/*
- * This source file is proprietary property of Beech Applications B.V.
- * Date: 21-06-13 10:24
- * All code (c) Beech Applications B.V. all rights reserved
- */
+/*                                                                        *
+ * This script belongs to beechit/mrmaks.                                 *
+ *                                                                        *
+ * It is free software; you can redistribute it and/or modify it under    *
+ * the terms of the GNU Lesser General Public License as published by the *
+ * Free Software Foundation, either version 3 of the License, or (at your *
+ * option) any later version.                                             *
+ *                                                                        *
+ * This script is distributed in the hope that it will be useful, but     *
+ * WITHOUT ANY WARRANTY; without even the implied warranty of MERCHAN-    *
+ * TABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser       *
+ * General Public License for more details.                               *
+ *                                                                        *
+ * You should have received a copy of the GNU Lesser General Public       *
+ * License along with the script.                                         *
+ * If not, see http://www.gnu.org/licenses/lgpl.html                      *
+ *                                                                        *
+ * The TYPO3 project - inspiring people to share!                         *
+ *                                                                        */
 
 use TYPO3\Flow\Annotations as Flow;
 use Doctrine\ORM\Mapping as ORM;
@@ -48,7 +62,7 @@ class MakePrimaryUnique {
 					} else if (count($objectsWithType) === 0) {
 							// if new object is not selected as primary
 							// and there is no other primary objects of the same type
-							// then set as primary 
+							// then set as primary
 						$model->setPrimary('TRUE');
 					}
 				}
