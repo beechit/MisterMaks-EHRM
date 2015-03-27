@@ -1,5 +1,9 @@
-'TYPO3.UserManagement':
-  requestFilter: 'isPackage("TYPO3.UserManagement")'
-  viewClassName: 'Beech\Ehrm\View\TemplateView'
+-
+  requestFilter: '(isPackage("Beech.Absense")||(isPackage("Beech.Calendar")||isPackage("Beech.Chart")||isPackage("Beech.CLA")|| isPackage("Beech.Communication") || isPackage("Beech.Document") || isPackage("Beech.Ehrm") || (isPackage("Beech.Minute") || isPackage("Beech.Party") || (isPackage("Beech.Socket")) || isPackage("Beech.Task") || isPackage("Beech.Workflow")'
+  viewObjectName: 'Beech\MijnVitaliteit\View\TemplateView'
   options:
-    layoutRootPath: 'resource://Beech.Ehrm/Private/Layouts'
+    layoutRootPaths:
+      - 'resource://Beech.Ehrm/Private/Layouts'
+    partialRootPaths:
+      - 'resource://Beech.Ehrm/Private/Partials'
+

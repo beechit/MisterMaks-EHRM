@@ -11,8 +11,7 @@
 		{ "type": "git", "url": "git://git.typo3.org/Packages/TYPO3.Kickstart.git" },
 		{ "type": "git", "url": "git://git.typo3.org/Packages/TYPO3.Surf.git" },
 		{ "type": "git", "url": "git://git.typo3.org/Flow/BuildEssentials.git" },
-		{ "type": "git", "url": "git://github.com/beechit/dompdf.git" },
-		{ "type": "git", "url": "git://github.com/beechit/couchdb-odm" }
+		{ "type": "git", "url": "git://github.com/beechit/dompdf.git" }
 	],
 
 	"config": {
@@ -20,20 +19,16 @@
 		"bin-dir": "bin"
 	},
 	"require": {
-		"php": ">=5.4.0",
 		"typo3/flow": "2.0.0-beta3",
 		"typo3/fluid": "2.0.0-beta3",
 		"typo3/party": "2.0.0-beta3",
-		"typo3/eel": "*",
-		"typo3/surf": "*",
+		"typo3/eel": "1.0.0-alpha5",
 		"beechit/emberjs": "*",
 		"beechit/couchdb": "dev-doctrine",
-		"beechit/couchdb-odm": "*",
+		"typo3/form": "1.1.0",
 		"typo3/formbuilder": "*",
-		"react/event-loop": "*",
-		"typo3/jobqueue-common": "dev-master",
 		"dompdf/dompdf": "v0.6.0",
-		"typo3/swiftmailer": "*"
+		"react/event-loop": "v0.3.4"
 	},
 	"minimum-stability": "dev",
 	"scripts": {

@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c68eb8cb0d5314644d5d0c0c7e98179f",
+    "hash": "485c30fd16278edffdcd30c189451db0",
     "packages": [
         {
             "name": "beechit/couchdb",
@@ -12,10 +12,10 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/beechit/Radmiraal.CouchDB.git",
-                "reference": "74933954e6ebf92f42a071018f3f4a48b4206553"
+                "reference": "c41f5e588a011aac1498dfd920d3c56a1b7c4668"
             },
             "require": {
-                "beechit/couchdb-odm": "*",
+                "doctrine/couchdb-odm": "*",
                 "typo3/flow": "*"
             },
             "type": "typo3-flow-package",
@@ -32,55 +32,7 @@
                     "name": "Rens Admiraal Beech.it"
                 }
             ],
-            "time": "2014-12-29 20:37:45"
-        },
-        {
-            "name": "beechit/couchdb-odm",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "git://github.com/beechit/couchdb-odm",
-                "reference": "677b49a870f724453ddfff45ef244d7dbb348604"
-            },
-            "require": {
-                "doctrine/common": "~2.2",
-                "doctrine/couchdb": "dev-master",
-                "php": ">=5.3.2",
-                "symfony/console": ">=2.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "@stable",
-                "symfony/yaml": "~2.0"
-            },
-            "suggest": {
-                "symfony/yaml": "If you want to use YAML Mappings"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Doctrine\\ODM\\CouchDB": "lib/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Benjamin Eberlei",
-                    "email": "kontakt@beberlei.de"
-                },
-                {
-                    "name": "Lukas Kahwe Smith",
-                    "email": "smith@pooteeweet.org"
-                }
-            ],
-            "description": "CouchDB Document Object Mapper",
-            "homepage": "http://www.doctrine-project.org",
-            "keywords": [
-                "couchdb",
-                "persistence"
-            ],
-            "time": "2014-12-29 20:26:57"
+            "time": "2015-03-26 10:44:45"
         },
         {
             "name": "beechit/emberjs",
@@ -115,12 +67,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "89d77bfbee79e16653f7162c86e602cc188471db"
+                "reference": "4db8898759143c742a8661b626d23f1535a42c15"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/89d77bfbee79e16653f7162c86e602cc188471db",
-                "reference": "89d77bfbee79e16653f7162c86e602cc188471db",
+                "url": "https://api.github.com/repos/composer/installers/zipball/4db8898759143c742a8661b626d23f1535a42c15",
+                "reference": "4db8898759143c742a8661b626d23f1535a42c15",
                 "shasum": ""
             },
             "replace": {
@@ -162,9 +114,11 @@
                 "Hurad",
                 "MODX Evo",
                 "OXID",
+                "SMF",
                 "Thelia",
                 "WolfCMS",
                 "agl",
+                "aimeos",
                 "annotatecms",
                 "bitrix",
                 "cakephp",
@@ -200,7 +154,7 @@
                 "zend",
                 "zikula"
             ],
-            "time": "2014-11-29 01:29:17"
+            "time": "2015-03-18 21:44:04"
         },
         {
             "name": "doctrine/annotations",
@@ -276,12 +230,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/cache.git",
-                "reference": "803a41469d948bc120a6c913399e8bfc8b5d9650"
+                "reference": "6c5c32eb6c596993d04e13b95d0c1e8153783d7a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/cache/zipball/803a41469d948bc120a6c913399e8bfc8b5d9650",
-                "reference": "803a41469d948bc120a6c913399e8bfc8b5d9650",
+                "url": "https://api.github.com/repos/doctrine/cache/zipball/6c5c32eb6c596993d04e13b95d0c1e8153783d7a",
+                "reference": "6c5c32eb6c596993d04e13b95d0c1e8153783d7a",
                 "shasum": ""
             },
             "require": {
@@ -292,13 +246,13 @@
             },
             "require-dev": {
                 "phpunit/phpunit": ">=3.7",
-                "predis/predis": "~0.8",
+                "predis/predis": "~1.0",
                 "satooshi/php-coveralls": "~0.6"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.4.x-dev"
+                    "dev-master": "1.5.x-dev"
                 }
             },
             "autoload": {
@@ -338,7 +292,7 @@
                 "cache",
                 "caching"
             ],
-            "time": "2014-12-08 23:13:26"
+            "time": "2015-02-16 12:24:01"
         },
         {
             "name": "doctrine/collections",
@@ -346,12 +300,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/collections.git",
-                "reference": "38ed66e6606309bec203a9df506ffa26d956d21d"
+                "reference": "c63f2e637c6ac759d83002906c30e6c96d91e5f3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/collections/zipball/38ed66e6606309bec203a9df506ffa26d956d21d",
-                "reference": "38ed66e6606309bec203a9df506ffa26d956d21d",
+                "url": "https://api.github.com/repos/doctrine/collections/zipball/c63f2e637c6ac759d83002906c30e6c96d91e5f3",
+                "reference": "c63f2e637c6ac759d83002906c30e6c96d91e5f3",
                 "shasum": ""
             },
             "require": {
@@ -404,7 +358,7 @@
                 "collections",
                 "iterator"
             ],
-            "time": "2014-11-05 15:56:21"
+            "time": "2015-01-21 05:12:54"
         },
         {
             "name": "doctrine/common",
@@ -490,12 +444,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/couchdb-client.git",
-                "reference": "1baaf607d41390d28e4467e80196896ffcd59c7f"
+                "reference": "9f92d8e5a2d400fd98542e8a70ecf85be1df4fe2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/couchdb-client/zipball/1baaf607d41390d28e4467e80196896ffcd59c7f",
-                "reference": "1baaf607d41390d28e4467e80196896ffcd59c7f",
+                "url": "https://api.github.com/repos/doctrine/couchdb-client/zipball/9f92d8e5a2d400fd98542e8a70ecf85be1df4fe2",
+                "reference": "9f92d8e5a2d400fd98542e8a70ecf85be1df4fe2",
                 "shasum": ""
             },
             "require": {
@@ -533,7 +487,62 @@
                 "couchdb",
                 "persistence"
             ],
-            "time": "2014-10-31 13:55:04"
+            "time": "2015-02-25 17:30:36"
+        },
+        {
+            "name": "doctrine/couchdb-odm",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/doctrine/couchdb-odm.git",
+                "reference": "827024181ca9d531911e343ef296e05c103b4b37"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/doctrine/couchdb-odm/zipball/827024181ca9d531911e343ef296e05c103b4b37",
+                "reference": "827024181ca9d531911e343ef296e05c103b4b37",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/common": "~2.2",
+                "doctrine/couchdb": "dev-master",
+                "php": ">=5.3.2",
+                "symfony/console": ">=2.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "@stable",
+                "symfony/yaml": "~2.0"
+            },
+            "suggest": {
+                "symfony/yaml": "If you want to use YAML Mappings"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Doctrine\\ODM\\CouchDB": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Benjamin Eberlei",
+                    "email": "kontakt@beberlei.de"
+                },
+                {
+                    "name": "Lukas Kahwe Smith",
+                    "email": "smith@pooteeweet.org"
+                }
+            ],
+            "description": "CouchDB Document Object Mapper",
+            "homepage": "http://www.doctrine-project.org",
+            "keywords": [
+                "couchdb",
+                "persistence"
+            ],
+            "time": "2014-05-14 09:31:38"
         },
         {
             "name": "doctrine/dbal",
@@ -602,12 +611,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/inflector.git",
-                "reference": "0bcb2e79d8571787f18b7eb036ed3d004908e604"
+                "reference": "e5eaf8c7ded0877195b5d2848491e17b1c0a6c4d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/inflector/zipball/0bcb2e79d8571787f18b7eb036ed3d004908e604",
-                "reference": "0bcb2e79d8571787f18b7eb036ed3d004908e604",
+                "url": "https://api.github.com/repos/doctrine/inflector/zipball/e5eaf8c7ded0877195b5d2848491e17b1c0a6c4d",
+                "reference": "e5eaf8c7ded0877195b5d2848491e17b1c0a6c4d",
                 "shasum": ""
             },
             "require": {
@@ -661,7 +670,7 @@
                 "singularize",
                 "string"
             ],
-            "time": "2014-12-20 21:24:13"
+            "time": "2015-01-01 18:34:57"
         },
         {
             "name": "doctrine/lexer",
@@ -723,12 +732,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/migrations.git",
-                "reference": "96f838b4fa93693d19196c8e24ed5f1c3972ba87"
+                "reference": "65978aa4e9ffca3bb632225ad8c6320077d80d85"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/migrations/zipball/96f838b4fa93693d19196c8e24ed5f1c3972ba87",
-                "reference": "96f838b4fa93693d19196c8e24ed5f1c3972ba87",
+                "url": "https://api.github.com/repos/doctrine/migrations/zipball/65978aa4e9ffca3bb632225ad8c6320077d80d85",
+                "reference": "65978aa4e9ffca3bb632225ad8c6320077d80d85",
                 "shasum": ""
             },
             "require": {
@@ -755,7 +764,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "LGPL"
+                "LGPL-2.1"
             ],
             "authors": [
                 {
@@ -773,7 +782,7 @@
                 "database",
                 "migrations"
             ],
-            "time": "2014-12-19 17:14:47"
+            "time": "2015-03-23 09:47:20"
         },
         {
             "name": "doctrine/orm",
@@ -923,35 +932,35 @@
         },
         {
             "name": "react/event-loop",
-            "version": "dev-master",
+            "version": "v0.3.4",
+            "target-dir": "React/EventLoop",
             "source": {
                 "type": "git",
                 "url": "https://github.com/reactphp/event-loop.git",
-                "reference": "ddfadd92624c0889e1793635893d825ed7ca5695"
+                "reference": "235cddfa999a392e7d63dc9bef2e042492608d9f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/reactphp/event-loop/zipball/ddfadd92624c0889e1793635893d825ed7ca5695",
-                "reference": "ddfadd92624c0889e1793635893d825ed7ca5695",
+                "url": "https://api.github.com/repos/reactphp/event-loop/zipball/235cddfa999a392e7d63dc9bef2e042492608d9f",
+                "reference": "235cddfa999a392e7d63dc9bef2e042492608d9f",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.4.0"
+                "php": ">=5.3.3"
             },
             "suggest": {
-                "ext-event": "~1.0",
                 "ext-libev": "*",
-                "ext-libevent": ">=0.1.0"
+                "ext-libevent": ">=0.0.5"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.5-dev"
+                    "dev-master": "0.3-dev"
                 }
             },
             "autoload": {
-                "psr-4": {
-                    "React\\EventLoop\\": "src"
+                "psr-0": {
+                    "React\\EventLoop": ""
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -960,61 +969,9 @@
             ],
             "description": "Event loop abstraction layer that libraries can use for evented I/O.",
             "keywords": [
-                "asynchronous",
                 "event-loop"
             ],
-            "time": "2014-12-18 13:56:28"
-        },
-        {
-            "name": "swiftmailer/swiftmailer",
-            "version": "v5.0.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/swiftmailer/swiftmailer.git",
-                "reference": "32edc3b0de0fdc1b10f5c4912e8677b3f411a230"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/32edc3b0de0fdc1b10f5c4912e8677b3f411a230",
-                "reference": "32edc3b0de0fdc1b10f5c4912e8677b3f411a230",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.2.4"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "5.1-dev"
-                }
-            },
-            "autoload": {
-                "files": [
-                    "lib/swift_required.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com",
-                    "homepage": "http://fabien.potencier.org",
-                    "role": "Lead Developer"
-                },
-                {
-                    "name": "Chris Corbyn"
-                }
-            ],
-            "description": "Swiftmailer, free feature-rich PHP mailer",
-            "homepage": "http://swiftmailer.org",
-            "keywords": [
-                "mail",
-                "mailer"
-            ],
-            "time": "2013-12-03 13:33:24"
+            "time": "2013-07-21 02:23:09"
         },
         {
             "name": "symfony/console",
@@ -1023,21 +980,22 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Console.git",
-                "reference": "b2d63b962688615d9b895a3d0be8bca7c3acf2fd"
+                "reference": "de303b307151adadef2bbeff2858ac53d813e186"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Console/zipball/b2d63b962688615d9b895a3d0be8bca7c3acf2fd",
-                "reference": "b2d63b962688615d9b895a3d0be8bca7c3acf2fd",
+                "url": "https://api.github.com/repos/symfony/Console/zipball/de303b307151adadef2bbeff2858ac53d813e186",
+                "reference": "de303b307151adadef2bbeff2858ac53d813e186",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.3"
+                "php": ">=5.3.9"
             },
             "require-dev": {
                 "psr/log": "~1.0",
-                "symfony/event-dispatcher": "~2.1",
-                "symfony/process": "~2.1"
+                "symfony/event-dispatcher": "~2.1|~3.0.0",
+                "symfony/phpunit-bridge": "~2.7|~3.0.0",
+                "symfony/process": "~2.1|~3.0.0"
             },
             "suggest": {
                 "psr/log": "For using the console logger",
@@ -1071,7 +1029,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "http://symfony.com",
-            "time": "2014-12-24 10:55:26"
+            "time": "2015-03-22 16:57:18"
         },
         {
             "name": "symfony/dom-crawler",
@@ -1174,38 +1132,34 @@
         },
         {
             "name": "typo3/eel",
-            "version": "dev-master",
+            "version": "1.0.0-alpha5",
             "source": {
                 "type": "git",
-                "url": "git://git.typo3.org/Packages/TYPO3.Eel.git",
-                "reference": "c53f30ff6ecadca34cdaafad2df4c9f456e7c723"
+                "url": "https://git.typo3.org/Packages/TYPO3.Eel.git",
+                "reference": "25710c956524fc6d7f28d5748973100960980ab9"
             },
             "require": {
                 "typo3/flow": "*"
             },
-            "type": "typo3-flow-framework",
+            "type": "typo3-flow-package",
             "autoload": {
                 "psr-0": {
                     "TYPO3\\Eel": "Classes"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "LGPL-3.0+"
-            ],
-            "description": "The Embedded Expression Language (Eel) is a building block for creating Domain Specific Languages",
-            "time": "2014-12-10 12:29:50"
+            "time": "2013-08-06 14:53:48"
         },
         {
             "name": "typo3/flow",
             "version": "2.0.0-beta3",
             "source": {
                 "type": "git",
-                "url": "git://git.typo3.org/Packages/TYPO3.Flow.git",
-                "reference": "2.0.0-beta3"
+                "url": "https://git.typo3.org/Packages/TYPO3.Flow.git",
+                "reference": "03037be0dd36a16a79c791e90deb3d3e23ce00d9"
             },
             "require": {
-                "composer/installers": ">=1.0.2,<1.1",
+                "composer/installers": "~1.0.2",
                 "doctrine/migrations": "dev-master",
                 "doctrine/orm": "2.3.*",
                 "ext-json": ">=1.2.0",
@@ -1240,8 +1194,8 @@
             "version": "2.0.0-beta3",
             "source": {
                 "type": "git",
-                "url": "git://git.typo3.org/Packages/TYPO3.Fluid.git",
-                "reference": "2f7a92559eebff872fad8022061320ae00067d6e"
+                "url": "https://git.typo3.org/Packages/TYPO3.Fluid.git",
+                "reference": "f10ef060ab22884891d6f419e3b76309f4570a2a"
             },
             "require": {
                 "typo3/flow": "2.0.*"
@@ -1257,15 +1211,15 @@
                 "LGPL-3.0+"
             ],
             "description": "Next-Generation Templating Framework for TYPO3 Flow and TYPO3 Neos, also backported to TYPO3 CMS",
-            "time": "2013-06-24 16:13:40"
+            "time": "2013-04-15 15:26:44"
         },
         {
             "name": "typo3/form",
-            "version": "dev-master",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
-                "url": "git://git.typo3.org/Packages/TYPO3.Form.git",
-                "reference": "b3c5ed6a02e169efe72c8667bd9e4389d707b2c2"
+                "url": "https://git.typo3.org/Packages/TYPO3.Form.git",
+                "reference": "3b96283456bdad93f62ee38473dcf436b3460d4b"
             },
             "require": {
                 "typo3/flow": "*"
@@ -1281,7 +1235,7 @@
                 "LGPL-3.0+"
             ],
             "description": "Extensible and flexible API for building web forms",
-            "time": "2014-12-11 14:35:35"
+            "time": "2013-08-09 12:22:13"
         },
         {
             "name": "typo3/formbuilder",
@@ -1289,7 +1243,7 @@
             "source": {
                 "type": "git",
                 "url": "git://git.typo3.org/Packages/TYPO3.FormBuilder.git",
-                "reference": "01165ec0af2790f9d114f07ced0941005615b8a2"
+                "reference": "7b7ea57227749af6d24a875172067884804d54e8"
             },
             "require": {
                 "typo3/flow": "*",
@@ -1302,41 +1256,15 @@
                 }
             },
             "description": "Graphical User Interface for creating and editing Forms based on the TYPO3 Flow Form Framework",
-            "time": "2013-10-22 15:21:33"
-        },
-        {
-            "name": "typo3/jobqueue-common",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "git://git.typo3.org/Packages/TYPO3.Jobqueue.Common.git",
-                "reference": "c27a77d4c2a8d5f115bc9ab6f559241ce9e6189f"
-            },
-            "require": {
-                "typo3/flow": "*"
-            },
-            "type": "typo3-flow-package",
-            "autoload": {
-                "psr-0": {
-                    "TYPO3\\Jobqueue\\Common": "Classes"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "time": "2014-05-15 09:56:06"
+            "time": "2015-03-10 17:01:42"
         },
         {
             "name": "typo3/party",
             "version": "2.0.0-beta3",
             "source": {
                 "type": "git",
-                "url": "git://git.typo3.org/Packages/TYPO3.Party.git",
-                "reference": "8b51051f1ca42c57bd86ce0cccdce5d0881a42fa"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "http://ci.beech.local:8080/job/composer-packages-1.0/ws/mistermaks/dist/typo3-party-2.0.0-beta3-a840a3.zip",
-                "reference": "2.0.0-beta3",
-                "shasum": null
+                "url": "https://git.typo3.org/Packages/TYPO3.Party.git",
+                "reference": "d819951736f17d3c68db5f8bba9a9795ae6d8606"
             },
             "require": {
                 "typo3/flow": "2.0.*"
@@ -1352,69 +1280,17 @@
                 "LGPL-3.0+"
             ],
             "description": "A PHP implementation of the OASIS Customer Information Quality (CIQ) XML Standard.",
-            "time": "2013-04-15 08:48:17"
-        },
-        {
-            "name": "typo3/surf",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "git://git.typo3.org/Packages/TYPO3.Surf.git",
-                "reference": "efbe3d7a13a0fb17b0e7ab599b830b02aeddb095"
-            },
-            "require": {
-                "typo3/flow": "*"
-            },
-            "type": "typo3-flow-package",
-            "autoload": {
-                "psr-0": {
-                    "TYPO3\\Surf": "Classes"
-                }
-            },
-            "license": [
-                "GPL-3.0+"
-            ],
-            "description": "TYPO3 Surf is a deployment tool based on Flow and suited for a wide variety of applications",
-            "time": "2014-12-02 15:03:55"
-        },
-        {
-            "name": "typo3/swiftmailer",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "git://git.typo3.org/Packages/TYPO3.SwiftMailer.git",
-                "reference": "f606f43aaf8c0b5050b41a7e961dedb1bbbb0765"
-            },
-            "require": {
-                "swiftmailer/swiftmailer": "5.0.*",
-                "typo3/flow": "*"
-            },
-            "type": "typo3-flow-package",
-            "autoload": {
-                "psr-0": {
-                    "TYPO3\\SwiftMailer": "Classes"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "LGPL-3.0",
-                "MIT"
-            ],
-            "description": "A TYPO3 Flow package for easy use of SwiftMailer",
-            "time": "2014-12-03 10:11:39"
+            "time": "2013-02-28 08:58:34"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "beechit/couchdb": 20,
-        "typo3/jobqueue-common": 20
+        "beechit/couchdb": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": {
-        "php": ">=5.4.0"
-    },
+    "platform": [],
     "platform-dev": []
 }

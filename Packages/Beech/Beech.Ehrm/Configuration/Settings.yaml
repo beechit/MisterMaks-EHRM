@@ -118,7 +118,6 @@ Beech:
       templates:
         'Beech\Ehrm\ViewHelpers\Navigation\MenuViewHelper': 'resource://Beech.Ehrm/Private/Templates/ViewHelpers/Navigation/Menu.html'
         'Beech\Ehrm\ViewHelpers\FlashMessagesViewHelper': 'resource://Beech.Ehrm/Private/Templates/ViewHelpers/FlashMessages.html'
-
     moduleRoutes:
       - ['Beech.Party', NULL, 'Person']
       - ['Beech.Party', 'Administration', 'Person']

@@ -1,0 +1,8 @@
+-
+  requestFilter: '(isPackage("Beech.MijnVitaliteit") && !isController("ApiRest"))||(isPackage("Beech.Efysio") && !isController("DiagnosisRest"))||isPackage("Beech.Mail")||isPackage("Beech.Message")|| isPackage("Beech.PaymentIdeal") || isPackage("Beech.Payment") || isPackage("Beech.PaymentInsurance") || (isPackage("Beech.Schedule") && !isController("Rest")) || isPackage("Beech.Hidashhi") || (isPackage("Beech.VideoExercise") && !isController("Rest"))'
+  viewObjectName: 'Beech\MijnVitaliteit\View\TemplateView'
+  options:
+    layoutRootPaths:
+      - 'resource://Beech.MijnVitaliteit/Private/Layouts'
+    partialRootPaths:
+      - 'resource://Beech.MijnVitaliteit/Private/Partials'

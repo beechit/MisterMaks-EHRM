@@ -6,7 +6,8 @@
 		"[FEATURE] Allow exposing the class name of an object in JsonView": "16050/4"
 	},
 	"TYPO3.Fluid": {
-		"[FEATURE] Add supportedOptions and setOptions": "16393/15",
+// commented out this breaks mr, but is probably needed for lodading partials correctly.
+//		"[FEATURE] Add supportedOptions and setOptions": "16393/18",
 		"[FEATURE] Configurable prepend option for Select ViewHelper": "18526/1"
 	}
 }

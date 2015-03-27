@@ -1,6 +1,6 @@
 (function() {
 	'use strict';
-
+	App.Store = DS.Store.extend();
 	App.ApplicationView = Ember.View.extend();
 	App.ApplicationView.reopen({
 		classNames: ['full']
