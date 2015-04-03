@@ -4,9 +4,14 @@ The customer behind this project canceled
 and the work is not finished. (85%)
 
 Features are
-Dynamic models
-one page application based on emberjs 
-Ajax loading of tempates.
+------------
+- Dynamic models
+- one page application based on emberjs 
+- Ajax loading of tempates.
+- Process engine
+- Socketserver based notifications
+- and more...
+ 
 
 this project is not ready but it runs and is rich of code examples.
 
