@@ -1,15 +1,18 @@
 # mistermaks
 Mr maks is proces based ehrm system based on TYPO3 flow.
-The customer behind this project canceled 
-and the work is not finished. (85%)
+The customer behind this project canceled the project
+so the work is not finished. (85%)
 
 Features are
 ------------
 - Dynamic models
-- one page application based on emberjs 
-- Ajax loading of tempates.
-- Process engine
-- Socketserver based notifications
+- Dual database setup (mysql and couchdb)
+- One page application on emberjs. 
+- Ajax loading of templates.
+- Dynamic wizards.
+- Dynamic configurable Process engine.
+- Socketserver based notifications.
+- ember widgets for charts and notifications.
 - and more...
  
 
