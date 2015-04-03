@@ -19,11 +19,11 @@ couchdb
 
 setup instructions.
 ===================
-  Clone this repository
-  cd /mistermaks
-  curl -sS https://getcomposer.org/installer | php
-  php composer.phar install
-  php gerrit_update
-  ./initialise-mistermaks.sh
-  create a vhost and its up and running.
+-  Clone this repository
+-  cd /mistermaks
+-  curl -sS https://getcomposer.org/installer | php
+-  php composer.phar install
+-  php gerrit_update
+-  ./initialise-mistermaks.sh
+-  create a vhost and its up and running.
 
