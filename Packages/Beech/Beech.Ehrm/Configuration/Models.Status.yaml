@@ -1,0 +1,47 @@
+'Beech.Ehrm.Domain.Model.Status':
+  properties:
+    'statusName':
+      label: 'StatusName'
+      options:
+        values:
+          'draft': 'Draft'
+          'pendingApproval': 'Pending approval'
+          'approved': 'Approved'
+          'active': 'Active'
+          'rejected': 'Rejected'
+          'canceled': 'Canceled'
+          'closed': 'Closed'
+          'suspended': 'Suspended'
+# draft a draft version
+# pendingApproval awaiting decision
+# approved is a substate where a user approves so proces can go on.
+# active normal state of active proces document etc.
+# rejected is an end state, where something was draft en never started.
+# cancelled is a state where a user actively stopped a current proces this is an end state
+# closed means the status is closed by the system due to an expire date
+# suspended means this is on hold by a proces or user
+      validation:
+        -
+          type: 'NotEmpty'
+    'stopReason':
+      options:
+        values:
+          'byEmployer': 'By employer'
+          'byEmployee': 'By employee'
+          'sickness': 'Sickness'
+          'other': 'Other'
+          'doesNotApply': 'Does not apply'
+      default: 'Does not apply'
+# in entity document we store document id's of entities that are stored, in way we only have to use one status connections to multiple entities.
+    'entityIdentifier':
+      label: 'entityID'
+    'creationDate':
+      default: 'now'
+      label: 'creation date'
+      type: 'DateTime'
+    'createdBy':
+      default: 'currentUser'
+      label: 'Created by'
+      type: 'Beech\Party\Domain\Model\Person'
+    'lastUpdated':
+      type: 'DateTime'

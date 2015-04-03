@@ -1,0 +1,13 @@
+<f:if condition="{phoneNumber}">
+	<f:then>
+		<div id="phoneNumber-{phoneNumber.id}" class="multi-form-item">
+			<f:render partial="Forms/PhoneNumber" arguments="{party: party, phoneNumber: phoneNumber, controller: 'PhoneNumber', action: 'update', collapsed: true}"/>
+		</div>
+		<div id="phoneNumber-add" class="multi-form-item">
+			<f:render partial="Forms/PhoneNumber" arguments="{party: party, controller: 'PhoneNumber', action: 'add', suffix: 'phoneNumber', collapsed: true}"/>
+		</div>
+	</f:then>
+</f:if>
+
+
+

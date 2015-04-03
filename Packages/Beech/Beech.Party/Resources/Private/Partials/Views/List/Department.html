@@ -1,0 +1,21 @@
+<f:if condition="{companies}">
+	<f:then>
+		<f:for each="{companies}" as="company" iteration="iterator">
+		<div class="media">
+
+			<div class="media-body row-fluid">
+				<div class="span2">
+					<a href="#">
+						<img src="{f:uri.resource(path: 'Images/NoProfilePhoto.png', package: 'Beech.Party')}" class="img-polaroid media-object" width="58"/>
+					</a>
+				</div>
+				<div class="span10">
+					<h4 class="media-heading">{company.name}</h4>
+					<div style="min-height: 16px">{company.description}</div>
+					<f:render partial="Views/List/Department" arguments="{companies: company.departments}"/>
+				</div>
+			</div>
+		</div>
+		</f:for>
+	</f:then>
+</f:if>

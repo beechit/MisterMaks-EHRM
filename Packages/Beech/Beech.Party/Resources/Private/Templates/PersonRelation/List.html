@@ -1,0 +1,23 @@
+<div class="header">
+	<h3><f:render partial="Views/Show/ProfilePhoto" arguments="{photo: person.profilePhoto, width: 50}"/>{person.name} / <f:translate id="relations">Relations</f:translate></h3>
+</div>
+
+<div class="content-padding multi-form">
+
+	<f:for each="{personRelations}" as="personRelation">
+		<div id="personRelation-{personRelation.id}" class="multi-form-item">
+			<f:render partial="Forms/PersonRelation" arguments="{person: person, persons: persons, personRelation: personRelation, action: 'update', collapsed: true}"/>
+		</div>
+	</f:for>
+	<div id="personRelation-add" class="multi-form-item">
+		<f:if condition="{personRelations}">
+			<f:then>
+				<f:render partial="Forms/PersonRelation" arguments="{person: person, persons: persons, personRelation: personRelation, action: 'add', suffix: 'personRelation', collapsed: true}"/>
+			</f:then>
+			<f:else>
+				<f:render partial="Forms/PersonRelation" arguments="{person: person, persons: persons, action: 'add', suffix: 'personRelation'}"/>
+			</f:else>
+		</f:if>
+	</div>
+
+</div>

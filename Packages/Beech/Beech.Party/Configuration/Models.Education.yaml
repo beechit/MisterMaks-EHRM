@@ -1,0 +1,70 @@
+'Beech.Party.Domain.Model.Education':
+  properties:
+    'party':
+      type: 'Beech\Party\Domain\Model\Person'
+    'educationLevel':
+      label: 'Education'
+      options:
+        values:
+         'primaryEducation': 'Primary education'
+         'preVocational': 'Pre vocational'
+         'vocationalSecondary': 'Vocational secondary'
+         'higherVocational': 'Higher vocational'
+         'academic': 'Academic'
+      validation:
+        -
+          type: 'stringLength'
+          options:
+            maximum: 20
+        -
+          type: 'NotEmpty'
+    'nameInstitute':
+      label: 'Name of the education institute'
+      validation:
+        -
+          type: 'StringLength'
+          options:
+            maximum: 35
+        -
+          type: 'NotEmpty'
+    'direction':
+      label: 'Education direction'
+      validation:
+        -
+          type: 'StringLength'
+          options:
+            maximum: 35
+    'startDate':
+      type: 'DateTime'
+      label: 'Education start date'
+      validation:
+        -
+          type: 'DateTimeRange'
+          options:
+            earliestDate: 19500101
+            latestDate: 20200101
+        -
+          type: 'NotEmpty'
+    'endDate':
+      type: 'DateTime'
+      label: 'Education end date'
+      validation:
+        -
+          type: 'DateTimeRange'
+          options:
+            earliestDate: 19500101
+            latestDate: 20200101
+    'graduated':
+      label: 'Graduated'
+      options:
+        values:
+          - FALSE
+          - TRUE
+    'creationDate':
+      type: 'DateTime'
+      default: 'now'
+      label: 'creation date'
+    'createdBy':
+      default: 'currentUser'
+      label: 'Created by'
+      type: 'Beech\Party\Domain\Model\Person'

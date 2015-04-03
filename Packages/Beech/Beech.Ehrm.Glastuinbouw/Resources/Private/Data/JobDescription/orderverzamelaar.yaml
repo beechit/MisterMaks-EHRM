@@ -1,0 +1,28 @@
+number: '20.01'
+name: Orderverzamelaar
+jobContext: 'De functie komt veelal voor in de (middel)grote bedrijven met veelal diverse eindproducten en eigen opslag.'
+reportsTo: 'operationeel leidinggevende, zoals bijv. hoofd logistiek of loodschef'
+manages: 'niet van toepassing'
+jobGoal: 'Samenstellen en verzendgereed maken van orders.'
+department: Logistiek
+expectations:
+  -
+    resultArea: 'Verzendklare orders'
+    mainActivities: ['verzamelen a.d.h.v. orderformulier van verlangde producten uit opslag, magazijn, koelcel danwel ophalen op (interne) productielocatie; hiertoe bedienen van en manoeuvreren met handpallettruck of elektrische lorry', 'controleren op juiste aantallen, (soms kleine verschillen in) soort\/ras\/kleur, kwaliteiten en soort verpakking', 'verpakken waarnodig in overdozen, palletiseren, aanbrengen van merken en aangeleverde adresstickers', 'aanleveren aan expeditie of plaatsen in afgesproken gedeelte van expeditieloods t.b.v. afvoer naar klant', 'melden van verstoringen en gebreken aan producten, verpakkingen en transportmiddelen aan de direct leidinggevende en collega\u2019s ']
+    resultCriteria: ['juistheid en volledigheid van verzamelde artikelen', 'zorgvuldigheid van uitgevoerde controles (afwijkingen in kleur en kwaliteit)', 'tijdigheid van melding van onvolkomenheden en noodzakelijke aanvullingen', 'zorgvuldigheid van inpakwerk', 'tijdigheid van signalering van storingen ']
+  -
+    resultArea: 'Verrichte ondersteunende handelingen'
+    mainActivities: ['aanvullen van voorraden in het magazijn', 'assisteren bij inventarisatie\/telwerkzaamheden', 'schoonhouden van werkruimten', 'uitvoeren van klein onderhoud aan te gebruiken transportmiddelen (o.a. opladen batterijen)', 'alle voorkomende algemene ondersteuningswerkzaamheden ']
+    resultCriteria: ['juistheid van verleende ondersteuning', 'orde en netheid van de werkomgeving']
+  -
+    resultArea: 'Nageleefde voorschriften'
+    mainActivities: ['Naleven van bedrijfsinstructies inzake veiligheid van werken e.d.']
+    resultCriteria: ['mate waarin de instructies worden nageleefd']
+burdeningCircumstances:
+  circumstance:
+    - 'Krachtsuitoefening bij het verplaatsen van colli en pallets.'
+    - 'Gedwongen houdingen bij het uit stellingen nemen en het palletiseren van goederen en bij het werken met handtruck en lorry.'
+    - 'Hinder van tocht in magazijn- en expeditieruimten. '
+    - 'Het functieniveau volgens ORBA is gebaseerd op de rubrieken: Functiecontext, Positie in de organisatie, Functiedoel, Resultaatverwachting \/ Functionele activiteiten en Werkgerelateerde bezwaren. '
+orbaScore: '47'
+wageScaleGroup: C

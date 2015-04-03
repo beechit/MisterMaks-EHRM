@@ -1,0 +1,12 @@
+absenceArrangement:
+  arrangementName: 'docterVisit'
+  label: 'Doctor visit eg.'
+  absenceType: 'leave'
+  help: 'A short visit to a docter, dentist or hospital'
+  days: ''
+  reportInpectionAction: TRUE
+  needsGrant: FALSE
+  autoGrandBalance: FALSE
+  deductFromBalance: FALSE
+  addToBalance: FALSE
+  unit: 'hours'

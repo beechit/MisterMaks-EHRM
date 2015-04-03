@@ -1,0 +1,19 @@
+<f:if condition="{contracts}">
+	<f:then>
+		<table class="table">
+			<tbody>
+				<f:for each="{contracts}" as="contract" iteration="iterator">
+					<tr>
+						<td>
+							<h4>{f:if(condition: iterator.isFirst, then: '', else: 'Previous ')}<f:translate id="contract">Contract</f:translate></h4>
+							<f:render partial="Beech.CLA:Views/Show/Contract" arguments="{contract: contract}"/>
+						</td>
+					</tr>
+				</f:for>
+			</tbody>
+		</table>
+	</f:then>
+	<f:else>
+		<p><f:translate id="nocontract>">No contracts for this person</f:translate></p>
+	</f:else>
+</f:if>

@@ -1,0 +1,115 @@
+.form-actions {
+	background: none;
+}
+.modal .form-actions {
+	background-color: whitesmoke;
+}
+
+.left {
+	/* Search */
+	form fieldset {
+		position: relative;
+		.icon-search {
+			position: absolute;
+			top: 8px;
+			right: 8px;
+			color: $blue;
+		}
+	}
+}
+
+.uneditable-input {
+	border-color: transparent;
+	color: #000;
+	background: transparent;
+	width: auto;
+}
+
+/* Start datepicker */
+.datepickerIcon {
+	cursor: pointer;
+}
+input[readonly].datepicker {
+	background: $white;
+}
+/* End datepicker */
+
+/* Start Contract Wizard / Form */
+.collapse .row-fluid {
+  margin: 20px 0px 20px 0px;
+}
+.compact-form {
+	margin: 0px;
+}
+.country { float: left }
+.country i {
+	background: url("../../../Form/Images/flags.png") no-repeat;
+	display: inline-block;
+	width: 16px;
+	height: 11px;
+}
+
+.article-values span {
+    margin-right: 20px;
+}
+#contractCreator {
+	.articles-section {
+		div.inputs-list {
+			border: 1px solid #e3e3e3;
+			background: $white;
+			padding: 10px;
+			border-radius: $borderRadiusSmall;
+		}
+		label {
+			padding-right: 5px;
+		}
+		.well {
+			padding:0;
+		}
+		fieldset {
+
+		}
+		legend {
+			margin-bottom: 10px;
+		}
+		.article-values {
+			margin:0;
+		}
+		.control-group {
+			margin-bottom: 10px;
+			display: inline-block;
+		}
+		.alert {
+			margin: 20px 0px!important;
+		}
+	}
+	.preview {
+		margin-bottom: 80px;
+	}
+}
+.preview table tr.article td {
+	padding-top:10px;
+}
+/* End Contract Wizard / Form */
+
+.ehrm-module td .icon-pencil {
+	opacity: 0;
+}
+.ehrm-module td:hover .icon-pencil {
+	opacity: 1;
+	transition: opacity .25s ease-in-out;
+}
+
+.multi-form {
+	.multi-form-item {
+		&:not(:last-child) {
+			border-bottom: 1px solid $grayLighter;
+		}
+		.row-fluid .span1:last-child {
+			text-align: right;
+		}
+		form {
+			margin: 15px 0;
+		}
+	}
+}

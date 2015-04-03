@@ -1,0 +1,192 @@
+'Beech.CLA.Domain.Model.Contract':
+  properties:
+    'employee':
+      label: 'Employee'
+      type: 'Beech\Party\Domain\Model\Person'
+      validation:
+        -
+          type: 'NotEmpty'
+    'employer':
+      label: 'Employer'
+      type: 'Beech\Party\Domain\Model\Company'
+    'contractVersion':
+      label: 'contractversion'
+      validation:
+        -
+          type: 'StringLength'
+          options:
+            maximum: 10
+    'status':
+      label: 'Status of the contract'
+      type: 'Beech\Ehrm\Domain\Model\Status'
+    'contractTemplate':
+      label: 'Contract type'
+      type: 'Beech\CLA\Domain\Model\ContractTemplate'
+    'contractAcceptanceDate':
+      label: 'Date contract was accepted'
+      type: 'DateTime'
+    'contractSigned':
+      label: 'Contract signed'
+      type: 'boolean'
+    'contractSignDate':
+      label: 'Date of signing contract'
+      type: 'DateTime'
+    'contractExpireDate':
+      label: 'Expiration date'
+      type: 'DateTime'
+    'contactStopDate':
+      label: 'Date contract is stopped'
+      type: 'DateTime'
+    'contactStopDateReason':
+      label: 'Reason that contract was stopped'
+      options:
+        values:
+          'byEmployer': 'By employer'
+          'byEmployee': 'By employee'
+          'sickness': 'Sickness'
+          'other': 'Other'
+      validation:
+        -
+          type: 'StringLength'
+          options:
+            maximum: 20
+    'contractDocumentId':
+      label: 'Id of the document'
+      type: 'Beech\Document\Domain\Model\Document'
+    'jobTitle':
+      label: 'Jobtitle'
+      validation:
+        -
+          type: 'StringLength'
+          options:
+            maximum: 30
+    'jobDescription':
+      label: 'Job description'
+      type: 'Beech\CLA\Domain\Model\JobDescription'
+    'defaultSalaryScale':
+      label: 'defaultSalaryScale'
+      type: 'Beech\CLA\Domain\Model\SalaryScale'
+    'endDate':
+      label: 'Expiration date'
+      type: 'DateTime'
+    'startDate':
+      label: 'Startdate of the contract'
+      type: 'DateTime'
+    'probation':
+      label: 'probation'
+      type: 'boolean'
+    'probationPeriod':
+      label: 'Probation'
+      validation:
+        -
+          type: 'Integer'
+        -
+          type: 'Count'
+          options:
+            minimum: 0
+            maximum: 62
+    'probationUnitOfTime':
+      label: 'ProbationUnitOfTime'
+    'hoursAWeek':
+      label: 'Hours a week'
+      validation:
+        -
+          type: 'Beech.Ehrm:Decimal'
+    'workDays':
+      label: 'Workdays'
+      validation:
+        -
+          type: 'StringLength'
+          options:
+            maximum: 15
+      options:
+        values:
+          'monday': 'Monday'
+          'tuesday': 'Tuesday'
+          'wednessday': 'Wednessday'
+          'thursday': 'Thursday'
+          'friday': 'Friday'
+          'saturday': 'Saturday'
+          'sunday': 'Sunday'
+    'startTime':
+      label: 'Starttime'
+      type: 'DateTime'
+    'endTime':
+      label: 'EndTime'
+      type: 'DateTime'
+# we need a custom validator here for time
+    'wage':
+      label: 'Hour Wage'
+    'paymentSequence':
+      label: 'PaymentInterval'
+      options:
+        values:
+          'week': 'Week'
+          '4 weeks': '4 weeks'
+          'month': 'Month'
+    'wageScale':
+      label: 'wage Scale'
+      type: ' Beech\CLA\DomainModel\SalaryScale'
+    'wageGroup':
+      label: ' WageGroup'
+      type: ' Beech\CLA\DomainModel\SalaryScale'
+    'wagestep':
+      label: 'Wage step'
+      type: ' Beech\CLA\DomainModel\SalaryScale'
+    'currentWageStep':
+      label: 'Current Wage Step'
+      validation:
+        -
+          type: 'Integer'
+        -
+          type: 'Count'
+          options:
+            minimum: 0
+            maximum: 15
+    'cla':
+      label: 'collective labour agreement'
+    'vacationAllowancePercentage':
+      label: 'Vacation allowance Percentage'
+      validation:
+        -
+          type: 'Beech.Ehrm:Decimal'
+          options:
+            digits: 4
+            decimal: 2
+    'sickReportTime':
+      label: 'Sickreport time'
+    'noticePeriod':
+      label: 'Notice period'
+      type: 'boolean'
+    'generalCompanyRules':
+      label: 'General Company Rules Apply'
+      type: 'boolean'
+    'identification':
+      label: 'Identification arrangment'
+      type: 'boolean'
+    'accomodation':
+      label: 'accomodation'
+      type: 'boolean'
+    'accomodationRent':
+      label: 'Accomodationrent'
+      validation:
+        -
+          type: 'Beech.Ehrm:Decimal'
+          options:
+            digits: 4
+            decimal: 2
+    'accomodationRentUnitOfTime':
+      label: 'rentperiod'
+    'cafetariaModel':
+      label: 'CafetariaModel'
+      type: 'boolean'
+    'articlesInCurrentContract':
+      type: 'array'
+    'creationDate':
+      default: 'now'
+      label: 'creation date'
+      type: 'DateTime'
+    'createdBy':
+      default: 'currentUser'
+      label: 'Created by'
+      type: 'Beech\Party\Domain\Model\Person'

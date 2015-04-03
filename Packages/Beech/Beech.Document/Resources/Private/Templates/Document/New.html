@@ -1,0 +1,8 @@
+{namespace ehrm=Beech\Ehrm\ViewHelpers}
+<div class="header">
+	<h3><f:render partial="Beech.Party:Views/Show/ProfilePhoto" arguments="{photo: party.profilePhoto, width: 50}"/>{party.name} / Documents</h3>
+</div>
+
+<div id="document-add" class="clearfix">
+	<f:render partial="Form/New" arguments="{_all}"/>
+</div>

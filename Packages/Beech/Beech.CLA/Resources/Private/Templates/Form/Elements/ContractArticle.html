@@ -1,0 +1,14 @@
+{namespace cla=Beech\CLA\ViewHelpers}
+<f:layout name="Beech.Ehrm:FullWidthField" />
+<f:section name="field">
+	<div class="inputs-list" id="{element.uniqueIdentifier}">
+		<strong><cla:renderContractArticleText element="{element}"></cla:renderContractArticleText></strong>
+		<f:if condition="{element.contractArticle.subArticles}">
+			<ul>
+				<f:for each="{element.contractArticle.subArticles}" as="subArticle">
+					<li><strong>{subArticle.articleText}</strong></li>
+				</f:for>
+			</ul>
+		</f:if>
+	</div>
+</f:section>

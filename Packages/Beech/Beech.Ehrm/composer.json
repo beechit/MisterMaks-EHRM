@@ -1,0 +1,17 @@
+{
+	"name": "beech/ehrm",
+	"type": "typo3-flow-package",
+	"description": "",
+	"version": "",
+	"require": {
+		"typo3/flow": "*",
+		"typo3/formbuilder": "*",
+		"beechit/emberjs": "*",
+		"beechit/couchdb": "dev-doctrine"
+	},
+	"autoload": {
+		"psr-0": {
+			"Beech\\Ehrm": "Classes"
+		}
+	}
+}

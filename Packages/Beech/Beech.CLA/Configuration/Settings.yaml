@@ -1,0 +1,7 @@
+Beech:
+  CLA:
+    contractArticlesPerPage: 3
+    viewHelpers:
+      partialRootPath: 'resource://Beech.CLA/Private/Templates/ViewHelpers/Partials/'
+      templates:
+        'Beech\CLA\ViewHelpers\RenderContractArticleViewHelper': 'resource://Beech.CLA/Private/Templates/ViewHelpers/ContractArticle.html'

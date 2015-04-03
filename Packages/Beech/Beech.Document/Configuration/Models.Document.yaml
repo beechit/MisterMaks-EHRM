@@ -1,0 +1,81 @@
+'Beech.Document.Domain.Model.Document':
+  properties:
+    'party':
+      type: 'TYPO3\Party\Domain\Model\AbstractParty'
+    'name':
+      label: 'Document name'
+      validation:
+        -
+          type: 'NotEmpty'
+    'documentType':
+      label: 'DocumentType'
+      validation:
+        -
+          type: 'NotEmpty'
+    'resources':
+      validation:
+        -
+          type: 'NotEmpty'
+    'document':
+      label: 'Document'
+    'uploadDate':
+      label: 'UploadDate'
+      type: 'DateTime'
+      default: 'now'
+#      validation:
+#        -
+#          type: 'NotEmpty'
+    'number':
+      label: 'Document Number'
+    'period':
+      label: 'Period'
+      options:
+        values:
+         '1' : 'January'
+         '2' : 'February'
+         '3' : 'March'
+         '4' : 'April'
+         '5' : 'May'
+         '6' : 'June'
+         '7' : 'July'
+         '8' : 'August'
+         '9' : 'September'
+         '10' : 'October'
+         '11' : 'November'
+         '12' : 'December'
+    'year':
+      label: 'Year'
+    'startDate':
+      label: 'startdate'
+      default: 'now'
+    'expiration':
+      label: 'Expire date'
+      type: 'DateTime'
+      validation:
+        -
+          type: 'DateTimeRange'
+          options:
+            earliestDate: 20130101
+            latestDate: 20200101
+    'required':
+      label: 'Required'
+# if set on true use generic workflow to monitor the expiration date on this document.
+    'monitoring':
+      label: 'monitoring'
+      options:
+        values:
+          - TRUE
+          - FALSE
+    'documentDescription':
+      label: 'Description'
+      validation:
+        -
+          type: 'Text'
+    'creationDate':
+      default: 'now'
+      label: 'creation date'
+      type: 'DateTime'
+    'createdBy':
+      default: 'currentUser'
+      label: 'Created by'
+      type: 'Beech\Party\Domain\Model\Person'

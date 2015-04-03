@@ -1,0 +1,12 @@
+absenceArrangement:
+  arrangementName: 'compensationLeave'
+  label: 'Compensation hours'
+  absenceType: 'leave'
+  help: ''
+  days: ''
+  reportInpectionAction: TRUE
+  needsGrant: TRUE
+  autoGrandBalance: FALSE
+  deductFromBalance: FALSE
+  addToBalance: FALSE
+  unit: 'hours'

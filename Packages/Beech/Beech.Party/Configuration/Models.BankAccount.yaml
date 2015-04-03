@@ -1,0 +1,59 @@
+'Beech.Party.Domain.Model.BankAccount':
+  properties:
+    'party':
+      type: 'TYPO3\Party\Domain\Model\AbstractParty'
+    'bankAccountType':
+      label: 'Bank account type'
+      options:
+        values:
+          'bank': 'Bank'
+          'foreignBank': 'ForeignBank'
+      validation:
+        -
+          type: 'NotEmpty'
+#todo check regular expression
+    'accountNumber':
+      label: 'Account number'
+      validation:
+        -
+          type: 'NotEmpty'
+    'primary':
+      label: 'Primary'
+      options:
+        values:
+          - FALSE
+          - TRUE
+      default: FALSE
+    'bankName':
+      label: 'Bank name'
+      validation:
+        -
+          type: 'StringLength'
+          options:
+            maximum: 30
+    'residence':
+      label: 'Bank residence'
+      validation:
+        -
+          type: 'StringLength'
+          options:
+            maximum: 30
+    'country':
+      default: 'NL'
+      label: 'Country bank'
+      validation:
+        -
+          type: 'NotEmpty'
+    'description':
+      label: 'Bank description'
+      validation:
+        -
+          type: 'Text'
+    'creationDate':
+      default: 'now'
+      label: 'creation date'
+      type: 'DateTime'
+    'createdBy':
+      default: 'currentUser'
+      label: 'Created by'
+      type: 'Beech\Party\Domain\Model\Person'

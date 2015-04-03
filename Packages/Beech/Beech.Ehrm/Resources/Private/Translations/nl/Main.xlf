@@ -1,0 +1,371 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-strict.xsd">
+	<file original="" source-language="en" target-language="nl" datatype="plaintext">
+		<body>
+			<trans-unit id="action.close">
+				<source>Close</source>
+				<target>Sluiten</target>
+			</trans-unit>
+			<trans-unit id="action.save">
+				<source>Save</source>
+				<target>Opslaan</target>
+			</trans-unit>
+			<trans-unit id="action.login">
+				<source>Login</source>
+				<target>Log in</target>
+			</trans-unit>
+			<trans-unit id="action.logout">
+				<source>Logout</source>
+				<target>Uitloggen</target>
+			</trans-unit>
+			<trans-unit id="do.task">
+				<source>Do task</source>
+				<target>Taak uitvoeren</target>
+			</trans-unit>
+			<trans-unit id="no.active.tasks">
+				<source>No active tasks</source>
+				<target>Geen open taken</target>
+			</trans-unit>
+			<trans-unit id="panel.login.legend">
+				<source>Login panel</source>
+				<target>Inloggen</target>
+			</trans-unit>
+			<trans-unit id="panel.login.username">
+				<source>Username</source>
+				<target>Gebruikersnaam</target>
+			</trans-unit>
+			<trans-unit id="panel.login.password">
+				<source>Password</source>
+				<target>Wachtwoord</target>
+			</trans-unit>
+			<trans-unit id="status.logged.in">
+				<source>Logged in</source>
+				<target>Ingelogd</target>
+			</trans-unit>
+			<trans-unit id="status.logged.out">
+				<source>Logged out</source>
+				<target>Uitgelogd</target>
+			</trans-unit>
+			<trans-unit id='menu.new'>
+				<source>New</source>
+				<target>Nieuw</target>
+			</trans-unit>
+			<trans-unit id='menu.manage'>
+				<source>Manage</source>
+				<target>Beheer</target>
+			</trans-unit>
+			<trans-unit id='menu.company'>
+				<source>Company</source>
+				<target>Bedrijf</target>
+			</trans-unit>
+			<trans-unit id='menu.companies'>
+				<source>Companies</source>
+				<target>Bedrijven</target>
+			</trans-unit>
+			<trans-unit id='menu.people'>
+				<source>People</source>
+				<target>Personen</target>
+			</trans-unit>
+			<trans-unit id='menu.settings'>
+				<source>Settings</source>
+				<target>Instellingen</target>
+			</trans-unit>
+			<trans-unit id='menu.themes'>
+				<source>Themes</source>
+				<target>Thema's</target>
+			</trans-unit>
+			<trans-unit id='menu.todo'>
+				<source>Todo</source>
+				<target>Todo</target>
+			</trans-unit>
+			<trans-unit id='menu.account'>
+				<source>Account</source>
+				<target>Account</target>
+			</trans-unit>
+			<trans-unit id='log.timestamp'>
+				<source>Timestamp</source>
+				<target>Timestamp</target>
+			</trans-unit>
+			<trans-unit id='log.message'>
+				<source>Message</source>
+				<target>Message</target>
+			</trans-unit>
+			<trans-unit id='log.severity'>
+				<source>Severity</source>
+				<target>Severity</target>
+			</trans-unit>
+			<trans-unit id='log.packageKey'>
+				<source>Package key</source>
+				<target>Package key</target>
+			</trans-unit>
+			<trans-unit id='log.className'>
+				<source>Class name</source>
+				<target>Class name</target>
+			</trans-unit>
+			<trans-unit id='log.methodName'>
+				<source>Method name</source>
+				<target>Method name</target>
+			</trans-unit>
+			<trans-unit id='log.ipAddress'>
+				<source>IP Address</source>
+				<target>IP Address</target>
+			</trans-unit>
+			<trans-unit id='log.processId'>
+				<source>Process Id</source>
+				<target>Process Id</target>
+			</trans-unit>
+			<trans-unit id='log.additionalData'>
+				<source>Additional data</source>
+				<target>Additional data</target>
+			</trans-unit>
+			<trans-unit id="message.log.noResult">
+				<source>No logs created yet</source>
+				<target>Geen logs gevonden</target>
+			</trans-unit>
+			<trans-unit id="message.authentication.failed">
+				<source>Authentication failed</source>
+				<target>Aanmelding mislukt</target>
+			</trans-unit>
+			<trans-unit id="message.authentication.failed.wrongCredentials">
+				<source>Wrong credentials</source>
+				<target>Onjuiste gebruikersnaam of onjuist wachtwoord.</target>
+			</trans-unit>
+			<trans-unit id="message.application.notCreated">
+				<source>No primary company configured, please contact your System Administrator.</source>
+				<target>Geen bedrijf gekoppeld aan installatie, neem contact op met uw systeembeheerder.</target>
+			</trans-unit>
+			<trans-unit id="message.error">
+				<source>Error!</source>
+				<target>Fout!</target>
+			</trans-unit>
+			<trans-unit id="action.back">
+				<source>Back</source>
+				<target>Terug</target>
+			</trans-unit>
+			<trans-unit id='language'>
+				<source>Language</source>
+				<target>Taal</target>
+			</trans-unit>
+			<trans-unit id="notification.addAddress">
+				<source>Add address to company</source>
+				<target>Voeg adresgegevens toe aan het bedrijf</target>
+			</trans-unit>
+			<trans-unit id="notification.addCompanyContact">
+				<source>Add company contact</source>
+				<target>Voeg een contactpersoon toe</target>
+			</trans-unit>
+			<trans-unit id="general">
+				<source>General</source>
+				<target>Algemeen</target>
+			</trans-unit>
+			<trans-unit id="settings">
+				<source>Settings</source>
+				<target>Instellingen</target>
+			</trans-unit>
+			<trans-unit id="models">
+				<source>Models</source>
+				<target>Modellen</target>
+			</trans-unit>
+			<trans-unit id="persons">
+				<source>Person</source>
+				<target>Persoon</target>
+			</trans-unit>
+			<trans-unit id="companies">
+				<source>Companies</source>
+				<target>Bedrijf</target>
+			</trans-unit>
+			<trans-unit id="jobDescriptions">
+				<source>Job descriptions</source>
+				<target>Functiebeschrijvingen</target>
+			</trans-unit>
+			<trans-unit id="contractArticle">
+				<source>contractArticle</source>
+				<target>Contractartikelen</target>
+			</trans-unit>
+			<trans-unit id="contractManagement">
+				<source>Contract management</source>
+				<target>Contract beheer</target>
+			</trans-unit>
+			<trans-unit id="system">
+				<source>System</source>
+				<target>Systeem</target>
+			</trans-unit>
+			<trans-unit id="wizards">
+				<source>Wizards</source>
+				<target>Wizard</target>
+			</trans-unit>
+			<trans-unit id="userManagement">
+				<source>User management</source>
+				<target>Gebruikersbeheer</target>
+			</trans-unit>
+			<trans-unit id="employees">
+				<source>Employees</source>
+				<target>Werknemers</target>
+			</trans-unit>
+			<trans-unit id="employee">
+				<source>Employee</source>
+				<target>Werknemer</target>
+			</trans-unit>
+			<trans-unit id="reports">
+				<source>Reports</source>
+				<target>Overzichten</target>
+			</trans-unit>
+			<trans-unit id="company">
+				<source>company</source>
+				<target>Bedrijf</target>
+			</trans-unit>
+			<trans-unit id="documents">
+				<source>Documents</source>
+				<target>documenten</target>
+			</trans-unit>
+			<trans-unit id="administration">
+				<source>Administration</source>
+				<target>Beheer</target>
+			</trans-unit>
+			<trans-unit id="logOut">
+				<source>Logout</source>
+				<target>Uitloggen</target>
+			</trans-unit>
+			<trans-unit id="hello">
+				<source>Hello</source>
+				<target>Hallo</target>
+			</trans-unit>
+			<trans-unit id="dashboard">
+				<source>Dashboard</source>
+				<target>Dashboard</target>
+			</trans-unit>
+			<trans-unit id="nl_NL">
+				<source>Dutch</source>
+				<target>Nederlands</target>
+			</trans-unit>
+			<trans-unit id="en_EN">
+				<source>English</source>
+				<target>Engels</target>
+			</trans-unit>
+			<trans-unit id="pl_PL">
+				<source>Polnish</source>
+				<target>Pools</target>
+			</trans-unit>
+			<trans-unit id="localisation">
+				<source>Localisation</source>
+				<target>Taal instellingen</target>
+			</trans-unit>
+			<trans-unit id="companyData">
+				<source>Company data</source>
+				<target>Bedrijfsgegevens</target>
+			</trans-unit>
+			<trans-unit id="companyLogo">
+				<source>Company logo</source>
+				<target>Bedrijfslogo</target>
+			</trans-unit>
+			<trans-unit id="companyAddresses">
+				<source>Company addresses</source>
+				<target>Adressen</target>
+			</trans-unit>
+			<trans-unit id="companyPhoneNumbers">
+				<source>Company phone numbers</source>
+				<target>Telefoonnummers</target>
+			</trans-unit>
+			<trans-unit id="companyElectronicAddresses">
+				<source>Company electronic addresses</source>
+				<target>Electronische addressen bedrijf</target>
+			</trans-unit>
+			<trans-unit id="companyBankAccounts">
+				<source>Company bankaccount</source>
+				<target>Bankrekeningen</target>
+			</trans-unit>
+	 		<trans-unit id="mainUser">
+				<source>Main user</source>
+				<target>Hoofd gebruiker</target>
+			</trans-unit>
+			<trans-unit id="mainUserProfilePhoto">
+				<source>Profile Photo</source>
+				<target>Profiel foto</target>
+			</trans-unit>
+			<trans-unit id="mainUserElectronicAddresses">
+				<source>Electronic address</source>
+				<target>Electronische adressen gebruiker</target>
+			</trans-unit>
+			<trans-unit id="errorSubmitting">
+				<source>There was a problem with your submission. Please correct the errors and re-submit.</source>
+				<target>Er is een fout opgetreden bij het verzenden van de gegevens, corrigeer de fout en verzend opnieuw</target>
+			</trans-unit>
+			<trans-unit id="errorSubmitting1">
+				<source>There was a problem submitting the form. Please try again in a minute.</source>
+				<target>Er is een fout opgetreden bij het verzenden van de gegevens probeer het later nog eens.</target>
+			</trans-unit>
+			<trans-unit id="or">
+				<source>or</source>
+				<target>of</target>
+			</trans-unit>
+			<trans-unit id="setupComplete">
+				<source>System is setup successfully.</source>
+				<target>Het systeem is klaar voor gebruik.</target>
+			</trans-unit>
+			<trans-unit id="createDepartment">
+				<source>Create department</source>
+				<target>Maak een afdeling aan</target>
+			</trans-unit>
+			<trans-unit id="createPerson">
+				<source>Create Person</source>
+				<target>Maak persoon aan</target>
+			</trans-unit>
+			<trans-unit id="done">
+				<source>Done</source>
+				<target>Gereed</target>
+			</trans-unit>
+			<trans-unit  id="theme">
+				<source>Theme</source>
+				<target>Thema</target>
+			</trans-unit>
+			<trans-unit id="locale.en_EN">
+				<source>English</source>
+				<target>Engels</target>
+			</trans-unit>
+			<trans-unit id="locale.nl_NL">
+				<source>Dutch</source>
+				<target>Nederlands</target>
+			</trans-unit>
+			<trans-unit id="locale.pl_PL">
+				<source>Polnish</source>
+				<target>Pools</target>
+			</trans-unit>
+			<trans-unit id="setupWizard">
+				<source>Environment setup wizard</source>
+				<target>Basis instellingen Mister maks</target>
+			</trans-unit>
+			<trans-unit id="personWizard">
+				<source>Person wizard</source>
+				<target>Nieuwe Persoon</target>
+			</trans-unit>
+			<trans-unit id="headcount">
+				<source>Headcount</source>
+				<target>Bezetting</target>
+			</trans-unit>
+			<transunit id="leave">
+				<source>Leave</source>
+				<target>Verlof</target>
+			</transunit>
+			<transunit id="sickness">
+				<source>Sickness</source>
+				<target>Verzuim</target>
+			</transunit>
+			<trans-unit id="age">
+				<source>Age</source>
+				<target>Leeftijd</target>
+			</trans-unit>
+			<trans-unit id="report.absence">
+				<source>Absence</source>
+				<target>Verlof en verzuim</target>
+			</trans-unit>
+			<trans-unit id="report.general">
+				<source>General</source>
+				<target>Algemeen</target>
+			</trans-unit>
+			<trans-unit id="report.contracts">
+				<source>Contracts</source>
+				<target>Arbeidsovereenkomsten</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

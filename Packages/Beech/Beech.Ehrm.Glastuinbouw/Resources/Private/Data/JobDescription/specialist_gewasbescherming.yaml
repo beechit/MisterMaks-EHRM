@@ -1,0 +1,36 @@
+number: '10.11'
+name: 'Specialist gewasbescherming'
+jobContext: 'De functie komt voor in grote glastuinbouwbedrijven (groenten en bloemen\/planten). Bij kleinere bedrijven worden de werkzaamheden meestal uitgevoerd door de ondernemer zelf of wordt de verlangde deskundigheid extern ingehuurd.\Eisen hebben betrekking op o.a. rasspecificaties, kwaliteit, kwantiteit, te gebruiken bestrijdingsmiddelen, efficiency, rendement en milieu.\Teeltvoorstellen worden vooraf doorgesproken met de betrokken leidinggevende aan wie tevens wordt teruggerapporteerd over de effecten. Er zijn kaders afgesproken waarbinnen zelfstandig maatregelen ter bevordering van de teeltkwaliteit kunnen worden genomen.\'
+reportsTo: 'operationeel leidinggevende, zoals bijv. ondernemer of productieleider'
+manages: 'niet van toepassing'
+jobGoal: 'Inbrengen van expertise op het gebied van het beschermen van gewas tegen de schadelijke gevolgen van biologische groeiverstoorders zodanig dat het gewas kan worden geproduceerd volgens de eisen van de onderneming.'
+department: Productie
+expectations:
+  -
+    resultArea: 'Opgestelde adviezen gewasbescherming '
+    mainActivities: ['inventariseren\/analyseren van potenti\u00eble veroorzakers van groeiverstoringen gezien de teelt, de voorbereiding en de teeltomstandigheden (zoals naastgelegen teelt en\/of bebouwingen, bepaalde vormen van economische bedrijvigheid in de directe omgeving, kl', 'analyseren van oorzaken van aanwezige groeiverstoringen in bodem en gewas en formuleren van voorstellen ter verwijdering van de veroorzakers en\/of van het gewas (chemisch en biologisch)', 'opstellen van recepturen voor bodemverbeteraars en chemische beschermingsmiddelen, formuleren van voorstellen voor de inzet van biologische beschermingsmiddelen', 'adviseren aan beslissers over de meest effectieve aanpak van groeiverstoringen tijdens teelt en teeltvoorbereiding (preventieve en curatieve bestrijdingsplannen)', 'adviseren over de te nemen veiligheids- en beschermingsmaatregelen voor de medewerkers', 'evalueren van de effecten van preventieve en curatieve bestrijding ']
+    resultCriteria: ['bruikbaarheid van adviezen en voorstellen', 'mate waarin beschadiging of uitval van teelt door ziekten of plagen wordt geminimaliseerd', 'juistheid en volledigheid van analyses en beoordeling', 'doelmatigheid van opgestelde recepturen', 'volledigheid van evaluatie ']
+  -
+    resultArea: 'Gerealiseerde gewasbescherming'
+    mainActivities: ['instrueren en begeleiden van bedrijfsfunctionarissen dan wel zelf uitvoeren van gewasbeschermingswerkzaamheden (o.a. spuiten)']
+    resultCriteria: ['helderheid van instructies', 'juistheid, veiligheid en doelmatigheid van de werkuitvoering']
+  -
+    resultArea: 'Verstrekte gewasbeschermingsgegevens'
+    mainActivities: ['bijhouden van informatie over o.a. de gesignaleerde groeiverstoringen, aangetroffen\/geanalyseerde veroorzakers, de aangewende middelen per gewas ter bestrijding, en de bereikte effecten', 'produceren van overzichten en rapportages over gebruik, maatregelen en effecten van preventie- en bestrijdingsmiddelen aan de directe leidinggevende ']
+    resultCriteria: ['actualiteit van gegevens', 'inzichtelijkheid en duidelijkheid van overzichten en rapportages']
+  -
+    resultArea: 'Gehandhaafde normen'
+    mainActivities: ['controleren op aanwezigheid van persoonlijke beschermingsmiddelen', 'toezien op de naleving van bescherming- en veiligheidsmaatregelen', 'toezien op juist gebruik en toepassing van gewasbeschermingsmiddelen']
+    resultCriteria: ['tijdigheid signaleren van afwijkingen t.o.v. de norm en doelmatigheid van bijsturing']
+  -
+    resultArea: 'Verantwoord functioneren'
+    mainActivities: ['Naleven van de bedrijfsinstructies inzake veiligheid van werken e.d.']
+    resultCriteria: ['mate van naleving van bedrijfsinstructies']
+burdeningCircumstances:
+  circumstance:
+    - 'Incidenteel werken of verblijven in ruimten met relatief hoge luchtvochtigheid (ca. 80%) en relatief hoge temperaturen (tot ca. 25 C).'
+    - 'Regelmatig hinder van temperatuurswisselingen bij ingaan en verlaten van ruimten.'
+    - 'Hinder van dragen van voorgeschreven persoonlijke beschermingsmiddelen bij samenstellen of aanbrengen van voedings-\/meststoffen of bestrijdingsmiddelen.'
+    - 'Het functieniveau volgens ORBA is gebaseerd op de rubrieken: Functiecontext, Positie in de organisatie, Functiedoel, Resultaatverwachting \/ Functionele activiteiten en Werkgerelateerde bezwaren. '
+orbaScore: '109'
+wageScaleGroup: G

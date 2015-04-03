@@ -1,0 +1,28 @@
+'Beech.Minute.Domain.Model.MinuteTemplate':
+  properties:
+    'name':
+      label: 'Template name'
+      validation:
+        -
+          type: 'StringLength'
+          options:
+            maximum: 20
+#    'type':
+#      label: 'Minute template type'
+#      options:
+#        values:
+#          'periodicAssesment': 'Periodic Assesment'
+#          'callReport': 'Call Report'
+#          'assesment': 'Assessment'
+#          'performanceReview': 'Performance review'
+#          'other': 'Other'
+#          'sickReportUpdate': 'SickReport update'
+#      validation:
+#        -
+#          type: 'StringLength'
+#          options:
+#            maximum: 20
+# todo: add some template specific properties here .
+# or point to resource files.
+    'modification':
+      type: 'Beech\Ehrm\Domain\Model\Modify'

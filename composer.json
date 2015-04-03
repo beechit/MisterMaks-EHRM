@@ -1,0 +1,37 @@
+{
+	"name": "beech/mister-maks-base-distribution",
+	"description": "Mister Maks Base Distribution",
+
+	"repositories": [
+		{ "type": "git", "url": "git://github.com/beechit/Radmiraal.Emberjs.git" },
+		{ "type": "git", "url": "git://github.com/beechit/TYPO3.Queue.git" },
+		{ "type": "git", "url": "git://git.typo3.org/Packages/TYPO3.FormBuilder.git" },
+		{ "type": "git", "url": "git://github.com/beechit/Radmiraal.CouchDB.git" },
+		{ "type": "git", "url": "git://github.com/beechit/serializer.git" },
+		{ "type": "git", "url": "git://git.typo3.org/Packages/TYPO3.Kickstart.git" },
+		{ "type": "git", "url": "git://git.typo3.org/Packages/TYPO3.Surf.git" },
+		{ "type": "git", "url": "git://git.typo3.org/Flow/BuildEssentials.git" },
+		{ "type": "git", "url": "git://github.com/beechit/dompdf.git" }
+	],
+
+	"config": {
+		"vendor-dir":"Packages/Libraries",
+		"bin-dir": "bin"
+	},
+	"require": {
+		"typo3/flow": "2.3.1",
+		"typo3/fluid": "2.3.1",
+		"typo3/party": "*",
+		"beechit/emberjs": "*",
+		"beechit/couchdb": "dev-doctrine",
+		"typo3/form": "1.1.0",
+		"typo3/formbuilder": "*",
+		"dompdf/dompdf": "v0.6.0",
+		"react/event-loop": "v0.3.4"
+	},
+	"minimum-stability": "dev",
+	"scripts": {
+		"post-update-cmd": "TYPO3\\Flow\\Composer\\InstallerScripts::postUpdateAndInstall",
+		"post-install-cmd": "TYPO3\\Flow\\Composer\\InstallerScripts::postUpdateAndInstall"
+	}
+}

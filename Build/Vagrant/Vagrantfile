@@ -1,0 +1,19 @@
+Vagrant::Config.run do |config|
+	config.vm.box     = "ubuntu-12-nfs-32"
+	config.vm.box_url = "http://ci.beech.local/files/ubuntu-12-nfs-32.box"
+
+	config.vm.network :hostonly, "172.31.254.10"
+	config.vm.network :bridged
+
+	config.vm.share_folder("vagrant", "/vagrant", "../")
+	config.vm.share_folder("web", "/var/www", "../../")
+
+	config.vm.provision :shell, :path => "install.sh"
+
+	config.vm.customize [
+		"modifyvm", :id,
+		"--name", "EHRM Documentation box",
+		"--memory", "512"
+	]
+	config.vm.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/web", "1"]
+end

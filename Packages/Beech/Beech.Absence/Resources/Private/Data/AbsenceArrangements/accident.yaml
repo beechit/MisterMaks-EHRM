@@ -1,0 +1,21 @@
+absenceArrangement:
+  arrangementName: 'accident'
+  label: 'Accident'
+# sets the type of absence
+  absenceType: 'sickness'
+# only for registering special days like holiday should show in view an extra selectfield to select the day.
+  days: ''
+# report inspection should be used to create a task, in case of labour accident this should be reported in some cases
+#to the arbeidsinspectie. todo: we should me a simple assessment tool if this is the case
+# this value should trigger this accesmenttool.
+  reportInpectionAction: TRUE
+# needsGrant is a setting used to trigger the granting workflow of leaveRequest.
+  needsGrant: FALSE
+# autogrant, is used for vacationdays, the can be granted when a new contracdt is created or the beginning of each year.
+# this could trigger a autogrant workflow.
+  autoGrandBalance: FALSE
+# deductFromBalance will deduct the number of hours in the Leave request from the balance.
+  deductFromBalance: FALSE
+# add to balance is used for sickreport to set the number of hours
+  addToBalance: TRUE
+  unit: 'hours'

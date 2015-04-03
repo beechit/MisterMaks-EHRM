@@ -1,0 +1,12 @@
+{
+	"name": "beech/ehrm-glastuinbouw",
+	"type": "typo3-flow-package",
+	"require": {
+		"typo3/flow": "*"
+	},
+	"autoload": {
+		"psr-0": {
+			"Beech\\Ehrm\\Glastuinbouw": "Classes"
+		}
+	}
+}

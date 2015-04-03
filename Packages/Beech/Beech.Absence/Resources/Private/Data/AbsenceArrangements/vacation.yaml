@@ -1,0 +1,12 @@
+absenceArrangement:
+  arrangementName: 'vacation'
+  label: 'Vacation'
+  absenceType: 'leave'
+  help: ''
+  days: ''
+  reportInpectionAction: TRUE
+  needsGrant: TRUE
+  autoGrandBalance: FALSE
+  deductFromBalance: TRUE
+  addToBalance: TRUE
+  unit: 'hours'

@@ -1,0 +1,121 @@
+
+<f:render partial="Views/Header" arguments="{person:absence.person, title:'{f:translate(id: \'approveLeave\', value: \'Approve leave\')}'}"/>
+
+
+	<ehrm:flashMessages/>
+
+	<f:form.validationResults for="absence">
+		<f:if condition="{validationResults.flattenedErrors}">
+			<div class="error">
+				<f:for each="{validationResults.flattenedErrors}" key="propertyPath" as="errors">{propertyPath}:
+					<f:for each="{errors}" as="error">
+						<div class="alert alert-warning">{error}</div>
+					</f:for>
+				</f:for>
+			</div>
+		</f:if>
+	</f:form.validationResults>
+
+<f:form method="post" action="update" name="absence" object="{absence}" class="compact-form form-horizontal" enctype="multipart/form-data">
+	<input type="hidden" name="iscomplete" value="true" data-validate="isComplete"/>
+
+	<div id="absence-approve" class="content-padding">
+
+		<div class="row-fluid">
+			<div class="span6">
+
+				<div class="control-group">
+					<label class="control-label" for="status">
+						<f:translate id="leave.status">Status</f:translate>
+					</label>
+					<div class="controls">
+						<span class="uneditable-input"><f:translate id="{absence.requestStatus}"></f:translate></span>
+					</div>
+				</div>
+
+				<div class="control-group">
+					<label class="control-label" for="absenceType">
+						<f:translate id="leave.type">Type</f:translate>
+					</label>
+					<div class="controls">
+						<span class="uneditable-input"><f:translate id="{absence.absenceArrangement.label}"></f:translate></span>
+					</div>
+				</div>
+
+				<div class="control-group">
+					<label class="control-label" for="startDate">
+						<f:translate id="absence.leave.startDate">Start date</f:translate>
+					</label>
+					<div class="controls">
+						<span class="uneditable-input span2"><f:format.date format="d-m-Y H:i">{absence.startDate}</f:format.date></span>
+					</div>
+				</div>
+
+				<div class="control-group">
+					<label class="control-label" for="endDate">
+						<f:translate id="absence.leave.endDate">End date</f:translate>
+					</label>
+					<div class="controls">
+						<span class="uneditable-input span2"><f:format.date format="d-m-Y H:i">{absence.endDate}</f:format.date></span>
+					</div>
+				</div>
+
+				<div class="control-group">
+					<label class="control-label" for="days">
+						<f:translate id="absence.leave.days">Days</f:translate>
+					</label>
+					<div class="controls">
+						<span class="uneditable-input span1">{absence.days}</span>
+					</div>
+				</div>
+
+				<div class="control-group">
+					<label class="control-label" for="hours">
+						<f:translate id="absence.leave.hours">Hours</f:translate>
+					</label>
+					<div class="controls">
+						<span class="uneditable-input span1">{absence.hours}</span>
+					</div>
+				</div>
+
+				<div class="control-group">
+					<label class="control-label" for="reportedTo">
+						<f:translate id="reportedTo">Reported to</f:translate>
+					</label>
+					<div class="controls">
+						<span class="uneditable-input">{absence.reportedTo.name}</span>
+					</div>
+				</div>
+
+			</div>
+			<div class="span6">
+				<label for="reason"><f:translate id="leave.reason">Reason</f:translate></label>
+				<div class="control-group well">
+					{absence.reason}
+				</div>
+
+				<label for="note"><f:translate id="leave.note">Note</f:translate></label>
+				<div class="control-groups">
+					<f:form.textarea id="note" property="note" class="span12" rows="10"></f:form.textarea>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="form-actions">
+		<a class="btn" href="{f:uri.action(package:'Beech.Absence', controller:'Absence', action:'edit', arguments: {absence: absence})}"
+		   data-toggle="modal-ajax" data-target="#modal" modal-size="large" data-reload="reload-current-page">
+			<i class="icon-edit"></i> <f:translate id="Edit">Edit</f:translate>
+		</a>
+
+		<f:form.hidden property="requestStatus" />
+		<button type="submit" name="absence[requestStatus]" class="btn btn-success" value="accepted">
+			<i class="icon-thumbs-up"></i> <f:translate id="leave.accept">accept</f:translate>
+		</button>
+		<button type="submit" name="absence[requestStatus]" class="btn btn-danger" value="declined">
+			<i class="icon-thumbs-down"></i> <f:translate id="leave.decline">decline</f:translate>
+		</button>
+
+	</div>
+</f:form>

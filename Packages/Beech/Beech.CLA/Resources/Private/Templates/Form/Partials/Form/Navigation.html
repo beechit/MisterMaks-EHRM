@@ -1,0 +1,18 @@
+<nav class="form-actions">
+	<f:if condition="{form.previousPage}">
+		<f:form.button name="__currentPage" value="{form.previousPage.index}" formnovalidate="formnovalidate" class="btn btn-cancel previous"><f:translate id="action.previous" source="Wizard" package="Beech.Ehrm">Previous page</f:translate></f:form.button>
+	</f:if>
+	<f:if condition="{form.nextPage}">
+		<f:then>
+			<f:form.button name="__currentPage" value="{form.nextPage.index}" class="btn btn-primary next"><f:translate id="action.next" source="Wizard" package="Beech.Ehrm">Next page</f:translate></f:form.button>
+		</f:then>
+		<f:else>
+			<f:form.button name="__currentPage" value="{form.pages -> f:count()}" class="btn btn-primary submit">
+				<f:if condition="{form.renderingOptions.submitButtonLabel}">
+					<f:then><f:translate id="{form.renderingOptions.submitButtonLabel}" source="Wizard" package="Beech.Ehrm">{form.renderingOptions.submitButtonLabel}</f:translate></f:then>
+					<f:else><f:translate id="action.submit" source="Wizard" package="Beech.Ehrm">Submit</f:translate></f:else>
+				</f:if>
+			</f:form.button>
+		</f:else>
+	</f:if>
+</nav>

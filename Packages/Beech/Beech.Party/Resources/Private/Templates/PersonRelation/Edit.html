@@ -1,0 +1,40 @@
+<div class="header">
+	<h3><f:render partial="Views/Show/ProfilePhoto" arguments="{photo: personRelation.personRelatedTo.profilePhoto, width: 50}"/>{personRelation.personRelatedTo.name.fullName} / <f:translate id="relative">Relative</f:translate></h3>
+</div>
+
+
+<f:form action="update" object="{person}" name="person" class="form-horizontal">
+	<input type="hidden" name="iscomplete" value="false" data-validate="isComplete"/>
+
+	<div class="content-padding">
+
+		<f:render partial="Forms/PersonRelation" arguments="{_all}" />
+		<f:form.hidden name="personRelation" id="personRelation{person.id}" value="{personRelation}" />
+
+		<div class="control-group">
+			<label class="control-label">
+				<f:translate id="phoneNumber">Phone number</f:translate>
+			</label>
+			<div class="controls controls-row">
+				<f:form.textfield property="phoneNumber" class="span7 phone home" placeholder="{f:translate(value: 'Phone Number')}..."/>
+				<f:form.hidden name="phoneNumberObject" id="phoneNumberObject{person.id}" value="{phoneNumber}" />
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label">
+				<f:translate id="email">E-mail</f:translate>
+			</label>
+			<div class="controls controls-row">
+				<f:form.textfield property="electronicAddress" class="span7 electronicAddress email" placeholder="{f:translate(value: 'Email')}..."/>
+				<f:form.hidden name="electronicAddressObject" id="electronicAddressObject{person.id}" value="{electronicAddress}" />
+			</div>
+		</div>
+	</div>
+
+	<div class="form-actions">
+		<button type="submit" name="action" class="btn btn-primary" value="{action}">
+			<i class="icon-save"></i> <f:translate id="Save">Save</f:translate>
+		</button>
+	</div>
+
+</f:form>

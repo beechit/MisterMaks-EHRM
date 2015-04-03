@@ -1,0 +1,66 @@
+{namespace ehrm=Beech\Ehrm\ViewHelpers}
+<ehrm:flashMessages/>
+
+<div class="control-group">
+	<label class="control-label" for="initials">
+		<f:translate id="personName">Person name</f:translate>
+	</label>
+
+	<div class="controls controls-row">
+		<f:form.textfield property="initials" id="initials" class="span2 uppercase"
+						  placeholder="{f:translate(id:'initials')}"/>
+		<f:form.textfield property="name.firstName" id="firstName" class="span6 capitalize"
+						  placeholder="{f:translate(id:'firstName')}"/>
+	</div>
+</div>
+<div class="control-group">
+	<label class="control-label" for="lastName">
+		<f:translate id="lastName">Last Name</f:translate>
+	</label>
+
+	<div class="controls controls-row">
+		<f:form.textfield property="name.middleName" id="middleName" class="span2 capitalize"
+						  placeholder="{f:translate(id:'middleName')}"/>
+		<f:form.textfield property="name.lastName" id="lastName" class="span6 capitalize"
+						  placeholder="{f:translate(id:'lastName')}"/>
+	</div>
+</div>
+<div class="control-group">
+	<label class="control-label" for="gender">
+		<f:translate id="gender">Gender</f:translate>
+	</label>
+
+	<div class="controls controls">
+		<ehrm:optionSelect property="gender" id="gender" model="Beech.Party:Person"
+						   placeholder="{f:translate(value: 'Gender')}..." class="span8" translate="{by: 'id'}"/>
+	</div>
+</div>
+
+<div class="control-group">
+	<label class="control-label" for="dateOfBirth">
+		<f:translate id="dateOfBirth">Birth date</f:translate>
+	</label>
+
+	<div class="controls controls-row">
+		<ehrm:form.datePicker id="dateOfBirth" property="dateOfBirth" class="datepicker"/>
+	</div>
+</div>
+<div class="control-group">
+	<label class="control-label" for="personRelationType{personRelation.id}">
+		<f:Translate id="relationType">Relation type</f:Translate>
+	</label>
+
+	<div class="controls controls-row">
+		<ehrm:optionSelect property="relationType" id="personRelationType{personRelation.id}" model="Beech.Party:PersonRelation"
+						   placeholder="{f:translate(id: 'Type')}..." class="span10 personRelationType" translate="{by: 'id'}"/>
+	</div>
+</div>
+<div class="control-group">
+	<label class="control-label" for="emergencyContact">
+		<i class="icon-medkit"></i> <f:translate id="emergencyContact">Emergency contact</f:translate>
+	</label>
+
+	<div class="controls controls-row">
+		 <f:form.checkbox property="emergencyContact" id="emergencyContact" value="true"/>
+	</div>
+</div>

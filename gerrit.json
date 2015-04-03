@@ -1,0 +1,10 @@
+{
+	"TYPO3.Flow": {
+		"[FEATURE] Allow classes to declare gettable properties": "18229/2",
+		"[FEATURE] Allow PolyType custom validators to be used": "18053/2",
+		"[FEATURE] Allow exposing the class name of an object in JsonView": "16050/4"
+	},
+	"TYPO3.Fluid": {
+		"[FEATURE] Configurable prepend option for Select ViewHelper": "18526/1"
+	}
+}

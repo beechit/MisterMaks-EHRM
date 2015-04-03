@@ -1,0 +1,389 @@
+Beech:
+  Ehrm:
+    languages: ['en_EN', 'nl_NL', 'pl_PL']
+
+    resources:
+      themes: []
+
+      styleSheets:
+        - 'Beech.Ehrm/Library/fontawesome/css/font-awesome.min.css'
+        - 'Beech.Ehrm/Library/dataTables/media/css/jquery.dataTables.TwitterBootstrap.css'
+        - 'Beech.Ehrm/Library/dataTables/media/css/jquery.dataTables.css'
+        - 'Beech.Ehrm/Library/bootstrap-notify/css/bootstrap-notify.css'
+        - 'Beech.Ehrm/Library/bootstrap-notify/css/styles/alert-blackgloss.css'
+        - 'Beech.Ehrm/Library/bootstrap-notify/css/styles/alert-notification-animations.css'
+        - 'Beech.Ehrm/Library/bootstrap-wizard/bootstrap-wizard.css'
+
+      javaScript:
+        libraries:
+          - 'Beech.Ehrm/Library/bootstrap/js/bootstrap.min.js'
+          - 'Beech.Ehrm/Library/bootstrap-notify/js/bootstrap-notify.js'
+          - 'Beech.Ehrm/Library/jquery.form.js'
+          - 'Beech.Ehrm/Library/jquery.cookie.js'
+          - 'Beech.Ehrm/Library/jquery.jOrgChart.js'
+          - 'Beech.Ehrm/Library/bootstrap-datetimepicker/bootstrap-datetimepicker.js'
+          - 'Beech.Ehrm/Library/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.en.js'
+          - 'Beech.Ehrm/Library/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.nl.js'
+          - 'Beech.Ehrm/Library/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.pl.js'
+          - 'Beech.Ehrm/Library/chosen/chosen.jquery.min.js'
+          - 'Beech.Ehrm/Library/inputmask/jquery.inputmask.js'
+          - 'Beech.Ehrm/Library/inputmask/jquery.inputmask.extensions.js'
+          - 'Beech.Ehrm/Library/momentjs/moment-with-langs.min.js'
+          - 'Beech.Ehrm/Library/bootstrap-wizard/bootstrap-wizard.js'
+          - 'Beech.Ehrm/Library/dataTables/media/js/jquery.dataTables.js'
+          - 'Beech.Ehrm/Library/dataTables/media/js/jquery.dataTables.TwitterBootstrap.js'
+          - 'Beech.Chart/Library/highcharts.js'
+
+        sources:
+          - 'Beech.Ehrm/JavaScript/Init.js'
+          - 'Beech.Ehrm/JavaScript/Store.js'
+          - 'Beech.Ehrm/JavaScript/Mixins/Module.js'
+          - 'Beech.Ehrm/JavaScript/Mixins/ModelFormable.js'
+          - 'Beech.Ehrm/JavaScript/Mixins/AjaxModule.js'
+          - 'Beech.Ehrm/JavaScript/Mixins/Model.js'
+          -
+            uri:
+              package: 'Radmiraal.Emberjs'
+              controller: 'Configuration'
+              action: 'model'
+              arguments:
+                application: 'MisterMaks'
+          - 'Beech.Ehrm/JavaScript/Model.js'
+          - 'Beech.Ehrm/JavaScript/Router.js'
+          - 'Beech.Ehrm/JavaScript/ModuleHandler.js'
+          - 'Beech.Absence/JavaScript/Route/Absence.js'
+          - 'Beech.Absence/JavaScript/Model/Absence.js'
+          - 'Beech.Absence/JavaScript/Controller/Absence.js'
+          - 'Beech.Absence/JavaScript/View/Absence.js'
+          - 'Beech.Party/JavaScript/Route/Company.js'
+          - 'Beech.Party/JavaScript/Route/Person.js'
+          - 'Beech.Party/JavaScript/Route/Account.js'
+          - 'Beech.Party/JavaScript/Controller/Company.js'
+          - 'Beech.Party/JavaScript/Controller/Person.js'
+          - 'Beech.Party/JavaScript/Controller/Account.js'
+          - 'Beech.Party/JavaScript/View/Company.js'
+          - 'Beech.Party/JavaScript/View/Person.js'
+          - 'Beech.Party/JavaScript/View/Account.js'
+          - 'Beech.Ehrm/JavaScript/Application.js'
+          - 'Beech.Task/JavaScript/Model/Task.js'
+          - 'Beech.Task/JavaScript/Controller/Task.js'
+          - 'Beech.Task/JavaScript/Route/Task.js'
+          - 'Beech.Task/JavaScript/View/Task.js'
+          - 'Beech.Task/JavaScript/Controller/TaskWidget.js'
+          - 'Beech.Task/JavaScript/View/TaskWidget.js'
+          - 'Beech.Party/JavaScript/Route/Company.js'
+          - 'Beech.Party/JavaScript/Route/Person.js'
+          - 'Beech.Party/JavaScript/Controller/Company.js'
+          - 'Beech.Party/JavaScript/Controller/Person.js'
+          - 'Beech.Party/JavaScript/View/Company.js'
+          - 'Beech.Party/JavaScript/View/Person.js'
+          - 'Beech.Ehrm/JavaScript/Route/ApplicationSettings.js'
+          - 'Beech.Ehrm/JavaScript/Route/UserPreferences.js'
+          - 'Beech.Ehrm/JavaScript/Controller/ApplicationSettings.js'
+          - 'Beech.Ehrm/JavaScript/Controller/UserPreferences.js'
+          - 'Beech.Ehrm/JavaScript/View/ApplicationSettings.js'
+          - 'Beech.Ehrm/JavaScript/View/UserPreferences.js'
+          - 'Beech.Ehrm/JavaScript/Component/UserInterface/Breadcrumbs.js'
+          - 'Beech.Ehrm/JavaScript/Component/UserInterface/DatePicker.js'
+          - 'Beech.Ehrm/JavaScript/Component/UserInterface/DataTables.js'
+          - 'Beech.Ehrm/JavaScript/Component/UserInterface/Country.js'
+          - 'Beech.Ehrm/JavaScript/Component/UserInterface/InputMask.js'
+          - 'Beech.Ehrm/JavaScript/Component/UserInterface/Form.js'
+          - 'Beech.Party/JavaScript/Component/UserInterface/Primary.js'
+          - 'Beech.Ehrm/JavaScript/Component/HandlebarHelpers.js'
+          - 'Beech.Ehrm/JavaScript/Service/WebSocketClient.js'
+          - 'Beech.Ehrm/JavaScript/Service/Notification.js'
+          - 'Beech.Task/JavaScript/Controller/TaskWidget.js'
+          - 'Beech.CLA/JavaScript/Route/Contract.js'
+          - 'Beech.CLA/JavaScript/Controller/Contract.js'
+          - 'Beech.CLA/JavaScript/View/Contract.js'
+          - 'Beech.CLA/JavaScript/Route/ContractArticle.js'
+          - 'Beech.CLA/JavaScript/Controller/ContractArticle.js'
+          - 'Beech.CLA/JavaScript/View/ContractArticle.js'
+          - 'Beech.Document/JavaScript/Route/Document.js'
+          - 'Beech.Document/JavaScript/Controller/Document.js'
+          - 'Beech.Document/JavaScript/View/Document.js'
+          - 'Beech.CLA/JavaScript/Route/JobDescription.js'
+          - 'Beech.CLA/JavaScript/Controller/JobDescription.js'
+          - 'Beech.CLA/JavaScript/View/JobDescription.js'
+          - 'Beech.CLA/JavaScript/Route/JobPosition.js'
+          - 'Beech.CLA/JavaScript/Controller/JobPosition.js'
+          - 'Beech.CLA/JavaScript/View/JobPosition.js'
+          - 'Beech.Chart/JavaScript/Route/Report.js'
+          - 'Beech.Chart/JavaScript/Controller/Report.js'
+          - 'Beech.Chart/JavaScript/View/Report.js'
+
+    viewHelpers:
+      partialRootPath: 'resource://Beech.Ehrm/Private/Templates/ViewHelpers/Partials/'
+      templates:
+        'Beech\Ehrm\ViewHelpers\Navigation\MenuViewHelper': 'resource://Beech.Ehrm/Private/Templates/ViewHelpers/Navigation/Menu.html'
+        'Beech\Ehrm\ViewHelpers\FlashMessagesViewHelper': 'resource://Beech.Ehrm/Private/Templates/ViewHelpers/FlashMessages.html'
+    moduleRoutes:
+      - ['Beech.Party', NULL, 'Person']
+      - ['Beech.Party', 'Administration', 'Person']
+      - ['Beech.Party', NULL, 'Company', {'index': 'Index', 'list': null}]
+      - ['Beech.Party', 'Administration', 'Company']
+      - ['Beech.Party', 'Administration', 'Account']
+      - ['Beech.Document', NULL, 'Document', {'chart': 'Chart'}]
+      - ['Beech.Task', NULL, 'Task', {'close': 'Close', 'delete':null}]
+      - ['Beech.CLA', 'Administration', 'Contract', {'start':'Start', 'edit':null, 'delete':null}]
+      - ['Beech.CLA', 'Administration', 'ContractArticle']
+      - ['Beech.CLA', 'Administration', 'JobDescription']
+      - ['Beech.Ehrm', 'Administration', 'ApplicationSettings', {'index': 'Index', 'update': 'Update', 'edit':null, 'delete':null, 'list':null, 'new':null, 'show': null,'setupwizard':'SetupWizard'}]
+      - ['Beech.CLA', '', 'JobPosition', {'index': 'Index', 'list':null, 'delete':null}]
+      - ['Beech.Chart', 'General', 'AgeReport', {'index': 'Index'}]
+      - ['Beech.Absence', '', 'Absence', {'list':'List','edit':null, 'delete':null, 'new':null, 'show': null}]
+
+    defaultActionsMapping:
+      'list': 'Index'
+      'new': 'New'
+      'edit': 'Edit'
+      'show': 'Show'
+      'delete': 'Delete'
+
+TYPO3:
+  Form:
+    presets:
+      wizard:
+        title: 'Wizard'
+        parentPreset: 'default'
+        finisherPresets:
+          'Beech.Ehrm:Database':
+            implementationClassName: 'Beech\Ehrm\Form\Finishers\DatabaseFinisher'
+          'Beech.Ehrm:ModalCloseConfirmation':
+            implementationClassName: 'Beech\Ehrm\Form\Finishers\ModalCloseConfirmationFinisher'
+        validatorPresets:
+          'Beech.Ehrm:Decimal':
+            implementationClassName: 'Beech\Ehrm\Validation\Validator\DecimalValidator'
+        formElementGroups:
+          contract:
+            sorting: 250
+            label: 'Contract Form Elements'
+        formElementTypes:
+          'TYPO3.Form:Base':
+            renderingOptions:
+              templatePathPattern: 'resource://Beech.Ehrm/Private/Templates/Form/Elements/{@type}.html'
+              partialPathPattern: 'resource://Beech.Ehrm/Private/Templates/Form/Partials/{@type}.html'
+              layoutPathPattern: 'resource://Beech.Ehrm/Private/Templates/Form/Layouts/{@type}.html'
+          'TYPO3.Form:Form':
+            formBuilder:
+              editors:
+                finishers:
+                  availableFinishers:
+                    'Beech.Ehrm:Database':
+                      label: 'Database Persistence Finisher'
+                      templateName: 'Finisher-DatabaseFinisher'
+                    'Beech.Ehrm:ModalCloseConfirmation':
+                      label: 'Modal Close Confirmation'
+                      templateName: 'Finisher-ModalCloseConfirmationFinisher'
+          'Beech.Ehrm:DatePicker':
+            superTypes: ['TYPO3.Form:FormElement']
+            implementationClassName: 'Beech\Ehrm\Form\Elements\DatePicker'
+            properties:
+              elementClassAttribute: 'input-small'
+              timeSelectorClassAttribute: 'input-mini input-time'
+              dateFormat: 'Y-m-d'
+              enableDatePicker: TRUE
+              displayDateSelector: TRUE
+              displayTimeSelector: FALSE
+            formBuilder:
+              label: 'Beech Date Picker'
+              group: custom
+              sorting: 99
+          'Beech.Ehrm:NationalitySelect':
+            superTypes: ['TYPO3.Form:FormElement', 'TYPO3.Form:SingleSelectDropdown']
+            implementationClassName: 'Beech\Ehrm\Form\Elements\NationalitySelect'
+            renderingOptions:
+              templatePathPattern: 'resource://Beech.Ehrm/Private/Templates/Form/Elements/NationalitySelect.html'
+            formBuilder:
+              label: 'Nationality Select'
+              group: custom
+          'Beech.Ehrm:CountrySelect':
+            superTypes: ['TYPO3.Form:FormElement', 'TYPO3.Form:SingleSelectDropdown']
+            implementationClassName: 'Beech\Ehrm\Form\Elements\CountrySelect'
+            renderingOptions:
+              templatePathPattern: 'resource://Beech.Ehrm/Private/Templates/Form/Elements/CountrySelect.html'
+            formBuilder:
+              label: 'Country Select'
+              group: custom
+          'Beech.Ehrm:SelectedValue':
+            superTypes: ['TYPO3.Form:FormElement', 'TYPO3.Form:TextMixin']
+            renderingOptions:
+              layoutPathPattern: 'resource://Beech.Ehrm/Private/Templates/Form/Layouts/{@type}.html'
+              templatePathPattern: 'resource://Beech.Ehrm/Private/Templates/Form/Elements/SelectedValue.html'
+          'Beech.Ehrm:UnitOfTimeSelect':
+            superTypes: ['TYPO3.Form:FormElement', 'TYPO3.Form:SingleSelectDropdown']
+            implementationClassName: 'Beech\Ehrm\Form\Elements\UnitOfTimeSelect'
+            renderingOptions:
+              templatePathPattern: 'resource://Beech.Ehrm/Private/Templates/Form/Elements/UnitOfTimeSelect.html'
+          'Beech.Party:EmployeeSelect':
+            superTypes: ['TYPO3.Form:FormElement', 'TYPO3.Form:SingleSelectDropdown']
+            implementationClassName: 'Beech\Party\Form\Elements\EmployeeSelect'
+            renderingOptions:
+              templatePathPattern: 'resource://Beech.Ehrm/Private/Templates/Form/Elements/SingleSelectDropdown.html'
+            formBuilder:
+              label: 'Employee Select'
+              group: custom
+          'Beech.Party:WorkLocationSelect':
+            superTypes: ['TYPO3.Form:FormElement', 'TYPO3.Form:SingleSelectDropdown']
+            implementationClassName: 'Beech\Party\Form\Elements\WorkLocationSelect'
+            renderingOptions:
+              templatePathPattern: 'resource://Beech.Party/Private/Templates/Form/Elements/WorkLocationSelect.html'
+          'Beech.Party:WorkDaySelect':
+            superTypes: ['TYPO3.Form:FormElement', 'TYPO3.Form:SingleSelectDropdown']
+            implementationClassName: 'Beech\Party\Form\Elements\WorkDaySelect'
+            renderingOptions:
+              templatePathPattern: 'resource://Beech.Party/Private/Templates/Form/Elements/WorkDaySelect.html'
+          'Beech.CLA:HiddenField':
+            superTypes: ['TYPO3.Form:HiddenField']
+            renderingOptions:
+              layoutPathPattern: 'resource://Beech.Ehrm/Private/Templates/Form/Layouts/{@type}.html'
+              templatePathPattern: 'resource://Beech.Ehrm/Private/Templates/Form/Elements/HiddenField.html'
+          'Beech.CLA:SingleLineText':
+            superTypes: ['TYPO3.Form:FormElement', 'TYPO3.Form:TextMixin']
+            renderingOptions:
+              layoutPathPattern: 'resource://Beech.Ehrm/Private/Templates/Form/Layouts/{@type}.html'
+              templatePathPattern: 'resource://Beech.Ehrm/Private/Templates/Form/Elements/SingleLineText.html'
+          'Beech.CLA:SingleSelectDropdown':
+            superTypes: ['TYPO3.Form:SingleSelectDropdown']
+            renderingOptions:
+              layoutPathPattern: 'resource://Beech.Ehrm/Private/Templates/Form/Layouts/{@type}.html'
+              templatePathPattern: 'resource://Beech.Ehrm/Private/Templates/Form/Elements/SingleSelectDropdown.html'
+          'Beech.CLA:MultipleSelectCheckboxes':
+            superTypes: ['TYPO3.Form:MultipleSelectCheckboxes']
+            renderingOptions:
+              layoutPathPattern: 'resource://Beech.Ehrm/Private/Templates/Form/Layouts/{@type}.html'
+              templatePathPattern: 'resource://Beech.Ehrm/Private/Templates/Form/Elements/MultipleSelectCheckboxes.html'
+          'Beech.CLA:ContractTemplateSelect':
+            superTypes: ['TYPO3.Form:FormElement', 'TYPO3.Form:SingleSelectDropdown']
+            implementationClassName: 'Beech\CLA\Form\Elements\ContractTemplateSelect'
+            renderingOptions:
+              templatePathPattern: 'resource://Beech.Ehrm/Private/Templates/Form/Elements/SingleSelectDropdown.html'
+            formBuilder:
+              label: 'Contract Template Select'
+              group: custom
+          'Beech.CLA:JobDescriptionSelect':
+            superTypes: ['TYPO3.Form:FormElement', 'TYPO3.Form:SingleSelectDropdown']
+            implementationClassName: 'Beech\CLA\Form\Elements\JobDescriptionSelect'
+            renderingOptions:
+              templatePathPattern: 'resource://Beech.Ehrm/Private/Templates/Form/Elements/SingleSelectDropdown.html'
+            formBuilder:
+              label: 'JobDescription Select'
+              group: contract
+          'Beech.CLA:SalaryScaleSelect':
+            superTypes: ['TYPO3.Form:FormElement', 'TYPO3.Form:SingleSelectDropdown']
+            implementationClassName: 'Beech\CLA\Form\Elements\SalaryScaleSelect'
+            renderingOptions:
+              templatePathPattern: 'resource://Beech.CLA/Private/Templates/Form/Elements/SalaryScaleSelect.html'
+            formBuilder:
+              label: 'Salaryscale Select'
+              group: contract
+          'Beech.CLA:WageGroupSelect':
+            superTypes: ['TYPO3.Form:FormElement', 'TYPO3.Form:SingleSelectDropdown']
+            implementationClassName: 'Beech\CLA\Form\Elements\WageGroupSelect'
+            renderingOptions:
+              templatePathPattern: 'resource://Beech.CLA/Private/Templates/Form/Elements/WageGroupSelect.html'
+            formBuilder:
+              label: 'Salaryscale Select'
+              group: contract
+          'Beech.CLA:WageStepSelect':
+            superTypes: ['TYPO3.Form:FormElement', 'TYPO3.Form:SingleSelectDropdown']
+            implementationClassName: 'Beech\CLA\Form\Elements\WageStepSelect'
+            renderingOptions:
+              templatePathPattern: 'resource://Beech.CLA/Private/Templates/Form/Elements/WageStepSelect.html'
+            formBuilder:
+              label: 'Salarystep Select'
+              group: contract
+          'Beech.CLA:ContractHeaderSection':
+            superTypes: ['TYPO3.Form:Section']
+            renderingOptions:
+              templatePathPattern: 'resource://Beech.CLA/Private/Templates/Form/Elements/ContractHeaderSection.html'
+          'Beech.CLA:ContractHeaderPdfSection':
+            superTypes: ['TYPO3.Form:Section']
+            renderingOptions:
+              templatePathPattern: 'resource://Beech.CLA/Private/Templates/Form/Elements/ContractHeaderPdfSection.html'
+          'Beech.CLA:ContractArticlesSection':
+            superTypes: ['TYPO3.Form:Section']
+            implementationClassName: 'Beech\CLA\Form\Elements\ContractArticlesSection'
+            renderingOptions:
+              templatePathPattern: 'resource://Beech.CLA/Private/Templates/Form/Elements/ContractArticles.html'
+              partialPathPattern: 'resource://Beech.CLA/Private/Templates/Form/Elements/Partials/{@type}.html'
+          'Beech.CLA:ContractFooterSection':
+            superTypes: ['TYPO3.Form:Section']
+            renderingOptions:
+              templatePathPattern: 'resource://Beech.CLA/Private/Templates/Form/Elements/ContractFooterSection.html'
+          'Beech.CLA:ContractArticleContainer':
+            superTypes: ['TYPO3.Form:Section']
+            renderingOptions:
+              templatePathPattern: 'resource://Beech.CLA/Private/Templates/Form/Elements/ContractArticleContainer.html'
+              partialPathPattern: 'resource://Beech.CLA/Private/Templates/Form/Elements/Partials/{@type}.html'
+          'Beech.CLA:ContractArticleFormElement':
+            superTypes: ['TYPO3.Form:FormElement']
+            implementationClassName: 'Beech\CLA\Form\Elements\ContractArticleFormElement'
+            renderingOptions:
+              templatePathPattern: 'resource://Beech.CLA/Private/Templates/Form/Elements/ContractArticle.html'
+              partialPathPattern: 'resource://Beech.CLA/Private/Templates/Form/Elements/Partials/{@type}.html'
+            formBuilder:
+              label: 'ContractArticle Element'
+              group: contract
+          'Beech.CLA:ContractPreviewPage':
+            superTypes: ['TYPO3.Form:Page']
+            implementationClassName: 'TYPO3\Form\Core\Model\Page'
+            renderingOptions:
+              templatePathPattern: 'resource://Beech.CLA/Private/Templates/Form/Elements/ContractPreviewPage.html'
+              partialPathPattern: 'resource://Beech.CLA/Private/Templates/Form/Elements/Partials/{@type}.html'
+          'Beech.CLA:ContractPdfPage':
+            superTypes: ['TYPO3.Form:Page']
+            implementationClassName: 'TYPO3\Form\Core\Model\Page'
+            renderingOptions:
+              templatePathPattern: 'resource://Beech.CLA/Private/Templates/Form/Elements/ContractPdfPage.html'
+              partialPathPattern: 'resource://Beech.CLA/Private/Templates/Form/Elements/Partials/{@type}.html'
+  FormBuilder:
+    handlebarsTemplates:
+      # include the handlebars template
+      Finisher-DatabaseFinisher: resource://Beech.Ehrm/Private/Templates/Form/Builder/DatabaseFinisher.html
+      Finisher-ModalCloseConfirmationFinisher: resource://Beech.Ehrm/Private/Templates/Form/Builder/ModalCloseConfirmationFinisher.html
+
+  Flow:
+    session:
+      cookie:
+
+        # Also allow JavaScript to retrieve the session cookie so we can pass
+        # it to the WebSocket service
+        httponly: FALSE
+
+Radmiraal:
+  Emberjs:
+    applications:
+      MisterMaks:
+        model:
+          ignoredModels:
+            - 'Beech\Ehrm\Domain\Model\Preference'
+            - 'Beech\Workflow\Domain\Model\Action'
+            - 'Beech\Ehrm\Domain\Model\Notification'
+            - 'Beech\Ehrm\Domain\Model\Log'
+          typeMapping:
+            TYPO3PartyDomainModelAbstractParty: 'BeechPartyDomainModelPerson'
+            TYPO3PartyDomainModelElectronicAddress: 'BeechPartyDomainModelElectronicAddress'
+            DateTime: 'date'
+            integer: 'number'
+          ignoredProperties:
+            - 'data'
+            - 'alias'
+          packageFolderPatterns:
+            - 'Beech/**'
+
+    properties:
+      _exclude:
+        - 'configurationManager'
+        - 'reflectionService'
+        - 'propertyMapper'
+        - 'gettablePropertyNames'
+        - 'documentManager'
+        - 'documentObject'
+        - 'documentManagementFactory'
+        - 'gettableProperties'
+        - 'persistenceManager'
+        - 'securityContext'
+        - 'accounts'
+        - 'deleted'

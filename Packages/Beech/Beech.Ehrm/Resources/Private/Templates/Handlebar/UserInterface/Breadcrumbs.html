@@ -1,0 +1,8 @@
+<div class="pull-right">
+	<h1>
+		{{#each element in App.breadcrumbElements}}
+			<f:translate package="Beech.Ehrm">{{element.value}}</f:translate>
+			{{#unless element.isLast}}<span class="divider">/</span>{{/unless}}
+		{{/each}}
+	</h1>
+</div>

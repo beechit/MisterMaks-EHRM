@@ -1,0 +1,133 @@
+{namespace ehrm=Beech\Ehrm\ViewHelpers}
+
+<f:render partial="Views/Header" arguments="{person:absence.person, title:'Recovery'}"/>
+
+<ehrm:flashMessages/>
+<f:form.validationResults for="absence">
+	<f:if condition="{validationResults.flattenedErrors}">
+		<div class="error">
+			<f:for each="{validationResults.flattenedErrors}" key="propertyPath" as="errors">{propertyPath}:
+				<f:for each="{errors}" as="error">
+					<div class="alert alert-warning">{error}</div>
+				</f:for>
+			</f:for>
+		</div>
+	</f:if>
+</f:form.validationResults>
+
+<f:form method="post" action="update" name="absence" object="{absence}" class="compact-form form-horizontal"
+		enctype="multipart/form-data">
+	<input type="hidden" name="iscomplete" value="true" data-validate="isComplete"/>
+	<div id="absence-update" class="content-padding">
+		<div class="row-fluid">
+			<div class="span6">
+				<div class="row-fluid">
+					<div class="span4 align-right">
+						<f:translate id="sickness.startDate">Date:</f:translate>
+					</div>
+					<div class="span8">
+						{absence.startDate -> f:format.date(format: 'd-m-Y H:i')}
+					</div>
+				</div>
+				<div class="row-fluid">
+					<div class="span4 align-right">
+						<f:translate id="sickness.absenceType">Sickness type</f:translate>
+					</div>
+					<div class="span8">
+						{absence.absenceArrangement.label}
+					</div>
+				</div>
+				<div class="row-fluid">
+					<div class="span4 align-right">
+						<f:translate id="sickness.estimatedRecoveryDate">Probably recovery on:</f:translate>
+					</div>
+					<div class="span8">
+						{absence.estimatedRecoveryDate -> f:format.date(format: 'd-m-Y')}
+					</div>
+				</div>
+				<div class="row-fluid">
+					<div class="span4 align-right">
+						<f:translate id="reportMethod">Report method</f:translate>
+					</div>
+					<div class="span8">
+						{absence.reportMethod}
+					</div>
+				</div>
+				<div class="row-fluid">
+					<div class="span4 align-right">
+						<f:translate id="reportedTo">Reported to</f:translate>
+					</div>
+					<div class="span8">
+						{reportedTo}
+					</div>
+				</div>
+				<div class="row-fluid">
+					<div class="span4 align-right">
+						<f:translate id="reason">Reason</f:translate>
+					</div>
+					<div class="span8">
+						{absence.reason}
+					</div>
+				</div>
+			</div>
+			<div class="span6">
+				<div class="control-group">
+					<label class="control-label align-left" for="recoveryDate">
+						<f:translate id="absence.recoveryDate">Recovery date:</f:translate>
+					</label>
+
+					<div class="control-label">
+						<ehrm:form.datePicker id="absence.recoveryDate" property="endDate"
+											  class="datepicker span8" enableTimePicker="TRUE"/>
+					</div>
+				</div>
+				<label for="reason">
+					<f:translate id="reason">Reason</f:translate>
+				</label>
+
+				<div class="control-group">
+					<f:form.textarea id="reason" property="reason" class="span12" rows="10">Reason</f:form.textarea>
+				</div>
+			</div>
+		</div>
+
+		<div class="row-fluid">
+			<div class="span6"></div>
+			<div class="span6">
+				<div class="control-group">
+					<label class="control-label align-left" for="reportMethod">
+						<f:translate id="reportMethod">Report method</f:translate>
+					</label>
+
+					<div class="controls">
+						<ehrm:optionSelect property="reportMethodRecovery" id="reportMethodRecovery"
+										   model="Beech.Absence:Absence" placeholder="{f:translate(id: 'reportMethod')}"
+										   class="reportMethod" translate="{by: 'id'}"/>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label align-left" for="reportedRecoveryTo">
+						<f:translate id="reportedRecoveryTo">Reported to</f:translate>
+					</label>
+
+					<div class="controls">
+						<f:form.select property="reportedRecoveryTo" id="reportedRecoveryTo" options="{persons}"
+									   optionLabelField="name"/>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<hr/>
+
+	<div class="form-actions">
+		<button type="submit" name="action" class="btn btn-primary" value="{action}">
+			<i class="icon-save"></i>
+			<f:translate id="Save">Save</f:translate>
+		</button>
+	</div>
+
+</f:form>
+
+
+</div>

@@ -1,0 +1,40 @@
+'Beech.Communication.Domain.Model.Message':
+  properties:
+    'messageName':
+      label: 'Message name'
+    'messageType':
+      options:
+        values:
+         'email': 'E-mail'
+         'sms': 'SMS'
+         'push': 'PushMessage'
+         'letter': 'Letter'
+         'phone': 'Phone'
+    'person':
+      label: 'send to'
+      type: 'TYPO3\Party\Domain\Model\Person'
+    'personCc':
+      type: 'TYPO3\Party\Domain\Model\Person'
+    'PersonBcc':
+      type: 'TYPO3\Party\Domain\Model\Person'
+    'personInitiator':
+      label: 'recieved from'
+      type: 'Beech\Party\Domain\Model\Person'
+    'subject':
+      label: 'Subject of message'
+    'messageTemplate':
+      type: 'Beech\Communication\Domain\Model\messageTemplate'
+    'content':
+      label: 'content of the message'
+    'sendDateTime':
+      type: 'DateTime'
+    'conversation':
+      type: 'Beech\Communication\Domain\Model\Message'
+    'creationDateTime':
+      default: 'now'
+      label: 'creation date'
+      type: 'DateTime'
+    'createdBy':
+      default: 'currentUser'
+      label: 'Created by'
+      type: 'Beech\Party\Domain\Model\Person'

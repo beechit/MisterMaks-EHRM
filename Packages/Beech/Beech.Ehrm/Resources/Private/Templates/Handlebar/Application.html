@@ -1,0 +1,28 @@
+<div class="container-fluid body">
+	<header class="row-fluid page-header">
+		<nav class="home">
+			{{#linkTo "index" class="brand" }}<i class="icon-home"></i>{{/linkTo}}
+		</nav>
+		{{render userInterface.breadcrumbs this}}
+	</header>
+
+	<div class="row-fluid">
+		{{render userInterface.userMenu}}
+	</div>
+
+	{{outlet}}
+
+	<div class="push"></div>
+</div>
+
+<footer class="container-fluid">
+	<hr />
+	<div class="row-fluid">
+		<div class="footer">
+			<p>&copy; Beech Applications, 2013</p>
+		</div>
+		<div class="logo pull-right">
+			<p><i class="icon-github"></i> mister Maks</p>
+		</div>
+	</div>
+</footer>

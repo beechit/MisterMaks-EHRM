@@ -1,0 +1,46 @@
+documentTypes:
+  -
+    'categoryName': 'Minutes'
+    'typeName': 'Performance review'
+    'delete': FALSE
+    'expiration': FALSE
+    'document': TRUE
+    'number': FALSE
+    'period': FALSE
+    'year': FALSE
+  -
+    'categoryName': 'Minutes'
+    'typeName': 'Team minutes'
+    'delete': FALSE
+    'expiration': FALSE
+    'document': TRUE
+    'number': FALSE
+    'period': FALSE
+    'year': FALSE
+  -
+    'categoryName': 'Minutes'
+    'typeName': 'Progress report'
+    'delete': FALSE
+    'expiration': FALSE
+    'document': TRUE
+    'number': FALSE
+    'period': FALSE
+    'year': FALSE
+  -
+    'categoryName': 'Minutes'
+    'typeName': 'Other'
+    'delete': FALSE
+    'expiration': FALSE
+    'document': TRUE
+    'number': FALSE
+    'period': FALSE
+    'year': FALSE
+  -
+    'categoryName': 'Minutes'
+    'typeName': 'Correspondence'
+    'delete': FALSE
+    'expiration': FALSE
+    'document': TRUE
+    'number': FALSE
+    'period': FALSE
+    'year': FALSE

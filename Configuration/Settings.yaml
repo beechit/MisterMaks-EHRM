@@ -1,0 +1,25 @@
+TYPO3:
+  Flow:
+    security:
+      authentication:
+        authenticationStrategy: oneToken
+        providers:
+          DefaultProvider:
+            provider: PersistedUsernamePasswordProvider
+            entryPoint: 'WebRedirect'
+            entryPointOptions:
+              routeValues:
+                '@package': 'Beech.Ehrm'
+                '@controller': 'Application'
+                '@action': 'index'
+    object:
+      excludeClasses:
+       'composer*': ['.*']
+       'pdepend*': ['.*']
+       'php*': ['.*']
+       'predis*': ['.*']
+       'react*': ['.*']
+       'sebastian*': ['.*']
+       'squiz*': ['.*']
+       'typo3*': ['.*']
+       'zeta*': ['.*']

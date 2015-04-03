@@ -1,0 +1,13 @@
+<f:if condition="{education}">
+	<f:then>
+		<div id="education-{education.id}" class="multi-form-item">
+			<f:render partial="Forms/Education" arguments="{party: party, education: education, action: 'update', collapsed: true}"/>
+		</div>
+		<div id="education-add" class="multi-form-item">
+			<f:render partial="Forms/Education" arguments="{party: party, action: 'add', suffix: 'education', collapsed: true}"/>
+		</div>
+	</f:then>
+</f:if>
+
+
+

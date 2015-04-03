@@ -1,0 +1,13 @@
+<f:if condition="{personRelation}">
+	<f:then>
+		<div id="personRelation-{personRelation.id}" class="multi-form-item">
+			<f:render partial="Forms/PersonRelation" arguments="{person: person, persons: persons, personRelation: personRelation, action: 'update'}"/>
+		</div>
+		<div id="personRelation-add" class="multi-form-item">
+			<f:render partial="Forms/PersonRelation" arguments="{person: person, persons: persons, action: 'add', suffix: 'personRelation'}"/>
+		</div>
+	</f:then>
+</f:if>
+
+
+

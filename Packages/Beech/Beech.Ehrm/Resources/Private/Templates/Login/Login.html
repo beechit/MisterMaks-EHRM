@@ -1,0 +1,48 @@
+<f:layout name="ajax" />
+
+<f:section name="Body">
+
+			<f:flashMessages class="login flashmessages alert" />
+
+			<f:if condition="{applicationConfigured}">
+				<f:then>
+					<f:form action="authenticate" class="compact-form login-form" additionalAttributes="{data-target:'#modal .modal-content'}">
+						<f:form.hidden name="modal" value="1" />
+						<div class="content-padding">
+							<fieldset>
+								<legend><f:translate id="panel.login.legend">Login panel</f:translate></legend>
+								<div class="control-group">
+									<div class="controls">
+										<div class="input-prepend">
+											<span class="add-on"><i class="icon-user"></i></span>
+											<f:form.textfield name="__authentication[TYPO3][Flow][Security][Authentication][Token][UsernamePassword][username]" class="input-xlarge" id="username" value="{username}" placeholder="{f:translate(id:'panel.login.username')}" />
+										</div>
+									</div>
+								</div>
+								<div class="control-group">
+									<div class="controls">
+										<div class="input-prepend">
+											<span class="add-on"><i class="icon-key"></i></span>
+											<f:form.password name="__authentication[TYPO3][Flow][Security][Authentication][Token][UsernamePassword][password]" class="input-xlarge" id="password" additionalAttributes="{placeholder: '{f:translate(id:\'panel.login.password\')}'}" />
+										</div>
+									</div>
+								</div>
+							</fieldset>
+						</div>
+						<div class="form-actions">
+							<button type="submit" class="btn btn-primary"><f:translate id="action.login">Login</f:translate></button>
+						</div>
+					</f:form>
+				</f:then>
+				<f:else>
+					<p class="alert alert-block alert-error">
+						<b><f:translate id="message.error">Error!</f:translate></b><br/>
+						<f:translate id="message.application.notCreated">No primary company configured, please contact your System Administrator.</f:translate>
+					</p>
+				</f:else>
+
+			</f:if>
+
+
+
+</f:section>

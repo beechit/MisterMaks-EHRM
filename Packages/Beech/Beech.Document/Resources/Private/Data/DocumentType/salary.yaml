@@ -1,0 +1,37 @@
+documentTypes:
+  -
+    'categoryName': 'Salary'
+    'typeName': 'Wage document'
+    'delete': FALSE
+    'expiration': FALSE
+    'document': TRUE
+    'number': FALSE
+    'period': TRUE
+    'year': TRUE
+  -
+    'categoryName': 'Salary'
+    'typeName': 'Year report'
+    'delete': FALSE
+    'expiration': FALSE
+    'document': TRUE
+    'number': FALSE
+    'period': FALSE
+    'year': TRUE
+  -
+    'categoryName': 'Salary'
+    'typeName': 'Wage tax declaration'
+    'delete': FALSE
+    'expiration': FALSE
+    'document': TRUE
+    'number': FALSE
+    'period': TRUE
+    'year': TRUE
+  -
+    'categoryName': 'Salary'
+    'typeName': 'Correspondence'
+    'delete': FALSE
+    'expiration': FALSE
+    'document': TRUE
+    'number': FALSE
+    'period': FALSE
+    'year': FALSE

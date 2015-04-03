@@ -1,0 +1,27 @@
+<f:layout name="Ajax" />{namespace ehrm=Beech\Ehrm\ViewHelpers}
+
+
+<f:section name="Body">
+	<ehrm:flashMessages/>
+	<div class="row-fluid">
+		<div class="span12">
+			<legend><f:translate id="document.document" quantity="2">Documents</f:translate></legend>
+			<f:if condition="{documents}">
+				<f:then>
+					<f:render partial="Document/List" arguments="{_all}"/>
+				</f:then>
+				<f:else>
+					<p><f:translate id="document.noDocumentsFound">No documents found</f:translate></p>
+				</f:else>
+			</f:if>
+		</div>
+	</div>
+	<div class="row-fluid">
+		<div class="span8">
+			<fieldset>
+				<legend><f:translate id="document.new">New</f:translate></legend>
+				<f:render partial="Form/New" arguments="{_all}"/>
+			</fieldset>
+		</div>
+	</div>
+</f:section>

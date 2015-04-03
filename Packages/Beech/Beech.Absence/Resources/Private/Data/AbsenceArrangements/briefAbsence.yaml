@@ -1,0 +1,12 @@
+absenceArrangement:
+  arrangementName: 'briefAbsence'
+  label: 'Brief absence'
+  absenceType: 'sickness'
+  help: 'Brief absence eg headache / flu'
+  days: ''
+  reportInpectionAction: TRUE
+  needsGrant: FALSE
+  autoGrandBalance: FALSE
+  deductFromBalance: FALSE
+  addToBalance: TRUE
+  unit: 'hours'

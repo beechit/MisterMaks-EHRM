@@ -1,0 +1,18 @@
+NewEmployee:
+  triggers:
+    -
+      action: 'add'
+      className: 'Beech\Party\Domain\Model\Person'
+  actions:
+    1:
+      description: 'Check 1'
+      outputHandlers:
+        -
+          className: 'Beech\Workflow\OutputHandlers\TaskOutputHandler'
+          properties:
+            assignedTo: 'ACTION:createdBy'
+            priority: 0
+            increasePriorityInterval: '4days'
+            description: 'Send %s a welcome card'
+            descriptionReplacements:
+              1: 'TARGET:name'

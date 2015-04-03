@@ -1,0 +1,12 @@
+absenceArrangement:
+  arrangementName: 'other'
+  label: 'Other'
+  absenceType: 'sickness'
+  help: ''
+  days: ''
+  reportInpectionAction: TRUE
+  needsGrant: FALSE
+  autoGrandBalance: FALSE
+  deductFromBalance: FALSE
+  addToBalance: TRUE
+  unit: 'hours'

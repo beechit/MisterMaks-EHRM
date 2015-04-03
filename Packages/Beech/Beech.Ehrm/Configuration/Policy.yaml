@@ -1,0 +1,23 @@
+resources:
+  methods:
+    ApplicationControllers: '!method(Beech\Ehrm\Controller\LoginController->.*Action())&&!method(Beech\Ehrm\Controller\ApplicationController->indexAction())&&method(Beech\.*\Controller\.*Controller->(?!initialize).*Action())'
+    ManagementControllers: 'method(\Beech\.*\Management\.*Controller->(?!initialize).*Action())'
+    SetupController: 'method(Beech\Ehrm\SetupController->(?!initialize).*Action())'
+
+roles:
+  Administrator: [ SuperUser ]
+  SuperUser: [ User ]
+  User: [ ]
+
+acls:
+  Administrator:
+    methods:
+      ManagementControllers: GRANT
+      SetupController: GRANT
+  SuperUser:
+    methods:
+      ManagementControllers: GRANT
+      SetupController: GRANT
+  Everybody:
+    methods:
+      ApplicationControllers: GRANT

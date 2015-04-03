@@ -1,0 +1,205 @@
+<f:layout name="Ajax"/>
+<f:section name="Body">
+	<f:form.validationResults for="contract">
+		<f:if condition="{validationResults.flattenedErrors}">
+			<div class="error">
+				<f:for each="{validationResults.flattenedErrors}" key="propertyPath" as="errors">{propertyPath}:
+					<f:for each="{errors}" as="error">{error}</f:for>
+				</f:for>
+			</div>
+		</f:if>
+	</f:form.validationResults>
+	<f:form action="update" object="{contract}" name="contract" class="form-horizontal well">
+		<div class="control-group">
+			<label class="control-label" for="subjectId">Subject id</label>
+			<div class="controls">
+				<f:form.textfield property="subjectId" id="subjectId" />
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="departementId">Department id</label>
+			<div class="controls">
+				<f:form.textfield property="departementId" id="departementId" />
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="contractVersion">contractversion</label>
+			<div class="controls">
+				<f:form.textfield property="contractVersion" id="contractVersion" />
+			</div>
+		</div>
+		<div class="control-group">
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="contractType">Contract type</label>
+			<div class="controls">
+				<f:form.textfield property="contractType" id="contractType" />
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="firstContract">First contract</label>
+			<div class="controls">
+				<f:form.textfield property="firstContract" id="firstContract" />
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="contractGenerationDate">The date the contract was created</label>
+			<div class="controls">
+				<f:form.textfield property="contractGenerationDate" id="contractGenerationDate" />
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="contractAcceptanceDate">Date contract was accepted</label>
+			<div class="controls">
+				<f:form.textfield property="contractAcceptanceDate" id="contractAcceptanceDate" />
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="contractSigned">Contract signed</label>
+			<div class="controls">
+				<f:form.textfield property="contractSigned" id="contractSigned" />
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="contractSignDate">Date of signing contract</label>
+			<div class="controls">
+				<f:form.textfield property="contractSignDate" id="contractSignDate" />
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="contractExpireDate">Expiration date</label>
+			<div class="controls">
+				<f:form.textfield property="contractExpireDate" id="contractExpireDate" />
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="contactStopDate">Date contract is stopped</label>
+			<div class="controls">
+				<f:form.textfield property="contactStopDate" id="contactStopDate" />
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="contactStopDateReason">Reason that contract was stopped</label>
+			<div class="controls">
+				<f:form.textfield property="contactStopDateReason" id="contactStopDateReason" />
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="jobDescription">Jobposition</label>
+			<div class="controls">
+				<f:form.textfield property="jobDescription" id="jobDescription" />
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="defaultSalaryScale">defaultSalaryScale</label>
+			<div class="controls">
+				<f:form.textfield property="defaultSalaryScale" id="defaultSalaryScale" />
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="contractEnddate">Expiration date</label>
+			<div class="controls">
+				<f:form.textfield property="contractEnddate" id="contractEnddate" />
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="startDate">Startdate of the contract</label>
+			<div class="controls">
+				<f:form.textfield property="startDate" id="startDate" />
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="streetName">Street name</label>
+			<div class="controls">
+				<f:form.textfield property="streetName" id="streetName" />
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="houseNumber">House number</label>
+			<div class="controls">
+				<f:form.textfield property="houseNumber" id="houseNumber" />
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="houseNumberAddition">House number addition</label>
+			<div class="controls">
+				<f:form.textfield property="houseNumberAddition" id="houseNumberAddition" />
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="postalCodeNL">Postal code</label>
+			<div class="controls">
+				<f:form.textfield property="postalCodeNL" id="postalCodeNL" />
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="residence">Residence</label>
+			<div class="controls">
+				<f:form.textfield property="residence" id="residence" />
+			</div>
+		</div>
+		<div class="control-group">
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="probation">probation</label>
+			<div class="controls">
+				<f:form.textfield property="probation" id="probation" />
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="probationInDays">Probation in Days</label>
+			<div class="controls">
+				<f:form.textfield property="probationInDays" id="probationInDays" />
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="totalHours">Total hours of this contract</label>
+			<div class="controls">
+				<f:form.textfield property="totalHours" id="totalHours" />
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="hoursAWeek">Hours a week</label>
+			<div class="controls">
+				<f:form.textfield property="hoursAWeek" id="hoursAWeek" />
+			</div>
+		</div>
+		<div class="control-group">
+				<fieldset>
+					<legend></legend>
+				</fieldset>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="hourWage">Hour Wage</label>
+			<div class="controls">
+				<f:form.textfield property="hourWage" id="hourWage" />
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="minimumWage">Minimum wage</label>
+			<div class="controls">
+				<f:form.textfield property="minimumWage" id="minimumWage" />
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="cla">collective labour agreement</label>
+			<div class="controls">
+				<f:form.textfield property="cla" id="cla" />
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="vacationAllowance">Vacation Allowance</label>
+			<div class="controls">
+				<f:form.textfield property="vacationAllowance" id="vacationAllowance" />
+			</div>
+		</div>
+		<div class="control-group">
+				<fieldset>
+					<legend>Articles</legend>
+				</fieldset>
+		</div>
+		<div class="control-group">
+			<f:form.submit value="Update" class="btn btn-primary"/>
+		</div>
+	</f:form>
+</f:section>

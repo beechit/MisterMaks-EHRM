@@ -1,0 +1,25 @@
+'Beech.Minute.Domain.Model.Minute':
+  properties:
+    'person':
+      type: 'Beech\Party\Domain\Model\Person'
+    personInitiator:
+      type: 'Beech\Party\Domain\Model\Person'
+    'title':
+      label: 'Title'
+    'minuteContent':
+      label: 'Minute content'
+      validation:
+        -
+          type: 'Text'
+    'minuteTemplate':
+      type: 'Beech\Minute\Domain\Model\MinuteTemplate'
+    'creationDate':
+      default: 'now'
+      label: 'creation date'
+      type: 'DateTime'
+    'createdBy':
+      default: 'currentUser'
+      label: 'Created by'
+      type: 'Beech\Party\Domain\Model\Person'
+    'modification':
+      type: 'Beech\Ehrm\Domain\Model\Modify'

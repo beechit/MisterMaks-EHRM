@@ -1,0 +1,13 @@
+<f:layout />
+<f:section name="Body">
+	<f:security.ifAuthenticated>
+		<f:then>
+			<f:render partial="Application/Index" arguments="{_all}"/>
+		</f:then>
+		<f:else>
+			<f:render partial="Application/Intro" arguments="{_all}"/>
+		</f:else>
+	</f:security.ifAuthenticated>
+
+	<f:render partial="Modals" />
+</f:section>

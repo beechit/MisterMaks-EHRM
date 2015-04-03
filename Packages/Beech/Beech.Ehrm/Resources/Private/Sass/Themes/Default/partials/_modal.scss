@@ -1,0 +1,147 @@
+.modal {
+	position: absolute;
+	overflow: visible;
+
+	&.modal-large {
+		width: 80%;
+		max-width: 1200px;
+		left: 10%;
+		right: 10%;
+		margin: 0 auto 20px auto;
+		&.fade.in {
+			top: 10%;
+		}
+	}
+
+	.modal-content {
+
+		.alert {
+			margin: 20px;
+		}
+		ul.login.flashmessages {
+			padding-left: 35px;
+		}
+
+		.header {
+			padding: 9px 15px;
+			border-bottom: 1px solid #eee;
+			.close { margin-top: 2px; }
+			h1, h2, h3 {
+				margin: 0;
+				line-height: 30px;
+			}
+		}
+
+			// loading icon
+		.icon-spin {
+			margin: 30px;
+		}
+
+		.content-padding {
+			padding: 0 20px;
+		}
+		.container-fluid {
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+
+		form {
+			margin: 30px 0 0 0;
+			fieldset {
+				margin: 20px;
+				legend {
+					margin-bottom: 0;
+					border: none;
+				}
+				legend + .control-group {
+					margin-top: 0;
+				}
+			}
+		}
+		.multi-form {
+			.multi-form-item {
+				form {
+					margin: 15px 0;
+				}
+			}
+		}
+
+		.form-actions {
+			bottom: 0;
+			right: 0;
+			left: 0;
+
+			padding: 14px 15px 15px;
+			margin-bottom: 0;
+			text-align: right; // right align buttons
+			background-color: #f5f5f5;
+			border-top: 1px solid #ddd;
+			@include border-radius(0 0 6px 6px);
+			@include clearfix(); // clear it in case folks use .pull-* classes on buttons
+			@include border-radius(0 0 6px 6px);
+
+			// Properly space out buttons
+			.btn + .btn {
+				margin-left: 5px;
+				margin-bottom: 0;
+			}
+			// but override that for button groups
+			.btn-group .btn + .btn {
+				margin-left: -1px;
+			}
+			&:after {
+				clear: both;
+			}
+			&:before, &:after {
+				display: table;
+				content: "";
+				line-height: 0;
+			}
+		}
+
+		// login form
+		form.login-form {
+			fieldset {
+				padding: 20px 0 20px 40px;
+			}
+			.form-actions {
+				margin-bottom: 0;
+				padding-left: 60px;
+				text-align: left;
+				.icon-spin {
+					margin: 0 0 0 30px;
+				}
+			}
+		}
+	}
+
+	&.wizard-modal {
+		.well {
+			padding:  0;
+			border: none;
+			background: transparent;
+			@include box-shadow(none);
+		}
+		.wizard-card {
+			.header, h1 {
+				display: none;
+			}
+		}
+		.row-fluid {
+			width: auto;
+		}
+	}
+}
+
+// make modals full screen on small screens
+@media (max-width: 767px) {
+	.modal {
+		&.modal-large.fade.in {
+			top:0;
+			left: 0;
+			right: 0;
+			width: auto;
+			margin: 0 0 auto 0;
+		}
+	}
+}

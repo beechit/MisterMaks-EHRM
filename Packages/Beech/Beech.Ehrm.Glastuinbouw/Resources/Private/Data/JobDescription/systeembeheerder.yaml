@@ -1,0 +1,30 @@
+number: '60.05'
+name: Systeembeheerder
+jobContext: 'De functie van systeembeheerder komt voor in middelgrote tot grote ondernemingen. De functie werkt in een afdeling met applicatiebeheerders en (bij grotere ondernemingen) met systeemontwikkelaars. Bij kleinere organisaties is dit specialisme uitbesteed. De systeembeheerder is verantwoordelijk voor de beschikbaarheid, prestatie (capaciteit, verwerkingssnelheid) en toegankelijkheid van de operationele systemen en gegevensverzamelingen.'
+reportsTo: 'operationeel leidinggevende, zoals bijv. directie of hoofd administratie'
+manages: 'niet van toepassing'
+jobGoal: 'Beheren, operationeel houden, beveiligen en optimaliseren van de automatiseringsinfrastructuur en de daarop beschikbare centrale informatiesystemen en gegevensbanken, zodanig dat een adequate toegankelijkheid en continue beschikbaarheid van de informatiesystemen en gegevensverzamelingen wordt gewaarborgd.'
+department: 'Administratie & ICT'
+expectations:
+  -
+    resultArea: 'Werkende systemen'
+    mainActivities: ['bewaken en beheren van automatiseringsinfrastructuur', 'bewaken van performance van de systemen (d.m.v. metingen), nemen van maatregelen om de performance te optimaliseren (verdelen van geheugencapaciteit over gebruikers, verdelen van gebruikersaansluitingen over het netwerk, fysiek reorganiseren van besta', 'signaleren van mogelijke capaciteits- en performanceproblemen aan de afdelingsleiding', 'installeren van werkstations\/pc\u2019s e.d. aan het netwerk', 'bijhouden van diverse overzichten van systeembezetting en systeemgebruik', 'reconstrueren van databases (vanuit backups) na opgetreden problemen', 'uitgeven en inbrengen van toegangscodes voor gebruikers, conform autorisatie van daartoe aangewezen leidinggevenden', 'toezien op het naleven van procedures voor de toegang tot computerruimtes, de opslag van informatiedragers, het aanmaken van backups e.d.', 'ontwikkelen en vastleggen van backup procedures, draaiboek m.b.t. de in noodsituaties te ondernemen acties', 'opstellen van procedures voor systeemontwikkelaars, applicatiebeheerders en eindgebruikers ']
+    resultCriteria: ['mate waarin systemen voldoen aan gestelde prestatiekenmerken', 'continue beschikbaarheid van informatiesystemen en gegevensverzameling', 'juistheid van aangebrachte beveiligingen', 'doeltreffendheid en mate van naleving van opgestelde procedures en draaiboek ']
+  -
+    resultArea: 'Ge\u00efnstalleerde nieuwe (versies) van informatiesystemen'
+    mainActivities: ['onderzoeken van de technische consequenties (performance, geheugengebruik etc.) van het in gebruik nemen van nieuwe informatiesystemen', 'installeren van nieuwe (versies van) operationele informatiesystemen en beoordelen of standaard- en maatwerkprogrammatuur voldoen aan de operationele standaards van de onderneming', 'rapporteren van de bevindingen aan de afdelingsleiding ']
+    resultCriteria: ['mate van ongestoorde beschikbaarheid van automatiseringsinfrastructuur', 'tijdige beschikbaarheid van nieuwe versies\/toepassingen', 'betrouwbaarheid van onderzoeken ']
+  -
+    resultArea: 'Werkende systeemprogrammatuur'
+    mainActivities: ['testen van nieuwe versies van systeemprogrammatuur, vaststellen of het installeren daarvan verantwoord en wenselijk is en adviseren hierover aan de afdelingsleiding', 'installeren en operationeel maken van (nieuwe versies van) systeemprogrammatuur', 'oplossen van problemen met de systeemprogrammatuur (aangeven van manieren om het probleem te vermijden, afwikkelen van kwesties met leveranciers)', 'beheren en actueel houden van systeemdocumentatie', 'ontwerpen, aanmaken en installeren van procedures en protocollen voor het effici\u00ebnt uitvoeren van systeembeheeractiviteiten (gebruikmakend van de beschikbare programmeertalen) ']
+    resultCriteria: ['ongestoorde beschikbaarheid van programmatuur', 'mate van (tijdig) inspelen op informatiseringbehoeften', 'duidelijkheid van procedures', 'actualiteit van systeemdocumentatie']
+  -
+    resultArea: 'Verleende gebruikersondersteuning'
+    mainActivities: ['verlenen van diverse vormen van ondersteuning aan gebruikers', 'installeren van werkomgevingen voor eindgebruikers, beschikbaar maken van geaccepteerde programmatuur', 'adviseren van eindgebruikers en systeemontwikkelaars over het gebruik van de systeemfaciliteiten', 'maken en vastleggen van afspraken met eindgebruikers voor de planning van de batchverwerking op het centrale systeem', 'oplossen van verwerkingsproblemen met een systeemtechnische achtergrond']
+    resultCriteria: ['actualiteit en volledigheid van gebruikersdocumentatie', 'bruikbaarheid van advies', 'snelheid van oplossingen', 'tevredenheid van de gebruikers met de ondersteuning ']
+burdeningCircumstances:
+  circumstance:
+    - 'Eenzijdige houding en belasting van oog- en rugspieren bij beeldschermwerkzaamheden.'
+    - 'Het functieniveau volgens ORBA is gebaseerd op de rubrieken: Functiecontext, Positie in de organisatie, Functiedoel, Resultaatverwachting \/ Functionele activiteiten en Werkgerelateerde bezwaren. '
+orbaScore: '165'
+wageScaleGroup: 'Boven CAO'

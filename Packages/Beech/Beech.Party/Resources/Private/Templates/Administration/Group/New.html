@@ -1,0 +1,33 @@
+<f:layout name="Ajax" />
+
+<f:section name="Body">
+	<f:form action="create" name="newGroup" class="form-horizontal well">
+		<div class="control-group">
+			<label for="name"><f:translate id="group.name">Group name</f:translate></label>
+			<div class="controls">
+				<f:form.textfield property="name" id="name" />
+			</div>
+		</div>
+		<div class="control-group">
+			<label for="members"><f:translate id="group.members">Members</f:translate></label>
+			<div class="controls">
+				<f:form.select name="members" id="members" property="members" options="{members}" optionLabelField="name" multiple="true"/>
+			</div>
+		</div>
+		<div class="control-group">
+			<label for="type"><f:translate id="group.type">Group type</f:translate></label>
+			<div class="controls">
+				<f:form.select name="type" id="type" property="type" options="{groupTypes}" optionLabelField="name" />
+			</div>
+		</div>
+		<div class="control-group">
+			<label for="children"><f:translate id="group.children">Subgroups</f:translate></label>
+			<div class="controls">
+				<f:form.select name="children" id="children" property="children" options="{children}" optionLabelField="name" multiple="true" />
+			</div>
+		</div>
+		<div class="control-group">
+			<f:form.submit value="{f:translate(id: 'action.create')}" class="btn btn-primary"/>
+		</div>
+	</f:form>
+</f:section>

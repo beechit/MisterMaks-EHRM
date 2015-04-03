@@ -1,0 +1,35 @@
+'Beech.Party.Domain.Model.ElectronicAddress':
+  properties:
+    'party':
+      type: 'TYPO3\Party\Domain\Model\AbstractParty'
+# todo: implement this that validation works on type address selected.
+    'electronicAddressType':
+      label: 'Electronic adress type'
+      options:
+        values:
+         'email': 'E-Mail'
+#         'skype': 'Skype'
+         'url': 'Website'
+#         'twitter': 'Twitter'
+#         'facebook': 'Facebook'
+         'linkedin': 'LinkedIn'
+      validation:
+        -
+          type: 'NotEmpty'
+    'address':
+      label: 'Electronic address'
+# validation is done in electronic address validator.
+    'primary':
+      label: 'Primary'
+      options:
+        values:
+          - FALSE
+          - TRUE
+      default: FALSE
+    'creationDate':
+      label: 'creation date'
+      type: 'DateTime'
+    'createdBy':
+      default: 'currentUser'
+      label: 'Created by'
+      type: 'Beech\Party\Domain\Model\Person'

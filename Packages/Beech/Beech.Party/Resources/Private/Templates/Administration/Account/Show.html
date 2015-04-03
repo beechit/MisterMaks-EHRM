@@ -1,0 +1,22 @@
+<f:layout name="Ajax" />{namespace ehrm=Beech\Ehrm\ViewHelpers}
+
+<f:section name="Body">
+	<h1>{account.party.name}</h1>
+
+	<ehrm:flashMessages/>
+
+	<dl class="dl-horizontal well">
+		<dt><f:translate id="account.accountIdentifier">Account identifier</f:translate></dt>
+		<dd>{account.accountIdentifier}&nbsp;</dd>
+
+		<dt><f:translate id="account.creationDate">Creation Date</f:translate></dt>
+		<dd>{account.creationDate -> f:format.date(format: 'Y-m-d H:i')}&nbsp;</dd>
+
+		<dt><f:translate id="account.expirationDate">Expiration Date</f:translate></dt>
+		<dd>{account.expirationDate -> f:format.date(format: 'Y-m-d H:i')}&nbsp;</dd>
+	</dl>
+
+	<div class="form-actions">
+		<a href="#/administration/userManagement" class="button"><f:translate id="action.back">Back</f:translate></a>
+	</div>
+</f:section>

@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-strict.xsd">
+	<file original="" source-language="en" target-language="en" datatype="plaintext">
+		<body>
+			<trans-unit id="minute.minuteType">
+				<source>Minute type</source>
+			</trans-unit>
+			<trans-unit id="minute.minuteContent">
+				<source>Minute content</source>
+			</trans-unit>
+			<trans-unit id="minute.followUpActionRequired">
+				<source>Follow up action required</source>
+			</trans-unit>
+			<trans-unit id="minute.needSigning">
+				<source>Needs signing</source>
+			</trans-unit>
+			<trans-unit id="minute.action">
+				<source>action</source>
+			</trans-unit>
+			<trans-unit id="minute.documentRequired">
+				<source>document required</source>
+			</trans-unit>
+			<trans-unit id="minute.visability">
+				<source>visability</source>
+			</trans-unit>
+			<trans-unit id="minute.creationDate">
+				<source>creation date</source>
+			</trans-unit>
+			<trans-unit id="minute.createdBy">
+				<source>Created by</source>
+			</trans-unit>
+			<trans-unit id="minute.modification">
+				<source>Modification</source>
+			</trans-unit>
+			<trans-unit id="minute.modificationDate">
+				<source>Modificatmion date</source>
+			</trans-unit>
+			<trans-unit id="minute.modifiedby">
+				<source>Modified by</source>
+			</trans-unit>
+			<trans-unit id="flashmessage.createdMinute">
+				<source>New minute created</source>
+			</trans-unit>
+			<trans-unit id="flashmessage.updatedMinute">
+				<source>Minute was updated</source>
+			</trans-unit>
+			<trans-unit id="flashmessage.deletedMinute">
+				<source>Minute was deleted</source>
+			</trans-unit>
+			<trans-unit id="periodicconversation">
+				<source>Periodic conversation</source>
+			</trans-unit>
+			<trans-unit id="callReporting">
+				<source>Conversation report</source>
+			</trans-unit>
+			<trans-unit id="assessment">
+				<source>Work assessment</source>
+			</trans-unit>
+			<trans-unit id="performanceReveiw">
+				<source>Performance review</source>
+			</trans-unit>
+			<trans-unit id="compensationConversation">
+				<source>Correction conversation</source>
+			</trans-unit>
+			<trans-unit id="other">
+				<source>Other</source>
+			</trans-unit>
+			<trans-unit id="sickReportUpdate">
+				<source>Sick report updateOther</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

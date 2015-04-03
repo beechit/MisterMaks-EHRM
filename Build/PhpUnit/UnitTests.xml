@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<phpunit strict="true"
+		bootstrap="../BuildEssentials/PhpUnit/UnitTestBootstrap.php"
+		convertErrorsToExceptions="true"
+		convertNoticesToExceptions="true"
+		convertWarningsToExceptions="true">
+	<testsuites>
+		<testsuite name="All tests">
+			<directory>../../Packages/Beech/*/Tests/Unit/</directory>
+		</testsuite>
+	</testsuites>
+	<filter>
+		<whitelist addUncoveredFilesFromWhitelist="false">
+			<directory>../../Packages/Beech/*/Classes</directory>
+		</whitelist>
+	</filter>
+	<logging>
+		<log type="junit" target="../Reports/UnitTests.xml" logIncompleteSkipped="false"/>
+	</logging>
+</phpunit>

@@ -1,0 +1,152 @@
+'Beech.Party.Domain.Model.Person':
+  properties:
+    'company':
+      label: 'Company'
+      type: 'Beech\Party\Domain\Model\Company'
+    'department':
+      label: 'Department'
+      type: 'Beech\Party\Domain\Model\Company'
+    'name':
+      label: 'name'
+      type: 'TYPO3\Party\Domain\Model\PersonName'
+    'emgencyContact':
+      label: 'Emgency contact'
+      type: 'Beech\Party\Domain\Model\Person'
+    'personType':
+      label: 'Person type'
+      options:
+        values:
+          'contact': 'Contact'
+          'companyContact': 'Company contact'
+          'employee': 'Employee'
+#          'partnerCompanyContact': 'Partner company contact'
+          'relative': 'Relative'
+# only for usage with persontype = relative this employee relation is about registering relatives tot the employee
+    'relativeType':
+      label: 'Relation'
+      options:
+        values:
+          'partner': 'Partner'
+          'child': 'Child'
+          'family': 'Family'
+          'other': 'Other'
+    'emergencyContact':
+      label: 'Emergency contact'
+      options:
+        values:
+          - FALSE
+          - TRUE
+    'middleOtherName':
+      validation:
+        -
+          type: 'StringLength'
+          options:
+            maximum: 10
+    'otherName':
+      label: 'Birthname'
+      validation:
+        -
+          type: 'StringLength'
+          options:
+            maximum: 30
+    'nameUsage':
+      label: 'Name usage'
+      options:
+        values:
+          'birthName': 'Birth name'
+          'marriedName' : 'Married name'
+          'marriedNameBirthName': 'Married name & birthname'
+    'initials':
+      label: 'Initials'
+      validation:
+        -
+          type: 'StringLength'
+          options:
+            maximum: 10
+        -
+          type: 'NotEmpty'
+    'dateOfBirth':
+      label: 'Date of Birth'
+      type: 'DateTime'
+    'placeOfBirth':
+      label: 'Place of birth'
+    'countryOfBirth':
+      label: 'Country of birth'
+#     default: '' see todo in Packages/Beech/Beech.Ehrm/Classes/Beech/Ehrm/ViewHelpers/Form/CountrySelectViewHelper.php
+    'dateOfDeath':
+      label: 'Date of death'
+      type: 'DateTime'
+    'gender':
+      label: 'Gender'
+      options:
+        values:
+          'male': 'Male'
+          'female': 'Female'
+      validation:
+        -
+          type: 'NotEmpty'
+    'salutation':
+      label: 'Salutation'
+      options:
+        values:
+          'mr': 'Dear Mr.'
+          'ms': 'Dear Ms.'
+          'miss': 'Dear Miss.'
+          'mrs': 'Dear Mrs.'
+    'bsn':
+      label: 'bsn'
+      validation:
+        -
+           type: 'Beech.Ehrm:Bsn'
+    'nationality':
+      label: 'Nationality'
+    'civilStatus':
+      label: 'Civil status'
+      options:
+        values:
+          'unknown': 'Unknown'
+          'married': 'Married'
+          'single': 'Single'
+          'livingTogether': 'Living together'
+          'widowWidower': 'widow / widower'
+          'divorced': 'Divorced'
+      validation:
+        -
+          type: 'StringLength'
+          options:
+            maximum: 25
+    'profilePhoto':
+      label: 'Image'
+      type: 'Beech\Document\Domain\Model\Document'
+    'preferedCommunicationMethod':
+      label: 'Prefered communication Method'
+      options:
+        values:
+          'none': 'None'
+          'email': 'e-mail'
+          'sms': 'SMS'
+          'phone': 'Phone'
+# status is used to set the status of companycontacts, contacts and partnercompanycontacts
+    'status':
+      label: 'Status'
+      options:
+        values:
+          'active': 'Active'
+          'achived': 'Archived'
+      default: 'active'
+    'majorShareholder':
+      label: 'Major shareholder'
+      options:
+        values:
+          - FALSE
+          - TRUE
+    'creationDate':
+      default: 'now'
+      label: 'creation date'
+      type: 'DateTime'
+    'createdBy':
+      default: 'currentUser'
+      label: 'Created by'
+      type: 'Beech\Party\Domain\Model\Person'
+    'preferences':
+      type: '\Beech\Ehrm\Domain\Model\PersonPreferences'

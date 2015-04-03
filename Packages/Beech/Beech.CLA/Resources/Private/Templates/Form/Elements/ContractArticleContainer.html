@@ -1,0 +1,31 @@
+{namespace form=TYPO3\Form\ViewHelpers}
+<div class="well">
+	<fieldset id="{section.uniqueIdentifier}">
+		<f:if condition="{section.label}">
+			<legend>
+				<div class="row-fluid">
+					<div class="span10">
+						<f:translate id="{section.label}" source="Wizard" package="Beech.Ehrm">{section.label}</f:translate>
+						<f:if condition="{section.properties.required}"><f:else>(optional)</f:else></f:if>
+					</div>
+
+					<div class="span2">
+						<a href="#" data-toggle="tooltip" title="{section.properties.help}" class="help"><i class="icon-question-sign icon"></i></a>
+						<f:if condition="{section.properties.required}">
+							<f:else>
+								<a href="#" data-toggle="{section.uniqueIdentifier}" class="article-show"><i class="icon-plus icon"></i></a>
+								<a href="#" data-toggle="{section.uniqueIdentifier}" class="article-hide hidden"><i class="icon-minus icon"></i></a>
+							</f:else>
+						</f:if>
+					</div>
+				</div>
+			</legend>
+		</f:if>
+
+		<div class="control-group form-inline article-values <f:if condition="{section.properties.required}"><f:then>article-content</f:then><f:else>article-content hidden</f:else></f:if>">
+			<f:for each="{section.elements}" as="element">
+				<form:renderRenderable renderable="{element}" />
+			</f:for>
+		</div>
+	</fieldset>
+</div>

@@ -1,0 +1,35 @@
+##
+# EHRM.Common subroutes
+#
+-
+  name: 'Beech EHRM'
+  uriPattern: '<BeechEhrmSubroutes>'
+  defaults:
+    '@format': 'html'
+  subRoutes:
+    BeechEhrmSubroutes:
+      package: 'Beech.Ehrm'
+
+##
+# Radmiraal.Emberjs subroutes
+#
+-
+  name: 'Emberjs'
+  uriPattern: '<RadmiraalEmberjsSubroutes>'
+  defaults:
+    '@format': 'js'
+  subRoutes:
+    RadmiraalEmberjsSubroutes:
+      package: 'Radmiraal.Emberjs'
+
+##
+# Flow subroutes
+#
+-
+  name: 'Flow'
+  uriPattern: '<FlowSubroutes>'
+  defaults:
+    '@format': 'html'
+  subRoutes:
+    FlowSubroutes:
+      package: 'TYPO3.Flow'

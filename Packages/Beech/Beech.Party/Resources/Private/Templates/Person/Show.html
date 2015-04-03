@@ -1,0 +1,197 @@
+<f:layout name="Ajax"/>{namespace ehrm=Beech\Ehrm\ViewHelpers}
+
+<f:section name="Body">
+
+	<h1>
+		<f:translate id="personInfo">Person information</f:translate>
+	</h1>
+
+	<div class="row-fluid content-padding">
+		<div class="span12">
+			<f:if condition="{absence}">
+				<f:then>
+					<a class="btn" href="{f:uri.action(package:'Beech.Absence', controller:'Absence', action:'recovery', arguments: {absence: absence})}"
+					   data-toggle="modal-ajax" data-target="#modal" modal-size="large"
+					   data-reload="reload-current-page">
+						<i class="icon-ambulance icon-white"></i>
+						<f:translate id="recoveryRequest">Recovery</f:translate>
+					</a>
+				</f:then>
+				<f:else>
+					<a class="btn" href="{f:uri.action(package:'Beech.Absence', controller:'Absence', action:'new', arguments: {person: person, absenceType: 'sickness'})}"
+					   data-toggle="modal-ajax" data-target="#modal" modal-size="large"
+					   data-reload="reload-current-page">
+						<i class="icon-ambulance icon-white"></i>
+						<f:translate id="sickReport">Sick report</f:translate>
+					</a>
+				</f:else>
+			</f:if>
+			<a class="btn" href="{f:uri.action(package:'Beech.Absence', controller:'Absence', action:'new', arguments: {person: person, absenceType: 'leave'})}"
+			   data-toggle="modal-ajax" data-target="#modal" modal-size="large"
+			   data-reload="reload-current-page">
+				<i class="icon-ambulance icon-white"></i>
+				<f:translate id="leaveRequest">Leave request</f:translate>
+			</a>
+			<a class="btn" href="{f:uri.action(package:'Beech.Absence', controller:'Absence', action:'list', arguments: {person: person, absenceType: 'sickness'})}"
+			   data-toggle="modal-ajax" data-target="#modal" modal-size="large"
+			   data-reload="close-modal">
+				<i class="icon-ambulance icon-white"></i>
+				<f:translate id="sicknessHistory">Sickness history</f:translate>
+			</a>
+			<a class="btn" href="{f:uri.action(package:'Beech.Absence', controller:'Absence', action:'list', arguments: {person: person, absenceType: 'leave'})}"
+			   data-toggle="modal-ajax" data-target="#modal" modal-size="large"
+			   data-reload="close-modal">
+				<i class="icon-ambulance icon-white"></i>
+				<f:translate id="leaveHistory">Leave history</f:translate>
+			</a>
+			<a class="btn btn-success {f:if(condition: contracts, then: 'isActiveContract', else: '')}" href="{f:uri.action(package:'Beech.CLA', subpackage:'Administration', controller:'contract', action:'new', arguments: {employee: person})}"
+			   data-toggle="modal-ajax" data-target="#modal" modal-size="large"
+			   data-reload="reload-current-page">
+				<i class="icon-plus icon-white"></i>
+				Create contract
+			</a>
+		</div>
+	</div>
+
+	<ehrm:flashMessages/>
+
+	<div class="row-fluid">
+		<div class="span12">
+			<ul id="personTabs" class="nav nav-tabs">
+				<li class="active">
+					<a data-toggle="tab" href="#general">
+						<f:translate id="general">General</f:translate>
+					</a>
+				</li>
+				<li>
+					<a data-toggle="tab" href="#education">
+						<f:translate id="education>">Education</f:translate>
+					</a>
+				</li>
+				<li>
+					<a data-toggle="tab" href="#personal">
+						<f:translate id="personal">Personal</f:translate>
+					</a>
+				</li>
+				<li>
+					<a data-toggle="tab" href="#contract">
+						<f:translate id="contract">Contract</f:translate>
+					</a>
+				</li>
+				<li>
+					<a data-toggle="tab" href="#asset">
+						<f:translate id="asset">Asset</f:translate>
+					</a>
+				</li>
+				<li>
+					<a data-toggle="tab" href="#licence">
+						<f:translate id="licence">Licence</f:translate>
+					</a>
+				</li>
+				<li>
+					<a data-toggle="tab" href="#documents">
+						<f:translate id="documents">Documents</f:translate>
+					</a>
+				</li>
+				<li>
+					<a data-toggle="tab" href="#personRelations">
+						<f:translate id="relatives">Relatives</f:translate></a>
+				</li>
+			</ul>
+			<div id="personTabsContent" class="tab-content">
+				<div id="general" class="tab-pane fade active in">
+					<div class="row-fluid">
+						<f:render partial="Views/Show/Person" arguments="{_all}"/>
+					</div>
+					<div class="row-fluid">
+						<div class="span3">
+							<blockquote>
+							<f:render partial="Views/Show/Address" arguments="{address: person.address_homeAddress}"/>
+							<ehrm:link.edit controller='Address' action='list'
+											arguments='{party: person}'
+											dataReload="reload-current-page" count="<f:count subject='{addresses}'/>"/>
+							</blockquote>
+						</div>
+						<div class="span3">
+							<blockquote>
+							<f:render partial="Views/Show/Address" arguments="{address: person.address_workAddress}"/>
+							<ehrm:link.edit controller='Address' action='list'
+											arguments='{party: person}'
+											dataReload="reload-current-page" count="<f:count subject='{addresses}'/>"/>
+							</blockquote>
+						</div>
+						<f:if condition="{person.emergencyContact}">
+						<div class="span6">
+							<blockquote>
+								<f:render partial="Views/Show/EmergencyContact" arguments="{emergencyContact: person.emergencyContact}"/>
+								<ehrm:link.edit controller='PersonRelation' action='edit' arguments='{personRelation: person.emergencyContactRelation}'
+												dataReload="reload-current-page"/>
+							</blockquote>
+						</div>
+						</f:if>
+					</div>
+				</div>
+				<div id="personal" class="tab-pane fade">
+				</div>
+				<div id="education" class="tab-pane fade">
+					<f:for each="{educations}" as="education">
+						<div id="education-{education.id}">
+							<f:render partial="Views/Show/Education" arguments="{education: education}"/>
+						</div>
+					</f:for>
+					<ehrm:link.edit controller='Education' action='list'
+									arguments='{party: person}'
+									dataReload="reload-current-page" count="<f:count subject='{educations}'/>"/>
+				</div>
+				<div id="contract" class="tab-pane fade">
+					<f:render partial="Beech.CLA:Views/List/Contract" arguments="{_all}"/>
+				</div>
+				<div id="asset" class="tab-pane fade">
+					<f:for each="{assets}" as="asset">
+						<div id="asset-{asset.id}">
+							<f:render partial="Views/Show/Asset" arguments="{asset: asset}"/>
+						</div>
+					</f:for>
+					<ehrm:link.edit controller='Asset' action='list'
+									arguments='{party: person}'
+									dataReload="reload-current-page" count="<f:count subject='{assets}'/>"/>
+				</div>
+				<div id="licence" class="tab-pane fade">
+					<f:for each="{licences}" as="licence">
+						<div id="licence-{licence.id}">
+							<f:render partial="Views/Show/Licence" arguments="{licence: licence}"/>
+						</div>
+					</f:for>
+					<ehrm:link.edit controller='Licence' action='list'
+									arguments='{party: person}'
+									dataReload="reload-current-page" count="<f:count subject='{licences}'/>"/>
+				</div>
+				<div id="personRelations" class="tab-pane fade">
+					<f:for each="{personRelations}" as="personRelation">
+						<div id="personRelation-{personRelation.id}">
+							<f:render partial="Views/List/PersonRelation" arguments="{_all}"/>
+						</div>
+
+					</f:for>
+					<ehrm:link.edit controller='PersonRelation' action='new'
+									arguments='{personRelatedTo: person}'
+									dataReload="reload-current-page" count="<f:count subject='{personRelations}'/>">
+						<i class="icon-plus icon-white"></i>
+						<f:translate id="action.add">Add</f:translate>
+					</ehrm:link.edit>
+				</div>
+				<div id="documents" class="tab-pane fade">
+					<f:render partial="Beech.Document:Document/Filter" arguments="{_all}"/>
+					<f:render partial="Beech.Document:Document/List" arguments="{_all}"/>
+					<f:render partial="Beech.Document:Document/Add" arguments="{_all}"/>
+					<hr/>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		$('.isActiveContract').on('click', function() {
+			return confirm('<f:translate id="active.contract.exists">Active contract already exists. Do you want to continue?</f:translate>');
+		})
+	</script>
+</f:section>

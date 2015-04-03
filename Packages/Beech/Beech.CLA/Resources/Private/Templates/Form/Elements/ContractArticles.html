@@ -1,0 +1,32 @@
+{namespace form=TYPO3\Form\ViewHelpers}
+<fieldset id="{section.uniqueIdentifier}" class="articles-section">
+	<f:if condition="{section.label}">
+		<legend><f:translate id="{section.label}" source="Wizard" package="Beech.Ehrm">{section.label}</f:translate></legend>
+	</f:if>
+	<f:for each="{section.elements}" as="element">
+		<form:renderRenderable renderable="{element}" />
+	</f:for>
+</fieldset>
+<script type="text/javascript">
+	jQuery('.article-show').click(function() {
+		jQuery('#' + $(this).attr('data-toggle')).find('.article-content').removeClass('hidden');
+		jQuery('#' + $(this).attr('data-toggle').replace('identifier', 'isSelected')).val('TRUE')
+		jQuery(this).addClass('hidden');
+		jQuery(this).parent().find('.article-hide').removeClass('hidden');
+		return false;
+	})
+	jQuery('.article-hide').click(function() {
+		jQuery('#' + $(this).attr('data-toggle')).find('.article-content').addClass('hidden');
+		jQuery('#' + $(this).attr('data-toggle').replace('identifier', 'isSelected')).val('FALSE')
+		jQuery(this).addClass('hidden');
+		jQuery(this).parent().find('.article-show').removeClass('hidden');
+		return false;
+	})
+	jQuery('.articles-section input, .articles-section select').trigger('change');
+	jQuery('.text-error').each(function(index, element) {
+		var errorContent = '<div class="alert alert-error"><button class="close" data-dismiss="alert">&times;</button><strong>'+ $(element).parent().find('label').text()+ '</strong>:'+$(element).html()+'</div>';
+		var legend = $(element).parents('fieldset').first().find('legend').after(errorContent);
+		$(element).hide()
+	});
+</script>
+

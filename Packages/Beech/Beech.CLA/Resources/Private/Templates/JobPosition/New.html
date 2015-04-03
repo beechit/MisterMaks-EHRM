@@ -1,0 +1,80 @@
+<f:layout name="Ajax"/>{namespace ehrm=Beech\Ehrm\ViewHelpers}
+<f:section name="Body">
+
+	<div class="header">
+		<h3>
+			<f:translate id="jobPosition">JobPosition</f:translate>
+		</h3>
+	</div>
+
+	<ehrm:flashMessages/>
+
+	<f:form.validationResults for="jobPosition">
+		<f:if condition="{validationResults.flattenedErrors}">
+			<div class="alert-error">
+				<f:for each="{validationResults.flattenedErrors}" key="propertyPath" as="errors">{propertyPath}:
+					<f:for each="{errors}" as="error">{error}</f:for>
+				</f:for>
+			</div>
+		</f:if>
+	</f:form.validationResults>
+
+	<f:form action="create" object="{jobPosition}" name="jobPosition" class="compact-form form-horizontal">
+
+		<div class="content-padding">
+			<div class="control-group">
+				<label class="control-label required" for="name">
+					<f:translate id="jobPosition.name">Name</f:translate>*
+				</label>
+
+				<div class="controls">
+					<f:form.textfield property="name" id="name"/>
+				</div>
+			</div>
+
+			<div class="control-group">
+				<label class="control-label" for="jobDescription">
+					<f:translate id="jobPosition.jobDescription">Description</f:translate>
+				</label>
+				<div class="controls">
+					<f:form.select property="jobDescription" id="jobDescription" options="{jobDescriptions}" optionLabelField="name" prependOptionLabel="{f:translate(id: 'jobPosition.selectJobDescription')}" />
+				</div>
+			</div>
+
+			<div class="control-group">
+				<label class="control-label" for="parent">
+					<f:translate id="jobPosition.parent">Parent jobposition</f:translate>
+				</label>
+
+				<div class="controls">
+					<f:form.select property="parent" id="parent" options="{jobPositions}" optionLabelField="name" />
+				</div>
+			</div>
+
+			<div class="control-group">
+				<label class="control-label" for="department">
+					<f:translate id="jobPosition.department">Department</f:translate>
+				</label>
+
+				<div class="controls">
+					<f:form.select property="department" id="department" options="{departments}" optionLabelField="name" prependOptionLabel="{f:translate(id: 'jobPosition.selectDepartment')}" />
+				</div>
+			</div>
+
+			<div class="control-group">
+				<label class="control-label" for="assigned_to">
+					<f:translate id="jobPosition.person">Person</f:translate>
+				</label>
+
+				<div class="controls">
+					<f:form.select property="person" id="person" options="{persons}" optionLabelField="name" prependOptionLabel="{f:translate(id: 'jobPosition.selectPerson')}" />
+				</div>
+			</div>
+		</div>
+
+		<div class="form-actions">
+			<f:form.submit value="<f:translate id='action.save'>Save</f:translate>" class="btn btn-primary"/>
+		</div>
+
+	</f:form>
+</f:section>

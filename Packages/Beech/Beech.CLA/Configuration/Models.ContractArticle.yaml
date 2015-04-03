@@ -1,0 +1,35 @@
+'Beech.CLA.Domain.Model.ContractArticle':
+  properties:
+    'articleId':
+      label: 'Article Id'
+      validation:
+        -
+          type: 'Integer'
+    'articleLabel':
+      label: 'Label'
+    'articleHeader':
+      label: 'Header'
+    'articleText':
+      label: 'Text'
+    'order':
+      label: 'Order'
+      validation:
+        -
+          type: 'Integer'
+    'required':
+      label: 'Required'
+      options:
+       values:
+         - TRUE
+         - FALSE
+    'creationDate':
+      label: 'creation date'
+      type: 'DateTime'
+      default: 'now'
+    'createdBy':
+      default: 'currentUser'
+      label: 'Created by'
+      type: 'Beech\Party\Domain\Model\Person'
+    'subArticles':
+      type: 'array'
+

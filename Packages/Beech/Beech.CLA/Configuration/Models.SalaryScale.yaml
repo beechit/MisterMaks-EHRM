@@ -1,0 +1,27 @@
+'Beech.CLA.Domain.Model.SalaryScale':
+  properties:
+    'ScaleName':
+      label: 'Wagename'
+      validation:
+        -
+          type: 'StringLength'
+          options:
+            maximum: 20
+    'wageName':
+      label: 'Wage name'
+    'wageStartDate':
+      label: 'Startdate of this wagescale'
+    'endDate':
+      label: 'Enddate of this wagescale'
+    'wageUnit':
+      label: 'month week or hour wage'
+      options:
+        values:
+          hour : 'Hour'
+          week : 'Week'
+          month: 'Month'
+    'wageGroup':
+      label: 'Wage'
+      type: 'Beech\CLA\Domain\Model\WageGroup'
+    'minimumWage':
+      type: 'Boolean'

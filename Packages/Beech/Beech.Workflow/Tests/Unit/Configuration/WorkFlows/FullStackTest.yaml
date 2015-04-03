@@ -1,0 +1,35 @@
+action:
+  -
+    validators:
+      -
+        className: 'Beech\Workflow\Validators\DateValidator'
+        properties:
+          value: 'DATETIME:now'
+          matchCondition: 'CONSTANT:MATCH_CONDITION_EQUAL'
+      -
+        className: 'Beech\Workflow\Validators\DateValidator'
+        properties:
+          value: 'DATETIME:2012-01-01'
+          matchCondition: 'CONSTANT:MATCH_CONDITION_SMALLER_THEN'
+
+    outputHandlers:
+      -
+        className: 'Beech\Workflow\OutputHandlers\EntityOutputHandler'
+        properties:
+          entity: 'ENTITY:Beech\Workflow\Tests\Unit\Fixtures\Domain\Model\Entity'
+      -
+        className: 'Beech\Workflow\OutputHandlers\ActionExpiredOutputHandler'
+        properties:
+          actionEntity: 'ENTITY:Beech\Workflow\Domain\Model\Action'
+
+    preConditions:
+      -
+        className: 'Beech\Workflow\PreConditions\DatePreCondition'
+        properties:
+          value: 'DATETIME:now'
+          matchCondition: 'CONSTANT:MATCH_CONDITION_EQUAL'
+      -
+        className: 'Beech\Workflow\PreConditions\DatePreCondition'
+        properties:
+          value: 'DATETIME:2012-01-01'
+          matchCondition: 'CONSTANT:MATCH_CONDITION_SMALLER_THEN'

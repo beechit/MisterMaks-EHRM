@@ -1,0 +1,42 @@
+<f:layout name="Ajax"/>{namespace ehrm=Beech\Ehrm\ViewHelpers}
+<f:section name="Body">
+	<h1>
+		<f:translate id="contract">contract</f:translate>
+	</h1>
+	<f:if condition="{entities}">
+		<f:then>
+			<table class="table">
+				<thead>
+				<tr>
+					<th><f:translate>Employee</f:translate></th>
+					<th><f:translate>Job Description</f:translate></th>
+					<th><f:translate>Status</f:translate></th>
+					<th><f:translate>Creation Date</f:translate></th>
+					<th></th>
+				</tr>
+				</thead>
+				<tbody>
+					<f:for each="{entities}" as="contract" iteration="iterator">
+						<tr>
+							<td>{contract.employee.name}</td>
+							<td>{contract.jobDescription.name}</td>
+							<td>{contract.status.statusName}</td>
+							<td>{contract.creationDate -> f:format.date(format: 'Y-m-d H:i')}</td>
+							<td>
+								<a href="#/administration/contract/show/{contract.id}"><i class="icon-camera"></i></a>
+							</td>
+						</tr>
+					</f:for>
+				</tbody>
+			</table>
+		</f:then>
+		<f:else>
+			<p></p>
+		</f:else>
+	</f:if>
+	<div class="form-actions">
+		<a class="btn btn-primary" href="/#/persons">
+			<i class="icon-arrow-left"></i> <f:translate id="action.goto.persons">Persons</f:translate>
+		</a>
+	</div>
+</f:section>

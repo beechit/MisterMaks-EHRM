@@ -1,0 +1,6 @@
+<div class="row-fluid">{namespace ehrm=Beech\Ehrm\ViewHelpers}
+	<div class="span1"><f:render partial="Forms/Buttons/Icon" arguments="{icon: 'icon-briefcase'}"/></div>
+	<div class="span2"><strong><f:translate id="asset.assetType.{asset.assetType}"></f:translate></div>
+	<div class="span2">{asset.assetName} {asset.model} {asset.iDNumber}</strong></div>
+	<div class="span3"><f:translate id="provisionDate">Provision date</f:translate> <f:format.date format="d-m-Y">{asset.provisionDate}</f:format.date></div>
+</div>

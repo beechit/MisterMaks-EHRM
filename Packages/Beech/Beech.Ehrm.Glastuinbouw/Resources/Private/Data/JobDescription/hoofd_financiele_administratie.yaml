@@ -1,0 +1,34 @@
+number: '60.04'
+name: 'Hoofd financiele administratie'
+jobContext: 'Het functie van hoofd financi\u00eble administratie is gesitueerd in een middelgrote of grote onderneming. De afdeling is verantwoordelijk voor de verwerking en registratie van de financi\u00eble stromen en de rapportages t.b.v. de ondernemingsleiding over de financi\u00eble positie van de onderneming. De functie is de gesprekspartner voor de directie en afdelingshoofden en de externe accountant en formuleert toelichtingen bij overzichten en specificaties.\'
+reportsTo: 'operationeel leidinggevende, zoals bijv. ondernemer of directie '
+manages: 'ca. 4 medewerkers financi\u00eble administratie'
+jobGoal: 'Zorgen voor een juiste verzameling, verwerking en verstrekking van financi\u00eble informatie, zodanig dat de juiste informatie tijdig beschikbaar is t.b.v. het besturen van de onderneming en de verantwoording die daarvoor dient te worden afgelegd.'
+department: 'Administratie & ICT'
+expectations:
+  -
+    resultArea: 'Bijgewerkte financi\u00eble administratie'
+    mainActivities: ['(laten) bijhouden van de dagboeken en (sub)grootboekrekeningen a.d.h.v. financi\u00eble bescheiden, toezien op de voortgang en kwaliteit, stellen van prioriteiten en oplossen van zich voordoende problemen', 'afsluiten per periode van de grootboekrekeningen, controleren van de verwerking van alle mutaties binnen het tijdsvak, juistheid van (door)berekeningen van kosten, aansluiting, e.d.']
+    resultCriteria: ['volledigheid en betrouwbaarheid van stuurinformatie', 'juistheid en efficiency van gegevensverwerking', 'tijdigheid van periodeafsluitingen', 'juiste toepassing van bedrijfsvoorschriften, en fiscale wetten ']
+  -
+    resultArea: 'Beheerde financi\u00eble middelen'
+    mainActivities: ['zorgdragen voor het voeren van een crediteurenadministratie en voorbereiden van de betalingen', 'laten bewaken van het debiteurenbestand, beoordelen van saldi, (laten) opstellen en accorderen van betalingsregelingen en initi\u00ebren van eventuele incassoactiviteiten', 'opmaken en bespreken van de liquiditeitsplanning']
+    resultCriteria: ['mate waarin kredietfaciliteiten worden benut', 'tijdige inning van vorderingen', 'mate van inzicht in liquiditeitspositie']
+  -
+    resultArea: 'Inzichtelijk gemaakte en gerapporteerde bedrijfsresultaten'
+    mainActivities: ['samenstellen van de maand- en kwartaalrapportages, verwerken van transitorische posten en voorzieningen', 'opstellen van de conceptjaarrekening, met de daarop betrekking hebbende specificaties en toelichtingen', 'analyseren, interpreteren en rapporteren van het (tussentijds) financieel resultaat, getoetst aan de bedrijfseconomische planning', 'verzamelen (historische) financi\u00eble en bedrijfseconomische gegevens en deze onderzoeken op trends en relevantie, doen van voorstellen t.a.v. normen en grondslagen', 'rapporteren en toelichten van bevindingen']
+    resultCriteria: ['volledigheid en tijdigheid van de rapportages', 'verklaring en onderbouwing van voorstellen en resultaten']
+  -
+    resultArea: 'Ingerichte administratie'
+    mainActivities: ['ontwikkelen en uitwerken van procedures en structuren voor de uitvoering van de boekhouding', 'aangeven van verbetermogelijkheden in de operationele financi\u00eble processen en de administratieve verwerkingssystemen vanuit feitelijke performance, informatiebehoeften van management e.d.', 'inbrengen van praktische inzichten en toelichten van voorstellen i.h.k.v. automatiseringprojecten', 'toetsen van de werkbaarheid van verbeteringen en bespreken van de bevindingen']
+    resultCriteria: ['mate waarin wordt voldaan aan wettelijke en ondernemingsvoorschriften m.b.t. verslaglegging en rapportering wordt voldaan', 'effectiviteit van systemen en procedures', 'eenduidigheid van richtlijnen en procedures']
+  -
+    resultArea: 'Presterende medewerkers'
+    mainActivities: ['leidinggeven aan door medewerkers uit te voeren werkzaamheden', 'verstrekken van opdrachten en regelen van de dagelijkse gang van zaken', 'geven van aanwijzingen en instructies', 'uitoefenen van controle, beoordelen van informatie en opsporen van fouten en onvolkomenheden, oplossen van moeilijkheden', 'coachen en stimuleren van medewerkers in hun functioneren, bevorderen van een goede samenwerking', 'behartigen van personeelsaangelegenheden ']
+    resultCriteria: ['inzetbaarheid van medewerkers', 'motivatie van medewerkers']
+burdeningCircumstances:
+  circumstance:
+    - 'Niet van toepassing.'
+    - 'Het functieniveau volgens ORBA is gebaseerd op de rubrieken: Functiecontext, Positie in de organisatie, Functiedoel, Resultaatverwachting \/ Functionele activiteiten en Werkgerelateerde bezwaren. '
+orbaScore: '192'
+wageScaleGroup: 'Boven CAO'

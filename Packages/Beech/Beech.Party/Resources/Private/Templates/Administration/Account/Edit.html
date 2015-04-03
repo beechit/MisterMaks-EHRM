@@ -1,0 +1,57 @@
+<f:layout name="Ajax" />{namespace ehrm=Beech\Ehrm\ViewHelpers}
+
+<f:section name="Body">
+	<h1><f:translate id="action.edit">Edit</f:translate></h1>
+
+	<ehrm:flashMessages/>
+
+	<f:form.validationResults for="account">
+		<f:if condition="{validationResults.flattenedErrors}">
+			<div class="error">
+				<f:for each="{validationResults.flattenedErrors}" key="propertyPath" as="errors">{propertyPath}: <f:for each="{errors}" as="error">{error}</f:for></f:for>
+			</div>
+		</f:if>
+	</f:form.validationResults>
+
+	<f:form action="update" object="{account}" name="account" class="form-horizontal well">
+
+		<f:comment>This hidden input is for the applicaton setupWizard</f:comment>
+		<input type="hidden" name="iscomplete" value="true" data-validate="isComplete"/>
+
+		<div class="control-group">
+			<label class="control-label" for="accountIdentifier"><f:translate id="account.accountIdentifier">Account identifier</f:translate></label>
+			<div class="controls">
+				<f:form.textfield property="accountIdentifier" id="accountIdentifier" />
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="password"><f:translate id="account.password">Password</f:translate></label>
+			<div class="controls">
+				<f:form.password name="password" id="password" />
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label"><f:translate id="account.creationDate">Creation Date</f:translate></label>
+			<div class="controls">
+				{account.creationDate -> f:format.date(format: 'Y-m-d H:i')}
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="person">Person</label>
+			<div class="controls">
+				{account.party.name.fullName}
+			</div>
+		</div>
+
+		<div class="control-group">
+			<label class="control-label" for="roles">Role</label>
+			<div class="controls">
+				<f:form.select property="roles" id="roles" options="{roles}" multiple="true"/>
+			</div>
+		</div>
+		<div class="form-actions">
+			<a href="#/administration/userManagement" class="btn"><f:translate id="action.back">Back</f:translate></a>
+			<f:form.submit class="btn btn-primary" value="{f:translate(id: 'action.update')}"/>
+		</div>
+	</f:form>
+</f:section>

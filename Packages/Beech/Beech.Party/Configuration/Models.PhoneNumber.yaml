@@ -1,0 +1,41 @@
+'Beech.Party.Domain.Model.PhoneNumber':
+  properties:
+    'party':
+      type: 'TYPO3\Party\Domain\Model\AbstractParty'
+    'phoneNumberType':
+      label: 'Phone type'
+      options:
+        values:
+          'workNumber': 'Work number'
+#          'fax': 'Fax'
+          'homeNumber': 'Home number'
+#          'business': 'Business number'
+          'mobileNumber': 'Mobile number'
+          'foreignNumber': 'Foreign number'
+#          'other': 'Other'
+      validation:
+        -
+          type: 'NotEmpty'
+    'phoneNumber':
+      label: 'Phone Number'
+# validation is done in phonevalidator.
+    'primary':
+      label: 'Primary'
+      options:
+        values:
+          - FALSE
+          - TRUE
+      default: FALSE
+    'description':
+      label: 'Description'
+      validation:
+        -
+          type: 'Text'
+    'creationDate':
+      default: 'now'
+      label: 'creation date'
+      type: 'DateTime'
+    'createdBy':
+      default: 'currentUser'
+      label: 'Created by'
+      type: 'Beech\Party\Domain\Model\Person'

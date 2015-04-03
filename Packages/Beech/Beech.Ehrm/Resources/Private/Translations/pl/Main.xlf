@@ -1,0 +1,267 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-strict.xsd">
+	<file original="" source-language="en" target-language="pl" datatype="plaintext">
+		<body>
+			<trans-unit id="action.close">
+				<source>Close</source>
+				<target>Zamknij</target>
+			</trans-unit>
+			<trans-unit id="action.save">
+				<source>Save</source>
+				<target>Zapisz</target>
+			</trans-unit>
+			<trans-unit id="action.login">
+				<source>Login</source>
+				<target>Zaloguj</target>
+			</trans-unit>
+			<trans-unit id="action.logout">
+				<source>Logout</source>
+				<target>Wyloguj</target>
+			</trans-unit>
+			<trans-unit id="do.task">
+				<source>Do task</source>
+				<target>Wykonaj zadanie</target>
+			</trans-unit>
+			<trans-unit id="no.active.tasks">
+				<source>No active tasks</source>
+				<target>Brak zadan</target>
+			</trans-unit>
+			<trans-unit id="panel.login.legend">
+				<source>Login panel</source>
+				<target>Panel logowania</target>
+			</trans-unit>
+			<trans-unit id="panel.login.username">
+				<source>Username</source>
+				<target>Uzytkownik</target>
+			</trans-unit>
+			<trans-unit id="panel.login.password">
+				<source>Password</source>
+				<target>Haslo</target>
+			</trans-unit>
+			<trans-unit id="status.logged.in">
+				<source>Logged in</source>
+				<target>Zalogowany</target>
+			</trans-unit>
+			<trans-unit id="status.logged.out">
+				<source>Logged out</source>
+				<target>Nie zalogowany</target>
+			</trans-unit>
+			<trans-unit id='menu.new'>
+				<source>New</source>
+				<target>Nowy</target>
+			</trans-unit>
+			<trans-unit id='menu.manage'>
+				<source>Manage</source>
+				<target>Zarzadzaj</target>
+			</trans-unit>
+			<trans-unit id='menu.company'>
+				<source>Company</source>
+				<target>Firma</target>
+			</trans-unit>
+			<trans-unit id='menu.companies'>
+				<source>Companies</source>
+				<target>Firmy</target>
+			</trans-unit>
+			<trans-unit id='menu.people'>
+				<source>People</source>
+				<target>Ludzie</target>
+			</trans-unit>
+			<trans-unit id='menu.settings'>
+				<source>Settings</source>
+				<target>Ustawienia</target>
+			</trans-unit>
+			<trans-unit id='menu.themes'>
+				<source>Themes</source>
+				<target>Motywy</target>
+			</trans-unit>
+			<trans-unit id='menu.todo'>
+				<source>Todo</source>
+				<target>Lista zadań</target>
+			</trans-unit>
+			<trans-unit id='menu.account'>
+				<source>Account</source>
+				<target>Konto</target>
+			</trans-unit>
+			<trans-unit id='log.timestamp'>
+				<source>Timestamp</source>
+				<target>Czas</target>
+			</trans-unit>
+			<trans-unit id='log.message'>
+				<source>Message</source>
+				<target>Treść</target>
+			</trans-unit>
+			<trans-unit id='log.severity'>
+				<source>Severity</source>
+				<target>Ważność</target>
+			</trans-unit>
+			<trans-unit id='log.packageKey'>
+				<source>Package key</source>
+				<target>Pakiet</target>
+			</trans-unit>
+			<trans-unit id='log.className'>
+				<source>Class name</source>
+				<target>Klasa</target>
+			</trans-unit>
+			<trans-unit id='log.methodName'>
+				<source>Method name</source>
+				<target>Metoda</target>
+			</trans-unit>
+			<trans-unit id='log.ipAddress'>
+				<source>IP Address</source>
+				<target>Adres IP</target>
+			</trans-unit>
+			<trans-unit id='log.processId'>
+				<source>Process Id</source>
+				<target>ID Procesu</target>
+			</trans-unit>
+			<trans-unit id='log.additionalData'>
+				<source>Additional data</source>
+				<target>Dodatkowe dane</target>
+			</trans-unit>
+			<trans-unit id="message.log.noResult">
+				<source>No logs created yet</source>
+				<target>Brak logow w systemie</target>
+			</trans-unit>
+			<trans-unit id="message.authentication.failed">
+				<source>Authentication failed</source>
+				<target>Autoryzacja nieudana</target>
+			</trans-unit>
+			<trans-unit id="message.authentication.failed.wrongCredentials">
+				<source>Wrong credentials</source>
+				<target>Nieprawidłowy login lub hasło</target>
+			</trans-unit>
+			<trans-unit id="message.application.notCreated">
+				<source>No primary company configured, please contact your System Administrator.</source>
+				<target>Nieprawidlowa konfiguracja, brak domyslych ustawien dla organizacji. Skontaktuj sie z Administratorem.</target>
+			</trans-unit>
+			<trans-unit id="message.error">
+				<source>Error!</source>
+				<target>Błąd!</target>
+			</trans-unit>
+			<trans-unit id="action.back">
+				<source>Back</source>
+				<target>Powrót</target>
+			</trans-unit>
+			<trans-unit id='language'>
+				<source>Language</source>
+				<target>Język</target>
+			</trans-unit>
+			<trans-unit id="notification.addAddress">
+				<source>Add address to company</source>
+				<target>Dodaj adres do firmy</target>
+			</trans-unit>
+			<trans-unit id="notification.addCompanyContact">
+				<source>Add company contact</source>
+				<target>Dodaj kontakt</target>
+			</trans-unit>
+			<trans-unit id="general">
+				<source>General</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="settings">
+				<source>Settings</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="models">
+				<source>Models</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="persons">
+				<source>Person</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="companies">
+				<source>Companies</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="jobDescriptions">
+				<source>Job descriptions</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="contractArticles">
+				<source>Contract articles</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="contractManagement">
+				<source>Contract management</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="system">
+				<source>System</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="wizards">
+				<source>Wizards</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="userManagement">
+				<source>User management</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="employees">
+				<source>Employees</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="employee">
+				<source>Employee</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="reports">
+				<source>Reports</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="company">
+				<source>company</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="documents">
+				<source>Documents</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="administration">
+				<source>Administration</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="logOut">
+				<source>Logout</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="hello">
+				<source>Hello</source>
+				<target>cześć</target>
+			</trans-unit>
+			<trans-unit id="dashboard">
+				<source>Dashboard</source>
+				<target>centrala</target>
+			</trans-unit>
+			<trans-unit id="headcount">
+				<source>Headcount</source>
+				<target></target>
+			</trans-unit>
+			<transunit id="leave">
+				<source>Leave</source>
+				<target></target>
+			</transunit>
+			<transunit id="sickness">
+				<source>Sickness</source>
+				<target></target>
+			</transunit>
+			<trans-unit id="age">
+				<source>Age</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="report.absence">
+				<source>Absence</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="report.general">
+				<source>General</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="report.contracts">
+				<source>Contracts</source>
+				<target></target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

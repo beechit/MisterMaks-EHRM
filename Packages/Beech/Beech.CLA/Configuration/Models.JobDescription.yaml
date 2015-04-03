@@ -1,0 +1,114 @@
+#############################################################
+# validated yaml for the jobDescriptions model Glastuinbouw
+# this is the jobDescriptions model.
+# todo: create a base model that is extended in GTB package
+#############################################################
+'Beech.CLA.Domain.Model.JobDescription':
+  properties:
+    'number':
+      label: 'Job description number'
+      validation:
+        -
+          type: 'StringLength'
+          options:
+            maximum: 10
+    'name':
+      label: 'Job Title'
+      validation:
+        -
+          type: 'StringLength'
+          options:
+            maximum: 50
+    'jobContext':
+      label: 'Job context'
+      validation:
+        -
+          type: 'Text'
+      default: 'Functiecontext'
+    'jobGoal':
+      label: 'Job goal'
+      validation:
+        -
+          type: 'Text'
+    'positionLabel':
+      type: 'string'
+      validation:
+        -
+          type: 'Label'
+        -
+          type: 'StringLength'
+          options:
+            maximum: 30
+      value: 'Positie in de organisatie'
+    'reportsTo':
+      label: 'Reports to'
+      validation:
+        -
+          type: 'Text'
+    'manages':
+      label: 'Manages'
+      validation:
+        -
+          type: 'Text'
+    'department':
+      label: 'Department'
+      validation:
+        -
+          type: 'StringLength'
+          options:
+            maximum: 20
+    'expectationLabel':
+      validation:
+        -
+          type: 'Label'
+        -
+          type: 'StringLength'
+          options:
+            maximum: 30
+      value: 'Resultaatgebieden'
+    'expectations':
+      label: 'Expectations'
+      items:
+        -
+          'mainActivities':
+            label: 'Main activities'
+            validation:
+              -
+                type: 'Text'
+        -
+          'resultCriteria':
+            label: 'Result criteria'
+            validation:
+              -
+                type: 'Text'
+    'burdeningCircumstances':
+      label: 'Burdening circumstances'
+      type: 'array'
+      values:
+        'circumstance':
+        label: 'Circumstance'
+        validation:
+          -
+            type: 'Text'
+    'orbaScore':
+      label: 'ORBA score'
+      validation:
+        -
+          type: 'StringLength'
+          options:
+            maximum: 10
+    'wageScaleGroup':
+      label: 'Wage scale'
+      validation:
+        -
+          type: 'StringLength'
+          options:
+            maximum: 20
+    'creationDate':
+      type: 'DateTime'
+      default: 'now'
+      label: 'creation date'
+    'createdBy':
+      default: 'currentUser'
+      label: 'Created by'
+      type: 'string'

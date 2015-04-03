@@ -1,0 +1,22 @@
+number: '60.02'
+name: 'Boekhoudkundig medewerker'
+jobContext: 'De afdeling boekhouding of administratie ressorteert rechtstreeks onder de directie, de directeur of de ondernemer. De boekhoudkundig medewerker voert de werkzaamheden in opdracht uit o.b.v. voorschriften en wordt achteraf steekproefsgewijs gecontroleerd.'
+reportsTo: 'operationeel leidinggevende, zoals bijv. hoofd administratie of boekhouder'
+manages: 'niet van toepassing'
+jobGoal: 'Verwerken van boekhoudkundige gegevens, zodanig dat tijdig de juiste informatie beschikbaar is.'
+department: 'Administratie & ICT'
+expectations:
+  -
+    resultArea: 'Gereedstaande boekingen'
+    mainActivities: ['boekingsgereed maken van financi\u00eble bescheiden en verzorgen van de invoer van boekhoudkundige data, conform vastgestelde procedures', 'controleren of te boeken bescheiden de juiste (autorisatie) procedure hebben doorlopen en controleren van facturen op juistheid en volledigheid', 'aanbrengen van boekingscoderingen v.w.b. kostenplaats en kostensoort en navraag doen bij diverse bedrijfsfunctionarissen in geval van onduidelijkheden', 'inbrengen van boekingsgegevens in het geautomatiseerde boekhoudsysteem', 'controleren van de output (foutmeldingen) en aanbrengen van correcties evt. na ruggespraak met de boekhouder ']
+    resultCriteria: ['tijdige boekingsgereedheid van financi\u00eble bescheiden en ingevoerde gegevens', 'juistheid van controle', 'juistheid van boekingscoderingen', 'actualiteit en juistheid van boekingsgegevens', 'juistheid aangebrachte correcties ']
+  -
+    resultArea: 'Opgestelde overzichten'
+    mainActivities: ['genereren, bewerken en rangschikken van gegevens uit bestanden en archieven', 'opstellen van diverse informatieve overzichten (periodiek en op verzoek)']
+    resultCriteria: ['compleetheid van overzichten', 'tijdigheid beschikbaarheid van overzichten', 'mate waarin de opgestelde overzichten afgestemd zijn op de vraagstelling']
+burdeningCircumstances:
+  circumstance:
+    - 'Eenzijdige houding en belasting van oog- en rugspieren bij het werken met beeldscherm (ca. 3-4 uur p.d.).'
+    - 'Het functieniveau volgens ORBA is gebaseerd op de rubrieken: Functiecontext, Positie in de organisatie, Functiedoel, Resultaatverwachting \/ Functionele activiteiten en Werkgerelateerde bezwaren. '
+orbaScore: '104'
+wageScaleGroup: F

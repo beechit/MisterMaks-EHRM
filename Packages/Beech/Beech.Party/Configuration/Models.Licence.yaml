@@ -1,0 +1,57 @@
+'Beech.Party.Domain.Model.Licence':
+  properties:
+    'party':
+      type: 'TYPO3\Party\Domain\Model\AbstractParty'
+    'licenceType':
+      label: 'Licence type'
+      options:
+        values:
+         'driversLicence': 'Drivers licence'
+         'emergencyResponce': 'Emergency response'
+         'cropProtection': 'Crop protection'
+         'other': 'Other'
+      validation:
+        -
+          type: 'NotEmpty'
+# todo make these values generic and move crop protection and so to branch package.
+    'name':
+      label: 'Licence name'
+      validation:
+        -
+          type: 'StringLength'
+          options:
+            maximum: 35
+        -
+          type: 'NotEmpty'
+    'grantedBy':
+      label: 'Granted by institute'
+      validation:
+        -
+          type: 'StringLength'
+          options:
+            maximum: 35
+    'startDate':
+      type: 'DateTime'
+      label: 'licenceStart'
+      validation:
+        -
+          type: 'NotEmpty'
+    'expirationDate':
+      label: 'Licence expiration date'
+      type: 'DateTime'
+    'document':
+      label: 'Licence document'
+      type: 'Beech\Party\Domain\Model\Document'
+    'notify':
+      label: 'Notify for expiration date'
+      options:
+        values:
+          - FALSE
+          - TRUE
+    'creationDate':
+      label: 'creation date'
+      type: 'DateTime'
+    'createdBy':
+      default: 'currentUser'
+      label: 'Created by'
+      type: 'Beech\Party\Domain\Model\Person'

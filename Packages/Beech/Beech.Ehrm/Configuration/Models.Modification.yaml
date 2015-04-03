@@ -1,0 +1,9 @@
+#This model is used for logging of modification in entities.
+'Beech.Ehrm.Domain.Model.Modification':
+  properties:
+    'modificationIdentifier':
+    'modificationDate':
+      type: 'DateTime'
+    'modifiedBy':
+      type: 'Beech\Party\Domain\Model\Person'
+# todo: implement diff and rollback features.

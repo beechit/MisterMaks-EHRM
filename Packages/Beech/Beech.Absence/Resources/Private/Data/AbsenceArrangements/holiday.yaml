@@ -1,0 +1,20 @@
+absenceArrangement:
+  arrangementName: 'holiday'
+  label: 'Holiday'
+  absenceType: 'leave'
+  days:
+  options:
+    values:
+      newyear: 'New years day'
+      kingsday: 'Kingsday'
+      christmas: 'Christmas'
+      eastern: 'Eastern'
+      ascensionDay: 'Ascension day'
+      liberationDay: 'Liberation day'
+      holyFriday: 'Holy friday'
+  reportInpectionAction: FALSE
+  needsGrant: TRUE
+  autoGrandBalance: FALSE
+  deductFromBalance: TRUE
+  addToBalance: FALSE
+  unit: 'hours'

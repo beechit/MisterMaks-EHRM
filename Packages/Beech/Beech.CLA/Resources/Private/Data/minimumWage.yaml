@@ -1,0 +1,45 @@
+minimumWage:
+  properties:
+    wageName: 'minimumWage'
+    wageStartDate: '01-01-2013'
+    wageEndDate: '30-06-2013'
+    wageType: 'month'
+    wageGroup:
+      defaultGroup:
+        -
+          step: 15
+          value: '440,80'
+          age: 15
+        -
+          step: 16
+          value: '506,95'
+          age: 16
+        -
+          step: 17
+          value: '580,40'
+          age: 17
+        -
+          step: 18
+          value: '668,60'
+          age: 18
+        -
+          step: 19
+          value: '771,45'
+          age: 19
+        -
+          step: 20
+          value: '903,70'
+          age: 20
+        -
+          step: 21
+          value: '1065,30'
+          age: 21
+        -
+          step: 22
+          value: '1249,00'
+          age: 22
+        -
+          step: 23
+          value: '1469,40'
+          age: 23
+          default: TRUE

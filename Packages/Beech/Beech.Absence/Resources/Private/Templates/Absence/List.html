@@ -1,0 +1,10 @@
+<f:if condition="{0: absenceType} == {0: 'sickness'}">
+	<f:then>
+		<f:render partial="Views/List/Sickness" arguments="{_all}"/>
+	</f:then>
+</f:if>
+<f:if condition="{0: absenceType} == {0: 'leave'}">
+	<f:then>
+		<f:render partial="Views/List/Leave" arguments="{_all}"/>
+	</f:then>
+</f:if>

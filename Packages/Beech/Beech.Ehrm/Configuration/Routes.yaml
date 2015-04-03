@@ -1,0 +1,53 @@
+-
+  name: 'Login'
+  uriPattern: 'login.html'
+  defaults:
+    '@package': 'Beech.Ehrm'
+    '@controller': 'Login'
+    '@action': 'login'
+    '@format': 'html'
+
+-
+  name: 'Logout'
+  uriPattern: 'logout.html'
+  defaults:
+    '@package': 'Beech.Ehrm'
+    '@controller': 'Login'
+    '@action': 'logout'
+    '@format': 'html'
+
+-
+  name: 'Download document'
+  uriPattern: 'download/{document}'
+  defaults:
+    '@package': 'Beech.Document'
+    '@controller': 'Document'
+    '@action': 'download'
+
+-
+  name: 'Download document with random token'
+  uriPattern: 'download/{document}(/{random})'
+  defaults:
+    '@package': 'Beech.Document'
+    '@controller': 'Document'
+    '@action': 'download'
+-
+  name: 'Management'
+  uriPattern: '{@package}/management/{@controller}/{@action}.{@format}'
+  defaults:
+    '@subpackage': 'Management'
+
+-
+  name: 'Administration'
+  uriPattern: '{@package}/administration/{@controller}/{@action}.{@format}'
+  defaults:
+    '@subpackage': 'Administration'
+
+-
+  name: 'Default'
+  uriPattern: ''
+  defaults:
+    '@package': 'Beech.Ehrm'
+    '@controller': 'Application'
+    '@action': 'index'
+    '@format': 'html'

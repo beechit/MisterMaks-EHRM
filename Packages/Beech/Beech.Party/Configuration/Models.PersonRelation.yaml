@@ -1,0 +1,18 @@
+'Beech.Party.Domain.Model.PersonRelation':
+  properties:
+    'person':
+      type: 'Beech\Party\Domain\Model\Person'
+    'personRelatedTo':
+      type: 'Beech\Party\Domain\Model\Person'
+    'relationType':
+      label: 'Relation'
+      options:
+        values:
+          'partner': 'Partner'
+          'parent': 'Parent'
+          'child': 'Child'
+          'family': 'Family'
+          'other': 'Other'
+      validation:
+        -
+          type: 'TYPO3.Flow:NotEmpty'

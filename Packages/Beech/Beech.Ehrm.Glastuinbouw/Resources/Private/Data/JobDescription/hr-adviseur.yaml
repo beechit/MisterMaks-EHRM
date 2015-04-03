@@ -1,0 +1,30 @@
+number: '70.04'
+name: HR-adviseur
+jobContext: 'De functie komt voor in de grotere glastuinbouwondernemingen. De bijdrage van de functie is gericht op de uitvoering van het vastgestelde HR-beleid. Het HR-beleid wordt geformuleerd door de leidinggevende en komt tot stand mede o.b.v. inbreng van de HR-adviseur.'
+reportsTo: 'operationeel leidinggevende, zoals bijv. directie of hoofd HR'
+manages: 'niet van toepassing'
+jobGoal: 'Uitvoering geven aan het HR-beleid, zodanig dat de voorwaarden gecre\u00eberd zijn voor een optimale beschikbaarheid, inzetbaarheid en motivatie van medewerkers en een optimale dienstverlening aan de organisatie wordt gerealiseerd.'
+department: 'Staf & facility'
+expectations:
+  -
+    resultArea: 'Bijdrage aan HR-beleid'
+    mainActivities: ['signaleren van trends voor het eigen werkgebied en bespreken met leidinggevende', 'meedenken en mee ontwikkelen van het HR-beleid en het realiseren van de gehanteerde doelstellingen', 'zorgen voor de co\u00f6rdinatie, implementatie en communicatie over (veranderingen) in het beleid', 'toezien op juiste toepassing en toetsing van afgesproken beleid', 'uitdragen van beleid naar afdelingshoofden en de organisatie', 'doen van voorstellen ter verbetering toepassing van beleid, rapporteren en toelichten van bevindingen aan ']
+    resultCriteria: ['bruikbaarheid van adviezen', 'transparantie HR-beleid', 'herkenbaarheid van beleid']
+  -
+    resultArea: 'Ge\u00efmplementeerde instrumenten, regelingen en middelen '
+    mainActivities: ['uitwerken en actueel houden van gemaakte keuzes en wettelijke veranderingen\/aanpassingen op gebied van arbeidsvoorwaarden en regelingen', 'uitvoeren van werving- en selectieprocedures', 'toezien op een correcte toepassing en uitvoering van het verzuimbeleid binnen de organisatie en een bijdrage leveren aan het verminderen van het verzuim ']
+    resultCriteria: ['bruikbaarheid van de instrumenten, regelingen en middelen', 'tevredenheid van gebruikers van de instrumenten, regelingen en middelen', 'juistheid en transparantie in gehanteerde regelingen ']
+  -
+    resultArea: 'Ondersteunde afdelingshoofden bij toepassen instrumenten, regelingen '
+    mainActivities: ['bespreken van personele zaken op het gebied van arbeidsconflicten, reintegratie, persoonlijke problemen, rechtspositionele kwesties e.d. met leidinggevenden, medewerkers en (externe) deskundige', 'ondersteunen aan een optimale personele bezetting van de afdelingen', 'meedenken en ondersteunen van bedrijfsleiding bij organisatorische vraagstukken\/veranderingen', 'begeleiden van management in toepassing van beleid', 'gevraagd en ongevraagd bespreken van HR-aangelegenheden met afdelingshoofden', 'onderkennen en signaleren van problemen bij individuele en groepen medewerkers en ondernemen van acties en maatregelen om deze problemen tot een oplossing te brengen i.s.m. leidinggevende', 'aanreiken, instrueren en ondersteunen van gebruik van HR-instrumenten en regelingen door afdelingshoofden ']
+    resultCriteria: ['bruikbaarheid en doeltreffendheid van adviezen en voorstellen', 'tevredenheid van afdelingshoofden over geboden ondersteuning']
+  -
+    resultArea: 'Behandelde individuele personeelsvraagstukken'
+    mainActivities: ['achterhalen van de oorzaken van problemen', 'bemiddelend optreden onder afweging van individuele, groeps- en ondernemingsbelangen', 'treffen van maatregelen, zoals doorverwijzen naar of inschakelen van in- of externe specialisten, adviseren van management', 'uitvoering geven aan verzuimbeleid a.d.h.v. wet- en regelgeving (o.a. Wet poortwachter)', 'begeleiden van afdelingshoofden bij begeleiden van arbeidsongeschikte medewerkers en bij reintegratie trajecten', 'behandelen van ontslag- en arbeidsrechtelijke procedures, zo nodig raadplegen van leidinggevende en\/of externe deskundige', 'adviseren en begeleiden van personele ontwikkelvraagstukken ']
+    resultCriteria: ['juistheid en doeltreffendheid van voorgestelde en\/of genomen maatregelen', 'mate van acceptatie van aangedragen oplossingen']
+burdeningCircumstances:
+  circumstance:
+    - 'Niet van toepassing.'
+    - 'Het functieniveau volgens ORBA is gebaseerd op de rubrieken: Functiecontext, Positie in de organisatie, Functiedoel, Resultaatverwachting \/ Functionele activiteiten en Werkgerelateerde bezwaren. '
+orbaScore: '196'
+wageScaleGroup: 'Boven CAO'

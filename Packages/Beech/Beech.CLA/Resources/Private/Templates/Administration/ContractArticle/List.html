@@ -1,0 +1,53 @@
+<f:layout name="Ajax"/>{namespace ehrm=Beech\Ehrm\ViewHelpers}
+<f:section name="Body">
+	<h1><f:translate id="contractArticle">Article</f:translate></h1>
+
+	<ehrm:flashMessages/>
+
+	<f:if condition="{entities}">
+		<f:then>
+			<table class="table">
+				<thead>
+					<tr>
+						<th><f:translate>Article Id</f:translate></th>
+						<th><f:translate>Header</f:translate></th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<f:for each="{entities}" as="contractArticle" iteration="iterator">
+						<tr>
+							<td>
+								<a href="#/administration/contractarticle/{contractArticle.id}">
+									<strong>{contractArticle.articleId}</strong>
+								</a>
+							</td>
+							<td>
+								<a href="#/administration/contractarticle/{contractArticle.id}">
+									<strong>{contractArticle.articleHeader}</strong>
+								</a>
+							</td>
+							<td>
+								<a href="#/administration/contractarticle/edit/{contractArticle.id}">
+									<i class="icon-pencil"></i>
+								</a>
+								<a href="#/administration/contractarticle/delete/{contractArticle.id}">
+									<i class="icon-trash"></i>
+								</a>
+							</td>
+						</tr>
+					</f:for>
+				</tbody>
+			</table>
+		</f:then>
+		<f:else>
+			<p></p>
+		</f:else>
+	</f:if>
+	<div class="form-actions">
+		<a class="btn btn-primary" href="#/administration/contractarticle/new">
+			<i class="icon-plus icon-white"></i>
+			<f:translate id="action.create">Create</f:translate>
+		</a>
+	</div>
+</f:section>

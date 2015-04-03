@@ -1,0 +1,136 @@
+'Beech.Absence.Domain.Model.Absence':
+  properties:
+    person:
+      type: 'Beech\Party\Domain\Model\Person'
+      validation:
+        -
+          type: 'NotEmpty'
+    absenceArrangement:
+      type: 'Beech\Absence\Domain\Model\AbsenceArrangement'
+      validation:
+        -
+          type: 'NotEmpty'
+    department:
+      type: 'Beech\Party\Domain\Model\Company'
+    absenceType:
+      label: 'absenceType'
+      validation:
+        -
+          type: 'NotEmpty'
+    startDate:
+      label: 'Startdate'
+      validation:
+        -
+          type: 'DateTimeRange'
+          options:
+            earliestDate: 20130101
+            latestDate: 20200101
+        -
+          type: 'NotEmpty'
+    hours:
+      label: 'Hours'
+      type: 'float'
+    estimatedRecoveryDate:
+      label: 'Probably recovered on:'
+      validation:
+        -
+          type: 'DateTimeRange'
+          options:
+            earliestDate: 20130101
+            latestDate: 20200101
+    estimatedRecoveryUnknown:
+      options:
+        values:
+          - FALSE
+          - TRUE
+      default: FALSE
+    reportMethod:
+      label: 'Report Method'
+      options:
+        values:
+          'phone': 'Phone'
+          'email': 'E-mail'
+          'letter': 'Letter'
+          'other': 'Other'
+          'inPerson': 'In person'
+      default: 'phone'
+      validation:
+        -
+          type: 'NotEmpty'
+    reportedTo:
+      label: 'Reported to'
+      default: 'currentUser'
+      type: 'Beech\Party\Domain\Model\Person'
+      validation:
+        -
+          type: 'NotEmpty'
+# Specific fields for Leave requests.
+    requestStatus:
+      label: 'Status'
+      options:
+        values:
+          'pending': 'Pending'
+          'accepted': 'Accept'
+          'declined': 'Declined'
+      default: 'pending'
+# note is used to add some explanation to the request.
+    note:
+      label: 'Note'
+      validation:
+        -
+          type: 'Text'
+# remark is used by the employee to explain why leave was granted or not.
+    remark:
+      label: 'Remark'
+      validation:
+        -
+         type: 'Text'
+# Specific fields for sickness registration
+# to explain the reason for sickness.
+    reportMethodRecovery:
+      label: 'Report MethodRecovery'
+      options:
+        values:
+          'phone': 'Phone'
+          'email': 'E-mail'
+          'letter': 'Letter'
+          'other': 'Other'
+    reportedRecoveryTo:
+      label: 'Reported recovery to'
+      default: 'currentUser'
+      type: 'Beech\Party\Domain\Model\Person'
+      validation:
+    recoveryRegistrationDate:
+      default: 'now'
+      label: 'creation date'
+      type: 'DateTime'
+      validation:
+        -
+          type: 'DateTimeRange'
+          options:
+            earliestDate: 20130101
+            latestDate: 20200101
+    reason:
+      label: 'reason for sick report'
+      validation:
+        -
+         type: 'Text'
+    recoveryNote:
+      label: 'Recovery note'
+      validation:
+        -
+          type: 'Text'
+    creationDate:
+      default: 'now'
+      label: 'creation date'
+      type: 'DateTime'
+      validation:
+        -
+          type: 'DateTimeRange'
+          options:
+            earliestDate: 20130101
+            latestDate: 20200101
+    createdBy:
+      default: 'currentUser'
+      label: 'Created by'
+      type: 'Beech\Party\Domain\Model\Person'

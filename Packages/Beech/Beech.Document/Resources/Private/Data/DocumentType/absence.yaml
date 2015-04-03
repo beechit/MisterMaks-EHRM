@@ -1,0 +1,47 @@
+documentTypes:
+  -
+    'categoryName': 'Absence'
+    'typeName': 'Uwv'
+    'delete': FALSE
+    'expiration': FALSE
+    'document': TRUE
+    'number': FALSE
+    'number': FALSE
+    'period': FALSE
+    'year': FALSE
+  -
+    'categoryName': 'Absence'
+    'typeName': 'Arbo'
+    'delete': FALSE
+    'expiration': FALSE
+    'document': TRUE
+    'number': FALSE
+    'period': FALSE
+    'year': FALSE
+  -
+    'categoryName': 'Absence'
+    'typeName': 'Correspondence'
+    'delete': FALSE
+    'expiration': FALSE
+    'document': TRUE
+    'number': FALSE
+    'period': FALSE
+    'year': FALSE
+  -
+    'categoryName': 'Absence'
+    'typeName': 'Other'
+    'delete': FALSE
+    'expiration': FALSE
+    'document': TRUE
+    'number': FALSE
+    'period': FALSE
+    'year': FALSE
+  -
+    'categoryName': 'Absence'
+    'typeName': 'Test-all-True'
+    'delete': TRUE
+    'expiration': TRUE
+    'document': TRUE
+    'number': TRUE
+    'period': TRUE
+    'year': TRUE

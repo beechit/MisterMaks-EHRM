@@ -1,0 +1,78 @@
+'Beech.Party.Domain.Model.Asset':
+  properties:
+    'party':
+      type: 'TYPO3\Party\Domain\Model\AbstractParty'
+      validation:
+        -
+          type: 'NotEmpty'
+    'assetName':
+      label: 'Assent name'
+      validation:
+        -
+          type: 'StringLength'
+          options:
+            maximum: 35
+        -
+          type: 'NotEmpty'
+    'department':
+      label: 'Department'
+      type: 'Beech\Party\Domain\Model\Company'
+    'assetType':
+      label: 'Asset Type'
+      options:
+        values:
+         'laptop': 'Laptop'
+         'phone': 'Phone'
+         'tools': 'Tools'
+         'car': 'Car'
+         'other': 'Other'
+      validation:
+        -
+          type: 'NotEmpty'
+    'model':
+      label: 'Model'
+      validation:
+        -
+          type: 'StringLength'
+          options:
+            maximum: 35
+    'idNumber':
+      label: 'Identification number'
+      validation:
+        -
+          type: 'StringLength'
+          options:
+            maximum: 35
+    'provisionDate':
+      type: 'DateTime'
+      label: 'Provision date'
+      validation:
+        -
+          type: 'NotEmpty'
+    'provisionedBy':
+      label: 'ProvisionedBy'
+      type: 'TYPO3\Party\Domain\Model\AbstractParty'
+      default: 'currentUser'
+    'returned':
+      label: 'Returned'
+      options:
+        values:
+          - FALSE
+          - TRUE
+    'returnDate':
+      label: 'Return Date'
+      type: 'DateTime'
+    'returnParty':
+      label: 'Returned to'
+      type: 'TYPO3\Party\Domain\Model\AbstractParty'
+      default: 'currentUser'
+    'document':
+      label: 'Document'
+      type: 'Beech\Party\Domain\Model\Document'
+    'creationDate':
+      label: 'creation date'
+      type: 'DateTime'
+    'createdBy':
+      default: 'currentUser'
+      label: 'Created by'
+      type: 'Beech\Party\Domain\Model\Person'

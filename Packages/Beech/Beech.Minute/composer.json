@@ -1,0 +1,16 @@
+{
+	"name": "beech/minutes",
+	"type": "typo3-flow-package",
+	"description": "",
+	"version": "",
+	"require": {
+		"typo3/flow": "*",
+		"beech/ehrm": "*",
+		"beech/party": "*"
+	},
+	"autoload": {
+		"psr-0": {
+			"Beech\\Minute": "Classes"
+		}
+	}
+}

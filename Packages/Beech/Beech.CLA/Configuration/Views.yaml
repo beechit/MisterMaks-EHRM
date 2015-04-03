@@ -1,0 +1,6 @@
+'Beech.CLA':
+  requestFilter: 'isPackage("Beech.CLA")'
+  viewObjectName: 'Beech\Ehrm\View\TemplateView'
+  options:
+    layoutRootPaths:
+      - 'resource://Beech.Ehrm/Private/Layouts'

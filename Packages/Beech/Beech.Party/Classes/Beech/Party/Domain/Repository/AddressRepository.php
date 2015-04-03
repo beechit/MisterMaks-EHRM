@@ -1,0 +1,48 @@
+<?php
+namespace Beech\Party\Domain\Repository;
+
+/*                                                                        *
+ * This script belongs to beechit/mrmaks.                                 *
+ *                                                                        *
+ * It is free software; you can redistribute it and/or modify it under    *
+ * the terms of the GNU Lesser General Public License as published by the *
+ * Free Software Foundation, either version 3 of the License, or (at your *
+ * option) any later version.                                             *
+ *                                                                        *
+ * This script is distributed in the hope that it will be useful, but     *
+ * WITHOUT ANY WARRANTY; without even the implied warranty of MERCHAN-    *
+ * TABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser       *
+ * General Public License for more details.                               *
+ *                                                                        *
+ * You should have received a copy of the GNU Lesser General Public       *
+ * License along with the script.                                         *
+ * If not, see http://www.gnu.org/licenses/lgpl.html                      *
+ *                                                                        *
+ * The TYPO3 project - inspiring people to share!                         *
+ *                                                                        */
+
+use TYPO3\Flow\Annotations as Flow;
+
+/**
+ * A repository for Addresses
+ *
+ * @Flow\Scope("singleton")
+ */
+class AddressRepository extends \Radmiraal\CouchDB\Persistence\AbstractRepository {
+
+	/**
+	 * Find all work addresses of company
+	 *
+	 * @param $company
+	 * @return array
+	 */
+	public function findAllWorkAddressesByCompany($company) {
+		$filter = array(
+			'party' => $company,
+			'addressType' => 'workAddress'
+		);
+		return $this->backend->findBy($filter);
+	}
+}
+
+?>

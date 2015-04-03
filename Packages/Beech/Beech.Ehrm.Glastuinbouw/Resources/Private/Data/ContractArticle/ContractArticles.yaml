@@ -1,0 +1,667 @@
+contractArticles:
+  cao: 'Glastuinbouw'
+  claVersion: 'current'
+  caoVersionDate: '2012-01-01 10:50:32.000000'
+  articles:
+    -
+      # articles from the ARBEIDSOVEREENKOMST VOOR BEPAALDE TIJD (GELEGENHEIDSWERK) contract.
+      articleHeader:
+        en: 'Employment, job and place of work'
+        nl: 'Dienstverband, functie en plaats van werkzaamheden'
+        pl: ''
+      articleLabel: employmentJobTitleLocation
+      articleId: 10000
+      order: 100
+      articleText:
+        en: ''
+        nl: 'Werknemer treedt per <startDate> bij werkgever in dienst. De arbeidsovereenkomst wordt aangegaan voor bepaalde tijd en eindigt van rechtswege op <endDate>. De werknemer is aangenomen voor de functie van <jobTitle>. De werkzaamheden worden hoofdzakelijk verricht op adres <workLocation>.'
+        pl: ''
+      help:
+        en: 'Select the name of the function, for example crop employee, assistant agricultural employee, or production employee. See the functionmanual or function grid in the collective agreement.'
+        nl: 'Selecteer de naam van de functie, bijvoorbeeld oogstmedewerker, assistent agrarisch medewerker of productiemedewerker. Zie hiervoor het functiehandboek of het functieraster in de cao.'
+        pl: ''
+      values:
+          -
+            type: 'Beech.Ehrm:DatePicker'
+            value: ''
+            valueId: startDate
+            properties:
+              dateFormat: 'd-m-Y'
+              enableDatePicker: TRUE
+              displayTimeSelector: FALSE
+            validation:
+              -
+                type: 'TYPO3.Flow:NotEmpty'
+              -
+                type: 'TYPO3.Flow:DateTimeRange'
+                options:
+                  earliestDate: 'P30D/now'
+          -
+            type: 'Beech.Ehrm:DatePicker'
+            value: ''
+            valueId: endDate
+            properties:
+              dateFormat: 'd-m-Y'
+              enableDatePicker: TRUE
+              displayTimeSelector: FALSE
+            validation:
+              -
+                type: 'TYPO3.Flow:NotEmpty'
+          -
+            type: 'Beech.CLA:SingleLineText'
+            value: ''
+            valueId: jobTitle
+            validation:
+              -
+                type: 'TYPO3.Flow:NotEmpty'
+              -
+                type: 'TYPO3.Flow:Text'
+          -
+            type: 'Beech.Party:WorkLocationSelect'
+            value: ''
+            valueId: 'workLocation'
+            validation:
+              -
+                type: 'TYPO3.Flow:NotEmpty'
+    -
+      articleHeader:
+        en: 'Probation'
+        nl: 'Proeftijd'
+        pl: ''
+      articleLabel: probation
+      articleId: 10001
+      order: 150
+      articleText:
+        en: ''
+        nl: 'Op deze arbeidsovereenkomst is <strong amount="0">geen proeftijd</strong><strong amount="positive">een proeftijd van </strong><probationPeriod> van toepassing. Gedurende deze proeftijd kunnen beide partijen de arbeidsovereenkomst dagelijks beëindigen.'
+        pl: ''
+      help:
+        en: 'Under the CAO Glastuinbouw a contract with a duration shorter then 2 years can only have a probation with a maximum of a month'
+        nl: 'Voor de CAO Glastuinbouw geld dat er een arbeidsovereenkomst voor korter dan twee jaar een proeftijd van maximaal een maand mag worden overeengekomen.'
+        pl: ''
+      values:
+        -
+          type: 'Beech.Ehrm:UnitOfTimeSelect'
+          value: ''
+          valueId: probationPeriod
+          default: 'P4W'
+    -
+      articleHeader:
+        en: 'Working hours'
+        nl: 'Arbeidsduur en werktijden'
+        pl: ''
+      articleLabel: hoursAndWorkingHours
+      articleId: 10002
+      order: 200
+      articleText:
+        en: ''
+        nl: 'De gemiddelde arbeidsduur bedraagt <hoursAWeek> per week. De werknemer werkt voornamelijk op <workDays> van <startTime> tot <endTime> De werknemer stemt ermee in dat door de seizoensmatige aard van het werk de arbeidsduur kan fluctueren, waardoor dagelijks en/of wekelijks meer/minder uren worden gewerkt dan de overeengekomen gemiddelde arbeidsduur. Werkgever en werknemer maken hierover in onderling overleg werkafspraken.'
+        pl: ''
+      help:
+        en: ''
+        nl: ''
+        pl: ''
+      values:
+        -
+          type: 'Beech.CLA:SingleLineText'
+          value: ''
+          valueId: hoursAWeek
+          default: '38.00'
+          validation:
+            -
+              type: 'Beech.Ehrm:Decimal'
+              options:
+                digits: 4
+                decimal: 2
+        -
+          type: 'Beech.Party:WorkDaySelect'
+          options:
+            1: monday
+            2: tuesday
+            3: wednessday
+            4: thursday
+            5: friday
+            6: saturday
+            0: sunday
+          translated:
+            nl: [ zondag, maandag, dinsdag, woensdag, donderdag, vrijdag, zaterdag ]
+            en: [ sunday, monday , tuesday , wednesday , thursday , friday , saturday ]
+            pl: [ niedziela, poniedzialek, wtorek, sroda, czwartek, piatek, sobota ]
+          valueId: workDays
+          validation:
+            -
+              type: 'TYPO3.Flow:NotEmpty'
+        -
+          type:  'Beech.Ehrm:DatePicker'
+          default: '8.00'
+          properties:
+            dateFormat: 'H.i'
+            enableDatePicker: TRUE
+            displayDateSelector: FALSE
+            displayTimeSelector: TRUE
+          value: ''
+          valueId: 'startTime'
+          validation:
+            -
+              type: 'TYPO3.Flow:NotEmpty'
+        -
+          type: 'Beech.Ehrm:DatePicker'
+          default: '17.00'
+          properties:
+            dateFormat: 'H.i'
+            enableDatePicker: TRUE
+            displayDateSelector: FALSE
+            displayTimeSelector: TRUE
+          value: ''
+          valueId: 'endTime'
+    -
+      articleHeader:
+        en: 'Payment'
+        nl: 'Beloning'
+        pl: ''
+      articleLabel: Wage
+      articleId: 10003
+      order: 300
+      articleText:
+        en: 'Employee is paid in accordance the statutory minimum wage.'
+        nl: 'Werknemer wordt beloond conform het wettelijk minimumloon. Bij indiensttreding bedraagt het salaris € <minimumWage> <wage> bruto per uur. Het loon word per <paymentSequence> uitbetaald.'
+        pl: ''
+      help:
+        en: ''
+        nl: 'Een gelegenheidswerker hoeft niet te worden ingeschaald maar mag beloond worden conform het wettelijk minimumloon.'
+        pl: ''
+      values:
+        -
+          type: 'Beech.CLA:SingleSelectDropdown'
+#          value: 'Beech\CLA\Domain\Model\SalaryScale'
+          valueId: 'minimumWage'
+          default: ''
+        -
+          type: 'Beech.CLA:SingleLineText'
+          value: ''
+          valueId: 'wage'
+          default: ''
+        -
+          type: 'Beech.Ehrm:UnitOfTimeSelect'
+          options:
+            'week': 'Week'
+            '4 weeks': '4 weeks'
+            'month': 'Month'
+          translated:
+            nl:
+              'week': 'week'
+              '4 weeks': '4 weken'
+              'month': 'maand'
+            pl:
+              'week': 'tydzień'
+              '4 weeks': '4 tygodnie'
+              'month': 'miesiąc'
+          default: 'P1M'
+          valueId: 'paymentSequence'
+          validation:
+            -
+              type: 'TYPO3.Flow:NotEmpty'
+    -
+      articleHeader:
+        en: 'CAO'
+        nl: 'CAO'
+        pl: ''
+      articleLabel: CLA
+      articleId: 10004
+      order: 400
+      articleText:
+        en: ''
+        nl: 'Op deze arbeidsovereenkomst zijn van toepassing de huidige en toekomstige bepalingen van de cao <strong>Glastuinbouw</strong>.'
+        pl: ''
+      help:
+        en: ''
+        nl: 'Geeft aan welke cao op de arbeidsovereenkomst van toepassing is.'
+        pl: ''
+    -
+      articleHeader:
+        en: 'Vacation allowance and vacation days'
+        nl: 'Vakantietoeslag en vakantiedagen'
+        pl: ''
+      articleLabel: vacationAllowance
+      articleId: 10005
+      order: 500
+      articleText:
+        en: ''
+        nl: 'Ter compensatie van de opgebouwde vakantiedagen en vakantietoeslag wordt over het brutoloon een toeslag betaald van <strong>20 %</strong> bij het einde van de dienstbetrekking. Hierop wordt de vergoeding in mindering gebracht die de werknemer heeft ontvangen voor de op zijn verzoek opgenomen vakantiedagen.'
+        pl: ''
+      help:
+        en: ''
+        nl: 'Ter compensatie van de opgebouwde vakantiedagen en vakantietoeslag wordt over het brutoloon een toeslag betaald van 20% bij het einde van de dienstbetrekking. Hierop wordt de vergoeding in mindering gebracht die de werknemer heeft ontvangen voor de op zijn verzoek opgenomen vakantiedagen.'
+        pl: ''
+      values:
+    -
+      articleHeader:
+         en: ''
+         nl: 'Ziekte'
+         pl: ''
+      articleLabel: Sickness
+      articleId: 10006
+      order: 600
+      articleText:
+        en: ''
+        nl: 'Ingeval van ziekte is de werknemer verplicht de werkgever zo spoedig mogelijk voor aanvang van de dienst op de hoogte te stellen, doch uiterlijk voor <sickReportTime> ’s morgens op dezelfde dag. De werkneme heeft recht op loondoorbetaling bij ziekte op basis van de geldende cao.'
+        pl: ''
+      help:
+        en: ''
+        nl: 'Zie voor loondoorbetaling bij ziekte artikel 29 van de cao Glastuinbouw.'
+        pl: ''
+      values:
+        -
+          type: 'Beech.Ehrm:DatePicker'
+          default: '8.00'
+          valueId: 'sickReportTime'
+          properties:
+            dateFormat: 'H.i'
+            enableDatePicker: TRUE
+            displayDateSelector: FALSE
+            displayTimeSelector: TRUE
+          validation:
+            -
+              type: 'TYPO3.Flow:NotEmpty'
+    -
+      articleHeader:
+        en: 'Interim denunciation'
+        nl: 'Tussentijdse opzegging'
+        pl: ''
+      articleLabel: noticePeriod
+      articleId: 10007
+      order: 700
+      articleText:
+        en: ''
+        nl: 'Een eventuele tussentijdse opzegging van deze arbeidsovereenkomst is mogelijk, op basis van de afspraken in de wet en de geldende CAO.'
+        pl: ''
+      help:
+        en: ''
+        nl: 'Indien dit artikel wordt opgenomen in de arbeidsovereenkomst, kan het contract tussentijds door werkgever of werknemer worden opgezegd met in acht neming van de afspraken hierover in de CAO.'
+        pl: ''
+    -
+      articleHeader:
+        en: 'General company rules'
+        nl: 'Bedrijfsreglement'
+        pl: ''
+      articleLabel: generalCompanyRules
+      articleId: 10008
+      order: 800
+      articleText:
+        en: ''
+        nl: 'De werknemer verklaart op de hoogte te zijn van en in te stemmen met de bij de werkgever geldende arbeids- en bedrijfsregels. Deze regels maken integraal onderdeel uit van de arbeidsovereenkomst tussen partijen. Werknemer heeft een exemplaar van het bedrijfsreglement ontvangen.'
+        pl: ''
+      help:
+        en: ''
+        nl: 'In het bedrijfsreglement worden de afspraken vastgelegd die voor het hele bedrijf gelden.'
+        pl: ''
+    -
+      articleHeader:
+        en: 'Identification requirement'
+        nl: 'Identificatieplicht'
+        pl: ''
+      articleLabel: Identification
+      articleId: 10009
+      order: 900
+      articleText:
+        en: ''
+        nl: 'Werknemer stelt werkgever voor aanvang van het dienstverband in het bezit van een kopie van een geldig identiteitsbewijs in de zin van de Wet op de Identificatieplicht, onder gelijke vertoning van het originele document. Werknemer verplicht zich te allen tijden een geldig identiteitsbewijs op het werk te kunnen tonen.'
+        pl: ''
+      help:
+        en: ''
+        nl: 'Werkgever dient werknemer te identificeren voor de aanvang van het dienstverband. Kijk voor een stappenplan verificatieplicht op www.weethoehetzit.nl (informatie van de overheid).'
+        pl: ''
+    -
+      articleHeader:
+         en: 'Accomodation'
+         nl: 'Huisvesting'
+         pl: ''
+      articleLabel: accomodationRent
+      articleId: 10010
+      order: 1000
+      articleText:
+        en: ''
+        nl: 'De werkgever draagt zorg voor huisvesting van de werknemer. Deze huisvesting voldoet minimaal aan alle wettelijke en gemeentelijke regels. De werknemer betaalt de werkgever een vergoeding van € <accomodationRent> per week voor het gebruik van deze voorziening.'
+        pl: ''
+      help:
+        en: ''
+        nl: 'indien u de huisvesting voor uw werknemers verzorgd moet deze aan de voorwaarden voldoen. U mag de werknemer een passende vergoeding vragen voor het verzorgen van deze huisvesting.'
+        pl: ''
+      values:
+        -
+          type: 'Beech.CLA:SingleLineText'
+          valueId: 'accomodationRent'
+          validation:
+            -
+              type: 'Beech.Ehrm:Decimal'
+              options:
+                digits: 5
+                decimal: 2
+    -
+      articleHeader:
+         en: 'Confidentiality agreement'
+         nl: 'Geheimhoudingsverklaring'
+         pl: ''
+      articleLabel: confidentialityAgreement
+      articleId: 10011
+      order: 1100
+      articleText:
+        en: ''
+        nl: 'De werknemer is verplicht tot geheimhouding van al hetgeen hij bij de uitoefening van zijn functie met betrekking tot de zaken en de belangen van de werkgever te weten komt.'
+        pl: ''
+      help:
+        en: ''
+        nl: 'Afspraken betreffende geheimhouding en werkkleding. Hier kunt u naar behoefte ook nog andere (individuele) afspraken vastleggen.'
+        pl: ''
+    -
+      articleHeader:
+         en: 'work clothing'
+         nl: 'Bedrijfskleding'
+         pl: ''
+      articleLabel: workClothing
+      articleId: 10012
+      order: 1200
+      articleText:
+        en: ''
+        nl: 'De werkgever is verplicht om aan de werknemer bedrijfskleding en of veiligheidsschoeisel te verstrekken overeenkomstig veiligheidsvoorschriften of ten behoeve van het verrichten van vuil werk. Werknemer is gehouden deze bedrijfsmiddelen te gebruiken volgens de geldende voorschriften. De bedrijfsmiddelen blijven in eigendom van de werkgever en dienen bij het einde van het dienstverband door de werknemer te worden ingeleverd.'
+        pl: ''
+      help:
+        en: ''
+        nl: 'Afspraken betreffende geheimhouding en werkkleding. Hier kunt u naar behoefte ook nog andere (individuele) afspraken vastleggen.'
+        pl: ''
+       # articles for contact for Bepaalde tijd en OTB
+    -
+      articleHeader:
+        en: 'Payment'
+        nl: 'Beloning'
+        pl: ''
+      articleLabel: Wage
+      articleId: 10014
+      order: 305
+      articleText:
+        en: ''
+        nl: 'Werknemer is ingedeeld in functiegroep <wageScaleGroup> in functiejaar <wageStep>. Bij indiensttreding bedraagt het salaris € <wageValue> bruto per uur. Het loon word per <wagePaymentSequence> uitbetaald.'
+        pl: ''
+      help:
+        en: ''
+        nl: 'Voor nieuwe medewerkers kiest u salaris schaal B. Salarisschaal A is slechts van toepassing op werknemers waarvan het dienstverband is aangevangen voor 1 juli 2005 en de werknemer die in 2003 en 2004 telkens ten minste 1200 uur in dienst is geweest bij dezelfde werkgever. Zie artikel 17 lid 2 sub A. Voor alle andere werknemers geldt loongebouw B, '
+        pl: ''
+      values:
+      # selectable values from the wagemodel.
+        -
+          type: 'Beech.CLA:SalaryScaleSelect'
+          valueId: 'salaryScale'
+          default: 'B'
+        -
+          type: 'Beech.CLA:WageGroupSelect'
+#          value: ''
+          valueId: 'wageScaleGroup'
+          default: ''
+          validation:
+            -
+              type: 'TYPO3.Flow:NotEmpty'
+        -
+          type: 'Beech.CLA:WageStepSelect'
+#          value: ''
+          valueId: 'wageStep'
+          default: '1'
+          validation:
+            -
+              type: 'TYPO3.Flow:NotEmpty'
+        -
+          type: 'Beech.CLA:SingleLineText'
+          value: ''
+          valueId: 'wageValue'
+          default: ''
+          validation:
+            -
+              type: 'TYPO3.Flow:NotEmpty'
+            -
+              type: 'Beech.Ehrm:Decimal'
+              options:
+                digits: 4
+                decimal: 2
+        -
+          type: 'Beech.CLA:SingleSelectDropdown'
+          options:
+            'week': 'Week'
+            '4 weeks': '4 weeks'
+            'month': 'Month'
+          default: 'month'
+          valueId: 'wagePaymentSequence'
+          validation:
+            -
+              type: 'TYPO3.Flow:NotEmpty'
+    -
+      articleHeader:
+        en: 'Vacation allowance and vacation days'
+        nl: 'Vakantietoeslag en vakantiedagen'
+        pl: ''
+      articleLabel: VacationAllowance
+      articleId: 10015
+      order: 1500
+      articleText:
+        en: ''
+        nl: 'Afhandeling van vakantierechten vindt plaats door uitbetaling van vakantiegeld (bruto 8.33%) en opbouw van betaalde vakantiedagen en feestdagen conform CAO.'
+        pl: ''
+      help:
+        en: ''
+        nl: ''
+        pl: ''
+      # Articles for OBT
+    -
+      articleHeader:
+        en: 'Employment, job and place of work'
+        nl: 'Dienstverband, functie en plaats van werkzaamheden'
+        pl: ''
+      articleLabel: employmentJobTitleLocation
+      articleId: 10017
+      order: 1700
+      articleText:
+        en: ''
+        nl: 'Werknemer treedt per <startDate> bij werkgever in dienst. De arbeidsovereenkomst wordt aangegaan voor onbepaalde tijd. De werknemer is aangenomen voor de functie van <jobTitle>. De werkzaamheden worden hoofdzakelijk verricht op adres <workLocation>.'
+        pl: ''
+      help:
+        en: ''
+        nl: 'Selecteer de naam van de functie, bijvoorbeeld Voorman, HR adviseur of productiemedewerker. Zie hiervoor het functiehandboek of het functieraster in de cao.'
+        pl: ''
+      values:
+        -
+          type: 'Beech.Ehrm:DatePicker'
+          properties:
+            dateFormat: 'd-m-Y'
+            enableDatePicker: TRUE
+            displayTimeSelector: FALSE
+          value: ''
+          valueId: startDate
+          default: ''
+          validation:
+            -
+              type: 'TYPO3.Flow:DateTimeRange'
+              options:
+                earliestDate: 'now/P30D'
+        -
+          type: 'Beech.CLA:SingleLineText'
+          value: ''
+          valueId: jobTitle
+          validation:
+            -
+              type: 'TYPO3.Flow:NotEmpty'
+        -
+          type: 'Beech.Party:WorkLocationSelect'
+          value: ''
+          valueId: 'workLocation'
+          validation:
+            -
+              type: 'TYPO3.Flow:NotEmpty'
+    -
+      articleHeader:
+        en: ''
+        nl: 'Proeftijd'
+        pl: ''
+      articleLabel: probation
+      articleId: 10018
+      order: 151
+      articleText:
+        en: ''
+        nl: 'Op deze arbeidsovereenkomst is <strong amount="0">geen proeftijd</strong><strong amount="positive">een proeftijd van</strong><probationPeriod> van toepassing. Gedurende deze proeftijd kunnen beide partijen de arbeidsovereenkomst dagelijks beëindigen.'
+        pl: ''
+      help:
+        en: ''
+        nl: 'Indien er niet eerder een dienstverband is geweest is bij een contract voor onbepaalde tijd een proeftijd mogelijk van maximaal 2 maanden.'
+        pl: ''
+      values:
+        -
+          type: 'Beech.Ehrm:UnitOfTimeSelect'
+          value: ''
+          valueId: probationPeriod
+          default: 'P0D'
+    -
+      articleHeader:
+        en: ''
+        nl: 'Proeftijd'
+        pl: ''
+      articleLabel: Probation
+      articleId: 10019
+      order: 152
+      articleText:
+        en: ''
+        nl: 'Op deze arbeidsovereenkomst is <strong>geen</strong> proeftijd van toepassing.'
+        pl: ''
+      help:
+        en: ''
+        nl: ''
+        pl: ''
+    -
+      articleHeader:
+        en: ''
+        nl: 'Opzegtermijn'
+        pl: ''
+      articleLabel: noticePeriod
+      articleId: 10019
+      order: 152
+      articleText:
+        en: ''
+        nl: 'Deze arbeidsovereenkomst kan opgezegd worden met inachtneming van de wettelijke opzegtermijnen.'
+        pl: ''
+      help:
+        en: ''
+        nl: ''
+        pl: ''
+      # possibly add article about notice period.
+      # articles belonging to the cafeteria arrangement that was made by LTO Nederland.
+    -
+      articleHeader:
+        en: ''
+        nl: 'Lidmaatschap LTO Nederland'
+        pl: ''
+      articleLabel: MemberLTO
+      articleId: 10020
+      order: 350
+      articleText:
+        en: ''
+        nl: 'Werkgever verklaart lid te zijn van LTO Noord, ZLTO, LLTB, NFO, KAVB, NOP of LTO Noord Glaskracht'
+        pl: ''
+      help:
+        en: ''
+        nl: ''
+        pl: ''
+    -
+      articleHeader:
+        en: ''
+        nl: 'Cafetaria Model'
+        pl: ''
+      articleLabel: cafetariaModel
+      articleId: 10021
+      order: 352
+      articleText:
+        en: ''
+        nl: 'Werkgever en werknemer spreken af gebruik te maken van de door LTO Nederland met de Belastingdienst afgesproken cafetariaregeling voor extraterritoriale kosten. De regeling en de werking ervan staat omschreven in een door LTO Nederland uitgebrachte brochure over extraterritoriale werknemers. De regeling wordt als volgt toegepast:'
+        pl: ''
+      help:
+        en: ''
+        nl: ''
+        pl: ''
+      subArticles:
+        -
+          articleId: 10022
+          order: 353
+          articleText:
+            en: ''
+            nl: 'Uitruil van uren tegen gemaakte kosten is slechts mogelijk voor de gewerkte uren boven de 38 uur per week, hierbij rekening houdend met de Wet minimumloon en minimumvakantiebijslag. Het maximum aantal uit te ruilen uren is beperkt tot de in de betreffende cao omschreven maximale arbeidstijd conform de Arbeidstijdenwet (boven 38 uur per week).'
+            pl: ''
+          help:
+            en: ''
+            nl: ''
+            pl: ''
+        -
+          articleId: 10023
+          order: 354
+          articleText:
+            en: ''
+            nl: 'De werknemer stemt toe dat de werkgever deze uren gebruikt voor uitruil conform onderstaande voorwaarden. De werknemer is zich ervan bewust dat het toepassen van deze regeling tot gevolg heeft dat er minder sociale rechten in Nederland worden opgebouwd.'
+            pl: ''
+          help:
+            en: ''
+            nl: ''
+            pl: ''
+        -
+          articleId: 10024
+          order: 355
+          articleText:
+            en: ''
+            nl: 'Indien de werkgever huisvesting aan de werknemer aanbiedt dient deze te voldoen aan de eisen die de LTO organisatie aan dergelijke huisvesting stelt (zie nationale intentieverklaring huisvesting arbeidsmigranten). Voor de huisvestingskosten wordt uitgegaan van de werkelijk in rekening gebrachte huisvestingskosten met een maximum van 20% van het bij de betreffende loonperiode behorende wettelijk minimumloon. De werknemer verklaart daarbij dat hij beschikt over zelfstandige woonruimte (dus niet inwonend) in zijn land van herkomst. '
+            pl: ''
+          help:
+            en: ''
+            nl: ''
+            pl: ''
+        -
+          articleId: 10025
+          order: 356
+          articleText:
+            en: ''
+            nl: ' Voor de reiskosten woonplaats in land van herkomst / plaats waar de werkzaamheden plaatsvinden kunnen op declaratiebasis (bonnetjes / facturen) de werkelijk gemaakte reiskosten uitgeruild worden.'
+            pl: ''
+          help:
+            en: ''
+            nl: ''
+            pl: ''
+        -
+          articleId: 10026
+          order: 357
+          articleText:
+            en: ''
+            nl: 'Indien met eigen auto gereisd wordt, geldt voor de eigenaar van de auto een fiscale norm van  0,19 per kilometer per auto. Er moeten een aantal gegevens worden vastgelegd, zie hiervoor de door LTO Nederland uitgebrachte brochure.'
+            pl: ''
+          help:
+            en: ''
+            nl: ''
+            pl: ''
+        -
+          articleId: 10027
+          order: 358
+          articleText:
+            en: ''
+            nl: 'Voor de extra kosten voor levensonderhoud kan een bedrag uitgeruild worden, afhankelijk van het land van herkomst van de werknemer. Zie hiervoor de door LTO Nederland uitgebrachte brochure'
+            pl: ''
+          help:
+            en: ''
+            nl: ''
+            pl: ''
+    -
+      articleHeader:
+        en: 'Exchange of data'
+        nl: 'Gegevensuitwisseling'
+        pl: ''
+      articleLabel: gegevensuitwisseling
+      articleId: 10035
+      order: 910
+      articleText:
+        en: ''
+        nl: 'Werkgever en werknemer verlenen het UWV, Arbo-Dienst en Mister Maks toestemming om de aan hen verstrekte persoon- en loongegevens ter beschikking te stellen aan stichtingen / fondsen / verzekeringsmaatschappijen, voor zover die gegevens noodzakelijk zijn voor de uitvoering van statuten, regelementen en verzekeringsovereenkomsten van en met de stichtinten fondsen en verzekeringsmaatschappijen'
+        pl: ''
+      help:
+        en: ''
+        nl: ''
+        pl: ''

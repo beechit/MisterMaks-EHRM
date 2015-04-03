@@ -1,0 +1,31 @@
+number: '50.02'
+name: Verkoper
+jobContext: 'De functie komt voor in middelgrote tot grote glastuinbouwbedrijven en is vooral actief in met de Nederlandse markt.'
+reportsTo: 'operationeel leidinggevende, zoals bijv. directie of hoofd verkoop'
+manages: 'niet van toepassing'
+jobGoal: 'Realiseren van de verkoopdoelstelling m.b.t. het totale (teelt)assortiment binnen het verantwoordelijkheidsgebied door relatiebeheer, bevorderen van verkoop bij bestaande relaties en het werven van nieuwe klanten.'
+department: Commercie
+expectations:
+  -
+    resultArea: 'Opgesteld verkoop jaarplan voor toegewezen gebied\/accounts '
+    mainActivities: ['opstellen van een verkoop jaarplan a.d.h.v. geformuleerde ondernemingsdoelstellingen', 'formuleren van doelstelling m.b.t. bestaande en nieuwe activiteiten voor toegewezen verantwoordelijkheidsgebied', 'aangeven van de te volgen strategie en acties voor het onderhouden van de relatie, uitbreiden van bestaande opdrachten en bij klanten en verwerven van nieuwe klanten', 'bespreken van het jaarplan met leidinggevende ter correctie, controle en goedkeuring ']
+    resultCriteria: ['mate waarin het plan bijdraagt aan de realisatie van verkoopdoelen', 'mate waarin het plan zich laat vertalen in concrete acties', 'mate waarin het plan door leidinggevende wordt geaccepteerd ']
+  -
+    resultArea: 'Gerealiseerde verkoopdoelstellingen'
+    mainActivities: ['onderhouden en optimaliseren van contacten met bestaande klanten', 'bezoeken van (potenti\u00eble) klanten, presenteren van de eigen organisatie, geven van productinformatie', 'voeren van verkoopbesprekingen, onderhandelen omtrent afnamekwantum, prijzen, betalingscondities', 'bevorderen van de omzet door het geven van voorlichting\/adviezen (teelt, gewasverzorging, -bescherming e.d.) m.b.t. het totale (teelt)assortiment', 'aanleveren van alle informatie aan de verkoopbinnendienst t.b.v. opstellen van een offerte', 'zo nodig toelichten van de offerte bij een klant', 'opstellen van een jaarcontract (afroep) en bespreken met leidinggevende ']
+    resultCriteria: ['gerealiseerde omzet en marge', 'mate waarin klantrelaties worden behouden en uitgebouwd', 'mate waarin adviezen zijn afgestemd op omstandigheden bij de klant', 'tevredenheid van relaties, klanten', 'doeltreffendheid van communicatie met binnendienst', 'juiste vastlegging van gemaakte afspraken met klanten ']
+  -
+    resultArea: 'Kennis van klantbehoeften en marktomstandigheden'
+    mainActivities: ['volgen van de ontwikkelingen binnen het eigen verantwoordelijkheidsgebied, positie, activiteiten en prijsstellingen van concurrenten', 'rapporteren van meer structurele ontwikkelingen m.b.t. activiteiten van concurrenten', 'bezoeken van conferenties of beurzen, lezen van vakliteratuur, voeren van gesprekken met klanten over de behoefte in de markt', 'inbrengen van marktinformatie in bijeenkomsten en vergaderingen']
+    resultCriteria: ['inzicht in de markt (o.a. concurrenten) en klantbehoeften', 'mate waarin relevante informatie wordt ingebracht']
+  -
+    resultArea: 'Verzorgde administratie'
+    mainActivities: ['opstellen van bezoekrapporten', 'vastleggen en bijhouden van klant- en andere relevante verkoopinformatie', 'vastleggen van verkoopresultaten']
+    resultCriteria: ['juistheid van gegevens', 'tijdigheid en juistheid van rapportages\/overzichten']
+burdeningCircumstances:
+  circumstance:
+    - 'Eenzijdige houding tijdens autoritten.'
+    - 'Kans op letsel door deelname aan wegverkeer (ca. 30.000 km\/jaar).'
+    - 'Het functieniveau volgens ORBA is gebaseerd op de rubrieken: Functiecontext, Positie in de organisatie, Functiedoel, Resultaatverwachting \/ Functionele activiteiten en Werkgerelateerde bezwaren. '
+orbaScore: '184'
+wageScaleGroup: 'Boven CAO'

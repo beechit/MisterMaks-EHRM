@@ -1,0 +1,13 @@
+<f:if condition="{licence}">
+	<f:then>
+		<div id="licence-{licence.id}" class="multi-form-item">
+			<f:render partial="Forms/Licence" arguments="{party: party, licence: licence, controller: 'Licence', action: 'update', collapsed: true}"/>
+		</div>
+		<div id="licence-add" class="multi-form-item">
+			<f:render partial="Forms/Licence" arguments="{party: party, controller: 'Licence', action: 'add', suffix: 'licence', collapsed: true}"/>
+		</div>
+	</f:then>
+</f:if>
+
+
+

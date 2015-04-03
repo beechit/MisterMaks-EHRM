@@ -1,0 +1,33 @@
+number: '70.02'
+name: 'Medewerker kantine'
+jobContext: 'De functie komt voor in de grotere agrarische bedrijven en meestal niet als fulltime functie. De kantinefaciliteiten zijn, met uitzondering van de hele grote ondernemingen, veelal beperkt tot standaard drankenassortiment.'
+reportsTo: 'bedrijfsleider of ondernemer'
+manages: 'niet van toepassing'
+jobGoal: 'Verstrekken van dranken, etenswaren en warme snacks.'
+department: 'Staf & facility'
+expectations:
+  -
+    resultArea: 'Geleverde service en consumpties'
+    mainActivities: ['bereiden van soep, zetten van koffie en thee', 'gereedmaken van uitgiftebuffet in kantine', 'uitgeven van dranken en etenswaren aan medewerkers en afrekenen met hen volgens vastgestelde prijzen', 'beantwoorden van vragen, geven van informatie over het (lunch)assortiment, prijzen en gang van zaken in de kantine', 'serveren van koffie, thee en dranken bij vergaderingen', 'rondgaan met dranken en snacks bij recepties of andere bijeenkomsten', 'bijvullen en schoonhouden van automaten voor koffie, thee en frisdranken']
+    resultCriteria: ['snelheid van bediening', 'tijdige aanwezigheid van gevraagde producten', 'correctheid van verstrekte informatie en antwoorden', 'beleefdheid richting de gasten']
+  -
+    resultArea: 'Beschikbare producten'
+    mainActivities: ['beheren van de kantinevoorraden', 'bestellen van dagverse producten bij vaste leveranciers']
+    resultCriteria: ['tijdige beschikbaarheid van kantinevoorraden en dagverse producten']
+  -
+    resultArea: 'Opgemaakte kas'
+    mainActivities: ['Opmaken van de kas en afdragen van gelden.']
+    resultCriteria: ['accuraatheid van kasopmaak en afdracht']
+  -
+    resultArea: 'Verrichte opruim- en schoonmaakwerkzaamheden'
+    mainActivities: ['dagelijks opruimen van de kantine', 'afruimen van tafels, schoonmaken van meubilair en vloeren', 'opruimen van overgebleven voorraden', 'afwassen van serviesgoed m.b.v. vaatwasser']
+    resultCriteria: ['tijdigheid en correctheid van afruimen en opruimen', 'correctheid van naleving van netheid, hygi\u00ebne en HACCP- voorschriften', 'aanblik van kantine, lunchtafels']
+burdeningCircumstances:
+  circumstance:
+    - 'Krachtsuitoefening bij het tillen van koffie en theekannen, afruimen van serviesgoed en bij opruim- en schoonmaakwerkzaamheden.'
+    - 'Lopend en staand werk, deels in gedwongen (gebogen) houding.'
+    - 'Hinder van dampen bij bereiding van snacks, alsmede van vuil en stof bij schoonmaakwerkzaamheden.'
+    - 'Kans op letsel door aanraking van kookplaten, van gebroken glas\/serviesgoed alsmede door stoten.'
+    - 'Het functieniveau volgens ORBA is gebaseerd op de rubrieken: Functiecontext, Positie in de organisatie, Functiedoel, Resultaatverwachting \/ Functionele activiteiten en Werkgerelateerde bezwaren. '
+orbaScore: '43'
+wageScaleGroup: C

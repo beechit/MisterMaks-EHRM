@@ -1,0 +1,12 @@
+absenceArrangement:
+  arrangementName: 'workRelatedFysical'
+  label: 'Work related fysical'
+  absenceType: 'sickness'
+  help: 'Sickness due to bending / lifting / standing'
+  days: ''
+  reportInpectionAction: TRUE
+  needsGrant: FALSE
+  autoGrandBalance: FALSE
+  deductFromBalance: FALSE
+  addToBalance: TRUE
+  unit: 'hours'

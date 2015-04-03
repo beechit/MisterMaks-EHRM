@@ -1,0 +1,31 @@
+<!DOCTYPE html>{namespace emberjs=Radmiraal\Emberjs\ViewHelpers}{namespace ehrm=Beech\Ehrm\ViewHelpers}
+<html>
+	<head>
+		<title><f:translate id="mistermaks">Mister Maks</f:translate></title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<f:base />
+		<!-- todo ember version should be set in settings and not hard in template!!!!-->
+		<emberjs:include loadJQuery="TRUE" loadEmberData="TRUE" version="1.0.0" minified="FALSE" />
+		<!--[if lt IE 9]><script src="resource://Beech.Ehrm/Public/Library/html5shim/html5.js"></script><![endif]-->
+
+		<f:security.ifAuthenticated>
+			<f:then>
+				<ehrm:headerParts loadJavaScriptSources="TRUE" />
+				<f:if condition="{emberRedirect}">
+					<script type="text/javascript">
+						$(function(){
+							window.location.href = "#{emberRedirect}";
+						})
+					</script>
+				</f:if>
+			</f:then>
+			<f:else>
+				<ehrm:headerParts loadJavaScriptSources="FALSE" />
+				<script src="resource://Beech.Ehrm/Public/JavaScript/Login.js"></script>
+			</f:else>
+		</f:security.ifAuthenticated>
+	</head>
+	<body>
+		<f:render section="Body" />
+	</body>
+</html>

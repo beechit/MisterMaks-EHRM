@@ -1,0 +1,4 @@
+<f:if condition="{element.label}">
+	<h2><f:translate id="{element.label}" source="Wizard" package="Beech.Ehrm">{element.label}</f:translate></h2>
+</f:if>
+<p{f:if(condition: element.properties.class, then: ' class="{element.properties.class}"')}><f:format.nl2br><f:translate id="{element.properties.text}" source="Wizard" package="Beech.Ehrm">{element.properties.text}</f:translate></f:format.nl2br></p>

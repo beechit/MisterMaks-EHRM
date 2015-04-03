@@ -1,0 +1,123 @@
+<f:layout name="Ajax"/>{namespace ehrm=Beech\Ehrm\ViewHelpers}
+<f:section name="Body">
+
+	<ehrm:flashMessages/>
+
+	<f:form.validationResults for="jobDescription">
+		<f:if condition="{validationResults.flattenedErrors}">
+			<div class="error">
+				<f:for each="{validationResults.flattenedErrors}" key="propertyPath" as="errors">{propertyPath}:
+					<f:for each="{errors}" as="error">{error}</f:for>
+				</f:for>
+			</div>
+		</f:if>
+	</f:form.validationResults>
+
+	<f:form action="update" object="{jobDescription}" name="jobDescription" class="form-horizontal well">
+		<fieldset>
+			<legend>Job details</legend>
+			<div class="control-group">
+				<label class="control-label" for="number">Job description number</label>
+				<div class="controls">
+					<f:form.textfield property="number" id="number"/>
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="name">Job title</label>
+				<div class="controls">
+					<f:form.textarea property="name" id="name"/>
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="jobContext">Job context</label>
+				<div class="controls">
+					<f:form.textfield property="jobContext" id="jobContext"/>
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="reportsTo">Reports to</label>
+				<div class="controls">
+					<f:form.textfield property="reportsTo" id="reportsTo"/>
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="manages">Manages</label>
+				<div class="controls">
+					<f:form.textfield property="manages" id="manages"/>
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="jobGoal">Jobgoal</label>
+				<div class="controls">
+					<f:form.textarea property="jobGoal" id="jobGoal"/>
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="department">Department</label>
+				<div class="controls">
+					<f:form.textarea property="department" id="department"/>
+				</div>
+			</div>
+		</fieldset>
+		<fieldset>
+			<legend>Score</legend>
+			<div class="control-group">
+				<label class="control-label" for="orbaScore">orbaScore</label>
+				<div class="controls">
+					<f:form.textfield property="orbaScore" id="orbaScore"/>
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="wageScaleGroup">Wage scale group</label>
+				<div class="controls">
+					<f:form.textfield property="wageScaleGroup" id="wageScaleGroup"/>
+				</div>
+			</div>
+		</fieldset>
+		<fieldset>
+			<legend>Expectations</legend>
+			<f:for each="{jobDescription.expectations}" as="expectation">
+				<h4>{expectation.resultArea}</h4>
+
+				<div class="row-fluid">
+					<div class="span6">
+						<strong>Kernactiviteiten</strong>
+					</div>
+					<div class="span6">
+						<strong>Resultaatcriteria</strong>
+					</div>
+				</div>
+				<div class="row-fluid">
+					<div class="span6">
+						<ul>
+							<f:for each="{expectation.mainActivities}" as="mainActivity">
+								<li>{mainActivity}</li>
+							</f:for>
+						</ul>
+					</div>
+					<div class="span6">
+						<ul>
+							<f:for each="{expectation.resultCriteria}" as="resultCriteria">
+								<li>{resultCriteria}</li>
+							</f:for>
+						</ul>
+					</div>
+				</div>
+			</f:for>
+		</fieldset>
+		<fieldset>
+			<legend>Burdening circumstances</legend>
+			<ul>
+				<f:for each="{jobDescription.burdeningCircumstances.circumstance}" as="circumstance">
+					<li>{circumstance}</li>
+				</f:for>
+			</ul>
+		</fieldset>
+		<div class="control-group">
+			<a class="btn btn-danger" href="/#/administration/jobdescriptions">
+				<f:translate id="action.cancel">Cancel</f:translate>
+			</a>
+			<f:form.submit value="{f:translate(id: 'action.save')}" class="btn btn-primary"/>
+		</div>
+	</f:form>
+</f:section>

@@ -1,0 +1,30 @@
+<f:layout name="Ajax" />
+
+<f:section name="Body">
+	<div class="header">
+		<h1><f:translate id="action.edit">Edit</f:translate><f:translate id="document.documents">Documents</f:translate></h1>
+	</div>
+
+	<f:form.validationResults for="document">
+		<f:if condition="{validationResults.flattenedErrors}">
+			<div class="error">
+				<f:for each="{validationResults.flattenedErrors}" key="propertyPath" as="errors">{propertyPath}: <f:for each="{errors}" as="error">{error}</f:for></f:for>
+			</div>
+		</f:if>
+	</f:form.validationResults>
+
+	<f:form action="updateResource" object="{resource}" name="resource" class="form-horizontal">
+		<div class="content-padding">
+			<div class="control-group">
+				<label class="control-label" for="originalResource.filename">File name</label>
+				<div class="controls">
+					<f:form.textfield id="originalResource.filename" name="filename" class="input-xxlarge" value="{resource.originalResource.filename}"/>
+				</div>
+			</div>
+		</div>
+		<div class="form-actions">
+			<f:form.submit value="{f:translate(id: 'action.update')}" class="btn btn-primary"/>
+		</div>
+	</f:form>
+
+</f:section>

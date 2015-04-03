@@ -1,0 +1,19 @@
+{namespace ehrm=Beech\Ehrm\ViewHelpers}
+	<f:if condition="{address.addressType}">
+		<f:then>
+			<div class="row-fluid">
+				<div class="span12"><i class="icon-home"></i> <strong><f:translate id="address.addressType.{address.addressType}">{address.addressType}</f:translate></strong></div>
+			</div>
+			<div class="row-fluid">
+				<div class="span12">{address.streetName} {address.houseNumber}<f:if condition="{address.houseNumberAddition}"> {address.houseNumberAddition}</f:if></div>
+			</div>
+			<div class="row-fluid">
+				<div class="span12">{address.postal} {address.residence}</div>
+			</div>
+		</f:then>
+	</f:if>
+	<f:if condition="{0: address.addressType} == {0: 'abroad'}">
+		<div class="row-fluid">
+			<div class="span3"><strong>{address.country -> ehrm:format.country()}</strong></div>
+		</div>
+	</f:if>

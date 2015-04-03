@@ -1,0 +1,106 @@
+'Beech.Party.Domain.Model.Company':
+  properties:
+    'name':
+      label: 'Name of company'
+      validation:
+        -
+          type: 'StringLength'
+          options:
+            maximum: 35
+        -
+          type: 'NotEmpty'
+    'type':
+      label: 'Company type'
+      options:
+        values:
+          #'primary': 'Primary' (is only used by initial setup for main company)
+          'department': 'Department'
+          'subsidairy': 'Subsidiary'
+          'other': 'Other'
+         # 'partnerCompany': 'PartnerCompany' needs to be implemented later, this is a supporting company that is nog registered in this system.
+      validation:
+        -
+          type: 'NotEmpty'
+    'departments':
+      label: 'Departments'
+      type: 'Beech\Party\Domain\Model\Company'
+    'idNumber':
+      label: 'Company Id Number'
+      validation:
+        -
+          type: 'integer'
+        -
+          type: 'Count'
+          options:
+            minimum: 1
+            maximum: 99999999
+#    'policyNumberAbsenceInsurer':
+#      label: 'Policy Number Absence Insurer'
+#       validation:
+#        -
+#          type: 'RegularExpression'
+#          options:
+#            regularExpression: '/[1-9]{1}[0-9]{0,24}/'
+#        -
+#          type: 'Integer'
+    'legalForm':
+      label: 'LegalForm'
+      options:
+        values:
+          'subsidairy': 'Subsidiary'
+          'department': 'Department'
+          'solePropietorship': 'Sole Proprietorship'
+          'vof': 'V.O.F.'
+          'bv': 'B.V.'
+      validation:
+        -
+          type: 'StringLength'
+          options:
+            maximum: 20
+        -
+          type: 'NotEmtpty'
+    'chamberOfCommerce':
+      label: 'Chamber of commerce number'
+      validation:
+        -
+          type: 'StringLength'
+          options:
+            maximum: 20
+    'vatNumber':
+      label: 'Vat Number'
+      validation:
+        -
+          type: 'StringLength'
+          options:
+            maximum: 14
+    'wageTaxNumber':
+      label: 'wage Tax Number'
+      validation:
+        -
+          type: 'RegularExpression'
+          options:
+            regularExpression: '/[0-9]{9}L[0-9]{2}/'
+        -
+          type: 'Stringlength'
+          options:
+            maximum: 9
+    'description':
+      label: 'Company description'
+      validation:
+        -
+          type: 'Text'
+    'contactPerson':
+      label: 'Contact person'
+      type: 'Beech\Party\Domain\Model\Person'
+    'logo':
+      label: 'Image'
+      type: 'Beech\Document\Domain\Model\Document'
+    'creationDate':
+      default: 'now'
+      label: 'creation date'
+      type: 'DateTime'
+      validation:
+    'createdBy':
+      default: 'currentUser'
+      label: 'Created by'
+      type: 'Beech\Party\Domain\Model\Person'

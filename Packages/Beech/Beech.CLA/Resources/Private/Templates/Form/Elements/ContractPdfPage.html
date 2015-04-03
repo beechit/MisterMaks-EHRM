@@ -1,0 +1,28 @@
+{namespace form=TYPO3\Form\ViewHelpers}{namespace cla=Beech\CLA\ViewHelpers}
+<div style="width: 700px; margin: auto">
+	<form:renderValues renderable="{page.rootForm}">
+		<f:if condition="{0: formValue.element.type} == {0: 'Beech.CLA:ContractHeaderPdfSection'}">
+			<f:then>
+				<form:renderRenderable renderable="{formValue.element}"/>
+			</f:then>
+		</f:if>
+	</form:renderValues>
+	<br/>
+	<form:renderValues renderable="{page.rootForm}">
+		<f:if condition="{0: formValue.element.type} == {0: 'Beech.CLA:ContractArticleFormElement'}">
+			<f:then>
+				<cla:renderContractArticle element="{formValue.element}"></cla:renderContractArticle>
+				<br/>
+			</f:then>
+		</f:if>
+	</form:renderValues>
+	<br/>
+	<form:renderValues renderable="{page.rootForm}">
+		<f:if condition="{0: formValue.element.type} == {0: 'Beech.CLA:ContractFooterSection'}">
+			<f:then>
+				<form:renderRenderable renderable="{formValue.element}"/>
+			</f:then>
+		</f:if>
+	</form:renderValues>
+</div>
+

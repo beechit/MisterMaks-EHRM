@@ -1,0 +1,98 @@
+{namespace ehrm=Beech\Ehrm\ViewHelpers}
+
+<f:render partial="Views/Header" arguments="{person:absence.person, title:'{f:translate(id: \'sickReport\', value: \'Sick report\')}'}"/>
+
+
+<ehrm:flashMessages/>
+<f:form.validationResults for="absence">
+	<f:if condition="{validationResults.flattenedErrors}">
+		<div class="error">
+			<f:for each="{validationResults.flattenedErrors}" key="propertyPath" as="errors">{propertyPath}:
+				<f:for each="{errors}" as="error">
+					<div class="alert alert-warning">{error}</div>
+				</f:for>
+			</f:for>
+		</divPerson wizard>
+	</f:if>
+</f:form.validationResults>
+
+<f:form method="post" action="update" name="absence" object="{absence}" class="compact-form form-horizontal" enctype="multipart/form-data">
+	<input type="hidden" name="iscomplete" value="true" data-validate="isComplete"/>
+
+	<div id="absence-edit" class="content-padding">
+
+		<div class="row-fluid">
+			<div class="span6">
+				<div class="control-group">
+					<label class="control-label" for="startDate">
+						<f:translate id="sickness.startDate">Date:</f:translate>
+					</label>
+					<div class="controls">
+						<ehrm:form.datePicker id="sickness.startDate" property="startDate" class="datepicker span8" enableTimePicker="TRUE"/>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="sickness.absenceType">
+						<f:translate id="sickness.absenceType">Sickness type</f:translate>
+					</label>
+					<div class="controls">
+						<f:form.select property="absenceArrangement" class="absenceArrangement" options="{absenceArrangements}"
+							optionLabelField="label" translate="{by: 'label'}" prependOptionLabel="{f:translate(id: 'absence.selectAbsenceArrangement')}"/>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="estimatedRecoveryDate">
+						<f:translate id="sickness.estimatedRecoveryDate">Probably recovery on:</f:translate>
+					</label>
+					<div class="controls">
+						<ehrm:form.datePicker id="estimatedRecoveryDate" property="estimatedRecoveryDate" class="datepicker span8" />
+						<label for="recoveryDateUnknown" class="checkbox inline"><f:form.checkbox name="recoveryDateUnknown" id="recoveryDateUnknown" value="TRUE"/><f:translate id="unknown">Unknown</f:translate></label>
+					</div>
+				</div>
+
+				<div class="control-group hide control-documentSubmit" >
+					<label class="control-label" for="submit">&nbsp;</label>
+					<div class="controls">
+						<f:form.submit value="{f:translate(id:'action.save')}" class="btn btn-primary"/>
+					</div>
+				</div>
+			</div>
+			<div class="span6">
+				<label for="reason"><f:translate id="reason">Reason</f:translate></label>
+				<div class="control-group">
+					<f:form.textarea id="reason" property="reason" class="span12" rows="10">Reason</f:form.textarea>
+				</div>
+			</div>
+		</div>
+
+		<div class="fluid-row">
+			<div class="span6"></div>
+			<div class="span6">
+				<div class="control-group">
+					<label class="control-label" for="reportMethod">
+						<f:translate id="reportMethod">Report method</f:translate>
+					</label>
+					<div class="controls">
+						<ehrm:optionSelect property="reportMethod" id="reportMethod" model="Beech.Absence:Absence" placeholder="{f:translate(id: 'reportMethod')}" class="reportMethod" translate="{by: 'label'}"/>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="reportedTo">
+						<f:translate id="reportedTo">Reported to</f:translate>
+					</label>
+					<div class="controls">
+						<f:form.select property="reportedTo" id="reportedTo" options="{persons}" optionLabelField="name"/>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<div class="form-actions">
+		<button type="submit" name="action" class="btn btn-primary" value="{action}">
+			<i class="icon-save"></i> <f:translate id="Save">Save</f:translate>
+		</button>
+	</div>
+
+</f:form>

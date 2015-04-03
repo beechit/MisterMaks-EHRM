@@ -1,0 +1,37 @@
+documentTypes:
+  -
+    'categoryName': 'jobApplication'
+    'typeName': 'Resume'
+    'delete': FALSE
+    'expiration': FALSE
+    'document': TRUE
+    'number': FALSE
+    'period': FALSE
+    'year': FALSE
+  -
+    'categoryName': 'jobApplication'
+    'typeName': 'Interview notes'
+    'delete': FALSE
+    'expiration': FALSE
+    'document': TRUE
+    'number': FALSE
+    'period': FALSE
+    'year': FALSE
+  -
+    'categoryName': 'jobApplication'
+    'typeName': 'Other'
+    'delete': FALSE
+    'expiration': FALSE
+    'document': TRUE
+    'number': FALSE
+    'period': FALSE
+    'year': FALSE
+  -
+    'categoryName': 'jobApplication'
+    'typeName': 'Correspondence'
+    'delete': FALSE
+    'expiration': FALSE
+    'document': TRUE
+    'number': FALSE
+    'period': FALSE
+    'year': FALSE

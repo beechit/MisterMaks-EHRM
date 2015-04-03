@@ -1,0 +1,21 @@
+<div class="row-fluid">{namespace ehrm=Beech\Ehrm\ViewHelpers}
+	<div class="span1">
+		<f:render partial="Forms/Buttons/Icon" arguments="{_all}"/>
+	</div>
+	<div class="span3"><strong><f:translate id="electronicAddress.electronicAddressType.{electronicAddress.electronicAddressType}">{electronicAddress.electronicAddressType}</f:translate></strong></div>
+	<div class="span6">{electronicAddress.address}</div>
+	<div class="span1 primaryIcon"><f:if condition="{electronicAddress.primary}"><i class="icon-check"></i></f:if></div>
+	<div class="span1">
+		<div class="btn-group">
+			<f:render partial="Forms/Buttons/Toggle" arguments="{identifier: electronicAddress.id, action: action, icon: 'icon-pencil', collapsed: collapsed}"/>
+			<f:if condition="{electronicAddress.primary}">
+				<f:then>
+					<f:render partial="Forms/Buttons/Remove" arguments="{class: 'hide'}"/>
+				</f:then>
+				<f:else>
+					<f:render partial="Forms/Buttons/Remove" arguments="{_all}"/>
+				</f:else>
+			</f:if>
+		</div>
+	</div>
+</div>

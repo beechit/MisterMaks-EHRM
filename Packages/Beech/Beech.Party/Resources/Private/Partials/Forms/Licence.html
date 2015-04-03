@@ -1,0 +1,49 @@
+{namespace ehrm=Beech\Ehrm\ViewHelpers}
+
+<div id="{action}{licence.id}{suffix}">
+
+	<ehrm:flashMessages/>
+
+	<f:form action="{action}" controller="Licence" object="{licence}" name="licence" class="compact-form form-horizontal {action}">
+		<f:if condition="{0: action} == {0: 'update'}">
+			<f:then>
+				<f:render partial="Views/List/Licence" arguments="{_all}"/>
+			</f:then>
+		</f:if>
+		<div id="toggle{licence.id}{suffix}" class="{f:if(condition: collapsed, then: 'collapse', else: 'in collapse')}">
+			<div class="row-fluid" >
+				<div class="span1"><i class="icon-plus"/></div>
+				<div class="span3">
+					<ehrm:optionSelect property="licenceType" id="licenceType{licence.id}" model="Beech.Party:Licence" placeholder="{f:translate(id: 'Type')}..." class="span10" translate="{by: 'id'}"/>
+				</div>
+				<div class="span7">
+					<f:form.textfield property="name" class="span5 capitalize" placeholder="{f:translate(id: 'licence')}..."/>
+					<f:form.textfield property="grantedBy" class="span5 capitalize" placeholder="{f:translate(id: 'grantedBy')}..."/>
+				</div>
+				<div class="span1">
+					<button type="submit" name="action" class="btn btn-small toggle{licence.id}_save" value="{action}">
+						<i class="icon-save"></i>
+					</button>
+				</div>
+			</div>
+			<div class="row-fluid" >
+				<div class="span4"></div>
+				<div class="span6">
+					<ehrm:form.datePicker id="startDate{licence.id}" property="startDate" class="datepicker span8" placeholder="{f:translate(id: 'startDate')}"/>
+				</div>
+			</div>
+			<div class="row-fluid" >
+				<div class="span4"></div>
+				<div class="span6">
+					<ehrm:form.datePicker id="expirationDate{licence.id}" property="expirationDate" class="datepicker span8" placeholder="{f:translate(id: 'Expiration')}"/>
+				</div>
+			</div>
+		</div>
+	<f:form.hidden property="party" value="{party}"/>
+</f:form>
+</div>
+<f:if condition="{0: action} == {0: 'add'}">
+	<f:then>
+		<f:render partial="Forms/Buttons/Add" arguments="{identifier: suffix, collapsed: collapsed}"/>
+	</f:then>
+</f:if>

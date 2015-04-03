@@ -1,0 +1,65 @@
+<h4>{section.properties.contract.contractTemplate.contractTitle}</h4>
+<br/>
+<div class="row-fluid">
+	<div>{section.properties.contract.contractTemplate.signingParties}</div>
+</div>
+<br/>
+<div class="row-fluid">
+	<div class="span5">{section.properties.contract.contractTemplate.nameCompany}</div>
+	<div class="span7">{section.properties.contract.employer.name}</div>
+</div>
+<br/>
+<div class="row-fluid">
+	<div class="span5">{section.properties.contract.contractTemplate.representiveEmployer}</div>
+	<div class="span7"></div>
+</div>
+<br/>
+<div class="row-fluid">
+	<div class="span5">{section.properties.contract.contractTemplate.addressCompany}</div>
+	<div class="span7">{section.properties.contract.employer.address_workAddress.streetName} {section.properties.contract.employer.address_workAddress.houseNumber}</div>
+</div>
+<br/>
+<div class="row-fluid">
+	<div class="span5">{section.properties.contract.contractTemplate.postalResidenceEmployer}</div>
+	<div class="span7">{section.properties.contract.employer.address_workAddress.postal} {section.properties.contract.employer.address_workAddress.residence}</div>
+</div>
+<br/>
+<div class="row-fluid">
+	<div class="span5"><strong>{section.properties.contract.contractTemplate.employerStatement}</strong></div>
+	<div class="span7"></div>
+</div>
+<br/><br/>
+<div class="row-fluid">
+	<div class="span5">{section.properties.contract.contractTemplate.nameEmployee}</div>
+	<div class="span7">{section.properties.contract.employee.name}</div>
+</div>
+<br/>
+<div class="row-fluid">
+	<div class="span5">{section.properties.contract.contractTemplate.addressCompany}</div>
+	<div class="span7">{section.properties.contract.employee.address_homeAddress.streetName} {section.properties.contract.employee.address_homeAddress.houseNumber}</div>
+</div>
+<br/>
+<div class="row-fluid">
+	<div class="span5">{section.properties.contract.contractTemplate.postalResidenceEmployee}</div>
+	<div class="span7">{section.properties.contract.employee.address_homeAddress.postal} {section.properties.contract.employee.address_homeAddress.residence}</div>
+</div>
+<br/>
+<div class="row-fluid">
+	<div class="span5">{section.properties.contract.contractTemplate.dateofBirthEmployee}</div>
+	<div class="span7"><f:if condition="{section.properties.contract.employee.dateOfBirth}"><f:format.date format="d-m-Y">{section.properties.contract.employee.dateOfBirth}</f:format.date></f:if></div>
+</div>
+<br/>
+<div class="row-fluid">
+	<div class="span5">{section.properties.contract.contractTemplate.bsnEmployee}</div>
+	<div class="span7">{section.properties.contract.employee.bsn}</div>
+</div>
+<br/>
+<div class="row-fluid">
+	<div class="span5"><strong>{section.properties.contract.contractTemplate.employeeStatement}</strong></div>
+	<div class="span7"></div>
+</div>
+<br/><br/>
+<div class="row-fluid">
+	<div class="span12">{section.properties.contract.contractTemplate.contractStatement}</div>
+</div>
+<br/>

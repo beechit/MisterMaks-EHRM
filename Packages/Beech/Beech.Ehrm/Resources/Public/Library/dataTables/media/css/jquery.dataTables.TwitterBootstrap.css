@@ -1,0 +1,59 @@
+
+div.dataTables_length label {
+
+	float: left;
+	text-align: left;
+}
+
+div.dataTables_length select {
+	width: 75px;
+}
+
+div.dataTables_filter {
+	float: right;
+}
+div.dataTables_filter label input { display: inline; }
+
+div.dataTables_info {
+	padding-top: 8px;
+}
+
+div.dataTables_paginate {
+	float: right;
+	margin: 0;
+}
+
+table {
+	margin: 1em 0;
+	clear: both;
+}
+
+table.dataTable th:active {
+	outline: none;
+}
+
+
+table.dataTable th.pagination-left, table.dataTable td.pagination-left
+{
+	text-align: left;
+}
+table.dataTable th.pagination-center, table.dataTable td.pagination-center
+{
+	text-align: center;
+}
+
+table.dataTable th.pagination-right, table.dataTable td.pagination-right
+{
+	text-align: right;
+}
+table.table thead .sorting,
+table.table thead .sorting_asc,
+table.table thead .sorting_desc,
+table.table thead .sorting_asc_disabled,
+table.table thead .sorting_desc_disabled {
+    cursor: pointer;
+    *cursor: hand;
+}
+
+table.dataTable thead th, table.dataTable td {padding: 8px;}
+

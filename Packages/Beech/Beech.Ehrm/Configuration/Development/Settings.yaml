@@ -1,0 +1,8 @@
+Beech:
+  Ehrm:
+    menu:
+      main:
+        groups:
+          dev:
+            priority: 99
+            label: 'Development'

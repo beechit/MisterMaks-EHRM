@@ -1,0 +1,41 @@
+number: '40.01'
+name: Onderhoudsmonteur
+jobContext: 'De functie komt voor in een technische dienst van een groter agrarisch bedrijf. Voert werkzaamheden zelfstandig uit. meer specialistische werkzaamheden (aan bijv. klimaatcomputer) zijn uitbesteed of worden door de leidinggevende aangestuurd. Beslissingen zijn van vaktechnische aard en richten zich op de methoden en technieken.\De werkzaamheden richten zich op alle in het bedrijf voorkomende technische apparatuur en installaties. Het betreft m.n. werktuigbouwkundige werkzaamheden aan bedrijfsmiddelen als transport- en hefmiddelen, klimaatregelingapparatuur en -installaties en apparatuur\/installaties t.b.v. water en voeding.\Grotere agrarische bedrijven hebben veelal een eigen technische deskundigheid t.b.v. het preventief planmatig onderhoud en het diagnosticeren en verhelpen van storingen. Complexere constructiewerkzaamheden en vernieuwing\/vervanging wordt veelal uitgevoerd door externe bedrijven\/contractors.\Bij uitvoering van de werkzaamheden zijn vaardigheden vereist als elektrisch en autogeen lassen, bank- en plaatwerk en verspanende bewerkingen als boren en eenvoudig draaiwerk.\'
+reportsTo: 'operationeel leidinggevende, zoals bijv. ondernemer of hoofd onderhoud'
+manages: 'niet van toepassing'
+jobGoal: 'Verrichten van algemeen werktuigbouwkundige onderhoudswerkzaamheden aan technische bedrijfsmiddelen, zodanig dat deze zo ongestoord mogelijk functioneren.'
+department: Techniek
+expectations:
+  -
+    resultArea: 'Ge\u00efnspecteerde installaties'
+    mainActivities: ['beoordelen van de technische staat a.d.h.v. eigen waarnemingen en\/of metingen in vergelijking met technische specificaties', 'uitvoeren van correctief onderhoud voortvloeiend uit inspecties', 'rapporteren\/registreren van bevindingen en verrichte werkzaamheden']
+    resultCriteria: ['juistheid beoordeling van situatie', 'bruikbaarheid van aanvullende schetsen', 'juistheid aangegeven benodigdheden en getroffen maatregelen', 'volledigheid van registratie ']
+  -
+    resultArea: 'Uitgevoerde reparaties\/mechanisch werkende installaties '
+    mainActivities: ['vaststellen van storingsoorzaken, beoordelen van aard en omvang van de te verrichten reparaties, overleggen met direct leidinggevende', 'uitvoeren van (nood)reparaties i.o.m. direct leidinggevende en productieleiding']
+    resultCriteria: ['correctheid van diagnose van storingen en storingsoorzaken', 'tijdigheid en helderheid van overleg met leidinggevende']
+  -
+    resultArea: 'Gemodificeerde en gereviseerde installaties'
+    mainActivities: ['uitvoeren van modificatie en revisiewerkzaamheden o.b.v. werkopdrachten en instructies of assisteren bij werkzaamheden door contractors', 'bewerken van materialen gebruikmakend van handgereedschappen, machines en lasapparatuur', 'uitvoeren van bewerkingen en toepassen van technieken zoals elektrisch en autogeen lassen, bank- en plaatwerk en verspanende bewerkingen als boren en eenvoudig draaiwerk', 'doen van voorstellen voor aanpassingen\/verbeteringen aan apparatuur, installaties of productiesituaties']
+    resultCriteria: ['juistheid uitgevoerde opdrachten', 'mate waarin wijzigingen en instructies zijn opgevolgd', 'doeltreffendheid van verbeteringsvoorstellen van bepaalde situaties ']
+  -
+    resultArea: 'Verleende assistentie bij in bedrijf stellen en uittesten van nieuwe apparatuur'
+    mainActivities: ['assisteren bij uit te voeren nieuwbouwwerkzaamheden in bedrijf stellen\/uittesten van installaties en apparatuur']
+    resultCriteria: ['mate waarin de gevraagde assistentie is geleverd', 'mate waarin inzicht is verkregen in de (onderhoud)technische aspecten van de apparatuur\/installaties']
+  -
+    resultArea: 'Vastgelegde gegevens\/informatie '
+    mainActivities: ['rapporteren\/registreren van bevindingen en verrichte werkzaamheden']
+    resultCriteria: ['volledigheid en actualiteit van registratie']
+  -
+    resultArea: 'Nageleefde voorschriften'
+    mainActivities: ['schoonhouden van werkplaats en onderhouden van gebruikte gereedschappen en machines', 'naleven van bedrijfsinstructies inzake veiligheid van werken e.d.']
+    resultCriteria: ['orde en netheid van eigen werkruimte', 'mate waarin instructies worden nageleefd']
+burdeningCircumstances:
+  circumstance:
+    - 'Krachtsuitoefening bij het verplaatsen van materialen en bij demontagewerkzaamheden (5-15 kg, max. 2 uur p.d.).'
+    - 'Inspannende houding bij het werken op moeilijk toegankelijke plaatsen (max. 2 uur p.d.).'
+    - 'Hinder van hitte, lawaai, vocht en temperatuurwisselingen i.v.m. binnen- en buitenwerk.'
+    - 'Kans op letsel door vallen, bekneld raken, uitschietend gereedschap en\/of door contact met gezondheidschadende stoffen. '
+    - 'Het functieniveau volgens ORBA is gebaseerd op de rubrieken: Functiecontext, Positie in de organisatie, Functiedoel, Resultaatverwachting \/ Functionele activiteiten en Werkgerelateerde bezwaren. '
+orbaScore: '118'
+wageScaleGroup: G

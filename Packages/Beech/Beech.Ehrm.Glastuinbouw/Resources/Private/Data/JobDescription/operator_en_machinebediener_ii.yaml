@@ -1,0 +1,36 @@
+number: '10.06'
+name: 'Operator\/machinebediener II'
+jobContext: 'Bij glastuinbouwondernemingen die zich bezig houden met teelt, veredeling, vermeerdering, verwerking en\/of verpakken van groentegewassen, potplanten en\/of sierteeltproducten, is naast een groot scala aan handmatige, uitvoerende activiteiten, sprake van werkzaamheden waarbij machinale bewerkingen plaatsvinden. De aard van de bewerkingen resp. de te bedienen machines is afhankelijk van het type te kweken en\/of te vermeerderen product en de mechanisatiegraad van het bedrijf. Ook assisteert de operator\/machinebediener, indien de bezetting daartoe aanleiding geeft, bij het uitvoeren van handmatige werkzaamheden (zie ook de NOK-matrix behorende bij functies medewerker glastuinbouw).\De functie van operator\/machinebediener II is de lichtste in een reeks van functies operator\/machinebediener II en I. Bij deze functie ligt de nadruk van de werkzaamheden op bedienen. Andere verschillen zijn gebaseerd op de inzetbaarheid (omvang van de bekwaamheden, machine\/proceskennis en bedieningsvaardigheden) en de door de (vanuit de organisatie gegeven) handelingsvrijheid\/zelfstandigheid. Zie bijbehorende NOK-matrix.\'
+reportsTo: 'operationeel leidinggevende, zoals bijv. productieleider of meewerkend voorman'
+manages: 'niet van toepassing '
+jobGoal: 'Verrichten van enkele gelijksoortige machinale bewerkingen t.b.v. de teelt, het veredelen, vermeerderen of verpakken van groentegewassen potplanten en\/of sierteeltproducten, en voor het verzendgereed opleveren van producten. \Assisteren bij het verrichten van handmatige teelt-, oogst-, veredelings-, vermeerderings-, verwerking- en\/of verpakkingswerkzaamheden zoals omschreven in de functie medewerker glastuinbouw I (functienummer 10.02). \'
+department: Productie
+expectations:
+  -
+    resultArea: 'Gerealiseerde productieopdrachten'
+    mainActivities: ['Verrichten van enkele gelijksoortige machinale bewerkingen t.b.v. de teelt, het vermeerderen en\/of veredelen en verpakken van groentegewassen, potplanten  en\/of sierteeltproducten op een semimechanische, gemechaniseerde of automatische installatie of sep', '\u00ad\\tvullen, persen van grond of substraat, zaaien van zaad, sorteren van plantmateriaal', '\u00ad\\tuitzetten en oprapen van plantgoed', '\u00ad\\twassen en desinfecteren', '\u00ad\\taan- en afvoeren van goederen, vegen, poetsen', '\u00ad\\tin bedrijf stellen en bedienen van de machine\/ installatie, a.d.h.v. mondelinge of schriftelijke werkopdrachten en bedieningsinstructies', '\u00ad\\tcontroleren van de werking van de machines', '\u00ad\\tverhelpen van eenvoudige verstoringen']
+    resultCriteria: ['snelheid en juistheid van uitgevoerde werkzaamheden', '\u00ad\\tjuiste opvolging van bedieningsinstructies']
+  -
+    resultArea: 'Werkende machine\/installatie '
+    mainActivities: ['\u00ad\\tsignaleren\/melden van afwijkingen en storingen bij de leidinggevende en\/of technisch personeel', '\u00ad\\tuitvoeren van eenvoudige dagelijkse of periodieke onderhoudswerkzaamheden, zoals smeren van machineonderdelen, olie verversen, brandstof tanken e.d. onder gebruikmaking van (hand-)gereedschappen', '\u00ad\\tschoonmaken en opruimen van machines, lopende banden, hulpapparatuur e.d. ']
+    resultCriteria: ['\u00ad\\ttijdigheid van signalering\/', '\u00ad\\ttijdigheid en juistheid van onderhoud', '\u00ad\\tnetheid, reinheid van apparatuur\/werkplek']
+  -
+    resultArea: 'Uitgevoerde handelingen'
+    mainActivities: ['\u00ad\\tuitvoeren van handmatige teelt-, veredelings- en\/of vermeerderings-, oogst-, verwerkings- en\/of verpakkingswerkzaamheden, zoals omschreven in de functie van medewerker glastuinbouw I (functienr. 10.02)']
+    resultCriteria: ['\u00ad\\tsnelheid en juistheid van uitgevoerde handelingen']
+  -
+    resultArea: 'Verstrekte informatie'
+    mainActivities: ['\u00ad\\tinvullen van standaard productieformulieren en tijdsregistraties', '\u00ad\\tsignaleren van onregelmatigheden aan leidinggevende']
+    resultCriteria: ['\u00ad\\tjuistheid en betrouwbaarheid van gegevensinvoer', 'tijdige signalering']
+  -
+    resultArea: 'Nageleefde voorschriften'
+    mainActivities: ['Naleven van bedrijfsinstructies inzake veiligheid van werken e.d.']
+    resultCriteria: ['\u00ad\\tmate van naleving van voorschriften']
+burdeningCircumstances:
+  circumstance:
+    - 'Krachtsuitoefening bij het uitvoeren van bepaalde bedienings- en onderhoudshandelingen en bij het incidenteel tillen en verplaatsen van materialen, kisten, dozen of gewas, etc. tot max. ca. 15 kg. Enige krachtsuitoefening bij het verrichten van handmati'
+    - 'Eenzijdige houding bij het bedienen van machines en bij bepaalde handmatige werkzaamheden.'
+    - '\u00adHinder bij werken in ruimten met relatief hoge luchtvochtigheid (ca. 80%) en\/of hoge temperaturen (20-25\u00b0C).'
+    - '\u00ad\\tKans op letsel door beknellen, stoten etc. bij het bedienen van machines en bij het uitvoeren van onderhoudswerkzaamheden. Kan op letsel bij het (incidenteel) uitvoeren van handmatige teelt, veredelings-, vermeerderings-, verwerkings- en\/of verpakking'
+orbaScore: '44'
+wageScaleGroup: C

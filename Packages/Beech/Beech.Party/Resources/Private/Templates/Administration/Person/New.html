@@ -1,0 +1,28 @@
+<f:layout name="Ajax" />
+
+<f:section name="Body">
+	<h1><f:translate id="action.new">New</f:translate></h1>
+	<f:form.validationResults for="person">
+		<f:if condition="{validationResults.flattenedErrors}">
+			<div class="error">
+				<f:for each="{validationResults.flattenedErrors}" key="propertyPath" as="errors">{propertyPath}: <f:for each="{errors}" as="error">{error}</f:for></f:for>
+			</div>
+		</f:if>
+	</f:form.validationResults>
+
+	<div class="tab-content">
+		<h3><f:translate id="personInfo">Person information</f:translate></h3>
+
+		<f:form action="create" object="{person}" name="person" class="form-horizontal well">
+			<f:render partial="Forms/Person" />
+			<div class="form-actions">
+				<f:form.submit value="{f:translate(id: 'action.create')}" />
+			</div>
+		</f:form>
+
+		<a class="btn btn-primary" href="/#/person">
+			<f:translate id="action.back">Back</f:translate>
+		</a>
+	</div>
+
+</f:section>

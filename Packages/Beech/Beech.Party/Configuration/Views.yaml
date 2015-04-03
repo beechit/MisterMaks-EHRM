@@ -1,0 +1,20 @@
+-
+  requestFilter: 'isPackage("Beech.Party")'
+  viewObjectName: 'Beech\Ehrm\View\TemplateView'
+  options:
+    layoutRootPaths:
+      - 'resource://Beech.Ehrm/Private/Layouts'
+-
+  requestFilter: 'isPackage("Beech.Party") && isSubPackage("Administration")'
+  viewObjectName: 'Beech\Ehrm\View\TemplateView'
+  options:
+    layoutRootPaths:
+      - 'resource://Beech.Ehrm/Private/Layouts'
+    templatePathAndFilenamePattern: '@templateRoot/@controller/@action.@format'
+-
+  requestFilter: 'isPackage("Beech.Party") && isSubPackage("Administration") && isController("Account")'
+  viewObjectName: 'Beech\Ehrm\View\TemplateView'
+  options:
+    layoutRootPaths:
+      - 'resource://Beech.Ehrm/Private/Layouts'
+    templatePathAndFilenamePattern: '@templateRoot/@subpackage/@controller/@action.@format'

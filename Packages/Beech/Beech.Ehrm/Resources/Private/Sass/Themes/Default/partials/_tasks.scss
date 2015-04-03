@@ -1,0 +1,22 @@
+.left {
+	#task-widget {
+		margin-bottom: 40px;
+	}
+	/* Tasks */
+	.accordion {
+		.accordion-heading {
+			position: relative;
+			.badge {
+				position: absolute;
+				right: 10px;
+				top: 10px;
+				padding: 2px 9px 1px;
+			}
+		}
+		.accordion-inner {
+			ul li a {
+				display: block;
+			}
+		}
+	}
+}

@@ -1,0 +1,143 @@
+#############################################################
+# this is the meeting model.
+# todo: recheck calendar api's on internet
+#############################################################
+'Beech.Calendar.Domain.Model.Meeting':
+  properties:
+    'meetingId':
+      label: 'Meeting ID'
+      validation:
+        -
+          type: 'StringLength'
+          options:
+            maximum: 20
+# todo register this status in status model ?
+    'status':
+      label: 'Status'
+      default: 'tentative'
+      options:
+        values:
+          'confirmed': 'Confirmed'
+          'tentative': 'Tentative'
+          'cancelled': 'Cancelled'
+      validation: ''
+    'summary':
+      label: 'Summary'
+      validation:
+        -
+          type: 'Text'
+    'description':
+      label: 'Description'
+      validation:
+        -
+          type: 'StringLength'
+          options:
+            maximum: 20
+    'location':
+      label: 'Meeting location'
+      validation:
+        -
+          type: 'StringLength'
+          options:
+            maximum: 30
+    'organiserId':
+      label: 'Organiser id'
+      type: 'Beech\Party\Domain\Model\Person'
+    'start':
+      label: 'Start'
+      type: 'DateTime'
+      validation:
+        -
+          type: 'DateTimeRange'
+          options:
+            earliestDate: 20130101
+            latestDate: 20200101
+    'end':
+      label: 'End'
+      type: 'DateTime'
+      validation:
+        -
+          type: 'DateTimeRange'
+          options:
+            earliestDate: 20130101
+            latestDate: 20200101
+    'attendees':
+      label: 'attendees'
+      type: 'Beech\Party\Domain\Model\Person'
+    'optional':
+      label: 'Optional'
+      options:
+        values:
+          - FALSE
+          - TRUE
+    'responseStatus':
+      label: 'Response status'
+      options:
+        values:
+          'declined': 'Declined'
+          'tentative': 'Tentative'
+          'accepted': 'Accepted'
+    'comment':
+      label: 'comment'
+      validation:
+        -
+          type: 'Text'
+    'minutesId':
+      label: 'Minute id'
+      validation:
+        -
+          type: 'StringLength'
+          options:
+            maximum: 20
+    'documentId':
+      label: 'Document id'
+      validation:
+        -
+          type: 'StringLength'
+          options:
+            maximum: 20
+    'documentType':
+      label: 'Document type'
+      validation:
+        -
+          type: 'StringLength'
+          options:
+            maximum: 20
+      label: 'Relations'
+      type: 'array'
+      validation: ''
+    'planNextMeeting':
+      label: 'Plan next meeting'
+      options:
+        values:
+          - FALSE
+          - TRUE
+      default: ''
+    'notification':
+      label: 'Notification'
+      options:
+        values:
+          - FALSE
+          - TRUE
+      default: TRUE
+    'notificationMethod':
+      label: 'Notification method'
+      options:
+        values:
+          'email': 'E-mail'
+          'sms': 'SMS'
+          'notification': 'Notification'
+    'creationDate':
+      default: 'now'
+      label: 'creation date'
+      type: 'DateTime'
+      validation:
+        -
+          type: 'DateTimeRange'
+          options:
+            earliestDate: 20130101
+            latestDate: 20200101
+    'createdBy':
+      default: 'currentUser'
+      label: 'Created by'
+      type: 'Beech\Party\Domain\Model\Person'

@@ -1,0 +1,39 @@
+documentTypes:
+  -
+    'categoryName': 'Image'
+    'typeName': 'profilePhoto'
+    'label': 'Profile photo'
+    'delete': FALSE
+    'expiration': FALSE
+    'document': FALSE
+    'number': FALSE
+    'period': FALSE
+    'year': FALSE
+  -
+    'categoryName': 'Image'
+    'typeName': 'companyLogo'
+    'label': 'Company logo'
+    'delete': FALSE
+    'expiration': FALSE
+    'document': FALSE
+    'number': FALSE
+    'period': FALSE
+    'year': FALSE
+  -
+    'categoryName': 'Image'
+    'typeName': 'Other'
+    'delete': FALSE
+    'expiration': FALSE
+    'document': TRUE
+    'number': FALSE
+    'period': FALSE
+    'year': FALSE
+  -
+    'categoryName': 'Image'
+    'typeName': 'Images'
+    'delete': FALSE
+    'expiration': FALSE
+    'document': TRUE
+    'number': FALSE
+    'period': FALSE
+    'year': FALSE

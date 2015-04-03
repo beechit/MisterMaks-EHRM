@@ -1,0 +1,80 @@
+{namespace ehrm=Beech\Ehrm\ViewHelpers}
+<table class="table table-striped">
+	<colgroup>
+		<col class="span1">
+		<col class="span7">
+	</colgroup>
+	<tbody>
+	<tr>
+		<td class="span2">
+			<strong><f:translate id="status">Status</f:translate></strong>
+		</td>
+		<td class="span3">
+			<f:translate id="contract.status.{contract.status.statusName}">{contract.status.statusName}</f:translate>
+		</td>
+		<td class="span4">
+			<strong>{contract.jobTitle}</strong>
+		</td>
+		<td>
+			<a href="{f:uri.action(package:'Beech.CLA', subpackage:'Administration', controller:'contract', action:'show', arguments: {contract: contract})}"
+			   data-toggle="modal-ajax" data-target="#modal" modal-size="large"
+			   data-reload="reload-current-page">
+				<i class="icon-eye-open"></i>
+			</a>
+			<f:link.action action="pdf" controller="Contract" package="Beech.CLA" subpackage="Administration" arguments="{contract: contract}"><i class="icon-file"></i></f:link.action>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<strong><f:translate id="contractType">Contract type</f:translate></strong>
+		</td>
+		<td>
+			<f:translate id="contract.contractTemplate.{contract.contractTemplate.templateName}">{contract.contractTemplate.templateName}</f:translate>
+		</td>
+		<td colspan="2">
+			<strong><f:translate id="hours"></f:translate></strong> {contract.hoursAWeek} <f:translate id="/week">/ week</f:translate>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<strong><f:translate id="startDate">Start date</f:translate></strong>
+		</td>
+		<td colspan="3">
+			{contract.startDate -> f:format.date(format: 'd-m-Y')}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<strong><f:translate id="endDate">End date</f:translate></strong>
+		</td>
+		<td>
+			{contract.endDate -> f:format.date(format: 'd-m-Y')}
+		</td>
+		<td colspan="2">
+			<strong><f:translate id="daysTillEnd">Days till end</f:translate></strong>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<strong><f:translate id="salary">Salary</f:translate></strong>
+		</td>
+		<td>
+			€ {contract.wage.value}
+		</td>
+		<td colspan="2"></td>
+	</tr>
+	<tr>
+		<td>
+		 	<strong><f:translate id="wageGroup">WageGroup</f:translate></strong>
+		</td>
+		<td>
+			<strong>{contract.wage.scaleGroup}</strong>
+		</td>
+		<td colspan="2">
+			<strong><f:translate id="wageStep">WageStep</f:translate> {contract.wage.step}</strong>
+		</td>
+		<td colspan="2"></td>
+	</tr>
+	</tbody>
+</table>
+

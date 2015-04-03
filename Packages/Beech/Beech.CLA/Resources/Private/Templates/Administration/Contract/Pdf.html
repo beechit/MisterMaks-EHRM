@@ -1,0 +1,67 @@
+{namespace dom=Beech\Pdf\ViewHelpers}{namespace form=TYPO3\Form\ViewHelpers}
+<dom:renderPdf>
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title></title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link href="resource://Beech.Ehrm/Public/StyleSheets/style.css" rel="stylesheet" type="text/css">
+		<style type="text/css">
+			/* Custom styles */
+			body {
+				color: #333333;
+				font-size: 14px;
+				line-height: 20px;
+			}
+
+			h4 {
+				font-size: 18px;
+				line-height: 20px;
+			}
+
+			h1, h2, h3, h4, h5, h6 {
+				color: inherit;
+				font-family: "colaborate-regularregular", Georgia, "Times New Roman", Times, serif;
+				font-weight: bold;
+				line-height: 1;
+				margin: 10px 0;
+				text-rendering: optimizelegibility;
+			}
+
+			form {
+				margin: 0 0 20px;
+			}
+
+			fieldset {
+				border: 0 none;
+				margin: 0;
+				padding: 0;
+			}
+
+			legend {
+				-moz-border-bottom-colors: none;
+				-moz-border-left-colors: none;
+				-moz-border-right-colors: none;
+				-moz-border-top-colors: none;
+				border-color: -moz-use-text-color -moz-use-text-color #E5E5E5;
+				border-image: none;
+				border-style: none none solid;
+				border-width: 0 0 1px;
+				color: #333333;
+				display: block;
+				font-size: 21px;
+				line-height: 40px;
+				margin-bottom: 20px;
+				padding: 0;
+				width: 100%;
+			}
+
+		</style>
+	</head>
+	<body>
+	<form:render factoryClass="Beech\CLA\Factory\ContractPdfFactory" presetName="wizard"
+				 overrideConfiguration="{overrideConfiguration}"/>
+	</body>
+	</html>
+</dom:renderPdf>

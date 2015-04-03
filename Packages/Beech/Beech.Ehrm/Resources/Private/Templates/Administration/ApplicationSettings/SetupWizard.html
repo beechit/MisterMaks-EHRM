@@ -1,0 +1,188 @@
+<f:layout name="Ajax"/>
+
+<f:section name="Body">
+	<div class="wizard" id="setup-environment-wizard">
+
+		<h1><f:translate id="setupWizard">Environment setup wizard</f:translate></h1>
+		<div class="wizard-card row-fluid" data-cardname="applicationSettings"
+			 data-url="<f:uri.action action='index' controller='ApplicationSettings' subpackage='administration' package='Beech.Ehrm'></f:uri.action>">
+			<h3><f:translate id="localisation">Localisation</f:translate></h3>
+		</div>
+		<div class="wizard-card row-fluid" data-cardname="company"
+			 data-url="<f:uri.action action='edit' controller='Company' package='Beech.Party' arguments='{company:company,withDetails:false}'></f:uri.action>">
+			<h3><f:translate id="companyData">Company data</f:translate></h3>
+		</div>
+		<div class="wizard-card row-fluid" data-cardname="companyLogo"
+			 data-url="<f:uri.action action='edit' controller='CompanyLogo' package='Beech.Party' arguments='{company:company}'></f:uri.action>">
+			<h3><f:translate id="companyLogo">Company logo</f:translate></h3>
+		</div>
+		<div class="wizard-card row-fluid" data-cardname="address"
+			 data-url="<f:uri.action action='list' controller='Address' package='Beech.Party' arguments='{party:company}'></f:uri.action>">
+			<h3><f:translate id="companyAddresses">Company addresses</f:translate></h3>
+		</div>
+		<div class="wizard-card row-fluid" data-cardname="phoneNumber"
+			 data-url="<f:uri.action action='list' controller='PhoneNumber' package='Beech.Party' arguments='{party:company}'></f:uri.action>">
+			<h3><f:translate id="companyPhoneNumbers">Company phone numbers</f:translate></h3>
+		</div>
+		<div class="wizard-card row-fluid" data-cardname="electronicAddress"
+			 data-url="<f:uri.action action='list' controller='ElectronicAddress' package='Beech.Party' arguments='{party:company}'></f:uri.action>">
+			<h3><f:translate id="companyElectronicAddresses">Company electronic addresses</f:translate></h3>
+		</div>
+		<div class="wizard-card row-fluid" data-cardname="bankAccount"
+			 data-url="<f:uri.action action='list' controller='BankAccount' package='Beech.Party' arguments='{party:company}'></f:uri.action>">
+			<h3><f:translate id="companyBankAccounts">Company bank accounts</f:translate></h3>
+		</div>
+
+		<div class="wizard-card row-fluid" data-cardname="mainUser"
+			 data-url="<f:uri.action action='edit' controller='Person' package='Beech.Party' arguments='{person:person,withDetails:false}'></f:uri.action>">
+		<h3><f:translate id="mainUser">Main user</f:translate></h3>
+		</div>
+		<div class="wizard-card row-fluid" data-cardname="mainUserProfilePhoto"
+			 data-url="<f:uri.action action='edit' controller='ProfilePhoto' package='Beech.Party' arguments='{party: person}'></f:uri.action>">
+			<h3><f:translate id="mainUserProfilePhoto">Main user profile photo</f:translate></h3>
+		</div>
+		<div class="wizard-card row-fluid" data-cardname="mainUserElectronicAddress"
+			 data-url="<f:uri.action action='list' controller='ElectronicAddress' package='Beech.Party' arguments='{party:person}'></f:uri.action>">
+			<h3><f:translate id="mainUserElectronicAddresses">Main user electronic addresses</f:translate></h3>
+		</div>
+		<div class="wizard-error">
+			<div class="alert alert-error">
+				<f:translate id="errorSubmitting">There was a problem with your submission. Please correct the errors and re-submit.</f:translate>
+			</div>
+		</div>
+
+		<div class="wizard-failure">
+			<div class="alert alert-error">
+				<f:translate id="errorSubmitting1">There was a problem submitting the form. Please try again in a minute.</f:translate>
+			</div>
+		</div>
+
+		<div class="wizard-success">
+
+			<div class="alert alert-success">
+				<f:translate id="setupComplete">System is setup successfully.</f:translate>
+			</div>
+
+			<a class="btn create-department" href="#/company/new"><f:translate id="createDepartment">Create an department</f:translate></a>
+			<span style="padding:0 10px"><f:translate>or</f:translate></span>
+			<a class="btn create-person" href="#/person/new"><f:translate id="createPerson">Create an person</f:translate></a>
+			<span style="padding:0 10px"><f:translate id="or">or</f:translate></span>
+			<a class="btn im-done" href="#/company"><f:translate id="done">Done</f:translate></a>
+		</div>
+	</div>
+	<script>
+		var wizard;
+
+		/**
+		 * This function will be triggered for all fields with
+		 * a data-validate="isComplete" attribute
+		 * When the value isn't "true" to form wil be submitted
+		 * on "Next" or selecting other tab.
+		 */
+		function isComplete(el) {
+			var ret = {
+				status: false
+			};
+			if (el.val() !== 'true') {
+				el.parents('form:first').submit();
+			} else {
+				ret.status = true;
+			}
+			return ret;
+		}
+
+		function applyAjaxForm(element) {
+
+				// all forms with a iscomplete fiels get a special ajaxForm configuration
+			element.find('input[name="iscomplete"]').each(function(k,isCompleteElement) {
+				$form = $(isCompleteElement).parents('form:first');
+				var $element = $form.parents('.wizard-card:first');
+				$form.ajaxForm({
+					dataType: 'html',
+						// let flow know we do not want a ember redirect
+					data: {noEmberRedirect: true},
+					beforeSend: App.ModuleHandler.startAjaxRequest,
+					complete: App.ModuleHandler.finishedAjaxRequest,
+					success: function(result) {
+
+						$element.html(result);
+						wizard.incrementCard();
+						applyAjaxForm($element);
+					},
+					error: function(result) {
+						$form.prepend(result.responseText);
+					}
+				});
+			});
+
+				// remove submit buttons when there is a "iscomplete" field
+				// so user is forces to click "next" button
+			if (element.find('input[name="iscomplete"]').length) {
+				element.find('input[type="submit"],button[type="submit"],.form-actions').remove();
+			}
+
+				// apply input masks etc.
+			element.find('.datepicker').each(function(index, datepicker) {
+				$(datepicker).datetimepicker($(datepicker).hasClass('withTime') ? App.dateTimePickerSettings : App.datePickerSettings);
+			});
+			element.find('.datepickerIcon').on('click', function(){$(this).parent().find('.datepicker').trigger('focus')});
+			element.find('select').chosen({width: '100%'});
+			element.find('.countrySelect').countrySelect();
+			element.find('input').applyInputMasks();
+
+				// reset complete flag on change in form so form is resend on clicking "Next"
+			$("input,select,textarea", element).on('change', function() {
+				$(this).parents('form:first').find('input[name="iscomplete"]').val('');
+			})
+		}
+
+		$(function() {
+			$.fn.wizard.logging = false;
+			var options = {
+				width: 1250,
+				increaseHeight: 200
+			};
+			wizard = $("#setup-environment-wizard").wizard(options);
+
+			$.each(wizard.cards, function(index, card) {
+				card.on('selected', function() {
+						// on first select load content
+					if ($('*', this.el).length <= 1 && $(this.el).attr('data-url')) {
+						App.ModuleHandler.loadUrl(
+								$(this.el).attr('data-url'),
+								$(this.el),
+								function(result,target) {
+									applyAjaxForm(target);
+										// after first load we force a save action on save
+									$('input[name="iscomplete"]', target).val('');
+								}
+						);
+					}
+				})
+			})
+			wizard.show();
+
+				// close wizard when clicking a link on the success panel
+			$('.wizard-success a').on('click', function() {
+				wizard.reset().close();
+			})
+
+				// on clomplete
+			wizard.on('submit', function(){
+				$.ajax({
+					type: "GET",
+					url: '/<f:uri.action action="setupwizardcomplete"></f:uri.action>',
+					success: function(resp) {
+						wizard.submitSuccess();
+						wizard.hideButtons();
+						wizard.updateProgressBar(0);
+					},
+					error: function() {
+						wizard.submitFailure();
+						wizard.hideButtons();
+					},
+				});
+			});
+		});
+	</script>
+</f:section>

@@ -1,0 +1,37 @@
+number: '10.03'
+name: 'Teeltmedewerker II'
+jobContext: 'Het is de nietgespecialiseerde medewerker in het glastuinbouwbedrijf (groententeelt en bloemen\/plantenteelt) die alle voorkomende uitvoerende werkzaamheden op het bedrijf kan verrichten. Het accent ligt op teeltvoorbereiding en de dagelijkse gewasverzorging. Daarnaast wordt meegewerkt bij de oogst, de oogstverwerking, verpakken, klein technisch onderhoud en intern transport. De werkzaamheden worden onder leiding uitgevoerd. Toezicht kan ook worden uitgeoefend door specialisten en `zware` generalisten (meewerkend voorman). Controle van de werkzaamheden vindt tijdens de uitvoering (visueel) en deels achteraf plaats.\De functie maakt deel uit van een in niveau opklimmende functiereeks van teeltmedewerkers (zelfstandig I en II). De verschillen zijn m.n. gebaseerd op de inzetbaarheid (omvang van de bekwaamheden) en de (vanuit de organisatie gegeven) handelingsvrijheid\/zelfstandigheid. De functie teeltmedewerker I is breder dan de teeltmedewerker II vanwege de transporttaken en complexer vanwege de gewasbeschermings- en ziektebestrijdingstaken en toezichthoudende taken (zie ook bijbehorende NOK matrix).\Deze functiereeks is een vervolg op de functiereeks van medewerker glastuinbouw en vormt een basis voor verdere ontwikkeling naar bijv. meer leidinggevende of specialistische functies, zoals die van meewerkend voorman en teeltchef of teeltspecialist en specialist gewasbescherming (zie functienummers 10.08 t\/m 10.11).\'
+reportsTo: 'operationeel leidinggevende, zoals bijv. productieleider of meewerkend voorman'
+manages: 'niet van toepassing '
+jobGoal: 'Verrichten van uitvoerende werkzaamheden gericht op het telen en\/of oogsten en\/of verwerken\/verpakken van tuinbouwgewassen. '
+department: Productie
+expectations:
+  -
+    resultArea: 'Voorbereide teelt'
+    mainActivities: ['aanbrengen van (door anderen samengestelde) bodemverbeteraars (meststoffen)', 'gebruiksklaar maken van de groeiondergrond door o.a. substraat reinigen, folietrekken, aanbrengen van flexibele leidingen en druppelaars t.b.v. toevoer van water\/voeding', 'spitten, schoffelen, harken, egaliseren of aanbrengen van profiel in de bodem', 'schoonmaken van de teeltlocatie (kas)', 'aanbrengen of verwijderen van afdekmateriaal (meestal van\/op daken van kassen) t.b.v. aanpassen van lichtintensiteit', 'stekken van moerplanten', 'handmatig inbrengen van plantmateriaal in bodem of pot (steksteken)', 'invoeren plantmateriaal in plantmachine t.b.v. machinaal planten', 'uitzetten en verplaatsen van opgepot uitgangsmateriaal in kas- of groeipositie (mechanisch of handmatig) ']
+    resultCriteria: ['efficiency van uitgevoerde werkzaamheden', 'tijdige beschikbaarheid van gebruiksklare groeiondergrond', 'juistheid aanbrengen van materialen en stoffen t.b.v. teeltvoorbereiding ']
+  -
+    resultArea: 'Geteeld product'
+    mainActivities: ['aanbrengen van ondersteuningsmaterialen (binden, indraaien, stokken plaatsen e.d.)', 'verzorgen van gewas door o.a. uitdunnen, krenten, pluizen, ontdoen van ongewenste bladeren, knoppen, snoeien e.d.', 'handmatig en\/of machinaal onkruid verwijderen', 'verzorgen van de water- en voedingsemissie', 'beoordelen van het groeiproces en signaleren van groeiverstoringen ']
+    resultCriteria: ['tijdigheid en juistheid van gewasverzorging', 'juistheid van beoordeling van het groeiproces', 'tijdigheid van signalering van groeiverstoringen', 'efficiency van uitgevoerde werkzaamheden ']
+  -
+    resultArea: 'Geoogst product'
+    mainActivities: ['handmatig plukken, snijden, rapen, verzamelen van oogstrijp gewas, ontdoen van overtollig blad, etc., in (rol-) containers, kisten of dozen leggen en aanleveren op een centrale verzamel- of verwerkingsplaats', 'sorteren van geoogst gewas op klasse (grootte en uiterlijke kwaliteit)', 'verpakken, binden, inrollen, sealen, insteken, opsteken, etc.', 'plaatsen van (verpakt) gewas in diverse vormen van emballage en waar nodig etiketteren, wegen en afsluiten ']
+    resultCriteria: ['snelheid en juistheid van uitgevoerde verwerkings- en verpakkingswerkzaamheden', 'juistheid sortering van gewassen']
+  -
+    resultArea: 'Overige bijdrage'
+    mainActivities: ['intern transporteren van gewas en materialen (met bijv. rollenkar)', 'aanleveren van gegevens m.b.t. de verrichte werkzaamheden, t.b.v. productielijsten', 'assisteren bij het dagelijks onderhoud aan en reiniging van transport- en hefmiddelen, teeltapparatuur en gereedschappen', 'verrichten van opruimwerkzaamheden ']
+    resultCriteria: ['efficiency en juistheid van uitgevoerde transportwerkzaamheden', 'tijdige beschikbaarheid van gegevens', 'tevredenheid over assistentie', 'orde en netheid van de werkomgeving']
+  -
+    resultArea: 'Nageleefde voorschriften'
+    mainActivities: ['Naleven van de bedrijfsinstructies inzake veiligheid van werken e.d.']
+    resultCriteria: ['mate van naleving van bedrijfsinstructies']
+burdeningCircumstances:
+  circumstance:
+    - 'Krachtsuitoefening bij het incidenteel tillen en verplaatsen van materialen, kisten, dozen of gewas tot max. 15 kg. en bij het hanteren van gereedschappen en hulpmiddelen t.b.v. grondbewerking, inpakwerkzaamheden en gewasverzorging (snijden, snoeien).'
+    - 'Eenzijdige spierbelasting en gebukt en gebogen werken bij gewasverzorging.'
+    - 'Soms werken aan\/met vochtige materialen bij plantwerkzaamheden; voortdurend werken in ruimten met relatief hoge luchtvochtigheid (ca. 80%) en relatief hoge temperaturen (tot ca. 25 C); hinder van dragen van voorgeschreven persoonlijke beschermingsmidd'
+    - 'Kans op hand- en vingerletsel a.g.v. hanteren van messen, etc. bij gewasverzorging. Kans op vallen van stellages etc. bij verzorgings- en oogstwerkzaamheden in geval van hooggroeiend gewas. '
+    - 'Het functieniveau volgens ORBA is gebaseerd op de rubrieken: Functiecontext, Positie in de organisatie, Functiedoel, Resultaatverwachting \/ Functionele activiteiten en Werkgerelateerde bezwaren. '
+orbaScore: '58'
+wageScaleGroup: D

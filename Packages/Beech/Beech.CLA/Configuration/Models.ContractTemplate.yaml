@@ -1,0 +1,14 @@
+# todo: Make this more generic.
+'Beech.CLA.Domain.Model.ContractTemplate':
+  properties:
+    'templateName':
+      label: 'Template name'
+    'articles':
+      type: 'array'
+      label: 'Articles'
+      items:
+        'required':
+           options:
+             values:
+               - FALSE
+               - TRUE

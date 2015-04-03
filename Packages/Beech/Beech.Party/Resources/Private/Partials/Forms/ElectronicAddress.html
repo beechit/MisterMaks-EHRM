@@ -1,0 +1,51 @@
+{namespace ehrm=Beech\Ehrm\ViewHelpers}
+
+<div id="{action}{electronicAddress.id}{suffix}" class="electronicAddressSection">
+
+	<ehrm:flashMessages/>
+
+	<f:form action="{action}" controller="ElectronicAddress" object="{electronicAddress}" name="electronicAddress" class="compact-form form-horizontal {action}">
+		<f:if condition="{0: action} == {0: 'update'}">
+			<f:then>
+				<f:render partial="Views/List/ElectronicAddress" arguments="{_all}"/>
+			</f:then>
+		</f:if>
+		<div id="toggle{electronicAddress.id}{suffix}" class="{f:if(condition: collapsed, then: 'collapse', else: '')}">
+			<div class="row-fluid" >
+				<div class="span1"><i class="icon-plus"/></div>
+				<div class="span3">
+					<ehrm:optionSelect property="electronicAddressType" id="electronicAddressType{electronicAddress.id}" model="Beech.Party:ElectronicAddress" placeholder="{f:translate(id: 'Type')}..." class="span10 electronicAddressType" translate="{by: 'id'}"/>
+				</div>
+				<div class="span7">
+					<div class="input-append input-prepend">
+						<f:form.textfield property="address" class="span9" placeholder="{f:translate(value: 'address')}..."/>
+						<span class="add-on"><i class="icon-envelope"/></span>
+						<f:if condition="{electronicAddress.primary}">
+							<f:then>
+							<span class="add-on hide"><f:translate id="primair">Primary</f:translate>
+								<f:form.checkbox property="primary" id="primary-electronicAddress-{electronicAddress.id}{suffix}" class="primary" value="TRUE"/>
+							</span>
+							</f:then>
+							<f:else>
+								<span class="add-on"><f:translate id="primair">Primary</f:translate>
+									<f:form.checkbox property="primary" id="primary-electronicAddress-{electronicAddress.id}{suffix}" class="primary" value="TRUE"/>
+								</span>
+							</f:else>
+						</f:if>
+					</div>
+				</div>
+				<div class="span1">
+					<button type="submit" name="action" class="btn btn-small toggle{electronicAddress.id}_save" value="{action}">
+						<i class="icon-save"></i>
+					</button>
+				</div>
+			</div>
+		</div>
+		<f:form.hidden property="party" value="{party}"/>
+	</f:form>
+</div>
+<f:if condition="{0: action} == {0: 'add'}">
+	<f:then>
+		<f:render partial="Forms/Buttons/Add" arguments="{identifier: suffix, collapsed: collapsed}"/>
+	</f:then>
+</f:if>

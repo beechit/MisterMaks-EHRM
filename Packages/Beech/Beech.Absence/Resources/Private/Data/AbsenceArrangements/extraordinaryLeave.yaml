@@ -1,0 +1,12 @@
+absenceArrangement:
+  arrangementName: 'extraordinaryLeave'
+  label: 'Extraordinary leave'
+  absenceType: 'leave'
+  help: ''
+  days: ''
+  reportInpectionAction: TRUE
+  needsGrant: FALSE
+  autoGrandBalance: FALSE
+  deductFromBalance: FALSE
+  addToBalance: FALSE
+  unit: 'hours'

@@ -1,0 +1,110 @@
+'Beech.Party.Domain.Model.Address':
+  properties:
+    'party':
+      type: 'TYPO3\Party\Domain\Model\AbstractParty'
+    'addressType':
+      label: 'Address type'
+      options:
+        values:
+          'homeAddress': 'Home address' # dont change key value, it breaks working of application
+          'workAddress': 'Work address' # dont change key value, it breaks working of application
+#          'business': 'Business'
+          'postbox': 'Postbox'
+          'mailing': 'Mailing'
+          'foreign': 'Foreign'
+#          'other': 'Other'
+      validation:
+        -
+          type: 'StringLength'
+          options:
+            maximum: 35
+    'streetName':
+      label: 'Street name'
+      validation:
+        -
+          type: 'StringLength'
+          options:
+            maximum: 35
+        -
+          type: 'NotEmpty'
+    'primaryPost':
+      label: 'Primary postaddress'
+      options:
+        values:
+          - FALSE
+          - TRUE
+    'primary':
+      label: 'Primary address'
+      options:
+        values:
+          - FALSE
+          - TRUE
+    'postBox':
+      label: 'Postbox number'
+      validation:
+        -
+          type: 'Beech.Ehrm:PostBoxNumber'
+    'houseNumber':
+      label: 'House number'
+      validation:
+        -
+          type: 'Integer'
+        -
+          type: 'StringLength'
+          options:
+            maximum: 5
+    'houseNumberAddition':
+      label: 'House number addition'
+      validation:
+        -
+          type: 'RegularExpression'
+          options:
+            regularExpression: '/[a-zA-Z0-9\\-]{0,10}/'
+        -
+          type: 'StringLength'
+          options:
+            maximum: 10
+    'postal':
+      label: 'Postal code'
+      validation:
+        -
+          type: 'NotEmpty'
+    'residence':
+      label: 'Residence'
+      validation:
+        -
+          type: 'StringLength'
+          options:
+            maximum: 35
+        -
+          type: 'NotEmpty'
+    'country':
+      label: 'Country'
+      validation:
+        -
+          type: 'StringLength'
+          options:
+            maximum: 30
+        -
+          type: 'NotEmpty'
+      default: 'NL'
+
+    'primary':
+      label: 'Primary'
+      options:
+        values:
+          - FALSE
+          - TRUE
+      default: FALSE
+    'description':
+      label: 'Address description'
+      validation:
+        -
+          type: 'Text'
+    'creationDate':
+      label: 'creation date'
+      type: 'DateTime'
+    'createdBy':
+      default: 'currentUser'
+      label: 'Created by'
+      type: 'Beech\Party\Domain\Model\Person'

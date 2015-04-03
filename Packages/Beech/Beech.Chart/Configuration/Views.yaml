@@ -1,0 +1,6 @@
+'Beech.Chart':
+  requestFilter: 'isPackage("Beech.Chart")'
+  viewObjectName: 'Beech\Ehrm\View\TemplateView'
+  options:
+    layoutRootPaths:
+      - 'resource://Beech.Ehrm/Private/Layouts'

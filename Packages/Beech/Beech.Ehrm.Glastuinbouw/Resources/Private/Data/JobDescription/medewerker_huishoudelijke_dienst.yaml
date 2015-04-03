@@ -1,0 +1,29 @@
+number: '70.01'
+name: 'Medewerker huishoudelijke dienst'
+jobContext: 'De functie wordt meestal parttime vervuld.'
+reportsTo: 'operationeel leidinggevende, zoals bijv. ondernemer of bedrijfsleider'
+manages: 'niet van toepassing'
+jobGoal: 'Schoonhouden van kantoorruimten en bijbehorende sanitaire voorzieningen.'
+department: 'Staf & facility'
+expectations:
+  -
+    resultArea: 'Nette en hygi\u00ebnische '
+    mainActivities: ['schoonmaken van kantoren, gangen en sanitaire voorzieningen in kantoorafdelingen', 'uitvoeren van schoonmaakwerkzaamheden, zoals stoffen en zuigen van kantoren, reinigen en ontvlekken van meubilair, boenen en dweilen van vloeren, lappen van ramen en deuren, afnemen van wanden en bureaus, schoonmaken en evt. desinfecteren van sanitair', 'bepalen van te gebruiken reinigingsmiddelen en vloeistoffen ']
+    resultCriteria: ['snelheid van schoonmaakhandelingen', 'correctheid van toepassing van de vereiste methoden en middelen']
+  -
+    resultArea: 'Effici\u00ebnte werkuitvoering'
+    mainActivities: ['bespreken van de werkzaamheden en de uitvoering met leidinggevende. Informeren van bedrijfsmedewerkers over de schoonmaakwerkzaamheden', 'indelen van de werkzaamheden volgens schema, opdrachten van leidinggevende en evt. naar eigen inzicht op grond van beoordeling van de situatie', 'verzamelen van kantoorafval en afvoeren naar daartoe bestemde plaatsen ']
+    resultCriteria: ['effici\u00ebnte indeling van werkzaamheden', 'juistheid van afvoer vuil', 'juistheid van prioriteitstelling', 'juistheid van naleving schema']
+  -
+    resultArea: 'Aangevulde artikelen '
+    mainActivities: ['Aanvullen van zeep en toiletpapier, zonodig verwisselen van huishoudtextiel.']
+    resultCriteria: ['aanwezigheid van artikelen op locaties']
+burdeningCircumstances:
+  circumstance:
+    - 'Krachtsuitoefening tijdens handmatige schoonmaakwerkzaamheden en het verplaatsen van volle emmers met water.'
+    - 'Eenzijdige belasting van armspieren. Werken in gedwongen houdingen (bukken en buigen).'
+    - 'Onaangenaam werk bij het reinigen van sanitaire voorzieningen. Hinder van vuil, water en reinigingsmiddelen.'
+    - 'Kans op letsel\/verwondingen door vallen e.d. '
+    - 'Het functieniveau volgens ORBA is gebaseerd op de rubrieken: Functiecontext, Positie in de organisatie, Functiedoel, Resultaatverwachting \/ Functionele activiteiten en Werkgerelateerde bezwaren. '
+orbaScore: '31'
+wageScaleGroup: B1

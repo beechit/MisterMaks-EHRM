@@ -1,0 +1,13 @@
+<f:if condition="{electronicAddress}">
+	<f:then>
+		<div id="electronicAddress-{electronicAddress.id}" class="multi-form-item">
+			<f:render partial="Forms/ElectronicAddress" arguments="{party: party, electronicAddress: electronicAddress, action: 'update'}"/>
+		</div>
+		<div id="electronicAddress-add" class="multi-form-item">
+			<f:render partial="Forms/ElectronicAddress" arguments="{party: party, action: 'add', suffix: 'electronicAddress'}"/>
+		</div>
+	</f:then>
+</f:if>
+
+
+

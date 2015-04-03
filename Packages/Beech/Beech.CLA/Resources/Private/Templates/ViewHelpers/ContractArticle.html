@@ -1,0 +1,13 @@
+{namespace cla=Beech\CLA\ViewHelpers}
+
+		<b>Artikel {articleIndex}: {element.properties.contractArticle.articleHeader}</b>
+<br/>
+		{articleText -> f:format.raw()}
+		<f:if condition="{element.contractArticle.subArticles}">
+			<ul>
+				<f:for each="{element.contractArticle.subArticles}" as="subArticle">
+					<li>{subArticle.articleText -> f:format.raw()}</li>
+				</f:for>
+			</ul>
+		</f:if>
+		<br/>

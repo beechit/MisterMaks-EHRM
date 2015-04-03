@@ -1,0 +1,16 @@
+<f:if condition="{photo}">{namespace ehrm=Beech\Ehrm\ViewHelpers}
+	<f:then>
+		<f:if condition="{random}">
+			<f:then>
+				<img src="download/{photo.id}/{ehrm:random()}" width="{width}" class="img-polaroid"/>
+			</f:then>
+			<f:else>
+				<img src="download/{photo.id}" width="{width}" class="img-polaroid"/>
+			</f:else>
+		</f:if>
+	</f:then>
+	<f:else>
+		<img src="{f:uri.resource(path: 'Images/NoProfilePhoto.png', package: 'Beech.Party')}" width="{width}" class="img-polaroid"/>
+	</f:else>
+</f:if>
+

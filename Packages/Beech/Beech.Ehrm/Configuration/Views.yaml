@@ -1,0 +1,8 @@
+-
+  requestFilter: 'isPackage("Beech.Ehrm") || isPackage("Beech.Task")'
+  viewObjectName: 'Beech\Ehrm\View\TemplateView'
+  options:
+    layoutRootPaths:
+      - 'resource://Beech.Ehrm/Private/Layouts'
+    partialRootPaths:
+      - 'resource://Beech.Ehrm/Private/Partials'

@@ -1,0 +1,35 @@
+'Beech.Document.Domain.Model.DocumentType':
+  properties:
+    'categoryName':
+      label: 'Document category name'
+      validation:
+        -
+          type: 'StringLength'
+          options:
+            maximum: 35
+    'typeName':
+      label: 'Document type'
+      validation:
+        -
+          type: 'StringLength'
+          options:
+            maximum: 35
+# This is a set of extra properties based on type that define the document.
+    'delete':
+      label: 'Allow delete'
+      type: 'Boolean'
+    'expiration':
+      label: 'Document can expire'
+      type: 'Boolean'
+    'document':
+      label: 'is a document not a picture'
+      type: 'Boolean'
+    'number':
+      label: 'Is identified by a number'
+      type: 'Boolean'
+    'period':
+      label: 'Connected to a period'
+      type: 'Boolean'
+    'year':
+      label: 'Connected to a year'
+      type: 'Boolean'

@@ -1,0 +1,15 @@
+{namespace ehrm=Beech\Ehrm\ViewHelpers}
+<div style="position: absolute; height: 100%">
+	<f:translate id="filter:">Filter:</f:translate>
+	<ehrm:form.select name="documentType" class="documentType" options="{documentCategories}"
+					  optionLabelField="typeName"/>
+
+	<style>.chosen-container {
+		width: 200px !important;
+	}</style>
+</div>
+<script type="text/javascript">
+	$('select.documentType').change(function () {
+		oPersonDocumentsTable.fnFilter($(this).find('option:selected').text());
+	});
+</script>

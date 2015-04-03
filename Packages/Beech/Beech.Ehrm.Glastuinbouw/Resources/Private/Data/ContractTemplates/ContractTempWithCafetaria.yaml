@@ -1,0 +1,173 @@
+###################################################################
+# This file is the template for a contract under CLA GTB
+# and is the base for the following contracts
+# Temporary contract with cafetaria arrangement
+####################################################################
+contractTemplate:
+  cla: 'Glastuinbouw'
+  claVersion: '1 juli 2012 tot en met 30 juni 2014'
+  claVersiondate: 01-07-2012
+  availableLanguages:
+    - 'nl_NL'
+  templateName: 'Temporary contract with cafetaria arrangement'
+  contractTitle:
+    text:
+      en: ''
+      nl: 'Arbeidsovereenkomst voor bepaalde tijd voor de regeling gelegenheidsarbeid '
+      pl: ''
+  signingParties:
+    text:
+      en: ''
+      nl: 'Ondergetekenden:'
+      pl: 'Niżej podpisani:'
+  nameCompany:
+    text:
+      en: ''
+      nl: 'Bedrijfsnaam:'
+      pl: 'Nazwa firmy:'
+  representiveEmployer:
+    text:
+      en: ''
+      nl: 'Rechtsgeldig vertegenwoordigd door:'
+      pl: 'Siedziba'
+  addressCompany:
+    text:
+      en: 'Address:'
+      nl: 'Adres:'
+      pl: 'Adres:'
+  postalResidenceEmployer:
+    text:
+      en: 'Postal code and residence:'
+      nl: 'Postcode en vestigingsplaats:'
+      pl: ''
+  employerStatement:
+    text:
+      en: ''
+      nl: 'Hierna te noemen werkgever,'
+      pl: 'zwana dalej „Pracodawcą” oraz'
+  nameEmployee:
+    text:
+      en: 'Name employee:'
+      nl: 'Naam medewerker:'
+      pl: 'Nazwisko pracownika '
+  postalResidenceEmployee:
+    text:
+      en: 'Postal code and residence:'
+      nl: 'Postcode en vestigingsplaats:'
+      pl: ''
+  dateofBirthEmployee:
+    text:
+      en: 'Date of birth:'
+      nl: 'Geboorte datum:'
+      pl: 'Data urodzenia pracownika:'
+  bsnEmployee:
+    text:
+      en: 'BSN number:'
+      nl: 'Burgerservicenummber (BSN):'
+      pl: 'Numer BSN/SOFI pracownika :'
+  employeeStatement:
+    text:
+      en: ''
+      nl: 'Hierna te noemen werknemer,'
+      pl: ''
+  contractStatement:
+    text:
+      en: ''
+      nl: 'verklaren hierbij een arbeidsovereenkomst te zijn aangegaan onder de volgende voorwaarden:'
+      pl: 'zwany dalej „Pracownikiem” oświadczają niniejszym, że zawarli umowę o pracę na następujących warunkach:'
+  employerMembership:
+    en: 'Membership number LTO:'
+    nl: 'Lidmaatschapsnummer LTO:'
+    pl: 'Numer członkowski LTO:'
+  articles:
+    -
+      '10000':
+        required: TRUE
+    -
+      '10001':
+        required: TRUE
+    -
+      '10002':
+        required: TRUE
+    -
+      '10004':
+        required: TRUE
+    -
+      '10006':
+        required: TRUE
+    -
+      '10007':
+        required: TRUE
+    -
+      '10008':
+        required: TRUE
+    -
+      '10009':
+        required: TRUE
+    -
+      '10010':
+        required: FALSE
+    -
+      '10011':
+        required: FALSE
+    -
+      '10012':
+        required: FALSE
+    -
+      '10014':
+        required: TRUE
+    -
+      '10015':
+        required: TRUE
+    -
+      '10020':
+        required: TRUE
+    -
+      '10021':
+        required: TRUE
+    -
+      '10022':
+        required: TRUE
+    -
+      '10023':
+        required: TRUE
+    -
+      '10024':
+        required: TRUE
+    -
+      '10025':
+        required: TRUE
+    -
+      '10026':
+        required: TRUE
+    -
+      '10027':
+        required: TRUE
+    -
+      '10035':
+        required: TRUE
+# these settings should be persisted while saving contract.
+  vacationAllowancePercentage: '8.33'
+  gla: FALSE
+  cafetariaModel: TRUE
+# for 'paper' contract generation
+  sigatureStatement:
+    text:
+      en: ''
+      nl: 'Aldus overeengekomen en in tweevoud opgemaakt op <SignDate> te <SignLocation>'
+      pl: 'Jak uzgodniono, sporządzono w dwóch egzemplarzach i podpisano dnia <SignDate> w <SignLocation>'
+    values:
+      signDate:
+        type: 'DateTime'
+        default: 'now'
+      signLocation:
+  signatureEmployer:
+    text:
+      en: 'Signature employer'
+      nl: 'Handtekening Werkgever,'
+      pl: 'Podpis pracodawcy'
+  signatureEmployee:
+    text:
+      en: 'Signature employee'
+      nl: 'Handtekening Werknemer,'
+      pl: 'Podpis pracownika'

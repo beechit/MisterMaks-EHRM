@@ -1,0 +1,25 @@
+number: '50.01'
+name: 'Medewerker verkoopbinnendienst'
+jobContext: 'De functie komt voor in middelgrote tot grote glastuinbouwbedrijven.'
+reportsTo: 'operationeel leidinggevende, zoals bijv. directie of hoofd verkoop'
+manages: 'niet van toepassing'
+jobGoal: 'Ondersteunen van de verkoopbuitendienst door offerteverstrekking, afhandeling van orders en onderhouden van communicatie tussen klanten en verkoopbuitendienst. '
+department: Commercie
+expectations:
+  -
+    resultArea: Orderplaatsing
+    mainActivities: ['\u00ad\\tverwerken van opgaven verkoopbuitendienst en telefonische aanvragen door klanten', '\u00ad\\tvaststellen van prijs, levertijd, leveringsvoorwaarden o.b.v. lopende jaarcontracten en vaste prijzen', '\u00ad\\taanvullen van ontbrekende gegevens waarnodig navragen bij verkoopbuitendienst', '\u00ad\\topstellen van de offerte (incl. leveringscondities) en waarnodig toelichten', '\u00ad\\tinvoeren van offertegegevens per klant', '\u00ad\\tnavragen bij afnemers en\/of contact opnemen met de verkoopbuitendienst over uitstaande offertes ']
+    resultCriteria: ['\u00ad\\tjuistheid en correctheid van afhandeling van aanvragen', '\u00ad\\tinhoudelijke juistheid van offertes', '\u00ad\\tklanttevredenheid inzake followup']
+  -
+    resultArea: 'Gerealiseerde orderuitvoering'
+    mainActivities: ['\u00ad\\tcontroleren, completeren en invoeren van ordergegevens in het systeem t.b.v. verdere afhandeling door administratie', '\u00ad\\tvolgen van de orderafwikkeling a.d.h.v. planningsoverzichten, expeditiegegevens e.d., signaleren en melden van dreigende afwijkingen aan leidinggevende of verkoopbuitendienst', '\u00ad\\tbijhouden van klantgegevens in het klantenbestand', '\u00ad\\tverzamelen van relevante informatie en maken van overzichten t.b.v. administratie, boekhouding, verkoopbuitendienst en leidinggevende ']
+    resultCriteria: ['\u00ad\\tjuistheid en volledigheid van gegevensinvoer', '\u00ad\\ttijdigheid melden van afwijkingen', 'actualiteit van klantenbestand', '\u00ad\\thelderheid en tijdigheid van verstrekte informatie en overzichten ']
+  -
+    resultArea: 'Verleende ondersteuning van de buitendienst'
+    mainActivities: ['\u00ad\\tverstrekken van telefonische informatie aan (potenti\u00eble) klanten over bedrijf en producten en versturen van brochures', '\u00ad\\tinplannen van bezoekafspraken t.b.v. verkoopbuitendienst bij bestaande en nieuwe klanten', '\u00ad\\tdoorgeven van boodschappen, klachten en bijzonderheden aan de klant en verkoopbuitendienst', '\u00ad\\tdeelnemen aan vergaderingen, maken van een vergaderverslag en verstrekken van informatie over lopende zaken']
+    resultCriteria: ['\u00ad\\ttijdigheid en juistheid van informatieverstrekking', '\u00ad\\tcorrectheid van informatieverstrekking\/klantvriendelijkheid', '\u00ad\\tefficiency en juistheid van geplande afspraken ']
+burdeningCircumstances:
+  circumstance:
+    - 'Eenzijdige houding en belasting van oog- en rugspieren bij het werken met beeldscherm (ca. 2 uur p.d.).'
+orbaScore: '118'
+wageScaleGroup: G

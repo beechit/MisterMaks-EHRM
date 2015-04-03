@@ -1,0 +1,15 @@
+Radmiraal:
+  Emberjs:
+    restInterfaces:
+      beechPartyDomainModelPerson:
+        routePath: 'beechPartyDomainModelPersons'
+        model: 'Beech\Party\Domain\Model\Person'
+        repository: 'Beech\Party\Domain\Repository\PersonRepository'
+      beechPartyDomainModelCompany:
+        routePath: 'beechPartyDomainModelCompanies'
+        model: 'Beech\Party\Domain\Model\Company'
+        repository: 'Beech\Party\Domain\Repository\CompanyRepository'
+      typo3PartyDomainModelPersonName:
+        routePath: 'typo3PartyDomainModelPersonNames'
+        model: 'TYPO3\Party\Domain\Model\PersonName'
+        repository: 'Beech\Party\Domain\Repository\PersonNameRepository'

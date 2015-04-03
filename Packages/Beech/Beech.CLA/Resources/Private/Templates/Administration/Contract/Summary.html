@@ -1,0 +1,19 @@
+<f:layout name="Ajax"/>{namespace form=TYPO3\Form\ViewHelpers}
+<f:section name="Body">
+	<p>Contract was created.</p>
+
+	<p>Mister maks will create some task that need to be completed to finish this process</p>
+
+	<div class="actions">
+		<nav class="form-actions">
+			<button class="btn btn-primary btn-close" data-dismiss="modal">Close</button>
+		</nav>
+	</div>
+	<f:if condition="{actions}">
+		<f:for each="{actions}" as="actionContent" key="actionName">
+			<script type="text/javascript">
+				$('.btn-{actionName}').on('click', function() <![CDATA[{]]>window.location.href="{actionContent}"<![CDATA[}]]>)
+			</script>
+		</f:for>
+	</f:if>
+</f:section>

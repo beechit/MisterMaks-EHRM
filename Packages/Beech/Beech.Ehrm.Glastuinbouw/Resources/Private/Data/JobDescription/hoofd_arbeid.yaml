@@ -1,0 +1,30 @@
+number: '10.12'
+name: 'Hoofd arbeid'
+jobContext: 'De functie komt m.n. in (middel)grote glastuinbouwbedrijven (groenten en bloemen\/planten) voor. Inzake de uitvoering wordt teruggerapporteerd en achteraf verantwoording afgelegd aan bedrijfsleider of directie. Het hoofd arbeid houdt zich bezig met het inplannen van de arbeid o.b.v. de teeltplannen en werkschema\u2019s i.s.m. een hoofd teelt of een teeltmanager.'
+reportsTo: 'operationeel leidinggevende, zoals bijv. ondernemer of bedrijfsleider.'
+manages: '10-20 vaste medewerkers, aangevuld met seizoensmedewerkers (ca. 20-50)'
+jobGoal: 'Opstellen van de personeels- en werkplanning o.b.v. het teeltplan, regelen van de beschikbaarheid van benodigd personeel en coordineren van de werkuitvoering op de toegewezen locaties.'
+department: Productie
+expectations:
+  -
+    resultArea: 'Geplande werkzaamheden'
+    mainActivities: ['overleggen met teeltchef\/hoofd teelt over de te verwachte werkzaamheden', 'ramen van benodigde manuren en doorlooptijd', 'opstellen van een week- en dagplanning van de arbeid van zowel vaste medewerkers, scholieren en uitzendkrachten o.b.v. een teeltplan i.o.m. teeltchef', 'onderhouden van contact met het uitzendbureau over beschikbaarheid van uitzendkrachten ']
+    resultCriteria: ['juistheid en realiseerbaarheid van geplande werkzaamheden', 'tijdigheid en helderheid van communicatie in- en extern']
+  -
+    resultArea: 'Geadministreerde urenverantwoording'
+    mainActivities: ['registreren en bijhouden van alle gewerkte uren en doorgeven aan medewerker P&O\/administratie t.b.v. de salarisverwerking (evt. door externe partij)']
+    resultCriteria: ['actualiteit en tijdigheid van geregistreerde urenverantwoording']
+  -
+    resultArea: 'Gerealiseerde werkplanning '
+    mainActivities: ['leiden van de dagelijkse werkzaamheden t.a.v. teeltvoorbereiding, teelt en oogst', 'mede uitvoeren van de teeltvoorbereiding-, oogst en teeltwerkzaamheden indien nodig', 'toewijzen van taken aan en indelen van de medewerkers, geven van aanwijzingen\/instructies', 'toezicht houden op de uit te voeren werkzaamheden en aangeven van gewenste aanpassingen, laten uitvoeren van mogelijke correcties', 'oplossen van moeilijkheden die door medewerkers niet kunnen of mogen verholpen worden', 'controleren van de kwaliteit van het product', 'signaleren van verstorende invloeden en deze bespreken met bedrijfsleider', 'deelnemen aan maandelijks overleg met alle vaste medewerkers en wekelijks overleg met het management ']
+    resultCriteria: ['efficiency en effectiviteit van dagelijkse werkzaamheden door medewerkers', 'helderheid van begeleiding en bijsturing', 'tijdigheid en doelmatigheid van bijsturing en communicatie met bedrijfsleider', 'beschikbaarheid van producten volgens planning ']
+  -
+    resultArea: 'Presterende medewerkers'
+    mainActivities: ['uitvoeren van het personeelsbeheer w.o. selecteren en aannemen van nieuwe medewerkers, opleiden\/begeleiden van nieuwe medewerkers, voeren van beoordelingsgesprekken, regelen van verlof. bijhouden van diverse aan\/afwezigheidgegevens', 'coachen van medewerkers', 'bijhouden van wetgeving op het gebied van personeel i.s.m. medewerker P&O', 'verrichten van overige werkzaamheden w.o. het opstellen van werkinstructies\/instructiemateriaal voor medewerkers ']
+    resultCriteria: ['kennis van medewerkers', 'efficiency en juistheid van uitgevoerde werkzaamheden', 'doelmatigheid van communicatie', 'tijdigheid en juistheid oplossingen van afwijkingen en problemen ']
+burdeningCircumstances:
+  circumstance:
+    - 'Soms werken\/verblijven in ruimten met hinder van relatief hoge luchtvochtigheid en\/of hoge temperatuur.'
+    - 'Het functieniveau volgens ORBA is gebaseerd op de rubrieken: Functiecontext, Positie in de organisatie, Functiedoel, Resultaatverwachting \/ Functionele activiteiten en Werkgerelateerde bezwaren. '
+orbaScore: '152'
+wageScaleGroup: 'Boven CAO'

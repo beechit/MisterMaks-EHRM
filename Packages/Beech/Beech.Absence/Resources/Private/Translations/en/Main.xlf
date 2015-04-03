@@ -1,0 +1,271 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-strict.xsd">
+	<file original="" source-language="en" target-language="en" datatype="plaintext">
+		<body>
+			<trans-unit id="absence.absenceType">
+				<source>Type of absence</source>
+			</trans-unit>
+			<trans-unit id="absence.personId">
+				<source>Person</source>
+			</trans-unit>
+			<trans-unit id="absence.departementId">
+				<source>department</source>
+			</trans-unit>
+			<trans-unit id="absence.firstSickDay">
+				<source>First absence day</source>
+			</trans-unit>
+			<trans-unit id="absence.disabilityPercentage">
+				<source>disability percentage</source>
+			</trans-unit>
+			<trans-unit id="absence.disabilitybackup">
+				<source>disability backup</source>
+			</trans-unit>
+			<trans-unit id="absence.recoveryDate">
+				<source>Recovery date</source>
+			</trans-unit>
+			<trans-unit id="absence.arboActionType">
+				<source>Action to take by Arbodienst</source>
+			</trans-unit>
+			<trans-unit id="absence.creationDate">
+				<source>Creation Date</source>
+			</trans-unit>
+			<trans-unit id="absence.createdBy">
+				<source>Created by</source>
+			</trans-unit>
+			<trans-unit id="absence.modification">
+				<source>Modification</source>
+			</trans-unit>
+			<trans-unit id="absence.modificationDate">
+				<source>modification date</source>
+			</trans-unit>
+			<trans-unit id="absence.modifiedBy">
+				<source>Modified by</source>
+			</trans-unit>
+			<trans-unit id="absence.selectAbsenceArrangement">
+				<source>Select absence type</source>
+			</trans-unit>
+			<trans-unit id="absence.flashmessage.createdAbsence">
+				<source>New minute created</source>
+			</trans-unit>
+			<trans-unit id="absence.flashmessage.updatedAbsence">
+				<source>Minute was updated</source>
+			</trans-unit>
+			<trans-unit id="absence.flashmessage.deletedAbsense">
+				<source>Minute was deleted</source>
+			</trans-unit>
+			<trans-unit id="absence.leave.startDate">
+				<source>Start leave</source>
+			</trans-unit>
+			<trans-unit id="absence.leave.endDate">
+				<source>End leave</source>
+			</trans-unit>
+			<trans-unit id="sickness.startDate">
+				<source>Date</source>
+			</trans-unit>
+			<trans-unit id="sickReport">
+				<source>Sick Report</source>
+			</trans-unit>
+			<trans-unit id="sickness.absenceType">
+				<source>Sickness Type</source>
+			</trans-unit>
+			<trans-unit id="sickness.estimatedRecoveryDate">
+				<source>Estimated Recovery date</source>
+			</trans-unit>
+			<trans-unit id="recoveryDateUnknown">
+				<source>Unknown</source>
+			</trans-unit>
+			<trans-unit id="reason">
+				<source>Reason</source>
+			</trans-unit>
+			<trans-unit id="reportMethod">
+				<source>Report method</source>
+			</trans-unit>
+			<trans-unit id="reportedTo">
+				<source>Reported to</source>
+			</trans-unit>
+			<trans-unit id="absenceArrangement.labourDispute">
+				<source>Labour dispute</source>
+			</trans-unit>
+			<trans-unit id="absenceArrangement.accident">
+				<source>Accident</source>
+			</trans-unit>
+			<trans-unit id="absenceArrangement.briefAbsence">
+				<source>Brief absence</source>
+			</trans-unit>
+			<trans-unit id="absenceArrangement.workRelatedFysical">
+				<source>Work related fysical</source>
+			</trans-unit>
+			<trans-unit id="absenceArrangement.workRelatedMental">
+				<source>Work related mental</source>
+			</trans-unit>
+			<trans-unit id="absenceArrangement.other">
+				<source>Other</source>
+			</trans-unit>
+			<trans-unit id="reportMethod.phone">
+				<source>Phone</source>
+			</trans-unit>
+			<trans-unit id="reportMethod.email">
+				<source>E-mail</source>
+			</trans-unit>
+			<trans-unit id="reportMethod.letter">
+				<source>Letter</source>
+			</trans-unit>
+			<trans-unit id="reportMethod.other">
+				<source>other</source>
+			</trans-unit>
+			<trans-unit id="reportMethod.inPerson">
+				<source>In person</source>
+			</trans-unit>
+			<trans-unit id="leave.reportMethod">
+				<source>Request by</source>
+			</trans-unit>
+			<trans-unit id="leave.type">
+				<source>Leave type</source>
+			</trans-unit>
+			<trans-unit id="leave.leave.reason">
+				<source>Reason</source>
+			</trans-unit>
+			<trans-unit id="absenceArrangement.extraordinaryLeave">
+				<source>Extraordinary leave</source>
+			</trans-unit>
+			<trans-unit id="absenceArrangement.holiday">
+				<source>Holiday</source>
+			</trans-unit>
+			<trans-unit id="absenceArrangement.vacation">
+				<source>Vacation</source>
+			</trans-unit>
+			<trans-unit id="absenceArrangement.doctorVisit">
+				<source>Doctor visit eg.</source>
+			</trans-unit>
+			<trans-unit id="absenceArrangement.compensationHours">
+				<source>Compensation hours</source>
+			</trans-unit>
+			<trans-unit id="leaveRequest">
+				<source>Leave request</source>
+			</trans-unit>
+			<trans-unit id="leaveHistory">
+				<source>Leave history</source>
+			</trans-unit>
+			<trans-unit id="percentageLeaveBalanceUsed">
+				<source>% used from leavebalance</source>
+			</trans-unit>
+			<trans-unit id="remainingLeaveBalance">
+				<source>remaining balance</source>
+			</trans-unit>
+			<trans-unit id="company">
+				<source>Company</source>
+			</trans-unit>
+			<trans-unit id="department">
+				<source>Department</source>
+			</trans-unit>
+			<trans-unit id="companyLeavePercentage">
+				<source>Company %</source>
+			</trans-unit>
+			<trans-unit id="departmentLeavePercentage">
+				<source>Department %</source>
+			</trans-unit>
+			<trans-unit id="type">
+				<source>Type</source>
+			</trans-unit>
+			<trans-unit id="from">
+				<source>from</source>
+			</trans-unit>
+			<trans-unit id="till">
+				<source>till</source>
+			</trans-unit>
+			<trans-unit id="days">
+				<source>Days</source>
+			</trans-unit>
+			<trans-unit id="hours">
+				<source>hours</source>
+			</trans-unit>
+			<trans-unit id="status">
+				<source>Status</source>
+			</trans-unit>
+			<trans-unit id="absence.sEmptyTable">
+				<source>No data available</source>
+			</trans-unit>
+			<trans-unit id="absence.sSearch">
+				<source>Search</source>
+			</trans-unit>
+			<trans-unit id="absence.sInfo">
+				<source>Showing (_START_ of _END_) of _TOTAL_ entries.</source>
+			</trans-unit>
+			<trans-unit id="absence.sFirst">
+				<source>First</source>
+			</trans-unit>
+			<trans-unit id="absence.sLast">
+				<source>Last</source>
+			</trans-unit>
+			<trans-unit id="absence.sNext">
+				<source>Next</source>
+			</trans-unit>
+			<trans-unit id="absence.sPrevious">
+				<source>Previous</source>
+			</trans-unit>
+			<trans-unit id="sicknessHistory">
+				<source>Sickness history</source>
+			</trans-unit>
+			<trans-unit id="percentageSick">
+				<source>Sickness %</source>
+			</trans-unit>
+			<trans-unit id="percentageAverageSickDepartment">
+				<source>Department %</source>
+			</trans-unit>
+			<trans-unit id="percentageAverageSickAverage">
+				<source>Company: %</source>
+			</trans-unit>
+			<trans-unit id="percentageAverageBranche">
+				<source>Branche %</source>
+			</trans-unit>
+			<trans-unit id="absence.leave.hours">
+				<source>Number of hours</source>
+			</trans-unit>
+			<trans-unit id="absence.status.pending">
+				<source>Pending</source>
+			</trans-unit>
+			<trans-unit id="absence.status.accepted">
+				<source>Accepted</source>
+			</trans-unit>
+			<trans-unit id="absence.status.declined">
+				<source>Declined</source>
+			</trans-unit>
+			<trans-unit id="absence.status.sick">
+				<source>sick</source>
+			</trans-unit>
+			<trans-unit id="absence.status.recovered">
+				<source>recovered</source>
+			</trans-unit>
+			<trans-unit id="absence.sInfo">
+				<source>Showing (_START_ of _END_) of _TOTAL_ entries.</source>
+			</trans-unit>
+			<trans-unit id="absence.sSearch">
+				<source>Search</source>
+			</trans-unit>
+			<trans-unit id="absence.sEmptyTable">
+				<source>No data available</source>
+			</trans-unit>
+			<trans-unit id="absence.sLengthMenu">
+				<source>Show _MENU_ entries</source>
+			</trans-unit>
+			<trans-unit id="accepted">
+				<source>Accepted</source>
+			</trans-unit>
+			<trans-unit id="declined">
+				<source>Declined</source>
+			</trans-unit>
+			<trans-unit id="leave.accept">
+				<source>Accept</source>
+			</trans-unit>
+			<trans-unit id="leave.decline">
+				<source>Decline</source>
+			</trans-unit>
+			<trans-unit id="edit">
+				<source>Edit</source>
+			</trans-unit>
+			<trans-unit id="cancel">
+				<source>Cancel</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

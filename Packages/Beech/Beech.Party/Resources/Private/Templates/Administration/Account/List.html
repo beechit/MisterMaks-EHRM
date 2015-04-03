@@ -1,0 +1,49 @@
+<f:layout name="Ajax" />{namespace ehrm=Beech\Ehrm\ViewHelpers}
+
+<f:section name="Body">
+	<h1><f:translate id="accounts">Accounts</f:translate></h1>
+
+	<ehrm:flashMessages/>
+
+	<f:if condition="{accounts}">
+		<f:then>
+			<table class="table">
+				<thead>
+				<tr>
+					<th><f:translate id="account.accountIdentifier">Account identifier</f:translate></th>
+					<th><f:translate id="account.person">Person</f:translate></th>
+					<th><f:translate id="account.role">Role</f:translate></th>
+					<th><f:translate id="action">Action</f:translate></th>
+				</tr>
+				</thead>
+				<tbody>
+				<f:for each="{accounts}" as="account" iteration="iterator">
+					<tr>
+						<td>
+							<strong><a href="#/administration/userManagement/show/{account -> f:format.identifier()}">{account.accountIdentifier}</a></strong>
+						</td>
+						<td>
+							{account.party.name}
+						</td>
+						<td>
+							<f:for each="{account.roles}" key="roleName" as="role" iteration="roleIterator">
+								{roleName}{f:if(condition: roleIterator.isLast, then: '', else: ', ')}
+							</f:for>
+						</td>
+						<td>
+							<a href="#/administration/userManagement/edit/{account -> f:format.identifier()}"><i class="icon-pencil"></i></a>
+							<a href="#/administration/userManagement/delete/{account -> f:format.identifier()}"><i class="icon-trash"></i></a>
+						</td>
+					</tr>
+				</f:for>
+				</tbody>
+			</table>
+		</f:then>
+		<f:else>
+			<p><f:translate id="message.account.noResult">No users added yet</f:translate></p>
+		</f:else>
+	</f:if>
+	<div class="form-actions">
+		<a href="#/administration/userManagement/new" class="btn btn-primary"><i class="icon-plus"></i><f:translate id="action.create">Create</f:translate></a>
+	</div>
+</f:section>

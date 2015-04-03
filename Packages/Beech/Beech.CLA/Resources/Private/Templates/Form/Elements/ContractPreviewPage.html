@@ -1,0 +1,35 @@
+{namespace form=TYPO3\Form\ViewHelpers}{namespace cla=Beech\CLA\ViewHelpers}
+<fieldset>
+	<div class="preview">
+		<output>
+				<form:renderValues renderable="{page.rootForm}">
+					<f:if condition="{0: formValue.element.type} == {0: 'Beech.CLA:ContractHeaderSection'}">
+						<f:then>
+							<form:renderRenderable renderable="{formValue.element}" />
+						</f:then>
+					</f:if>
+				</form:renderValues>
+				<form:renderValues renderable="{page.rootForm}">
+					<f:if condition="{0: formValue.element.type} == {0: 'Beech.CLA:ContractArticleFormElement'}">
+						<f:then>
+							<cla:renderContractArticle element="{formValue.element}"></cla:renderContractArticle>
+							<br/>
+						</f:then>
+					</f:if>
+				</form:renderValues>
+				<form:renderValues renderable="{page.rootForm}">
+					<f:if condition="{0: formValue.element.type} == {0: 'Beech.CLA:ContractFooterSection'}">
+						<f:then>
+							<form:renderRenderable renderable="{formValue.element}" />
+						</f:then>
+					</f:if>
+				</form:renderValues>
+			</table>
+		</output>
+	</div>
+</fieldset>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('.probationPeriod').convertISO8601ToText();
+	});
+</script>

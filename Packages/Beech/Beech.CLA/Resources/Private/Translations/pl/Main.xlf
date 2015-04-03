@@ -1,0 +1,207 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-strict.xsd">
+	<file original="" source-language="en" target-language="pl" datatype="plaintext">
+		<body>
+			<trans-unit id="contract.Period">
+				<source>Contract period</source>
+				<target>Czas trwania umowy</target>
+			</trans-unit>
+			<trans-unit id="probation">
+				<source>Probation</source>
+				<target>Okres próbny</target>
+			</trans-unit>
+			<trans-unit id="job.Title">
+				<source>Job Title</source>
+				<target>Nazwa stanowiska</target>
+			</trans-unit>
+			<trans-unit id="hours.a.week">
+				<source>Hours a week</source>
+				<target>Godziny w tygodniu</target>
+			</trans-unit>
+			<trans-unit id="working.Hours">
+				<source>Working hours</source>
+				<target>Godziny pracy</target>
+			</trans-unit>
+			<trans-unit id="day[1]">
+				<source>Day</source>
+				<target>Dzień</target>
+			</trans-unit>
+			<trans-unit id="day[2]">
+				<source>Days</source>
+				<target>Dni</target>
+			</trans-unit>
+			<trans-unit id="week[1]">
+				<source>Week</source>
+				<target>Tydzień</target>
+			</trans-unit>
+			<trans-unit id="week[2]">
+				<source>Weeks</source>
+				<target>Tygodnie</target>
+			</trans-unit>
+			<trans-unit id="month[1]">
+				<source>Month</source>
+				<target>Miesiąc</target>
+			</trans-unit>
+			<trans-unit id="month[2]">
+				<source>Months</source>
+				<target>Miesiące</target>
+			</trans-unit>
+			<trans-unit id="year[1]">
+				<source>Year</source>
+				<target>Rok</target>
+			</trans-unit>
+			<trans-unit id="year[2]">
+				<source>Years</source>
+				<target>Lata</target>
+			</trans-unit>
+			<trans-unit id="work.Location">
+				<source>Work location</source>
+				<target>Miejsce pracy</target>
+			</trans-unit>
+			<trans-unit id="salary">
+				<source>Salary</source>
+				<target>WYnagrodzenie</target>
+			</trans-unit>
+			<trans-unit id="travel.Expenses.Home">
+				<source>Travel expenses home work traffic</source>
+				<target>Dodatek paliwowy</target>
+			</trans-unit>
+			<trans-unit id="travel.Expenses.Work">
+				<source>Travel expenses business trips</source>
+				<target>Wydatki na podróże służbowe</target>
+			</trans-unit>
+			<trans-unit id="study.Expenses">
+				<source>Study expenses</source>
+				<target>Wydatki na studia</target>
+			</trans-unit>
+			<trans-unit id="vacation.Allowance">
+				<source>Vacation allowance</source>
+				<target>Dodatek wakacyjny</target>
+			</trans-unit>
+			<trans-unit id="vacation.Entitlement">
+				<source>Vacation entitlement</source>
+				<target>Prawo do urlopu</target>
+			</trans-unit>
+			<trans-unit id="flexible.Employment.Benefits">
+				<source>Flexible employment benefits</source>
+				<target>Elastyczny system świadczeń pracowniczych</target>
+			</trans-unit>
+			<trans-unit id="mobile.Phone.Provision">
+				<source>Provision of mobile phone</source>
+				<target>Telefon służbowy</target>
+			</trans-unit>
+			<trans-unit id="laptop.Provision">
+				<source>Provision of laptop</source>
+				<target>Laptop służbowy</target>
+			</trans-unit>
+			<trans-unit id="competition.Clause">
+				<source>Competition clause</source>
+				<target>Klauzula o zakazie konkurencji</target>
+			</trans-unit>
+			<trans-unit id="confidentiality.Clause">
+				<source>Confidentiality clause</source>
+				<target>Klauzula poufności</target>
+			</trans-unit>
+			<trans-unit id="additional.Positions">
+				<source>Additional job positions</source>
+				<target>Dodatkowe stanowiska pracy</target>
+			</trans-unit>
+			<trans-unit id="general.Benefits">
+				<source>General benefits</source>
+				<target>Ogólne korzyści</target>
+			</trans-unit>
+			<trans-unit id="contract.contractTemplate.Temporary contract with GLA Arrangement">
+				<source>Temporary contract with GLA arrangement</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="contract.contractTemplate.Permanent Contract">
+				<source>Permanent contract</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="contract.contractTemplate.Temporary contract">
+				<source>Temporary contract</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="contract.contractTemplate.Temporary contract with cafetaria arrangement">
+				<source>Temporary contract with cafetaria arrangement</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="status">
+				<source>Status</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="contractType">
+				<source>Contract type</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="hours">
+				<source>Hours</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="week">
+				<source>Week</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="startDate">
+				<source>Start date</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="endDate">
+				<source>End date</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="daysTillEnd">
+				<source>Days till end</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="salary">
+				<source>Salary</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="contract">
+				<source>Contract</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="wageGroup">
+				<source>Wagegroup</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="wageStep">
+				<source>Wage step</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="contract.status.draft">
+				<source>Draft</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="contract.status.active">
+				<source>Active</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="contract.status.rejected">
+				<source>Rejected</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="contract.status.cancelled">
+				<source>Cancelled</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="contract.status.closed">
+				<source>Ended</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="contract.status.pendingApproval">
+				<source>Pending approval</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="noContract">
+				<source>There is no contract for this person.</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="/week">
+				<source>/ week</source>
+				<target></target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

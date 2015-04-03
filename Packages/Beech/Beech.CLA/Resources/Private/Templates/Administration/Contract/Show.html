@@ -1,0 +1,7 @@
+<f:layout name="Ajax"/>{namespace form=TYPO3\Form\ViewHelpers}
+<f:section name="Body">
+	<form:render factoryClass="Beech\CLA\Factory\ContractPreviewFactory" presetName="wizard" overrideConfiguration="{overrideConfiguration}"/>
+	<div class="form-actions">
+		<a class="btn btn-primary" href="/#/administration/contracts"><f:translate id="action.back">Back</f:translate></a>
+	</div>
+</f:section>

@@ -1,0 +1,122 @@
+#############################################################
+# this is the jobDescriptions model.
+# todo: make this as an extend on the CLA.Jobdescriptions model.
+# it should be an extend of the jobdescriptions model that is in cla.
+#############################################################
+'Beech.CLA.Domain.Model.JobDescription':
+  properties:
+    'number':
+      label: 'Job description number'
+      validation:
+        -
+          type: 'StringLength'
+          options:
+            maximum: 10
+    'name':
+      label: 'Job Title'
+      validation:
+        -
+          type: 'StringLength'
+          options:
+            maximum: 50
+    'jobContext':
+      label: 'Job context'
+      validation:
+        -
+          type: 'Text'
+      default: 'Functioncontext'
+    'jobGoal':
+      label: 'Job goal'
+      validation:
+        -
+          type: 'Text'
+    'positionLabel':
+      type: 'string'
+      validation:
+        -
+          type: 'Label'
+        -
+          type: 'StringLength'
+          options:
+            maximum: 30
+      default: 'organisational position'
+    'reportsTo':
+      label: 'Reports to'
+      validation:
+        -
+          type: 'Text'
+    'manages':
+      label: 'Manages'
+      validation:
+        -
+          type: 'Text'
+    'department':
+      label: 'Department'
+      validation:
+        -
+          type: 'StringLength'
+          options:
+            maximum: 20
+    'expectationLabel':
+      validation:
+        -
+          type: 'Label'
+        -
+          type: 'StringLength'
+          options:
+            maximum: 30
+      default: 'Result area'
+    'expectations':
+      label: 'Expectations'
+      type: 'array'
+      values:
+        'actsPerformed': 'Acts performed'
+        'informationProvided': 'Information provided'
+        'compliedOperatingProcedures': 'Complied operating procedures'
+    'mainActivities':
+      label: 'Main activities'
+      validation:
+        -
+          type: 'Text'
+    'resultCriteria':
+      label: 'Result criteria'
+      validation:
+        -
+          type: 'Text'
+    'burdeningCircumstances':
+      label: 'Burdening circumstances'
+      type: 'array'
+      values:
+        'circumstance':
+        label: 'Circumstance'
+        validation:
+          -
+            type: 'Text'
+    'orbaScore':
+      label: 'ORBA score'
+      validation:
+        -
+          type: 'StringLength'
+          options:
+            maximum: 10
+    'wageScaleGroup':
+      label: 'Wage scale'
+      validation:
+        -
+          type: 'StringLength'
+          options:
+            maximum: 20
+    'creationDate':
+      default: 'now'
+      label: 'creation date'
+      type: 'DateTime'
+#      validation:
+#        -
+#          type: 'DateTimeRange'
+#          options:
+#            earliestDate: 20130101
+#            latestDate: 20200101
+    'createdBy':
+      default: 'currentUser'
+      label: 'Created by'
+      type: 'string'

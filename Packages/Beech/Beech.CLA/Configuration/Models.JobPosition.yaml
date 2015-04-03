@@ -1,0 +1,20 @@
+'Beech.CLA.Domain.Model.JobPosition':
+  properties:
+# sets the abstract party its attached to.
+    'person':
+      label: 'Person'
+      type: 'Beech\Party\Domain\Model\Person'
+    'jobDescription':
+      label: 'JobDescription'
+      type: 'Beech\CLA\Domain\Model\JobDescription'
+# sets the head of the department if TRUE
+    'departmentHead':
+      label: 'Head of department'
+      options:
+        values:
+          - FALSE
+          - TRUE
+# Sets group" rights and roles that is connected to function.
+    'group':
+      label: 'Member of'
+      type: 'Beech\Party\Domain\Model\Group'

@@ -1,0 +1,404 @@
+SalaryScale:
+  wageName: 'GlastuinbouwScaleB'
+  wageStartDate: '01-09-2012'
+  wageEndDate: '01-07-2013'
+  wageUnit: 'hour'
+  wageGroups:
+    -
+      label: 'B'
+      orbaPointsStart: 21
+      orbaPointsEnd: 35
+      data:
+        -
+          step: '15'
+          value: '* 0,40'
+          age: '15'
+          wageType: 'calculation'
+        -
+          step: '16'
+          value: '* 0,50'
+          age: '16'
+          wageType: 'calculation'
+        -
+          step: '17'
+          value: '* 0,60'
+          age: '17'
+          wageType: 'calculation'
+        -
+          step: '18'
+          value: '* 0,70'
+          age: '18'
+          wageType: 'calculation'
+        -
+          step: '19'
+          value: '* 0,80'
+          age: '19'
+          wageType: 'calculation'
+        -
+          step: '20'
+          value: '* 0,90'
+          age: '20'
+          wageType: 'calculation'
+        -
+          step: '1'
+          value: '* 1'
+          age: '1'
+          wageType: 'calculation'
+          default: TRUE
+        -
+          step: '2'
+          value: '* 1,017'
+          wageType: 'calculation'
+        -
+          step: '3'
+          value: '* 1,031'
+          wageType: 'calculation'
+        -
+          step: '4'
+          value: '9,25'
+        -
+          step: '5'
+          value: '9,8'
+        -
+          step: '6'
+          value: '10,38'
+        -
+          step: '7'
+          value: '10,93'
+    -
+      label: 'C'
+      orbaPointsStart: 36
+      orbaPointsEnd: 50
+      data:
+        -
+          step: '15'
+          value: '3,98'
+          age: '15'
+        -
+          step: '16'
+          value: '4,97'
+          age: '16'
+        -
+          step: '17'
+          value: '5,96'
+          age: '17'
+        -
+          step: '18'
+          value: '6,96'
+          age: '18'
+        -
+          step: '19'
+          value: '7,95'
+          age: '19'
+        -
+          step: '20'
+          value: '8,95'
+          age: '20'
+        -
+          step: '1'
+          value: '9,94'
+          default: TRUE
+        -
+          step: '2'
+          value: '10,34'
+        -
+          step: '3'
+          value: '10,74'
+        -
+          step: '4'
+          value: '11,19'
+        -
+          step: '5'
+          value: '11,64'
+        -
+          step: '6'
+          value: '12,1'
+        -
+          step: '7'
+          value: '12,57'
+    -
+      label: 'D'
+      orbaPointsStart: 51
+      orbaPointsEnd: 65
+      data:
+        -
+          step: '15'
+          value: '4,04'
+          age: '15'
+        -
+          step: '16'
+          value: '5,06'
+          age: '16'
+        -
+          step: '17'
+          value: '6,07'
+          age: '17'
+        -
+          step: '18'
+          value: '7,08'
+          age: '18'
+        -
+          step: '19'
+          value: '8,09'
+          age: '19'
+        -
+          step: '20'
+          value: '9,1'
+          age: '20'
+        -
+          step: '1'
+          value: '10,11'
+          default: TRUE
+        -
+          step: '2'
+          value: '10,52'
+        -
+          step: '3'
+          value: '10,94'
+        -
+          step: '4'
+          value: '11,37'
+        -
+          step: '5'
+          value: '11,83'
+        -
+          step: '6'
+          value: '12,31'
+        -
+          step: '7'
+          value: '13,03'
+
+    -
+      label: 'E'
+      orbaPointsStart: 66
+      orbaPointsEnd: 85
+      data:
+        -
+          step: '15'
+          value: '4,21'
+          age: '15'
+        -
+          step: '16'
+          value: '5,26'
+          age: '16'
+        -
+          step: '17'
+          value: '6,31'
+          age: '17'
+        -
+          step: '18'
+          value: '7,36'
+          age: '18'
+        -
+          step: '19'
+          value: '8,42'
+          age: '19'
+        -
+          step: '20'
+          value: '9,47'
+          age: '20'
+        -
+          step: '1'
+          value: '10,52'
+          default: TRUE
+        -
+          step: '2'
+          value: '10,94'
+        -
+          step: '3'
+          value: '11,37'
+        -
+          step: '4'
+          value: '11,83'
+        -
+          step: '5'
+          value: '12,31'
+        -
+          step: '6'
+          value: '12,78'
+        -
+          step: '7'
+          value: '13,31'
+        -
+          step: '8'
+          value: '13,85'
+    -
+      label: 'F'
+      orbaPointsStart: 86
+      orbaPointsEnd: 105
+      data:
+        -
+          step: '15'
+          value: '4,42'
+          age: '15'
+        -
+          step: '16'
+          value: '5,53'
+          age: '16'
+        -
+          step: '17'
+          value: '6,63'
+          age: '17'
+        -
+          step: '18'
+          value: '7,74'
+          age: '18'
+        -
+          step: '19'
+          value: '8,84'
+          age: '19'
+        -
+          step: '20'
+          value: '9,95'
+          age: '20'
+        -
+          step: '1'
+          value: '11,05'
+          default: TRUE
+        -
+          step: '2'
+          value: '11,49'
+        -
+          step: '3'
+          value: '11,95'
+        -
+          step: '4'
+          value: '12,43'
+        -
+          step: '5'
+          value: '12,96'
+        -
+          step: '6'
+          value: '13,45'
+        -
+          step: '7'
+          value: '13,99'
+        -
+          step: '8'
+          value: '14,54'
+        -
+          step: '9'
+          value: '15,13'
+    -
+      label: 'G'
+      orbaPointsStart: 106
+      orbaPointsEnd: 125
+      data:
+        -
+          step: '15'
+          value: '4,69'
+          age: '15'
+        -
+          step: '16'
+          value: '5,86'
+          age: '16'
+        -
+          step: '17'
+          value: '7,03'
+          age: '17'
+        -
+          step: '18'
+          value: '8,2'
+          age: '18'
+        -
+          step: '19'
+          value: '9,38'
+          age: '19'
+        -
+          step: '20'
+          value: '10,55'
+          age: '20'
+        -
+          step: '1'
+          value: '11,72'
+          default: TRUE
+        -
+          step: '2'
+          value: '12,19'
+        -
+          step: '3'
+          value: '12,67'
+        -
+          step: '4'
+          value: '13,18'
+        -
+          step: '5'
+          value: '13,7'
+        -
+          step: '6'
+          value: '14,23'
+        -
+          step: '7'
+          value: '14,82'
+        -
+          step: '8'
+          value: '15,4'
+        -
+          step: '9'
+          value: '16,03'
+        -
+          step: '10'
+          value: '16,65'
+    -
+      label: 'H'
+      orbaPointsStart: 126
+      orbaPointsEnd: 145
+      data:
+        -
+          step: '15'
+          value: '5,1'
+          age: '15'
+        -
+          step: '16'
+          value: '6,38'
+          age: '16'
+        -
+          step: '17'
+          value: '7,66'
+          age: '17'
+        -
+          step: '18'
+          value: '8,93'
+          age: '18'
+        -
+          step: '19'
+          value: '10,21'
+          age: '19'
+        -
+          step: '20'
+          value: '11,48'
+          age: '20'
+        -
+          step: '1'
+          value: '12,76'
+          default: TRUE
+        -
+          step: '2'
+          value: '13,29'
+        -
+          step: '3'
+          value: '13,82'
+        -
+          step: '4'
+          value: '14,39'
+        -
+          step: '5'
+          value: '14,95'
+        -
+          step: '6'
+          value: '15,54'
+        -
+          step: '7'
+          value: '16,18'
+        -
+          step: '8'
+          value: '16,82'
+        -
+          step: '9'
+          value: '17,51'
+        -
+          step: '10'
+          value: '18,2'
+        -
+          step: '11'
+          value: '18,92'

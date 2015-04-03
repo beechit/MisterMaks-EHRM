@@ -1,0 +1,7 @@
+Radmiraal:
+  Emberjs:
+    restInterfaces:
+      beechTaskDomainModelTasks:
+        routePath: 'beechTaskDomainModelTasks'
+        model: 'Beech\Task\Domain\Model\Task'
+        repository: 'Beech\Task\Domain\Repository\TaskRepository'

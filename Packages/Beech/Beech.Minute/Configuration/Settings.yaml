@@ -1,0 +1,10 @@
+Famelo:
+  Scaff:
+    modules:
+      minutes:
+        label: 'Minute'
+        arguments:
+          @package: 'Beech.Minute'
+          @controller: 'Management\Minute'
+          @action: 'list'
+

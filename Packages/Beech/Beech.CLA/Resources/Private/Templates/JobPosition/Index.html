@@ -1,0 +1,32 @@
+<f:layout name="Ajax"/>{namespace ehrm=Beech\Ehrm\ViewHelpers}
+<f:section name="Body">
+
+	<h1>
+		<f:translate id="organisationChart">Organisation chart</f:translate>
+	</h1>
+
+	<ehrm:flashMessages/>
+	<f:if condition="{jobPosition}">
+		<f:then>
+			<ul class="jobpositions">
+				<f:render partial="JobPosition/VisialNode" arguments="{jobPosition:jobPosition}" />
+			</ul>
+		</f:then>
+		<f:else>
+			<div class="alert">
+				<h3>No root job position found!</h3>
+				<p><strong>run <em>./flow setup:initialize "company name"</em></strong></p>
+			</div>
+		</f:else>
+	</f:if>
+<script>
+	jQuery(document).ready(function() {
+		$(".jobpositions").jOrgChart({chartElement:$(".jobpositions").parent()});
+		$(".jobpositions").hide();
+			// prevent collapsing of node when clicking action
+		$(".jOrgChart .actions a").on('click', function(e) {
+			$(this).parents('.node:first').trigger('click');
+		})
+	});
+</script>
+</f:section>

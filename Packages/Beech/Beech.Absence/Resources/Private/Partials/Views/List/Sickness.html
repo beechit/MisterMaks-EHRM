@@ -1,0 +1,85 @@
+
+<f:render partial="Views/Header" arguments="{person:person, title:'{f:translate(id: \'sicknessHistory\', value: \'Sickness history\')}'}"/>
+
+<span class="breadcrumbElement hide" position="2"><f:translate id='sicknessHistory'>Sickness history</f:translate></span>
+
+<div class="clearfix container-fluid">
+	<div class="row-fluid">
+		<div class="span3"><f:translate id="percentageSick">Sickness %</f:translate></div>
+		<div class="span3"><f:translate id="percentageAverageSickDepartment">Department: %</f:translate></div>
+		<div class="span3"><f:translate id="percentageAverageSickAverage">Company: %</f:translate></div>
+		<div class="span3"><f:translate id="percentageAverageBranche">Branche: %</f:translate></div>
+	</div>
+	<div class="row-fluid">
+		<div class="span12">
+			<table class="table absenceList table-striped table-bordered">
+				<thead>
+				<tr>
+					<f:if condition="{person}"><f:else><th><f:translate id="type">Name</f:translate></th></f:else></f:if>
+					<th><f:translate id="type">Type</f:translate></th>
+					<th><f:translate id="from">From</f:translate></th>
+					<th><f:translate id="till">Till</f:translate></th>
+					<th><f:translate id="days">Days</f:translate></th>
+					<th><f:translate id="hours">Hours</f:translate></th>
+					<th><f:translate id="status">Status</f:translate></th>
+					<th></th>
+				</tr>
+				</thead>
+				<f:for each="{absences}" as="absence">
+					<tr>
+						<f:if condition="{person}"><f:else><td>{absence.person.name}</td></f:else></f:if>
+						<td><f:translate id="absence.absenceArrangement.label.{absence.absenceArrangement.label}">{absence.absenceArrangement.label}</f:translate></td>
+						<td><i class="icon-calendar"/> {absence.startDate -> f:format.date(format: 'd-m-Y')}</td>
+						<td><i class="icon-calendar"/>
+							<f:if condition="{absence.endDate}">
+								<f:then>{absence.endDate -> f:format.date(format: 'd-m-Y')}</f:then>
+								<f:else>{absence.estimatedRecoveryDate -> f:format.date(format: 'd-m-Y')}</f:else>
+							</f:if>
+						</td>
+						<td>{absence.days}</td>
+						<td>{absence.hours} </td>
+						<td>
+							<span {f:if(condition: '{0: absence.status} == {0: "recovered"}', then: 'class="text-success"', else: 'class="text-error"')}>
+							<f:translate id="absence.status.{absence.status}">{absence.status}</f:translate>
+							</span>
+						</td>
+						<td>
+							<a class="btn btn-small" href="{f:uri.action(package:'Beech.Absence', controller:'Absence', action:'edit', arguments: {absence: absence})}"
+							   data-toggle="modal-ajax" data-target="#modal" modal-size="large" data-reload="reload-current-page" title="<f:translate id='edit' />">
+								<i class="icon-edit"></i>
+							</a>
+						</td>
+					</tr>
+				</f:for>
+			</table>
+		</div>
+	</div>
+
+
+</div>
+<script type="text/javascript">
+	$('table.absenceList').dataTable({
+		"oLanguage": {
+			"sEmptyTable": '<f:translate id="absence.sEmptyTable">No data available</f:translate>',
+			"sSearch": '<f:translate id="absence.sSearch">Search</f:translate>',
+			"sInfo": '<f:translate id="absence.sInfo">Showing (_START_ of _END_) of _TOTAL_ entries.</f:translate>',
+			"sLengthMenu": '<f:translate id="absence.sLengthMenu">Show _MENU_ entries</f:translate>',
+			"oPaginate": {
+				"sFirst": '<f:translate id="absence.sFirst">Search</f:translate>',
+				"sLast": '<f:translate id="absence.sLast">Last</f:translate>',
+				"sNext": '<f:translate id="absence.sNext">Next</f:translate>',
+				"sPrevious": '<f:translate id="absence.sPrevious">Previous</f:translate>',
+		"aoColumns": [
+			<f:if condition="{person}"><f:else>null,</f:else></f:if>
+			null,
+			{ "sType": "date-nl" },
+			{ "sType": "date-nl" },
+			{ "sType": "numeric" },
+			{ "sType": "numeric" },
+			null,
+			null
+		]
+		}
+	}
+	});
+</script>

@@ -1,0 +1,415 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-strict.xsd">
+	<file original="" source-language="en" target-language="pl" datatype="plaintext">
+		<body>
+			<trans-unit id="document.documents">
+				<source>Documents</source>
+				<target>Akta</target>
+			</trans-unit>
+			<trans-unit id="document.noDocumentsFound">
+				<source>No documents found</source>
+				<target>Nie znaleziono plików</target>
+			</trans-unit>
+			<trans-unit id="document.mimeTypeNotAllowed">
+				<source>Mime type {0} not allowed</source>
+				<target>Plik z tym rozszerzeniem jest niedozwolony</target>
+			</trans-unit>
+			<trans-unit id="document.noFileSelected">
+				<source>No file was selected for upload</source>
+				<target>Nie wybrano pliku do uploadu</target>
+			</trans-unit>
+			<trans-unit id="document.documentUploaded">
+				<source>Document uploaded</source>
+				<target>Przesłany plik</target>
+			</trans-unit>
+			<trans-unit id="document.new">
+				<source>New</source>
+				<target>Nowy</target>
+			</trans-unit>
+			<trans-unit id="document.documentDeleted">
+				<source>Document deleted</source>
+				<target>Plik usunięty</target>
+			</trans-unit>
+			<trans-unit id="document.upload">
+				<source>Upload</source>
+				<target>Prześlij</target>
+			</trans-unit>
+			<trans-unit id="name">
+				<source>Name</source>
+				<target>Name</target>
+			</trans-unit>
+			<trans-unit id="versions">
+				<source>Versions</source>
+				<target>Versions</target>
+			</trans-unit>
+			<trans-unit id="documentOwner">
+				<source>Owner</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="department">
+				<source>DepartmentID</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="documentType">
+				<source>Document type</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="identification">
+				<source>Identification</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="resume">
+				<source>Resumé</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="report">
+				<source>Report</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="permit">
+				<source>Workpermit</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="diploma">
+				<source>Diploma</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="certificate">
+				<source>Certificate</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="other">
+				<source>Other</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="driversLicenceType">
+				<source>Drivers licence</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="A">
+				<source>A</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="B">
+				<source>B</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="C">
+				<source>C</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="D">
+				<source>D</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="E">
+				<source>E</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="tractor">
+				<source>Tractor</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="forklift">
+				<source>forklift</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="identificationType">
+				<source>Identification type</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="IdCard">
+				<source>IDCard</source>
+			    <target></target>
+			</trans-unit>
+			<trans-unit id="passport">
+				<source>Passport</source>
+			    <target></target>
+			</trans-unit>
+			<trans-unit id="foreignPassport">
+				<source>Foreign Passport</source>
+			    <target></target>
+			</trans-unit>
+			<trans-unit id="foreignIDCard">
+				<source>Foreign IDCard</source>
+			    <target></target>
+			</trans-unit>
+			<trans-unit id="expirationDate">
+				<source>Expiration date</source>
+			    <target></target>
+			</trans-unit>
+			<trans-unit id="resource">
+				<source>Resource</source>
+			    <target></target>
+			</trans-unit>
+			<trans-unit id="trackIfisValid">
+				<source></source>
+			    <target></target>
+			</trans-unit>
+			<trans-unit id="documentDate">
+				<source>Document date</source>
+			    <target></target>
+			</trans-unit>
+			<trans-unit id="documentDescription">
+				<source>Document description</source>
+			    <target></target>
+			</trans-unit>
+			<trans-unit id="privateDocument">
+				<source>Private document</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="visible">
+				<source>Visible</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="connections">
+				<source>Connections</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="minuteId">
+				<source>MinuteID</source>
+			    <target></target>
+			</trans-unit>
+			<trans-unit id="contractId">
+				<source>ContractID</source>
+			    <target></target>
+			</trans-unit>
+			<trans-unit id="meetingId">
+				<source>MeetingID</source>
+			    <target></target>
+			</trans-unit>
+			<trans-unit id="absenceId">
+				<source>AbsenceID</source>
+			    <target></target>
+			</trans-unit>
+			<trans-unit id="leaveId">
+				<source>LeaveID</source>
+			    <target></target>
+			</trans-unit>
+			<trans-unit id="documentId">
+				<source>DocumentID</source>
+			    <target></target>
+			</trans-unit>
+			<trans-unit id="personId">
+				<source>PersonID</source>
+			    <target></target>
+			</trans-unit>
+			<trans-unit id="creationDate">
+				<source>Creation date</source>
+			    <target></target>
+			</trans-unit>
+			<trans-unit id="createdBy">
+				<source>Created by</source>
+			    <target></target>
+			</trans-unit>
+			<trans-unit id="modification">
+				<source>Modification</source>
+			    <target></target>
+			</trans-unit>
+			<trans-unit id="modificationDate">
+				<source>Modification date</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="modifiedBy">
+				<source>Modified By</source>
+ 			    <target></target>
+			</trans-unit>
+			<trans-unit id="action.update">
+				<source>Update</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="documentName">
+				<source>Document name</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="NameAttachmentAreRequired">
+				<source>* Document name and attachment are required</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="resource.contentType.image/gif">
+				<source>Image (gif)</source>
+				<target>Obraz (gif)</target>
+			</trans-unit>
+			<trans-unit id="resource.contentType.image/tiff">
+				<source>Image (tiff)</source>
+				<target>Obraz (tiff)</target>
+			</trans-unit>
+			<trans-unit id="resource.contentType.image/jpeg">
+				<source>Image (jpeg)</source>
+				<target>Obraz (jpeg)</target>
+			</trans-unit>
+			<trans-unit id="resource.contentType.text/plain">
+				<source>File (txt)</source>
+				<target>Dokument (txt)</target>
+			</trans-unit>
+			<trans-unit id="resource.contentType.application/vnd.ms-excel">
+				<source>Spreadsheet (xls)</source>
+				<target>Kalkulacyjny (xls)</target>
+			</trans-unit>
+			<trans-unit id="resource.contentType.image/png">
+				<source>Image (png)</source>
+				<target>Obraz (png)</target>
+			</trans-unit>
+			<trans-unit id="resource.contentType.application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+				<source>Document (docx)</source>
+				<target>Dokument (docx)</target>
+			</trans-unit>
+			<trans-unit id="resource.contentType.application/vnd.oasis.opendocument.text">
+				<source>Document (odt)</source>
+				<target>Dokument (odt)</target>
+			</trans-unit>
+			<trans-unit id="resource.contentType.application/pdf">
+				<source>Document (pdf)</source>
+				<target>Dokument (pdf)</target>
+			</trans-unit>
+			<trans-unit id="resource.contentType.application/vnd.openxmlformats-officedocument.spreadsheetml.sheet">
+				<source>Spreadsheet (xlsx)</source>
+				<target>Kalkulacyjny (xlsx)</target>
+			</trans-unit>
+			<trans-unit id="resource.contentType.application/vnd.oasis.opendocument.spreadsheet">
+				<source>Spreadsheet (ods)</source>
+				<target>Kalkulacyjny (ods)</target>
+			</trans-unit>
+			<trans-unit id="document.documentType.categoryName.Absence">
+				<source>Absence</source>
+				<target>Verlof en verzuim</target>
+			</trans-unit>
+			<trans-unit id="document.documentType.typeName.Correspondence">
+				<source>Correspondence</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="document.documentType.typeName.Arbo">
+				<source>Arbodienst</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="document.documentType.typeName.Other">
+				<source>Other</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="document.documentType.categoryName.Contract">
+				<source>Contract</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="document.documentType.categoryName.Reference note">
+				<source>Reference note</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="document.documentType.typeName.Renewable certificates">
+				<source>Renewable certificates</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="document.documentType.typeName.Permanent Certificates">
+				<source>Certificates</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="document.documentType.categoryName.Educational">
+				<source>Education</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="document.documentType.typeName.Diploma">
+				<source>Diploma</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="document.documentType.typeName.Certificate of registration">
+				<source>Certificate of registration</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="document.documentType.categoryName.General">
+				<source>General</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="document.documentType.typeName.Report">
+				<source>Report</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="document.documentType.categoryName.Identification">
+				<source>Identification</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="document.documentType.typeName.Passport">
+				<source>Passport</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="document.documentType.typeName.ID card">
+				<source>ID card</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="document.documentType.categoryName.Image">
+				<source>Image</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="document.documentType.typeName.profilePhoto">
+				<source>Profile image</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="document.documentType.typeName.companyLogo">
+				<source>Company logo</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="document.documentType.typeName.Other">
+				<source>Other</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="document.documentType.typeName.Images">
+				<source>Images</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="document.documentType.categoryName.jobApplication">
+				<source>jobApplication</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="document.documentType.typeName.Resume">
+				<source>Resume</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="document.documentType.typeName.Interview notes">
+				<source></source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="document.documentType.typeName.Performance review">
+				<source>Performance Review</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="document.documentType.typeName.Team meetings">
+				<source>Minutes</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="document.documentType.typeName.Progress report">
+				<source>Progress report</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="document.documentType.typeName.Workpermit">
+				<source>Workpermit</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="document.documentType.typeName.ResidencePermit">
+				<source>Residence permit</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="document.documentType.typeName.ApplicationForms">
+				<source>Application form</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="document.documentType.typeName.Wage document">
+				<source>Wage document</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="document.documentType.typeName.Wage tax declaration">
+				<source>Wage Tax documents</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="document.documentType.categoryName.Salary">
+				<source>Salary</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="document.documentType.categoryName.Permits">
+				<source>Permits</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="period">
+				<source>Period</source>
+				<target></target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

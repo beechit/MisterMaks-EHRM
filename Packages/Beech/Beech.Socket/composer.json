@@ -1,0 +1,15 @@
+{
+	"name": "beech/socket",
+	"type": "typo3-flow-package",
+	"description": "",
+	"require": {
+		"typo3/flow": "*",
+		"php": ">=5.4.0",
+		"react/event-loop": "*"
+	},
+	"autoload": {
+		"psr-0": {
+			"Beech\\Socket": "Classes"
+		}
+	}
+}
