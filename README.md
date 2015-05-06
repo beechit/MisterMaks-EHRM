@@ -20,10 +20,10 @@ this project is not ready but it runs and is rich of code examples.
 
 Requirements
 ============
-Apache webserver
-Mysql
-Php 5.4 ->
-couchdb
+- Apache webserver
+- Mysql
+- PHP 5.4 ->
+- Couchdb
 
 setup instructions.
 ===================
@@ -31,7 +31,7 @@ setup instructions.
 -  cd /mistermaks
 -  curl -sS https://getcomposer.org/installer | php
 -  php composer.phar install
--  php gerrit_update
+-  php gerrit_update.php
 -  ./initialise-mistermaks.sh
 -  create a vhost and its up and running.
 
